@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A summary of the properties of a trial component as returned by the <a>Search</a>
-    /// API.
+    /// The properties of a trial component as returned by the <a>Search</a> API.
     /// </summary>
     public partial class TrialComponent
     {
@@ -251,7 +250,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Source.
+        /// Gets and sets the property Source. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) and job type of the source of the component.
+        /// </para>
         /// </summary>
         public TrialComponentSource Source
         {
@@ -268,7 +270,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SourceDetail. 
         /// <para>
-        /// The source of the trial component.&gt;
+        /// Details of the source of the component.
         /// </para>
         /// </summary>
         public TrialComponentSourceDetail SourceDetail

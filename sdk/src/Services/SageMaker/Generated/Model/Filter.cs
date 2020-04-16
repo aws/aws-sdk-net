@@ -29,20 +29,13 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// A conditional statement for a search expression that includes a resource property,
-    /// a Boolean operator, and a value.
+    /// a Boolean operator, and a value. Resources that match the statement are returned in
+    /// the results from the <a>Search</a> API.
     /// 
     ///  
     /// <para>
-    /// If you don't specify an <code>Operator</code> and a <code>Value</code>, the filter
-    /// searches for only the specified property. For example, defining a <code>Filter</code>
-    /// for the <code>FailureReason</code> for the <code>TrainingJob</code> <code>Resource</code>
-    /// searches for training job objects that have a value in the <code>FailureReason</code>
-    /// field.
-    /// </para>
-    ///  
-    /// <para>
     /// If you specify a <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker
-    /// uses the equals operator as the default.
+    /// uses the equals operator.
     /// </para>
     ///  
     /// <para>
@@ -64,7 +57,7 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>"Operator": "GREATER_THAN",</code> 
+    ///  <code>"Operator": "GreaterThan",</code> 
     /// </para>
     ///  
     /// <para>
@@ -93,7 +86,7 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code> "Operator": "LESS_THAN",</code> 
+    ///  <code> "Operator": "LessThan",</code> 
     /// </para>
     ///  
     /// <para>
@@ -105,7 +98,7 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </dd> <dt>Tags</dt> <dd> 
     /// <para>
-    /// To define a tag filter, enter a value with the form <code>"Tags.&lt;key&gt;"</code>.
+    /// To define a tag filter, enter a value with the form <code>Tags.&lt;key&gt;</code>.
     /// </para>
     ///  </dd> </dl>
     /// </summary>
@@ -118,9 +111,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A property name. For example, <code>TrainingJobName</code>. For the list of valid
-        /// property names returned in a search result for each supported resource, see <a>TrainingJob</a>
-        /// properties. You must specify a valid property name for the resource.
+        /// A resource property name. For example, <code>TrainingJobName</code>. For valid property
+        /// names, see <a>SearchRecord</a>. You must specify a valid property for the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -144,42 +136,51 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <dl> <dt>Equals</dt> <dd> 
         /// <para>
-        /// The specified resource in <code>Name</code> equals the specified <code>Value</code>.
+        /// The value of <code>Name</code> equals <code>Value</code>.
         /// </para>
         ///  </dd> <dt>NotEquals</dt> <dd> 
         /// <para>
-        /// The specified resource in <code>Name</code> does not equal the specified <code>Value</code>.
+        /// The value of <code>Name</code> doesn't equal <code>Value</code>.
         /// </para>
         ///  </dd> <dt>GreaterThan</dt> <dd> 
         /// <para>
-        /// The specified resource in <code>Name</code> is greater than the specified <code>Value</code>.
-        /// Not supported for text-based properties.
+        /// The value of <code>Name</code> is greater than <code>Value</code>. Not supported for
+        /// text properties.
         /// </para>
         ///  </dd> <dt>GreaterThanOrEqualTo</dt> <dd> 
         /// <para>
-        /// The specified resource in <code>Name</code> is greater than or equal to the specified
-        /// <code>Value</code>. Not supported for text-based properties.
+        /// The value of <code>Name</code> is greater than or equal to <code>Value</code>. Not
+        /// supported for text properties.
         /// </para>
         ///  </dd> <dt>LessThan</dt> <dd> 
         /// <para>
-        /// The specified resource in <code>Name</code> is less than the specified <code>Value</code>.
-        /// Not supported for text-based properties.
+        /// The value of <code>Name</code> is less than <code>Value</code>. Not supported for
+        /// text properties.
         /// </para>
         ///  </dd> <dt>LessThanOrEqualTo</dt> <dd> 
         /// <para>
-        /// The specified resource in <code>Name</code> is less than or equal to the specified
-        /// <code>Value</code>. Not supported for text-based properties.
+        /// The value of <code>Name</code> is less than or equal to <code>Value</code>. Not supported
+        /// for text properties.
         /// </para>
         ///  </dd> <dt>Contains</dt> <dd> 
         /// <para>
-        /// Only supported for text-based properties. The word-list of the property contains the
-        /// specified <code>Value</code>. A <code>SearchExpression</code> can include only one
-        /// <code>Contains</code> operator.
+        /// The value of <code>Name</code> contains the string <code>Value</code>. A <code>SearchExpression</code>
+        /// can include only one <code>Contains</code> operator. Only supported for text properties.
         /// </para>
-        ///  </dd> </dl> 
+        ///  </dd> <dt>Exists</dt> <dd> 
         /// <para>
-        /// If you have specified a filter <code>Value</code>, the default is <code>Equals</code>.
+        /// The <code>Name</code> property exists.
         /// </para>
+        ///  </dd> <dt>NotExists</dt> <dd> 
+        /// <para>
+        /// The <code>Name</code> property does not exist.
+        /// </para>
+        ///  </dd> <dt>In</dt> <dd> 
+        /// <para>
+        /// The value of <code>Name</code> is one of the comma delimited strings in <code>Value</code>.
+        /// Only supported for text properties.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         public Operator Operator
         {
@@ -196,9 +197,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// A value used with <code>Resource</code> and <code>Operator</code> to determine if
-        /// objects satisfy the filter's condition. For numerical properties, <code>Value</code>
-        /// must be an integer or floating-point decimal. For timestamp properties, <code>Value</code>
+        /// A value used with <code>Name</code> and <code>Operator</code> to determine which resources
+        /// satisfy the filter's condition. For numerical properties, <code>Value</code> must
+        /// be an integer or floating-point decimal. For timestamp properties, <code>Value</code>
         /// must be an ISO 8601 date-time string of the following format: <code>YYYY-mm-dd'T'HH:MM:SS</code>.
         /// </para>
         /// </summary>

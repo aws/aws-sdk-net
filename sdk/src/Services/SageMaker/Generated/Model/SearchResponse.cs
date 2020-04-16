@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Results. 
         /// <para>
-        /// A list of <code>SearchResult</code> objects.
+        /// A list of <code>SearchRecord</code> objects.
         /// </para>
         /// </summary>
         public List<SearchRecord> Results

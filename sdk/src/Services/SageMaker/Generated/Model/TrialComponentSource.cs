@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The source of the trial component.
+    /// The Amazon Resource Name (ARN) and job type of the source of a trial component.
     /// </summary>
     public partial class TrialComponentSource
     {
@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the source.
+        /// The source ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

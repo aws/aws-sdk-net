@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3CompressionType. 
         /// <para>
-        /// Whether to use <code>Gzip</code> compresion for Amazon S3 storage.
+        /// Whether to use <code>Gzip</code> compression for Amazon S3 storage.
         /// </para>
         /// </summary>
         public ProcessingS3CompressionType S3CompressionType
@@ -123,7 +123,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3InputMode. 
         /// <para>
-        /// Wether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code>
+        /// Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code>
         /// mode, Amazon SageMaker copies the data from the input source onto the local Amazon
         /// Elastic Block Store (Amazon EBS) volumes before starting your training algorithm.
         /// This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker

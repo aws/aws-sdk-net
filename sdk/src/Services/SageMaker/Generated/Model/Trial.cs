@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A summary of the properties of a trial as returned by the <a>Search</a> API.
+    /// The properties of a trial as returned by the <a>Search</a> API.
     /// </summary>
     public partial class Trial
     {

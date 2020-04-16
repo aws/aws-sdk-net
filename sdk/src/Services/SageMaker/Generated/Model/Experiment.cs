@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A summary of the properties of an experiment as returned by the <a>Search</a> API.
+    /// The properties of an experiment as returned by the <a>Search</a> API.
     /// </summary>
     public partial class Experiment
     {

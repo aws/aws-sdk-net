@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// An individual search result record that contains a single resource object.
+    /// A single resource returned as part of the <a>Search</a> API response.
     /// </summary>
     public partial class SearchRecord
     {
@@ -40,7 +40,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Experiment. 
         /// <para>
-        /// A summary of the properties of an experiment.
+        /// The properties of an experiment.
         /// </para>
         /// </summary>
         public Experiment Experiment
@@ -58,8 +58,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TrainingJob. 
         /// <para>
-        /// A <code>TrainingJob</code> object that is returned as part of a <code>Search</code>
-        /// request.
+        /// The properties of a training job.
         /// </para>
         /// </summary>
         public TrainingJob TrainingJob
@@ -77,7 +76,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Trial. 
         /// <para>
-        /// A summary of the properties of a trial.
+        /// The properties of a trial.
         /// </para>
         /// </summary>
         public Trial Trial
@@ -95,7 +94,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TrialComponent. 
         /// <para>
-        /// A summary of the properties of a trial component.
+        /// The properties of a trial component.
         /// </para>
         /// </summary>
         public TrialComponent TrialComponent

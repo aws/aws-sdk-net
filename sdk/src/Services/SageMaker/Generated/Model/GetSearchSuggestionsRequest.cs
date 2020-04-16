@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The name of the Amazon SageMaker resource to Search for.
+        /// The name of the Amazon SageMaker resource to search for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

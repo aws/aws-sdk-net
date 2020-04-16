@@ -35,7 +35,23 @@ namespace Amazon.SageMaker
     /// <summary>
     /// Implementation for accessing SageMaker
     ///
-    /// Provides APIs for creating and managing Amazon SageMaker resources.
+    /// Provides APIs for creating and managing Amazon SageMaker resources. 
+    /// 
+    ///  
+    /// <para>
+    /// Other Resources:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html#first-time-user">Amazon
+    /// SageMaker Developer Guide</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/augmented-ai/2019-11-07/APIReference/Welcome.html">Amazon
+    /// Augmented AI Runtime API Reference</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class AmazonSageMakerClient : AmazonServiceClient, IAmazonSageMaker
     {
@@ -7047,9 +7063,9 @@ namespace Amazon.SageMaker
         #region  Search
 
         /// <summary>
-        /// Finds Amazon SageMaker resources that match a search query. Matching resource objects
-        /// are returned as a list of <code>SearchResult</code> objects in the response. You can
-        /// sort the search results by any resource property in a ascending or descending order.
+        /// Finds Amazon SageMaker resources that match a search query. Matching resources are
+        /// returned as a list of <code>SearchRecord</code> objects in the response. You can sort
+        /// the search results by any resource property in a ascending or descending order.
         /// 
         ///  
         /// <para>

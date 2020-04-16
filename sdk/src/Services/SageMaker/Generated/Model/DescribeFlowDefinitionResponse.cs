@@ -174,7 +174,11 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HumanLoopRequestSource.
+        /// Gets and sets the property HumanLoopRequestSource. 
+        /// <para>
+        /// Container for configuring the source of human task requests. Used to specify if Amazon
+        /// Rekognition or Amazon Textract is used as an integration source.
+        /// </para>
         /// </summary>
         public HumanLoopRequestSource HumanLoopRequestSource
         {

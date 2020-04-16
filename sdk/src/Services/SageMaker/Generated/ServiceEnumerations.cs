@@ -2371,6 +2371,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly Framework TENSORFLOW = new Framework("TENSORFLOW");
         /// <summary>
+        /// Constant TFLITE for Framework
+        /// </summary>
+        public static readonly Framework TFLITE = new Framework("TFLITE");
+        /// <summary>
         /// Constant XGBOOST for Framework
         /// </summary>
         public static readonly Framework XGBOOST = new Framework("XGBOOST");
@@ -6149,6 +6153,26 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly TrainingInstanceType MlC59xlarge = new TrainingInstanceType("ml.c5.9xlarge");
         /// <summary>
+        /// Constant MlC5n18xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlC5n18xlarge = new TrainingInstanceType("ml.c5n.18xlarge");
+        /// <summary>
+        /// Constant MlC5n2xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlC5n2xlarge = new TrainingInstanceType("ml.c5n.2xlarge");
+        /// <summary>
+        /// Constant MlC5n4xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlC5n4xlarge = new TrainingInstanceType("ml.c5n.4xlarge");
+        /// <summary>
+        /// Constant MlC5n9xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlC5n9xlarge = new TrainingInstanceType("ml.c5n.9xlarge");
+        /// <summary>
+        /// Constant MlC5nXlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlC5nXlarge = new TrainingInstanceType("ml.c5n.xlarge");
+        /// <summary>
         /// Constant MlC5Xlarge for TrainingInstanceType
         /// </summary>
         public static readonly TrainingInstanceType MlC5Xlarge = new TrainingInstanceType("ml.c5.xlarge");
@@ -6680,6 +6704,14 @@ namespace Amazon.SageMaker
         /// Constant InProgress for TrialComponentPrimaryStatus
         /// </summary>
         public static readonly TrialComponentPrimaryStatus InProgress = new TrialComponentPrimaryStatus("InProgress");
+        /// <summary>
+        /// Constant Stopped for TrialComponentPrimaryStatus
+        /// </summary>
+        public static readonly TrialComponentPrimaryStatus Stopped = new TrialComponentPrimaryStatus("Stopped");
+        /// <summary>
+        /// Constant Stopping for TrialComponentPrimaryStatus
+        /// </summary>
+        public static readonly TrialComponentPrimaryStatus Stopping = new TrialComponentPrimaryStatus("Stopping");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
