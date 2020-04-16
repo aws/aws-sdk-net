@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FileSourceSettings Marshaller
+    /// CaptionSourceFramerate Marshaller
     /// </summary>       
-    public class FileSourceSettingsMarshaller : IRequestMarshaller<FileSourceSettings, JsonMarshallerContext> 
+    public class CaptionSourceFramerateMarshaller : IRequestMarshaller<CaptionSourceFramerate, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FileSourceSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(CaptionSourceFramerate requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetConvert608To708())
+            if(requestObject.IsSetFramerateDenominator())
             {
-                context.Writer.WritePropertyName("convert608To708");
-                context.Writer.Write(requestObject.Convert608To708);
+                context.Writer.WritePropertyName("framerateDenominator");
+                context.Writer.Write(requestObject.FramerateDenominator);
             }
 
-            if(requestObject.IsSetFramerate())
+            if(requestObject.IsSetFramerateNumerator())
             {
-                context.Writer.WritePropertyName("framerate");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CaptionSourceFramerateMarshaller.Instance;
-                marshaller.Marshall(requestObject.Framerate, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetSourceFile())
-            {
-                context.Writer.WritePropertyName("sourceFile");
-                context.Writer.Write(requestObject.SourceFile);
-            }
-
-            if(requestObject.IsSetTimeDelta())
-            {
-                context.Writer.WritePropertyName("timeDelta");
-                context.Writer.Write(requestObject.TimeDelta);
+                context.Writer.WritePropertyName("framerateNumerator");
+                context.Writer.Write(requestObject.FramerateNumerator);
             }
 
         }
@@ -79,7 +62,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static FileSourceSettingsMarshaller Instance = new FileSourceSettingsMarshaller();
+        public readonly static CaptionSourceFramerateMarshaller Instance = new CaptionSourceFramerateMarshaller();
 
     }
 }

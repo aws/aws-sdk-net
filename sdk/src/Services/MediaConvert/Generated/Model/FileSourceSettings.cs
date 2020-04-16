@@ -35,6 +35,7 @@ namespace Amazon.MediaConvert.Model
     public partial class FileSourceSettings
     {
         private FileSourceConvert608To708 _convert608To708;
+        private CaptionSourceFramerate _framerate;
         private string _sourceFile;
         private int? _timeDelta;
 
@@ -55,6 +56,27 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetConvert608To708()
         {
             return this._convert608To708 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Framerate. Ignore this setting unless your input captions
+        /// format is SCC. To have the service compensate for differing framerates between your
+        /// input captions and input video, specify the framerate of the captions file. Specify
+        /// this value as a fraction, using the settings Framerate numerator (framerateNumerator)
+        /// and Framerate denominator (framerateDenominator). For example, you might specify 24
+        /// / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for
+        /// 29.97 fps.
+        /// </summary>
+        public CaptionSourceFramerate Framerate
+        {
+            get { return this._framerate; }
+            set { this._framerate = value; }
+        }
+
+        // Check to see if Framerate property is set
+        internal bool IsSetFramerate()
+        {
+            return this._framerate != null;
         }
 
         /// <summary>
