@@ -34,6 +34,7 @@ namespace Amazon.MediaTailor.Model
     public partial class PutPlaybackConfigurationRequest : AmazonMediaTailorRequest
     {
         private string _adDecisionServerUrl;
+        private AvailSuppression _availSuppression;
         private CdnConfiguration _cdnConfiguration;
         private DashConfigurationForPut _dashConfiguration;
         private LivePreRollConfiguration _livePreRollConfiguration;
@@ -63,6 +64,25 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetAdDecisionServerUrl()
         {
             return this._adDecisionServerUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailSuppression. 
+        /// <para>
+        /// The configuration for Avail Suppression. Ad suppression can be used to turn off ad
+        /// personalization in a long manifest, or if a viewer joins mid-break.
+        /// </para>
+        /// </summary>
+        public AvailSuppression AvailSuppression
+        {
+            get { return this._availSuppression; }
+            set { this._availSuppression = value; }
+        }
+
+        // Check to see if AvailSuppression property is set
+        internal bool IsSetAvailSuppression()
+        {
+            return this._availSuppression != null;
         }
 
         /// <summary>

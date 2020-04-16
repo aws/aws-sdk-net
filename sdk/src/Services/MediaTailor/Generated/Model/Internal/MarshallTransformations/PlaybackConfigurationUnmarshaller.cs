@@ -70,6 +70,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdDecisionServerUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AvailSuppression", targetDepth))
+                {
+                    var unmarshaller = AvailSuppressionUnmarshaller.Instance;
+                    unmarshalledObject.AvailSuppression = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CdnConfiguration", targetDepth))
                 {
                     var unmarshaller = CdnConfigurationUnmarshaller.Instance;
