@@ -41,7 +41,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// a file in JSON format.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=4194304)]
+        [AWSProperty(Required=true, Max=3145728)]
         public string InputContent
         {
             get { return this._inputContent; }

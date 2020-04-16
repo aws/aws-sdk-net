@@ -31,43 +31,50 @@ namespace Amazon.AugmentedAIRuntime
     /// <summary>
     /// Interface for accessing AugmentedAIRuntime
     ///
-    /// Amazon Augmented AI (Augmented AI) (Preview) is a service that adds human judgment
-    /// to any machine learning application. Human reviewers can take over when an AI application
-    /// can't evaluate data with a high degree of confidence.
-    /// 
-    ///  
+    /// <important> 
     /// <para>
-    /// From fraudulent bank transaction identification to document processing to image analysis,
-    /// machine learning models can be trained to make decisions as well as or better than
-    /// a human. Nevertheless, some decisions require contextual interpretation, such as when
-    /// you need to decide whether an image is appropriate for a given audience. Content moderation
-    /// guidelines are nuanced and highly dependent on context, and they vary between countries.
-    /// When trying to apply AI in these situations, you can be forced to choose between "ML
-    /// only" systems with unacceptably high error rates or "human only" systems that are
-    /// expensive and difficult to scale, and that slow down decision making.
+    /// Amazon Augmented AI is in preview release and is subject to change. We do not recommend
+    /// using this product in production environments.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to any machine
+    /// learning application. When an AI application can't evaluate data with a high degree
+    /// of confidence, human reviewers can take over. This human review is called a human
+    /// review workflow. To create and start a human review workflow, you need three resources:
+    /// a <i>worker task template</i>, a <i>flow definition</i>, and a <i>human loop</i>.
     /// </para>
     ///  
     /// <para>
-    /// This API reference includes information about API actions and data types you can use
-    /// to interact with Augmented AI programmatically. 
+    /// For information about these resources and prerequisites for using Amazon A2I, see
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-getting-started.html">Get
+    /// Started with Amazon Augmented AI</a> in the Amazon SageMaker Developer Guide.
     /// </para>
     ///  
     /// <para>
-    /// You can create a flow definition against the Augmented AI API. Provide the Amazon
-    /// Resource Name (ARN) of a flow definition to integrate AI service APIs, such as <code>Textract.AnalyzeDocument</code>
-    /// and <code>Rekognition.DetectModerationLabels</code>. These AI services, in turn, invoke
-    /// the <a>StartHumanLoop</a> API, which evaluates conditions under which humans will
-    /// be invoked. If humans are required, Augmented AI creates a human loop. Results of
-    /// human work are available asynchronously in Amazon Simple Storage Service (Amazon S3).
-    /// You can use Amazon CloudWatch Events to detect human work results.
+    /// This API reference includes information about API actions and data types that you
+    /// can use to interact with Amazon A2I programmatically. Use this guide to:
     /// </para>
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// You can find additional Augmented AI API documentation in the following reference
-    /// guides: <a href="https://docs.aws.amazon.com/rekognition/latest/dg/API_Reference.html">Amazon
-    /// Rekognition</a>, <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_Reference.html">Amazon
-    /// SageMaker</a>, and <a href="https://docs.aws.amazon.com/textract/latest/dg/API_Reference.html">Amazon
-    /// Textract</a>.
+    /// Start a human loop with the <code>StartHumanLoop</code> operation when using Amazon
+    /// A2I with a <i>custom task type</i>. To learn more about the difference between custom
+    /// and built-in task types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-task-types-general.html">Use
+    /// Task Types </a>. To learn how to start a human loop using this API, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-start-human-loop.html#a2i-instructions-starthumanloop">Create
+    /// and Start a Human Loop for a Custom Task Type </a> in the Amazon SageMaker Developer
+    /// Guide.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Manage your human loops. You can list all human loops that you have created, describe
+    /// individual human loops, and stop and delete human loops. To learn more, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-monitor-humanloop-results.html">Monitor
+    /// and Manage Your Human Loop </a> in the Amazon SageMaker Developer Guide.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Amazon A2I integrates APIs from various AWS services to create and start human review
+    /// workflows for those services. To learn how Amazon A2I uses these APIs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-api-references.html">Use
+    /// APIs in Amazon A2I</a> in the Amazon SageMaker Developer Guide.
     /// </para>
     /// </summary>
     public partial interface IAmazonAugmentedAIRuntime : IAmazonService, IDisposable
@@ -87,16 +94,16 @@ namespace Amazon.AugmentedAIRuntime
         /// 
         /// <returns>The response from the DeleteHumanLoop service method, as returned by AugmentedAIRuntime.</returns>
         /// <exception cref="Amazon.AugmentedAIRuntime.Model.InternalServerException">
-        /// Your request could not be processed.
+        /// We couldn't process your request because of an issue with the server. Try again later.
         /// </exception>
         /// <exception cref="Amazon.AugmentedAIRuntime.Model.ResourceNotFoundException">
-        /// We were unable to find the requested resource.
+        /// We couldn't find the requested resource.
         /// </exception>
         /// <exception cref="Amazon.AugmentedAIRuntime.Model.ThrottlingException">
-        /// Your request has exceeded the allowed amount of requests.
+        /// You exceeded the maximum number of requests.
         /// </exception>
         /// <exception cref="Amazon.AugmentedAIRuntime.Model.ValidationException">
-        /// Your request was not valid. Check the syntax and try again.
+        /// The request isn't valid. Check the syntax and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/DeleteHumanLoop">REST API Reference for DeleteHumanLoop Operation</seealso>
         Task<DeleteHumanLoopResponse> DeleteHumanLoopAsync(DeleteHumanLoopRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -117,16 +124,16 @@ namespace Amazon.AugmentedAIRuntime
         /// 
         /// <returns>The response from the DescribeHumanLoop service method, as returned by AugmentedAIRuntime.</returns>
         /// <exception cref="Amazon.AugmentedAIRuntime.Model.InternalServerException">
-        /// Your request could not be processed.
+        /// We couldn't process your request because of an issue with the server. Try again later.
         /// </exception>
         /// <exception cref="Amazon.AugmentedAIRuntime.Model.ResourceNotFoundException">
-        /// We were unable to find the requested resource.
+        /// We couldn't find the requested resource.
         /// </exception>
         /// <exception cref="Amazon.AugmentedAIRuntime.Model.ThrottlingException">
-        /// Your request has exceeded the allowed amount of requests.
+        /// You exceeded the maximum number of requests.
         /// </exception>
         /// <exception cref="Amazon.AugmentedAIRuntime.Model.ValidationException">
-        /// Your request was not valid. Check the syntax and try again.
+        /// The request isn't valid. Check the syntax and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/DescribeHumanLoop">REST API Reference for DescribeHumanLoop Operation</seealso>
         Task<DescribeHumanLoopResponse> DescribeHumanLoopAsync(DescribeHumanLoopRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -148,13 +155,16 @@ namespace Amazon.AugmentedAIRuntime
         /// 
         /// <returns>The response from the ListHumanLoops service method, as returned by AugmentedAIRuntime.</returns>
         /// <exception cref="Amazon.AugmentedAIRuntime.Model.InternalServerException">
-        /// Your request could not be processed.
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.AugmentedAIRuntime.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource.
         /// </exception>
         /// <exception cref="Amazon.AugmentedAIRuntime.Model.ThrottlingException">
-        /// Your request has exceeded the allowed amount of requests.
+        /// You exceeded the maximum number of requests.
         /// </exception>
         /// <exception cref="Amazon.AugmentedAIRuntime.Model.ValidationException">
-        /// Your request was not valid. Check the syntax and try again.
+        /// The request isn't valid. Check the syntax and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/ListHumanLoops">REST API Reference for ListHumanLoops Operation</seealso>
         Task<ListHumanLoopsResponse> ListHumanLoopsAsync(ListHumanLoopsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -179,17 +189,17 @@ namespace Amazon.AugmentedAIRuntime
         /// data. You cannot start two human loops with the same name and different input data.
         /// </exception>
         /// <exception cref="Amazon.AugmentedAIRuntime.Model.InternalServerException">
-        /// Your request could not be processed.
+        /// We couldn't process your request because of an issue with the server. Try again later.
         /// </exception>
         /// <exception cref="Amazon.AugmentedAIRuntime.Model.ServiceQuotaExceededException">
-        /// You have exceeded your service quota. To perform the requested action, remove some
-        /// of the relevant resources, or request a service quota increase.
+        /// You exceeded your service quota. Delete some resources or request an increase in your
+        /// service quota.
         /// </exception>
         /// <exception cref="Amazon.AugmentedAIRuntime.Model.ThrottlingException">
-        /// Your request has exceeded the allowed amount of requests.
+        /// You exceeded the maximum number of requests.
         /// </exception>
         /// <exception cref="Amazon.AugmentedAIRuntime.Model.ValidationException">
-        /// Your request was not valid. Check the syntax and try again.
+        /// The request isn't valid. Check the syntax and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/StartHumanLoop">REST API Reference for StartHumanLoop Operation</seealso>
         Task<StartHumanLoopResponse> StartHumanLoopAsync(StartHumanLoopRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -210,16 +220,16 @@ namespace Amazon.AugmentedAIRuntime
         /// 
         /// <returns>The response from the StopHumanLoop service method, as returned by AugmentedAIRuntime.</returns>
         /// <exception cref="Amazon.AugmentedAIRuntime.Model.InternalServerException">
-        /// Your request could not be processed.
+        /// We couldn't process your request because of an issue with the server. Try again later.
         /// </exception>
         /// <exception cref="Amazon.AugmentedAIRuntime.Model.ResourceNotFoundException">
-        /// We were unable to find the requested resource.
+        /// We couldn't find the requested resource.
         /// </exception>
         /// <exception cref="Amazon.AugmentedAIRuntime.Model.ThrottlingException">
-        /// Your request has exceeded the allowed amount of requests.
+        /// You exceeded the maximum number of requests.
         /// </exception>
         /// <exception cref="Amazon.AugmentedAIRuntime.Model.ValidationException">
-        /// Your request was not valid. Check the syntax and try again.
+        /// The request isn't valid. Check the syntax and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/StopHumanLoop">REST API Reference for StopHumanLoop Operation</seealso>
         Task<StopHumanLoopResponse> StopHumanLoopAsync(StopHumanLoopRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

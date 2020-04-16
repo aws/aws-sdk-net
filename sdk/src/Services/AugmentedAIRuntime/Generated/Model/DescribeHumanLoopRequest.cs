@@ -38,7 +38,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <summary>
         /// Gets and sets the property HumanLoopName. 
         /// <para>
-        /// The unique name of the human loop.
+        /// The name of the human loop that you want information about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

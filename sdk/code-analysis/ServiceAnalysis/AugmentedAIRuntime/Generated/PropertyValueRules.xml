@@ -76,7 +76,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AugmentedAIRuntime.Model.HumanLoopInput.InputContent</property>
-    <max>4194304</max>
+    <max>3145728</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AugmentedAIRuntime.Model.HumanLoopSummary.FailureReason</property>

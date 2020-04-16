@@ -38,7 +38,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <summary>
         /// Gets and sets the property HumanLoopSummaries. 
         /// <para>
-        /// An array of objects containing information about the human loops.
+        /// An array of objects that contain information about the human loops.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -57,7 +57,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to resume pagination.
+        /// A token to display the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
