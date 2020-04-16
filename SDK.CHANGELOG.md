@@ -1,3 +1,36 @@
+### 3.3.719.0 (2020-04-16 18:17 UTC)
+* AugmentedAIRuntime (3.3.102.0)
+	* This release updates Amazon Augmented AI ListHumanLoops and StartHumanLoop APIs.
+* EC2 (3.3.170.0)
+	* Amazon EC2 now supports adding AWS resource tags for placement groups and key pairs, at creation time. The CreatePlacementGroup API will now return placement group information when created successfully. The DeleteKeyPair API now supports deletion by resource ID.
+* Glue (3.3.116.0)
+	* This release adds support for querying GetUserDefinedFunctions API without databaseName.
+* Imagebuilder (3.3.103.0)
+	* This release includes support for additional OS Versions within EC2 Image Builder.
+* IoTEvents (3.3.104.0)
+	* API update that allows users to customize event action payloads, and adds support for Amazon DynamoDB actions.
+* Lambda (3.3.109.7)
+	* Sample code for AWS Lambda operations
+* MediaConvert (3.3.116.0)
+	* AWS Elemental MediaConvert now allows you to specify your input captions frame rate for SCC captions sources.
+* MediaTailor (3.3.104.0)
+	* AWS Elemental MediaTailor SDK now allows configuration of Avail Suppression.
+* MigrationHub (3.3.103.0)
+	* Adding ThrottlingException
+* RDS (3.3.120.0)
+	* This release adds support for Amazon RDS Proxy with PostgreSQL compatibility.
+* SageMaker (3.3.113.0)
+	* Amazon SageMaker now supports running training jobs on ml.g4dn and ml.c5n instance types. Amazon SageMaker supports in "IN" operation for Search now.
+* SecurityHub (3.3.112.0)
+	* Added a new BatchUpdateFindings action, which allows customers to update selected information about their findings. Security Hub customers use BatchUpdateFindings to track their investigation into a finding. BatchUpdateFindings is intended to replace the UpdateFindings action, which is deprecated.
+* Snowball (3.3.103.0)
+	* An update to the Snowball Edge Storage Optimized device has been launched. Like the previous version, it has 80 TB of capacity for data transfer. Now it has 40 vCPUs, 80 GiB, and a 1 TiB SATA SSD of memory for EC2 compatible compute. The 80 TB of capacity can also be used for EBS-like volumes for AMIs.
+* Core 3.3.106.5
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.718.1 (2020-04-08 23:40 UTC)
 * Core 3.3.106.4
 	* Remove FxCop and migrate to Roslyn Analyzer; Updated doc generator to include .NET Standard 2.0
