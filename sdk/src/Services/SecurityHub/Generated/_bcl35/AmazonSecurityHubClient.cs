@@ -518,6 +518,49 @@ namespace Amazon.SecurityHub
         /// The maximum allowed size for a finding is 240 Kb. An error is returned for any finding
         /// larger than 240 Kb.
         /// </para>
+        ///  
+        /// <para>
+        /// After a finding is created, <code>BatchImportFindings</code> cannot be used to update
+        /// the following finding fields and objects, which Security Hub customers use to manage
+        /// their investigation workflow.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Confidence</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Criticality</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Note</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RelatedFindings</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Severity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Types</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UserDefinedFields</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VerificationState</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Workflow</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchImportFindings service method.</param>
         /// 
@@ -578,6 +621,128 @@ namespace Amazon.SecurityHub
         public virtual BatchImportFindingsResponse EndBatchImportFindings(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchImportFindingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchUpdateFindings
+
+        /// <summary>
+        /// Used by Security Hub customers to update information about their investigation into
+        /// a finding. Requested by master accounts or member accounts. Master accounts can update
+        /// findings for their account and their member accounts. Member accounts can update findings
+        /// for their account.
+        /// 
+        ///  
+        /// <para>
+        /// Updates from <code>BatchUpdateFindings</code> do not affect the value of <code>UpdatedAt</code>
+        /// for a finding.
+        /// </para>
+        ///  
+        /// <para>
+        /// Master accounts can use <code>BatchUpdateFindings</code> to update the following finding
+        /// fields and objects.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Confidence</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Criticality</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Note</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RelatedFindings</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Severity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Types</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UserDefinedFields</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VerificationState</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Workflow</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Member accounts can only use <code>BatchUpdateFindings</code> to update the Note object.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFindings service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateFindings service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">REST API Reference for BatchUpdateFindings Operation</seealso>
+        public virtual BatchUpdateFindingsResponse BatchUpdateFindings(BatchUpdateFindingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateFindingsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateFindingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchUpdateFindings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFindings operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchUpdateFindings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">REST API Reference for BatchUpdateFindings Operation</seealso>
+        public virtual IAsyncResult BeginBatchUpdateFindings(BatchUpdateFindingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateFindingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchUpdateFindings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchUpdateFindings.</param>
+        /// 
+        /// <returns>Returns a  BatchUpdateFindingsResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">REST API Reference for BatchUpdateFindings Operation</seealso>
+        public virtual BatchUpdateFindingsResponse EndBatchUpdateFindings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchUpdateFindingsResponse>(asyncResult);
         }
 
         #endregion
@@ -3046,9 +3211,15 @@ namespace Amazon.SecurityHub
         #region  UpdateFindings
 
         /// <summary>
+        /// <code>UpdateFindings</code> is deprecated. Instead of <code>UpdateFindings</code>,
+        /// use <code>BatchUpdateFindings</code>.
+        /// 
+        ///  
+        /// <para>
         /// Updates the <code>Note</code> and <code>RecordState</code> of the Security Hub-aggregated
         /// findings that the filter attributes specify. Any member account that can view the
         /// finding also sees the update to the finding.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFindings service method.</param>
         /// 

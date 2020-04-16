@@ -29,9 +29,15 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFindings operation.
+    /// <code>UpdateFindings</code> is deprecated. Instead of <code>UpdateFindings</code>,
+    /// use <code>BatchUpdateFindings</code>.
+    /// 
+    ///  
+    /// <para>
     /// Updates the <code>Note</code> and <code>RecordState</code> of the Security Hub-aggregated
     /// findings that the filter attributes specify. Any member account that can view the
     /// finding also sees the update to the finding.
+    /// </para>
     /// </summary>
     public partial class UpdateFindingsRequest : AmazonSecurityHubRequest
     {

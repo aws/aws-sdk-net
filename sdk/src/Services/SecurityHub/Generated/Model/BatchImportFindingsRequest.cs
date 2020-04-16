@@ -38,6 +38,49 @@ namespace Amazon.SecurityHub.Model
     /// The maximum allowed size for a finding is 240 Kb. An error is returned for any finding
     /// larger than 240 Kb.
     /// </para>
+    ///  
+    /// <para>
+    /// After a finding is created, <code>BatchImportFindings</code> cannot be used to update
+    /// the following finding fields and objects, which Security Hub customers use to manage
+    /// their investigation workflow.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>Confidence</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Criticality</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Note</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>RelatedFindings</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Severity</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Types</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UserDefinedFields</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>VerificationState</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Workflow</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class BatchImportFindingsRequest : AmazonSecurityHubRequest
     {
