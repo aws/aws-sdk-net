@@ -42,7 +42,7 @@ namespace Amazon.MigrationHub.Model
         /// on-premise resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string ConfigurationId
         {
             get { return this._configurationId; }

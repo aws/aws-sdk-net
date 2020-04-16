@@ -79,6 +79,7 @@ namespace Amazon.MigrationHub.Model
         /// token in <code>NextToken</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

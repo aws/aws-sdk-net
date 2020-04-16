@@ -40,6 +40,7 @@
     <property>Amazon.MigrationHub.Model.DescribeApplicationStateRequest.ApplicationId</property>
     <min>1</min>
     <max>1600</max>
+    <pattern>^.{1,1600}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHub.Model.DescribeMigrationTaskRequest.MigrationTaskName</property>
@@ -74,6 +75,8 @@
   <property-value-rule>
     <property>Amazon.MigrationHub.Model.DisassociateDiscoveredResourceRequest.ConfigurationId</property>
     <min>1</min>
+    <max>1600</max>
+    <pattern>^.{1,1600}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHub.Model.DisassociateDiscoveredResourceRequest.MigrationTaskName</property>
@@ -105,6 +108,18 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MigrationHub.Model.ListApplicationStatesRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9\/\+\=]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHub.Model.ListApplicationStatesResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9\/\+\=]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MigrationHub.Model.ListCreatedArtifactsRequest.MaxResults</property>
     <min>1</min>
     <max>10</max>
@@ -116,10 +131,22 @@
     <pattern>[^:|]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MigrationHub.Model.ListCreatedArtifactsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9\/\+\=]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MigrationHub.Model.ListCreatedArtifactsRequest.ProgressUpdateStream</property>
     <min>1</min>
     <max>50</max>
     <pattern>[^/:|\000-\037]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHub.Model.ListCreatedArtifactsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9\/\+\=]{0,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHub.Model.ListDiscoveredResourcesRequest.MaxResults</property>
@@ -133,10 +160,22 @@
     <pattern>[^:|]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MigrationHub.Model.ListDiscoveredResourcesRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9\/\+\=]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MigrationHub.Model.ListDiscoveredResourcesRequest.ProgressUpdateStream</property>
     <min>1</min>
     <max>50</max>
     <pattern>[^/:|\000-\037]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHub.Model.ListDiscoveredResourcesResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9\/\+\=]{0,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHub.Model.ListMigrationTasksRequest.MaxResults</property>
@@ -144,9 +183,22 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MigrationHub.Model.ListMigrationTasksRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9\/\+\=]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MigrationHub.Model.ListMigrationTasksRequest.ResourceName</property>
     <min>1</min>
     <max>1600</max>
+    <pattern>^.{1,1600}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHub.Model.ListMigrationTasksResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9\/\+\=]{0,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHub.Model.ListProgressUpdateStreamsRequest.MaxResults</property>
@@ -154,9 +206,22 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MigrationHub.Model.ListProgressUpdateStreamsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9\/\+\=]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHub.Model.ListProgressUpdateStreamsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9\/\+\=]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MigrationHub.Model.NotifyApplicationStateRequest.ApplicationId</property>
     <min>1</min>
     <max>1600</max>
+    <pattern>^.{1,1600}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHub.Model.NotifyMigrationTaskStateRequest.MigrationTaskName</property>
@@ -190,11 +255,13 @@
     <property>Amazon.MigrationHub.Model.ApplicationState.ApplicationId</property>
     <min>1</min>
     <max>1600</max>
+    <pattern>^.{1,1600}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHub.Model.CreatedArtifact.Description</property>
     <min>0</min>
     <max>500</max>
+    <pattern>^.{0,500}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHub.Model.CreatedArtifact.Name</property>
@@ -205,11 +272,14 @@
   <property-value-rule>
     <property>Amazon.MigrationHub.Model.DiscoveredResource.ConfigurationId</property>
     <min>1</min>
+    <max>1600</max>
+    <pattern>^.{1,1600}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHub.Model.DiscoveredResource.Description</property>
     <min>0</min>
     <max>500</max>
+    <pattern>^.{0,500}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHub.Model.MigrationTask.MigrationTaskName</property>
@@ -244,6 +314,7 @@
     <property>Amazon.MigrationHub.Model.MigrationTaskSummary.StatusDetail</property>
     <min>0</min>
     <max>500</max>
+    <pattern>^.{0,500}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHub.Model.ProgressUpdateStreamSummary.ProgressUpdateStreamName</property>
@@ -255,6 +326,7 @@
     <property>Amazon.MigrationHub.Model.ResourceAttribute.Value</property>
     <min>1</min>
     <max>256</max>
+    <pattern>^.{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHub.Model.Task.ProgressPercent</property>
@@ -265,5 +337,6 @@
     <property>Amazon.MigrationHub.Model.Task.StatusDetail</property>
     <min>0</min>
     <max>500</max>
+    <pattern>^.{0,500}$</pattern>
   </property-value-rule>
 </property-value-rules>

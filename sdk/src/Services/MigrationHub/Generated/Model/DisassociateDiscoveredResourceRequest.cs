@@ -45,7 +45,7 @@ namespace Amazon.MigrationHub.Model
         /// ConfigurationId of the Application Discovery Service resource to be disassociated.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string ConfigurationId
         {
             get { return this._configurationId; }

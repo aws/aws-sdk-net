@@ -300,6 +300,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
         /// flag is set to "true".
@@ -368,6 +371,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
         /// flag is set to "true".
@@ -424,6 +430,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
         /// flag is set to "true".
@@ -479,6 +488,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
         /// flag is set to "true".
@@ -528,6 +540,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
         /// flag is set to "true".
@@ -575,6 +590,9 @@ namespace Amazon.MigrationHub
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
@@ -658,6 +676,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
         /// flag is set to "true".
@@ -739,6 +760,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
         /// flag is set to "true".
@@ -790,6 +814,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeApplicationState">REST API Reference for DescribeApplicationState Operation</seealso>
         public virtual DescribeApplicationStateResponse DescribeApplicationState(DescribeApplicationStateRequest request)
         {
@@ -836,6 +863,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeApplicationState">REST API Reference for DescribeApplicationState Operation</seealso>
         public virtual Task<DescribeApplicationStateResponse> DescribeApplicationStateAsync(DescribeApplicationStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -878,6 +908,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeMigrationTask">REST API Reference for DescribeMigrationTask Operation</seealso>
         public virtual DescribeMigrationTaskResponse DescribeMigrationTask(DescribeMigrationTaskRequest request)
         {
@@ -918,6 +951,9 @@ namespace Amazon.MigrationHub
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeMigrationTask">REST API Reference for DescribeMigrationTask Operation</seealso>
         public virtual Task<DescribeMigrationTaskResponse> DescribeMigrationTaskAsync(DescribeMigrationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -982,6 +1018,9 @@ namespace Amazon.MigrationHub
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
@@ -1050,6 +1089,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
         /// flag is set to "true".
@@ -1101,6 +1143,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
         /// flag is set to "true".
@@ -1150,6 +1195,9 @@ namespace Amazon.MigrationHub
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
@@ -1208,6 +1256,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
         /// flag is set to "true".
@@ -1264,6 +1315,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
         /// flag is set to "true".
@@ -1306,6 +1360,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListApplicationStates">REST API Reference for ListApplicationStates Operation</seealso>
         public virtual ListApplicationStatesResponse ListApplicationStates(ListApplicationStatesRequest request)
         {
@@ -1342,6 +1399,9 @@ namespace Amazon.MigrationHub
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListApplicationStates">REST API Reference for ListApplicationStates Operation</seealso>
         public virtual Task<ListApplicationStatesResponse> ListApplicationStatesAsync(ListApplicationStatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1401,6 +1461,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListCreatedArtifacts">REST API Reference for ListCreatedArtifacts Operation</seealso>
         public virtual ListCreatedArtifactsResponse ListCreatedArtifacts(ListCreatedArtifactsRequest request)
         {
@@ -1458,6 +1521,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListCreatedArtifacts">REST API Reference for ListCreatedArtifacts Operation</seealso>
         public virtual Task<ListCreatedArtifactsResponse> ListCreatedArtifactsAsync(ListCreatedArtifactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1500,6 +1566,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         public virtual ListDiscoveredResourcesResponse ListDiscoveredResources(ListDiscoveredResourcesRequest request)
         {
@@ -1540,6 +1609,9 @@ namespace Amazon.MigrationHub
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         public virtual Task<ListDiscoveredResourcesResponse> ListDiscoveredResourcesAsync(ListDiscoveredResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1603,6 +1675,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListMigrationTasks">REST API Reference for ListMigrationTasks Operation</seealso>
         public virtual ListMigrationTasksResponse ListMigrationTasks(ListMigrationTasksRequest request)
         {
@@ -1664,6 +1739,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListMigrationTasks">REST API Reference for ListMigrationTasks Operation</seealso>
         public virtual Task<ListMigrationTasksResponse> ListMigrationTasksAsync(ListMigrationTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1701,6 +1779,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListProgressUpdateStreams">REST API Reference for ListProgressUpdateStreams Operation</seealso>
         public virtual ListProgressUpdateStreamsResponse ListProgressUpdateStreams(ListProgressUpdateStreamsRequest request)
         {
@@ -1736,6 +1817,9 @@ namespace Amazon.MigrationHub
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListProgressUpdateStreams">REST API Reference for ListProgressUpdateStreams Operation</seealso>
         public virtual Task<ListProgressUpdateStreamsResponse> ListProgressUpdateStreamsAsync(ListProgressUpdateStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1789,6 +1873,9 @@ namespace Amazon.MigrationHub
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
@@ -1845,6 +1932,9 @@ namespace Amazon.MigrationHub
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
@@ -1913,6 +2003,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
         /// flag is set to "true".
@@ -1978,6 +2071,9 @@ namespace Amazon.MigrationHub
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
@@ -2052,6 +2148,9 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
         /// flag is set to "true".
@@ -2123,6 +2222,9 @@ namespace Amazon.MigrationHub
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
