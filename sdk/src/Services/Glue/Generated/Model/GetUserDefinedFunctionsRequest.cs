@@ -65,7 +65,7 @@ namespace Amazon.Glue.Model
         /// The name of the catalog database where the functions are located.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=255)]
         public string DatabaseName
         {
             get { return this._databaseName; }
