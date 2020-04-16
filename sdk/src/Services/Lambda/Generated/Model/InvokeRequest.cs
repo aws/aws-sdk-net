@@ -78,7 +78,8 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permission for the <code>lambda:InvokeFunction</code> action.
+    /// This operation requires permission for the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a>
+    /// action.
     /// </para>
     /// </summary>
     public partial class InvokeRequest : AmazonLambdaRequest

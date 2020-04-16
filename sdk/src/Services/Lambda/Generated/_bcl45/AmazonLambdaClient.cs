@@ -2518,7 +2518,8 @@ namespace Amazon.Lambda
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permission for the <code>lambda:InvokeFunction</code> action.
+        /// This operation requires permission for the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Invoke service method.</param>
@@ -2662,7 +2663,8 @@ namespace Amazon.Lambda
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permission for the <code>lambda:InvokeFunction</code> action.
+        /// This operation requires permission for the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Invoke service method.</param>

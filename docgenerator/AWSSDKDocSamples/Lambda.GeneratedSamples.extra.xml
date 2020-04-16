@@ -2,6 +2,25 @@
 <docs>
     <doc>
         <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.AddLayerVersionPermission(Amazon.Lambda.Model.AddLayerVersionPermissionRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.AddLayerVersionPermission(Amazon.Lambda.Model.AddLayerVersionPermissionRequest)" />
+            <member name="T:Amazon.Lambda.Model.AddLayerVersionPermissionRequest" />
+            <member name="T:Amazon.Lambda.Model.AddLayerVersionPermissionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example grants permission for the account 223456789012 to use version 1 of a layer named my-layer.
+                </para>
+                <code
+                    title="To add permissions to a layer version"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-add-permissions-to-a-layer-version-1586479797163" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Lambda.IAmazonLambda.AddPermission(Amazon.Lambda.Model.AddPermissionRequest)" />
             <member name="M:Amazon.Lambda.AmazonLambdaClient.AddPermission(Amazon.Lambda.Model.AddPermissionRequest)" />
             <member name="T:Amazon.Lambda.Model.AddPermissionRequest" />
@@ -10,12 +29,69 @@
         <value>
             <example>
                 <para>
-                    This example adds a permission for an S3 bucket to invoke a Lambda function.
+                    The following example adds permission for Amazon S3 to invoke a Lambda function named my-function for notifications from a bucket named my-bucket-1xpuxmplzrlbh in account 123456789012.
                 </para>
                 <code
-                    title="add-permission"
+                    title="To grant Amazon S3 permission to invoke a function"
                     source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
                     region="add-permission-1474651469455" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.AddPermission(Amazon.Lambda.Model.AddPermissionRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.AddPermission(Amazon.Lambda.Model.AddPermissionRequest)" />
+            <member name="T:Amazon.Lambda.Model.AddPermissionRequest" />
+            <member name="T:Amazon.Lambda.Model.AddPermissionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example adds permission for account 223456789012 invoke a Lambda function named my-function.
+                </para>
+                <code
+                    title="To grant another account permission to invoke a function"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="add-permission-1474651469456" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.CreateAlias(Amazon.Lambda.Model.CreateAliasRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.CreateAlias(Amazon.Lambda.Model.CreateAliasRequest)" />
+            <member name="T:Amazon.Lambda.Model.CreateAliasRequest" />
+            <member name="T:Amazon.Lambda.Model.CreateAliasResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an alias named LIVE that points to version 1 of the my-function Lambda function.
+                </para>
+                <code
+                    title="To create an alias for a Lambda function"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-create-an-alias-for-a-lambda-function-1586480324259" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.CreateEventSourceMapping(Amazon.Lambda.Model.CreateEventSourceMappingRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.CreateEventSourceMapping(Amazon.Lambda.Model.CreateEventSourceMappingRequest)" />
+            <member name="T:Amazon.Lambda.Model.CreateEventSourceMappingRequest" />
+            <member name="T:Amazon.Lambda.Model.CreateEventSourceMappingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a mapping between an SQS queue and the my-function Lambda function.
+                </para>
+                <code
+                    title="To create a mapping between an event source and an AWS Lambda function"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-create-a-mapping-between-an-event-source-and-an-aws-lambda-function-1586480555467" />
             </example>
         </value>
     </doc>
@@ -29,12 +105,12 @@
         <value>
             <example>
                 <para>
-                    This example creates a Lambda function.
+                    The following example creates a function with a deployment package in Amazon S3 and enables X-Ray tracing and environment variable encryption.
                 </para>
                 <code
-                    title="create-function"
+                    title="To update an asynchronous invocation configuration"
                     source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
-                    region="create-function-1474653449931" />
+                    region="to-update-an-asynchronous-invocation-configuration-1586492061186" />
             </example>
         </value>
     </doc>
@@ -48,7 +124,7 @@
         <value>
             <example>
                 <para>
-                    This operation deletes a Lambda function alias
+                    The following example deletes an alias named BLUE from a function named my-function
                 </para>
                 <code
                     title="To delete a Lambda function alias"
@@ -67,7 +143,7 @@
         <value>
             <example>
                 <para>
-                    This operation deletes a Lambda function event source mapping
+                    The following example deletes an event source mapping. To get a mapping's UUID, use ListEventSourceMappings.
                 </para>
                 <code
                     title="To delete a Lambda function event source mapping"
@@ -86,12 +162,88 @@
         <value>
             <example>
                 <para>
-                    This operation deletes a Lambda function
+                    The following example deletes version 1 of a Lambda function named my-function.
                 </para>
                 <code
-                    title="To delete a Lambda function"
+                    title="To delete a version of a Lambda function"
                     source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
                     region="to-delete-a-lambda-function-1481648553696" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.DeleteFunctionConcurrency(Amazon.Lambda.Model.DeleteFunctionConcurrencyRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.DeleteFunctionConcurrency(Amazon.Lambda.Model.DeleteFunctionConcurrencyRequest)" />
+            <member name="T:Amazon.Lambda.Model.DeleteFunctionConcurrencyRequest" />
+            <member name="T:Amazon.Lambda.Model.DeleteFunctionConcurrencyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the reserved concurrent execution limit from a function named my-function.
+                </para>
+                <code
+                    title="To remove the reserved concurrent execution limit from a function"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-remove-the-reserved-concurrent-execution-limit-from-a-function-1586480714680" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.DeleteFunctionEventInvokeConfig(Amazon.Lambda.Model.DeleteFunctionEventInvokeConfigRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.DeleteFunctionEventInvokeConfig(Amazon.Lambda.Model.DeleteFunctionEventInvokeConfigRequest)" />
+            <member name="T:Amazon.Lambda.Model.DeleteFunctionEventInvokeConfigRequest" />
+            <member name="T:Amazon.Lambda.Model.DeleteFunctionEventInvokeConfigResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the asynchronous invocation configuration for the GREEN alias of a function named my-function.
+                </para>
+                <code
+                    title="To delete an asynchronous invocation configuration"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-delete-an-asynchronous-invocation-configuration-1586481102187" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.DeleteLayerVersion(Amazon.Lambda.Model.DeleteLayerVersionRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.DeleteLayerVersion(Amazon.Lambda.Model.DeleteLayerVersionRequest)" />
+            <member name="T:Amazon.Lambda.Model.DeleteLayerVersionRequest" />
+            <member name="T:Amazon.Lambda.Model.DeleteLayerVersionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes version 2 of a layer named my-layer.
+                </para>
+                <code
+                    title="To delete a version of a Lambda layer"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-delete-a-version-of-a-lambda-layer-1586481157547" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.DeleteProvisionedConcurrencyConfig(Amazon.Lambda.Model.DeleteProvisionedConcurrencyConfigRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.DeleteProvisionedConcurrencyConfig(Amazon.Lambda.Model.DeleteProvisionedConcurrencyConfigRequest)" />
+            <member name="T:Amazon.Lambda.Model.DeleteProvisionedConcurrencyConfigRequest" />
+            <member name="T:Amazon.Lambda.Model.DeleteProvisionedConcurrencyConfigResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the provisioned concurrency configuration for the GREEN alias of a function named my-function.
+                </para>
+                <code
+                    title="To delete a provisioned concurrency configuration"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-delete-a-provisioned-concurrency-configuration-1586481032551" />
             </example>
         </value>
     </doc>
@@ -105,12 +257,12 @@
         <value>
             <example>
                 <para>
-                    This operation retrieves a Lambda customer's account settings
+                    This operation takes no parameters and returns details about storage and concurrency quotas in the current Region.
                 </para>
                 <code
-                    title="To retrieves a Lambda customer's account settings"
+                    title="To get account settings"
                     source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
-                    region="to-retrieves-a-lambda-customers-account-settings-1481657495274" />
+                    region="to-get-account-settings-1481657495274" />
             </example>
         </value>
     </doc>
@@ -124,10 +276,10 @@
         <value>
             <example>
                 <para>
-                    This operation retrieves a Lambda function alias
+                    The following example returns details about an alias named BLUE for a function named my-function
                 </para>
                 <code
-                    title="To retrieve a Lambda function alias"
+                    title="To get a Lambda function alias"
                     source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
                     region="to-retrieve-a-lambda-function-alias-1481648742254" />
             </example>
@@ -143,12 +295,12 @@
         <value>
             <example>
                 <para>
-                    This operation retrieves a Lambda function's event source mapping
+                    The following example returns details about an event source mapping. To get a mapping's UUID, use ListEventSourceMappings.
                 </para>
                 <code
-                    title="To retrieve a Lambda function's event source mapping"
+                    title="To get a Lambda function's event source mapping"
                     source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
-                    region="to-retrieve-a-lambda-functions-event-source-mapping-1481661622799" />
+                    region="to-get-a-lambda-functions-event-source-mapping-1481661622799" />
             </example>
         </value>
     </doc>
@@ -162,12 +314,31 @@
         <value>
             <example>
                 <para>
-                    This operation retrieves a Lambda function's event source mapping
+                    The following example returns code and configuration details for version 1 of a function named my-function.
                 </para>
                 <code
-                    title="To retrieve a Lambda function's event source mapping"
+                    title="To get a Lambda function"
                     source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
-                    region="to-retrieve-a-lambda-functions-event-source-mapping-1481661622799" />
+                    region="to-get-a-lambda-function-1481661622799" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.GetFunctionConcurrency(Amazon.Lambda.Model.GetFunctionConcurrencyRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.GetFunctionConcurrency(Amazon.Lambda.Model.GetFunctionConcurrencyRequest)" />
+            <member name="T:Amazon.Lambda.Model.GetFunctionConcurrencyRequest" />
+            <member name="T:Amazon.Lambda.Model.GetFunctionConcurrencyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the reserved concurrency setting for a function named my-function.
+                </para>
+                <code
+                    title="To get the reserved concurrency setting for a function"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-get-the-reserved-concurrency-setting-for-a-function-1586481279992" />
             </example>
         </value>
     </doc>
@@ -181,12 +352,69 @@
         <value>
             <example>
                 <para>
-                    This operation retrieves a Lambda function's event source mapping
+                    The following example returns and configuration details for version 1 of a function named my-function.
                 </para>
                 <code
-                    title="To retrieve a Lambda function's event source mapping"
+                    title="To get a Lambda function's event source mapping"
                     source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
-                    region="to-retrieve-a-lambda-functions-event-source-mapping-1481661622799" />
+                    region="to-get-a-lambda-functions-event-source-mapping-1481661622799" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.GetFunctionEventInvokeConfig(Amazon.Lambda.Model.GetFunctionEventInvokeConfigRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.GetFunctionEventInvokeConfig(Amazon.Lambda.Model.GetFunctionEventInvokeConfigRequest)" />
+            <member name="T:Amazon.Lambda.Model.GetFunctionEventInvokeConfigRequest" />
+            <member name="T:Amazon.Lambda.Model.GetFunctionEventInvokeConfigResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the asynchronous invocation configuration for the BLUE alias of a function named my-function.
+                </para>
+                <code
+                    title="To get an asynchronous invocation configuration"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-get-an-asynchronous-invocation-configuration-1586481338463" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.GetLayerVersion(Amazon.Lambda.Model.GetLayerVersionRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.GetLayerVersion(Amazon.Lambda.Model.GetLayerVersionRequest)" />
+            <member name="T:Amazon.Lambda.Model.GetLayerVersionRequest" />
+            <member name="T:Amazon.Lambda.Model.GetLayerVersionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information for version 1 of a layer named my-layer.
+                </para>
+                <code
+                    title="To get information about a Lambda layer version"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-get-information-about-a-lambda-layer-version-1586481457839" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.GetLayerVersionByArn(Amazon.Lambda.Model.GetLayerVersionByArnRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.GetLayerVersionByArn(Amazon.Lambda.Model.GetLayerVersionByArnRequest)" />
+            <member name="T:Amazon.Lambda.Model.GetLayerVersionByArnRequest" />
+            <member name="T:Amazon.Lambda.Model.GetLayerVersionByArnResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about the layer version with the specified Amazon Resource Name (ARN).
+                </para>
+                <code
+                    title="To get information about a Lambda layer version"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-get-information-about-a-lambda-layer-version-1586481457839" />
             </example>
         </value>
     </doc>
@@ -200,12 +428,50 @@
         <value>
             <example>
                 <para>
-                    This operation retrieves a Lambda function policy
+                    The following example returns the resource-based policy for version 1 of a Lambda function named my-function.
                 </para>
                 <code
                     title="To retrieve a Lambda function policy"
                     source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
                     region="to-retrieve-a-lambda-function-policy-1481649319053" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.GetProvisionedConcurrencyConfig(Amazon.Lambda.Model.GetProvisionedConcurrencyConfigRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.GetProvisionedConcurrencyConfig(Amazon.Lambda.Model.GetProvisionedConcurrencyConfigRequest)" />
+            <member name="T:Amazon.Lambda.Model.GetProvisionedConcurrencyConfigRequest" />
+            <member name="T:Amazon.Lambda.Model.GetProvisionedConcurrencyConfigResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns details for the provisioned concurrency configuration for the BLUE alias of the specified function.
+                </para>
+                <code
+                    title="To get a provisioned concurrency configuration"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-get-a-provisioned-concurrency-configuration-1586490192690" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.GetProvisionedConcurrencyConfig(Amazon.Lambda.Model.GetProvisionedConcurrencyConfigRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.GetProvisionedConcurrencyConfig(Amazon.Lambda.Model.GetProvisionedConcurrencyConfigRequest)" />
+            <member name="T:Amazon.Lambda.Model.GetProvisionedConcurrencyConfigRequest" />
+            <member name="T:Amazon.Lambda.Model.GetProvisionedConcurrencyConfigResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example displays details for the provisioned concurrency configuration for the BLUE alias of the specified function.
+                </para>
+                <code
+                    title="To view a provisioned concurrency configuration"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-view-a-provisioned-concurrency-configuration-1586490192690" />
             </example>
         </value>
     </doc>
@@ -219,12 +485,31 @@
         <value>
             <example>
                 <para>
-                    This operation invokes a Lambda function
+                    The following example invokes version 1 of a function named my-function with an empty event payload.
                 </para>
                 <code
                     title="To invoke a Lambda function"
                     source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
                     region="to-invoke-a-lambda-function-1481659683915" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.Invoke(Amazon.Lambda.Model.InvokeRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.Invoke(Amazon.Lambda.Model.InvokeRequest)" />
+            <member name="T:Amazon.Lambda.Model.InvokeRequest" />
+            <member name="T:Amazon.Lambda.Model.InvokeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example invokes version 1 of a function named my-function asynchronously.
+                </para>
+                <code
+                    title="To invoke a Lambda function asynchronously"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-invoke-a-lambda-function-async-1481659683915" />
             </example>
         </value>
     </doc>
@@ -238,7 +523,7 @@
         <value>
             <example>
                 <para>
-                    This operation invokes a Lambda function asynchronously
+                    The following example invokes a Lambda function asynchronously
                 </para>
                 <code
                     title="To invoke a Lambda function asynchronously"
@@ -257,12 +542,50 @@
         <value>
             <example>
                 <para>
-                    This operation retrieves a Lambda function's aliases
+                    The following example returns a list of aliases for a function named my-function.
                 </para>
                 <code
-                    title="To retrieve a Lambda function aliases"
+                    title="To list a function's aliases"
                     source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
-                    region="to-retrieve-a-lambda-function-aliases-1481650199732" />
+                    region="to-list-a-functions-aliases-1481650199732" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.ListEventSourceMappings(Amazon.Lambda.Model.ListEventSourceMappingsRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.ListEventSourceMappings(Amazon.Lambda.Model.ListEventSourceMappingsRequest)" />
+            <member name="T:Amazon.Lambda.Model.ListEventSourceMappingsRequest" />
+            <member name="T:Amazon.Lambda.Model.ListEventSourceMappingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns a list of the event source mappings for a function named my-function.
+                </para>
+                <code
+                    title="To list the event source mappings for a function"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-list-the-event-source-mappings-for-a-function-1586490285906" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.ListFunctionEventInvokeConfigs(Amazon.Lambda.Model.ListFunctionEventInvokeConfigsRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.ListFunctionEventInvokeConfigs(Amazon.Lambda.Model.ListFunctionEventInvokeConfigsRequest)" />
+            <member name="T:Amazon.Lambda.Model.ListFunctionEventInvokeConfigsRequest" />
+            <member name="T:Amazon.Lambda.Model.ListFunctionEventInvokeConfigsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns a list of asynchronous invocation configurations for a function named my-function.
+                </para>
+                <code
+                    title="To view a list of asynchronous invocation configurations"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-view-a-list-of-asynchronous-invocation-configurations-1586490355611" />
             </example>
         </value>
     </doc>
@@ -276,12 +599,88 @@
         <value>
             <example>
                 <para>
-                    This operation retrieves a Lambda functions
+                    This operation returns a list of Lambda functions.
                 </para>
                 <code
-                    title="To retrieve a list of Lambda functions"
+                    title="To get a list of Lambda functions"
                     source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
-                    region="to-retrieve-a-list-of-lambda-functions-1481650507425" />
+                    region="to-get-a-list-of-lambda-functions-1481650507425" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.ListLayers(Amazon.Lambda.Model.ListLayersRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.ListLayers(Amazon.Lambda.Model.ListLayersRequest)" />
+            <member name="T:Amazon.Lambda.Model.ListLayersRequest" />
+            <member name="T:Amazon.Lambda.Model.ListLayersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about layers that are compatible with the Python 3.7 runtime.
+                </para>
+                <code
+                    title="To list the layers that are compatible with your function's runtime"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-list-the-layers-that-are-compatible-with-your-functions-runtime-1586490857297" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.ListLayerVersions(Amazon.Lambda.Model.ListLayerVersionsRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.ListLayerVersions(Amazon.Lambda.Model.ListLayerVersionsRequest)" />
+            <member name="T:Amazon.Lambda.Model.ListLayerVersionsRequest" />
+            <member name="T:Amazon.Lambda.Model.ListLayerVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example displays information about the versions for the layer named blank-java-lib
+                </para>
+                <code
+                    title="To list versions of a layer"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-list-versions-of-a-layer-1586490857297" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.ListProvisionedConcurrencyConfigs(Amazon.Lambda.Model.ListProvisionedConcurrencyConfigsRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.ListProvisionedConcurrencyConfigs(Amazon.Lambda.Model.ListProvisionedConcurrencyConfigsRequest)" />
+            <member name="T:Amazon.Lambda.Model.ListProvisionedConcurrencyConfigsRequest" />
+            <member name="T:Amazon.Lambda.Model.ListProvisionedConcurrencyConfigsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns a list of provisioned concurrency configurations for a function named my-function.
+                </para>
+                <code
+                    title="To get a list of provisioned concurrency configurations"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-get-a-list-of-provisioned-concurrency-configurations-1586491032592" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.ListTags(Amazon.Lambda.Model.ListTagsRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.ListTags(Amazon.Lambda.Model.ListTagsRequest)" />
+            <member name="T:Amazon.Lambda.Model.ListTagsRequest" />
+            <member name="T:Amazon.Lambda.Model.ListTagsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example displays the tags attached to the my-function Lambda function.
+                </para>
+                <code
+                    title="To retrieve the list of tags for a Lambda function"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-retrieve-the-list-of-tags-for-a-lambda-function-1586491111498" />
             </example>
         </value>
     </doc>
@@ -295,12 +694,31 @@
         <value>
             <example>
                 <para>
-                    This operation retrieves a Lambda function versions
+                    The following example returns a list of versions of a function named my-function
                 </para>
                 <code
-                    title="To retrieve a list of Lambda function versions"
+                    title="To list versions of a function"
                     source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
-                    region="to-retrieve-a-list-of-lambda-function-versions-1481650603750" />
+                    region="to-list-versions-1481650603750" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.PublishLayerVersion(Amazon.Lambda.Model.PublishLayerVersionRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.PublishLayerVersion(Amazon.Lambda.Model.PublishLayerVersionRequest)" />
+            <member name="T:Amazon.Lambda.Model.PublishLayerVersionRequest" />
+            <member name="T:Amazon.Lambda.Model.PublishLayerVersionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a new Python library layer version. The command retrieves the layer content a file named layer.zip in the specified S3 bucket.
+                </para>
+                <code
+                    title="To create a Lambda layer version"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-create-a-lambda-layer-version-1586491213595" />
             </example>
         </value>
     </doc>
@@ -325,6 +743,82 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.PutFunctionConcurrency(Amazon.Lambda.Model.PutFunctionConcurrencyRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.PutFunctionConcurrency(Amazon.Lambda.Model.PutFunctionConcurrencyRequest)" />
+            <member name="T:Amazon.Lambda.Model.PutFunctionConcurrencyRequest" />
+            <member name="T:Amazon.Lambda.Model.PutFunctionConcurrencyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example configures 100 reserved concurrent executions for the my-function function.
+                </para>
+                <code
+                    title="To configure a reserved concurrency limit for a function"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-configure-a-reserved-concurrency-limit-for-a-function-1586491405956" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.PutFunctionEventInvokeConfig(Amazon.Lambda.Model.PutFunctionEventInvokeConfigRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.PutFunctionEventInvokeConfig(Amazon.Lambda.Model.PutFunctionEventInvokeConfigRequest)" />
+            <member name="T:Amazon.Lambda.Model.PutFunctionEventInvokeConfigRequest" />
+            <member name="T:Amazon.Lambda.Model.PutFunctionEventInvokeConfigResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example sets a maximum event age of one hour and disables retries for the specified function.
+                </para>
+                <code
+                    title="To configure error handling for asynchronous invocation"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-configure-error-handling-for-asynchronous-invocation-1586491524021" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.PutProvisionedConcurrencyConfig(Amazon.Lambda.Model.PutProvisionedConcurrencyConfigRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.PutProvisionedConcurrencyConfig(Amazon.Lambda.Model.PutProvisionedConcurrencyConfigRequest)" />
+            <member name="T:Amazon.Lambda.Model.PutProvisionedConcurrencyConfigRequest" />
+            <member name="T:Amazon.Lambda.Model.PutProvisionedConcurrencyConfigResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example allocates 100 provisioned concurrency for the BLUE alias of the specified function.
+                </para>
+                <code
+                    title="To allocate provisioned concurrency"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-allocate-provisioned-concurrency-1586491651377" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.RemoveLayerVersionPermission(Amazon.Lambda.Model.RemoveLayerVersionPermissionRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.RemoveLayerVersionPermission(Amazon.Lambda.Model.RemoveLayerVersionPermissionRequest)" />
+            <member name="T:Amazon.Lambda.Model.RemoveLayerVersionPermissionRequest" />
+            <member name="T:Amazon.Lambda.Model.RemoveLayerVersionPermissionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes permission for an account to configure a layer version.
+                </para>
+                <code
+                    title="To delete layer-version permissions"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-delete-layer-version-permissions-1586491829416" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Lambda.IAmazonLambda.RemovePermission(Amazon.Lambda.Model.RemovePermissionRequest)" />
             <member name="M:Amazon.Lambda.AmazonLambdaClient.RemovePermission(Amazon.Lambda.Model.RemovePermissionRequest)" />
             <member name="T:Amazon.Lambda.Model.RemovePermissionRequest" />
@@ -333,12 +827,50 @@
         <value>
             <example>
                 <para>
-                    This operation removes a Lambda function's permissions
+                    The following example removes a permissions statement named xaccount from the PROD alias of a function named my-function.
                 </para>
                 <code
                     title="To remove a Lambda function's permissions"
                     source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
                     region="to-remove-a-lambda-functions-permissions-1481661337021" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.TagResource(Amazon.Lambda.Model.TagResourceRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.TagResource(Amazon.Lambda.Model.TagResourceRequest)" />
+            <member name="T:Amazon.Lambda.Model.TagResourceRequest" />
+            <member name="T:Amazon.Lambda.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example adds a tag with the key name DEPARTMENT and a value of 'Department A' to the specified Lambda function.
+                </para>
+                <code
+                    title="To add tags to an existing Lambda function"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-add-tags-to-an-existing-lambda-function-1586491890446" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.UntagResource(Amazon.Lambda.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.UntagResource(Amazon.Lambda.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.Lambda.Model.UntagResourceRequest" />
+            <member name="T:Amazon.Lambda.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example removes the tag with the key name DEPARTMENT tag from the my-function Lambda function.
+                </para>
+                <code
+                    title="To remove tags from an existing Lambda function"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-remove-tags-from-an-existing-lambda-function-1586491956425" />
             </example>
         </value>
     </doc>
@@ -352,12 +884,12 @@
         <value>
             <example>
                 <para>
-                    This operation updates a Lambda function alias
+                    The following example updates the alias named BLUE to send 30% of traffic to version 2 and 70% to version 1.
                 </para>
                 <code
-                    title="To update a Lambda function alias"
+                    title="To update a function alias"
                     source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
-                    region="to-update-a-lambda-function-alias-1481650817950" />
+                    region="to-update-a-function-alias-1481650817950" />
             </example>
         </value>
     </doc>
@@ -390,7 +922,7 @@
         <value>
             <example>
                 <para>
-                    This operation updates a Lambda function's code
+                    The following example replaces the code of the unpublished ($LATEST) version of a function named my-function with the contents of the specified zip file in Amazon S3.
                 </para>
                 <code
                     title="To update a Lambda function's code"
@@ -409,12 +941,31 @@
         <value>
             <example>
                 <para>
-                    This operation updates a Lambda function's configuration
+                    The following example modifies the memory size to be 256 MB for the unpublished ($LATEST) version of a function named my-function.
                 </para>
                 <code
                     title="To update a Lambda function's configuration"
                     source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
                     region="to-update-a-lambda-functions-configuration-1481651096447" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.UpdateFunctionEventInvokeConfig(Amazon.Lambda.Model.UpdateFunctionEventInvokeConfigRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.UpdateFunctionEventInvokeConfig(Amazon.Lambda.Model.UpdateFunctionEventInvokeConfigRequest)" />
+            <member name="T:Amazon.Lambda.Model.UpdateFunctionEventInvokeConfigRequest" />
+            <member name="T:Amazon.Lambda.Model.UpdateFunctionEventInvokeConfigResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example adds an on-failure destination to the existing asynchronous invocation configuration for a function named my-function.
+                </para>
+                <code
+                    title="To update an asynchronous invocation configuration"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-update-an-asynchronous-invocation-configuration-1586492061186" />
             </example>
         </value>
     </doc>
