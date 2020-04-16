@@ -548,6 +548,14 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
@@ -6742,6 +6750,14 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
@@ -8785,6 +8801,14 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.

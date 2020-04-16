@@ -77,6 +77,10 @@ namespace Amazon.RDS.Model
         /// include multiple variables in a single <code>SET</code> statement, such as <code>SET
         /// x=1, y=2</code>. 
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>InitQuery</code> is not currently supported for PostgreSQL.
+        /// </para>
         /// </summary>
         public string InitQuery
         {

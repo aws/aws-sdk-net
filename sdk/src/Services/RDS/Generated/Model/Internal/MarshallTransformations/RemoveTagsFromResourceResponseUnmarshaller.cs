@@ -107,6 +107,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 return new DBInstanceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DBProxyNotFoundFault"))
+            {
+                return new DBProxyNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DBProxyTargetGroupNotFoundFault"))
+            {
+                return new DBProxyTargetGroupNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("DBSnapshotNotFound"))
             {
                 return new DBSnapshotNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

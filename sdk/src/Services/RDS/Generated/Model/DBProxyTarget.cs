@@ -51,6 +51,7 @@ namespace Amazon.RDS.Model
         private int? _port;
         private string _rdsResourceId;
         private string _targetArn;
+        private TargetHealth _targetHealth;
         private string _trackedClusterId;
         private TargetType _type;
 
@@ -126,6 +127,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetTargetArn()
         {
             return this._targetArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetHealth. 
+        /// <para>
+        /// Information about the connection health of the RDS Proxy target.
+        /// </para>
+        /// </summary>
+        public TargetHealth TargetHealth
+        {
+            get { return this._targetHealth; }
+            set { this._targetHealth = value; }
+        }
+
+        // Check to see if TargetHealth property is set
+        internal bool IsSetTargetHealth()
+        {
+            return this._targetHealth != null;
         }
 
         /// <summary>

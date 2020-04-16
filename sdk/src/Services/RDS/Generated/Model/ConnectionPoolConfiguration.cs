@@ -86,6 +86,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        ///  <code>InitQuery</code> is not currently supported for PostgreSQL.
+        /// </para>
+        ///  
+        /// <para>
         /// Default: no initialization query
         /// </para>
         /// </summary>

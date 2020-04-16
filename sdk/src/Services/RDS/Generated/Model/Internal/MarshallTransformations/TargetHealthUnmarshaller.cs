@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DBProxyTarget Object
+    /// Response Unmarshaller for TargetHealth Object
     /// </summary>  
-    public class DBProxyTargetUnmarshaller : IUnmarshaller<DBProxyTarget, XmlUnmarshallerContext>, IUnmarshaller<DBProxyTarget, JsonUnmarshallerContext>
+    public class TargetHealthUnmarshaller : IUnmarshaller<TargetHealth, XmlUnmarshallerContext>, IUnmarshaller<TargetHealth, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DBProxyTarget Unmarshall(XmlUnmarshallerContext context)
+        public TargetHealth Unmarshall(XmlUnmarshallerContext context)
         {
-            DBProxyTarget unmarshalledObject = new DBProxyTarget();
+            TargetHealth unmarshalledObject = new TargetHealth();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,46 +54,22 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Endpoint", targetDepth))
+                    if (context.TestExpression("Description", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Port", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.Port = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("RdsResourceId", targetDepth))
+                    if (context.TestExpression("Reason", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.RdsResourceId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("TargetArn", targetDepth))
+                    if (context.TestExpression("State", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TargetArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TargetHealth", targetDepth))
-                    {
-                        var unmarshaller = TargetHealthUnmarshaller.Instance;
-                        unmarshalledObject.TargetHealth = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TrackedClusterId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TrackedClusterId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Type", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -111,18 +87,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DBProxyTarget Unmarshall(JsonUnmarshallerContext context)
+        public TargetHealth Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static DBProxyTargetUnmarshaller _instance = new DBProxyTargetUnmarshaller();        
+        private static TargetHealthUnmarshaller _instance = new TargetHealthUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DBProxyTargetUnmarshaller Instance
+        public static TargetHealthUnmarshaller Instance
         {
             get
             {
