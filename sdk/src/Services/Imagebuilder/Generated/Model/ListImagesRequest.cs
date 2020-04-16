@@ -41,7 +41,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        ///  The filters. 
+        /// The filters. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -60,7 +60,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum items to return in a request. 
+        /// The maximum items to return in a request. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
@@ -79,7 +79,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A token to specify where to start paginating. This is the NextToken from a previously
+        /// A token to specify where to start paginating. This is the NextToken from a previously
         /// truncated response. 
         /// </para>
         /// </summary>
@@ -99,7 +99,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        ///  The owner defines which images you want to list. By default, this request will only
+        /// The owner defines which images you want to list. By default, this request will only
         /// show images owned by your account. You can use this field to specify if you want to
         /// view images owned by yourself, by Amazon, or those images that have been shared with
         /// you by other customers. 

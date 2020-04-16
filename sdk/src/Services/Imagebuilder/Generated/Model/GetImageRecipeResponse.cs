@@ -38,7 +38,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageRecipe. 
         /// <para>
-        ///  The image recipe object. 
+        /// The image recipe object. 
         /// </para>
         /// </summary>
         public ImageRecipe ImageRecipe
@@ -56,7 +56,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        ///  The request ID that uniquely identifies this request. 
+        /// The request ID that uniquely identifies this request. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

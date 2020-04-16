@@ -41,7 +41,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the EC2 AMI. 
+        /// The description of the EC2 AMI. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -60,7 +60,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Image. 
         /// <para>
-        ///  The AMI ID of the EC2 AMI. 
+        /// The AMI ID of the EC2 AMI. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -79,7 +79,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the EC2 AMI. 
+        /// The name of the EC2 AMI. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -98,7 +98,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        ///  The AWS Region of the EC2 AMI. 
+        /// The AWS Region of the EC2 AMI. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -41,7 +41,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        ///  The filters. 
+        /// The filters. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -60,7 +60,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageVersionArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.
+        /// The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.
         /// 
         /// </para>
         /// </summary>
@@ -80,7 +80,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum items to return in a request. 
+        /// The maximum items to return in a request. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
@@ -99,7 +99,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A token to specify where to start paginating. This is the NextToken from a previously
+        /// A token to specify where to start paginating. This is the NextToken from a previously
         /// truncated response. 
         /// </para>
         /// </summary>

@@ -35,10 +35,12 @@ namespace Amazon.Imagebuilder.Model
         private string _arn;
         private string _dateCreated;
         private DistributionConfiguration _distributionConfiguration;
+        private bool? _enhancedImageMetadataEnabled;
         private ImageRecipe _imageRecipe;
         private ImageTestsConfiguration _imageTestsConfiguration;
         private InfrastructureConfiguration _infrastructureConfiguration;
         private string _name;
+        private string _osVersion;
         private OutputResources _outputResources;
         private Platform _platform;
         private string _sourcePipelineArn;
@@ -102,6 +104,26 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnhancedImageMetadataEnabled. 
+        /// <para>
+        ///  Collects additional information about the image being created, including the operating
+        /// system (OS) version and package list. This information is used to enhance the overall
+        /// experience of using EC2 Image Builder. Enabled by default. 
+        /// </para>
+        /// </summary>
+        public bool EnhancedImageMetadataEnabled
+        {
+            get { return this._enhancedImageMetadataEnabled.GetValueOrDefault(); }
+            set { this._enhancedImageMetadataEnabled = value; }
+        }
+
+        // Check to see if EnhancedImageMetadataEnabled property is set
+        internal bool IsSetEnhancedImageMetadataEnabled()
+        {
+            return this._enhancedImageMetadataEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ImageRecipe. 
         /// <para>
         /// The image recipe used when creating the image.
@@ -140,7 +162,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property InfrastructureConfiguration. 
         /// <para>
-        ///  The infrastructure used when creating this image.
+        /// The infrastructure used when creating this image.
         /// </para>
         /// </summary>
         public InfrastructureConfiguration InfrastructureConfiguration
@@ -171,6 +193,26 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OsVersion. 
+        /// <para>
+        /// The operating system version of the instance. For example, Amazon Linux 2, Ubuntu
+        /// 18, or Microsoft Windows Server 2019. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string OsVersion
+        {
+            get { return this._osVersion; }
+            set { this._osVersion = value; }
+        }
+
+        // Check to see if OsVersion property is set
+        internal bool IsSetOsVersion()
+        {
+            return this._osVersion != null;
         }
 
         /// <summary>

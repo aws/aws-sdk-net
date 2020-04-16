@@ -37,6 +37,7 @@ namespace Amazon.Imagebuilder.Model
         private string _clientToken;
         private string _description;
         private string _distributionConfigurationArn;
+        private bool? _enhancedImageMetadataEnabled;
         private string _imageRecipeArn;
         private ImageTestsConfiguration _imageTestsConfiguration;
         private string _infrastructureConfigurationArn;
@@ -100,6 +101,26 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetDistributionConfigurationArn()
         {
             return this._distributionConfigurationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnhancedImageMetadataEnabled. 
+        /// <para>
+        ///  Collects additional information about the image being created, including the operating
+        /// system (OS) version and package list. This information is used to enhance the overall
+        /// experience of using EC2 Image Builder. Enabled by default. 
+        /// </para>
+        /// </summary>
+        public bool EnhancedImageMetadataEnabled
+        {
+            get { return this._enhancedImageMetadataEnabled.GetValueOrDefault(); }
+            set { this._enhancedImageMetadataEnabled = value; }
+        }
+
+        // Check to see if EnhancedImageMetadataEnabled property is set
+        internal bool IsSetEnhancedImageMetadataEnabled()
+        {
+            return this._enhancedImageMetadataEnabled.HasValue; 
         }
 
         /// <summary>

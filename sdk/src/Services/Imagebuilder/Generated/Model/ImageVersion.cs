@@ -35,6 +35,7 @@ namespace Amazon.Imagebuilder.Model
         private string _arn;
         private string _dateCreated;
         private string _name;
+        private string _osVersion;
         private string _owner;
         private Platform _platform;
         private string _version;
@@ -91,6 +92,26 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OsVersion. 
+        /// <para>
+        ///  The operating system version of the instance. For example, Amazon Linux 2, Ubuntu
+        /// 18, or Microsoft Windows Server 2019. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string OsVersion
+        {
+            get { return this._osVersion; }
+            set { this._osVersion = value; }
+        }
+
+        // Check to see if OsVersion property is set
+        internal bool IsSetOsVersion()
+        {
+            return this._osVersion != null;
         }
 
         /// <summary>

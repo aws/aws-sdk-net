@@ -38,7 +38,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        ///  The reason for the image's status. 
+        /// The reason for the image's status. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -57,7 +57,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of the image. 
+        /// The status of the image. 
         /// </para>
         /// </summary>
         public ImageStatus Status

@@ -38,7 +38,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DistributionConfigurationArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the distribution configuration that was deleted.
+        /// The Amazon Resource Name (ARN) of the distribution configuration that was deleted.
         /// 
         /// </para>
         /// </summary>
@@ -57,7 +57,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        ///  The request ID that uniquely identifies this request. 
+        /// The request ID that uniquely identifies this request. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

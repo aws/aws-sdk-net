@@ -46,7 +46,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property BlockDeviceMappings. 
         /// <para>
-        ///  The block device mappings of the image recipe. 
+        /// The block device mappings of the image recipe. 
         /// </para>
         /// </summary>
         public List<InstanceBlockDeviceMapping> BlockDeviceMappings
@@ -64,7 +64,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        ///  The idempotency token used to make this request idempotent. 
+        /// The idempotency token used to make this request idempotent. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -83,7 +83,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Components. 
         /// <para>
-        ///  The components of the image recipe. 
+        /// The components of the image recipe. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -140,7 +140,13 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ParentImage. 
         /// <para>
-        ///  The parent image of the image recipe. 
+        /// The parent image of the image recipe. The value of the string can be the ARN of the
+        /// parent image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
+        /// The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image Builder
+        /// that you want to use the latest AMI created in 20xx (year). You can provide the specific
+        /// version that you want to use, or you can use a wildcard in all of the fields. If you
+        /// enter an AMI ID for the string value, you must have access to the AMI, and the AMI
+        /// must be in the same Region in which you are using Image Builder. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -159,7 +165,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SemanticVersion. 
         /// <para>
-        ///  The semantic version of the image recipe. 
+        /// The semantic version of the image recipe. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

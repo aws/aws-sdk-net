@@ -2825,7 +2825,11 @@ namespace Amazon.Imagebuilder
         #region  PutComponentPolicy
 
         /// <summary>
-        /// Applies a policy to a component.
+        /// Applies a policy to a component. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
+        /// to share resources. If you call the Image Builder API <code>PutComponentPolicy</code>,
+        /// you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+        /// in order for the resource to be visible to all principals with whom the resource is
+        /// shared.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutComponentPolicy service method.</param>
         /// 
@@ -2905,7 +2909,11 @@ namespace Amazon.Imagebuilder
         #region  PutImagePolicy
 
         /// <summary>
-        /// Applies a policy to an image.
+        /// Applies a policy to an image. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
+        /// to share resources. If you call the Image Builder API <code>PutImagePolicy</code>,
+        /// you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+        /// in order for the resource to be visible to all principals with whom the resource is
+        /// shared.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutImagePolicy service method.</param>
         /// 
@@ -2985,7 +2993,11 @@ namespace Amazon.Imagebuilder
         #region  PutImageRecipePolicy
 
         /// <summary>
-        /// Applies a policy to an image recipe.
+        /// Applies a policy to an image recipe. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
+        /// to share resources. If you call the Image Builder API <code>PutImageRecipePolicy</code>,
+        /// you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+        /// in order for the resource to be visible to all principals with whom the resource is
+        /// shared.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutImageRecipePolicy service method.</param>
         /// 

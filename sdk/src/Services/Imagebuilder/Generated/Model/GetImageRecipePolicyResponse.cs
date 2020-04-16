@@ -38,7 +38,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        ///  The image recipe policy object. 
+        /// The image recipe policy object. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=30000)]
@@ -57,7 +57,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        ///  The request ID that uniquely identifies this request. 
+        /// The request ID that uniquely identifies this request. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

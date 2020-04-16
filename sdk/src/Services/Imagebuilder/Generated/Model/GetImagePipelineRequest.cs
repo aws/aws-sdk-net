@@ -38,7 +38,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImagePipelineArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve. 
+        /// The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

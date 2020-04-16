@@ -29,7 +29,11 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the PutImagePolicy operation.
-    /// Applies a policy to an image.
+    /// Applies a policy to an image. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
+    /// to share resources. If you call the Image Builder API <code>PutImagePolicy</code>,
+    /// you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+    /// in order for the resource to be visible to all principals with whom the resource is
+    /// shared.
     /// </summary>
     public partial class PutImagePolicyRequest : AmazonImagebuilderRequest
     {
@@ -39,7 +43,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the image that this policy should be applied to.
+        /// The Amazon Resource Name (ARN) of the image that this policy should be applied to.
         /// 
         /// </para>
         /// </summary>
@@ -59,7 +63,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        ///  The policy to apply. 
+        /// The policy to apply. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=30000)]

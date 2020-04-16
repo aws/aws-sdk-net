@@ -38,7 +38,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DistributionConfigurationArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the distribution configuration that you want to
+        /// The Amazon Resource Name (ARN) of the distribution configuration that you want to
         /// retrieve. 
         /// </para>
         /// </summary>

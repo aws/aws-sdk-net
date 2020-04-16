@@ -39,7 +39,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageSummaryList. 
         /// <para>
-        ///  The list of image build versions. 
+        /// The list of image build versions. 
         /// </para>
         /// </summary>
         public List<ImageSummary> ImageSummaryList
@@ -57,7 +57,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The next token used for paginated responses. When this is not empty, there are additional
+        /// The next token used for paginated responses. When this is not empty, there are additional
         /// elements that the service has not included in this request. Use this token with the
         /// next request to retrieve additional objects. 
         /// </para>
@@ -78,7 +78,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        ///  The request ID that uniquely identifies this request. 
+        /// The request ID that uniquely identifies this request. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

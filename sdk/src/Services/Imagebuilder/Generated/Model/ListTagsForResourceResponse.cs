@@ -37,7 +37,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  The tags for the specified resource. 
+        /// The tags for the specified resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

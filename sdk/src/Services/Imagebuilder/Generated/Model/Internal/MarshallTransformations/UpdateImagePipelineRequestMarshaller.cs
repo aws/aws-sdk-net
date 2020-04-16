@@ -89,6 +89,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DistributionConfigurationArn);
                 }
 
+                if(publicRequest.IsSetEnhancedImageMetadataEnabled())
+                {
+                    context.Writer.WritePropertyName("enhancedImageMetadataEnabled");
+                    context.Writer.Write(publicRequest.EnhancedImageMetadataEnabled);
+                }
+
                 if(publicRequest.IsSetImagePipelineArn())
                 {
                     context.Writer.WritePropertyName("imagePipelineArn");
