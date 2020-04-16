@@ -32,6 +32,22 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreatePlacementGroupResponse : AmazonWebServiceResponse
     {
+        private PlacementGroup _placementGroup;
+
+        /// <summary>
+        /// Gets and sets the property PlacementGroup.
+        /// </summary>
+        public PlacementGroup PlacementGroup
+        {
+            get { return this._placementGroup; }
+            set { this._placementGroup = value; }
+        }
+
+        // Check to see if PlacementGroup property is set
+        internal bool IsSetPlacementGroup()
+        {
+            return this._placementGroup != null;
+        }
 
     }
 }

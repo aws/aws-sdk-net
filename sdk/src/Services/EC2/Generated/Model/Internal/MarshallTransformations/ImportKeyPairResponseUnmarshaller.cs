@@ -67,6 +67,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.KeyName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("keyPairId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.KeyPairId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("tagSet/item", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Tags.Add(item);
+                        continue;
+                    }
                 } 
             }
 

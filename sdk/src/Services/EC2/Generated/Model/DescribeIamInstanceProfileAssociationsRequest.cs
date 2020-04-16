@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>state</code> - The state of the association (<code>associating</code> | <code>associated</code>
-        /// | <code>disassociating</code> | <code>disassociated</code>).
+        /// | <code>disassociating</code>).
         /// </para>
         ///  </li> </ul>
         /// </summary>

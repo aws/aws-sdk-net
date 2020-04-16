@@ -30,8 +30,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the RegisterInstanceEventNotificationAttributes operation.
     /// Registers a set of tag keys to include in scheduled event notifications for your resources.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications">Customizing
-    /// Scheduled Event Notifications</a>.
+    /// 
     /// 
     ///  
     /// <para>

@@ -31,12 +31,6 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DeregisterInstanceEventNotificationAttributes operation.
     /// Deregisters tag keys to prevent tags that have the specified tag keys from being included
     /// in scheduled event notifications for resources in the Region.
-    /// 
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications">Customizing
-    /// Scheduled Event Notifications</a>.
-    /// </para>
     /// </summary>
     public partial class DeregisterInstanceEventNotificationAttributesRequest : AmazonEC2Request
     {
