@@ -318,6 +318,10 @@ namespace Amazon.Snowball
         /// Constant T80 for SnowballCapacity
         /// </summary>
         public static readonly SnowballCapacity T80 = new SnowballCapacity("T80");
+        /// <summary>
+        /// Constant T98 for SnowballCapacity
+        /// </summary>
+        public static readonly SnowballCapacity T98 = new SnowballCapacity("T98");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -372,6 +376,10 @@ namespace Amazon.Snowball
         /// Constant EDGE_CG for SnowballType
         /// </summary>
         public static readonly SnowballType EDGE_CG = new SnowballType("EDGE_CG");
+        /// <summary>
+        /// Constant EDGE_S for SnowballType
+        /// </summary>
+        public static readonly SnowballType EDGE_S = new SnowballType("EDGE_S");
         /// <summary>
         /// Constant STANDARD for SnowballType
         /// </summary>
