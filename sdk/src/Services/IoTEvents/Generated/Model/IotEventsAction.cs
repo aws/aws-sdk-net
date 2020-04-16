@@ -34,6 +34,7 @@ namespace Amazon.IoTEvents.Model
     public partial class IotEventsAction
     {
         private string _inputName;
+        private Payload _payload;
 
         /// <summary>
         /// Gets and sets the property InputName. 
@@ -52,6 +53,25 @@ namespace Amazon.IoTEvents.Model
         internal bool IsSetInputName()
         {
             return this._inputName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Payload. 
+        /// <para>
+        /// You can configure the action payload when you send a message to an AWS IoT Events
+        /// input.
+        /// </para>
+        /// </summary>
+        public Payload Payload
+        {
+            get { return this._payload; }
+            set { this._payload = value; }
+        }
+
+        // Check to see if Payload property is set
+        internal bool IsSetPayload()
+        {
+            return this._payload != null;
         }
 
     }

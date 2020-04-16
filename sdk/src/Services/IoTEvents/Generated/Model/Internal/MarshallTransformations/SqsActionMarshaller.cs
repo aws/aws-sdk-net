@@ -45,6 +45,17 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SqsAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetPayload())
+            {
+                context.Writer.WritePropertyName("payload");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PayloadMarshaller.Instance;
+                marshaller.Marshall(requestObject.Payload, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetQueueUrl())
             {
                 context.Writer.WritePropertyName("queueUrl");

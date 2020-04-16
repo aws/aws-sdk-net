@@ -34,6 +34,7 @@ namespace Amazon.IoTEvents.Model
     public partial class FirehoseAction
     {
         private string _deliveryStreamName;
+        private Payload _payload;
         private string _separator;
 
         /// <summary>
@@ -53,6 +54,25 @@ namespace Amazon.IoTEvents.Model
         internal bool IsSetDeliveryStreamName()
         {
             return this._deliveryStreamName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Payload. 
+        /// <para>
+        /// You can configure the action payload when you send a message to an Amazon Kinesis
+        /// Data Firehose delivery stream.
+        /// </para>
+        /// </summary>
+        public Payload Payload
+        {
+            get { return this._payload; }
+            set { this._payload = value; }
+        }
+
+        // Check to see if Payload property is set
+        internal bool IsSetPayload()
+        {
+            return this._payload != null;
         }
 
         /// <summary>

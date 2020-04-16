@@ -32,7 +32,27 @@ namespace Amazon.IoTEvents.Model
     /// </summary>
     public partial class SNSTopicPublishAction
     {
+        private Payload _payload;
         private string _targetArn;
+
+        /// <summary>
+        /// Gets and sets the property Payload. 
+        /// <para>
+        /// You can configure the action payload when you send a message as an Amazon SNS push
+        /// notification.
+        /// </para>
+        /// </summary>
+        public Payload Payload
+        {
+            get { return this._payload; }
+            set { this._payload = value; }
+        }
+
+        // Check to see if Payload property is set
+        internal bool IsSetPayload()
+        {
+            return this._payload != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TargetArn. 

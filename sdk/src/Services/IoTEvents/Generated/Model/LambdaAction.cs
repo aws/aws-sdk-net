@@ -34,6 +34,7 @@ namespace Amazon.IoTEvents.Model
     public partial class LambdaAction
     {
         private string _functionArn;
+        private Payload _payload;
 
         /// <summary>
         /// Gets and sets the property FunctionArn. 
@@ -52,6 +53,24 @@ namespace Amazon.IoTEvents.Model
         internal bool IsSetFunctionArn()
         {
             return this._functionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Payload. 
+        /// <para>
+        /// You can configure the action payload when you send a message to a Lambda function.
+        /// </para>
+        /// </summary>
+        public Payload Payload
+        {
+            get { return this._payload; }
+            set { this._payload = value; }
+        }
+
+        // Check to see if Payload property is set
+        internal bool IsSetPayload()
+        {
+            return this._payload != null;
         }
 
     }

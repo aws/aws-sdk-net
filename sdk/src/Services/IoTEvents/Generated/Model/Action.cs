@@ -33,6 +33,8 @@ namespace Amazon.IoTEvents.Model
     public partial class Action
     {
         private ClearTimerAction _clearTimer;
+        private DynamoDBAction _dynamodb;
+        private DynamoDBv2Action _dynamodBv2;
         private FirehoseAction _firehose;
         private IotEventsAction _iotEvents;
         private IotTopicPublishAction _iotTopicPublish;
@@ -62,6 +64,52 @@ namespace Amazon.IoTEvents.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DynamoDB. 
+        /// <para>
+        /// Writes to the DynamoDB table that you created. The default action payload contains
+        /// all attribute-value pairs that have the information about the detector model instance
+        /// and the event that triggered the action. You can also customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
+        /// One column of the DynamoDB table receives all attribute-value pairs in the payload
+        /// that you specify. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a>
+        /// in <i>AWS IoT Events Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public DynamoDBAction DynamoDB
+        {
+            get { return this._dynamodb; }
+            set { this._dynamodb = value; }
+        }
+
+        // Check to see if DynamoDB property is set
+        internal bool IsSetDynamoDB()
+        {
+            return this._dynamodb != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DynamoDBv2. 
+        /// <para>
+        /// Writes to the DynamoDB table that you created. The default action payload contains
+        /// all attribute-value pairs that have the information about the detector model instance
+        /// and the event that triggered the action. You can also customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
+        /// A separate column of the DynamoDB table receives one attribute-value pair in the payload
+        /// that you specify. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a>
+        /// in <i>AWS IoT Events Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public DynamoDBv2Action DynamoDBv2
+        {
+            get { return this._dynamodBv2; }
+            set { this._dynamodBv2 = value; }
+        }
+
+        // Check to see if DynamoDBv2 property is set
+        internal bool IsSetDynamoDBv2()
+        {
+            return this._dynamodBv2 != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Firehose. 
         /// <para>
         /// Sends information about the detector model instance and the event that triggered the
@@ -83,7 +131,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property IotEvents. 
         /// <para>
-        /// Sends an AWS IoT Events input, passing in information about the detector model instance
+        /// Sends AWS IoT Events input, which passes information about the detector model instance
         /// and the event that triggered the action.
         /// </para>
         /// </summary>

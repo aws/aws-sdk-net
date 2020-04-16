@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SNSTopicPublishAction Marshaller
+    /// Payload Marshaller
     /// </summary>       
-    public class SNSTopicPublishActionMarshaller : IRequestMarshaller<SNSTopicPublishAction, JsonMarshallerContext> 
+    public class PayloadMarshaller : IRequestMarshaller<Payload, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,18 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SNSTopicPublishAction requestObject, JsonMarshallerContext context)
+        public void Marshall(Payload requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetPayload())
+            if(requestObject.IsSetContentExpression())
             {
-                context.Writer.WritePropertyName("payload");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = PayloadMarshaller.Instance;
-                marshaller.Marshall(requestObject.Payload, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("contentExpression");
+                context.Writer.Write(requestObject.ContentExpression);
             }
 
-            if(requestObject.IsSetTargetArn())
+            if(requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("targetArn");
-                context.Writer.Write(requestObject.TargetArn);
+                context.Writer.WritePropertyName("type");
+                context.Writer.Write(requestObject.Type);
             }
 
         }
@@ -67,7 +62,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static SNSTopicPublishActionMarshaller Instance = new SNSTopicPublishActionMarshaller();
+        public readonly static PayloadMarshaller Instance = new PayloadMarshaller();
 
     }
 }

@@ -28,20 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
-    /// Sends information about the detector model instance and the event that triggered the
-    /// action to an Amazon SQS queue.
+    /// Defines an action to write to the Amazon DynamoDB table that you created. The default
+    /// action payload contains all attribute-value pairs that have the information about
+    /// the detector model instance and the event that triggered the action. You can also
+    /// customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
+    /// A separate column of the DynamoDB table receives one attribute-value pair in the payload
+    /// that you specify.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// The <code>type</code> value for <code>Payload</code> must be <code>JSON</code>.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// You can use expressions for parameters that are strings. For more information, see
+    /// <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a>
+    /// in the <i>AWS IoT Events Developer Guide</i>.
+    /// </para>
     /// </summary>
-    public partial class SqsAction
+    public partial class DynamoDBv2Action
     {
         private Payload _payload;
-        private string _queueUrl;
-        private bool? _useBase64;
+        private string _tableName;
 
         /// <summary>
-        /// Gets and sets the property Payload. 
-        /// <para>
-        /// You can configure the action payload when you send a message to an Amazon SQS queue.
-        /// </para>
+        /// Gets and sets the property Payload.
         /// </summary>
         public Payload Payload
         {
@@ -56,41 +67,22 @@ namespace Amazon.IoTEvents.Model
         }
 
         /// <summary>
-        /// Gets and sets the property QueueUrl. 
+        /// Gets and sets the property TableName. 
         /// <para>
-        /// The URL of the SQS queue where the data is written.
+        /// The name of the DynamoDB table.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string QueueUrl
+        public string TableName
         {
-            get { return this._queueUrl; }
-            set { this._queueUrl = value; }
+            get { return this._tableName; }
+            set { this._tableName = value; }
         }
 
-        // Check to see if QueueUrl property is set
-        internal bool IsSetQueueUrl()
+        // Check to see if TableName property is set
+        internal bool IsSetTableName()
         {
-            return this._queueUrl != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property UseBase64. 
-        /// <para>
-        /// Set this to TRUE if you want the data to be base-64 encoded before it is written to
-        /// the queue. Otherwise, set this to FALSE.
-        /// </para>
-        /// </summary>
-        public bool UseBase64
-        {
-            get { return this._useBase64.GetValueOrDefault(); }
-            set { this._useBase64 = value; }
-        }
-
-        // Check to see if UseBase64 property is set
-        internal bool IsSetUseBase64()
-        {
-            return this._useBase64.HasValue; 
+            return this._tableName != null;
         }
 
     }

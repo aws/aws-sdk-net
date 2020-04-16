@@ -60,7 +60,7 @@ namespace Amazon.IoTEvents.Model
         /// Gets and sets the property OnExit. 
         /// <para>
         /// When exiting this state, perform these <code>actions</code> if the specified <code>condition</code>
-        /// is TRUE.
+        /// is <code>TRUE</code>.
         /// </para>
         /// </summary>
         public OnExitLifecycle OnExit

@@ -255,6 +255,10 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTEvents.Model.Payload.ContentExpression</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTEvents.Model.ResetTimerAction.TimerName</property>
     <min>1</min>
     <max>128</max>

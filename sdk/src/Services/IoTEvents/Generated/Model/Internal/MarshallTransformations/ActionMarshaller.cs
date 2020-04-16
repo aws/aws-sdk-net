@@ -56,6 +56,28 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDynamoDB())
+            {
+                context.Writer.WritePropertyName("dynamoDB");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DynamoDBActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.DynamoDB, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDynamoDBv2())
+            {
+                context.Writer.WritePropertyName("dynamoDBv2");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DynamoDBv2ActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.DynamoDBv2, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFirehose())
             {
                 context.Writer.WritePropertyName("firehose");

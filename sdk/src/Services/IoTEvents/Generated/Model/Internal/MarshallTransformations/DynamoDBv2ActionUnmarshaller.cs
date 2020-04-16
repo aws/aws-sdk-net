@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SqsAction Object
+    /// Response Unmarshaller for DynamoDBv2Action Object
     /// </summary>  
-    public class SqsActionUnmarshaller : IUnmarshaller<SqsAction, XmlUnmarshallerContext>, IUnmarshaller<SqsAction, JsonUnmarshallerContext>
+    public class DynamoDBv2ActionUnmarshaller : IUnmarshaller<DynamoDBv2Action, XmlUnmarshallerContext>, IUnmarshaller<DynamoDBv2Action, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SqsAction IUnmarshaller<SqsAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DynamoDBv2Action IUnmarshaller<DynamoDBv2Action, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SqsAction Unmarshall(JsonUnmarshallerContext context)
+        public DynamoDBv2Action Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SqsAction unmarshalledObject = new SqsAction();
+            DynamoDBv2Action unmarshalledObject = new DynamoDBv2Action();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,16 +70,10 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                     unmarshalledObject.Payload = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("queueUrl", targetDepth))
+                if (context.TestExpression("tableName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QueueUrl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("useBase64", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.UseBase64 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TableName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         }
 
 
-        private static SqsActionUnmarshaller _instance = new SqsActionUnmarshaller();        
+        private static DynamoDBv2ActionUnmarshaller _instance = new DynamoDBv2ActionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SqsActionUnmarshaller Instance
+        public static DynamoDBv2ActionUnmarshaller Instance
         {
             get
             {

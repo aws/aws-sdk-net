@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SNSTopicPublishAction Marshaller
+    /// DynamoDBv2Action Marshaller
     /// </summary>       
-    public class SNSTopicPublishActionMarshaller : IRequestMarshaller<SNSTopicPublishAction, JsonMarshallerContext> 
+    public class DynamoDBv2ActionMarshaller : IRequestMarshaller<DynamoDBv2Action, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SNSTopicPublishAction requestObject, JsonMarshallerContext context)
+        public void Marshall(DynamoDBv2Action requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetPayload())
             {
@@ -56,10 +56,10 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetTargetArn())
+            if(requestObject.IsSetTableName())
             {
-                context.Writer.WritePropertyName("targetArn");
-                context.Writer.Write(requestObject.TargetArn);
+                context.Writer.WritePropertyName("tableName");
+                context.Writer.Write(requestObject.TableName);
             }
 
         }
@@ -67,7 +67,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static SNSTopicPublishActionMarshaller Instance = new SNSTopicPublishActionMarshaller();
+        public readonly static DynamoDBv2ActionMarshaller Instance = new DynamoDBv2ActionMarshaller();
 
     }
 }

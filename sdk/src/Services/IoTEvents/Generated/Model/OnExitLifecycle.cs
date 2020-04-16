@@ -29,7 +29,7 @@ namespace Amazon.IoTEvents.Model
 {
     /// <summary>
     /// When exiting this state, perform these <code>actions</code> if the specified <code>condition</code>
-    /// is TRUE.
+    /// is <code>TRUE</code>.
     /// </summary>
     public partial class OnExitLifecycle
     {
@@ -39,7 +39,7 @@ namespace Amazon.IoTEvents.Model
         /// Gets and sets the property Events. 
         /// <para>
         /// Specifies the <code>actions</code> that are performed when the state is exited and
-        /// the <code>condition</code> is TRUE.
+        /// the <code>condition</code> is <code>TRUE</code>.
         /// </para>
         /// </summary>
         public List<Event> Events
