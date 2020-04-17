@@ -28,19 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDetectorVersion operation.
-    /// Deletes the detector version. You cannot delete detector versions that are in <code>ACTIVE</code>
-    /// status.
+    /// Container for the parameters to the DeleteRuleVersion operation.
+    /// Deletes the rule version. You cannot delete a rule version if it is used by an <code>ACTIVE</code>
+    /// or <code>INACTIVE</code> detector version.
     /// </summary>
-    public partial class DeleteDetectorVersionRequest : AmazonFraudDetectorRequest
+    public partial class DeleteRuleVersionRequest : AmazonFraudDetectorRequest
     {
         private string _detectorId;
-        private string _detectorVersionId;
+        private string _ruleId;
+        private string _ruleVersion;
 
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The ID of the parent detector for the detector version to delete.
+        /// The ID of the detector that includes the rule version to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -57,22 +58,41 @@ namespace Amazon.FraudDetector.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DetectorVersionId. 
+        /// Gets and sets the property RuleId. 
         /// <para>
-        /// The ID of the detector version to delete.
+        /// The rule ID of the rule version to delete.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string RuleId
+        {
+            get { return this._ruleId; }
+            set { this._ruleId = value; }
+        }
+
+        // Check to see if RuleId property is set
+        internal bool IsSetRuleId()
+        {
+            return this._ruleId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleVersion. 
+        /// <para>
+        /// The rule version to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public string DetectorVersionId
+        public string RuleVersion
         {
-            get { return this._detectorVersionId; }
-            set { this._detectorVersionId = value; }
+            get { return this._ruleVersion; }
+            set { this._ruleVersion = value; }
         }
 
-        // Check to see if DetectorVersionId property is set
-        internal bool IsSetDetectorVersionId()
+        // Check to see if RuleVersion property is set
+        internal bool IsSetRuleVersion()
         {
-            return this._detectorVersionId != null;
+            return this._ruleVersion != null;
         }
 
     }

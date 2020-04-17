@@ -442,6 +442,9 @@ namespace Amazon.FraudDetector
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
         /// </exception>
@@ -620,14 +623,123 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  DeleteDetector
+
+        /// <summary>
+        /// Deletes the detector. Before deleting a detector, you must first delete all detector
+        /// versions and rule versions associated with the detector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDetector service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDetector service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRuleVersion: A conflict exception will occur if the <code>RuleVersion</code>
+        /// is in use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetector">REST API Reference for DeleteDetector Operation</seealso>
+        public virtual DeleteDetectorResponse DeleteDetector(DeleteDetectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDetectorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDetectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDetector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDetector operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDetector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetector">REST API Reference for DeleteDetector Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDetector(DeleteDetectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDetectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDetector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDetector.</param>
+        /// 
+        /// <returns>Returns a  DeleteDetectorResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetector">REST API Reference for DeleteDetector Operation</seealso>
+        public virtual DeleteDetectorResponse EndDeleteDetector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDetectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteDetectorVersion
 
         /// <summary>
-        /// Deletes the detector version.
+        /// Deletes the detector version. You cannot delete detector versions that are in <code>ACTIVE</code>
+        /// status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDetectorVersion service method.</param>
         /// 
         /// <returns>The response from the DeleteDetectorVersion service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRuleVersion: A conflict exception will occur if the <code>RuleVersion</code>
+        /// is in use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -742,6 +854,92 @@ namespace Amazon.FraudDetector
         public virtual DeleteEventResponse EndDeleteEvent(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteEventResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteRuleVersion
+
+        /// <summary>
+        /// Deletes the rule version. You cannot delete a rule version if it is used by an <code>ACTIVE</code>
+        /// or <code>INACTIVE</code> detector version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRuleVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRuleVersion service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRuleVersion: A conflict exception will occur if the <code>RuleVersion</code>
+        /// is in use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRuleVersion">REST API Reference for DeleteRuleVersion Operation</seealso>
+        public virtual DeleteRuleVersionResponse DeleteRuleVersion(DeleteRuleVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRuleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRuleVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRuleVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRuleVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRuleVersion operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRuleVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRuleVersion">REST API Reference for DeleteRuleVersion Operation</seealso>
+        public virtual IAsyncResult BeginDeleteRuleVersion(DeleteRuleVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRuleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRuleVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRuleVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRuleVersion.</param>
+        /// 
+        /// <returns>Returns a  DeleteRuleVersionResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRuleVersion">REST API Reference for DeleteRuleVersion Operation</seealso>
+        public virtual DeleteRuleVersionResponse EndDeleteRuleVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteRuleVersionResponse>(asyncResult);
         }
 
         #endregion

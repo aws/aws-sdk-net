@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateModelVersion operation
+    /// Response Unmarshaller for DeleteRuleVersion operation
     /// </summary>  
-    public class CreateModelVersionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteRuleVersionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,37 +45,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateModelVersionResponse response = new CreateModelVersionResponse();
+            DeleteRuleVersionResponse response = new DeleteRuleVersionResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("modelId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ModelId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("modelType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ModelType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("modelVersionNumber", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ModelVersionNumber = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -90,13 +61,13 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+            {
+                return new ConflictException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
             {
                 return new InternalServerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-            {
-                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
             {
@@ -109,9 +80,9 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             return new AmazonFraudDetectorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreateModelVersionResponseUnmarshaller _instance = new CreateModelVersionResponseUnmarshaller();        
+        private static DeleteRuleVersionResponseUnmarshaller _instance = new DeleteRuleVersionResponseUnmarshaller();        
 
-        internal static CreateModelVersionResponseUnmarshaller GetInstance()
+        internal static DeleteRuleVersionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -119,7 +90,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateModelVersionResponseUnmarshaller Instance
+        public static DeleteRuleVersionResponseUnmarshaller Instance
         {
             get
             {

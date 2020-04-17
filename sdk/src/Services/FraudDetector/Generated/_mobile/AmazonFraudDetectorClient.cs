@@ -403,6 +403,9 @@ namespace Amazon.FraudDetector
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
         /// </exception>
@@ -507,6 +510,72 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  DeleteDetector
+
+        internal virtual DeleteDetectorResponse DeleteDetector(DeleteDetectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDetectorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDetectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the detector. Before deleting a detector, you must first delete all detector
+        /// versions and rule versions associated with the detector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDetector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDetector service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRuleVersion: A conflict exception will occur if the <code>RuleVersion</code>
+        /// is in use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetector">REST API Reference for DeleteDetector Operation</seealso>
+        public virtual Task<DeleteDetectorResponse> DeleteDetectorAsync(DeleteDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDetectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDetectorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDetectorVersion
 
         internal virtual DeleteDetectorVersionResponse DeleteDetectorVersion(DeleteDetectorVersionRequest request)
@@ -521,7 +590,8 @@ namespace Amazon.FraudDetector
 
 
         /// <summary>
-        /// Deletes the detector version.
+        /// Deletes the detector version. You cannot delete detector versions that are in <code>ACTIVE</code>
+        /// status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDetectorVersion service method.</param>
         /// <param name="cancellationToken">
@@ -529,6 +599,28 @@ namespace Amazon.FraudDetector
         /// </param>
         /// 
         /// <returns>The response from the DeleteDetectorVersion service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRuleVersion: A conflict exception will occur if the <code>RuleVersion</code>
+        /// is in use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -589,6 +681,72 @@ namespace Amazon.FraudDetector
             options.ResponseUnmarshaller = DeleteEventResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteEventResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRuleVersion
+
+        internal virtual DeleteRuleVersionResponse DeleteRuleVersion(DeleteRuleVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRuleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRuleVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRuleVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the rule version. You cannot delete a rule version if it is used by an <code>ACTIVE</code>
+        /// or <code>INACTIVE</code> detector version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRuleVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRuleVersion service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRuleVersion: A conflict exception will occur if the <code>RuleVersion</code>
+        /// is in use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRuleVersion">REST API Reference for DeleteRuleVersion Operation</seealso>
+        public virtual Task<DeleteRuleVersionResponse> DeleteRuleVersionAsync(DeleteRuleVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRuleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRuleVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRuleVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion

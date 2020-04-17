@@ -217,6 +217,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("FraudDetector")]
+        public void DeleteDetectorMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeleteDetectorRequest>();
+            var marshaller = new DeleteDetectorRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeleteDetectorRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteDetector").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DeleteDetectorResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteDetectorResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("FraudDetector")]
         public void DeleteDetectorVersionMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DeleteDetectorVersionRequest>();
@@ -267,6 +296,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteEventResponseUnmarshaller.Instance.Unmarshall(context)
                 as DeleteEventResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("FraudDetector")]
+        public void DeleteRuleVersionMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeleteRuleVersionRequest>();
+            var marshaller = new DeleteRuleVersionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeleteRuleVersionRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteRuleVersion").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DeleteRuleVersionResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteRuleVersionResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

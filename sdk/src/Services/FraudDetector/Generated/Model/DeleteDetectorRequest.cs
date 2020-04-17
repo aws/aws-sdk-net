@@ -28,19 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDetectorVersion operation.
-    /// Deletes the detector version. You cannot delete detector versions that are in <code>ACTIVE</code>
-    /// status.
+    /// Container for the parameters to the DeleteDetector operation.
+    /// Deletes the detector. Before deleting a detector, you must first delete all detector
+    /// versions and rule versions associated with the detector.
     /// </summary>
-    public partial class DeleteDetectorVersionRequest : AmazonFraudDetectorRequest
+    public partial class DeleteDetectorRequest : AmazonFraudDetectorRequest
     {
         private string _detectorId;
-        private string _detectorVersionId;
 
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The ID of the parent detector for the detector version to delete.
+        /// The ID of the detector to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -54,25 +53,6 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetDetectorId()
         {
             return this._detectorId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DetectorVersionId. 
-        /// <para>
-        /// The ID of the detector version to delete.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1)]
-        public string DetectorVersionId
-        {
-            get { return this._detectorVersionId; }
-            set { this._detectorVersionId = value; }
-        }
-
-        // Check to see if DetectorVersionId property is set
-        internal bool IsSetDetectorVersionId()
-        {
-            return this._detectorVersionId != null;
         }
 
     }

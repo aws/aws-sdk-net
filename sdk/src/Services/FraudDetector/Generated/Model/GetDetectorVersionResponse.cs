@@ -39,6 +39,7 @@ namespace Amazon.FraudDetector.Model
         private List<string> _externalModelEndpoints = new List<string>();
         private string _lastUpdatedTime;
         private List<ModelVersion> _modelVersions = new List<ModelVersion>();
+        private RuleExecutionMode _ruleExecutionMode;
         private List<Rule> _rules = new List<Rule>();
         private DetectorVersionStatus _status;
 
@@ -169,6 +170,36 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetModelVersions()
         {
             return this._modelVersions != null && this._modelVersions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleExecutionMode. 
+        /// <para>
+        /// The execution mode of the rule in the dectector
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially,
+        /// first to last, stopping at the first matched rule. Amazon Fraud dectector then provides
+        /// the outcomes for that single rule.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules
+        /// and returns the outcomes for all matched rules. You can define and edit the rule mode
+        /// at the detector version level, when it is in draft status.
+        /// </para>
+        /// </summary>
+        public RuleExecutionMode RuleExecutionMode
+        {
+            get { return this._ruleExecutionMode; }
+            set { this._ruleExecutionMode = value; }
+        }
+
+        // Check to see if RuleExecutionMode property is set
+        internal bool IsSetRuleExecutionMode()
+        {
+            return this._ruleExecutionMode != null;
         }
 
         /// <summary>

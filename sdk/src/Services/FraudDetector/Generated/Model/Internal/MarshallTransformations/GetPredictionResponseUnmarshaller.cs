@@ -63,6 +63,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     response.Outcomes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ruleResults", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RuleResult, RuleResultUnmarshaller>(RuleResultUnmarshaller.Instance);
+                    response.RuleResults = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

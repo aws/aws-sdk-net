@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateDetectorVersion Request Marshaller
+    /// DeleteRuleVersion Request Marshaller
     /// </summary>       
-    public class CreateDetectorVersionRequestMarshaller : IMarshaller<IRequest, CreateDetectorVersionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteRuleVersionRequestMarshaller : IMarshaller<IRequest, DeleteRuleVersionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateDetectorVersionRequest)input);
+            return this.Marshall((DeleteRuleVersionRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateDetectorVersionRequest publicRequest)
+        public IRequest Marshall(DeleteRuleVersionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.FraudDetector");
-            string target = "AWSHawksNestServiceFacade.CreateDetectorVersion";
+            string target = "AWSHawksNestServiceFacade.DeleteRuleVersion";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-15";            
@@ -68,65 +68,22 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
                 if(publicRequest.IsSetDetectorId())
                 {
                     context.Writer.WritePropertyName("detectorId");
                     context.Writer.Write(publicRequest.DetectorId);
                 }
 
-                if(publicRequest.IsSetExternalModelEndpoints())
+                if(publicRequest.IsSetRuleId())
                 {
-                    context.Writer.WritePropertyName("externalModelEndpoints");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestExternalModelEndpointsListValue in publicRequest.ExternalModelEndpoints)
-                    {
-                            context.Writer.Write(publicRequestExternalModelEndpointsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("ruleId");
+                    context.Writer.Write(publicRequest.RuleId);
                 }
 
-                if(publicRequest.IsSetModelVersions())
+                if(publicRequest.IsSetRuleVersion())
                 {
-                    context.Writer.WritePropertyName("modelVersions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestModelVersionsListValue in publicRequest.ModelVersions)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ModelVersionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestModelVersionsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetRuleExecutionMode())
-                {
-                    context.Writer.WritePropertyName("ruleExecutionMode");
-                    context.Writer.Write(publicRequest.RuleExecutionMode);
-                }
-
-                if(publicRequest.IsSetRules())
-                {
-                    context.Writer.WritePropertyName("rules");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRulesListValue in publicRequest.Rules)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RuleMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRulesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("ruleVersion");
+                    context.Writer.Write(publicRequest.RuleVersion);
                 }
 
         
@@ -138,9 +95,9 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateDetectorVersionRequestMarshaller _instance = new CreateDetectorVersionRequestMarshaller();        
+        private static DeleteRuleVersionRequestMarshaller _instance = new DeleteRuleVersionRequestMarshaller();        
 
-        internal static CreateDetectorVersionRequestMarshaller GetInstance()
+        internal static DeleteRuleVersionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -148,7 +105,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateDetectorVersionRequestMarshaller Instance
+        public static DeleteRuleVersionRequestMarshaller Instance
         {
             get
             {

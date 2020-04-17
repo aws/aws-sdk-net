@@ -65,6 +65,12 @@
     <pattern>^[0-9a-z_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FraudDetector.Model.DeleteDetectorRequest.DetectorId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FraudDetector.Model.DeleteDetectorVersionRequest.DetectorId</property>
     <min>1</min>
     <max>64</max>
@@ -72,6 +78,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.DeleteDetectorVersionRequest.DetectorVersionId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.DeleteRuleVersionRequest.DetectorId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.DeleteRuleVersionRequest.RuleId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.DeleteRuleVersionRequest.RuleVersion</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -447,6 +469,6 @@
     <property>Amazon.FraudDetector.Model.TrainingDataSource.DataLocation</property>
     <min>1</min>
     <max>512</max>
-    <pattern>^s3:\/\/[^\s]+$</pattern>
+    <pattern>^s3:\/\/(.+)$</pattern>
   </property-value-rule>
 </property-value-rules>

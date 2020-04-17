@@ -28,36 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
-    /// This is the response object from the GetPrediction operation.
+    /// The rule results.
     /// </summary>
-    public partial class GetPredictionResponse : AmazonWebServiceResponse
+    public partial class RuleResult
     {
-        private List<ModelScores> _modelScores = new List<ModelScores>();
         private List<string> _outcomes = new List<string>();
-        private List<RuleResult> _ruleResults = new List<RuleResult>();
-
-        /// <summary>
-        /// Gets and sets the property ModelScores. 
-        /// <para>
-        /// The model scores for models used in the detector version.
-        /// </para>
-        /// </summary>
-        public List<ModelScores> ModelScores
-        {
-            get { return this._modelScores; }
-            set { this._modelScores = value; }
-        }
-
-        // Check to see if ModelScores property is set
-        internal bool IsSetModelScores()
-        {
-            return this._modelScores != null && this._modelScores.Count > 0; 
-        }
+        private string _ruleId;
 
         /// <summary>
         /// Gets and sets the property Outcomes. 
         /// <para>
-        /// The prediction outcomes.
+        /// The outcomes of the matched rule, based on the rule execution mode.
         /// </para>
         /// </summary>
         public List<string> Outcomes
@@ -73,21 +54,21 @@ namespace Amazon.FraudDetector.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RuleResults. 
+        /// Gets and sets the property RuleId. 
         /// <para>
-        /// The rule results in the prediction.
+        /// The rule ID that was matched, based on the rule execution mode.
         /// </para>
         /// </summary>
-        public List<RuleResult> RuleResults
+        public string RuleId
         {
-            get { return this._ruleResults; }
-            set { this._ruleResults = value; }
+            get { return this._ruleId; }
+            set { this._ruleId = value; }
         }
 
-        // Check to see if RuleResults property is set
-        internal bool IsSetRuleResults()
+        // Check to see if RuleId property is set
+        internal bool IsSetRuleId()
         {
-            return this._ruleResults != null && this._ruleResults.Count > 0; 
+            return this._ruleId != null;
         }
 
     }
