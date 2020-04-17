@@ -374,7 +374,7 @@ namespace Amazon.OpsWorksCM.Model
         /// Gets and sets the property EngineVersion. 
         /// <para>
         ///  The major release version of the engine that you want to use. For a Chef server,
-        /// the valid value for EngineVersion is currently <code>2</code>. For a Puppet server,
+        /// the valid value for EngineVersion is currently <code>12</code>. For a Puppet server,
         /// the valid value is <code>2017</code>. 
         /// </para>
         /// </summary>
@@ -471,8 +471,8 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated
-        /// universal time (UTC). The default value is a random, daily start time.
+        /// The specified time is in coordinated universal time (UTC). The default value is a
+        /// random, daily start time.
         /// </para>
         ///  
         /// <para>
@@ -503,10 +503,9 @@ namespace Amazon.OpsWorksCM.Model
         /// <para>
         ///  The start time for a one-hour period each week during which AWS OpsWorks CM performs
         /// maintenance on the instance. Valid values must be specified in the following format:
-        /// <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The
-        /// specified time is in coordinated universal time (UTC). The default value is a random
-        /// one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code>
-        /// for more information. 
+        /// <code>DDD:HH:MM</code>. The specified time is in coordinated universal time (UTC).
+        /// The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
+        /// <code>TimeWindowDefinition</code> for more information. 
         /// </para>
         ///  
         /// <para>
