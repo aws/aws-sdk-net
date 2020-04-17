@@ -1,3 +1,14 @@
+### 3.3.720.0 (2020-04-17 18:12 UTC)
+* FraudDetector (3.3.101.0)
+	* Added support for a new rule engine execution mode. Customers will be able to configure their detector versions to evaluate all rules and return outcomes from all 'matched' rules in the GetPrediction API response. Added support for deleting Detectors (DeleteDetector) and Rule Versions (DeleteRuleVersion).
+* OpsWorksCM (3.3.105.21)
+	* Documentation updates for opsworkscm
+* Core 3.3.106.6
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.719.0 (2020-04-16 18:17 UTC)
 * AugmentedAIRuntime (3.3.102.0)
 	* This release updates Amazon Augmented AI ListHumanLoops and StartHumanLoop APIs.
