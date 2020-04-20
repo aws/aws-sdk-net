@@ -100,6 +100,17 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetIotSiteWise())
+            {
+                context.Writer.WritePropertyName("iotSiteWise");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = IotSiteWiseActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.IotSiteWise, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetIotTopicPublish())
             {
                 context.Writer.WritePropertyName("iotTopicPublish");

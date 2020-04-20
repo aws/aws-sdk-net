@@ -94,6 +94,12 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                     unmarshalledObject.IotEvents = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("iotSiteWise", targetDepth))
+                {
+                    var unmarshaller = IotSiteWiseActionUnmarshaller.Instance;
+                    unmarshalledObject.IotSiteWise = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("iotTopicPublish", targetDepth))
                 {
                     var unmarshaller = IotTopicPublishActionUnmarshaller.Instance;

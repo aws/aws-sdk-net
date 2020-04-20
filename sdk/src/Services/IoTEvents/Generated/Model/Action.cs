@@ -37,6 +37,7 @@ namespace Amazon.IoTEvents.Model
         private DynamoDBv2Action _dynamodBv2;
         private FirehoseAction _firehose;
         private IotEventsAction _iotEvents;
+        private IotSiteWiseAction _iotSiteWise;
         private IotTopicPublishAction _iotTopicPublish;
         private LambdaAction _lambda;
         private ResetTimerAction _resetTimer;
@@ -145,6 +146,25 @@ namespace Amazon.IoTEvents.Model
         internal bool IsSetIotEvents()
         {
             return this._iotEvents != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IotSiteWise. 
+        /// <para>
+        /// Sends information about the detector model instance and the event that triggered the
+        /// action to an AWS IoT SiteWise asset property.
+        /// </para>
+        /// </summary>
+        public IotSiteWiseAction IotSiteWise
+        {
+            get { return this._iotSiteWise; }
+            set { this._iotSiteWise = value; }
+        }
+
+        // Check to see if IotSiteWise property is set
+        internal bool IsSetIotSiteWise()
+        {
+            return this._iotSiteWise != null;
         }
 
         /// <summary>
