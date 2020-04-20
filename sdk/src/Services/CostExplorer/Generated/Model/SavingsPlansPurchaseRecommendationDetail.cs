@@ -55,6 +55,7 @@ namespace Amazon.CostExplorer.Model
         /// The <code>AccountID</code> the recommendation is generated for.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -74,6 +75,7 @@ namespace Amazon.CostExplorer.Model
         /// potential savings.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string CurrencyCode
         {
             get { return this._currencyCode; }
@@ -93,6 +95,7 @@ namespace Amazon.CostExplorer.Model
         /// usage type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string CurrentAverageHourlyOnDemandSpend
         {
             get { return this._currentAverageHourlyOnDemandSpend; }
@@ -112,6 +115,7 @@ namespace Amazon.CostExplorer.Model
         /// usage type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string CurrentMaximumHourlyOnDemandSpend
         {
             get { return this._currentMaximumHourlyOnDemandSpend; }
@@ -131,6 +135,7 @@ namespace Amazon.CostExplorer.Model
         /// usage type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string CurrentMinimumHourlyOnDemandSpend
         {
             get { return this._currentMinimumHourlyOnDemandSpend; }
@@ -149,6 +154,7 @@ namespace Amazon.CostExplorer.Model
         /// The estimated utilization of the recommended Savings Plans.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedAverageUtilization
         {
             get { return this._estimatedAverageUtilization; }
@@ -167,6 +173,7 @@ namespace Amazon.CostExplorer.Model
         /// The estimated monthly savings amount, based on the recommended Savings Plans.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedMonthlySavingsAmount
         {
             get { return this._estimatedMonthlySavingsAmount; }
@@ -186,6 +193,7 @@ namespace Amazon.CostExplorer.Model
         /// Plans, over the length of the lookback period.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedOnDemandCost
         {
             get { return this._estimatedOnDemandCost; }
@@ -205,6 +213,7 @@ namespace Amazon.CostExplorer.Model
         /// on your usage of the selected time period and the Savings Plans you own. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedOnDemandCostWithCurrentCommitment
         {
             get { return this._estimatedOnDemandCostWithCurrentCommitment; }
@@ -224,6 +233,7 @@ namespace Amazon.CostExplorer.Model
         /// This is calculated as <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedROI
         {
             get { return this._estimatedROI; }
@@ -243,6 +253,7 @@ namespace Amazon.CostExplorer.Model
         /// of the lookback period.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedSavingsAmount
         {
             get { return this._estimatedSavingsAmount; }
@@ -262,6 +273,7 @@ namespace Amazon.CostExplorer.Model
         /// usage over the lookback period.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedSavingsPercentage
         {
             get { return this._estimatedSavingsPercentage; }
@@ -280,6 +292,7 @@ namespace Amazon.CostExplorer.Model
         /// The cost of the recommended Savings Plans over the length of the lookback period.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedSPCost
         {
             get { return this._estimatedSPCost; }
@@ -299,6 +312,7 @@ namespace Amazon.CostExplorer.Model
         /// based on the usage during the lookback period.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string HourlyCommitmentToPurchase
         {
             get { return this._hourlyCommitmentToPurchase; }
@@ -335,6 +349,7 @@ namespace Amazon.CostExplorer.Model
         /// The upfront cost of the recommended Savings Plans, based on the selected payment option.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string UpfrontCost
         {
             get { return this._upfrontCost; }

@@ -48,6 +48,7 @@ namespace Amazon.CostExplorer.Model
         ///  Hourly public On Demand rate for the instance type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string HourlyOnDemandRate
         {
             get { return this._hourlyOnDemandRate; }
@@ -66,6 +67,7 @@ namespace Amazon.CostExplorer.Model
         ///  The type of Amazon Web Services instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string InstanceType
         {
             get { return this._instanceType; }
@@ -84,6 +86,7 @@ namespace Amazon.CostExplorer.Model
         ///  Memory capacity of Amazon Web Services instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Memory
         {
             get { return this._memory; }
@@ -102,6 +105,7 @@ namespace Amazon.CostExplorer.Model
         ///  Network performance capacity of the Amazon Web Services instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string NetworkPerformance
         {
             get { return this._networkPerformance; }
@@ -121,6 +125,7 @@ namespace Amazon.CostExplorer.Model
         /// of operating system, license model, and software on an instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Platform
         {
             get { return this._platform; }
@@ -139,6 +144,7 @@ namespace Amazon.CostExplorer.Model
         ///  The Amazon Web Services Region of the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Region
         {
             get { return this._region; }
@@ -157,6 +163,7 @@ namespace Amazon.CostExplorer.Model
         ///  The SKU of the product.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Sku
         {
             get { return this._sku; }
@@ -175,6 +182,7 @@ namespace Amazon.CostExplorer.Model
         ///  The disk storage of the Amazon Web Services instance (Not EBS storage).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Storage
         {
             get { return this._storage; }
@@ -193,6 +201,7 @@ namespace Amazon.CostExplorer.Model
         ///  Number of VCPU cores in the Amazon Web Services instance type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Vcpu
         {
             get { return this._vcpu; }

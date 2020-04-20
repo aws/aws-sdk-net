@@ -32,8 +32,9 @@ namespace Amazon.CostExplorer.Model
     /// Retrieves the reservation coverage for your account. This enables you to see how much
     /// of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database
     /// Service, or Amazon Redshift usage is covered by a reservation. An organization's master
-    /// account can see the coverage of the associated member accounts. For any time period,
-    /// you can filter data about reservation usage by the following dimensions:
+    /// account can see the coverage of the associated member accounts. This supports dimensions,
+    /// Cost Categories, and nested expressions. For any time period, you can filter data
+    /// about reservation usage by the following dimensions:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -161,6 +162,10 @@ namespace Amazon.CostExplorer.Model
         ///  
         /// <para>
         /// If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.
+        /// </para>
+        ///  
+        /// <para>
+        /// Cost category is also supported.
         /// </para>
         /// </summary>
         public Expression Filter
@@ -294,6 +299,7 @@ namespace Amazon.CostExplorer.Model
         /// from a previous call has more results than the maximum page size.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
         public string NextPageToken
         {
             get { return this._nextPageToken; }

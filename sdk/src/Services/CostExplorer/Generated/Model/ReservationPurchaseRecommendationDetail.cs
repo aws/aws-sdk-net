@@ -58,6 +58,7 @@ namespace Amazon.CostExplorer.Model
         /// The account that this RI recommendation is for.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -77,6 +78,7 @@ namespace Amazon.CostExplorer.Model
         /// period. AWS uses this to calculate your recommended reservation purchases.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string AverageNormalizedUnitsUsedPerHour
         {
             get { return this._averageNormalizedUnitsUsedPerHour; }
@@ -96,6 +98,7 @@ namespace Amazon.CostExplorer.Model
         /// AWS uses this to calculate your recommended reservation purchases.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string AverageNumberOfInstancesUsedPerHour
         {
             get { return this._averageNumberOfInstancesUsedPerHour; }
@@ -115,6 +118,7 @@ namespace Amazon.CostExplorer.Model
         /// reservation purchases.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string AverageUtilization
         {
             get { return this._averageUtilization; }
@@ -133,6 +137,7 @@ namespace Amazon.CostExplorer.Model
         /// The currency code that AWS used to calculate the costs for this instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string CurrencyCode
         {
             get { return this._currencyCode; }
@@ -152,6 +157,7 @@ namespace Amazon.CostExplorer.Model
         /// in months.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedBreakEvenInMonths
         {
             get { return this._estimatedBreakEvenInMonths; }
@@ -170,6 +176,7 @@ namespace Amazon.CostExplorer.Model
         /// How much AWS estimates that you spend on On-Demand Instances in a month.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedMonthlyOnDemandCost
         {
             get { return this._estimatedMonthlyOnDemandCost; }
@@ -188,6 +195,7 @@ namespace Amazon.CostExplorer.Model
         /// How much AWS estimates that this specific recommendation could save you in a month.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedMonthlySavingsAmount
         {
             get { return this._estimatedMonthlySavingsAmount; }
@@ -207,6 +215,7 @@ namespace Amazon.CostExplorer.Model
         /// as a percentage of your overall costs.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedMonthlySavingsPercentage
         {
             get { return this._estimatedMonthlySavingsPercentage; }
@@ -226,6 +235,7 @@ namespace Amazon.CostExplorer.Model
         /// historical period if you had a reservation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedReservationCostForLookbackPeriod
         {
             get { return this._estimatedReservationCostForLookbackPeriod; }
@@ -263,6 +273,7 @@ namespace Amazon.CostExplorer.Model
         /// period. AWS uses this to calculate your recommended reservation purchases.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string MaximumNormalizedUnitsUsedPerHour
         {
             get { return this._maximumNormalizedUnitsUsedPerHour; }
@@ -282,6 +293,7 @@ namespace Amazon.CostExplorer.Model
         /// AWS uses this to calculate your recommended reservation purchases.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string MaximumNumberOfInstancesUsedPerHour
         {
             get { return this._maximumNumberOfInstancesUsedPerHour; }
@@ -301,6 +313,7 @@ namespace Amazon.CostExplorer.Model
         /// period. AWS uses this to calculate your recommended reservation purchases.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string MinimumNormalizedUnitsUsedPerHour
         {
             get { return this._minimumNormalizedUnitsUsedPerHour; }
@@ -320,6 +333,7 @@ namespace Amazon.CostExplorer.Model
         /// AWS uses this to calculate your recommended reservation purchases.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string MinimumNumberOfInstancesUsedPerHour
         {
             get { return this._minimumNumberOfInstancesUsedPerHour; }
@@ -338,6 +352,7 @@ namespace Amazon.CostExplorer.Model
         /// The number of normalized units that AWS recommends that you purchase.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string RecommendedNormalizedUnitsToPurchase
         {
             get { return this._recommendedNormalizedUnitsToPurchase; }
@@ -356,6 +371,7 @@ namespace Amazon.CostExplorer.Model
         /// The number of instances that AWS recommends that you purchase.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string RecommendedNumberOfInstancesToPurchase
         {
             get { return this._recommendedNumberOfInstancesToPurchase; }
@@ -374,6 +390,7 @@ namespace Amazon.CostExplorer.Model
         /// How much purchasing this instance costs you on a monthly basis.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string RecurringStandardMonthlyCost
         {
             get { return this._recurringStandardMonthlyCost; }
@@ -392,6 +409,7 @@ namespace Amazon.CostExplorer.Model
         /// How much purchasing this instance costs you upfront.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string UpfrontCost
         {
             get { return this._upfrontCost; }

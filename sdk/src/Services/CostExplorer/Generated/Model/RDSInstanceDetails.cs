@@ -66,6 +66,7 @@ namespace Amazon.CostExplorer.Model
         /// The database edition that the recommended reservation supports.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string DatabaseEdition
         {
             get { return this._databaseEdition; }
@@ -84,6 +85,7 @@ namespace Amazon.CostExplorer.Model
         /// The database engine that the recommended reservation supports.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string DatabaseEngine
         {
             get { return this._databaseEngine; }
@@ -103,6 +105,7 @@ namespace Amazon.CostExplorer.Model
         /// reservation with a backup in a second Availability Zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string DeploymentOption
         {
             get { return this._deploymentOption; }
@@ -121,6 +124,7 @@ namespace Amazon.CostExplorer.Model
         /// The instance family of the recommended reservation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Family
         {
             get { return this._family; }
@@ -139,6 +143,7 @@ namespace Amazon.CostExplorer.Model
         /// The type of instance that AWS recommends.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string InstanceType
         {
             get { return this._instanceType; }
@@ -157,6 +162,7 @@ namespace Amazon.CostExplorer.Model
         /// The license model that the recommended reservation supports.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string LicenseModel
         {
             get { return this._licenseModel; }
@@ -175,6 +181,7 @@ namespace Amazon.CostExplorer.Model
         /// The AWS Region of the recommended reservation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Region
         {
             get { return this._region; }

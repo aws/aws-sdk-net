@@ -60,6 +60,7 @@ namespace Amazon.CostExplorer.Model
         /// The value of a dimension with a specific attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Value
         {
             get { return this._value; }

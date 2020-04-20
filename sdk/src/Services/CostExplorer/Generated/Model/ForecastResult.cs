@@ -43,6 +43,7 @@ namespace Amazon.CostExplorer.Model
         /// The mean value of the forecast.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string MeanValue
         {
             get { return this._meanValue; }
@@ -61,6 +62,7 @@ namespace Amazon.CostExplorer.Model
         /// The lower limit for the prediction interval. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string PredictionIntervalLowerBound
         {
             get { return this._predictionIntervalLowerBound; }
@@ -79,6 +81,7 @@ namespace Amazon.CostExplorer.Model
         /// The upper limit for the prediction interval. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string PredictionIntervalUpperBound
         {
             get { return this._predictionIntervalUpperBound; }

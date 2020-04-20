@@ -44,6 +44,7 @@ namespace Amazon.CostExplorer.Model
         /// The account that this recommendation is for.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string AccountId
         {
             get { return this._accountId; }

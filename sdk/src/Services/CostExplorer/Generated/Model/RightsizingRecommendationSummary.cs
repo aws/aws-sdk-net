@@ -43,6 +43,7 @@ namespace Amazon.CostExplorer.Model
         ///  Estimated total savings resulting from modifications, on a monthly basis.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedTotalMonthlySavingsAmount
         {
             get { return this._estimatedTotalMonthlySavingsAmount; }
@@ -61,6 +62,7 @@ namespace Amazon.CostExplorer.Model
         ///  The currency code that Amazon Web Services used to calculate the savings.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string SavingsCurrencyCode
         {
             get { return this._savingsCurrencyCode; }
@@ -80,6 +82,7 @@ namespace Amazon.CostExplorer.Model
         /// On Demand costs associated with these instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string SavingsPercentage
         {
             get { return this._savingsPercentage; }
@@ -98,6 +101,7 @@ namespace Amazon.CostExplorer.Model
         ///  Total number of instance recommendations.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string TotalRecommendationCount
         {
             get { return this._totalRecommendationCount; }

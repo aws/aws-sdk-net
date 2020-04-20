@@ -49,6 +49,7 @@ namespace Amazon.CostExplorer.Model
         ///  The currency code that Amazon Web Services used to calculate the costs for this instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string CurrencyCode
         {
             get { return this._currencyCode; }
@@ -67,6 +68,7 @@ namespace Amazon.CostExplorer.Model
         ///  Current On Demand cost of operating this instance on a monthly basis.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string MonthlyCost
         {
             get { return this._monthlyCost; }
@@ -85,6 +87,7 @@ namespace Amazon.CostExplorer.Model
         ///  Number of hours during the lookback period billed at On Demand rates.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string OnDemandHoursInLookbackPeriod
         {
             get { return this._onDemandHoursInLookbackPeriod; }
@@ -103,6 +106,7 @@ namespace Amazon.CostExplorer.Model
         ///  Number of hours during the lookback period covered by reservations.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string ReservationCoveredHoursInLookbackPeriod
         {
             get { return this._reservationCoveredHoursInLookbackPeriod; }
@@ -139,6 +143,7 @@ namespace Amazon.CostExplorer.Model
         /// Resource ID of the current instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -175,6 +180,7 @@ namespace Amazon.CostExplorer.Model
         /// Number of hours during the lookback period covered by Savings Plans.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string SavingsPlansCoveredHoursInLookbackPeriod
         {
             get { return this._savingsPlansCoveredHoursInLookbackPeriod; }
@@ -211,6 +217,7 @@ namespace Amazon.CostExplorer.Model
         ///  The total number of hours the instance ran during the lookback period.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string TotalRunningHoursInLookbackPeriod
         {
             get { return this._totalRunningHoursInLookbackPeriod; }

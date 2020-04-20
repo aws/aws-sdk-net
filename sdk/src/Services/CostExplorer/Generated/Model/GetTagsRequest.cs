@@ -46,6 +46,7 @@ namespace Amazon.CostExplorer.Model
         /// from a previous call has more results than the maximum page size.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
         public string NextPageToken
         {
             get { return this._nextPageToken; }
@@ -64,6 +65,7 @@ namespace Amazon.CostExplorer.Model
         /// The value that you want to search for.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string SearchString
         {
             get { return this._searchString; }
@@ -82,6 +84,7 @@ namespace Amazon.CostExplorer.Model
         /// The key of the tag that you want to return values for.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string TagKey
         {
             get { return this._tagKey; }

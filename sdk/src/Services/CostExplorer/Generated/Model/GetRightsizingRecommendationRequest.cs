@@ -68,6 +68,7 @@ namespace Amazon.CostExplorer.Model
         /// The pagination token that indicates the next set of results that you want to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
         public string NextPageToken
         {
             get { return this._nextPageToken; }
@@ -106,7 +107,7 @@ namespace Amazon.CostExplorer.Model
         /// is "<code>AmazonEC2</code>".
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string Service
         {
             get { return this._service; }

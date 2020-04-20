@@ -41,10 +41,11 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CoveragePercentage. 
         /// <para>
-        /// The percentage of your existing Savings Planscovered usage, divided by all of your
+        /// The percentage of your existing Savings Plans covered usage, divided by all of your
         /// eligible Savings Plans usage in an account(or set of accounts).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string CoveragePercentage
         {
             get { return this._coveragePercentage; }
@@ -63,6 +64,7 @@ namespace Amazon.CostExplorer.Model
         /// The cost of your Amazon Web Services usage at the public On-Demand rate.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string OnDemandCost
         {
             get { return this._onDemandCost; }
@@ -81,6 +83,7 @@ namespace Amazon.CostExplorer.Model
         /// The amount of your Amazon Web Services usage that is covered by a Savings Plans.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string SpendCoveredBySavingsPlans
         {
             get { return this._spendCoveredBySavingsPlans; }
@@ -99,6 +102,7 @@ namespace Amazon.CostExplorer.Model
         /// The total cost of your Amazon Web Services usage, regardless of your purchase option.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string TotalCost
         {
             get { return this._totalCost; }

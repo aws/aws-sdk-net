@@ -42,6 +42,7 @@ namespace Amazon.CostExplorer.Model
         ///  The time stamp for when Amazon Web Services made this recommendation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string GenerationTimestamp
         {
             get { return this._generationTimestamp; }
@@ -79,6 +80,7 @@ namespace Amazon.CostExplorer.Model
         ///  The ID for this specific recommendation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string RecommendationId
         {
             get { return this._recommendationId; }

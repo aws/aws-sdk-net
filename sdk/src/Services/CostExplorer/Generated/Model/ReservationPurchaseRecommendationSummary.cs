@@ -43,6 +43,7 @@ namespace Amazon.CostExplorer.Model
         /// The currency code used for this recommendation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string CurrencyCode
         {
             get { return this._currencyCode; }
@@ -61,6 +62,7 @@ namespace Amazon.CostExplorer.Model
         /// The total amount that AWS estimates that this recommendation could save you in a month.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string TotalEstimatedMonthlySavingsAmount
         {
             get { return this._totalEstimatedMonthlySavingsAmount; }
@@ -80,6 +82,7 @@ namespace Amazon.CostExplorer.Model
         /// as a percentage of your costs.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string TotalEstimatedMonthlySavingsPercentage
         {
             get { return this._totalEstimatedMonthlySavingsPercentage; }

@@ -41,6 +41,7 @@ namespace Amazon.CostExplorer.Model
         ///  The currency code that Amazon Web Services used to calculate the costs for this instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string CurrencyCode
         {
             get { return this._currencyCode; }
@@ -59,6 +60,7 @@ namespace Amazon.CostExplorer.Model
         ///  Estimated savings resulting from modification, on a monthly basis.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedMonthlySavings
         {
             get { return this._estimatedMonthlySavings; }

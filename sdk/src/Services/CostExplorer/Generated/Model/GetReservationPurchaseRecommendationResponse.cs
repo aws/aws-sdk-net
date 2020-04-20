@@ -61,6 +61,7 @@ namespace Amazon.CostExplorer.Model
         /// The pagination token for the next set of retrievable results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
         public string NextPageToken
         {
             get { return this._nextPageToken; }

@@ -43,6 +43,7 @@ namespace Amazon.CostExplorer.Model
         /// Plans, when compared to the On-Demand equivalent of the same usage.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string NetSavings
         {
             get { return this._netSavings; }
@@ -62,6 +63,7 @@ namespace Amazon.CostExplorer.Model
         /// rate.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string OnDemandCostEquivalent
         {
             get { return this._onDemandCostEquivalent; }

@@ -43,7 +43,7 @@ namespace Amazon.CostExplorer.Model
         /// cost and usage data from the start date up to, but not including, <code>2017-05-01</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=40)]
         public string End
         {
             get { return this._end; }
@@ -65,7 +65,7 @@ namespace Amazon.CostExplorer.Model
         /// date.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=40)]
         public string Start
         {
             get { return this._start; }

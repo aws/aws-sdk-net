@@ -28,18 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// <important> 
-    /// <para>
-    ///  <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is
-    /// subject to change. Your use of Cost Categories is subject to the Beta Service Participation
-    /// terms of the <a href="http://aws.amazon.com/service-terms/">AWS Service Terms</a>
-    /// (Section 1.10).</b> </i> 
-    /// </para>
-    ///  </important> 
-    /// <para>
     /// A reference to a Cost Category containing only enough information to identify the
     /// Cost Category.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// You can use this information to retrieve the full Cost Category information using
@@ -52,11 +43,12 @@ namespace Amazon.CostExplorer.Model
         private string _effectiveEnd;
         private string _effectiveStart;
         private string _name;
+        private int? _numberOfRules;
 
         /// <summary>
         /// Gets and sets the property CostCategoryArn. 
         /// <para>
-        ///  The unique identifier for your Cost Category Reference. 
+        ///  The unique identifier for your Cost Category. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -124,6 +116,25 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfRules. 
+        /// <para>
+        ///  The number of rules associated with a specific Cost Category. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int NumberOfRules
+        {
+            get { return this._numberOfRules.GetValueOrDefault(); }
+            set { this._numberOfRules = value; }
+        }
+
+        // Check to see if NumberOfRules property is set
+        internal bool IsSetNumberOfRules()
+        {
+            return this._numberOfRules.HasValue; 
         }
 
     }

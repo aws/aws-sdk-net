@@ -31,8 +31,9 @@ namespace Amazon.CostExplorer.Model
     /// Container for the parameters to the GetSavingsPlansCoverage operation.
     /// Retrieves the Savings Plans covered for your account. This enables you to see how
     /// much of your cost is covered by a Savings Plan. An organization’s master account can
-    /// see the coverage of the associated member accounts. For any time period, you can filter
-    /// data for Savings Plans usage with the following dimensions:
+    /// see the coverage of the associated member accounts. This supports dimensions, Cost
+    /// Categories, and nested expressions. For any time period, you can filter data for Savings
+    /// Plans usage with the following dimensions:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -93,6 +94,10 @@ namespace Amazon.CostExplorer.Model
         ///  <code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
         /// object as the other operations, but only <code>AND</code> is supported among each
         /// dimension. If there are multiple values for a dimension, they are OR'd together.
+        /// </para>
+        ///  
+        /// <para>
+        /// Cost category is also supported.
         /// </para>
         /// </summary>
         public Expression Filter
@@ -196,6 +201,7 @@ namespace Amazon.CostExplorer.Model
         /// when the response from a previous call has more results than the maximum page size.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

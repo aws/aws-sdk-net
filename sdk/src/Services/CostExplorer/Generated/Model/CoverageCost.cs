@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// How much it cost to run an instance.
+    /// How much it costs to run an instance.
     /// </summary>
     public partial class CoverageCost
     {
@@ -37,7 +37,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property OnDemandCost. 
         /// <para>
-        /// How much an On-Demand instance cost.
+        /// How much an On-Demand Instance costs.
         /// </para>
         /// </summary>
         public string OnDemandCost

@@ -71,6 +71,7 @@ namespace Amazon.CostExplorer.Model
         /// The account ID that is associated with the recommendation. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -129,6 +130,7 @@ namespace Amazon.CostExplorer.Model
         /// The pagination token that indicates the next set of results that you want to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
         public string NextPageToken
         {
             get { return this._nextPageToken; }
@@ -184,7 +186,7 @@ namespace Amazon.CostExplorer.Model
         /// The specific service that you want recommendations for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string Service
         {
             get { return this._service; }

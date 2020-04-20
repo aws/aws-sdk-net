@@ -119,6 +119,7 @@ namespace Amazon.CostExplorer.Model
         /// when the response from a previous call has more results than the maximum page size.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
         public string NextPageToken
         {
             get { return this._nextPageToken; }

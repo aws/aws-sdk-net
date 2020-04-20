@@ -100,7 +100,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SavingsPlansPurchaseRecommendationDetails. 
         /// <para>
-        /// Details for the Savings Plans we recommend you to purchase to cover existing, Savings
+        /// Details for the Savings Plans we recommend that you purchase to cover existing Savings
         /// Plans eligible workloads.
         /// </para>
         /// </summary>

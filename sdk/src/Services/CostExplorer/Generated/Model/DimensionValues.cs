@@ -34,6 +34,7 @@ namespace Amazon.CostExplorer.Model
     public partial class DimensionValues
     {
         private Dimension _key;
+        private List<string> _matchOptions = new List<string>();
         private List<string> _values = new List<string>();
 
         /// <summary>
@@ -56,16 +57,30 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MatchOptions. 
+        /// <para>
+        /// The match options that you can use to filter your results. <code>MatchOptions</code>
+        /// is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code>
+        /// is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
+        /// </para>
+        /// </summary>
+        public List<string> MatchOptions
+        {
+            get { return this._matchOptions; }
+            set { this._matchOptions = value; }
+        }
+
+        // Check to see if MatchOptions property is set
+        internal bool IsSetMatchOptions()
+        {
+            return this._matchOptions != null && this._matchOptions.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
         /// The metadata values that you can use to filter and group your results. You can use
         /// <code>GetDimensionValues</code> to find specific values.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values for the <code>SERVICE</code> dimension are <code>Amazon Elastic Compute
-        /// Cloud - Compute</code>, <code>Amazon Elasticsearch Service</code>, <code>Amazon ElastiCache</code>,
-        /// <code>Amazon Redshift</code>, and <code>Amazon Relational Database Service</code>.
         /// </para>
         /// </summary>
         public List<string> Values

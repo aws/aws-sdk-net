@@ -42,6 +42,7 @@ namespace Amazon.CostExplorer.Model
         /// The string that represents a key for a specified group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Key
         {
             get { return this._key; }

@@ -74,6 +74,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EffectiveOn);
                 }
 
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("NextToken");

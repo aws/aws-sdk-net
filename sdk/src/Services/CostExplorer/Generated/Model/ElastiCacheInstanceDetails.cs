@@ -63,6 +63,7 @@ namespace Amazon.CostExplorer.Model
         /// The instance family of the recommended reservation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Family
         {
             get { return this._family; }
@@ -81,6 +82,7 @@ namespace Amazon.CostExplorer.Model
         /// The type of node that AWS recommends.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string NodeType
         {
             get { return this._nodeType; }
@@ -99,6 +101,7 @@ namespace Amazon.CostExplorer.Model
         /// The description of the recommended reservation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string ProductDescription
         {
             get { return this._productDescription; }
@@ -117,6 +120,7 @@ namespace Amazon.CostExplorer.Model
         /// The AWS Region of the recommended reservation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Region
         {
             get { return this._region; }
