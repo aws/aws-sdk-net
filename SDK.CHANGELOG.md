@@ -1,3 +1,20 @@
+### 3.3.721.0 (2020-04-20 18:49 UTC)
+* ApiGatewayV2 (3.3.107.0)
+	* You can now export an OpenAPI 3.0 compliant API definition file for Amazon API Gateway HTTP APIs using the Export API.
+* CostExplorer (3.3.108.0)
+	* Cost Categories API is now General Available with new dimensions and operations support. You can map costs by account name, service, and charge type dimensions as well as use contains, starts with, and ends with operations. Cost Categories can also be used in RI and SP coverage reports.
+* Glue (3.3.117.0)
+	* Added a new ConnectionType "KAFKA" and a ConnectionProperty "KAFKA_BOOTSTRAP_SERVERS" to support Kafka connection.
+* IoTEvents (3.3.105.0)
+	* API update that allows users to add AWS Iot SiteWise actions while creating Detector Model in AWS Iot Events
+* Synthetics (3.3.100.0)
+	* Introducing CloudWatch Synthetics. This is the first public release of CloudWatch Synthetics.
+* Core 3.3.106.7
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.720.0 (2020-04-17 18:12 UTC)
 * FraudDetector (3.3.101.0)
 	* Added support for a new rule engine execution mode. Customers will be able to configure their detector versions to evaluate all rules and return outcomes from all 'matched' rules in the GetPrediction API response. Added support for deleting Detectors (DeleteDetector) and Rule Versions (DeleteRuleVersion).
