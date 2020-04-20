@@ -529,10 +529,10 @@ uses the service models defined in the **generator\ServiceModels** folder.
 [sdk-issues]: https://github.com/aws/aws-sdk-net/issues
 [sdk-license]: http://aws.amazon.com/apache2.0/
 [docs-api]: http://docs.aws.amazon.com/sdkfornet/v3/apidocs/Index.html
-[docs-signup]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-setup.html
-[aws-iam-credentials]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-roles.html
-[docs-guide]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/welcome.html
-[credentials-management]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-config-creds.html
+[docs-signup]: http://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/net-dg-setup.html
+[aws-iam-credentials]: http://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/net-dg-hosm.html
+[docs-guide]: http://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html
+[credentials-management]: http://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/net-dg-config-creds.html
 [dotnet-blog]: http://blogs.aws.amazon.com/net/
 [github-aws-sdk-net-v2]: https://github.com/aws/aws-sdk-net/tree/aws-sdk-net-v2
 
