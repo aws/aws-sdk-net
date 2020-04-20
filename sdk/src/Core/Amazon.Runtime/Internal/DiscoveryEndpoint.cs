@@ -12,9 +12,9 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 using System;
-using System.Collections.Generic;
-using Amazon.Util;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Amazon.Runtime.Internal
 {
@@ -37,11 +37,12 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <param name="address">The address of the endpoint</param>        
         /// <param name="cachePeriodInMinutes">The cache period for the endpoint in minutes</param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("AwsSdkRules", "CR1003:PreventDateTimeNowUseRule", Justification = "The DateTime value is never used on the server.")]
+        [SuppressMessage("AwsSdkRules", "CR1003:PreventDateTimeNowUseRule",
+            Justification = "The DateTime value is never used on the server.")]
         protected DiscoveryEndpointBase(string address, long cachePeriodInMinutes)
         {
-            _address = address;
-            _cachePeriodInMinutes = cachePeriodInMinutes;
+            Address = address;
+            CachePeriodInMinutes = cachePeriodInMinutes;
             _createdOn = DateTime.UtcNow;
         }
 
@@ -50,13 +51,24 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         public string Address
         {
-            get
-            {
-                return _address;
-            }
+            get { return _address; }
             protected set
             {
-                _address = value;
+                var address = value;
+
+                // A null endpoint is allowed when endpoint discovery is not required.
+                if (address != null)
+                {
+                    // Only http schemes are allowed, and we assume that if it does not start with an http scheme,
+                    // it should be defaulted to https.
+                    if (!address.StartsWith("http://", StringComparison.OrdinalIgnoreCase) &&
+                        !address.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
+                    {
+                        address = "https://" + address;
+                    }
+                }
+
+                _address = address;
             }
         }
 
@@ -65,21 +77,16 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         public long CachePeriodInMinutes
         {
-            get
-            {
-                return _cachePeriodInMinutes;
-            }
-            protected set
-            {
-                _cachePeriodInMinutes = value;
-            }
+            get { return _cachePeriodInMinutes; }
+            protected set { _cachePeriodInMinutes = value; }
         }
 
         /// <summary>
         /// Calculates if this endpoint has expired
         /// </summary>
         /// <returns>A boolean value indicating if the cache period has expired</returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("AwsSdkRules", "CR1003:PreventDateTimeNowUseRule", Justification = "The DateTime value is never used on the server.")]
+        [SuppressMessage("AwsSdkRules", "CR1003:PreventDateTimeNowUseRule",
+            Justification = "The DateTime value is never used on the server.")]
         public bool HasExpired()
         {
             TimeSpan timespan = DateTime.UtcNow - _createdOn;
@@ -89,7 +96,8 @@ namespace Amazon.Runtime.Internal
         /// <summary>
         /// Extends the endpoint expiration by the specified number of minutes from now.
         /// </summary>        
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("AwsSdkRules", "CR1003:PreventDateTimeNowUseRule", Justification = "The DateTime value is never used on the server.")]
+        [SuppressMessage("AwsSdkRules", "CR1003:PreventDateTimeNowUseRule",
+            Justification = "The DateTime value is never used on the server.")]
         public void ExtendExpiration(long minutes)
         {
             //Lock for this instance of the object against multiple extends
@@ -97,7 +105,7 @@ namespace Amazon.Runtime.Internal
             {
                 CachePeriodInMinutes = minutes;
                 _createdOn = DateTime.UtcNow;
-            }            
+            }
         }
     }
 

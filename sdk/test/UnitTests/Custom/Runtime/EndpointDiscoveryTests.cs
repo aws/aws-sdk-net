@@ -12,19 +12,22 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 using Amazon;
+using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.Model;
+using Amazon.DynamoDBv2.Model.Internal.MarshallTransformations;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.DynamoDBv2;
-using Amazon.DynamoDBv2.Model;
-using Amazon.DynamoDBv2.Model.Internal.MarshallTransformations;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
 using AWSSDK_DotNet35.UnitTests;
-using System.Globalization;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ExecutionContext = Amazon.Runtime.Internal.ExecutionContext;
 
 namespace AWSSDK.UnitTests
 {
@@ -46,22 +49,27 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(10, config.EndpointDiscoveryCacheLimit);
         }
 
-        [TestMethod]
+        [DataTestMethod]
+        [DataRow(null, "https://test123.amazonaws.com/shared/")]
+        [DataRow("http://test123.amazonaws.com/shared", "http://test123.amazonaws.com/shared/")]
+        [DataRow("Http://test123.amazonaws.com/shared", "http://test123.amazonaws.com/shared/")]
+        [DataRow("test123.amazonaws.com/shared", "https://test123.amazonaws.com/shared/")]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        public void RequiredNoIdentifiers()
+        public void RequiredNoIdentifiers(string endpoint, string expectedEndpoint)
         {
             var config = SetupConfig();
-            var client = new EndpointDiscoveryTestClient(config);
+            var client = new EndpointDiscoveryTestClient(config, baseUrl: endpoint);
             var executionContext = CreateExecutionContext(client, config, true, null);
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
-            Assert.AreEqual("https://test123.amazonaws.com/shared/", executionContext.RequestContext.Request.Endpoint.ToString());
+            Assert.AreEqual(expectedEndpoint,
+                executionContext.RequestContext.Request.Endpoint.ToString());
             Assert.AreEqual(1, client.FetchCallCount);
             Assert.AreEqual(1, client.CacheCount);
             var endpoints = client.WaitForCachedValue(CACHEKEY);
             Assert.IsNotNull(endpoints);
-            Assert.IsTrue(HasEndpointAddress(endpoints, "https://test123.amazonaws.com/shared/"));
+            Assert.IsTrue(HasEndpointAddress(endpoints, expectedEndpoint));
         }
 
         [TestMethod]
@@ -74,7 +82,8 @@ namespace AWSSDK.UnitTests
             var executionContext = CreateExecutionContext(client, config, true, null);
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
-            Assert.AreEqual("https://test123.amazonaws.com/shared/", executionContext.RequestContext.Request.Endpoint.ToString());
+            Assert.AreEqual("https://test123.amazonaws.com/shared/",
+                executionContext.RequestContext.Request.Endpoint.ToString());
             Assert.AreEqual(1, client.EndpointOperationCallCount);
             Assert.AreEqual(1, client.FetchCallCount);
             Assert.AreEqual(1, client.CacheCount);
@@ -83,7 +92,8 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(HasEndpointAddress(endpoints, "https://test123.amazonaws.com/shared/"));
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
-            Assert.AreEqual("https://test123.amazonaws.com/shared/", executionContext.RequestContext.Request.Endpoint.ToString());
+            Assert.AreEqual("https://test123.amazonaws.com/shared/",
+                executionContext.RequestContext.Request.Endpoint.ToString());
             Assert.AreEqual(2, client.EndpointOperationCallCount);
             Assert.AreEqual(1, client.FetchCallCount);
             Assert.AreEqual(1, client.CacheCount);
@@ -102,7 +112,8 @@ namespace AWSSDK.UnitTests
             var executionContext = CreateExecutionContext(client, config, true, null);
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
-            Assert.AreEqual("https://test123.amazonaws.com/shared/", executionContext.RequestContext.Request.Endpoint.ToString());
+            Assert.AreEqual("https://test123.amazonaws.com/shared/",
+                executionContext.RequestContext.Request.Endpoint.ToString());
             Assert.AreEqual(1, client.EndpointOperationCallCount);
             Assert.AreEqual(1, client.FetchCallCount);
             Assert.AreEqual(1, client.CacheCount);
@@ -119,7 +130,8 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(0, client.CacheCount);
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
-            Assert.AreEqual("https://test123.amazonaws.com/shared/", executionContext.RequestContext.Request.Endpoint.ToString());
+            Assert.AreEqual("https://test123.amazonaws.com/shared/",
+                executionContext.RequestContext.Request.Endpoint.ToString());
             Assert.AreEqual(3, client.EndpointOperationCallCount);
             Assert.AreEqual(2, client.FetchCallCount);
             Assert.AreEqual(1, client.CacheCount);
@@ -140,7 +152,8 @@ namespace AWSSDK.UnitTests
             var executionContext = CreateExecutionContext(client, config, true, identifiers);
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
-            Assert.AreEqual("https://test123.amazonaws.com/shared/CreateTable", executionContext.RequestContext.Request.Endpoint.ToString());
+            Assert.AreEqual("https://test123.amazonaws.com/shared/CreateTable",
+                executionContext.RequestContext.Request.Endpoint.ToString());
             Assert.AreEqual(1, client.FetchCallCount);
             Assert.AreEqual(1, client.CacheCount);
             var endpoints = client.WaitForCachedValue(CACHEKEY_IDENTIFIERS);
@@ -160,7 +173,8 @@ namespace AWSSDK.UnitTests
             var executionContext = CreateExecutionContext(client, config, true, identifiers);
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
-            Assert.AreEqual("https://test123.amazonaws.com/shared/CreateTable", executionContext.RequestContext.Request.Endpoint.ToString());
+            Assert.AreEqual("https://test123.amazonaws.com/shared/CreateTable",
+                executionContext.RequestContext.Request.Endpoint.ToString());
             Assert.AreEqual(1, client.EndpointOperationCallCount);
             Assert.AreEqual(1, client.FetchCallCount);
             Assert.AreEqual(1, client.CacheCount);
@@ -169,7 +183,8 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(HasEndpointAddress(endpoints, "https://test123.amazonaws.com/shared/CreateTable"));
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
-            Assert.AreEqual("https://test123.amazonaws.com/shared/CreateTable", executionContext.RequestContext.Request.Endpoint.ToString());
+            Assert.AreEqual("https://test123.amazonaws.com/shared/CreateTable",
+                executionContext.RequestContext.Request.Endpoint.ToString());
             Assert.AreEqual(2, client.EndpointOperationCallCount);
             Assert.AreEqual(1, client.FetchCallCount);
             Assert.AreEqual(1, client.CacheCount);
@@ -186,10 +201,9 @@ namespace AWSSDK.UnitTests
             identifiers.Add(IDENTIFIER_NAME, "test");
             var executionContext = CreateExecutionContext(client, config, true, identifiers);
 
-            Utils.AssertExceptionExpected(() =>
-            {
-                EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
-            }, typeof(AmazonClientException));
+            Utils.AssertExceptionExpected(
+                () => { EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false); },
+                typeof(AmazonClientException));
 
             Assert.AreEqual(1, client.EndpointOperationCallCount);
             Assert.AreEqual(1, client.FetchCallCount);
@@ -202,7 +216,7 @@ namespace AWSSDK.UnitTests
         public void NotRequiredNoIdentifiersFailedDiscoveryWait()
         {
             var config = SetupConfig(true);
-            var client = new EndpointDiscoveryTestClient(config, true);            
+            var client = new EndpointDiscoveryTestClient(config, true);
             var executionContext = CreateExecutionContext(client, config, false, null);
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
@@ -261,9 +275,9 @@ namespace AWSSDK.UnitTests
             var config = SetupConfig(true);
             var client = new EndpointDiscoveryTestClient(config, true);
             var executionContext = CreateExecutionContext(client, config, false, null);
-                        
+
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
-            
+
             //Verify the endpoint has not been touched by the endpoint discovery resolver
             Assert.IsNull(executionContext.RequestContext.Request.Endpoint);
         }
@@ -276,9 +290,9 @@ namespace AWSSDK.UnitTests
             var config = SetupConfig(true);
             var client = new EndpointDiscoveryTestClient(config);
             var executionContext = CreateExecutionContext(client, config, false, null);
-                        
+
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
-            
+
             //Verify the endpoint has not been touched by the endpoint discovery resolver
             Assert.IsNull(executionContext.RequestContext.Request.Endpoint);
         }
@@ -295,89 +309,84 @@ namespace AWSSDK.UnitTests
             var executionContext = CreateExecutionContext(client, config, false, identifiers);
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
-            
+
             //Verify the endpoint has not been touched by the endpoint discovery resolver
             Assert.IsNull(executionContext.RequestContext.Request.Endpoint);
         }
 
-        private ExecutionContext CreateExecutionContext(EndpointDiscoveryTestClient client, AmazonDynamoDBConfig config, bool required, SortedDictionary<string, string> identifiers)
-        {            
+        private ExecutionContext CreateExecutionContext(EndpointDiscoveryTestClient client, AmazonDynamoDBConfig config,
+            bool required, SortedDictionary<string, string> identifiers)
+        {
             var request = new CreateTableRequest();
-            var options = new InvokeOptions();            
+            var options = new InvokeOptions();
 
             options.RequestMarshaller = new CreateTableRequestMarshaller();
             options.EndpointDiscoveryMarshaller = new TestEndpointDiscoveryMarshaller(required, identifiers);
             client.SetOptionsEndpointOperation(options);
             var credentials = new ImmutableCredentials(AWS_ACCESS_KEY_ID, "test", "test");
-                                    
+
             var executionContext = new ExecutionContext(
                 new RequestContext(true, new NullSigner())
                 {
                     ClientConfig = config,
                     Request = options.RequestMarshaller.Marshall(request),
                     ImmutableCredentials = credentials,
-                    OriginalRequest = request, 
-                    Options = options                    
+                    OriginalRequest = request,
+                    Options = options
                 },
                 new ResponseContext()
             );
-                        
+
             return executionContext;
         }
 
         private static AmazonDynamoDBConfig SetupConfig(bool? endpointDiscoveryEnabled = null, int? cacheLimit = null)
-        {            
-            var config = new AmazonDynamoDBConfig();
-            config.RegionEndpoint = RegionEndpoint.USEast1;
-            //config.ServiceURL = "https://test123.amazonaws.com/";
+        {
+            var config = new AmazonDynamoDBConfig
+            {
+                RegionEndpoint = RegionEndpoint.USEast1
+            };
 
             if (endpointDiscoveryEnabled != null)
             {
                 config.EndpointDiscoveryEnabled = endpointDiscoveryEnabled.Value;
             }
-            
-            if(cacheLimit != null)
+
+            if (cacheLimit != null)
             {
                 config.EndpointDiscoveryCacheLimit = cacheLimit.Value;
             }
-            
+
             return config;
         }
 
         private bool HasEndpointAddress(IEnumerable<DiscoveryEndpointBase> endpoints, string address)
         {
-            foreach(var endpoint in endpoints)
-            {
-                if(endpoint.Address == null && address == null)
-                {
-                    return true;
-                }
-                else if (endpoint.Address != null && address != null && endpoint.Address == address)
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            return endpoints.Any(endpoint =>
+                string.Equals(endpoint?.Address, address, StringComparison.OrdinalIgnoreCase));
         }
     }
 
     public class EndpointDiscoveryTestClient : AmazonDynamoDBClient
     {
         private bool _failEndpointOperation = false;
+        private readonly string _baseUrl;
         public int FetchCallCount { get; set; }
         public int EndpointOperationCallCount { get; set; }
 
-        public EndpointDiscoveryTestClient(AmazonDynamoDBConfig config, bool failEndpointOperation = false) : base(config)
+
+        public EndpointDiscoveryTestClient(AmazonDynamoDBConfig config, bool failEndpointOperation = false,
+            string baseUrl = null) : base(config)
         {
             FetchCallCount = 0;
             _failEndpointOperation = failEndpointOperation;
+            _baseUrl = baseUrl ?? "https://test123.amazonaws.com/shared";
         }
 
         protected override IEnumerable<DiscoveryEndpointBase> EndpointOperation(EndpointOperationContextBase context)
         {
             EndpointOperationCallCount++;
-            
+
             return EndpointDiscoveryResolver.ResolveEndpoints(context, () =>
             {
                 FetchCallCount++;
@@ -387,7 +396,8 @@ namespace AWSSDK.UnitTests
                 }
 
                 var endpoints = new List<DiscoveryEndpointBase>();
-                endpoints.Add(new DiscoveryEndpoint(string.Format("https://test123.amazonaws.com/shared/{0}", context.OperationName), 5));
+                endpoints.Add(
+                    new DiscoveryEndpoint(string.Format("{0}/{1}", _baseUrl, context.OperationName), 5));
                 return endpoints;
             });
         }
@@ -399,10 +409,7 @@ namespace AWSSDK.UnitTests
 
         public int CacheCount
         {
-            get
-            {
-                return EndpointDiscoveryResolver.CacheCount;
-            }            
+            get { return EndpointDiscoveryResolver.CacheCount; }
         }
 
         public IEnumerable<DiscoveryEndpointBase> CacheValue(string key)
@@ -417,7 +424,7 @@ namespace AWSSDK.UnitTests
             {
                 if ((endpoints = CacheValue(key)) == null)
                 {
-                    System.Threading.Thread.Sleep(100);
+                    Thread.Sleep(100);
                     continue;
                 }
 
@@ -428,7 +435,8 @@ namespace AWSSDK.UnitTests
         }
     }
 
-    public class TestEndpointDiscoveryMarshaller : IMarshaller<EndpointDiscoveryDataBase, CreateTableRequest>, IMarshaller<EndpointDiscoveryDataBase, AmazonWebServiceRequest>
+    public class TestEndpointDiscoveryMarshaller : IMarshaller<EndpointDiscoveryDataBase, CreateTableRequest>,
+        IMarshaller<EndpointDiscoveryDataBase, AmazonWebServiceRequest>
     {
         private bool _required;
         private SortedDictionary<string, string> _identifiers;
@@ -447,14 +455,14 @@ namespace AWSSDK.UnitTests
         public EndpointDiscoveryDataBase Marshall(CreateTableRequest publicRequest)
         {
             var endpointDiscoveryData = new EndpointDiscoveryData(_required);
-            if(_identifiers != null)
+            if (_identifiers != null)
             {
                 foreach (var identifier in _identifiers)
                 {
                     endpointDiscoveryData.Identifiers.Add(identifier.Key, identifier.Value);
                 }
-            }           
-            
+            }
+
             return endpointDiscoveryData;
         }
     }
