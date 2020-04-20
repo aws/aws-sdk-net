@@ -70,6 +70,10 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>MONGODB</code> - Designates a connection to a MongoDB document database.
         /// </para>
         ///  </li> </ul> 

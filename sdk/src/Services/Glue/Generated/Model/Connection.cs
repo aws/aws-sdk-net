@@ -135,6 +135,12 @@ namespace Amazon.Glue.Model
         ///  <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data
         /// source.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs
+        /// that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka
+        /// client will connect to and bootstrap itself.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

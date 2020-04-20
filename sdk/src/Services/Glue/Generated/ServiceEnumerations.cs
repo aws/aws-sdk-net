@@ -245,6 +245,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionPropertyKey JDBC_ENGINE_VERSION = new ConnectionPropertyKey("JDBC_ENGINE_VERSION");
         /// <summary>
+        /// Constant KAFKA_BOOTSTRAP_SERVERS for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_BOOTSTRAP_SERVERS = new ConnectionPropertyKey("KAFKA_BOOTSTRAP_SERVERS");
+        /// <summary>
         /// Constant PASSWORD for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey PASSWORD = new ConnectionPropertyKey("PASSWORD");
@@ -306,6 +310,10 @@ namespace Amazon.Glue
         /// Constant JDBC for ConnectionType
         /// </summary>
         public static readonly ConnectionType JDBC = new ConnectionType("JDBC");
+        /// <summary>
+        /// Constant KAFKA for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType KAFKA = new ConnectionType("KAFKA");
         /// <summary>
         /// Constant MONGODB for ConnectionType
         /// </summary>
