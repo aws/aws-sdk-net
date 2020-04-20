@@ -1374,6 +1374,54 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  ExportApi
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportApi service method.</param>
+        /// 
+        /// <returns>The response from the ExportApi service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        ExportApiResponse ExportApi(ExportApiRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportApi operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportApi operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportApi
+        ///         operation.</returns>
+        IAsyncResult BeginExportApi(ExportApiRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExportApi operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportApi.</param>
+        /// 
+        /// <returns>Returns a  ExportApiResult from ApiGatewayV2.</returns>
+        ExportApiResponse EndExportApi(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetApi
 
 

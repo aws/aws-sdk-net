@@ -1470,6 +1470,50 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  ExportApi
+
+        internal virtual ExportApiResponse ExportApi(ExportApiRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportApiResponseUnmarshaller.Instance;
+
+            return Invoke<ExportApiResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportApi service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExportApi service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        public virtual Task<ExportApiResponse> ExportApiAsync(ExportApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportApiResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExportApiResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetApi
 
         internal virtual GetApiResponse GetApi(GetApiRequest request)

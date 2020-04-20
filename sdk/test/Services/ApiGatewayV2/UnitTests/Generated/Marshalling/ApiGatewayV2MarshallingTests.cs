@@ -715,6 +715,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ApiGatewayV2")]
+        public void ExportApiMarshallTest()
+        {
+            var operation = service_model.FindOperation("ExportApi");
+
+            var request = InstantiateClassGenerator.Execute<ExportApiRequest>();
+            var marshaller = new ExportApiRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ExportApi", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ExportApiResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ExportApiResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ApiGatewayV2")]
         public void GetApiMarshallTest()
         {
             var operation = service_model.FindOperation("GetApi");
