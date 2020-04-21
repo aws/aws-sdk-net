@@ -38,7 +38,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// AWS EC2 instance profile ARN.
+        /// The profile ARN of the EC2 instance.
         /// </para>
         /// </summary>
         public string Arn
@@ -56,7 +56,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// AWS EC2 instance profile ID.
+        /// The profile ID of the EC2 instance.
         /// </para>
         /// </summary>
         public string Id

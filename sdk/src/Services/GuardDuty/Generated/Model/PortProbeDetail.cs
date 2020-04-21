@@ -39,7 +39,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property LocalIpDetails. 
         /// <para>
-        /// Local IP information of the connection.
+        /// The local IP information of the connection.
         /// </para>
         /// </summary>
         public LocalIpDetails LocalIpDetails
@@ -57,7 +57,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property LocalPortDetails. 
         /// <para>
-        /// Local port information of the connection.
+        /// The local port information of the connection.
         /// </para>
         /// </summary>
         public LocalPortDetails LocalPortDetails
@@ -75,7 +75,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property RemoteIpDetails. 
         /// <para>
-        /// Remote IP information of the connection.
+        /// The remote IP information of the connection.
         /// </para>
         /// </summary>
         public RemoteIpDetails RemoteIpDetails

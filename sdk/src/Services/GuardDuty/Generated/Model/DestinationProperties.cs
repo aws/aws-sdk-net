@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains the ARN of the resource to publish to, such as an S3 bucket, and the ARN
-    /// of the KMS key to use to encrypt published findings.
+    /// Contains the Amazon Resource Name (ARN) of the resource to publish to, such as an
+    /// S3 bucket, and the ARN of the KMS key to use to encrypt published findings.
     /// </summary>
     public partial class DestinationProperties
     {

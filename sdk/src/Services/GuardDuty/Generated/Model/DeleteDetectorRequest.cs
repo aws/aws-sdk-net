@@ -29,7 +29,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDetector operation.
-    /// Deletes a Amazon GuardDuty detector specified by the detector ID.
+    /// Deletes an Amazon GuardDuty detector that is specified by the detector ID.
     /// </summary>
     public partial class DeleteDetectorRequest : AmazonGuardDutyRequest
     {

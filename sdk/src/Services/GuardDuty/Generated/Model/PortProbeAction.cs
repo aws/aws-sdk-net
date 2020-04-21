@@ -38,7 +38,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Blocked. 
         /// <para>
-        /// Port probe blocked information.
+        /// Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.
         /// </para>
         /// </summary>
         public bool Blocked
@@ -56,7 +56,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property PortProbeDetails. 
         /// <para>
-        /// A list of port probe details objects.
+        /// A list of objects related to port probe details.
         /// </para>
         /// </summary>
         public List<PortProbeDetail> PortProbeDetails

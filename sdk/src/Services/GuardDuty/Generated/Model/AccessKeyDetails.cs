@@ -40,7 +40,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AccessKeyId. 
         /// <para>
-        /// Access key ID of the user.
+        /// The access key ID of the user.
         /// </para>
         /// </summary>
         public string AccessKeyId

@@ -78,10 +78,10 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to use for paginating results returned in the repsonse. Set the value of this
-        /// parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.
+        /// A token to use for paginating results that are returned in the response. Set the value
+        /// of this parameter to null for the first request to a list action. For subsequent calls,
+        /// use the <code>NextToken</code> value returned from the previous request to continue
+        /// listing results after the first page.
         /// </para>
         /// </summary>
         public string NextToken

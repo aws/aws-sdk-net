@@ -60,7 +60,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property FindingTypes. 
         /// <para>
-        /// Types of sample findings to generate.
+        /// The types of sample findings to generate.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

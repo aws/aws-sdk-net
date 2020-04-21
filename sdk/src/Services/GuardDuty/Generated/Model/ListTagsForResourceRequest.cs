@@ -30,8 +30,8 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
     /// Lists tags for a resource. Tagging is currently supported for detectors, finding filters,
-    /// IP sets, and Threat Intel sets, with a limit of 50 tags per resource. When invoked,
-    /// this operation returns all assigned tags for a given resource..
+    /// IP sets, and threat intel sets, with a limit of 50 tags per resource. When invoked,
+    /// this operation returns all assigned tags for a given resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonGuardDutyRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the given GuardDuty resource 
+        /// The Amazon Resource Name (ARN) for the given GuardDuty resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -46,7 +46,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// Information about the activity described in a finding.
+        /// Information about the activity that is described in a finding.
         /// </para>
         /// </summary>
         public Action Action
@@ -82,7 +82,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// Total count of the occurrences of this finding type.
+        /// The total count of the occurrences of this finding type.
         /// </para>
         /// </summary>
         public int Count
@@ -100,7 +100,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// Detector ID for the GuardDuty service.
+        /// The detector ID for the GuardDuty service.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]
@@ -119,7 +119,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property EventFirstSeen. 
         /// <para>
-        /// First seen timestamp of the activity that prompted GuardDuty to generate this finding.
+        /// The first-seen timestamp of the activity that prompted GuardDuty to generate this
+        /// finding.
         /// </para>
         /// </summary>
         public string EventFirstSeen
@@ -137,7 +138,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property EventLastSeen. 
         /// <para>
-        /// Last seen timestamp of the activity that prompted GuardDuty to generate this finding.
+        /// The last-seen timestamp of the activity that prompted GuardDuty to generate this finding.
         /// </para>
         /// </summary>
         public string EventLastSeen
@@ -173,7 +174,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property ResourceRole. 
         /// <para>
-        /// Resource role information for this finding.
+        /// The resource role information for this finding.
         /// </para>
         /// </summary>
         public string ResourceRole
@@ -209,7 +210,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property UserFeedback. 
         /// <para>
-        /// Feedback left about the finding.
+        /// Feedback that was submitted about the finding.
         /// </para>
         /// </summary>
         public string UserFeedback

@@ -37,7 +37,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property FindingStatistics. 
         /// <para>
-        /// Finding statistics object.
+        /// The finding statistics object.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

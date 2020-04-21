@@ -29,7 +29,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIPSet operation.
-    /// Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called Trusted
+    /// Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called trusted
     /// IP lists in the console user interface.
     /// </summary>
     public partial class DeleteIPSetRequest : AmazonGuardDutyRequest

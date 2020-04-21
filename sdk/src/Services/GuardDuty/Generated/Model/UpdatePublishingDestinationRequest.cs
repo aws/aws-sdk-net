@@ -40,7 +40,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DestinationId. 
         /// <para>
-        /// The ID of the detector associated with the publishing destinations to update.
+        /// The ID of the publishing destination to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -78,7 +78,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The ID of the 
+        /// The ID of the detector associated with the publishing destinations to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

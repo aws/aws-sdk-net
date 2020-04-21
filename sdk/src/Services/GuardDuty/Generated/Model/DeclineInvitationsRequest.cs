@@ -29,8 +29,8 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the DeclineInvitations operation.
-    /// Declines invitations sent to the current member account by AWS account specified by
-    /// their account IDs.
+    /// Declines invitations sent to the current member account by AWS accounts specified
+    /// by their account IDs.
     /// </summary>
     public partial class DeclineInvitationsRequest : AmazonGuardDutyRequest
     {

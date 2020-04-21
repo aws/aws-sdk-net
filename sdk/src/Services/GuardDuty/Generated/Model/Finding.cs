@@ -71,7 +71,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN for the finding.
+        /// The ARN of the finding.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -108,7 +108,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time and date at which the finding was created.
+        /// The time and date when the finding was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -182,7 +182,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The Region in which the finding was generated.
+        /// The Region where the finding was generated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -270,7 +270,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// The title for the finding.
+        /// The title of the finding.
         /// </para>
         /// </summary>
         public string Title
@@ -288,7 +288,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the finding.
+        /// The type of finding.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
@@ -307,7 +307,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The time and date at which the finding was laste updated.
+        /// The time and date when the finding was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -33,18 +33,27 @@ namespace Amazon.GuardDuty
     ///
     /// Amazon GuardDuty is a continuous security monitoring service that analyzes and processes
     /// the following data sources: VPC Flow Logs, AWS CloudTrail event logs, and DNS logs.
-    /// It uses threat intelligence feeds, such as lists of malicious IPs and domains, and
-    /// machine learning to identify unexpected and potentially unauthorized and malicious
-    /// activity within your AWS environment. This can include issues like escalations of
-    /// privileges, uses of exposed credentials, or communication with malicious IPs, URLs,
-    /// or domains. For example, GuardDuty can detect compromised EC2 instances serving malware
-    /// or mining bitcoin. It also monitors AWS account access behavior for signs of compromise,
-    /// such as unauthorized infrastructure deployments, like instances deployed in a region
-    /// that has never been used, or unusual API calls, like a password policy change to reduce
-    /// password strength. GuardDuty informs you of the status of your AWS environment by
-    /// producing security findings that you can view in the GuardDuty console or through
-    /// Amazon CloudWatch events. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon
-    /// GuardDuty User Guide</a>.
+    /// It uses threat intelligence feeds (such as lists of malicious IPs and domains) and
+    /// machine learning to identify unexpected, potentially unauthorized, and malicious activity
+    /// within your AWS environment. This can include issues like escalations of privileges,
+    /// uses of exposed credentials, or communication with malicious IPs, URLs, or domains.
+    /// For example, GuardDuty can detect compromised EC2 instances that serve malware or
+    /// mine bitcoin. 
+    /// 
+    ///  
+    /// <para>
+    /// GuardDuty also monitors AWS account access behavior for signs of compromise. Some
+    /// examples of this are unauthorized infrastructure deployments such as EC2 instances
+    /// deployed in a Region that has never been used, or unusual API calls like a password
+    /// policy change to reduce password strength. 
+    /// </para>
+    ///  
+    /// <para>
+    /// GuardDuty informs you of the status of your AWS environment by producing security
+    /// findings that you can view in the GuardDuty console or through Amazon CloudWatch events.
+    /// For more information, see the <i> <a href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon
+    /// GuardDuty User Guide</a> </i>. 
+    /// </para>
     /// </summary>
     public partial interface IAmazonGuardDuty : IAmazonService, IDisposable
     {
@@ -63,10 +72,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the AcceptInvitation service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
         Task<AcceptInvitationResponse> AcceptInvitationAsync(AcceptInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -78,11 +87,11 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Archives GuardDuty findings specified by the list of finding IDs.
+        /// Archives GuardDuty findings that are specified by the list of finding IDs.
         /// 
         ///  <note> 
         /// <para>
-        /// Only the master account can archive findings. Member accounts do not have permission
+        /// Only the master account can archive findings. Member accounts don't have permission
         /// to archive findings from their accounts.
         /// </para>
         ///  </note>
@@ -94,10 +103,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the ArchiveFindings service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ArchiveFindings">REST API Reference for ArchiveFindings Operation</seealso>
         Task<ArchiveFindingsResponse> ArchiveFindingsAsync(ArchiveFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -111,8 +120,8 @@ namespace Amazon.GuardDuty
         /// <summary>
         /// Creates a single Amazon GuardDuty detector. A detector is a resource that represents
         /// the GuardDuty service. To start using GuardDuty, you must create a detector in each
-        /// region that you enable the service. You can have only one detector per account per
-        /// region.
+        /// Region where you enable the service. You can have only one detector per account per
+        /// Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDetector service method.</param>
         /// <param name="cancellationToken">
@@ -121,10 +130,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the CreateDetector service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateDetector">REST API Reference for CreateDetector Operation</seealso>
         Task<CreateDetectorResponse> CreateDetectorAsync(CreateDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -145,10 +154,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the CreateFilter service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateFilter">REST API Reference for CreateFilter Operation</seealso>
         Task<CreateFilterResponse> CreateFilterAsync(CreateFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -160,10 +169,10 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Creates a new IPSet, called Trusted IP list in the consoler user interface. An IPSet
-        /// is a list IP addresses trusted for secure communication with AWS infrastructure and
-        /// applications. GuardDuty does not generate findings for IP addresses included in IPSets.
-        /// Only users from the master account can use this operation.
+        /// Creates a new IPSet, which is called a trusted IP list in the console user interface.
+        /// An IPSet is a list of IP addresses that are trusted for secure communication with
+        /// AWS infrastructure and applications. GuardDuty doesn't generate findings for IP addresses
+        /// that are included in IPSets. Only users from the master account can use this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIPSet service method.</param>
         /// <param name="cancellationToken">
@@ -172,10 +181,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the CreateIPSet service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateIPSet">REST API Reference for CreateIPSet Operation</seealso>
         Task<CreateIPSetResponse> CreateIPSetAsync(CreateIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -198,10 +207,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the CreateMembers service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMembers">REST API Reference for CreateMembers Operation</seealso>
         Task<CreateMembersResponse> CreateMembersAsync(CreateMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -213,7 +222,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Creates a publishing destination to send findings to. The resource to send findings
+        /// Creates a publishing destination to export findings to. The resource to export findings
         /// to must exist before you use this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePublishingDestination service method.</param>
@@ -223,10 +232,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the CreatePublishingDestination service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreatePublishingDestination">REST API Reference for CreatePublishingDestination Operation</seealso>
         Task<CreatePublishingDestinationResponse> CreatePublishingDestinationAsync(CreatePublishingDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -249,10 +258,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the CreateSampleFindings service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateSampleFindings">REST API Reference for CreateSampleFindings Operation</seealso>
         Task<CreateSampleFindingsResponse> CreateSampleFindingsAsync(CreateSampleFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -264,7 +273,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Create a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses.
+        /// Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses.
         /// GuardDuty generates findings based on ThreatIntelSets. Only users of the master account
         /// can use this operation.
         /// </summary>
@@ -275,10 +284,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the CreateThreatIntelSet service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateThreatIntelSet">REST API Reference for CreateThreatIntelSet Operation</seealso>
         Task<CreateThreatIntelSetResponse> CreateThreatIntelSetAsync(CreateThreatIntelSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -290,8 +299,8 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Declines invitations sent to the current member account by AWS account specified by
-        /// their account IDs.
+        /// Declines invitations sent to the current member account by AWS accounts specified
+        /// by their account IDs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeclineInvitations service method.</param>
         /// <param name="cancellationToken">
@@ -300,10 +309,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the DeclineInvitations service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
         Task<DeclineInvitationsResponse> DeclineInvitationsAsync(DeclineInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -315,7 +324,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Deletes a Amazon GuardDuty detector specified by the detector ID.
+        /// Deletes an Amazon GuardDuty detector that is specified by the detector ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDetector service method.</param>
         /// <param name="cancellationToken">
@@ -324,10 +333,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the DeleteDetector service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteDetector">REST API Reference for DeleteDetector Operation</seealso>
         Task<DeleteDetectorResponse> DeleteDetectorAsync(DeleteDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -348,10 +357,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the DeleteFilter service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteFilter">REST API Reference for DeleteFilter Operation</seealso>
         Task<DeleteFilterResponse> DeleteFilterAsync(DeleteFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -373,10 +382,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the DeleteInvitations service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteInvitations">REST API Reference for DeleteInvitations Operation</seealso>
         Task<DeleteInvitationsResponse> DeleteInvitationsAsync(DeleteInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -388,7 +397,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called Trusted
+        /// Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called trusted
         /// IP lists in the console user interface.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIPSet service method.</param>
@@ -398,10 +407,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the DeleteIPSet service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
         Task<DeleteIPSetResponse> DeleteIPSetAsync(DeleteIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -423,10 +432,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the DeleteMembers service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteMembers">REST API Reference for DeleteMembers Operation</seealso>
         Task<DeleteMembersResponse> DeleteMembersAsync(DeleteMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -447,10 +456,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the DeletePublishingDestination service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeletePublishingDestination">REST API Reference for DeletePublishingDestination Operation</seealso>
         Task<DeletePublishingDestinationResponse> DeletePublishingDestinationAsync(DeletePublishingDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -462,7 +471,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Deletes ThreatIntelSet specified by the ThreatIntelSet ID.
+        /// Deletes the ThreatIntelSet specified by the ThreatIntelSet ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteThreatIntelSet service method.</param>
         /// <param name="cancellationToken">
@@ -471,13 +480,38 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the DeleteThreatIntelSet service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteThreatIntelSet">REST API Reference for DeleteThreatIntelSet Operation</seealso>
         Task<DeleteThreatIntelSetResponse> DeleteThreatIntelSetAsync(DeleteThreatIntelSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeOrganizationConfiguration
+
+
+
+        /// <summary>
+        /// Returns information about the account selected as the delegated administrator for
+        /// GuardDuty.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeOrganizationConfiguration service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribeOrganizationConfiguration">REST API Reference for DescribeOrganizationConfiguration Operation</seealso>
+        Task<DescribeOrganizationConfigurationResponse> DescribeOrganizationConfigurationAsync(DescribeOrganizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -495,13 +529,37 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the DescribePublishingDestination service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribePublishingDestination">REST API Reference for DescribePublishingDestination Operation</seealso>
         Task<DescribePublishingDestinationResponse> DescribePublishingDestinationAsync(DescribePublishingDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DisableOrganizationAdminAccount
+
+
+
+        /// <summary>
+        /// Disables GuardDuty administrator permissions for an AWS account within the Organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationAdminAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableOrganizationAdminAccount service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisableOrganizationAdminAccount">REST API Reference for DisableOrganizationAdminAccount Operation</seealso>
+        Task<DisableOrganizationAdminAccountResponse> DisableOrganizationAdminAccountAsync(DisableOrganizationAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -519,10 +577,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the DisassociateFromMasterAccount service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
         Task<DisassociateFromMasterAccountResponse> DisassociateFromMasterAccountAsync(DisassociateFromMasterAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -544,13 +602,37 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the DisassociateMembers service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateMembers">REST API Reference for DisassociateMembers Operation</seealso>
         Task<DisassociateMembersResponse> DisassociateMembersAsync(DisassociateMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  EnableOrganizationAdminAccount
+
+
+
+        /// <summary>
+        /// Enables GuardDuty administrator permissions for an AWS account within the organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationAdminAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableOrganizationAdminAccount service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/EnableOrganizationAdminAccount">REST API Reference for EnableOrganizationAdminAccount Operation</seealso>
+        Task<EnableOrganizationAdminAccountResponse> EnableOrganizationAdminAccountAsync(EnableOrganizationAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -568,10 +650,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the GetDetector service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetDetector">REST API Reference for GetDetector Operation</seealso>
         Task<GetDetectorResponse> GetDetectorAsync(GetDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -592,10 +674,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the GetFilter service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFilter">REST API Reference for GetFilter Operation</seealso>
         Task<GetFilterResponse> GetFilterAsync(GetFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -616,10 +698,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the GetFindings service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFindings">REST API Reference for GetFindings Operation</seealso>
         Task<GetFindingsResponse> GetFindingsAsync(GetFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -631,7 +713,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Lists Amazon GuardDuty findings' statistics for the specified detector ID.
+        /// Lists Amazon GuardDuty findings statistics for the specified detector ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindingsStatistics service method.</param>
         /// <param name="cancellationToken">
@@ -640,10 +722,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the GetFindingsStatistics service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFindingsStatistics">REST API Reference for GetFindingsStatistics Operation</seealso>
         Task<GetFindingsStatisticsResponse> GetFindingsStatisticsAsync(GetFindingsStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -665,10 +747,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the GetInvitationsCount service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
         Task<GetInvitationsCountResponse> GetInvitationsCountAsync(GetInvitationsCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -689,10 +771,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the GetIPSet service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetIPSet">REST API Reference for GetIPSet Operation</seealso>
         Task<GetIPSetResponse> GetIPSetAsync(GetIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -714,10 +796,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the GetMasterAccount service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
         Task<GetMasterAccountResponse> GetMasterAccountAsync(GetMasterAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -739,10 +821,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the GetMembers service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMembers">REST API Reference for GetMembers Operation</seealso>
         Task<GetMembersResponse> GetMembersAsync(GetMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -763,10 +845,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the GetThreatIntelSet service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetThreatIntelSet">REST API Reference for GetThreatIntelSet Operation</seealso>
         Task<GetThreatIntelSetResponse> GetThreatIntelSetAsync(GetThreatIntelSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -779,7 +861,7 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Invites other AWS accounts (created as members of the current AWS account by CreateMembers)
-        /// to enable GuardDuty and allow the current AWS account to view and manage these accounts'
+        /// to enable GuardDuty, and allow the current AWS account to view and manage these accounts'
         /// GuardDuty findings on their behalf as the master account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InviteMembers service method.</param>
@@ -789,10 +871,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the InviteMembers service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/InviteMembers">REST API Reference for InviteMembers Operation</seealso>
         Task<InviteMembersResponse> InviteMembersAsync(InviteMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -813,10 +895,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the ListDetectors service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListDetectors">REST API Reference for ListDetectors Operation</seealso>
         Task<ListDetectorsResponse> ListDetectorsAsync(ListDetectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -837,10 +919,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the ListFilters service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFilters">REST API Reference for ListFilters Operation</seealso>
         Task<ListFiltersResponse> ListFiltersAsync(ListFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -861,10 +943,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the ListFindings service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFindings">REST API Reference for ListFindings Operation</seealso>
         Task<ListFindingsResponse> ListFindingsAsync(ListFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -885,10 +967,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the ListInvitations service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         Task<ListInvitationsResponse> ListInvitationsAsync(ListInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -911,10 +993,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the ListIPSets service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListIPSets">REST API Reference for ListIPSets Operation</seealso>
         Task<ListIPSetsResponse> ListIPSetsAsync(ListIPSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -926,7 +1008,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Lists details about all member accounts for the current GuardDuty master account.
+        /// Lists details about associated member accounts for the current GuardDuty master account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMembers service method.</param>
         /// <param name="cancellationToken">
@@ -935,13 +1017,37 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the ListMembers service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMembers">REST API Reference for ListMembers Operation</seealso>
         Task<ListMembersResponse> ListMembersAsync(ListMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListOrganizationAdminAccounts
+
+
+
+        /// <summary>
+        /// Lists the accounts configured as AWS Organization delegated administrators.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationAdminAccounts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOrganizationAdminAccounts service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListOrganizationAdminAccounts">REST API Reference for ListOrganizationAdminAccounts Operation</seealso>
+        Task<ListOrganizationAdminAccountsResponse> ListOrganizationAdminAccountsAsync(ListOrganizationAdminAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -959,10 +1065,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the ListPublishingDestinations service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListPublishingDestinations">REST API Reference for ListPublishingDestinations Operation</seealso>
         Task<ListPublishingDestinationsResponse> ListPublishingDestinationsAsync(ListPublishingDestinationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -975,8 +1081,8 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Lists tags for a resource. Tagging is currently supported for detectors, finding filters,
-        /// IP sets, and Threat Intel sets, with a limit of 50 tags per resource. When invoked,
-        /// this operation returns all assigned tags for a given resource..
+        /// IP sets, and threat intel sets, with a limit of 50 tags per resource. When invoked,
+        /// this operation returns all assigned tags for a given resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -985,10 +1091,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1011,10 +1117,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the ListThreatIntelSets service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListThreatIntelSets">REST API Reference for ListThreatIntelSets Operation</seealso>
         Task<ListThreatIntelSetsResponse> ListThreatIntelSetsAsync(ListThreatIntelSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1037,10 +1143,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the StartMonitoringMembers service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StartMonitoringMembers">REST API Reference for StartMonitoringMembers Operation</seealso>
         Task<StartMonitoringMembersResponse> StartMonitoringMembersAsync(StartMonitoringMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1052,8 +1158,8 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Stops GuardDuty monitoring for the specified member accounnts. Use the <code>StartMonitoringMembers</code>
-        /// to restart monitoring for those accounts.
+        /// Stops GuardDuty monitoring for the specified member accounts. Use the <code>StartMonitoringMembers</code>
+        /// operation to restart monitoring for those accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopMonitoringMembers service method.</param>
         /// <param name="cancellationToken">
@@ -1062,10 +1168,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the StopMonitoringMembers service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StopMonitoringMembers">REST API Reference for StopMonitoringMembers Operation</seealso>
         Task<StopMonitoringMembersResponse> StopMonitoringMembersAsync(StopMonitoringMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1086,10 +1192,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the TagResource service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1110,10 +1216,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the UnarchiveFindings service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UnarchiveFindings">REST API Reference for UnarchiveFindings Operation</seealso>
         Task<UnarchiveFindingsResponse> UnarchiveFindingsAsync(UnarchiveFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1134,10 +1240,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the UntagResource service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1158,10 +1264,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the UpdateDetector service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateDetector">REST API Reference for UpdateDetector Operation</seealso>
         Task<UpdateDetectorResponse> UpdateDetectorAsync(UpdateDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1182,10 +1288,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the UpdateFilter service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFilter">REST API Reference for UpdateFilter Operation</seealso>
         Task<UpdateFilterResponse> UpdateFilterAsync(UpdateFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1206,10 +1312,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the UpdateFindingsFeedback service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFindingsFeedback">REST API Reference for UpdateFindingsFeedback Operation</seealso>
         Task<UpdateFindingsFeedbackResponse> UpdateFindingsFeedbackAsync(UpdateFindingsFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1230,13 +1336,37 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the UpdateIPSet service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
         Task<UpdateIPSetResponse> UpdateIPSetAsync(UpdateIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateOrganizationConfiguration
+
+
+
+        /// <summary>
+        /// Updates the delegated administrator account with the values provided.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateOrganizationConfiguration service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
+        Task<UpdateOrganizationConfigurationResponse> UpdateOrganizationConfigurationAsync(UpdateOrganizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1254,10 +1384,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the UpdatePublishingDestination service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdatePublishingDestination">REST API Reference for UpdatePublishingDestination Operation</seealso>
         Task<UpdatePublishingDestinationResponse> UpdatePublishingDestinationAsync(UpdatePublishingDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1269,7 +1399,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Updates the ThreatIntelSet specified by ThreatIntelSet ID.
+        /// Updates the ThreatIntelSet specified by the ThreatIntelSet ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateThreatIntelSet service method.</param>
         /// <param name="cancellationToken">
@@ -1278,10 +1408,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the UpdateThreatIntelSet service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Bad request exception object.
+        /// A bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Internal server error exception object.
+        /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateThreatIntelSet">REST API Reference for UpdateThreatIntelSet Operation</seealso>
         Task<UpdateThreatIntelSetResponse> UpdateThreatIntelSetAsync(UpdateThreatIntelSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

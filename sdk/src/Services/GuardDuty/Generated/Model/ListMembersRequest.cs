@@ -29,7 +29,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMembers operation.
-    /// Lists details about all member accounts for the current GuardDuty master account.
+    /// Lists details about associated member accounts for the current GuardDuty master account.
     /// </summary>
     public partial class ListMembersRequest : AmazonGuardDutyRequest
     {
@@ -81,7 +81,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the list action. For subsequent calls to the action
+        /// to null on your first call to the list action. For subsequent calls to the action,
         /// fill nextToken in the request with the value of NextToken from the previous response
         /// to continue listing data.
         /// </para>
@@ -101,8 +101,10 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property OnlyAssociated. 
         /// <para>
-        /// Specifies whether to only return associated members or to return all members (including
-        /// members which haven't been invited yet or have been disassociated).
+        /// Specifies what member accounts the response includes based on their relationship status
+        /// with the master account. The default value is "true". If set to "false" the response
+        /// includes all existing member accounts (including members who haven't been invited
+        /// yet or have been disassociated).
         /// </para>
         /// </summary>
         public string OnlyAssociated

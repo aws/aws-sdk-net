@@ -38,7 +38,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Lat. 
         /// <para>
-        /// Latitude information of remote IP address.
+        /// The latitude information of the remote IP address.
         /// </para>
         /// </summary>
         public double Lat
@@ -56,7 +56,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Lon. 
         /// <para>
-        /// Longitude information of remote IP address.
+        /// The longitude information of the remote IP address.
         /// </para>
         /// </summary>
         public double Lon

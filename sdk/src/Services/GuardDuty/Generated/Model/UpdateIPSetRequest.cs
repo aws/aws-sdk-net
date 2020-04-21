@@ -42,7 +42,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Activate. 
         /// <para>
-        /// The updated boolean value that specifies whether the IPSet is active or not.
+        /// The updated Boolean value that specifies whether the IPSet is active or not.
         /// </para>
         /// </summary>
         public bool Activate
@@ -98,7 +98,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The updated URI of the file that contains the IPSet. For example (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).
+        /// The updated URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]

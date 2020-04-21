@@ -38,7 +38,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property PrivateDnsName. 
         /// <para>
-        /// Private DNS name of the EC2 instance.
+        /// The private DNS name of the EC2 instance.
         /// </para>
         /// </summary>
         public string PrivateDnsName
@@ -56,7 +56,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddress. 
         /// <para>
-        /// Private IP address of the EC2 instance.
+        /// The private IP address of the EC2 instance.
         /// </para>
         /// </summary>
         public string PrivateIpAddress

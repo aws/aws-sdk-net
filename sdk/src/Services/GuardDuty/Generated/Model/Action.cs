@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about action.
+    /// Contains information about actions.
     /// </summary>
     public partial class Action
     {
@@ -41,7 +41,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property ActionType. 
         /// <para>
-        /// GuardDuty Finding activity type.
+        /// The GuardDuty finding activity type.
         /// </para>
         /// </summary>
         public string ActionType

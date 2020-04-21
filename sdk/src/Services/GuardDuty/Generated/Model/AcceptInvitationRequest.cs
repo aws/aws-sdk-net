@@ -59,7 +59,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property InvitationId. 
         /// <para>
-        /// This value is used to validate the master account to the member account.
+        /// The value that is used to validate the master account to the member account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

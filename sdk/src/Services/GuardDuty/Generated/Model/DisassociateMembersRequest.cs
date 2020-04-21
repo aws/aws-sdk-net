@@ -41,7 +41,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property AccountIds. 
         /// <para>
         /// A list of account IDs of the GuardDuty member accounts that you want to disassociate
-        /// from master.
+        /// from the master account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
@@ -61,7 +61,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property DetectorId. 
         /// <para>
         /// The unique ID of the detector of the GuardDuty account whose members you want to disassociate
-        /// from master.
+        /// from the master account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

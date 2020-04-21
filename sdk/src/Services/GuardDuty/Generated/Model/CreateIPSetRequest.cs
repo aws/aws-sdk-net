@@ -29,10 +29,10 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateIPSet operation.
-    /// Creates a new IPSet, called Trusted IP list in the consoler user interface. An IPSet
-    /// is a list IP addresses trusted for secure communication with AWS infrastructure and
-    /// applications. GuardDuty does not generate findings for IP addresses included in IPSets.
-    /// Only users from the master account can use this operation.
+    /// Creates a new IPSet, which is called a trusted IP list in the console user interface.
+    /// An IPSet is a list of IP addresses that are trusted for secure communication with
+    /// AWS infrastructure and applications. GuardDuty doesn't generate findings for IP addresses
+    /// that are included in IPSets. Only users from the master account can use this operation.
     /// </summary>
     public partial class CreateIPSetRequest : AmazonGuardDutyRequest
     {
@@ -47,7 +47,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Activate. 
         /// <para>
-        /// A boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
+        /// A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,8 +85,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The unique ID of the detector of the GuardDuty account for which you want to create
-        /// an IPSet.
+        /// The unique ID of the detector of the GuardDuty account that you want to create an
+        /// IPSet for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
@@ -124,7 +124,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The URI of the file that contains the IPSet. For example (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+        /// The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
@@ -143,8 +143,11 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The user friendly name to identify the IPSet. This name is displayed in all findings
-        /// that are triggered by activity that involves IP addresses included in this IPSet.
+        /// The user-friendly name to identify the IPSet.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

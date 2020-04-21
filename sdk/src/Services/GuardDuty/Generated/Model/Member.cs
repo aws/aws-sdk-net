@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Continas information about the member account
+    /// Contains information about the member account.
     /// </summary>
     public partial class Member
     {
@@ -43,7 +43,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// Member account ID.
+        /// The ID of the member account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -62,7 +62,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// Member account's detector ID.
+        /// The detector ID of the member account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]
@@ -81,7 +81,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Email. 
         /// <para>
-        /// Member account's email address.
+        /// The email address of the member account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -100,7 +100,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property InvitedAt. 
         /// <para>
-        /// Timestamp at which the invitation was sent
+        /// The timestamp when the invitation was sent.
         /// </para>
         /// </summary>
         public string InvitedAt
@@ -118,7 +118,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property MasterId. 
         /// <para>
-        /// Master account ID.
+        /// The master account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -156,7 +156,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// Member last updated timestamp.
+        /// The last-updated timestamp of the member.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

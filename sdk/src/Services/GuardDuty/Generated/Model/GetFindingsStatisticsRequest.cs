@@ -29,7 +29,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFindingsStatistics operation.
-    /// Lists Amazon GuardDuty findings' statistics for the specified detector ID.
+    /// Lists Amazon GuardDuty findings statistics for the specified detector ID.
     /// </summary>
     public partial class GetFindingsStatisticsRequest : AmazonGuardDutyRequest
     {
@@ -60,7 +60,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property FindingCriteria. 
         /// <para>
-        /// Represents the criteria used for querying findings.
+        /// Represents the criteria that is used for querying findings.
         /// </para>
         /// </summary>
         public FindingCriteria FindingCriteria
@@ -78,7 +78,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property FindingStatisticTypes. 
         /// <para>
-        /// Types of finding statistics to retrieve.
+        /// The types of finding statistics to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]

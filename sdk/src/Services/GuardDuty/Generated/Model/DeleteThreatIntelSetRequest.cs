@@ -29,7 +29,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteThreatIntelSet operation.
-    /// Deletes ThreatIntelSet specified by the ThreatIntelSet ID.
+    /// Deletes the ThreatIntelSet specified by the ThreatIntelSet ID.
     /// </summary>
     public partial class DeleteThreatIntelSetRequest : AmazonGuardDutyRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The unique ID of the detector the threatIntelSet is associated with.
+        /// The unique ID of the detector that the threatIntelSet is associated with.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
@@ -58,7 +58,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property ThreatIntelSetId. 
         /// <para>
-        /// The unique ID of the threatIntelSet you want to delete.
+        /// The unique ID of the threatIntelSet that you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

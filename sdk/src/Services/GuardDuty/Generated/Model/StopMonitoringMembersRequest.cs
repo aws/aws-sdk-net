@@ -29,8 +29,8 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the StopMonitoringMembers operation.
-    /// Stops GuardDuty monitoring for the specified member accounnts. Use the <code>StartMonitoringMembers</code>
-    /// to restart monitoring for those accounts.
+    /// Stops GuardDuty monitoring for the specified member accounts. Use the <code>StartMonitoringMembers</code>
+    /// operation to restart monitoring for those accounts.
     /// </summary>
     public partial class StopMonitoringMembersRequest : AmazonGuardDutyRequest
     {
@@ -40,8 +40,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// A list of account IDs of the GuardDuty member accounts whose findings you want the
-        /// master account to stop monitoring.
+        /// A list of account IDs for the member accounts to stop monitoring.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
@@ -60,8 +59,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The unique ID of the detector of the GuardDuty account that you want to stop from
-        /// monitor members' findings.
+        /// The unique ID of the detector associated with the GuardDuty master account that is
+        /// monitoring member accounts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

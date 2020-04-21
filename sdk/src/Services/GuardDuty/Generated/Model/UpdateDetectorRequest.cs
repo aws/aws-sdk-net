@@ -77,7 +77,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property FindingPublishingFrequency. 
         /// <para>
-        /// A enum value that specifies how frequently findings are exported, such as to CloudWatch
+        /// An enum value that specifies how frequently findings are exported, such as to CloudWatch
         /// Events.
         /// </para>
         /// </summary>

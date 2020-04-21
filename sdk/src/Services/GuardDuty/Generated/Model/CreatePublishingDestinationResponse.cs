@@ -37,7 +37,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DestinationId. 
         /// <para>
-        /// The ID of the publishing destination created.
+        /// The ID of the publishing destination that is created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

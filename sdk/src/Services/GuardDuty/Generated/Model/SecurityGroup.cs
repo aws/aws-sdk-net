@@ -38,7 +38,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// EC2 instance's security group ID.
+        /// The security group ID of the EC2 instance.
         /// </para>
         /// </summary>
         public string GroupId
@@ -56,7 +56,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// EC2 instance's security group name.
+        /// The security group name of the EC2 instance.
         /// </para>
         /// </summary>
         public string GroupName

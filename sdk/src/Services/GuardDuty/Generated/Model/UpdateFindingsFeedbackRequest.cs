@@ -97,7 +97,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property FindingIds. 
         /// <para>
-        /// IDs of the findings that you want to mark as useful or not useful.
+        /// The IDs of the findings that you want to mark as useful or not useful.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

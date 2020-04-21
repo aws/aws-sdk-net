@@ -37,7 +37,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property CountBySeverity. 
         /// <para>
-        /// Represents a map of severity to count statistic for a set of findings
+        /// Represents a map of severity to count statistics for a set of findings.
         /// </para>
         /// </summary>
         public Dictionary<string, int> CountBySeverity

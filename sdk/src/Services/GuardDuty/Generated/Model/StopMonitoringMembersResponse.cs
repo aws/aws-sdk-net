@@ -37,8 +37,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property UnprocessedAccounts. 
         /// <para>
-        /// A list of objects containing the unprocessed account and a result string explaining
-        /// why it was unprocessed.
+        /// A list of objects that contain an accountId for each account that could not be processed,
+        /// and a result string that indicates why the account was not processed. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

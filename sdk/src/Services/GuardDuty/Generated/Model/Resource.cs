@@ -78,7 +78,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of the AWS resource.
+        /// The type of AWS resource.
         /// </para>
         /// </summary>
         public string ResourceType

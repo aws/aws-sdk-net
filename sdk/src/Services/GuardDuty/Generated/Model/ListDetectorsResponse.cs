@@ -38,7 +38,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorIds. 
         /// <para>
-        /// A list of detector Ids.
+        /// A list of detector IDs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]
@@ -57,7 +57,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination parameter to be used on the next list operation to retrieve more items.
+        /// The pagination parameter to be used on the next list operation to retrieve more items.
         /// </para>
         /// </summary>
         public string NextToken

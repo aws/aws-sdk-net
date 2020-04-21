@@ -38,7 +38,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// Port number of the local connection.
+        /// The port number of the local connection.
         /// </para>
         /// </summary>
         public int Port
@@ -56,7 +56,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property PortName. 
         /// <para>
-        /// Port name of the local connection.
+        /// The port name of the local connection.
         /// </para>
         /// </summary>
         public string PortName

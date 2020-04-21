@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Continas information about the remote IP address of the connection.
+    /// Contains information about the remote IP address of the connection.
     /// </summary>
     public partial class RemoteIpDetails
     {
@@ -41,7 +41,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property City. 
         /// <para>
-        /// City information of the remote IP address.
+        /// The city information of the remote IP address.
         /// </para>
         /// </summary>
         public City City
@@ -59,7 +59,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Country. 
         /// <para>
-        /// Country code of the remote IP address.
+        /// The country code of the remote IP address.
         /// </para>
         /// </summary>
         public Country Country
@@ -77,7 +77,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property GeoLocation. 
         /// <para>
-        /// Location information of the remote IP address.
+        /// The location information of the remote IP address.
         /// </para>
         /// </summary>
         public GeoLocation GeoLocation
@@ -95,7 +95,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property IpAddressV4. 
         /// <para>
-        /// IPV4 remote address of the connection.
+        /// The IPv4 remote address of the connection.
         /// </para>
         /// </summary>
         public string IpAddressV4
@@ -113,7 +113,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Organization. 
         /// <para>
-        /// ISP Organization information of the remote IP address.
+        /// The ISP organization information of the remote IP address.
         /// </para>
         /// </summary>
         public Organization Organization

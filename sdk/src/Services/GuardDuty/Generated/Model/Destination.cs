@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about a publishing destination, including the ID, type, and status.
+    /// Contains information about the publishing destination, including the ID, type, and
+    /// status.
     /// </summary>
     public partial class Destination
     {
@@ -58,7 +59,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DestinationType. 
         /// <para>
-        /// The type of resource used for the publishing destination. Currently, only S3 is supported.
+        /// The type of resource used for the publishing destination. Currently, only Amazon S3
+        /// buckets are supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

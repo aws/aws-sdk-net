@@ -30,7 +30,7 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Container for the parameters to the InviteMembers operation.
     /// Invites other AWS accounts (created as members of the current AWS account by CreateMembers)
-    /// to enable GuardDuty and allow the current AWS account to view and manage these accounts'
+    /// to enable GuardDuty, and allow the current AWS account to view and manage these accounts'
     /// GuardDuty findings on their behalf as the master account.
     /// </summary>
     public partial class InviteMembersRequest : AmazonGuardDutyRequest
@@ -62,8 +62,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The unique ID of the detector of the GuardDuty account with which you want to invite
-        /// members.
+        /// The unique ID of the detector of the GuardDuty account that you want to invite members
+        /// with.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
@@ -82,7 +82,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DisableEmailNotification. 
         /// <para>
-        /// A boolean value that specifies whether you want to disable email notification to the
+        /// A Boolean value that specifies whether you want to disable email notification to the
         /// accounts that you’re inviting to GuardDuty as members.
         /// </para>
         /// </summary>
