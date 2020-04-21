@@ -43,6 +43,64 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Route53Domains")]
+        public void AcceptDomainTransferFromAnotherAwsAccountMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<AcceptDomainTransferFromAnotherAwsAccountRequest>();
+            var marshaller = new AcceptDomainTransferFromAnotherAwsAccountRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<AcceptDomainTransferFromAnotherAwsAccountRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AcceptDomainTransferFromAnotherAwsAccount").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = AcceptDomainTransferFromAnotherAwsAccountResponseUnmarshaller.Instance.Unmarshall(context)
+                as AcceptDomainTransferFromAnotherAwsAccountResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Route53Domains")]
+        public void CancelDomainTransferToAnotherAwsAccountMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<CancelDomainTransferToAnotherAwsAccountRequest>();
+            var marshaller = new CancelDomainTransferToAnotherAwsAccountRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<CancelDomainTransferToAnotherAwsAccountRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CancelDomainTransferToAnotherAwsAccount").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = CancelDomainTransferToAnotherAwsAccountResponseUnmarshaller.Instance.Unmarshall(context)
+                as CancelDomainTransferToAnotherAwsAccountResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Route53Domains")]
         public void CheckDomainAvailabilityMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<CheckDomainAvailabilityRequest>();
@@ -478,6 +536,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Route53Domains")]
+        public void RejectDomainTransferFromAnotherAwsAccountMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<RejectDomainTransferFromAnotherAwsAccountRequest>();
+            var marshaller = new RejectDomainTransferFromAnotherAwsAccountRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<RejectDomainTransferFromAnotherAwsAccountRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("RejectDomainTransferFromAnotherAwsAccount").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = RejectDomainTransferFromAnotherAwsAccountResponseUnmarshaller.Instance.Unmarshall(context)
+                as RejectDomainTransferFromAnotherAwsAccountResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Route53Domains")]
         public void RenewDomainMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<RenewDomainRequest>();
@@ -586,6 +673,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = TransferDomainResponseUnmarshaller.Instance.Unmarshall(context)
                 as TransferDomainResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Route53Domains")]
+        public void TransferDomainToAnotherAwsAccountMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<TransferDomainToAnotherAwsAccountRequest>();
+            var marshaller = new TransferDomainToAnotherAwsAccountRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<TransferDomainToAnotherAwsAccountRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("TransferDomainToAnotherAwsAccount").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = TransferDomainToAnotherAwsAccountResponseUnmarshaller.Instance.Unmarshall(context)
+                as TransferDomainToAnotherAwsAccountResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

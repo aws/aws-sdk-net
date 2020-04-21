@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Route53Domains.Model.AcceptDomainTransferFromAnotherAwsAccountRequest.DomainName</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.AcceptDomainTransferFromAnotherAwsAccountResponse.OperationId</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.CancelDomainTransferToAnotherAwsAccountRequest.DomainName</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.CancelDomainTransferToAnotherAwsAccountResponse.OperationId</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Domains.Model.CheckDomainAvailabilityRequest.DomainName</property>
     <max>255</max>
   </property-value-rule>
@@ -130,6 +146,14 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Domains.Model.RejectDomainTransferFromAnotherAwsAccountRequest.DomainName</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.RejectDomainTransferFromAnotherAwsAccountResponse.OperationId</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Domains.Model.RenewDomainRequest.DomainName</property>
     <max>255</max>
   </property-value-rule>
@@ -181,6 +205,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.TransferDomainResponse.OperationId</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.TransferDomainToAnotherAwsAccountRequest.AccountId</property>
+    <pattern>^(\d{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.TransferDomainToAnotherAwsAccountRequest.DomainName</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.TransferDomainToAnotherAwsAccountResponse.OperationId</property>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>

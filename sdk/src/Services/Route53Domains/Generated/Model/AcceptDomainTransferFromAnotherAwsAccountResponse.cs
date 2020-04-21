@@ -28,26 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// A complex type that contains information about whether the specified domain can be
-    /// transferred to Route 53.
+    /// The AcceptDomainTransferFromAnotherAwsAccount response includes the following element.
     /// </summary>
-    public partial class DomainTransferability
+    public partial class AcceptDomainTransferFromAnotherAwsAccountResponse : AmazonWebServiceResponse
     {
-        private Transferable _transferable;
+        private string _operationId;
 
         /// <summary>
-        /// Gets and sets the property Transferable.
+        /// Gets and sets the property OperationId. 
+        /// <para>
+        /// Identifier for tracking the progress of the request. To query the operation status,
+        /// use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.
+        /// </para>
         /// </summary>
-        public Transferable Transferable
+        [AWSProperty(Max=255)]
+        public string OperationId
         {
-            get { return this._transferable; }
-            set { this._transferable = value; }
+            get { return this._operationId; }
+            set { this._operationId = value; }
         }
 
-        // Check to see if Transferable property is set
-        internal bool IsSetTransferable()
+        // Check to see if OperationId property is set
+        internal bool IsSetOperationId()
         {
-            return this._transferable != null;
+            return this._operationId != null;
         }
 
     }

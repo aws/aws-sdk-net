@@ -28,26 +28,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// A complex type that contains information about whether the specified domain can be
-    /// transferred to Route 53.
+    /// The RejectDomainTransferFromAnotherAwsAccount response includes the following element.
     /// </summary>
-    public partial class DomainTransferability
+    public partial class RejectDomainTransferFromAnotherAwsAccountResponse : AmazonWebServiceResponse
     {
-        private Transferable _transferable;
+        private string _operationId;
 
         /// <summary>
-        /// Gets and sets the property Transferable.
+        /// Gets and sets the property OperationId. 
+        /// <para>
+        /// The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track
+        /// the progress of the request. Because the transfer request was rejected, the value
+        /// is no longer valid, and you can't use <code>GetOperationDetail</code> to query the
+        /// operation status.
+        /// </para>
         /// </summary>
-        public Transferable Transferable
+        [AWSProperty(Max=255)]
+        public string OperationId
         {
-            get { return this._transferable; }
-            set { this._transferable = value; }
+            get { return this._operationId; }
+            set { this._operationId = value; }
         }
 
-        // Check to see if Transferable property is set
-        internal bool IsSetTransferable()
+        // Check to see if OperationId property is set
+        internal bool IsSetOperationId()
         {
-            return this._transferable != null;
+            return this._operationId != null;
         }
 
     }

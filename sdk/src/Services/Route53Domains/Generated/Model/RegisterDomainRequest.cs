@@ -39,9 +39,9 @@ namespace Amazon.Route53Domains.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Creates a Amazon Route 53 hosted zone that has the same name as the domain. Amazon
-    /// Route 53 assigns four name servers to your hosted zone and automatically updates your
-    /// domain registration with the names of these name servers.
+    /// Creates a Route 53 hosted zone that has the same name as the domain. Route 53 assigns
+    /// four name servers to your hosted zone and automatically updates your domain registration
+    /// with the names of these name servers.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -86,7 +86,8 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property AdminContact. 
         /// <para>
-        /// Provides detailed contact information.
+        /// Provides detailed contact information. For information about the values that you specify
+        /// for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -128,12 +129,38 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain name that you want to register.
+        /// The domain name that you want to register. The top-level domain (TLD), such as .com,
+        /// must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+        /// that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: The domain name can contain only the letters a through z, the numbers
-        /// 0 through 9, and hyphen (-). Internationalized Domain Names are not supported.
+        /// The domain name can contain only the following characters:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Letters a through z. Domain names are not case sensitive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Numbers 0 through 9.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Hyphen (-). You can't specify a hyphen at the beginning or end of a label. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Internationalized domain names are not supported for some top-level domains. To determine
+        /// whether the TLD that you want to use supports internationalized domain names, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+        /// that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting
+        /// Internationalized Domain Names</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -154,7 +181,7 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// The number of years that you want to register the domain for. Domains are registered
         /// for a minimum of one year. The maximum period depends on the top-level domain. For
-        /// the range of valid values for your domain, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+        /// the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
         /// that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer
         /// Guide</i>.
         /// </para>
@@ -276,7 +303,8 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property RegistrantContact. 
         /// <para>
-        /// Provides detailed contact information.
+        /// Provides detailed contact information. For information about the values that you specify
+        /// for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -295,7 +323,8 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property TechContact. 
         /// <para>
-        /// Provides detailed contact information.
+        /// Provides detailed contact information. For information about the values that you specify
+        /// for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

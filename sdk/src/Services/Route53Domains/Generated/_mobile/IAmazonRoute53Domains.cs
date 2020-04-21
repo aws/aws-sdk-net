@@ -36,6 +36,90 @@ namespace Amazon.Route53Domains
     public partial interface IAmazonRoute53Domains : IAmazonService, IDisposable
     {
                 
+        #region  AcceptDomainTransferFromAnotherAwsAccount
+
+
+
+        /// <summary>
+        /// Accepts the transfer of a domain from another AWS account to the current AWS account.
+        /// You initiate a transfer between AWS accounts using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Use either <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
+        /// or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+        /// to determine whether the operation succeeded. <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+        /// provides additional information, for example, <code>Domain Transfer from Aws Account
+        /// 111122223333 has been cancelled</code>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptDomainTransferFromAnotherAwsAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptDomainTransferFromAnotherAwsAccount service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.DomainLimitExceededException">
+        /// The number of domains has exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AcceptDomainTransferFromAnotherAwsAccount">REST API Reference for AcceptDomainTransferFromAnotherAwsAccount Operation</seealso>
+        Task<AcceptDomainTransferFromAnotherAwsAccountResponse> AcceptDomainTransferFromAnotherAwsAccountAsync(AcceptDomainTransferFromAnotherAwsAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CancelDomainTransferToAnotherAwsAccount
+
+
+
+        /// <summary>
+        /// Cancels the transfer of a domain from the current AWS account to another AWS account.
+        /// You initiate a transfer between AWS accounts using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+        /// 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You must cancel the transfer before the other AWS account accepts the transfer using
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Use either <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
+        /// or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+        /// to determine whether the operation succeeded. <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+        /// provides additional information, for example, <code>Domain Transfer from Aws Account
+        /// 111122223333 has been cancelled</code>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelDomainTransferToAnotherAwsAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelDomainTransferToAnotherAwsAccount service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CancelDomainTransferToAnotherAwsAccount">REST API Reference for CancelDomainTransferToAnotherAwsAccount Operation</seealso>
+        Task<CancelDomainTransferToAnotherAwsAccountResponse> CancelDomainTransferToAnotherAwsAccountAsync(CancelDomainTransferToAnotherAwsAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CheckDomainAvailability
 
 
@@ -52,9 +136,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the CheckDomainAvailability service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain (TLD).
@@ -78,9 +163,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the CheckDomainTransferability service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain (TLD).
@@ -110,9 +196,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the DeleteTagsForDomain service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
@@ -140,9 +227,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the DeleteTagsForDomain service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
@@ -170,9 +258,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the DisableDomainAutoRenew service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain (TLD).
@@ -204,9 +293,10 @@ namespace Amazon.Route53Domains
         /// The request is already in progress for the domain.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
@@ -234,10 +324,10 @@ namespace Amazon.Route53Domains
         ///  
         /// <para>
         /// The period during which you can renew a domain name varies by TLD. For a list of TLDs
-        /// and their renewal policies, see <a href="http://wiki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times">"Renewal,
-        /// restoration, and deletion times"</a> on the website for our registrar associate, Gandi.
-        /// Amazon Route 53 requires that you renew before the end of the renewal period that
-        /// is listed on the Gandi website so we can complete processing before the deadline.
+        /// and their renewal policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+        /// That You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer
+        /// Guide</i>. Route 53 requires that you renew before the end of the renewal period so
+        /// we can complete processing before the deadline.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableDomainAutoRenew service method.</param>
@@ -247,9 +337,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the EnableDomainAutoRenew service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
         /// The top-level domain does not support this operation.
@@ -282,9 +373,10 @@ namespace Amazon.Route53Domains
         /// The request is already in progress for the domain.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
@@ -322,9 +414,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the GetContactReachabilityStatus service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
@@ -353,9 +446,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the GetDomainDetail service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain (TLD).
@@ -370,8 +464,7 @@ namespace Amazon.Route53Domains
 
 
         /// <summary>
-        /// The GetDomainSuggestions operation returns a list of suggested domain names given
-        /// a string, which can either be a domain name or simply a word or phrase (without spaces).
+        /// The GetDomainSuggestions operation returns a list of suggested domain names.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDomainSuggestions service method.</param>
         /// <param name="cancellationToken">
@@ -380,9 +473,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the GetDomainSuggestions service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain (TLD).
@@ -406,9 +500,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the GetOperationDetail service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetail">REST API Reference for GetOperationDetail Operation</seealso>
         Task<GetOperationDetailResponse> GetOperationDetailAsync(GetOperationDetailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -428,9 +523,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the ListDomains service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         Task<ListDomainsResponse> ListDomainsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -448,9 +544,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the ListDomains service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -461,7 +558,8 @@ namespace Amazon.Route53Domains
 
 
         /// <summary>
-        /// This operation returns the operation IDs of operations that are not yet complete.
+        /// Returns information about all of the operations that return an operation ID and that
+        /// have ever been performed on domains that were registered by the current account.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -469,9 +567,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the ListOperations service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
         Task<ListOperationsResponse> ListOperationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -479,7 +578,8 @@ namespace Amazon.Route53Domains
 
 
         /// <summary>
-        /// This operation returns the operation IDs of operations that are not yet complete.
+        /// Returns information about all of the operations that return an operation ID and that
+        /// have ever been performed on domains that were registered by the current account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOperations service method.</param>
         /// <param name="cancellationToken">
@@ -488,9 +588,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the ListOperations service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
         Task<ListOperationsResponse> ListOperationsAsync(ListOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -516,9 +617,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the ListTagsForDomain service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
@@ -546,9 +648,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the ListTagsForDomain service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
@@ -576,9 +679,9 @@ namespace Amazon.Route53Domains
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Creates a Amazon Route 53 hosted zone that has the same name as the domain. Amazon
-        /// Route 53 assigns four name servers to your hosted zone and automatically updates your
-        /// domain registration with the names of these name servers.
+        /// Creates a Route 53 hosted zone that has the same name as the domain. Route 53 assigns
+        /// four name servers to your hosted zone and automatically updates your domain registration
+        /// with the names of these name servers.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -620,9 +723,10 @@ namespace Amazon.Route53Domains
         /// The request is already in progress for the domain.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
@@ -635,6 +739,44 @@ namespace Amazon.Route53Domains
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
         Task<RegisterDomainResponse> RegisterDomainAsync(RegisterDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RejectDomainTransferFromAnotherAwsAccount
+
+
+
+        /// <summary>
+        /// Rejects the transfer of a domain from another AWS account to the current AWS account.
+        /// You initiate a transfer between AWS accounts using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Use either <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
+        /// or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+        /// to determine whether the operation succeeded. <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+        /// provides additional information, for example, <code>Domain Transfer from Aws Account
+        /// 111122223333 has been cancelled</code>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectDomainTransferFromAnotherAwsAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RejectDomainTransferFromAnotherAwsAccount service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RejectDomainTransferFromAnotherAwsAccount">REST API Reference for RejectDomainTransferFromAnotherAwsAccount Operation</seealso>
+        Task<RejectDomainTransferFromAnotherAwsAccountResponse> RejectDomainTransferFromAnotherAwsAccountAsync(RejectDomainTransferFromAnotherAwsAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -651,8 +793,8 @@ namespace Amazon.Route53Domains
         /// We recommend that you renew your domain several weeks before the expiration date.
         /// Some TLD registries delete domains before the expiration date if you haven't renewed
         /// far enough in advance. For more information about renewing domain registration, see
-        /// <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-renew.html">Renewing
-        /// Registration for a Domain</a> in the Amazon Route 53 Developer Guide.
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-renew.html">Renewing
+        /// Registration for a Domain</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RenewDomain service method.</param>
@@ -665,9 +807,10 @@ namespace Amazon.Route53Domains
         /// The request is already in progress for the domain.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
@@ -699,9 +842,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the ResendContactReachabilityEmail service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
@@ -729,9 +873,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the RetrieveDomainAuthCode service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain (TLD).
@@ -746,26 +891,42 @@ namespace Amazon.Route53Domains
 
 
         /// <summary>
-        /// This operation transfers a domain from another registrar to Amazon Route 53. When
-        /// the transfer is complete, the domain is registered either with Amazon Registrar (for
-        /// .com, .net, and .org domains) or with our registrar associate, Gandi (for all other
-        /// TLDs).
+        /// Transfers a domain from another registrar to Amazon Route 53. When the transfer is
+        /// complete, the domain is registered either with Amazon Registrar (for .com, .net, and
+        /// .org domains) or with our registrar associate, Gandi (for all other TLDs).
         /// 
         ///  
         /// <para>
+        /// For more information about transferring domains, see the following topics:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
         /// For transfer requirements, a detailed procedure, and information about viewing the
-        /// status of a domain transfer, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html">Transferring
+        /// status of a domain that you're transferring to Route 53, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html">Transferring
         /// Registration for a Domain to Amazon Route 53</a> in the <i>Amazon Route 53 Developer
         /// Guide</i>.
         /// </para>
-        ///  
+        ///  </li> <li> 
+        /// <para>
+        /// For information about how to transfer a domain from one AWS account to another, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For information about how to transfer a domain to another domain registrar, see <a
+        /// href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-from-route-53.html">Transferring
+        /// a Domain from Amazon Route 53 to Another Registrar</a> in the <i>Amazon Route 53 Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// If the registrar for your domain is also the DNS service provider for the domain,
-        /// we highly recommend that you consider transferring your DNS service to Amazon Route
-        /// 53 or to another DNS service provider before you transfer your registration. Some
-        /// registrars provide free DNS service when you purchase a domain registration. When
-        /// you transfer the registration, the previous registrar will not renew your domain registration
-        /// and could end your DNS service at any time.
+        /// we highly recommend that you transfer your DNS service to Route 53 or to another DNS
+        /// service provider before you transfer your registration. Some registrars provide free
+        /// DNS service when you purchase a domain registration. When you transfer the registration,
+        /// the previous registrar will not renew your domain registration and could end your
+        /// DNS service at any time.
         /// </para>
         ///  <important> 
         /// <para>
@@ -793,9 +954,10 @@ namespace Amazon.Route53Domains
         /// The request is already in progress for the domain.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
@@ -808,6 +970,71 @@ namespace Amazon.Route53Domains
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain">REST API Reference for TransferDomain Operation</seealso>
         Task<TransferDomainResponse> TransferDomainAsync(TransferDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TransferDomainToAnotherAwsAccount
+
+
+
+        /// <summary>
+        /// Transfers a domain from the current AWS account to another AWS account. Note the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The AWS account that you're transferring the domain to must accept the transfer. If
+        /// the other account doesn't accept the transfer within 3 days, we cancel the transfer.
+        /// See <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can cancel the transfer before the other account accepts it. See <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_CancelDomainTransferToAnotherAwsAccount.html">CancelDomainTransferToAnotherAwsAccount</a>.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The other account can reject the transfer. See <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RejectDomainTransferFromAnotherAwsAccount.html">RejectDomainTransferFromAnotherAwsAccount</a>.
+        /// 
+        /// </para>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// When you transfer a domain from one AWS account to another, Route 53 doesn't transfer
+        /// the hosted zone that is associated with the domain. DNS resolution isn't affected
+        /// if the domain and the hosted zone are owned by separate accounts, so transferring
+        /// the hosted zone is optional. For information about transferring the hosted zone to
+        /// another AWS account, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-migrating.html">Migrating
+        /// a Hosted Zone to a Different AWS Account</a> in the <i>Amazon Route 53 Developer Guide</i>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Use either <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
+        /// or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+        /// to determine whether the operation succeeded. <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+        /// provides additional information, for example, <code>Domain Transfer from Aws Account
+        /// 111122223333 has been cancelled</code>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TransferDomainToAnotherAwsAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TransferDomainToAnotherAwsAccount service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.DuplicateRequestException">
+        /// The request is already in progress for the domain.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomainToAnotherAwsAccount">REST API Reference for TransferDomainToAnotherAwsAccount Operation</seealso>
+        Task<TransferDomainToAnotherAwsAccountResponse> TransferDomainToAnotherAwsAccountAsync(TransferDomainToAnotherAwsAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -836,9 +1063,10 @@ namespace Amazon.Route53Domains
         /// The request is already in progress for the domain.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
@@ -868,10 +1096,21 @@ namespace Amazon.Route53Domains
         /// <para>
         /// This operation affects only the contact information for the specified contact type
         /// (registrant, administrator, or tech). If the request succeeds, Amazon Route 53 returns
-        /// an operation ID that you can use with <a>GetOperationDetail</a> to track the progress
-        /// and completion of the action. If the request doesn't complete successfully, the domain
-        /// registrant will be notified by email.
+        /// an operation ID that you can use with <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+        /// to track the progress and completion of the action. If the request doesn't complete
+        /// successfully, the domain registrant will be notified by email.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// By disabling the privacy service via API, you consent to the publication of the contact
+        /// information provided for this domain via the public WHOIS database. You certify that
+        /// you are the registrant of this domain name and have the authority to make this decision.
+        /// You may withdraw your consent at any time by enabling privacy protection using either
+        /// <code>UpdateDomainContactPrivacy</code> or the Route 53 console. Enabling privacy
+        /// protection removes the contact information provided for this domain from the WHOIS
+        /// database. For more information on our privacy practices, see <a href="https://aws.amazon.com/privacy/">https://aws.amazon.com/privacy/</a>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainContactPrivacy service method.</param>
         /// <param name="cancellationToken">
@@ -883,9 +1122,10 @@ namespace Amazon.Route53Domains
         /// The request is already in progress for the domain.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
@@ -927,9 +1167,10 @@ namespace Amazon.Route53Domains
         /// The request is already in progress for the domain.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
@@ -965,9 +1206,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the UpdateTagsForDomain service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
@@ -995,9 +1237,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the UpdateTagsForDomain service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
@@ -1025,9 +1268,10 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>The response from the ViewBilling service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
-        /// The requested item is not acceptable. For example, for an OperationId it might refer
-        /// to the ID of an operation that is already completed. For a domain name, it might not
-        /// be a valid domain name or belong to the requester account.
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ViewBilling">REST API Reference for ViewBilling Operation</seealso>
         Task<ViewBillingResponse> ViewBillingAsync(ViewBillingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

@@ -157,7 +157,7 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property CreationDate. 
         /// <para>
         /// The date when the domain was created as found in the response to a WHOIS query. The
-        /// date and time is in Coordinated Universal time (UTC).
+        /// date and time is in Unix time format and Coordinated Universal time (UTC).
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -213,7 +213,7 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property ExpirationDate. 
         /// <para>
         /// The date when the registration for the domain is set to expire. The date and time
-        /// is in Coordinated Universal time (UTC).
+        /// is in Unix time format and Coordinated Universal time (UTC).
         /// </para>
         /// </summary>
         public DateTime ExpirationDate
@@ -348,8 +348,8 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property Reseller. 
         /// <para>
-        /// Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains
-        /// will have <code>"Amazon"</code> as the reseller. 
+        /// Reseller of the domain. Domains registered or transferred using Route 53 domains will
+        /// have <code>"Amazon"</code> as the reseller. 
         /// </para>
         /// </summary>
         public string Reseller
@@ -443,7 +443,7 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property UpdatedDate. 
         /// <para>
         /// The last updated date of the domain as found in the response to a WHOIS query. The
-        /// date and time is in Coordinated Universal time (UTC).
+        /// date and time is in Unix time format and Coordinated Universal time (UTC).
         /// </para>
         /// </summary>
         public DateTime UpdatedDate

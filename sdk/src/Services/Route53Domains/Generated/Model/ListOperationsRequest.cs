@@ -29,7 +29,8 @@ namespace Amazon.Route53Domains.Model
 {
     /// <summary>
     /// Container for the parameters to the ListOperations operation.
-    /// This operation returns the operation IDs of operations that are not yet complete.
+    /// Returns information about all of the operations that return an operation ID and that
+    /// have ever been performed on domains that were registered by the current account.
     /// </summary>
     public partial class ListOperationsRequest : AmazonRoute53DomainsRequest
     {
@@ -88,8 +89,8 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property SubmittedSince. 
         /// <para>
         /// An optional parameter that lets you get information about all the operations that
-        /// you submitted after a specified date and time. Specify the date and time in Coordinated
-        /// Universal time (UTC).
+        /// you submitted after a specified date and time. Specify the date and time in Unix time
+        /// format and Coordinated Universal time (UTC).
         /// </para>
         /// </summary>
         public DateTime SubmittedSince

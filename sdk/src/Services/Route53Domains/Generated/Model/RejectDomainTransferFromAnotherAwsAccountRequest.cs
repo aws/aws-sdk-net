@@ -28,28 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// Container for the parameters to the EnableDomainAutoRenew operation.
-    /// This operation configures Amazon Route 53 to automatically renew the specified domain
-    /// before the domain registration expires. The cost of renewing your domain registration
-    /// is billed to your AWS account.
+    /// Container for the parameters to the RejectDomainTransferFromAnotherAwsAccount operation.
+    /// Rejects the transfer of a domain from another AWS account to the current AWS account.
+    /// You initiate a transfer between AWS accounts using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+    /// 
     /// 
     ///  
     /// <para>
-    /// The period during which you can renew a domain name varies by TLD. For a list of TLDs
-    /// and their renewal policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
-    /// That You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer
-    /// Guide</i>. Route 53 requires that you renew before the end of the renewal period so
-    /// we can complete processing before the deadline.
+    /// Use either <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
+    /// or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+    /// to determine whether the operation succeeded. <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+    /// provides additional information, for example, <code>Domain Transfer from Aws Account
+    /// 111122223333 has been cancelled</code>. 
     /// </para>
     /// </summary>
-    public partial class EnableDomainAutoRenewRequest : AmazonRoute53DomainsRequest
+    public partial class RejectDomainTransferFromAnotherAwsAccountRequest : AmazonRoute53DomainsRequest
     {
         private string _domainName;
 
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of the domain that you want to enable automatic renewal for.
+        /// The name of the domain that was specified when another AWS account submitted a <a
+        /// href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
+        /// request. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

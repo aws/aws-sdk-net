@@ -28,11 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// The UpdateDomainContact response includes the following element.
+    /// The <code>TransferDomainToAnotherAwsAccount</code> response includes the following
+    /// elements.
     /// </summary>
-    public partial class UpdateDomainContactResponse : AmazonWebServiceResponse
+    public partial class TransferDomainToAnotherAwsAccountResponse : AmazonWebServiceResponse
     {
         private string _operationId;
+        private string _password;
 
         /// <summary>
         /// Gets and sets the property OperationId. 
@@ -41,7 +43,7 @@ namespace Amazon.Route53Domains.Model
         /// use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Max=255)]
         public string OperationId
         {
             get { return this._operationId; }
@@ -52,6 +54,27 @@ namespace Amazon.Route53Domains.Model
         internal bool IsSetOperationId()
         {
             return this._operationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Password. 
+        /// <para>
+        /// To finish transferring a domain to another AWS account, the account that the domain
+        /// is being transferred to must submit an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>
+        /// request. The request must include the value of the <code>Password</code> element that
+        /// was returned in the <code>TransferDomainToAnotherAwsAccount</code> response.
+        /// </para>
+        /// </summary>
+        public string Password
+        {
+            get { return this._password; }
+            set { this._password = value; }
+        }
+
+        // Check to see if Password property is set
+        internal bool IsSetPassword()
+        {
+            return this._password != null;
         }
 
     }

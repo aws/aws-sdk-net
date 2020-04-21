@@ -38,7 +38,7 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property Transferability. 
         /// <para>
         /// A complex type that contains information about whether the specified domain can be
-        /// transferred to Amazon Route 53.
+        /// transferred to Route 53.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
