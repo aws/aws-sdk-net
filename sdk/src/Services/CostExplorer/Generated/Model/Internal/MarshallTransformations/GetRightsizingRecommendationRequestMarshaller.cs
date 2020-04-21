@@ -68,6 +68,17 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetConfiguration())
+                {
+                    context.Writer.WritePropertyName("Configuration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RightsizingRecommendationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Configuration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetFilter())
                 {
                     context.Writer.WritePropertyName("Filter");

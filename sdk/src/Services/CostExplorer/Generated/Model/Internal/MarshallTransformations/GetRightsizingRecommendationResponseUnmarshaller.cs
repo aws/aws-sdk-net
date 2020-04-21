@@ -51,6 +51,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Configuration", targetDepth))
+                {
+                    var unmarshaller = RightsizingRecommendationConfigurationUnmarshaller.Instance;
+                    response.Configuration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Metadata", targetDepth))
                 {
                     var unmarshaller = RightsizingRecommendationMetadataUnmarshaller.Instance;
