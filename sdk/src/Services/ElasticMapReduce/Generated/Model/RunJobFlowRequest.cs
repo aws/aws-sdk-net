@@ -81,6 +81,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _jobFlowRole;
         private KerberosAttributes _kerberosAttributes;
         private string _logUri;
+        private ManagedScalingPolicy _managedScalingPolicy;
         private string _name;
         private List<SupportedProductConfig> _newSupportedProducts = new List<SupportedProductConfig>();
         private string _releaseLabel;
@@ -357,6 +358,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetLogUri()
         {
             return this._logUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedScalingPolicy. 
+        /// <para>
+        ///  The specified managed scaling policy for an Amazon EMR cluster. 
+        /// </para>
+        /// </summary>
+        public ManagedScalingPolicy ManagedScalingPolicy
+        {
+            get { return this._managedScalingPolicy; }
+            set { this._managedScalingPolicy = value; }
+        }
+
+        // Check to see if ManagedScalingPolicy property is set
+        internal bool IsSetManagedScalingPolicy()
+        {
+            return this._managedScalingPolicy != null;
         }
 
         /// <summary>

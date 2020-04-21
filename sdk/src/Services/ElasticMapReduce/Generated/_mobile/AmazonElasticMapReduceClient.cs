@@ -912,6 +912,40 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  GetManagedScalingPolicy
+
+        internal virtual GetManagedScalingPolicyResponse GetManagedScalingPolicy(GetManagedScalingPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedScalingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedScalingPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetManagedScalingPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Fetches the attached managed scaling policy for an Amazon EMR cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedScalingPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetManagedScalingPolicy service method, as returned by ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetManagedScalingPolicy">REST API Reference for GetManagedScalingPolicy Operation</seealso>
+        public virtual Task<GetManagedScalingPolicyResponse> GetManagedScalingPolicyAsync(GetManagedScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedScalingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedScalingPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetManagedScalingPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListBootstrapActions
 
         internal virtual ListBootstrapActionsResponse ListBootstrapActions()
@@ -1553,6 +1587,43 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  PutManagedScalingPolicy
+
+        internal virtual PutManagedScalingPolicyResponse PutManagedScalingPolicy(PutManagedScalingPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutManagedScalingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutManagedScalingPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutManagedScalingPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed
+        /// scaling policy defines the limits for resources, such as EC2 instances that can be
+        /// added or terminated from a cluster. The policy only applies to the core and task nodes.
+        /// The master node cannot be scaled after initial configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutManagedScalingPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutManagedScalingPolicy service method, as returned by ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutManagedScalingPolicy">REST API Reference for PutManagedScalingPolicy Operation</seealso>
+        public virtual Task<PutManagedScalingPolicyResponse> PutManagedScalingPolicyAsync(PutManagedScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutManagedScalingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutManagedScalingPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutManagedScalingPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RemoveAutoScalingPolicy
 
         internal virtual RemoveAutoScalingPolicyResponse RemoveAutoScalingPolicy(RemoveAutoScalingPolicyRequest request)
@@ -1584,6 +1655,40 @@ namespace Amazon.ElasticMapReduce
             options.ResponseUnmarshaller = RemoveAutoScalingPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveAutoScalingPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveManagedScalingPolicy
+
+        internal virtual RemoveManagedScalingPolicyResponse RemoveManagedScalingPolicy(RemoveManagedScalingPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveManagedScalingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveManagedScalingPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveManagedScalingPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes a managed scaling policy from a specified EMR cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveManagedScalingPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveManagedScalingPolicy service method, as returned by ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveManagedScalingPolicy">REST API Reference for RemoveManagedScalingPolicy Operation</seealso>
+        public virtual Task<RemoveManagedScalingPolicyResponse> RemoveManagedScalingPolicyAsync(RemoveManagedScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveManagedScalingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveManagedScalingPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveManagedScalingPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion

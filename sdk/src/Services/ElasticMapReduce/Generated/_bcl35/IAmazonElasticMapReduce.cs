@@ -743,6 +743,46 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  GetManagedScalingPolicy
+
+
+        /// <summary>
+        /// Fetches the attached managed scaling policy for an Amazon EMR cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedScalingPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetManagedScalingPolicy service method, as returned by ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetManagedScalingPolicy">REST API Reference for GetManagedScalingPolicy Operation</seealso>
+        GetManagedScalingPolicyResponse GetManagedScalingPolicy(GetManagedScalingPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetManagedScalingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedScalingPolicy operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetManagedScalingPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetManagedScalingPolicy">REST API Reference for GetManagedScalingPolicy Operation</seealso>
+        IAsyncResult BeginGetManagedScalingPolicy(GetManagedScalingPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetManagedScalingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetManagedScalingPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetManagedScalingPolicyResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetManagedScalingPolicy">REST API Reference for GetManagedScalingPolicy Operation</seealso>
+        GetManagedScalingPolicyResponse EndGetManagedScalingPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListBootstrapActions
 
 
@@ -1401,6 +1441,49 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  PutManagedScalingPolicy
+
+
+        /// <summary>
+        /// Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed
+        /// scaling policy defines the limits for resources, such as EC2 instances that can be
+        /// added or terminated from a cluster. The policy only applies to the core and task nodes.
+        /// The master node cannot be scaled after initial configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutManagedScalingPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutManagedScalingPolicy service method, as returned by ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutManagedScalingPolicy">REST API Reference for PutManagedScalingPolicy Operation</seealso>
+        PutManagedScalingPolicyResponse PutManagedScalingPolicy(PutManagedScalingPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutManagedScalingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutManagedScalingPolicy operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutManagedScalingPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutManagedScalingPolicy">REST API Reference for PutManagedScalingPolicy Operation</seealso>
+        IAsyncResult BeginPutManagedScalingPolicy(PutManagedScalingPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutManagedScalingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutManagedScalingPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutManagedScalingPolicyResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutManagedScalingPolicy">REST API Reference for PutManagedScalingPolicy Operation</seealso>
+        PutManagedScalingPolicyResponse EndPutManagedScalingPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RemoveAutoScalingPolicy
 
 
@@ -1439,6 +1522,46 @@ namespace Amazon.ElasticMapReduce
         /// <returns>Returns a  RemoveAutoScalingPolicyResult from ElasticMapReduce.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveAutoScalingPolicy">REST API Reference for RemoveAutoScalingPolicy Operation</seealso>
         RemoveAutoScalingPolicyResponse EndRemoveAutoScalingPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RemoveManagedScalingPolicy
+
+
+        /// <summary>
+        /// Removes a managed scaling policy from a specified EMR cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveManagedScalingPolicy service method.</param>
+        /// 
+        /// <returns>The response from the RemoveManagedScalingPolicy service method, as returned by ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveManagedScalingPolicy">REST API Reference for RemoveManagedScalingPolicy Operation</seealso>
+        RemoveManagedScalingPolicyResponse RemoveManagedScalingPolicy(RemoveManagedScalingPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveManagedScalingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveManagedScalingPolicy operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveManagedScalingPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveManagedScalingPolicy">REST API Reference for RemoveManagedScalingPolicy Operation</seealso>
+        IAsyncResult BeginRemoveManagedScalingPolicy(RemoveManagedScalingPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveManagedScalingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveManagedScalingPolicy.</param>
+        /// 
+        /// <returns>Returns a  RemoveManagedScalingPolicyResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveManagedScalingPolicy">REST API Reference for RemoveManagedScalingPolicy Operation</seealso>
+        RemoveManagedScalingPolicyResponse EndRemoveManagedScalingPolicy(IAsyncResult asyncResult);
 
         #endregion
         
