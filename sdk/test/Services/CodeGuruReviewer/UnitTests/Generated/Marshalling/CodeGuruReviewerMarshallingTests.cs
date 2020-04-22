@@ -76,6 +76,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("CodeGuruReviewer")]
+        public void DescribeCodeReviewMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeCodeReview");
+
+            var request = InstantiateClassGenerator.Execute<DescribeCodeReviewRequest>();
+            var marshaller = new DescribeCodeReviewRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DescribeCodeReview", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DescribeCodeReviewResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DescribeCodeReviewResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CodeGuruReviewer")]
+        public void DescribeRecommendationFeedbackMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeRecommendationFeedback");
+
+            var request = InstantiateClassGenerator.Execute<DescribeRecommendationFeedbackRequest>();
+            var marshaller = new DescribeRecommendationFeedbackRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DescribeRecommendationFeedback", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DescribeRecommendationFeedbackResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DescribeRecommendationFeedbackResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CodeGuruReviewer")]
         public void DescribeRepositoryAssociationMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeRepositoryAssociation");
@@ -140,6 +204,102 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("CodeGuruReviewer")]
+        public void ListCodeReviewsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListCodeReviews");
+
+            var request = InstantiateClassGenerator.Execute<ListCodeReviewsRequest>();
+            var marshaller = new ListCodeReviewsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListCodeReviews", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListCodeReviewsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListCodeReviewsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CodeGuruReviewer")]
+        public void ListRecommendationFeedbackMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListRecommendationFeedback");
+
+            var request = InstantiateClassGenerator.Execute<ListRecommendationFeedbackRequest>();
+            var marshaller = new ListRecommendationFeedbackRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListRecommendationFeedback", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListRecommendationFeedbackResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListRecommendationFeedbackResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CodeGuruReviewer")]
+        public void ListRecommendationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListRecommendations");
+
+            var request = InstantiateClassGenerator.Execute<ListRecommendationsRequest>();
+            var marshaller = new ListRecommendationsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListRecommendations", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListRecommendationsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListRecommendationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CodeGuruReviewer")]
         public void ListRepositoryAssociationsMarshallTest()
         {
             var operation = service_model.FindOperation("ListRepositoryAssociations");
@@ -164,6 +324,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListRepositoryAssociationsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListRepositoryAssociationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CodeGuruReviewer")]
+        public void PutRecommendationFeedbackMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutRecommendationFeedback");
+
+            var request = InstantiateClassGenerator.Execute<PutRecommendationFeedbackRequest>();
+            var marshaller = new PutRecommendationFeedbackRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutRecommendationFeedback", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutRecommendationFeedbackResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PutRecommendationFeedbackResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

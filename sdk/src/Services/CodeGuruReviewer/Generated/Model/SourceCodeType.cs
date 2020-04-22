@@ -28,31 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeRepositoryAssociation operation.
-    /// Describes a repository association.
+    /// Information about the source code type.
     /// </summary>
-    public partial class DescribeRepositoryAssociationRequest : AmazonCodeGuruReviewerRequest
+    public partial class SourceCodeType
     {
-        private string _associationArn;
+        private CommitDiffSourceCodeType _commitDiff;
 
         /// <summary>
-        /// Gets and sets the property AssociationArn. 
+        /// Gets and sets the property CommitDiff. 
         /// <para>
-        /// The Amazon Resource Name (ARN) identifying the association. You can retrieve this
-        /// ARN by calling <code>ListRepositories</code>.
+        ///  The commit diff for the pull request. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1600)]
-        public string AssociationArn
+        public CommitDiffSourceCodeType CommitDiff
         {
-            get { return this._associationArn; }
-            set { this._associationArn = value; }
+            get { return this._commitDiff; }
+            set { this._commitDiff = value; }
         }
 
-        // Check to see if AssociationArn property is set
-        internal bool IsSetAssociationArn()
+        // Check to see if CommitDiff property is set
+        internal bool IsSetCommitDiff()
         {
-            return this._associationArn != null;
+            return this._commitDiff != null;
         }
 
     }

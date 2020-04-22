@@ -28,31 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeRepositoryAssociation operation.
-    /// Describes a repository association.
+    /// Container for the parameters to the DescribeCodeReview operation.
+    /// Returns the metadaata associated with the code review along with its status.
     /// </summary>
-    public partial class DescribeRepositoryAssociationRequest : AmazonCodeGuruReviewerRequest
+    public partial class DescribeCodeReviewRequest : AmazonCodeGuruReviewerRequest
     {
-        private string _associationArn;
+        private string _codeReviewArn;
 
         /// <summary>
-        /// Gets and sets the property AssociationArn. 
+        /// Gets and sets the property CodeReviewArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) identifying the association. You can retrieve this
-        /// ARN by calling <code>ListRepositories</code>.
+        ///  The Amazon Resource Name (ARN) of the code review to describe. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]
-        public string AssociationArn
+        public string CodeReviewArn
         {
-            get { return this._associationArn; }
-            set { this._associationArn = value; }
+            get { return this._codeReviewArn; }
+            set { this._codeReviewArn = value; }
         }
 
-        // Check to see if AssociationArn property is set
-        internal bool IsSetAssociationArn()
+        // Check to see if CodeReviewArn property is set
+        internal bool IsSetCodeReviewArn()
         {
-            return this._associationArn != null;
+            return this._codeReviewArn != null;
         }
 
     }

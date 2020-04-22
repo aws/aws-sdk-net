@@ -28,31 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeRepositoryAssociation operation.
-    /// Describes a repository association.
+    /// This is the response object from the DescribeRecommendationFeedback operation.
     /// </summary>
-    public partial class DescribeRepositoryAssociationRequest : AmazonCodeGuruReviewerRequest
+    public partial class DescribeRecommendationFeedbackResponse : AmazonWebServiceResponse
     {
-        private string _associationArn;
+        private RecommendationFeedback _recommendationFeedback;
 
         /// <summary>
-        /// Gets and sets the property AssociationArn. 
+        /// Gets and sets the property RecommendationFeedback. 
         /// <para>
-        /// The Amazon Resource Name (ARN) identifying the association. You can retrieve this
-        /// ARN by calling <code>ListRepositories</code>.
+        ///  The recommendation feedback given by the user. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1600)]
-        public string AssociationArn
+        public RecommendationFeedback RecommendationFeedback
         {
-            get { return this._associationArn; }
-            set { this._associationArn = value; }
+            get { return this._recommendationFeedback; }
+            set { this._recommendationFeedback = value; }
         }
 
-        // Check to see if AssociationArn property is set
-        internal bool IsSetAssociationArn()
+        // Check to see if RecommendationFeedback property is set
+        internal bool IsSetRecommendationFeedback()
         {
-            return this._associationArn != null;
+            return this._recommendationFeedback != null;
         }
 
     }

@@ -28,62 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// Information about a repository association.
+    /// Information about a code review.
     /// </summary>
-    public partial class RepositoryAssociation
+    public partial class CodeReview
     {
-        private string _associationArn;
-        private string _associationId;
+        private string _codeReviewArn;
         private DateTime? _createdTimeStamp;
         private DateTime? _lastUpdatedTimeStamp;
+        private Metrics _metrics;
         private string _name;
         private string _owner;
         private ProviderType _providerType;
-        private RepositoryAssociationState _state;
+        private string _pullRequestId;
+        private string _repositoryName;
+        private SourceCodeType _sourceCodeType;
+        private JobState _state;
         private string _stateReason;
+        private Type _type;
 
         /// <summary>
-        /// Gets and sets the property AssociationArn. 
+        /// Gets and sets the property CodeReviewArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) identifying the repository association.
+        ///  The Amazon Resource Name (ARN) of the code review to describe. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
-        public string AssociationArn
+        public string CodeReviewArn
         {
-            get { return this._associationArn; }
-            set { this._associationArn = value; }
+            get { return this._codeReviewArn; }
+            set { this._codeReviewArn = value; }
         }
 
-        // Check to see if AssociationArn property is set
-        internal bool IsSetAssociationArn()
+        // Check to see if CodeReviewArn property is set
+        internal bool IsSetCodeReviewArn()
         {
-            return this._associationArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property AssociationId. 
-        /// <para>
-        /// The ID of the repository association.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public string AssociationId
-        {
-            get { return this._associationId; }
-            set { this._associationId = value; }
-        }
-
-        // Check to see if AssociationId property is set
-        internal bool IsSetAssociationId()
-        {
-            return this._associationId != null;
+            return this._codeReviewArn != null;
         }
 
         /// <summary>
         /// Gets and sets the property CreatedTimeStamp. 
         /// <para>
-        /// The time, in milliseconds since the epoch, when the repository association was created.
+        ///  The time, in milliseconds since the epoch, when the code review was created. 
         /// </para>
         /// </summary>
         public DateTime CreatedTimeStamp
@@ -101,8 +86,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTimeStamp. 
         /// <para>
-        /// The time, in milliseconds since the epoch, when the repository association was last
-        /// updated.
+        ///  The time, in milliseconds since the epoch, when the code review was last updated.
+        /// 
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTimeStamp
@@ -118,9 +103,27 @@ namespace Amazon.CodeGuruReviewer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Metrics. 
+        /// <para>
+        ///  The statistics from the code review. 
+        /// </para>
+        /// </summary>
+        public Metrics Metrics
+        {
+            get { return this._metrics; }
+            set { this._metrics = value; }
+        }
+
+        // Check to see if Metrics property is set
+        internal bool IsSetMetrics()
+        {
+            return this._metrics != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the repository.
+        ///  The name of the code review. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -139,7 +142,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The owner of the repository.
+        ///  The owner of the repository. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -158,7 +161,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property ProviderType. 
         /// <para>
-        /// The provider type of the repository association.
+        ///  The provider type of the repository association. 
         /// </para>
         /// </summary>
         public ProviderType ProviderType
@@ -174,12 +177,68 @@ namespace Amazon.CodeGuruReviewer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property State. 
+        /// Gets and sets the property PullRequestId. 
         /// <para>
-        /// The state of the repository association.
+        ///  The pull request ID for the code review. 
         /// </para>
         /// </summary>
-        public RepositoryAssociationState State
+        [AWSProperty(Min=1, Max=64)]
+        public string PullRequestId
+        {
+            get { return this._pullRequestId; }
+            set { this._pullRequestId = value; }
+        }
+
+        // Check to see if PullRequestId property is set
+        internal bool IsSetPullRequestId()
+        {
+            return this._pullRequestId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RepositoryName. 
+        /// <para>
+        ///  The name of the repository. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string RepositoryName
+        {
+            get { return this._repositoryName; }
+            set { this._repositoryName = value; }
+        }
+
+        // Check to see if RepositoryName property is set
+        internal bool IsSetRepositoryName()
+        {
+            return this._repositoryName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceCodeType. 
+        /// <para>
+        ///  The type of the source code for the code review. 
+        /// </para>
+        /// </summary>
+        public SourceCodeType SourceCodeType
+        {
+            get { return this._sourceCodeType; }
+            set { this._sourceCodeType = value; }
+        }
+
+        // Check to see if SourceCodeType property is set
+        internal bool IsSetSourceCodeType()
+        {
+            return this._sourceCodeType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        ///  The state of the code review. 
+        /// </para>
+        /// </summary>
+        public JobState State
         {
             get { return this._state; }
             set { this._state = value; }
@@ -194,7 +253,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property StateReason. 
         /// <para>
-        /// A description of why the repository association is in the current state.
+        ///  The reason for the state of the code review. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -208,6 +267,24 @@ namespace Amazon.CodeGuruReviewer.Model
         internal bool IsSetStateReason()
         {
             return this._stateReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        ///  The type of code review. 
+        /// </para>
+        /// </summary>
+        public Type Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

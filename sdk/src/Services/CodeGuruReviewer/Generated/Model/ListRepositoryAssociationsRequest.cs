@@ -46,11 +46,11 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <para>
         /// The maximum number of repository association results returned by <code>ListRepositoryAssociations</code>
         /// in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code>
-        /// only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// only returns <code>maxResults</code> results in a single page with a <code>nextToken</code>
         /// response element. The remaining results of the initial request can be seen by sending
         /// another <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRepositoryAssociations</code>
-        /// returns up to 100 results and a <code>nextToken</code> value if applicable. 
+        /// value. This value can be between 1 and 25. If this parameter is not used, <code>ListRepositoryAssociations</code>
+        /// returns up to 25 results and a <code>nextToken</code> value if applicable. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -69,7 +69,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Names. 
         /// <para>
-        /// List of names to use as a filter.
+        /// List of repository names to use as a filter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]
@@ -95,8 +95,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.
+        /// Treat this token as an opaque identifier that is only used to retrieve the next items
+        /// in a list and not for other programmatic purposes.
         /// </para>
         ///  </note>
         /// </summary>
@@ -116,8 +116,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Owners. 
         /// <para>
-        /// List of owners to use as a filter. For AWS CodeCommit, the owner is the AWS account
-        /// id. For GitHub, it is the GitHub account name.
+        /// List of owners to use as a filter. For GitHub, this is name of the GitHub account
+        /// that was used to associate the repository. For AWS CodeCommit, it is the name of the
+        /// CodeCommit account that was used to associate the repository.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]

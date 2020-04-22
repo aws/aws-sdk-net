@@ -7,16 +7,95 @@
     <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.DescribeCodeReviewRequest.CodeReviewArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.DescribeRecommendationFeedbackRequest.CodeReviewArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.DescribeRecommendationFeedbackRequest.RecommendationId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.DescribeRecommendationFeedbackRequest.UserId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.DescribeRepositoryAssociationRequest.AssociationArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z]+:[\w-]+$</pattern>
+    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.DisassociateRepositoryRequest.AssociationArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z]+:[\w-]+$</pattern>
+    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.ListCodeReviewsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.ListCodeReviewsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.ListCodeReviewsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.ListRecommendationFeedbackRequest.CodeReviewArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.ListRecommendationFeedbackRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.ListRecommendationFeedbackRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.ListRecommendationFeedbackResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.ListRecommendationsRequest.CodeReviewArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.ListRecommendationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.ListRecommendationsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.ListRecommendationsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.ListRepositoryAssociationsRequest.MaxResults</property>
@@ -34,16 +113,141 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.PutRecommendationFeedbackRequest.CodeReviewArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.PutRecommendationFeedbackRequest.RecommendationId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.CodeCommitRepository.Name</property>
     <min>1</min>
     <max>100</max>
     <pattern>^\S[\w.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.CodeReview.CodeReviewArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.CodeReview.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^\S[\w.-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.CodeReview.Owner</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^\S(.*\S)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.CodeReview.PullRequestId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.CodeReview.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^\S[\w.-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.CodeReview.StateReason</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.CodeReviewSummary.CodeReviewArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.CodeReviewSummary.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^\S[\w.-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.CodeReviewSummary.Owner</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^\S(.*\S)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.CodeReviewSummary.PullRequestId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.CodeReviewSummary.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^\S[\w.-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.CommitDiffSourceCodeType.DestinationCommit</property>
+    <min>6</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.CommitDiffSourceCodeType.SourceCommit</property>
+    <min>6</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.RecommendationFeedback.CodeReviewArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.RecommendationFeedback.RecommendationId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.RecommendationFeedback.UserId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.RecommendationFeedbackSummary.RecommendationId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.RecommendationFeedbackSummary.UserId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.RecommendationSummary.Description</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.RecommendationSummary.FilePath</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.RecommendationSummary.RecommendationId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.RepositoryAssociation.AssociationArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z]+:[\w-]+$</pattern>
+    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.RepositoryAssociation.AssociationId</property>
@@ -71,7 +275,7 @@
     <property>Amazon.CodeGuruReviewer.Model.RepositoryAssociationSummary.AssociationArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z]+:[\w-]+$</pattern>
+    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.RepositoryAssociationSummary.AssociationId</property>
