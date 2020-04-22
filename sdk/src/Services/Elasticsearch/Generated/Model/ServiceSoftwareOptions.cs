@@ -37,6 +37,7 @@ namespace Amazon.Elasticsearch.Model
         private string _currentVersion;
         private string _description;
         private string _newVersion;
+        private bool? _optionalDeployment;
         private bool? _updateAvailable;
         private DeploymentStatus _updateStatus;
 
@@ -130,6 +131,26 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetNewVersion()
         {
             return this._newVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptionalDeployment. 
+        /// <para>
+        /// <code>True</code> if a service software is never automatically updated. <code>False</code>
+        /// if a service software is automatically updated after <code>AutomatedUpdateDate</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public bool OptionalDeployment
+        {
+            get { return this._optionalDeployment.GetValueOrDefault(); }
+            set { this._optionalDeployment = value; }
+        }
+
+        // Check to see if OptionalDeployment property is set
+        internal bool IsSetOptionalDeployment()
+        {
+            return this._optionalDeployment.HasValue; 
         }
 
         /// <summary>

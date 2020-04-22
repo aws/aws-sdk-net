@@ -94,6 +94,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.NewVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OptionalDeployment", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.OptionalDeployment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UpdateAvailable", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
