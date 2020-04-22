@@ -967,6 +967,46 @@ namespace Amazon.Redshift
 
         #endregion
                 
+        #region  CreateUsageLimit
+
+
+
+        /// <summary>
+        /// Creates a usage limit for a specified Amazon Redshift feature on a cluster. The usage
+        /// limit is identified by the returned usage limit identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsageLimit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateUsageLimit service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidUsageLimitException">
+        /// The usage limit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
+        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
+        /// You have exceeded the number of tags allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UsageLimitAlreadyExistsException">
+        /// The usage limit already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateUsageLimit">REST API Reference for CreateUsageLimit Operation</seealso>
+        Task<CreateUsageLimitResponse> CreateUsageLimitAsync(CreateUsageLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteCluster
 
 
@@ -1326,6 +1366,30 @@ namespace Amazon.Redshift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteUsageLimit
+
+
+
+        /// <summary>
+        /// Deletes a usage limit from a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsageLimit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteUsageLimit service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UsageLimitNotFoundException">
+        /// The usage limit identifier can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteUsageLimit">REST API Reference for DeleteUsageLimit Operation</seealso>
+        Task<DeleteUsageLimitResponse> DeleteUsageLimitAsync(DeleteUsageLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2621,6 +2685,53 @@ namespace Amazon.Redshift
 
         #endregion
                 
+        #region  DescribeUsageLimits
+
+
+
+        /// <summary>
+        /// Shows usage limits on a cluster. Results are filtered based on the combination of
+        /// input usage limit identifier, cluster identifier, and feature type parameters:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If usage limit identifier, cluster identifier, and feature type are not provided,
+        /// then all usage limit objects for the current account in the current region are returned.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If usage limit identifier is provided, then the corresponding usage limit object is
+        /// returned.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If cluster identifier is provided, then all usage limit objects for the specified
+        /// cluster are returned.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If cluster identifier and feature type are provided, then all usage limit objects
+        /// for the combination of cluster and feature are returned.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUsageLimits service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeUsageLimits service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeUsageLimits">REST API Reference for DescribeUsageLimits Operation</seealso>
+        Task<DescribeUsageLimitsResponse> DescribeUsageLimitsAsync(DescribeUsageLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisableLogging
 
 
@@ -3345,6 +3456,34 @@ namespace Amazon.Redshift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotSchedule">REST API Reference for ModifySnapshotSchedule Operation</seealso>
         Task<ModifySnapshotScheduleResponse> ModifySnapshotScheduleAsync(ModifySnapshotScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyUsageLimit
+
+
+
+        /// <summary>
+        /// Modifies a usage limit in a cluster. You can't modify the feature type or period of
+        /// a usage limit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyUsageLimit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyUsageLimit service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidUsageLimitException">
+        /// The usage limit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UsageLimitNotFoundException">
+        /// The usage limit identifier can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyUsageLimit">REST API Reference for ModifyUsageLimit Operation</seealso>
+        Task<ModifyUsageLimitResponse> ModifyUsageLimitAsync(ModifyUsageLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

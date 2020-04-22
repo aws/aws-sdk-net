@@ -1384,6 +1384,68 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  CreateUsageLimit
+
+
+        /// <summary>
+        /// Creates a usage limit for a specified Amazon Redshift feature on a cluster. The usage
+        /// limit is identified by the returned usage limit identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsageLimit service method.</param>
+        /// 
+        /// <returns>The response from the CreateUsageLimit service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidUsageLimitException">
+        /// The usage limit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
+        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
+        /// You have exceeded the number of tags allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UsageLimitAlreadyExistsException">
+        /// The usage limit already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateUsageLimit">REST API Reference for CreateUsageLimit Operation</seealso>
+        CreateUsageLimitResponse CreateUsageLimit(CreateUsageLimitRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUsageLimit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsageLimit operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUsageLimit
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateUsageLimit">REST API Reference for CreateUsageLimit Operation</seealso>
+        IAsyncResult BeginCreateUsageLimit(CreateUsageLimitRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateUsageLimit operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUsageLimit.</param>
+        /// 
+        /// <returns>Returns a  CreateUsageLimitResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateUsageLimit">REST API Reference for CreateUsageLimit Operation</seealso>
+        CreateUsageLimitResponse EndCreateUsageLimit(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteCluster
 
 
@@ -2007,6 +2069,52 @@ namespace Amazon.Redshift
         /// <returns>Returns a  DeleteTagsResult from Redshift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteUsageLimit
+
+
+        /// <summary>
+        /// Deletes a usage limit from a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsageLimit service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUsageLimit service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UsageLimitNotFoundException">
+        /// The usage limit identifier can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteUsageLimit">REST API Reference for DeleteUsageLimit Operation</seealso>
+        DeleteUsageLimitResponse DeleteUsageLimit(DeleteUsageLimitRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUsageLimit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsageLimit operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUsageLimit
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteUsageLimit">REST API Reference for DeleteUsageLimit Operation</seealso>
+        IAsyncResult BeginDeleteUsageLimit(DeleteUsageLimitRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteUsageLimit operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUsageLimit.</param>
+        /// 
+        /// <returns>Returns a  DeleteUsageLimitResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteUsageLimit">REST API Reference for DeleteUsageLimit Operation</seealso>
+        DeleteUsageLimitResponse EndDeleteUsageLimit(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3862,6 +3970,75 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  DescribeUsageLimits
+
+
+        /// <summary>
+        /// Shows usage limits on a cluster. Results are filtered based on the combination of
+        /// input usage limit identifier, cluster identifier, and feature type parameters:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If usage limit identifier, cluster identifier, and feature type are not provided,
+        /// then all usage limit objects for the current account in the current region are returned.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If usage limit identifier is provided, then the corresponding usage limit object is
+        /// returned.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If cluster identifier is provided, then all usage limit objects for the specified
+        /// cluster are returned.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If cluster identifier and feature type are provided, then all usage limit objects
+        /// for the combination of cluster and feature are returned.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUsageLimits service method.</param>
+        /// 
+        /// <returns>The response from the DescribeUsageLimits service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeUsageLimits">REST API Reference for DescribeUsageLimits Operation</seealso>
+        DescribeUsageLimitsResponse DescribeUsageLimits(DescribeUsageLimitsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUsageLimits operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUsageLimits operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeUsageLimits
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeUsageLimits">REST API Reference for DescribeUsageLimits Operation</seealso>
+        IAsyncResult BeginDescribeUsageLimits(DescribeUsageLimitsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeUsageLimits operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeUsageLimits.</param>
+        /// 
+        /// <returns>Returns a  DescribeUsageLimitsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeUsageLimits">REST API Reference for DescribeUsageLimits Operation</seealso>
+        DescribeUsageLimitsResponse EndDescribeUsageLimits(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableLogging
 
 
@@ -4982,6 +5159,56 @@ namespace Amazon.Redshift
         /// <returns>Returns a  ModifySnapshotScheduleResult from Redshift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotSchedule">REST API Reference for ModifySnapshotSchedule Operation</seealso>
         ModifySnapshotScheduleResponse EndModifySnapshotSchedule(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyUsageLimit
+
+
+        /// <summary>
+        /// Modifies a usage limit in a cluster. You can't modify the feature type or period of
+        /// a usage limit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyUsageLimit service method.</param>
+        /// 
+        /// <returns>The response from the ModifyUsageLimit service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidUsageLimitException">
+        /// The usage limit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UsageLimitNotFoundException">
+        /// The usage limit identifier can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyUsageLimit">REST API Reference for ModifyUsageLimit Operation</seealso>
+        ModifyUsageLimitResponse ModifyUsageLimit(ModifyUsageLimitRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyUsageLimit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyUsageLimit operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyUsageLimit
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyUsageLimit">REST API Reference for ModifyUsageLimit Operation</seealso>
+        IAsyncResult BeginModifyUsageLimit(ModifyUsageLimitRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyUsageLimit operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyUsageLimit.</param>
+        /// 
+        /// <returns>Returns a  ModifyUsageLimitResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyUsageLimit">REST API Reference for ModifyUsageLimit Operation</seealso>
+        ModifyUsageLimitResponse EndModifyUsageLimit(IAsyncResult asyncResult);
 
         #endregion
         

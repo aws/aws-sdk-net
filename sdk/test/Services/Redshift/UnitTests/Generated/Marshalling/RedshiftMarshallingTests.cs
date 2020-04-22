@@ -495,6 +495,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void CreateUsageLimitMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateUsageLimit");
+
+            var request = InstantiateClassGenerator.Execute<CreateUsageLimitRequest>();
+            var marshaller = new CreateUsageLimitRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateUsageLimitResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateUsageLimitResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void DeleteClusterMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteCluster");
@@ -720,6 +744,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var request = InstantiateClassGenerator.Execute<DeleteTagsRequest>();
             var marshaller = new DeleteTagsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DeleteUsageLimitMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteUsageLimit");
+
+            var request = InstantiateClassGenerator.Execute<DeleteUsageLimitRequest>();
+            var marshaller = new DeleteUsageLimitRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
             validator.Validate();
@@ -1405,6 +1448,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void DescribeUsageLimitsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeUsageLimits");
+
+            var request = InstantiateClassGenerator.Execute<DescribeUsageLimitsRequest>();
+            var marshaller = new DescribeUsageLimitsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeUsageLimitsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeUsageLimitsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void DisableLoggingMarshallTest()
         {
             var operation = service_model.FindOperation("DisableLogging");
@@ -1823,6 +1890,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = ModifySnapshotScheduleResponseUnmarshaller.Instance.Unmarshall(context)
                 as ModifySnapshotScheduleResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void ModifyUsageLimitMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyUsageLimit");
+
+            var request = InstantiateClassGenerator.Execute<ModifyUsageLimitRequest>();
+            var marshaller = new ModifyUsageLimitRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyUsageLimitResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyUsageLimitResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
