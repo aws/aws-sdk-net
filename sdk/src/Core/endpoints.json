@@ -13,8 +13,11 @@
       "dnsSuffix": "amazonaws.com",
       "partition": "aws",
       "partitionName": "AWS Standard",
-      "regionRegex": "^(us|eu|ap|sa|ca|me)\\-\\w+\\-\\d+$",
+      "regionRegex": "^(us|eu|ap|sa|ca|me|af)\\-\\w+\\-\\d+$",
       "regions": {
+        "af-south-1": {
+          "description": "Africa (Cape Town)"
+        },
         "ap-east-1": {
           "description": "Asia Pacific (Hong Kong)"
         },
@@ -78,6 +81,7 @@
         },
         "access-analyzer": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -100,6 +104,7 @@
         },
         "acm": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -209,6 +214,12 @@
         },
         "api.ecr": {
           "endpoints": {
+            "af-south-1": {
+              "credentialScope": {
+                "region": "af-south-1"
+              },
+              "hostname": "api.ecr.af-south-1.amazonaws.com"
+            },
             "ap-east-1": {
               "credentialScope": {
                 "region": "ap-east-1"
@@ -413,6 +424,7 @@
         },
         "apigateway": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -441,6 +453,7 @@
             ]
           },
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -554,6 +567,7 @@
             ]
           },
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -742,6 +756,7 @@
         },
         "cloudformation": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -859,6 +874,7 @@
         },
         "cloudtrail": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -979,6 +995,7 @@
         },
         "codedeploy": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -1424,6 +1441,7 @@
         },
         "directconnect": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -1477,6 +1495,7 @@
         },
         "dms": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -1645,6 +1664,7 @@
             ]
           },
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -1712,6 +1732,7 @@
             ]
           },
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -1764,6 +1785,7 @@
         },
         "ecs": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -1832,6 +1854,7 @@
         },
         "elasticache": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -1860,6 +1883,7 @@
         },
         "elasticbeanstalk": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -2041,6 +2065,7 @@
             ]
           },
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -2093,6 +2118,7 @@
             "sslCommonName": "{region}.{service}.{dnsSuffix}"
           },
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -2181,6 +2207,7 @@
         },
         "es": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -2209,6 +2236,7 @@
         },
         "events": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -2446,6 +2474,7 @@
           "endpoints": {
             "ap-east-1": {},
             "ap-northeast-1": {},
+            "ap-northeast-2": {},
             "ap-southeast-1": {},
             "ap-southeast-2": {},
             "eu-central-1": {},
@@ -2484,6 +2513,7 @@
             ]
           },
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -2918,6 +2948,7 @@
         },
         "kinesis": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -3004,6 +3035,7 @@
         },
         "kms": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -3043,6 +3075,7 @@
         },
         "lambda": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -3152,6 +3185,7 @@
         },
         "logs": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -3287,6 +3321,7 @@
             }
           },
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -3326,8 +3361,11 @@
             }
           },
           "endpoints": {
+            "ap-southeast-1": {},
             "ap-southeast-2": {},
+            "eu-central-1": {},
             "eu-west-1": {},
+            "eu-west-2": {},
             "us-east-1": {},
             "us-west-2": {}
           }
@@ -3340,6 +3378,7 @@
             ]
           },
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -3850,6 +3889,7 @@
         },
         "rds": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -3874,6 +3914,7 @@
         },
         "redshift": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -3942,6 +3983,7 @@
         },
         "resource-groups": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -4048,8 +4090,11 @@
             }
           },
           "endpoints": {
+            "ap-southeast-1": {},
             "ap-southeast-2": {},
+            "eu-central-1": {},
             "eu-west-1": {},
+            "eu-west-2": {},
             "us-east-1": {},
             "us-west-2": {}
           }
@@ -4111,6 +4156,7 @@
             ]
           },
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {
               "hostname": "s3.ap-northeast-1.amazonaws.com",
@@ -4717,6 +4763,7 @@
         },
         "sms": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -4878,6 +4925,7 @@
             ]
           },
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -4931,6 +4979,7 @@
             "sslCommonName": "{region}.queue.{dnsSuffix}"
           },
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -4979,6 +5028,7 @@
         },
         "ssm": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -5049,6 +5099,7 @@
         },
         "states": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -5186,6 +5237,7 @@
         },
         "sts": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -5250,6 +5302,7 @@
         },
         "swf": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -5296,6 +5349,7 @@
         },
         "tagging": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -5728,6 +5782,7 @@
         },
         "xray": {
           "endpoints": {
+            "af-south-1": {},
             "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
@@ -7355,6 +7410,12 @@
             }
           }
         },
+        "securityhub": {
+          "endpoints": {
+            "us-gov-east-1": {},
+            "us-gov-west-1": {}
+          }
+        },
         "serverlessrepo": {
           "defaults": {
             "protocols": [
@@ -7683,6 +7744,16 @@
           }
         },
         "codedeploy": {
+          "endpoints": {
+            "us-iso-east-1": {}
+          }
+        },
+        "comprehend": {
+          "defaults": {
+            "protocols": [
+              "https"
+            ]
+          },
           "endpoints": {
             "us-iso-east-1": {}
           }
