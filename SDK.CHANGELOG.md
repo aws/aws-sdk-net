@@ -1,3 +1,18 @@
+### 3.3.723.0 (2020-04-22 18:11 UTC)
+* CodeGuruReviewer (3.3.102.0)
+	* Add support for code review and recommendation feedback APIs.
+* Elasticsearch (3.3.106.0)
+	* This change adds a new field 'OptionalDeployment' to ServiceSoftwareOptions to indicate whether a service software update is optional or mandatory. If True, it indicates that the update is optional, and the service software is not automatically updated. If False, the service software is automatically updated after AutomatedUpdateDate.
+* FMS (3.3.105.0)
+	* This release is to support AWS Firewall Manager policy with Organizational Unit scope. 
+* Redshift (3.3.108.0)
+	* Amazon Redshift support for usage limits
+* Core 3.3.106.9
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.722.0 (2020-04-21 21:32 UTC)
 * CostExplorer (3.3.109.0)
 	* Cost Explorer Rightsizing Recommendations integrates with Compute Optimizer and begins offering across instance family rightsizing recommendations, adding to existing support for within instance family rightsizing recommendations. 
