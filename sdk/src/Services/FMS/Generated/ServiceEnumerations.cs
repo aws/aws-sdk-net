@@ -96,6 +96,10 @@ namespace Amazon.FMS
         /// Constant ACCOUNT for CustomerPolicyScopeIdType
         /// </summary>
         public static readonly CustomerPolicyScopeIdType ACCOUNT = new CustomerPolicyScopeIdType("ACCOUNT");
+        /// <summary>
+        /// Constant ORG_UNIT for CustomerPolicyScopeIdType
+        /// </summary>
+        public static readonly CustomerPolicyScopeIdType ORG_UNIT = new CustomerPolicyScopeIdType("ORG_UNIT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
