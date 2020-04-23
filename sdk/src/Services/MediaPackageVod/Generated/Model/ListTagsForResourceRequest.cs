@@ -28,43 +28,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaPackageVod.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreatePackagingGroup operation.
-    /// Creates a new MediaPackage VOD PackagingGroup resource.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// List tags for a given MediaPackage VOD resource
     /// </summary>
-    public partial class CreatePackagingGroupRequest : AmazonMediaPackageVodRequest
+    public partial class ListTagsForResourceRequest : AmazonMediaPackageVodRequest
     {
-        private string _id;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property Id. The ID of the PackagingGroup.
+        /// Gets and sets the property ResourceArn.
         /// </summary>
         [AWSProperty(Required=true)]
-        public string Id
+        public string ResourceArn
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._id != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags.
-        /// </summary>
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._resourceArn != null;
         }
 
     }

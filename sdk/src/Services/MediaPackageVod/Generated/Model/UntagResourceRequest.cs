@@ -28,43 +28,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaPackageVod.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreatePackagingGroup operation.
-    /// Creates a new MediaPackage VOD PackagingGroup resource.
+    /// Container for the parameters to the UntagResource operation.
+    /// Delete tags for a given MediaPackage VOD resource
     /// </summary>
-    public partial class CreatePackagingGroupRequest : AmazonMediaPackageVodRequest
+    public partial class UntagResourceRequest : AmazonMediaPackageVodRequest
     {
-        private string _id;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private string _resourceArn;
+        private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Id. The ID of the PackagingGroup.
+        /// Gets and sets the property ResourceArn.
         /// </summary>
         [AWSProperty(Required=true)]
-        public string Id
+        public string ResourceArn
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._id != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property TagKeys. The key(s) of tag to be deleted
         /// </summary>
-        public Dictionary<string, string> Tags
+        [AWSProperty(Required=true)]
+        public List<string> TagKeys
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
     }

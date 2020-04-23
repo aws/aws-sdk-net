@@ -28,64 +28,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaPackageVod.Model
 {
     /// <summary>
-    /// This is the response object from the CreatePackagingGroup operation.
+    /// Container for the parameters to the TagResource operation.
+    /// Set tags for a given MediaPackage VOD resource
     /// </summary>
-    public partial class CreatePackagingGroupResponse : AmazonWebServiceResponse
+    public partial class TagResourceRequest : AmazonMediaPackageVodRequest
     {
-        private string _arn;
-        private string _domainName;
-        private string _id;
+        private string _resourceArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Arn. The ARN of the PackagingGroup.
+        /// Gets and sets the property ResourceArn.
         /// </summary>
-        public string Arn
+        [AWSProperty(Required=true)]
+        public string ResourceArn
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DomainName. The fully qualified domain name for Assets
-        /// in the PackagingGroup.
-        /// </summary>
-        public string DomainName
-        {
-            get { return this._domainName; }
-            set { this._domainName = value; }
-        }
-
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
-        {
-            return this._domainName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Id. The ID of the PackagingGroup.
-        /// </summary>
-        public string Id
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this._id != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
         /// Gets and sets the property Tags.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

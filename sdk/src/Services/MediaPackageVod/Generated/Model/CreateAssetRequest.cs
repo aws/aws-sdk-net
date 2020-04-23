@@ -38,6 +38,7 @@ namespace Amazon.MediaPackageVod.Model
         private string _resourceId;
         private string _sourceArn;
         private string _sourceRoleArn;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Id. The unique identifier for the Asset.
@@ -118,6 +119,21 @@ namespace Amazon.MediaPackageVod.Model
         internal bool IsSetSourceRoleArn()
         {
             return this._sourceRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags.
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

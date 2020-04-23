@@ -34,77 +34,64 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PackagingGroup Object
+    /// Response Unmarshaller for ListTagsForResource operation
     /// </summary>  
-    public class PackagingGroupUnmarshaller : IUnmarshaller<PackagingGroup, XmlUnmarshallerContext>, IUnmarshaller<PackagingGroup, JsonUnmarshallerContext>
+    public class ListTagsForResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PackagingGroup IUnmarshaller<PackagingGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
-        }
+            ListTagsForResourceResponse response = new ListTagsForResourceResponse();
 
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PackagingGroup Unmarshall(JsonUnmarshallerContext context)
-        {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
-
-            PackagingGroup unmarshalledObject = new PackagingGroup();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("domainName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
-          
-            return unmarshalledObject;
+
+            return response;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
+        /// <returns></returns>
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            return new AmazonMediaPackageVodException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+        }
 
-        private static PackagingGroupUnmarshaller _instance = new PackagingGroupUnmarshaller();        
+        private static ListTagsForResourceResponseUnmarshaller _instance = new ListTagsForResourceResponseUnmarshaller();        
+
+        internal static ListTagsForResourceResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PackagingGroupUnmarshaller Instance
+        public static ListTagsForResourceResponseUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
+
     }
 }

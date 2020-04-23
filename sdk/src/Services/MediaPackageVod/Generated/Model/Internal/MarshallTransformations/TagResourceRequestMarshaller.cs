@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreatePackagingConfiguration Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreatePackagingConfigurationRequestMarshaller : IMarshaller<IRequest, CreatePackagingConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreatePackagingConfigurationRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,76 +52,23 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreatePackagingConfigurationRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaPackageVod");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-07";            
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/packaging_configurations";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonMediaPackageVodException("Request object does not have required field ResourceArn set");
+            request.AddPathResource("{resource-arn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/tags/{resource-arn}";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCmafPackage())
-                {
-                    context.Writer.WritePropertyName("cmafPackage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CmafPackageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CmafPackage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDashPackage())
-                {
-                    context.Writer.WritePropertyName("dashPackage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DashPackageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DashPackage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetHlsPackage())
-                {
-                    context.Writer.WritePropertyName("hlsPackage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HlsPackageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HlsPackage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetId())
-                {
-                    context.Writer.WritePropertyName("id");
-                    context.Writer.Write(publicRequest.Id);
-                }
-
-                if(publicRequest.IsSetMssPackage())
-                {
-                    context.Writer.WritePropertyName("mssPackage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MssPackageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MssPackage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPackagingGroupId())
-                {
-                    context.Writer.WritePropertyName("packagingGroupId");
-                    context.Writer.Write(publicRequest.PackagingGroupId);
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -145,9 +92,9 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreatePackagingConfigurationRequestMarshaller _instance = new CreatePackagingConfigurationRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreatePackagingConfigurationRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -155,7 +102,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreatePackagingConfigurationRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {
