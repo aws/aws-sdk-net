@@ -89,6 +89,7 @@ namespace Amazon.KinesisFirehose.Model
         /// data.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string HECEndpoint
         {
             get { return this._hecEndpoint; }
@@ -125,6 +126,7 @@ namespace Amazon.KinesisFirehose.Model
         /// A GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string HECToken
         {
             get { return this._hecToken; }

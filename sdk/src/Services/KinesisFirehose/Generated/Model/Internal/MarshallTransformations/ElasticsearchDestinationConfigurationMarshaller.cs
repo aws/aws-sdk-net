@@ -142,6 +142,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TypeName);
             }
 
+            if(requestObject.IsSetVpcConfiguration())
+            {
+                context.Writer.WritePropertyName("VpcConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VpcConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.VpcConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

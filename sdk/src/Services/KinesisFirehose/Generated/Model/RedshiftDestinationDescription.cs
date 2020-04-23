@@ -67,7 +67,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The database connection string.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string ClusterJDBCURL
         {
             get { return this._clusterJDBCURL; }
@@ -218,7 +218,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The name of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string Username
         {
             get { return this._username; }

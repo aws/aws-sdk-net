@@ -44,6 +44,7 @@ namespace Amazon.KinesisFirehose.Model
         private ElasticsearchS3BackupMode _s3BackupMode;
         private S3DestinationConfiguration _s3Configuration;
         private string _typeName;
+        private VpcConfiguration _vpcConfiguration;
 
         /// <summary>
         /// Gets and sets the property BufferingHints. 
@@ -294,6 +295,24 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetTypeName()
         {
             return this._typeName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfiguration. 
+        /// <para>
+        /// The details of the VPC of the Amazon ES destination.
+        /// </para>
+        /// </summary>
+        public VpcConfiguration VpcConfiguration
+        {
+            get { return this._vpcConfiguration; }
+            set { this._vpcConfiguration = value; }
+        }
+
+        // Check to see if VpcConfiguration property is set
+        internal bool IsSetVpcConfiguration()
+        {
+            return this._vpcConfiguration != null;
         }
 
     }

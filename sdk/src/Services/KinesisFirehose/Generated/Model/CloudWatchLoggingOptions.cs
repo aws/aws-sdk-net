@@ -61,6 +61,7 @@ namespace Amazon.KinesisFirehose.Model
         /// is enabled.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
@@ -80,6 +81,7 @@ namespace Amazon.KinesisFirehose.Model
         /// is enabled.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=512)]
         public string LogStreamName
         {
             get { return this._logStreamName; }

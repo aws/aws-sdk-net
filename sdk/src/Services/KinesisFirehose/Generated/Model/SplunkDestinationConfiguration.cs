@@ -89,7 +89,7 @@ namespace Amazon.KinesisFirehose.Model
         /// data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string HECEndpoint
         {
             get { return this._hecEndpoint; }
@@ -128,7 +128,7 @@ namespace Amazon.KinesisFirehose.Model
         /// endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string HECToken
         {
             get { return this._hecToken; }
