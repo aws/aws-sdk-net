@@ -209,6 +209,14 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly MetricType AppStreamAverageCapacityUtilization = new MetricType("AppStreamAverageCapacityUtilization");
         /// <summary>
+        /// Constant CassandraReadCapacityUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType CassandraReadCapacityUtilization = new MetricType("CassandraReadCapacityUtilization");
+        /// <summary>
+        /// Constant CassandraWriteCapacityUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType CassandraWriteCapacityUtilization = new MetricType("CassandraWriteCapacityUtilization");
+        /// <summary>
         /// Constant ComprehendInferenceUtilization for MetricType
         /// </summary>
         public static readonly MetricType ComprehendInferenceUtilization = new MetricType("ComprehendInferenceUtilization");
@@ -352,6 +360,14 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant AppstreamFleetDesiredCapacity for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension AppstreamFleetDesiredCapacity = new ScalableDimension("appstream:fleet:DesiredCapacity");
+        /// <summary>
+        /// Constant CassandraTableReadCapacityUnits for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension CassandraTableReadCapacityUnits = new ScalableDimension("cassandra:table:ReadCapacityUnits");
+        /// <summary>
+        /// Constant CassandraTableWriteCapacityUnits for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension CassandraTableWriteCapacityUnits = new ScalableDimension("cassandra:table:WriteCapacityUnits");
         /// <summary>
         /// Constant ComprehendDocumentClassifierEndpointDesiredInferenceUnits for ScalableDimension
         /// </summary>
@@ -512,6 +528,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant Appstream for ServiceNamespace
         /// </summary>
         public static readonly ServiceNamespace Appstream = new ServiceNamespace("appstream");
+        /// <summary>
+        /// Constant Cassandra for ServiceNamespace
+        /// </summary>
+        public static readonly ServiceNamespace Cassandra = new ServiceNamespace("cassandra");
         /// <summary>
         /// Constant Comprehend for ServiceNamespace
         /// </summary>

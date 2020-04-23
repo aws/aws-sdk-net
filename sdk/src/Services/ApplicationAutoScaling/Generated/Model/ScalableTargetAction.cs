@@ -58,6 +58,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// The minimum capacity.
         /// </para>
+        ///  
+        /// <para>
+        /// For Lambda provisioned concurrency, the minimum value allowed is 0. For all other
+        /// resources, the minimum value allowed is 1.
+        /// </para>
         /// </summary>
         public int MinCapacity
         {

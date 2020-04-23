@@ -41,8 +41,13 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property AdjustmentType. 
         /// <para>
-        /// Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a>
+        /// Specifies whether the <code>ScalingAdjustment</code> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a>
         /// is an absolute number or a percentage of the current capacity. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>AdjustmentType</code> is required if you are adding a new step scaling policy
+        /// configuration.
         /// </para>
         /// </summary>
         public AdjustmentType AdjustmentType
@@ -66,13 +71,13 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  
         /// <para>
         /// For scale-out policies, while the cooldown period is in effect, the capacity that
-        /// has been added by the previous scale-out event that initiated the cooldown is calculated
+        /// has been added by the previous scale-out action that initiated the cooldown is calculated
         /// as part of the desired capacity for the next scale out. The intention is to continuously
         /// (but not excessively) scale out. For example, an alarm triggers a step scaling policy
         /// to scale out an Amazon ECS service by 2 tasks, the scaling activity completes successfully,
         /// and a cooldown period of 5 minutes starts. During the cooldown period, if the alarm
         /// triggers the same policy again but at a more aggressive step adjustment to scale out
-        /// the service by 3 tasks, the 2 tasks that were added in the previous scale-out event
+        /// the service by 3 tasks, the 2 tasks that were added in the previous scale-out action
         /// are considered part of that capacity and only 1 additional task is added to the desired
         /// count.
         /// </para>
@@ -84,6 +89,64 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// during the cooldown period after a scale-in, Application Auto Scaling scales out your
         /// scalable target immediately.
         /// </para>
+        ///  
+        /// <para>
+        /// Application Auto Scaling provides a default value of 300 for the following scalable
+        /// targets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ECS services
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Spot Fleet requests
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMR clusters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AppStream 2.0 fleets
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Aurora DB clusters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon SageMaker endpoint variants
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Custom resources
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For all other scalable targets, the default value is 0:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// DynamoDB tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DynamoDB global secondary indexes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Comprehend document classification endpoints
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Lambda provisioned concurrency
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Keyspaces tables
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int Cooldown
         {
@@ -120,17 +183,16 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinAdjustmentMagnitude. 
         /// <para>
-        /// The minimum number to adjust your scalable dimension as a result of a scaling activity.
-        /// If the adjustment type is <code>PercentChangeInCapacity</code>, the scaling policy
-        /// changes the scalable dimension of the scalable target by this amount.
+        /// The minimum value to scale by when scaling by percentages. For example, suppose that
+        /// you create a step scaling policy to scale out an Amazon ECS service by 25 percent
+        /// and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks
+        /// and the scaling policy is performed, 25 percent of 4 is 1. However, because you specified
+        /// a <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the
+        /// service by 2 tasks.
         /// </para>
         ///  
         /// <para>
-        /// For example, suppose that you create a step scaling policy to scale out an Amazon
-        /// ECS service by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
-        /// 2. If the service has 4 tasks and the scaling policy is performed, 25 percent of 4
-        /// is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Application
-        /// Auto Scaling scales out the service by 2 tasks.
+        /// Valid only if the adjustment type is <code>PercentChangeInCapacity</code>. 
         /// </para>
         /// </summary>
         public int MinAdjustmentMagnitude
@@ -149,6 +211,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property StepAdjustments. 
         /// <para>
         /// A set of adjustments that enable you to scale based on the size of the alarm breach.
+        /// </para>
+        ///  
+        /// <para>
+        /// At least one step adjustment is required if you are adding a new step scaling policy
+        /// configuration.
         /// </para>
         /// </summary>
         public List<StepAdjustment> StepAdjustments

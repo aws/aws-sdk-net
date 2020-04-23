@@ -63,9 +63,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// Indicates whether scale in by the target tracking scaling policy is disabled. If the
         /// value is <code>true</code>, scale in is disabled and the target tracking scaling policy
-        /// won't remove capacity from the scalable resource. Otherwise, scale in is enabled and
-        /// the target tracking scaling policy can remove capacity from the scalable resource.
-        /// The default value is <code>false</code>.
+        /// won't remove capacity from the scalable target. Otherwise, scale in is enabled and
+        /// the target tracking scaling policy can remove capacity from the scalable target. The
+        /// default value is <code>false</code>.
         /// </para>
         /// </summary>
         public bool DisableScaleIn
@@ -111,6 +111,64 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// However, if another alarm triggers a scale-out policy during the cooldown period after
         /// a scale-in, Application Auto Scaling scales out your scalable target immediately.
         /// </para>
+        ///  
+        /// <para>
+        /// Application Auto Scaling provides a default value of 300 for the following scalable
+        /// targets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ECS services
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Spot Fleet requests
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMR clusters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AppStream 2.0 fleets
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Aurora DB clusters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon SageMaker endpoint variants
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Custom resources
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For all other scalable targets, the default value is 0:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// DynamoDB tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DynamoDB global secondary indexes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Comprehend document classification endpoints
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Lambda provisioned concurrency
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Keyspaces tables
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int ScaleInCooldown
         {
@@ -133,10 +191,68 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  
         /// <para>
         /// While the cooldown period is in effect, the capacity that has been added by the previous
-        /// scale-out event that initiated the cooldown is calculated as part of the desired capacity
-        /// for the next scale out. The intention is to continuously (but not excessively) scale
-        /// out.
+        /// scale-out action that initiated the cooldown is calculated as part of the desired
+        /// capacity for the next scale out. The intention is to continuously (but not excessively)
+        /// scale out.
         /// </para>
+        ///  
+        /// <para>
+        /// Application Auto Scaling provides a default value of 300 for the following scalable
+        /// targets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ECS services
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Spot Fleet requests
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMR clusters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AppStream 2.0 fleets
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Aurora DB clusters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon SageMaker endpoint variants
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Custom resources
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For all other scalable targets, the default value is 0:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// DynamoDB tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DynamoDB global secondary indexes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Comprehend document classification endpoints
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Lambda provisioned concurrency
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Keyspaces tables
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int ScaleOutCooldown
         {

@@ -33,6 +33,11 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// 
     ///  
     /// <para>
+    /// For information about the available metrics for a service, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">AWS
+    /// Services That Publish CloudWatch Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
     /// To create your customized metric specification:
     /// </para>
     ///  <ul> <li> 
@@ -46,7 +51,8 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// <para>
     /// Choose a metric that changes proportionally with capacity. The value of the metric
     /// should increase or decrease in inverse proportion to the number of capacity units.
-    /// That is, the value of the metric should decrease when capacity increases. 
+    /// That is, the value of the metric should decrease when capacity increases, and increase
+    /// when capacity decreases. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
