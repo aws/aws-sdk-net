@@ -90,6 +90,10 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             {
                 return new MalformedArnException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceArnNotFoundException"))
+            {
+                return new ResourceArnNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServerInternalException"))
             {
                 return new ServerInternalException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

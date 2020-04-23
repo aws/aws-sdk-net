@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RAM.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PromoteResourceShareCreatedFromPolicy operation
+    /// Response Unmarshaller for ListResourceTypes operation
     /// </summary>  
-    public class PromoteResourceShareCreatedFromPolicyResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListResourceTypesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            PromoteResourceShareCreatedFromPolicyResponse response = new PromoteResourceShareCreatedFromPolicyResponse();
+            ListResourceTypesResponse response = new ListResourceTypesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("returnValue", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.ReturnValue = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("resourceTypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ServiceNameAndResourceType, ServiceNameAndResourceTypeUnmarshaller>(ServiceNameAndResourceTypeUnmarshaller.Instance);
+                    response.ResourceTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -72,21 +78,13 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextTokenException"))
+            {
+                return new InvalidNextTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
             {
                 return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("MalformedArnException"))
-            {
-                return new MalformedArnException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("MissingRequiredParameterException"))
-            {
-                return new MissingRequiredParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
-            {
-                return new OperationNotPermittedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServerInternalException"))
             {
@@ -96,16 +94,12 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             {
                 return new ServiceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("UnknownResourceException"))
-            {
-                return new UnknownResourceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonRAMException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static PromoteResourceShareCreatedFromPolicyResponseUnmarshaller _instance = new PromoteResourceShareCreatedFromPolicyResponseUnmarshaller();        
+        private static ListResourceTypesResponseUnmarshaller _instance = new ListResourceTypesResponseUnmarshaller();        
 
-        internal static PromoteResourceShareCreatedFromPolicyResponseUnmarshaller GetInstance()
+        internal static ListResourceTypesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -113,7 +107,7 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PromoteResourceShareCreatedFromPolicyResponseUnmarshaller Instance
+        public static ListResourceTypesResponseUnmarshaller Instance
         {
             get
             {
