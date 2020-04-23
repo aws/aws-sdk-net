@@ -61,7 +61,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// This property contains one or more values that you assigned to the key name you create.
+        /// Contains one or more values that you assigned to the key name you create.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

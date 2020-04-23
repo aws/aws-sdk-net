@@ -29,8 +29,8 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUsers operation.
-    /// Lists the users for the server that you specify by passing the <code>ServerId</code>
-    /// parameter.
+    /// Lists the users for a file transfer protocol-enabled server that you specify by passing
+    /// the <code>ServerId</code> parameter.
     /// </summary>
     public partial class ListUsersRequest : AmazonTransferRequest
     {
@@ -82,8 +82,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server
-        /// that has users assigned to it.
+        /// A system-assigned unique identifier for a file transfer protocol-enabled server that
+        /// has users assigned to it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

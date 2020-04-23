@@ -74,6 +74,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ServerId);
                 }
 
+                if(publicRequest.IsSetServerProtocol())
+                {
+                    context.Writer.WritePropertyName("ServerProtocol");
+                    context.Writer.Write(publicRequest.ServerProtocol);
+                }
+
                 if(publicRequest.IsSetUserName())
                 {
                     context.Writer.WritePropertyName("UserName");

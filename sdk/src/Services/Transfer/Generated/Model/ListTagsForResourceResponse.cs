@@ -39,7 +39,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// This value is the ARN you specified to list the tags of.
+        /// The ARN you specified to list the tags of.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=1600)]

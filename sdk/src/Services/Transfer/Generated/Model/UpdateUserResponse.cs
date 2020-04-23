@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// <code>UpdateUserResponse</code> returns the user name and server identifier for the
-    /// request to update a user's properties.
+    /// <code>UpdateUserResponse</code> returns the user name and file transfer protocol-enabled
+    /// server identifier for the request to update a user's properties.
     /// </summary>
     public partial class UpdateUserResponse : AmazonWebServiceResponse
     {
@@ -39,8 +39,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned unique identifier for an SFTP server instance that the user account
-        /// is assigned to.
+        /// A system-assigned unique identifier for a file transfer protocol-enabled server instance
+        /// that the user account is assigned to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]
@@ -59,8 +59,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The unique identifier for a user that is assigned to the SFTP server instance that
-        /// was specified in the request.
+        /// The unique identifier for a user that is assigned to a file transfer protocol-enabled
+        /// server instance that was specified in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=32)]
