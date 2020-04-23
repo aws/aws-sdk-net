@@ -38,6 +38,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class OrderableDBInstanceOption
     {
+        private string _availabilityZoneGroup;
         private List<AvailabilityZone> _availabilityZones = new List<AvailabilityZone>();
         private List<AvailableProcessorFeature> _availableProcessorFeatures = new List<AvailableProcessorFeature>();
         private string _dbInstanceClass;
@@ -62,6 +63,24 @@ namespace Amazon.RDS.Model
         private bool? _supportsStorageAutoscaling;
         private bool? _supportsStorageEncryption;
         private bool? _vpc;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneGroup. 
+        /// <para>
+        /// The Availability Zone group for a DB instance.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneGroup
+        {
+            get { return this._availabilityZoneGroup; }
+            set { this._availabilityZoneGroup = value; }
+        }
+
+        // Check to see if AvailabilityZoneGroup property is set
+        internal bool IsSetAvailabilityZoneGroup()
+        {
+            return this._availabilityZoneGroup != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
@@ -452,8 +471,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsStorageAutoscaling. 
         /// <para>
-        /// Whether or not Amazon RDS can automatically scale storage for DB instances that use
-        /// the specified instance class.
+        /// Whether Amazon RDS can automatically scale storage for DB instances that use the specified
+        /// DB instance class.
         /// </para>
         /// </summary>
         public bool SupportsStorageAutoscaling
