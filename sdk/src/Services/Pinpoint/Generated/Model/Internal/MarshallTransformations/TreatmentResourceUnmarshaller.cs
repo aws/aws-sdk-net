@@ -64,6 +64,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CustomDeliveryConfiguration", targetDepth))
+                {
+                    var unmarshaller = CustomDeliveryConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.CustomDeliveryConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -28,35 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Provides information about the status of a campaign.
+    /// Specifies the contents of a message that's sent through a custom channel to recipients
+    /// of a campaign.
     /// </summary>
-    public partial class CampaignState
+    public partial class CampaignCustomMessage
     {
-        private CampaignStatus _campaignStatus;
+        private string _data;
 
         /// <summary>
-        /// Gets and sets the property CampaignStatus. 
+        /// Gets and sets the property Data. 
         /// <para>
-        /// The current status of the campaign, or the current status of a treatment that belongs
-        /// to an A/B test campaign.
-        /// </para>
-        ///  
-        /// <para>
-        /// If a campaign uses A/B testing, the campaign has a status of COMPLETED only if all
-        /// campaign treatments have a status of COMPLETED. If you delete the segment that's associated
-        /// with a campaign, the campaign fails and has a status of DELETED.
+        /// The raw, JSON-formatted string to use as the payload for the message. The maximum
+        /// size is 5 KB.
         /// </para>
         /// </summary>
-        public CampaignStatus CampaignStatus
+        public string Data
         {
-            get { return this._campaignStatus; }
-            set { this._campaignStatus = value; }
+            get { return this._data; }
+            set { this._data = value; }
         }
 
-        // Check to see if CampaignStatus property is set
-        internal bool IsSetCampaignStatus()
+        // Check to see if Data property is set
+        internal bool IsSetData()
         {
-            return this._campaignStatus != null;
+            return this._data != null;
         }
 
     }

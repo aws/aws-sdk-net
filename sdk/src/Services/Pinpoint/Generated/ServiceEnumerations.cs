@@ -25,6 +25,92 @@ namespace Amazon.Pinpoint
 {
 
     /// <summary>
+    /// Constants used for properties of type __EndpointTypesElement.
+    /// </summary>
+    public class __EndpointTypesElement : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADM for __EndpointTypesElement
+        /// </summary>
+        public static readonly __EndpointTypesElement ADM = new __EndpointTypesElement("ADM");
+        /// <summary>
+        /// Constant APNS for __EndpointTypesElement
+        /// </summary>
+        public static readonly __EndpointTypesElement APNS = new __EndpointTypesElement("APNS");
+        /// <summary>
+        /// Constant APNS_SANDBOX for __EndpointTypesElement
+        /// </summary>
+        public static readonly __EndpointTypesElement APNS_SANDBOX = new __EndpointTypesElement("APNS_SANDBOX");
+        /// <summary>
+        /// Constant APNS_VOIP for __EndpointTypesElement
+        /// </summary>
+        public static readonly __EndpointTypesElement APNS_VOIP = new __EndpointTypesElement("APNS_VOIP");
+        /// <summary>
+        /// Constant APNS_VOIP_SANDBOX for __EndpointTypesElement
+        /// </summary>
+        public static readonly __EndpointTypesElement APNS_VOIP_SANDBOX = new __EndpointTypesElement("APNS_VOIP_SANDBOX");
+        /// <summary>
+        /// Constant BAIDU for __EndpointTypesElement
+        /// </summary>
+        public static readonly __EndpointTypesElement BAIDU = new __EndpointTypesElement("BAIDU");
+        /// <summary>
+        /// Constant CUSTOM for __EndpointTypesElement
+        /// </summary>
+        public static readonly __EndpointTypesElement CUSTOM = new __EndpointTypesElement("CUSTOM");
+        /// <summary>
+        /// Constant EMAIL for __EndpointTypesElement
+        /// </summary>
+        public static readonly __EndpointTypesElement EMAIL = new __EndpointTypesElement("EMAIL");
+        /// <summary>
+        /// Constant GCM for __EndpointTypesElement
+        /// </summary>
+        public static readonly __EndpointTypesElement GCM = new __EndpointTypesElement("GCM");
+        /// <summary>
+        /// Constant SMS for __EndpointTypesElement
+        /// </summary>
+        public static readonly __EndpointTypesElement SMS = new __EndpointTypesElement("SMS");
+        /// <summary>
+        /// Constant VOICE for __EndpointTypesElement
+        /// </summary>
+        public static readonly __EndpointTypesElement VOICE = new __EndpointTypesElement("VOICE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public __EndpointTypesElement(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static __EndpointTypesElement FindValue(string value)
+        {
+            return FindValue<__EndpointTypesElement>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator __EndpointTypesElement(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Action.
     /// </summary>
     public class Action : ConstantClass

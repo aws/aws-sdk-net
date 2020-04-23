@@ -275,8 +275,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// One or more custom user attributes that describe the user who's associated with the
-        /// endpoint.
+        /// One or more custom attributes that describe the user who's associated with the endpoint.
         /// </para>
         /// </summary>
         public EndpointUser User

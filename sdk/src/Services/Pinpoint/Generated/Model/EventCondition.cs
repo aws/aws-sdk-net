@@ -42,7 +42,6 @@ namespace Amazon.Pinpoint.Model
         /// The dimensions for the event filter to use for the activity.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public EventDimensions Dimensions
         {
             get { return this._dimensions; }

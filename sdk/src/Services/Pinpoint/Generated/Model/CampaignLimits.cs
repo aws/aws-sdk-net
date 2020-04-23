@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Specifies limits on the messages that a campaign can send.
+    /// For a campaign, specifies limits on the messages that the campaign can send. For an
+    /// application, specifies the default limits for messages that campaigns and journeys
+    /// in the application can send.
     /// </summary>
     public partial class CampaignLimits
     {
@@ -41,6 +43,8 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property Daily. 
         /// <para>
         /// The maximum number of messages that a campaign can send to a single endpoint during
+        /// a 24-hour period. For an application, this value specifies the default limit for the
+        /// number of messages that campaigns and journeys can send to a single endpoint during
         /// a 24-hour period. The maximum value is 100.
         /// </para>
         /// </summary>
@@ -78,8 +82,9 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property MessagesPerSecond. 
         /// <para>
-        /// The maximum number of messages that a campaign can send each second. The minimum value
-        /// is 50. The maximum value is 20,000.
+        /// The maximum number of messages that a campaign can send each second. For an application,
+        /// this value specifies the default limit for the number of messages that campaigns and
+        /// journeys can send each second. The minimum value is 50. The maximum value is 20,000.
         /// </para>
         /// </summary>
         public int MessagesPerSecond
@@ -98,7 +103,8 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property Total. 
         /// <para>
         /// The maximum number of messages that a campaign can send to a single endpoint during
-        /// the course of the campaign. The maximum value is 100.
+        /// the course of the campaign. If a campaign recurs, this setting applies to all runs
+        /// of the campaign. The maximum value is 100.
         /// </para>
         /// </summary>
         public int Total

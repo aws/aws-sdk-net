@@ -35,6 +35,7 @@ namespace Amazon.Pinpoint.Model
         private Message _admMessage;
         private Message _apnsMessage;
         private Message _baiduMessage;
+        private CampaignCustomMessage _customMessage;
         private Message _defaultMessage;
         private CampaignEmailMessage _emailMessage;
         private Message _gcmMessage;
@@ -44,7 +45,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property ADMMessage. 
         /// <para>
         /// The message that the campaign sends through the ADM (Amazon Device Messaging) channel.
-        /// This message overrides the default message.
+        /// If specified, this message overrides the default message.
         /// </para>
         /// </summary>
         public Message ADMMessage
@@ -63,7 +64,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property APNSMessage. 
         /// <para>
         /// The message that the campaign sends through the APNs (Apple Push Notification service)
-        /// channel. This message overrides the default message.
+        /// channel. If specified, this message overrides the default message.
         /// </para>
         /// </summary>
         public Message APNSMessage
@@ -82,7 +83,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property BaiduMessage. 
         /// <para>
         /// The message that the campaign sends through the Baidu (Baidu Cloud Push) channel.
-        /// This message overrides the default message.
+        /// If specified, this message overrides the default message.
         /// </para>
         /// </summary>
         public Message BaiduMessage
@@ -95,6 +96,26 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetBaiduMessage()
         {
             return this._baiduMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomMessage. 
+        /// <para>
+        /// The message that the campaign sends through a custom channel, as specified by the
+        /// delivery configuration (CustomDeliveryConfiguration) settings for the campaign. If
+        /// specified, this message overrides the default message.
+        /// </para>
+        /// </summary>
+        public CampaignCustomMessage CustomMessage
+        {
+            get { return this._customMessage; }
+            set { this._customMessage = value; }
+        }
+
+        // Check to see if CustomMessage property is set
+        internal bool IsSetCustomMessage()
+        {
+            return this._customMessage != null;
         }
 
         /// <summary>
@@ -119,7 +140,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property EmailMessage. 
         /// <para>
-        /// The message that the campaign sends through the email channel.
+        /// The message that the campaign sends through the email channel. If specified, this
+        /// message overrides the default message.
         /// </para>
         /// </summary>
         public CampaignEmailMessage EmailMessage
@@ -139,7 +161,8 @@ namespace Amazon.Pinpoint.Model
         /// <para>
         /// The message that the campaign sends through the GCM channel, which enables Amazon
         /// Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly
-        /// Google Cloud Messaging (GCM), service. This message overrides the default message.
+        /// Google Cloud Messaging (GCM), service. If specified, this message overrides the default
+        /// message.
         /// </para>
         /// </summary>
         public Message GCMMessage
@@ -157,7 +180,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property SMSMessage. 
         /// <para>
-        /// The message that the campaign sends through the SMS channel.
+        /// The message that the campaign sends through the SMS channel. If specified, this message
+        /// overrides the default message.
         /// </para>
         /// </summary>
         public CampaignSmsMessage SMSMessage
