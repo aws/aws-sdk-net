@@ -1,3 +1,26 @@
+### 3.3.724.0 (2020-04-23 18:20 UTC)
+* ApplicationAutoScaling (3.3.105.0)
+	* This release supports Auto Scaling in Amazon Keyspaces for Apache Cassandra.
+* KinesisFirehose (3.3.104.0)
+	* You can now deliver streaming data to an Amazon Elasticsearch Service domain in an Amazon VPC. You can now compress streaming data delivered to S3 using Hadoop-Snappy in addition to Gzip, Zip and Snappy formats.
+* MediaPackageVod (3.3.105.0)
+	* Adds tagging support for PackagingGroups, PackagingConfigurations, and Assets
+* Pinpoint (3.3.109.0)
+	* This release of the Amazon Pinpoint API enhances support for sending campaigns through custom channels to locations such as AWS Lambda functions or web applications. Campaigns can now use CustomDeliveryConfiguration and CampaignCustomMessage to configure custom channel settings for a campaign.
+* RAM (3.3.103.0)
+	* AWS Resource Access Manager (RAM) provides a new ListResourceTypes action. This action lets you list the resource types that can be shared using AWS RAM.
+* RDS (3.3.121.0)
+	* Adds support for AWS Local Zones, including a new optional parameter AvailabilityZoneGroup for the DescribeOrderableDBInstanceOptions operation.
+* StorageGateway (3.3.113.0)
+	* Added AutomaticTapeCreation APIs
+* Transfer (3.3.106.0)
+	* This release adds support for transfers over FTPS and FTP in and out of Amazon S3, which makes it easy to migrate File Transfer Protocol over SSL (FTPS) and FTP workloads to AWS, in addition to the existing support for Secure File Transfer Protocol (SFTP).
+* Core 3.3.106.10
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.723.0 (2020-04-22 18:11 UTC)
 * CodeGuruReviewer (3.3.102.0)
 	* Add support for code review and recommendation feedback APIs.
