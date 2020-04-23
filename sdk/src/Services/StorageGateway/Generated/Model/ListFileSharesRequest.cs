@@ -42,7 +42,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN. 
         /// <para>
-        /// The Amazon resource Name (ARN) of the gateway whose file shares you want to list.
+        /// The Amazon Resource Name (ARN) of the gateway whose file shares you want to list.
         /// If this field is not present, all file shares under your account are listed.
         /// </para>
         /// </summary>

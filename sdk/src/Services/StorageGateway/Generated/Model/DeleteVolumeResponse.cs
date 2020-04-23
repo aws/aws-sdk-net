@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// A JSON object containing the of the storage volume that was deleted
+    /// A JSON object containing the Amazon Resource Name (ARN) of the storage volume that
+    /// was deleted
     /// </summary>
     public partial class DeleteVolumeResponse : AmazonWebServiceResponse
     {

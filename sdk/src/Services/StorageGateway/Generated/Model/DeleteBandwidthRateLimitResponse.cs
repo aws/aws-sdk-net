@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// A JSON object containing the of the gateway whose bandwidth rate information was deleted.
+    /// A JSON object containing the Amazon Resource Name (ARN) of the gateway whose bandwidth
+    /// rate information was deleted.
     /// </summary>
     public partial class DeleteBandwidthRateLimitResponse : AmazonWebServiceResponse
     {

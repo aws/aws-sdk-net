@@ -28,30 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// A JSON object containing the Amazon Resource Name (ARN) of the updated storage volume.
+    /// This is the response object from the ListAutomaticTapeCreationPolicies operation.
     /// </summary>
-    public partial class UpdateSnapshotScheduleResponse : AmazonWebServiceResponse
+    public partial class ListAutomaticTapeCreationPoliciesResponse : AmazonWebServiceResponse
     {
-        private string _volumeARN;
+        private List<AutomaticTapeCreationPolicyInfo> _automaticTapeCreationPolicyInfos = new List<AutomaticTapeCreationPolicyInfo>();
 
         /// <summary>
-        /// Gets and sets the property VolumeARN. 
+        /// Gets and sets the property AutomaticTapeCreationPolicyInfos. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation
-        /// to return a list of gateway volumes.
+        /// Gets a listing of information about the gateway's automatic tape creation policies,
+        /// including the automatic tape creation rules and the gateway that is using the policies.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=50, Max=500)]
-        public string VolumeARN
+        public List<AutomaticTapeCreationPolicyInfo> AutomaticTapeCreationPolicyInfos
         {
-            get { return this._volumeARN; }
-            set { this._volumeARN = value; }
+            get { return this._automaticTapeCreationPolicyInfos; }
+            set { this._automaticTapeCreationPolicyInfos = value; }
         }
 
-        // Check to see if VolumeARN property is set
-        internal bool IsSetVolumeARN()
+        // Check to see if AutomaticTapeCreationPolicyInfos property is set
+        internal bool IsSetAutomaticTapeCreationPolicyInfos()
         {
-            return this._volumeARN != null;
+            return this._automaticTapeCreationPolicyInfos != null && this._automaticTapeCreationPolicyInfos.Count > 0; 
         }
 
     }

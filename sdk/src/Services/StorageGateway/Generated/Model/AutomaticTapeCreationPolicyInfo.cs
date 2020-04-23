@@ -28,11 +28,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// A JSON object containing the Amazon Resource Name (ARN) of the gateway that was restarted.
+    /// Information about the gateway's automatic tape creation policies, including the automatic
+    /// tape creation rules and the gateway that is using the policies.
     /// </summary>
-    public partial class StartGatewayResponse : AmazonWebServiceResponse
+    public partial class AutomaticTapeCreationPolicyInfo
     {
+        private List<AutomaticTapeCreationRule> _automaticTapeCreationRules = new List<AutomaticTapeCreationRule>();
         private string _gatewayARN;
+
+        /// <summary>
+        /// Gets and sets the property AutomaticTapeCreationRules. 
+        /// <para>
+        /// An automatic tape creation policy consists of a list of automatic tape creation rules.
+        /// This returns the rules that determine when and how to automatically create new tapes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<AutomaticTapeCreationRule> AutomaticTapeCreationRules
+        {
+            get { return this._automaticTapeCreationRules; }
+            set { this._automaticTapeCreationRules = value; }
+        }
+
+        // Check to see if AutomaticTapeCreationRules property is set
+        internal bool IsSetAutomaticTapeCreationRules()
+        {
+            return this._automaticTapeCreationRules != null && this._automaticTapeCreationRules.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property GatewayARN.

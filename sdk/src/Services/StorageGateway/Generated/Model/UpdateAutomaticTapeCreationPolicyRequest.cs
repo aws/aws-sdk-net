@@ -28,47 +28,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the AddWorkingStorage operation.
-    /// Configures one or more gateway local disks as working storage for a gateway. This
-    /// operation is only supported in the stored volume gateway type. This operation is deprecated
-    /// in cached volume API version 20120630. Use <a>AddUploadBuffer</a> instead.
+    /// Container for the parameters to the UpdateAutomaticTapeCreationPolicy operation.
+    /// Updates the automatic tape creation policy of a gateway. Use this to update the policy
+    /// with a new set of automatic tape creation rules. This is only supported for tape gateways.
     /// 
+    ///  
+    /// <para>
+    /// By default, there is no automatic tape creation policy.
+    /// </para>
     ///  <note> 
     /// <para>
-    /// Working storage is also referred to as upload buffer. You can also use the <a>AddUploadBuffer</a>
-    /// operation to add upload buffer to a stored volume gateway.
+    /// A gateway can have only one automatic tape creation policy.
     /// </para>
-    ///  </note> 
-    /// <para>
-    /// In the request, you specify the gateway Amazon Resource Name (ARN) to which you want
-    /// to add working storage, and one or more disk IDs that you want to configure as working
-    /// storage.
-    /// </para>
+    ///  </note>
     /// </summary>
-    public partial class AddWorkingStorageRequest : AmazonStorageGatewayRequest
+    public partial class UpdateAutomaticTapeCreationPolicyRequest : AmazonStorageGatewayRequest
     {
-        private List<string> _diskIds = new List<string>();
+        private List<AutomaticTapeCreationRule> _automaticTapeCreationRules = new List<AutomaticTapeCreationRule>();
         private string _gatewayARN;
 
         /// <summary>
-        /// Gets and sets the property DiskIds. 
+        /// Gets and sets the property AutomaticTapeCreationRules. 
         /// <para>
-        /// An array of strings that identify disks that are to be configured as working storage.
-        /// Each string has a minimum length of 1 and maximum length of 300. You can get the disk
-        /// IDs from the <a>ListLocalDisks</a> API.
+        ///  An automatic tape creation policy consists of a list of automatic tape creation rules.
+        /// The rules determine when and how to automatically create new tapes. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> DiskIds
+        [AWSProperty(Required=true, Min=1, Max=10)]
+        public List<AutomaticTapeCreationRule> AutomaticTapeCreationRules
         {
-            get { return this._diskIds; }
-            set { this._diskIds = value; }
+            get { return this._automaticTapeCreationRules; }
+            set { this._automaticTapeCreationRules = value; }
         }
 
-        // Check to see if DiskIds property is set
-        internal bool IsSetDiskIds()
+        // Check to see if AutomaticTapeCreationRules property is set
+        internal bool IsSetAutomaticTapeCreationRules()
         {
-            return this._diskIds != null && this._diskIds.Count > 0; 
+            return this._automaticTapeCreationRules != null && this._automaticTapeCreationRules.Count > 0; 
         }
 
         /// <summary>

@@ -28,9 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// A JSON object containing the Amazon Resource Name (ARN) of the gateway that was restarted.
+    /// Container for the parameters to the ListAutomaticTapeCreationPolicies operation.
+    /// Lists the automatic tape creation policies for a gateway. If there are no automatic
+    /// tape creation policies for the gateway, it returns an empty list. 
+    /// 
+    ///  
+    /// <para>
+    /// This operation is only supported for tape gateways.
+    /// </para>
     /// </summary>
-    public partial class StartGatewayResponse : AmazonWebServiceResponse
+    public partial class ListAutomaticTapeCreationPoliciesRequest : AmazonStorageGatewayRequest
     {
         private string _gatewayARN;
 

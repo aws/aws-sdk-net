@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// A JSON object containing the of the gateway whose throttle information was updated.
+    /// A JSON object containing the Amazon Resource Name (ARN) of the gateway whose throttle
+    /// information was updated.
     /// </summary>
     public partial class UpdateBandwidthRateLimitResponse : AmazonWebServiceResponse
     {

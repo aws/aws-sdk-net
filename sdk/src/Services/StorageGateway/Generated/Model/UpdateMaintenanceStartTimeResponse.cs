@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// A JSON object containing the of the gateway whose maintenance start time is updated.
+    /// A JSON object containing the Amazon Resource Name (ARN) of the gateway whose maintenance
+    /// start time is updated.
     /// </summary>
     public partial class UpdateMaintenanceStartTimeResponse : AmazonWebServiceResponse
     {

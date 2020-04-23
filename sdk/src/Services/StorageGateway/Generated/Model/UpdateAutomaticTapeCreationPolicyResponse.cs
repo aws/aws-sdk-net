@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// A JSON object containing the Amazon Resource Name (ARN) of the gateway that was restarted.
+    /// This is the response object from the UpdateAutomaticTapeCreationPolicy operation.
     /// </summary>
-    public partial class StartGatewayResponse : AmazonWebServiceResponse
+    public partial class UpdateAutomaticTapeCreationPolicyResponse : AmazonWebServiceResponse
     {
         private string _gatewayARN;
 

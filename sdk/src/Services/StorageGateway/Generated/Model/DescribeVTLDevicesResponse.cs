@@ -77,7 +77,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property VTLDevices. 
         /// <para>
-        /// An array of VTL device objects composed of the Amazon Resource Name(ARN) of the VTL
+        /// An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL
         /// devices.
         /// </para>
         /// </summary>

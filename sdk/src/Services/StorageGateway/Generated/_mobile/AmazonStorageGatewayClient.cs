@@ -43,7 +43,7 @@ namespace Amazon.StorageGateway
     /// AWS Storage Gateway is the service that connects an on-premises software appliance
     /// with cloud-based storage to provide seamless and secure integration between an organization's
     /// on-premises IT environment and the AWS storage infrastructure. The service enables
-    /// you to securely upload data to the AWS cloud for cost effective backup and rapid disaster
+    /// you to securely upload data to the AWS Cloud for cost effective backup and rapid disaster
     /// recovery.
     /// </para>
     ///  
@@ -615,7 +615,7 @@ namespace Amazon.StorageGateway
         /// Assigns a tape to a tape pool for archiving. The tape assigned to a pool is archived
         /// in the S3 storage class that is associated with the pool. When you use your backup
         /// application to eject the tape, the tape is archived directly into the S3 storage class
-        /// (Glacier or Deep Archive) that corresponds to the pool.
+        /// (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
         /// 
         ///  
         /// <para>
@@ -861,13 +861,13 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Creates a Network File System (NFS) file share on an existing file gateway. In Storage
         /// Gateway, a file share is a file system mount point backed by Amazon S3 cloud storage.
-        /// Storage Gateway exposes file shares using a NFS interface. This operation is only
+        /// Storage Gateway exposes file shares using an NFS interface. This operation is only
         /// supported for file gateways.
         /// 
         ///  <important> 
         /// <para>
         /// File gateway requires AWS Security Token Service (AWS STS) to be activated to enable
-        /// you create a file share. Make sure AWS STS is activated in the AWS Region you are
+        /// you to create a file share. Make sure AWS STS is activated in the AWS Region you are
         /// creating your file gateway in. If AWS STS is not activated in the AWS Region, activate
         /// it. For information about how to activate AWS STS, see Activating and Deactivating
         /// AWS STS in an AWS Region in the AWS Identity and Access Management User Guide. 
@@ -920,8 +920,8 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Creates a Server Message Block (SMB) file share on an existing file gateway. In Storage
         /// Gateway, a file share is a file system mount point backed by Amazon S3 cloud storage.
-        /// Storage Gateway expose file shares using a SMB interface. This operation is only supported
-        /// for file gateways.
+        /// Storage Gateway expose file shares using an SMB interface. This operation is only
+        /// supported for file gateways.
         /// 
         ///  <important> 
         /// <para>
@@ -983,10 +983,11 @@ namespace Amazon.StorageGateway
         ///  
         /// <para>
         /// AWS Storage Gateway provides the ability to back up point-in-time snapshots of your
-        /// data to Amazon Simple Storage (S3) for durable off-site recovery, as well as import
-        /// the data to an Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud
-        /// (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc basis.
-        /// This API enables you to take ad-hoc snapshot. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
+        /// data to Amazon Simple Storage Service (Amazon S3) for durable off-site recovery, as
+        /// well as import the data to an Amazon Elastic Block Store (EBS) volume in Amazon Elastic
+        /// Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled
+        /// or ad hoc basis. This API enables you to take an ad hoc snapshot. For more information,
+        /// see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
         /// a Snapshot Schedule</a>.
         /// </para>
         ///  
@@ -1235,8 +1236,8 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Creates a virtual tape by using your own barcode. You write data to the virtual tape
-        /// and then archive the tape. A barcode is unique and can not be reused if it has already
-        /// been used on a tape . This applies to barcodes used on deleted tapes. This operation
+        /// and then archive the tape. A barcode is unique and cannot be reused if it has already
+        /// been used on a tape. This applies to barcodes used on deleted tapes. This operation
         /// is only supported in the tape gateway type.
         /// 
         ///  <note> 
@@ -1268,6 +1269,50 @@ namespace Amazon.StorageGateway
             options.ResponseUnmarshaller = CreateTapeWithBarcodeResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateTapeWithBarcodeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAutomaticTapeCreationPolicy
+
+        internal virtual DeleteAutomaticTapeCreationPolicyResponse DeleteAutomaticTapeCreationPolicy(DeleteAutomaticTapeCreationPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAutomaticTapeCreationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAutomaticTapeCreationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAutomaticTapeCreationPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the automatic tape creation policy of a gateway. If you delete this policy,
+        /// new virtual tapes must be created manually. Use the Amazon Resource Name (ARN) of
+        /// the gateway in your request to remove the policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutomaticTapeCreationPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAutomaticTapeCreationPolicy service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteAutomaticTapeCreationPolicy">REST API Reference for DeleteAutomaticTapeCreationPolicy Operation</seealso>
+        public virtual Task<DeleteAutomaticTapeCreationPolicyResponse> DeleteAutomaticTapeCreationPolicyAsync(DeleteAutomaticTapeCreationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAutomaticTapeCreationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAutomaticTapeCreationPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAutomaticTapeCreationPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1494,8 +1539,9 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  <note> 
         /// <para>
-        /// To list or delete a snapshot, you must use the Amazon EC2 API. in <i>Amazon Elastic
-        /// Compute Cloud API Reference</i>.
+        /// To list or delete a snapshot, you must use the Amazon EC2 API. For more information,
+        /// go to <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
+        /// in the <i>Amazon Elastic Compute Cloud API Reference</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1783,7 +1829,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns information about the cache of a gateway. This operation is only supported
-        /// in the cached volume, tape and file gateway types.
+        /// in the cached volume, tape, and file gateway types.
         /// 
         ///  
         /// <para>
@@ -1836,9 +1882,9 @@ namespace Amazon.StorageGateway
         /// 
         ///  
         /// <para>
-        /// The list of gateway volumes in the request must be from one gateway. In the response
-        /// Amazon Storage Gateway returns volume information sorted by volume Amazon Resource
-        /// Name (ARN).
+        /// The list of gateway volumes in the request must be from one gateway. In the response,
+        /// AWS Storage Gateway returns volume information sorted by volume Amazon Resource Name
+        /// (ARN).
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCachediSCSIVolumes service method.</param>
@@ -2186,9 +2232,9 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns the description of the gateway volumes specified in the request. The list
-        /// of gateway volumes in the request must be from one gateway. In the response Amazon
-        /// Storage Gateway returns volume information sorted by volume ARNs. This operation is
-        /// only supported in stored volume gateway type.
+        /// of gateway volumes in the request must be from one gateway. In the response AWS Storage
+        /// Gateway returns volume information sorted by volume ARNs. This operation is only supported
+        /// in stored volume gateway type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStorediSCSIVolumes service method.</param>
         /// <param name="cancellationToken">
@@ -2618,7 +2664,7 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  <important> 
         /// <para>
-        /// Once a gateway is disabled it cannot be enabled.
+        /// After a gateway is disabled, it cannot be enabled.
         /// </para>
         ///  </important>
         /// </summary>
@@ -2687,6 +2733,54 @@ namespace Amazon.StorageGateway
             options.ResponseUnmarshaller = JoinDomainResponseUnmarshaller.Instance;
 
             return InvokeAsync<JoinDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAutomaticTapeCreationPolicies
+
+        internal virtual ListAutomaticTapeCreationPoliciesResponse ListAutomaticTapeCreationPolicies(ListAutomaticTapeCreationPoliciesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAutomaticTapeCreationPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAutomaticTapeCreationPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAutomaticTapeCreationPoliciesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the automatic tape creation policies for a gateway. If there are no automatic
+        /// tape creation policies for the gateway, it returns an empty list. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation is only supported for tape gateways.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomaticTapeCreationPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAutomaticTapeCreationPolicies service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListAutomaticTapeCreationPolicies">REST API Reference for ListAutomaticTapeCreationPolicies Operation</seealso>
+        public virtual Task<ListAutomaticTapeCreationPoliciesResponse> ListAutomaticTapeCreationPoliciesAsync(ListAutomaticTapeCreationPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAutomaticTapeCreationPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAutomaticTapeCreationPoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAutomaticTapeCreationPoliciesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3323,13 +3417,13 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Resets all cache disks that have encountered a error and makes the disks available
-        /// for reconfiguration as cache storage. If your cache disk encounters a error, the gateway
-        /// prevents read and write operations on virtual tapes in the gateway. For example, an
-        /// error can occur when a disk is corrupted or removed from the gateway. When a cache
-        /// is reset, the gateway loses its cache storage. At this point you can reconfigure the
-        /// disks as cache disks. This operation is only supported in the cached volume and tape
-        /// types.
+        /// Resets all cache disks that have encountered an error and makes the disks available
+        /// for reconfiguration as cache storage. If your cache disk encounters an error, the
+        /// gateway prevents read and write operations on virtual tapes in the gateway. For example,
+        /// an error can occur when a disk is corrupted or removed from the gateway. When a cache
+        /// is reset, the gateway loses its cache storage. At this point, you can reconfigure
+        /// the disks as cache disks. This operation is only supported in the cached volume and
+        /// tape types.
         /// 
         ///  <important> 
         /// <para>
@@ -3365,13 +3459,13 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Resets all cache disks that have encountered a error and makes the disks available
-        /// for reconfiguration as cache storage. If your cache disk encounters a error, the gateway
-        /// prevents read and write operations on virtual tapes in the gateway. For example, an
-        /// error can occur when a disk is corrupted or removed from the gateway. When a cache
-        /// is reset, the gateway loses its cache storage. At this point you can reconfigure the
-        /// disks as cache disks. This operation is only supported in the cached volume and tape
-        /// types.
+        /// Resets all cache disks that have encountered an error and makes the disks available
+        /// for reconfiguration as cache storage. If your cache disk encounters an error, the
+        /// gateway prevents read and write operations on virtual tapes in the gateway. For example,
+        /// an error can occur when a disk is corrupted or removed from the gateway. When a cache
+        /// is reset, the gateway loses its cache storage. At this point, you can reconfigure
+        /// the disks as cache disks. This operation is only supported in the cached volume and
+        /// tape types.
         /// 
         ///  <important> 
         /// <para>
@@ -3636,8 +3730,8 @@ namespace Amazon.StorageGateway
         ///  </note> 
         /// <para>
         /// After the gateway is shutdown, you cannot call any other API except <a>StartGateway</a>,
-        /// <a>DescribeGatewayInformation</a>, and <a>ListGateways</a>. For more information,
-        /// see <a>ActivateGateway</a>. Your applications cannot read from or write to the gateway's
+        /// <a>DescribeGatewayInformation</a> and <a>ListGateways</a>. For more information, see
+        /// <a>ActivateGateway</a>. Your applications cannot read from or write to the gateway's
         /// storage volumes, and there are no snapshots taken.
         /// </para>
         ///  <note> 
@@ -3785,6 +3879,59 @@ namespace Amazon.StorageGateway
             options.ResponseUnmarshaller = StartGatewayResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartGatewayResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAutomaticTapeCreationPolicy
+
+        internal virtual UpdateAutomaticTapeCreationPolicyResponse UpdateAutomaticTapeCreationPolicy(UpdateAutomaticTapeCreationPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAutomaticTapeCreationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAutomaticTapeCreationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAutomaticTapeCreationPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the automatic tape creation policy of a gateway. Use this to update the policy
+        /// with a new set of automatic tape creation rules. This is only supported for tape gateways.
+        /// 
+        ///  
+        /// <para>
+        /// By default, there is no automatic tape creation policy.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// A gateway can have only one automatic tape creation policy.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomaticTapeCreationPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAutomaticTapeCreationPolicy service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateAutomaticTapeCreationPolicy">REST API Reference for UpdateAutomaticTapeCreationPolicy Operation</seealso>
+        public virtual Task<UpdateAutomaticTapeCreationPolicyResponse> UpdateAutomaticTapeCreationPolicyAsync(UpdateAutomaticTapeCreationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAutomaticTapeCreationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAutomaticTapeCreationPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAutomaticTapeCreationPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion

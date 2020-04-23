@@ -40,7 +40,7 @@ namespace Amazon.StorageGateway.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// Once a gateway is disabled it cannot be enabled.
+    /// After a gateway is disabled, it cannot be enabled.
     /// </para>
     ///  </important>
     /// </summary>

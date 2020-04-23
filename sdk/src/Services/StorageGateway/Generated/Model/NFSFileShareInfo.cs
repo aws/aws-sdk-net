@@ -178,7 +178,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSEncrypted. 
         /// <para>
-        /// True to use Amazon S3 server side encryption with your own AWS KMS key, or false to
+        /// True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to
         /// use a key managed by Amazon S3. Optional. 
         /// </para>
         /// </summary>

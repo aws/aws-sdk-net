@@ -28,16 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// A JSON object containing the Amazon Resource Name (ARN) of the gateway that was restarted.
+    /// Container for the parameters to the DeleteAutomaticTapeCreationPolicy operation.
+    /// Deletes the automatic tape creation policy of a gateway. If you delete this policy,
+    /// new virtual tapes must be created manually. Use the Amazon Resource Name (ARN) of
+    /// the gateway in your request to remove the policy.
     /// </summary>
-    public partial class StartGatewayResponse : AmazonWebServiceResponse
+    public partial class DeleteAutomaticTapeCreationPolicyRequest : AmazonStorageGatewayRequest
     {
         private string _gatewayARN;
 
         /// <summary>
         /// Gets and sets the property GatewayARN.
         /// </summary>
-        [AWSProperty(Min=50, Max=500)]
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }

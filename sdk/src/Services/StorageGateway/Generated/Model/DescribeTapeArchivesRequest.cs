@@ -47,7 +47,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Specifies that the number of virtual tapes descried be limited to the specified number.
+        /// Specifies that the number of virtual tapes described be limited to the specified number.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

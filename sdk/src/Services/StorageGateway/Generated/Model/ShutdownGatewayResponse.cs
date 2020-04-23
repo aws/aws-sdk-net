@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// A JSON object containing the of the gateway that was shut down.
+    /// A JSON object containing the Amazon Resource Name (ARN) of the gateway that was shut
+    /// down.
     /// </summary>
     public partial class ShutdownGatewayResponse : AmazonWebServiceResponse
     {

@@ -431,6 +431,16 @@
     <pattern>^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DeleteAutomaticTapeCreationPolicyRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DeleteAutomaticTapeCreationPolicyResponse.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.DeleteBandwidthRateLimitRequest.BandwidthType</property>
     <min>3</min>
     <max>25</max>
@@ -864,6 +874,11 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.ListAutomaticTapeCreationPoliciesRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListFileSharesRequest.GatewayARN</property>
     <min>50</min>
     <max>500</max>
@@ -1135,6 +1150,16 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateAutomaticTapeCreationPolicyRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateAutomaticTapeCreationPolicyResponse.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateBandwidthRateLimitRequest.AverageDownloadRateLimitInBitsPerSec</property>
     <min>102400</min>
   </property-value-rule>
@@ -1347,6 +1372,27 @@
     <property>Amazon.StorageGateway.Model.UpdateVTLDeviceTypeResponse.VTLDeviceARN</property>
     <min>50</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.AutomaticTapeCreationPolicyInfo.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.AutomaticTapeCreationRule.MinimumNumTapes</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.AutomaticTapeCreationRule.PoolId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.AutomaticTapeCreationRule.TapeBarcodePrefix</property>
+    <min>1</min>
+    <max>4</max>
+    <pattern>^[A-Z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CachediSCSIVolume.KMSKey</property>
