@@ -1,3 +1,16 @@
+### 3.3.725.0 (2020-04-24 18:13 UTC)
+* DLM (3.3.106.37)
+	* Enable 1hour frequency in the schedule creation for Data LifeCycle Manager.
+* ElasticInference (3.3.102.0)
+	* This feature allows customers to describe the accelerator types and offerings on any region where Elastic Inference is available.
+* IoT (3.3.109.0)
+	* This release adds a new exception type to the AWS IoT SetV2LoggingLevel API.
+* Core 3.3.106.11
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.724.0 (2020-04-23 18:20 UTC)
 * ApplicationAutoScaling (3.3.105.0)
 	* This release supports Auto Scaling in Amazon Keyspaces for Apache Cassandra.
