@@ -28,50 +28,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticInference.Model
 {
     /// <summary>
-    /// Container for the parameters to the UntagResource operation.
-    /// Removes the specified tags from an Elastic Inference Accelerator.
+    /// A throughput entry for an Elastic Inference Accelerator type.
     /// </summary>
-    public partial class UntagResourceRequest : AmazonElasticInferenceRequest
+    public partial class KeyValuePair
     {
-        private string _resourceArn;
-        private List<string> _tagKeys = new List<string>();
+        private string _key;
+        private int? _value;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
+        /// Gets and sets the property Key. 
         /// <para>
-        ///  The ARN of the Elastic Inference Accelerator to untag. 
+        ///  The throughput value of the Elastic Inference Accelerator type. It can assume the
+        /// following values: TFLOPS16bit: the throughput expressed in 16bit TeraFLOPS. TFLOPS32bit:
+        /// the throughput expressed in 32bit TeraFLOPS. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1011)]
-        public string ResourceArn
+        [AWSProperty(Min=1, Max=256)]
+        public string Key
         {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._resourceArn != null;
+            return this._key != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. 
+        /// Gets and sets the property Value. 
         /// <para>
-        ///  The list of tags to remove from the Elastic Inference Accelerator. 
+        ///  The throughput value of the Elastic Inference Accelerator type. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
-        public List<string> TagKeys
+        public int Value
         {
-            get { return this._tagKeys; }
-            set { this._tagKeys = value; }
+            get { return this._value.GetValueOrDefault(); }
+            set { this._value = value; }
         }
 
-        // Check to see if TagKeys property is set
-        internal bool IsSetTagKeys()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._value.HasValue; 
         }
 
     }

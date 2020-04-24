@@ -28,30 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticInference.Model
 {
     /// <summary>
-    /// This is the response object from the ListTagsForResource operation.
+    /// Container for the parameters to the DescribeAcceleratorTypes operation.
+    /// Describes the accelerator types available in a given region, as well as their characteristics,
+    /// such as memory and throughput.
     /// </summary>
-    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
+    public partial class DescribeAcceleratorTypesRequest : AmazonElasticInferenceRequest
     {
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        ///  The tags of the Elastic Inference Accelerator. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
-        }
 
     }
 }

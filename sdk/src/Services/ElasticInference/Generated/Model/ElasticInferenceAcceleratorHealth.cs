@@ -28,29 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticInference.Model
 {
     /// <summary>
-    /// This is the response object from the ListTagsForResource operation.
+    /// The health details of an Elastic Inference Accelerator.
     /// </summary>
-    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
+    public partial class ElasticInferenceAcceleratorHealth
     {
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private string _status;
 
         /// <summary>
-        /// Gets and sets the property Tags. 
+        /// Gets and sets the property Status. 
         /// <para>
-        ///  The tags of the Elastic Inference Accelerator. 
+        ///  The health status of the Elastic Inference Accelerator. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public Dictionary<string, string> Tags
+        [AWSProperty(Min=1, Max=256)]
+        public string Status
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._status != null;
         }
 
     }

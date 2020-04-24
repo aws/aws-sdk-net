@@ -243,6 +243,131 @@ namespace Amazon.ElasticInference
         #endregion
 
 
+        #region  DescribeAcceleratorOfferings
+
+        internal virtual DescribeAcceleratorOfferingsResponse DescribeAcceleratorOfferings(DescribeAcceleratorOfferingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAcceleratorOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAcceleratorOfferingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAcceleratorOfferingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the locations in which a given accelerator type or set of types is present
+        /// in a given region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAcceleratorOfferings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAcceleratorOfferings service method, as returned by ElasticInference.</returns>
+        /// <exception cref="Amazon.ElasticInference.Model.BadRequestException">
+        /// Raised when a malformed input has been provided to the API.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticInference.Model.InternalServerException">
+        /// Raised when an unexpected error occurred during request processing.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticInference.Model.ResourceNotFoundException">
+        /// Raised when the requested resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAcceleratorOfferings">REST API Reference for DescribeAcceleratorOfferings Operation</seealso>
+        public virtual Task<DescribeAcceleratorOfferingsResponse> DescribeAcceleratorOfferingsAsync(DescribeAcceleratorOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAcceleratorOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAcceleratorOfferingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAcceleratorOfferingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAccelerators
+
+        internal virtual DescribeAcceleratorsResponse DescribeAccelerators(DescribeAcceleratorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAcceleratorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAcceleratorsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAcceleratorsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes information over a provided set of accelerators belonging to an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccelerators service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAccelerators service method, as returned by ElasticInference.</returns>
+        /// <exception cref="Amazon.ElasticInference.Model.BadRequestException">
+        /// Raised when a malformed input has been provided to the API.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticInference.Model.InternalServerException">
+        /// Raised when an unexpected error occurred during request processing.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticInference.Model.ResourceNotFoundException">
+        /// Raised when the requested resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAccelerators">REST API Reference for DescribeAccelerators Operation</seealso>
+        public virtual Task<DescribeAcceleratorsResponse> DescribeAcceleratorsAsync(DescribeAcceleratorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAcceleratorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAcceleratorsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAcceleratorsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAcceleratorTypes
+
+        internal virtual DescribeAcceleratorTypesResponse DescribeAcceleratorTypes(DescribeAcceleratorTypesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAcceleratorTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAcceleratorTypesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAcceleratorTypesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the accelerator types available in a given region, as well as their characteristics,
+        /// such as memory and throughput.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAcceleratorTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAcceleratorTypes service method, as returned by ElasticInference.</returns>
+        /// <exception cref="Amazon.ElasticInference.Model.InternalServerException">
+        /// Raised when an unexpected error occurred during request processing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAcceleratorTypes">REST API Reference for DescribeAcceleratorTypes Operation</seealso>
+        public virtual Task<DescribeAcceleratorTypesResponse> DescribeAcceleratorTypesAsync(DescribeAcceleratorTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAcceleratorTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAcceleratorTypesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAcceleratorTypesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -300,7 +425,7 @@ namespace Amazon.ElasticInference
 
 
         /// <summary>
-        /// Adds the specified tag(s) to an Elastic Inference Accelerator.
+        /// Adds the specified tags to an Elastic Inference Accelerator.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -343,7 +468,7 @@ namespace Amazon.ElasticInference
 
 
         /// <summary>
-        /// Removes the specified tag(s) from an Elastic Inference Accelerator.
+        /// Removes the specified tags from an Elastic Inference Accelerator.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

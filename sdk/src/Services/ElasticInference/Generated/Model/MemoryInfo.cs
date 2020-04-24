@@ -28,29 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticInference.Model
 {
     /// <summary>
-    /// This is the response object from the ListTagsForResource operation.
+    /// The memory information of an Elastic Inference Accelerator type.
     /// </summary>
-    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
+    public partial class MemoryInfo
     {
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private int? _sizeInMiB;
 
         /// <summary>
-        /// Gets and sets the property Tags. 
+        /// Gets and sets the property SizeInMiB. 
         /// <para>
-        ///  The tags of the Elastic Inference Accelerator. 
+        ///  The size in mebibytes of the Elastic Inference Accelerator type. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public Dictionary<string, string> Tags
+        public int SizeInMiB
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._sizeInMiB.GetValueOrDefault(); }
+            set { this._sizeInMiB = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if SizeInMiB property is set
+        internal bool IsSetSizeInMiB()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._sizeInMiB.HasValue; 
         }
 
     }

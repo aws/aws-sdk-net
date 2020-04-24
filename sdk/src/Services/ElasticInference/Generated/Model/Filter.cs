@@ -28,50 +28,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticInference.Model
 {
     /// <summary>
-    /// Container for the parameters to the UntagResource operation.
-    /// Removes the specified tags from an Elastic Inference Accelerator.
+    /// A filter expression for the Elastic Inference Accelerator list.
     /// </summary>
-    public partial class UntagResourceRequest : AmazonElasticInferenceRequest
+    public partial class Filter
     {
-        private string _resourceArn;
-        private List<string> _tagKeys = new List<string>();
+        private string _name;
+        private List<string> _values = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
+        /// Gets and sets the property Name. 
         /// <para>
-        ///  The ARN of the Elastic Inference Accelerator to untag. 
+        ///  The filter name for the Elastic Inference Accelerator list. It can assume the following
+        /// values: accelerator-type: the type of Elastic Inference Accelerator to filter for.
+        /// instance-id: an EC2 instance id to filter for. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1011)]
-        public string ResourceArn
+        [AWSProperty(Min=1, Max=128)]
+        public string Name
         {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._resourceArn != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. 
+        /// Gets and sets the property Values. 
         /// <para>
-        ///  The list of tags to remove from the Elastic Inference Accelerator. 
+        ///  The values for the filter of the Elastic Inference Accelerator list. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
-        public List<string> TagKeys
+        [AWSProperty(Min=0, Max=100)]
+        public List<string> Values
         {
-            get { return this._tagKeys; }
-            set { this._tagKeys = value; }
+            get { return this._values; }
+            set { this._values = value; }
         }
 
-        // Check to see if TagKeys property is set
-        internal bool IsSetTagKeys()
+        // Check to see if Values property is set
+        internal bool IsSetValues()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._values != null && this._values.Count > 0; 
         }
 
     }
