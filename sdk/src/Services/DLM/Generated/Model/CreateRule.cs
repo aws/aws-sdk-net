@@ -39,7 +39,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property Interval. 
         /// <para>
-        /// The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
+        /// The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and
+        /// 24.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
