@@ -83,6 +83,60 @@ namespace Amazon.AccessAnalyzer
 
 
     /// <summary>
+    /// Constants used for properties of type FindingSourceType.
+    /// </summary>
+    public class FindingSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BUCKET_ACL for FindingSourceType
+        /// </summary>
+        public static readonly FindingSourceType BUCKET_ACL = new FindingSourceType("BUCKET_ACL");
+        /// <summary>
+        /// Constant POLICY for FindingSourceType
+        /// </summary>
+        public static readonly FindingSourceType POLICY = new FindingSourceType("POLICY");
+        /// <summary>
+        /// Constant S3_ACCESS_POINT for FindingSourceType
+        /// </summary>
+        public static readonly FindingSourceType S3_ACCESS_POINT = new FindingSourceType("S3_ACCESS_POINT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FindingSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FindingSourceType FindValue(string value)
+        {
+            return FindValue<FindingSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FindingSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FindingStatus.
     /// </summary>
     public class FindingStatus : ConstantClass

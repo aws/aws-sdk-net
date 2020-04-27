@@ -130,6 +130,12 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FindingSource, FindingSourceUnmarshaller>(FindingSourceUnmarshaller.Instance);
+                    unmarshalledObject.Sources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

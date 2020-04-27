@@ -43,6 +43,7 @@ namespace Amazon.AccessAnalyzer.Model
         private string _resource;
         private string _resourceOwnerAccount;
         private ResourceType _resourceType;
+        private List<FindingSource> _sources = new List<FindingSource>();
         private FindingStatus _status;
         private DateTime? _updatedAt;
 
@@ -250,6 +251,25 @@ namespace Amazon.AccessAnalyzer.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sources. 
+        /// <para>
+        /// The sources of the finding. This indicates how the access that generated the finding
+        /// is granted. It is populated for Amazon S3 bucket findings.
+        /// </para>
+        /// </summary>
+        public List<FindingSource> Sources
+        {
+            get { return this._sources; }
+            set { this._sources = value; }
+        }
+
+        // Check to see if Sources property is set
+        internal bool IsSetSources()
+        {
+            return this._sources != null && this._sources.Count > 0; 
         }
 
         /// <summary>

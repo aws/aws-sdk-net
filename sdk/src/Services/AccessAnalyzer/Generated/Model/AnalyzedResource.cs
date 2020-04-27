@@ -199,7 +199,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property SharedVia. 
         /// <para>
-        /// Indicates how the access that generated the finding is granted.
+        /// Indicates how the access that generated the finding is granted. This is populated
+        /// for Amazon S3 bucket findings.
         /// </para>
         /// </summary>
         public List<string> SharedVia
