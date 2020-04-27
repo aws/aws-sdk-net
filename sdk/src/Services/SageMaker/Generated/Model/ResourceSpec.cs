@@ -28,31 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The instance type and quantity.
+    /// The instance type and the Amazon Resource Name (ARN) of the image created on the instance.
+    /// The ARN is stored as metadata in Amazon SageMaker Studio notebooks.
     /// </summary>
     public partial class ResourceSpec
     {
-        private string _environmentArn;
         private AppInstanceType _instanceType;
-
-        /// <summary>
-        /// Gets and sets the property EnvironmentArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the environment.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=256)]
-        public string EnvironmentArn
-        {
-            get { return this._environmentArn; }
-            set { this._environmentArn = value; }
-        }
-
-        // Check to see if EnvironmentArn property is set
-        internal bool IsSetEnvironmentArn()
-        {
-            return this._environmentArn != null;
-        }
+        private string _sageMakerImageArn;
 
         /// <summary>
         /// Gets and sets the property InstanceType. 
@@ -70,6 +52,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SageMakerImageArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the image created on the instance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string SageMakerImageArn
+        {
+            get { return this._sageMakerImageArn; }
+            set { this._sageMakerImageArn = value; }
+        }
+
+        // Check to see if SageMakerImageArn property is set
+        internal bool IsSetSageMakerImageArn()
+        {
+            return this._sageMakerImageArn != null;
         }
 
     }

@@ -3771,9 +3771,9 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SageMaker.Model.ResourceSpec.EnvironmentArn</property>
+    <property>Amazon.SageMaker.Model.ResourceSpec.SageMakerImageArn</property>
     <max>256</max>
-    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:environment/[a-z0-9]([-.]?[a-z0-9])*$</pattern>
+    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-z0-9]([-.]?[a-z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.S3DataSource.S3Uri</property>

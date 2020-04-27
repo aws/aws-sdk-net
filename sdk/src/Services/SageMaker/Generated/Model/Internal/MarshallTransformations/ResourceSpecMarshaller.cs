@@ -45,16 +45,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourceSpec requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEnvironmentArn())
-            {
-                context.Writer.WritePropertyName("EnvironmentArn");
-                context.Writer.Write(requestObject.EnvironmentArn);
-            }
-
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");
                 context.Writer.Write(requestObject.InstanceType);
+            }
+
+            if(requestObject.IsSetSageMakerImageArn())
+            {
+                context.Writer.WritePropertyName("SageMakerImageArn");
+                context.Writer.Write(requestObject.SageMakerImageArn);
             }
 
         }
