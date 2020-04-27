@@ -1,3 +1,18 @@
+### 3.3.726.0 (2020-04-27 18:11 UTC)
+* AccessAnalyzer (3.3.104.0)
+	* This release adds support for inclusion of S3 Access Point policies in IAM Access Analyzer evaluation of S3 bucket access. IAM Access Analyzer now reports findings for buckets shared through access points and identifies the access point that permits access.
+* DatabaseMigrationService (3.3.105.0)
+	* Adding minimum replication engine version for describe-endpoint-types api.
+* DataExchange (3.3.101.0)
+	* This release introduces AWS Data Exchange support for configurable encryption parameters when exporting data sets to Amazon S3. 
+* SageMaker (3.3.114.0)
+	* Change to the input, ResourceSpec, changing EnvironmentArn to SageMakerImageArn. This affects the following preview APIs: CreateDomain, DescribeDomain, UpdateDomain, CreateUserProfile, DescribeUserProfile, UpdateUserProfile, CreateApp and DescribeApp.
+* Core 3.3.106.12
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.725.0 (2020-04-24 18:13 UTC)
 * DLM (3.3.106.37)
 	* Enable 1hour frequency in the schedule creation for Data LifeCycle Manager.
