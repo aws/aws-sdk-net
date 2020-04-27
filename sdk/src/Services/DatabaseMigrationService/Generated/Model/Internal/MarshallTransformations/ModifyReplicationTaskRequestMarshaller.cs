@@ -116,6 +116,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TableMappings);
                 }
 
+                if(publicRequest.IsSetTaskData())
+                {
+                    context.Writer.WritePropertyName("TaskData");
+                    context.Writer.Write(publicRequest.TaskData);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

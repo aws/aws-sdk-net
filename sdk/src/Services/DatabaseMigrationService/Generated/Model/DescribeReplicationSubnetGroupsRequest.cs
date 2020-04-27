@@ -42,6 +42,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Filters applied to the describe action.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid filter names: replication-subnet-group-id
+        /// </para>
         /// </summary>
         public List<Filter> Filters
         {

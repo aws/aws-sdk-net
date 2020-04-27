@@ -37,6 +37,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private ReplicationEndpointTypeValue _endpointType;
         private string _engineDisplayName;
         private string _engineName;
+        private string _replicationInstanceEngineMinimumVersion;
         private bool? _supportsCDC;
 
         /// <summary>
@@ -97,6 +98,26 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetEngineName()
         {
             return this._engineName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationInstanceEngineMinimumVersion. 
+        /// <para>
+        /// The earliest AWS DMS engine version that supports this endpoint engine. Note that
+        /// endpoint engines released with AWS DMS versions earlier than 3.1.1 do not return a
+        /// value for this parameter.
+        /// </para>
+        /// </summary>
+        public string ReplicationInstanceEngineMinimumVersion
+        {
+            get { return this._replicationInstanceEngineMinimumVersion; }
+            set { this._replicationInstanceEngineMinimumVersion = value; }
+        }
+
+        // Check to see if ReplicationInstanceEngineMinimumVersion property is set
+        internal bool IsSetReplicationInstanceEngineMinimumVersion()
+        {
+            return this._replicationInstanceEngineMinimumVersion != null;
         }
 
         /// <summary>

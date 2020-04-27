@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SupportedEndpointType Object
+    /// Response Unmarshaller for NeptuneSettings Object
     /// </summary>  
-    public class SupportedEndpointTypeUnmarshaller : IUnmarshaller<SupportedEndpointType, XmlUnmarshallerContext>, IUnmarshaller<SupportedEndpointType, JsonUnmarshallerContext>
+    public class NeptuneSettingsUnmarshaller : IUnmarshaller<NeptuneSettings, XmlUnmarshallerContext>, IUnmarshaller<NeptuneSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SupportedEndpointType IUnmarshaller<SupportedEndpointType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        NeptuneSettings IUnmarshaller<NeptuneSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,57 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SupportedEndpointType Unmarshall(JsonUnmarshallerContext context)
+        public NeptuneSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SupportedEndpointType unmarshalledObject = new SupportedEndpointType();
+            NeptuneSettings unmarshalledObject = new NeptuneSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EndpointType", targetDepth))
+                if (context.TestExpression("ErrorRetryDuration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndpointType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ErrorRetryDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EngineDisplayName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EngineDisplayName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EngineName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EngineName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ReplicationInstanceEngineMinimumVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationInstanceEngineMinimumVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SupportsCDC", targetDepth))
+                if (context.TestExpression("IamAuthEnabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.SupportsCDC = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IamAuthEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxFileSize", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxFileSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxRetryCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxRetryCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3BucketFolder", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3BucketFolder = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3BucketName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3BucketName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ServiceAccessRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceAccessRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +112,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         }
 
 
-        private static SupportedEndpointTypeUnmarshaller _instance = new SupportedEndpointTypeUnmarshaller();        
+        private static NeptuneSettingsUnmarshaller _instance = new NeptuneSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SupportedEndpointTypeUnmarshaller Instance
+        public static NeptuneSettingsUnmarshaller Instance
         {
             get
             {
