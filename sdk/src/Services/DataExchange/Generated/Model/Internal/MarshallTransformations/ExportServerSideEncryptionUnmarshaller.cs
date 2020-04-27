@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ExportAssetsToS3ResponseDetails Object
+    /// Response Unmarshaller for ExportServerSideEncryption Object
     /// </summary>  
-    public class ExportAssetsToS3ResponseDetailsUnmarshaller : IUnmarshaller<ExportAssetsToS3ResponseDetails, XmlUnmarshallerContext>, IUnmarshaller<ExportAssetsToS3ResponseDetails, JsonUnmarshallerContext>
+    public class ExportServerSideEncryptionUnmarshaller : IUnmarshaller<ExportServerSideEncryption, XmlUnmarshallerContext>, IUnmarshaller<ExportServerSideEncryption, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ExportAssetsToS3ResponseDetails IUnmarshaller<ExportAssetsToS3ResponseDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ExportServerSideEncryption IUnmarshaller<ExportServerSideEncryption, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ExportAssetsToS3ResponseDetails Unmarshall(JsonUnmarshallerContext context)
+        public ExportServerSideEncryption Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ExportAssetsToS3ResponseDetails unmarshalledObject = new ExportAssetsToS3ResponseDetails();
+            ExportServerSideEncryption unmarshalledObject = new ExportServerSideEncryption();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AssetDestinations", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AssetDestinationEntry, AssetDestinationEntryUnmarshaller>(AssetDestinationEntryUnmarshaller.Instance);
-                    unmarshalledObject.AssetDestinations = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DataSetId", targetDepth))
+                if (context.TestExpression("KmsKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataSetId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Encryption", targetDepth))
-                {
-                    var unmarshaller = ExportServerSideEncryptionUnmarshaller.Instance;
-                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RevisionId", targetDepth))
+                if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RevisionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         }
 
 
-        private static ExportAssetsToS3ResponseDetailsUnmarshaller _instance = new ExportAssetsToS3ResponseDetailsUnmarshaller();        
+        private static ExportServerSideEncryptionUnmarshaller _instance = new ExportServerSideEncryptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ExportAssetsToS3ResponseDetailsUnmarshaller Instance
+        public static ExportServerSideEncryptionUnmarshaller Instance
         {
             get
             {

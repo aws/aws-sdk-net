@@ -121,7 +121,7 @@ namespace Amazon.DataExchange.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceId. The unqiue identifier for the resource related
+        /// Gets and sets the property ResourceId. The unique identifier for the resource related
         /// to the error.
         /// </summary>
         public string ResourceId
