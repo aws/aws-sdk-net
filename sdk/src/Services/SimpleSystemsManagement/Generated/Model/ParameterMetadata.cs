@@ -199,8 +199,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of parameter. Valid parameter types include the following: String, String
-        /// list, Secure string.
+        /// The type of parameter. Valid parameter types include the following: <code>String</code>,
+        /// <code>StringList</code>, and <code>SecureString</code>.
         /// </para>
         /// </summary>
         public ParameterType Type

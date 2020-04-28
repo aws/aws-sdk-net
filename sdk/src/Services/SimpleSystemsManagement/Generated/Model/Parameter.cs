@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// An Amazon EC2 Systems Manager parameter in Parameter Store.
+    /// An Systems Manager parameter in Parameter Store.
     /// </summary>
     public partial class Parameter
     {
@@ -146,8 +146,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of parameter. Valid values include the following: String, String list, Secure
-        /// string.
+        /// The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>,
+        /// and <code>SecureString</code>.
         /// </para>
         /// </summary>
         public ParameterType Type

@@ -129,6 +129,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ScheduleExpression);
             }
 
+            if(requestObject.IsSetSyncCompliance())
+            {
+                context.Writer.WritePropertyName("SyncCompliance");
+                context.Writer.Write(requestObject.SyncCompliance);
+            }
+
             if(requestObject.IsSetTargets())
             {
                 context.Writer.WritePropertyName("Targets");

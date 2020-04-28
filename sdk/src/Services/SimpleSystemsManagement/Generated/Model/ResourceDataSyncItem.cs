@@ -119,7 +119,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property S3Destination. 
         /// <para>
-        /// Configuration information for the target Amazon S3 bucket.
+        /// Configuration information for the target S3 bucket.
         /// </para>
         /// </summary>
         public ResourceDataSyncS3Destination S3Destination
@@ -211,7 +211,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property SyncType. 
         /// <para>
         /// The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>,
-        /// then the resource data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code>
+        /// then the resource data sync synchronizes data to an S3 bucket. If the <code>SyncType</code>
         /// is <code>SyncFromSource</code> then the resource data sync synchronizes data from
         /// AWS Organizations or from multiple AWS Regions.
         /// </para>

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// An Amazon S3 bucket where you want to store the results of this request.
+    /// An S3 bucket where you want to store the results of this request.
     /// </summary>
     public partial class InstanceAssociationOutputLocation
     {
@@ -37,7 +37,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property S3Location. 
         /// <para>
-        /// An Amazon S3 bucket where you want to store the results of this request.
+        /// An S3 bucket where you want to store the results of this request.
         /// </para>
         /// </summary>
         public S3OutputLocation S3Location

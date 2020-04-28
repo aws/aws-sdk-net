@@ -130,6 +130,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.ScheduleExpression = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SyncCompliance", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SyncCompliance = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Targets", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Target, TargetUnmarshaller>(TargetUnmarshaller.Instance);

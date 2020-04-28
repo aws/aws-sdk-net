@@ -230,7 +230,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OutputUrl. 
         /// <para>
-        /// A URL for an Amazon S3 bucket where you want to store the results of this request.
+        /// A URL for an S3 bucket where you want to store the results of this request.
         /// </para>
         /// </summary>
         public InstanceAssociationOutputUrl OutputUrl

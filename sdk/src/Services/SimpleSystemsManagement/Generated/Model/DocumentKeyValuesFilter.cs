@@ -60,7 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// To specify a custom key and value pair, use the format <code>Key=tag:[tagName],Values=[valueName]</code>.
+    /// To specify a custom key and value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
     /// </para>
     ///  
     /// <para>

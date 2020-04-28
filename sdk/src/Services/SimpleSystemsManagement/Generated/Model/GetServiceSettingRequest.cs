@@ -57,7 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SettingId. 
         /// <para>
-        /// The ID of the service setting to get.
+        /// The ID of the service setting to get. The setting ID can be <code>/ssm/parameter-store/default-parameter-tier</code>,
+        /// <code>/ssm/parameter-store/high-throughput-enabled</code>, or <code>/ssm/managed-instance/activation-tier</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]

@@ -29,8 +29,9 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateManagedInstanceRole operation.
-    /// Assigns or changes an Amazon Identity and Access Management (IAM) role for the managed
-    /// instance.
+    /// Changes the Amazon Identity and Access Management (IAM) role that is assigned to the
+    /// on-premises instance or virtual machines (VM). IAM roles are first assigned to these
+    /// hybrid instances during the activation process. For more information, see <a>CreateActivation</a>.
     /// </summary>
     public partial class UpdateManagedInstanceRoleRequest : AmazonSimpleSystemsManagementRequest
     {

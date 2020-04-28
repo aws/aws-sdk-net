@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the GetConnectionStatus operation.
     /// Retrieves the Session Manager connection status for an instance to determine whether
-    /// it is connected and ready to receive Session Manager connections.
+    /// it is running and ready to receive Session Manager connections.
     /// </summary>
     public partial class GetConnectionStatusRequest : AmazonSimpleSystemsManagementRequest
     {

@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Information about the compliance as defined by the resource type. For example, for
     /// a patch resource type, <code>Items</code> includes information about the PatchSeverity,
-    /// Classification, etc.
+    /// Classification, and so on.
     /// </summary>
     public partial class ComplianceItem
     {

@@ -49,8 +49,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  
     /// <para>
     /// For examples of CLI commands demonstrating valid parameter filter constructions, see
-    /// <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching
-    /// for Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching
+    /// for Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
     /// </para>
     ///  </important>
     /// </summary>

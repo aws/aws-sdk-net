@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// An Amazon S3 bucket where you want to store the results of this request.
+    /// An S3 bucket where you want to store the results of this request.
     /// </summary>
     public partial class S3OutputLocation
     {
@@ -39,7 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OutputS3BucketName. 
         /// <para>
-        /// The name of the Amazon S3 bucket.
+        /// The name of the S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=63)]
@@ -58,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OutputS3KeyPrefix. 
         /// <para>
-        /// The Amazon S3 bucket subfolder.
+        /// The S3 bucket subfolder.
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
@@ -78,7 +78,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property OutputS3Region. 
         /// <para>
         /// (Deprecated) You can no longer specify this parameter. The system ignores it. Instead,
-        /// Systems Manager automatically determines the Amazon S3 bucket region.
+        /// Systems Manager automatically determines the Region of the S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=20)]

@@ -29,13 +29,11 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDocument operation.
-    /// Creates a Systems Manager document.
-    /// 
-    ///  
-    /// <para>
-    /// After you create a document, you can use CreateAssociation to associate it with one
-    /// or more running instances.
-    /// </para>
+    /// Creates a Systems Manager (SSM) document. An SSM document defines the actions that
+    /// Systems Manager performs on your managed instances. For more information about SSM
+    /// documents, including information about supported schemas, features, and syntax, see
+    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">AWS
+    /// Systems Manager Documents</a> in the <i>AWS Systems Manager User Guide</i>.
     /// </summary>
     public partial class CreateDocumentRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -57,8 +55,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates CreateDocumentRequest with the parameterized properties
         /// </summary>
-        /// <param name="name">A name for the Systems Manager document. <important> Do not use the following to begin the names of documents you create. They are reserved by AWS for use as document prefixes: <ul> <li>  <code>aws</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
-        /// <param name="content">A valid JSON or YAML string.</param>
+        /// <param name="name">A name for the Systems Manager document. <important> You can't use the following strings as document name prefixes. These are reserved by AWS for use as document name prefixes: <ul> <li>  <code>aws</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
+        /// <param name="content">The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>AWS Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create an SSM document (console)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (AWS CLI)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>  </li> </ul></param>
         public CreateDocumentRequest(string name, string content)
         {
             _name = name;
@@ -87,8 +85,30 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// A valid JSON or YAML string.
+        /// The content for the new SSM document in JSON or YAML format. We recommend storing
+        /// the contents for your new document in an external JSON or YAML file and referencing
+        /// the file in a command.
         /// </para>
+        ///  
+        /// <para>
+        /// For examples, see the following topics in the <i>AWS Systems Manager User Guide</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create
+        /// an SSM document (console)</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
+        /// an SSM document (AWS CLI)</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+        /// an SSM document (API)</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
         public string Content
@@ -147,8 +167,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// Do not use the following to begin the names of documents you create. They are reserved
-        /// by AWS for use as document prefixes:
+        /// You can't use the following strings as document name prefixes. These are reserved
+        /// by AWS for use as document name prefixes:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -180,8 +200,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Requires. 
         /// <para>
-        /// A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code>
-        /// document requires an <code>ApplicationConfigurationSchema</code> document.
+        /// A list of SSM documents required by a document. This parameter is used exclusively
+        /// by AWS AppConfig. When a user creates an AppConfig configuration in an SSM document,
+        /// the user must also specify a required document for validation purposes. In this case,
+        /// an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code>
+        /// document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS
+        /// AppConfig</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -240,7 +264,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// If you specify a value of '/' the document can run on all types of resources. If you
         /// don't specify a value, the document can't run on any resources. For a list of valid
         /// resource types, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-        /// Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. 
+        /// resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]

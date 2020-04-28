@@ -38,7 +38,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OutputSourceId. 
         /// <para>
-        /// The ID of the output source, for example the URL of an Amazon S3 bucket.
+        /// The ID of the output source, for example the URL of an S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

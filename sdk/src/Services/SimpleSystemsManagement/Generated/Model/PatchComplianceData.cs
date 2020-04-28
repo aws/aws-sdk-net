@@ -124,8 +124,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// For descriptions of each patch state, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
-        /// Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
+        /// patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -168,8 +168,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For additional information about valid values for parameter names, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-        /// and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
+        /// requirements and constraints for parameter names</a> in the <i>AWS Systems Manager
+        /// User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -244,8 +245,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// All existing policies are preserved until you send new policies or an empty policy.
-        /// For more information about parameter policies, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
-        /// with Parameter Policies</a>. 
+        /// For more information about parameter policies, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+        /// parameter policies</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
@@ -319,8 +320,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Advanced parameters have a content size limit of 8 KB and can be configured to use
         /// parameter policies. You can create a maximum of 100,000 advanced parameters for each
         /// Region in an AWS account. Advanced parameters incur a charge. For more information,
-        /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
-        /// Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
+        /// and advanced parameter tiers</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -395,8 +396,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about configuring the default tier option, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-        /// a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// For more information about configuring the default tier option, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
+        /// a default parameter tier</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public ParameterTier Tier

@@ -250,8 +250,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of instances that are allowed to run the command at the same time.
         /// You can specify a number of instances, such as 10, or a percentage of instances, such
         /// as 10%. The default value is 50. For more information about how to use MaxConcurrency,
-        /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-        /// Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager User
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+        /// commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager User
         /// Guide</i>.
         /// </para>
         /// </summary>
@@ -274,8 +274,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of errors allowed before the system stops sending the command to
         /// additional targets. You can specify a number of errors, such as 10, or a percentage
         /// or errors, such as 10%. The default value is 0. For more information about how to
-        /// use MaxErrors, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-        /// Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager User
+        /// use MaxErrors, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+        /// commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager User
         /// Guide</i>.
         /// </para>
         /// </summary>
@@ -354,7 +354,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property OutputS3Region. 
         /// <para>
         /// (Deprecated) You can no longer specify this parameter. The system ignores it. Instead,
-        /// Systems Manager automatically determines the Amazon S3 bucket region.
+        /// Systems Manager automatically determines the Region of the S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=20)]
@@ -449,8 +449,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A detailed status of the command execution. StatusDetails includes more information
         /// than Status because it includes states resulting from error and concurrency control
         /// parameters. StatusDetails can show different results than Status. For more information
-        /// about these statuses, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-        /// Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can
+        /// about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+        /// command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can
         /// be one of the following values:
         /// </para>
         ///  <ul> <li> 

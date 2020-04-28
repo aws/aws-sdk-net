@@ -119,6 +119,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ResourceType);
                 }
 
+                if(publicRequest.IsSetUploadType())
+                {
+                    context.Writer.WritePropertyName("UploadType");
+                    context.Writer.Write(publicRequest.UploadType);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

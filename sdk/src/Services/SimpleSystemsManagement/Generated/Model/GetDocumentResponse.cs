@@ -46,7 +46,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AttachmentsContent. 
         /// <para>
-        /// A description of the document attachments, including names, locations, sizes, etc.
+        /// A description of the document attachments, including names, locations, sizes, and
+        /// so on.
         /// </para>
         /// </summary>
         public List<AttachmentContent> AttachmentsContent

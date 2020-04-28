@@ -51,6 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
         private string _scheduleExpression;
         private AssociationStatus _status;
+        private AssociationSyncCompliance _syncCompliance;
         private List<Target> _targets = new List<Target>();
 
         /// <summary>
@@ -335,7 +336,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OutputLocation. 
         /// <para>
-        /// An Amazon S3 bucket where you want to store the output details of the request.
+        /// An S3 bucket where you want to store the output details of the request.
         /// </para>
         /// </summary>
         public InstanceAssociationOutputLocation OutputLocation
@@ -421,6 +422,39 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SyncCompliance. 
+        /// <para>
+        /// The mode for generating association compliance. You can specify <code>AUTO</code>
+        /// or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the
+        /// association execution to determine the compliance status. If the association execution
+        /// runs successfully, then the association is <code>COMPLIANT</code>. If the association
+        /// execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a
+        /// parameter for the <a>PutComplianceItems</a> API action. In this case, compliance data
+        /// is not managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a>
+        /// API action.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, all associations use <code>AUTO</code> mode.
+        /// </para>
+        /// </summary>
+        public AssociationSyncCompliance SyncCompliance
+        {
+            get { return this._syncCompliance; }
+            set { this._syncCompliance = value; }
+        }
+
+        // Check to see if SyncCompliance property is set
+        internal bool IsSetSyncCompliance()
+        {
+            return this._syncCompliance != null;
         }
 
         /// <summary>

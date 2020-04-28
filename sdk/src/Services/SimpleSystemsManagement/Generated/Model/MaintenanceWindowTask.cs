@@ -68,7 +68,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property LoggingInfo. 
         /// <para>
-        /// Information about an Amazon S3 bucket to write task-level logs to.
+        /// Information about an S3 bucket to write task-level logs to.
         /// </para>
         ///  <note> 
         /// <para>

@@ -80,8 +80,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property DeletionSummary. 
         /// <para>
         /// Information about the delete operation. For more information about this summary, see
-        /// <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
-        /// the Delete Inventory Summary</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
+        /// the delete inventory summary</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public InventoryDeletionSummary DeletionSummary
