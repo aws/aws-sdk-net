@@ -28,10 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Settings to configure an action so that it occurs as soon as possible.
+    /// Audio Track Selection
     /// </summary>
-    public partial class ImmediateModeScheduleActionStartSettings
+    public partial class AudioTrackSelection
     {
+        private List<AudioTrack> _tracks = new List<AudioTrack>();
+
+        /// <summary>
+        /// Gets and sets the property Tracks. Selects one or more unique audio tracks from within
+        /// an mp4 source.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public List<AudioTrack> Tracks
+        {
+            get { return this._tracks; }
+            set { this._tracks = value; }
+        }
+
+        // Check to see if Tracks property is set
+        internal bool IsSetTracks()
+        {
+            return this._tracks != null && this._tracks.Count > 0; 
+        }
 
     }
 }

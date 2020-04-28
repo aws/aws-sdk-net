@@ -67,6 +67,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAudioTrackSelection())
+            {
+                context.Writer.WritePropertyName("audioTrackSelection");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AudioTrackSelectionMarshaller.Instance;
+                marshaller.Marshall(requestObject.AudioTrackSelection, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

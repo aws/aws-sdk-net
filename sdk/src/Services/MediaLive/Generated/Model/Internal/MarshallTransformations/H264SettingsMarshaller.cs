@@ -98,6 +98,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EntropyEncoding);
             }
 
+            if(requestObject.IsSetFilterSettings())
+            {
+                context.Writer.WritePropertyName("filterSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = H264FilterSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.FilterSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFixedAfd())
             {
                 context.Writer.WritePropertyName("fixedAfd");
@@ -216,6 +227,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("profile");
                 context.Writer.Write(requestObject.Profile);
+            }
+
+            if(requestObject.IsSetQualityLevel())
+            {
+                context.Writer.WritePropertyName("qualityLevel");
+                context.Writer.Write(requestObject.QualityLevel);
             }
 
             if(requestObject.IsSetQvbrQualityLevel())

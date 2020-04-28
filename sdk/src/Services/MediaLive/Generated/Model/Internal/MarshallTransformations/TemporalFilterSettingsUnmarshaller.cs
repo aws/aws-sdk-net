@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AudioSelectorSettings Object
+    /// Response Unmarshaller for TemporalFilterSettings Object
     /// </summary>  
-    public class AudioSelectorSettingsUnmarshaller : IUnmarshaller<AudioSelectorSettings, XmlUnmarshallerContext>, IUnmarshaller<AudioSelectorSettings, JsonUnmarshallerContext>
+    public class TemporalFilterSettingsUnmarshaller : IUnmarshaller<TemporalFilterSettings, XmlUnmarshallerContext>, IUnmarshaller<TemporalFilterSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AudioSelectorSettings IUnmarshaller<AudioSelectorSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TemporalFilterSettings IUnmarshaller<TemporalFilterSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AudioSelectorSettings Unmarshall(JsonUnmarshallerContext context)
+        public TemporalFilterSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AudioSelectorSettings unmarshalledObject = new AudioSelectorSettings();
+            TemporalFilterSettings unmarshalledObject = new TemporalFilterSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("audioLanguageSelection", targetDepth))
+                if (context.TestExpression("postFilterSharpening", targetDepth))
                 {
-                    var unmarshaller = AudioLanguageSelectionUnmarshaller.Instance;
-                    unmarshalledObject.AudioLanguageSelection = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PostFilterSharpening = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("audioPidSelection", targetDepth))
+                if (context.TestExpression("strength", targetDepth))
                 {
-                    var unmarshaller = AudioPidSelectionUnmarshaller.Instance;
-                    unmarshalledObject.AudioPidSelection = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("audioTrackSelection", targetDepth))
-                {
-                    var unmarshaller = AudioTrackSelectionUnmarshaller.Instance;
-                    unmarshalledObject.AudioTrackSelection = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Strength = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static AudioSelectorSettingsUnmarshaller _instance = new AudioSelectorSettingsUnmarshaller();        
+        private static TemporalFilterSettingsUnmarshaller _instance = new TemporalFilterSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AudioSelectorSettingsUnmarshaller Instance
+        public static TemporalFilterSettingsUnmarshaller Instance
         {
             get
             {

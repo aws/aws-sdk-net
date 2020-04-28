@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Fmp4HlsSettings Marshaller
+    /// AudioTrack Marshaller
     /// </summary>       
-    public class Fmp4HlsSettingsMarshaller : IRequestMarshaller<Fmp4HlsSettings, JsonMarshallerContext> 
+    public class AudioTrackMarshaller : IRequestMarshaller<AudioTrack, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,24 +43,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Fmp4HlsSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(AudioTrack requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAudioRenditionSets())
+            if(requestObject.IsSetTrack())
             {
-                context.Writer.WritePropertyName("audioRenditionSets");
-                context.Writer.Write(requestObject.AudioRenditionSets);
-            }
-
-            if(requestObject.IsSetNielsenId3Behavior())
-            {
-                context.Writer.WritePropertyName("nielsenId3Behavior");
-                context.Writer.Write(requestObject.NielsenId3Behavior);
-            }
-
-            if(requestObject.IsSetTimedMetadataBehavior())
-            {
-                context.Writer.WritePropertyName("timedMetadataBehavior");
-                context.Writer.Write(requestObject.TimedMetadataBehavior);
+                context.Writer.WritePropertyName("track");
+                context.Writer.Write(requestObject.Track);
             }
 
         }
@@ -68,7 +56,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static Fmp4HlsSettingsMarshaller Instance = new Fmp4HlsSettingsMarshaller();
+        public readonly static AudioTrackMarshaller Instance = new AudioTrackMarshaller();
 
     }
 }

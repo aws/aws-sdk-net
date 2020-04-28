@@ -555,7 +555,8 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property OutputSelection. MANIFESTSANDSEGMENTS: Generates manifests
-        /// (master manifest, if applicable, and media manifests) for this output group.SEGMENTSONLY:
+        /// (master manifest, if applicable, and media manifests) for this output group.VARIANTMANIFESTSANDSEGMENTS:
+        /// Generates media manifests for this output group, but not a master manifest.SEGMENTSONLY:
         /// Does not generate any manifests for this output group.
         /// </summary>
         public HlsOutputSelection OutputSelection

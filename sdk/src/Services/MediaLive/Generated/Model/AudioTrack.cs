@@ -28,10 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Settings to configure an action so that it occurs as soon as possible.
+    /// Audio Track
     /// </summary>
-    public partial class ImmediateModeScheduleActionStartSettings
+    public partial class AudioTrack
     {
+        private int? _track;
+
+        /// <summary>
+        /// Gets and sets the property Track. 1-based integer value that maps to a specific audio
+        /// track
+        /// </summary>
+        [AWSProperty(Required=true, Min=1)]
+        public int Track
+        {
+            get { return this._track.GetValueOrDefault(); }
+            set { this._track = value; }
+        }
+
+        // Check to see if Track property is set
+        internal bool IsSetTrack()
+        {
+            return this._track.HasValue; 
+        }
 
     }
 }

@@ -40,6 +40,7 @@ namespace Amazon.MediaLive.Model
         private H264ColorMetadata _colorMetadata;
         private H264ColorSpaceSettings _colorSpaceSettings;
         private H264EntropyEncoding _entropyEncoding;
+        private H264FilterSettings _filterSettings;
         private FixedAfd _fixedAfd;
         private H264FlickerAq _flickerAq;
         private H264ForceFieldPictures _forceFieldPictures;
@@ -60,6 +61,7 @@ namespace Amazon.MediaLive.Model
         private int? _parDenominator;
         private int? _parNumerator;
         private H264Profile _profile;
+        private H264QualityLevel _qualityLevel;
         private int? _qvbrQualityLevel;
         private H264RateControlMode _rateControlMode;
         private H264ScanType _scanType;
@@ -205,6 +207,22 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FilterSettings. Settings associated with the specified
+        /// filter.
+        /// </summary>
+        public H264FilterSettings FilterSettings
+        {
+            get { return this._filterSettings; }
+            set { this._filterSettings = value; }
+        }
+
+        // Check to see if FilterSettings property is set
+        internal bool IsSetFilterSettings()
+        {
+            return this._filterSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FixedAfd. Four bit AFD value to write on all frames of
         /// video in the output stream. Only valid when afdSignaling is set to 'Fixed'.
         /// </summary>
@@ -238,11 +256,12 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property ForceFieldPictures. This setting applies only when scan
-        /// type is "interlaced." It controls whether coding is on a field basis or a frame basis.
-        /// (When the video is progressive, the coding is always on a frame basis.)enabled: Always
-        /// code on a field basis, so that odd and even sets of fields are coded separately.disabled:
-        /// Code the two sets of fields separately (on a field basis) or together (on a frame
-        /// basis, using PAFF or MBAFF), depending on what is most appropriate for the content.
+        /// type is "interlaced." It controls whether coding is performed on a field basis or
+        /// on a frame basis. (When the video is progressive, the coding is always performed on
+        /// a frame basis.)enabled: Force MediaLive to code on a field basis, so that odd and
+        /// even sets of fields are coded separately.disabled: Code the two sets of fields separately
+        /// (on a field basis) or together (on a frame basis using PAFF), depending on what is
+        /// most appropriate for the content.
         /// </summary>
         public H264ForceFieldPictures ForceFieldPictures
         {
@@ -545,6 +564,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetProfile()
         {
             return this._profile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QualityLevel. If set to "ENHANCEDQUALITY," improves visual
+        /// quality at an increased output cost. If this video is being delivered to a MediaLive
+        /// Multiplex, "ENHANCEDQUALITY" is always used.
+        /// </summary>
+        public H264QualityLevel QualityLevel
+        {
+            get { return this._qualityLevel; }
+            set { this._qualityLevel = value; }
+        }
+
+        // Check to see if QualityLevel property is set
+        internal bool IsSetQualityLevel()
+        {
+            return this._qualityLevel != null;
         }
 
         /// <summary>

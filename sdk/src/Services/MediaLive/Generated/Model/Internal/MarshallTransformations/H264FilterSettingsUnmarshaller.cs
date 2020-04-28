@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AudioSelectorSettings Object
+    /// Response Unmarshaller for H264FilterSettings Object
     /// </summary>  
-    public class AudioSelectorSettingsUnmarshaller : IUnmarshaller<AudioSelectorSettings, XmlUnmarshallerContext>, IUnmarshaller<AudioSelectorSettings, JsonUnmarshallerContext>
+    public class H264FilterSettingsUnmarshaller : IUnmarshaller<H264FilterSettings, XmlUnmarshallerContext>, IUnmarshaller<H264FilterSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AudioSelectorSettings IUnmarshaller<AudioSelectorSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        H264FilterSettings IUnmarshaller<H264FilterSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AudioSelectorSettings Unmarshall(JsonUnmarshallerContext context)
+        public H264FilterSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AudioSelectorSettings unmarshalledObject = new AudioSelectorSettings();
+            H264FilterSettings unmarshalledObject = new H264FilterSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("audioLanguageSelection", targetDepth))
+                if (context.TestExpression("temporalFilterSettings", targetDepth))
                 {
-                    var unmarshaller = AudioLanguageSelectionUnmarshaller.Instance;
-                    unmarshalledObject.AudioLanguageSelection = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("audioPidSelection", targetDepth))
-                {
-                    var unmarshaller = AudioPidSelectionUnmarshaller.Instance;
-                    unmarshalledObject.AudioPidSelection = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("audioTrackSelection", targetDepth))
-                {
-                    var unmarshaller = AudioTrackSelectionUnmarshaller.Instance;
-                    unmarshalledObject.AudioTrackSelection = unmarshaller.Unmarshall(context);
+                    var unmarshaller = TemporalFilterSettingsUnmarshaller.Instance;
+                    unmarshalledObject.TemporalFilterSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static AudioSelectorSettingsUnmarshaller _instance = new AudioSelectorSettingsUnmarshaller();        
+        private static H264FilterSettingsUnmarshaller _instance = new H264FilterSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AudioSelectorSettingsUnmarshaller Instance
+        public static H264FilterSettingsUnmarshaller Instance
         {
             get
             {

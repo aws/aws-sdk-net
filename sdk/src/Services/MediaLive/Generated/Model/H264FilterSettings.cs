@@ -28,10 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Settings to configure an action so that it occurs as soon as possible.
+    /// H264 Filter Settings
     /// </summary>
-    public partial class ImmediateModeScheduleActionStartSettings
+    public partial class H264FilterSettings
     {
+        private TemporalFilterSettings _temporalFilterSettings;
+
+        /// <summary>
+        /// Gets and sets the property TemporalFilterSettings.
+        /// </summary>
+        public TemporalFilterSettings TemporalFilterSettings
+        {
+            get { return this._temporalFilterSettings; }
+            set { this._temporalFilterSettings = value; }
+        }
+
+        // Check to see if TemporalFilterSettings property is set
+        internal bool IsSetTemporalFilterSettings()
+        {
+            return this._temporalFilterSettings != null;
+        }
 
     }
 }

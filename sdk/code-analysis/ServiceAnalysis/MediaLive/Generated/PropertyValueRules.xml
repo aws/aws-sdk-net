@@ -73,6 +73,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.AudioTrack.Track</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.BlackoutSlate.NetworkId</property>
     <min>34</min>
     <max>34</max>

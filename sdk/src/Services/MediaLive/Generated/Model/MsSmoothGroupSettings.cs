@@ -310,7 +310,9 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property SparseTrackType. If set to scte35, use incoming SCTE-35
-        /// messages to generate a sparse track in this group of MS-Smooth outputs.
+        /// messages to generate a sparse track in this group of MS-Smooth outputs. scte35WithoutSegmentation
+        /// is the same as scte35, except EML will not start a new segment at a SCTE-35 marker.
+        /// It will still encode an IDR frame at a SCTE-35 marker.
         /// </summary>
         public SmoothGroupSparseTrackType SparseTrackType
         {

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Fmp4HlsSettings Marshaller
+    /// H264FilterSettings Marshaller
     /// </summary>       
-    public class Fmp4HlsSettingsMarshaller : IRequestMarshaller<Fmp4HlsSettings, JsonMarshallerContext> 
+    public class H264FilterSettingsMarshaller : IRequestMarshaller<H264FilterSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,24 +43,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Fmp4HlsSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(H264FilterSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAudioRenditionSets())
+            if(requestObject.IsSetTemporalFilterSettings())
             {
-                context.Writer.WritePropertyName("audioRenditionSets");
-                context.Writer.Write(requestObject.AudioRenditionSets);
-            }
+                context.Writer.WritePropertyName("temporalFilterSettings");
+                context.Writer.WriteObjectStart();
 
-            if(requestObject.IsSetNielsenId3Behavior())
-            {
-                context.Writer.WritePropertyName("nielsenId3Behavior");
-                context.Writer.Write(requestObject.NielsenId3Behavior);
-            }
+                var marshaller = TemporalFilterSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.TemporalFilterSettings, context);
 
-            if(requestObject.IsSetTimedMetadataBehavior())
-            {
-                context.Writer.WritePropertyName("timedMetadataBehavior");
-                context.Writer.Write(requestObject.TimedMetadataBehavior);
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -68,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static Fmp4HlsSettingsMarshaller Instance = new Fmp4HlsSettingsMarshaller();
+        public readonly static H264FilterSettingsMarshaller Instance = new H264FilterSettingsMarshaller();
 
     }
 }
