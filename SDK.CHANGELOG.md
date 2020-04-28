@@ -1,3 +1,22 @@
+### 3.3.727.0 (2020-04-28 18:16 UTC)
+* ECR (3.3.104.0)
+	* This release adds support for multi-architecture images also known as a manifest list
+* KinesisVideo (3.3.103.0)
+	* Add "GET_CLIP" to the list of supported API names for the GetDataEndpoint API.
+* KinesisVideoArchivedMedia (3.3.103.0)
+	* Add support for the GetClip API for retrieving media from a video stream in the MP4 format.
+* MediaLive (3.3.110.0)
+	* AWS Elemental MediaLive now supports several new features: enhanced VQ for H.264 (AVC) output encodes; passthrough of timed metadata and of Nielsen ID3 metadata in fMP4 containers in HLS outputs; the ability to generate a SCTE-35 sparse track without additional segmentation, in Microsoft Smooth outputs;  the ability to select the audio from a TS input by specifying the audio track; and conversion of HDR colorspace in the input to an SDR colorspace in the output.
+* Route53 (3.3.103.0)
+	* Amazon Route 53 now supports the Africa (Cape Town) Region (af-south-1) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+* SimpleSystemsManagement (3.3.120.0)
+	* SSM State Manager support for adding list association filter for Resource Group and manual mode of managing compliance for an association. 
+* Core 3.3.106.13
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.726.0 (2020-04-27 18:11 UTC)
 * AccessAnalyzer (3.3.104.0)
 	* This release adds support for inclusion of S3 Access Point policies in IAM Access Analyzer evaluation of S3 bucket access. IAM Access Analyzer now reports findings for buckets shared through access points and identifies the access point that permits access.
