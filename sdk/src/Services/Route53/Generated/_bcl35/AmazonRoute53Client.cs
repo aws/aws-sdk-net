@@ -279,24 +279,26 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the AssociateVPCWithHostedZone service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.ConflictingDomainExistsException">
-        /// The cause of this error depends on whether you're trying to create a public or a private
-        /// hosted zone:
+        /// The cause of this error depends on the operation that you're performing:
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Public hosted zone:</b> Two hosted zones that have the same name or that have
-        /// a parent/child relationship (example.com and test.example.com) can't have any common
-        /// name servers. You tried to create a hosted zone that has the same name as an existing
-        /// hosted zone or that's the parent or child of an existing hosted zone, and you specified
-        /// a delegation set that shares one or more name servers with the existing hosted zone.
-        /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.
+        ///  <b>Create a public hosted zone:</b> Two hosted zones that have the same name or that
+        /// have a parent/child relationship (example.com and test.example.com) can't have any
+        /// common name servers. You tried to create a hosted zone that has the same name as an
+        /// existing hosted zone or that's the parent or child of an existing hosted zone, and
+        /// you specified a delegation set that shares one or more name servers with the existing
+        /// hosted zone. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Private hosted zone:</b> You specified an Amazon VPC that you're already using
-        /// for another hosted zone, and the domain that you specified for one of the hosted zones
-        /// is a subdomain of the domain that you specified for the other hosted zone. For example,
-        /// you can't use the same Amazon VPC for the hosted zones for example.com and test.example.com.
+        ///  <b>Create a private hosted zone:</b> A hosted zone with the specified name already
+        /// exists and is already associated with the Amazon VPC that you specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Associate VPCs with a private hosted zone:</b> The VPC that you specified is already
+        /// associated with another hosted zone that has the same name.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -383,33 +385,42 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
+        ///  <b>Deleting Resource Record Sets</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a resource record set, you must specify all the same values that you specified
+        /// when you created it.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Change Batches and Transactional Changes</b> 
         /// </para>
         ///  
         /// <para>
         /// The request body must include a document with a <code>ChangeResourceRecordSetsRequest</code>
         /// element. The request body contains a list of change items, known as a change batch.
-        /// Change batches are considered transactional changes. When using the Amazon Route 53
-        /// API to change resource record sets, Route 53 either makes all or none of the changes
-        /// in a change batch request. This ensures that Route 53 never partially implements the
-        /// intended changes to the resource record sets in a hosted zone. 
+        /// Change batches are considered transactional changes. Route 53 validates the changes
+        /// in the request and then either makes all or none of the changes in the change batch
+        /// request. This ensures that DNS routing isn't adversely affected by partial changes
+        /// to the resource record sets in a hosted zone. 
         /// </para>
         ///  
         /// <para>
-        /// For example, a change batch request that deletes the <code>CNAME</code> record for
-        /// www.example.com and creates an alias resource record set for www.example.com. Route
-        /// 53 deletes the first resource record set and creates the second resource record set
-        /// in a single operation. If either the <code>DELETE</code> or the <code>CREATE</code>
-        /// action fails, then both changes (plus any other changes in the batch) fail, and the
-        /// original <code>CNAME</code> record continues to exist.
+        /// For example, suppose a change batch request contains two changes: it deletes the <code>CNAME</code>
+        /// resource record set for www.example.com and creates an alias resource record set for
+        /// www.example.com. If validation for both records succeeds, Route 53 deletes the first
+        /// resource record set and creates the second resource record set in a single operation.
+        /// If validation for either the <code>DELETE</code> or the <code>CREATE</code> action
+        /// fails, then the request is canceled, and the original <code>CNAME</code> record continues
+        /// to exist.
         /// </para>
-        ///  <important> 
+        ///  <note> 
         /// <para>
-        /// Due to the nature of transactional changes, you can't delete the same resource record
-        /// set more than once in a single change batch. If you attempt to delete the same change
-        /// batch more than once, Route 53 returns an <code>InvalidChangeBatch</code> error.
+        /// If you try to delete the same resource record set more than once in a single change
+        /// batch, Route 53 returns an <code>InvalidChangeBatch</code> error.
         /// </para>
-        ///  </important> 
+        ///  </note> 
         /// <para>
         ///  <b>Traffic Flow</b> 
         /// </para>
@@ -844,24 +855,26 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the CreateHostedZone service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.ConflictingDomainExistsException">
-        /// The cause of this error depends on whether you're trying to create a public or a private
-        /// hosted zone:
+        /// The cause of this error depends on the operation that you're performing:
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Public hosted zone:</b> Two hosted zones that have the same name or that have
-        /// a parent/child relationship (example.com and test.example.com) can't have any common
-        /// name servers. You tried to create a hosted zone that has the same name as an existing
-        /// hosted zone or that's the parent or child of an existing hosted zone, and you specified
-        /// a delegation set that shares one or more name servers with the existing hosted zone.
-        /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.
+        ///  <b>Create a public hosted zone:</b> Two hosted zones that have the same name or that
+        /// have a parent/child relationship (example.com and test.example.com) can't have any
+        /// common name servers. You tried to create a hosted zone that has the same name as an
+        /// existing hosted zone or that's the parent or child of an existing hosted zone, and
+        /// you specified a delegation set that shares one or more name servers with the existing
+        /// hosted zone. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Private hosted zone:</b> You specified an Amazon VPC that you're already using
-        /// for another hosted zone, and the domain that you specified for one of the hosted zones
-        /// is a subdomain of the domain that you specified for the other hosted zone. For example,
-        /// you can't use the same Amazon VPC for the hosted zones for example.com and test.example.com.
+        ///  <b>Create a private hosted zone:</b> A hosted zone with the specified name already
+        /// exists and is already associated with the Amazon VPC that you specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Associate VPCs with a private hosted zone:</b> The VPC that you specified is already
+        /// associated with another hosted zone that has the same name.
         /// </para>
         ///  </li> </ul>
         /// </exception>
