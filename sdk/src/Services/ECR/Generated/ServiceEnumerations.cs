@@ -147,6 +147,10 @@ namespace Amazon.ECR
         /// </summary>
         public static readonly ImageFailureCode ImageNotFound = new ImageFailureCode("ImageNotFound");
         /// <summary>
+        /// Constant ImageReferencedByManifestList for ImageFailureCode
+        /// </summary>
+        public static readonly ImageFailureCode ImageReferencedByManifestList = new ImageFailureCode("ImageReferencedByManifestList");
+        /// <summary>
         /// Constant ImageTagDoesNotMatchDigest for ImageFailureCode
         /// </summary>
         public static readonly ImageFailureCode ImageTagDoesNotMatchDigest = new ImageFailureCode("ImageTagDoesNotMatchDigest");

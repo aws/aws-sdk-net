@@ -119,6 +119,11 @@ namespace Amazon.ECR.Model
         /// <para>
         /// The size, in bytes, of the image in the repository.
         /// </para>
+        ///  
+        /// <para>
+        /// If the image is a manifest list, this will be the max size of all manifests in the
+        /// list.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Beginning with Docker version 1.9, the Docker client compresses image layers before

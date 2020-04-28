@@ -52,18 +52,13 @@ namespace Amazon.ECR
         ///  
         /// <para>
         /// When an image is pushed to a repository, each image layer is checked to verify if
-        /// it has been uploaded before. If it is, then the image layer is skipped.
-        /// </para>
-        ///  
-        /// <para>
-        /// When an image is pulled from a repository, each image layer is checked once to verify
-        /// it is available to be pulled.
+        /// it has been uploaded before. If it has been uploaded, then the image layer is skipped.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-        /// use by customers for pulling and pushing images. In most cases, you should use the
-        /// <code>docker</code> CLI to pull, tag, and push images.
+        /// This operation is used by the Amazon ECR proxy and is not generally used by customers
+        /// for pulling and pushing images. In most cases, you should use the <code>docker</code>
+        /// CLI to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -245,9 +240,9 @@ namespace Amazon.ECR
         /// </para>
         ///  <note> 
         /// <para>
-        /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-        /// use by customers for pulling and pushing images. In most cases, you should use the
-        /// <code>docker</code> CLI to pull, tag, and push images.
+        /// This operation is used by the Amazon ECR proxy and is not generally used by customers
+        /// for pulling and pushing images. In most cases, you should use the <code>docker</code>
+        /// CLI to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -771,13 +766,14 @@ namespace Amazon.ECR
         /// 
         ///  
         /// <para>
-        /// When an image is pulled, the GetDownloadUrlForLayer API is called once per image layer.
+        /// When an image is pulled, the GetDownloadUrlForLayer API is called once per image layer
+        /// that is not already cached.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-        /// use by customers for pulling and pushing images. In most cases, you should use the
-        /// <code>docker</code> CLI to pull, tag, and push images.
+        /// This operation is used by the Amazon ECR proxy and is not generally used by customers
+        /// for pulling and pushing images. In most cases, you should use the <code>docker</code>
+        /// CLI to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1002,14 +998,14 @@ namespace Amazon.ECR
         ///  
         /// <para>
         /// When an image is pushed, the InitiateLayerUpload API is called once per image layer
-        /// that has not already been uploaded. Whether an image layer has been uploaded before
-        /// is determined by the <a>BatchCheckLayerAvailability</a> API action.
+        /// that has not already been uploaded. Whether or not an image layer has been uploaded
+        /// is determined by the BatchCheckLayerAvailability API action.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-        /// use by customers for pulling and pushing images. In most cases, you should use the
-        /// <code>docker</code> CLI to pull, tag, and push images.
+        /// This operation is used by the Amazon ECR proxy and is not generally used by customers
+        /// for pulling and pushing images. In most cases, you should use the <code>docker</code>
+        /// CLI to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1176,14 +1172,14 @@ namespace Amazon.ECR
         ///  
         /// <para>
         /// When an image is pushed and all new image layers have been uploaded, the PutImage
-        /// API is called once to create or update the image manifest and tags associated with
-        /// the image.
+        /// API is called once to create or update the image manifest and the tags associated
+        /// with the image.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-        /// use by customers for pulling and pushing images. In most cases, you should use the
-        /// <code>docker</code> CLI to pull, tag, and push images.
+        /// This operation is used by the Amazon ECR proxy and is not generally used by customers
+        /// for pulling and pushing images. In most cases, you should use the <code>docker</code>
+        /// CLI to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1209,6 +1205,9 @@ namespace Amazon.ECR
         /// The operation did not succeed because it would have exceeded a service limit for your
         /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon
         /// ECR Default Service Limits</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ReferencedImagesNotFoundException">
+        /// The manifest list is referencing an image that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
         /// The specified repository could not be found. Check the spelling of the specified repository
@@ -1472,12 +1471,20 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon
+        /// ECR Default Service Limits</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
         /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
         /// The specified repository could not be found. Check the spelling of the specified repository
         /// and ensure that you are performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.UnsupportedImageTypeException">
+        /// The image is of a type that cannot be scanned.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartImageScan">REST API Reference for StartImageScan Operation</seealso>
         StartImageScanResponse StartImageScan(StartImageScanRequest request);
@@ -1699,9 +1706,9 @@ namespace Amazon.ECR
         /// </para>
         ///  <note> 
         /// <para>
-        /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-        /// use by customers for pulling and pushing images. In most cases, you should use the
-        /// <code>docker</code> CLI to pull, tag, and push images.
+        /// This operation is used by the Amazon ECR proxy and is not generally used by customers
+        /// for pulling and pushing images. In most cases, you should use the <code>docker</code>
+        /// CLI to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
