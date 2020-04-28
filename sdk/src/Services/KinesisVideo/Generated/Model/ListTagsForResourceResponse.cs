@@ -38,9 +38,9 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If you specify this parameter and the result of a ListTagsForResource call is truncated,
-        /// the response includes a token that you can use in the next request to fetch the next
-        /// set of tags. 
+        /// If you specify this parameter and the result of a <code>ListTagsForResource</code>
+        /// call is truncated, the response includes a token that you can use in the next request
+        /// to fetch the next set of tags. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=512)]

@@ -43,7 +43,7 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The ARN of the signaling channel to which you want to add tags.
+        /// The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

@@ -66,7 +66,7 @@ namespace Amazon.KinesisVideo
         /// The value for this input parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The stream is currently not available for this operation.
+        /// The signaling channel is currently not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.TagsPerResourceExceededLimitException">
         /// You have exceeded the limit of tags that you can associate with the resource. Kinesis
@@ -106,7 +106,7 @@ namespace Amazon.KinesisVideo
         /// The value for this input parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The stream is currently not available for this operation.
+        /// The signaling channel is currently not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.TagsPerResourceExceededLimitException">
         /// You have exceeded the limit of tags that you can associate with the resource. Kinesis
@@ -162,7 +162,7 @@ namespace Amazon.KinesisVideo
         /// Not implemented.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The stream is currently not available for this operation.
+        /// The signaling channel is currently not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.TagsPerResourceExceededLimitException">
         /// You have exceeded the limit of tags that you can associate with the resource. Kinesis
@@ -218,7 +218,7 @@ namespace Amazon.KinesisVideo
         /// Not implemented.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The stream is currently not available for this operation.
+        /// The signaling channel is currently not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.TagsPerResourceExceededLimitException">
         /// You have exceeded the limit of tags that you can associate with the resource. Kinesis
@@ -249,6 +249,9 @@ namespace Amazon.KinesisVideo
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
         /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
+        /// The signaling channel is currently not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
@@ -283,6 +286,9 @@ namespace Amazon.KinesisVideo
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
         /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
+        /// The signaling channel is currently not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
@@ -338,6 +344,9 @@ namespace Amazon.KinesisVideo
         /// <exception cref="Amazon.KinesisVideo.Model.NotAuthorizedException">
         /// The caller is not authorized to perform this operation.
         /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
+        /// The signaling channel is currently not available for this operation.
+        /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
         /// </exception>
@@ -392,6 +401,9 @@ namespace Amazon.KinesisVideo
         /// <exception cref="Amazon.KinesisVideo.Model.NotAuthorizedException">
         /// The caller is not authorized to perform this operation.
         /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
+        /// The signaling channel is currently not available for this operation.
+        /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
         /// </exception>
@@ -410,7 +422,8 @@ namespace Amazon.KinesisVideo
 
         /// <summary>
         /// Returns the most current information about the signaling channel. You must specify
-        /// either the name or the ARN of the channel that you want to describe.
+        /// either the name or the Amazon Resource Name (ARN) of the channel that you want to
+        /// describe.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSignalingChannel service method.</param>
         /// 
@@ -435,7 +448,8 @@ namespace Amazon.KinesisVideo
 
         /// <summary>
         /// Returns the most current information about the signaling channel. You must specify
-        /// either the name or the ARN of the channel that you want to describe.
+        /// either the name or the Amazon Resource Name (ARN) of the channel that you want to
+        /// describe.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSignalingChannel service method.</param>
         /// <param name="cancellationToken">
@@ -608,9 +622,9 @@ namespace Amazon.KinesisVideo
         ///  
         /// <para>
         ///  <code>Protocols</code> is used to determine the communication mechanism. For example,
-        /// specifying <code>WSS</code> as the protocol, results in this API producing a secure
-        /// websocket endpoint, and specifying <code>HTTPS</code> as the protocol, results in
-        /// this API generating an HTTPS endpoint. 
+        /// if you specify <code>WSS</code> as the protocol, this API produces a secure websocket
+        /// endpoint. If you specify <code>HTTPS</code> as the protocol, this API generates an
+        /// HTTPS endpoint. 
         /// </para>
         ///  
         /// <para>
@@ -635,7 +649,7 @@ namespace Amazon.KinesisVideo
         /// The value for this input parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The stream is currently not available for this operation.
+        /// The signaling channel is currently not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
@@ -653,9 +667,9 @@ namespace Amazon.KinesisVideo
         ///  
         /// <para>
         ///  <code>Protocols</code> is used to determine the communication mechanism. For example,
-        /// specifying <code>WSS</code> as the protocol, results in this API producing a secure
-        /// websocket endpoint, and specifying <code>HTTPS</code> as the protocol, results in
-        /// this API generating an HTTPS endpoint. 
+        /// if you specify <code>WSS</code> as the protocol, this API produces a secure websocket
+        /// endpoint. If you specify <code>HTTPS</code> as the protocol, this API generates an
+        /// HTTPS endpoint. 
         /// </para>
         ///  
         /// <para>
@@ -683,7 +697,7 @@ namespace Amazon.KinesisVideo
         /// The value for this input parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The stream is currently not available for this operation.
+        /// The signaling channel is currently not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
@@ -1272,7 +1286,7 @@ namespace Amazon.KinesisVideo
         /// The caller is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The stream is currently not available for this operation.
+        /// The signaling channel is currently not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
@@ -1338,7 +1352,7 @@ namespace Amazon.KinesisVideo
         /// The caller is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The stream is currently not available for this operation.
+        /// The signaling channel is currently not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
@@ -1363,9 +1377,8 @@ namespace Amazon.KinesisVideo
         ///  
         /// <para>
         /// If the <code>MessageTtlSeconds</code> value is updated (either increased or reduced),
-        /// then it only applies to new messages sent via this channel after it's been updated.
-        /// Existing messages are still expire as per the previous <code>MessageTtlSeconds</code>
-        /// value.
+        /// it only applies to new messages sent via this channel after it's been updated. Existing
+        /// messages are still expired as per the previous <code>MessageTtlSeconds</code> value.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSignalingChannel service method.</param>
@@ -1382,7 +1395,7 @@ namespace Amazon.KinesisVideo
         /// The value for this input parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The stream is currently not available for this operation.
+        /// The signaling channel is currently not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
@@ -1404,9 +1417,8 @@ namespace Amazon.KinesisVideo
         ///  
         /// <para>
         /// If the <code>MessageTtlSeconds</code> value is updated (either increased or reduced),
-        /// then it only applies to new messages sent via this channel after it's been updated.
-        /// Existing messages are still expire as per the previous <code>MessageTtlSeconds</code>
-        /// value.
+        /// it only applies to new messages sent via this channel after it's been updated. Existing
+        /// messages are still expired as per the previous <code>MessageTtlSeconds</code> value.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSignalingChannel service method.</param>
@@ -1426,7 +1438,7 @@ namespace Amazon.KinesisVideo
         /// The value for this input parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The stream is currently not available for this operation.
+        /// The signaling channel is currently not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
@@ -1477,7 +1489,7 @@ namespace Amazon.KinesisVideo
         /// The caller is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The stream is currently not available for this operation.
+        /// The signaling channel is currently not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
@@ -1528,7 +1540,7 @@ namespace Amazon.KinesisVideo
         /// The caller is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The stream is currently not available for this operation.
+        /// The signaling channel is currently not available for this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.

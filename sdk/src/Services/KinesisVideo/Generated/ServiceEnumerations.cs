@@ -31,6 +31,10 @@ namespace Amazon.KinesisVideo
     {
 
         /// <summary>
+        /// Constant GET_CLIP for APIName
+        /// </summary>
+        public static readonly APIName GET_CLIP = new APIName("GET_CLIP");
+        /// <summary>
         /// Constant GET_DASH_STREAMING_SESSION_URL for APIName
         /// </summary>
         public static readonly APIName GET_DASH_STREAMING_SESSION_URL = new APIName("GET_DASH_STREAMING_SESSION_URL");

@@ -37,7 +37,7 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property ChannelARN. 
         /// <para>
-        /// The ARN of the created channel.
+        /// The Amazon Resource Name (ARN) of the created channel.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
