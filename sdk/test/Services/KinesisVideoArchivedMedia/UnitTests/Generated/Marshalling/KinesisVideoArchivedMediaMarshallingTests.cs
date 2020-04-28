@@ -44,6 +44,39 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("KinesisVideoArchivedMedia")]
+        public void GetClipMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetClip");
+
+            var request = InstantiateClassGenerator.Execute<GetClipRequest>();
+            var marshaller = new GetClipRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetClip", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetClipResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetClipResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("KinesisVideoArchivedMedia")]
         public void GetDASHStreamingSessionURLMarshallTest()
         {
             var operation = service_model.FindOperation("GetDASHStreamingSessionURL");

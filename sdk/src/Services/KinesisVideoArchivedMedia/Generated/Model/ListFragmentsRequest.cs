@@ -129,7 +129,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// from a previously truncated response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }

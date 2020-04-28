@@ -63,7 +63,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// the ingestion order.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=128)]
         public string FragmentNumber
         {
             get { return this._fragmentNumber; }

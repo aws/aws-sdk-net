@@ -80,6 +80,241 @@ namespace Amazon.KinesisVideoArchivedMedia
         #endregion
 
 
+        #region  GetClip
+
+
+        /// <summary>
+        /// Downloads an MP4 file (clip) containing the archived, on-demand media from the specified
+        /// video stream over the specified time range. 
+        /// 
+        ///  
+        /// <para>
+        /// Both the StreamName and the StreamARN parameters are optional, but you must specify
+        /// either the StreamName or the StreamARN when invoking this API operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// As a prerequsite to using GetCLip API, you must obtain an endpoint using <code>GetDataEndpoint</code>,
+        /// specifying GET_CLIP for<code/> the <code>APIName</code> parameter. 
+        /// </para>
+        ///  
+        /// <para>
+        /// An Amazon Kinesis video stream has the following requirements for providing data through
+        /// MP4:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The media must contain h.264 or h.265 encoded video and, optionally, AAC or G.711
+        /// encoded audio. Specifically, the codec ID of track 1 should be <code>V_MPEG/ISO/AVC</code>
+        /// (for h.264) or V_MPEGH/ISO/HEVC (for H.265). Optionally, the codec ID of track 2 should
+        /// be <code>A_AAC</code> (for AAC) or A_MS/ACM (for G.711).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Data retention must be greater than 0.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The video track of each fragment must contain codec private data in the Advanced Video
+        /// Coding (AVC) for H.264 format and HEVC for H.265 format. For more information, see
+        /// <a href="https://www.iso.org/standard/55980.html">MPEG-4 specification ISO/IEC 14496-15</a>.
+        /// For information about adapting stream data to a given format, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/producer-reference-nal.html">NAL
+        /// Adaptation Flags</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The audio track (if present) of each fragment must contain codec private data in the
+        /// AAC format (<a href="https://www.iso.org/standard/43345.html">AAC specification ISO/IEC
+        /// 13818-7</a>) or the <a href="http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/WAVE.html">MS
+        /// Wave format</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can monitor the amount of outgoing data by monitoring the <code>GetClip.OutgoingBytes</code>
+        /// Amazon CloudWatch metric. For information about using CloudWatch to monitor Kinesis
+        /// Video Streams, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/monitoring.html">Monitoring
+        /// Kinesis Video Streams</a>. For pricing information, see <a href="https://aws.amazon.com/kinesis/video-streams/pricing/">Amazon
+        /// Kinesis Video Streams Pricing</a> and <a href="https://aws.amazon.com/pricing/">AWS
+        /// Pricing</a>. Charges for outgoing AWS data apply.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetClip service method.</param>
+        /// 
+        /// <returns>The response from the GetClip service method, as returned by KinesisVideoArchivedMedia.</returns>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.InvalidCodecPrivateDataException">
+        /// The codec private data in at least one of the tracks of the video stream is not valid
+        /// for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.InvalidMediaFrameException">
+        /// One or more frames in the requested clip could not be parsed based on the specified
+        /// codec.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.MissingCodecPrivateDataException">
+        /// No codec private data was found in at least one of tracks of the video stream.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NoDataRetentionException">
+        /// A streaming session was requested for a stream that does not retain data (that is,
+        /// has a <code>DataRetentionInHours</code> of 0).
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NotAuthorizedException">
+        /// Status Code: 403, The caller is not authorized to perform an operation on the given
+        /// stream, or the token has expired.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.ResourceNotFoundException">
+        /// <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the
+        /// stream that you specified.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code>
+        /// throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code>
+        /// or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within
+        /// the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code>
+        /// is requested for a stream that has no fragments within the last 30 seconds.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.UnsupportedStreamMediaTypeException">
+        /// The type of the media (for example, h.264 or h.265 video or ACC or G.711 audio) could
+        /// not be determined from the codec IDs of the tracks in the first fragment for a playback
+        /// session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally,
+        /// the codec ID for track 2 should be <code>A_AAC</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetClip">REST API Reference for GetClip Operation</seealso>
+        public virtual GetClipResponse GetClip(GetClipRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetClipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetClipResponseUnmarshaller.Instance;
+
+            return Invoke<GetClipResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Downloads an MP4 file (clip) containing the archived, on-demand media from the specified
+        /// video stream over the specified time range. 
+        /// 
+        ///  
+        /// <para>
+        /// Both the StreamName and the StreamARN parameters are optional, but you must specify
+        /// either the StreamName or the StreamARN when invoking this API operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// As a prerequsite to using GetCLip API, you must obtain an endpoint using <code>GetDataEndpoint</code>,
+        /// specifying GET_CLIP for<code/> the <code>APIName</code> parameter. 
+        /// </para>
+        ///  
+        /// <para>
+        /// An Amazon Kinesis video stream has the following requirements for providing data through
+        /// MP4:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The media must contain h.264 or h.265 encoded video and, optionally, AAC or G.711
+        /// encoded audio. Specifically, the codec ID of track 1 should be <code>V_MPEG/ISO/AVC</code>
+        /// (for h.264) or V_MPEGH/ISO/HEVC (for H.265). Optionally, the codec ID of track 2 should
+        /// be <code>A_AAC</code> (for AAC) or A_MS/ACM (for G.711).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Data retention must be greater than 0.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The video track of each fragment must contain codec private data in the Advanced Video
+        /// Coding (AVC) for H.264 format and HEVC for H.265 format. For more information, see
+        /// <a href="https://www.iso.org/standard/55980.html">MPEG-4 specification ISO/IEC 14496-15</a>.
+        /// For information about adapting stream data to a given format, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/producer-reference-nal.html">NAL
+        /// Adaptation Flags</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The audio track (if present) of each fragment must contain codec private data in the
+        /// AAC format (<a href="https://www.iso.org/standard/43345.html">AAC specification ISO/IEC
+        /// 13818-7</a>) or the <a href="http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/WAVE.html">MS
+        /// Wave format</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can monitor the amount of outgoing data by monitoring the <code>GetClip.OutgoingBytes</code>
+        /// Amazon CloudWatch metric. For information about using CloudWatch to monitor Kinesis
+        /// Video Streams, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/monitoring.html">Monitoring
+        /// Kinesis Video Streams</a>. For pricing information, see <a href="https://aws.amazon.com/kinesis/video-streams/pricing/">Amazon
+        /// Kinesis Video Streams Pricing</a> and <a href="https://aws.amazon.com/pricing/">AWS
+        /// Pricing</a>. Charges for outgoing AWS data apply.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetClip service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetClip service method, as returned by KinesisVideoArchivedMedia.</returns>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.InvalidCodecPrivateDataException">
+        /// The codec private data in at least one of the tracks of the video stream is not valid
+        /// for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.InvalidMediaFrameException">
+        /// One or more frames in the requested clip could not be parsed based on the specified
+        /// codec.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.MissingCodecPrivateDataException">
+        /// No codec private data was found in at least one of tracks of the video stream.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NoDataRetentionException">
+        /// A streaming session was requested for a stream that does not retain data (that is,
+        /// has a <code>DataRetentionInHours</code> of 0).
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NotAuthorizedException">
+        /// Status Code: 403, The caller is not authorized to perform an operation on the given
+        /// stream, or the token has expired.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.ResourceNotFoundException">
+        /// <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the
+        /// stream that you specified.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code>
+        /// throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code>
+        /// or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within
+        /// the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code>
+        /// is requested for a stream that has no fragments within the last 30 seconds.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.UnsupportedStreamMediaTypeException">
+        /// The type of the media (for example, h.264 or h.265 video or ACC or G.711 audio) could
+        /// not be determined from the codec IDs of the tracks in the first fragment for a playback
+        /// session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally,
+        /// the codec ID for track 2 should be <code>A_AAC</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetClip">REST API Reference for GetClip Operation</seealso>
+        public virtual Task<GetClipResponse> GetClipAsync(GetClipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetClipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetClipResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetClipResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDASHStreamingSessionURL
 
 
