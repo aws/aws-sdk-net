@@ -28,31 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAF.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateSizeConstraintSet operation.
+    /// This is the response object from the CreateWebACLMigrationStack operation.
     /// </summary>
-    public partial class UpdateSizeConstraintSetResponse : AmazonWebServiceResponse
+    public partial class CreateWebACLMigrationStackResponse : AmazonWebServiceResponse
     {
-        private string _changeToken;
+        private string _s3ObjectUrl;
 
         /// <summary>
-        /// Gets and sets the property ChangeToken. 
+        /// Gets and sets the property S3ObjectUrl. 
         /// <para>
-        /// The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code>
-        /// request. You can also use this value to query the status of the request. For more
-        /// information, see <a>GetChangeTokenStatus</a>.
+        /// The URL of the template created in Amazon S3. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string ChangeToken
+        [AWSProperty(Required=true, Min=1)]
+        public string S3ObjectUrl
         {
-            get { return this._changeToken; }
-            set { this._changeToken = value; }
+            get { return this._s3ObjectUrl; }
+            set { this._s3ObjectUrl = value; }
         }
 
-        // Check to see if ChangeToken property is set
-        internal bool IsSetChangeToken()
+        // Check to see if S3ObjectUrl property is set
+        internal bool IsSetS3ObjectUrl()
         {
-            return this._changeToken != null;
+            return this._s3ObjectUrl != null;
         }
 
     }

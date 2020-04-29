@@ -40,7 +40,7 @@ namespace Amazon.WAF.Model
         /// The IAM policy attached to the specified RuleGroup.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=395000)]
         public string Policy
         {
             get { return this._policy; }

@@ -38,7 +38,7 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property NextMarker.
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1224)]
         public string NextMarker
         {
             get { return this._nextMarker; }

@@ -63,7 +63,7 @@ namespace Amazon.WAF.Model
         /// value in the next request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1224)]
         public string NextMarker
         {
             get { return this._nextMarker; }
