@@ -35,6 +35,62 @@ namespace Amazon.TranscribeService
     {
 
         
+        #region  CreateMedicalVocabulary
+
+
+        /// <summary>
+        /// Creates a new custom vocabulary that you can use to change how Amazon Transcribe Medical
+        /// transcribes your audio file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMedicalVocabulary service method.</param>
+        /// 
+        /// <returns>The response from the CreateMedicalVocabulary service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// The resource name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateMedicalVocabulary">REST API Reference for CreateMedicalVocabulary Operation</seealso>
+        CreateMedicalVocabularyResponse CreateMedicalVocabulary(CreateMedicalVocabularyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMedicalVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMedicalVocabulary operation on AmazonTranscribeServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMedicalVocabulary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateMedicalVocabulary">REST API Reference for CreateMedicalVocabulary Operation</seealso>
+        IAsyncResult BeginCreateMedicalVocabulary(CreateMedicalVocabularyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMedicalVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMedicalVocabulary.</param>
+        /// 
+        /// <returns>Returns a  CreateMedicalVocabularyResult from TranscribeService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateMedicalVocabulary">REST API Reference for CreateMedicalVocabulary Operation</seealso>
+        CreateMedicalVocabularyResponse EndCreateMedicalVocabulary(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateVocabulary
 
 
@@ -51,15 +107,7 @@ namespace Amazon.TranscribeService
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code>
-        /// field is a duplicate of a previously entered job name. Resend your request with a
-        /// different name.
-        /// 
-        ///  
-        /// <para>
-        /// When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
-        /// running at the same time. Resend the second request later.
-        /// </para>
+        /// The resource name already exists.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -115,15 +163,7 @@ namespace Amazon.TranscribeService
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code>
-        /// field is a duplicate of a previously entered job name. Resend your request with a
-        /// different name.
-        /// 
-        ///  
-        /// <para>
-        /// When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
-        /// running at the same time. Resend the second request later.
-        /// </para>
+        /// The resource name already exists.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -213,6 +253,61 @@ namespace Amazon.TranscribeService
         /// <returns>Returns a  DeleteMedicalTranscriptionJobResult from TranscribeService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalTranscriptionJob">REST API Reference for DeleteMedicalTranscriptionJob Operation</seealso>
         DeleteMedicalTranscriptionJobResponse EndDeleteMedicalTranscriptionJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteMedicalVocabulary
+
+
+        /// <summary>
+        /// Deletes a vocabulary from Amazon Transcribe Medical.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMedicalVocabulary service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMedicalVocabulary service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalVocabulary">REST API Reference for DeleteMedicalVocabulary Operation</seealso>
+        DeleteMedicalVocabularyResponse DeleteMedicalVocabulary(DeleteMedicalVocabularyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMedicalVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMedicalVocabulary operation on AmazonTranscribeServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMedicalVocabulary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalVocabulary">REST API Reference for DeleteMedicalVocabulary Operation</seealso>
+        IAsyncResult BeginDeleteMedicalVocabulary(DeleteMedicalVocabularyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMedicalVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMedicalVocabulary.</param>
+        /// 
+        /// <returns>Returns a  DeleteMedicalVocabularyResult from TranscribeService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalVocabulary">REST API Reference for DeleteMedicalVocabulary Operation</seealso>
+        DeleteMedicalVocabularyResponse EndDeleteMedicalVocabulary(IAsyncResult asyncResult);
 
         #endregion
         
@@ -434,6 +529,61 @@ namespace Amazon.TranscribeService
         /// <returns>Returns a  GetMedicalTranscriptionJobResult from TranscribeService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalTranscriptionJob">REST API Reference for GetMedicalTranscriptionJob Operation</seealso>
         GetMedicalTranscriptionJobResponse EndGetMedicalTranscriptionJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetMedicalVocabulary
+
+
+        /// <summary>
+        /// Retrieve information about a medical vocabulary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMedicalVocabulary service method.</param>
+        /// 
+        /// <returns>The response from the GetMedicalVocabulary service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalVocabulary">REST API Reference for GetMedicalVocabulary Operation</seealso>
+        GetMedicalVocabularyResponse GetMedicalVocabulary(GetMedicalVocabularyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMedicalVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMedicalVocabulary operation on AmazonTranscribeServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMedicalVocabulary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalVocabulary">REST API Reference for GetMedicalVocabulary Operation</seealso>
+        IAsyncResult BeginGetMedicalVocabulary(GetMedicalVocabularyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMedicalVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMedicalVocabulary.</param>
+        /// 
+        /// <returns>Returns a  GetMedicalVocabularyResult from TranscribeService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalVocabulary">REST API Reference for GetMedicalVocabulary Operation</seealso>
+        GetMedicalVocabularyResponse EndGetMedicalVocabulary(IAsyncResult asyncResult);
 
         #endregion
         
@@ -659,6 +809,59 @@ namespace Amazon.TranscribeService
 
         #endregion
         
+        #region  ListMedicalVocabularies
+
+
+        /// <summary>
+        /// Returns a list of vocabularies that match the specified criteria. You get the entire
+        /// list of vocabularies if you don't enter a value in any of the request parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMedicalVocabularies service method.</param>
+        /// 
+        /// <returns>The response from the ListMedicalVocabularies service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalVocabularies">REST API Reference for ListMedicalVocabularies Operation</seealso>
+        ListMedicalVocabulariesResponse ListMedicalVocabularies(ListMedicalVocabulariesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMedicalVocabularies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMedicalVocabularies operation on AmazonTranscribeServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMedicalVocabularies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalVocabularies">REST API Reference for ListMedicalVocabularies Operation</seealso>
+        IAsyncResult BeginListMedicalVocabularies(ListMedicalVocabulariesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMedicalVocabularies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMedicalVocabularies.</param>
+        /// 
+        /// <returns>Returns a  ListMedicalVocabulariesResult from TranscribeService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalVocabularies">REST API Reference for ListMedicalVocabularies Operation</seealso>
+        ListMedicalVocabulariesResponse EndListMedicalVocabularies(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTranscriptionJobs
 
 
@@ -831,15 +1034,7 @@ namespace Amazon.TranscribeService
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code>
-        /// field is a duplicate of a previously entered job name. Resend your request with a
-        /// different name.
-        /// 
-        ///  
-        /// <para>
-        /// When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
-        /// running at the same time. Resend the second request later.
-        /// </para>
+        /// The resource name already exists.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -894,15 +1089,7 @@ namespace Amazon.TranscribeService
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code>
-        /// field is a duplicate of a previously entered job name. Resend your request with a
-        /// different name.
-        /// 
-        ///  
-        /// <para>
-        /// When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
-        /// running at the same time. Resend the second request later.
-        /// </para>
+        /// The resource name already exists.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -942,6 +1129,66 @@ namespace Amazon.TranscribeService
 
         #endregion
         
+        #region  UpdateMedicalVocabulary
+
+
+        /// <summary>
+        /// Updates an existing vocabulary with new values in a different text file. The <code>UpdateMedicalVocabulary</code>
+        /// operation overwrites all of the existing information with the values that you provide
+        /// in the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMedicalVocabulary service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMedicalVocabulary service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// The resource name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateMedicalVocabulary">REST API Reference for UpdateMedicalVocabulary Operation</seealso>
+        UpdateMedicalVocabularyResponse UpdateMedicalVocabulary(UpdateMedicalVocabularyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMedicalVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMedicalVocabulary operation on AmazonTranscribeServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMedicalVocabulary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateMedicalVocabulary">REST API Reference for UpdateMedicalVocabulary Operation</seealso>
+        IAsyncResult BeginUpdateMedicalVocabulary(UpdateMedicalVocabularyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMedicalVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMedicalVocabulary.</param>
+        /// 
+        /// <returns>Returns a  UpdateMedicalVocabularyResult from TranscribeService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateMedicalVocabulary">REST API Reference for UpdateMedicalVocabulary Operation</seealso>
+        UpdateMedicalVocabularyResponse EndUpdateMedicalVocabulary(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateVocabulary
 
 
@@ -959,15 +1206,7 @@ namespace Amazon.TranscribeService
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code>
-        /// field is a duplicate of a previously entered job name. Resend your request with a
-        /// different name.
-        /// 
-        ///  
-        /// <para>
-        /// When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
-        /// running at the same time. Resend the second request later.
-        /// </para>
+        /// The resource name already exists.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.

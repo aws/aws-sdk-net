@@ -129,7 +129,9 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property MedicalTranscriptionJobName. 
         /// <para>
         /// The name of the medical transcription job. You can't use the strings "." or ".." by
-        /// themselves as the job name. The name must also be unique within an AWS account.
+        /// themselves as the job name. The name must also be unique within an AWS account. If
+        /// you try to create a medical transcription job with the same name as a previous medical
+        /// transcription job you will receive a <code>ConflictException</code> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -278,9 +280,10 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The speech of clinician in the input audio. <code>CONVERSATION</code> refers to conversations
-        /// clinicians have with patients. <code>DICTATION</code> refers to medical professionals
-        /// dictating their notes about a patient encounter.
+        /// The type of speech in the input audio. <code>CONVERSATION</code> refers to conversations
+        /// between two or more speakers, e.g., a conversations between doctors and patients.
+        /// <code>DICTATION</code> refers to single-speaker dictated speech, e.g., for clinical
+        /// notes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

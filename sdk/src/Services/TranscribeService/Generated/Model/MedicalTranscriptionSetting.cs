@@ -37,6 +37,7 @@ namespace Amazon.TranscribeService.Model
         private int? _maxSpeakerLabels;
         private bool? _showAlternatives;
         private bool? _showSpeakerLabels;
+        private string _vocabularyName;
 
         /// <summary>
         /// Gets and sets the property ChannelIdentification. 
@@ -159,6 +160,25 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetShowSpeakerLabels()
         {
             return this._showSpeakerLabels.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VocabularyName. 
+        /// <para>
+        /// The name of the vocabulary to use when processing a medical transcription job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public string VocabularyName
+        {
+            get { return this._vocabularyName; }
+            set { this._vocabularyName = value; }
+        }
+
+        // Check to see if VocabularyName property is set
+        internal bool IsSetVocabularyName()
+        {
+            return this._vocabularyName != null;
         }
 
     }

@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// This is the response object from the ListVocabularies operation.
+    /// This is the response object from the ListMedicalVocabularies operation.
     /// </summary>
-    public partial class ListVocabulariesResponse : AmazonWebServiceResponse
+    public partial class ListMedicalVocabulariesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
         private VocabularyState _status;
@@ -39,11 +39,11 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>ListVocabularies</code> operation returns a page of vocabularies at a time.
-        /// The maximum size of the page is set by the <code>MaxResults</code> parameter. If there
-        /// are more jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code>
-        /// token. Include the token in the next request to the <code>ListVocabularies</code>
-        /// operation to return in the next page of jobs.
+        /// The <code>ListMedicalVocabularies</code> operation returns a page of vocabularies
+        /// at a time. The maximum size of the page is set by the <code>MaxResults</code> parameter.
+        /// If there are more jobs in the list than the page size, Amazon Transcribe Medical returns
+        /// the <code>NextPage</code> token. Include the token in the next request to the <code>ListMedicalVocabularies</code>
+        /// operation to return the next page of jobs.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

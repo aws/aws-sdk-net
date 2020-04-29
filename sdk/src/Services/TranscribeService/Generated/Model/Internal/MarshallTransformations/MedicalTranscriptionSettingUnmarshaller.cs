@@ -94,6 +94,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ShowSpeakerLabels = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VocabularyName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VocabularyName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

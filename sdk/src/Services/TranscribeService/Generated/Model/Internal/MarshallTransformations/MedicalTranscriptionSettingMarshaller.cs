@@ -75,6 +75,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ShowSpeakerLabels);
             }
 
+            if(requestObject.IsSetVocabularyName())
+            {
+                context.Writer.WritePropertyName("VocabularyName");
+                context.Writer.Write(requestObject.VocabularyName);
+            }
+
         }
 
         /// <summary>

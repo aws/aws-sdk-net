@@ -28,21 +28,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateVocabulary operation.
-    /// Creates a new custom vocabulary that you can use to change the way Amazon Transcribe
-    /// handles transcription of an audio file.
+    /// Container for the parameters to the UpdateMedicalVocabulary operation.
+    /// Updates an existing vocabulary with new values in a different text file. The <code>UpdateMedicalVocabulary</code>
+    /// operation overwrites all of the existing information with the values that you provide
+    /// in the request.
     /// </summary>
-    public partial class CreateVocabularyRequest : AmazonTranscribeServiceRequest
+    public partial class UpdateMedicalVocabularyRequest : AmazonTranscribeServiceRequest
     {
         private LanguageCode _languageCode;
-        private List<string> _phrases = new List<string>();
         private string _vocabularyFileUri;
         private string _vocabularyName;
 
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code of the vocabulary entries.
+        /// The language code of the entries in the updated vocabulary. US English (en-US) is
+        /// the only valid language code in Amazon Transcribe Medical.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,29 +60,11 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Phrases. 
-        /// <para>
-        /// An array of strings that contains the vocabulary entries. 
-        /// </para>
-        /// </summary>
-        public List<string> Phrases
-        {
-            get { return this._phrases; }
-            set { this._phrases = value; }
-        }
-
-        // Check to see if Phrases property is set
-        internal bool IsSetPhrases()
-        {
-            return this._phrases != null && this._phrases.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property VocabularyFileUri. 
         /// <para>
-        /// The S3 location of the text file that contains the definition of the custom vocabulary.
-        /// The URI must be in the same region as the API endpoint that you are calling. The general
-        /// form is 
+        /// The Amazon S3 location of the text file containing the definition of the custom vocabulary.
+        /// The URI must be in the same AWS region as the API endpoint you are calling. You can
+        /// see the fields you need to enter for you Amazon S3 location in the example URI here:
         /// </para>
         ///  
         /// <para>
@@ -103,8 +86,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about custom vocabularies, see <a href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
-        /// Vocabularies</a>.
+        /// For more information about custom vocabularies in Amazon Transcribe Medical, see <a
+        /// href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Medical
+        /// Custom Vocabularies</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
@@ -123,9 +107,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the vocabulary. The name must be unique within an AWS account. The name
-        /// is case-sensitive. If you try to create a vocabulary with the same name as a previous
-        /// vocabulary you will receive a <code>ConflictException</code> error.
+        /// The name of the vocabulary to update. The name is case-sensitive. If you try to update
+        /// a vocabulary with the same name as a previous vocabulary you will receive a <code>ConflictException</code>
+        /// error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

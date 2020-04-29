@@ -71,7 +71,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyFilterName. 
         /// <para>
-        /// The name of the vocabulary filter to update.
+        /// The name of the vocabulary filter to update. If you try to update a vocabulary filter
+        /// with the same name as a previous vocabulary filter you will receive a <code>ConflictException</code>
+        /// error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
