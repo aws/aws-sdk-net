@@ -34,7 +34,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// 
     ///  <note> 
     /// <para>
-    /// To get a list of operations that match specified criteria, see <a>ListOperations</a>.
+    /// To get a list of operations that match specified criteria, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html">ListOperations</a>.
     /// </para>
     ///  </note>
     /// </summary>

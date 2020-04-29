@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.CreatePrivateDnsNamespace(Amazon.ServiceDiscovery.Model.CreatePrivateDnsNamespaceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.CreatePrivateDnsNamespace(Amazon.ServiceDiscovery.Model.CreatePrivateDnsNamespaceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.CreatePrivateDnsNamespaceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.CreatePrivateDnsNamespaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Example: Create private DNS namespace
+                </para>
+                <code
+                    title="Example: Create private DNS namespace"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="example-create-private-dns-namespace-1587058592930" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.CreateService(Amazon.ServiceDiscovery.Model.CreateServiceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.CreateService(Amazon.ServiceDiscovery.Model.CreateServiceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.CreateServiceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.CreateServiceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Example: Create service
+                </para>
+                <code
+                    title="Example: Create service"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="example-create-service-1587235913584" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.DeleteNamespace(Amazon.ServiceDiscovery.Model.DeleteNamespaceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.DeleteNamespace(Amazon.ServiceDiscovery.Model.DeleteNamespaceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DeleteNamespaceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DeleteNamespaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Example: Delete namespace
+                </para>
+                <code
+                    title="Example: Delete namespace"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="example-delete-namespace-1587416093508" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.DeleteService(Amazon.ServiceDiscovery.Model.DeleteServiceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.DeleteService(Amazon.ServiceDiscovery.Model.DeleteServiceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DeleteServiceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DeleteServiceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Example: Delete service
+                </para>
+                <code
+                    title="Example: Delete service"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="example-delete-service-1587416462902" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.DeregisterInstance(Amazon.ServiceDiscovery.Model.DeregisterInstanceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.DeregisterInstance(Amazon.ServiceDiscovery.Model.DeregisterInstanceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DeregisterInstanceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DeregisterInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Example: Deregister a service instance
+                </para>
+                <code
+                    title="Example: Deregister a service instance"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="example-deregister-a-service-instance-1587416305738" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.DiscoverInstances(Amazon.ServiceDiscovery.Model.DiscoverInstancesRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.DiscoverInstances(Amazon.ServiceDiscovery.Model.DiscoverInstancesRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DiscoverInstancesRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DiscoverInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Example: Discover registered instances
+                </para>
+                <code
+                    title="Example: Discover registered instances"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="example-discover-registered-instances-1587236343568" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.GetOperation(Amazon.ServiceDiscovery.Model.GetOperationRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.GetOperation(Amazon.ServiceDiscovery.Model.GetOperationRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetOperationRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetOperationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Example: Get operation result
+                </para>
+                <code
+                    title="Example: Get operation result"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="example-get-operation-result-1587073807124" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.ListInstances(Amazon.ServiceDiscovery.Model.ListInstancesRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.ListInstances(Amazon.ServiceDiscovery.Model.ListInstancesRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.ListInstancesRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.ListInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Example: List service instances
+                </para>
+                <code
+                    title="Example: List service instances"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="example-list-service-instances-1587236237008" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.ListNamespaces(Amazon.ServiceDiscovery.Model.ListNamespacesRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.ListNamespaces(Amazon.ServiceDiscovery.Model.ListNamespacesRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.ListNamespacesRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.ListNamespacesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Example: List namespaces
+                </para>
+                <code
+                    title="Example: List namespaces"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="example-list-namespaces-1587401553154" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.ListServices(Amazon.ServiceDiscovery.Model.ListServicesRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.ListServices(Amazon.ServiceDiscovery.Model.ListServicesRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.ListServicesRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.ListServicesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Example: List services
+                </para>
+                <code
+                    title="Example: List services"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="example-list-services-1587236889840" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.RegisterInstance(Amazon.ServiceDiscovery.Model.RegisterInstanceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.RegisterInstance(Amazon.ServiceDiscovery.Model.RegisterInstanceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.RegisterInstanceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.RegisterInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Example: Register Instance
+                </para>
+                <code
+                    title="Example: Register Instance"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="example-register-instance-1587236116314" />
+            </example>
+        </value>
+    </doc>
+</docs>

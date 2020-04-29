@@ -41,7 +41,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a>HealthCheckCustomConfig</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_HealthCheckCustomConfig.html">HealthCheckCustomConfig</a>.
     /// </para>
     /// </summary>
     public partial class UpdateInstanceCustomHealthStatusRequest : AmazonServiceDiscoveryRequest

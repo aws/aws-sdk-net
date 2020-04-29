@@ -168,7 +168,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// The number of instances that are currently associated with the service. Instances
         /// that were previously associated with the service but that have been deleted are not
-        /// included in the count.
+        /// included in the count. The count might not reflect pending registrations and deregistrations.
         /// </para>
         /// </summary>
         public int InstanceCount
