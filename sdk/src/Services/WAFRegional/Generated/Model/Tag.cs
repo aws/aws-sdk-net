@@ -28,7 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFRegional.Model
 {
     /// <summary>
-    /// 
+    /// <note> 
+    /// <para>
+    /// This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
+    /// WAF Classic</a> in the developer guide.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+    /// WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints
+    /// for regional and global use. 
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// A tag associated with an AWS resource. Tags are key:value pairs that you can use to
+    /// categorize and manage your resources, for purposes like billing. For example, you
+    /// might set the tag key to "customer" and the value to the customer name or ID. You
+    /// can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.
+    /// </para>
+    ///  
+    /// <para>
+    /// Tagging is only available through the API, SDKs, and CLI. You can't manage or view
+    /// tags through the AWS WAF Classic console. You can tag the AWS resources that you manage
+    /// through AWS WAF Classic: web ACLs, rule groups, and rules. 
+    /// </para>
     /// </summary>
     public partial class Tag
     {
@@ -38,7 +61,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Key.
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -54,7 +77,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Value.
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

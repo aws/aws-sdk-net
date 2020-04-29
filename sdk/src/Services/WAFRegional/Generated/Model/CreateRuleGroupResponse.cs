@@ -43,7 +43,7 @@ namespace Amazon.WAFRegional.Model
         /// information, see <a>GetChangeTokenStatus</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=128)]
         public string ChangeToken
         {
             get { return this._changeToken; }
