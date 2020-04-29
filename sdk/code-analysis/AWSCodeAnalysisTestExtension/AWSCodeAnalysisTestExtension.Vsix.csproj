@@ -500,6 +500,10 @@
       <Project>{0A4E48B4-3876-4C68-BF4E-A01FDB1E284F}</Project>
       <Name>AWSSDK.IoTSecureTunneling.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/IoTSiteWise/AWSSDK.IoTSiteWise.CodeAnalysis.csproj">
+      <Project>{33582910-C352-4051-807A-66541519A477}</Project>
+      <Name>AWSSDK.IoTSiteWise.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/IoTThingsGraph/AWSSDK.IoTThingsGraph.CodeAnalysis.csproj">
       <Project>{C9C5C240-E67B-4569-A4A1-ECA292B6650D}</Project>
       <Name>AWSSDK.IoTThingsGraph.CodeAnalysis</Name>
