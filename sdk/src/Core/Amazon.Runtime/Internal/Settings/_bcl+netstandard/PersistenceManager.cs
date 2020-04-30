@@ -57,7 +57,6 @@ namespace Amazon.Runtime.Internal.Settings
     {
         #region Private members
 
-        static IPersistenceManager INSTANCE;
         static readonly HashSet<string> ENCRYPTEDKEYS = new HashSet<string>
         {
             SettingsConstants.AccessKeyField,
@@ -74,18 +73,41 @@ namespace Amazon.Runtime.Internal.Settings
             SettingsConstants.RoleSession
         };
 
+        static readonly Logger _logger;
+        
         readonly Dictionary<string, SettingsWatcher> _watchers = new Dictionary<string, SettingsWatcher>();
 
         // static but not readonly - allows for unit testing
         static string SettingsStoreFolder = null;
-
         #endregion
-
 
         #region Constructor
         static PersistenceManager()
         {
+            _logger = Logger.GetLogger(typeof(PersistenceManager));
 
+            try
+            {
+#if BCL
+                SettingsStoreFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData) + "/AWSToolkit";
+#else
+                SettingsStoreFolder = System.Environment.GetEnvironmentVariable("HOME");
+                if (string.IsNullOrEmpty(SettingsStoreFolder))
+                    SettingsStoreFolder = System.Environment.GetEnvironmentVariable("USERPROFILE");
+
+                SettingsStoreFolder = Path.Combine(SettingsStoreFolder, "AppData/Local/AWSToolkit");
+#endif
+                if (!Directory.Exists(SettingsStoreFolder))
+                    Directory.CreateDirectory(SettingsStoreFolder);
+
+                Instance = new PersistenceManager();
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, $"Unable to initialize '{nameof(PersistenceManager)}'. Falling back to '{nameof(PersistenceManager)}'.");
+
+                Instance = new InMemoryPersistenceManager();
+            }
         }
 
         #endregion
@@ -93,34 +115,7 @@ namespace Amazon.Runtime.Internal.Settings
 
         #region Public methods
 
-        public static IPersistenceManager Instance
-        {
-            get
-            {
-                if (INSTANCE == null)
-                {
-#if BCL
-            SettingsStoreFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData) + "/AWSToolkit";
-#else
-                    SettingsStoreFolder = System.Environment.GetEnvironmentVariable("HOME");
-                    if (string.IsNullOrEmpty(SettingsStoreFolder))
-                        SettingsStoreFolder = System.Environment.GetEnvironmentVariable("USERPROFILE");
-
-                    SettingsStoreFolder = Path.Combine(SettingsStoreFolder, "AppData/Local/AWSToolkit");
-#endif
-                    if (!Directory.Exists(SettingsStoreFolder))
-                        Directory.CreateDirectory(SettingsStoreFolder);
-
-                    INSTANCE = new PersistenceManager();
-                }
-
-                return INSTANCE;
-            }
-            set
-            {
-                INSTANCE = value;
-            }
-        }
+        public static IPersistenceManager Instance { get; set; }
 
         public SettingsCollection GetSettings(string type)
         {
