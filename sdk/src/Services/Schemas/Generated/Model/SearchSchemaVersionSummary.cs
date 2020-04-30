@@ -36,7 +36,10 @@ namespace Amazon.Schemas.Model
         private string _schemaVersion;
 
         /// <summary>
-        /// Gets and sets the property CreatedDate.
+        /// Gets and sets the property CreatedDate. 
+        /// <para>
+        /// The date the schema version was created.
+        /// </para>
         /// </summary>
         public DateTime CreatedDate
         {

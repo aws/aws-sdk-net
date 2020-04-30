@@ -35,7 +35,10 @@ namespace Amazon.Schemas.Model
         private string _content;
 
         /// <summary>
-        /// Gets and sets the property Content.
+        /// Gets and sets the property Content. 
+        /// <para>
+        /// The source of the schema definition.
+        /// </para>
         /// </summary>
         public string Content
         {

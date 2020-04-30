@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Schemas.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LockServiceLinkedRole Request Marshaller
+    /// PutResourcePolicy Request Marshaller
     /// </summary>       
-    public class LockServiceLinkedRoleRequestMarshaller : IMarshaller<IRequest, LockServiceLinkedRoleRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutResourcePolicyRequestMarshaller : IMarshaller<IRequest, PutResourcePolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((LockServiceLinkedRoleRequest)input);
+            return this.Marshall((PutResourcePolicyRequest)input);
         }
 
         /// <summary>
@@ -52,30 +52,33 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(LockServiceLinkedRoleRequest publicRequest)
+        public IRequest Marshall(PutResourcePolicyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Schemas");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";            
-            request.HttpMethod = "POST";
+            request.HttpMethod = "PUT";
 
-            request.ResourcePath = "/slr-deletion/lock";
+            
+            if (publicRequest.IsSetRegistryName())
+                request.Parameters.Add("registryName", StringUtils.FromString(publicRequest.RegistryName));
+            request.ResourcePath = "/v1/policy";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRoleArn())
+                if(publicRequest.IsSetPolicy())
                 {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
+                    context.Writer.WritePropertyName("Policy");
+                    context.Writer.Write(publicRequest.Policy);
                 }
 
-                if(publicRequest.IsSetTimeout())
+                if(publicRequest.IsSetRevisionId())
                 {
-                    context.Writer.WritePropertyName("Timeout");
-                    context.Writer.Write(publicRequest.Timeout);
+                    context.Writer.WritePropertyName("RevisionId");
+                    context.Writer.Write(publicRequest.RevisionId);
                 }
 
         
@@ -84,12 +87,13 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+            request.UseQueryString = true;
 
             return request;
         }
-        private static LockServiceLinkedRoleRequestMarshaller _instance = new LockServiceLinkedRoleRequestMarshaller();        
+        private static PutResourcePolicyRequestMarshaller _instance = new PutResourcePolicyRequestMarshaller();        
 
-        internal static LockServiceLinkedRoleRequestMarshaller GetInstance()
+        internal static PutResourcePolicyRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -97,7 +101,7 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LockServiceLinkedRoleRequestMarshaller Instance
+        public static PutResourcePolicyRequestMarshaller Instance
         {
             get
             {

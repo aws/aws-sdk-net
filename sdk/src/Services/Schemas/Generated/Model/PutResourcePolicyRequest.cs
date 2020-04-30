@@ -28,31 +28,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Schemas.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateRegistry operation.
-    /// Updates a registry.
+    /// Container for the parameters to the PutResourcePolicy operation.
+    /// The name of the policy.
     /// </summary>
-    public partial class UpdateRegistryRequest : AmazonSchemasRequest
+    public partial class PutResourcePolicyRequest : AmazonSchemasRequest
     {
-        private string _description;
+        private string _policy;
         private string _registryName;
+        private string _revisionId;
 
         /// <summary>
-        /// Gets and sets the property Description. 
+        /// Gets and sets the property Policy. 
         /// <para>
-        /// The description of the registry to update.
+        /// The resource-based policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
-        public string Description
+        [AWSProperty(Required=true)]
+        public string Policy
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return this._policy; }
+            set { this._policy = value; }
         }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
+        // Check to see if Policy property is set
+        internal bool IsSetPolicy()
         {
-            return this._description != null;
+            return this._policy != null;
         }
 
         /// <summary>
@@ -61,7 +62,6 @@ namespace Amazon.Schemas.Model
         /// The name of the registry.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string RegistryName
         {
             get { return this._registryName; }
@@ -72,6 +72,24 @@ namespace Amazon.Schemas.Model
         internal bool IsSetRegistryName()
         {
             return this._registryName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RevisionId. 
+        /// <para>
+        /// The revision ID of the policy.
+        /// </para>
+        /// </summary>
+        public string RevisionId
+        {
+            get { return this._revisionId; }
+            set { this._revisionId = value; }
+        }
+
+        // Check to see if RevisionId property is set
+        internal bool IsSetRevisionId()
+        {
+            return this._revisionId != null;
         }
 
     }

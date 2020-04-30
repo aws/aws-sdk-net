@@ -37,7 +37,10 @@ namespace Amazon.Schemas.Model
         private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The ARN of the resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceArn
@@ -53,7 +56,10 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys.
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        /// Keys of key-value pairs.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> TagKeys

@@ -28,50 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Schemas.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateRegistry operation.
-    /// Updates a registry.
+    /// This is the response object from the GetResourcePolicy operation.
     /// </summary>
-    public partial class UpdateRegistryRequest : AmazonSchemasRequest
+    public partial class GetResourcePolicyResponse : AmazonWebServiceResponse
     {
-        private string _description;
-        private string _registryName;
+        private string _policy;
+        private string _revisionId;
 
         /// <summary>
-        /// Gets and sets the property Description. 
+        /// Gets and sets the property Policy. 
         /// <para>
-        /// The description of the registry to update.
+        /// The resource-based policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
-        public string Description
+        public string Policy
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return this._policy; }
+            set { this._policy = value; }
         }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
+        // Check to see if Policy property is set
+        internal bool IsSetPolicy()
         {
-            return this._description != null;
+            return this._policy != null;
         }
 
         /// <summary>
-        /// Gets and sets the property RegistryName. 
+        /// Gets and sets the property RevisionId. 
         /// <para>
-        /// The name of the registry.
+        /// The revision ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string RegistryName
+        public string RevisionId
         {
-            get { return this._registryName; }
-            set { this._registryName = value; }
+            get { return this._revisionId; }
+            set { this._revisionId = value; }
         }
 
-        // Check to see if RegistryName property is set
-        internal bool IsSetRegistryName()
+        // Check to see if RevisionId property is set
+        internal bool IsSetRevisionId()
         {
-            return this._registryName != null;
+            return this._revisionId != null;
         }
 
     }

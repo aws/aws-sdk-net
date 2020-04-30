@@ -36,7 +36,10 @@ namespace Amazon.Schemas.Model
         private string _discovererId;
 
         /// <summary>
-        /// Gets and sets the property DiscovererId.
+        /// Gets and sets the property DiscovererId. 
+        /// <para>
+        /// The ID of the discoverer.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DiscovererId

@@ -28,32 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Schemas.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateRegistry operation.
-    /// Updates a registry.
+    /// Container for the parameters to the DeleteResourcePolicy operation.
+    /// Delete the resource-based policy attached to the specified registry.
     /// </summary>
-    public partial class UpdateRegistryRequest : AmazonSchemasRequest
+    public partial class DeleteResourcePolicyRequest : AmazonSchemasRequest
     {
-        private string _description;
         private string _registryName;
-
-        /// <summary>
-        /// Gets and sets the property Description. 
-        /// <para>
-        /// The description of the registry to update.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=256)]
-        public string Description
-        {
-            get { return this._description; }
-            set { this._description = value; }
-        }
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this._description != null;
-        }
 
         /// <summary>
         /// Gets and sets the property RegistryName. 
@@ -61,7 +41,6 @@ namespace Amazon.Schemas.Model
         /// The name of the registry.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string RegistryName
         {
             get { return this._registryName; }

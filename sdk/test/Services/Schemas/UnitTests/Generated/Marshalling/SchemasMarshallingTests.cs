@@ -174,6 +174,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Schemas")]
+        public void DeleteResourcePolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteResourcePolicy");
+
+            var request = InstantiateClassGenerator.Execute<DeleteResourcePolicyRequest>();
+            var marshaller = new DeleteResourcePolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteResourcePolicy", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Schemas")]
         public void DeleteSchemaMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteSchema");
@@ -400,6 +417,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Schemas")]
+        public void GetResourcePolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetResourcePolicy");
+
+            var request = InstantiateClassGenerator.Execute<GetResourcePolicyRequest>();
+            var marshaller = new GetResourcePolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetResourcePolicy", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetResourcePolicyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Schemas")]
         public void ListDiscoverersMarshallTest()
         {
             var operation = service_model.FindOperation("ListDiscoverers");
@@ -560,38 +609,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Schemas")]
-        public void LockServiceLinkedRoleMarshallTest()
-        {
-            var operation = service_model.FindOperation("LockServiceLinkedRole");
-
-            var request = InstantiateClassGenerator.Execute<LockServiceLinkedRoleRequest>();
-            var marshaller = new LockServiceLinkedRoleRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("LockServiceLinkedRole", request, internalRequest, service_model);            
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            
-            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = LockServiceLinkedRoleResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as LockServiceLinkedRoleResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
-        }
-
-        
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("Schemas")]
         public void PutCodeBindingMarshallTest()
         {
             var operation = service_model.FindOperation("PutCodeBinding");
@@ -616,6 +633,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = PutCodeBindingResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as PutCodeBindingResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Schemas")]
+        public void PutResourcePolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutResourcePolicy");
+
+            var request = InstantiateClassGenerator.Execute<PutResourcePolicyRequest>();
+            var marshaller = new PutResourcePolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutResourcePolicy", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PutResourcePolicyResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -730,38 +779,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("TagResource", request, internalRequest, service_model);            
 
-        }
-
-        
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("Schemas")]
-        public void UnlockServiceLinkedRoleMarshallTest()
-        {
-            var operation = service_model.FindOperation("UnlockServiceLinkedRole");
-
-            var request = InstantiateClassGenerator.Execute<UnlockServiceLinkedRoleRequest>();
-            var marshaller = new UnlockServiceLinkedRoleRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("UnlockServiceLinkedRole", request, internalRequest, service_model);            
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            
-            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = UnlockServiceLinkedRoleResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as UnlockServiceLinkedRoleResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
         

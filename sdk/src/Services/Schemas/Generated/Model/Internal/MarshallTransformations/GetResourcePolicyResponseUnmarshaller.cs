@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Schemas.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UnlockServiceLinkedRole operation
+    /// Response Unmarshaller for GetResourcePolicy operation
     /// </summary>  
-    public class UnlockServiceLinkedRoleResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetResourcePolicyResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,25 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UnlockServiceLinkedRoleResponse response = new UnlockServiceLinkedRoleResponse();
+            GetResourcePolicyResponse response = new GetResourcePolicyResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("Policy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Policy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RevisionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RevisionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -73,6 +90,10 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
             {
                 return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
+            {
+                return new NotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
             {
                 return new ServiceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -84,9 +105,9 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
             return new AmazonSchemasException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UnlockServiceLinkedRoleResponseUnmarshaller _instance = new UnlockServiceLinkedRoleResponseUnmarshaller();        
+        private static GetResourcePolicyResponseUnmarshaller _instance = new GetResourcePolicyResponseUnmarshaller();        
 
-        internal static UnlockServiceLinkedRoleResponseUnmarshaller GetInstance()
+        internal static GetResourcePolicyResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -94,7 +115,7 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UnlockServiceLinkedRoleResponseUnmarshaller Instance
+        public static GetResourcePolicyResponseUnmarshaller Instance
         {
             get
             {

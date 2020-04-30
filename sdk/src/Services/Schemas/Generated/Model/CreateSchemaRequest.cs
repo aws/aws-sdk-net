@@ -30,6 +30,12 @@ namespace Amazon.Schemas.Model
     /// <summary>
     /// Container for the parameters to the CreateSchema operation.
     /// Creates a schema definition.
+    /// 
+    ///  <note>
+    /// <para>
+    /// Inactive schemas will be deleted after two years.
+    /// </para>
+    /// </note>
     /// </summary>
     public partial class CreateSchemaRequest : AmazonSchemasRequest
     {
@@ -41,7 +47,10 @@ namespace Amazon.Schemas.Model
         private Type _type;
 
         /// <summary>
-        /// Gets and sets the property Content.
+        /// Gets and sets the property Content. 
+        /// <para>
+        /// The source of the schema definition.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100000)]
         public string Content
@@ -76,7 +85,10 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RegistryName.
+        /// Gets and sets the property RegistryName. 
+        /// <para>
+        /// The name of the registry.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RegistryName
@@ -92,7 +104,10 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SchemaName.
+        /// Gets and sets the property SchemaName. 
+        /// <para>
+        /// The name of the schema.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SchemaName
@@ -126,7 +141,10 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of schema.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Type Type

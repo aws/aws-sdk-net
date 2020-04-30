@@ -36,7 +36,10 @@ namespace Amazon.Schemas.Model
         private string _registryName;
 
         /// <summary>
-        /// Gets and sets the property RegistryName.
+        /// Gets and sets the property RegistryName. 
+        /// <para>
+        /// The name of the registry.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RegistryName

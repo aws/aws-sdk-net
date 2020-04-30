@@ -38,7 +38,7 @@ namespace Amazon.Schemas
     /// <summary>
     /// Implementation for accessing Schemas
     ///
-    /// AWS EventBridge Schemas
+    /// Amazon EventBridge Schema Registry
     /// </summary>
     public partial class AmazonSchemasClient : AmazonServiceClient, IAmazonSchemas
     {
@@ -362,6 +362,12 @@ namespace Amazon.Schemas
 
         /// <summary>
         /// Creates a schema definition.
+        /// 
+        ///  <note>
+        /// <para>
+        /// Inactive schemas will be deleted after two years.
+        /// </para>
+        /// </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSchema service method.</param>
         /// <param name="cancellationToken">
@@ -493,6 +499,58 @@ namespace Amazon.Schemas
             options.ResponseUnmarshaller = DeleteRegistryResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRegistryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteResourcePolicy
+
+        internal virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete the resource-based policy attached to the specified registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by Schemas.</returns>
+        /// <exception cref="Amazon.Schemas.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.InternalServerErrorException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -910,6 +968,58 @@ namespace Amazon.Schemas
 
         #endregion
         
+        #region  GetResourcePolicy
+
+        internal virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the resource-based policy attached to a given registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by Schemas.</returns>
+        /// <exception cref="Amazon.Schemas.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.InternalServerErrorException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDiscoverers
 
         internal virtual ListDiscoverersResponse ListDiscoverers(ListDiscoverersRequest request)
@@ -1155,55 +1265,6 @@ namespace Amazon.Schemas
 
         #endregion
         
-        #region  LockServiceLinkedRole
-
-        internal virtual LockServiceLinkedRoleResponse LockServiceLinkedRole(LockServiceLinkedRoleRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = LockServiceLinkedRoleRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = LockServiceLinkedRoleResponseUnmarshaller.Instance;
-
-            return Invoke<LockServiceLinkedRoleResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the LockServiceLinkedRole service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the LockServiceLinkedRole service method, as returned by Schemas.</returns>
-        /// <exception cref="Amazon.Schemas.Model.BadRequestException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Schemas.Model.ForbiddenException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Schemas.Model.InternalServerErrorException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Schemas.Model.ServiceUnavailableException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Schemas.Model.UnauthorizedException">
-        /// 
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/LockServiceLinkedRole">REST API Reference for LockServiceLinkedRole Operation</seealso>
-        public virtual Task<LockServiceLinkedRoleResponse> LockServiceLinkedRoleAsync(LockServiceLinkedRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = LockServiceLinkedRoleRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = LockServiceLinkedRoleResponseUnmarshaller.Instance;
-
-            return InvokeAsync<LockServiceLinkedRoleResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  PutCodeBinding
 
         internal virtual PutCodeBindingResponse PutCodeBinding(PutCodeBindingRequest request)
@@ -1255,6 +1316,61 @@ namespace Amazon.Schemas
             options.ResponseUnmarshaller = PutCodeBindingResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutCodeBindingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutResourcePolicy
+
+        internal virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The name of the policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by Schemas.</returns>
+        /// <exception cref="Amazon.Schemas.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.InternalServerErrorException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.PreconditionFailedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1458,55 +1574,6 @@ namespace Amazon.Schemas
 
         #endregion
         
-        #region  UnlockServiceLinkedRole
-
-        internal virtual UnlockServiceLinkedRoleResponse UnlockServiceLinkedRole(UnlockServiceLinkedRoleRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = UnlockServiceLinkedRoleRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = UnlockServiceLinkedRoleResponseUnmarshaller.Instance;
-
-            return Invoke<UnlockServiceLinkedRoleResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UnlockServiceLinkedRole service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the UnlockServiceLinkedRole service method, as returned by Schemas.</returns>
-        /// <exception cref="Amazon.Schemas.Model.BadRequestException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Schemas.Model.ForbiddenException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Schemas.Model.InternalServerErrorException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Schemas.Model.ServiceUnavailableException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Schemas.Model.UnauthorizedException">
-        /// 
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UnlockServiceLinkedRole">REST API Reference for UnlockServiceLinkedRole Operation</seealso>
-        public virtual Task<UnlockServiceLinkedRoleResponse> UnlockServiceLinkedRoleAsync(UnlockServiceLinkedRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = UnlockServiceLinkedRoleRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = UnlockServiceLinkedRoleResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UnlockServiceLinkedRoleResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  UntagResource
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -1672,6 +1739,12 @@ namespace Amazon.Schemas
 
         /// <summary>
         /// Updates the schema definition
+        /// 
+        ///  <note>
+        /// <para>
+        /// Inactive schemas will be deleted after two years.
+        /// </para>
+        /// </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSchema service method.</param>
         /// <param name="cancellationToken">

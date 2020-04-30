@@ -38,7 +38,10 @@ namespace Amazon.Schemas.Model
         private string _schemaVersion;
 
         /// <summary>
-        /// Gets and sets the property RegistryName.
+        /// Gets and sets the property RegistryName. 
+        /// <para>
+        /// The name of the registry.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RegistryName
@@ -54,7 +57,10 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SchemaName.
+        /// Gets and sets the property SchemaName. 
+        /// <para>
+        /// The name of the schema.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SchemaName
@@ -70,7 +76,7 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SchemaVersion.
+        /// Gets and sets the property SchemaVersion. The version number of the schema
         /// </summary>
         [AWSProperty(Required=true)]
         public string SchemaVersion

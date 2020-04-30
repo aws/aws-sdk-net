@@ -28,10 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Schemas.Model
 {
     /// <summary>
-    /// This is the response object from the UnlockServiceLinkedRole operation.
+    /// Container for the parameters to the GetResourcePolicy operation.
+    /// Retrieves the resource-based policy attached to a given registry.
     /// </summary>
-    public partial class UnlockServiceLinkedRoleResponse : AmazonWebServiceResponse
+    public partial class GetResourcePolicyRequest : AmazonSchemasRequest
     {
+        private string _registryName;
+
+        /// <summary>
+        /// Gets and sets the property RegistryName. 
+        /// <para>
+        /// The name of the registry.
+        /// </para>
+        /// </summary>
+        public string RegistryName
+        {
+            get { return this._registryName; }
+            set { this._registryName = value; }
+        }
+
+        // Check to see if RegistryName property is set
+        internal bool IsSetRegistryName()
+        {
+            return this._registryName != null;
+        }
 
     }
 }

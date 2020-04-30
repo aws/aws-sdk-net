@@ -28,44 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Schemas.Model
 {
     /// <summary>
-    /// Container for the parameters to the LockServiceLinkedRole operation.
-    /// 
+    /// This is the response object from the PutResourcePolicy operation.
     /// </summary>
-    public partial class LockServiceLinkedRoleRequest : AmazonSchemasRequest
+    public partial class PutResourcePolicyResponse : AmazonWebServiceResponse
     {
-        private string _roleArn;
-        private int? _timeout;
+        private string _policy;
+        private string _revisionId;
 
         /// <summary>
-        /// Gets and sets the property RoleArn.
+        /// Gets and sets the property Policy. 
+        /// <para>
+        /// The resource-based policy.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1600)]
-        public string RoleArn
+        public string Policy
         {
-            get { return this._roleArn; }
-            set { this._roleArn = value; }
+            get { return this._policy; }
+            set { this._policy = value; }
         }
 
-        // Check to see if RoleArn property is set
-        internal bool IsSetRoleArn()
+        // Check to see if Policy property is set
+        internal bool IsSetPolicy()
         {
-            return this._roleArn != null;
+            return this._policy != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Timeout.
+        /// Gets and sets the property RevisionId. 
+        /// <para>
+        /// The revision ID of the policy.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=29000)]
-        public int Timeout
+        public string RevisionId
         {
-            get { return this._timeout.GetValueOrDefault(); }
-            set { this._timeout = value; }
+            get { return this._revisionId; }
+            set { this._revisionId = value; }
         }
 
-        // Check to see if Timeout property is set
-        internal bool IsSetTimeout()
+        // Check to see if RevisionId property is set
+        internal bool IsSetRevisionId()
         {
-            return this._timeout.HasValue; 
+            return this._revisionId != null;
         }
 
     }

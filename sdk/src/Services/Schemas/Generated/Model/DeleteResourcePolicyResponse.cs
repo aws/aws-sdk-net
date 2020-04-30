@@ -28,28 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Schemas.Model
 {
     /// <summary>
-    /// Container for the parameters to the UnlockServiceLinkedRole operation.
-    /// 
+    /// This is the response object from the DeleteResourcePolicy operation.
     /// </summary>
-    public partial class UnlockServiceLinkedRoleRequest : AmazonSchemasRequest
+    public partial class DeleteResourcePolicyResponse : AmazonWebServiceResponse
     {
-        private string _roleArn;
-
-        /// <summary>
-        /// Gets and sets the property RoleArn.
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1600)]
-        public string RoleArn
-        {
-            get { return this._roleArn; }
-            set { this._roleArn = value; }
-        }
-
-        // Check to see if RoleArn property is set
-        internal bool IsSetRoleArn()
-        {
-            return this._roleArn != null;
-        }
 
     }
 }

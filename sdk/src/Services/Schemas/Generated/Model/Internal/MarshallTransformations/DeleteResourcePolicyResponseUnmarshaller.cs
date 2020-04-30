@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Schemas.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LockServiceLinkedRole operation
+    /// Response Unmarshaller for DeleteResourcePolicy operation
     /// </summary>  
-    public class LockServiceLinkedRoleResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteResourcePolicyResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,31 +45,8 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            LockServiceLinkedRoleResponse response = new LockServiceLinkedRoleResponse();
+            DeleteResourcePolicyResponse response = new DeleteResourcePolicyResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("CanBeDeleted", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.CanBeDeleted = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ReasonOfFailure", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ReasonOfFailure = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RelatedResources", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<DiscovererSummary, DiscovererSummaryUnmarshaller>(DiscovererSummaryUnmarshaller.Instance);
-                    response.RelatedResources = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -96,6 +73,10 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
             {
                 return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
+            {
+                return new NotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
             {
                 return new ServiceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -107,9 +88,9 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
             return new AmazonSchemasException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static LockServiceLinkedRoleResponseUnmarshaller _instance = new LockServiceLinkedRoleResponseUnmarshaller();        
+        private static DeleteResourcePolicyResponseUnmarshaller _instance = new DeleteResourcePolicyResponseUnmarshaller();        
 
-        internal static LockServiceLinkedRoleResponseUnmarshaller GetInstance()
+        internal static DeleteResourcePolicyResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -117,7 +98,7 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LockServiceLinkedRoleResponseUnmarshaller Instance
+        public static DeleteResourcePolicyResponseUnmarshaller Instance
         {
             get
             {

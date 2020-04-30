@@ -93,7 +93,10 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property State.
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the discoverer.
+        /// </para>
         /// </summary>
         public DiscovererState State
         {

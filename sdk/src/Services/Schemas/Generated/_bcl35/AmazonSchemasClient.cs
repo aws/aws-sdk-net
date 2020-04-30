@@ -35,7 +35,7 @@ namespace Amazon.Schemas
     /// <summary>
     /// Implementation for accessing Schemas
     ///
-    /// AWS EventBridge Schemas
+    /// Amazon EventBridge Schema Registry
     /// </summary>
     public partial class AmazonSchemasClient : AmazonServiceClient, IAmazonSchemas
     {
@@ -384,6 +384,12 @@ namespace Amazon.Schemas
 
         /// <summary>
         /// Creates a schema definition.
+        /// 
+        ///  <note>
+        /// <para>
+        /// Inactive schemas will be deleted after two years.
+        /// </para>
+        /// </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSchema service method.</param>
         /// 
@@ -586,6 +592,78 @@ namespace Amazon.Schemas
         public virtual DeleteRegistryResponse EndDeleteRegistry(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRegistryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteResourcePolicy
+
+        /// <summary>
+        /// Delete the resource-based policy attached to the specified registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by Schemas.</returns>
+        /// <exception cref="Amazon.Schemas.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.InternalServerErrorException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy operation on AmazonSchemasClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteResourcePolicyResult from Schemas.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse EndDeleteResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteResourcePolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -1163,6 +1241,78 @@ namespace Amazon.Schemas
 
         #endregion
         
+        #region  GetResourcePolicy
+
+        /// <summary>
+        /// Retrieves the resource-based policy attached to a given registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by Schemas.</returns>
+        /// <exception cref="Amazon.Schemas.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.InternalServerErrorException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy operation on AmazonSchemasClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginGetResourcePolicy(GetResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  GetResourcePolicyResult from Schemas.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual GetResourcePolicyResponse EndGetResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResourcePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDiscoverers
 
         /// <summary>
@@ -1508,75 +1658,6 @@ namespace Amazon.Schemas
 
         #endregion
         
-        #region  LockServiceLinkedRole
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the LockServiceLinkedRole service method.</param>
-        /// 
-        /// <returns>The response from the LockServiceLinkedRole service method, as returned by Schemas.</returns>
-        /// <exception cref="Amazon.Schemas.Model.BadRequestException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Schemas.Model.ForbiddenException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Schemas.Model.InternalServerErrorException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Schemas.Model.ServiceUnavailableException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Schemas.Model.UnauthorizedException">
-        /// 
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/LockServiceLinkedRole">REST API Reference for LockServiceLinkedRole Operation</seealso>
-        public virtual LockServiceLinkedRoleResponse LockServiceLinkedRole(LockServiceLinkedRoleRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = LockServiceLinkedRoleRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = LockServiceLinkedRoleResponseUnmarshaller.Instance;
-
-            return Invoke<LockServiceLinkedRoleResponse>(request, options);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the LockServiceLinkedRole operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the LockServiceLinkedRole operation on AmazonSchemasClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndLockServiceLinkedRole
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/LockServiceLinkedRole">REST API Reference for LockServiceLinkedRole Operation</seealso>
-        public virtual IAsyncResult BeginLockServiceLinkedRole(LockServiceLinkedRoleRequest request, AsyncCallback callback, object state)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = LockServiceLinkedRoleRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = LockServiceLinkedRoleResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  LockServiceLinkedRole operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginLockServiceLinkedRole.</param>
-        /// 
-        /// <returns>Returns a  LockServiceLinkedRoleResult from Schemas.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/LockServiceLinkedRole">REST API Reference for LockServiceLinkedRole Operation</seealso>
-        public virtual LockServiceLinkedRoleResponse EndLockServiceLinkedRole(IAsyncResult asyncResult)
-        {
-            return EndInvoke<LockServiceLinkedRoleResponse>(asyncResult);
-        }
-
-        #endregion
-        
         #region  PutCodeBinding
 
         /// <summary>
@@ -1648,6 +1729,81 @@ namespace Amazon.Schemas
         public virtual PutCodeBindingResponse EndPutCodeBinding(IAsyncResult asyncResult)
         {
             return EndInvoke<PutCodeBindingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutResourcePolicy
+
+        /// <summary>
+        /// The name of the policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by Schemas.</returns>
+        /// <exception cref="Amazon.Schemas.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.InternalServerErrorException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.PreconditionFailedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy operation on AmazonSchemasClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  PutResourcePolicyResult from Schemas.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse EndPutResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutResourcePolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -1931,75 +2087,6 @@ namespace Amazon.Schemas
 
         #endregion
         
-        #region  UnlockServiceLinkedRole
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UnlockServiceLinkedRole service method.</param>
-        /// 
-        /// <returns>The response from the UnlockServiceLinkedRole service method, as returned by Schemas.</returns>
-        /// <exception cref="Amazon.Schemas.Model.BadRequestException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Schemas.Model.ForbiddenException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Schemas.Model.InternalServerErrorException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Schemas.Model.ServiceUnavailableException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Schemas.Model.UnauthorizedException">
-        /// 
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UnlockServiceLinkedRole">REST API Reference for UnlockServiceLinkedRole Operation</seealso>
-        public virtual UnlockServiceLinkedRoleResponse UnlockServiceLinkedRole(UnlockServiceLinkedRoleRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = UnlockServiceLinkedRoleRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = UnlockServiceLinkedRoleResponseUnmarshaller.Instance;
-
-            return Invoke<UnlockServiceLinkedRoleResponse>(request, options);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UnlockServiceLinkedRole operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UnlockServiceLinkedRole operation on AmazonSchemasClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnlockServiceLinkedRole
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UnlockServiceLinkedRole">REST API Reference for UnlockServiceLinkedRole Operation</seealso>
-        public virtual IAsyncResult BeginUnlockServiceLinkedRole(UnlockServiceLinkedRoleRequest request, AsyncCallback callback, object state)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = UnlockServiceLinkedRoleRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = UnlockServiceLinkedRoleResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  UnlockServiceLinkedRole operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnlockServiceLinkedRole.</param>
-        /// 
-        /// <returns>Returns a  UnlockServiceLinkedRoleResult from Schemas.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UnlockServiceLinkedRole">REST API Reference for UnlockServiceLinkedRole Operation</seealso>
-        public virtual UnlockServiceLinkedRoleResponse EndUnlockServiceLinkedRole(IAsyncResult asyncResult)
-        {
-            return EndInvoke<UnlockServiceLinkedRoleResponse>(asyncResult);
-        }
-
-        #endregion
-        
         #region  UntagResource
 
         /// <summary>
@@ -2214,6 +2301,12 @@ namespace Amazon.Schemas
 
         /// <summary>
         /// Updates the schema definition
+        /// 
+        ///  <note>
+        /// <para>
+        /// Inactive schemas will be deleted after two years.
+        /// </para>
+        /// </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSchema service method.</param>
         /// 

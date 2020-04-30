@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Schemas.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListTagsForResource operation
+    /// Response Unmarshaller for PutResourcePolicy operation
     /// </summary>  
-    public class ListTagsForResourceResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutResourcePolicyResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListTagsForResourceResponse response = new ListTagsForResourceResponse();
+            PutResourcePolicyResponse response = new PutResourcePolicyResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("Policy", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Policy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RevisionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RevisionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +94,24 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
             {
                 return new NotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("PreconditionFailedException"))
+            {
+                return new PreconditionFailedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
+            {
+                return new ServiceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedException"))
+            {
+                return new UnauthorizedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonSchemasException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ListTagsForResourceResponseUnmarshaller _instance = new ListTagsForResourceResponseUnmarshaller();        
+        private static PutResourcePolicyResponseUnmarshaller _instance = new PutResourcePolicyResponseUnmarshaller();        
 
-        internal static ListTagsForResourceResponseUnmarshaller GetInstance()
+        internal static PutResourcePolicyResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -101,7 +119,7 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListTagsForResourceResponseUnmarshaller Instance
+        public static PutResourcePolicyResponseUnmarshaller Instance
         {
             get
             {

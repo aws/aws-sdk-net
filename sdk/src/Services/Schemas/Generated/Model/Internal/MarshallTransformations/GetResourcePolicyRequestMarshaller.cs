@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Schemas.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UnlockServiceLinkedRole Request Marshaller
+    /// GetResourcePolicy Request Marshaller
     /// </summary>       
-    public class UnlockServiceLinkedRoleRequestMarshaller : IMarshaller<IRequest, UnlockServiceLinkedRoleRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetResourcePolicyRequestMarshaller : IMarshaller<IRequest, GetResourcePolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UnlockServiceLinkedRoleRequest)input);
+            return this.Marshall((GetResourcePolicyRequest)input);
         }
 
         /// <summary>
@@ -52,38 +52,24 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UnlockServiceLinkedRoleRequest publicRequest)
+        public IRequest Marshall(GetResourcePolicyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Schemas");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";            
-            request.HttpMethod = "POST";
+            request.HttpMethod = "GET";
 
-            request.ResourcePath = "/slr-deletion/unlock";
+            
+            if (publicRequest.IsSetRegistryName())
+                request.Parameters.Add("registryName", StringUtils.FromString(publicRequest.RegistryName));
+            request.ResourcePath = "/v1/policy";
             request.MarshallerVersion = 2;
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-        
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
+            request.UseQueryString = true;
 
             return request;
         }
-        private static UnlockServiceLinkedRoleRequestMarshaller _instance = new UnlockServiceLinkedRoleRequestMarshaller();        
+        private static GetResourcePolicyRequestMarshaller _instance = new GetResourcePolicyRequestMarshaller();        
 
-        internal static UnlockServiceLinkedRoleRequestMarshaller GetInstance()
+        internal static GetResourcePolicyRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -91,7 +77,7 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UnlockServiceLinkedRoleRequestMarshaller Instance
+        public static GetResourcePolicyRequestMarshaller Instance
         {
             get
             {

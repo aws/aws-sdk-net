@@ -54,7 +54,12 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token that specifies the next page of results to return. To request the first
+        /// page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared
+        /// with other accounts.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -69,7 +74,10 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RegistryName.
+        /// Gets and sets the property RegistryName. 
+        /// <para>
+        /// The name of the registry.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RegistryName
@@ -85,7 +93,11 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SchemaNamePrefix.
+        /// Gets and sets the property SchemaNamePrefix. 
+        /// <para>
+        /// Specifying this limits the results to only those schema names that start with the
+        /// specified prefix.
+        /// </para>
         /// </summary>
         public string SchemaNamePrefix
         {
