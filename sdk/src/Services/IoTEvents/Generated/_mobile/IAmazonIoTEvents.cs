@@ -600,42 +600,6 @@ namespace Amazon.IoTEvents
         Task<UpdateInputResponse> UpdateInputAsync(UpdateInputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
-                
-        #region  VerifyResourcesExistForTagris
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the VerifyResourcesExistForTagris service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the VerifyResourcesExistForTagris service method, as returned by IoTEvents.</returns>
-        /// <exception cref="Amazon.IoTEvents.Model.TagrisAccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.IoTEvents.Model.TagrisInternalServiceException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.IoTEvents.Model.TagrisInvalidArnException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.IoTEvents.Model.TagrisInvalidParameterException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.IoTEvents.Model.TagrisPartialResourcesExistResultsException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.IoTEvents.Model.TagrisThrottledException">
-        /// 
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/VerifyResourcesExistForTagris">REST API Reference for VerifyResourcesExistForTagris Operation</seealso>
-        Task<VerifyResourcesExistForTagrisResponse> VerifyResourcesExistForTagrisAsync(VerifyResourcesExistForTagrisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
         
     }
 }

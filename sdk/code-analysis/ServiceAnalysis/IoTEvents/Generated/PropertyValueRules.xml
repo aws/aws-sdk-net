@@ -310,51 +310,6 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.IoTEvents.Model.TagrisAccessDeniedException.Message</property>
-    <min>0</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTEvents.Model.TagrisInternalServiceException.Message</property>
-    <min>0</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTEvents.Model.TagrisInvalidArnException.Message</property>
-    <min>0</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTEvents.Model.TagrisInvalidParameterException.Message</property>
-    <min>0</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTEvents.Model.TagrisPartialResourcesExistResultsException.Message</property>
-    <min>0</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTEvents.Model.TagrisSweepListItem.TagrisAccountId</property>
-    <min>12</min>
-    <max>12</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTEvents.Model.TagrisSweepListItem.TagrisAmazonResourceName</property>
-    <min>1</min>
-    <max>1011</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTEvents.Model.TagrisSweepListItem.TagrisInternalId</property>
-    <min>0</min>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTEvents.Model.TagrisThrottledException.Message</property>
-    <min>0</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.IoTEvents.Model.TransitionEvent.Condition</property>
     <max>512</max>
   </property-value-rule>

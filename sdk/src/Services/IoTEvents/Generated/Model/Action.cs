@@ -152,7 +152,7 @@ namespace Amazon.IoTEvents.Model
         /// Gets and sets the property IotSiteWise. 
         /// <para>
         /// Sends information about the detector model instance and the event that triggered the
-        /// action to an AWS IoT SiteWise asset property.
+        /// action to an asset property in AWS IoT SiteWise .
         /// </para>
         /// </summary>
         public IotSiteWiseAction IotSiteWise
