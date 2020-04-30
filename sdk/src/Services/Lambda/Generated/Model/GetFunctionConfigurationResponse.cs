@@ -468,7 +468,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Timeout. 
         /// <para>
-        /// The amount of time that Lambda allows a function to run before stopping it.
+        /// The amount of time in seconds that Lambda allows a function to run before stopping
+        /// it.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

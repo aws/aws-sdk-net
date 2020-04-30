@@ -112,7 +112,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaCreateFunction()
         {
-            #region to-update-an-asynchronous-invocation-configuration-1586492061186
+            #region to-create-a-function-1586492061186
 
             var response = client.CreateFunction(new CreateFunctionRequest 
             {

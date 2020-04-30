@@ -108,9 +108,9 @@
                     The following example creates a function with a deployment package in Amazon S3 and enables X-Ray tracing and environment variable encryption.
                 </para>
                 <code
-                    title="To update an asynchronous invocation configuration"
+                    title="To create a function"
                     source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
-                    region="to-update-an-asynchronous-invocation-configuration-1586492061186" />
+                    region="to-create-a-function-1586492061186" />
             </example>
         </value>
     </doc>
