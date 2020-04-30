@@ -128,6 +128,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMxfSettings())
+            {
+                context.Writer.WritePropertyName("mxfSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MxfSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MxfSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

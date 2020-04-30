@@ -112,6 +112,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.MpdSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mxfSettings", targetDepth))
+                {
+                    var unmarshaller = MxfSettingsUnmarshaller.Instance;
+                    unmarshalledObject.MxfSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
