@@ -37,6 +37,7 @@ namespace Amazon.IoT.Model
         private string _description;
         private bool? _enabled;
         private DateTime? _lastModifiedDate;
+        private ProvisioningHook _preProvisioningHook;
         private string _provisioningRoleArn;
         private string _templateArn;
         private string _templateBody;
@@ -131,6 +132,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetLastModifiedDate()
         {
             return this._lastModifiedDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreProvisioningHook. 
+        /// <para>
+        /// Gets information about a pre-provisioned hook.
+        /// </para>
+        /// </summary>
+        public ProvisioningHook PreProvisioningHook
+        {
+            get { return this._preProvisioningHook; }
+            set { this._preProvisioningHook = value; }
+        }
+
+        // Check to see if PreProvisioningHook property is set
+        internal bool IsSetPreProvisioningHook()
+        {
+            return this._preProvisioningHook != null;
         }
 
         /// <summary>

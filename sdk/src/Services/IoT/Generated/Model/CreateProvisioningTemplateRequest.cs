@@ -35,6 +35,7 @@ namespace Amazon.IoT.Model
     {
         private string _description;
         private bool? _enabled;
+        private ProvisioningHook _preProvisioningHook;
         private string _provisioningRoleArn;
         private List<Tag> _tags = new List<Tag>();
         private string _templateBody;
@@ -75,6 +76,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreProvisioningHook. 
+        /// <para>
+        /// Creates a pre-provisioning hook template.
+        /// </para>
+        /// </summary>
+        public ProvisioningHook PreProvisioningHook
+        {
+            get { return this._preProvisioningHook; }
+            set { this._preProvisioningHook = value; }
+        }
+
+        // Check to see if PreProvisioningHook property is set
+        internal bool IsSetPreProvisioningHook()
+        {
+            return this._preProvisioningHook != null;
         }
 
         /// <summary>

@@ -28,12 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// This is the response object from the RegisterThing operation.
+    /// Container for the parameters to the RegisterCertificateWithoutCA operation.
+    /// Register a certificate that does not have a certificate authority (CA).
     /// </summary>
-    public partial class RegisterThingResponse : AmazonWebServiceResponse
+    public partial class RegisterCertificateWithoutCARequest : AmazonIoTRequest
     {
         private string _certificatePem;
-        private Dictionary<string, string> _resourceArns = new Dictionary<string, string>();
+        private CertificateStatus _status;
 
         /// <summary>
         /// Gets and sets the property CertificatePem. 
@@ -41,7 +42,7 @@ namespace Amazon.IoT.Model
         /// The certificate data, in PEM format.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=65536)]
+        [AWSProperty(Required=true, Min=1, Max=65536)]
         public string CertificatePem
         {
             get { return this._certificatePem; }
@@ -55,21 +56,21 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceArns. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// ARNs for the generated resources.
+        /// The status of the register certificate request.
         /// </para>
         /// </summary>
-        public Dictionary<string, string> ResourceArns
+        public CertificateStatus Status
         {
-            get { return this._resourceArns; }
-            set { this._resourceArns = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if ResourceArns property is set
-        internal bool IsSetResourceArns()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._resourceArns != null && this._resourceArns.Count > 0; 
+            return this._status != null;
         }
 
     }

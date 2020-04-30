@@ -1730,6 +1730,17 @@
     <pattern>(0x)?[a-fA-F0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.RegisterCertificateWithoutCARequest.CertificatePem</property>
+    <min>1</min>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.RegisterCertificateWithoutCAResponse.CertificateId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>(0x)?[a-fA-F0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.RegisterThingResponse.CertificatePem</property>
     <min>1</min>
     <max>65536</max>
@@ -2221,6 +2232,10 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.AuditNotificationTarget.TargetArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.AuditTaskMetadata.TaskId</property>
     <min>1</min>
     <max>40</max>
@@ -2450,6 +2465,7 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.JobExecutionsRolloutConfig.MaximumPerMinute</property>
     <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.JobExecutionSummaryForThing.JobId</property>
@@ -2583,6 +2599,16 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.PresignedUrlConfig.RoleArn</property>
     <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ProvisioningHook.PayloadVersion</property>
+    <min>10</min>
+    <max>32</max>
+    <pattern>^[0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ProvisioningHook.TargetArn</property>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -2778,6 +2804,17 @@
     <property>Amazon.IoT.Model.StreamSummary.StreamVersion</property>
     <min>0</min>
     <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.Tag.Value</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ThingAttribute.ThingName</property>

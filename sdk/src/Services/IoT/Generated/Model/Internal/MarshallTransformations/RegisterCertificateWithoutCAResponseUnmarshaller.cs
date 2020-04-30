@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeProvisioningTemplate operation
+    /// Response Unmarshaller for RegisterCertificateWithoutCA operation
     /// </summary>  
-    public class DescribeProvisioningTemplateResponseUnmarshaller : JsonResponseUnmarshaller
+    public class RegisterCertificateWithoutCAResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,70 +45,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeProvisioningTemplateResponse response = new DescribeProvisioningTemplateResponse();
+            RegisterCertificateWithoutCAResponse response = new RegisterCertificateWithoutCAResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("creationDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("defaultVersionId", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.DefaultVersionId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("certificateArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
+                    response.CertificateArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("enabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.Enabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastModifiedDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastModifiedDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("preProvisioningHook", targetDepth))
-                {
-                    var unmarshaller = ProvisioningHookUnmarshaller.Instance;
-                    response.PreProvisioningHook = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("provisioningRoleArn", targetDepth))
+                if (context.TestExpression("certificateId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ProvisioningRoleArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("templateArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TemplateArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("templateBody", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TemplateBody = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("templateName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TemplateName = unmarshaller.Unmarshall(context);
+                    response.CertificateId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -126,6 +78,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("CertificateStateException"))
+            {
+                return new CertificateStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("CertificateValidationException"))
+            {
+                return new CertificateValidationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailureException"))
             {
                 return new InternalFailureException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -134,9 +94,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             {
                 return new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceAlreadyExistsException"))
             {
-                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new ResourceAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
+            {
+                return new ServiceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
             {
@@ -149,9 +113,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             return new AmazonIoTException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeProvisioningTemplateResponseUnmarshaller _instance = new DescribeProvisioningTemplateResponseUnmarshaller();        
+        private static RegisterCertificateWithoutCAResponseUnmarshaller _instance = new RegisterCertificateWithoutCAResponseUnmarshaller();        
 
-        internal static DescribeProvisioningTemplateResponseUnmarshaller GetInstance()
+        internal static RegisterCertificateWithoutCAResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -159,7 +123,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeProvisioningTemplateResponseUnmarshaller Instance
+        public static RegisterCertificateWithoutCAResponseUnmarshaller Instance
         {
             get
             {

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Certificate Object
+    /// Response Unmarshaller for ProvisioningHook Object
     /// </summary>  
-    public class CertificateUnmarshaller : IUnmarshaller<Certificate, XmlUnmarshallerContext>, IUnmarshaller<Certificate, JsonUnmarshallerContext>
+    public class ProvisioningHookUnmarshaller : IUnmarshaller<ProvisioningHook, XmlUnmarshallerContext>, IUnmarshaller<ProvisioningHook, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Certificate IUnmarshaller<Certificate, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ProvisioningHook IUnmarshaller<ProvisioningHook, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Certificate Unmarshall(JsonUnmarshallerContext context)
+        public ProvisioningHook Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Certificate unmarshalledObject = new Certificate();
+            ProvisioningHook unmarshalledObject = new ProvisioningHook();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("certificateArn", targetDepth))
+                if (context.TestExpression("payloadVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PayloadVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("certificateId", targetDepth))
+                if (context.TestExpression("targetArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CertificateId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("certificateMode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CertificateMode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("creationDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static CertificateUnmarshaller _instance = new CertificateUnmarshaller();        
+        private static ProvisioningHookUnmarshaller _instance = new ProvisioningHookUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CertificateUnmarshaller Instance
+        public static ProvisioningHookUnmarshaller Instance
         {
             get
             {

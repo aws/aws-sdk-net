@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateRoleAlias Request Marshaller
+    /// RegisterCertificateWithoutCA Request Marshaller
     /// </summary>       
-    public class CreateRoleAliasRequestMarshaller : IMarshaller<IRequest, CreateRoleAliasRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class RegisterCertificateWithoutCARequestMarshaller : IMarshaller<IRequest, RegisterCertificateWithoutCARequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateRoleAliasRequest)input);
+            return this.Marshall((RegisterCertificateWithoutCARequest)input);
         }
 
         /// <summary>
@@ -52,49 +52,30 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateRoleAliasRequest publicRequest)
+        public IRequest Marshall(RegisterCertificateWithoutCARequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "POST";
 
-            if (!publicRequest.IsSetRoleAlias())
-                throw new AmazonIoTException("Request object does not have required field RoleAlias set");
-            request.AddPathResource("{roleAlias}", StringUtils.FromString(publicRequest.RoleAlias));
-            request.ResourcePath = "/role-aliases/{roleAlias}";
+            request.ResourcePath = "/certificate/register-no-ca";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCredentialDurationSeconds())
+                if(publicRequest.IsSetCertificatePem())
                 {
-                    context.Writer.WritePropertyName("credentialDurationSeconds");
-                    context.Writer.Write(publicRequest.CredentialDurationSeconds);
+                    context.Writer.WritePropertyName("certificatePem");
+                    context.Writer.Write(publicRequest.CertificatePem);
                 }
 
-                if(publicRequest.IsSetRoleArn())
+                if(publicRequest.IsSetStatus())
                 {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("status");
+                    context.Writer.Write(publicRequest.Status);
                 }
 
         
@@ -106,9 +87,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateRoleAliasRequestMarshaller _instance = new CreateRoleAliasRequestMarshaller();        
+        private static RegisterCertificateWithoutCARequestMarshaller _instance = new RegisterCertificateWithoutCARequestMarshaller();        
 
-        internal static CreateRoleAliasRequestMarshaller GetInstance()
+        internal static RegisterCertificateWithoutCARequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -116,7 +97,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateRoleAliasRequestMarshaller Instance
+        public static RegisterCertificateWithoutCARequestMarshaller Instance
         {
             get
             {

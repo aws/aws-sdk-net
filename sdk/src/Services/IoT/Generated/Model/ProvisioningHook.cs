@@ -28,58 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Information about the targets to which audit notifications are sent.
+    /// Structure that contains <code>payloadVersion</code> and <code>targetArn</code>.
     /// </summary>
-    public partial class AuditNotificationTarget
+    public partial class ProvisioningHook
     {
-        private bool? _enabled;
-        private string _roleArn;
+        private string _payloadVersion;
         private string _targetArn;
 
         /// <summary>
-        /// Gets and sets the property Enabled. 
+        /// Gets and sets the property PayloadVersion. 
         /// <para>
-        /// True if notifications to the target are enabled.
+        /// The payload that was sent to the target function.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Note:</i> Only Lambda functions are currently supported.
         /// </para>
         /// </summary>
-        public bool Enabled
+        [AWSProperty(Min=10, Max=32)]
+        public string PayloadVersion
         {
-            get { return this._enabled.GetValueOrDefault(); }
-            set { this._enabled = value; }
+            get { return this._payloadVersion; }
+            set { this._payloadVersion = value; }
         }
 
-        // Check to see if Enabled property is set
-        internal bool IsSetEnabled()
+        // Check to see if PayloadVersion property is set
+        internal bool IsSetPayloadVersion()
         {
-            return this._enabled.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property RoleArn. 
-        /// <para>
-        /// The ARN of the role that grants permission to send notifications to the target.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
-        public string RoleArn
-        {
-            get { return this._roleArn; }
-            set { this._roleArn = value; }
-        }
-
-        // Check to see if RoleArn property is set
-        internal bool IsSetRoleArn()
-        {
-            return this._roleArn != null;
+            return this._payloadVersion != null;
         }
 
         /// <summary>
         /// Gets and sets the property TargetArn. 
         /// <para>
-        /// The ARN of the target (SNS topic) to which audit notifications are sent.
+        /// The ARN of the target function.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Note:</i> Only Lambda functions are currently supported.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Required=true, Max=2048)]
         public string TargetArn
         {
             get { return this._targetArn; }

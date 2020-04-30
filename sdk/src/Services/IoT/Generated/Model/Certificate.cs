@@ -34,6 +34,7 @@ namespace Amazon.IoT.Model
     {
         private string _certificateArn;
         private string _certificateId;
+        private CertificateMode _certificateMode;
         private DateTime? _creationDate;
         private CertificateStatus _status;
 
@@ -73,6 +74,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetCertificateId()
         {
             return this._certificateId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateMode. 
+        /// <para>
+        /// The mode of the certificate.
+        /// </para>
+        /// </summary>
+        public CertificateMode CertificateMode
+        {
+            get { return this._certificateMode; }
+            set { this._certificateMode = value; }
+        }
+
+        // Check to see if CertificateMode property is set
+        internal bool IsSetCertificateMode()
+        {
+            return this._certificateMode != null;
         }
 
         /// <summary>

@@ -28,48 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// This is the response object from the RegisterThing operation.
+    /// This is the response object from the RegisterCertificateWithoutCA operation.
     /// </summary>
-    public partial class RegisterThingResponse : AmazonWebServiceResponse
+    public partial class RegisterCertificateWithoutCAResponse : AmazonWebServiceResponse
     {
-        private string _certificatePem;
-        private Dictionary<string, string> _resourceArns = new Dictionary<string, string>();
+        private string _certificateArn;
+        private string _certificateId;
 
         /// <summary>
-        /// Gets and sets the property CertificatePem. 
+        /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// The certificate data, in PEM format.
+        /// The Amazon Resource Name (ARN) of the registered certificate.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=65536)]
-        public string CertificatePem
+        public string CertificateArn
         {
-            get { return this._certificatePem; }
-            set { this._certificatePem = value; }
+            get { return this._certificateArn; }
+            set { this._certificateArn = value; }
         }
 
-        // Check to see if CertificatePem property is set
-        internal bool IsSetCertificatePem()
+        // Check to see if CertificateArn property is set
+        internal bool IsSetCertificateArn()
         {
-            return this._certificatePem != null;
+            return this._certificateArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceArns. 
+        /// Gets and sets the property CertificateId. 
         /// <para>
-        /// ARNs for the generated resources.
+        /// The ID of the registered certificate. (The last part of the certificate ARN contains
+        /// the certificate ID.
         /// </para>
         /// </summary>
-        public Dictionary<string, string> ResourceArns
+        [AWSProperty(Min=64, Max=64)]
+        public string CertificateId
         {
-            get { return this._resourceArns; }
-            set { this._resourceArns = value; }
+            get { return this._certificateId; }
+            set { this._certificateId = value; }
         }
 
-        // Check to see if ResourceArns property is set
-        internal bool IsSetResourceArns()
+        // Check to see if CertificateId property is set
+        internal bool IsSetCertificateId()
         {
-            return this._resourceArns != null && this._resourceArns.Count > 0; 
+            return this._certificateId != null;
         }
 
     }

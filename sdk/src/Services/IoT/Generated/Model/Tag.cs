@@ -41,6 +41,7 @@ namespace Amazon.IoT.Model
         /// The tag's key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -59,6 +60,7 @@ namespace Amazon.IoT.Model
         /// The tag's value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Value
         {
             get { return this._value; }

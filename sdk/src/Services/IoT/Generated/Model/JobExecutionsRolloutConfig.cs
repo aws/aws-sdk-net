@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model
         /// parameter allows you to create a staged rollout.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1000)]
         public int MaximumPerMinute
         {
             get { return this._maximumPerMinute.GetValueOrDefault(); }

@@ -87,10 +87,27 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Enabled);
                 }
 
+                if(publicRequest.IsSetPreProvisioningHook())
+                {
+                    context.Writer.WritePropertyName("preProvisioningHook");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ProvisioningHookMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PreProvisioningHook, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetProvisioningRoleArn())
                 {
                     context.Writer.WritePropertyName("provisioningRoleArn");
                     context.Writer.Write(publicRequest.ProvisioningRoleArn);
+                }
+
+                if(publicRequest.IsSetRemovePreProvisioningHook())
+                {
+                    context.Writer.WritePropertyName("removePreProvisioningHook");
+                    context.Writer.Write(publicRequest.RemovePreProvisioningHook);
                 }
 
         

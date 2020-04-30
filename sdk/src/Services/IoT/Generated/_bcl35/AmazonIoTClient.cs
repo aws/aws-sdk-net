@@ -6761,6 +6761,9 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
         /// An unexpected error has occurred.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
@@ -13302,6 +13305,84 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  RegisterCertificateWithoutCA
+
+        /// <summary>
+        /// Register a certificate that does not have a certificate authority (CA).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterCertificateWithoutCA service method.</param>
+        /// 
+        /// <returns>The response from the RegisterCertificateWithoutCA service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.CertificateStateException">
+        /// The certificate operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.CertificateValidationException">
+        /// The certificate is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificateWithoutCA">REST API Reference for RegisterCertificateWithoutCA Operation</seealso>
+        public virtual RegisterCertificateWithoutCAResponse RegisterCertificateWithoutCA(RegisterCertificateWithoutCARequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterCertificateWithoutCARequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterCertificateWithoutCAResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterCertificateWithoutCAResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterCertificateWithoutCA operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterCertificateWithoutCA operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterCertificateWithoutCA
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificateWithoutCA">REST API Reference for RegisterCertificateWithoutCA Operation</seealso>
+        public virtual IAsyncResult BeginRegisterCertificateWithoutCA(RegisterCertificateWithoutCARequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterCertificateWithoutCARequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterCertificateWithoutCAResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterCertificateWithoutCA operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterCertificateWithoutCA.</param>
+        /// 
+        /// <returns>Returns a  RegisterCertificateWithoutCAResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificateWithoutCA">REST API Reference for RegisterCertificateWithoutCA Operation</seealso>
+        public virtual RegisterCertificateWithoutCAResponse EndRegisterCertificateWithoutCA(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RegisterCertificateWithoutCAResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RegisterThing
 
         /// <summary>
@@ -14070,9 +14151,6 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
         /// The request is not valid.
-        /// </exception>
-        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.NotConfiguredException">
         /// The resource is not configured.

@@ -108,6 +108,11 @@ namespace Amazon.IoT.Model
         /// <para>
         /// The name of the thing to update.
         /// </para>
+        ///  
+        /// <para>
+        /// You can't change a thing's name. To change a thing's name, you must create a new thing,
+        /// give it the new name, and then delete the old thing.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string ThingName
