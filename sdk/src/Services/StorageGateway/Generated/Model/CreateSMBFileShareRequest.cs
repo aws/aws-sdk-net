@@ -168,7 +168,7 @@ namespace Amazon.StorageGateway.Model
         /// Optional.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=20)]
+        [AWSProperty(Min=5, Max=50)]
         public string DefaultStorageClass
         {
             get { return this._defaultStorageClass; }

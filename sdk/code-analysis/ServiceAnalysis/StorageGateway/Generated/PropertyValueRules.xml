@@ -219,7 +219,7 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.DefaultStorageClass</property>
     <min>5</min>
-    <max>20</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.GatewayARN</property>
@@ -268,7 +268,7 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.DefaultStorageClass</property>
     <min>5</min>
-    <max>20</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.GatewayARN</property>
@@ -1277,7 +1277,7 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateNFSFileShareRequest.DefaultStorageClass</property>
     <min>5</min>
-    <max>20</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateNFSFileShareRequest.FileShareARN</property>
@@ -1306,7 +1306,7 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateSMBFileShareRequest.DefaultStorageClass</property>
     <min>5</min>
-    <max>20</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateSMBFileShareRequest.FileShareARN</property>
@@ -1539,7 +1539,7 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.NFSFileShareInfo.DefaultStorageClass</property>
     <min>5</min>
-    <max>20</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.NFSFileShareInfo.FileShareARN</property>
@@ -1593,7 +1593,7 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.SMBFileShareInfo.DefaultStorageClass</property>
     <min>5</min>
-    <max>20</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.SMBFileShareInfo.FileShareARN</property>
