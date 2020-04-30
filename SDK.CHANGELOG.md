@@ -1,3 +1,22 @@
+### 3.3.729.0 (2020-04-30 18:16 UTC)
+* IoT (3.3.110.0)
+	* AWS IoT Core released Fleet Provisioning for scalable onboarding of IoT devices to the cloud. This release includes support for customer's Lambda functions to validate devices during onboarding. Fleet Provisioning also allows devices to send Certificate Signing Requests (CSR) to AWS IoT Core for signing and getting a unique certificate. Lastly,  AWS IoT Core added a feature to register the same certificate for multiple accounts in the same region without needing to register the certificate authority (CA).
+* IoTEvents (3.3.106.0)
+	* Doc only update to correct APIs and related descriptions
+* Lambda (3.3.109.17)
+	* Documentation updates for Lambda
+* MediaConvert (3.3.117.0)
+	* AWS Elemental MediaConvert SDK has added support for including AFD signaling in MXF wrapper.
+* Schemas (3.3.101.0)
+	* Add support for resource policies for Amazon EventBridge Schema Registry, which is now generally available.
+* StorageGateway (3.3.114.0)
+	* Adding support for S3_INTELLIGENT_TIERING as a storage class option
+* Core 3.3.106.15
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.728.0 (2020-04-29 19:13 UTC)
 * IoTSiteWise (3.3.100.0)
 	* AWS IoT SiteWise is a managed service that makes it easy to collect, store, organize and monitor data from industrial equipment at scale. You can use AWS IoT SiteWise to model your physical assets, processes and facilities, quickly compute common industrial performance metrics, and create fully managed web applications to help analyze industrial equipment data, prevent costly equipment issues, and reduce production inefficiencies.
