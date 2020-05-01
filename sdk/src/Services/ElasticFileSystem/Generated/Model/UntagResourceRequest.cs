@@ -69,7 +69,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

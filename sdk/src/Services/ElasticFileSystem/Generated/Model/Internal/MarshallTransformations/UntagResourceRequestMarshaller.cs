@@ -61,30 +61,12 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetResourceId())
                 throw new AmazonElasticFileSystemException("Request object does not have required field ResourceId set");
             request.AddPathResource("{ResourceId}", StringUtils.FromString(publicRequest.ResourceId));
+            
+            if (publicRequest.IsSetTagKeys())
+                request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
             request.ResourcePath = "/2015-02-01/resource-tags/{ResourceId}";
             request.MarshallerVersion = 2;
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetTagKeys())
-                {
-                    context.Writer.WritePropertyName("TagKeys");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagKeysListValue in publicRequest.TagKeys)
-                    {
-                            context.Writer.Write(publicRequestTagKeysListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-        
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
+            request.UseQueryString = true;
 
             return request;
         }
