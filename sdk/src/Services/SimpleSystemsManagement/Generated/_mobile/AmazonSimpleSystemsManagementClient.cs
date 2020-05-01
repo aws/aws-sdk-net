@@ -303,11 +303,12 @@ namespace Amazon.SimpleSystemsManagement
         /// We recommend that you devise a set of tag keys that meets your needs for each resource
         /// type. Using a consistent set of tag keys makes it easier for you to manage your resources.
         /// You can search and filter the resources based on the tags you add. Tags don't have
-        /// any semantic meaning to and are interpreted strictly as a string of characters. 
+        /// any semantic meaning to Amazon EC2 and are interpreted strictly as a string of characters.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// For more information about using tags with EC2 instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+        /// For more information about tags, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
         /// your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -919,7 +920,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">AWS
         /// Systems Manager Documents</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </summary>
-        /// <param name="content">The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>AWS Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create an SSM document (console)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (AWS CLI)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>  </li> </ul></param>
+        /// <param name="content">The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>AWS Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (AWS API)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (AWS CLI)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>  </li> </ul></param>
         /// <param name="name">A name for the Systems Manager document. <important> You can't use the following strings as document name prefixes. These are reserved by AWS for use as document name prefixes: <ul> <li>  <code>aws</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

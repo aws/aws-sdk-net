@@ -36,7 +36,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// Other valid values include Owner, Name, PlatformTypes, and DocumentType.
+    /// Other valid values include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
+    /// <code>DocumentType</code>, and <code>TargetType</code>.
     /// </para>
     ///  
     /// <para>

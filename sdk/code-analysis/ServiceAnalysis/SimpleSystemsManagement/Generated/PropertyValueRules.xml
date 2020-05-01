@@ -2223,6 +2223,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Command.TimeoutSeconds</property>
+    <min>30</min>
+    <max>2592000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CommandFilter.Value</property>
     <min>1</min>
     <max>128</max>

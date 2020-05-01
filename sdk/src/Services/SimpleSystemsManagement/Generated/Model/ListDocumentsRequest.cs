@@ -78,9 +78,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// One or more DocumentKeyValuesFilter objects. Use a filter to return a more specific
         /// list of results. For keys, you can specify one or more key-value pair tags that have
         /// been applied to a document. Other valid keys include <code>Owner</code>, <code>Name</code>,
-        /// <code>PlatformTypes</code>, and <code>DocumentType</code>. For example, to return
-        /// documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value
-        /// pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
+        /// <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>.
+        /// For example, to return documents you own use <code>Key=Owner,Values=Self</code>. To
+        /// specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=6)]

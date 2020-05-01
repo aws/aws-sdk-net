@@ -55,6 +55,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _statusDetails;
         private int? _targetCount;
         private List<Target> _targets = new List<Target>();
+        private int? _timeoutSeconds;
 
         /// <summary>
         /// Gets and sets the property CloudWatchOutputConfig. 
@@ -549,6 +550,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTargets()
         {
             return this._targets != null && this._targets.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeoutSeconds. 
+        /// <para>
+        /// The <code>TimeoutSeconds</code> value specified for a command.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=30, Max=2592000)]
+        public int TimeoutSeconds
+        {
+            get { return this._timeoutSeconds.GetValueOrDefault(); }
+            set { this._timeoutSeconds = value; }
+        }
+
+        // Check to see if TimeoutSeconds property is set
+        internal bool IsSetTimeoutSeconds()
+        {
+            return this._timeoutSeconds.HasValue; 
         }
 
     }
