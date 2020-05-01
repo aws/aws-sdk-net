@@ -1,3 +1,14 @@
+### 3.3.730.0 (2020-05-01 18:11 UTC)
+* ElasticFileSystem (3.3.105.0)
+	* Change the TagKeys argument for UntagResource to a URL parameter to address an issue with the Java and .NET SDKs.
+* SimpleSystemsManagement (3.3.121.0)
+	* Added TimeoutSeconds as part of ListCommands API response.
+* Core 3.3.106.16
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.729.0 (2020-04-30 18:16 UTC)
 * IoT (3.3.110.0)
 	* AWS IoT Core released Fleet Provisioning for scalable onboarding of IoT devices to the cloud. This release includes support for customer's Lambda functions to validate devices during onboarding. Fleet Provisioning also allows devices to send Certificate Signing Requests (CSR) to AWS IoT Core for signing and getting a unique certificate. Lastly,  AWS IoT Core added a feature to register the same certificate for multiple accounts in the same region without needing to register the certificate authority (CA).
