@@ -384,6 +384,32 @@ namespace Amazon.Internal
             }
         }
 
+        private object _allRegionRegexLock = new object();
+        private IEnumerable<string> _allRegionRegex;
+        public IEnumerable<string> AllRegionRegex
+        {
+            get
+            {
+                lock (_allRegionRegexLock)
+                lock (_regionEndpointMapLock)
+                {
+                    if (_allRegionRegex == null)
+                    {
+                        JsonData partitions = _root["partitions"];
+                        var allRegionRegex = new List<string>();
+                        foreach (JsonData partition in partitions)
+                        {
+                            var regionRegex = (string)partition["regionRegex"];
+                            allRegionRegex.Add(regionRegex);
+                        }
+
+                        _allRegionRegex = allRegionRegex;
+                    }
+                }
+                return _allRegionRegex;
+            }
+        }
+
         private static string GetUnknownRegionDescription(string regionName)
         {
             if (regionName.StartsWith("cn-", StringComparison.OrdinalIgnoreCase) ||

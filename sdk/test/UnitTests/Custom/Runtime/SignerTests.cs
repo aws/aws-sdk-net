@@ -90,6 +90,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("eu-central-1", AWSSDKUtils.DetermineRegion("https://s3.eu-central-1.amazonaws.com/"));
             Assert.AreEqual("us-west-2", AWSSDKUtils.DetermineRegion("https://streams.dynamodb.us-west-2.amazonaws.com/"));
             Assert.AreEqual("us-west-2", AWSSDKUtils.DetermineRegion("https://s3-control.us-west-2.amazonaws.com/"));
+            Assert.AreEqual(null, AWSSDKUtils.DetermineRegion("https://bucket-name.s3-accelerate.amazonaws.com/"));
         }
 
         [TestMethod]

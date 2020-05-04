@@ -520,54 +520,13 @@ namespace Amazon.Util
         /// </summary>
         /// <param name="url">Endpoint to the service to be called</param>
         /// <returns>
-        /// Region parsed from the endpoint; DefaultRegion (or DefaultGovRegion) 
+        /// Region parsed from the endpoint; DefaultRegion (or DefaultGovRegion)
         /// if it cannot be determined/is not explicit
         /// </returns>
         public static string DetermineRegion(string url)
         {
-            int delimIndex = url.IndexOf("//", StringComparison.Ordinal);
-            if (delimIndex >= 0)
-                url = url.Substring(delimIndex + 2);
-
-            if (url.EndsWith("/", StringComparison.Ordinal))
-                url = url.Substring(0, url.Length - 1);
-
-            int awsIndex = url.IndexOf(".amazonaws.com", StringComparison.Ordinal);
-            if (awsIndex < 0)
-                return DefaultRegion;
-            string serviceAndRegion = url.Substring(0, awsIndex);
-
-            int cloudSearchIndex = url.IndexOf(".cloudsearch.amazonaws.com", StringComparison.Ordinal);
-            if (cloudSearchIndex > 0)
-                serviceAndRegion = url.Substring(0, cloudSearchIndex);
-
-            int queueIndex = serviceAndRegion.IndexOf("queue", StringComparison.Ordinal);
-            if (queueIndex == 0)
-                return DefaultRegion;
-            if (queueIndex > 0)
-                return serviceAndRegion.Substring(0, queueIndex - 1);
-
-            if (serviceAndRegion.StartsWith("s3-", StringComparison.Ordinal) && !serviceAndRegion.StartsWith(S3Control, StringComparison.Ordinal))
-            {
-                // Accelerate endpoint is global and does not contain region information
-                if (serviceAndRegion.Equals(AWSSDKUtils.S3Accelerate, StringComparison.Ordinal))
-                    return null;
-
-                serviceAndRegion = "s3." + serviceAndRegion.Substring(3);
-            }
-
-            int separatorIndex = serviceAndRegion.LastIndexOf('.');
-            if (separatorIndex == -1)
-                return DefaultRegion;
-
-            string region = serviceAndRegion.Substring(separatorIndex + 1);
-            if (region.Equals("external-1"))
-                return RegionEndpoint.USEast1.SystemName;
-
-            if (string.Equals(region, "us-gov", StringComparison.Ordinal))
-                return DefaultGovRegion;
-
-            return region;
+            var regionEndpoint = RegionFinder.Instance.FindRegion(url);
+            return regionEndpoint?.RegionName;
         }
 
         /// <summary>

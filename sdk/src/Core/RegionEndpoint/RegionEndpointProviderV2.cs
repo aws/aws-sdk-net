@@ -372,7 +372,7 @@ namespace Amazon.Internal
             }
             #endregion
 
-            private RegionEndpoint(string systemName, string displayName)
+            internal RegionEndpoint(string systemName, string displayName)
             {
                 this.SystemName = systemName;
                 this.DisplayName = displayName;
