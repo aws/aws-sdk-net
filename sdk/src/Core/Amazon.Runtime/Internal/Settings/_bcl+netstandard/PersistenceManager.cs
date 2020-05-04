@@ -258,7 +258,7 @@ namespace Amazon.Runtime.Internal.Settings
                     if (settings == null)
                         settings = new Dictionary<string, Dictionary<string, object>>();
 
-                    decryptAnyEncryptedValues(settings);
+                    DecryptAnyEncryptedValues(settings);
 
                     return new SettingsCollection(settings);
                 }
@@ -275,7 +275,7 @@ namespace Amazon.Runtime.Internal.Settings
             }
         }
 
-        void decryptAnyEncryptedValues(Dictionary<string, Dictionary<string, object>> settings)
+        static void DecryptAnyEncryptedValues(Dictionary<string, Dictionary<string, object>> settings)
         {
             foreach (var kvp in settings)
             {

@@ -549,6 +549,9 @@ using System.Diagnostics.CodeAnalysis;
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1024:Use properties where appropriate", Scope = "member", Target = "~M:Amazon.Runtime.ClientConfig.GetWebProxy~System.Net.IWebProxy")]
 
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("AwsSdkRules", "CR1002:Do not store ILogger instances in static members.", Justification = "<Pending>", Scope = "member", Target = "~F:Amazon.Runtime.Internal.Settings.PersistenceManager._logger")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "<Pending>", Scope = "member", Target = "~M:Amazon.Runtime.Internal.Settings.PersistenceManager.DecryptAnyEncryptedValues(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.Dictionary{System.String,System.Object}})")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "<Pending>", Scope = "member", Target = "~M:Amazon.Runtime.Internal.Settings.PersistenceManager.#cctor")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Util.Internal.InternalSDKUtils.DetermineOS~System.String")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Util.Internal.InternalSDKUtils.DetermineOSVersion~System.String")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Util.Internal.InternalSDKUtils.DetermineRuntime~System.String")]
