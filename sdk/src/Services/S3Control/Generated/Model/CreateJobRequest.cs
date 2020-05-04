@@ -29,7 +29,32 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateJob operation.
-    /// Creates an Amazon S3 batch operations job.
+    /// You can use Amazon S3 Batch Operations to perform large-scale Batch Operations on
+    /// Amazon S3 objects. Amazon S3 Batch Operations can execute a single operation or action
+    /// on lists of Amazon S3 objects that you specify. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+    /// S3 Batch Operations</a> in the Amazon Simple Storage Service Developer Guide.
+    /// 
+    ///  
+    /// <para>
+    /// Related actions include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeJob</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListJobs</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateJobPriority</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateJobStatus</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateJobRequest : AmazonS3ControlRequest
     {
@@ -200,8 +225,9 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) Role that
-        /// batch operations will use to execute this job's operation on each object in the manifest.
+        /// The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role
+        /// that Batch Operations will use to execute this job's operation on each object in the
+        /// manifest.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -220,7 +246,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An optional set of tags to associate with the job when it is created.
+        /// A set of tags to associate with the Amazon S3 Batch Operations job. This is an optional
+        /// parameter. 
         /// </para>
         /// </summary>
         public List<S3Tag> Tags

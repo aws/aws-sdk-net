@@ -28,28 +28,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Contains the configuration parameters for a Set Object Tagging operation. Amazon S3
-    /// Batch Operations passes each value through to the underlying PUT Object tagging API.
-    /// For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html">PUT
-    /// Object tagging</a>.
+    /// Contains the configuration parameters for a Set Object Legal Hold operation. Amazon
+    /// S3 Batch Operations passes each value through to the underlying PUT Object Legal Hold
+    /// API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.htmll#object-lock-legal-holds">PUT
+    /// Object Legal Hold</a>.
     /// </summary>
-    public partial class S3SetObjectTaggingOperation
+    public partial class S3SetObjectLegalHoldOperation
     {
-        private List<S3Tag> _tagSet = new List<S3Tag>();
+        private S3ObjectLockLegalHold _legalHold;
 
         /// <summary>
-        /// Gets and sets the property TagSet.
+        /// Gets and sets the property LegalHold. 
+        /// <para>
+        /// The Legal Hold contains the status to be applied to all objects in the Batch Operations
+        /// job.
+        /// </para>
         /// </summary>
-        public List<S3Tag> TagSet
+        [AWSProperty(Required=true)]
+        public S3ObjectLockLegalHold LegalHold
         {
-            get { return this._tagSet; }
-            set { this._tagSet = value; }
+            get { return this._legalHold; }
+            set { this._legalHold = value; }
         }
 
-        // Check to see if TagSet property is set
-        internal bool IsSetTagSet()
+        // Check to see if LegalHold property is set
+        internal bool IsSetLegalHold()
         {
-            return this._tagSet != null && this._tagSet.Count > 0; 
+            return this._legalHold != null;
         }
 
     }

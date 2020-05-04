@@ -37,7 +37,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The set of tags associated with the job.
+        /// The set of tags associated with the Amazon S3 Batch Operations job.
         /// </para>
         /// </summary>
         public List<S3Tag> Tags

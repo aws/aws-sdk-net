@@ -28,28 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Contains the configuration parameters for a Set Object Tagging operation. Amazon S3
-    /// Batch Operations passes each value through to the underlying PUT Object tagging API.
-    /// For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html">PUT
-    /// Object tagging</a>.
+    /// 
     /// </summary>
-    public partial class S3SetObjectTaggingOperation
+    public partial class S3ObjectLockLegalHold
     {
-        private List<S3Tag> _tagSet = new List<S3Tag>();
+        private S3ObjectLockLegalHoldStatus _status;
 
         /// <summary>
-        /// Gets and sets the property TagSet.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The Legal Hold status to be applied to all objects in the Batch Operations job.
+        /// </para>
         /// </summary>
-        public List<S3Tag> TagSet
+        [AWSProperty(Required=true)]
+        public S3ObjectLockLegalHoldStatus Status
         {
-            get { return this._tagSet; }
-            set { this._tagSet = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if TagSet property is set
-        internal bool IsSetTagSet()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._tagSet != null && this._tagSet.Count > 0; 
+            return this._status != null;
         }
 
     }

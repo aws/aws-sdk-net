@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// The Virtual Private Cloud (VPC) configuration for an access point.
+    /// The virtual private cloud (VPC) configuration for an access point.
     /// </summary>
     public partial class VpcConfiguration
     {

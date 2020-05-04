@@ -29,7 +29,28 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteJobTagging operation.
-    /// Delete the tags on a Amazon S3 batch operations job, if any.
+    /// Removes the entire tag set from the specified Amazon S3 Batch Operations job. To use
+    /// this operation, you must have permission to perform the <code>s3:DeleteJobTagging</code>
+    /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
+    /// Job Tags</a> in the Amazon Simple Storage Service Developer Guide.
+    /// 
+    ///   
+    /// <para>
+    /// Related actions include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateJob</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetJobTagging</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PutJobTagging</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DeleteJobTaggingRequest : AmazonS3ControlRequest
     {
@@ -39,8 +60,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID for the Amazon Web Services account associated with the Amazon S3 batch
-        /// operations job you want to remove tags from.
+        /// The AWS account ID associated with the Amazon S3 Batch Operations job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -59,7 +79,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The ID for the job whose tags you want to delete.
+        /// The ID for the Amazon S3 Batch Operations job whose tags you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=36)]
