@@ -83,8 +83,17 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            return new AmazonAlexaForBusinessException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            errorResponse.InnerException = innerException;
+            errorResponse.StatusCode = statusCode;
+
+            var responseBodyBytes = context.GetResponseBodyBytes();
+
+            using (var streamCopy = new MemoryStream(responseBodyBytes))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            {
+            }
+            return new AmazonAlexaForBusinessException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
         private static SearchProfilesResponseUnmarshaller _instance = new SearchProfilesResponseUnmarshaller();        

@@ -17,19 +17,32 @@
  * Do not modify this file. This file is generated from the waf-regional-2016-11-28.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.WAFRegional.Model
 {
-    ///<summary>
-    /// WAFRegional exception
+    /// <summary>
+    /// AWS WAF is not able to access the service linked role. This can be caused by a previous
+    /// <code>PutLoggingConfiguration</code> request, which can lock the service linked role
+    /// for about 20 seconds. Please try your request again. The service linked role can also
+    /// be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock
+    /// the role for 15 minutes or more. If you recently made a <code>DeleteServiceLinkedRole</code>,
+    /// wait at least 15 minutes and try the request again. If you receive this same exception
+    /// again, you will have to wait additional time until the role is unlocked.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class WAFServiceLinkedRoleErrorException : AmazonWAFRegionalException 
+    #endif
+    public partial class WAFServiceLinkedRoleErrorException : AmazonWAFRegionalException
     {
+
         /// <summary>
         /// Constructs a new WAFServiceLinkedRoleErrorException with the specified error
         /// message.
@@ -39,7 +52,7 @@ namespace Amazon.WAFRegional.Model
         /// </param>
         public WAFServiceLinkedRoleErrorException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of WAFServiceLinkedRoleErrorException
         /// </summary>
@@ -47,14 +60,14 @@ namespace Amazon.WAFRegional.Model
         /// <param name="innerException"></param>
         public WAFServiceLinkedRoleErrorException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of WAFServiceLinkedRoleErrorException
         /// </summary>
         /// <param name="innerException"></param>
         public WAFServiceLinkedRoleErrorException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of WAFServiceLinkedRoleErrorException
         /// </summary>
@@ -92,6 +105,26 @@ namespace Amazon.WAFRegional.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

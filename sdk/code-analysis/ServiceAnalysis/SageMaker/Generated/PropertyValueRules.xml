@@ -2588,10 +2588,6 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SageMaker.Model.ConflictException.Message</property>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SageMaker.Model.ContainerDefinition.ContainerHostname</property>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
@@ -3751,24 +3747,12 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SageMaker.Model.ResourceInUse.Message</property>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SageMaker.Model.ResourceLimitExceeded.Message</property>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceLimits.MaxNumberOfTrainingJobs</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceLimits.MaxParallelTrainingJobs</property>
     <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SageMaker.Model.ResourceNotFound.Message</property>
-    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceSpec.SageMakerImageArn</property>

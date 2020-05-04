@@ -17,19 +17,32 @@
  * Do not modify this file. This file is generated from the transfer-2018-11-05.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Transfer.Model
 {
-    ///<summary>
-    /// Transfer exception
+    /// <summary>
+    /// The request was denied due to request throttling.
+    /// 
+    ///  
+    /// <para>
+    ///  HTTP Status Code: 400
+    /// </para>
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class ThrottlingException : AmazonTransferException 
+    #endif
+    public partial class ThrottlingException : AmazonTransferException
     {
+        private string _retryAfterSeconds;
+
         /// <summary>
         /// Constructs a new ThrottlingException with the specified error
         /// message.
@@ -39,7 +52,7 @@ namespace Amazon.Transfer.Model
         /// </param>
         public ThrottlingException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of ThrottlingException
         /// </summary>
@@ -47,14 +60,14 @@ namespace Amazon.Transfer.Model
         /// <param name="innerException"></param>
         public ThrottlingException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ThrottlingException
         /// </summary>
         /// <param name="innerException"></param>
         public ThrottlingException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ThrottlingException
         /// </summary>
@@ -90,8 +103,45 @@ namespace Amazon.Transfer.Model
         protected ThrottlingException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.RetryAfterSeconds = (string)info.GetValue("RetryAfterSeconds", typeof(string));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("RetryAfterSeconds", this.RetryAfterSeconds);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property RetryAfterSeconds.
+        /// </summary>
+        public string RetryAfterSeconds
+        {
+            get { return this._retryAfterSeconds; }
+            set { this._retryAfterSeconds = value; }
+        }
+
+        // Check to see if RetryAfterSeconds property is set
+        internal bool IsSetRetryAfterSeconds()
+        {
+            return this._retryAfterSeconds != null;
+        }
+
     }
 }

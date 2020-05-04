@@ -3235,9 +3235,6 @@ namespace Amazon.WorkMail
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
         /// </exception>
-        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
-        /// One or more of the input parameters don't match the service's restrictions.
-        /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.MailDomainNotFoundException">
         /// For an email or alias to be created in Amazon WorkMail, the included domain must be
         /// defined in the organization.
@@ -3295,9 +3292,6 @@ namespace Amazon.WorkMail
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
         /// You are performing an operation on a user, group, or resource that isn't in the expected
         /// state, such as trying to delete an active user.
-        /// </exception>
-        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
-        /// One or more of the input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.

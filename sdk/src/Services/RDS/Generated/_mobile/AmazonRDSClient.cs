@@ -6980,9 +6980,6 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
-        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
-        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
-        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
         /// <code>Domain</code> doesn't refer to an existing Active Directory domain.
         /// </exception>
@@ -7016,10 +7013,6 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
-        /// The request would result in the user exceeding the allowed amount of storage available
-        /// across all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available

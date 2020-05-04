@@ -17,19 +17,29 @@
  * Do not modify this file. This file is generated from the dlm-2018-01-12.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.DLM.Model
 {
-    ///<summary>
-    /// DLM exception
+    /// <summary>
+    /// Bad request. The request is missing required parameters or has invalid parameters.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class InvalidRequestException : AmazonDLMException 
+    #endif
+    public partial class InvalidRequestException : AmazonDLMException
     {
+        private string _code;
+        private List<string> _mutuallyExclusiveParameters = new List<string>();
+        private List<string> _requiredParameters = new List<string>();
+
         /// <summary>
         /// Constructs a new InvalidRequestException with the specified error
         /// message.
@@ -39,7 +49,7 @@ namespace Amazon.DLM.Model
         /// </param>
         public InvalidRequestException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of InvalidRequestException
         /// </summary>
@@ -47,14 +57,14 @@ namespace Amazon.DLM.Model
         /// <param name="innerException"></param>
         public InvalidRequestException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidRequestException
         /// </summary>
         /// <param name="innerException"></param>
         public InvalidRequestException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidRequestException
         /// </summary>
@@ -90,8 +100,85 @@ namespace Amazon.DLM.Model
         protected InvalidRequestException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Code = (string)info.GetValue("Code", typeof(string));
+            this.MutuallyExclusiveParameters = (List<string>)info.GetValue("MutuallyExclusiveParameters", typeof(List<string>));
+            this.RequiredParameters = (List<string>)info.GetValue("RequiredParameters", typeof(List<string>));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("Code", this.Code);
+            info.AddValue("MutuallyExclusiveParameters", this.MutuallyExclusiveParameters);
+            info.AddValue("RequiredParameters", this.RequiredParameters);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property Code.
+        /// </summary>
+        public string Code
+        {
+            get { return this._code; }
+            set { this._code = value; }
+        }
+
+        // Check to see if Code property is set
+        internal bool IsSetCode()
+        {
+            return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MutuallyExclusiveParameters. 
+        /// <para>
+        /// The request included parameters that cannot be provided together.
+        /// </para>
+        /// </summary>
+        public List<string> MutuallyExclusiveParameters
+        {
+            get { return this._mutuallyExclusiveParameters; }
+            set { this._mutuallyExclusiveParameters = value; }
+        }
+
+        // Check to see if MutuallyExclusiveParameters property is set
+        internal bool IsSetMutuallyExclusiveParameters()
+        {
+            return this._mutuallyExclusiveParameters != null && this._mutuallyExclusiveParameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequiredParameters. 
+        /// <para>
+        /// The request omitted one or more required parameters.
+        /// </para>
+        /// </summary>
+        public List<string> RequiredParameters
+        {
+            get { return this._requiredParameters; }
+            set { this._requiredParameters = value; }
+        }
+
+        // Check to see if RequiredParameters property is set
+        internal bool IsSetRequiredParameters()
+        {
+            return this._requiredParameters != null && this._requiredParameters.Count > 0; 
+        }
+
     }
 }

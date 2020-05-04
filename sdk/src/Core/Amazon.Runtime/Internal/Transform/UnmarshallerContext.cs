@@ -34,6 +34,7 @@ namespace Amazon.Runtime.Internal.Transform
         private bool disposed = false;
 
         protected bool MaintainResponseBody { get; set; }
+        protected bool IsException { get; set; }
         protected CrcCalculatorStream CrcStream { get; set; }
         protected int Crc32Result { get; set; }        
         protected IWebResponseData WebResponseData { get; set; }
@@ -51,9 +52,14 @@ namespace Amazon.Runtime.Internal.Transform
 
         public byte[] GetResponseBodyBytes()
         {
-            if (MaintainResponseBody)
+            if (IsException)
             {
                 return this.WrappingStream.AllReadBytes.ToArray();
+            }
+
+            if (MaintainResponseBody)
+            {
+                return this.WrappingStream.LoggableReadBytes.ToArray();
             }
             else
             {
@@ -319,19 +325,30 @@ namespace Amazon.Runtime.Internal.Transform
         /// Wrap an XmlTextReader with state for event-based parsing of an XML stream.
         /// </summary>
         /// <param name="responseStream"><c>Stream</c> with the XML from a service response.</param>
-        /// <param name="maintainResponseBody"> If set to true, maintains a copy of the complete response body as the stream is being read.</param>
+        /// <param name="maintainResponseBody"> If set to true, maintains a copy of the complete response body constraint to log response size as the stream is being read.</param>
         /// <param name="responseData">Response data coming back from the request</param>
-        public XmlUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData responseData)
+        /// <param name="isException">If set to true, maintains a copy of the complete response body as the stream is being read.</param>
+        public XmlUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData responseData, bool isException = false)
         {
-            if (maintainResponseBody)
+            if (isException)
+            {
+                this.WrappingStream = new CachingWrapperStream(responseStream);
+            }
+            else if (maintainResponseBody)
             {
                 this.WrappingStream = new CachingWrapperStream(responseStream, AWSConfigs.LoggingConfig.LogResponsesSizeLimit);
-                responseStream = this.WrappingStream;                
             }
+
+            if (isException || maintainResponseBody)
+            {
+                responseStream = this.WrappingStream;
+            }
+
             streamReader = new StreamReader(responseStream);
             this.WebResponseData = responseData;
             this.MaintainResponseBody = maintainResponseBody;
-        }        
+            this.IsException = isException;
+        }
 
         #endregion
 
@@ -524,15 +541,16 @@ namespace Amazon.Runtime.Internal.Transform
     }
 
     public class EC2UnmarshallerContext : XmlUnmarshallerContext
-    {        
+    {
         /// <summary>
         /// Wrap an XmlTextReader with state for event-based parsing of an XML stream.
         /// </summary>
         /// <param name="responseStream"><c>Stream</c> with the XML from a service response.</param>
-        /// <param name="maintainResponseBody"> If set to true, maintains a copy of the complete response body as the stream is being read.</param>
+        /// <param name="maintainResponseBody"> If set to true, maintains a copy of the complete response body constraint to log response size as the stream is being read.</param>
         /// <param name="responseData">Response data coming back from the request</param>
-        public EC2UnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData responseData)
-            : base(responseStream, maintainResponseBody, responseData)
+        /// <param name="isException">If set to true, maintains a copy of the complete response body as the stream is being read.</param>
+        public EC2UnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData responseData, bool isException = false)
+            : base(responseStream, maintainResponseBody, responseData, isException)
         {
         }
 

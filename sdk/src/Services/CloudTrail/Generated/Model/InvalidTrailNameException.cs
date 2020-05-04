@@ -17,19 +17,51 @@
  * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudTrail.Model
 {
-    ///<summary>
-    /// CloudTrail exception
+    /// <summary>
+    /// This exception is thrown when the provided trail name is not valid. Trail names must
+    /// meet the following requirements:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+    /// or dashes (-)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Start with a letter or number, and end with a letter or number
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Be between 3 and 128 characters
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+    /// and <code>my--namespace</code> are invalid.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Not be in IP address format (for example, 192.168.5.4)
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class InvalidTrailNameException : AmazonCloudTrailException 
+    #endif
+    public partial class InvalidTrailNameException : AmazonCloudTrailException
     {
+
         /// <summary>
         /// Constructs a new InvalidTrailNameException with the specified error
         /// message.
@@ -39,7 +71,7 @@ namespace Amazon.CloudTrail.Model
         /// </param>
         public InvalidTrailNameException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of InvalidTrailNameException
         /// </summary>
@@ -47,14 +79,14 @@ namespace Amazon.CloudTrail.Model
         /// <param name="innerException"></param>
         public InvalidTrailNameException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidTrailNameException
         /// </summary>
         /// <param name="innerException"></param>
         public InvalidTrailNameException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidTrailNameException
         /// </summary>
@@ -92,6 +124,26 @@ namespace Amazon.CloudTrail.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

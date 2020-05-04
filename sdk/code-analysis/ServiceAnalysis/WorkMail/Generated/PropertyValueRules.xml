@@ -658,30 +658,6 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.WorkMail.Model.DirectoryServiceAuthenticationFailedException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.DirectoryUnavailableException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.EmailAddressInUseException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.EntityAlreadyRegisteredException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.EntityNotFoundException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.EntityStateException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.WorkMail.Model.Group.Email</property>
     <min>1</min>
     <max>254</max>
@@ -699,47 +675,11 @@
     <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.WorkMail.Model.InvalidConfigurationException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.InvalidParameterException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.InvalidPasswordException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.LimitExceededException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.MailDomainNotFoundException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.MailDomainStateException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.WorkMail.Model.Member.Id</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.Member.Name</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.NameAvailabilityException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.OrganizationNotFoundException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.OrganizationStateException.Message</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -766,10 +706,6 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.WorkMail.Model.ReservedNameException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.WorkMail.Model.Resource.Email</property>
     <min>1</min>
     <max>254</max>
@@ -787,10 +723,6 @@
     <pattern>[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.WorkMail.Model.ResourceNotFoundException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.WorkMail.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
@@ -798,14 +730,6 @@
   <property-value-rule>
     <property>Amazon.WorkMail.Model.Tag.Value</property>
     <min>0</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.TooManyTagsException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.UnsupportedOperationException.Message</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>

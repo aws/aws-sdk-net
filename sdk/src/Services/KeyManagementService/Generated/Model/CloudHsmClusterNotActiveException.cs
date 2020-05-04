@@ -17,19 +17,29 @@
  * Do not modify this file. This file is generated from the kms-2014-11-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.KeyManagementService.Model
 {
-    ///<summary>
-    /// KeyManagementService exception
+    /// <summary>
+    /// The request was rejected because the AWS CloudHSM cluster that is associated with
+    /// the custom key store is not active. Initialize and activate the cluster and try the
+    /// command again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting
+    /// Started</a> in the <i>AWS CloudHSM User Guide</i>.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class CloudHsmClusterNotActiveException : AmazonKeyManagementServiceException 
+    #endif
+    public partial class CloudHsmClusterNotActiveException : AmazonKeyManagementServiceException
     {
+
         /// <summary>
         /// Constructs a new CloudHsmClusterNotActiveException with the specified error
         /// message.
@@ -39,7 +49,7 @@ namespace Amazon.KeyManagementService.Model
         /// </param>
         public CloudHsmClusterNotActiveException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of CloudHsmClusterNotActiveException
         /// </summary>
@@ -47,14 +57,14 @@ namespace Amazon.KeyManagementService.Model
         /// <param name="innerException"></param>
         public CloudHsmClusterNotActiveException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of CloudHsmClusterNotActiveException
         /// </summary>
         /// <param name="innerException"></param>
         public CloudHsmClusterNotActiveException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of CloudHsmClusterNotActiveException
         /// </summary>
@@ -92,6 +102,26 @@ namespace Amazon.KeyManagementService.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

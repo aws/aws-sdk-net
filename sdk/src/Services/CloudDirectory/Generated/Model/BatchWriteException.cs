@@ -17,19 +17,28 @@
  * Do not modify this file. This file is generated from the clouddirectory-2017-01-11.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudDirectory.Model
 {
-    ///<summary>
-    /// CloudDirectory exception
+    /// <summary>
+    /// A <code>BatchWrite</code> exception has occurred.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class BatchWriteException : AmazonCloudDirectoryException 
+    #endif
+    public partial class BatchWriteException : AmazonCloudDirectoryException
     {
+        private int? _index;
+        private BatchWriteExceptionType _type;
+
         /// <summary>
         /// Constructs a new BatchWriteException with the specified error
         /// message.
@@ -39,7 +48,7 @@ namespace Amazon.CloudDirectory.Model
         /// </param>
         public BatchWriteException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of BatchWriteException
         /// </summary>
@@ -47,14 +56,14 @@ namespace Amazon.CloudDirectory.Model
         /// <param name="innerException"></param>
         public BatchWriteException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of BatchWriteException
         /// </summary>
         /// <param name="innerException"></param>
         public BatchWriteException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of BatchWriteException
         /// </summary>
@@ -90,8 +99,62 @@ namespace Amazon.CloudDirectory.Model
         protected BatchWriteException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Index = (int)info.GetValue("Index", typeof(int));
+            this.Type = (BatchWriteExceptionType)info.GetValue("Type", typeof(BatchWriteExceptionType));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("Index", this.Index);
+            info.AddValue("Type", this.Type);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property Index.
+        /// </summary>
+        public int Index
+        {
+            get { return this._index.GetValueOrDefault(); }
+            set { this._index = value; }
+        }
+
+        // Check to see if Index property is set
+        internal bool IsSetIndex()
+        {
+            return this._index.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type.
+        /// </summary>
+        public BatchWriteExceptionType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
+        }
+
     }
 }

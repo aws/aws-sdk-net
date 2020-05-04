@@ -17,19 +17,27 @@
  * Do not modify this file. This file is generated from the iot-jobs-data-2017-09-29.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IoTJobsDataPlane.Model
 {
-    ///<summary>
-    /// IoTJobsDataPlane exception
+    /// <summary>
+    /// The rate exceeds the limit.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class ThrottlingException : AmazonIoTJobsDataPlaneException 
+    #endif
+    public partial class ThrottlingException : AmazonIoTJobsDataPlaneException
     {
+        private MemoryStream _payload;
+
         /// <summary>
         /// Constructs a new ThrottlingException with the specified error
         /// message.
@@ -39,7 +47,7 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// </param>
         public ThrottlingException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of ThrottlingException
         /// </summary>
@@ -47,14 +55,14 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// <param name="innerException"></param>
         public ThrottlingException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ThrottlingException
         /// </summary>
         /// <param name="innerException"></param>
         public ThrottlingException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ThrottlingException
         /// </summary>
@@ -90,8 +98,48 @@ namespace Amazon.IoTJobsDataPlane.Model
         protected ThrottlingException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Payload = (MemoryStream)info.GetValue("Payload", typeof(MemoryStream));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("Payload", this.Payload);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property Payload. 
+        /// <para>
+        /// The payload associated with the exception.
+        /// </para>
+        /// </summary>
+        public MemoryStream Payload
+        {
+            get { return this._payload; }
+            set { this._payload = value; }
+        }
+
+        // Check to see if Payload property is set
+        internal bool IsSetPayload()
+        {
+            return this._payload != null;
+        }
+
     }
 }

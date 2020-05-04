@@ -17,19 +17,28 @@
  * Do not modify this file. This file is generated from the accessanalyzer-2019-11-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AccessAnalyzer.Model
 {
-    ///<summary>
-    /// AccessAnalyzer exception
+    /// <summary>
+    /// Validation exception error.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class ValidationException : AmazonAccessAnalyzerException 
+    #endif
+    public partial class ValidationException : AmazonAccessAnalyzerException
     {
+        private List<ValidationExceptionField> _fieldList = new List<ValidationExceptionField>();
+        private ValidationExceptionReason _reason;
+
         /// <summary>
         /// Constructs a new ValidationException with the specified error
         /// message.
@@ -39,7 +48,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// </param>
         public ValidationException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of ValidationException
         /// </summary>
@@ -47,14 +56,14 @@ namespace Amazon.AccessAnalyzer.Model
         /// <param name="innerException"></param>
         public ValidationException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ValidationException
         /// </summary>
         /// <param name="innerException"></param>
         public ValidationException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ValidationException
         /// </summary>
@@ -90,8 +99,69 @@ namespace Amazon.AccessAnalyzer.Model
         protected ValidationException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.FieldList = (List<ValidationExceptionField>)info.GetValue("FieldList", typeof(List<ValidationExceptionField>));
+            this.Reason = (ValidationExceptionReason)info.GetValue("Reason", typeof(ValidationExceptionReason));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("FieldList", this.FieldList);
+            info.AddValue("Reason", this.Reason);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property FieldList. 
+        /// <para>
+        /// A list of fields that didn't validate.
+        /// </para>
+        /// </summary>
+        public List<ValidationExceptionField> FieldList
+        {
+            get { return this._fieldList; }
+            set { this._fieldList = value; }
+        }
+
+        // Check to see if FieldList property is set
+        internal bool IsSetFieldList()
+        {
+            return this._fieldList != null && this._fieldList.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// The reason for the exception.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public ValidationExceptionReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
+
     }
 }

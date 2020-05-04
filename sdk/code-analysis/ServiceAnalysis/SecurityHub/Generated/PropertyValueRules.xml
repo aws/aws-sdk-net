@@ -201,10 +201,6 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityHub.Model.AccessDeniedException.Message</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SecurityHub.Model.AccountDetails.Email</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -931,23 +927,11 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityHub.Model.InternalException.Message</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SecurityHub.Model.InvalidAccessException.Code</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityHub.Model.InvalidAccessException.Message</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SecurityHub.Model.InvalidInputException.Code</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityHub.Model.InvalidInputException.Message</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -968,10 +952,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.LimitExceededException.Code</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityHub.Model.LimitExceededException.Message</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1139,15 +1119,7 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityHub.Model.ResourceConflictException.Message</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SecurityHub.Model.ResourceNotFoundException.Code</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityHub.Model.ResourceNotFoundException.Message</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

@@ -17,19 +17,28 @@
  * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Redshift.Model
 {
-    ///<summary>
-    /// Redshift exception
+    /// <summary>
+    /// The request would result in user exceeding the allowed number of cluster subnet groups.
+    /// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
+    /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class ClusterSubnetGroupQuotaExceededException : AmazonRedshiftException 
+    #endif
+    public partial class ClusterSubnetGroupQuotaExceededException : AmazonRedshiftException
     {
+
         /// <summary>
         /// Constructs a new ClusterSubnetGroupQuotaExceededException with the specified error
         /// message.
@@ -39,7 +48,7 @@ namespace Amazon.Redshift.Model
         /// </param>
         public ClusterSubnetGroupQuotaExceededException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of ClusterSubnetGroupQuotaExceededException
         /// </summary>
@@ -47,14 +56,14 @@ namespace Amazon.Redshift.Model
         /// <param name="innerException"></param>
         public ClusterSubnetGroupQuotaExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ClusterSubnetGroupQuotaExceededException
         /// </summary>
         /// <param name="innerException"></param>
         public ClusterSubnetGroupQuotaExceededException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ClusterSubnetGroupQuotaExceededException
         /// </summary>
@@ -92,6 +101,26 @@ namespace Amazon.Redshift.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

@@ -17,19 +17,28 @@
  * Do not modify this file. This file is generated from the devicefarm-2015-06-23.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.DeviceFarm.Model
 {
-    ///<summary>
-    /// DeviceFarm exception
+    /// <summary>
+    /// The request doesn't comply with the AWS Identity and Access Management (IAM) tag policy.
+    /// Correct your request and then retry it.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class TagPolicyException : AmazonDeviceFarmException 
+    #endif
+    public partial class TagPolicyException : AmazonDeviceFarmException
     {
+        private string _resourceName;
+
         /// <summary>
         /// Constructs a new TagPolicyException with the specified error
         /// message.
@@ -39,7 +48,7 @@ namespace Amazon.DeviceFarm.Model
         /// </param>
         public TagPolicyException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of TagPolicyException
         /// </summary>
@@ -47,14 +56,14 @@ namespace Amazon.DeviceFarm.Model
         /// <param name="innerException"></param>
         public TagPolicyException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of TagPolicyException
         /// </summary>
         /// <param name="innerException"></param>
         public TagPolicyException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of TagPolicyException
         /// </summary>
@@ -90,8 +99,46 @@ namespace Amazon.DeviceFarm.Model
         protected TagPolicyException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ResourceName = (string)info.GetValue("ResourceName", typeof(string));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("ResourceName", this.ResourceName);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property ResourceName.
+        /// </summary>
+        [AWSProperty(Min=32, Max=1011)]
+        public string ResourceName
+        {
+            get { return this._resourceName; }
+            set { this._resourceName = value; }
+        }
+
+        // Check to see if ResourceName property is set
+        internal bool IsSetResourceName()
+        {
+            return this._resourceName != null;
+        }
+
     }
 }

@@ -17,19 +17,43 @@
  * Do not modify this file. This file is generated from the detective-2018-10-26.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Detective.Model
 {
-    ///<summary>
-    /// Detective exception
+    /// <summary>
+    /// This request cannot be completed for one of the following reasons.
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// The request would cause the number of member accounts in the behavior graph to exceed
+    /// the maximum allowed. A behavior graph cannot have more than 1000 member accounts.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The request would cause the data rate for the behavior graph to exceed the maximum
+    /// allowed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Detective is unable to verify the data rate for the member account. This is usually
+    /// because the member account is not enrolled in Amazon GuardDuty. 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class ServiceQuotaExceededException : AmazonDetectiveException 
+    #endif
+    public partial class ServiceQuotaExceededException : AmazonDetectiveException
     {
+
         /// <summary>
         /// Constructs a new ServiceQuotaExceededException with the specified error
         /// message.
@@ -39,7 +63,7 @@ namespace Amazon.Detective.Model
         /// </param>
         public ServiceQuotaExceededException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of ServiceQuotaExceededException
         /// </summary>
@@ -47,14 +71,14 @@ namespace Amazon.Detective.Model
         /// <param name="innerException"></param>
         public ServiceQuotaExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ServiceQuotaExceededException
         /// </summary>
         /// <param name="innerException"></param>
         public ServiceQuotaExceededException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ServiceQuotaExceededException
         /// </summary>
@@ -92,6 +116,26 @@ namespace Amazon.Detective.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

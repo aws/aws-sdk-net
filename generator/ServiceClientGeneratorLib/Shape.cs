@@ -63,7 +63,17 @@ namespace ServiceClientGenerator
             { "timestamp",  "DateTime"},
         };
 
-        readonly string _name;
+        private readonly string _name;
+
+        public static Shape CreateShape(ServiceModel model, string name, JsonData data)
+        {
+            var exception = data[ExceptionKey];
+            if (exception != null && exception.IsBoolean)
+            {
+                return new ExceptionShape(model, name, data);
+            }
+            return new Shape(model, name, data);
+        }
 
         /// <summary>
         /// Creates a shape with a reference to the model it's a part of, its name, and the json data of the shape pulled from the model.
@@ -74,7 +84,7 @@ namespace ServiceClientGenerator
         /// <param name="model">The model that contains the shape</param>
         /// <param name="name">The name of the shape</param>
         /// <param name="data">The json object of the shape, pulled form the model json</param>
-        public Shape(ServiceModel model, string name, JsonData data)
+        protected Shape(ServiceModel model, string name, JsonData data)
             : base(model, data)
         {
             this._name = name.ToUpperFirstCharacter();
@@ -86,7 +96,7 @@ namespace ServiceClientGenerator
         /// <summary>
         /// The name of the shape found in the model json
         /// </summary>
-        public string Name
+        public virtual string Name
         {
             get { return this._name; }
         }
@@ -276,7 +286,7 @@ namespace ServiceClientGenerator
         /// <summary>
         /// Members of the shape, defined by another shape
         /// </summary>
-        public IList<Member> Members
+        public virtual IList<Member> Members
         {
             get
             {
@@ -330,43 +340,6 @@ namespace ServiceClientGenerator
             {
                 return Members.SingleOrDefault<Member>(m => string.Equals(m.ModeledName, PayloadMemberName
                     , StringComparison.InvariantCultureIgnoreCase));
-            }
-        }
-
-
-        /// <summary>
-        /// Returns if the shape should be generated as an exception for the service
-        /// </summary>
-        public bool IsException
-        {
-            get
-            {
-                var exception = this.data[ExceptionKey];
-                if (exception == null || !exception.IsBoolean) return false;
-                return (bool)exception;
-            }
-        }
-
-        /// <summary>
-        /// Determines if the exception is marked retryable
-        /// </summary>
-        public bool IsRetryable
-        {
-            get
-            {
-                return this.data[RetryableKey] != null;
-            }
-        }
-
-        /// <summary>
-        /// Determines if a retryable exception is marked as throttling
-        /// </summary>
-        public bool Throttling
-        {
-            get
-            {
-                var throttling = this.data[RetryableKey]?[ThrottlingKey];
-                return (bool)(throttling ?? false);
             }
         }
 

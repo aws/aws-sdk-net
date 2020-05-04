@@ -371,21 +371,6 @@
     <pattern>[\x20-\x7E]+</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.CloudWatch.Model.InvalidFormatFault.Message</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.CloudWatch.Model.InvalidNextToken.Message</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.CloudWatch.Model.LimitExceededFault.Message</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.CloudWatch.Model.Metric.MetricName</property>
     <min>1</min>
     <max>255</max>
@@ -494,11 +479,6 @@
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.MetricStat.Period</property>
     <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.CloudWatch.Model.ResourceNotFound.Message</property>
-    <min>1</min>
-    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.Tag.Key</property>

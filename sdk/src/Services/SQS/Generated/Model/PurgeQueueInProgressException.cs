@@ -17,19 +17,27 @@
  * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SQS.Model
 {
-    ///<summary>
-    /// SQS exception
+    /// <summary>
+    /// Indicates that the specified queue previously received a <code>PurgeQueue</code> request
+    /// within the last 60 seconds (the time it can take to delete the messages in the queue).
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class PurgeQueueInProgressException : AmazonSQSException 
+    #endif
+    public partial class PurgeQueueInProgressException : AmazonSQSException
     {
+
         /// <summary>
         /// Constructs a new PurgeQueueInProgressException with the specified error
         /// message.
@@ -39,7 +47,7 @@ namespace Amazon.SQS.Model
         /// </param>
         public PurgeQueueInProgressException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of PurgeQueueInProgressException
         /// </summary>
@@ -47,14 +55,14 @@ namespace Amazon.SQS.Model
         /// <param name="innerException"></param>
         public PurgeQueueInProgressException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of PurgeQueueInProgressException
         /// </summary>
         /// <param name="innerException"></param>
         public PurgeQueueInProgressException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of PurgeQueueInProgressException
         /// </summary>
@@ -92,6 +100,26 @@ namespace Amazon.SQS.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

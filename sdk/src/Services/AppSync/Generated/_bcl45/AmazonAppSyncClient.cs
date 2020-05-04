@@ -342,9 +342,6 @@ namespace Amazon.AppSync
         /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
         /// The request exceeded a limit. Try your request again.
         /// </exception>
-        /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
-        /// The request exceeded a limit. Try your request again.
-        /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
         /// The resource specified in the request was not found. Check the resource, and then
         /// try again.
@@ -385,9 +382,6 @@ namespace Amazon.AppSync
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
-        /// </exception>
-        /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
-        /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
         /// The request exceeded a limit. Try your request again.

@@ -63,11 +63,6 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ElasticInference.Model.BadRequestException.Message</property>
-    <max>500000</max>
-    <pattern>^.*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.ElasticInference.Model.ElasticInferenceAccelerator.AcceleratorId</property>
     <min>1</min>
     <max>256</max>
@@ -101,19 +96,9 @@
     <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ElasticInference.Model.InternalServerException.Message</property>
-    <max>500000</max>
-    <pattern>^.*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.ElasticInference.Model.KeyValuePair.Key</property>
     <min>1</min>
     <max>256</max>
     <pattern>^\S+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ElasticInference.Model.ResourceNotFoundException.Message</property>
-    <max>500000</max>
-    <pattern>^.*$</pattern>
   </property-value-rule>
 </property-value-rules>

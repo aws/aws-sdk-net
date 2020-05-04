@@ -17,19 +17,31 @@
  * Do not modify this file. This file is generated from the eks-2017-11-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.EKS.Model
 {
-    ///<summary>
-    /// EKS exception
+    /// <summary>
+    /// At least one of your specified cluster subnets is in an Availability Zone that does
+    /// not support Amazon EKS. The exception output specifies the supported Availability
+    /// Zones for your account, from which you can choose subnets for your cluster.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class UnsupportedAvailabilityZoneException : AmazonEKSException 
+    #endif
+    public partial class UnsupportedAvailabilityZoneException : AmazonEKSException
     {
+        private string _clusterName;
+        private string _nodegroupName;
+        private List<string> _validZones = new List<string>();
+
         /// <summary>
         /// Constructs a new UnsupportedAvailabilityZoneException with the specified error
         /// message.
@@ -39,7 +51,7 @@ namespace Amazon.EKS.Model
         /// </param>
         public UnsupportedAvailabilityZoneException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of UnsupportedAvailabilityZoneException
         /// </summary>
@@ -47,14 +59,14 @@ namespace Amazon.EKS.Model
         /// <param name="innerException"></param>
         public UnsupportedAvailabilityZoneException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of UnsupportedAvailabilityZoneException
         /// </summary>
         /// <param name="innerException"></param>
         public UnsupportedAvailabilityZoneException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of UnsupportedAvailabilityZoneException
         /// </summary>
@@ -90,8 +102,89 @@ namespace Amazon.EKS.Model
         protected UnsupportedAvailabilityZoneException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ClusterName = (string)info.GetValue("ClusterName", typeof(string));
+            this.NodegroupName = (string)info.GetValue("NodegroupName", typeof(string));
+            this.ValidZones = (List<string>)info.GetValue("ValidZones", typeof(List<string>));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("ClusterName", this.ClusterName);
+            info.AddValue("NodegroupName", this.NodegroupName);
+            info.AddValue("ValidZones", this.ValidZones);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property ClusterName. 
+        /// <para>
+        /// The Amazon EKS cluster associated with the exception.
+        /// </para>
+        /// </summary>
+        public string ClusterName
+        {
+            get { return this._clusterName; }
+            set { this._clusterName = value; }
+        }
+
+        // Check to see if ClusterName property is set
+        internal bool IsSetClusterName()
+        {
+            return this._clusterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodegroupName. 
+        /// <para>
+        /// The Amazon EKS managed node group associated with the exception.
+        /// </para>
+        /// </summary>
+        public string NodegroupName
+        {
+            get { return this._nodegroupName; }
+            set { this._nodegroupName = value; }
+        }
+
+        // Check to see if NodegroupName property is set
+        internal bool IsSetNodegroupName()
+        {
+            return this._nodegroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidZones. 
+        /// <para>
+        /// The supported Availability Zones for your account. Choose subnets in these Availability
+        /// Zones for your cluster.
+        /// </para>
+        /// </summary>
+        public List<string> ValidZones
+        {
+            get { return this._validZones; }
+            set { this._validZones = value; }
+        }
+
+        // Check to see if ValidZones property is set
+        internal bool IsSetValidZones()
+        {
+            return this._validZones != null && this._validZones.Count > 0; 
+        }
+
     }
 }

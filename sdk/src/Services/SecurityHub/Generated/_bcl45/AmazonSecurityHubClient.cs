@@ -3507,9 +3507,6 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
         /// </exception>
-        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
-        /// The request was rejected because we can't find the specified resource.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateActionTarget">REST API Reference for UpdateActionTarget Operation</seealso>
         public virtual UpdateActionTargetResponse UpdateActionTarget(UpdateActionTargetRequest request)
         {
@@ -3539,9 +3536,6 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
         /// an input parameter.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
-        /// The request was rejected because we can't find the specified resource.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.

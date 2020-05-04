@@ -17,19 +17,27 @@
  * Do not modify this file. This file is generated from the fsx-2018-03-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.FSx.Model
 {
-    ///<summary>
-    /// FSx exception
+    /// <summary>
+    /// The resource specified does not support tagging.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class ResourceDoesNotSupportTaggingException : AmazonFSxException 
+    #endif
+    public partial class ResourceDoesNotSupportTaggingException : AmazonFSxException
     {
+        private string _resourceARN;
+
         /// <summary>
         /// Constructs a new ResourceDoesNotSupportTaggingException with the specified error
         /// message.
@@ -39,7 +47,7 @@ namespace Amazon.FSx.Model
         /// </param>
         public ResourceDoesNotSupportTaggingException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of ResourceDoesNotSupportTaggingException
         /// </summary>
@@ -47,14 +55,14 @@ namespace Amazon.FSx.Model
         /// <param name="innerException"></param>
         public ResourceDoesNotSupportTaggingException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ResourceDoesNotSupportTaggingException
         /// </summary>
         /// <param name="innerException"></param>
         public ResourceDoesNotSupportTaggingException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ResourceDoesNotSupportTaggingException
         /// </summary>
@@ -90,8 +98,49 @@ namespace Amazon.FSx.Model
         protected ResourceDoesNotSupportTaggingException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ResourceARN = (string)info.GetValue("ResourceARN", typeof(string));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("ResourceARN", this.ResourceARN);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property ResourceARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the resource that doesn't support tagging.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=8, Max=512)]
+        public string ResourceARN
+        {
+            get { return this._resourceARN; }
+            set { this._resourceARN = value; }
+        }
+
+        // Check to see if ResourceARN property is set
+        internal bool IsSetResourceARN()
+        {
+            return this._resourceARN != null;
+        }
+
     }
 }

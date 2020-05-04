@@ -605,9 +605,6 @@ namespace Amazon.AppConfig
         /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
         /// The requested resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
-        /// The requested resource could not be found.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
         GetConfigurationResponse GetConfiguration(GetConfigurationRequest request);
 

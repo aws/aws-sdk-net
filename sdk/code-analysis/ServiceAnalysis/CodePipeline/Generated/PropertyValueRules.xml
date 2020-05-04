@@ -636,11 +636,6 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.CodePipeline.Model.ConcurrentModificationException.Message</property>
-    <min>1</min>
-    <max>5000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.CodePipeline.Model.CurrentRevision.ChangeIdentifier</property>
     <min>1</min>
     <max>100</max>
@@ -654,11 +649,6 @@
     <property>Amazon.CodePipeline.Model.CurrentRevision.RevisionSummary</property>
     <min>1</min>
     <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.CodePipeline.Model.DuplicatedStopRequestException.Message</property>
-    <min>1</min>
-    <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.EncryptionKey.Id</property>
@@ -707,16 +697,6 @@
     <pattern>[a-zA-Z0-9_\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.CodePipeline.Model.InvalidArnException.Message</property>
-    <min>1</min>
-    <max>5000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.CodePipeline.Model.InvalidTagsException.Message</property>
-    <min>1</min>
-    <max>5000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.CodePipeline.Model.Job.AccountId</property>
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
@@ -752,11 +732,6 @@
     <min>1</min>
     <max>100</max>
     <pattern>[a-zA-Z0-9_\-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.CodePipeline.Model.OutputVariablesSizeExceededException.Message</property>
-    <min>1</min>
-    <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.PipelineContext.PipelineArn</property>
@@ -800,11 +775,6 @@
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.PipelineExecution.PipelineVersion</property>
     <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.CodePipeline.Model.PipelineExecutionNotStoppableException.Message</property>
-    <min>1</min>
-    <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.PipelineExecutionSummary.PipelineExecutionId</property>
@@ -913,11 +883,6 @@
     <property>Amazon.CodePipeline.Model.ThirdPartyJobDetails.Nonce</property>
     <min>1</min>
     <max>50</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.CodePipeline.Model.TooManyTagsException.Message</property>
-    <min>1</min>
-    <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.TransitionState.DisabledReason</property>

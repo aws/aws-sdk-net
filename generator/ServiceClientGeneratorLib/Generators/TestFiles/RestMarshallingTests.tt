@@ -12,6 +12,7 @@
 using System;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -134,9 +135,116 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             }
 #>
         }
+<#
+            foreach (var exception in operation.Exceptions)
+            {
+#>
 
-		<#
-		}
-		#>
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("<#=this.Config.ServiceModel.Type#>")]
+        [TestCategory("<#=this.Config.TestCategory#>")]
+        public void <#=operation.Name#>_<#=exception.Name#>MarshallTest()
+        {
+            var operation = service_model.FindOperation("<#=operation.Name#>");
+
+            var request = InstantiateClassGenerator.Execute<<#=operation.Name#>Request>();
+            var marshaller = new <#=operation.Name#>RequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("<#=operation.Name#>", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("<#=exception.Name#>"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+<#
+            if( operation.ResponseHeaderMembers.Count() > 0 )
+            {
+                foreach (var member in operation.ResponseHeaderMembers)
+                {
+                    if (member.Shape.IsString)
+                    {
+                        if (member.IsJsonValue)
+                        {
+#>
+                    {"<#=member.MarshallLocationName#>",Convert.ToBase64String(Encoding.UTF8.GetBytes("<#=member.MarshallLocationName#>_Value"))},
+<#
+                        }
+                        else
+                        {
+#>
+                    {"<#=member.MarshallLocationName#>","<#=member.MarshallLocationName#>_Value"},
+<#
+                        }
+
+                    }
+                    else if (member.Shape.IsInt)
+                    {
+#>
+                    {"<#=member.MarshallLocationName#>",int.MaxValue.ToString(CultureInfo.InvariantCulture)},
+<#
+                    }
+                    else if (member.Shape.IsLong)
+                    {
+#>
+                    {"<#=member.MarshallLocationName#>",long.MaxValue.ToString(CultureInfo.InvariantCulture)},
+<#
+                    }
+                    else if (member.Shape.IsDateTime)
+                    {
+#>
+                    {"<#=member.MarshallLocationName#>",ValidatorUtils.GetTestDate(TimestampFormat.<#=member.TimestampFormat#>)},
+<#
+                    }
+                    else
+                    {
+                        throw new Exception("Member " + member.Shape.Name + " cannot be handled because it's type, " + member.Shape.Type + ", is not handled.  Please Update RestMarshallingTests.tt.");
+                    }
+                }
+            }
+#>
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+<#
+                if(this.Config.ServiceModel.Type != ServiceType.Rest_Xml)
+                {
+#>
+                    {"x-amzn-ErrorType","<#=exception.Name#>"},
+<#
+                }
+#>
+                }
+            };
+
+<#
+                if(this.Config.ServiceModel.Type == ServiceType.Rest_Xml)
+                {
+#>
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = <#=operation.Name#>ResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+<#
+                }
+                else
+                {
+#>
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = <#=operation.Name#>ResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+<#
+                }
+#>
+        }
+<#
+            }
+        }
+#>
     }
 }

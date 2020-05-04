@@ -17,19 +17,29 @@
  * Do not modify this file. This file is generated from the runtime.sagemaker-2017-05-13.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SageMakerRuntime.Model
 {
-    ///<summary>
-    /// SageMakerRuntime exception
+    /// <summary>
+    /// Model (owned by the customer in the container) returned 4xx or 5xx error code.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class ModelErrorException : AmazonSageMakerRuntimeException 
+    #endif
+    public partial class ModelErrorException : AmazonSageMakerRuntimeException
     {
+        private string _logStreamArn;
+        private string _originalMessage;
+        private int? _originalStatusCode;
+
         /// <summary>
         /// Constructs a new ModelErrorException with the specified error
         /// message.
@@ -39,7 +49,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// </param>
         public ModelErrorException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of ModelErrorException
         /// </summary>
@@ -47,14 +57,14 @@ namespace Amazon.SageMakerRuntime.Model
         /// <param name="innerException"></param>
         public ModelErrorException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ModelErrorException
         /// </summary>
         /// <param name="innerException"></param>
         public ModelErrorException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ModelErrorException
         /// </summary>
@@ -90,8 +100,89 @@ namespace Amazon.SageMakerRuntime.Model
         protected ModelErrorException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.LogStreamArn = (string)info.GetValue("LogStreamArn", typeof(string));
+            this.OriginalMessage = (string)info.GetValue("OriginalMessage", typeof(string));
+            this.OriginalStatusCode = (int)info.GetValue("OriginalStatusCode", typeof(int));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("LogStreamArn", this.LogStreamArn);
+            info.AddValue("OriginalMessage", this.OriginalMessage);
+            info.AddValue("OriginalStatusCode", this.OriginalStatusCode);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property LogStreamArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the log stream. 
+        /// </para>
+        /// </summary>
+        public string LogStreamArn
+        {
+            get { return this._logStreamArn; }
+            set { this._logStreamArn = value; }
+        }
+
+        // Check to see if LogStreamArn property is set
+        internal bool IsSetLogStreamArn()
+        {
+            return this._logStreamArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginalMessage. 
+        /// <para>
+        ///  Original message. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string OriginalMessage
+        {
+            get { return this._originalMessage; }
+            set { this._originalMessage = value; }
+        }
+
+        // Check to see if OriginalMessage property is set
+        internal bool IsSetOriginalMessage()
+        {
+            return this._originalMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginalStatusCode. 
+        /// <para>
+        ///  Original status code. 
+        /// </para>
+        /// </summary>
+        public int OriginalStatusCode
+        {
+            get { return this._originalStatusCode.GetValueOrDefault(); }
+            set { this._originalStatusCode = value; }
+        }
+
+        // Check to see if OriginalStatusCode property is set
+        internal bool IsSetOriginalStatusCode()
+        {
+            return this._originalStatusCode.HasValue; 
+        }
+
     }
 }

@@ -49,10 +49,6 @@
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Macie.Model.AccessDeniedException.Message</property>
-    <max>10000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Macie.Model.AccessDeniedException.ResourceType</property>
     <max>1000</max>
   </property-value-rule>
@@ -69,10 +65,6 @@
     <max>10</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Macie.Model.InternalException.Message</property>
-    <max>10000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Macie.Model.InvalidInputException.ErrorCode</property>
     <max>10</max>
   </property-value-rule>
@@ -81,16 +73,8 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Macie.Model.InvalidInputException.Message</property>
-    <max>10000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Macie.Model.LimitExceededException.ErrorCode</property>
     <max>10</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Macie.Model.LimitExceededException.Message</property>
-    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Macie.Model.LimitExceededException.ResourceType</property>

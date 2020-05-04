@@ -207,15 +207,10 @@
     <pattern>^.{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FSx.Model.ActiveDirectoryError.ActiveDirectoryId</property>
+    <property>Amazon.FSx.Model.ActiveDirectoryErrorException.ActiveDirectoryId</property>
     <min>12</min>
     <max>12</max>
     <pattern>^d-[0-9a-f]{10}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FSx.Model.ActiveDirectoryError.Message</property>
-    <min>1</min>
-    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.Backup.BackupId</property>
@@ -246,30 +241,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FSx.Model.BackupInProgress.Message</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FSx.Model.BackupNotFound.Message</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FSx.Model.BackupRestoring.FileSystemId</property>
+    <property>Amazon.FSx.Model.BackupRestoringException.FileSystemId</property>
     <min>11</min>
     <max>21</max>
     <pattern>^(fs-[0-9a-f]{8,})$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FSx.Model.BackupRestoring.Message</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FSx.Model.BadRequest.Message</property>
-    <min>1</min>
-    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CompletionReport.Path</property>
@@ -375,22 +350,7 @@
     <pattern>^(task-[0-9a-f]{17,})$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FSx.Model.DataRepositoryTaskEnded.Message</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FSx.Model.DataRepositoryTaskExecuting.Message</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.FSx.Model.DataRepositoryTaskFailureDetails.Message</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FSx.Model.DataRepositoryTaskNotFound.Message</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
@@ -446,55 +406,20 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FSx.Model.FileSystemNotFound.Message</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FSx.Model.IncompatibleParameterError.Message</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FSx.Model.IncompatibleParameterError.Parameter</property>
+    <property>Amazon.FSx.Model.IncompatibleParameterErrorException.Parameter</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FSx.Model.InternalServerError.Message</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FSx.Model.InvalidExportPath.Message</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FSx.Model.InvalidImportPath.Message</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FSx.Model.InvalidNetworkSettings.InvalidSecurityGroupId</property>
+    <property>Amazon.FSx.Model.InvalidNetworkSettingsException.InvalidSecurityGroupId</property>
     <min>11</min>
     <max>20</max>
     <pattern>^(sg-[0-9a-f]{8,})$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FSx.Model.InvalidNetworkSettings.InvalidSubnetId</property>
+    <property>Amazon.FSx.Model.InvalidNetworkSettingsException.InvalidSubnetId</property>
     <min>15</min>
     <max>24</max>
     <pattern>^(subnet-[0-9a-f]{8,})$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FSx.Model.InvalidNetworkSettings.Message</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FSx.Model.InvalidPerUnitStorageThroughput.Message</property>
-    <min>1</min>
-    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.LustreFileSystemConfiguration.MountName</property>
@@ -514,39 +439,19 @@
     <pattern>^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FSx.Model.MissingFileSystemConfiguration.Message</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FSx.Model.NotServiceResourceError.Message</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FSx.Model.NotServiceResourceError.ResourceARN</property>
+    <property>Amazon.FSx.Model.NotServiceResourceErrorException.ResourceARN</property>
     <min>8</min>
     <max>512</max>
     <pattern>^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?&lt;!-)):){4}(?!/).{0,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FSx.Model.ResourceDoesNotSupportTagging.Message</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FSx.Model.ResourceDoesNotSupportTagging.ResourceARN</property>
+    <property>Amazon.FSx.Model.ResourceDoesNotSupportTaggingException.ResourceARN</property>
     <min>8</min>
     <max>512</max>
     <pattern>^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?&lt;!-)):){4}(?!/).{0,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FSx.Model.ResourceNotFound.Message</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FSx.Model.ResourceNotFound.ResourceARN</property>
+    <property>Amazon.FSx.Model.ResourceNotFoundException.ResourceARN</property>
     <min>8</min>
     <max>512</max>
     <pattern>^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?&lt;!-)):){4}(?!/).{0,1024}$</pattern>
@@ -618,11 +523,6 @@
     <pattern>^.{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FSx.Model.ServiceLimitExceeded.Message</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.FSx.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
@@ -633,11 +533,6 @@
     <min>0</min>
     <max>256</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FSx.Model.UnsupportedOperation.Message</property>
-    <min>1</min>
-    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateFileSystemLustreConfiguration.WeeklyMaintenanceStartTime</property>

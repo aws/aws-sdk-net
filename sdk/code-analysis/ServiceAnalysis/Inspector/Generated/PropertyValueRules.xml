@@ -283,11 +283,6 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Inspector.Model.AccessDeniedException.Message</property>
-    <min>0</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Inspector.Model.AgentAlreadyRunningAssessment.AgentId</property>
     <min>1</min>
     <max>128</max>
@@ -333,11 +328,6 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Inspector.Model.AgentsAlreadyRunningAssessmentException.Message</property>
-    <min>0</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Inspector.Model.AssessmentRun.Arn</property>
     <min>1</min>
     <max>300</max>
@@ -381,11 +371,6 @@
     <property>Amazon.Inspector.Model.AssessmentRunFilter.NamePattern</property>
     <min>1</min>
     <max>140</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Inspector.Model.AssessmentRunInProgressException.Message</property>
-    <min>0</min>
-    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector.Model.AssessmentRunNotification.Message</property>
@@ -585,26 +570,6 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Inspector.Model.InternalException.Message</property>
-    <min>0</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Inspector.Model.InvalidCrossAccountRoleException.Message</property>
-    <min>0</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Inspector.Model.InvalidInputException.Message</property>
-    <min>0</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Inspector.Model.LimitExceededException.Message</property>
-    <min>0</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Inspector.Model.NetworkInterface.NetworkInterfaceId</property>
     <min>0</min>
     <max>20000</max>
@@ -638,16 +603,6 @@
     <property>Amazon.Inspector.Model.NetworkInterface.VpcId</property>
     <min>0</min>
     <max>20000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Inspector.Model.NoSuchEntityException.Message</property>
-    <min>0</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Inspector.Model.PreviewGenerationInProgressException.Message</property>
-    <min>0</min>
-    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector.Model.PrivateIp.PrivateDnsName</property>
@@ -710,11 +665,6 @@
     <max>20000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Inspector.Model.ServiceTemporarilyUnavailableException.Message</property>
-    <min>0</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Inspector.Model.Subscription.ResourceArn</property>
     <min>1</min>
     <max>300</max>
@@ -738,10 +688,5 @@
     <property>Amazon.Inspector.Model.TelemetryMetadata.MessageType</property>
     <min>1</min>
     <max>300</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Inspector.Model.UnsupportedFeatureException.Message</property>
-    <min>0</min>
-    <max>1000</max>
   </property-value-rule>
 </property-value-rules>

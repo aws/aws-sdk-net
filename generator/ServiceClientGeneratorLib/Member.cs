@@ -735,28 +735,6 @@ namespace ServiceClientGenerator
             }
         }
 
-        public string GetSerializationInfoMethodName()
-        {
-            var simpleTypeName = DetermineType();
-
-            switch (simpleTypeName)
-            {
-                case "string":
-                case "boolean":
-                case "double":
-                    return "Get" + simpleTypeName.ToUpperFirstCharacter();
-                case "float":
-                    return "GetSingle";
-                case "integer":
-                    return "GetInt32";
-                case "long":
-                    return "GetInt64";
-
-                default:
-                    throw new Exception("Unknown serialization type " + simpleTypeName);
-            }
-        }
-
         public string GetPrimitiveType()
         {
             return this.Shape.GetPrimitiveType();
@@ -947,7 +925,7 @@ namespace ServiceClientGenerator
             get
             {
                 var memberShape = this.model.DocumentRoot[ServiceModel.ShapesKey][this.Extends];
-                return new Shape(this.model, this.Extends, memberShape);
+                return Shape.CreateShape(this.model, this.Extends, memberShape);
             }
         }
 
@@ -966,7 +944,7 @@ namespace ServiceClientGenerator
                 if (memberShape == null)
                     throw new Exception("Type is missing for shape " + this.Extends);
 
-                return new Shape(this.model, this.Extends, memberShape);
+                return Shape.CreateShape(this.model, this.Extends, memberShape);
             }
         }
 

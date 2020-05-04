@@ -43,23 +43,7 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SageMakerRuntime.Model.InternalFailure.Message</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SageMakerRuntime.Model.ModelError.Message</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SageMakerRuntime.Model.ModelError.OriginalMessage</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SageMakerRuntime.Model.ServiceUnavailable.Message</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SageMakerRuntime.Model.ValidationError.Message</property>
+    <property>Amazon.SageMakerRuntime.Model.ModelErrorException.OriginalMessage</property>
     <max>2048</max>
   </property-value-rule>
 </property-value-rules>

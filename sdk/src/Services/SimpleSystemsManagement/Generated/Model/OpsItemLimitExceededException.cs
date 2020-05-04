@@ -17,19 +17,31 @@
  * Do not modify this file. This file is generated from the ssm-2014-11-06.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleSystemsManagement.Model
 {
-    ///<summary>
-    /// SimpleSystemsManagement exception
+    /// <summary>
+    /// The request caused OpsItems to exceed one or more quotas. For information about OpsItem
+    /// quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What
+    /// are the resource limits for OpsCenter?</a>.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class OpsItemLimitExceededException : AmazonSimpleSystemsManagementException 
+    #endif
+    public partial class OpsItemLimitExceededException : AmazonSimpleSystemsManagementException
     {
+        private int? _limit;
+        private string _limitType;
+        private List<string> _resourceTypes = new List<string>();
+
         /// <summary>
         /// Constructs a new OpsItemLimitExceededException with the specified error
         /// message.
@@ -39,7 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </param>
         public OpsItemLimitExceededException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of OpsItemLimitExceededException
         /// </summary>
@@ -47,14 +59,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <param name="innerException"></param>
         public OpsItemLimitExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of OpsItemLimitExceededException
         /// </summary>
         /// <param name="innerException"></param>
         public OpsItemLimitExceededException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of OpsItemLimitExceededException
         /// </summary>
@@ -90,8 +102,79 @@ namespace Amazon.SimpleSystemsManagement.Model
         protected OpsItemLimitExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Limit = (int)info.GetValue("Limit", typeof(int));
+            this.LimitType = (string)info.GetValue("LimitType", typeof(string));
+            this.ResourceTypes = (List<string>)info.GetValue("ResourceTypes", typeof(List<string>));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("Limit", this.Limit);
+            info.AddValue("LimitType", this.LimitType);
+            info.AddValue("ResourceTypes", this.ResourceTypes);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property Limit.
+        /// </summary>
+        public int Limit
+        {
+            get { return this._limit.GetValueOrDefault(); }
+            set { this._limit = value; }
+        }
+
+        // Check to see if Limit property is set
+        internal bool IsSetLimit()
+        {
+            return this._limit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LimitType.
+        /// </summary>
+        public string LimitType
+        {
+            get { return this._limitType; }
+            set { this._limitType = value; }
+        }
+
+        // Check to see if LimitType property is set
+        internal bool IsSetLimitType()
+        {
+            return this._limitType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceTypes.
+        /// </summary>
+        public List<string> ResourceTypes
+        {
+            get { return this._resourceTypes; }
+            set { this._resourceTypes = value; }
+        }
+
+        // Check to see if ResourceTypes property is set
+        internal bool IsSetResourceTypes()
+        {
+            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+        }
+
     }
 }

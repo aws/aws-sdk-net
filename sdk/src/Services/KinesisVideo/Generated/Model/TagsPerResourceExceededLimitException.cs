@@ -17,19 +17,27 @@
  * Do not modify this file. This file is generated from the kinesisvideo-2017-09-30.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.KinesisVideo.Model
 {
-    ///<summary>
-    /// KinesisVideo exception
+    /// <summary>
+    /// You have exceeded the limit of tags that you can associate with the resource. Kinesis
+    /// video streams support up to 50 tags.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class TagsPerResourceExceededLimitException : AmazonKinesisVideoException 
+    #endif
+    public partial class TagsPerResourceExceededLimitException : AmazonKinesisVideoException
     {
+
         /// <summary>
         /// Constructs a new TagsPerResourceExceededLimitException with the specified error
         /// message.
@@ -39,7 +47,7 @@ namespace Amazon.KinesisVideo.Model
         /// </param>
         public TagsPerResourceExceededLimitException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of TagsPerResourceExceededLimitException
         /// </summary>
@@ -47,14 +55,14 @@ namespace Amazon.KinesisVideo.Model
         /// <param name="innerException"></param>
         public TagsPerResourceExceededLimitException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of TagsPerResourceExceededLimitException
         /// </summary>
         /// <param name="innerException"></param>
         public TagsPerResourceExceededLimitException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of TagsPerResourceExceededLimitException
         /// </summary>
@@ -92,6 +100,26 @@ namespace Amazon.KinesisVideo.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

@@ -2443,9 +2443,6 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
         /// </exception>
-        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
-        /// The request was rejected because we can't find the specified resource.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateActionTarget">REST API Reference for UpdateActionTarget Operation</seealso>
         UpdateActionTargetResponse UpdateActionTarget(UpdateActionTargetRequest request);
 

@@ -502,7 +502,7 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.StepFunctions.Model.ResourceNotFound.ResourceName</property>
+    <property>Amazon.StepFunctions.Model.ResourceNotFoundException.ResourceName</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
@@ -683,7 +683,7 @@
     <max>80</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.StepFunctions.Model.TooManyTags.ResourceName</property>
+    <property>Amazon.StepFunctions.Model.TooManyTagsException.ResourceName</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>

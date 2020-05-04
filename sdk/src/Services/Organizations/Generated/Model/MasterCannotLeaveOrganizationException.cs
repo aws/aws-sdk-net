@@ -17,19 +17,28 @@
  * Do not modify this file. This file is generated from the organizations-2016-11-28.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Organizations.Model
 {
-    ///<summary>
-    /// Organizations exception
+    /// <summary>
+    /// You can't remove a master account from an organization. If you want the master account
+    /// to become a member account in another organization, you must first delete the current
+    /// organization of the master account.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class MasterCannotLeaveOrganizationException : AmazonOrganizationsException 
+    #endif
+    public partial class MasterCannotLeaveOrganizationException : AmazonOrganizationsException
     {
+
         /// <summary>
         /// Constructs a new MasterCannotLeaveOrganizationException with the specified error
         /// message.
@@ -39,7 +48,7 @@ namespace Amazon.Organizations.Model
         /// </param>
         public MasterCannotLeaveOrganizationException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of MasterCannotLeaveOrganizationException
         /// </summary>
@@ -47,14 +56,14 @@ namespace Amazon.Organizations.Model
         /// <param name="innerException"></param>
         public MasterCannotLeaveOrganizationException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of MasterCannotLeaveOrganizationException
         /// </summary>
         /// <param name="innerException"></param>
         public MasterCannotLeaveOrganizationException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of MasterCannotLeaveOrganizationException
         /// </summary>
@@ -92,6 +101,26 @@ namespace Amazon.Organizations.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

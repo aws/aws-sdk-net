@@ -103,18 +103,6 @@
     <max>16</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.MediaStoreData.Model.ContainerNotFoundException.Message</property>
-    <min>1</min>
-    <max>255</max>
-    <pattern>[ \w:\.\?-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MediaStoreData.Model.InternalServerError.Message</property>
-    <min>1</min>
-    <max>255</max>
-    <pattern>[ \w:\.\?-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.MediaStoreData.Model.Item.ContentLength</property>
     <min>0</min>
   </property-value-rule>
@@ -131,17 +119,5 @@
   <property-value-rule>
     <property>Amazon.MediaStoreData.Model.Item.Name</property>
     <pattern>[A-Za-z0-9_\.\-\~]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MediaStoreData.Model.ObjectNotFoundException.Message</property>
-    <min>1</min>
-    <max>255</max>
-    <pattern>[ \w:\.\?-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MediaStoreData.Model.RequestedRangeNotSatisfiableException.Message</property>
-    <min>1</min>
-    <max>255</max>
-    <pattern>[ \w:\.\?-]+</pattern>
   </property-value-rule>
 </property-value-rules>

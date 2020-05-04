@@ -17,19 +17,28 @@
  * Do not modify this file. This file is generated from the fsx-2018-03-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.FSx.Model
 {
-    ///<summary>
-    /// FSx exception
+    /// <summary>
+    /// An error indicating that a particular service limit was exceeded. You can increase
+    /// some service limits by contacting AWS Support.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class ServiceLimitExceededException : AmazonFSxException 
+    #endif
+    public partial class ServiceLimitExceededException : AmazonFSxException
     {
+        private ServiceLimit _limit;
+
         /// <summary>
         /// Constructs a new ServiceLimitExceededException with the specified error
         /// message.
@@ -39,7 +48,7 @@ namespace Amazon.FSx.Model
         /// </param>
         public ServiceLimitExceededException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of ServiceLimitExceededException
         /// </summary>
@@ -47,14 +56,14 @@ namespace Amazon.FSx.Model
         /// <param name="innerException"></param>
         public ServiceLimitExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ServiceLimitExceededException
         /// </summary>
         /// <param name="innerException"></param>
         public ServiceLimitExceededException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ServiceLimitExceededException
         /// </summary>
@@ -90,8 +99,49 @@ namespace Amazon.FSx.Model
         protected ServiceLimitExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Limit = (ServiceLimit)info.GetValue("Limit", typeof(ServiceLimit));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("Limit", this.Limit);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property Limit. 
+        /// <para>
+        /// Enumeration of the service limit that was exceeded. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public ServiceLimit Limit
+        {
+            get { return this._limit; }
+            set { this._limit = value; }
+        }
+
+        // Check to see if Limit property is set
+        internal bool IsSetLimit()
+        {
+            return this._limit != null;
+        }
+
     }
 }

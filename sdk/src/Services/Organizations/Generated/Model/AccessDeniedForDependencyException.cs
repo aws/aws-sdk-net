@@ -17,19 +17,29 @@
  * Do not modify this file. This file is generated from the organizations-2016-11-28.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Organizations.Model
 {
-    ///<summary>
-    /// Organizations exception
+    /// <summary>
+    /// The operation that you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code>
+    /// for <code>organizations.amazonaws.com</code> permission so that AWS Organizations
+    /// can create the required service-linked role. You don't have that permission.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class AccessDeniedForDependencyException : AmazonOrganizationsException 
+    #endif
+    public partial class AccessDeniedForDependencyException : AmazonOrganizationsException
     {
+        private AccessDeniedForDependencyExceptionReason _reason;
+
         /// <summary>
         /// Constructs a new AccessDeniedForDependencyException with the specified error
         /// message.
@@ -39,7 +49,7 @@ namespace Amazon.Organizations.Model
         /// </param>
         public AccessDeniedForDependencyException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of AccessDeniedForDependencyException
         /// </summary>
@@ -47,14 +57,14 @@ namespace Amazon.Organizations.Model
         /// <param name="innerException"></param>
         public AccessDeniedForDependencyException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of AccessDeniedForDependencyException
         /// </summary>
         /// <param name="innerException"></param>
         public AccessDeniedForDependencyException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of AccessDeniedForDependencyException
         /// </summary>
@@ -90,8 +100,45 @@ namespace Amazon.Organizations.Model
         protected AccessDeniedForDependencyException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Reason = (AccessDeniedForDependencyExceptionReason)info.GetValue("Reason", typeof(AccessDeniedForDependencyExceptionReason));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("Reason", this.Reason);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property Reason.
+        /// </summary>
+        public AccessDeniedForDependencyExceptionReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
+
     }
 }

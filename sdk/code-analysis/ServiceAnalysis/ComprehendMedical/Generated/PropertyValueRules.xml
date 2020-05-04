@@ -381,18 +381,6 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ComprehendMedical.Model.InternalServerException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ComprehendMedical.Model.InvalidEncodingException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ComprehendMedical.Model.InvalidRequestException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.OutputDataConfig.S3Bucket</property>
     <min>3</min>
     <max>63</max>
@@ -402,10 +390,6 @@
     <property>Amazon.ComprehendMedical.Model.OutputDataConfig.S3Key</property>
     <max>1024</max>
     <pattern>.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ComprehendMedical.Model.ResourceNotFoundException.Message</property>
-    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.RxNormAttribute.Text</property>
@@ -423,21 +407,5 @@
     <property>Amazon.ComprehendMedical.Model.RxNormEntity.Text</property>
     <min>1</min>
     <max>10000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ComprehendMedical.Model.ServiceUnavailableException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ComprehendMedical.Model.TextSizeLimitExceededException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ComprehendMedical.Model.TooManyRequestsException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ComprehendMedical.Model.ValidationException.Message</property>
-    <min>1</min>
   </property-value-rule>
 </property-value-rules>

@@ -17,19 +17,27 @@
  * Do not modify this file. This file is generated from the workdocs-2016-05-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.WorkDocs.Model
 {
-    ///<summary>
-    /// WorkDocs exception
+    /// <summary>
+    /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+    /// the control of the organization is failing, such as a connected Active Directory.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class FailedDependencyException : AmazonWorkDocsException 
+    #endif
+    public partial class FailedDependencyException : AmazonWorkDocsException
     {
+
         /// <summary>
         /// Constructs a new FailedDependencyException with the specified error
         /// message.
@@ -39,7 +47,7 @@ namespace Amazon.WorkDocs.Model
         /// </param>
         public FailedDependencyException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of FailedDependencyException
         /// </summary>
@@ -47,14 +55,14 @@ namespace Amazon.WorkDocs.Model
         /// <param name="innerException"></param>
         public FailedDependencyException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of FailedDependencyException
         /// </summary>
         /// <param name="innerException"></param>
         public FailedDependencyException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of FailedDependencyException
         /// </summary>
@@ -92,6 +100,26 @@ namespace Amazon.WorkDocs.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

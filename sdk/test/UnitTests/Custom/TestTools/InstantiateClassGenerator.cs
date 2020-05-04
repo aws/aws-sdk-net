@@ -185,6 +185,10 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                     if (info.SetMethod == null || info.Name == "ContentLength")
                         continue;
 
+                    if (owningObject is Exception && 
+                        (info.Name.Equals("HelpLink") || info.Name.Equals("Source") || info.Name.Equals("HResult") || info.Name.Equals("AmazonId2")))
+                        continue;
+
                     var type = info.PropertyType;
                     var propertyValue = info.GetMethod.Invoke(owningObject, new object[] { });
 

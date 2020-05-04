@@ -17,19 +17,28 @@
  * Do not modify this file. This file is generated from the dlm-2018-01-12.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.DLM.Model
 {
-    ///<summary>
-    /// DLM exception
+    /// <summary>
+    /// The request failed because a limit was exceeded.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class LimitExceededException : AmazonDLMException 
+    #endif
+    public partial class LimitExceededException : AmazonDLMException
     {
+        private string _code;
+        private string _resourceType;
+
         /// <summary>
         /// Constructs a new LimitExceededException with the specified error
         /// message.
@@ -39,7 +48,7 @@ namespace Amazon.DLM.Model
         /// </param>
         public LimitExceededException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of LimitExceededException
         /// </summary>
@@ -47,14 +56,14 @@ namespace Amazon.DLM.Model
         /// <param name="innerException"></param>
         public LimitExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of LimitExceededException
         /// </summary>
         /// <param name="innerException"></param>
         public LimitExceededException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of LimitExceededException
         /// </summary>
@@ -90,8 +99,66 @@ namespace Amazon.DLM.Model
         protected LimitExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Code = (string)info.GetValue("Code", typeof(string));
+            this.ResourceType = (string)info.GetValue("ResourceType", typeof(string));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("Code", this.Code);
+            info.AddValue("ResourceType", this.ResourceType);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property Code.
+        /// </summary>
+        public string Code
+        {
+            get { return this._code; }
+            set { this._code = value; }
+        }
+
+        // Check to see if Code property is set
+        internal bool IsSetCode()
+        {
+            return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// Value is the type of resource for which a limit was exceeded.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=500)]
+        public string ResourceType
+        {
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
+        }
+
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
+        {
+            return this._resourceType != null;
+        }
+
     }
 }

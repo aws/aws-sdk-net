@@ -17,19 +17,29 @@
  * Do not modify this file. This file is generated from the elasticfilesystem-2015-02-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticFileSystem.Model
 {
-    ///<summary>
-    /// ElasticFileSystem exception
+    /// <summary>
+    /// Returned if the access point you are trying to create already exists, with the creation
+    /// token you provided in the request.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class AccessPointAlreadyExistsException : AmazonElasticFileSystemException 
+    #endif
+    public partial class AccessPointAlreadyExistsException : AmazonElasticFileSystemException
     {
+        private string _accessPointId;
+        private string _errorCode;
+
         /// <summary>
         /// Constructs a new AccessPointAlreadyExistsException with the specified error
         /// message.
@@ -39,7 +49,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// </param>
         public AccessPointAlreadyExistsException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of AccessPointAlreadyExistsException
         /// </summary>
@@ -47,14 +57,14 @@ namespace Amazon.ElasticFileSystem.Model
         /// <param name="innerException"></param>
         public AccessPointAlreadyExistsException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of AccessPointAlreadyExistsException
         /// </summary>
         /// <param name="innerException"></param>
         public AccessPointAlreadyExistsException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of AccessPointAlreadyExistsException
         /// </summary>
@@ -90,8 +100,64 @@ namespace Amazon.ElasticFileSystem.Model
         protected AccessPointAlreadyExistsException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.AccessPointId = (string)info.GetValue("AccessPointId", typeof(string));
+            this.ErrorCode = (string)info.GetValue("ErrorCode", typeof(string));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("AccessPointId", this.AccessPointId);
+            info.AddValue("ErrorCode", this.ErrorCode);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property AccessPointId.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string AccessPointId
+        {
+            get { return this._accessPointId; }
+            set { this._accessPointId = value; }
+        }
+
+        // Check to see if AccessPointId property is set
+        internal bool IsSetAccessPointId()
+        {
+            return this._accessPointId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorCode.
+        /// </summary>
+        [AWSProperty(Required=true, Min=1)]
+        public string ErrorCode
+        {
+            get { return this._errorCode; }
+            set { this._errorCode = value; }
+        }
+
+        // Check to see if ErrorCode property is set
+        internal bool IsSetErrorCode()
+        {
+            return this._errorCode != null;
+        }
+
     }
 }

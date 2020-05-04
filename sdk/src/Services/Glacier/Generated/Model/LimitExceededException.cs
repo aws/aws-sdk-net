@@ -17,19 +17,28 @@
  * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Glacier.Model
 {
-    ///<summary>
-    /// Glacier exception
+    /// <summary>
+    /// Returned if the request results in a vault or account limit being exceeded.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class LimitExceededException : AmazonGlacierException 
+    #endif
+    public partial class LimitExceededException : AmazonGlacierException
     {
+        private string _code;
+        private string _type;
+
         /// <summary>
         /// Constructs a new LimitExceededException with the specified error
         /// message.
@@ -39,7 +48,7 @@ namespace Amazon.Glacier.Model
         /// </param>
         public LimitExceededException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of LimitExceededException
         /// </summary>
@@ -47,14 +56,14 @@ namespace Amazon.Glacier.Model
         /// <param name="innerException"></param>
         public LimitExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of LimitExceededException
         /// </summary>
         /// <param name="innerException"></param>
         public LimitExceededException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of LimitExceededException
         /// </summary>
@@ -78,16 +87,6 @@ namespace Amazon.Glacier.Model
         public LimitExceededException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
-        /// <summary>
-        /// Gets and sets the Code property.
-        /// </summary>
-        public string Code { get; set; }
-
-        /// <summary>
-        /// Gets and sets the Type property.
-        /// </summary>
-        public string Type { get; set; }
-
 
 #if !PCL && !NETSTANDARD
         /// <summary>
@@ -100,11 +99,8 @@ namespace Amazon.Glacier.Model
         protected LimitExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
-            if (info != null)
-            {
-                this.Code = info.GetString("Code");
-                this.Type = info.GetString("Type");
-            }
+            this.Code = (string)info.GetValue("Code", typeof(string));
+            this.Type = (string)info.GetValue("Type", typeof(string));
         }
 
         /// <summary>
@@ -125,12 +121,46 @@ namespace Amazon.Glacier.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
-            if (info != null)
-            {
-                info.AddValue("Code", this.Code);
-                info.AddValue("Type", this.Type);
-            }
+            info.AddValue("Code", this.Code);
+            info.AddValue("Type", this.Type);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Code. 
+        /// <para>
+        /// 400 Bad Request
+        /// </para>
+        /// </summary>
+        public string Code
+        {
+            get { return this._code; }
+            set { this._code = value; }
+        }
+
+        // Check to see if Code property is set
+        internal bool IsSetCode()
+        {
+            return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Client
+        /// </para>
+        /// </summary>
+        public string Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
+        }
+
     }
 }

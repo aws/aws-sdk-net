@@ -476,9 +476,6 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates that your request is malformed in some manner. See the exception message.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachObject">REST API Reference for AttachObject Operation</seealso>
         public virtual Task<AttachObjectResponse> AttachObjectAsync(AttachObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -707,9 +704,6 @@ namespace Amazon.CloudDirectory
         /// when the previous write did not have time to propagate to the host serving the current
         /// request. A retry (with appropriate backoff logic) is the recommended response to this
         /// exception.
-        /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
@@ -1209,9 +1203,6 @@ namespace Amazon.CloudDirectory
         /// </param>
         /// 
         /// <returns>The response from the CreateSchema service method, as returned by CloudDirectory.</returns>
-        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
-        /// Access denied. Check your permissions.
-        /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
         /// Access denied. Check your permissions.
         /// </exception>
@@ -2562,9 +2553,6 @@ namespace Amazon.CloudDirectory
         /// when the previous write did not have time to propagate to the host serving the current
         /// request. A retry (with appropriate backoff logic) is the recommended response to this
         /// exception.
-        /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
-        /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.

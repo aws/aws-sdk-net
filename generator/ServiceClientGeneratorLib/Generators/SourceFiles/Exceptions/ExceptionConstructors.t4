@@ -1,0 +1,48 @@
+﻿        /// <summary>
+        /// Constructs a new <#=this.Structure.Name#> with the specified error
+        /// message.
+        /// </summary>
+        /// <param name="message">
+        /// Describes the error encountered.
+        /// </param>
+        public <#=this.Structure.Name#>(string message) 
+            : base(message) {}
+
+        /// <summary>
+        /// Construct instance of <#=this.Structure.Name#>
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        public <#=this.Structure.Name#>(string message, Exception innerException) 
+            : base(message, innerException) {}
+
+        /// <summary>
+        /// Construct instance of <#=this.Structure.Name#>
+        /// </summary>
+        /// <param name="innerException"></param>
+        public <#=this.Structure.Name#>(Exception innerException) 
+            : base(innerException) {}
+
+        /// <summary>
+        /// Construct instance of <#=this.Structure.Name#>
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public <#=this.Structure.Name#>(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
+
+        /// <summary>
+        /// Construct instance of <#=this.Structure.Name#>
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public <#=this.Structure.Name#>(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, errorType, errorCode, requestId, statusCode) {}
+

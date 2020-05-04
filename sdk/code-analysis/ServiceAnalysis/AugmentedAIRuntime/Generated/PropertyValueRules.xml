@@ -71,10 +71,6 @@
     <pattern>^[a-z0-9](-*[a-z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AugmentedAIRuntime.Model.ConflictException.Message</property>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.AugmentedAIRuntime.Model.HumanLoopInput.InputContent</property>
     <max>3145728</max>
   </property-value-rule>
@@ -92,25 +88,5 @@
     <min>1</min>
     <max>63</max>
     <pattern>^[a-z0-9](-*[a-z0-9])*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AugmentedAIRuntime.Model.InternalServerException.Message</property>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AugmentedAIRuntime.Model.ResourceNotFoundException.Message</property>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AugmentedAIRuntime.Model.ServiceQuotaExceededException.Message</property>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AugmentedAIRuntime.Model.ThrottlingException.Message</property>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AugmentedAIRuntime.Model.ValidationException.Message</property>
-    <max>1024</max>
   </property-value-rule>
 </property-value-rules>

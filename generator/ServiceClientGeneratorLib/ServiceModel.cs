@@ -339,11 +339,11 @@ namespace ServiceClientGenerator
             }
         }
 
-        public IEnumerable<ExceptionModel> Exceptions
+        public IEnumerable<ExceptionShape> Exceptions
         {
             get
             {
-                var exceptions = new List<ExceptionModel>();
+                var exceptions = new List<ExceptionShape>();
                 foreach (var operation in this.Operations)
                 {
                     foreach (var exception in operation.Exceptions)
@@ -376,7 +376,7 @@ namespace ServiceClientGenerator
                 {
                     var type = kvp.Value["type"];
                     if (type != null && type.ToString() == "structure")
-                        list.Add(new Shape(this, kvp.Key, kvp.Value));
+                        list.Add(Shape.CreateShape(this, kvp.Key, kvp.Value));
                 }
                 return list.OrderBy(x => x.Name).ToList();
             }
@@ -392,7 +392,7 @@ namespace ServiceClientGenerator
                 var list = new List<Shape>();
                 foreach (KeyValuePair<string, JsonData> kvp in DocumentRoot[ShapesKey])
                 {
-                    list.Add(new Shape(this, kvp.Key, kvp.Value));
+                    list.Add(Shape.CreateShape(this, kvp.Key, kvp.Value));
                 }
                 return list.OrderBy(x => x.Name).ToList();
             }
@@ -435,7 +435,8 @@ namespace ServiceClientGenerator
         {
             var shapes = this.DocumentRoot[ShapesKey];
             var shape = shapes[name];
-            return new Shape(this, name, shape);
+
+            return Shape.CreateShape(this, name, shape);
         }
 
         /// <summary>

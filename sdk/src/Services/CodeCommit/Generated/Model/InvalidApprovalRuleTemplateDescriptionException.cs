@@ -17,19 +17,29 @@
  * Do not modify this file. This file is generated from the codecommit-2015-04-13.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CodeCommit.Model
 {
-    ///<summary>
-    /// CodeCommit exception
+    /// <summary>
+    /// The description for the approval rule template is not valid because it exceeds the
+    /// maximum characters allowed for a description. For more information about limits in
+    /// AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+    /// CodeCommit User Guide</a>.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class InvalidApprovalRuleTemplateDescriptionException : AmazonCodeCommitException 
+    #endif
+    public partial class InvalidApprovalRuleTemplateDescriptionException : AmazonCodeCommitException
     {
+
         /// <summary>
         /// Constructs a new InvalidApprovalRuleTemplateDescriptionException with the specified error
         /// message.
@@ -39,7 +49,7 @@ namespace Amazon.CodeCommit.Model
         /// </param>
         public InvalidApprovalRuleTemplateDescriptionException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of InvalidApprovalRuleTemplateDescriptionException
         /// </summary>
@@ -47,14 +57,14 @@ namespace Amazon.CodeCommit.Model
         /// <param name="innerException"></param>
         public InvalidApprovalRuleTemplateDescriptionException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidApprovalRuleTemplateDescriptionException
         /// </summary>
         /// <param name="innerException"></param>
         public InvalidApprovalRuleTemplateDescriptionException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidApprovalRuleTemplateDescriptionException
         /// </summary>
@@ -92,6 +102,26 @@ namespace Amazon.CodeCommit.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

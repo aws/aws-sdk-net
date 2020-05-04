@@ -353,9 +353,6 @@ namespace Amazon.RAM
         /// <exception cref="Amazon.RAM.Model.InvalidStateTransitionException">
         /// The requested state transition is not valid.
         /// </exception>
-        /// <exception cref="Amazon.RAM.Model.InvalidStateTransitionException">
-        /// The requested state transition is not valid.
-        /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
         /// The format of an Amazon Resource Name (ARN) is not valid.
         /// </exception>
@@ -370,9 +367,6 @@ namespace Amazon.RAM
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
         /// The service is not available.
-        /// </exception>
-        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
-        /// A specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
         /// A specified resource was not found.

@@ -17,19 +17,28 @@
  * Do not modify this file. This file is generated from the fsx-2018-03-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.FSx.Model
 {
-    ///<summary>
-    /// FSx exception
+    /// <summary>
+    /// An Active Directory error.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class ActiveDirectoryErrorException : AmazonFSxException 
+    #endif
+    public partial class ActiveDirectoryErrorException : AmazonFSxException
     {
+        private string _activeDirectoryId;
+        private ActiveDirectoryErrorType _type;
+
         /// <summary>
         /// Constructs a new ActiveDirectoryErrorException with the specified error
         /// message.
@@ -39,7 +48,7 @@ namespace Amazon.FSx.Model
         /// </param>
         public ActiveDirectoryErrorException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of ActiveDirectoryErrorException
         /// </summary>
@@ -47,14 +56,14 @@ namespace Amazon.FSx.Model
         /// <param name="innerException"></param>
         public ActiveDirectoryErrorException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ActiveDirectoryErrorException
         /// </summary>
         /// <param name="innerException"></param>
         public ActiveDirectoryErrorException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ActiveDirectoryErrorException
         /// </summary>
@@ -90,8 +99,69 @@ namespace Amazon.FSx.Model
         protected ActiveDirectoryErrorException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ActiveDirectoryId = (string)info.GetValue("ActiveDirectoryId", typeof(string));
+            this.Type = (ActiveDirectoryErrorType)info.GetValue("Type", typeof(ActiveDirectoryErrorType));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("ActiveDirectoryId", this.ActiveDirectoryId);
+            info.AddValue("Type", this.Type);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property ActiveDirectoryId. 
+        /// <para>
+        /// The directory ID of the directory that an error pertains to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=12)]
+        public string ActiveDirectoryId
+        {
+            get { return this._activeDirectoryId; }
+            set { this._activeDirectoryId = value; }
+        }
+
+        // Check to see if ActiveDirectoryId property is set
+        internal bool IsSetActiveDirectoryId()
+        {
+            return this._activeDirectoryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of Active Directory error.
+        /// </para>
+        /// </summary>
+        public ActiveDirectoryErrorType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
+        }
+
     }
 }

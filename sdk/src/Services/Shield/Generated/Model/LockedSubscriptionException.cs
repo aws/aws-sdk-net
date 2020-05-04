@@ -17,19 +17,29 @@
  * Do not modify this file. This file is generated from the shield-2016-06-02.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Shield.Model
 {
-    ///<summary>
-    /// Shield exception
+    /// <summary>
+    /// You are trying to update a subscription that has not yet completed the 1-year commitment.
+    /// You can change the <code>AutoRenew</code> parameter during the last 30 days of your
+    /// subscription. This exception indicates that you are attempting to change <code>AutoRenew</code>
+    /// prior to that period.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class LockedSubscriptionException : AmazonShieldException 
+    #endif
+    public partial class LockedSubscriptionException : AmazonShieldException
     {
+
         /// <summary>
         /// Constructs a new LockedSubscriptionException with the specified error
         /// message.
@@ -39,7 +49,7 @@ namespace Amazon.Shield.Model
         /// </param>
         public LockedSubscriptionException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of LockedSubscriptionException
         /// </summary>
@@ -47,14 +57,14 @@ namespace Amazon.Shield.Model
         /// <param name="innerException"></param>
         public LockedSubscriptionException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of LockedSubscriptionException
         /// </summary>
         /// <param name="innerException"></param>
         public LockedSubscriptionException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of LockedSubscriptionException
         /// </summary>
@@ -92,6 +102,26 @@ namespace Amazon.Shield.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

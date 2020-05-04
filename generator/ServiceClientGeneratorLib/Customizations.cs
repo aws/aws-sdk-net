@@ -420,7 +420,6 @@ namespace ServiceClientGenerator
         public const string TypeKey = "Type";
         public const string MarshallerKey = "Marshaller";
         public const string UnmarshallerKey = "Unmarshaller";
-        public const string GenerateComplexExceptionKey = "generateComplexException";
         public const string SuppressSimpleMethodExceptionDocsKey = "suppressSimpleMethodExceptionDocs";
         public const string XHttpMethodOverrideKey = "xHttpMethodOverride";
         public const string XamarinSampleSolutionFileKey = "xamarinSamples";
@@ -622,23 +621,6 @@ namespace ServiceClientGenerator
                 {
                     return false;
                 }
-            }
-        }
-
-        public bool GenerateComplexException
-        {
-            get
-            {
-                var flag = _documentRoot[GenerateComplexExceptionKey];
-                if (flag != null && flag.IsBoolean)
-                {
-                    return (bool)flag;
-                }
-                else if (flag != null && flag.IsString)
-                {
-                    return bool.Parse((string)flag);
-                }
-                return false;
             }
         }
 

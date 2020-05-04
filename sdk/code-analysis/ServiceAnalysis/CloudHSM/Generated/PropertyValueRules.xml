@@ -323,10 +323,6 @@
     <pattern>[\w :+=./\\-]*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.CloudHSM.Model.CloudHsmServiceException.Message</property>
-    <pattern>[\w :+=./\\-]*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.CloudHSM.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>

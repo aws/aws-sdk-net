@@ -59,7 +59,7 @@ namespace AWSSDK.UnitTests
 
         private Model UnmarshallModel(string json)
         {
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(json), true, null);
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(json), false, null);
             context.Read();
             int targetDepth = context.CurrentDepth;
             var model = new Model();

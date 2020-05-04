@@ -17,19 +17,31 @@
  * Do not modify this file. This file is generated from the ecr-2015-09-21.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ECR.Model
 {
-    ///<summary>
-    /// ECR exception
+    /// <summary>
+    /// The layer part size is not valid, or the first byte specified is not consecutive to
+    /// the last byte of a previous layer part upload.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class InvalidLayerPartException : AmazonECRException 
+    #endif
+    public partial class InvalidLayerPartException : AmazonECRException
     {
+        private long? _lastValidByteReceived;
+        private string _registryId;
+        private string _repositoryName;
+        private string _uploadId;
+
         /// <summary>
         /// Constructs a new InvalidLayerPartException with the specified error
         /// message.
@@ -39,7 +51,7 @@ namespace Amazon.ECR.Model
         /// </param>
         public InvalidLayerPartException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of InvalidLayerPartException
         /// </summary>
@@ -47,14 +59,14 @@ namespace Amazon.ECR.Model
         /// <param name="innerException"></param>
         public InvalidLayerPartException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidLayerPartException
         /// </summary>
         /// <param name="innerException"></param>
         public InvalidLayerPartException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidLayerPartException
         /// </summary>
@@ -90,8 +102,111 @@ namespace Amazon.ECR.Model
         protected InvalidLayerPartException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.LastValidByteReceived = (long)info.GetValue("LastValidByteReceived", typeof(long));
+            this.RegistryId = (string)info.GetValue("RegistryId", typeof(string));
+            this.RepositoryName = (string)info.GetValue("RepositoryName", typeof(string));
+            this.UploadId = (string)info.GetValue("UploadId", typeof(string));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("LastValidByteReceived", this.LastValidByteReceived);
+            info.AddValue("RegistryId", this.RegistryId);
+            info.AddValue("RepositoryName", this.RepositoryName);
+            info.AddValue("UploadId", this.UploadId);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property LastValidByteReceived. 
+        /// <para>
+        /// The last valid byte received from the layer part upload that is associated with the
+        /// exception.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long LastValidByteReceived
+        {
+            get { return this._lastValidByteReceived.GetValueOrDefault(); }
+            set { this._lastValidByteReceived = value; }
+        }
+
+        // Check to see if LastValidByteReceived property is set
+        internal bool IsSetLastValidByteReceived()
+        {
+            return this._lastValidByteReceived.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegistryId. 
+        /// <para>
+        /// The registry ID associated with the exception.
+        /// </para>
+        /// </summary>
+        public string RegistryId
+        {
+            get { return this._registryId; }
+            set { this._registryId = value; }
+        }
+
+        // Check to see if RegistryId property is set
+        internal bool IsSetRegistryId()
+        {
+            return this._registryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RepositoryName. 
+        /// <para>
+        /// The repository name associated with the exception.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=256)]
+        public string RepositoryName
+        {
+            get { return this._repositoryName; }
+            set { this._repositoryName = value; }
+        }
+
+        // Check to see if RepositoryName property is set
+        internal bool IsSetRepositoryName()
+        {
+            return this._repositoryName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UploadId. 
+        /// <para>
+        /// The upload ID associated with the exception.
+        /// </para>
+        /// </summary>
+        public string UploadId
+        {
+            get { return this._uploadId; }
+            set { this._uploadId = value; }
+        }
+
+        // Check to see if UploadId property is set
+        internal bool IsSetUploadId()
+        {
+            return this._uploadId != null;
+        }
+
     }
 }

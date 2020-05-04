@@ -17,19 +17,123 @@
  * Do not modify this file. This file is generated from the organizations-2016-11-28.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Organizations.Model
 {
-    ///<summary>
-    /// Organizations exception
+    /// <summary>
+    /// The requested operation failed because you provided invalid values for one or more
+    /// of the request parameters. This exception includes a reason that contains additional
+    /// information about the violated limit:
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Some of the reasons in the following list might not be applicable to this specific
+    /// API or operation:
+    /// </para>
+    ///  </note> <ul> <li> 
+    /// <para>
+    /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// INPUT_REQUIRED: You must include a value for all required parameters.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// INVALID_ENUM: You specified an invalid value.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one
+    /// invalid value.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
+    /// the response to a previous call of the operation.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization,
+    /// or email) as a party.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the
+    /// required pattern.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
+    /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid Amazon Resource Name (ARN)
+    /// for the organization.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// INVALID_SYSTEM_TAGS_PARAMETER: You specified a tag key that is a system tag. You can’t
+    /// add, edit, or delete system tag keys because they're reserved for AWS use. System
+    /// tags don’t count against your tags per resource limit.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than
+    /// allowed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than
+    /// allowed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
+    /// in the same root.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class InvalidInputException : AmazonOrganizationsException 
+    #endif
+    public partial class InvalidInputException : AmazonOrganizationsException
     {
+        private InvalidInputExceptionReason _reason;
+
         /// <summary>
         /// Constructs a new InvalidInputException with the specified error
         /// message.
@@ -39,7 +143,7 @@ namespace Amazon.Organizations.Model
         /// </param>
         public InvalidInputException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of InvalidInputException
         /// </summary>
@@ -47,14 +151,14 @@ namespace Amazon.Organizations.Model
         /// <param name="innerException"></param>
         public InvalidInputException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidInputException
         /// </summary>
         /// <param name="innerException"></param>
         public InvalidInputException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidInputException
         /// </summary>
@@ -90,8 +194,45 @@ namespace Amazon.Organizations.Model
         protected InvalidInputException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Reason = (InvalidInputExceptionReason)info.GetValue("Reason", typeof(InvalidInputExceptionReason));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("Reason", this.Reason);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property Reason.
+        /// </summary>
+        public InvalidInputExceptionReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
+
     }
 }

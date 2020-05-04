@@ -17,19 +17,29 @@
  * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Route53.Model
 {
-    ///<summary>
-    /// Route53 exception
+    /// <summary>
+    /// You can create a hosted zone that has the same name as an existing hosted zone (example.com
+    /// is common), but there is a limit to the number of hosted zones that have the same
+    /// name. If you get this error, Amazon Route 53 has reached that limit. If you own the
+    /// domain name and Route 53 generates this error, contact Customer Support.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class DelegationSetNotAvailableException : AmazonRoute53Exception 
+    #endif
+    public partial class DelegationSetNotAvailableException : AmazonRoute53Exception
     {
+
         /// <summary>
         /// Constructs a new DelegationSetNotAvailableException with the specified error
         /// message.
@@ -39,7 +49,7 @@ namespace Amazon.Route53.Model
         /// </param>
         public DelegationSetNotAvailableException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of DelegationSetNotAvailableException
         /// </summary>
@@ -47,14 +57,14 @@ namespace Amazon.Route53.Model
         /// <param name="innerException"></param>
         public DelegationSetNotAvailableException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of DelegationSetNotAvailableException
         /// </summary>
         /// <param name="innerException"></param>
         public DelegationSetNotAvailableException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of DelegationSetNotAvailableException
         /// </summary>
@@ -92,6 +102,26 @@ namespace Amazon.Route53.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

@@ -17,19 +17,183 @@
  * Do not modify this file. This file is generated from the organizations-2016-11-28.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Organizations.Model
 {
-    ///<summary>
-    /// Organizations exception
+    /// <summary>
+    /// Performing this operation violates a minimum or maximum value limit. For example,
+    /// attempting to remove the last service control policy (SCP) from an OU or root, inviting
+    /// or creating too many accounts to the organization, or attaching too many policies
+    /// to an account, OU, or root. This exception includes a reason that contains additional
+    /// information about the violated limit.
+    /// 
+    ///  
+    /// <para>
+    /// Some of the reasons in the following list might not be applicable to this specific
+    /// API or operation:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
+    /// that doesn't yet have enough information to exist as a standalone account. This account
+    /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
+    /// href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+    /// leave an organization when all required account information has not yet been provided</a>
+    /// in the <i>AWS Organizations User Guide.</i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
+    /// from the organization that doesn't yet have enough information to exist as a standalone
+    /// account. This account requires you to first complete phone verification. Follow the
+    /// steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+    /// leave an organization when all required account information has not yet been provided</a>
+    /// in the <i>AWS Organizations User Guide.</i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+    /// that you can create in one day.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
+    /// accounts in an organization. If you need more accounts, contact <a href="https://console.aws.amazon.com/support/home#/">AWS
+    /// Support</a> to request an increase in your limit. 
+    /// </para>
+    ///  
+    /// <para>
+    /// Or the number of invitations that you tried to send would cause you to exceed the
+    /// limit of accounts in your organization. Send fewer invitations or contact AWS Support
+    /// to request an increase in the number of accounts.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// Deleted and closed accounts still count toward your limit.
+    /// </para>
+    ///  </note> <important> 
+    /// <para>
+    /// If you get receive this exception when running a command immediately after creating
+    /// the organization, wait one hour and try again. If after an hour it continues to fail
+    /// with this error, contact <a href="https://console.aws.amazon.com/support/home#/">AWS
+    /// Support</a>.
+    /// </para>
+    ///  </important> </li> <li> 
+    /// <para>
+    /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
+    /// account as a delegated administrator.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
+    /// first deregister this account as a delegated administrator. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
+    /// first deregister all delegated administrators for this service.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
+    /// you can send in one day.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
+    /// you first must migrate the organization's master account to the marketplace that corresponds
+    /// to the master account's address. For example, accounts with India addresses must be
+    /// associated with the AISPL marketplace. All accounts in an organization must be associated
+    /// with the same marketplace.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
+    /// contact a valid address and phone number for the master account. Then try the operation
+    /// again.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+    /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
+    /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
+    /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+    /// account, you first must associate a valid payment instrument, such as a credit card,
+    /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+    /// leave an organization when all required account information has not yet been provided</a>
+    /// in the <i>AWS Organizations User Guide.</i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED: You attempted to register
+    /// more delegated administrators than allowed for the service principal. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies
+    /// of a certain type that can be attached to an entity at one time.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// MAX_TAG_LIMIT_EXCEEDED: You have exceeded the number of tags allowed on this resource.
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
+    /// account, you first must associate a valid payment instrument, such as a credit card,
+    /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+    /// leave an organization when all required account information has not yet been provided</a>
+    /// in the <i>AWS Organizations User Guide.</i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an
+    /// entity that would cause the entity to have fewer than the minimum number of policies
+    /// of a certain type required.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+    /// deep.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
+    /// requires the organization to be configured to support all features. An organization
+    /// that supports only consolidated billing features can't perform this operation.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of OUs that you can have
+    /// in an organization.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+    /// you can have in an organization.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class ConstraintViolationException : AmazonOrganizationsException 
+    #endif
+    public partial class ConstraintViolationException : AmazonOrganizationsException
     {
+        private ConstraintViolationExceptionReason _reason;
+
         /// <summary>
         /// Constructs a new ConstraintViolationException with the specified error
         /// message.
@@ -39,7 +203,7 @@ namespace Amazon.Organizations.Model
         /// </param>
         public ConstraintViolationException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of ConstraintViolationException
         /// </summary>
@@ -47,14 +211,14 @@ namespace Amazon.Organizations.Model
         /// <param name="innerException"></param>
         public ConstraintViolationException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ConstraintViolationException
         /// </summary>
         /// <param name="innerException"></param>
         public ConstraintViolationException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ConstraintViolationException
         /// </summary>
@@ -90,8 +254,45 @@ namespace Amazon.Organizations.Model
         protected ConstraintViolationException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Reason = (ConstraintViolationExceptionReason)info.GetValue("Reason", typeof(ConstraintViolationExceptionReason));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("Reason", this.Reason);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property Reason.
+        /// </summary>
+        public ConstraintViolationExceptionReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
+
     }
 }

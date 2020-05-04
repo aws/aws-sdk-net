@@ -17,19 +17,36 @@
  * Do not modify this file. This file is generated from the kms-2014-11-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.KeyManagementService.Model
 {
-    ///<summary>
-    /// KeyManagementService exception
+    /// <summary>
+    /// The request was rejected because the specified AWS CloudHSM cluster is already associated
+    /// with a custom key store or it shares a backup history with a cluster that is associated
+    /// with a custom key store. Each custom key store must be associated with a different
+    /// AWS CloudHSM cluster.
+    /// 
+    ///  
+    /// <para>
+    /// Clusters that share a backup history have the same cluster certificate. To view the
+    /// cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
+    /// operation.
+    /// </para>
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class CloudHsmClusterInUseException : AmazonKeyManagementServiceException 
+    #endif
+    public partial class CloudHsmClusterInUseException : AmazonKeyManagementServiceException
     {
+
         /// <summary>
         /// Constructs a new CloudHsmClusterInUseException with the specified error
         /// message.
@@ -39,7 +56,7 @@ namespace Amazon.KeyManagementService.Model
         /// </param>
         public CloudHsmClusterInUseException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of CloudHsmClusterInUseException
         /// </summary>
@@ -47,14 +64,14 @@ namespace Amazon.KeyManagementService.Model
         /// <param name="innerException"></param>
         public CloudHsmClusterInUseException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of CloudHsmClusterInUseException
         /// </summary>
         /// <param name="innerException"></param>
         public CloudHsmClusterInUseException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of CloudHsmClusterInUseException
         /// </summary>
@@ -92,6 +109,26 @@ namespace Amazon.KeyManagementService.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

@@ -17,19 +17,28 @@
  * Do not modify this file. This file is generated from the importexport-2010-06-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ImportExport.Model
 {
-    ///<summary>
-    /// ImportExport exception
+    /// <summary>
+    /// Each account can create only a certain number of jobs per day. If you need to create
+    /// more than this, please contact awsimportexport@amazon.com to explain your particular
+    /// use case.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class CreateJobQuotaExceededException : AmazonImportExportException 
+    #endif
+    public partial class CreateJobQuotaExceededException : AmazonImportExportException
     {
+
         /// <summary>
         /// Constructs a new CreateJobQuotaExceededException with the specified error
         /// message.
@@ -39,7 +48,7 @@ namespace Amazon.ImportExport.Model
         /// </param>
         public CreateJobQuotaExceededException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of CreateJobQuotaExceededException
         /// </summary>
@@ -47,14 +56,14 @@ namespace Amazon.ImportExport.Model
         /// <param name="innerException"></param>
         public CreateJobQuotaExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of CreateJobQuotaExceededException
         /// </summary>
         /// <param name="innerException"></param>
         public CreateJobQuotaExceededException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of CreateJobQuotaExceededException
         /// </summary>
@@ -92,6 +101,26 @@ namespace Amazon.ImportExport.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

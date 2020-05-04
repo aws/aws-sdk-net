@@ -17,19 +17,30 @@
  * Do not modify this file. This file is generated from the backup-2018-11-15.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Backup.Model
 {
-    ///<summary>
-    /// Backup exception
+    /// <summary>
+    /// A dependent AWS service or resource returned an error to the AWS Backup service, and
+    /// the action cannot be completed.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class DependencyFailureException : AmazonBackupException 
+    #endif
+    public partial class DependencyFailureException : AmazonBackupException
     {
+        private string _code;
+        private string _context;
+        private string _type;
+
         /// <summary>
         /// Constructs a new DependencyFailureException with the specified error
         /// message.
@@ -39,7 +50,7 @@ namespace Amazon.Backup.Model
         /// </param>
         public DependencyFailureException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of DependencyFailureException
         /// </summary>
@@ -47,14 +58,14 @@ namespace Amazon.Backup.Model
         /// <param name="innerException"></param>
         public DependencyFailureException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of DependencyFailureException
         /// </summary>
         /// <param name="innerException"></param>
         public DependencyFailureException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of DependencyFailureException
         /// </summary>
@@ -90,8 +101,79 @@ namespace Amazon.Backup.Model
         protected DependencyFailureException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Code = (string)info.GetValue("Code", typeof(string));
+            this.Context = (string)info.GetValue("Context", typeof(string));
+            this.Type = (string)info.GetValue("Type", typeof(string));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("Code", this.Code);
+            info.AddValue("Context", this.Context);
+            info.AddValue("Type", this.Type);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property Code.
+        /// </summary>
+        public string Code
+        {
+            get { return this._code; }
+            set { this._code = value; }
+        }
+
+        // Check to see if Code property is set
+        internal bool IsSetCode()
+        {
+            return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Context.
+        /// </summary>
+        public string Context
+        {
+            get { return this._context; }
+            set { this._context = value; }
+        }
+
+        // Check to see if Context property is set
+        internal bool IsSetContext()
+        {
+            return this._context != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type.
+        /// </summary>
+        public string Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
+        }
+
     }
 }

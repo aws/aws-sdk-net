@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -48,6 +49,14 @@ namespace <#=this.Config.Namespace#>.Model
     [Obsolete("<#=this.Structure.DeprecationMessage#>")]
 <#
 		}
+        if(this.Structure is ExceptionShape)
+        {
+#>
+    #if !PCL && !NETSTANDARD
+    [Serializable]
+    #endif
+<#
+        }
         bool hasStreamingMember = this.Structure?.Members.Any(member => member.IsStreaming) ?? false;
         if (this.StructureType == StructureType.Response && hasStreamingMember) 
         {
@@ -96,6 +105,23 @@ namespace <#=this.Config.Namespace#>.Model
 <#
 		        AddSimpleRequestConstructors(this.ClassName, this.Structure, this.Config.Namespace);
 
+                if(this.Structure is ExceptionShape)
+                {
+                    var exceptionShape = (ExceptionShape)this.Structure;
+                    if (exceptionShape.IsRetryable)
+                    {
+#>
+        private RetryableDetails _retryableDetails = new RetryableDetails(<#=exceptionShape.Throttling.ToString().ToLower()#>);
+<#
+#>
+
+<#
+                    }
+#>
+<#@ include file=".\Exceptions\ExceptionConstructors.t4" once="true" #>
+<#@ include file=".\Exceptions\ExceptionSerialization.t4" once="true" #>
+<#
+                }
 		        foreach(var member in this.Structure.Members)
                 {
 					if (member.IsExcluded)
@@ -336,7 +362,27 @@ namespace <#=this.Config.Namespace#>.Model
 #>
 #endregion
 <#
-		        }
+                }
+                if (this.Structure is ExceptionShape)
+                {
+                    var exceptionShape = (ExceptionShape)this.Structure;
+                    if (exceptionShape.IsRetryable)
+                    {
+#>
+        /// <summary>
+        /// Flag indicating if the exception is retryable and the associated retry
+        /// details. A null value indicates that the exception is not retryable.
+        /// </summary>
+        public override RetryableDetails Retryable
+        {
+            get
+            {
+                return _retryableDetails;
+            }
+        }
+<#
+                    }
+                }
             }
 
         }

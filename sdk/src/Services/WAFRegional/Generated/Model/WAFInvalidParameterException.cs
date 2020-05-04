@@ -17,19 +17,75 @@
  * Do not modify this file. This file is generated from the waf-regional-2016-11-28.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.WAFRegional.Model
 {
-    ///<summary>
-    /// WAFRegional exception
+    /// <summary>
+    /// The operation failed because AWS WAF didn't recognize a parameter in the request.
+    /// For example:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// You specified an invalid parameter name.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You specified an invalid value.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+    /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+    /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value
+    /// other than <code>IP</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+    /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+    /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+    /// but no value for <code>Data</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Your request references an ARN that is malformed, or corresponds to a resource with
+    /// which a web ACL cannot be associated.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class WAFInvalidParameterException : AmazonWAFRegionalException 
+    #endif
+    public partial class WAFInvalidParameterException : AmazonWAFRegionalException
     {
+        private ParameterExceptionField _field;
+        private string _parameter;
+        private ParameterExceptionReason _reason;
+
         /// <summary>
         /// Constructs a new WAFInvalidParameterException with the specified error
         /// message.
@@ -39,7 +95,7 @@ namespace Amazon.WAFRegional.Model
         /// </param>
         public WAFInvalidParameterException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of WAFInvalidParameterException
         /// </summary>
@@ -47,14 +103,14 @@ namespace Amazon.WAFRegional.Model
         /// <param name="innerException"></param>
         public WAFInvalidParameterException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of WAFInvalidParameterException
         /// </summary>
         /// <param name="innerException"></param>
         public WAFInvalidParameterException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of WAFInvalidParameterException
         /// </summary>
@@ -90,8 +146,80 @@ namespace Amazon.WAFRegional.Model
         protected WAFInvalidParameterException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Field = (ParameterExceptionField)info.GetValue("Field", typeof(ParameterExceptionField));
+            this.Parameter = (string)info.GetValue("Parameter", typeof(string));
+            this.Reason = (ParameterExceptionReason)info.GetValue("Reason", typeof(ParameterExceptionReason));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("Field", this.Field);
+            info.AddValue("Parameter", this.Parameter);
+            info.AddValue("Reason", this.Reason);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property Field.
+        /// </summary>
+        public ParameterExceptionField Field
+        {
+            get { return this._field; }
+            set { this._field = value; }
+        }
+
+        // Check to see if Field property is set
+        internal bool IsSetField()
+        {
+            return this._field != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameter.
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string Parameter
+        {
+            get { return this._parameter; }
+            set { this._parameter = value; }
+        }
+
+        // Check to see if Parameter property is set
+        internal bool IsSetParameter()
+        {
+            return this._parameter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Reason.
+        /// </summary>
+        public ParameterExceptionReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
+
     }
 }

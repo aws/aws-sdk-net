@@ -17,19 +17,27 @@
  * Do not modify this file. This file is generated from the lambda-2015-03-31.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Lambda.Model
 {
-    ///<summary>
-    /// Lambda exception
+    /// <summary>
+    /// The Security Group ID provided in the Lambda function VPC configuration is invalid.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class InvalidSecurityGroupIDException : AmazonLambdaException 
+    #endif
+    public partial class InvalidSecurityGroupIDException : AmazonLambdaException
     {
+        private string _type;
+
         /// <summary>
         /// Constructs a new InvalidSecurityGroupIDException with the specified error
         /// message.
@@ -39,7 +47,7 @@ namespace Amazon.Lambda.Model
         /// </param>
         public InvalidSecurityGroupIDException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of InvalidSecurityGroupIDException
         /// </summary>
@@ -47,14 +55,14 @@ namespace Amazon.Lambda.Model
         /// <param name="innerException"></param>
         public InvalidSecurityGroupIDException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidSecurityGroupIDException
         /// </summary>
         /// <param name="innerException"></param>
         public InvalidSecurityGroupIDException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidSecurityGroupIDException
         /// </summary>
@@ -90,8 +98,45 @@ namespace Amazon.Lambda.Model
         protected InvalidSecurityGroupIDException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Type = (string)info.GetValue("Type", typeof(string));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("Type", this.Type);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property Type.
+        /// </summary>
+        public string Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
+        }
+
     }
 }

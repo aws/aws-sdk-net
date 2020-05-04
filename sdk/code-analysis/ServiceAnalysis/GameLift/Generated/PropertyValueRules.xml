@@ -1207,10 +1207,6 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.GameLift.Model.ConflictException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.GameLift.Model.Credentials.AccessKeyId</property>
     <min>1</min>
   </property-value-rule>
@@ -1338,10 +1334,6 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.FleetCapacity.FleetId</property>
     <pattern>^fleet-\S+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.GameLift.Model.FleetCapacityExceededException.Message</property>
-    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.FleetUtilization.ActiveGameSessionCount</property>
@@ -1502,10 +1494,6 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.GameLift.Model.GameSessionFullException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.GameLift.Model.GameSessionPlacement.GameSessionArn</property>
     <min>1</min>
     <max>1024</max>
@@ -1579,10 +1567,6 @@
     <pattern>[a-zA-Z0-9:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.GameLift.Model.IdempotentParameterMismatchException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.GameLift.Model.Instance.FleetId</property>
     <pattern>^fleet-\S+</pattern>
   </property-value-rule>
@@ -1613,22 +1597,6 @@
     <pattern>^[\u0031-\u0039][\u0030-\u0039]{0,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.GameLift.Model.InternalServiceException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.GameLift.Model.InvalidFleetStatusException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.GameLift.Model.InvalidGameSessionStatusException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.GameLift.Model.InvalidRequestException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.GameLift.Model.IpPermission.FromPort</property>
     <min>1</min>
     <max>60000</max>
@@ -1657,10 +1625,6 @@
     <property>Amazon.GameLift.Model.LaunchTemplateSpecification.Version</property>
     <min>1</min>
     <max>128</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.GameLift.Model.LimitExceededException.Message</property>
-    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.MatchedPlayerSession.PlayerId</property>
@@ -1755,14 +1719,6 @@
     <property>Amazon.GameLift.Model.MatchmakingTicket.TicketId</property>
     <max>128</max>
     <pattern>[a-zA-Z0-9-\.]*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.GameLift.Model.NotFoundException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.GameLift.Model.OutOfCapacityException.Message</property>
-    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.PlacedPlayerSession.PlayerId</property>
@@ -1931,24 +1887,8 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.GameLift.Model.TaggingFailedException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.GameLift.Model.TargetTrackingConfiguration.TargetValue</property>
     <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.GameLift.Model.TerminalRoutingStrategyException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.GameLift.Model.UnauthorizedException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.GameLift.Model.UnsupportedRegionException.Message</property>
-    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.VpcPeeringAuthorization.GameLiftAwsAccountId</property>

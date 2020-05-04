@@ -17,19 +17,29 @@
  * Do not modify this file. This file is generated from the fsx-2018-03-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.FSx.Model
 {
-    ///<summary>
-    /// FSx exception
+    /// <summary>
+    /// The error returned when a second request is received with the same client request
+    /// token but different parameters settings. A client request token should always uniquely
+    /// identify a single request.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class IncompatibleParameterErrorException : AmazonFSxException 
+    #endif
+    public partial class IncompatibleParameterErrorException : AmazonFSxException
     {
+        private string _parameter;
+
         /// <summary>
         /// Constructs a new IncompatibleParameterErrorException with the specified error
         /// message.
@@ -39,7 +49,7 @@ namespace Amazon.FSx.Model
         /// </param>
         public IncompatibleParameterErrorException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of IncompatibleParameterErrorException
         /// </summary>
@@ -47,14 +57,14 @@ namespace Amazon.FSx.Model
         /// <param name="innerException"></param>
         public IncompatibleParameterErrorException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of IncompatibleParameterErrorException
         /// </summary>
         /// <param name="innerException"></param>
         public IncompatibleParameterErrorException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of IncompatibleParameterErrorException
         /// </summary>
@@ -90,8 +100,49 @@ namespace Amazon.FSx.Model
         protected IncompatibleParameterErrorException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Parameter = (string)info.GetValue("Parameter", typeof(string));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("Parameter", this.Parameter);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property Parameter. 
+        /// <para>
+        /// A parameter that is incompatible with the earlier request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1)]
+        public string Parameter
+        {
+            get { return this._parameter; }
+            set { this._parameter = value; }
+        }
+
+        // Check to see if Parameter property is set
+        internal bool IsSetParameter()
+        {
+            return this._parameter != null;
+        }
+
     }
 }

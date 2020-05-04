@@ -17,19 +17,28 @@
  * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFormation.Model
 {
-    ///<summary>
-    /// CloudFormation exception
+    /// <summary>
+    /// The specified change set can't be used to update the stack. For example, the change
+    /// set status might be <code>CREATE_IN_PROGRESS</code>, or the stack status might be
+    /// <code>UPDATE_IN_PROGRESS</code>.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class InvalidChangeSetStatusException : AmazonCloudFormationException 
+    #endif
+    public partial class InvalidChangeSetStatusException : AmazonCloudFormationException
     {
+
         /// <summary>
         /// Constructs a new InvalidChangeSetStatusException with the specified error
         /// message.
@@ -39,7 +48,7 @@ namespace Amazon.CloudFormation.Model
         /// </param>
         public InvalidChangeSetStatusException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of InvalidChangeSetStatusException
         /// </summary>
@@ -47,14 +56,14 @@ namespace Amazon.CloudFormation.Model
         /// <param name="innerException"></param>
         public InvalidChangeSetStatusException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidChangeSetStatusException
         /// </summary>
         /// <param name="innerException"></param>
         public InvalidChangeSetStatusException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidChangeSetStatusException
         /// </summary>
@@ -92,6 +101,26 @@ namespace Amazon.CloudFormation.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

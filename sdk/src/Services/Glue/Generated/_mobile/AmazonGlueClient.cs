@@ -5799,9 +5799,6 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.InvalidInputException">
         /// The input provided was not valid.
         /// </exception>
-        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
-        /// The input provided was not valid.
-        /// </exception>
         /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
         /// The operation timed out.
         /// </exception>

@@ -78,10 +78,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ExampleMetadata.tt</DependentUpon>
     </Compile>
+    <Compile Update="Generators\Marshallers\AWSQueryExceptionUnmarshaller.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AWSQueryExceptionUnmarshaller.tt</DependentUpon>
+    </Compile>
     <Compile Update="Generators\Marshallers\EndpointDiscoveryMarshaller.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>EndpointDiscoveryMarshaller.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\Marshallers\JsonRPCExceptionUnmarshaller.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>JsonRPCExceptionUnmarshaller.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\Marshallers\RestXmlExceptionUnmarshaller.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RestXmlExceptionUnmarshaller.tt</DependentUpon>
     </Compile>
     <Compile Update="Generators\NuGet\CoreNuspec.cs">
       <AutoGen>True</AutoGen>
@@ -238,11 +253,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Update="Generators\SourceFiles\ExceptionClass.cs">
-      <DependentUpon>ExceptionClass.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Update="Generators\TestFiles\EndpointDiscoveryMarshallingTests.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -395,9 +405,21 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>GettingStarted.cs</LastGenOutput>
     </None>
+    <None Update="Generators\Marshallers\AWSQueryExceptionUnmarshaller.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AWSQueryExceptionUnmarshaller.cs</LastGenOutput>
+    </None>
     <None Update="Generators\Marshallers\EndpointDiscoveryMarshaller.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>EndpointDiscoveryMarshaller.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>JsonRPCExceptionUnmarshaller.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\Marshallers\RestXmlExceptionUnmarshaller.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>RestXmlExceptionUnmarshaller.cs</LastGenOutput>
     </None>
     <None Update="Generators\NuGet\CoreNuspec.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -498,10 +520,6 @@
     <None Update="Generators\SourceFiles\BaseServiceException.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>BaseServiceException.cs</LastGenOutput>
-    </None>
-    <None Update="Generators\SourceFiles\ExceptionClass.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ExceptionClass.cs</LastGenOutput>
     </None>
     <None Update="Generators\TestFiles\EndpointDiscoveryMarshallingTests.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

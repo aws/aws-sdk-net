@@ -20,6 +20,7 @@
 
 using System;
 using System.IO;
+using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -39,7 +40,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     {
         static readonly ServiceModel service_model = Utils.LoadServiceModel("elasticbeanstalk");
         
-
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
@@ -57,7 +57,28 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void AbortEnvironmentUpdate_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AbortEnvironmentUpdate");
+
+            var request = InstantiateClassGenerator.Execute<AbortEnvironmentUpdateRequest>();
+            var marshaller = new AbortEnvironmentUpdateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = AbortEnvironmentUpdateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -81,7 +102,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void ApplyEnvironmentManagedAction_ElasticBeanstalkServiceExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ApplyEnvironmentManagedAction");
+
+            var request = InstantiateClassGenerator.Execute<ApplyEnvironmentManagedActionRequest>();
+            var marshaller = new ApplyEnvironmentManagedActionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ElasticBeanstalkServiceException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ApplyEnvironmentManagedActionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void ApplyEnvironmentManagedAction_ManagedActionInvalidStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ApplyEnvironmentManagedAction");
+
+            var request = InstantiateClassGenerator.Execute<ApplyEnvironmentManagedActionRequest>();
+            var marshaller = new ApplyEnvironmentManagedActionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ManagedActionInvalidStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ApplyEnvironmentManagedActionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -105,8 +170,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
-
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
@@ -129,7 +192,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void ComposeEnvironments_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ComposeEnvironments");
+
+            var request = InstantiateClassGenerator.Execute<ComposeEnvironmentsRequest>();
+            var marshaller = new ComposeEnvironmentsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ComposeEnvironmentsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void ComposeEnvironments_TooManyEnvironmentsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ComposeEnvironments");
+
+            var request = InstantiateClassGenerator.Execute<ComposeEnvironmentsRequest>();
+            var marshaller = new ComposeEnvironmentsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyEnvironmentsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ComposeEnvironmentsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -153,7 +260,28 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void CreateApplication_TooManyApplicationsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateApplication");
+
+            var request = InstantiateClassGenerator.Execute<CreateApplicationRequest>();
+            var marshaller = new CreateApplicationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyApplicationsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateApplicationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -177,7 +305,120 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void CreateApplicationVersion_CodeBuildNotInServiceRegionExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateApplicationVersion");
+
+            var request = InstantiateClassGenerator.Execute<CreateApplicationVersionRequest>();
+            var marshaller = new CreateApplicationVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("CodeBuildNotInServiceRegionException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateApplicationVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void CreateApplicationVersion_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateApplicationVersion");
+
+            var request = InstantiateClassGenerator.Execute<CreateApplicationVersionRequest>();
+            var marshaller = new CreateApplicationVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateApplicationVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void CreateApplicationVersion_S3LocationNotInServiceRegionExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateApplicationVersion");
+
+            var request = InstantiateClassGenerator.Execute<CreateApplicationVersionRequest>();
+            var marshaller = new CreateApplicationVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("S3LocationNotInServiceRegionException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateApplicationVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void CreateApplicationVersion_TooManyApplicationsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateApplicationVersion");
+
+            var request = InstantiateClassGenerator.Execute<CreateApplicationVersionRequest>();
+            var marshaller = new CreateApplicationVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyApplicationsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateApplicationVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void CreateApplicationVersion_TooManyApplicationVersionsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateApplicationVersion");
+
+            var request = InstantiateClassGenerator.Execute<CreateApplicationVersionRequest>();
+            var marshaller = new CreateApplicationVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyApplicationVersionsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateApplicationVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -201,7 +442,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void CreateConfigurationTemplate_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateConfigurationTemplate");
+
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationTemplateRequest>();
+            var marshaller = new CreateConfigurationTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateConfigurationTemplateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void CreateConfigurationTemplate_TooManyBucketsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateConfigurationTemplate");
+
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationTemplateRequest>();
+            var marshaller = new CreateConfigurationTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyBucketsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateConfigurationTemplateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void CreateConfigurationTemplate_TooManyConfigurationTemplatesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateConfigurationTemplate");
+
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationTemplateRequest>();
+            var marshaller = new CreateConfigurationTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyConfigurationTemplatesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateConfigurationTemplateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -225,7 +533,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void CreateEnvironment_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateEnvironment");
+
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentRequest>();
+            var marshaller = new CreateEnvironmentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateEnvironmentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void CreateEnvironment_TooManyEnvironmentsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateEnvironment");
+
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentRequest>();
+            var marshaller = new CreateEnvironmentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyEnvironmentsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateEnvironmentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -249,7 +601,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void CreatePlatformVersion_ElasticBeanstalkServiceExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreatePlatformVersion");
+
+            var request = InstantiateClassGenerator.Execute<CreatePlatformVersionRequest>();
+            var marshaller = new CreatePlatformVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ElasticBeanstalkServiceException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreatePlatformVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void CreatePlatformVersion_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreatePlatformVersion");
+
+            var request = InstantiateClassGenerator.Execute<CreatePlatformVersionRequest>();
+            var marshaller = new CreatePlatformVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreatePlatformVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void CreatePlatformVersion_TooManyPlatformsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreatePlatformVersion");
+
+            var request = InstantiateClassGenerator.Execute<CreatePlatformVersionRequest>();
+            var marshaller = new CreatePlatformVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyPlatformsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreatePlatformVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -273,7 +692,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void CreateStorageLocation_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateStorageLocation");
+
+            var request = InstantiateClassGenerator.Execute<CreateStorageLocationRequest>();
+            var marshaller = new CreateStorageLocationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateStorageLocationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void CreateStorageLocation_S3SubscriptionRequiredExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateStorageLocation");
+
+            var request = InstantiateClassGenerator.Execute<CreateStorageLocationRequest>();
+            var marshaller = new CreateStorageLocationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("S3SubscriptionRequiredException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateStorageLocationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void CreateStorageLocation_TooManyBucketsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateStorageLocation");
+
+            var request = InstantiateClassGenerator.Execute<CreateStorageLocationRequest>();
+            var marshaller = new CreateStorageLocationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyBucketsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateStorageLocationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -292,7 +778,28 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DeleteApplication_OperationInProgressExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteApplication");
+
+            var request = InstantiateClassGenerator.Execute<DeleteApplicationRequest>();
+            var marshaller = new DeleteApplicationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("OperationInProgressException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteApplicationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -311,7 +818,97 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DeleteApplicationVersion_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteApplicationVersion");
+
+            var request = InstantiateClassGenerator.Execute<DeleteApplicationVersionRequest>();
+            var marshaller = new DeleteApplicationVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteApplicationVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DeleteApplicationVersion_OperationInProgressExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteApplicationVersion");
+
+            var request = InstantiateClassGenerator.Execute<DeleteApplicationVersionRequest>();
+            var marshaller = new DeleteApplicationVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("OperationInProgressException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteApplicationVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DeleteApplicationVersion_S3LocationNotInServiceRegionExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteApplicationVersion");
+
+            var request = InstantiateClassGenerator.Execute<DeleteApplicationVersionRequest>();
+            var marshaller = new DeleteApplicationVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("S3LocationNotInServiceRegionException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteApplicationVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DeleteApplicationVersion_SourceBundleDeletionExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteApplicationVersion");
+
+            var request = InstantiateClassGenerator.Execute<DeleteApplicationVersionRequest>();
+            var marshaller = new DeleteApplicationVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SourceBundleDeletionException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteApplicationVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -330,7 +927,28 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DeleteConfigurationTemplate_OperationInProgressExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteConfigurationTemplate");
+
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationTemplateRequest>();
+            var marshaller = new DeleteConfigurationTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("OperationInProgressException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteConfigurationTemplateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -348,8 +966,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
 
         }
-
-        
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -373,7 +989,97 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DeletePlatformVersion_ElasticBeanstalkServiceExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeletePlatformVersion");
+
+            var request = InstantiateClassGenerator.Execute<DeletePlatformVersionRequest>();
+            var marshaller = new DeletePlatformVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ElasticBeanstalkServiceException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeletePlatformVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DeletePlatformVersion_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeletePlatformVersion");
+
+            var request = InstantiateClassGenerator.Execute<DeletePlatformVersionRequest>();
+            var marshaller = new DeletePlatformVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeletePlatformVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DeletePlatformVersion_OperationInProgressExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeletePlatformVersion");
+
+            var request = InstantiateClassGenerator.Execute<DeletePlatformVersionRequest>();
+            var marshaller = new DeletePlatformVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("OperationInProgressException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeletePlatformVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DeletePlatformVersion_PlatformVersionStillReferencedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeletePlatformVersion");
+
+            var request = InstantiateClassGenerator.Execute<DeletePlatformVersionRequest>();
+            var marshaller = new DeletePlatformVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("PlatformVersionStillReferencedException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeletePlatformVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -397,7 +1103,28 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DescribeAccountAttributes_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAccountAttributes");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAccountAttributesRequest>();
+            var marshaller = new DescribeAccountAttributesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeAccountAttributesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -421,8 +1148,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
-
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
@@ -444,8 +1169,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 as DescribeApplicationVersionsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
-
-        
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -469,7 +1192,28 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DescribeConfigurationOptions_TooManyBucketsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeConfigurationOptions");
+
+            var request = InstantiateClassGenerator.Execute<DescribeConfigurationOptionsRequest>();
+            var marshaller = new DescribeConfigurationOptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyBucketsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeConfigurationOptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -493,7 +1237,28 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DescribeConfigurationSettings_TooManyBucketsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeConfigurationSettings");
+
+            var request = InstantiateClassGenerator.Execute<DescribeConfigurationSettingsRequest>();
+            var marshaller = new DescribeConfigurationSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyBucketsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeConfigurationSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -517,7 +1282,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DescribeEnvironmentHealth_ElasticBeanstalkServiceExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeEnvironmentHealth");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentHealthRequest>();
+            var marshaller = new DescribeEnvironmentHealthRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ElasticBeanstalkServiceException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeEnvironmentHealthResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DescribeEnvironmentHealth_InvalidRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeEnvironmentHealth");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentHealthRequest>();
+            var marshaller = new DescribeEnvironmentHealthRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidRequestException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeEnvironmentHealthResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -541,7 +1350,28 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DescribeEnvironmentManagedActionHistory_ElasticBeanstalkServiceExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeEnvironmentManagedActionHistory");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentManagedActionHistoryRequest>();
+            var marshaller = new DescribeEnvironmentManagedActionHistoryRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ElasticBeanstalkServiceException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeEnvironmentManagedActionHistoryResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -565,7 +1395,28 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DescribeEnvironmentManagedActions_ElasticBeanstalkServiceExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeEnvironmentManagedActions");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentManagedActionsRequest>();
+            var marshaller = new DescribeEnvironmentManagedActionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ElasticBeanstalkServiceException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeEnvironmentManagedActionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -589,7 +1440,28 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DescribeEnvironmentResources_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeEnvironmentResources");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentResourcesRequest>();
+            var marshaller = new DescribeEnvironmentResourcesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeEnvironmentResourcesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -613,8 +1485,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
-
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
@@ -636,8 +1506,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 as DescribeEventsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
-
-        
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -661,7 +1529,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DescribeInstancesHealth_ElasticBeanstalkServiceExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeInstancesHealth");
+
+            var request = InstantiateClassGenerator.Execute<DescribeInstancesHealthRequest>();
+            var marshaller = new DescribeInstancesHealthRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ElasticBeanstalkServiceException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeInstancesHealthResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DescribeInstancesHealth_InvalidRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeInstancesHealth");
+
+            var request = InstantiateClassGenerator.Execute<DescribeInstancesHealthRequest>();
+            var marshaller = new DescribeInstancesHealthRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidRequestException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeInstancesHealthResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -685,7 +1597,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DescribePlatformVersion_ElasticBeanstalkServiceExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribePlatformVersion");
+
+            var request = InstantiateClassGenerator.Execute<DescribePlatformVersionRequest>();
+            var marshaller = new DescribePlatformVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ElasticBeanstalkServiceException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribePlatformVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DescribePlatformVersion_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribePlatformVersion");
+
+            var request = InstantiateClassGenerator.Execute<DescribePlatformVersionRequest>();
+            var marshaller = new DescribePlatformVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribePlatformVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -709,8 +1665,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
-
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
@@ -732,8 +1686,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 as ListPlatformBranchesResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
-
-        
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -757,7 +1709,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void ListPlatformVersions_ElasticBeanstalkServiceExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListPlatformVersions");
+
+            var request = InstantiateClassGenerator.Execute<ListPlatformVersionsRequest>();
+            var marshaller = new ListPlatformVersionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ElasticBeanstalkServiceException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListPlatformVersionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void ListPlatformVersions_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListPlatformVersions");
+
+            var request = InstantiateClassGenerator.Execute<ListPlatformVersionsRequest>();
+            var marshaller = new ListPlatformVersionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListPlatformVersionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -781,7 +1777,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void ListTagsForResource_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListTagsForResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void ListTagsForResource_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListTagsForResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void ListTagsForResource_ResourceTypeNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceTypeNotSupportedException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListTagsForResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -800,7 +1863,28 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void RebuildEnvironment_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RebuildEnvironment");
+
+            var request = InstantiateClassGenerator.Execute<RebuildEnvironmentRequest>();
+            var marshaller = new RebuildEnvironmentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RebuildEnvironmentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -819,8 +1903,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         }
 
-        
-
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
@@ -837,8 +1919,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
 
         }
-
-        
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -862,8 +1942,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
-
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
@@ -880,8 +1958,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
 
         }
-
-        
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -905,7 +1981,28 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void TerminateEnvironment_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("TerminateEnvironment");
+
+            var request = InstantiateClassGenerator.Execute<TerminateEnvironmentRequest>();
+            var marshaller = new TerminateEnvironmentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = TerminateEnvironmentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -929,8 +2026,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
-
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
@@ -953,7 +2048,28 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void UpdateApplicationResourceLifecycle_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateApplicationResourceLifecycle");
+
+            var request = InstantiateClassGenerator.Execute<UpdateApplicationResourceLifecycleRequest>();
+            var marshaller = new UpdateApplicationResourceLifecycleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = UpdateApplicationResourceLifecycleResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -977,8 +2093,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
-
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
@@ -1001,7 +2115,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void UpdateConfigurationTemplate_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateConfigurationTemplate");
+
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationTemplateRequest>();
+            var marshaller = new UpdateConfigurationTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = UpdateConfigurationTemplateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void UpdateConfigurationTemplate_TooManyBucketsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateConfigurationTemplate");
+
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationTemplateRequest>();
+            var marshaller = new UpdateConfigurationTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyBucketsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = UpdateConfigurationTemplateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -1025,7 +2183,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void UpdateEnvironment_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateEnvironment");
+
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>();
+            var marshaller = new UpdateEnvironmentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = UpdateEnvironmentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void UpdateEnvironment_TooManyBucketsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateEnvironment");
+
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>();
+            var marshaller = new UpdateEnvironmentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyBucketsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = UpdateEnvironmentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -1044,7 +2246,120 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void UpdateTagsForResource_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<UpdateTagsForResourceRequest>();
+            var marshaller = new UpdateTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = UpdateTagsForResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void UpdateTagsForResource_OperationInProgressExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<UpdateTagsForResourceRequest>();
+            var marshaller = new UpdateTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("OperationInProgressException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = UpdateTagsForResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void UpdateTagsForResource_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<UpdateTagsForResourceRequest>();
+            var marshaller = new UpdateTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = UpdateTagsForResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void UpdateTagsForResource_ResourceTypeNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<UpdateTagsForResourceRequest>();
+            var marshaller = new UpdateTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceTypeNotSupportedException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = UpdateTagsForResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void UpdateTagsForResource_TooManyTagsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<UpdateTagsForResourceRequest>();
+            var marshaller = new UpdateTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyTagsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = UpdateTagsForResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -1068,6 +2383,50 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
-        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void ValidateConfigurationSettings_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ValidateConfigurationSettings");
+
+            var request = InstantiateClassGenerator.Execute<ValidateConfigurationSettingsRequest>();
+            var marshaller = new ValidateConfigurationSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ValidateConfigurationSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void ValidateConfigurationSettings_TooManyBucketsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ValidateConfigurationSettings");
+
+            var request = InstantiateClassGenerator.Execute<ValidateConfigurationSettingsRequest>();
+            var marshaller = new ValidateConfigurationSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyBucketsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ValidateConfigurationSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
     }
 }

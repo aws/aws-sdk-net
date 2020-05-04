@@ -17,19 +17,30 @@
  * Do not modify this file. This file is generated from the ecs-2014-11-13.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ECS.Model
 {
-    ///<summary>
-    /// ECS exception
+    /// <summary>
+    /// There is already a current Amazon ECS container agent update in progress on the specified
+    /// container instance. If the container agent becomes disconnected while it is in a transitional
+    /// stage, such as <code>PENDING</code> or <code>STAGING</code>, the update process can
+    /// get stuck in that state. However, when the agent reconnects, it resumes where it stopped
+    /// previously.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class UpdateInProgressException : AmazonECSException 
+    #endif
+    public partial class UpdateInProgressException : AmazonECSException
     {
+
         /// <summary>
         /// Constructs a new UpdateInProgressException with the specified error
         /// message.
@@ -39,7 +50,7 @@ namespace Amazon.ECS.Model
         /// </param>
         public UpdateInProgressException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of UpdateInProgressException
         /// </summary>
@@ -47,14 +58,14 @@ namespace Amazon.ECS.Model
         /// <param name="innerException"></param>
         public UpdateInProgressException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of UpdateInProgressException
         /// </summary>
         /// <param name="innerException"></param>
         public UpdateInProgressException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of UpdateInProgressException
         /// </summary>
@@ -92,6 +103,26 @@ namespace Amazon.ECS.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

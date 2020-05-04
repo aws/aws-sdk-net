@@ -17,19 +17,30 @@
  * Do not modify this file. This file is generated from the codepipeline-2015-07-09.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CodePipeline.Model
 {
-    ///<summary>
-    /// CodePipeline exception
+    /// <summary>
+    /// The pipeline execution is already in a <code>Stopping</code> state. If you already
+    /// chose to stop and wait, you cannot make that request again. You can choose to stop
+    /// and abandon now, but be aware that this option can lead to failed tasks or out of
+    /// sequence tasks. If you already chose to stop and abandon, you cannot make that request
+    /// again.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class DuplicatedStopRequestException : AmazonCodePipelineException 
+    #endif
+    public partial class DuplicatedStopRequestException : AmazonCodePipelineException
     {
+
         /// <summary>
         /// Constructs a new DuplicatedStopRequestException with the specified error
         /// message.
@@ -39,7 +50,7 @@ namespace Amazon.CodePipeline.Model
         /// </param>
         public DuplicatedStopRequestException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of DuplicatedStopRequestException
         /// </summary>
@@ -47,14 +58,14 @@ namespace Amazon.CodePipeline.Model
         /// <param name="innerException"></param>
         public DuplicatedStopRequestException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of DuplicatedStopRequestException
         /// </summary>
         /// <param name="innerException"></param>
         public DuplicatedStopRequestException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of DuplicatedStopRequestException
         /// </summary>
@@ -92,6 +103,26 @@ namespace Amazon.CodePipeline.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

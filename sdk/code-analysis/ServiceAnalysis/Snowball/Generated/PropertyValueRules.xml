@@ -314,10 +314,6 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Snowball.Model.ClusterLimitExceededException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Snowball.Model.ClusterListEntry.ClusterId</property>
     <min>1</min>
   </property-value-rule>
@@ -374,36 +370,12 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Snowball.Model.Ec2RequestFailedException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Snowball.Model.EventTriggerDefinition.EventResourceARN</property>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.INDTaxDocuments.GSTIN</property>
     <pattern>\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Snowball.Model.InvalidAddressException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Snowball.Model.InvalidInputCombinationException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Snowball.Model.InvalidJobStateException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Snowball.Model.InvalidNextTokenException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Snowball.Model.InvalidResourceException.Message</property>
-    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.InvalidResourceException.ResourceType</property>
@@ -472,10 +444,6 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Snowball.Model.KMSRequestFailedException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Snowball.Model.LambdaResource.LambdaArn</property>
     <max>255</max>
   </property-value-rule>
@@ -494,10 +462,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.Shipment.TrackingNumber</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Snowball.Model.UnsupportedAddressException.Message</property>
     <min>1</min>
   </property-value-rule>
 </property-value-rules>

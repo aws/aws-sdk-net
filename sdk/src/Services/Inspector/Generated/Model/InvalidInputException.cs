@@ -17,19 +17,29 @@
  * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Inspector.Model
 {
-    ///<summary>
-    /// Inspector exception
+    /// <summary>
+    /// The request was rejected because an invalid or out-of-range value was supplied for
+    /// an input parameter.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class InvalidInputException : AmazonInspectorException 
+    #endif
+    public partial class InvalidInputException : AmazonInspectorException
     {
+        private bool? _canRetry;
+        private InvalidInputErrorCode _errorCode;
+
         /// <summary>
         /// Constructs a new InvalidInputException with the specified error
         /// message.
@@ -39,7 +49,7 @@ namespace Amazon.Inspector.Model
         /// </param>
         public InvalidInputException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of InvalidInputException
         /// </summary>
@@ -47,14 +57,14 @@ namespace Amazon.Inspector.Model
         /// <param name="innerException"></param>
         public InvalidInputException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidInputException
         /// </summary>
         /// <param name="innerException"></param>
         public InvalidInputException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidInputException
         /// </summary>
@@ -90,8 +100,70 @@ namespace Amazon.Inspector.Model
         protected InvalidInputException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.CanRetry = (bool)info.GetValue("CanRetry", typeof(bool));
+            this.ErrorCode = (InvalidInputErrorCode)info.GetValue("ErrorCode", typeof(InvalidInputErrorCode));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("CanRetry", this.CanRetry);
+            info.AddValue("ErrorCode", this.ErrorCode);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property CanRetry. 
+        /// <para>
+        /// You can immediately retry your request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public bool CanRetry
+        {
+            get { return this._canRetry.GetValueOrDefault(); }
+            set { this._canRetry = value; }
+        }
+
+        // Check to see if CanRetry property is set
+        internal bool IsSetCanRetry()
+        {
+            return this._canRetry.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorCode. 
+        /// <para>
+        /// Code that indicates the type of error that is generated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public InvalidInputErrorCode ErrorCode
+        {
+            get { return this._errorCode; }
+            set { this._errorCode = value; }
+        }
+
+        // Check to see if ErrorCode property is set
+        internal bool IsSetErrorCode()
+        {
+            return this._errorCode != null;
+        }
+
     }
 }

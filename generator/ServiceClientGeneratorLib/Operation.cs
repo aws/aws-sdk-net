@@ -647,11 +647,11 @@ namespace ServiceClientGenerator
         /// <summary>
         /// The list of errors that the service returns which will be turned into exceptions.
         /// </summary>
-        public IList<ExceptionModel> Exceptions
+        public IList<ExceptionShape> Exceptions
         {
             get
             {
-                IList<ExceptionModel> list = new List<ExceptionModel>();
+                var hashSet = new HashSet<ExceptionShape>();
                 var errors = this.data[ServiceModel.ErrorsKey];
                 if (errors != null && errors.IsArray)
                 {
@@ -661,14 +661,11 @@ namespace ServiceClientGenerator
                         if (extendsNode == null)
                             continue;
                         var structure = this.model.FindShape(extendsNode.ToString());
-                        var documentationNode = structure.data[ServiceModel.DocumentationKey];
-                        var documentation = documentationNode == null ? "" : documentationNode.ToString();
-
-                        list.Add(new ExceptionModel(error, extendsNode.ToString(), documentation, structure));
+                        hashSet.Add((ExceptionShape)structure);
                     }
                 }
 
-                return list.OrderBy(x => x.Name).ToList();
+                return hashSet.OrderBy(x => x.Name).ToList();
             }
         }
 

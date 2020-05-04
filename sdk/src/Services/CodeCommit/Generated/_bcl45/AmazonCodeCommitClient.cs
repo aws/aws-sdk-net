@@ -9429,9 +9429,6 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
         /// The folderPath for a location cannot be null.
         /// </exception>
-        /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
-        /// The folderPath for a location cannot be null.
-        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
         /// The pull request ID could not be found. Make sure that you have specified the correct
         /// repository name and pull request ID, and then try again.
@@ -9551,9 +9548,6 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PathDoesNotExistException">
         /// The specified path does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
-        /// The folderPath for a location cannot be null.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
         /// The folderPath for a location cannot be null.

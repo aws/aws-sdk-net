@@ -17,19 +17,47 @@
  * Do not modify this file. This file is generated from the resourcegroupstaggingapi-2017-01-26.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
-    ///<summary>
-    /// ResourceGroupsTaggingAPI exception
+    /// <summary>
+    /// The request was denied because performing this operation violates a constraint. 
+    /// 
+    ///  
+    /// <para>
+    /// Some of the reasons in the following list might not apply to this specific operation.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// You must meet the prerequisites for using tag policies. For information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites
+    /// and Permissions for Using Tag Policies</a> in the <i>AWS Organizations User Guide.</i>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You must enable the tag policies service principal (<code>tagpolicies.tag.amazonaws.com</code>)
+    /// to integrate with AWS Organizations For information, see <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You must have a tag policy attached to the organization root, an OU, or an account.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class ConstraintViolationException : AmazonResourceGroupsTaggingAPIException 
+    #endif
+    public partial class ConstraintViolationException : AmazonResourceGroupsTaggingAPIException
     {
+
         /// <summary>
         /// Constructs a new ConstraintViolationException with the specified error
         /// message.
@@ -39,7 +67,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// </param>
         public ConstraintViolationException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of ConstraintViolationException
         /// </summary>
@@ -47,14 +75,14 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <param name="innerException"></param>
         public ConstraintViolationException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ConstraintViolationException
         /// </summary>
         /// <param name="innerException"></param>
         public ConstraintViolationException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ConstraintViolationException
         /// </summary>
@@ -92,6 +120,26 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

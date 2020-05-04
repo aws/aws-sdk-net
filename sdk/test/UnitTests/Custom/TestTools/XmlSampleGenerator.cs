@@ -78,6 +78,30 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             return xml;
         }
 
+        public string Execute(ExceptionShape exceptionShape)
+        {
+            var content = new StringWriter();
+            using (var writer = XmlWriter.Create(content))
+            {
+                writer.WriteStartElement("ErrorResponse");
+                writer.WriteStartElement("Error");
+
+                writer.WriteElementString("Code", exceptionShape.Code);
+                writer.WriteElementString("Message", $"{exceptionShape.Name}_Message");
+                
+                WriteStructure(writer, exceptionShape);
+
+                writer.WriteEndElement();
+
+                writer.WriteElementString("RequestId", "6fbe234c-80f9-11e2-a17f-9148EXAMPLE");
+
+                writer.WriteEndElement();
+            }
+
+            var xml = content.ToString();
+            return xml;
+        }
+
         private void WriteStructure(XmlWriter writer, Shape structure)
         {
             foreach (var member in structure.Members)

@@ -17,19 +17,27 @@
  * Do not modify this file. This file is generated from the cloudsearchdomain-2013-01-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudSearchDomain.Model
 {
-    ///<summary>
-    /// CloudSearchDomain exception
+    /// <summary>
+    /// Information about any problems encountered while processing an upload request.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class DocumentServiceException : AmazonCloudSearchDomainException 
+    #endif
+    public partial class DocumentServiceException : AmazonCloudSearchDomainException
     {
+        private string _status;
+
         /// <summary>
         /// Constructs a new DocumentServiceException with the specified error
         /// message.
@@ -39,7 +47,7 @@ namespace Amazon.CloudSearchDomain.Model
         /// </param>
         public DocumentServiceException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of DocumentServiceException
         /// </summary>
@@ -47,14 +55,14 @@ namespace Amazon.CloudSearchDomain.Model
         /// <param name="innerException"></param>
         public DocumentServiceException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of DocumentServiceException
         /// </summary>
         /// <param name="innerException"></param>
         public DocumentServiceException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of DocumentServiceException
         /// </summary>
@@ -90,8 +98,48 @@ namespace Amazon.CloudSearchDomain.Model
         protected DocumentServiceException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Status = (string)info.GetValue("Status", typeof(string));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("Status", this.Status);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The return status of a document upload request, <code>error</code> or <code>success</code>.
+        /// </para>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
     }
 }

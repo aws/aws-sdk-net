@@ -538,11 +538,6 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AutoScaling.Model.AlreadyExistsFault.Message</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.AutoScaling.Model.AutoScalingGroup.AutoScalingGroupARN</property>
     <min>1</min>
     <max>1600</max>
@@ -720,11 +715,6 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AutoScaling.Model.InvalidNextToken.Message</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.AutoScaling.Model.LaunchConfiguration.ClassicLinkVPCId</property>
     <min>1</min>
     <max>255</max>
@@ -857,11 +847,6 @@
     <max>1600</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AutoScaling.Model.LimitExceededFault.Message</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.AutoScaling.Model.LoadBalancerState.LoadBalancerName</property>
     <min>1</min>
     <max>255</max>
@@ -913,21 +898,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.ProcessType.ProcessName</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AutoScaling.Model.ResourceContentionFault.Message</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AutoScaling.Model.ResourceInUseFault.Message</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AutoScaling.Model.ScalingActivityInProgressFault.Message</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -988,11 +958,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.ScheduledUpdateGroupActionRequest.ScheduledActionName</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AutoScaling.Model.ServiceLinkedRoleFailure.Message</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>

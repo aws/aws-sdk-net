@@ -17,19 +17,52 @@
  * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudTrail.Model
 {
-    ///<summary>
-    /// CloudTrail exception
+    /// <summary>
+    /// This exception is thrown when the <code>PutEventSelectors</code> operation is called
+    /// with a number of event selectors or data resources that is not valid. The combination
+    /// of event selectors and data resources is not valid. A trail can have up to 5 event
+    /// selectors. A trail is limited to 250 data resources. These data resources can be distributed
+    /// across event selectors, but the overall total cannot exceed 250.
+    /// 
+    ///  
+    /// <para>
+    /// You can:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Specify a valid number of event selectors (1 to 5) for a trail.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Specify a valid number of data resources (1 to 250) for an event selector. The limit
+    /// of number of resources on an individual event selector is configurable up to 250.
+    /// However, this upper limit is allowed only if the total number of data resources does
+    /// not exceed 250 across all event selectors for a trail.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code>
+    /// parameter with a value of <code>read-only</code> is invalid.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class InvalidEventSelectorsException : AmazonCloudTrailException 
+    #endif
+    public partial class InvalidEventSelectorsException : AmazonCloudTrailException
     {
+
         /// <summary>
         /// Constructs a new InvalidEventSelectorsException with the specified error
         /// message.
@@ -39,7 +72,7 @@ namespace Amazon.CloudTrail.Model
         /// </param>
         public InvalidEventSelectorsException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of InvalidEventSelectorsException
         /// </summary>
@@ -47,14 +80,14 @@ namespace Amazon.CloudTrail.Model
         /// <param name="innerException"></param>
         public InvalidEventSelectorsException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidEventSelectorsException
         /// </summary>
         /// <param name="innerException"></param>
         public InvalidEventSelectorsException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidEventSelectorsException
         /// </summary>
@@ -92,6 +125,26 @@ namespace Amazon.CloudTrail.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

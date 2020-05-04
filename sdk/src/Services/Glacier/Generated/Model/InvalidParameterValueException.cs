@@ -17,19 +17,28 @@
  * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Glacier.Model
 {
-    ///<summary>
-    /// Glacier exception
+    /// <summary>
+    /// Returned if a parameter of the request is incorrectly specified.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class InvalidParameterValueException : AmazonGlacierException 
+    #endif
+    public partial class InvalidParameterValueException : AmazonGlacierException
     {
+        private string _code;
+        private string _type;
+
         /// <summary>
         /// Constructs a new InvalidParameterValueException with the specified error
         /// message.
@@ -39,7 +48,7 @@ namespace Amazon.Glacier.Model
         /// </param>
         public InvalidParameterValueException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of InvalidParameterValueException
         /// </summary>
@@ -47,14 +56,14 @@ namespace Amazon.Glacier.Model
         /// <param name="innerException"></param>
         public InvalidParameterValueException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidParameterValueException
         /// </summary>
         /// <param name="innerException"></param>
         public InvalidParameterValueException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidParameterValueException
         /// </summary>
@@ -78,16 +87,6 @@ namespace Amazon.Glacier.Model
         public InvalidParameterValueException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
-        /// <summary>
-        /// Gets and sets the Code property.
-        /// </summary>
-        public string Code { get; set; }
-
-        /// <summary>
-        /// Gets and sets the Type property.
-        /// </summary>
-        public string Type { get; set; }
-
 
 #if !PCL && !NETSTANDARD
         /// <summary>
@@ -100,11 +99,8 @@ namespace Amazon.Glacier.Model
         protected InvalidParameterValueException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
-            if (info != null)
-            {
-                this.Code = info.GetString("Code");
-                this.Type = info.GetString("Type");
-            }
+            this.Code = (string)info.GetValue("Code", typeof(string));
+            this.Type = (string)info.GetValue("Type", typeof(string));
         }
 
         /// <summary>
@@ -125,12 +121,46 @@ namespace Amazon.Glacier.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
-            if (info != null)
-            {
-                info.AddValue("Code", this.Code);
-                info.AddValue("Type", this.Type);
-            }
+            info.AddValue("Code", this.Code);
+            info.AddValue("Type", this.Type);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Code. 
+        /// <para>
+        /// 400 Bad Request
+        /// </para>
+        /// </summary>
+        public string Code
+        {
+            get { return this._code; }
+            set { this._code = value; }
+        }
+
+        // Check to see if Code property is set
+        internal bool IsSetCode()
+        {
+            return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Client
+        /// </para>
+        /// </summary>
+        public string Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
+        }
+
     }
 }

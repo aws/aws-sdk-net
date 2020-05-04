@@ -17,19 +17,32 @@
  * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleEmail.Model
 {
-    ///<summary>
-    /// SimpleEmailService exception
+    /// <summary>
+    /// Indicates that email sending is disabled for the configuration set.
+    /// 
+    ///  
+    /// <para>
+    /// You can enable or disable email sending for a configuration set using <a>UpdateConfigurationSetSendingEnabled</a>.
+    /// </para>
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class ConfigurationSetSendingPausedException : AmazonSimpleEmailServiceException 
+    #endif
+    public partial class ConfigurationSetSendingPausedException : AmazonSimpleEmailServiceException
     {
+        private string _configurationSetName;
+
         /// <summary>
         /// Constructs a new ConfigurationSetSendingPausedException with the specified error
         /// message.
@@ -39,7 +52,7 @@ namespace Amazon.SimpleEmail.Model
         /// </param>
         public ConfigurationSetSendingPausedException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of ConfigurationSetSendingPausedException
         /// </summary>
@@ -47,14 +60,14 @@ namespace Amazon.SimpleEmail.Model
         /// <param name="innerException"></param>
         public ConfigurationSetSendingPausedException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ConfigurationSetSendingPausedException
         /// </summary>
         /// <param name="innerException"></param>
         public ConfigurationSetSendingPausedException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ConfigurationSetSendingPausedException
         /// </summary>
@@ -90,8 +103,48 @@ namespace Amazon.SimpleEmail.Model
         protected ConfigurationSetSendingPausedException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ConfigurationSetName = (string)info.GetValue("ConfigurationSetName", typeof(string));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("ConfigurationSetName", this.ConfigurationSetName);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationSetName. 
+        /// <para>
+        /// The name of the configuration set for which email sending is disabled.
+        /// </para>
+        /// </summary>
+        public string ConfigurationSetName
+        {
+            get { return this._configurationSetName; }
+            set { this._configurationSetName = value; }
+        }
+
+        // Check to see if ConfigurationSetName property is set
+        internal bool IsSetConfigurationSetName()
+        {
+            return this._configurationSetName != null;
+        }
+
     }
 }

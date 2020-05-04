@@ -17,19 +17,28 @@
  * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleEmail.Model
 {
-    ///<summary>
-    /// SimpleEmailService exception
+    /// <summary>
+    /// Indicates that the sender address specified for a custom verification email is not
+    /// verified, and is therefore not eligible to send the custom verification email.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class FromEmailAddressNotVerifiedException : AmazonSimpleEmailServiceException 
+    #endif
+    public partial class FromEmailAddressNotVerifiedException : AmazonSimpleEmailServiceException
     {
+        private string _fromEmailAddress;
+
         /// <summary>
         /// Constructs a new FromEmailAddressNotVerifiedException with the specified error
         /// message.
@@ -39,7 +48,7 @@ namespace Amazon.SimpleEmail.Model
         /// </param>
         public FromEmailAddressNotVerifiedException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of FromEmailAddressNotVerifiedException
         /// </summary>
@@ -47,14 +56,14 @@ namespace Amazon.SimpleEmail.Model
         /// <param name="innerException"></param>
         public FromEmailAddressNotVerifiedException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of FromEmailAddressNotVerifiedException
         /// </summary>
         /// <param name="innerException"></param>
         public FromEmailAddressNotVerifiedException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of FromEmailAddressNotVerifiedException
         /// </summary>
@@ -90,8 +99,49 @@ namespace Amazon.SimpleEmail.Model
         protected FromEmailAddressNotVerifiedException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.FromEmailAddress = (string)info.GetValue("FromEmailAddress", typeof(string));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("FromEmailAddress", this.FromEmailAddress);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property FromEmailAddress. 
+        /// <para>
+        /// Indicates that the from email address associated with the custom verification email
+        /// template is not verified.
+        /// </para>
+        /// </summary>
+        public string FromEmailAddress
+        {
+            get { return this._fromEmailAddress; }
+            set { this._fromEmailAddress = value; }
+        }
+
+        // Check to see if FromEmailAddress property is set
+        internal bool IsSetFromEmailAddress()
+        {
+            return this._fromEmailAddress != null;
+        }
+
     }
 }

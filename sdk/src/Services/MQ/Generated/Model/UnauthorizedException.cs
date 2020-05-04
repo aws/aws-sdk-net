@@ -17,19 +17,27 @@
  * Do not modify this file. This file is generated from the mq-2017-11-27.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.MQ.Model
 {
-    ///<summary>
-    /// MQ exception
+    /// <summary>
+    /// Returns information about an error.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class UnauthorizedException : AmazonMQException 
+    #endif
+    public partial class UnauthorizedException : AmazonMQException
     {
+        private string _errorAttribute;
+
         /// <summary>
         /// Constructs a new UnauthorizedException with the specified error
         /// message.
@@ -39,7 +47,7 @@ namespace Amazon.MQ.Model
         /// </param>
         public UnauthorizedException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of UnauthorizedException
         /// </summary>
@@ -47,14 +55,14 @@ namespace Amazon.MQ.Model
         /// <param name="innerException"></param>
         public UnauthorizedException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of UnauthorizedException
         /// </summary>
         /// <param name="innerException"></param>
         public UnauthorizedException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of UnauthorizedException
         /// </summary>
@@ -90,8 +98,45 @@ namespace Amazon.MQ.Model
         protected UnauthorizedException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ErrorAttribute = (string)info.GetValue("ErrorAttribute", typeof(string));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("ErrorAttribute", this.ErrorAttribute);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property ErrorAttribute. The attribute which caused the error.
+        /// </summary>
+        public string ErrorAttribute
+        {
+            get { return this._errorAttribute; }
+            set { this._errorAttribute = value; }
+        }
+
+        // Check to see if ErrorAttribute property is set
+        internal bool IsSetErrorAttribute()
+        {
+            return this._errorAttribute != null;
+        }
+
     }
 }

@@ -17,19 +17,28 @@
  * Do not modify this file. This file is generated from the iotevents-2018-07-27.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IoTEvents.Model
 {
-    ///<summary>
-    /// IoTEvents exception
+    /// <summary>
+    /// The resource already exists.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class ResourceAlreadyExistsException : AmazonIoTEventsException 
+    #endif
+    public partial class ResourceAlreadyExistsException : AmazonIoTEventsException
     {
+        private string _resourceArn;
+        private string _resourceId;
+
         /// <summary>
         /// Constructs a new ResourceAlreadyExistsException with the specified error
         /// message.
@@ -39,7 +48,7 @@ namespace Amazon.IoTEvents.Model
         /// </param>
         public ResourceAlreadyExistsException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of ResourceAlreadyExistsException
         /// </summary>
@@ -47,14 +56,14 @@ namespace Amazon.IoTEvents.Model
         /// <param name="innerException"></param>
         public ResourceAlreadyExistsException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ResourceAlreadyExistsException
         /// </summary>
         /// <param name="innerException"></param>
         public ResourceAlreadyExistsException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ResourceAlreadyExistsException
         /// </summary>
@@ -90,8 +99,68 @@ namespace Amazon.IoTEvents.Model
         protected ResourceAlreadyExistsException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ResourceArn = (string)info.GetValue("ResourceArn", typeof(string));
+            this.ResourceId = (string)info.GetValue("ResourceId", typeof(string));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("ResourceArn", this.ResourceArn);
+            info.AddValue("ResourceId", this.ResourceId);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The ARN of the resource.
+        /// </para>
+        /// </summary>
+        public string ResourceArn
+        {
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
+        }
+
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
+        {
+            return this._resourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        /// The ID of the resource.
+        /// </para>
+        /// </summary>
+        public string ResourceId
+        {
+            get { return this._resourceId; }
+            set { this._resourceId = value; }
+        }
+
+        // Check to see if ResourceId property is set
+        internal bool IsSetResourceId()
+        {
+            return this._resourceId != null;
+        }
+
     }
 }

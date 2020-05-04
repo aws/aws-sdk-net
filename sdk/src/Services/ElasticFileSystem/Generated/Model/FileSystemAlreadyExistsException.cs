@@ -17,19 +17,29 @@
  * Do not modify this file. This file is generated from the elasticfilesystem-2015-02-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticFileSystem.Model
 {
-    ///<summary>
-    /// ElasticFileSystem exception
+    /// <summary>
+    /// Returned if the file system you are trying to create already exists, with the creation
+    /// token you provided.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class FileSystemAlreadyExistsException : AmazonElasticFileSystemException 
+    #endif
+    public partial class FileSystemAlreadyExistsException : AmazonElasticFileSystemException
     {
+        private string _errorCode;
+        private string _fileSystemId;
+
         /// <summary>
         /// Constructs a new FileSystemAlreadyExistsException with the specified error
         /// message.
@@ -39,7 +49,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// </param>
         public FileSystemAlreadyExistsException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of FileSystemAlreadyExistsException
         /// </summary>
@@ -47,14 +57,14 @@ namespace Amazon.ElasticFileSystem.Model
         /// <param name="innerException"></param>
         public FileSystemAlreadyExistsException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of FileSystemAlreadyExistsException
         /// </summary>
         /// <param name="innerException"></param>
         public FileSystemAlreadyExistsException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of FileSystemAlreadyExistsException
         /// </summary>
@@ -90,8 +100,64 @@ namespace Amazon.ElasticFileSystem.Model
         protected FileSystemAlreadyExistsException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ErrorCode = (string)info.GetValue("ErrorCode", typeof(string));
+            this.FileSystemId = (string)info.GetValue("FileSystemId", typeof(string));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("ErrorCode", this.ErrorCode);
+            info.AddValue("FileSystemId", this.FileSystemId);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property ErrorCode.
+        /// </summary>
+        [AWSProperty(Required=true, Min=1)]
+        public string ErrorCode
+        {
+            get { return this._errorCode; }
+            set { this._errorCode = value; }
+        }
+
+        // Check to see if ErrorCode property is set
+        internal bool IsSetErrorCode()
+        {
+            return this._errorCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileSystemId.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string FileSystemId
+        {
+            get { return this._fileSystemId; }
+            set { this._fileSystemId = value; }
+        }
+
+        // Check to see if FileSystemId property is set
+        internal bool IsSetFileSystemId()
+        {
+            return this._fileSystemId != null;
+        }
+
     }
 }

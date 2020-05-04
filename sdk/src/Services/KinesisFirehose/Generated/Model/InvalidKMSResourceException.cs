@@ -17,19 +17,30 @@
  * Do not modify this file. This file is generated from the firehose-2015-08-04.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.KinesisFirehose.Model
 {
-    ///<summary>
-    /// KinesisFirehose exception
+    /// <summary>
+    /// Kinesis Data Firehose throws this exception when an attempt to put records or to start
+    /// or stop delivery stream encryption fails. This happens when the KMS service throws
+    /// one of the following exception types: <code>AccessDeniedException</code>, <code>InvalidStateException</code>,
+    /// <code>DisabledException</code>, or <code>NotFoundException</code>.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class InvalidKMSResourceException : AmazonKinesisFirehoseException 
+    #endif
+    public partial class InvalidKMSResourceException : AmazonKinesisFirehoseException
     {
+        private string _code;
+
         /// <summary>
         /// Constructs a new InvalidKMSResourceException with the specified error
         /// message.
@@ -39,7 +50,7 @@ namespace Amazon.KinesisFirehose.Model
         /// </param>
         public InvalidKMSResourceException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of InvalidKMSResourceException
         /// </summary>
@@ -47,14 +58,14 @@ namespace Amazon.KinesisFirehose.Model
         /// <param name="innerException"></param>
         public InvalidKMSResourceException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidKMSResourceException
         /// </summary>
         /// <param name="innerException"></param>
         public InvalidKMSResourceException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidKMSResourceException
         /// </summary>
@@ -90,8 +101,45 @@ namespace Amazon.KinesisFirehose.Model
         protected InvalidKMSResourceException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Code = (string)info.GetValue("Code", typeof(string));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("Code", this.Code);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property Code.
+        /// </summary>
+        public string Code
+        {
+            get { return this._code; }
+            set { this._code = value; }
+        }
+
+        // Check to see if Code property is set
+        internal bool IsSetCode()
+        {
+            return this._code != null;
+        }
+
     }
 }

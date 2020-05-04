@@ -244,7 +244,7 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.DuplicateRequest.DuplicateOperationId</property>
+    <property>Amazon.ServiceDiscovery.Model.DuplicateRequestException.DuplicateOperationId</property>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -310,11 +310,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.NamespaceAlreadyExists.CreatorRequestId</property>
+    <property>Amazon.ServiceDiscovery.Model.NamespaceAlreadyExistsException.CreatorRequestId</property>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.NamespaceAlreadyExists.NamespaceId</property>
+    <property>Amazon.ServiceDiscovery.Model.NamespaceAlreadyExistsException.NamespaceId</property>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -366,11 +366,11 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.ServiceAlreadyExists.CreatorRequestId</property>
+    <property>Amazon.ServiceDiscovery.Model.ServiceAlreadyExistsException.CreatorRequestId</property>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.ServiceAlreadyExists.ServiceId</property>
+    <property>Amazon.ServiceDiscovery.Model.ServiceAlreadyExistsException.ServiceId</property>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>

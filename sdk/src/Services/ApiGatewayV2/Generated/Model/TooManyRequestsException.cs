@@ -17,19 +17,27 @@
  * Do not modify this file. This file is generated from the apigatewayv2-2018-11-29.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ApiGatewayV2.Model
 {
-    ///<summary>
-    /// ApiGatewayV2 exception
+    /// <summary>
+    /// A limit has been exceeded. See the accompanying error message for details.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class TooManyRequestsException : AmazonApiGatewayV2Exception 
+    #endif
+    public partial class TooManyRequestsException : AmazonApiGatewayV2Exception
     {
+        private string _limitType;
+
         /// <summary>
         /// Constructs a new TooManyRequestsException with the specified error
         /// message.
@@ -39,7 +47,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// </param>
         public TooManyRequestsException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of TooManyRequestsException
         /// </summary>
@@ -47,14 +55,14 @@ namespace Amazon.ApiGatewayV2.Model
         /// <param name="innerException"></param>
         public TooManyRequestsException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of TooManyRequestsException
         /// </summary>
         /// <param name="innerException"></param>
         public TooManyRequestsException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of TooManyRequestsException
         /// </summary>
@@ -90,8 +98,48 @@ namespace Amazon.ApiGatewayV2.Model
         protected TooManyRequestsException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.LimitType = (string)info.GetValue("LimitType", typeof(string));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("LimitType", this.LimitType);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property LimitType. 
+        /// <para>
+        /// The limit type.
+        /// </para>
+        /// </summary>
+        public string LimitType
+        {
+            get { return this._limitType; }
+            set { this._limitType = value; }
+        }
+
+        // Check to see if LimitType property is set
+        internal bool IsSetLimitType()
+        {
+            return this._limitType != null;
+        }
+
     }
 }

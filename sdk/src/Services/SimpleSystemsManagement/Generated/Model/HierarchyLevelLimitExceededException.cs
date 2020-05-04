@@ -17,19 +17,27 @@
  * Do not modify this file. This file is generated from the ssm-2014-11-06.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleSystemsManagement.Model
 {
-    ///<summary>
-    /// SimpleSystemsManagement exception
+    /// <summary>
+    /// A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
+    /// and constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class HierarchyLevelLimitExceededException : AmazonSimpleSystemsManagementException 
+    #endif
+    public partial class HierarchyLevelLimitExceededException : AmazonSimpleSystemsManagementException
     {
+
         /// <summary>
         /// Constructs a new HierarchyLevelLimitExceededException with the specified error
         /// message.
@@ -39,7 +47,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </param>
         public HierarchyLevelLimitExceededException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of HierarchyLevelLimitExceededException
         /// </summary>
@@ -47,14 +55,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <param name="innerException"></param>
         public HierarchyLevelLimitExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of HierarchyLevelLimitExceededException
         /// </summary>
         /// <param name="innerException"></param>
         public HierarchyLevelLimitExceededException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of HierarchyLevelLimitExceededException
         /// </summary>
@@ -92,6 +100,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

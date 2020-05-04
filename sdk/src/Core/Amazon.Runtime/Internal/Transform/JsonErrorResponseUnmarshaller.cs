@@ -24,7 +24,7 @@ using System.IO;
 namespace Amazon.Runtime.Internal.Transform
 {
     /// <summary>
-    ///    Response Unmarshaller for all Errors
+    ///    First-pass unmarshaller for all errors
     /// </summary>
     public class JsonErrorResponseUnmarshaller : IUnmarshaller<ErrorResponse, JsonUnmarshallerContext>
     {
@@ -52,6 +52,7 @@ namespace Amazon.Runtime.Internal.Transform
                 string type;
                 string message;
                 string code;
+                string requestId = null;
                 GetValuesFromJsonIfPossible(context, out type, out message, out code);
 
                 // If an error code was not found, check for the x-amzn-ErrorType header. 
@@ -112,12 +113,20 @@ namespace Amazon.Runtime.Internal.Transform
                     }
                 }
 
+                // Check for the x-amzn-RequestId header. This header is returned by rest-json services.
+                // If the header is present it is preferred over any value provided in the response body.
+                if (context.ResponseData.IsHeaderPresent(HeaderKeys.RequestIdHeader))
+                {
+                    requestId = context.ResponseData.GetHeaderValue(HeaderKeys.RequestIdHeader);
+                }
+
                 response = new ErrorResponse
                 {
                     Code = type,
                     Message = message,
                     // type is not applicable to JSON services, setting to Unknown
-                    Type = ErrorType.Unknown
+                    Type = ErrorType.Unknown,
+                    RequestId = requestId
                 };
             }
             

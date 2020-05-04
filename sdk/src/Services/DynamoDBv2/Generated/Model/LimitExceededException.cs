@@ -17,19 +17,44 @@
  * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.DynamoDBv2.Model
 {
-    ///<summary>
-    /// DynamoDB exception
+    /// <summary>
+    /// There is no limit to the number of daily on-demand backups that can be taken. 
+    /// 
+    ///  
+    /// <para>
+    /// Up to 50 simultaneous table operations are allowed per account. These operations include
+    /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// The only exception is when you are creating a table with one or more secondary indexes.
+    /// You can have up to 25 such requests running at a time; however, if the table or index
+    /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+    /// operations.
+    /// </para>
+    ///  
+    /// <para>
+    /// There is a soft account limit of 256 tables.
+    /// </para>
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class LimitExceededException : AmazonDynamoDBException 
+    #endif
+    public partial class LimitExceededException : AmazonDynamoDBException
     {
+
         /// <summary>
         /// Constructs a new LimitExceededException with the specified error
         /// message.
@@ -39,7 +64,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </param>
         public LimitExceededException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of LimitExceededException
         /// </summary>
@@ -47,14 +72,14 @@ namespace Amazon.DynamoDBv2.Model
         /// <param name="innerException"></param>
         public LimitExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of LimitExceededException
         /// </summary>
         /// <param name="innerException"></param>
         public LimitExceededException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of LimitExceededException
         /// </summary>
@@ -92,6 +117,26 @@ namespace Amazon.DynamoDBv2.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

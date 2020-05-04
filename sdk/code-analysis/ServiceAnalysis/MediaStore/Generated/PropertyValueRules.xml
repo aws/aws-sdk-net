@@ -185,39 +185,9 @@
     <max>16</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.MediaStore.Model.ContainerInUseException.Message</property>
-    <min>1</min>
-    <max>255</max>
-    <pattern>[ \w:\.\?-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MediaStore.Model.ContainerNotFoundException.Message</property>
-    <min>1</min>
-    <max>255</max>
-    <pattern>[ \w:\.\?-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MediaStore.Model.CorsPolicyNotFoundException.Message</property>
-    <min>1</min>
-    <max>255</max>
-    <pattern>[ \w:\.\?-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.MediaStore.Model.CorsRule.MaxAgeSeconds</property>
     <min>0</min>
     <max>2147483647</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MediaStore.Model.InternalServerError.Message</property>
-    <min>1</min>
-    <max>255</max>
-    <pattern>[ \w:\.\?-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MediaStore.Model.LimitExceededException.Message</property>
-    <min>1</min>
-    <max>255</max>
-    <pattern>[ \w:\.\?-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.MetricPolicyRule.ObjectGroup</property>
@@ -230,12 +200,6 @@
     <min>1</min>
     <max>30</max>
     <pattern>[a-zA-Z0-9_]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MediaStore.Model.PolicyNotFoundException.Message</property>
-    <min>1</min>
-    <max>255</max>
-    <pattern>[ \w:\.\?-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.Tag.Key</property>

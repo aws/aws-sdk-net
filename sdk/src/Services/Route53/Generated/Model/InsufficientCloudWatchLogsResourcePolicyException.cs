@@ -17,19 +17,42 @@
  * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Route53.Model
 {
-    ///<summary>
-    /// Route53 exception
+    /// <summary>
+    /// Amazon Route 53 doesn't have the permissions required to create log streams and send
+    /// query logs to log streams. Possible causes include the following:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// There is no resource policy that specifies the log group ARN in the value for <code>Resource</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The resource policy that includes the log group ARN in the value for <code>Resource</code>
+    /// doesn't have the necessary permissions.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The resource policy hasn't finished propagating yet.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class InsufficientCloudWatchLogsResourcePolicyException : AmazonRoute53Exception 
+    #endif
+    public partial class InsufficientCloudWatchLogsResourcePolicyException : AmazonRoute53Exception
     {
+
         /// <summary>
         /// Constructs a new InsufficientCloudWatchLogsResourcePolicyException with the specified error
         /// message.
@@ -39,7 +62,7 @@ namespace Amazon.Route53.Model
         /// </param>
         public InsufficientCloudWatchLogsResourcePolicyException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of InsufficientCloudWatchLogsResourcePolicyException
         /// </summary>
@@ -47,14 +70,14 @@ namespace Amazon.Route53.Model
         /// <param name="innerException"></param>
         public InsufficientCloudWatchLogsResourcePolicyException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InsufficientCloudWatchLogsResourcePolicyException
         /// </summary>
         /// <param name="innerException"></param>
         public InsufficientCloudWatchLogsResourcePolicyException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InsufficientCloudWatchLogsResourcePolicyException
         /// </summary>
@@ -92,6 +115,26 @@ namespace Amazon.Route53.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

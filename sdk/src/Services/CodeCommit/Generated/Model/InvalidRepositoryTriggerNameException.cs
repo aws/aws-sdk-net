@@ -17,19 +17,26 @@
  * Do not modify this file. This file is generated from the codecommit-2015-04-13.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CodeCommit.Model
 {
-    ///<summary>
-    /// CodeCommit exception
+    /// <summary>
+    /// The name of the trigger is not valid.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class InvalidRepositoryTriggerNameException : AmazonCodeCommitException 
+    #endif
+    public partial class InvalidRepositoryTriggerNameException : AmazonCodeCommitException
     {
+
         /// <summary>
         /// Constructs a new InvalidRepositoryTriggerNameException with the specified error
         /// message.
@@ -39,7 +46,7 @@ namespace Amazon.CodeCommit.Model
         /// </param>
         public InvalidRepositoryTriggerNameException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of InvalidRepositoryTriggerNameException
         /// </summary>
@@ -47,14 +54,14 @@ namespace Amazon.CodeCommit.Model
         /// <param name="innerException"></param>
         public InvalidRepositoryTriggerNameException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidRepositoryTriggerNameException
         /// </summary>
         /// <param name="innerException"></param>
         public InvalidRepositoryTriggerNameException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of InvalidRepositoryTriggerNameException
         /// </summary>
@@ -92,6 +99,26 @@ namespace Amazon.CodeCommit.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

@@ -17,19 +17,27 @@
  * Do not modify this file. This file is generated from the sdb-2009-04-15.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleDB.Model
 {
-    ///<summary>
-    /// SimpleDB exception
+    /// <summary>
+    /// Too many attributes requested.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class TooManyRequestedAttributesException : AmazonSimpleDBException 
+    #endif
+    public partial class TooManyRequestedAttributesException : AmazonSimpleDBException
     {
+        private float? _boxUsage;
+
         /// <summary>
         /// Constructs a new TooManyRequestedAttributesException with the specified error
         /// message.
@@ -39,7 +47,7 @@ namespace Amazon.SimpleDB.Model
         /// </param>
         public TooManyRequestedAttributesException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of TooManyRequestedAttributesException
         /// </summary>
@@ -47,14 +55,14 @@ namespace Amazon.SimpleDB.Model
         /// <param name="innerException"></param>
         public TooManyRequestedAttributesException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of TooManyRequestedAttributesException
         /// </summary>
         /// <param name="innerException"></param>
         public TooManyRequestedAttributesException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of TooManyRequestedAttributesException
         /// </summary>
@@ -78,11 +86,6 @@ namespace Amazon.SimpleDB.Model
         public TooManyRequestedAttributesException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
-        /// <summary>
-        /// Gets and sets the BoxUsage property.
-        /// </summary>
-        public float BoxUsage { get; set; }
-
 
 #if !PCL && !NETSTANDARD
         /// <summary>
@@ -95,10 +98,7 @@ namespace Amazon.SimpleDB.Model
         protected TooManyRequestedAttributesException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
-            if (info != null)
-            {
-                this.BoxUsage = info.GetSingle("BoxUsage");
-            }
+            this.BoxUsage = (float)info.GetValue("BoxUsage", typeof(float));
         }
 
         /// <summary>
@@ -119,11 +119,24 @@ namespace Amazon.SimpleDB.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
-            if (info != null)
-            {
-                info.AddValue("BoxUsage", this.BoxUsage);
-            }
+            info.AddValue("BoxUsage", this.BoxUsage);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property BoxUsage.
+        /// </summary>
+        public float BoxUsage
+        {
+            get { return this._boxUsage.GetValueOrDefault(); }
+            set { this._boxUsage = value; }
+        }
+
+        // Check to see if BoxUsage property is set
+        internal bool IsSetBoxUsage()
+        {
+            return this._boxUsage.HasValue; 
+        }
+
     }
 }

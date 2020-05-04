@@ -781,26 +781,6 @@
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.MachineLearning.Model.IdempotentParameterMismatchException.Message</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MachineLearning.Model.InternalServerException.Message</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MachineLearning.Model.InvalidInputException.Message</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MachineLearning.Model.InvalidTagException.Message</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MachineLearning.Model.LimitExceededException.Message</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.MachineLearning.Model.MLModel.CreatedByIamUser</property>
     <pattern>arn:aws:iam::[0-9]+:((user/.+)|(root))</pattern>
   </property-value-rule>
@@ -832,10 +812,6 @@
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.Prediction.PredictedLabel</property>
     <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MachineLearning.Model.PredictorNotMountedException.Message</property>
-    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.RDSDatabase.DatabaseName</property>
@@ -974,10 +950,6 @@
     <max>16777216</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.MachineLearning.Model.ResourceNotFoundException.Message</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.MachineLearning.Model.S3DataSpec.DataLocationS3</property>
     <max>2048</max>
     <pattern>s3://([^/]+)(/.*)?</pattern>
@@ -1002,9 +974,5 @@
     <min>0</min>
     <max>256</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MachineLearning.Model.TagLimitExceededException.Message</property>
-    <max>2048</max>
   </property-value-rule>
 </property-value-rules>

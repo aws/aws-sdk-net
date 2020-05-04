@@ -17,19 +17,28 @@
  * Do not modify this file. This file is generated from the servicediscovery-2017-03-14.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ServiceDiscovery.Model
 {
-    ///<summary>
-    /// ServiceDiscovery exception
+    /// <summary>
+    /// The namespace that you're trying to create already exists.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class NamespaceAlreadyExistsException : AmazonServiceDiscoveryException 
+    #endif
+    public partial class NamespaceAlreadyExistsException : AmazonServiceDiscoveryException
     {
+        private string _creatorRequestId;
+        private string _namespaceId;
+
         /// <summary>
         /// Constructs a new NamespaceAlreadyExistsException with the specified error
         /// message.
@@ -39,7 +48,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </param>
         public NamespaceAlreadyExistsException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of NamespaceAlreadyExistsException
         /// </summary>
@@ -47,14 +56,14 @@ namespace Amazon.ServiceDiscovery.Model
         /// <param name="innerException"></param>
         public NamespaceAlreadyExistsException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of NamespaceAlreadyExistsException
         /// </summary>
         /// <param name="innerException"></param>
         public NamespaceAlreadyExistsException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of NamespaceAlreadyExistsException
         /// </summary>
@@ -90,8 +99,70 @@ namespace Amazon.ServiceDiscovery.Model
         protected NamespaceAlreadyExistsException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.CreatorRequestId = (string)info.GetValue("CreatorRequestId", typeof(string));
+            this.NamespaceId = (string)info.GetValue("NamespaceId", typeof(string));
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("CreatorRequestId", this.CreatorRequestId);
+            info.AddValue("NamespaceId", this.NamespaceId);
+        }
+#endif
+
+        /// <summary>
+        /// Gets and sets the property CreatorRequestId. 
+        /// <para>
+        /// The <code>CreatorRequestId</code> that was used to create the namespace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=64)]
+        public string CreatorRequestId
+        {
+            get { return this._creatorRequestId; }
+            set { this._creatorRequestId = value; }
+        }
+
+        // Check to see if CreatorRequestId property is set
+        internal bool IsSetCreatorRequestId()
+        {
+            return this._creatorRequestId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NamespaceId. 
+        /// <para>
+        /// The ID of the existing namespace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=64)]
+        public string NamespaceId
+        {
+            get { return this._namespaceId; }
+            set { this._namespaceId = value; }
+        }
+
+        // Check to see if NamespaceId property is set
+        internal bool IsSetNamespaceId()
+        {
+            return this._namespaceId != null;
+        }
+
     }
 }

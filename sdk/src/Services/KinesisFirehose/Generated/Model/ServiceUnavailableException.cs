@@ -17,19 +17,29 @@
  * Do not modify this file. This file is generated from the firehose-2015-08-04.normal.json service model.
  */
 using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.KinesisFirehose.Model
 {
-    ///<summary>
-    /// KinesisFirehose exception
+    /// <summary>
+    /// The service is unavailable. Back off and retry the operation. If you continue to see
+    /// the exception, throughput limits for the delivery stream may have been exceeded. For
+    /// more information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+    /// Kinesis Data Firehose Limits</a>.
     /// </summary>
-#if !PCL && !NETSTANDARD
+    #if !PCL && !NETSTANDARD
     [Serializable]
-#endif
-    public class ServiceUnavailableException : AmazonKinesisFirehoseException 
+    #endif
+    public partial class ServiceUnavailableException : AmazonKinesisFirehoseException
     {
+
         /// <summary>
         /// Constructs a new ServiceUnavailableException with the specified error
         /// message.
@@ -39,7 +49,7 @@ namespace Amazon.KinesisFirehose.Model
         /// </param>
         public ServiceUnavailableException(string message) 
             : base(message) {}
-          
+
         /// <summary>
         /// Construct instance of ServiceUnavailableException
         /// </summary>
@@ -47,14 +57,14 @@ namespace Amazon.KinesisFirehose.Model
         /// <param name="innerException"></param>
         public ServiceUnavailableException(string message, Exception innerException) 
             : base(message, innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ServiceUnavailableException
         /// </summary>
         /// <param name="innerException"></param>
         public ServiceUnavailableException(Exception innerException) 
             : base(innerException) {}
-            
+
         /// <summary>
         /// Construct instance of ServiceUnavailableException
         /// </summary>
@@ -92,6 +102,26 @@ namespace Amazon.KinesisFirehose.Model
         {
         }
 
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
 #endif
+        [System.Security.SecurityCritical]
+        // These FxCop rules are giving false-positives for this method
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+#endif
+
     }
 }

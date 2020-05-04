@@ -4359,9 +4359,6 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
-        /// <exception cref="Amazon.Neptune.Model.DBSubnetGroupNotFoundException">
-        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
-        /// </exception>
         /// <exception cref="Amazon.Neptune.Model.InsufficientDBClusterCapacityException">
         /// The DB cluster does not have enough capacity for the current operation.
         /// </exception>
@@ -4392,10 +4389,6 @@ namespace Amazon.Neptune
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.OptionGroupNotFoundException">
         /// The designated option group could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.Neptune.Model.StorageQuotaExceededException">
-        /// Request would result in user exceeding the allowed amount of storage available across
-        /// all DB instances.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.StorageQuotaExceededException">
         /// Request would result in user exceeding the allowed amount of storage available across
@@ -4453,9 +4446,6 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
-        /// <exception cref="Amazon.Neptune.Model.DBSubnetGroupNotFoundException">
-        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
-        /// </exception>
         /// <exception cref="Amazon.Neptune.Model.InsufficientDBClusterCapacityException">
         /// The DB cluster does not have enough capacity for the current operation.
         /// </exception>
@@ -4486,10 +4476,6 @@ namespace Amazon.Neptune
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.OptionGroupNotFoundException">
         /// The designated option group could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.Neptune.Model.StorageQuotaExceededException">
-        /// Request would result in user exceeding the allowed amount of storage available across
-        /// all DB instances.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.StorageQuotaExceededException">
         /// Request would result in user exceeding the allowed amount of storage available across

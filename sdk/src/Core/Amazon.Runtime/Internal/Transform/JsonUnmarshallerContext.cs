@@ -63,18 +63,28 @@ namespace Amazon.Runtime.Internal.Transform
         /// Wrap the jsonstring for unmarshalling.
         /// </summary>
         /// <param name="responseStream">Stream that contains the JSON for unmarshalling</param>
-        /// <param name="maintainResponseBody"> If set to true, maintains a copy of the complete response body as the stream is being read.</param>
+        /// <param name="maintainResponseBody"> If set to true, maintains a copy of the complete response body constraint to log response size as the stream is being read.</param>
         /// <param name="responseData">Response data coming back from the request</param>
-        public JsonUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData responseData)
+        /// <param name="isException">If set to true, maintains a copy of the complete response body as the stream is being read.</param>
+        public JsonUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData responseData, bool isException = false)
         {
-            if (maintainResponseBody)
+            if (isException)
+            {
+                this.WrappingStream = new CachingWrapperStream(responseStream);
+            }
+            else if (maintainResponseBody)
             {
                 this.WrappingStream = new CachingWrapperStream(responseStream, AWSConfigs.LoggingConfig.LogResponsesSizeLimit);
+            }
+
+            if (isException || maintainResponseBody)
+            {
                 responseStream = this.WrappingStream;
             }
-            
+
             this.WebResponseData = responseData;
             this.MaintainResponseBody = maintainResponseBody;
+            this.IsException = isException;
 			
 
             //if the json unmarshaller context is being called internally without their being a http response then the response data would be null

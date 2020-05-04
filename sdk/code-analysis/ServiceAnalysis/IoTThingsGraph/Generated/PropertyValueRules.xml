@@ -214,32 +214,8 @@
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.IoTThingsGraph.Model.InternalFailureException.Message</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTThingsGraph.Model.InvalidRequestException.Message</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTThingsGraph.Model.LimitExceededException.Message</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.MetricsConfiguration.MetricRuleRoleArn</property>
     <min>20</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTThingsGraph.Model.ResourceAlreadyExistsException.Message</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTThingsGraph.Model.ResourceInUseException.Message</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTThingsGraph.Model.ResourceNotFoundException.Message</property>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -271,9 +247,5 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9:_-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTThingsGraph.Model.ThrottlingException.Message</property>
-    <max>2048</max>
   </property-value-rule>
 </property-value-rules>

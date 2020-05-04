@@ -232,7 +232,7 @@ namespace ServiceClientGenerator
 
             if (Configuration.ServiceModel.Customizations.GenerateCustomUnmarshaller)
             {
-                GenerateUnmarshaller(Configuration.ServiceModel.Customizations.CustomUnmarshaller);
+                GenerateCustomUnmarshallers(Configuration.ServiceModel.Customizations.CustomUnmarshaller);
             }
 
             // Generate any missed structures that are not defined or referenced by a request, response, marshaller, unmarshaller, or exception of an operation
@@ -476,35 +476,6 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Generates exception classes in the model namespaces for exceptions declared in the service model. 
-        /// </summary>
-        /// <param name="operation">The operation to generate exceptions for</param>
-        void GenerateExceptions(Operation operation)
-        {
-            foreach (var exception in operation.Exceptions)
-            {
-                // Skip exceptions that have already been generated for the parent model
-                if (IsExceptionPresentInParentModel(this.Configuration, exception.Name))
-                    continue;
-
-                // Check to see if the exceptions has already been generated for a previous operation.
-                if (!this._processedStructures.Contains(exception.Name))
-                {
-
-
-                    var generator = new ExceptionClass()
-                    {
-                        Exception = exception,
-                        GenerateComplexException = this.Configuration.ServiceModel.Customizations.GenerateComplexException,
-                        BaseException = this.Configuration.BaseException
-                    };
-                    this.ExecuteGenerator(generator, exception.Name + ".cs", "Model");
-                    this._processedStructures.Add(exception.Name);
-                }
-            }
-        }
-
-        /// <summary>
         /// Generates the request marshaller.
         /// </summary>
         /// <param name="operation">The operation to generate request marshallers for</param>
@@ -615,32 +586,37 @@ namespace ServiceClientGenerator
             }
         }
 
-        void GenerateUnmarshaller(List<string> structures)
+        private void GenerateUnmarshaller(Shape shape)
+        {
+            var lookup = new NestedStructureLookup();
+            lookup.SearchForNestedStructures(shape);
+            foreach (var nestedStructure in lookup.NestedStructures)
+            {
+                // Skip structure unmarshallers that have already been generated for the parent model
+                if (IsShapePresentInParentModel(this.Configuration, nestedStructure.Name))
+                    continue;
+
+                if (this.Configuration.ServiceModel.Customizations.IsSubstitutedShape(nestedStructure.Name))
+                    continue;
+
+                // Skip already processed unmarshallers. This handles the case of structures being returned in mulitiple requests.
+                if (!this._processedUnmarshallers.Contains(nestedStructure.Name))
+                {
+                    var generator = GetStructureUnmarshaller();
+                    generator.Structure = nestedStructure;
+
+                    this.ExecuteGenerator(generator, nestedStructure.Name + "Unmarshaller.cs", "Model.Internal.MarshallTransformations");
+                    this._processedUnmarshallers.Add(nestedStructure.Name);
+                }
+            }
+        }
+
+        private void GenerateCustomUnmarshallers(List<string> structures)
         {
             foreach (var structure in structures)
             {
                 var shape = this.Configuration.ServiceModel.FindShape(structure);
-                var lookup = new NestedStructureLookup();
-                lookup.SearchForNestedStructures(shape);
-                foreach (var nestedStructure in lookup.NestedStructures)
-                {
-                    // Skip structure unmarshallers that have already been generated for the parent model
-                    if (IsShapePresentInParentModel(this.Configuration, nestedStructure.Name))
-                        continue;
-
-                    if (this.Configuration.ServiceModel.Customizations.IsSubstitutedShape(nestedStructure.Name))
-                        continue;
-
-                    // Skip already processed unmarshallers. This handles the case of structures being returned in mulitiple requests.
-                    if (!this._processedUnmarshallers.Contains(nestedStructure.Name))
-                    {
-                        var generator = GetStructureUnmarshaller();
-                        generator.Structure = nestedStructure;
-
-                        this.ExecuteGenerator(generator, nestedStructure.Name + "Unmarshaller.cs", "Model.Internal.MarshallTransformations");
-                        this._processedUnmarshallers.Add(nestedStructure.Name);
-                    }
-                }
+                GenerateUnmarshaller(shape);
             }
         }
 
@@ -661,6 +637,35 @@ namespace ServiceClientGenerator
             };
 
             this.ExecuteGenerator(generator, operation.Name + "EndpointDiscoveryMarshaller.cs", "Model.Internal.MarshallTransformations");                        
+        }
+
+        private void GenerateExceptions(Operation operation)
+        {
+            foreach (var exceptionShape in operation.Exceptions)
+            {
+                // Skip exceptions that have already been generated for the parent model
+                if (IsExceptionPresentInParentModel(this.Configuration, exceptionShape.Name) || this._processedStructures.Contains(exceptionShape.Name))
+                    continue;
+
+                var generator = new StructureGenerator()
+                {
+                    ClassName = exceptionShape.Name,
+                    Structure = exceptionShape,
+                    BaseClass = this.Configuration.BaseException
+                };
+                this.ExecuteGenerator(generator, exceptionShape.Name + ".cs", "Model");
+                this._processedStructures.Add(exceptionShape.Name);
+
+                var unmarshallerGenerator = GetExceptionUnmarshaller();
+                unmarshallerGenerator.Structure = exceptionShape;
+
+                this.ExecuteGenerator(unmarshallerGenerator, exceptionShape.Name + "Unmarshaller.cs", "Model.Internal.MarshallTransformations");
+                this._processedUnmarshallers.Add(exceptionShape.Name);
+
+                DetermineStructuresToProcess(exceptionShape, false);
+                GenerateUnmarshaller(exceptionShape);
+            }
+
         }
 
         public static void GenerateCoreProjects(GenerationManifest generationManifest,
@@ -766,7 +771,7 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Provides a way to generate the neccesary attributes and marshallers/unmarshallers for nested structures to work
+        /// Provides a way to generate the necessary attributes and marshallers/unmarshallers for nested structures to work
         /// </summary>
         class NestedStructureLookup
         {
@@ -827,7 +832,7 @@ namespace ServiceClientGenerator
                 if (IsShapePresentInParentModel(this.Configuration, definition.Name))
                     continue;
 
-                if (!this._processedStructures.Contains(definition.Name) && !definition.IsException)
+                if (!this._processedStructures.Contains(definition.Name))
                 {
                     // if the shape had a substitution, we can skip generation
                     if (this.Configuration.ServiceModel.Customizations.IsSubstitutedShape(definition.Name))
@@ -1339,7 +1344,27 @@ namespace ServiceClientGenerator
                 default:
                     throw new Exception("No structure unmarshaller for service type: " + this.Configuration.ServiceModel.Type);
             }
-        }                
+        }
+        
+        /// <summary>
+        /// Determines the Unmarshaller for structures based on the service model type
+        /// </summary>
+        /// <returns>Either JsonRPCStructureUnmarshaller, AWSQueryStructureUnmarshaller, or RestXmlStructureUnmarshaller. Error otherwise</returns>
+        BaseResponseUnmarshaller GetExceptionUnmarshaller()
+        {
+            switch (this.Configuration.ServiceModel.Type)
+            {
+                case ServiceType.Rest_Json:
+                case ServiceType.Json:
+                    return new JsonRPCExceptionUnmarshaller();
+                case ServiceType.Query:
+                    return new AWSQueryExceptionUnmarshaller();
+                case ServiceType.Rest_Xml:
+                    return new RestXmlExceptionUnmarshaller();
+                default:
+                    throw new Exception("No structure unmarshaller for service type: " + this.Configuration.ServiceModel.Type);
+            }
+        }     
 
         void GenerateCodeAnalysisProject()
         {
