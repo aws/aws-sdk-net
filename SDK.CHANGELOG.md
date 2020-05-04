@@ -1,3 +1,16 @@
+### 3.3.731.0 (2020-05-04 18:12 UTC)
+* APIGateway (3.3.103.97)
+	* Documentation updates for Amazon API Gateway
+* EC2 (3.3.171.0)
+	* With this release, you can include enriched metadata in Amazon Virtual Private Cloud (Amazon VPC) flow logs published to Amazon CloudWatch Logs or Amazon Simple Storage Service (S3). Prior to this, custom format VPC flow logs enriched with additional metadata could be published only to S3. With this launch, we are also adding additional metadata fields that provide insights about the location such as AWS Region, AWS Availability Zone, AWS Local Zone, AWS Wavelength Zone, or AWS Outpost where the network interface where flow logs are captured exists. 
+* S3Control (3.3.104.0)
+	* Amazon S3 Batch Operations now supports Object Lock.
+* Core 3.3.106.17
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.730.0 (2020-05-01 18:11 UTC)
 * ElasticFileSystem (3.3.105.0)
 	* Change the TagKeys argument for UntagResource to a URL parameter to address an issue with the Java and .NET SDKs.
