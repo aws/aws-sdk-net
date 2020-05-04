@@ -329,7 +329,7 @@ namespace Amazon.S3.Util
         internal static void SetMetadataHeaders(IRequest request, MetadataCollection metadata)
         {
             foreach (var name in metadata.Keys)
-                request.Headers[name] = metadata[name];
+                request.Headers[name] = Uri.EscapeDataString(metadata[name]);
         }
 
         internal static DateTime? ParseExpiresHeader(string rawValue, string requestId)
