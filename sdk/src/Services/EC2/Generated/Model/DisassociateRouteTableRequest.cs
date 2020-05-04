@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateRouteTable operation.
-    /// Disassociates a subnet from a route table.
+    /// Disassociates a subnet or gateway from a route table.
     /// 
     ///  
     /// <para>
@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property AssociationId. 
         /// <para>
         /// The association ID representing the current association between the route table and
-        /// subnet.
+        /// subnet or gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

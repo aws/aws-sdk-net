@@ -17415,6 +17415,11 @@ namespace Amazon.EC2
         /// public IP addresses when addressed between a linked EC2-Classic instance and instances
         /// in the VPC to which it's linked. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
         /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify a VPC ID in the request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLinkDnsSupport service method.</param>
         /// 
@@ -17435,6 +17440,11 @@ namespace Amazon.EC2
         /// public IP addresses when addressed between a linked EC2-Classic instance and instances
         /// in the VPC to which it's linked. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
         /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify a VPC ID in the request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLinkDnsSupport service method.</param>
         /// <param name="cancellationToken">
@@ -17655,7 +17665,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Disassociates a subnet from a route table.
+        /// Disassociates a subnet or gateway from a route table.
         /// 
         ///  
         /// <para>
@@ -17680,7 +17690,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Disassociates a subnet from a route table.
+        /// Disassociates a subnet or gateway from a route table.
         /// 
         ///  
         /// <para>
@@ -18242,6 +18252,11 @@ namespace Amazon.EC2
         /// of an instance in a VPC resolves to its private IP address when addressed from a linked
         /// EC2-Classic instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
         /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify a VPC ID in the request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLinkDnsSupport service method.</param>
         /// 
@@ -18264,6 +18279,11 @@ namespace Amazon.EC2
         /// of an instance in a VPC resolves to its private IP address when addressed from a linked
         /// EC2-Classic instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
         /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify a VPC ID in the request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLinkDnsSupport service method.</param>
         /// <param name="cancellationToken">
