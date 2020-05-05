@@ -111,6 +111,11 @@ namespace Amazon.EC2.Model
         /// Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
         /// Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// To create a subnet in an Outpost, set this value to the Availability Zone for the
+        /// Outpost and specify the Outpost ARN.
+        /// </para>
         /// </summary>
         public string AvailabilityZone
         {
