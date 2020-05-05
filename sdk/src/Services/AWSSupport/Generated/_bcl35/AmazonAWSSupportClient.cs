@@ -42,7 +42,18 @@ namespace Amazon.AWSSupport
     /// your AWS Support cases programmatically. It uses HTTP methods that return results
     /// in JSON format.
     /// </para>
-    ///  
+    ///  <important> <ul> <li> 
+    /// <para>
+    /// You must have a Business or Enterprise support plan to use the AWS Support API. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you call the AWS Support API from an account that doesn't have a Business or Enterprise
+    /// support plan, the <code>SubscriptionRequiredException</code> error message appears.
+    /// For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS
+    /// Support</a>.
+    /// </para>
+    ///  </li> </ul> </important> 
     /// <para>
     /// The AWS Support service also exposes a set of <a href="http://aws.amazon.com/premiumsupport/trustedadvisor/">Trusted
     /// Advisor</a> features. You can retrieve a list of checks and their descriptions, get
@@ -317,18 +328,13 @@ namespace Amazon.AWSSupport
         #region  AddAttachmentsToSet
 
         /// <summary>
-        /// Adds one or more attachments to an attachment set. If an <code>attachmentSetId</code>
-        /// is not specified, a new attachment set is created, and the ID of the set is returned
-        /// in the response. If an <code>attachmentSetId</code> is specified, the attachments
-        /// are added to the specified set, if it exists.
+        /// Adds one or more attachments to an attachment set. 
         /// 
         ///  
         /// <para>
-        /// An attachment set is a temporary container for attachments that are to be added to
-        /// a case or case communication. The set is available for one hour after it is created;
-        /// the <code>expiryTime</code> returned in the response indicates when the set expires.
-        /// The maximum number of attachments in a set is 3, and the maximum size of any attachment
-        /// in the set is 5 MB.
+        /// An attachment set is a temporary container for attachments that you add to a case
+        /// or case communication. The set is available for 1 hour after it's created. The <code>expiryTime</code>
+        /// returned in the response is when the set expires. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddAttachmentsToSet service method.</param>
@@ -346,8 +352,8 @@ namespace Amazon.AWSSupport
         /// An attachment set with the specified ID could not be found.
         /// </exception>
         /// <exception cref="Amazon.AWSSupport.Model.AttachmentSetSizeLimitExceededException">
-        /// A limit for the size of an attachment set has been exceeded. The limits are 3 attachments
-        /// and 5 MB per attachment.
+        /// A limit for the size of an attachment set has been exceeded. The limits are three
+        /// attachments and 5 MB per attachment.
         /// </exception>
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
@@ -480,85 +486,39 @@ namespace Amazon.AWSSupport
         #region  CreateCase
 
         /// <summary>
-        /// Creates a new case in the AWS Support Center. This operation is modeled on the behavior
-        /// of the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
-        /// Case</a> page. Its parameters require you to specify the following information:
+        /// Creates a case in the AWS Support Center. This operation is similar to how you create
+        /// a case in the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
+        /// Case</a> page.
         /// 
-        ///  <ul> <li> 
-        /// <para>
-        ///  <b>issueType.</b> The type of issue for the case. You can specify either "customer-service"
-        /// or "technical." If you do not indicate a value, the default is "technical."
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// Service limit increases are not supported by the Support API; you must submit service
-        /// limit increase requests in <a href="https://console.aws.amazon.com/support">Support
-        /// Center</a>.
-        /// </para>
         ///  
         /// <para>
-        /// The <code>caseId</code> is not the <code>displayId</code> that appears in <a href="https://console.aws.amazon.com/support">Support
-        /// Center</a>. You can use the <a>DescribeCases</a> API to get the <code>displayId</code>.
+        /// The AWS Support API doesn't support requesting service limit increases. You can submit
+        /// a service limit increase in the following ways: 
         /// </para>
-        ///  </note> </li> <li> 
+        ///  <ul> <li> 
         /// <para>
-        ///  <b>serviceCode.</b> The code for an AWS service. You can get the possible <code>serviceCode</code>
-        /// values by calling <a>DescribeServices</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>categoryCode.</b> The category for the service defined for the <code>serviceCode</code>
-        /// value. You also get the category code for a service by calling <a>DescribeServices</a>.
-        /// Each AWS service defines its own set of category codes.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>severityCode.</b> A value that indicates the urgency of the case, which in turn
-        /// determines the response time according to your service level agreement with AWS Support.
-        /// You can get the possible <code>severityCode</code> values by calling <a>DescribeSeverityLevels</a>.
-        /// For more information about the meaning of the codes, see <a>SeverityLevel</a> and
-        /// <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-        /// a Severity</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>subject.</b> The <b>Subject</b> field on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
+        /// Submit a request from the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
         /// Case</a> page.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>communicationBody.</b> The <b>Description</b> field on the AWS Support Center
-        /// <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a>
-        /// page.
+        /// Use the Service Quotas <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_RequestServiceQuotaIncrease.html">RequestServiceQuotaIncrease</a>
+        /// operation.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> 
         /// <para>
-        ///  <b>attachmentSetId.</b> The ID of a set of attachments that has been created by using
-        /// <a>AddAttachmentsToSet</a>.
+        /// A successful <a>CreateCase</a> request returns an AWS Support case number. You can
+        /// use the <a>DescribeCases</a> operation and specify the case number to get existing
+        /// AWS Support cases. After you create a case, you can use the <a>AddCommunicationToCase</a>
+        /// operation to add additional communication or attachments to an existing case.
         /// </para>
-        ///  </li> <li> 
+        ///  <note> <ul> <li> 
         /// <para>
-        ///  <b>language.</b> The human language in which AWS Support handles the case. English
-        /// and Japanese are currently supported.
+        /// The <code>caseId</code> is separate from the <code>displayId</code> that appears in
+        /// the <a href="https://console.aws.amazon.com/support">Support Center</a>. You can use
+        /// the <a>DescribeCases</a> operation to get the <code>displayId</code>.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>ccEmailAddresses.</b> The AWS Support Center <b>CC</b> field on the <a href="https://console.aws.amazon.com/support/home#/case/create">Create
-        /// Case</a> page. You can list email addresses to be copied on any correspondence about
-        /// the case. The account that opens the case is already identified by passing the AWS
-        /// Credentials in the HTTP POST method or in a method or function call from one of the
-        /// programming languages supported by an <a href="http://aws.amazon.com/tools/">AWS SDK</a>.
-        /// 
-        /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// To add additional communication or attachments to an existing case, use <a>AddCommunicationToCase</a>.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// A successful <a>CreateCase</a> request returns an AWS Support case number. Case numbers
-        /// are used by the <a>DescribeCases</a> operation to retrieve existing AWS Support cases.
-        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCase service method.</param>
         /// 
@@ -625,8 +585,9 @@ namespace Amazon.AWSSupport
         #region  DescribeAttachment
 
         /// <summary>
-        /// Returns the attachment that has the specified ID. Attachment IDs are generated by
-        /// the case management system when you add an attachment to a case or case communication.
+        /// Returns the attachment that has the specified ID. Attachments can include screenshots,
+        /// error logs, or other files that describe your issue. Attachment IDs are generated
+        /// by the case management system when you add an attachment to a case or case communication.
         /// Attachment IDs are returned in the <a>AttachmentDetails</a> objects that are returned
         /// by the <a>DescribeCommunications</a> operation.
         /// </summary>

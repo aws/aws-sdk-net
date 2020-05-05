@@ -61,7 +61,7 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the Trusted Advisor check, which includes the alert criteria and
-        /// recommended actions (contains HTML markup).
+        /// recommended operations (contains HTML markup).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
