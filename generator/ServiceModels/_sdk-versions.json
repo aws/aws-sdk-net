@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.731.0",
+    "ProductVersion" : "3.3.732.0",
     "CoreVersion"    : "3.3.106.17",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -21,7 +21,7 @@
             "InPreview"               : false
         },
         "AWSSupport"  : {
-            "Version" : "3.3.100.172",
+            "Version" : "3.3.100.173",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.106.17"
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.171.0",
+            "Version" : "3.3.172.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.106.17"
@@ -369,7 +369,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.3.121.1",
+            "Version" : "3.3.122.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.106.17"
