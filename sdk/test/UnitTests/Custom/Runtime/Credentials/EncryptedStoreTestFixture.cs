@@ -171,13 +171,13 @@ namespace AWSSDK.UnitTests
         private void MockEncryptedKeys()
         {
             // mock _encryptedKeys to be empty so that we can easily look at the file for unit testing
-            OriginalEncryptedKeys = (HashSet<string>)ReflectionHelpers.Invoke(PersistenceManager.Instance, "_encryptedKeys");
-            ReflectionHelpers.Invoke(PersistenceManager.Instance, "_encryptedKeys", new HashSet<string>());
+            OriginalEncryptedKeys = (HashSet<string>)ReflectionHelpers.Invoke(typeof(PersistenceManager), "ENCRYPTEDKEYS");
+            ReflectionHelpers.Invoke(typeof(PersistenceManager), "ENCRYPTEDKEYS", new HashSet<string>());
         }
 
         private void UnMockEncryptedKeys()
         {
-            ReflectionHelpers.Invoke(PersistenceManager.Instance, "_encryptedKeys", OriginalEncryptedKeys);
+            ReflectionHelpers.Invoke(typeof(PersistenceManager), "ENCRYPTEDKEYS", OriginalEncryptedKeys);
         }
 
 
