@@ -34,6 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class ParameterMetadata
     {
         private string _allowedPattern;
+        private string _dataType;
         private string _description;
         private string _keyId;
         private DateTime? _lastModifiedDate;
@@ -65,6 +66,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAllowedPattern()
         {
             return this._allowedPattern != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataType. 
+        /// <para>
+        /// The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>.
+        /// The default is <code>text</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string DataType
+        {
+            get { return this._dataType; }
+            set { this._dataType = value; }
+        }
+
+        // Check to see if DataType property is set
+        internal bool IsSetDataType()
+        {
+            return this._dataType != null;
         }
 
         /// <summary>

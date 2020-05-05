@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class Parameter
     {
         private string _arn;
+        private string _dataType;
         private DateTime? _lastModifiedDate;
         private string _name;
         private string _selector;
@@ -57,6 +58,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetARN()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataType. 
+        /// <para>
+        /// The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>.
+        /// The default is <code>text</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string DataType
+        {
+            get { return this._dataType; }
+            set { this._dataType = value; }
+        }
+
+        // Check to see if DataType property is set
+        internal bool IsSetDataType()
+        {
+            return this._dataType != null;
         }
 
         /// <summary>

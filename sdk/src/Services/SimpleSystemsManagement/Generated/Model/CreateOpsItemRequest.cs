@@ -215,7 +215,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The origin of the OpsItem, such as EC2 or Systems Manager.
+        /// The origin of the OpsItem, such as Amazon EC2 or Systems Manager.
         /// </para>
         ///  <note> 
         /// <para>

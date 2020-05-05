@@ -34,6 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class PutParameterRequest : AmazonSimpleSystemsManagementRequest
     {
         private string _allowedPattern;
+        private string _dataType;
         private string _description;
         private string _keyId;
         private string _name;
@@ -63,6 +64,46 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAllowedPattern()
         {
             return this._allowedPattern != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataType. 
+        /// <para>
+        /// The data type for a String parameter. Supported data types include plain text and
+        /// Amazon Machine Image IDs.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>The following data type values are supported.</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>text</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aws:ec2:image</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When you create a String parameter and specify <code>aws:ec2:image</code>, Systems
+        /// Manager validates the parameter value you provide against that data type. The required
+        /// format is <code>ami-12345abcdeEXAMPLE</code>. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+        /// parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string DataType
+        {
+            get { return this._dataType; }
+            set { this._dataType = value; }
+        }
+
+        // Check to see if DataType property is set
+        internal bool IsSetDataType()
+        {
+            return this._dataType != null;
         }
 
         /// <summary>
@@ -430,7 +471,6 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ParameterType Type
         {
             get { return this._type; }
