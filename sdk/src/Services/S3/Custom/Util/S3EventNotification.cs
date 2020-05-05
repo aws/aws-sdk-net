@@ -40,7 +40,6 @@ namespace Amazon.S3.Util
                         record.EventVersion = GetValueAsString(jsonRecord, "eventVersion");
                         record.EventSource = GetValueAsString(jsonRecord, "eventSource");
                         record.AwsRegion = GetValueAsString(jsonRecord, "awsRegion");
-                        record.EventVersion = GetValueAsString(jsonRecord, "eventVersion");
 
                         if (jsonRecord["eventTime"] != null)
                             record.EventTime = DateTime.Parse((string)jsonRecord["eventTime"], CultureInfo.InvariantCulture);
