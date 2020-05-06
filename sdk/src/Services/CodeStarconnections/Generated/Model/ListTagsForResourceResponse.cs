@@ -28,42 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeStarconnections.Model
 {
     /// <summary>
-    /// This is the response object from the CreateConnection operation.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class CreateConnectionResponse : AmazonWebServiceResponse
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private string _connectionArn;
         private List<Tag> _tags = new List<Tag>();
-
-        /// <summary>
-        /// Gets and sets the property ConnectionArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as
-        /// the connection reference when the connection is shared between AWS services.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// The ARN is never reused if the connection is deleted.
-        /// </para>
-        ///  </note>
-        /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
-        public string ConnectionArn
-        {
-            get { return this._connectionArn; }
-            set { this._connectionArn = value; }
-        }
-
-        // Check to see if ConnectionArn property is set
-        internal bool IsSetConnectionArn()
-        {
-            return this._connectionArn != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Specifies the tags applied to the resource.
+        /// A list of tag key and value pairs associated with the specified resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

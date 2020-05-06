@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateConnection Request Marshaller
+    /// ListTagsForResource Request Marshaller
     /// </summary>       
-    public class CreateConnectionRequestMarshaller : IMarshaller<IRequest, CreateConnectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListTagsForResourceRequestMarshaller : IMarshaller<IRequest, ListTagsForResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateConnectionRequest)input);
+            return this.Marshall((ListTagsForResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateConnectionRequest publicRequest)
+        public IRequest Marshall(ListTagsForResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeStarconnections");
-            string target = "com.amazonaws.codestar.connections.CodeStar_connections_20191201.CreateConnection";
+            string target = "com.amazonaws.codestar.connections.CodeStar_connections_20191201.ListTagsForResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-01";            
@@ -68,32 +68,10 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConnectionName())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WritePropertyName("ConnectionName");
-                    context.Writer.Write(publicRequest.ConnectionName);
-                }
-
-                if(publicRequest.IsSetProviderType())
-                {
-                    context.Writer.WritePropertyName("ProviderType");
-                    context.Writer.Write(publicRequest.ProviderType);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
         
@@ -105,9 +83,9 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateConnectionRequestMarshaller _instance = new CreateConnectionRequestMarshaller();        
+        private static ListTagsForResourceRequestMarshaller _instance = new ListTagsForResourceRequestMarshaller();        
 
-        internal static CreateConnectionRequestMarshaller GetInstance()
+        internal static ListTagsForResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -115,7 +93,7 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateConnectionRequestMarshaller Instance
+        public static ListTagsForResourceRequestMarshaller Instance
         {
             get
             {

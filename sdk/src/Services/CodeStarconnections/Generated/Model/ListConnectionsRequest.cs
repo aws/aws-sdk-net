@@ -44,7 +44,7 @@ namespace Amazon.CodeStarconnections.Model
         /// results, make another call with the returned <code>nextToken</code> value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=0, Max=5000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -28,45 +28,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeStarconnections.Model
 {
     /// <summary>
-    /// This is the response object from the CreateConnection operation.
+    /// Container for the parameters to the TagResource operation.
+    /// Adds to or modifies the tags of the given resource. Tags are metadata that can be
+    /// used to manage a resource.
     /// </summary>
-    public partial class CreateConnectionResponse : AmazonWebServiceResponse
+    public partial class TagResourceRequest : AmazonCodeStarconnectionsRequest
     {
-        private string _connectionArn;
+        private string _resourceArn;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property ConnectionArn. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as
-        /// the connection reference when the connection is shared between AWS services.
+        /// The Amazon Resource Name (ARN) of the resource to which you want to add or update
+        /// tags.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The ARN is never reused if the connection is deleted.
-        /// </para>
-        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
-        public string ConnectionArn
+        [AWSProperty(Required=true, Min=1, Max=1011)]
+        public string ResourceArn
         {
-            get { return this._connectionArn; }
-            set { this._connectionArn = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if ConnectionArn property is set
-        internal bool IsSetConnectionArn()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._connectionArn != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Specifies the tags applied to the resource.
+        /// The tags you want to modify or add to the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Required=true, Min=0, Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }
