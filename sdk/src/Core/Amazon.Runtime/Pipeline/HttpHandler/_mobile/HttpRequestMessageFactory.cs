@@ -268,10 +268,10 @@ namespace Amazon.Runtime
 #if NETSTANDARD
             if (clientConfig.MaxConnectionsPerServer.HasValue)
                 httpMessageHandler.MaxConnectionsPerServer = clientConfig.MaxConnectionsPerServer.Value;
-#endif
 
             try
             {
+#endif
                 // If HttpClientHandler.AllowAutoRedirect is set to true (default value),
                 // redirects for GET requests are automatically followed and redirects for POST
                 // requests are thrown back as exceptions.
@@ -291,12 +291,13 @@ namespace Amazon.Runtime
                 {
                     httpMessageHandler.Proxy.Credentials = clientConfig.ProxyCredentials;
                 }
+#if NETSTANDARD
             }
             catch (PlatformNotSupportedException pns)
             {
                 Logger.GetLogger(typeof(HttpRequestMessageFactory)).Debug(pns, $"The current runtime does not support modifying the configuration of HttpClient.");
             }
-
+#endif
             var httpClient = new HttpClient(httpMessageHandler);
             
             if (clientConfig.Timeout.HasValue)
