@@ -270,25 +270,31 @@ namespace Amazon.Runtime
                 httpMessageHandler.MaxConnectionsPerServer = clientConfig.MaxConnectionsPerServer.Value;
 #endif
 
-            // If HttpClientHandler.AllowAutoRedirect is set to true (default value),
-            // redirects for GET requests are automatically followed and redirects for POST
-            // requests are thrown back as exceptions.
-            // If HttpClientHandler.AllowAutoRedirect is set to false (e.g. S3),
-            // redirects are returned as responses.
-            httpMessageHandler.AllowAutoRedirect = clientConfig.AllowAutoRedirect;
-
-            // Disable automatic decompression when Content-Encoding header is present
-            httpMessageHandler.AutomaticDecompression = DecompressionMethods.None;
-
-            var proxy = clientConfig.GetWebProxy();
-            if (proxy != null)
+            try
             {
-                httpMessageHandler.Proxy = proxy;
+                // If HttpClientHandler.AllowAutoRedirect is set to true (default value),
+                // redirects for GET requests are automatically followed and redirects for POST
+                // requests are thrown back as exceptions.
+                // If HttpClientHandler.AllowAutoRedirect is set to false (e.g. S3),
+                // redirects are returned as responses.
+                httpMessageHandler.AllowAutoRedirect = clientConfig.AllowAutoRedirect;
+                // Disable automatic decompression when Content-Encoding header is present
+                httpMessageHandler.AutomaticDecompression = DecompressionMethods.None;
+
+                var proxy = clientConfig.GetWebProxy();
+                if (proxy != null)
+                {
+                    httpMessageHandler.Proxy = proxy;
+                }
+
+                if (httpMessageHandler.Proxy != null && clientConfig.ProxyCredentials != null)
+                {
+                    httpMessageHandler.Proxy.Credentials = clientConfig.ProxyCredentials;
+                }
             }
-
-            if (httpMessageHandler.Proxy != null && clientConfig.ProxyCredentials != null)
+            catch (PlatformNotSupportedException pns)
             {
-                httpMessageHandler.Proxy.Credentials = clientConfig.ProxyCredentials;
+                Logger.GetLogger(typeof(HttpRequestMessageFactory)).Debug(pns, $"The current runtime does not support modifying the configuration of HttpClient.");
             }
 
             var httpClient = new HttpClient(httpMessageHandler);

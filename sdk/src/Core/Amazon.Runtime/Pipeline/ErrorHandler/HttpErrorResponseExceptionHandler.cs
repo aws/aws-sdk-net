@@ -115,6 +115,87 @@ namespace Amazon.Runtime.Internal
             throw errorResponseException;
         }
 
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Handles an exception for the given execution context.
+        /// </summary>
+        /// <param name="executionContext">The execution context, it contains the
+        /// request and response context.</param>
+        /// <param name="exception">The exception to handle.</param>
+        /// <returns>
+        /// Returns a boolean value which indicates if the original exception
+        /// should be rethrown.
+        /// This method can also throw a new exception to replace the original exception.
+        /// </returns>
+        public override async System.Threading.Tasks.Task<bool> HandleExceptionAsync(IExecutionContext executionContext, HttpErrorResponseException exception)
+        {
+            var requestContext = executionContext.RequestContext;
+            var httpErrorResponse = exception.Response;
+
+            // If 404 was suppressed and successfully unmarshalled,
+            // don't rethrow the original exception.
+            if (HandleSuppressed404(executionContext, httpErrorResponse))
+                return false;
+
+            requestContext.Metrics.AddProperty(Metric.StatusCode, httpErrorResponse.StatusCode);
+
+            AmazonServiceException errorResponseException = null;
+            // Unmarshall the service error response and throw the corresponding service exception.
+            try
+            {
+                using (httpErrorResponse.ResponseBody)
+                {
+                    var unmarshaller = requestContext.Unmarshaller;
+                    var readEntireResponse = true;
+
+                    var errorContext = unmarshaller.CreateContext(httpErrorResponse,
+                        readEntireResponse,
+                        await httpErrorResponse.ResponseBody.OpenResponseAsync(),
+                        requestContext.Metrics);
+
+                    try
+                    {
+                        errorResponseException = unmarshaller.UnmarshallException(errorContext,
+                            exception, httpErrorResponse.StatusCode);
+                    }
+                    catch (Exception e)
+                    {
+                        // Rethrow Amazon service or client exceptions 
+                        if (e is AmazonServiceException ||
+                            e is AmazonClientException)
+                        {
+                            throw;
+                        }
+
+                        // Else, there was an issue with the response body, throw AmazonUnmarshallingException
+                        var requestId = httpErrorResponse.GetHeaderValue(HeaderKeys.RequestIdHeader);
+                        var body = errorContext.ResponseBody;
+                        throw new AmazonUnmarshallingException(requestId, lastKnownLocation: null, responseBody: body,
+                            innerException: e, statusCode : httpErrorResponse.StatusCode);
+                    }
+
+                    requestContext.Metrics.AddProperty(Metric.AWSRequestID, errorResponseException.RequestId);
+                    requestContext.Metrics.AddProperty(Metric.AWSErrorCode, errorResponseException.ErrorCode);
+
+                    var logResponseBody = requestContext.ClientConfig.LogResponse ||
+                        AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never;
+                    if (logResponseBody)
+                    {
+                        this.Logger.Error(errorResponseException, "Received error response: [{0}]",
+                            errorContext.ResponseBody);
+                    }
+                }
+            }
+            catch (Exception unmarshallException)
+            {
+                this.Logger.Error(unmarshallException, "Failed to unmarshall a service error response.");
+                throw;
+            }
+
+            throw errorResponseException;
+        }
+#endif
+
         /// <summary>
         /// Checks if a HTTP 404 status code is returned which needs to be suppressed and 
         /// processes it.

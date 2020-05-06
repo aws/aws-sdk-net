@@ -3,7 +3,7 @@
     <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
     <TargetFrameworks>netstandard1.3;netstandard2.0</TargetFrameworks>    
     <DefineConstants>$(DefineConstants);NETSTANDARD;AWS_ASYNC_API</DefineConstants>
-    <DefineConstants Condition="'$(TargetFramework)' == 'netstandard1.3'">$(DefineConstants);NETSTANDARD13;ADD_SUPPORT_IORDERED_DICTIONARY;ADD_SUPPORT_ICLONEABLE</DefineConstants>
+    <DefineConstants Condition="'$(TargetFramework)' == 'netstandard1.3'">TRACE;NETSTANDARD;BLAZORWASM;AWS_ASYNC_API;NETSTANDARD13;ADD_SUPPORT_IORDERED_DICTIONARY;ADD_SUPPORT_ICLONEABLE</DefineConstants>
     <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.0'">$(DefineConstants);NETSTANDARD20</DefineConstants>    
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -23,6 +23,10 @@
 
     <NetStandardImplicitPackageVersion Condition="'$(TargetFramework)' == 'netstandard1.3'">1.6.0</NetStandardImplicitPackageVersion>
     <NetStandardImplicitPackageVersion Condition="'$(TargetFramework)' == 'netstandard2.0'">2.0.0</NetStandardImplicitPackageVersion>
+    <PublicSign>True</PublicSign>
+    <SignAssembly>true</SignAssembly>
+    <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile>..\..\public.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   
   <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'false' Or '$(RuleSetFileForBuild)' == '' ">
@@ -35,7 +39,7 @@
   <Choose>
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>
-        <AssemblyOriginatorKeyFile>..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
+        <AssemblyOriginatorKeyFile>..\..\public.snk</AssemblyOriginatorKeyFile>
       </PropertyGroup>
     </When>
     <Otherwise>
