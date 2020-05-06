@@ -23,7 +23,6 @@
 
     <NetStandardImplicitPackageVersion Condition="'$(TargetFramework)' == 'netstandard1.3'">1.6.0</NetStandardImplicitPackageVersion>
     <NetStandardImplicitPackageVersion Condition="'$(TargetFramework)' == 'netstandard2.0'">2.0.0</NetStandardImplicitPackageVersion>
-    <PublicSign>True</PublicSign>
     <SignAssembly>true</SignAssembly>
     <DelaySign>false</DelaySign>
     <AssemblyOriginatorKeyFile>..\..\public.snk</AssemblyOriginatorKeyFile>
@@ -39,7 +38,7 @@
   <Choose>
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>
-        <AssemblyOriginatorKeyFile>..\..\public.snk</AssemblyOriginatorKeyFile>
+        <AssemblyOriginatorKeyFile>..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
       </PropertyGroup>
     </When>
     <Otherwise>
