@@ -104,7 +104,7 @@ namespace Amazon.Runtime.Internal.Settings
             }
             catch (UnauthorizedAccessException ex)
             {
-                _logger.Error(ex, $"Unable to initialize '{nameof(PersistenceManager)}'. Falling back to '{nameof(InMemoryPersistenceManager)}': {ex.Message}");
+                _logger.Error(ex, $"Unable to initialize '{nameof(PersistenceManager)}'. Falling back to '{nameof(InMemoryPersistenceManager)}'.");
 
                 Instance = new InMemoryPersistenceManager();
             }
