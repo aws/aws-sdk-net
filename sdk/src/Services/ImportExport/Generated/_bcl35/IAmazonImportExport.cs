@@ -70,6 +70,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.UnableToCancelJobIdException">
         /// AWS Import/Export cannot cancel the job
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CancelJob">REST API Reference for CancelJob Operation</seealso>
         CancelJobResponse CancelJob(CancelJobRequest request);
 
         /// <summary>
@@ -83,6 +84,7 @@ namespace Amazon.ImportExport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CancelJob">REST API Reference for CancelJob Operation</seealso>
         IAsyncResult BeginCancelJob(CancelJobRequest request, AsyncCallback callback, object state);
 
 
@@ -94,6 +96,7 @@ namespace Amazon.ImportExport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelJob.</param>
         /// 
         /// <returns>Returns a  CancelJobResult from ImportExport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CancelJob">REST API Reference for CancelJob Operation</seealso>
         CancelJobResponse EndCancelJob(IAsyncResult asyncResult);
 
         #endregion
@@ -167,6 +170,7 @@ namespace Amazon.ImportExport
         /// bucket, exportBucket, or logBucket field to a bucket that the account, as specified
         /// by the manifest's Access Key ID, has write permissions to.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CreateJob">REST API Reference for CreateJob Operation</seealso>
         CreateJobResponse CreateJob(CreateJobRequest request);
 
         /// <summary>
@@ -180,6 +184,7 @@ namespace Amazon.ImportExport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CreateJob">REST API Reference for CreateJob Operation</seealso>
         IAsyncResult BeginCreateJob(CreateJobRequest request, AsyncCallback callback, object state);
 
 
@@ -191,6 +196,7 @@ namespace Amazon.ImportExport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateJob.</param>
         /// 
         /// <returns>Returns a  CreateJobResult from ImportExport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CreateJob">REST API Reference for CreateJob Operation</seealso>
         CreateJobResponse EndCreateJob(IAsyncResult asyncResult);
 
         #endregion
@@ -228,6 +234,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetShippingLabel">REST API Reference for GetShippingLabel Operation</seealso>
         GetShippingLabelResponse GetShippingLabel(GetShippingLabelRequest request);
 
         /// <summary>
@@ -241,6 +248,7 @@ namespace Amazon.ImportExport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetShippingLabel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetShippingLabel">REST API Reference for GetShippingLabel Operation</seealso>
         IAsyncResult BeginGetShippingLabel(GetShippingLabelRequest request, AsyncCallback callback, object state);
 
 
@@ -252,6 +260,7 @@ namespace Amazon.ImportExport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetShippingLabel.</param>
         /// 
         /// <returns>Returns a  GetShippingLabelResult from ImportExport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetShippingLabel">REST API Reference for GetShippingLabel Operation</seealso>
         GetShippingLabelResponse EndGetShippingLabel(IAsyncResult asyncResult);
 
         #endregion
@@ -284,6 +293,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetStatus">REST API Reference for GetStatus Operation</seealso>
         GetStatusResponse GetStatus(GetStatusRequest request);
 
         /// <summary>
@@ -297,6 +307,7 @@ namespace Amazon.ImportExport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetStatus">REST API Reference for GetStatus Operation</seealso>
         IAsyncResult BeginGetStatus(GetStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -308,6 +319,7 @@ namespace Amazon.ImportExport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStatus.</param>
         /// 
         /// <returns>Returns a  GetStatusResult from ImportExport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetStatus">REST API Reference for GetStatus Operation</seealso>
         GetStatusResponse EndGetStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -334,6 +346,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/ListJobs">REST API Reference for ListJobs Operation</seealso>
         ListJobsResponse ListJobs();
 
         /// <summary>
@@ -356,6 +369,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/ListJobs">REST API Reference for ListJobs Operation</seealso>
         ListJobsResponse ListJobs(ListJobsRequest request);
 
         /// <summary>
@@ -369,6 +383,7 @@ namespace Amazon.ImportExport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJobs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/ListJobs">REST API Reference for ListJobs Operation</seealso>
         IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state);
 
 
@@ -380,6 +395,7 @@ namespace Amazon.ImportExport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJobs.</param>
         /// 
         /// <returns>Returns a  ListJobsResult from ImportExport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/ListJobs">REST API Reference for ListJobs Operation</seealso>
         ListJobsResponse EndListJobs(IAsyncResult asyncResult);
 
         #endregion
@@ -456,6 +472,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.UnableToUpdateJobIdException">
         /// AWS Import/Export cannot update the job
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         UpdateJobResponse UpdateJob(UpdateJobRequest request);
 
         /// <summary>
@@ -469,6 +486,7 @@ namespace Amazon.ImportExport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         IAsyncResult BeginUpdateJob(UpdateJobRequest request, AsyncCallback callback, object state);
 
 
@@ -480,6 +498,7 @@ namespace Amazon.ImportExport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateJob.</param>
         /// 
         /// <returns>Returns a  UpdateJobResult from ImportExport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         UpdateJobResponse EndUpdateJob(IAsyncResult asyncResult);
 
         #endregion

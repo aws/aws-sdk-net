@@ -253,6 +253,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/BatchGetTraces">REST API Reference for BatchGetTraces Operation</seealso>
         public virtual BatchGetTracesResponse BatchGetTraces(BatchGetTracesRequest request)
         {
             var options = new InvokeOptions();
@@ -273,6 +274,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetTraces
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/BatchGetTraces">REST API Reference for BatchGetTraces Operation</seealso>
         public virtual IAsyncResult BeginBatchGetTraces(BatchGetTracesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -289,6 +291,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetTraces.</param>
         /// 
         /// <returns>Returns a  BatchGetTracesResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/BatchGetTraces">REST API Reference for BatchGetTraces Operation</seealso>
         public virtual BatchGetTracesResponse EndBatchGetTraces(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetTracesResponse>(asyncResult);
@@ -310,6 +313,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -330,6 +334,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateGroup(CreateGroupRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -346,6 +351,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateGroup.</param>
         /// 
         /// <returns>Returns a  CreateGroupResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual CreateGroupResponse EndCreateGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateGroupResponse>(asyncResult);
@@ -376,6 +382,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateSamplingRule">REST API Reference for CreateSamplingRule Operation</seealso>
         public virtual CreateSamplingRuleResponse CreateSamplingRule(CreateSamplingRuleRequest request)
         {
             var options = new InvokeOptions();
@@ -396,6 +403,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSamplingRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateSamplingRule">REST API Reference for CreateSamplingRule Operation</seealso>
         public virtual IAsyncResult BeginCreateSamplingRule(CreateSamplingRuleRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -412,6 +420,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSamplingRule.</param>
         /// 
         /// <returns>Returns a  CreateSamplingRuleResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateSamplingRule">REST API Reference for CreateSamplingRule Operation</seealso>
         public virtual CreateSamplingRuleResponse EndCreateSamplingRule(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSamplingRuleResponse>(asyncResult);
@@ -433,6 +442,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -453,6 +463,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteGroup(DeleteGroupRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -469,6 +480,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGroup.</param>
         /// 
         /// <returns>Returns a  DeleteGroupResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual DeleteGroupResponse EndDeleteGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteGroupResponse>(asyncResult);
@@ -490,6 +502,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteSamplingRule">REST API Reference for DeleteSamplingRule Operation</seealso>
         public virtual DeleteSamplingRuleResponse DeleteSamplingRule(DeleteSamplingRuleRequest request)
         {
             var options = new InvokeOptions();
@@ -510,6 +523,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSamplingRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteSamplingRule">REST API Reference for DeleteSamplingRule Operation</seealso>
         public virtual IAsyncResult BeginDeleteSamplingRule(DeleteSamplingRuleRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -526,6 +540,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSamplingRule.</param>
         /// 
         /// <returns>Returns a  DeleteSamplingRuleResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteSamplingRule">REST API Reference for DeleteSamplingRule Operation</seealso>
         public virtual DeleteSamplingRuleResponse EndDeleteSamplingRule(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSamplingRuleResponse>(asyncResult);
@@ -547,6 +562,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetEncryptionConfig">REST API Reference for GetEncryptionConfig Operation</seealso>
         public virtual GetEncryptionConfigResponse GetEncryptionConfig(GetEncryptionConfigRequest request)
         {
             var options = new InvokeOptions();
@@ -567,6 +583,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEncryptionConfig
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetEncryptionConfig">REST API Reference for GetEncryptionConfig Operation</seealso>
         public virtual IAsyncResult BeginGetEncryptionConfig(GetEncryptionConfigRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -583,6 +600,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEncryptionConfig.</param>
         /// 
         /// <returns>Returns a  GetEncryptionConfigResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetEncryptionConfig">REST API Reference for GetEncryptionConfig Operation</seealso>
         public virtual GetEncryptionConfigResponse EndGetEncryptionConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<GetEncryptionConfigResponse>(asyncResult);
@@ -604,6 +622,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroup">REST API Reference for GetGroup Operation</seealso>
         public virtual GetGroupResponse GetGroup(GetGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -624,6 +643,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroup">REST API Reference for GetGroup Operation</seealso>
         public virtual IAsyncResult BeginGetGroup(GetGroupRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -640,6 +660,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGroup.</param>
         /// 
         /// <returns>Returns a  GetGroupResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroup">REST API Reference for GetGroup Operation</seealso>
         public virtual GetGroupResponse EndGetGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<GetGroupResponse>(asyncResult);
@@ -661,6 +682,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroups">REST API Reference for GetGroups Operation</seealso>
         public virtual GetGroupsResponse GetGroups(GetGroupsRequest request)
         {
             var options = new InvokeOptions();
@@ -681,6 +703,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroups">REST API Reference for GetGroups Operation</seealso>
         public virtual IAsyncResult BeginGetGroups(GetGroupsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -697,6 +720,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGroups.</param>
         /// 
         /// <returns>Returns a  GetGroupsResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroups">REST API Reference for GetGroups Operation</seealso>
         public virtual GetGroupsResponse EndGetGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<GetGroupsResponse>(asyncResult);
@@ -718,6 +742,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingRules">REST API Reference for GetSamplingRules Operation</seealso>
         public virtual GetSamplingRulesResponse GetSamplingRules(GetSamplingRulesRequest request)
         {
             var options = new InvokeOptions();
@@ -738,6 +763,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSamplingRules
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingRules">REST API Reference for GetSamplingRules Operation</seealso>
         public virtual IAsyncResult BeginGetSamplingRules(GetSamplingRulesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -754,6 +780,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSamplingRules.</param>
         /// 
         /// <returns>Returns a  GetSamplingRulesResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingRules">REST API Reference for GetSamplingRules Operation</seealso>
         public virtual GetSamplingRulesResponse EndGetSamplingRules(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSamplingRulesResponse>(asyncResult);
@@ -775,6 +802,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingStatisticSummaries">REST API Reference for GetSamplingStatisticSummaries Operation</seealso>
         public virtual GetSamplingStatisticSummariesResponse GetSamplingStatisticSummaries(GetSamplingStatisticSummariesRequest request)
         {
             var options = new InvokeOptions();
@@ -795,6 +823,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSamplingStatisticSummaries
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingStatisticSummaries">REST API Reference for GetSamplingStatisticSummaries Operation</seealso>
         public virtual IAsyncResult BeginGetSamplingStatisticSummaries(GetSamplingStatisticSummariesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -811,6 +840,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSamplingStatisticSummaries.</param>
         /// 
         /// <returns>Returns a  GetSamplingStatisticSummariesResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingStatisticSummaries">REST API Reference for GetSamplingStatisticSummaries Operation</seealso>
         public virtual GetSamplingStatisticSummariesResponse EndGetSamplingStatisticSummaries(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSamplingStatisticSummariesResponse>(asyncResult);
@@ -832,6 +862,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingTargets">REST API Reference for GetSamplingTargets Operation</seealso>
         public virtual GetSamplingTargetsResponse GetSamplingTargets(GetSamplingTargetsRequest request)
         {
             var options = new InvokeOptions();
@@ -852,6 +883,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSamplingTargets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingTargets">REST API Reference for GetSamplingTargets Operation</seealso>
         public virtual IAsyncResult BeginGetSamplingTargets(GetSamplingTargetsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -868,6 +900,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSamplingTargets.</param>
         /// 
         /// <returns>Returns a  GetSamplingTargetsResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingTargets">REST API Reference for GetSamplingTargets Operation</seealso>
         public virtual GetSamplingTargetsResponse EndGetSamplingTargets(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSamplingTargetsResponse>(asyncResult);
@@ -893,6 +926,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetServiceGraph">REST API Reference for GetServiceGraph Operation</seealso>
         public virtual GetServiceGraphResponse GetServiceGraph(GetServiceGraphRequest request)
         {
             var options = new InvokeOptions();
@@ -913,6 +947,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServiceGraph
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetServiceGraph">REST API Reference for GetServiceGraph Operation</seealso>
         public virtual IAsyncResult BeginGetServiceGraph(GetServiceGraphRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -929,6 +964,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetServiceGraph.</param>
         /// 
         /// <returns>Returns a  GetServiceGraphResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetServiceGraph">REST API Reference for GetServiceGraph Operation</seealso>
         public virtual GetServiceGraphResponse EndGetServiceGraph(IAsyncResult asyncResult)
         {
             return EndInvoke<GetServiceGraphResponse>(asyncResult);
@@ -950,6 +986,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTimeSeriesServiceStatistics">REST API Reference for GetTimeSeriesServiceStatistics Operation</seealso>
         public virtual GetTimeSeriesServiceStatisticsResponse GetTimeSeriesServiceStatistics(GetTimeSeriesServiceStatisticsRequest request)
         {
             var options = new InvokeOptions();
@@ -970,6 +1007,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTimeSeriesServiceStatistics
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTimeSeriesServiceStatistics">REST API Reference for GetTimeSeriesServiceStatistics Operation</seealso>
         public virtual IAsyncResult BeginGetTimeSeriesServiceStatistics(GetTimeSeriesServiceStatisticsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -986,6 +1024,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTimeSeriesServiceStatistics.</param>
         /// 
         /// <returns>Returns a  GetTimeSeriesServiceStatisticsResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTimeSeriesServiceStatistics">REST API Reference for GetTimeSeriesServiceStatistics Operation</seealso>
         public virtual GetTimeSeriesServiceStatisticsResponse EndGetTimeSeriesServiceStatistics(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTimeSeriesServiceStatisticsResponse>(asyncResult);
@@ -1007,6 +1046,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceGraph">REST API Reference for GetTraceGraph Operation</seealso>
         public virtual GetTraceGraphResponse GetTraceGraph(GetTraceGraphRequest request)
         {
             var options = new InvokeOptions();
@@ -1027,6 +1067,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTraceGraph
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceGraph">REST API Reference for GetTraceGraph Operation</seealso>
         public virtual IAsyncResult BeginGetTraceGraph(GetTraceGraphRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1043,6 +1084,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTraceGraph.</param>
         /// 
         /// <returns>Returns a  GetTraceGraphResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceGraph">REST API Reference for GetTraceGraph Operation</seealso>
         public virtual GetTraceGraphResponse EndGetTraceGraph(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTraceGraphResponse>(asyncResult);
@@ -1091,6 +1133,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSummaries">REST API Reference for GetTraceSummaries Operation</seealso>
         public virtual GetTraceSummariesResponse GetTraceSummaries(GetTraceSummariesRequest request)
         {
             var options = new InvokeOptions();
@@ -1111,6 +1154,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTraceSummaries
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSummaries">REST API Reference for GetTraceSummaries Operation</seealso>
         public virtual IAsyncResult BeginGetTraceSummaries(GetTraceSummariesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1127,6 +1171,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTraceSummaries.</param>
         /// 
         /// <returns>Returns a  GetTraceSummariesResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSummaries">REST API Reference for GetTraceSummaries Operation</seealso>
         public virtual GetTraceSummariesResponse EndGetTraceSummaries(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTraceSummariesResponse>(asyncResult);
@@ -1148,6 +1193,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutEncryptionConfig">REST API Reference for PutEncryptionConfig Operation</seealso>
         public virtual PutEncryptionConfigResponse PutEncryptionConfig(PutEncryptionConfigRequest request)
         {
             var options = new InvokeOptions();
@@ -1168,6 +1214,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEncryptionConfig
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutEncryptionConfig">REST API Reference for PutEncryptionConfig Operation</seealso>
         public virtual IAsyncResult BeginPutEncryptionConfig(PutEncryptionConfigRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1184,6 +1231,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEncryptionConfig.</param>
         /// 
         /// <returns>Returns a  PutEncryptionConfigResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutEncryptionConfig">REST API Reference for PutEncryptionConfig Operation</seealso>
         public virtual PutEncryptionConfigResponse EndPutEncryptionConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<PutEncryptionConfigResponse>(asyncResult);
@@ -1205,6 +1253,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTelemetryRecords">REST API Reference for PutTelemetryRecords Operation</seealso>
         public virtual PutTelemetryRecordsResponse PutTelemetryRecords(PutTelemetryRecordsRequest request)
         {
             var options = new InvokeOptions();
@@ -1225,6 +1274,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutTelemetryRecords
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTelemetryRecords">REST API Reference for PutTelemetryRecords Operation</seealso>
         public virtual IAsyncResult BeginPutTelemetryRecords(PutTelemetryRecordsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1241,6 +1291,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutTelemetryRecords.</param>
         /// 
         /// <returns>Returns a  PutTelemetryRecordsResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTelemetryRecords">REST API Reference for PutTelemetryRecords Operation</seealso>
         public virtual PutTelemetryRecordsResponse EndPutTelemetryRecords(IAsyncResult asyncResult)
         {
             return EndInvoke<PutTelemetryRecordsResponse>(asyncResult);
@@ -1329,6 +1380,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTraceSegments">REST API Reference for PutTraceSegments Operation</seealso>
         public virtual PutTraceSegmentsResponse PutTraceSegments(PutTraceSegmentsRequest request)
         {
             var options = new InvokeOptions();
@@ -1349,6 +1401,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutTraceSegments
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTraceSegments">REST API Reference for PutTraceSegments Operation</seealso>
         public virtual IAsyncResult BeginPutTraceSegments(PutTraceSegmentsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1365,6 +1418,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutTraceSegments.</param>
         /// 
         /// <returns>Returns a  PutTraceSegmentsResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTraceSegments">REST API Reference for PutTraceSegments Operation</seealso>
         public virtual PutTraceSegmentsResponse EndPutTraceSegments(IAsyncResult asyncResult)
         {
             return EndInvoke<PutTraceSegmentsResponse>(asyncResult);
@@ -1386,6 +1440,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -1406,6 +1461,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateGroup(UpdateGroupRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1422,6 +1478,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGroup.</param>
         /// 
         /// <returns>Returns a  UpdateGroupResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual UpdateGroupResponse EndUpdateGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateGroupResponse>(asyncResult);
@@ -1443,6 +1500,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateSamplingRule">REST API Reference for UpdateSamplingRule Operation</seealso>
         public virtual UpdateSamplingRuleResponse UpdateSamplingRule(UpdateSamplingRuleRequest request)
         {
             var options = new InvokeOptions();
@@ -1463,6 +1521,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSamplingRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateSamplingRule">REST API Reference for UpdateSamplingRule Operation</seealso>
         public virtual IAsyncResult BeginUpdateSamplingRule(UpdateSamplingRuleRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1479,6 +1538,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSamplingRule.</param>
         /// 
         /// <returns>Returns a  UpdateSamplingRuleResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateSamplingRule">REST API Reference for UpdateSamplingRule Operation</seealso>
         public virtual UpdateSamplingRuleResponse EndUpdateSamplingRule(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateSamplingRuleResponse>(asyncResult);

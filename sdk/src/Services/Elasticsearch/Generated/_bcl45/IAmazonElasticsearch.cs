@@ -79,6 +79,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AddTags">REST API Reference for AddTags Operation</seealso>
         AddTagsResponse AddTags(AddTagsRequest request);
 
 
@@ -108,6 +109,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AddTags">REST API Reference for AddTags Operation</seealso>
         Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -143,6 +145,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AssociatePackage">REST API Reference for AssociatePackage Operation</seealso>
         AssociatePackageResponse AssociatePackage(AssociatePackageRequest request);
 
 
@@ -178,6 +181,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AssociatePackage">REST API Reference for AssociatePackage Operation</seealso>
         Task<AssociatePackageResponse> AssociatePackageAsync(AssociatePackageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -207,6 +211,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CancelElasticsearchServiceSoftwareUpdate">REST API Reference for CancelElasticsearchServiceSoftwareUpdate Operation</seealso>
         CancelElasticsearchServiceSoftwareUpdateResponse CancelElasticsearchServiceSoftwareUpdate(CancelElasticsearchServiceSoftwareUpdateRequest request);
 
 
@@ -236,6 +241,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CancelElasticsearchServiceSoftwareUpdate">REST API Reference for CancelElasticsearchServiceSoftwareUpdate Operation</seealso>
         Task<CancelElasticsearchServiceSoftwareUpdateResponse> CancelElasticsearchServiceSoftwareUpdateAsync(CancelElasticsearchServiceSoftwareUpdateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -277,6 +283,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateElasticsearchDomain">REST API Reference for CreateElasticsearchDomain Operation</seealso>
         CreateElasticsearchDomainResponse CreateElasticsearchDomain(CreateElasticsearchDomainRequest request);
 
 
@@ -318,6 +325,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateElasticsearchDomain">REST API Reference for CreateElasticsearchDomain Operation</seealso>
         Task<CreateElasticsearchDomainResponse> CreateElasticsearchDomainAsync(CreateElasticsearchDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -357,6 +365,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreatePackage">REST API Reference for CreatePackage Operation</seealso>
         CreatePackageResponse CreatePackage(CreatePackageRequest request);
 
 
@@ -396,6 +405,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreatePackage">REST API Reference for CreatePackage Operation</seealso>
         Task<CreatePackageResponse> CreatePackageAsync(CreatePackageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -424,6 +434,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteElasticsearchDomain">REST API Reference for DeleteElasticsearchDomain Operation</seealso>
         DeleteElasticsearchDomainResponse DeleteElasticsearchDomain(DeleteElasticsearchDomainRequest request);
 
 
@@ -452,6 +463,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteElasticsearchDomain">REST API Reference for DeleteElasticsearchDomain Operation</seealso>
         Task<DeleteElasticsearchDomainResponse> DeleteElasticsearchDomainAsync(DeleteElasticsearchDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -479,6 +491,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteElasticsearchServiceRole">REST API Reference for DeleteElasticsearchServiceRole Operation</seealso>
         DeleteElasticsearchServiceRoleResponse DeleteElasticsearchServiceRole(DeleteElasticsearchServiceRoleRequest request);
 
 
@@ -506,6 +519,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteElasticsearchServiceRole">REST API Reference for DeleteElasticsearchServiceRole Operation</seealso>
         Task<DeleteElasticsearchServiceRoleResponse> DeleteElasticsearchServiceRoleAsync(DeleteElasticsearchServiceRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -541,6 +555,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
         DeletePackageResponse DeletePackage(DeletePackageRequest request);
 
 
@@ -576,6 +591,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
         Task<DeletePackageResponse> DeletePackageAsync(DeletePackageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -604,6 +620,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomain">REST API Reference for DescribeElasticsearchDomain Operation</seealso>
         DescribeElasticsearchDomainResponse DescribeElasticsearchDomain(DescribeElasticsearchDomainRequest request);
 
 
@@ -632,6 +649,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomain">REST API Reference for DescribeElasticsearchDomain Operation</seealso>
         Task<DescribeElasticsearchDomainResponse> DescribeElasticsearchDomainAsync(DescribeElasticsearchDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -660,6 +678,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomainConfig">REST API Reference for DescribeElasticsearchDomainConfig Operation</seealso>
         DescribeElasticsearchDomainConfigResponse DescribeElasticsearchDomainConfig(DescribeElasticsearchDomainConfigRequest request);
 
 
@@ -688,6 +707,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomainConfig">REST API Reference for DescribeElasticsearchDomainConfig Operation</seealso>
         Task<DescribeElasticsearchDomainConfigResponse> DescribeElasticsearchDomainConfigAsync(DescribeElasticsearchDomainConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -712,6 +732,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomains">REST API Reference for DescribeElasticsearchDomains Operation</seealso>
         DescribeElasticsearchDomainsResponse DescribeElasticsearchDomains(DescribeElasticsearchDomainsRequest request);
 
 
@@ -736,6 +757,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomains">REST API Reference for DescribeElasticsearchDomains Operation</seealso>
         Task<DescribeElasticsearchDomainsResponse> DescribeElasticsearchDomainsAsync(DescribeElasticsearchDomainsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -773,6 +795,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchInstanceTypeLimits">REST API Reference for DescribeElasticsearchInstanceTypeLimits Operation</seealso>
         DescribeElasticsearchInstanceTypeLimitsResponse DescribeElasticsearchInstanceTypeLimits(DescribeElasticsearchInstanceTypeLimitsRequest request);
 
 
@@ -810,6 +833,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchInstanceTypeLimits">REST API Reference for DescribeElasticsearchInstanceTypeLimits Operation</seealso>
         Task<DescribeElasticsearchInstanceTypeLimitsResponse> DescribeElasticsearchInstanceTypeLimitsAsync(DescribeElasticsearchInstanceTypeLimitsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -842,6 +866,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribePackages">REST API Reference for DescribePackages Operation</seealso>
         DescribePackagesResponse DescribePackages(DescribePackagesRequest request);
 
 
@@ -874,6 +899,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribePackages">REST API Reference for DescribePackages Operation</seealso>
         Task<DescribePackagesResponse> DescribePackagesAsync(DescribePackagesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -902,6 +928,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeReservedElasticsearchInstanceOfferings">REST API Reference for DescribeReservedElasticsearchInstanceOfferings Operation</seealso>
         DescribeReservedElasticsearchInstanceOfferingsResponse DescribeReservedElasticsearchInstanceOfferings(DescribeReservedElasticsearchInstanceOfferingsRequest request);
 
 
@@ -930,6 +957,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeReservedElasticsearchInstanceOfferings">REST API Reference for DescribeReservedElasticsearchInstanceOfferings Operation</seealso>
         Task<DescribeReservedElasticsearchInstanceOfferingsResponse> DescribeReservedElasticsearchInstanceOfferingsAsync(DescribeReservedElasticsearchInstanceOfferingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -958,6 +986,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeReservedElasticsearchInstances">REST API Reference for DescribeReservedElasticsearchInstances Operation</seealso>
         DescribeReservedElasticsearchInstancesResponse DescribeReservedElasticsearchInstances(DescribeReservedElasticsearchInstancesRequest request);
 
 
@@ -986,6 +1015,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeReservedElasticsearchInstances">REST API Reference for DescribeReservedElasticsearchInstances Operation</seealso>
         Task<DescribeReservedElasticsearchInstancesResponse> DescribeReservedElasticsearchInstancesAsync(DescribeReservedElasticsearchInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1021,6 +1051,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DissociatePackage">REST API Reference for DissociatePackage Operation</seealso>
         DissociatePackageResponse DissociatePackage(DissociatePackageRequest request);
 
 
@@ -1056,6 +1087,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DissociatePackage">REST API Reference for DissociatePackage Operation</seealso>
         Task<DissociatePackageResponse> DissociatePackageAsync(DissociatePackageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1089,6 +1121,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetCompatibleElasticsearchVersions">REST API Reference for GetCompatibleElasticsearchVersions Operation</seealso>
         GetCompatibleElasticsearchVersionsResponse GetCompatibleElasticsearchVersions(GetCompatibleElasticsearchVersionsRequest request);
 
 
@@ -1122,6 +1155,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetCompatibleElasticsearchVersions">REST API Reference for GetCompatibleElasticsearchVersions Operation</seealso>
         Task<GetCompatibleElasticsearchVersionsResponse> GetCompatibleElasticsearchVersionsAsync(GetCompatibleElasticsearchVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1154,6 +1188,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetUpgradeHistory">REST API Reference for GetUpgradeHistory Operation</seealso>
         GetUpgradeHistoryResponse GetUpgradeHistory(GetUpgradeHistoryRequest request);
 
 
@@ -1186,6 +1221,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetUpgradeHistory">REST API Reference for GetUpgradeHistory Operation</seealso>
         Task<GetUpgradeHistoryResponse> GetUpgradeHistoryAsync(GetUpgradeHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1218,6 +1254,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetUpgradeStatus">REST API Reference for GetUpgradeStatus Operation</seealso>
         GetUpgradeStatusResponse GetUpgradeStatus(GetUpgradeStatusRequest request);
 
 
@@ -1250,6 +1287,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetUpgradeStatus">REST API Reference for GetUpgradeStatus Operation</seealso>
         Task<GetUpgradeStatusResponse> GetUpgradeStatusAsync(GetUpgradeStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1269,6 +1307,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
         ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request);
 
 
@@ -1288,6 +1327,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
         Task<ListDomainNamesResponse> ListDomainNamesAsync(ListDomainNamesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1319,6 +1359,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListDomainsForPackage">REST API Reference for ListDomainsForPackage Operation</seealso>
         ListDomainsForPackageResponse ListDomainsForPackage(ListDomainsForPackageRequest request);
 
 
@@ -1350,6 +1391,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListDomainsForPackage">REST API Reference for ListDomainsForPackage Operation</seealso>
         Task<ListDomainsForPackageResponse> ListDomainsForPackageAsync(ListDomainsForPackageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1377,6 +1419,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListElasticsearchInstanceTypes">REST API Reference for ListElasticsearchInstanceTypes Operation</seealso>
         ListElasticsearchInstanceTypesResponse ListElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest request);
 
 
@@ -1404,6 +1447,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListElasticsearchInstanceTypes">REST API Reference for ListElasticsearchInstanceTypes Operation</seealso>
         Task<ListElasticsearchInstanceTypesResponse> ListElasticsearchInstanceTypesAsync(ListElasticsearchInstanceTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1431,6 +1475,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListElasticsearchVersions">REST API Reference for ListElasticsearchVersions Operation</seealso>
         ListElasticsearchVersionsResponse ListElasticsearchVersions(ListElasticsearchVersionsRequest request);
 
 
@@ -1458,6 +1503,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListElasticsearchVersions">REST API Reference for ListElasticsearchVersions Operation</seealso>
         Task<ListElasticsearchVersionsResponse> ListElasticsearchVersionsAsync(ListElasticsearchVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1489,6 +1535,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListPackagesForDomain">REST API Reference for ListPackagesForDomain Operation</seealso>
         ListPackagesForDomainResponse ListPackagesForDomain(ListPackagesForDomainRequest request);
 
 
@@ -1520,6 +1567,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListPackagesForDomain">REST API Reference for ListPackagesForDomain Operation</seealso>
         Task<ListPackagesForDomainResponse> ListPackagesForDomainAsync(ListPackagesForDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1547,6 +1595,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListTags">REST API Reference for ListTags Operation</seealso>
         ListTagsResponse ListTags(ListTagsRequest request);
 
 
@@ -1574,6 +1623,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListTags">REST API Reference for ListTags Operation</seealso>
         Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1610,6 +1660,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/PurchaseReservedElasticsearchInstanceOffering">REST API Reference for PurchaseReservedElasticsearchInstanceOffering Operation</seealso>
         PurchaseReservedElasticsearchInstanceOfferingResponse PurchaseReservedElasticsearchInstanceOffering(PurchaseReservedElasticsearchInstanceOfferingRequest request);
 
 
@@ -1646,6 +1697,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/PurchaseReservedElasticsearchInstanceOffering">REST API Reference for PurchaseReservedElasticsearchInstanceOffering Operation</seealso>
         Task<PurchaseReservedElasticsearchInstanceOfferingResponse> PurchaseReservedElasticsearchInstanceOfferingAsync(PurchaseReservedElasticsearchInstanceOfferingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1669,6 +1721,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         RemoveTagsResponse RemoveTags(RemoveTagsRequest request);
 
 
@@ -1692,6 +1745,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1719,6 +1773,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/StartElasticsearchServiceSoftwareUpdate">REST API Reference for StartElasticsearchServiceSoftwareUpdate Operation</seealso>
         StartElasticsearchServiceSoftwareUpdateResponse StartElasticsearchServiceSoftwareUpdate(StartElasticsearchServiceSoftwareUpdateRequest request);
 
 
@@ -1746,6 +1801,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/StartElasticsearchServiceSoftwareUpdate">REST API Reference for StartElasticsearchServiceSoftwareUpdate Operation</seealso>
         Task<StartElasticsearchServiceSoftwareUpdateResponse> StartElasticsearchServiceSoftwareUpdateAsync(StartElasticsearchServiceSoftwareUpdateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1782,6 +1838,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdateElasticsearchDomainConfig">REST API Reference for UpdateElasticsearchDomainConfig Operation</seealso>
         UpdateElasticsearchDomainConfigResponse UpdateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest request);
 
 
@@ -1818,6 +1875,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdateElasticsearchDomainConfig">REST API Reference for UpdateElasticsearchDomainConfig Operation</seealso>
         Task<UpdateElasticsearchDomainConfigResponse> UpdateElasticsearchDomainConfigAsync(UpdateElasticsearchDomainConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1854,6 +1912,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpgradeElasticsearchDomain">REST API Reference for UpgradeElasticsearchDomain Operation</seealso>
         UpgradeElasticsearchDomainResponse UpgradeElasticsearchDomain(UpgradeElasticsearchDomainRequest request);
 
 
@@ -1890,6 +1949,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpgradeElasticsearchDomain">REST API Reference for UpgradeElasticsearchDomain Operation</seealso>
         Task<UpgradeElasticsearchDomainResponse> UpgradeElasticsearchDomainAsync(UpgradeElasticsearchDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

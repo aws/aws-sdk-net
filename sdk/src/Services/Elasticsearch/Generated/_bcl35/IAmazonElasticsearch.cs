@@ -77,6 +77,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AddTags">REST API Reference for AddTags Operation</seealso>
         AddTagsResponse AddTags(AddTagsRequest request);
 
         /// <summary>
@@ -90,6 +91,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AddTags">REST API Reference for AddTags Operation</seealso>
         IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state);
 
 
@@ -101,6 +103,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTags.</param>
         /// 
         /// <returns>Returns a  AddTagsResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AddTags">REST API Reference for AddTags Operation</seealso>
         AddTagsResponse EndAddTags(IAsyncResult asyncResult);
 
         #endregion
@@ -136,6 +139,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AssociatePackage">REST API Reference for AssociatePackage Operation</seealso>
         AssociatePackageResponse AssociatePackage(AssociatePackageRequest request);
 
         /// <summary>
@@ -149,6 +153,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociatePackage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AssociatePackage">REST API Reference for AssociatePackage Operation</seealso>
         IAsyncResult BeginAssociatePackage(AssociatePackageRequest request, AsyncCallback callback, object state);
 
 
@@ -160,6 +165,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociatePackage.</param>
         /// 
         /// <returns>Returns a  AssociatePackageResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AssociatePackage">REST API Reference for AssociatePackage Operation</seealso>
         AssociatePackageResponse EndAssociatePackage(IAsyncResult asyncResult);
 
         #endregion
@@ -189,6 +195,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CancelElasticsearchServiceSoftwareUpdate">REST API Reference for CancelElasticsearchServiceSoftwareUpdate Operation</seealso>
         CancelElasticsearchServiceSoftwareUpdateResponse CancelElasticsearchServiceSoftwareUpdate(CancelElasticsearchServiceSoftwareUpdateRequest request);
 
         /// <summary>
@@ -202,6 +209,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelElasticsearchServiceSoftwareUpdate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CancelElasticsearchServiceSoftwareUpdate">REST API Reference for CancelElasticsearchServiceSoftwareUpdate Operation</seealso>
         IAsyncResult BeginCancelElasticsearchServiceSoftwareUpdate(CancelElasticsearchServiceSoftwareUpdateRequest request, AsyncCallback callback, object state);
 
 
@@ -213,6 +221,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelElasticsearchServiceSoftwareUpdate.</param>
         /// 
         /// <returns>Returns a  CancelElasticsearchServiceSoftwareUpdateResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CancelElasticsearchServiceSoftwareUpdate">REST API Reference for CancelElasticsearchServiceSoftwareUpdate Operation</seealso>
         CancelElasticsearchServiceSoftwareUpdateResponse EndCancelElasticsearchServiceSoftwareUpdate(IAsyncResult asyncResult);
 
         #endregion
@@ -254,6 +263,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateElasticsearchDomain">REST API Reference for CreateElasticsearchDomain Operation</seealso>
         CreateElasticsearchDomainResponse CreateElasticsearchDomain(CreateElasticsearchDomainRequest request);
 
         /// <summary>
@@ -267,6 +277,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateElasticsearchDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateElasticsearchDomain">REST API Reference for CreateElasticsearchDomain Operation</seealso>
         IAsyncResult BeginCreateElasticsearchDomain(CreateElasticsearchDomainRequest request, AsyncCallback callback, object state);
 
 
@@ -278,6 +289,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateElasticsearchDomain.</param>
         /// 
         /// <returns>Returns a  CreateElasticsearchDomainResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateElasticsearchDomain">REST API Reference for CreateElasticsearchDomain Operation</seealso>
         CreateElasticsearchDomainResponse EndCreateElasticsearchDomain(IAsyncResult asyncResult);
 
         #endregion
@@ -317,6 +329,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreatePackage">REST API Reference for CreatePackage Operation</seealso>
         CreatePackageResponse CreatePackage(CreatePackageRequest request);
 
         /// <summary>
@@ -330,6 +343,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePackage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreatePackage">REST API Reference for CreatePackage Operation</seealso>
         IAsyncResult BeginCreatePackage(CreatePackageRequest request, AsyncCallback callback, object state);
 
 
@@ -341,6 +355,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePackage.</param>
         /// 
         /// <returns>Returns a  CreatePackageResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreatePackage">REST API Reference for CreatePackage Operation</seealso>
         CreatePackageResponse EndCreatePackage(IAsyncResult asyncResult);
 
         #endregion
@@ -369,6 +384,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteElasticsearchDomain">REST API Reference for DeleteElasticsearchDomain Operation</seealso>
         DeleteElasticsearchDomainResponse DeleteElasticsearchDomain(DeleteElasticsearchDomainRequest request);
 
         /// <summary>
@@ -382,6 +398,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteElasticsearchDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteElasticsearchDomain">REST API Reference for DeleteElasticsearchDomain Operation</seealso>
         IAsyncResult BeginDeleteElasticsearchDomain(DeleteElasticsearchDomainRequest request, AsyncCallback callback, object state);
 
 
@@ -393,6 +410,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteElasticsearchDomain.</param>
         /// 
         /// <returns>Returns a  DeleteElasticsearchDomainResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteElasticsearchDomain">REST API Reference for DeleteElasticsearchDomain Operation</seealso>
         DeleteElasticsearchDomainResponse EndDeleteElasticsearchDomain(IAsyncResult asyncResult);
 
         #endregion
@@ -420,6 +438,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteElasticsearchServiceRole">REST API Reference for DeleteElasticsearchServiceRole Operation</seealso>
         DeleteElasticsearchServiceRoleResponse DeleteElasticsearchServiceRole(DeleteElasticsearchServiceRoleRequest request);
 
         /// <summary>
@@ -433,6 +452,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteElasticsearchServiceRole
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteElasticsearchServiceRole">REST API Reference for DeleteElasticsearchServiceRole Operation</seealso>
         IAsyncResult BeginDeleteElasticsearchServiceRole(DeleteElasticsearchServiceRoleRequest request, AsyncCallback callback, object state);
 
 
@@ -444,6 +464,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteElasticsearchServiceRole.</param>
         /// 
         /// <returns>Returns a  DeleteElasticsearchServiceRoleResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteElasticsearchServiceRole">REST API Reference for DeleteElasticsearchServiceRole Operation</seealso>
         DeleteElasticsearchServiceRoleResponse EndDeleteElasticsearchServiceRole(IAsyncResult asyncResult);
 
         #endregion
@@ -479,6 +500,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
         DeletePackageResponse DeletePackage(DeletePackageRequest request);
 
         /// <summary>
@@ -492,6 +514,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePackage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
         IAsyncResult BeginDeletePackage(DeletePackageRequest request, AsyncCallback callback, object state);
 
 
@@ -503,6 +526,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePackage.</param>
         /// 
         /// <returns>Returns a  DeletePackageResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
         DeletePackageResponse EndDeletePackage(IAsyncResult asyncResult);
 
         #endregion
@@ -531,6 +555,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomain">REST API Reference for DescribeElasticsearchDomain Operation</seealso>
         DescribeElasticsearchDomainResponse DescribeElasticsearchDomain(DescribeElasticsearchDomainRequest request);
 
         /// <summary>
@@ -544,6 +569,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeElasticsearchDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomain">REST API Reference for DescribeElasticsearchDomain Operation</seealso>
         IAsyncResult BeginDescribeElasticsearchDomain(DescribeElasticsearchDomainRequest request, AsyncCallback callback, object state);
 
 
@@ -555,6 +581,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeElasticsearchDomain.</param>
         /// 
         /// <returns>Returns a  DescribeElasticsearchDomainResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomain">REST API Reference for DescribeElasticsearchDomain Operation</seealso>
         DescribeElasticsearchDomainResponse EndDescribeElasticsearchDomain(IAsyncResult asyncResult);
 
         #endregion
@@ -583,6 +610,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomainConfig">REST API Reference for DescribeElasticsearchDomainConfig Operation</seealso>
         DescribeElasticsearchDomainConfigResponse DescribeElasticsearchDomainConfig(DescribeElasticsearchDomainConfigRequest request);
 
         /// <summary>
@@ -596,6 +624,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeElasticsearchDomainConfig
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomainConfig">REST API Reference for DescribeElasticsearchDomainConfig Operation</seealso>
         IAsyncResult BeginDescribeElasticsearchDomainConfig(DescribeElasticsearchDomainConfigRequest request, AsyncCallback callback, object state);
 
 
@@ -607,6 +636,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeElasticsearchDomainConfig.</param>
         /// 
         /// <returns>Returns a  DescribeElasticsearchDomainConfigResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomainConfig">REST API Reference for DescribeElasticsearchDomainConfig Operation</seealso>
         DescribeElasticsearchDomainConfigResponse EndDescribeElasticsearchDomainConfig(IAsyncResult asyncResult);
 
         #endregion
@@ -631,6 +661,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomains">REST API Reference for DescribeElasticsearchDomains Operation</seealso>
         DescribeElasticsearchDomainsResponse DescribeElasticsearchDomains(DescribeElasticsearchDomainsRequest request);
 
         /// <summary>
@@ -644,6 +675,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeElasticsearchDomains
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomains">REST API Reference for DescribeElasticsearchDomains Operation</seealso>
         IAsyncResult BeginDescribeElasticsearchDomains(DescribeElasticsearchDomainsRequest request, AsyncCallback callback, object state);
 
 
@@ -655,6 +687,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeElasticsearchDomains.</param>
         /// 
         /// <returns>Returns a  DescribeElasticsearchDomainsResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomains">REST API Reference for DescribeElasticsearchDomains Operation</seealso>
         DescribeElasticsearchDomainsResponse EndDescribeElasticsearchDomains(IAsyncResult asyncResult);
 
         #endregion
@@ -692,6 +725,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchInstanceTypeLimits">REST API Reference for DescribeElasticsearchInstanceTypeLimits Operation</seealso>
         DescribeElasticsearchInstanceTypeLimitsResponse DescribeElasticsearchInstanceTypeLimits(DescribeElasticsearchInstanceTypeLimitsRequest request);
 
         /// <summary>
@@ -705,6 +739,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeElasticsearchInstanceTypeLimits
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchInstanceTypeLimits">REST API Reference for DescribeElasticsearchInstanceTypeLimits Operation</seealso>
         IAsyncResult BeginDescribeElasticsearchInstanceTypeLimits(DescribeElasticsearchInstanceTypeLimitsRequest request, AsyncCallback callback, object state);
 
 
@@ -716,6 +751,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeElasticsearchInstanceTypeLimits.</param>
         /// 
         /// <returns>Returns a  DescribeElasticsearchInstanceTypeLimitsResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchInstanceTypeLimits">REST API Reference for DescribeElasticsearchInstanceTypeLimits Operation</seealso>
         DescribeElasticsearchInstanceTypeLimitsResponse EndDescribeElasticsearchInstanceTypeLimits(IAsyncResult asyncResult);
 
         #endregion
@@ -748,6 +784,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribePackages">REST API Reference for DescribePackages Operation</seealso>
         DescribePackagesResponse DescribePackages(DescribePackagesRequest request);
 
         /// <summary>
@@ -761,6 +798,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePackages
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribePackages">REST API Reference for DescribePackages Operation</seealso>
         IAsyncResult BeginDescribePackages(DescribePackagesRequest request, AsyncCallback callback, object state);
 
 
@@ -772,6 +810,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePackages.</param>
         /// 
         /// <returns>Returns a  DescribePackagesResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribePackages">REST API Reference for DescribePackages Operation</seealso>
         DescribePackagesResponse EndDescribePackages(IAsyncResult asyncResult);
 
         #endregion
@@ -800,6 +839,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeReservedElasticsearchInstanceOfferings">REST API Reference for DescribeReservedElasticsearchInstanceOfferings Operation</seealso>
         DescribeReservedElasticsearchInstanceOfferingsResponse DescribeReservedElasticsearchInstanceOfferings(DescribeReservedElasticsearchInstanceOfferingsRequest request);
 
         /// <summary>
@@ -813,6 +853,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReservedElasticsearchInstanceOfferings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeReservedElasticsearchInstanceOfferings">REST API Reference for DescribeReservedElasticsearchInstanceOfferings Operation</seealso>
         IAsyncResult BeginDescribeReservedElasticsearchInstanceOfferings(DescribeReservedElasticsearchInstanceOfferingsRequest request, AsyncCallback callback, object state);
 
 
@@ -824,6 +865,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReservedElasticsearchInstanceOfferings.</param>
         /// 
         /// <returns>Returns a  DescribeReservedElasticsearchInstanceOfferingsResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeReservedElasticsearchInstanceOfferings">REST API Reference for DescribeReservedElasticsearchInstanceOfferings Operation</seealso>
         DescribeReservedElasticsearchInstanceOfferingsResponse EndDescribeReservedElasticsearchInstanceOfferings(IAsyncResult asyncResult);
 
         #endregion
@@ -852,6 +894,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeReservedElasticsearchInstances">REST API Reference for DescribeReservedElasticsearchInstances Operation</seealso>
         DescribeReservedElasticsearchInstancesResponse DescribeReservedElasticsearchInstances(DescribeReservedElasticsearchInstancesRequest request);
 
         /// <summary>
@@ -865,6 +908,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReservedElasticsearchInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeReservedElasticsearchInstances">REST API Reference for DescribeReservedElasticsearchInstances Operation</seealso>
         IAsyncResult BeginDescribeReservedElasticsearchInstances(DescribeReservedElasticsearchInstancesRequest request, AsyncCallback callback, object state);
 
 
@@ -876,6 +920,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReservedElasticsearchInstances.</param>
         /// 
         /// <returns>Returns a  DescribeReservedElasticsearchInstancesResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeReservedElasticsearchInstances">REST API Reference for DescribeReservedElasticsearchInstances Operation</seealso>
         DescribeReservedElasticsearchInstancesResponse EndDescribeReservedElasticsearchInstances(IAsyncResult asyncResult);
 
         #endregion
@@ -911,6 +956,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DissociatePackage">REST API Reference for DissociatePackage Operation</seealso>
         DissociatePackageResponse DissociatePackage(DissociatePackageRequest request);
 
         /// <summary>
@@ -924,6 +970,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDissociatePackage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DissociatePackage">REST API Reference for DissociatePackage Operation</seealso>
         IAsyncResult BeginDissociatePackage(DissociatePackageRequest request, AsyncCallback callback, object state);
 
 
@@ -935,6 +982,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDissociatePackage.</param>
         /// 
         /// <returns>Returns a  DissociatePackageResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DissociatePackage">REST API Reference for DissociatePackage Operation</seealso>
         DissociatePackageResponse EndDissociatePackage(IAsyncResult asyncResult);
 
         #endregion
@@ -968,6 +1016,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetCompatibleElasticsearchVersions">REST API Reference for GetCompatibleElasticsearchVersions Operation</seealso>
         GetCompatibleElasticsearchVersionsResponse GetCompatibleElasticsearchVersions(GetCompatibleElasticsearchVersionsRequest request);
 
         /// <summary>
@@ -981,6 +1030,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCompatibleElasticsearchVersions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetCompatibleElasticsearchVersions">REST API Reference for GetCompatibleElasticsearchVersions Operation</seealso>
         IAsyncResult BeginGetCompatibleElasticsearchVersions(GetCompatibleElasticsearchVersionsRequest request, AsyncCallback callback, object state);
 
 
@@ -992,6 +1042,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCompatibleElasticsearchVersions.</param>
         /// 
         /// <returns>Returns a  GetCompatibleElasticsearchVersionsResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetCompatibleElasticsearchVersions">REST API Reference for GetCompatibleElasticsearchVersions Operation</seealso>
         GetCompatibleElasticsearchVersionsResponse EndGetCompatibleElasticsearchVersions(IAsyncResult asyncResult);
 
         #endregion
@@ -1024,6 +1075,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetUpgradeHistory">REST API Reference for GetUpgradeHistory Operation</seealso>
         GetUpgradeHistoryResponse GetUpgradeHistory(GetUpgradeHistoryRequest request);
 
         /// <summary>
@@ -1037,6 +1089,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUpgradeHistory
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetUpgradeHistory">REST API Reference for GetUpgradeHistory Operation</seealso>
         IAsyncResult BeginGetUpgradeHistory(GetUpgradeHistoryRequest request, AsyncCallback callback, object state);
 
 
@@ -1048,6 +1101,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUpgradeHistory.</param>
         /// 
         /// <returns>Returns a  GetUpgradeHistoryResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetUpgradeHistory">REST API Reference for GetUpgradeHistory Operation</seealso>
         GetUpgradeHistoryResponse EndGetUpgradeHistory(IAsyncResult asyncResult);
 
         #endregion
@@ -1080,6 +1134,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetUpgradeStatus">REST API Reference for GetUpgradeStatus Operation</seealso>
         GetUpgradeStatusResponse GetUpgradeStatus(GetUpgradeStatusRequest request);
 
         /// <summary>
@@ -1093,6 +1148,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUpgradeStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetUpgradeStatus">REST API Reference for GetUpgradeStatus Operation</seealso>
         IAsyncResult BeginGetUpgradeStatus(GetUpgradeStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -1104,6 +1160,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUpgradeStatus.</param>
         /// 
         /// <returns>Returns a  GetUpgradeStatusResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetUpgradeStatus">REST API Reference for GetUpgradeStatus Operation</seealso>
         GetUpgradeStatusResponse EndGetUpgradeStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -1123,6 +1180,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
         ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request);
 
         /// <summary>
@@ -1136,6 +1194,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomainNames
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
         IAsyncResult BeginListDomainNames(ListDomainNamesRequest request, AsyncCallback callback, object state);
 
 
@@ -1147,6 +1206,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomainNames.</param>
         /// 
         /// <returns>Returns a  ListDomainNamesResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
         ListDomainNamesResponse EndListDomainNames(IAsyncResult asyncResult);
 
         #endregion
@@ -1178,6 +1238,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListDomainsForPackage">REST API Reference for ListDomainsForPackage Operation</seealso>
         ListDomainsForPackageResponse ListDomainsForPackage(ListDomainsForPackageRequest request);
 
         /// <summary>
@@ -1191,6 +1252,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomainsForPackage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListDomainsForPackage">REST API Reference for ListDomainsForPackage Operation</seealso>
         IAsyncResult BeginListDomainsForPackage(ListDomainsForPackageRequest request, AsyncCallback callback, object state);
 
 
@@ -1202,6 +1264,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomainsForPackage.</param>
         /// 
         /// <returns>Returns a  ListDomainsForPackageResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListDomainsForPackage">REST API Reference for ListDomainsForPackage Operation</seealso>
         ListDomainsForPackageResponse EndListDomainsForPackage(IAsyncResult asyncResult);
 
         #endregion
@@ -1229,6 +1292,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListElasticsearchInstanceTypes">REST API Reference for ListElasticsearchInstanceTypes Operation</seealso>
         ListElasticsearchInstanceTypesResponse ListElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest request);
 
         /// <summary>
@@ -1242,6 +1306,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListElasticsearchInstanceTypes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListElasticsearchInstanceTypes">REST API Reference for ListElasticsearchInstanceTypes Operation</seealso>
         IAsyncResult BeginListElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest request, AsyncCallback callback, object state);
 
 
@@ -1253,6 +1318,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListElasticsearchInstanceTypes.</param>
         /// 
         /// <returns>Returns a  ListElasticsearchInstanceTypesResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListElasticsearchInstanceTypes">REST API Reference for ListElasticsearchInstanceTypes Operation</seealso>
         ListElasticsearchInstanceTypesResponse EndListElasticsearchInstanceTypes(IAsyncResult asyncResult);
 
         #endregion
@@ -1280,6 +1346,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListElasticsearchVersions">REST API Reference for ListElasticsearchVersions Operation</seealso>
         ListElasticsearchVersionsResponse ListElasticsearchVersions(ListElasticsearchVersionsRequest request);
 
         /// <summary>
@@ -1293,6 +1360,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListElasticsearchVersions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListElasticsearchVersions">REST API Reference for ListElasticsearchVersions Operation</seealso>
         IAsyncResult BeginListElasticsearchVersions(ListElasticsearchVersionsRequest request, AsyncCallback callback, object state);
 
 
@@ -1304,6 +1372,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListElasticsearchVersions.</param>
         /// 
         /// <returns>Returns a  ListElasticsearchVersionsResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListElasticsearchVersions">REST API Reference for ListElasticsearchVersions Operation</seealso>
         ListElasticsearchVersionsResponse EndListElasticsearchVersions(IAsyncResult asyncResult);
 
         #endregion
@@ -1335,6 +1404,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListPackagesForDomain">REST API Reference for ListPackagesForDomain Operation</seealso>
         ListPackagesForDomainResponse ListPackagesForDomain(ListPackagesForDomainRequest request);
 
         /// <summary>
@@ -1348,6 +1418,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPackagesForDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListPackagesForDomain">REST API Reference for ListPackagesForDomain Operation</seealso>
         IAsyncResult BeginListPackagesForDomain(ListPackagesForDomainRequest request, AsyncCallback callback, object state);
 
 
@@ -1359,6 +1430,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPackagesForDomain.</param>
         /// 
         /// <returns>Returns a  ListPackagesForDomainResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListPackagesForDomain">REST API Reference for ListPackagesForDomain Operation</seealso>
         ListPackagesForDomainResponse EndListPackagesForDomain(IAsyncResult asyncResult);
 
         #endregion
@@ -1386,6 +1458,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListTags">REST API Reference for ListTags Operation</seealso>
         ListTagsResponse ListTags(ListTagsRequest request);
 
         /// <summary>
@@ -1399,6 +1472,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListTags">REST API Reference for ListTags Operation</seealso>
         IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state);
 
 
@@ -1410,6 +1484,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTags.</param>
         /// 
         /// <returns>Returns a  ListTagsResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListTags">REST API Reference for ListTags Operation</seealso>
         ListTagsResponse EndListTags(IAsyncResult asyncResult);
 
         #endregion
@@ -1446,6 +1521,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/PurchaseReservedElasticsearchInstanceOffering">REST API Reference for PurchaseReservedElasticsearchInstanceOffering Operation</seealso>
         PurchaseReservedElasticsearchInstanceOfferingResponse PurchaseReservedElasticsearchInstanceOffering(PurchaseReservedElasticsearchInstanceOfferingRequest request);
 
         /// <summary>
@@ -1459,6 +1535,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurchaseReservedElasticsearchInstanceOffering
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/PurchaseReservedElasticsearchInstanceOffering">REST API Reference for PurchaseReservedElasticsearchInstanceOffering Operation</seealso>
         IAsyncResult BeginPurchaseReservedElasticsearchInstanceOffering(PurchaseReservedElasticsearchInstanceOfferingRequest request, AsyncCallback callback, object state);
 
 
@@ -1470,6 +1547,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurchaseReservedElasticsearchInstanceOffering.</param>
         /// 
         /// <returns>Returns a  PurchaseReservedElasticsearchInstanceOfferingResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/PurchaseReservedElasticsearchInstanceOffering">REST API Reference for PurchaseReservedElasticsearchInstanceOffering Operation</seealso>
         PurchaseReservedElasticsearchInstanceOfferingResponse EndPurchaseReservedElasticsearchInstanceOffering(IAsyncResult asyncResult);
 
         #endregion
@@ -1493,6 +1571,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         RemoveTagsResponse RemoveTags(RemoveTagsRequest request);
 
         /// <summary>
@@ -1506,6 +1585,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         IAsyncResult BeginRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state);
 
 
@@ -1517,6 +1597,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTags.</param>
         /// 
         /// <returns>Returns a  RemoveTagsResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         RemoveTagsResponse EndRemoveTags(IAsyncResult asyncResult);
 
         #endregion
@@ -1544,6 +1625,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/StartElasticsearchServiceSoftwareUpdate">REST API Reference for StartElasticsearchServiceSoftwareUpdate Operation</seealso>
         StartElasticsearchServiceSoftwareUpdateResponse StartElasticsearchServiceSoftwareUpdate(StartElasticsearchServiceSoftwareUpdateRequest request);
 
         /// <summary>
@@ -1557,6 +1639,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartElasticsearchServiceSoftwareUpdate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/StartElasticsearchServiceSoftwareUpdate">REST API Reference for StartElasticsearchServiceSoftwareUpdate Operation</seealso>
         IAsyncResult BeginStartElasticsearchServiceSoftwareUpdate(StartElasticsearchServiceSoftwareUpdateRequest request, AsyncCallback callback, object state);
 
 
@@ -1568,6 +1651,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartElasticsearchServiceSoftwareUpdate.</param>
         /// 
         /// <returns>Returns a  StartElasticsearchServiceSoftwareUpdateResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/StartElasticsearchServiceSoftwareUpdate">REST API Reference for StartElasticsearchServiceSoftwareUpdate Operation</seealso>
         StartElasticsearchServiceSoftwareUpdateResponse EndStartElasticsearchServiceSoftwareUpdate(IAsyncResult asyncResult);
 
         #endregion
@@ -1604,6 +1688,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdateElasticsearchDomainConfig">REST API Reference for UpdateElasticsearchDomainConfig Operation</seealso>
         UpdateElasticsearchDomainConfigResponse UpdateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest request);
 
         /// <summary>
@@ -1617,6 +1702,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateElasticsearchDomainConfig
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdateElasticsearchDomainConfig">REST API Reference for UpdateElasticsearchDomainConfig Operation</seealso>
         IAsyncResult BeginUpdateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest request, AsyncCallback callback, object state);
 
 
@@ -1628,6 +1714,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateElasticsearchDomainConfig.</param>
         /// 
         /// <returns>Returns a  UpdateElasticsearchDomainConfigResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdateElasticsearchDomainConfig">REST API Reference for UpdateElasticsearchDomainConfig Operation</seealso>
         UpdateElasticsearchDomainConfigResponse EndUpdateElasticsearchDomainConfig(IAsyncResult asyncResult);
 
         #endregion
@@ -1664,6 +1751,7 @@ namespace Amazon.Elasticsearch
         /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
         /// An exception for missing / invalid input fields. Gives http status code of 400.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpgradeElasticsearchDomain">REST API Reference for UpgradeElasticsearchDomain Operation</seealso>
         UpgradeElasticsearchDomainResponse UpgradeElasticsearchDomain(UpgradeElasticsearchDomainRequest request);
 
         /// <summary>
@@ -1677,6 +1765,7 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpgradeElasticsearchDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpgradeElasticsearchDomain">REST API Reference for UpgradeElasticsearchDomain Operation</seealso>
         IAsyncResult BeginUpgradeElasticsearchDomain(UpgradeElasticsearchDomainRequest request, AsyncCallback callback, object state);
 
 
@@ -1688,6 +1777,7 @@ namespace Amazon.Elasticsearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpgradeElasticsearchDomain.</param>
         /// 
         /// <returns>Returns a  UpgradeElasticsearchDomainResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpgradeElasticsearchDomain">REST API Reference for UpgradeElasticsearchDomain Operation</seealso>
         UpgradeElasticsearchDomainResponse EndUpgradeElasticsearchDomain(IAsyncResult asyncResult);
 
         #endregion

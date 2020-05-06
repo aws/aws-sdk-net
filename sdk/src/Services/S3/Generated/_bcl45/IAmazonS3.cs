@@ -91,6 +91,7 @@ namespace Amazon.S3
         /// <param name="uploadId">Upload ID that identifies the multipart upload.</param>
         /// 
         /// <returns>The response from the AbortMultipartUpload service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         AbortMultipartUploadResponse AbortMultipartUpload(string bucketName, string key, string uploadId);
 
         /// <summary>
@@ -142,6 +143,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the AbortMultipartUpload service method.</param>
         /// 
         /// <returns>The response from the AbortMultipartUpload service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request);
 
 
@@ -199,6 +201,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the AbortMultipartUpload service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         Task<AbortMultipartUploadResponse> AbortMultipartUploadAsync(string bucketName, string key, string uploadId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -254,6 +257,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the AbortMultipartUpload service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         Task<AbortMultipartUploadResponse> AbortMultipartUploadAsync(AbortMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -387,6 +391,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartUpload service method.</param>
         /// 
         /// <returns>The response from the CompleteMultipartUpload service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CompleteMultipartUpload">REST API Reference for CompleteMultipartUpload Operation</seealso>
         CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request);
 
 
@@ -520,6 +525,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the CompleteMultipartUpload service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CompleteMultipartUpload">REST API Reference for CompleteMultipartUpload Operation</seealso>
         Task<CompleteMultipartUploadResponse> CompleteMultipartUploadAsync(CompleteMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -759,6 +765,7 @@ namespace Amazon.S3
         /// <param name="destinationKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// 
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">REST API Reference for CopyObject Operation</seealso>
         CopyObjectResponse CopyObject(string sourceBucket, string sourceKey, string destinationBucket, string destinationKey);
 
         /// <summary>
@@ -994,6 +1001,7 @@ namespace Amazon.S3
         /// <param name="destinationKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// 
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">REST API Reference for CopyObject Operation</seealso>
         CopyObjectResponse CopyObject(string sourceBucket, string sourceKey, string sourceVersionId, string destinationBucket, string destinationKey);
 
         /// <summary>
@@ -1225,6 +1233,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the CopyObject service method.</param>
         /// 
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">REST API Reference for CopyObject Operation</seealso>
         CopyObjectResponse CopyObject(CopyObjectRequest request);
 
 
@@ -1463,6 +1472,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">REST API Reference for CopyObject Operation</seealso>
         Task<CopyObjectResponse> CopyObjectAsync(string sourceBucket, string sourceKey, string destinationBucket, string destinationKey, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -1701,6 +1711,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">REST API Reference for CopyObject Operation</seealso>
         Task<CopyObjectResponse> CopyObjectAsync(string sourceBucket, string sourceKey, string sourceVersionId, string destinationBucket, string destinationKey, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1936,6 +1947,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">REST API Reference for CopyObject Operation</seealso>
         Task<CopyObjectResponse> CopyObjectAsync(CopyObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2133,6 +2145,7 @@ namespace Amazon.S3
         /// <param name="uploadId">Upload ID identifying the multipart upload whose part is being copied.</param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
         CopyPartResponse CopyPart(string sourceBucket, string sourceKey, string destinationBucket, string destinationKey, string uploadId);
 
         /// <summary>
@@ -2326,6 +2339,7 @@ namespace Amazon.S3
         /// <param name="uploadId">Upload ID identifying the multipart upload whose part is being copied.</param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
         CopyPartResponse CopyPart(string sourceBucket, string sourceKey, string sourceVersionId, string destinationBucket, string destinationKey, string uploadId);
 
         /// <summary>
@@ -2514,6 +2528,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the CopyPart service method.</param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
         CopyPartResponse CopyPart(CopyPartRequest request);
 
 
@@ -2710,6 +2725,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
         Task<CopyPartResponse> CopyPartAsync(string sourceBucket, string sourceKey, string destinationBucket, string destinationKey, string uploadId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -2906,6 +2922,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
         Task<CopyPartResponse> CopyPartAsync(string sourceBucket, string sourceKey, string sourceVersionId, string destinationBucket, string destinationKey, string uploadId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -3098,6 +3115,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
         Task<CopyPartResponse> CopyPartAsync(CopyPartRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3124,6 +3142,7 @@ namespace Amazon.S3
         /// <param name="bucketName">Specifies the bucket being deleted.</param>
         /// 
         /// <returns>The response from the DeleteBucket service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
         DeleteBucketResponse DeleteBucket(string bucketName);
 
         /// <summary>
@@ -3145,6 +3164,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucket service method.</param>
         /// 
         /// <returns>The response from the DeleteBucket service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
         DeleteBucketResponse DeleteBucket(DeleteBucketRequest request);
 
 
@@ -3170,6 +3190,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteBucket service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
         Task<DeleteBucketResponse> DeleteBucketAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -3195,6 +3216,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteBucket service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
         Task<DeleteBucketResponse> DeleteBucketAsync(DeleteBucketRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3240,6 +3262,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketAnalyticsConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketAnalyticsConfiguration">REST API Reference for DeleteBucketAnalyticsConfiguration Operation</seealso>
         DeleteBucketAnalyticsConfigurationResponse DeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request);
 
 
@@ -3285,6 +3308,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketAnalyticsConfiguration">REST API Reference for DeleteBucketAnalyticsConfiguration Operation</seealso>
         Task<DeleteBucketAnalyticsConfigurationResponse> DeleteBucketAnalyticsConfigurationAsync(DeleteBucketAnalyticsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3322,6 +3346,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketEncryption service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketEncryption service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketEncryption">REST API Reference for DeleteBucketEncryption Operation</seealso>
         DeleteBucketEncryptionResponse DeleteBucketEncryption(DeleteBucketEncryptionRequest request);
 
 
@@ -3359,6 +3384,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteBucketEncryption service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketEncryption">REST API Reference for DeleteBucketEncryption Operation</seealso>
         Task<DeleteBucketEncryptionResponse> DeleteBucketEncryptionAsync(DeleteBucketEncryptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3403,6 +3429,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketInventoryConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketInventoryConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketInventoryConfiguration">REST API Reference for DeleteBucketInventoryConfiguration Operation</seealso>
         DeleteBucketInventoryConfigurationResponse DeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request);
 
 
@@ -3447,6 +3474,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteBucketInventoryConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketInventoryConfiguration">REST API Reference for DeleteBucketInventoryConfiguration Operation</seealso>
         Task<DeleteBucketInventoryConfigurationResponse> DeleteBucketInventoryConfigurationAsync(DeleteBucketInventoryConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3498,6 +3526,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetricsConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketMetricsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetricsConfiguration">REST API Reference for DeleteBucketMetricsConfiguration Operation</seealso>
         DeleteBucketMetricsConfigurationResponse DeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request);
 
 
@@ -3549,6 +3578,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteBucketMetricsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetricsConfiguration">REST API Reference for DeleteBucketMetricsConfiguration Operation</seealso>
         Task<DeleteBucketMetricsConfigurationResponse> DeleteBucketMetricsConfigurationAsync(DeleteBucketMetricsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3598,6 +3628,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name.</param>
         /// 
         /// <returns>The response from the DeleteBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
         DeleteBucketPolicyResponse DeleteBucketPolicy(string bucketName);
 
         /// <summary>
@@ -3642,6 +3673,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketPolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
         DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request);
 
 
@@ -3690,6 +3722,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
         Task<DeleteBucketPolicyResponse> DeleteBucketPolicyAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -3738,6 +3771,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
         Task<DeleteBucketPolicyResponse> DeleteBucketPolicyAsync(DeleteBucketPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3782,6 +3816,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketReplication service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketReplication service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">REST API Reference for DeleteBucketReplication Operation</seealso>
         DeleteBucketReplicationResponse DeleteBucketReplication(DeleteBucketReplicationRequest request);
 
 
@@ -3826,6 +3861,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteBucketReplication service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">REST API Reference for DeleteBucketReplication Operation</seealso>
         Task<DeleteBucketReplicationResponse> DeleteBucketReplicationAsync(DeleteBucketReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3859,6 +3895,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket that has the tag set to be removed.</param>
         /// 
         /// <returns>The response from the DeleteBucketTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketTagging">REST API Reference for DeleteBucketTagging Operation</seealso>
         DeleteBucketTaggingResponse DeleteBucketTagging(string bucketName);
 
         /// <summary>
@@ -3887,6 +3924,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketTagging service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketTagging">REST API Reference for DeleteBucketTagging Operation</seealso>
         DeleteBucketTaggingResponse DeleteBucketTagging(DeleteBucketTaggingRequest request);
 
 
@@ -3919,6 +3957,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteBucketTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketTagging">REST API Reference for DeleteBucketTagging Operation</seealso>
         Task<DeleteBucketTaggingResponse> DeleteBucketTaggingAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -3951,6 +3990,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteBucketTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketTagging">REST API Reference for DeleteBucketTagging Operation</seealso>
         Task<DeleteBucketTaggingResponse> DeleteBucketTaggingAsync(DeleteBucketTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3995,6 +4035,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name for which you want to remove the website configuration. </param>
         /// 
         /// <returns>The response from the DeleteBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketWebsite">REST API Reference for DeleteBucketWebsite Operation</seealso>
         DeleteBucketWebsiteResponse DeleteBucketWebsite(string bucketName);
 
         /// <summary>
@@ -4034,6 +4075,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketWebsite service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketWebsite">REST API Reference for DeleteBucketWebsite Operation</seealso>
         DeleteBucketWebsiteResponse DeleteBucketWebsite(DeleteBucketWebsiteRequest request);
 
 
@@ -4077,6 +4119,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketWebsite">REST API Reference for DeleteBucketWebsite Operation</seealso>
         Task<DeleteBucketWebsiteResponse> DeleteBucketWebsiteAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -4120,6 +4163,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketWebsite">REST API Reference for DeleteBucketWebsite Operation</seealso>
         Task<DeleteBucketWebsiteResponse> DeleteBucketWebsiteAsync(DeleteBucketWebsiteRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4157,6 +4201,7 @@ namespace Amazon.S3
         /// <param name="bucketName">Specifies the bucket whose <code>cors</code> configuration is being deleted.</param>
         /// 
         /// <returns>The response from the DeleteCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">REST API Reference for DeleteCORSConfiguration Operation</seealso>
         DeleteCORSConfigurationResponse DeleteCORSConfiguration(string bucketName);
 
         /// <summary>
@@ -4189,6 +4234,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteCORSConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">REST API Reference for DeleteCORSConfiguration Operation</seealso>
         DeleteCORSConfigurationResponse DeleteCORSConfiguration(DeleteCORSConfigurationRequest request);
 
 
@@ -4225,6 +4271,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">REST API Reference for DeleteCORSConfiguration Operation</seealso>
         Task<DeleteCORSConfigurationResponse> DeleteCORSConfigurationAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -4261,6 +4308,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">REST API Reference for DeleteCORSConfiguration Operation</seealso>
         Task<DeleteCORSConfigurationResponse> DeleteCORSConfigurationAsync(DeleteCORSConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4307,6 +4355,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name of the lifecycle to delete.</param>
         /// 
         /// <returns>The response from the DeleteLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketLifecycle">REST API Reference for DeleteLifecycleConfiguration Operation</seealso>
         DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(string bucketName);
 
         /// <summary>
@@ -4348,6 +4397,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketLifecycle">REST API Reference for DeleteLifecycleConfiguration Operation</seealso>
         DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request);
 
 
@@ -4393,6 +4443,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketLifecycle">REST API Reference for DeleteLifecycleConfiguration Operation</seealso>
         Task<DeleteLifecycleConfigurationResponse> DeleteLifecycleConfigurationAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -4438,6 +4489,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketLifecycle">REST API Reference for DeleteLifecycleConfiguration Operation</seealso>
         Task<DeleteLifecycleConfigurationResponse> DeleteLifecycleConfigurationAsync(DeleteLifecycleConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4492,6 +4544,7 @@ namespace Amazon.S3
         /// <param name="key">Key name of the object to delete.</param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         DeleteObjectResponse DeleteObject(string bucketName, string key);
 
         /// <summary>
@@ -4542,6 +4595,7 @@ namespace Amazon.S3
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         DeleteObjectResponse DeleteObject(string bucketName, string key, string versionId);
 
         /// <summary>
@@ -4590,6 +4644,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteObject service method.</param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         DeleteObjectResponse DeleteObject(DeleteObjectRequest request);
 
 
@@ -4643,6 +4698,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         Task<DeleteObjectResponse> DeleteObjectAsync(string bucketName, string key, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -4696,6 +4752,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         Task<DeleteObjectResponse> DeleteObjectAsync(string bucketName, string key, string versionId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -4748,6 +4805,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         Task<DeleteObjectResponse> DeleteObjectAsync(DeleteObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4823,6 +4881,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteObjects service method.</param>
         /// 
         /// <returns>The response from the DeleteObjects service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">REST API Reference for DeleteObjects Operation</seealso>
         DeleteObjectsResponse DeleteObjects(DeleteObjectsRequest request);
 
 
@@ -4898,6 +4957,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteObjects service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">REST API Reference for DeleteObjects Operation</seealso>
         Task<DeleteObjectsResponse> DeleteObjectsAsync(DeleteObjectsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4938,6 +4998,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteObjectTagging service method.</param>
         /// 
         /// <returns>The response from the DeleteObjectTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjectTagging">REST API Reference for DeleteObjectTagging Operation</seealso>
         DeleteObjectTaggingResponse DeleteObjectTagging(DeleteObjectTaggingRequest request);
 
 
@@ -4978,6 +5039,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeleteObjectTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjectTagging">REST API Reference for DeleteObjectTagging Operation</seealso>
         Task<DeleteObjectTaggingResponse> DeleteObjectTaggingAsync(DeleteObjectTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5018,6 +5080,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
         /// 
         /// <returns>The response from the DeletePublicAccessBlock service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         DeletePublicAccessBlockResponse DeletePublicAccessBlock(DeletePublicAccessBlockRequest request);
 
 
@@ -5058,6 +5121,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the DeletePublicAccessBlock service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         Task<DeletePublicAccessBlockResponse> DeletePublicAccessBlockAsync(DeletePublicAccessBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5083,6 +5147,7 @@ namespace Amazon.S3
         /// <param name="bucketName">Specifies the S3 bucket whose ACL is being requested.</param>
         /// 
         /// <returns>The response from the GetACL service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetACL Operation</seealso>
         GetACLResponse GetACL(string bucketName);
 
         /// <summary>
@@ -5103,6 +5168,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetACL service method.</param>
         /// 
         /// <returns>The response from the GetACL service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetACL Operation</seealso>
         GetACLResponse GetACL(GetACLRequest request);
 
 
@@ -5127,6 +5193,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetACL service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetACL Operation</seealso>
         Task<GetACLResponse> GetACLAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -5151,6 +5218,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetACL service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetACL Operation</seealso>
         Task<GetACLResponse> GetACLAsync(GetACLRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5201,6 +5269,7 @@ namespace Amazon.S3
         /// <param name="bucketName">Name of the bucket for which the accelerate configuration is retrieved.</param>
         /// 
         /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">REST API Reference for GetBucketAccelerateConfiguration Operation</seealso>
         GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(string bucketName);
 
         /// <summary>
@@ -5246,6 +5315,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketAccelerateConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">REST API Reference for GetBucketAccelerateConfiguration Operation</seealso>
         GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request);
 
 
@@ -5295,6 +5365,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">REST API Reference for GetBucketAccelerateConfiguration Operation</seealso>
         Task<GetBucketAccelerateConfigurationResponse> GetBucketAccelerateConfigurationAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -5344,6 +5415,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">REST API Reference for GetBucketAccelerateConfiguration Operation</seealso>
         Task<GetBucketAccelerateConfigurationResponse> GetBucketAccelerateConfigurationAsync(GetBucketAccelerateConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5389,6 +5461,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketAnalyticsConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAnalyticsConfiguration">REST API Reference for GetBucketAnalyticsConfiguration Operation</seealso>
         GetBucketAnalyticsConfigurationResponse GetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request);
 
 
@@ -5434,6 +5507,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAnalyticsConfiguration">REST API Reference for GetBucketAnalyticsConfiguration Operation</seealso>
         Task<GetBucketAnalyticsConfigurationResponse> GetBucketAnalyticsConfigurationAsync(GetBucketAnalyticsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5471,6 +5545,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketEncryption service method.</param>
         /// 
         /// <returns>The response from the GetBucketEncryption service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketEncryption">REST API Reference for GetBucketEncryption Operation</seealso>
         GetBucketEncryptionResponse GetBucketEncryption(GetBucketEncryptionRequest request);
 
 
@@ -5508,6 +5583,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketEncryption service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketEncryption">REST API Reference for GetBucketEncryption Operation</seealso>
         Task<GetBucketEncryptionResponse> GetBucketEncryptionAsync(GetBucketEncryptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5553,6 +5629,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketInventoryConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetBucketInventoryConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketInventoryConfiguration">REST API Reference for GetBucketInventoryConfiguration Operation</seealso>
         GetBucketInventoryConfigurationResponse GetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request);
 
 
@@ -5598,6 +5675,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketInventoryConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketInventoryConfiguration">REST API Reference for GetBucketInventoryConfiguration Operation</seealso>
         Task<GetBucketInventoryConfigurationResponse> GetBucketInventoryConfigurationAsync(GetBucketInventoryConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5631,6 +5709,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The name of the bucket for which to get the location.</param>
         /// 
         /// <returns>The response from the GetBucketLocation service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLocation">REST API Reference for GetBucketLocation Operation</seealso>
         GetBucketLocationResponse GetBucketLocation(string bucketName);
 
         /// <summary>
@@ -5659,6 +5738,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLocation service method.</param>
         /// 
         /// <returns>The response from the GetBucketLocation service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLocation">REST API Reference for GetBucketLocation Operation</seealso>
         GetBucketLocationResponse GetBucketLocation(GetBucketLocationRequest request);
 
 
@@ -5691,6 +5771,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketLocation service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLocation">REST API Reference for GetBucketLocation Operation</seealso>
         Task<GetBucketLocationResponse> GetBucketLocationAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -5723,6 +5804,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketLocation service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLocation">REST API Reference for GetBucketLocation Operation</seealso>
         Task<GetBucketLocationResponse> GetBucketLocationAsync(GetBucketLocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5751,6 +5833,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name for which to get the logging information.</param>
         /// 
         /// <returns>The response from the GetBucketLogging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLogging">REST API Reference for GetBucketLogging Operation</seealso>
         GetBucketLoggingResponse GetBucketLogging(string bucketName);
 
         /// <summary>
@@ -5774,6 +5857,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLogging service method.</param>
         /// 
         /// <returns>The response from the GetBucketLogging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLogging">REST API Reference for GetBucketLogging Operation</seealso>
         GetBucketLoggingResponse GetBucketLogging(GetBucketLoggingRequest request);
 
 
@@ -5801,6 +5885,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketLogging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLogging">REST API Reference for GetBucketLogging Operation</seealso>
         Task<GetBucketLoggingResponse> GetBucketLoggingAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -5828,6 +5913,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketLogging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLogging">REST API Reference for GetBucketLogging Operation</seealso>
         Task<GetBucketLoggingResponse> GetBucketLoggingAsync(GetBucketLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5878,6 +5964,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketMetricsConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetBucketMetricsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetricsConfiguration">REST API Reference for GetBucketMetricsConfiguration Operation</seealso>
         GetBucketMetricsConfigurationResponse GetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request);
 
 
@@ -5928,6 +6015,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketMetricsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetricsConfiguration">REST API Reference for GetBucketMetricsConfiguration Operation</seealso>
         Task<GetBucketMetricsConfigurationResponse> GetBucketMetricsConfigurationAsync(GetBucketMetricsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5971,6 +6059,7 @@ namespace Amazon.S3
         /// <param name="bucketName">Name of the bucket for which to get the notification configuration.</param>
         /// 
         /// <returns>The response from the GetBucketNotification service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">REST API Reference for GetBucketNotification Operation</seealso>
         GetBucketNotificationResponse GetBucketNotification(string bucketName);
 
         /// <summary>
@@ -6009,6 +6098,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketNotification service method.</param>
         /// 
         /// <returns>The response from the GetBucketNotification service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">REST API Reference for GetBucketNotification Operation</seealso>
         GetBucketNotificationResponse GetBucketNotification(GetBucketNotificationRequest request);
 
 
@@ -6051,6 +6141,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketNotification service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">REST API Reference for GetBucketNotification Operation</seealso>
         Task<GetBucketNotificationResponse> GetBucketNotificationAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -6093,6 +6184,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketNotification service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">REST API Reference for GetBucketNotification Operation</seealso>
         Task<GetBucketNotificationResponse> GetBucketNotificationAsync(GetBucketNotificationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6137,6 +6229,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name for which to get the bucket policy.</param>
         /// 
         /// <returns>The response from the GetBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
         GetBucketPolicyResponse GetBucketPolicy(string bucketName);
 
         /// <summary>
@@ -6176,6 +6269,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicy service method.</param>
         /// 
         /// <returns>The response from the GetBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
         GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest request);
 
 
@@ -6219,6 +6313,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
         Task<GetBucketPolicyResponse> GetBucketPolicyAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -6262,6 +6357,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
         Task<GetBucketPolicyResponse> GetBucketPolicyAsync(GetBucketPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6306,6 +6402,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicyStatus service method.</param>
         /// 
         /// <returns>The response from the GetBucketPolicyStatus service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicyStatus">REST API Reference for GetBucketPolicyStatus Operation</seealso>
         GetBucketPolicyStatusResponse GetBucketPolicyStatus(GetBucketPolicyStatusRequest request);
 
 
@@ -6350,6 +6447,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketPolicyStatus service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicyStatus">REST API Reference for GetBucketPolicyStatus Operation</seealso>
         Task<GetBucketPolicyStatusResponse> GetBucketPolicyStatusAsync(GetBucketPolicyStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6363,6 +6461,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketReplication service method.</param>
         /// 
         /// <returns>The response from the GetBucketReplication service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication">REST API Reference for GetBucketReplication Operation</seealso>
         GetBucketReplicationResponse GetBucketReplication(GetBucketReplicationRequest request);
 
 
@@ -6376,6 +6475,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketReplication service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication">REST API Reference for GetBucketReplication Operation</seealso>
         Task<GetBucketReplicationResponse> GetBucketReplicationAsync(GetBucketReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6401,6 +6501,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The name of the bucket for which to get the payment request configuration</param>
         /// 
         /// <returns>The response from the GetBucketRequestPayment service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">REST API Reference for GetBucketRequestPayment Operation</seealso>
         GetBucketRequestPaymentResponse GetBucketRequestPayment(string bucketName);
 
         /// <summary>
@@ -6421,6 +6522,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketRequestPayment service method.</param>
         /// 
         /// <returns>The response from the GetBucketRequestPayment service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">REST API Reference for GetBucketRequestPayment Operation</seealso>
         GetBucketRequestPaymentResponse GetBucketRequestPayment(GetBucketRequestPaymentRequest request);
 
 
@@ -6445,6 +6547,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketRequestPayment service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">REST API Reference for GetBucketRequestPayment Operation</seealso>
         Task<GetBucketRequestPaymentResponse> GetBucketRequestPaymentAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -6469,6 +6572,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketRequestPayment service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">REST API Reference for GetBucketRequestPayment Operation</seealso>
         Task<GetBucketRequestPaymentResponse> GetBucketRequestPaymentAsync(GetBucketRequestPaymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6514,6 +6618,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketTagging service method.</param>
         /// 
         /// <returns>The response from the GetBucketTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketTagging">REST API Reference for GetBucketTagging Operation</seealso>
         GetBucketTaggingResponse GetBucketTagging(GetBucketTaggingRequest request);
 
 
@@ -6559,6 +6664,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketTagging">REST API Reference for GetBucketTagging Operation</seealso>
         Task<GetBucketTaggingResponse> GetBucketTaggingAsync(GetBucketTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6600,6 +6706,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The name of the bucket for which to get the versioning information.</param>
         /// 
         /// <returns>The response from the GetBucketVersioning service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketVersioning">REST API Reference for GetBucketVersioning Operation</seealso>
         GetBucketVersioningResponse GetBucketVersioning(string bucketName);
 
         /// <summary>
@@ -6636,6 +6743,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketVersioning service method.</param>
         /// 
         /// <returns>The response from the GetBucketVersioning service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketVersioning">REST API Reference for GetBucketVersioning Operation</seealso>
         GetBucketVersioningResponse GetBucketVersioning(GetBucketVersioningRequest request);
 
 
@@ -6676,6 +6784,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketVersioning service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketVersioning">REST API Reference for GetBucketVersioning Operation</seealso>
         Task<GetBucketVersioningResponse> GetBucketVersioningAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -6716,6 +6825,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketVersioning service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketVersioning">REST API Reference for GetBucketVersioning Operation</seealso>
         Task<GetBucketVersioningResponse> GetBucketVersioningAsync(GetBucketVersioningRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6753,6 +6863,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name for which to get the website configuration.</param>
         /// 
         /// <returns>The response from the GetBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketWebsite">REST API Reference for GetBucketWebsite Operation</seealso>
         GetBucketWebsiteResponse GetBucketWebsite(string bucketName);
 
         /// <summary>
@@ -6785,6 +6896,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketWebsite service method.</param>
         /// 
         /// <returns>The response from the GetBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketWebsite">REST API Reference for GetBucketWebsite Operation</seealso>
         GetBucketWebsiteResponse GetBucketWebsite(GetBucketWebsiteRequest request);
 
 
@@ -6821,6 +6933,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketWebsite">REST API Reference for GetBucketWebsite Operation</seealso>
         Task<GetBucketWebsiteResponse> GetBucketWebsiteAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -6857,6 +6970,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketWebsite">REST API Reference for GetBucketWebsite Operation</seealso>
         Task<GetBucketWebsiteResponse> GetBucketWebsiteAsync(GetBucketWebsiteRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6894,6 +7008,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name for which to get the cors configuration.</param>
         /// 
         /// <returns>The response from the GetCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">REST API Reference for GetCORSConfiguration Operation</seealso>
         GetCORSConfigurationResponse GetCORSConfiguration(string bucketName);
 
         /// <summary>
@@ -6926,6 +7041,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetCORSConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">REST API Reference for GetCORSConfiguration Operation</seealso>
         GetCORSConfigurationResponse GetCORSConfiguration(GetCORSConfigurationRequest request);
 
 
@@ -6962,6 +7078,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">REST API Reference for GetCORSConfiguration Operation</seealso>
         Task<GetCORSConfigurationResponse> GetCORSConfigurationAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -6998,6 +7115,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">REST API Reference for GetCORSConfiguration Operation</seealso>
         Task<GetCORSConfigurationResponse> GetCORSConfigurationAsync(GetCORSConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -7070,6 +7188,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The name of the bucket for which to get the lifecycle information.</param>
         /// 
         /// <returns>The response from the GetLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">REST API Reference for GetLifecycleConfiguration Operation</seealso>
         GetLifecycleConfigurationResponse GetLifecycleConfiguration(string bucketName);
 
         /// <summary>
@@ -7137,6 +7256,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">REST API Reference for GetLifecycleConfiguration Operation</seealso>
         GetLifecycleConfigurationResponse GetLifecycleConfiguration(GetLifecycleConfigurationRequest request);
 
 
@@ -7208,6 +7328,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">REST API Reference for GetLifecycleConfiguration Operation</seealso>
         Task<GetLifecycleConfigurationResponse> GetLifecycleConfigurationAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -7279,6 +7400,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">REST API Reference for GetLifecycleConfiguration Operation</seealso>
         Task<GetLifecycleConfigurationResponse> GetLifecycleConfigurationAsync(GetLifecycleConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -7491,6 +7613,7 @@ namespace Amazon.S3
         /// <param name="key">Key of the object to get.</param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">REST API Reference for GetObject Operation</seealso>
         GetObjectResponse GetObject(string bucketName, string key);
 
         /// <summary>
@@ -7699,6 +7822,7 @@ namespace Amazon.S3
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">REST API Reference for GetObject Operation</seealso>
         GetObjectResponse GetObject(string bucketName, string key, string versionId);
 
         /// <summary>
@@ -7905,6 +8029,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObject service method.</param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">REST API Reference for GetObject Operation</seealso>
         GetObjectResponse GetObject(GetObjectRequest request);
 
 
@@ -8116,6 +8241,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">REST API Reference for GetObject Operation</seealso>
         Task<GetObjectResponse> GetObjectAsync(string bucketName, string key, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -8327,6 +8453,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">REST API Reference for GetObject Operation</seealso>
         Task<GetObjectResponse> GetObjectAsync(string bucketName, string key, string versionId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -8537,6 +8664,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">REST API Reference for GetObject Operation</seealso>
         Task<GetObjectResponse> GetObjectAsync(GetObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -8551,6 +8679,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectLegalHold service method.</param>
         /// 
         /// <returns>The response from the GetObjectLegalHold service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">REST API Reference for GetObjectLegalHold Operation</seealso>
         GetObjectLegalHoldResponse GetObjectLegalHold(GetObjectLegalHoldRequest request);
 
 
@@ -8565,6 +8694,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetObjectLegalHold service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">REST API Reference for GetObjectLegalHold Operation</seealso>
         Task<GetObjectLegalHoldResponse> GetObjectLegalHoldAsync(GetObjectLegalHoldRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -8581,6 +8711,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectLockConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetObjectLockConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">REST API Reference for GetObjectLockConfiguration Operation</seealso>
         GetObjectLockConfigurationResponse GetObjectLockConfiguration(GetObjectLockConfigurationRequest request);
 
 
@@ -8597,6 +8728,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetObjectLockConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">REST API Reference for GetObjectLockConfiguration Operation</seealso>
         Task<GetObjectLockConfigurationResponse> GetObjectLockConfigurationAsync(GetObjectLockConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -8729,6 +8861,7 @@ namespace Amazon.S3
         /// <param name="key">The object key.</param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">REST API Reference for GetObjectMetadata Operation</seealso>
         GetObjectMetadataResponse GetObjectMetadata(string bucketName, string key);
 
         /// <summary>
@@ -8857,6 +8990,7 @@ namespace Amazon.S3
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">REST API Reference for GetObjectMetadata Operation</seealso>
         GetObjectMetadataResponse GetObjectMetadata(string bucketName, string key, string versionId);
 
         /// <summary>
@@ -8983,6 +9117,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectMetadata service method.</param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">REST API Reference for GetObjectMetadata Operation</seealso>
         GetObjectMetadataResponse GetObjectMetadata(GetObjectMetadataRequest request);
 
 
@@ -9114,6 +9249,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">REST API Reference for GetObjectMetadata Operation</seealso>
         Task<GetObjectMetadataResponse> GetObjectMetadataAsync(string bucketName, string key, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -9245,6 +9381,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">REST API Reference for GetObjectMetadata Operation</seealso>
         Task<GetObjectMetadataResponse> GetObjectMetadataAsync(string bucketName, string key, string versionId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -9375,6 +9512,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">REST API Reference for GetObjectMetadata Operation</seealso>
         Task<GetObjectMetadataResponse> GetObjectMetadataAsync(GetObjectMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -9389,6 +9527,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectRetention service method.</param>
         /// 
         /// <returns>The response from the GetObjectRetention service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">REST API Reference for GetObjectRetention Operation</seealso>
         GetObjectRetentionResponse GetObjectRetention(GetObjectRetentionRequest request);
 
 
@@ -9403,6 +9542,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetObjectRetention service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">REST API Reference for GetObjectRetention Operation</seealso>
         Task<GetObjectRetentionResponse> GetObjectRetentionAsync(GetObjectRetentionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -9445,6 +9585,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectTagging service method.</param>
         /// 
         /// <returns>The response from the GetObjectTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTagging">REST API Reference for GetObjectTagging Operation</seealso>
         GetObjectTaggingResponse GetObjectTagging(GetObjectTaggingRequest request);
 
 
@@ -9487,6 +9628,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetObjectTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTagging">REST API Reference for GetObjectTagging Operation</seealso>
         Task<GetObjectTaggingResponse> GetObjectTaggingAsync(GetObjectTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -9522,6 +9664,7 @@ namespace Amazon.S3
         /// <param name="key">The object key for which to get the information.</param>
         /// 
         /// <returns>The response from the GetObjectTorrent service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">REST API Reference for GetObjectTorrent Operation</seealso>
         GetObjectTorrentResponse GetObjectTorrent(string bucketName, string key);
 
         /// <summary>
@@ -9551,6 +9694,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectTorrent service method.</param>
         /// 
         /// <returns>The response from the GetObjectTorrent service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">REST API Reference for GetObjectTorrent Operation</seealso>
         GetObjectTorrentResponse GetObjectTorrent(GetObjectTorrentRequest request);
 
 
@@ -9585,6 +9729,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetObjectTorrent service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">REST API Reference for GetObjectTorrent Operation</seealso>
         Task<GetObjectTorrentResponse> GetObjectTorrentAsync(string bucketName, string key, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -9618,6 +9763,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetObjectTorrent service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">REST API Reference for GetObjectTorrent Operation</seealso>
         Task<GetObjectTorrentResponse> GetObjectTorrentAsync(GetObjectTorrentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -9672,6 +9818,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock service method.</param>
         /// 
         /// <returns>The response from the GetPublicAccessBlock service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         GetPublicAccessBlockResponse GetPublicAccessBlock(GetPublicAccessBlockRequest request);
 
 
@@ -9726,6 +9873,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the GetPublicAccessBlock service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         Task<GetPublicAccessBlockResponse> GetPublicAccessBlockAsync(GetPublicAccessBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -10041,6 +10189,7 @@ namespace Amazon.S3
         /// <param name="key">Object key for which the multipart upload is to be initiated.</param>
         /// 
         /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         InitiateMultipartUploadResponse InitiateMultipartUpload(string bucketName, string key);
 
         /// <summary>
@@ -10350,6 +10499,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the InitiateMultipartUpload service method.</param>
         /// 
         /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request);
 
 
@@ -10664,6 +10814,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         Task<InitiateMultipartUploadResponse> InitiateMultipartUploadAsync(string bucketName, string key, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -10977,6 +11128,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         Task<InitiateMultipartUploadResponse> InitiateMultipartUploadAsync(InitiateMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -11032,6 +11184,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListBucketAnalyticsConfigurations service method.</param>
         /// 
         /// <returns>The response from the ListBucketAnalyticsConfigurations service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketAnalyticsConfigurations">REST API Reference for ListBucketAnalyticsConfigurations Operation</seealso>
         ListBucketAnalyticsConfigurationsResponse ListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request);
 
 
@@ -11087,6 +11240,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the ListBucketAnalyticsConfigurations service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketAnalyticsConfigurations">REST API Reference for ListBucketAnalyticsConfigurations Operation</seealso>
         Task<ListBucketAnalyticsConfigurationsResponse> ListBucketAnalyticsConfigurationsAsync(ListBucketAnalyticsConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -11142,6 +11296,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListBucketInventoryConfigurations service method.</param>
         /// 
         /// <returns>The response from the ListBucketInventoryConfigurations service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketInventoryConfigurations">REST API Reference for ListBucketInventoryConfigurations Operation</seealso>
         ListBucketInventoryConfigurationsResponse ListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request);
 
 
@@ -11197,6 +11352,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the ListBucketInventoryConfigurations service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketInventoryConfigurations">REST API Reference for ListBucketInventoryConfigurations Operation</seealso>
         Task<ListBucketInventoryConfigurationsResponse> ListBucketInventoryConfigurationsAsync(ListBucketInventoryConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -11254,6 +11410,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListBucketMetricsConfigurations service method.</param>
         /// 
         /// <returns>The response from the ListBucketMetricsConfigurations service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketMetricsConfigurations">REST API Reference for ListBucketMetricsConfigurations Operation</seealso>
         ListBucketMetricsConfigurationsResponse ListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request);
 
 
@@ -11311,6 +11468,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the ListBucketMetricsConfigurations service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketMetricsConfigurations">REST API Reference for ListBucketMetricsConfigurations Operation</seealso>
         Task<ListBucketMetricsConfigurationsResponse> ListBucketMetricsConfigurationsAsync(ListBucketMetricsConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -11323,6 +11481,7 @@ namespace Amazon.S3
         /// </summary>
         /// 
         /// <returns>The response from the ListBuckets service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">REST API Reference for ListBuckets Operation</seealso>
         ListBucketsResponse ListBuckets();
 
 
@@ -11332,6 +11491,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListBuckets service method.</param>
         /// 
         /// <returns>The response from the ListBuckets service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">REST API Reference for ListBuckets Operation</seealso>
         ListBucketsResponse ListBuckets(ListBucketsRequest request);
 
 
@@ -11343,6 +11503,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the ListBuckets service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">REST API Reference for ListBuckets Operation</seealso>
         Task<ListBucketsResponse> ListBucketsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -11356,6 +11517,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the ListBuckets service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">REST API Reference for ListBuckets Operation</seealso>
         Task<ListBucketsResponse> ListBucketsAsync(ListBucketsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -11424,6 +11586,7 @@ namespace Amazon.S3
         /// <param name="bucketName">Name of the bucket to which the multipart upload was initiated.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         ListMultipartUploadsResponse ListMultipartUploads(string bucketName);
 
         /// <summary>
@@ -11488,6 +11651,7 @@ namespace Amazon.S3
         /// <param name="prefix">Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.)</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         ListMultipartUploadsResponse ListMultipartUploads(string bucketName, string prefix);
 
         /// <summary>
@@ -11551,6 +11715,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListMultipartUploads service method.</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request);
 
 
@@ -11618,6 +11783,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -11685,6 +11851,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(string bucketName, string prefix, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -11752,6 +11919,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(ListMultipartUploadsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -11800,6 +11968,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The name of the bucket containing the objects.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
         ListObjectsResponse ListObjects(string bucketName);
 
         /// <summary>
@@ -11844,6 +12013,7 @@ namespace Amazon.S3
         /// <param name="prefix">Limits the response to keys that begin with the specified prefix.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
         ListObjectsResponse ListObjects(string bucketName, string prefix);
 
         /// <summary>
@@ -11887,6 +12057,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListObjects service method.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
         ListObjectsResponse ListObjects(ListObjectsRequest request);
 
 
@@ -11934,6 +12105,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
         Task<ListObjectsResponse> ListObjectsAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -11981,6 +12153,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
         Task<ListObjectsResponse> ListObjectsAsync(string bucketName, string prefix, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -12028,6 +12201,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
         Task<ListObjectsResponse> ListObjectsAsync(ListObjectsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -12085,6 +12259,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListObjectsV2 service method.</param>
         /// 
         /// <returns>The response from the ListObjectsV2 service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectsV2">REST API Reference for ListObjectsV2 Operation</seealso>
         ListObjectsV2Response ListObjectsV2(ListObjectsV2Request request);
 
 
@@ -12142,6 +12317,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the ListObjectsV2 service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectsV2">REST API Reference for ListObjectsV2 Operation</seealso>
         Task<ListObjectsV2Response> ListObjectsV2Async(ListObjectsV2Request request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -12202,6 +12378,7 @@ namespace Amazon.S3
         /// <param name="uploadId">Upload ID identifying the multipart upload whose parts are being listed.</param>
         /// 
         /// <returns>The response from the ListParts service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListParts">REST API Reference for ListParts Operation</seealso>
         ListPartsResponse ListParts(string bucketName, string key, string uploadId);
 
         /// <summary>
@@ -12255,6 +12432,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListParts service method.</param>
         /// 
         /// <returns>The response from the ListParts service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListParts">REST API Reference for ListParts Operation</seealso>
         ListPartsResponse ListParts(ListPartsRequest request);
 
 
@@ -12314,6 +12492,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the ListParts service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListParts">REST API Reference for ListParts Operation</seealso>
         Task<ListPartsResponse> ListPartsAsync(string bucketName, string key, string uploadId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -12371,6 +12550,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the ListParts service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListParts">REST API Reference for ListParts Operation</seealso>
         Task<ListPartsResponse> ListPartsAsync(ListPartsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -12417,6 +12597,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name that contains the objects.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         ListVersionsResponse ListVersions(string bucketName);
 
         /// <summary>
@@ -12459,6 +12640,7 @@ namespace Amazon.S3
         /// <param name="prefix">Use this parameter to select only those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different groupings of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.) You can use prefix with delimiter to roll up numerous objects into a single result under CommonPrefixes. </param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         ListVersionsResponse ListVersions(string bucketName, string prefix);
 
         /// <summary>
@@ -12500,6 +12682,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListVersions service method.</param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         ListVersionsResponse ListVersions(ListVersionsRequest request);
 
 
@@ -12545,6 +12728,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         Task<ListVersionsResponse> ListVersionsAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -12590,6 +12774,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         Task<ListVersionsResponse> ListVersionsAsync(string bucketName, string prefix, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -12635,6 +12820,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         Task<ListVersionsResponse> ListVersionsAsync(ListVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -12879,6 +13065,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutACL service method.</param>
         /// 
         /// <returns>The response from the PutACL service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAcl">REST API Reference for PutACL Operation</seealso>
         PutACLResponse PutACL(PutACLRequest request);
 
 
@@ -13123,6 +13310,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutACL service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAcl">REST API Reference for PutACL Operation</seealso>
         Task<PutACLResponse> PutACLAsync(PutACLRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -13271,6 +13459,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The name of the bucket to create.</param>
         /// 
         /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">REST API Reference for PutBucket Operation</seealso>
         PutBucketResponse PutBucket(string bucketName);
 
         /// <summary>
@@ -13414,6 +13603,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucket service method.</param>
         /// 
         /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">REST API Reference for PutBucket Operation</seealso>
         PutBucketResponse PutBucket(PutBucketRequest request);
 
 
@@ -13561,6 +13751,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">REST API Reference for PutBucket Operation</seealso>
         Task<PutBucketResponse> PutBucketAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -13708,6 +13899,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">REST API Reference for PutBucket Operation</seealso>
         Task<PutBucketResponse> PutBucketAsync(PutBucketRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -13778,6 +13970,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketAccelerateConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAccelerateConfiguration">REST API Reference for PutBucketAccelerateConfiguration Operation</seealso>
         PutBucketAccelerateConfigurationResponse PutBucketAccelerateConfiguration(PutBucketAccelerateConfigurationRequest request);
 
 
@@ -13848,6 +14041,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAccelerateConfiguration">REST API Reference for PutBucketAccelerateConfiguration Operation</seealso>
         Task<PutBucketAccelerateConfigurationResponse> PutBucketAccelerateConfigurationAsync(PutBucketAccelerateConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -13945,6 +14139,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketAnalyticsConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAnalyticsConfiguration">REST API Reference for PutBucketAnalyticsConfiguration Operation</seealso>
         PutBucketAnalyticsConfigurationResponse PutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request);
 
 
@@ -14042,6 +14237,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAnalyticsConfiguration">REST API Reference for PutBucketAnalyticsConfiguration Operation</seealso>
         Task<PutBucketAnalyticsConfigurationResponse> PutBucketAnalyticsConfigurationAsync(PutBucketAnalyticsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -14090,6 +14286,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketEncryption service method.</param>
         /// 
         /// <returns>The response from the PutBucketEncryption service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketEncryption">REST API Reference for PutBucketEncryption Operation</seealso>
         PutBucketEncryptionResponse PutBucketEncryption(PutBucketEncryptionRequest request);
 
 
@@ -14138,6 +14335,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutBucketEncryption service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketEncryption">REST API Reference for PutBucketEncryption Operation</seealso>
         Task<PutBucketEncryptionResponse> PutBucketEncryptionAsync(PutBucketEncryptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -14237,6 +14435,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketInventoryConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutBucketInventoryConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketInventoryConfiguration">REST API Reference for PutBucketInventoryConfiguration Operation</seealso>
         PutBucketInventoryConfigurationResponse PutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request);
 
 
@@ -14336,6 +14535,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutBucketInventoryConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketInventoryConfiguration">REST API Reference for PutBucketInventoryConfiguration Operation</seealso>
         Task<PutBucketInventoryConfigurationResponse> PutBucketInventoryConfigurationAsync(PutBucketInventoryConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -14445,6 +14645,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketLogging service method.</param>
         /// 
         /// <returns>The response from the PutBucketLogging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLogging">REST API Reference for PutBucketLogging Operation</seealso>
         PutBucketLoggingResponse PutBucketLogging(PutBucketLoggingRequest request);
 
 
@@ -14554,6 +14755,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutBucketLogging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLogging">REST API Reference for PutBucketLogging Operation</seealso>
         Task<PutBucketLoggingResponse> PutBucketLoggingAsync(PutBucketLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -14619,6 +14821,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketMetricsConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutBucketMetricsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketMetricsConfiguration">REST API Reference for PutBucketMetricsConfiguration Operation</seealso>
         PutBucketMetricsConfigurationResponse PutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request);
 
 
@@ -14684,6 +14887,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutBucketMetricsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketMetricsConfiguration">REST API Reference for PutBucketMetricsConfiguration Operation</seealso>
         Task<PutBucketMetricsConfigurationResponse> PutBucketMetricsConfigurationAsync(PutBucketMetricsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -14773,6 +14977,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketNotification service method.</param>
         /// 
         /// <returns>The response from the PutBucketNotification service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketNotificationConfiguration">REST API Reference for PutBucketNotification Operation</seealso>
         PutBucketNotificationResponse PutBucketNotification(PutBucketNotificationRequest request);
 
 
@@ -14862,6 +15067,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutBucketNotification service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketNotificationConfiguration">REST API Reference for PutBucketNotification Operation</seealso>
         Task<PutBucketNotificationResponse> PutBucketNotificationAsync(PutBucketNotificationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -14911,6 +15117,7 @@ namespace Amazon.S3
         /// <param name="policy">The bucket policy as a JSON document.</param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         PutBucketPolicyResponse PutBucketPolicy(string bucketName, string policy);
 
         /// <summary>
@@ -14956,6 +15163,7 @@ namespace Amazon.S3
         /// <param name="contentMD5">The MD5 hash of the request body.</param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         PutBucketPolicyResponse PutBucketPolicy(string bucketName, string policy, string contentMD5);
 
         /// <summary>
@@ -14999,6 +15207,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketPolicy service method.</param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest request);
 
 
@@ -15047,6 +15256,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         Task<PutBucketPolicyResponse> PutBucketPolicyAsync(string bucketName, string policy, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -15095,6 +15305,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         Task<PutBucketPolicyResponse> PutBucketPolicyAsync(string bucketName, string policy, string contentMD5, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -15142,6 +15353,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         Task<PutBucketPolicyResponse> PutBucketPolicyAsync(PutBucketPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -15230,6 +15442,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketReplication service method.</param>
         /// 
         /// <returns>The response from the PutBucketReplication service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">REST API Reference for PutBucketReplication Operation</seealso>
         PutBucketReplicationResponse PutBucketReplication(PutBucketReplicationRequest request);
 
 
@@ -15318,6 +15531,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutBucketReplication service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">REST API Reference for PutBucketReplication Operation</seealso>
         Task<PutBucketReplicationResponse> PutBucketReplicationAsync(PutBucketReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -15350,6 +15564,7 @@ namespace Amazon.S3
         /// <param name="requestPaymentConfiguration">Container for Payer.</param>
         /// 
         /// <returns>The response from the PutBucketRequestPayment service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketRequestPayment">REST API Reference for PutBucketRequestPayment Operation</seealso>
         PutBucketRequestPaymentResponse PutBucketRequestPayment(string bucketName, RequestPaymentConfiguration requestPaymentConfiguration);
 
         /// <summary>
@@ -15376,6 +15591,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketRequestPayment service method.</param>
         /// 
         /// <returns>The response from the PutBucketRequestPayment service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketRequestPayment">REST API Reference for PutBucketRequestPayment Operation</seealso>
         PutBucketRequestPaymentResponse PutBucketRequestPayment(PutBucketRequestPaymentRequest request);
 
 
@@ -15407,6 +15623,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutBucketRequestPayment service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketRequestPayment">REST API Reference for PutBucketRequestPayment Operation</seealso>
         Task<PutBucketRequestPaymentResponse> PutBucketRequestPaymentAsync(string bucketName, RequestPaymentConfiguration requestPaymentConfiguration, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -15437,6 +15654,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutBucketRequestPayment service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketRequestPayment">REST API Reference for PutBucketRequestPayment Operation</seealso>
         Task<PutBucketRequestPaymentResponse> PutBucketRequestPaymentAsync(PutBucketRequestPaymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -15529,6 +15747,7 @@ namespace Amazon.S3
         /// <param name="tagSet">A property of PutBucketTaggingRequest used to execute the PutBucketTagging service method.</param>
         /// 
         /// <returns>The response from the PutBucketTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
         PutBucketTaggingResponse PutBucketTagging(string bucketName, List<Tag> tagSet);
 
         /// <summary>
@@ -15615,6 +15834,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketTagging service method.</param>
         /// 
         /// <returns>The response from the PutBucketTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
         PutBucketTaggingResponse PutBucketTagging(PutBucketTaggingRequest request);
 
 
@@ -15706,6 +15926,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutBucketTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
         Task<PutBucketTaggingResponse> PutBucketTaggingAsync(string bucketName, List<Tag> tagSet, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -15796,6 +16017,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutBucketTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
         Task<PutBucketTaggingResponse> PutBucketTaggingAsync(PutBucketTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -15862,6 +16084,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketVersioning service method.</param>
         /// 
         /// <returns>The response from the PutBucketVersioning service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketVersioning">REST API Reference for PutBucketVersioning Operation</seealso>
         PutBucketVersioningResponse PutBucketVersioning(PutBucketVersioningRequest request);
 
 
@@ -15928,6 +16151,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutBucketVersioning service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketVersioning">REST API Reference for PutBucketVersioning Operation</seealso>
         Task<PutBucketVersioningResponse> PutBucketVersioningAsync(PutBucketVersioningRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -16054,6 +16278,7 @@ namespace Amazon.S3
         /// <param name="websiteConfiguration">Container for the request.</param>
         /// 
         /// <returns>The response from the PutBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketWebsite">REST API Reference for PutBucketWebsite Operation</seealso>
         PutBucketWebsiteResponse PutBucketWebsite(string bucketName, WebsiteConfiguration websiteConfiguration);
 
         /// <summary>
@@ -16174,6 +16399,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketWebsite service method.</param>
         /// 
         /// <returns>The response from the PutBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketWebsite">REST API Reference for PutBucketWebsite Operation</seealso>
         PutBucketWebsiteResponse PutBucketWebsite(PutBucketWebsiteRequest request);
 
 
@@ -16299,6 +16525,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketWebsite">REST API Reference for PutBucketWebsite Operation</seealso>
         Task<PutBucketWebsiteResponse> PutBucketWebsiteAsync(string bucketName, WebsiteConfiguration websiteConfiguration, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -16423,6 +16650,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketWebsite">REST API Reference for PutBucketWebsite Operation</seealso>
         Task<PutBucketWebsiteResponse> PutBucketWebsiteAsync(PutBucketWebsiteRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -16502,6 +16730,7 @@ namespace Amazon.S3
         /// <param name="configuration">Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the PutCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">REST API Reference for PutCORSConfiguration Operation</seealso>
         PutCORSConfigurationResponse PutCORSConfiguration(string bucketName, CORSConfiguration configuration);
 
         /// <summary>
@@ -16575,6 +16804,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutCORSConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">REST API Reference for PutCORSConfiguration Operation</seealso>
         PutCORSConfigurationResponse PutCORSConfiguration(PutCORSConfigurationRequest request);
 
 
@@ -16653,6 +16883,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">REST API Reference for PutCORSConfiguration Operation</seealso>
         Task<PutCORSConfigurationResponse> PutCORSConfigurationAsync(string bucketName, CORSConfiguration configuration, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -16730,6 +16961,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">REST API Reference for PutCORSConfiguration Operation</seealso>
         Task<PutCORSConfigurationResponse> PutCORSConfigurationAsync(PutCORSConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -16841,6 +17073,7 @@ namespace Amazon.S3
         /// <param name="configuration">A property of PutLifecycleConfigurationRequest used to execute the PutLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">REST API Reference for PutLifecycleConfiguration Operation</seealso>
         PutLifecycleConfigurationResponse PutLifecycleConfiguration(string bucketName, LifecycleConfiguration configuration);
 
         /// <summary>
@@ -16946,6 +17179,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">REST API Reference for PutLifecycleConfiguration Operation</seealso>
         PutLifecycleConfigurationResponse PutLifecycleConfiguration(PutLifecycleConfigurationRequest request);
 
 
@@ -17056,6 +17290,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">REST API Reference for PutLifecycleConfiguration Operation</seealso>
         Task<PutLifecycleConfigurationResponse> PutLifecycleConfigurationAsync(string bucketName, LifecycleConfiguration configuration, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -17165,6 +17400,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">REST API Reference for PutLifecycleConfiguration Operation</seealso>
         Task<PutLifecycleConfigurationResponse> PutLifecycleConfigurationAsync(PutLifecycleConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -17273,6 +17509,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutObject service method.</param>
         /// 
         /// <returns>The response from the PutObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObject">REST API Reference for PutObject Operation</seealso>
         PutObjectResponse PutObject(PutObjectRequest request);
 
 
@@ -17381,6 +17618,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObject">REST API Reference for PutObject Operation</seealso>
         Task<PutObjectResponse> PutObjectAsync(PutObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -17403,6 +17641,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutObjectLegalHold service method.</param>
         /// 
         /// <returns>The response from the PutObjectLegalHold service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">REST API Reference for PutObjectLegalHold Operation</seealso>
         PutObjectLegalHoldResponse PutObjectLegalHold(PutObjectLegalHoldRequest request);
 
 
@@ -17425,6 +17664,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutObjectLegalHold service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">REST API Reference for PutObjectLegalHold Operation</seealso>
         Task<PutObjectLegalHoldResponse> PutObjectLegalHoldAsync(PutObjectLegalHoldRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -17454,6 +17694,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutObjectLockConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutObjectLockConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">REST API Reference for PutObjectLockConfiguration Operation</seealso>
         PutObjectLockConfigurationResponse PutObjectLockConfiguration(PutObjectLockConfigurationRequest request);
 
 
@@ -17483,6 +17724,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutObjectLockConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">REST API Reference for PutObjectLockConfiguration Operation</seealso>
         Task<PutObjectLockConfigurationResponse> PutObjectLockConfigurationAsync(PutObjectLockConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -17505,6 +17747,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutObjectRetention service method.</param>
         /// 
         /// <returns>The response from the PutObjectRetention service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">REST API Reference for PutObjectRetention Operation</seealso>
         PutObjectRetentionResponse PutObjectRetention(PutObjectRetentionRequest request);
 
 
@@ -17527,6 +17770,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutObjectRetention service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">REST API Reference for PutObjectRetention Operation</seealso>
         Task<PutObjectRetentionResponse> PutObjectRetentionAsync(PutObjectRetentionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -17617,6 +17861,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutObjectTagging service method.</param>
         /// 
         /// <returns>The response from the PutObjectTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectTagging">REST API Reference for PutObjectTagging Operation</seealso>
         PutObjectTaggingResponse PutObjectTagging(PutObjectTaggingRequest request);
 
 
@@ -17707,6 +17952,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutObjectTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectTagging">REST API Reference for PutObjectTagging Operation</seealso>
         Task<PutObjectTaggingResponse> PutObjectTaggingAsync(PutObjectTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -17759,6 +18005,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
         /// 
         /// <returns>The response from the PutPublicAccessBlock service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         PutPublicAccessBlockResponse PutPublicAccessBlock(PutPublicAccessBlockRequest request);
 
 
@@ -17811,6 +18058,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the PutPublicAccessBlock service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         Task<PutPublicAccessBlockResponse> PutPublicAccessBlockAsync(PutPublicAccessBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -18146,6 +18394,7 @@ namespace Amazon.S3
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         RestoreObjectResponse RestoreObject(string bucketName, string key);
 
         /// <summary>
@@ -18477,6 +18726,7 @@ namespace Amazon.S3
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         RestoreObjectResponse RestoreObject(string bucketName, string key, int days);
 
         /// <summary>
@@ -18808,6 +19058,7 @@ namespace Amazon.S3
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         RestoreObjectResponse RestoreObject(string bucketName, string key, string versionId);
 
         /// <summary>
@@ -19140,6 +19391,7 @@ namespace Amazon.S3
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         RestoreObjectResponse RestoreObject(string bucketName, string key, string versionId, int days);
 
         /// <summary>
@@ -19469,6 +19721,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the RestoreObject service method.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         RestoreObjectResponse RestoreObject(RestoreObjectRequest request);
 
 
@@ -19803,6 +20056,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         Task<RestoreObjectResponse> RestoreObjectAsync(string bucketName, string key, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -20137,6 +20391,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         Task<RestoreObjectResponse> RestoreObjectAsync(string bucketName, string key, int days, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -20471,6 +20726,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         Task<RestoreObjectResponse> RestoreObjectAsync(string bucketName, string key, string versionId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -20806,6 +21062,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         Task<RestoreObjectResponse> RestoreObjectAsync(string bucketName, string key, string versionId, int days, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -21139,6 +21396,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         Task<RestoreObjectResponse> RestoreObjectAsync(RestoreObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -21283,6 +21541,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the SelectObjectContent service method.</param>
         /// 
         /// <returns>The response from the SelectObjectContent service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContent">REST API Reference for SelectObjectContent Operation</seealso>
         SelectObjectContentResponse SelectObjectContent(SelectObjectContentRequest request);
 
 
@@ -21427,6 +21686,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the SelectObjectContent service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContent">REST API Reference for SelectObjectContent Operation</seealso>
         Task<SelectObjectContentResponse> SelectObjectContentAsync(SelectObjectContentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -21567,6 +21827,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the UploadPart service method.</param>
         /// 
         /// <returns>The response from the UploadPart service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPart">REST API Reference for UploadPart Operation</seealso>
         UploadPartResponse UploadPart(UploadPartRequest request);
 
 
@@ -21707,6 +21968,7 @@ namespace Amazon.S3
         /// </param>
         /// 
         /// <returns>The response from the UploadPart service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPart">REST API Reference for UploadPart Operation</seealso>
         Task<UploadPartResponse> UploadPartAsync(UploadPartRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

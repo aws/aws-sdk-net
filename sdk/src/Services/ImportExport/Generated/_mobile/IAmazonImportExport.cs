@@ -75,6 +75,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.UnableToCancelJobIdException">
         /// AWS Import/Export cannot cancel the job
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CancelJob">REST API Reference for CancelJob Operation</seealso>
         Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -152,6 +153,7 @@ namespace Amazon.ImportExport
         /// bucket, exportBucket, or logBucket field to a bucket that the account, as specified
         /// by the manifest's Access Key ID, has write permissions to.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CreateJob">REST API Reference for CreateJob Operation</seealso>
         Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -193,6 +195,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetShippingLabel">REST API Reference for GetShippingLabel Operation</seealso>
         Task<GetShippingLabelResponse> GetShippingLabelAsync(GetShippingLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -229,6 +232,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetStatus">REST API Reference for GetStatus Operation</seealso>
         Task<GetStatusResponse> GetStatusAsync(GetStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -258,6 +262,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/ListJobs">REST API Reference for ListJobs Operation</seealso>
         Task<ListJobsResponse> ListJobsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -285,6 +290,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/ListJobs">REST API Reference for ListJobs Operation</seealso>
         Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -365,6 +371,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.UnableToUpdateJobIdException">
         /// AWS Import/Export cannot update the job
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

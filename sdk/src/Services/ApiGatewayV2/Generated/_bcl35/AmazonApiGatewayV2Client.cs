@@ -260,6 +260,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateApi">REST API Reference for CreateApi Operation</seealso>
         public virtual CreateApiResponse CreateApi(CreateApiRequest request)
         {
             var options = new InvokeOptions();
@@ -280,6 +281,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApi
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateApi">REST API Reference for CreateApi Operation</seealso>
         public virtual IAsyncResult BeginCreateApi(CreateApiRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -296,6 +298,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApi.</param>
         /// 
         /// <returns>Returns a  CreateApiResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateApi">REST API Reference for CreateApi Operation</seealso>
         public virtual CreateApiResponse EndCreateApi(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateApiResponse>(asyncResult);
@@ -327,6 +330,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateApiMapping">REST API Reference for CreateApiMapping Operation</seealso>
         public virtual CreateApiMappingResponse CreateApiMapping(CreateApiMappingRequest request)
         {
             var options = new InvokeOptions();
@@ -347,6 +351,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApiMapping
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateApiMapping">REST API Reference for CreateApiMapping Operation</seealso>
         public virtual IAsyncResult BeginCreateApiMapping(CreateApiMappingRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -363,6 +368,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApiMapping.</param>
         /// 
         /// <returns>Returns a  CreateApiMappingResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateApiMapping">REST API Reference for CreateApiMapping Operation</seealso>
         public virtual CreateApiMappingResponse EndCreateApiMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateApiMappingResponse>(asyncResult);
@@ -394,6 +400,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateAuthorizer">REST API Reference for CreateAuthorizer Operation</seealso>
         public virtual CreateAuthorizerResponse CreateAuthorizer(CreateAuthorizerRequest request)
         {
             var options = new InvokeOptions();
@@ -414,6 +421,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAuthorizer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateAuthorizer">REST API Reference for CreateAuthorizer Operation</seealso>
         public virtual IAsyncResult BeginCreateAuthorizer(CreateAuthorizerRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -430,6 +438,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAuthorizer.</param>
         /// 
         /// <returns>Returns a  CreateAuthorizerResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateAuthorizer">REST API Reference for CreateAuthorizer Operation</seealso>
         public virtual CreateAuthorizerResponse EndCreateAuthorizer(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAuthorizerResponse>(asyncResult);
@@ -461,6 +470,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
         {
             var options = new InvokeOptions();
@@ -481,6 +491,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDeployment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual IAsyncResult BeginCreateDeployment(CreateDeploymentRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -497,6 +508,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDeployment.</param>
         /// 
         /// <returns>Returns a  CreateDeploymentResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual CreateDeploymentResponse EndCreateDeployment(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDeploymentResponse>(asyncResult);
@@ -531,6 +543,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateDomainName">REST API Reference for CreateDomainName Operation</seealso>
         public virtual CreateDomainNameResponse CreateDomainName(CreateDomainNameRequest request)
         {
             var options = new InvokeOptions();
@@ -551,6 +564,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDomainName
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateDomainName">REST API Reference for CreateDomainName Operation</seealso>
         public virtual IAsyncResult BeginCreateDomainName(CreateDomainNameRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -567,6 +581,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDomainName.</param>
         /// 
         /// <returns>Returns a  CreateDomainNameResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateDomainName">REST API Reference for CreateDomainName Operation</seealso>
         public virtual CreateDomainNameResponse EndCreateDomainName(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDomainNameResponse>(asyncResult);
@@ -598,6 +613,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateIntegration">REST API Reference for CreateIntegration Operation</seealso>
         public virtual CreateIntegrationResponse CreateIntegration(CreateIntegrationRequest request)
         {
             var options = new InvokeOptions();
@@ -618,6 +634,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIntegration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateIntegration">REST API Reference for CreateIntegration Operation</seealso>
         public virtual IAsyncResult BeginCreateIntegration(CreateIntegrationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -634,6 +651,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIntegration.</param>
         /// 
         /// <returns>Returns a  CreateIntegrationResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateIntegration">REST API Reference for CreateIntegration Operation</seealso>
         public virtual CreateIntegrationResponse EndCreateIntegration(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateIntegrationResponse>(asyncResult);
@@ -665,6 +683,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateIntegrationResponse">REST API Reference for CreateIntegrationResponse Operation</seealso>
         public virtual CreateIntegrationResponseResponse CreateIntegrationResponse(CreateIntegrationResponseRequest request)
         {
             var options = new InvokeOptions();
@@ -685,6 +704,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIntegrationResponse
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateIntegrationResponse">REST API Reference for CreateIntegrationResponse Operation</seealso>
         public virtual IAsyncResult BeginCreateIntegrationResponse(CreateIntegrationResponseRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -701,6 +721,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIntegrationResponse.</param>
         /// 
         /// <returns>Returns a  CreateIntegrationResponseResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateIntegrationResponse">REST API Reference for CreateIntegrationResponse Operation</seealso>
         public virtual CreateIntegrationResponseResponse EndCreateIntegrationResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateIntegrationResponseResponse>(asyncResult);
@@ -732,6 +753,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateModel">REST API Reference for CreateModel Operation</seealso>
         public virtual CreateModelResponse CreateModel(CreateModelRequest request)
         {
             var options = new InvokeOptions();
@@ -752,6 +774,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateModel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateModel">REST API Reference for CreateModel Operation</seealso>
         public virtual IAsyncResult BeginCreateModel(CreateModelRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -768,6 +791,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateModel.</param>
         /// 
         /// <returns>Returns a  CreateModelResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateModel">REST API Reference for CreateModel Operation</seealso>
         public virtual CreateModelResponse EndCreateModel(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateModelResponse>(asyncResult);
@@ -799,6 +823,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public virtual CreateRouteResponse CreateRoute(CreateRouteRequest request)
         {
             var options = new InvokeOptions();
@@ -819,6 +844,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRoute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public virtual IAsyncResult BeginCreateRoute(CreateRouteRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -835,6 +861,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRoute.</param>
         /// 
         /// <returns>Returns a  CreateRouteResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public virtual CreateRouteResponse EndCreateRoute(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateRouteResponse>(asyncResult);
@@ -866,6 +893,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRouteResponse">REST API Reference for CreateRouteResponse Operation</seealso>
         public virtual CreateRouteResponseResponse CreateRouteResponse(CreateRouteResponseRequest request)
         {
             var options = new InvokeOptions();
@@ -886,6 +914,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRouteResponse
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRouteResponse">REST API Reference for CreateRouteResponse Operation</seealso>
         public virtual IAsyncResult BeginCreateRouteResponse(CreateRouteResponseRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -902,6 +931,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRouteResponse.</param>
         /// 
         /// <returns>Returns a  CreateRouteResponseResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRouteResponse">REST API Reference for CreateRouteResponse Operation</seealso>
         public virtual CreateRouteResponseResponse EndCreateRouteResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateRouteResponseResponse>(asyncResult);
@@ -933,6 +963,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateStage">REST API Reference for CreateStage Operation</seealso>
         public virtual CreateStageResponse CreateStage(CreateStageRequest request)
         {
             var options = new InvokeOptions();
@@ -953,6 +984,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateStage">REST API Reference for CreateStage Operation</seealso>
         public virtual IAsyncResult BeginCreateStage(CreateStageRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -969,6 +1001,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStage.</param>
         /// 
         /// <returns>Returns a  CreateStageResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateStage">REST API Reference for CreateStage Operation</seealso>
         public virtual CreateStageResponse EndCreateStage(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateStageResponse>(asyncResult);
@@ -991,6 +1024,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateVpcLink">REST API Reference for CreateVpcLink Operation</seealso>
         public virtual CreateVpcLinkResponse CreateVpcLink(CreateVpcLinkRequest request)
         {
             var options = new InvokeOptions();
@@ -1011,6 +1045,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpcLink
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateVpcLink">REST API Reference for CreateVpcLink Operation</seealso>
         public virtual IAsyncResult BeginCreateVpcLink(CreateVpcLinkRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1027,6 +1062,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpcLink.</param>
         /// 
         /// <returns>Returns a  CreateVpcLinkResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateVpcLink">REST API Reference for CreateVpcLink Operation</seealso>
         public virtual CreateVpcLinkResponse EndCreateVpcLink(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateVpcLinkResponse>(asyncResult);
@@ -1050,6 +1086,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteAccessLogSettings">REST API Reference for DeleteAccessLogSettings Operation</seealso>
         public virtual DeleteAccessLogSettingsResponse DeleteAccessLogSettings(DeleteAccessLogSettingsRequest request)
         {
             var options = new InvokeOptions();
@@ -1070,6 +1107,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccessLogSettings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteAccessLogSettings">REST API Reference for DeleteAccessLogSettings Operation</seealso>
         public virtual IAsyncResult BeginDeleteAccessLogSettings(DeleteAccessLogSettingsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1086,6 +1124,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccessLogSettings.</param>
         /// 
         /// <returns>Returns a  DeleteAccessLogSettingsResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteAccessLogSettings">REST API Reference for DeleteAccessLogSettings Operation</seealso>
         public virtual DeleteAccessLogSettingsResponse EndDeleteAccessLogSettings(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAccessLogSettingsResponse>(asyncResult);
@@ -1108,6 +1147,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteApi">REST API Reference for DeleteApi Operation</seealso>
         public virtual DeleteApiResponse DeleteApi(DeleteApiRequest request)
         {
             var options = new InvokeOptions();
@@ -1128,6 +1168,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApi
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteApi">REST API Reference for DeleteApi Operation</seealso>
         public virtual IAsyncResult BeginDeleteApi(DeleteApiRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1144,6 +1185,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApi.</param>
         /// 
         /// <returns>Returns a  DeleteApiResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteApi">REST API Reference for DeleteApi Operation</seealso>
         public virtual DeleteApiResponse EndDeleteApi(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteApiResponse>(asyncResult);
@@ -1170,6 +1212,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteApiMapping">REST API Reference for DeleteApiMapping Operation</seealso>
         public virtual DeleteApiMappingResponse DeleteApiMapping(DeleteApiMappingRequest request)
         {
             var options = new InvokeOptions();
@@ -1190,6 +1233,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApiMapping
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteApiMapping">REST API Reference for DeleteApiMapping Operation</seealso>
         public virtual IAsyncResult BeginDeleteApiMapping(DeleteApiMappingRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1206,6 +1250,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApiMapping.</param>
         /// 
         /// <returns>Returns a  DeleteApiMappingResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteApiMapping">REST API Reference for DeleteApiMapping Operation</seealso>
         public virtual DeleteApiMappingResponse EndDeleteApiMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteApiMappingResponse>(asyncResult);
@@ -1228,6 +1273,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteAuthorizer">REST API Reference for DeleteAuthorizer Operation</seealso>
         public virtual DeleteAuthorizerResponse DeleteAuthorizer(DeleteAuthorizerRequest request)
         {
             var options = new InvokeOptions();
@@ -1248,6 +1294,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAuthorizer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteAuthorizer">REST API Reference for DeleteAuthorizer Operation</seealso>
         public virtual IAsyncResult BeginDeleteAuthorizer(DeleteAuthorizerRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1264,6 +1311,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAuthorizer.</param>
         /// 
         /// <returns>Returns a  DeleteAuthorizerResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteAuthorizer">REST API Reference for DeleteAuthorizer Operation</seealso>
         public virtual DeleteAuthorizerResponse EndDeleteAuthorizer(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAuthorizerResponse>(asyncResult);
@@ -1286,6 +1334,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteCorsConfiguration">REST API Reference for DeleteCorsConfiguration Operation</seealso>
         public virtual DeleteCorsConfigurationResponse DeleteCorsConfiguration(DeleteCorsConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -1306,6 +1355,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCorsConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteCorsConfiguration">REST API Reference for DeleteCorsConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteCorsConfiguration(DeleteCorsConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1322,6 +1372,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCorsConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteCorsConfigurationResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteCorsConfiguration">REST API Reference for DeleteCorsConfiguration Operation</seealso>
         public virtual DeleteCorsConfigurationResponse EndDeleteCorsConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCorsConfigurationResponse>(asyncResult);
@@ -1344,6 +1395,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
         public virtual DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request)
         {
             var options = new InvokeOptions();
@@ -1364,6 +1416,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDeployment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
         public virtual IAsyncResult BeginDeleteDeployment(DeleteDeploymentRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1380,6 +1433,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDeployment.</param>
         /// 
         /// <returns>Returns a  DeleteDeploymentResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
         public virtual DeleteDeploymentResponse EndDeleteDeployment(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDeploymentResponse>(asyncResult);
@@ -1402,6 +1456,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteDomainName">REST API Reference for DeleteDomainName Operation</seealso>
         public virtual DeleteDomainNameResponse DeleteDomainName(DeleteDomainNameRequest request)
         {
             var options = new InvokeOptions();
@@ -1422,6 +1477,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDomainName
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteDomainName">REST API Reference for DeleteDomainName Operation</seealso>
         public virtual IAsyncResult BeginDeleteDomainName(DeleteDomainNameRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1438,6 +1494,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDomainName.</param>
         /// 
         /// <returns>Returns a  DeleteDomainNameResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteDomainName">REST API Reference for DeleteDomainName Operation</seealso>
         public virtual DeleteDomainNameResponse EndDeleteDomainName(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDomainNameResponse>(asyncResult);
@@ -1460,6 +1517,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
         public virtual DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
         {
             var options = new InvokeOptions();
@@ -1480,6 +1538,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIntegration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
         public virtual IAsyncResult BeginDeleteIntegration(DeleteIntegrationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1496,6 +1555,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIntegration.</param>
         /// 
         /// <returns>Returns a  DeleteIntegrationResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
         public virtual DeleteIntegrationResponse EndDeleteIntegration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteIntegrationResponse>(asyncResult);
@@ -1518,6 +1578,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteIntegrationResponse">REST API Reference for DeleteIntegrationResponse Operation</seealso>
         public virtual DeleteIntegrationResponseResponse DeleteIntegrationResponse(DeleteIntegrationResponseRequest request)
         {
             var options = new InvokeOptions();
@@ -1538,6 +1599,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIntegrationResponse
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteIntegrationResponse">REST API Reference for DeleteIntegrationResponse Operation</seealso>
         public virtual IAsyncResult BeginDeleteIntegrationResponse(DeleteIntegrationResponseRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1554,6 +1616,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIntegrationResponse.</param>
         /// 
         /// <returns>Returns a  DeleteIntegrationResponseResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteIntegrationResponse">REST API Reference for DeleteIntegrationResponse Operation</seealso>
         public virtual DeleteIntegrationResponseResponse EndDeleteIntegrationResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteIntegrationResponseResponse>(asyncResult);
@@ -1576,6 +1639,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual DeleteModelResponse DeleteModel(DeleteModelRequest request)
         {
             var options = new InvokeOptions();
@@ -1596,6 +1660,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteModel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual IAsyncResult BeginDeleteModel(DeleteModelRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1612,6 +1677,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteModel.</param>
         /// 
         /// <returns>Returns a  DeleteModelResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual DeleteModelResponse EndDeleteModel(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteModelResponse>(asyncResult);
@@ -1634,6 +1700,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public virtual DeleteRouteResponse DeleteRoute(DeleteRouteRequest request)
         {
             var options = new InvokeOptions();
@@ -1654,6 +1721,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRoute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public virtual IAsyncResult BeginDeleteRoute(DeleteRouteRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1670,6 +1738,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRoute.</param>
         /// 
         /// <returns>Returns a  DeleteRouteResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public virtual DeleteRouteResponse EndDeleteRoute(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRouteResponse>(asyncResult);
@@ -1692,6 +1761,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRouteRequestParameter">REST API Reference for DeleteRouteRequestParameter Operation</seealso>
         public virtual DeleteRouteRequestParameterResponse DeleteRouteRequestParameter(DeleteRouteRequestParameterRequest request)
         {
             var options = new InvokeOptions();
@@ -1712,6 +1782,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRouteRequestParameter
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRouteRequestParameter">REST API Reference for DeleteRouteRequestParameter Operation</seealso>
         public virtual IAsyncResult BeginDeleteRouteRequestParameter(DeleteRouteRequestParameterRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1728,6 +1799,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRouteRequestParameter.</param>
         /// 
         /// <returns>Returns a  DeleteRouteRequestParameterResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRouteRequestParameter">REST API Reference for DeleteRouteRequestParameter Operation</seealso>
         public virtual DeleteRouteRequestParameterResponse EndDeleteRouteRequestParameter(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRouteRequestParameterResponse>(asyncResult);
@@ -1750,6 +1822,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRouteResponse">REST API Reference for DeleteRouteResponse Operation</seealso>
         public virtual DeleteRouteResponseResponse DeleteRouteResponse(DeleteRouteResponseRequest request)
         {
             var options = new InvokeOptions();
@@ -1770,6 +1843,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRouteResponse
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRouteResponse">REST API Reference for DeleteRouteResponse Operation</seealso>
         public virtual IAsyncResult BeginDeleteRouteResponse(DeleteRouteResponseRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1786,6 +1860,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRouteResponse.</param>
         /// 
         /// <returns>Returns a  DeleteRouteResponseResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRouteResponse">REST API Reference for DeleteRouteResponse Operation</seealso>
         public virtual DeleteRouteResponseResponse EndDeleteRouteResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRouteResponseResponse>(asyncResult);
@@ -1808,6 +1883,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRouteSettings">REST API Reference for DeleteRouteSettings Operation</seealso>
         public virtual DeleteRouteSettingsResponse DeleteRouteSettings(DeleteRouteSettingsRequest request)
         {
             var options = new InvokeOptions();
@@ -1828,6 +1904,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRouteSettings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRouteSettings">REST API Reference for DeleteRouteSettings Operation</seealso>
         public virtual IAsyncResult BeginDeleteRouteSettings(DeleteRouteSettingsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1844,6 +1921,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRouteSettings.</param>
         /// 
         /// <returns>Returns a  DeleteRouteSettingsResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRouteSettings">REST API Reference for DeleteRouteSettings Operation</seealso>
         public virtual DeleteRouteSettingsResponse EndDeleteRouteSettings(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRouteSettingsResponse>(asyncResult);
@@ -1866,6 +1944,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteStage">REST API Reference for DeleteStage Operation</seealso>
         public virtual DeleteStageResponse DeleteStage(DeleteStageRequest request)
         {
             var options = new InvokeOptions();
@@ -1886,6 +1965,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteStage">REST API Reference for DeleteStage Operation</seealso>
         public virtual IAsyncResult BeginDeleteStage(DeleteStageRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1902,6 +1982,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStage.</param>
         /// 
         /// <returns>Returns a  DeleteStageResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteStage">REST API Reference for DeleteStage Operation</seealso>
         public virtual DeleteStageResponse EndDeleteStage(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteStageResponse>(asyncResult);
@@ -1924,6 +2005,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteVpcLink">REST API Reference for DeleteVpcLink Operation</seealso>
         public virtual DeleteVpcLinkResponse DeleteVpcLink(DeleteVpcLinkRequest request)
         {
             var options = new InvokeOptions();
@@ -1944,6 +2026,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpcLink
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteVpcLink">REST API Reference for DeleteVpcLink Operation</seealso>
         public virtual IAsyncResult BeginDeleteVpcLink(DeleteVpcLinkRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1960,6 +2043,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcLink.</param>
         /// 
         /// <returns>Returns a  DeleteVpcLinkResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteVpcLink">REST API Reference for DeleteVpcLink Operation</seealso>
         public virtual DeleteVpcLinkResponse EndDeleteVpcLink(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVpcLinkResponse>(asyncResult);
@@ -1986,6 +2070,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ExportApi">REST API Reference for ExportApi Operation</seealso>
         public virtual ExportApiResponse ExportApi(ExportApiRequest request)
         {
             var options = new InvokeOptions();
@@ -2006,6 +2091,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportApi
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ExportApi">REST API Reference for ExportApi Operation</seealso>
         public virtual IAsyncResult BeginExportApi(ExportApiRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2022,6 +2108,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportApi.</param>
         /// 
         /// <returns>Returns a  ExportApiResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ExportApi">REST API Reference for ExportApi Operation</seealso>
         public virtual ExportApiResponse EndExportApi(IAsyncResult asyncResult)
         {
             return EndInvoke<ExportApiResponse>(asyncResult);
@@ -2044,6 +2131,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApi">REST API Reference for GetApi Operation</seealso>
         public virtual GetApiResponse GetApi(GetApiRequest request)
         {
             var options = new InvokeOptions();
@@ -2064,6 +2152,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApi
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApi">REST API Reference for GetApi Operation</seealso>
         public virtual IAsyncResult BeginGetApi(GetApiRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2080,6 +2169,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApi.</param>
         /// 
         /// <returns>Returns a  GetApiResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApi">REST API Reference for GetApi Operation</seealso>
         public virtual GetApiResponse EndGetApi(IAsyncResult asyncResult)
         {
             return EndInvoke<GetApiResponse>(asyncResult);
@@ -2106,6 +2196,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApiMapping">REST API Reference for GetApiMapping Operation</seealso>
         public virtual GetApiMappingResponse GetApiMapping(GetApiMappingRequest request)
         {
             var options = new InvokeOptions();
@@ -2126,6 +2217,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApiMapping
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApiMapping">REST API Reference for GetApiMapping Operation</seealso>
         public virtual IAsyncResult BeginGetApiMapping(GetApiMappingRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2142,6 +2234,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApiMapping.</param>
         /// 
         /// <returns>Returns a  GetApiMappingResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApiMapping">REST API Reference for GetApiMapping Operation</seealso>
         public virtual GetApiMappingResponse EndGetApiMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<GetApiMappingResponse>(asyncResult);
@@ -2168,6 +2261,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApiMappings">REST API Reference for GetApiMappings Operation</seealso>
         public virtual GetApiMappingsResponse GetApiMappings(GetApiMappingsRequest request)
         {
             var options = new InvokeOptions();
@@ -2188,6 +2282,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApiMappings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApiMappings">REST API Reference for GetApiMappings Operation</seealso>
         public virtual IAsyncResult BeginGetApiMappings(GetApiMappingsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2204,6 +2299,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApiMappings.</param>
         /// 
         /// <returns>Returns a  GetApiMappingsResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApiMappings">REST API Reference for GetApiMappings Operation</seealso>
         public virtual GetApiMappingsResponse EndGetApiMappings(IAsyncResult asyncResult)
         {
             return EndInvoke<GetApiMappingsResponse>(asyncResult);
@@ -2230,6 +2326,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApis">REST API Reference for GetApis Operation</seealso>
         public virtual GetApisResponse GetApis(GetApisRequest request)
         {
             var options = new InvokeOptions();
@@ -2250,6 +2347,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApis
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApis">REST API Reference for GetApis Operation</seealso>
         public virtual IAsyncResult BeginGetApis(GetApisRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2266,6 +2364,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApis.</param>
         /// 
         /// <returns>Returns a  GetApisResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApis">REST API Reference for GetApis Operation</seealso>
         public virtual GetApisResponse EndGetApis(IAsyncResult asyncResult)
         {
             return EndInvoke<GetApisResponse>(asyncResult);
@@ -2288,6 +2387,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetAuthorizer">REST API Reference for GetAuthorizer Operation</seealso>
         public virtual GetAuthorizerResponse GetAuthorizer(GetAuthorizerRequest request)
         {
             var options = new InvokeOptions();
@@ -2308,6 +2408,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAuthorizer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetAuthorizer">REST API Reference for GetAuthorizer Operation</seealso>
         public virtual IAsyncResult BeginGetAuthorizer(GetAuthorizerRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2324,6 +2425,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAuthorizer.</param>
         /// 
         /// <returns>Returns a  GetAuthorizerResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetAuthorizer">REST API Reference for GetAuthorizer Operation</seealso>
         public virtual GetAuthorizerResponse EndGetAuthorizer(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAuthorizerResponse>(asyncResult);
@@ -2350,6 +2452,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetAuthorizers">REST API Reference for GetAuthorizers Operation</seealso>
         public virtual GetAuthorizersResponse GetAuthorizers(GetAuthorizersRequest request)
         {
             var options = new InvokeOptions();
@@ -2370,6 +2473,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAuthorizers
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetAuthorizers">REST API Reference for GetAuthorizers Operation</seealso>
         public virtual IAsyncResult BeginGetAuthorizers(GetAuthorizersRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2386,6 +2490,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAuthorizers.</param>
         /// 
         /// <returns>Returns a  GetAuthorizersResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetAuthorizers">REST API Reference for GetAuthorizers Operation</seealso>
         public virtual GetAuthorizersResponse EndGetAuthorizers(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAuthorizersResponse>(asyncResult);
@@ -2408,6 +2513,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public virtual GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
         {
             var options = new InvokeOptions();
@@ -2428,6 +2534,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeployment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public virtual IAsyncResult BeginGetDeployment(GetDeploymentRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2444,6 +2551,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeployment.</param>
         /// 
         /// <returns>Returns a  GetDeploymentResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public virtual GetDeploymentResponse EndGetDeployment(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDeploymentResponse>(asyncResult);
@@ -2470,6 +2578,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDeployments">REST API Reference for GetDeployments Operation</seealso>
         public virtual GetDeploymentsResponse GetDeployments(GetDeploymentsRequest request)
         {
             var options = new InvokeOptions();
@@ -2490,6 +2599,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeployments
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDeployments">REST API Reference for GetDeployments Operation</seealso>
         public virtual IAsyncResult BeginGetDeployments(GetDeploymentsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2506,6 +2616,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeployments.</param>
         /// 
         /// <returns>Returns a  GetDeploymentsResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDeployments">REST API Reference for GetDeployments Operation</seealso>
         public virtual GetDeploymentsResponse EndGetDeployments(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDeploymentsResponse>(asyncResult);
@@ -2528,6 +2639,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDomainName">REST API Reference for GetDomainName Operation</seealso>
         public virtual GetDomainNameResponse GetDomainName(GetDomainNameRequest request)
         {
             var options = new InvokeOptions();
@@ -2548,6 +2660,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomainName
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDomainName">REST API Reference for GetDomainName Operation</seealso>
         public virtual IAsyncResult BeginGetDomainName(GetDomainNameRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2564,6 +2677,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDomainName.</param>
         /// 
         /// <returns>Returns a  GetDomainNameResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDomainName">REST API Reference for GetDomainName Operation</seealso>
         public virtual GetDomainNameResponse EndGetDomainName(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDomainNameResponse>(asyncResult);
@@ -2590,6 +2704,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDomainNames">REST API Reference for GetDomainNames Operation</seealso>
         public virtual GetDomainNamesResponse GetDomainNames(GetDomainNamesRequest request)
         {
             var options = new InvokeOptions();
@@ -2610,6 +2725,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomainNames
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDomainNames">REST API Reference for GetDomainNames Operation</seealso>
         public virtual IAsyncResult BeginGetDomainNames(GetDomainNamesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2626,6 +2742,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDomainNames.</param>
         /// 
         /// <returns>Returns a  GetDomainNamesResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDomainNames">REST API Reference for GetDomainNames Operation</seealso>
         public virtual GetDomainNamesResponse EndGetDomainNames(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDomainNamesResponse>(asyncResult);
@@ -2648,6 +2765,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegration">REST API Reference for GetIntegration Operation</seealso>
         public virtual GetIntegrationResponse GetIntegration(GetIntegrationRequest request)
         {
             var options = new InvokeOptions();
@@ -2668,6 +2786,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIntegration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegration">REST API Reference for GetIntegration Operation</seealso>
         public virtual IAsyncResult BeginGetIntegration(GetIntegrationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2684,6 +2803,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIntegration.</param>
         /// 
         /// <returns>Returns a  GetIntegrationResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegration">REST API Reference for GetIntegration Operation</seealso>
         public virtual GetIntegrationResponse EndGetIntegration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetIntegrationResponse>(asyncResult);
@@ -2706,6 +2826,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegrationResponse">REST API Reference for GetIntegrationResponse Operation</seealso>
         public virtual GetIntegrationResponseResponse GetIntegrationResponse(GetIntegrationResponseRequest request)
         {
             var options = new InvokeOptions();
@@ -2726,6 +2847,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIntegrationResponse
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegrationResponse">REST API Reference for GetIntegrationResponse Operation</seealso>
         public virtual IAsyncResult BeginGetIntegrationResponse(GetIntegrationResponseRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2742,6 +2864,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIntegrationResponse.</param>
         /// 
         /// <returns>Returns a  GetIntegrationResponseResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegrationResponse">REST API Reference for GetIntegrationResponse Operation</seealso>
         public virtual GetIntegrationResponseResponse EndGetIntegrationResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<GetIntegrationResponseResponse>(asyncResult);
@@ -2768,6 +2891,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegrationResponses">REST API Reference for GetIntegrationResponses Operation</seealso>
         public virtual GetIntegrationResponsesResponse GetIntegrationResponses(GetIntegrationResponsesRequest request)
         {
             var options = new InvokeOptions();
@@ -2788,6 +2912,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIntegrationResponses
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegrationResponses">REST API Reference for GetIntegrationResponses Operation</seealso>
         public virtual IAsyncResult BeginGetIntegrationResponses(GetIntegrationResponsesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2804,6 +2929,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIntegrationResponses.</param>
         /// 
         /// <returns>Returns a  GetIntegrationResponsesResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegrationResponses">REST API Reference for GetIntegrationResponses Operation</seealso>
         public virtual GetIntegrationResponsesResponse EndGetIntegrationResponses(IAsyncResult asyncResult)
         {
             return EndInvoke<GetIntegrationResponsesResponse>(asyncResult);
@@ -2830,6 +2956,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegrations">REST API Reference for GetIntegrations Operation</seealso>
         public virtual GetIntegrationsResponse GetIntegrations(GetIntegrationsRequest request)
         {
             var options = new InvokeOptions();
@@ -2850,6 +2977,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIntegrations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegrations">REST API Reference for GetIntegrations Operation</seealso>
         public virtual IAsyncResult BeginGetIntegrations(GetIntegrationsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2866,6 +2994,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIntegrations.</param>
         /// 
         /// <returns>Returns a  GetIntegrationsResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegrations">REST API Reference for GetIntegrations Operation</seealso>
         public virtual GetIntegrationsResponse EndGetIntegrations(IAsyncResult asyncResult)
         {
             return EndInvoke<GetIntegrationsResponse>(asyncResult);
@@ -2888,6 +3017,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetModel">REST API Reference for GetModel Operation</seealso>
         public virtual GetModelResponse GetModel(GetModelRequest request)
         {
             var options = new InvokeOptions();
@@ -2908,6 +3038,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetModel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetModel">REST API Reference for GetModel Operation</seealso>
         public virtual IAsyncResult BeginGetModel(GetModelRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2924,6 +3055,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetModel.</param>
         /// 
         /// <returns>Returns a  GetModelResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetModel">REST API Reference for GetModel Operation</seealso>
         public virtual GetModelResponse EndGetModel(IAsyncResult asyncResult)
         {
             return EndInvoke<GetModelResponse>(asyncResult);
@@ -2950,6 +3082,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetModels">REST API Reference for GetModels Operation</seealso>
         public virtual GetModelsResponse GetModels(GetModelsRequest request)
         {
             var options = new InvokeOptions();
@@ -2970,6 +3103,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetModels
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetModels">REST API Reference for GetModels Operation</seealso>
         public virtual IAsyncResult BeginGetModels(GetModelsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2986,6 +3120,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetModels.</param>
         /// 
         /// <returns>Returns a  GetModelsResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetModels">REST API Reference for GetModels Operation</seealso>
         public virtual GetModelsResponse EndGetModels(IAsyncResult asyncResult)
         {
             return EndInvoke<GetModelsResponse>(asyncResult);
@@ -3008,6 +3143,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetModelTemplate">REST API Reference for GetModelTemplate Operation</seealso>
         public virtual GetModelTemplateResponse GetModelTemplate(GetModelTemplateRequest request)
         {
             var options = new InvokeOptions();
@@ -3028,6 +3164,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetModelTemplate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetModelTemplate">REST API Reference for GetModelTemplate Operation</seealso>
         public virtual IAsyncResult BeginGetModelTemplate(GetModelTemplateRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3044,6 +3181,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetModelTemplate.</param>
         /// 
         /// <returns>Returns a  GetModelTemplateResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetModelTemplate">REST API Reference for GetModelTemplate Operation</seealso>
         public virtual GetModelTemplateResponse EndGetModelTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<GetModelTemplateResponse>(asyncResult);
@@ -3066,6 +3204,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRoute">REST API Reference for GetRoute Operation</seealso>
         public virtual GetRouteResponse GetRoute(GetRouteRequest request)
         {
             var options = new InvokeOptions();
@@ -3086,6 +3225,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRoute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRoute">REST API Reference for GetRoute Operation</seealso>
         public virtual IAsyncResult BeginGetRoute(GetRouteRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3102,6 +3242,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRoute.</param>
         /// 
         /// <returns>Returns a  GetRouteResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRoute">REST API Reference for GetRoute Operation</seealso>
         public virtual GetRouteResponse EndGetRoute(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRouteResponse>(asyncResult);
@@ -3124,6 +3265,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRouteResponse">REST API Reference for GetRouteResponse Operation</seealso>
         public virtual GetRouteResponseResponse GetRouteResponse(GetRouteResponseRequest request)
         {
             var options = new InvokeOptions();
@@ -3144,6 +3286,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRouteResponse
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRouteResponse">REST API Reference for GetRouteResponse Operation</seealso>
         public virtual IAsyncResult BeginGetRouteResponse(GetRouteResponseRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3160,6 +3303,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRouteResponse.</param>
         /// 
         /// <returns>Returns a  GetRouteResponseResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRouteResponse">REST API Reference for GetRouteResponse Operation</seealso>
         public virtual GetRouteResponseResponse EndGetRouteResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRouteResponseResponse>(asyncResult);
@@ -3186,6 +3330,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRouteResponses">REST API Reference for GetRouteResponses Operation</seealso>
         public virtual GetRouteResponsesResponse GetRouteResponses(GetRouteResponsesRequest request)
         {
             var options = new InvokeOptions();
@@ -3206,6 +3351,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRouteResponses
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRouteResponses">REST API Reference for GetRouteResponses Operation</seealso>
         public virtual IAsyncResult BeginGetRouteResponses(GetRouteResponsesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3222,6 +3368,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRouteResponses.</param>
         /// 
         /// <returns>Returns a  GetRouteResponsesResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRouteResponses">REST API Reference for GetRouteResponses Operation</seealso>
         public virtual GetRouteResponsesResponse EndGetRouteResponses(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRouteResponsesResponse>(asyncResult);
@@ -3248,6 +3395,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRoutes">REST API Reference for GetRoutes Operation</seealso>
         public virtual GetRoutesResponse GetRoutes(GetRoutesRequest request)
         {
             var options = new InvokeOptions();
@@ -3268,6 +3416,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRoutes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRoutes">REST API Reference for GetRoutes Operation</seealso>
         public virtual IAsyncResult BeginGetRoutes(GetRoutesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3284,6 +3433,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRoutes.</param>
         /// 
         /// <returns>Returns a  GetRoutesResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRoutes">REST API Reference for GetRoutes Operation</seealso>
         public virtual GetRoutesResponse EndGetRoutes(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRoutesResponse>(asyncResult);
@@ -3306,6 +3456,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetStage">REST API Reference for GetStage Operation</seealso>
         public virtual GetStageResponse GetStage(GetStageRequest request)
         {
             var options = new InvokeOptions();
@@ -3326,6 +3477,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetStage">REST API Reference for GetStage Operation</seealso>
         public virtual IAsyncResult BeginGetStage(GetStageRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3342,6 +3494,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStage.</param>
         /// 
         /// <returns>Returns a  GetStageResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetStage">REST API Reference for GetStage Operation</seealso>
         public virtual GetStageResponse EndGetStage(IAsyncResult asyncResult)
         {
             return EndInvoke<GetStageResponse>(asyncResult);
@@ -3368,6 +3521,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetStages">REST API Reference for GetStages Operation</seealso>
         public virtual GetStagesResponse GetStages(GetStagesRequest request)
         {
             var options = new InvokeOptions();
@@ -3388,6 +3542,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStages
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetStages">REST API Reference for GetStages Operation</seealso>
         public virtual IAsyncResult BeginGetStages(GetStagesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3404,6 +3559,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStages.</param>
         /// 
         /// <returns>Returns a  GetStagesResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetStages">REST API Reference for GetStages Operation</seealso>
         public virtual GetStagesResponse EndGetStages(IAsyncResult asyncResult)
         {
             return EndInvoke<GetStagesResponse>(asyncResult);
@@ -3435,6 +3591,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual GetTagsResponse GetTags(GetTagsRequest request)
         {
             var options = new InvokeOptions();
@@ -3455,6 +3612,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual IAsyncResult BeginGetTags(GetTagsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3471,6 +3629,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTags.</param>
         /// 
         /// <returns>Returns a  GetTagsResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual GetTagsResponse EndGetTags(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTagsResponse>(asyncResult);
@@ -3493,6 +3652,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetVpcLink">REST API Reference for GetVpcLink Operation</seealso>
         public virtual GetVpcLinkResponse GetVpcLink(GetVpcLinkRequest request)
         {
             var options = new InvokeOptions();
@@ -3513,6 +3673,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVpcLink
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetVpcLink">REST API Reference for GetVpcLink Operation</seealso>
         public virtual IAsyncResult BeginGetVpcLink(GetVpcLinkRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3529,6 +3690,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVpcLink.</param>
         /// 
         /// <returns>Returns a  GetVpcLinkResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetVpcLink">REST API Reference for GetVpcLink Operation</seealso>
         public virtual GetVpcLinkResponse EndGetVpcLink(IAsyncResult asyncResult)
         {
             return EndInvoke<GetVpcLinkResponse>(asyncResult);
@@ -3551,6 +3713,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetVpcLinks">REST API Reference for GetVpcLinks Operation</seealso>
         public virtual GetVpcLinksResponse GetVpcLinks(GetVpcLinksRequest request)
         {
             var options = new InvokeOptions();
@@ -3571,6 +3734,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVpcLinks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetVpcLinks">REST API Reference for GetVpcLinks Operation</seealso>
         public virtual IAsyncResult BeginGetVpcLinks(GetVpcLinksRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3587,6 +3751,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVpcLinks.</param>
         /// 
         /// <returns>Returns a  GetVpcLinksResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetVpcLinks">REST API Reference for GetVpcLinks Operation</seealso>
         public virtual GetVpcLinksResponse EndGetVpcLinks(IAsyncResult asyncResult)
         {
             return EndInvoke<GetVpcLinksResponse>(asyncResult);
@@ -3618,6 +3783,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ImportApi">REST API Reference for ImportApi Operation</seealso>
         public virtual ImportApiResponse ImportApi(ImportApiRequest request)
         {
             var options = new InvokeOptions();
@@ -3638,6 +3804,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportApi
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ImportApi">REST API Reference for ImportApi Operation</seealso>
         public virtual IAsyncResult BeginImportApi(ImportApiRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3654,6 +3821,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportApi.</param>
         /// 
         /// <returns>Returns a  ImportApiResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ImportApi">REST API Reference for ImportApi Operation</seealso>
         public virtual ImportApiResponse EndImportApi(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportApiResponse>(asyncResult);
@@ -3685,6 +3853,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ReimportApi">REST API Reference for ReimportApi Operation</seealso>
         public virtual ReimportApiResponse ReimportApi(ReimportApiRequest request)
         {
             var options = new InvokeOptions();
@@ -3705,6 +3874,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReimportApi
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ReimportApi">REST API Reference for ReimportApi Operation</seealso>
         public virtual IAsyncResult BeginReimportApi(ReimportApiRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3721,6 +3891,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReimportApi.</param>
         /// 
         /// <returns>Returns a  ReimportApiResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ReimportApi">REST API Reference for ReimportApi Operation</seealso>
         public virtual ReimportApiResponse EndReimportApi(IAsyncResult asyncResult)
         {
             return EndInvoke<ReimportApiResponse>(asyncResult);
@@ -3752,6 +3923,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -3772,6 +3944,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3788,6 +3961,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
         /// 
         /// <returns>Returns a  TagResourceResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<TagResourceResponse>(asyncResult);
@@ -3819,6 +3993,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -3839,6 +4014,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3855,6 +4031,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
         /// 
         /// <returns>Returns a  UntagResourceResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
@@ -3886,6 +4063,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateApi">REST API Reference for UpdateApi Operation</seealso>
         public virtual UpdateApiResponse UpdateApi(UpdateApiRequest request)
         {
             var options = new InvokeOptions();
@@ -3906,6 +4084,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApi
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateApi">REST API Reference for UpdateApi Operation</seealso>
         public virtual IAsyncResult BeginUpdateApi(UpdateApiRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3922,6 +4101,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApi.</param>
         /// 
         /// <returns>Returns a  UpdateApiResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateApi">REST API Reference for UpdateApi Operation</seealso>
         public virtual UpdateApiResponse EndUpdateApi(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateApiResponse>(asyncResult);
@@ -3953,6 +4133,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateApiMapping">REST API Reference for UpdateApiMapping Operation</seealso>
         public virtual UpdateApiMappingResponse UpdateApiMapping(UpdateApiMappingRequest request)
         {
             var options = new InvokeOptions();
@@ -3973,6 +4154,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApiMapping
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateApiMapping">REST API Reference for UpdateApiMapping Operation</seealso>
         public virtual IAsyncResult BeginUpdateApiMapping(UpdateApiMappingRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3989,6 +4171,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApiMapping.</param>
         /// 
         /// <returns>Returns a  UpdateApiMappingResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateApiMapping">REST API Reference for UpdateApiMapping Operation</seealso>
         public virtual UpdateApiMappingResponse EndUpdateApiMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateApiMappingResponse>(asyncResult);
@@ -4020,6 +4203,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateAuthorizer">REST API Reference for UpdateAuthorizer Operation</seealso>
         public virtual UpdateAuthorizerResponse UpdateAuthorizer(UpdateAuthorizerRequest request)
         {
             var options = new InvokeOptions();
@@ -4040,6 +4224,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAuthorizer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateAuthorizer">REST API Reference for UpdateAuthorizer Operation</seealso>
         public virtual IAsyncResult BeginUpdateAuthorizer(UpdateAuthorizerRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4056,6 +4241,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAuthorizer.</param>
         /// 
         /// <returns>Returns a  UpdateAuthorizerResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateAuthorizer">REST API Reference for UpdateAuthorizer Operation</seealso>
         public virtual UpdateAuthorizerResponse EndUpdateAuthorizer(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAuthorizerResponse>(asyncResult);
@@ -4087,6 +4273,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateDeployment">REST API Reference for UpdateDeployment Operation</seealso>
         public virtual UpdateDeploymentResponse UpdateDeployment(UpdateDeploymentRequest request)
         {
             var options = new InvokeOptions();
@@ -4107,6 +4294,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDeployment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateDeployment">REST API Reference for UpdateDeployment Operation</seealso>
         public virtual IAsyncResult BeginUpdateDeployment(UpdateDeploymentRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4123,6 +4311,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDeployment.</param>
         /// 
         /// <returns>Returns a  UpdateDeploymentResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateDeployment">REST API Reference for UpdateDeployment Operation</seealso>
         public virtual UpdateDeploymentResponse EndUpdateDeployment(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDeploymentResponse>(asyncResult);
@@ -4154,6 +4343,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateDomainName">REST API Reference for UpdateDomainName Operation</seealso>
         public virtual UpdateDomainNameResponse UpdateDomainName(UpdateDomainNameRequest request)
         {
             var options = new InvokeOptions();
@@ -4174,6 +4364,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDomainName
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateDomainName">REST API Reference for UpdateDomainName Operation</seealso>
         public virtual IAsyncResult BeginUpdateDomainName(UpdateDomainNameRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4190,6 +4381,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDomainName.</param>
         /// 
         /// <returns>Returns a  UpdateDomainNameResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateDomainName">REST API Reference for UpdateDomainName Operation</seealso>
         public virtual UpdateDomainNameResponse EndUpdateDomainName(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDomainNameResponse>(asyncResult);
@@ -4221,6 +4413,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateIntegration">REST API Reference for UpdateIntegration Operation</seealso>
         public virtual UpdateIntegrationResponse UpdateIntegration(UpdateIntegrationRequest request)
         {
             var options = new InvokeOptions();
@@ -4241,6 +4434,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIntegration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateIntegration">REST API Reference for UpdateIntegration Operation</seealso>
         public virtual IAsyncResult BeginUpdateIntegration(UpdateIntegrationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4257,6 +4451,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateIntegration.</param>
         /// 
         /// <returns>Returns a  UpdateIntegrationResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateIntegration">REST API Reference for UpdateIntegration Operation</seealso>
         public virtual UpdateIntegrationResponse EndUpdateIntegration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateIntegrationResponse>(asyncResult);
@@ -4288,6 +4483,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateIntegrationResponse">REST API Reference for UpdateIntegrationResponse Operation</seealso>
         public virtual UpdateIntegrationResponseResponse UpdateIntegrationResponse(UpdateIntegrationResponseRequest request)
         {
             var options = new InvokeOptions();
@@ -4308,6 +4504,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIntegrationResponse
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateIntegrationResponse">REST API Reference for UpdateIntegrationResponse Operation</seealso>
         public virtual IAsyncResult BeginUpdateIntegrationResponse(UpdateIntegrationResponseRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4324,6 +4521,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateIntegrationResponse.</param>
         /// 
         /// <returns>Returns a  UpdateIntegrationResponseResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateIntegrationResponse">REST API Reference for UpdateIntegrationResponse Operation</seealso>
         public virtual UpdateIntegrationResponseResponse EndUpdateIntegrationResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateIntegrationResponseResponse>(asyncResult);
@@ -4355,6 +4553,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
         public virtual UpdateModelResponse UpdateModel(UpdateModelRequest request)
         {
             var options = new InvokeOptions();
@@ -4375,6 +4574,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateModel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
         public virtual IAsyncResult BeginUpdateModel(UpdateModelRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4391,6 +4591,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateModel.</param>
         /// 
         /// <returns>Returns a  UpdateModelResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
         public virtual UpdateModelResponse EndUpdateModel(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateModelResponse>(asyncResult);
@@ -4422,6 +4623,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateRoute">REST API Reference for UpdateRoute Operation</seealso>
         public virtual UpdateRouteResponse UpdateRoute(UpdateRouteRequest request)
         {
             var options = new InvokeOptions();
@@ -4442,6 +4644,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRoute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateRoute">REST API Reference for UpdateRoute Operation</seealso>
         public virtual IAsyncResult BeginUpdateRoute(UpdateRouteRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4458,6 +4661,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRoute.</param>
         /// 
         /// <returns>Returns a  UpdateRouteResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateRoute">REST API Reference for UpdateRoute Operation</seealso>
         public virtual UpdateRouteResponse EndUpdateRoute(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateRouteResponse>(asyncResult);
@@ -4489,6 +4693,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateRouteResponse">REST API Reference for UpdateRouteResponse Operation</seealso>
         public virtual UpdateRouteResponseResponse UpdateRouteResponse(UpdateRouteResponseRequest request)
         {
             var options = new InvokeOptions();
@@ -4509,6 +4714,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRouteResponse
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateRouteResponse">REST API Reference for UpdateRouteResponse Operation</seealso>
         public virtual IAsyncResult BeginUpdateRouteResponse(UpdateRouteResponseRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4525,6 +4731,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRouteResponse.</param>
         /// 
         /// <returns>Returns a  UpdateRouteResponseResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateRouteResponse">REST API Reference for UpdateRouteResponse Operation</seealso>
         public virtual UpdateRouteResponseResponse EndUpdateRouteResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateRouteResponseResponse>(asyncResult);
@@ -4556,6 +4763,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateStage">REST API Reference for UpdateStage Operation</seealso>
         public virtual UpdateStageResponse UpdateStage(UpdateStageRequest request)
         {
             var options = new InvokeOptions();
@@ -4576,6 +4784,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateStage">REST API Reference for UpdateStage Operation</seealso>
         public virtual IAsyncResult BeginUpdateStage(UpdateStageRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4592,6 +4801,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStage.</param>
         /// 
         /// <returns>Returns a  UpdateStageResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateStage">REST API Reference for UpdateStage Operation</seealso>
         public virtual UpdateStageResponse EndUpdateStage(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateStageResponse>(asyncResult);
@@ -4618,6 +4828,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateVpcLink">REST API Reference for UpdateVpcLink Operation</seealso>
         public virtual UpdateVpcLinkResponse UpdateVpcLink(UpdateVpcLinkRequest request)
         {
             var options = new InvokeOptions();
@@ -4638,6 +4849,7 @@ namespace Amazon.ApiGatewayV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVpcLink
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateVpcLink">REST API Reference for UpdateVpcLink Operation</seealso>
         public virtual IAsyncResult BeginUpdateVpcLink(UpdateVpcLinkRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4654,6 +4866,7 @@ namespace Amazon.ApiGatewayV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVpcLink.</param>
         /// 
         /// <returns>Returns a  UpdateVpcLinkResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateVpcLink">REST API Reference for UpdateVpcLink Operation</seealso>
         public virtual UpdateVpcLinkResponse EndUpdateVpcLink(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateVpcLinkResponse>(asyncResult);

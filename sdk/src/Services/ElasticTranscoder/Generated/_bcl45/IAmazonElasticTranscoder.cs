@@ -78,6 +78,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CancelJob">REST API Reference for CancelJob Operation</seealso>
         CancelJobResponse CancelJob(CancelJobRequest request);
 
 
@@ -120,6 +121,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CancelJob">REST API Reference for CancelJob Operation</seealso>
         Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -162,6 +164,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreateJob">REST API Reference for CreateJob Operation</seealso>
         CreateJobResponse CreateJob(CreateJobRequest request);
 
 
@@ -204,6 +207,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreateJob">REST API Reference for CreateJob Operation</seealso>
         Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -238,6 +242,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         CreatePipelineResponse CreatePipeline(CreatePipelineRequest request);
 
 
@@ -272,6 +277,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -321,6 +327,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePreset">REST API Reference for CreatePreset Operation</seealso>
         CreatePresetResponse CreatePreset(CreatePresetRequest request);
 
 
@@ -370,6 +377,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePreset">REST API Reference for CreatePreset Operation</seealso>
         Task<CreatePresetResponse> CreatePresetAsync(CreatePresetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -411,6 +419,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         DeletePipelineResponse DeletePipeline(DeletePipelineRequest request);
 
 
@@ -452,6 +461,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -488,6 +498,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePreset">REST API Reference for DeletePreset Operation</seealso>
         DeletePresetResponse DeletePreset(DeletePresetRequest request);
 
 
@@ -524,6 +535,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePreset">REST API Reference for DeletePreset Operation</seealso>
         Task<DeletePresetResponse> DeletePresetAsync(DeletePresetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -560,6 +572,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByPipeline">REST API Reference for ListJobsByPipeline Operation</seealso>
         ListJobsByPipelineResponse ListJobsByPipeline(ListJobsByPipelineRequest request);
 
 
@@ -596,6 +609,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByPipeline">REST API Reference for ListJobsByPipeline Operation</seealso>
         Task<ListJobsByPipelineResponse> ListJobsByPipelineAsync(ListJobsByPipelineRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -627,6 +641,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByStatus">REST API Reference for ListJobsByStatus Operation</seealso>
         ListJobsByStatusResponse ListJobsByStatus(ListJobsByStatusRequest request);
 
 
@@ -658,6 +673,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByStatus">REST API Reference for ListJobsByStatus Operation</seealso>
         Task<ListJobsByStatusResponse> ListJobsByStatusAsync(ListJobsByStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -684,6 +700,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         ListPipelinesResponse ListPipelines();
 
 
@@ -707,6 +724,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         ListPipelinesResponse ListPipelines(ListPipelinesRequest request);
 
 
@@ -732,6 +750,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         Task<ListPipelinesResponse> ListPipelinesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -759,6 +778,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -785,6 +805,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPresets">REST API Reference for ListPresets Operation</seealso>
         ListPresetsResponse ListPresets();
 
 
@@ -808,6 +829,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPresets">REST API Reference for ListPresets Operation</seealso>
         ListPresetsResponse ListPresets(ListPresetsRequest request);
 
 
@@ -833,6 +855,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPresets">REST API Reference for ListPresets Operation</seealso>
         Task<ListPresetsResponse> ListPresetsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -860,6 +883,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPresets">REST API Reference for ListPresets Operation</seealso>
         Task<ListPresetsResponse> ListPresetsAsync(ListPresetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -890,6 +914,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadJob">REST API Reference for ReadJob Operation</seealso>
         ReadJobResponse ReadJob(ReadJobRequest request);
 
 
@@ -920,6 +945,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadJob">REST API Reference for ReadJob Operation</seealso>
         Task<ReadJobResponse> ReadJobAsync(ReadJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -950,6 +976,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPipeline">REST API Reference for ReadPipeline Operation</seealso>
         ReadPipelineResponse ReadPipeline(ReadPipelineRequest request);
 
 
@@ -980,6 +1007,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPipeline">REST API Reference for ReadPipeline Operation</seealso>
         Task<ReadPipelineResponse> ReadPipelineAsync(ReadPipelineRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1010,6 +1038,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPreset">REST API Reference for ReadPreset Operation</seealso>
         ReadPresetResponse ReadPreset(ReadPresetRequest request);
 
 
@@ -1040,6 +1069,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPreset">REST API Reference for ReadPreset Operation</seealso>
         Task<ReadPresetResponse> ReadPresetAsync(ReadPresetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1079,6 +1109,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/TestRole">REST API Reference for TestRole Operation</seealso>
         [Obsolete("This API is deprecated and will be removed in a future release.")]
         TestRoleResponse TestRole(TestRoleRequest request);
 
@@ -1119,6 +1150,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/TestRole">REST API Reference for TestRole Operation</seealso>
         [Obsolete("This API is deprecated and will be removed in a future release.")]
         Task<TestRoleResponse> TestRoleAsync(TestRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1162,6 +1194,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request);
 
 
@@ -1204,6 +1237,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         Task<UpdatePipelineResponse> UpdatePipelineAsync(UpdatePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1245,6 +1279,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineNotifications">REST API Reference for UpdatePipelineNotifications Operation</seealso>
         UpdatePipelineNotificationsResponse UpdatePipelineNotifications(UpdatePipelineNotificationsRequest request);
 
 
@@ -1286,6 +1321,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineNotifications">REST API Reference for UpdatePipelineNotifications Operation</seealso>
         Task<UpdatePipelineNotificationsResponse> UpdatePipelineNotificationsAsync(UpdatePipelineNotificationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1329,6 +1365,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineStatus">REST API Reference for UpdatePipelineStatus Operation</seealso>
         UpdatePipelineStatusResponse UpdatePipelineStatus(UpdatePipelineStatusRequest request);
 
 
@@ -1372,6 +1409,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineStatus">REST API Reference for UpdatePipelineStatus Operation</seealso>
         Task<UpdatePipelineStatusResponse> UpdatePipelineStatusAsync(UpdatePipelineStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

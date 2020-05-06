@@ -46,6 +46,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessPoint service method.</param>
         /// 
         /// <returns>The response from the CreateAccessPoint service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPoint">REST API Reference for CreateAccessPoint Operation</seealso>
         CreateAccessPointResponse CreateAccessPoint(CreateAccessPointRequest request);
 
 
@@ -59,6 +60,7 @@ namespace Amazon.S3Control
         /// </param>
         /// 
         /// <returns>The response from the CreateAccessPoint service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPoint">REST API Reference for CreateAccessPoint Operation</seealso>
         Task<CreateAccessPointResponse> CreateAccessPointAsync(CreateAccessPointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -109,6 +111,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateJob">REST API Reference for CreateJob Operation</seealso>
         CreateJobResponse CreateJob(CreateJobRequest request);
 
 
@@ -159,6 +162,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateJob">REST API Reference for CreateJob Operation</seealso>
         Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -172,6 +176,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPoint service method.</param>
         /// 
         /// <returns>The response from the DeleteAccessPoint service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPoint">REST API Reference for DeleteAccessPoint Operation</seealso>
         DeleteAccessPointResponse DeleteAccessPoint(DeleteAccessPointRequest request);
 
 
@@ -185,6 +190,7 @@ namespace Amazon.S3Control
         /// </param>
         /// 
         /// <returns>The response from the DeleteAccessPoint service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPoint">REST API Reference for DeleteAccessPoint Operation</seealso>
         Task<DeleteAccessPointResponse> DeleteAccessPointAsync(DeleteAccessPointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -198,6 +204,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointPolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteAccessPointPolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicy">REST API Reference for DeleteAccessPointPolicy Operation</seealso>
         DeleteAccessPointPolicyResponse DeleteAccessPointPolicy(DeleteAccessPointPolicyRequest request);
 
 
@@ -211,6 +218,7 @@ namespace Amazon.S3Control
         /// </param>
         /// 
         /// <returns>The response from the DeleteAccessPointPolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicy">REST API Reference for DeleteAccessPointPolicy Operation</seealso>
         Task<DeleteAccessPointPolicyResponse> DeleteAccessPointPolicyAsync(DeleteAccessPointPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -254,6 +262,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteJobTagging">REST API Reference for DeleteJobTagging Operation</seealso>
         DeleteJobTaggingResponse DeleteJobTagging(DeleteJobTaggingRequest request);
 
 
@@ -297,6 +306,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteJobTagging">REST API Reference for DeleteJobTagging Operation</seealso>
         Task<DeleteJobTaggingResponse> DeleteJobTaggingAsync(DeleteJobTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -311,6 +321,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
         /// 
         /// <returns>The response from the DeletePublicAccessBlock service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         DeletePublicAccessBlockResponse DeletePublicAccessBlock(DeletePublicAccessBlockRequest request);
 
 
@@ -325,6 +336,7 @@ namespace Amazon.S3Control
         /// </param>
         /// 
         /// <returns>The response from the DeletePublicAccessBlock service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         Task<DeletePublicAccessBlockResponse> DeletePublicAccessBlockAsync(DeletePublicAccessBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -374,6 +386,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         DescribeJobResponse DescribeJob(DescribeJobRequest request);
 
 
@@ -423,6 +436,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         Task<DescribeJobResponse> DescribeJobAsync(DescribeJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -436,6 +450,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPoint service method.</param>
         /// 
         /// <returns>The response from the GetAccessPoint service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPoint">REST API Reference for GetAccessPoint Operation</seealso>
         GetAccessPointResponse GetAccessPoint(GetAccessPointRequest request);
 
 
@@ -449,6 +464,7 @@ namespace Amazon.S3Control
         /// </param>
         /// 
         /// <returns>The response from the GetAccessPoint service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPoint">REST API Reference for GetAccessPoint Operation</seealso>
         Task<GetAccessPointResponse> GetAccessPointAsync(GetAccessPointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -462,6 +478,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicy service method.</param>
         /// 
         /// <returns>The response from the GetAccessPointPolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicy">REST API Reference for GetAccessPointPolicy Operation</seealso>
         GetAccessPointPolicyResponse GetAccessPointPolicy(GetAccessPointPolicyRequest request);
 
 
@@ -475,6 +492,7 @@ namespace Amazon.S3Control
         /// </param>
         /// 
         /// <returns>The response from the GetAccessPointPolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicy">REST API Reference for GetAccessPointPolicy Operation</seealso>
         Task<GetAccessPointPolicyResponse> GetAccessPointPolicyAsync(GetAccessPointPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -491,6 +509,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicyStatus service method.</param>
         /// 
         /// <returns>The response from the GetAccessPointPolicyStatus service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatus">REST API Reference for GetAccessPointPolicyStatus Operation</seealso>
         GetAccessPointPolicyStatusResponse GetAccessPointPolicyStatus(GetAccessPointPolicyStatusRequest request);
 
 
@@ -507,6 +526,7 @@ namespace Amazon.S3Control
         /// </param>
         /// 
         /// <returns>The response from the GetAccessPointPolicyStatus service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatus">REST API Reference for GetAccessPointPolicyStatus Operation</seealso>
         Task<GetAccessPointPolicyStatusResponse> GetAccessPointPolicyStatusAsync(GetAccessPointPolicyStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -550,6 +570,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetJobTagging">REST API Reference for GetJobTagging Operation</seealso>
         GetJobTaggingResponse GetJobTagging(GetJobTaggingRequest request);
 
 
@@ -593,6 +614,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetJobTagging">REST API Reference for GetJobTagging Operation</seealso>
         Task<GetJobTaggingResponse> GetJobTaggingAsync(GetJobTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -612,6 +634,7 @@ namespace Amazon.S3Control
         /// against an account that doesn't have a <code>PublicAccessBlockConfiguration</code>
         /// set.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         GetPublicAccessBlockResponse GetPublicAccessBlock(GetPublicAccessBlockRequest request);
 
 
@@ -631,6 +654,7 @@ namespace Amazon.S3Control
         /// against an account that doesn't have a <code>PublicAccessBlockConfiguration</code>
         /// set.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         Task<GetPublicAccessBlockResponse> GetPublicAccessBlockAsync(GetPublicAccessBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -648,6 +672,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the ListAccessPoints service method.</param>
         /// 
         /// <returns>The response from the ListAccessPoints service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPoints">REST API Reference for ListAccessPoints Operation</seealso>
         ListAccessPointsResponse ListAccessPoints(ListAccessPointsRequest request);
 
 
@@ -665,6 +690,7 @@ namespace Amazon.S3Control
         /// </param>
         /// 
         /// <returns>The response from the ListAccessPoints service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPoints">REST API Reference for ListAccessPoints Operation</seealso>
         Task<ListAccessPointsResponse> ListAccessPointsAsync(ListAccessPointsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -712,6 +738,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.InvalidRequestException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListJobs">REST API Reference for ListJobs Operation</seealso>
         ListJobsResponse ListJobs(ListJobsRequest request);
 
 
@@ -759,6 +786,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.InvalidRequestException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListJobs">REST API Reference for ListJobs Operation</seealso>
         Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -774,6 +802,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the PutAccessPointPolicy service method.</param>
         /// 
         /// <returns>The response from the PutAccessPointPolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicy">REST API Reference for PutAccessPointPolicy Operation</seealso>
         PutAccessPointPolicyResponse PutAccessPointPolicy(PutAccessPointPolicyRequest request);
 
 
@@ -789,6 +818,7 @@ namespace Amazon.S3Control
         /// </param>
         /// 
         /// <returns>The response from the PutAccessPointPolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicy">REST API Reference for PutAccessPointPolicy Operation</seealso>
         Task<PutAccessPointPolicyResponse> PutAccessPointPolicyAsync(PutAccessPointPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -886,6 +916,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyTagsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutJobTagging">REST API Reference for PutJobTagging Operation</seealso>
         PutJobTaggingResponse PutJobTagging(PutJobTaggingRequest request);
 
 
@@ -983,6 +1014,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyTagsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutJobTagging">REST API Reference for PutJobTagging Operation</seealso>
         Task<PutJobTaggingResponse> PutJobTaggingAsync(PutJobTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -997,6 +1029,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
         /// 
         /// <returns>The response from the PutPublicAccessBlock service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         PutPublicAccessBlockResponse PutPublicAccessBlock(PutPublicAccessBlockRequest request);
 
 
@@ -1011,6 +1044,7 @@ namespace Amazon.S3Control
         /// </param>
         /// 
         /// <returns>The response from the PutPublicAccessBlock service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         Task<PutPublicAccessBlockResponse> PutPublicAccessBlockAsync(PutPublicAccessBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1060,6 +1094,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobPriority">REST API Reference for UpdateJobPriority Operation</seealso>
         UpdateJobPriorityResponse UpdateJobPriority(UpdateJobPriorityRequest request);
 
 
@@ -1109,6 +1144,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobPriority">REST API Reference for UpdateJobPriority Operation</seealso>
         Task<UpdateJobPriorityResponse> UpdateJobPriorityAsync(UpdateJobPriorityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1161,6 +1197,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobStatus">REST API Reference for UpdateJobStatus Operation</seealso>
         UpdateJobStatusResponse UpdateJobStatus(UpdateJobStatusRequest request);
 
 
@@ -1213,6 +1250,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobStatus">REST API Reference for UpdateJobStatus Operation</seealso>
         Task<UpdateJobStatusResponse> UpdateJobStatusAsync(UpdateJobStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

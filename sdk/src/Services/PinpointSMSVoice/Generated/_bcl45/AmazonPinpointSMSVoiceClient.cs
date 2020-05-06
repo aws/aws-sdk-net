@@ -265,6 +265,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         public virtual CreateConfigurationSetResponse CreateConfigurationSet(CreateConfigurationSetRequest request)
         {
             var options = new InvokeOptions();
@@ -302,6 +303,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         public virtual Task<CreateConfigurationSetResponse> CreateConfigurationSetAsync(CreateConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -342,6 +344,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
         public virtual CreateConfigurationSetEventDestinationResponse CreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request)
         {
             var options = new InvokeOptions();
@@ -381,6 +384,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
         public virtual Task<CreateConfigurationSetEventDestinationResponse> CreateConfigurationSetEventDestinationAsync(CreateConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -415,6 +419,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         public virtual DeleteConfigurationSetResponse DeleteConfigurationSet(DeleteConfigurationSetRequest request)
         {
             var options = new InvokeOptions();
@@ -448,6 +453,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         public virtual Task<DeleteConfigurationSetResponse> DeleteConfigurationSetAsync(DeleteConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -482,6 +488,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/DeleteConfigurationSetEventDestination">REST API Reference for DeleteConfigurationSetEventDestination Operation</seealso>
         public virtual DeleteConfigurationSetEventDestinationResponse DeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request)
         {
             var options = new InvokeOptions();
@@ -515,6 +522,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/DeleteConfigurationSetEventDestination">REST API Reference for DeleteConfigurationSetEventDestination Operation</seealso>
         public virtual Task<DeleteConfigurationSetEventDestinationResponse> DeleteConfigurationSetEventDestinationAsync(DeleteConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -550,6 +558,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/GetConfigurationSetEventDestinations">REST API Reference for GetConfigurationSetEventDestinations Operation</seealso>
         public virtual GetConfigurationSetEventDestinationsResponse GetConfigurationSetEventDestinations(GetConfigurationSetEventDestinationsRequest request)
         {
             var options = new InvokeOptions();
@@ -584,6 +593,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/GetConfigurationSetEventDestinations">REST API Reference for GetConfigurationSetEventDestinations Operation</seealso>
         public virtual Task<GetConfigurationSetEventDestinationsResponse> GetConfigurationSetEventDestinationsAsync(GetConfigurationSetEventDestinationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -616,6 +626,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         public virtual ListConfigurationSetsResponse ListConfigurationSets(ListConfigurationSetsRequest request)
         {
             var options = new InvokeOptions();
@@ -647,6 +658,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         public virtual Task<ListConfigurationSetsResponse> ListConfigurationSetsAsync(ListConfigurationSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -678,6 +690,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/SendVoiceMessage">REST API Reference for SendVoiceMessage Operation</seealso>
         public virtual SendVoiceMessageResponse SendVoiceMessage(SendVoiceMessageRequest request)
         {
             var options = new InvokeOptions();
@@ -708,6 +721,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/SendVoiceMessage">REST API Reference for SendVoiceMessage Operation</seealso>
         public virtual Task<SendVoiceMessageResponse> SendVoiceMessageAsync(SendVoiceMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -744,6 +758,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/UpdateConfigurationSetEventDestination">REST API Reference for UpdateConfigurationSetEventDestination Operation</seealso>
         public virtual UpdateConfigurationSetEventDestinationResponse UpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request)
         {
             var options = new InvokeOptions();
@@ -779,6 +794,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/UpdateConfigurationSetEventDestination">REST API Reference for UpdateConfigurationSetEventDestination Operation</seealso>
         public virtual Task<UpdateConfigurationSetEventDestinationResponse> UpdateConfigurationSetEventDestinationAsync(UpdateConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();

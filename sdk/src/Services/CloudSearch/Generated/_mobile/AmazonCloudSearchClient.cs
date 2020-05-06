@@ -291,6 +291,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/BuildSuggesters">REST API Reference for BuildSuggesters Operation</seealso>
         public virtual Task<BuildSuggestersResponse> BuildSuggestersAsync(BuildSuggestersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -337,6 +338,7 @@ namespace Amazon.CloudSearch
         /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
         /// The request was rejected because a resource limit has already been met.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -392,6 +394,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineAnalysisScheme">REST API Reference for DefineAnalysisScheme Operation</seealso>
         public virtual Task<DefineAnalysisSchemeResponse> DefineAnalysisSchemeAsync(DefineAnalysisSchemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -447,6 +450,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineExpression">REST API Reference for DefineExpression Operation</seealso>
         public virtual Task<DefineExpressionResponse> DefineExpressionAsync(DefineExpressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -506,6 +510,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineIndexField">REST API Reference for DefineIndexField Operation</seealso>
         public virtual Task<DefineIndexFieldResponse> DefineIndexFieldAsync(DefineIndexFieldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -562,6 +567,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineSuggester">REST API Reference for DefineSuggester Operation</seealso>
         public virtual Task<DefineSuggesterResponse> DefineSuggesterAsync(DefineSuggesterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -612,6 +618,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteAnalysisScheme">REST API Reference for DeleteAnalysisScheme Operation</seealso>
         public virtual Task<DeleteAnalysisSchemeResponse> DeleteAnalysisSchemeAsync(DeleteAnalysisSchemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -656,6 +663,7 @@ namespace Amazon.CloudSearch
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -707,6 +715,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteExpression">REST API Reference for DeleteExpression Operation</seealso>
         public virtual Task<DeleteExpressionResponse> DeleteExpressionAsync(DeleteExpressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -758,6 +767,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteIndexField">REST API Reference for DeleteIndexField Operation</seealso>
         public virtual Task<DeleteIndexFieldResponse> DeleteIndexFieldAsync(DeleteIndexFieldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -808,6 +818,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteSuggester">REST API Reference for DeleteSuggester Operation</seealso>
         public virtual Task<DeleteSuggesterResponse> DeleteSuggesterAsync(DeleteSuggesterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -860,6 +871,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAnalysisSchemes">REST API Reference for DescribeAnalysisSchemes Operation</seealso>
         public virtual Task<DescribeAnalysisSchemesResponse> DescribeAnalysisSchemesAsync(DescribeAnalysisSchemesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -919,6 +931,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAvailabilityOptions">REST API Reference for DescribeAvailabilityOptions Operation</seealso>
         public virtual Task<DescribeAvailabilityOptionsResponse> DescribeAvailabilityOptionsAsync(DescribeAvailabilityOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -973,6 +986,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomainEndpointOptions">REST API Reference for DescribeDomainEndpointOptions Operation</seealso>
         public virtual Task<DescribeDomainEndpointOptionsResponse> DescribeDomainEndpointOptionsAsync(DescribeDomainEndpointOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1022,6 +1036,7 @@ namespace Amazon.CloudSearch
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomains">REST API Reference for DescribeDomains Operation</seealso>
         public virtual Task<DescribeDomainsResponse> DescribeDomainsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeDomainsAsync(new DescribeDomainsRequest(), cancellationToken);
@@ -1052,6 +1067,7 @@ namespace Amazon.CloudSearch
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomains">REST API Reference for DescribeDomains Operation</seealso>
         public virtual Task<DescribeDomainsResponse> DescribeDomainsAsync(DescribeDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1103,6 +1119,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeExpressions">REST API Reference for DescribeExpressions Operation</seealso>
         public virtual Task<DescribeExpressionsResponse> DescribeExpressionsAsync(DescribeExpressionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1154,6 +1171,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeIndexFields">REST API Reference for DescribeIndexFields Operation</seealso>
         public virtual Task<DescribeIndexFieldsResponse> DescribeIndexFieldsAsync(DescribeIndexFieldsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1203,6 +1221,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeScalingParameters">REST API Reference for DescribeScalingParameters Operation</seealso>
         public virtual Task<DescribeScalingParametersResponse> DescribeScalingParametersAsync(DescribeScalingParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1253,6 +1272,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeServiceAccessPolicies">REST API Reference for DescribeServiceAccessPolicies Operation</seealso>
         public virtual Task<DescribeServiceAccessPoliciesResponse> DescribeServiceAccessPoliciesAsync(DescribeServiceAccessPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1304,6 +1324,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeSuggesters">REST API Reference for DescribeSuggesters Operation</seealso>
         public virtual Task<DescribeSuggestersResponse> DescribeSuggestersAsync(DescribeSuggestersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1351,6 +1372,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/IndexDocuments">REST API Reference for IndexDocuments Operation</seealso>
         public virtual Task<IndexDocumentsResponse> IndexDocumentsAsync(IndexDocumentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1389,6 +1411,7 @@ namespace Amazon.CloudSearch
         /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
         public virtual Task<ListDomainNamesResponse> ListDomainNamesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListDomainNamesAsync(new ListDomainNamesRequest(), cancellationToken);
@@ -1408,6 +1431,7 @@ namespace Amazon.CloudSearch
         /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
         public virtual Task<ListDomainNamesResponse> ListDomainNamesAsync(ListDomainNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1471,6 +1495,7 @@ namespace Amazon.CloudSearch
         /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
         /// The request was rejected because it has invalid parameters.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateAvailabilityOptions">REST API Reference for UpdateAvailabilityOptions Operation</seealso>
         public virtual Task<UpdateAvailabilityOptionsResponse> UpdateAvailabilityOptionsAsync(UpdateAvailabilityOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1531,6 +1556,7 @@ namespace Amazon.CloudSearch
         /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
         /// The request was rejected because it has invalid parameters.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateDomainEndpointOptions">REST API Reference for UpdateDomainEndpointOptions Operation</seealso>
         public virtual Task<UpdateDomainEndpointOptionsResponse> UpdateDomainEndpointOptionsAsync(UpdateDomainEndpointOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1589,6 +1615,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateScalingParameters">REST API Reference for UpdateScalingParameters Operation</seealso>
         public virtual Task<UpdateScalingParametersResponse> UpdateScalingParametersAsync(UpdateScalingParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1642,6 +1669,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateServiceAccessPolicies">REST API Reference for UpdateServiceAccessPolicies Operation</seealso>
         public virtual Task<UpdateServiceAccessPoliciesResponse> UpdateServiceAccessPoliciesAsync(UpdateServiceAccessPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();

@@ -258,6 +258,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// The client is sending more than the allowed number of requests per unit of time or
         /// the WebSocket client side buffer is full.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
         {
             var options = new InvokeOptions();
@@ -278,6 +279,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConnection
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual IAsyncResult BeginDeleteConnection(DeleteConnectionRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -294,6 +296,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConnection.</param>
         /// 
         /// <returns>Returns a  DeleteConnectionResult from ApiGatewayManagementApi.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual DeleteConnectionResponse EndDeleteConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteConnectionResponse>(asyncResult);
@@ -319,6 +322,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// The client is sending more than the allowed number of requests per unit of time or
         /// the WebSocket client side buffer is full.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/GetConnection">REST API Reference for GetConnection Operation</seealso>
         public virtual GetConnectionResponse GetConnection(GetConnectionRequest request)
         {
             var options = new InvokeOptions();
@@ -339,6 +343,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConnection
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/GetConnection">REST API Reference for GetConnection Operation</seealso>
         public virtual IAsyncResult BeginGetConnection(GetConnectionRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -355,6 +360,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConnection.</param>
         /// 
         /// <returns>Returns a  GetConnectionResult from ApiGatewayManagementApi.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/GetConnection">REST API Reference for GetConnection Operation</seealso>
         public virtual GetConnectionResponse EndGetConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<GetConnectionResponse>(asyncResult);
@@ -383,6 +389,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// <exception cref="Amazon.ApiGatewayManagementApi.Model.PayloadTooLargeException">
         /// The data has exceeded the maximum size allowed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/PostToConnection">REST API Reference for PostToConnection Operation</seealso>
         public virtual PostToConnectionResponse PostToConnection(PostToConnectionRequest request)
         {
             var options = new InvokeOptions();
@@ -403,6 +410,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPostToConnection
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/PostToConnection">REST API Reference for PostToConnection Operation</seealso>
         public virtual IAsyncResult BeginPostToConnection(PostToConnectionRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -419,6 +427,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPostToConnection.</param>
         /// 
         /// <returns>Returns a  PostToConnectionResult from ApiGatewayManagementApi.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/PostToConnection">REST API Reference for PostToConnection Operation</seealso>
         public virtual PostToConnectionResponse EndPostToConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<PostToConnectionResponse>(asyncResult);

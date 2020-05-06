@@ -89,6 +89,7 @@ namespace Amazon.S3
         /// <param name="uploadId">Upload ID that identifies the multipart upload.</param>
         /// 
         /// <returns>The response from the AbortMultipartUpload service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         AbortMultipartUploadResponse AbortMultipartUpload(string bucketName, string key, string uploadId);
 
         /// <summary>
@@ -140,6 +141,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the AbortMultipartUpload service method.</param>
         /// 
         /// <returns>The response from the AbortMultipartUpload service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request);
 
         /// <summary>
@@ -153,6 +155,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAbortMultipartUpload
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         IAsyncResult BeginAbortMultipartUpload(AbortMultipartUploadRequest request, AsyncCallback callback, object state);
 
 
@@ -164,6 +167,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAbortMultipartUpload.</param>
         /// 
         /// <returns>Returns a  AbortMultipartUploadResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         AbortMultipartUploadResponse EndAbortMultipartUpload(IAsyncResult asyncResult);
 
         #endregion
@@ -297,6 +301,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartUpload service method.</param>
         /// 
         /// <returns>The response from the CompleteMultipartUpload service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CompleteMultipartUpload">REST API Reference for CompleteMultipartUpload Operation</seealso>
         CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request);
 
         /// <summary>
@@ -310,6 +315,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCompleteMultipartUpload
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CompleteMultipartUpload">REST API Reference for CompleteMultipartUpload Operation</seealso>
         IAsyncResult BeginCompleteMultipartUpload(CompleteMultipartUploadRequest request, AsyncCallback callback, object state);
 
 
@@ -321,6 +327,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCompleteMultipartUpload.</param>
         /// 
         /// <returns>Returns a  CompleteMultipartUploadResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CompleteMultipartUpload">REST API Reference for CompleteMultipartUpload Operation</seealso>
         CompleteMultipartUploadResponse EndCompleteMultipartUpload(IAsyncResult asyncResult);
 
         #endregion
@@ -560,6 +567,7 @@ namespace Amazon.S3
         /// <param name="destinationKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// 
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">REST API Reference for CopyObject Operation</seealso>
         CopyObjectResponse CopyObject(string sourceBucket, string sourceKey, string destinationBucket, string destinationKey);
 
         /// <summary>
@@ -795,6 +803,7 @@ namespace Amazon.S3
         /// <param name="destinationKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// 
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">REST API Reference for CopyObject Operation</seealso>
         CopyObjectResponse CopyObject(string sourceBucket, string sourceKey, string sourceVersionId, string destinationBucket, string destinationKey);
 
         /// <summary>
@@ -1026,6 +1035,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the CopyObject service method.</param>
         /// 
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">REST API Reference for CopyObject Operation</seealso>
         CopyObjectResponse CopyObject(CopyObjectRequest request);
 
         /// <summary>
@@ -1039,6 +1049,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyObject
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">REST API Reference for CopyObject Operation</seealso>
         IAsyncResult BeginCopyObject(CopyObjectRequest request, AsyncCallback callback, object state);
 
 
@@ -1050,6 +1061,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyObject.</param>
         /// 
         /// <returns>Returns a  CopyObjectResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">REST API Reference for CopyObject Operation</seealso>
         CopyObjectResponse EndCopyObject(IAsyncResult asyncResult);
 
         #endregion
@@ -1247,6 +1259,7 @@ namespace Amazon.S3
         /// <param name="uploadId">Upload ID identifying the multipart upload whose part is being copied.</param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
         CopyPartResponse CopyPart(string sourceBucket, string sourceKey, string destinationBucket, string destinationKey, string uploadId);
 
         /// <summary>
@@ -1440,6 +1453,7 @@ namespace Amazon.S3
         /// <param name="uploadId">Upload ID identifying the multipart upload whose part is being copied.</param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
         CopyPartResponse CopyPart(string sourceBucket, string sourceKey, string sourceVersionId, string destinationBucket, string destinationKey, string uploadId);
 
         /// <summary>
@@ -1628,6 +1642,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the CopyPart service method.</param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
         CopyPartResponse CopyPart(CopyPartRequest request);
 
         /// <summary>
@@ -1641,6 +1656,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyPart
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
         IAsyncResult BeginCopyPart(CopyPartRequest request, AsyncCallback callback, object state);
 
 
@@ -1652,6 +1668,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyPart.</param>
         /// 
         /// <returns>Returns a  CopyPartResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
         CopyPartResponse EndCopyPart(IAsyncResult asyncResult);
 
         #endregion
@@ -1678,6 +1695,7 @@ namespace Amazon.S3
         /// <param name="bucketName">Specifies the bucket being deleted.</param>
         /// 
         /// <returns>The response from the DeleteBucket service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
         DeleteBucketResponse DeleteBucket(string bucketName);
 
         /// <summary>
@@ -1699,6 +1717,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucket service method.</param>
         /// 
         /// <returns>The response from the DeleteBucket service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
         DeleteBucketResponse DeleteBucket(DeleteBucketRequest request);
 
         /// <summary>
@@ -1712,6 +1731,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucket
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
         IAsyncResult BeginDeleteBucket(DeleteBucketRequest request, AsyncCallback callback, object state);
 
 
@@ -1723,6 +1743,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucket.</param>
         /// 
         /// <returns>Returns a  DeleteBucketResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
         DeleteBucketResponse EndDeleteBucket(IAsyncResult asyncResult);
 
         #endregion
@@ -1768,6 +1789,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketAnalyticsConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketAnalyticsConfiguration">REST API Reference for DeleteBucketAnalyticsConfiguration Operation</seealso>
         DeleteBucketAnalyticsConfigurationResponse DeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request);
 
         /// <summary>
@@ -1781,6 +1803,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketAnalyticsConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketAnalyticsConfiguration">REST API Reference for DeleteBucketAnalyticsConfiguration Operation</seealso>
         IAsyncResult BeginDeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -1792,6 +1815,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketAnalyticsConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteBucketAnalyticsConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketAnalyticsConfiguration">REST API Reference for DeleteBucketAnalyticsConfiguration Operation</seealso>
         DeleteBucketAnalyticsConfigurationResponse EndDeleteBucketAnalyticsConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -1829,6 +1853,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketEncryption service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketEncryption service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketEncryption">REST API Reference for DeleteBucketEncryption Operation</seealso>
         DeleteBucketEncryptionResponse DeleteBucketEncryption(DeleteBucketEncryptionRequest request);
 
         /// <summary>
@@ -1842,6 +1867,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketEncryption
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketEncryption">REST API Reference for DeleteBucketEncryption Operation</seealso>
         IAsyncResult BeginDeleteBucketEncryption(DeleteBucketEncryptionRequest request, AsyncCallback callback, object state);
 
 
@@ -1853,6 +1879,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketEncryption.</param>
         /// 
         /// <returns>Returns a  DeleteBucketEncryptionResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketEncryption">REST API Reference for DeleteBucketEncryption Operation</seealso>
         DeleteBucketEncryptionResponse EndDeleteBucketEncryption(IAsyncResult asyncResult);
 
         #endregion
@@ -1897,6 +1924,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketInventoryConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketInventoryConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketInventoryConfiguration">REST API Reference for DeleteBucketInventoryConfiguration Operation</seealso>
         DeleteBucketInventoryConfigurationResponse DeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request);
 
         /// <summary>
@@ -1910,6 +1938,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketInventoryConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketInventoryConfiguration">REST API Reference for DeleteBucketInventoryConfiguration Operation</seealso>
         IAsyncResult BeginDeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -1921,6 +1950,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketInventoryConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteBucketInventoryConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketInventoryConfiguration">REST API Reference for DeleteBucketInventoryConfiguration Operation</seealso>
         DeleteBucketInventoryConfigurationResponse EndDeleteBucketInventoryConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -1972,6 +2002,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetricsConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketMetricsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetricsConfiguration">REST API Reference for DeleteBucketMetricsConfiguration Operation</seealso>
         DeleteBucketMetricsConfigurationResponse DeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request);
 
         /// <summary>
@@ -1985,6 +2016,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketMetricsConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetricsConfiguration">REST API Reference for DeleteBucketMetricsConfiguration Operation</seealso>
         IAsyncResult BeginDeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -1996,6 +2028,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketMetricsConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteBucketMetricsConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetricsConfiguration">REST API Reference for DeleteBucketMetricsConfiguration Operation</seealso>
         DeleteBucketMetricsConfigurationResponse EndDeleteBucketMetricsConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -2045,6 +2078,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name.</param>
         /// 
         /// <returns>The response from the DeleteBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
         DeleteBucketPolicyResponse DeleteBucketPolicy(string bucketName);
 
         /// <summary>
@@ -2089,6 +2123,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketPolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
         DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request);
 
         /// <summary>
@@ -2102,6 +2137,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
         IAsyncResult BeginDeleteBucketPolicy(DeleteBucketPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -2113,6 +2149,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketPolicy.</param>
         /// 
         /// <returns>Returns a  DeleteBucketPolicyResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
         DeleteBucketPolicyResponse EndDeleteBucketPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -2157,6 +2194,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketReplication service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketReplication service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">REST API Reference for DeleteBucketReplication Operation</seealso>
         DeleteBucketReplicationResponse DeleteBucketReplication(DeleteBucketReplicationRequest request);
 
         /// <summary>
@@ -2170,6 +2208,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketReplication
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">REST API Reference for DeleteBucketReplication Operation</seealso>
         IAsyncResult BeginDeleteBucketReplication(DeleteBucketReplicationRequest request, AsyncCallback callback, object state);
 
 
@@ -2181,6 +2220,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketReplication.</param>
         /// 
         /// <returns>Returns a  DeleteBucketReplicationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">REST API Reference for DeleteBucketReplication Operation</seealso>
         DeleteBucketReplicationResponse EndDeleteBucketReplication(IAsyncResult asyncResult);
 
         #endregion
@@ -2214,6 +2254,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket that has the tag set to be removed.</param>
         /// 
         /// <returns>The response from the DeleteBucketTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketTagging">REST API Reference for DeleteBucketTagging Operation</seealso>
         DeleteBucketTaggingResponse DeleteBucketTagging(string bucketName);
 
         /// <summary>
@@ -2242,6 +2283,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketTagging service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketTagging">REST API Reference for DeleteBucketTagging Operation</seealso>
         DeleteBucketTaggingResponse DeleteBucketTagging(DeleteBucketTaggingRequest request);
 
         /// <summary>
@@ -2255,6 +2297,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketTagging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketTagging">REST API Reference for DeleteBucketTagging Operation</seealso>
         IAsyncResult BeginDeleteBucketTagging(DeleteBucketTaggingRequest request, AsyncCallback callback, object state);
 
 
@@ -2266,6 +2309,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketTagging.</param>
         /// 
         /// <returns>Returns a  DeleteBucketTaggingResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketTagging">REST API Reference for DeleteBucketTagging Operation</seealso>
         DeleteBucketTaggingResponse EndDeleteBucketTagging(IAsyncResult asyncResult);
 
         #endregion
@@ -2310,6 +2354,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name for which you want to remove the website configuration. </param>
         /// 
         /// <returns>The response from the DeleteBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketWebsite">REST API Reference for DeleteBucketWebsite Operation</seealso>
         DeleteBucketWebsiteResponse DeleteBucketWebsite(string bucketName);
 
         /// <summary>
@@ -2349,6 +2394,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketWebsite service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketWebsite">REST API Reference for DeleteBucketWebsite Operation</seealso>
         DeleteBucketWebsiteResponse DeleteBucketWebsite(DeleteBucketWebsiteRequest request);
 
         /// <summary>
@@ -2362,6 +2408,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketWebsite
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketWebsite">REST API Reference for DeleteBucketWebsite Operation</seealso>
         IAsyncResult BeginDeleteBucketWebsite(DeleteBucketWebsiteRequest request, AsyncCallback callback, object state);
 
 
@@ -2373,6 +2420,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketWebsite.</param>
         /// 
         /// <returns>Returns a  DeleteBucketWebsiteResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketWebsite">REST API Reference for DeleteBucketWebsite Operation</seealso>
         DeleteBucketWebsiteResponse EndDeleteBucketWebsite(IAsyncResult asyncResult);
 
         #endregion
@@ -2410,6 +2458,7 @@ namespace Amazon.S3
         /// <param name="bucketName">Specifies the bucket whose <code>cors</code> configuration is being deleted.</param>
         /// 
         /// <returns>The response from the DeleteCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">REST API Reference for DeleteCORSConfiguration Operation</seealso>
         DeleteCORSConfigurationResponse DeleteCORSConfiguration(string bucketName);
 
         /// <summary>
@@ -2442,6 +2491,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteCORSConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">REST API Reference for DeleteCORSConfiguration Operation</seealso>
         DeleteCORSConfigurationResponse DeleteCORSConfiguration(DeleteCORSConfigurationRequest request);
 
         /// <summary>
@@ -2455,6 +2505,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCORSConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">REST API Reference for DeleteCORSConfiguration Operation</seealso>
         IAsyncResult BeginDeleteCORSConfiguration(DeleteCORSConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -2466,6 +2517,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCORSConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteCORSConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">REST API Reference for DeleteCORSConfiguration Operation</seealso>
         DeleteCORSConfigurationResponse EndDeleteCORSConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -2512,6 +2564,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name of the lifecycle to delete.</param>
         /// 
         /// <returns>The response from the DeleteLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketLifecycle">REST API Reference for DeleteLifecycleConfiguration Operation</seealso>
         DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(string bucketName);
 
         /// <summary>
@@ -2553,6 +2606,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketLifecycle">REST API Reference for DeleteLifecycleConfiguration Operation</seealso>
         DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request);
 
         /// <summary>
@@ -2566,6 +2620,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLifecycleConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketLifecycle">REST API Reference for DeleteLifecycleConfiguration Operation</seealso>
         IAsyncResult BeginDeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -2577,6 +2632,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLifecycleConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteLifecycleConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketLifecycle">REST API Reference for DeleteLifecycleConfiguration Operation</seealso>
         DeleteLifecycleConfigurationResponse EndDeleteLifecycleConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -2631,6 +2687,7 @@ namespace Amazon.S3
         /// <param name="key">Key name of the object to delete.</param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         DeleteObjectResponse DeleteObject(string bucketName, string key);
 
         /// <summary>
@@ -2681,6 +2738,7 @@ namespace Amazon.S3
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         DeleteObjectResponse DeleteObject(string bucketName, string key, string versionId);
 
         /// <summary>
@@ -2729,6 +2787,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteObject service method.</param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         DeleteObjectResponse DeleteObject(DeleteObjectRequest request);
 
         /// <summary>
@@ -2742,6 +2801,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteObject
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         IAsyncResult BeginDeleteObject(DeleteObjectRequest request, AsyncCallback callback, object state);
 
 
@@ -2753,6 +2813,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteObject.</param>
         /// 
         /// <returns>Returns a  DeleteObjectResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         DeleteObjectResponse EndDeleteObject(IAsyncResult asyncResult);
 
         #endregion
@@ -2828,6 +2889,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteObjects service method.</param>
         /// 
         /// <returns>The response from the DeleteObjects service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">REST API Reference for DeleteObjects Operation</seealso>
         DeleteObjectsResponse DeleteObjects(DeleteObjectsRequest request);
 
         /// <summary>
@@ -2841,6 +2903,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteObjects
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">REST API Reference for DeleteObjects Operation</seealso>
         IAsyncResult BeginDeleteObjects(DeleteObjectsRequest request, AsyncCallback callback, object state);
 
 
@@ -2852,6 +2915,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteObjects.</param>
         /// 
         /// <returns>Returns a  DeleteObjectsResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">REST API Reference for DeleteObjects Operation</seealso>
         DeleteObjectsResponse EndDeleteObjects(IAsyncResult asyncResult);
 
         #endregion
@@ -2892,6 +2956,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteObjectTagging service method.</param>
         /// 
         /// <returns>The response from the DeleteObjectTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjectTagging">REST API Reference for DeleteObjectTagging Operation</seealso>
         DeleteObjectTaggingResponse DeleteObjectTagging(DeleteObjectTaggingRequest request);
 
         /// <summary>
@@ -2905,6 +2970,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteObjectTagging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjectTagging">REST API Reference for DeleteObjectTagging Operation</seealso>
         IAsyncResult BeginDeleteObjectTagging(DeleteObjectTaggingRequest request, AsyncCallback callback, object state);
 
 
@@ -2916,6 +2982,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteObjectTagging.</param>
         /// 
         /// <returns>Returns a  DeleteObjectTaggingResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjectTagging">REST API Reference for DeleteObjectTagging Operation</seealso>
         DeleteObjectTaggingResponse EndDeleteObjectTagging(IAsyncResult asyncResult);
 
         #endregion
@@ -2956,6 +3023,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
         /// 
         /// <returns>The response from the DeletePublicAccessBlock service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         DeletePublicAccessBlockResponse DeletePublicAccessBlock(DeletePublicAccessBlockRequest request);
 
         /// <summary>
@@ -2969,6 +3037,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePublicAccessBlock
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         IAsyncResult BeginDeletePublicAccessBlock(DeletePublicAccessBlockRequest request, AsyncCallback callback, object state);
 
 
@@ -2980,6 +3049,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePublicAccessBlock.</param>
         /// 
         /// <returns>Returns a  DeletePublicAccessBlockResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         DeletePublicAccessBlockResponse EndDeletePublicAccessBlock(IAsyncResult asyncResult);
 
         #endregion
@@ -3005,6 +3075,7 @@ namespace Amazon.S3
         /// <param name="bucketName">Specifies the S3 bucket whose ACL is being requested.</param>
         /// 
         /// <returns>The response from the GetACL service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetACL Operation</seealso>
         GetACLResponse GetACL(string bucketName);
 
         /// <summary>
@@ -3025,6 +3096,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetACL service method.</param>
         /// 
         /// <returns>The response from the GetACL service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetACL Operation</seealso>
         GetACLResponse GetACL(GetACLRequest request);
 
         /// <summary>
@@ -3038,6 +3110,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetACL
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetACL Operation</seealso>
         IAsyncResult BeginGetACL(GetACLRequest request, AsyncCallback callback, object state);
 
 
@@ -3049,6 +3122,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetACL.</param>
         /// 
         /// <returns>Returns a  GetACLResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetACL Operation</seealso>
         GetACLResponse EndGetACL(IAsyncResult asyncResult);
 
         #endregion
@@ -3099,6 +3173,7 @@ namespace Amazon.S3
         /// <param name="bucketName">Name of the bucket for which the accelerate configuration is retrieved.</param>
         /// 
         /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">REST API Reference for GetBucketAccelerateConfiguration Operation</seealso>
         GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(string bucketName);
 
         /// <summary>
@@ -3144,6 +3219,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketAccelerateConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">REST API Reference for GetBucketAccelerateConfiguration Operation</seealso>
         GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request);
 
         /// <summary>
@@ -3157,6 +3233,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketAccelerateConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">REST API Reference for GetBucketAccelerateConfiguration Operation</seealso>
         IAsyncResult BeginGetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -3168,6 +3245,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketAccelerateConfiguration.</param>
         /// 
         /// <returns>Returns a  GetBucketAccelerateConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">REST API Reference for GetBucketAccelerateConfiguration Operation</seealso>
         GetBucketAccelerateConfigurationResponse EndGetBucketAccelerateConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -3213,6 +3291,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketAnalyticsConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAnalyticsConfiguration">REST API Reference for GetBucketAnalyticsConfiguration Operation</seealso>
         GetBucketAnalyticsConfigurationResponse GetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request);
 
         /// <summary>
@@ -3226,6 +3305,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketAnalyticsConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAnalyticsConfiguration">REST API Reference for GetBucketAnalyticsConfiguration Operation</seealso>
         IAsyncResult BeginGetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -3237,6 +3317,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketAnalyticsConfiguration.</param>
         /// 
         /// <returns>Returns a  GetBucketAnalyticsConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAnalyticsConfiguration">REST API Reference for GetBucketAnalyticsConfiguration Operation</seealso>
         GetBucketAnalyticsConfigurationResponse EndGetBucketAnalyticsConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -3274,6 +3355,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketEncryption service method.</param>
         /// 
         /// <returns>The response from the GetBucketEncryption service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketEncryption">REST API Reference for GetBucketEncryption Operation</seealso>
         GetBucketEncryptionResponse GetBucketEncryption(GetBucketEncryptionRequest request);
 
         /// <summary>
@@ -3287,6 +3369,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketEncryption
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketEncryption">REST API Reference for GetBucketEncryption Operation</seealso>
         IAsyncResult BeginGetBucketEncryption(GetBucketEncryptionRequest request, AsyncCallback callback, object state);
 
 
@@ -3298,6 +3381,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketEncryption.</param>
         /// 
         /// <returns>Returns a  GetBucketEncryptionResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketEncryption">REST API Reference for GetBucketEncryption Operation</seealso>
         GetBucketEncryptionResponse EndGetBucketEncryption(IAsyncResult asyncResult);
 
         #endregion
@@ -3343,6 +3427,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketInventoryConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetBucketInventoryConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketInventoryConfiguration">REST API Reference for GetBucketInventoryConfiguration Operation</seealso>
         GetBucketInventoryConfigurationResponse GetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request);
 
         /// <summary>
@@ -3356,6 +3441,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketInventoryConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketInventoryConfiguration">REST API Reference for GetBucketInventoryConfiguration Operation</seealso>
         IAsyncResult BeginGetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -3367,6 +3453,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketInventoryConfiguration.</param>
         /// 
         /// <returns>Returns a  GetBucketInventoryConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketInventoryConfiguration">REST API Reference for GetBucketInventoryConfiguration Operation</seealso>
         GetBucketInventoryConfigurationResponse EndGetBucketInventoryConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -3400,6 +3487,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The name of the bucket for which to get the location.</param>
         /// 
         /// <returns>The response from the GetBucketLocation service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLocation">REST API Reference for GetBucketLocation Operation</seealso>
         GetBucketLocationResponse GetBucketLocation(string bucketName);
 
         /// <summary>
@@ -3428,6 +3516,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLocation service method.</param>
         /// 
         /// <returns>The response from the GetBucketLocation service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLocation">REST API Reference for GetBucketLocation Operation</seealso>
         GetBucketLocationResponse GetBucketLocation(GetBucketLocationRequest request);
 
         /// <summary>
@@ -3441,6 +3530,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketLocation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLocation">REST API Reference for GetBucketLocation Operation</seealso>
         IAsyncResult BeginGetBucketLocation(GetBucketLocationRequest request, AsyncCallback callback, object state);
 
 
@@ -3452,6 +3542,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketLocation.</param>
         /// 
         /// <returns>Returns a  GetBucketLocationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLocation">REST API Reference for GetBucketLocation Operation</seealso>
         GetBucketLocationResponse EndGetBucketLocation(IAsyncResult asyncResult);
 
         #endregion
@@ -3480,6 +3571,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name for which to get the logging information.</param>
         /// 
         /// <returns>The response from the GetBucketLogging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLogging">REST API Reference for GetBucketLogging Operation</seealso>
         GetBucketLoggingResponse GetBucketLogging(string bucketName);
 
         /// <summary>
@@ -3503,6 +3595,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLogging service method.</param>
         /// 
         /// <returns>The response from the GetBucketLogging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLogging">REST API Reference for GetBucketLogging Operation</seealso>
         GetBucketLoggingResponse GetBucketLogging(GetBucketLoggingRequest request);
 
         /// <summary>
@@ -3516,6 +3609,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketLogging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLogging">REST API Reference for GetBucketLogging Operation</seealso>
         IAsyncResult BeginGetBucketLogging(GetBucketLoggingRequest request, AsyncCallback callback, object state);
 
 
@@ -3527,6 +3621,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketLogging.</param>
         /// 
         /// <returns>Returns a  GetBucketLoggingResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLogging">REST API Reference for GetBucketLogging Operation</seealso>
         GetBucketLoggingResponse EndGetBucketLogging(IAsyncResult asyncResult);
 
         #endregion
@@ -3577,6 +3672,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketMetricsConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetBucketMetricsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetricsConfiguration">REST API Reference for GetBucketMetricsConfiguration Operation</seealso>
         GetBucketMetricsConfigurationResponse GetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request);
 
         /// <summary>
@@ -3590,6 +3686,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketMetricsConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetricsConfiguration">REST API Reference for GetBucketMetricsConfiguration Operation</seealso>
         IAsyncResult BeginGetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -3601,6 +3698,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketMetricsConfiguration.</param>
         /// 
         /// <returns>Returns a  GetBucketMetricsConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetricsConfiguration">REST API Reference for GetBucketMetricsConfiguration Operation</seealso>
         GetBucketMetricsConfigurationResponse EndGetBucketMetricsConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -3644,6 +3742,7 @@ namespace Amazon.S3
         /// <param name="bucketName">Name of the bucket for which to get the notification configuration.</param>
         /// 
         /// <returns>The response from the GetBucketNotification service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">REST API Reference for GetBucketNotification Operation</seealso>
         GetBucketNotificationResponse GetBucketNotification(string bucketName);
 
         /// <summary>
@@ -3682,6 +3781,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketNotification service method.</param>
         /// 
         /// <returns>The response from the GetBucketNotification service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">REST API Reference for GetBucketNotification Operation</seealso>
         GetBucketNotificationResponse GetBucketNotification(GetBucketNotificationRequest request);
 
         /// <summary>
@@ -3695,6 +3795,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketNotification
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">REST API Reference for GetBucketNotification Operation</seealso>
         IAsyncResult BeginGetBucketNotification(GetBucketNotificationRequest request, AsyncCallback callback, object state);
 
 
@@ -3706,6 +3807,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketNotification.</param>
         /// 
         /// <returns>Returns a  GetBucketNotificationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">REST API Reference for GetBucketNotification Operation</seealso>
         GetBucketNotificationResponse EndGetBucketNotification(IAsyncResult asyncResult);
 
         #endregion
@@ -3750,6 +3852,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name for which to get the bucket policy.</param>
         /// 
         /// <returns>The response from the GetBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
         GetBucketPolicyResponse GetBucketPolicy(string bucketName);
 
         /// <summary>
@@ -3789,6 +3892,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicy service method.</param>
         /// 
         /// <returns>The response from the GetBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
         GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest request);
 
         /// <summary>
@@ -3802,6 +3906,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
         IAsyncResult BeginGetBucketPolicy(GetBucketPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -3813,6 +3918,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketPolicy.</param>
         /// 
         /// <returns>Returns a  GetBucketPolicyResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
         GetBucketPolicyResponse EndGetBucketPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -3857,6 +3963,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicyStatus service method.</param>
         /// 
         /// <returns>The response from the GetBucketPolicyStatus service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicyStatus">REST API Reference for GetBucketPolicyStatus Operation</seealso>
         GetBucketPolicyStatusResponse GetBucketPolicyStatus(GetBucketPolicyStatusRequest request);
 
         /// <summary>
@@ -3870,6 +3977,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketPolicyStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicyStatus">REST API Reference for GetBucketPolicyStatus Operation</seealso>
         IAsyncResult BeginGetBucketPolicyStatus(GetBucketPolicyStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -3881,6 +3989,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketPolicyStatus.</param>
         /// 
         /// <returns>Returns a  GetBucketPolicyStatusResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicyStatus">REST API Reference for GetBucketPolicyStatus Operation</seealso>
         GetBucketPolicyStatusResponse EndGetBucketPolicyStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -3894,6 +4003,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketReplication service method.</param>
         /// 
         /// <returns>The response from the GetBucketReplication service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication">REST API Reference for GetBucketReplication Operation</seealso>
         GetBucketReplicationResponse GetBucketReplication(GetBucketReplicationRequest request);
 
         /// <summary>
@@ -3907,6 +4017,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketReplication
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication">REST API Reference for GetBucketReplication Operation</seealso>
         IAsyncResult BeginGetBucketReplication(GetBucketReplicationRequest request, AsyncCallback callback, object state);
 
 
@@ -3918,6 +4029,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketReplication.</param>
         /// 
         /// <returns>Returns a  GetBucketReplicationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication">REST API Reference for GetBucketReplication Operation</seealso>
         GetBucketReplicationResponse EndGetBucketReplication(IAsyncResult asyncResult);
 
         #endregion
@@ -3943,6 +4055,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The name of the bucket for which to get the payment request configuration</param>
         /// 
         /// <returns>The response from the GetBucketRequestPayment service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">REST API Reference for GetBucketRequestPayment Operation</seealso>
         GetBucketRequestPaymentResponse GetBucketRequestPayment(string bucketName);
 
         /// <summary>
@@ -3963,6 +4076,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketRequestPayment service method.</param>
         /// 
         /// <returns>The response from the GetBucketRequestPayment service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">REST API Reference for GetBucketRequestPayment Operation</seealso>
         GetBucketRequestPaymentResponse GetBucketRequestPayment(GetBucketRequestPaymentRequest request);
 
         /// <summary>
@@ -3976,6 +4090,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketRequestPayment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">REST API Reference for GetBucketRequestPayment Operation</seealso>
         IAsyncResult BeginGetBucketRequestPayment(GetBucketRequestPaymentRequest request, AsyncCallback callback, object state);
 
 
@@ -3987,6 +4102,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketRequestPayment.</param>
         /// 
         /// <returns>Returns a  GetBucketRequestPaymentResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">REST API Reference for GetBucketRequestPayment Operation</seealso>
         GetBucketRequestPaymentResponse EndGetBucketRequestPayment(IAsyncResult asyncResult);
 
         #endregion
@@ -4032,6 +4148,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketTagging service method.</param>
         /// 
         /// <returns>The response from the GetBucketTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketTagging">REST API Reference for GetBucketTagging Operation</seealso>
         GetBucketTaggingResponse GetBucketTagging(GetBucketTaggingRequest request);
 
         /// <summary>
@@ -4045,6 +4162,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketTagging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketTagging">REST API Reference for GetBucketTagging Operation</seealso>
         IAsyncResult BeginGetBucketTagging(GetBucketTaggingRequest request, AsyncCallback callback, object state);
 
 
@@ -4056,6 +4174,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketTagging.</param>
         /// 
         /// <returns>Returns a  GetBucketTaggingResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketTagging">REST API Reference for GetBucketTagging Operation</seealso>
         GetBucketTaggingResponse EndGetBucketTagging(IAsyncResult asyncResult);
 
         #endregion
@@ -4097,6 +4216,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The name of the bucket for which to get the versioning information.</param>
         /// 
         /// <returns>The response from the GetBucketVersioning service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketVersioning">REST API Reference for GetBucketVersioning Operation</seealso>
         GetBucketVersioningResponse GetBucketVersioning(string bucketName);
 
         /// <summary>
@@ -4133,6 +4253,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketVersioning service method.</param>
         /// 
         /// <returns>The response from the GetBucketVersioning service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketVersioning">REST API Reference for GetBucketVersioning Operation</seealso>
         GetBucketVersioningResponse GetBucketVersioning(GetBucketVersioningRequest request);
 
         /// <summary>
@@ -4146,6 +4267,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketVersioning
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketVersioning">REST API Reference for GetBucketVersioning Operation</seealso>
         IAsyncResult BeginGetBucketVersioning(GetBucketVersioningRequest request, AsyncCallback callback, object state);
 
 
@@ -4157,6 +4279,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketVersioning.</param>
         /// 
         /// <returns>Returns a  GetBucketVersioningResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketVersioning">REST API Reference for GetBucketVersioning Operation</seealso>
         GetBucketVersioningResponse EndGetBucketVersioning(IAsyncResult asyncResult);
 
         #endregion
@@ -4194,6 +4317,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name for which to get the website configuration.</param>
         /// 
         /// <returns>The response from the GetBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketWebsite">REST API Reference for GetBucketWebsite Operation</seealso>
         GetBucketWebsiteResponse GetBucketWebsite(string bucketName);
 
         /// <summary>
@@ -4226,6 +4350,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketWebsite service method.</param>
         /// 
         /// <returns>The response from the GetBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketWebsite">REST API Reference for GetBucketWebsite Operation</seealso>
         GetBucketWebsiteResponse GetBucketWebsite(GetBucketWebsiteRequest request);
 
         /// <summary>
@@ -4239,6 +4364,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketWebsite
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketWebsite">REST API Reference for GetBucketWebsite Operation</seealso>
         IAsyncResult BeginGetBucketWebsite(GetBucketWebsiteRequest request, AsyncCallback callback, object state);
 
 
@@ -4250,6 +4376,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketWebsite.</param>
         /// 
         /// <returns>Returns a  GetBucketWebsiteResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketWebsite">REST API Reference for GetBucketWebsite Operation</seealso>
         GetBucketWebsiteResponse EndGetBucketWebsite(IAsyncResult asyncResult);
 
         #endregion
@@ -4287,6 +4414,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name for which to get the cors configuration.</param>
         /// 
         /// <returns>The response from the GetCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">REST API Reference for GetCORSConfiguration Operation</seealso>
         GetCORSConfigurationResponse GetCORSConfiguration(string bucketName);
 
         /// <summary>
@@ -4319,6 +4447,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetCORSConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">REST API Reference for GetCORSConfiguration Operation</seealso>
         GetCORSConfigurationResponse GetCORSConfiguration(GetCORSConfigurationRequest request);
 
         /// <summary>
@@ -4332,6 +4461,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCORSConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">REST API Reference for GetCORSConfiguration Operation</seealso>
         IAsyncResult BeginGetCORSConfiguration(GetCORSConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -4343,6 +4473,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCORSConfiguration.</param>
         /// 
         /// <returns>Returns a  GetCORSConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">REST API Reference for GetCORSConfiguration Operation</seealso>
         GetCORSConfigurationResponse EndGetCORSConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -4415,6 +4546,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The name of the bucket for which to get the lifecycle information.</param>
         /// 
         /// <returns>The response from the GetLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">REST API Reference for GetLifecycleConfiguration Operation</seealso>
         GetLifecycleConfigurationResponse GetLifecycleConfiguration(string bucketName);
 
         /// <summary>
@@ -4482,6 +4614,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">REST API Reference for GetLifecycleConfiguration Operation</seealso>
         GetLifecycleConfigurationResponse GetLifecycleConfiguration(GetLifecycleConfigurationRequest request);
 
         /// <summary>
@@ -4495,6 +4628,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLifecycleConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">REST API Reference for GetLifecycleConfiguration Operation</seealso>
         IAsyncResult BeginGetLifecycleConfiguration(GetLifecycleConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -4506,6 +4640,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLifecycleConfiguration.</param>
         /// 
         /// <returns>Returns a  GetLifecycleConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">REST API Reference for GetLifecycleConfiguration Operation</seealso>
         GetLifecycleConfigurationResponse EndGetLifecycleConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -4718,6 +4853,7 @@ namespace Amazon.S3
         /// <param name="key">Key of the object to get.</param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">REST API Reference for GetObject Operation</seealso>
         GetObjectResponse GetObject(string bucketName, string key);
 
         /// <summary>
@@ -4926,6 +5062,7 @@ namespace Amazon.S3
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">REST API Reference for GetObject Operation</seealso>
         GetObjectResponse GetObject(string bucketName, string key, string versionId);
 
         /// <summary>
@@ -5132,6 +5269,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObject service method.</param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">REST API Reference for GetObject Operation</seealso>
         GetObjectResponse GetObject(GetObjectRequest request);
 
         /// <summary>
@@ -5145,6 +5283,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObject
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">REST API Reference for GetObject Operation</seealso>
         IAsyncResult BeginGetObject(GetObjectRequest request, AsyncCallback callback, object state);
 
 
@@ -5156,6 +5295,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObject.</param>
         /// 
         /// <returns>Returns a  GetObjectResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">REST API Reference for GetObject Operation</seealso>
         GetObjectResponse EndGetObject(IAsyncResult asyncResult);
 
         #endregion
@@ -5170,6 +5310,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectLegalHold service method.</param>
         /// 
         /// <returns>The response from the GetObjectLegalHold service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">REST API Reference for GetObjectLegalHold Operation</seealso>
         GetObjectLegalHoldResponse GetObjectLegalHold(GetObjectLegalHoldRequest request);
 
         /// <summary>
@@ -5183,6 +5324,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectLegalHold
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">REST API Reference for GetObjectLegalHold Operation</seealso>
         IAsyncResult BeginGetObjectLegalHold(GetObjectLegalHoldRequest request, AsyncCallback callback, object state);
 
 
@@ -5194,6 +5336,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectLegalHold.</param>
         /// 
         /// <returns>Returns a  GetObjectLegalHoldResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">REST API Reference for GetObjectLegalHold Operation</seealso>
         GetObjectLegalHoldResponse EndGetObjectLegalHold(IAsyncResult asyncResult);
 
         #endregion
@@ -5210,6 +5353,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectLockConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetObjectLockConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">REST API Reference for GetObjectLockConfiguration Operation</seealso>
         GetObjectLockConfigurationResponse GetObjectLockConfiguration(GetObjectLockConfigurationRequest request);
 
         /// <summary>
@@ -5223,6 +5367,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectLockConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">REST API Reference for GetObjectLockConfiguration Operation</seealso>
         IAsyncResult BeginGetObjectLockConfiguration(GetObjectLockConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -5234,6 +5379,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectLockConfiguration.</param>
         /// 
         /// <returns>Returns a  GetObjectLockConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">REST API Reference for GetObjectLockConfiguration Operation</seealso>
         GetObjectLockConfigurationResponse EndGetObjectLockConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -5366,6 +5512,7 @@ namespace Amazon.S3
         /// <param name="key">The object key.</param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">REST API Reference for GetObjectMetadata Operation</seealso>
         GetObjectMetadataResponse GetObjectMetadata(string bucketName, string key);
 
         /// <summary>
@@ -5494,6 +5641,7 @@ namespace Amazon.S3
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">REST API Reference for GetObjectMetadata Operation</seealso>
         GetObjectMetadataResponse GetObjectMetadata(string bucketName, string key, string versionId);
 
         /// <summary>
@@ -5620,6 +5768,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectMetadata service method.</param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">REST API Reference for GetObjectMetadata Operation</seealso>
         GetObjectMetadataResponse GetObjectMetadata(GetObjectMetadataRequest request);
 
         /// <summary>
@@ -5633,6 +5782,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectMetadata
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">REST API Reference for GetObjectMetadata Operation</seealso>
         IAsyncResult BeginGetObjectMetadata(GetObjectMetadataRequest request, AsyncCallback callback, object state);
 
 
@@ -5644,6 +5794,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectMetadata.</param>
         /// 
         /// <returns>Returns a  GetObjectMetadataResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">REST API Reference for GetObjectMetadata Operation</seealso>
         GetObjectMetadataResponse EndGetObjectMetadata(IAsyncResult asyncResult);
 
         #endregion
@@ -5658,6 +5809,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectRetention service method.</param>
         /// 
         /// <returns>The response from the GetObjectRetention service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">REST API Reference for GetObjectRetention Operation</seealso>
         GetObjectRetentionResponse GetObjectRetention(GetObjectRetentionRequest request);
 
         /// <summary>
@@ -5671,6 +5823,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectRetention
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">REST API Reference for GetObjectRetention Operation</seealso>
         IAsyncResult BeginGetObjectRetention(GetObjectRetentionRequest request, AsyncCallback callback, object state);
 
 
@@ -5682,6 +5835,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectRetention.</param>
         /// 
         /// <returns>Returns a  GetObjectRetentionResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">REST API Reference for GetObjectRetention Operation</seealso>
         GetObjectRetentionResponse EndGetObjectRetention(IAsyncResult asyncResult);
 
         #endregion
@@ -5724,6 +5878,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectTagging service method.</param>
         /// 
         /// <returns>The response from the GetObjectTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTagging">REST API Reference for GetObjectTagging Operation</seealso>
         GetObjectTaggingResponse GetObjectTagging(GetObjectTaggingRequest request);
 
         /// <summary>
@@ -5737,6 +5892,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectTagging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTagging">REST API Reference for GetObjectTagging Operation</seealso>
         IAsyncResult BeginGetObjectTagging(GetObjectTaggingRequest request, AsyncCallback callback, object state);
 
 
@@ -5748,6 +5904,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectTagging.</param>
         /// 
         /// <returns>Returns a  GetObjectTaggingResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTagging">REST API Reference for GetObjectTagging Operation</seealso>
         GetObjectTaggingResponse EndGetObjectTagging(IAsyncResult asyncResult);
 
         #endregion
@@ -5783,6 +5940,7 @@ namespace Amazon.S3
         /// <param name="key">The object key for which to get the information.</param>
         /// 
         /// <returns>The response from the GetObjectTorrent service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">REST API Reference for GetObjectTorrent Operation</seealso>
         GetObjectTorrentResponse GetObjectTorrent(string bucketName, string key);
 
         /// <summary>
@@ -5812,6 +5970,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectTorrent service method.</param>
         /// 
         /// <returns>The response from the GetObjectTorrent service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">REST API Reference for GetObjectTorrent Operation</seealso>
         GetObjectTorrentResponse GetObjectTorrent(GetObjectTorrentRequest request);
 
         /// <summary>
@@ -5825,6 +5984,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectTorrent
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">REST API Reference for GetObjectTorrent Operation</seealso>
         IAsyncResult BeginGetObjectTorrent(GetObjectTorrentRequest request, AsyncCallback callback, object state);
 
 
@@ -5836,6 +5996,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectTorrent.</param>
         /// 
         /// <returns>Returns a  GetObjectTorrentResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">REST API Reference for GetObjectTorrent Operation</seealso>
         GetObjectTorrentResponse EndGetObjectTorrent(IAsyncResult asyncResult);
 
         #endregion
@@ -5890,6 +6051,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock service method.</param>
         /// 
         /// <returns>The response from the GetPublicAccessBlock service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         GetPublicAccessBlockResponse GetPublicAccessBlock(GetPublicAccessBlockRequest request);
 
         /// <summary>
@@ -5903,6 +6065,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPublicAccessBlock
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         IAsyncResult BeginGetPublicAccessBlock(GetPublicAccessBlockRequest request, AsyncCallback callback, object state);
 
 
@@ -5914,6 +6077,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPublicAccessBlock.</param>
         /// 
         /// <returns>Returns a  GetPublicAccessBlockResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         GetPublicAccessBlockResponse EndGetPublicAccessBlock(IAsyncResult asyncResult);
 
         #endregion
@@ -6229,6 +6393,7 @@ namespace Amazon.S3
         /// <param name="key">Object key for which the multipart upload is to be initiated.</param>
         /// 
         /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         InitiateMultipartUploadResponse InitiateMultipartUpload(string bucketName, string key);
 
         /// <summary>
@@ -6538,6 +6703,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the InitiateMultipartUpload service method.</param>
         /// 
         /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request);
 
         /// <summary>
@@ -6551,6 +6717,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInitiateMultipartUpload
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         IAsyncResult BeginInitiateMultipartUpload(InitiateMultipartUploadRequest request, AsyncCallback callback, object state);
 
 
@@ -6562,6 +6729,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInitiateMultipartUpload.</param>
         /// 
         /// <returns>Returns a  InitiateMultipartUploadResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         InitiateMultipartUploadResponse EndInitiateMultipartUpload(IAsyncResult asyncResult);
 
         #endregion
@@ -6617,6 +6785,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListBucketAnalyticsConfigurations service method.</param>
         /// 
         /// <returns>The response from the ListBucketAnalyticsConfigurations service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketAnalyticsConfigurations">REST API Reference for ListBucketAnalyticsConfigurations Operation</seealso>
         ListBucketAnalyticsConfigurationsResponse ListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request);
 
         /// <summary>
@@ -6630,6 +6799,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBucketAnalyticsConfigurations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketAnalyticsConfigurations">REST API Reference for ListBucketAnalyticsConfigurations Operation</seealso>
         IAsyncResult BeginListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request, AsyncCallback callback, object state);
 
 
@@ -6641,6 +6811,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBucketAnalyticsConfigurations.</param>
         /// 
         /// <returns>Returns a  ListBucketAnalyticsConfigurationsResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketAnalyticsConfigurations">REST API Reference for ListBucketAnalyticsConfigurations Operation</seealso>
         ListBucketAnalyticsConfigurationsResponse EndListBucketAnalyticsConfigurations(IAsyncResult asyncResult);
 
         #endregion
@@ -6696,6 +6867,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListBucketInventoryConfigurations service method.</param>
         /// 
         /// <returns>The response from the ListBucketInventoryConfigurations service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketInventoryConfigurations">REST API Reference for ListBucketInventoryConfigurations Operation</seealso>
         ListBucketInventoryConfigurationsResponse ListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request);
 
         /// <summary>
@@ -6709,6 +6881,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBucketInventoryConfigurations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketInventoryConfigurations">REST API Reference for ListBucketInventoryConfigurations Operation</seealso>
         IAsyncResult BeginListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request, AsyncCallback callback, object state);
 
 
@@ -6720,6 +6893,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBucketInventoryConfigurations.</param>
         /// 
         /// <returns>Returns a  ListBucketInventoryConfigurationsResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketInventoryConfigurations">REST API Reference for ListBucketInventoryConfigurations Operation</seealso>
         ListBucketInventoryConfigurationsResponse EndListBucketInventoryConfigurations(IAsyncResult asyncResult);
 
         #endregion
@@ -6777,6 +6951,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListBucketMetricsConfigurations service method.</param>
         /// 
         /// <returns>The response from the ListBucketMetricsConfigurations service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketMetricsConfigurations">REST API Reference for ListBucketMetricsConfigurations Operation</seealso>
         ListBucketMetricsConfigurationsResponse ListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request);
 
         /// <summary>
@@ -6790,6 +6965,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBucketMetricsConfigurations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketMetricsConfigurations">REST API Reference for ListBucketMetricsConfigurations Operation</seealso>
         IAsyncResult BeginListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request, AsyncCallback callback, object state);
 
 
@@ -6801,6 +6977,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBucketMetricsConfigurations.</param>
         /// 
         /// <returns>Returns a  ListBucketMetricsConfigurationsResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketMetricsConfigurations">REST API Reference for ListBucketMetricsConfigurations Operation</seealso>
         ListBucketMetricsConfigurationsResponse EndListBucketMetricsConfigurations(IAsyncResult asyncResult);
 
         #endregion
@@ -6813,6 +6990,7 @@ namespace Amazon.S3
         /// </summary>
         /// 
         /// <returns>The response from the ListBuckets service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">REST API Reference for ListBuckets Operation</seealso>
         ListBucketsResponse ListBuckets();
 
         /// <summary>
@@ -6821,6 +6999,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListBuckets service method.</param>
         /// 
         /// <returns>The response from the ListBuckets service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">REST API Reference for ListBuckets Operation</seealso>
         ListBucketsResponse ListBuckets(ListBucketsRequest request);
 
         /// <summary>
@@ -6834,6 +7013,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBuckets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">REST API Reference for ListBuckets Operation</seealso>
         IAsyncResult BeginListBuckets(ListBucketsRequest request, AsyncCallback callback, object state);
 
 
@@ -6845,6 +7025,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBuckets.</param>
         /// 
         /// <returns>Returns a  ListBucketsResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">REST API Reference for ListBuckets Operation</seealso>
         ListBucketsResponse EndListBuckets(IAsyncResult asyncResult);
 
         #endregion
@@ -6913,6 +7094,7 @@ namespace Amazon.S3
         /// <param name="bucketName">Name of the bucket to which the multipart upload was initiated.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         ListMultipartUploadsResponse ListMultipartUploads(string bucketName);
 
         /// <summary>
@@ -6977,6 +7159,7 @@ namespace Amazon.S3
         /// <param name="prefix">Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.)</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         ListMultipartUploadsResponse ListMultipartUploads(string bucketName, string prefix);
 
         /// <summary>
@@ -7040,6 +7223,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListMultipartUploads service method.</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request);
 
         /// <summary>
@@ -7053,6 +7237,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMultipartUploads
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         IAsyncResult BeginListMultipartUploads(ListMultipartUploadsRequest request, AsyncCallback callback, object state);
 
 
@@ -7064,6 +7249,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMultipartUploads.</param>
         /// 
         /// <returns>Returns a  ListMultipartUploadsResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         ListMultipartUploadsResponse EndListMultipartUploads(IAsyncResult asyncResult);
 
         #endregion
@@ -7112,6 +7298,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The name of the bucket containing the objects.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
         ListObjectsResponse ListObjects(string bucketName);
 
         /// <summary>
@@ -7156,6 +7343,7 @@ namespace Amazon.S3
         /// <param name="prefix">Limits the response to keys that begin with the specified prefix.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
         ListObjectsResponse ListObjects(string bucketName, string prefix);
 
         /// <summary>
@@ -7199,6 +7387,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListObjects service method.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
         ListObjectsResponse ListObjects(ListObjectsRequest request);
 
         /// <summary>
@@ -7212,6 +7401,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListObjects
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
         IAsyncResult BeginListObjects(ListObjectsRequest request, AsyncCallback callback, object state);
 
 
@@ -7223,6 +7413,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListObjects.</param>
         /// 
         /// <returns>Returns a  ListObjectsResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
         ListObjectsResponse EndListObjects(IAsyncResult asyncResult);
 
         #endregion
@@ -7280,6 +7471,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListObjectsV2 service method.</param>
         /// 
         /// <returns>The response from the ListObjectsV2 service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectsV2">REST API Reference for ListObjectsV2 Operation</seealso>
         ListObjectsV2Response ListObjectsV2(ListObjectsV2Request request);
 
         /// <summary>
@@ -7293,6 +7485,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListObjectsV2
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectsV2">REST API Reference for ListObjectsV2 Operation</seealso>
         IAsyncResult BeginListObjectsV2(ListObjectsV2Request request, AsyncCallback callback, object state);
 
 
@@ -7304,6 +7497,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListObjectsV2.</param>
         /// 
         /// <returns>Returns a  ListObjectsV2Result from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectsV2">REST API Reference for ListObjectsV2 Operation</seealso>
         ListObjectsV2Response EndListObjectsV2(IAsyncResult asyncResult);
 
         #endregion
@@ -7364,6 +7558,7 @@ namespace Amazon.S3
         /// <param name="uploadId">Upload ID identifying the multipart upload whose parts are being listed.</param>
         /// 
         /// <returns>The response from the ListParts service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListParts">REST API Reference for ListParts Operation</seealso>
         ListPartsResponse ListParts(string bucketName, string key, string uploadId);
 
         /// <summary>
@@ -7417,6 +7612,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListParts service method.</param>
         /// 
         /// <returns>The response from the ListParts service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListParts">REST API Reference for ListParts Operation</seealso>
         ListPartsResponse ListParts(ListPartsRequest request);
 
         /// <summary>
@@ -7430,6 +7626,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListParts
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListParts">REST API Reference for ListParts Operation</seealso>
         IAsyncResult BeginListParts(ListPartsRequest request, AsyncCallback callback, object state);
 
 
@@ -7441,6 +7638,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListParts.</param>
         /// 
         /// <returns>Returns a  ListPartsResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListParts">REST API Reference for ListParts Operation</seealso>
         ListPartsResponse EndListParts(IAsyncResult asyncResult);
 
         #endregion
@@ -7487,6 +7685,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name that contains the objects.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         ListVersionsResponse ListVersions(string bucketName);
 
         /// <summary>
@@ -7529,6 +7728,7 @@ namespace Amazon.S3
         /// <param name="prefix">Use this parameter to select only those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different groupings of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.) You can use prefix with delimiter to roll up numerous objects into a single result under CommonPrefixes. </param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         ListVersionsResponse ListVersions(string bucketName, string prefix);
 
         /// <summary>
@@ -7570,6 +7770,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListVersions service method.</param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         ListVersionsResponse ListVersions(ListVersionsRequest request);
 
         /// <summary>
@@ -7583,6 +7784,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVersions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         IAsyncResult BeginListVersions(ListVersionsRequest request, AsyncCallback callback, object state);
 
 
@@ -7594,6 +7796,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVersions.</param>
         /// 
         /// <returns>Returns a  ListVersionsResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         ListVersionsResponse EndListVersions(IAsyncResult asyncResult);
 
         #endregion
@@ -7838,6 +8041,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutACL service method.</param>
         /// 
         /// <returns>The response from the PutACL service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAcl">REST API Reference for PutACL Operation</seealso>
         PutACLResponse PutACL(PutACLRequest request);
 
         /// <summary>
@@ -7851,6 +8055,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutACL
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAcl">REST API Reference for PutACL Operation</seealso>
         IAsyncResult BeginPutACL(PutACLRequest request, AsyncCallback callback, object state);
 
 
@@ -7862,6 +8067,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutACL.</param>
         /// 
         /// <returns>Returns a  PutACLResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAcl">REST API Reference for PutACL Operation</seealso>
         PutACLResponse EndPutACL(IAsyncResult asyncResult);
 
         #endregion
@@ -8010,6 +8216,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The name of the bucket to create.</param>
         /// 
         /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">REST API Reference for PutBucket Operation</seealso>
         PutBucketResponse PutBucket(string bucketName);
 
         /// <summary>
@@ -8153,6 +8360,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucket service method.</param>
         /// 
         /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">REST API Reference for PutBucket Operation</seealso>
         PutBucketResponse PutBucket(PutBucketRequest request);
 
         /// <summary>
@@ -8166,6 +8374,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucket
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">REST API Reference for PutBucket Operation</seealso>
         IAsyncResult BeginPutBucket(PutBucketRequest request, AsyncCallback callback, object state);
 
 
@@ -8177,6 +8386,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucket.</param>
         /// 
         /// <returns>Returns a  PutBucketResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">REST API Reference for PutBucket Operation</seealso>
         PutBucketResponse EndPutBucket(IAsyncResult asyncResult);
 
         #endregion
@@ -8247,6 +8457,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketAccelerateConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAccelerateConfiguration">REST API Reference for PutBucketAccelerateConfiguration Operation</seealso>
         PutBucketAccelerateConfigurationResponse PutBucketAccelerateConfiguration(PutBucketAccelerateConfigurationRequest request);
 
         /// <summary>
@@ -8260,6 +8471,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketAccelerateConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAccelerateConfiguration">REST API Reference for PutBucketAccelerateConfiguration Operation</seealso>
         IAsyncResult BeginPutBucketAccelerateConfiguration(PutBucketAccelerateConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -8271,6 +8483,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketAccelerateConfiguration.</param>
         /// 
         /// <returns>Returns a  PutBucketAccelerateConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAccelerateConfiguration">REST API Reference for PutBucketAccelerateConfiguration Operation</seealso>
         PutBucketAccelerateConfigurationResponse EndPutBucketAccelerateConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -8368,6 +8581,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketAnalyticsConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAnalyticsConfiguration">REST API Reference for PutBucketAnalyticsConfiguration Operation</seealso>
         PutBucketAnalyticsConfigurationResponse PutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request);
 
         /// <summary>
@@ -8381,6 +8595,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketAnalyticsConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAnalyticsConfiguration">REST API Reference for PutBucketAnalyticsConfiguration Operation</seealso>
         IAsyncResult BeginPutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -8392,6 +8607,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketAnalyticsConfiguration.</param>
         /// 
         /// <returns>Returns a  PutBucketAnalyticsConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAnalyticsConfiguration">REST API Reference for PutBucketAnalyticsConfiguration Operation</seealso>
         PutBucketAnalyticsConfigurationResponse EndPutBucketAnalyticsConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -8440,6 +8656,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketEncryption service method.</param>
         /// 
         /// <returns>The response from the PutBucketEncryption service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketEncryption">REST API Reference for PutBucketEncryption Operation</seealso>
         PutBucketEncryptionResponse PutBucketEncryption(PutBucketEncryptionRequest request);
 
         /// <summary>
@@ -8453,6 +8670,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketEncryption
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketEncryption">REST API Reference for PutBucketEncryption Operation</seealso>
         IAsyncResult BeginPutBucketEncryption(PutBucketEncryptionRequest request, AsyncCallback callback, object state);
 
 
@@ -8464,6 +8682,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketEncryption.</param>
         /// 
         /// <returns>Returns a  PutBucketEncryptionResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketEncryption">REST API Reference for PutBucketEncryption Operation</seealso>
         PutBucketEncryptionResponse EndPutBucketEncryption(IAsyncResult asyncResult);
 
         #endregion
@@ -8563,6 +8782,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketInventoryConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutBucketInventoryConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketInventoryConfiguration">REST API Reference for PutBucketInventoryConfiguration Operation</seealso>
         PutBucketInventoryConfigurationResponse PutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request);
 
         /// <summary>
@@ -8576,6 +8796,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketInventoryConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketInventoryConfiguration">REST API Reference for PutBucketInventoryConfiguration Operation</seealso>
         IAsyncResult BeginPutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -8587,6 +8808,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketInventoryConfiguration.</param>
         /// 
         /// <returns>Returns a  PutBucketInventoryConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketInventoryConfiguration">REST API Reference for PutBucketInventoryConfiguration Operation</seealso>
         PutBucketInventoryConfigurationResponse EndPutBucketInventoryConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -8696,6 +8918,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketLogging service method.</param>
         /// 
         /// <returns>The response from the PutBucketLogging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLogging">REST API Reference for PutBucketLogging Operation</seealso>
         PutBucketLoggingResponse PutBucketLogging(PutBucketLoggingRequest request);
 
         /// <summary>
@@ -8709,6 +8932,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketLogging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLogging">REST API Reference for PutBucketLogging Operation</seealso>
         IAsyncResult BeginPutBucketLogging(PutBucketLoggingRequest request, AsyncCallback callback, object state);
 
 
@@ -8720,6 +8944,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketLogging.</param>
         /// 
         /// <returns>Returns a  PutBucketLoggingResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLogging">REST API Reference for PutBucketLogging Operation</seealso>
         PutBucketLoggingResponse EndPutBucketLogging(IAsyncResult asyncResult);
 
         #endregion
@@ -8785,6 +9010,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketMetricsConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutBucketMetricsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketMetricsConfiguration">REST API Reference for PutBucketMetricsConfiguration Operation</seealso>
         PutBucketMetricsConfigurationResponse PutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request);
 
         /// <summary>
@@ -8798,6 +9024,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketMetricsConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketMetricsConfiguration">REST API Reference for PutBucketMetricsConfiguration Operation</seealso>
         IAsyncResult BeginPutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -8809,6 +9036,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketMetricsConfiguration.</param>
         /// 
         /// <returns>Returns a  PutBucketMetricsConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketMetricsConfiguration">REST API Reference for PutBucketMetricsConfiguration Operation</seealso>
         PutBucketMetricsConfigurationResponse EndPutBucketMetricsConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -8898,6 +9126,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketNotification service method.</param>
         /// 
         /// <returns>The response from the PutBucketNotification service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketNotificationConfiguration">REST API Reference for PutBucketNotification Operation</seealso>
         PutBucketNotificationResponse PutBucketNotification(PutBucketNotificationRequest request);
 
         /// <summary>
@@ -8911,6 +9140,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketNotification
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketNotificationConfiguration">REST API Reference for PutBucketNotification Operation</seealso>
         IAsyncResult BeginPutBucketNotification(PutBucketNotificationRequest request, AsyncCallback callback, object state);
 
 
@@ -8922,6 +9152,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketNotification.</param>
         /// 
         /// <returns>Returns a  PutBucketNotificationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketNotificationConfiguration">REST API Reference for PutBucketNotification Operation</seealso>
         PutBucketNotificationResponse EndPutBucketNotification(IAsyncResult asyncResult);
 
         #endregion
@@ -8971,6 +9202,7 @@ namespace Amazon.S3
         /// <param name="policy">The bucket policy as a JSON document.</param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         PutBucketPolicyResponse PutBucketPolicy(string bucketName, string policy);
 
         /// <summary>
@@ -9016,6 +9248,7 @@ namespace Amazon.S3
         /// <param name="contentMD5">The MD5 hash of the request body.</param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         PutBucketPolicyResponse PutBucketPolicy(string bucketName, string policy, string contentMD5);
 
         /// <summary>
@@ -9059,6 +9292,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketPolicy service method.</param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest request);
 
         /// <summary>
@@ -9072,6 +9306,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         IAsyncResult BeginPutBucketPolicy(PutBucketPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -9083,6 +9318,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketPolicy.</param>
         /// 
         /// <returns>Returns a  PutBucketPolicyResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         PutBucketPolicyResponse EndPutBucketPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -9171,6 +9407,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketReplication service method.</param>
         /// 
         /// <returns>The response from the PutBucketReplication service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">REST API Reference for PutBucketReplication Operation</seealso>
         PutBucketReplicationResponse PutBucketReplication(PutBucketReplicationRequest request);
 
         /// <summary>
@@ -9184,6 +9421,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketReplication
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">REST API Reference for PutBucketReplication Operation</seealso>
         IAsyncResult BeginPutBucketReplication(PutBucketReplicationRequest request, AsyncCallback callback, object state);
 
 
@@ -9195,6 +9433,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketReplication.</param>
         /// 
         /// <returns>Returns a  PutBucketReplicationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">REST API Reference for PutBucketReplication Operation</seealso>
         PutBucketReplicationResponse EndPutBucketReplication(IAsyncResult asyncResult);
 
         #endregion
@@ -9227,6 +9466,7 @@ namespace Amazon.S3
         /// <param name="requestPaymentConfiguration">Container for Payer.</param>
         /// 
         /// <returns>The response from the PutBucketRequestPayment service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketRequestPayment">REST API Reference for PutBucketRequestPayment Operation</seealso>
         PutBucketRequestPaymentResponse PutBucketRequestPayment(string bucketName, RequestPaymentConfiguration requestPaymentConfiguration);
 
         /// <summary>
@@ -9253,6 +9493,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketRequestPayment service method.</param>
         /// 
         /// <returns>The response from the PutBucketRequestPayment service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketRequestPayment">REST API Reference for PutBucketRequestPayment Operation</seealso>
         PutBucketRequestPaymentResponse PutBucketRequestPayment(PutBucketRequestPaymentRequest request);
 
         /// <summary>
@@ -9266,6 +9507,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketRequestPayment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketRequestPayment">REST API Reference for PutBucketRequestPayment Operation</seealso>
         IAsyncResult BeginPutBucketRequestPayment(PutBucketRequestPaymentRequest request, AsyncCallback callback, object state);
 
 
@@ -9277,6 +9519,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketRequestPayment.</param>
         /// 
         /// <returns>Returns a  PutBucketRequestPaymentResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketRequestPayment">REST API Reference for PutBucketRequestPayment Operation</seealso>
         PutBucketRequestPaymentResponse EndPutBucketRequestPayment(IAsyncResult asyncResult);
 
         #endregion
@@ -9369,6 +9612,7 @@ namespace Amazon.S3
         /// <param name="tagSet">A property of PutBucketTaggingRequest used to execute the PutBucketTagging service method.</param>
         /// 
         /// <returns>The response from the PutBucketTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
         PutBucketTaggingResponse PutBucketTagging(string bucketName, List<Tag> tagSet);
 
         /// <summary>
@@ -9455,6 +9699,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketTagging service method.</param>
         /// 
         /// <returns>The response from the PutBucketTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
         PutBucketTaggingResponse PutBucketTagging(PutBucketTaggingRequest request);
 
         /// <summary>
@@ -9468,6 +9713,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketTagging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
         IAsyncResult BeginPutBucketTagging(PutBucketTaggingRequest request, AsyncCallback callback, object state);
 
 
@@ -9479,6 +9725,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketTagging.</param>
         /// 
         /// <returns>Returns a  PutBucketTaggingResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
         PutBucketTaggingResponse EndPutBucketTagging(IAsyncResult asyncResult);
 
         #endregion
@@ -9545,6 +9792,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketVersioning service method.</param>
         /// 
         /// <returns>The response from the PutBucketVersioning service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketVersioning">REST API Reference for PutBucketVersioning Operation</seealso>
         PutBucketVersioningResponse PutBucketVersioning(PutBucketVersioningRequest request);
 
         /// <summary>
@@ -9558,6 +9806,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketVersioning
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketVersioning">REST API Reference for PutBucketVersioning Operation</seealso>
         IAsyncResult BeginPutBucketVersioning(PutBucketVersioningRequest request, AsyncCallback callback, object state);
 
 
@@ -9569,6 +9818,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketVersioning.</param>
         /// 
         /// <returns>Returns a  PutBucketVersioningResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketVersioning">REST API Reference for PutBucketVersioning Operation</seealso>
         PutBucketVersioningResponse EndPutBucketVersioning(IAsyncResult asyncResult);
 
         #endregion
@@ -9695,6 +9945,7 @@ namespace Amazon.S3
         /// <param name="websiteConfiguration">Container for the request.</param>
         /// 
         /// <returns>The response from the PutBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketWebsite">REST API Reference for PutBucketWebsite Operation</seealso>
         PutBucketWebsiteResponse PutBucketWebsite(string bucketName, WebsiteConfiguration websiteConfiguration);
 
         /// <summary>
@@ -9815,6 +10066,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketWebsite service method.</param>
         /// 
         /// <returns>The response from the PutBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketWebsite">REST API Reference for PutBucketWebsite Operation</seealso>
         PutBucketWebsiteResponse PutBucketWebsite(PutBucketWebsiteRequest request);
 
         /// <summary>
@@ -9828,6 +10080,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketWebsite
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketWebsite">REST API Reference for PutBucketWebsite Operation</seealso>
         IAsyncResult BeginPutBucketWebsite(PutBucketWebsiteRequest request, AsyncCallback callback, object state);
 
 
@@ -9839,6 +10092,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketWebsite.</param>
         /// 
         /// <returns>Returns a  PutBucketWebsiteResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketWebsite">REST API Reference for PutBucketWebsite Operation</seealso>
         PutBucketWebsiteResponse EndPutBucketWebsite(IAsyncResult asyncResult);
 
         #endregion
@@ -9918,6 +10172,7 @@ namespace Amazon.S3
         /// <param name="configuration">Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the PutCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">REST API Reference for PutCORSConfiguration Operation</seealso>
         PutCORSConfigurationResponse PutCORSConfiguration(string bucketName, CORSConfiguration configuration);
 
         /// <summary>
@@ -9991,6 +10246,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutCORSConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">REST API Reference for PutCORSConfiguration Operation</seealso>
         PutCORSConfigurationResponse PutCORSConfiguration(PutCORSConfigurationRequest request);
 
         /// <summary>
@@ -10004,6 +10260,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutCORSConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">REST API Reference for PutCORSConfiguration Operation</seealso>
         IAsyncResult BeginPutCORSConfiguration(PutCORSConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -10015,6 +10272,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutCORSConfiguration.</param>
         /// 
         /// <returns>Returns a  PutCORSConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">REST API Reference for PutCORSConfiguration Operation</seealso>
         PutCORSConfigurationResponse EndPutCORSConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -10126,6 +10384,7 @@ namespace Amazon.S3
         /// <param name="configuration">A property of PutLifecycleConfigurationRequest used to execute the PutLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">REST API Reference for PutLifecycleConfiguration Operation</seealso>
         PutLifecycleConfigurationResponse PutLifecycleConfiguration(string bucketName, LifecycleConfiguration configuration);
 
         /// <summary>
@@ -10231,6 +10490,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">REST API Reference for PutLifecycleConfiguration Operation</seealso>
         PutLifecycleConfigurationResponse PutLifecycleConfiguration(PutLifecycleConfigurationRequest request);
 
         /// <summary>
@@ -10244,6 +10504,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutLifecycleConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">REST API Reference for PutLifecycleConfiguration Operation</seealso>
         IAsyncResult BeginPutLifecycleConfiguration(PutLifecycleConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -10255,6 +10516,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutLifecycleConfiguration.</param>
         /// 
         /// <returns>Returns a  PutLifecycleConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">REST API Reference for PutLifecycleConfiguration Operation</seealso>
         PutLifecycleConfigurationResponse EndPutLifecycleConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -10363,6 +10625,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutObject service method.</param>
         /// 
         /// <returns>The response from the PutObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObject">REST API Reference for PutObject Operation</seealso>
         PutObjectResponse PutObject(PutObjectRequest request);
 
         /// <summary>
@@ -10376,6 +10639,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutObject
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObject">REST API Reference for PutObject Operation</seealso>
         IAsyncResult BeginPutObject(PutObjectRequest request, AsyncCallback callback, object state);
 
 
@@ -10387,6 +10651,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObject.</param>
         /// 
         /// <returns>Returns a  PutObjectResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObject">REST API Reference for PutObject Operation</seealso>
         PutObjectResponse EndPutObject(IAsyncResult asyncResult);
 
         #endregion
@@ -10409,6 +10674,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutObjectLegalHold service method.</param>
         /// 
         /// <returns>The response from the PutObjectLegalHold service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">REST API Reference for PutObjectLegalHold Operation</seealso>
         PutObjectLegalHoldResponse PutObjectLegalHold(PutObjectLegalHoldRequest request);
 
         /// <summary>
@@ -10422,6 +10688,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutObjectLegalHold
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">REST API Reference for PutObjectLegalHold Operation</seealso>
         IAsyncResult BeginPutObjectLegalHold(PutObjectLegalHoldRequest request, AsyncCallback callback, object state);
 
 
@@ -10433,6 +10700,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObjectLegalHold.</param>
         /// 
         /// <returns>Returns a  PutObjectLegalHoldResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">REST API Reference for PutObjectLegalHold Operation</seealso>
         PutObjectLegalHoldResponse EndPutObjectLegalHold(IAsyncResult asyncResult);
 
         #endregion
@@ -10462,6 +10730,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutObjectLockConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutObjectLockConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">REST API Reference for PutObjectLockConfiguration Operation</seealso>
         PutObjectLockConfigurationResponse PutObjectLockConfiguration(PutObjectLockConfigurationRequest request);
 
         /// <summary>
@@ -10475,6 +10744,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutObjectLockConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">REST API Reference for PutObjectLockConfiguration Operation</seealso>
         IAsyncResult BeginPutObjectLockConfiguration(PutObjectLockConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -10486,6 +10756,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObjectLockConfiguration.</param>
         /// 
         /// <returns>Returns a  PutObjectLockConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">REST API Reference for PutObjectLockConfiguration Operation</seealso>
         PutObjectLockConfigurationResponse EndPutObjectLockConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -10508,6 +10779,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutObjectRetention service method.</param>
         /// 
         /// <returns>The response from the PutObjectRetention service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">REST API Reference for PutObjectRetention Operation</seealso>
         PutObjectRetentionResponse PutObjectRetention(PutObjectRetentionRequest request);
 
         /// <summary>
@@ -10521,6 +10793,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutObjectRetention
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">REST API Reference for PutObjectRetention Operation</seealso>
         IAsyncResult BeginPutObjectRetention(PutObjectRetentionRequest request, AsyncCallback callback, object state);
 
 
@@ -10532,6 +10805,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObjectRetention.</param>
         /// 
         /// <returns>Returns a  PutObjectRetentionResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">REST API Reference for PutObjectRetention Operation</seealso>
         PutObjectRetentionResponse EndPutObjectRetention(IAsyncResult asyncResult);
 
         #endregion
@@ -10622,6 +10896,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutObjectTagging service method.</param>
         /// 
         /// <returns>The response from the PutObjectTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectTagging">REST API Reference for PutObjectTagging Operation</seealso>
         PutObjectTaggingResponse PutObjectTagging(PutObjectTaggingRequest request);
 
         /// <summary>
@@ -10635,6 +10910,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutObjectTagging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectTagging">REST API Reference for PutObjectTagging Operation</seealso>
         IAsyncResult BeginPutObjectTagging(PutObjectTaggingRequest request, AsyncCallback callback, object state);
 
 
@@ -10646,6 +10922,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObjectTagging.</param>
         /// 
         /// <returns>Returns a  PutObjectTaggingResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectTagging">REST API Reference for PutObjectTagging Operation</seealso>
         PutObjectTaggingResponse EndPutObjectTagging(IAsyncResult asyncResult);
 
         #endregion
@@ -10698,6 +10975,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
         /// 
         /// <returns>The response from the PutPublicAccessBlock service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         PutPublicAccessBlockResponse PutPublicAccessBlock(PutPublicAccessBlockRequest request);
 
         /// <summary>
@@ -10711,6 +10989,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutPublicAccessBlock
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         IAsyncResult BeginPutPublicAccessBlock(PutPublicAccessBlockRequest request, AsyncCallback callback, object state);
 
 
@@ -10722,6 +11001,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutPublicAccessBlock.</param>
         /// 
         /// <returns>Returns a  PutPublicAccessBlockResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         PutPublicAccessBlockResponse EndPutPublicAccessBlock(IAsyncResult asyncResult);
 
         #endregion
@@ -11057,6 +11337,7 @@ namespace Amazon.S3
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         RestoreObjectResponse RestoreObject(string bucketName, string key);
 
         /// <summary>
@@ -11388,6 +11669,7 @@ namespace Amazon.S3
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         RestoreObjectResponse RestoreObject(string bucketName, string key, int days);
 
         /// <summary>
@@ -11719,6 +12001,7 @@ namespace Amazon.S3
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         RestoreObjectResponse RestoreObject(string bucketName, string key, string versionId);
 
         /// <summary>
@@ -12051,6 +12334,7 @@ namespace Amazon.S3
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         RestoreObjectResponse RestoreObject(string bucketName, string key, string versionId, int days);
 
         /// <summary>
@@ -12380,6 +12664,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the RestoreObject service method.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         RestoreObjectResponse RestoreObject(RestoreObjectRequest request);
 
         /// <summary>
@@ -12393,6 +12678,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreObject
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         IAsyncResult BeginRestoreObject(RestoreObjectRequest request, AsyncCallback callback, object state);
 
 
@@ -12404,6 +12690,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreObject.</param>
         /// 
         /// <returns>Returns a  RestoreObjectResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         RestoreObjectResponse EndRestoreObject(IAsyncResult asyncResult);
 
         #endregion
@@ -12548,6 +12835,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the SelectObjectContent service method.</param>
         /// 
         /// <returns>The response from the SelectObjectContent service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContent">REST API Reference for SelectObjectContent Operation</seealso>
         SelectObjectContentResponse SelectObjectContent(SelectObjectContentRequest request);
 
         /// <summary>
@@ -12561,6 +12849,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSelectObjectContent
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContent">REST API Reference for SelectObjectContent Operation</seealso>
         IAsyncResult BeginSelectObjectContent(SelectObjectContentRequest request, AsyncCallback callback, object state);
 
 
@@ -12572,6 +12861,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSelectObjectContent.</param>
         /// 
         /// <returns>Returns a  SelectObjectContentResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContent">REST API Reference for SelectObjectContent Operation</seealso>
         SelectObjectContentResponse EndSelectObjectContent(IAsyncResult asyncResult);
 
         #endregion
@@ -12712,6 +13002,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the UploadPart service method.</param>
         /// 
         /// <returns>The response from the UploadPart service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPart">REST API Reference for UploadPart Operation</seealso>
         UploadPartResponse UploadPart(UploadPartRequest request);
 
         /// <summary>
@@ -12725,6 +13016,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadPart
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPart">REST API Reference for UploadPart Operation</seealso>
         IAsyncResult BeginUploadPart(UploadPartRequest request, AsyncCallback callback, object state);
 
 
@@ -12736,6 +13028,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadPart.</param>
         /// 
         /// <returns>Returns a  UploadPartResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPart">REST API Reference for UploadPart Operation</seealso>
         UploadPartResponse EndUploadPart(IAsyncResult asyncResult);
 
         #endregion

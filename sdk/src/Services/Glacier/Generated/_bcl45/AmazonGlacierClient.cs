@@ -337,6 +337,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         public virtual AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
         {
             var options = new InvokeOptions();
@@ -396,6 +397,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         public virtual Task<AbortMultipartUploadResponse> AbortMultipartUploadAsync(AbortMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -449,6 +451,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortVaultLock">REST API Reference for AbortVaultLock Operation</seealso>
         public virtual AbortVaultLockResponse AbortVaultLock(AbortVaultLockRequest request)
         {
             var options = new InvokeOptions();
@@ -501,6 +504,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortVaultLock">REST API Reference for AbortVaultLock Operation</seealso>
         public virtual Task<AbortVaultLockResponse> AbortVaultLockAsync(AbortVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -542,6 +546,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AddTagsToVault">REST API Reference for AddTagsToVault Operation</seealso>
         public virtual AddTagsToVaultResponse AddTagsToVault(AddTagsToVaultRequest request)
         {
             var options = new InvokeOptions();
@@ -582,6 +587,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AddTagsToVault">REST API Reference for AddTagsToVault Operation</seealso>
         public virtual Task<AddTagsToVaultResponse> AddTagsToVaultAsync(AddTagsToVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -664,6 +670,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteMultipartUpload">REST API Reference for CompleteMultipartUpload Operation</seealso>
         public virtual CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
         {
             var options = new InvokeOptions();
@@ -745,6 +752,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteMultipartUpload">REST API Reference for CompleteMultipartUpload Operation</seealso>
         public virtual Task<CompleteMultipartUploadResponse> CompleteMultipartUploadAsync(CompleteMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -798,6 +806,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteVaultLock">REST API Reference for CompleteVaultLock Operation</seealso>
         public virtual CompleteVaultLockResponse CompleteVaultLock(CompleteVaultLockRequest request)
         {
             var options = new InvokeOptions();
@@ -850,6 +859,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteVaultLock">REST API Reference for CompleteVaultLock Operation</seealso>
         public virtual Task<CompleteVaultLockResponse> CompleteVaultLockAsync(CompleteVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -915,6 +925,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CreateVault">REST API Reference for CreateVault Operation</seealso>
         public virtual CreateVaultResponse CreateVault(CreateVaultRequest request)
         {
             var options = new InvokeOptions();
@@ -979,6 +990,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CreateVault">REST API Reference for CreateVault Operation</seealso>
         public virtual Task<CreateVaultResponse> CreateVaultAsync(CreateVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1046,6 +1058,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteArchive">REST API Reference for DeleteArchive Operation</seealso>
         public virtual DeleteArchiveResponse DeleteArchive(DeleteArchiveRequest request)
         {
             var options = new InvokeOptions();
@@ -1112,6 +1125,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteArchive">REST API Reference for DeleteArchive Operation</seealso>
         public virtual Task<DeleteArchiveResponse> DeleteArchiveAsync(DeleteArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1172,6 +1186,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVault">REST API Reference for DeleteVault Operation</seealso>
         public virtual DeleteVaultResponse DeleteVault(DeleteVaultRequest request)
         {
             var options = new InvokeOptions();
@@ -1231,6 +1246,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVault">REST API Reference for DeleteVault Operation</seealso>
         public virtual Task<DeleteVaultResponse> DeleteVaultAsync(DeleteVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1275,6 +1291,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultAccessPolicy">REST API Reference for DeleteVaultAccessPolicy Operation</seealso>
         public virtual DeleteVaultAccessPolicyResponse DeleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request)
         {
             var options = new InvokeOptions();
@@ -1318,6 +1335,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultAccessPolicy">REST API Reference for DeleteVaultAccessPolicy Operation</seealso>
         public virtual Task<DeleteVaultAccessPolicyResponse> DeleteVaultAccessPolicyAsync(DeleteVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1369,6 +1387,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultNotifications">REST API Reference for DeleteVaultNotifications Operation</seealso>
         public virtual DeleteVaultNotificationsResponse DeleteVaultNotifications(DeleteVaultNotificationsRequest request)
         {
             var options = new InvokeOptions();
@@ -1419,6 +1438,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultNotifications">REST API Reference for DeleteVaultNotifications Operation</seealso>
         public virtual Task<DeleteVaultNotificationsResponse> DeleteVaultNotificationsAsync(DeleteVaultNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1480,6 +1500,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         public virtual DescribeJobResponse DescribeJob(DescribeJobRequest request)
         {
             var options = new InvokeOptions();
@@ -1540,6 +1561,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         public virtual Task<DescribeJobResponse> DescribeJobAsync(DescribeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1596,6 +1618,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeVault">REST API Reference for DescribeVault Operation</seealso>
         public virtual DescribeVaultResponse DescribeVault(DescribeVaultRequest request)
         {
             var options = new InvokeOptions();
@@ -1651,6 +1674,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeVault">REST API Reference for DescribeVault Operation</seealso>
         public virtual Task<DescribeVaultResponse> DescribeVaultAsync(DescribeVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1683,6 +1707,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetDataRetrievalPolicy">REST API Reference for GetDataRetrievalPolicy Operation</seealso>
         public virtual GetDataRetrievalPolicyResponse GetDataRetrievalPolicy(GetDataRetrievalPolicyRequest request)
         {
             var options = new InvokeOptions();
@@ -1714,6 +1739,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetDataRetrievalPolicy">REST API Reference for GetDataRetrievalPolicy Operation</seealso>
         public virtual Task<GetDataRetrievalPolicyResponse> GetDataRetrievalPolicyAsync(GetDataRetrievalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1803,6 +1829,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetJobOutput">REST API Reference for GetJobOutput Operation</seealso>
         public virtual GetJobOutputResponse GetJobOutput(GetJobOutputRequest request)
         {
             var options = new InvokeOptions();
@@ -1891,6 +1918,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetJobOutput">REST API Reference for GetJobOutput Operation</seealso>
         public virtual Task<GetJobOutputResponse> GetJobOutputAsync(GetJobOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1929,6 +1957,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultAccessPolicy">REST API Reference for GetVaultAccessPolicy Operation</seealso>
         public virtual GetVaultAccessPolicyResponse GetVaultAccessPolicy(GetVaultAccessPolicyRequest request)
         {
             var options = new InvokeOptions();
@@ -1966,6 +1995,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultAccessPolicy">REST API Reference for GetVaultAccessPolicy Operation</seealso>
         public virtual Task<GetVaultAccessPolicyResponse> GetVaultAccessPolicyAsync(GetVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2031,6 +2061,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultLock">REST API Reference for GetVaultLock Operation</seealso>
         public virtual GetVaultLockResponse GetVaultLock(GetVaultLockRequest request)
         {
             var options = new InvokeOptions();
@@ -2095,6 +2126,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultLock">REST API Reference for GetVaultLock Operation</seealso>
         public virtual Task<GetVaultLockResponse> GetVaultLockAsync(GetVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2152,6 +2184,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultNotifications">REST API Reference for GetVaultNotifications Operation</seealso>
         public virtual GetVaultNotificationsResponse GetVaultNotifications(GetVaultNotificationsRequest request)
         {
             var options = new InvokeOptions();
@@ -2208,6 +2241,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultNotifications">REST API Reference for GetVaultNotifications Operation</seealso>
         public virtual Task<GetVaultNotificationsResponse> GetVaultNotificationsAsync(GetVaultNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2252,6 +2286,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateJob">REST API Reference for InitiateJob Operation</seealso>
         public virtual InitiateJobResponse InitiateJob(InitiateJobRequest request)
         {
             var options = new InvokeOptions();
@@ -2295,6 +2330,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateJob">REST API Reference for InitiateJob Operation</seealso>
         public virtual Task<InitiateJobResponse> InitiateJobAsync(InitiateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2372,6 +2408,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         public virtual InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
         {
             var options = new InvokeOptions();
@@ -2448,6 +2485,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         public virtual Task<InitiateMultipartUploadResponse> InitiateMultipartUploadAsync(InitiateMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2528,6 +2566,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateVaultLock">REST API Reference for InitiateVaultLock Operation</seealso>
         public virtual InitiateVaultLockResponse InitiateVaultLock(InitiateVaultLockRequest request)
         {
             var options = new InvokeOptions();
@@ -2607,6 +2646,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateVaultLock">REST API Reference for InitiateVaultLock Operation</seealso>
         public virtual Task<InitiateVaultLockResponse> InitiateVaultLockAsync(InitiateVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2686,6 +2726,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
             var options = new InvokeOptions();
@@ -2764,6 +2805,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2833,6 +2875,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         public virtual ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
         {
             var options = new InvokeOptions();
@@ -2901,6 +2944,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         public virtual Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(ListMultipartUploadsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2963,6 +3007,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListParts">REST API Reference for ListParts Operation</seealso>
         public virtual ListPartsResponse ListParts(ListPartsRequest request)
         {
             var options = new InvokeOptions();
@@ -3024,6 +3069,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListParts">REST API Reference for ListParts Operation</seealso>
         public virtual Task<ListPartsResponse> ListPartsAsync(ListPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3053,6 +3099,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListProvisionedCapacity">REST API Reference for ListProvisionedCapacity Operation</seealso>
         public virtual ListProvisionedCapacityResponse ListProvisionedCapacity(ListProvisionedCapacityRequest request)
         {
             var options = new InvokeOptions();
@@ -3081,6 +3128,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListProvisionedCapacity">REST API Reference for ListProvisionedCapacity Operation</seealso>
         public virtual Task<ListProvisionedCapacityResponse> ListProvisionedCapacityAsync(ListProvisionedCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3116,6 +3164,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListTagsForVault">REST API Reference for ListTagsForVault Operation</seealso>
         public virtual ListTagsForVaultResponse ListTagsForVault(ListTagsForVaultRequest request)
         {
             var options = new InvokeOptions();
@@ -3150,6 +3199,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListTagsForVault">REST API Reference for ListTagsForVault Operation</seealso>
         public virtual Task<ListTagsForVaultResponse> ListTagsForVaultAsync(ListTagsForVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3208,6 +3258,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListVaults">REST API Reference for ListVaults Operation</seealso>
         public virtual ListVaultsResponse ListVaults()
         {
             return ListVaults(new ListVaultsRequest());
@@ -3259,6 +3310,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListVaults">REST API Reference for ListVaults Operation</seealso>
         public virtual ListVaultsResponse ListVaults(ListVaultsRequest request)
         {
             var options = new InvokeOptions();
@@ -3316,6 +3368,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListVaults">REST API Reference for ListVaults Operation</seealso>
         public virtual Task<ListVaultsResponse> ListVaultsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListVaultsAsync(new ListVaultsRequest(), cancellationToken);
@@ -3369,6 +3422,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListVaults">REST API Reference for ListVaults Operation</seealso>
         public virtual Task<ListVaultsResponse> ListVaultsAsync(ListVaultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3401,6 +3455,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/PurchaseProvisionedCapacity">REST API Reference for PurchaseProvisionedCapacity Operation</seealso>
         public virtual PurchaseProvisionedCapacityResponse PurchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request)
         {
             var options = new InvokeOptions();
@@ -3432,6 +3487,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/PurchaseProvisionedCapacity">REST API Reference for PurchaseProvisionedCapacity Operation</seealso>
         public virtual Task<PurchaseProvisionedCapacityResponse> PurchaseProvisionedCapacityAsync(PurchaseProvisionedCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3468,6 +3524,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/RemoveTagsFromVault">REST API Reference for RemoveTagsFromVault Operation</seealso>
         public virtual RemoveTagsFromVaultResponse RemoveTagsFromVault(RemoveTagsFromVaultRequest request)
         {
             var options = new InvokeOptions();
@@ -3503,6 +3560,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/RemoveTagsFromVault">REST API Reference for RemoveTagsFromVault Operation</seealso>
         public virtual Task<RemoveTagsFromVaultResponse> RemoveTagsFromVaultAsync(RemoveTagsFromVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3542,6 +3600,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetDataRetrievalPolicy">REST API Reference for SetDataRetrievalPolicy Operation</seealso>
         public virtual SetDataRetrievalPolicyResponse SetDataRetrievalPolicy(SetDataRetrievalPolicyRequest request)
         {
             var options = new InvokeOptions();
@@ -3580,6 +3639,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetDataRetrievalPolicy">REST API Reference for SetDataRetrievalPolicy Operation</seealso>
         public virtual Task<SetDataRetrievalPolicyResponse> SetDataRetrievalPolicyAsync(SetDataRetrievalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3618,6 +3678,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultAccessPolicy">REST API Reference for SetVaultAccessPolicy Operation</seealso>
         public virtual SetVaultAccessPolicyResponse SetVaultAccessPolicy(SetVaultAccessPolicyRequest request)
         {
             var options = new InvokeOptions();
@@ -3655,6 +3716,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultAccessPolicy">REST API Reference for SetVaultAccessPolicy Operation</seealso>
         public virtual Task<SetVaultAccessPolicyResponse> SetVaultAccessPolicyAsync(SetVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3732,6 +3794,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultNotifications">REST API Reference for SetVaultNotifications Operation</seealso>
         public virtual SetVaultNotificationsResponse SetVaultNotifications(SetVaultNotificationsRequest request)
         {
             var options = new InvokeOptions();
@@ -3808,6 +3871,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultNotifications">REST API Reference for SetVaultNotifications Operation</seealso>
         public virtual Task<SetVaultNotificationsResponse> SetVaultNotificationsAsync(SetVaultNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3892,6 +3956,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadArchive">REST API Reference for UploadArchive Operation</seealso>
         public virtual UploadArchiveResponse UploadArchive(UploadArchiveRequest request)
         {
             var options = new InvokeOptions();
@@ -3975,6 +4040,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadArchive">REST API Reference for UploadArchive Operation</seealso>
         public virtual Task<UploadArchiveResponse> UploadArchiveAsync(UploadArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4070,6 +4136,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadMultipartPart">REST API Reference for UploadMultipartPart Operation</seealso>
         public virtual UploadMultipartPartResponse UploadMultipartPart(UploadMultipartPartRequest request)
         {
             var options = new InvokeOptions();
@@ -4164,6 +4231,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadMultipartPart">REST API Reference for UploadMultipartPart Operation</seealso>
         public virtual Task<UploadMultipartPartResponse> UploadMultipartPartAsync(UploadMultipartPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();

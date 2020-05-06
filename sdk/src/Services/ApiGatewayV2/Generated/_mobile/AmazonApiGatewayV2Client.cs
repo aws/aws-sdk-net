@@ -281,6 +281,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateApi">REST API Reference for CreateApi Operation</seealso>
         public virtual Task<CreateApiResponse> CreateApiAsync(CreateApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -330,6 +331,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateApiMapping">REST API Reference for CreateApiMapping Operation</seealso>
         public virtual Task<CreateApiMappingResponse> CreateApiMappingAsync(CreateApiMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -379,6 +381,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateAuthorizer">REST API Reference for CreateAuthorizer Operation</seealso>
         public virtual Task<CreateAuthorizerResponse> CreateAuthorizerAsync(CreateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -428,6 +431,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -480,6 +484,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateDomainName">REST API Reference for CreateDomainName Operation</seealso>
         public virtual Task<CreateDomainNameResponse> CreateDomainNameAsync(CreateDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -529,6 +534,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateIntegration">REST API Reference for CreateIntegration Operation</seealso>
         public virtual Task<CreateIntegrationResponse> CreateIntegrationAsync(CreateIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -578,6 +584,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateIntegrationResponse">REST API Reference for CreateIntegrationResponse Operation</seealso>
         public virtual Task<CreateIntegrationResponseResponse> CreateIntegrationResponseAsync(CreateIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -627,6 +634,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateModel">REST API Reference for CreateModel Operation</seealso>
         public virtual Task<CreateModelResponse> CreateModelAsync(CreateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -676,6 +684,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public virtual Task<CreateRouteResponse> CreateRouteAsync(CreateRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -725,6 +734,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRouteResponse">REST API Reference for CreateRouteResponse Operation</seealso>
         public virtual Task<CreateRouteResponseResponse> CreateRouteResponseAsync(CreateRouteResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -774,6 +784,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateStage">REST API Reference for CreateStage Operation</seealso>
         public virtual Task<CreateStageResponse> CreateStageAsync(CreateStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -814,6 +825,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateVpcLink">REST API Reference for CreateVpcLink Operation</seealso>
         public virtual Task<CreateVpcLinkResponse> CreateVpcLinkAsync(CreateVpcLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -855,6 +867,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteAccessLogSettings">REST API Reference for DeleteAccessLogSettings Operation</seealso>
         public virtual Task<DeleteAccessLogSettingsResponse> DeleteAccessLogSettingsAsync(DeleteAccessLogSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -895,6 +908,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteApi">REST API Reference for DeleteApi Operation</seealso>
         public virtual Task<DeleteApiResponse> DeleteApiAsync(DeleteApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -939,6 +953,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteApiMapping">REST API Reference for DeleteApiMapping Operation</seealso>
         public virtual Task<DeleteApiMappingResponse> DeleteApiMappingAsync(DeleteApiMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -979,6 +994,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteAuthorizer">REST API Reference for DeleteAuthorizer Operation</seealso>
         public virtual Task<DeleteAuthorizerResponse> DeleteAuthorizerAsync(DeleteAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1019,6 +1035,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteCorsConfiguration">REST API Reference for DeleteCorsConfiguration Operation</seealso>
         public virtual Task<DeleteCorsConfigurationResponse> DeleteCorsConfigurationAsync(DeleteCorsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1059,6 +1076,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
         public virtual Task<DeleteDeploymentResponse> DeleteDeploymentAsync(DeleteDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1099,6 +1117,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteDomainName">REST API Reference for DeleteDomainName Operation</seealso>
         public virtual Task<DeleteDomainNameResponse> DeleteDomainNameAsync(DeleteDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1139,6 +1158,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
         public virtual Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1179,6 +1199,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteIntegrationResponse">REST API Reference for DeleteIntegrationResponse Operation</seealso>
         public virtual Task<DeleteIntegrationResponseResponse> DeleteIntegrationResponseAsync(DeleteIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1219,6 +1240,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual Task<DeleteModelResponse> DeleteModelAsync(DeleteModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1259,6 +1281,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public virtual Task<DeleteRouteResponse> DeleteRouteAsync(DeleteRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1299,6 +1322,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRouteRequestParameter">REST API Reference for DeleteRouteRequestParameter Operation</seealso>
         public virtual Task<DeleteRouteRequestParameterResponse> DeleteRouteRequestParameterAsync(DeleteRouteRequestParameterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1339,6 +1363,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRouteResponse">REST API Reference for DeleteRouteResponse Operation</seealso>
         public virtual Task<DeleteRouteResponseResponse> DeleteRouteResponseAsync(DeleteRouteResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1379,6 +1404,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRouteSettings">REST API Reference for DeleteRouteSettings Operation</seealso>
         public virtual Task<DeleteRouteSettingsResponse> DeleteRouteSettingsAsync(DeleteRouteSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1419,6 +1445,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteStage">REST API Reference for DeleteStage Operation</seealso>
         public virtual Task<DeleteStageResponse> DeleteStageAsync(DeleteStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1459,6 +1486,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteVpcLink">REST API Reference for DeleteVpcLink Operation</seealso>
         public virtual Task<DeleteVpcLinkResponse> DeleteVpcLinkAsync(DeleteVpcLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1503,6 +1531,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ExportApi">REST API Reference for ExportApi Operation</seealso>
         public virtual Task<ExportApiResponse> ExportApiAsync(ExportApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1543,6 +1572,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApi">REST API Reference for GetApi Operation</seealso>
         public virtual Task<GetApiResponse> GetApiAsync(GetApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1587,6 +1617,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApiMapping">REST API Reference for GetApiMapping Operation</seealso>
         public virtual Task<GetApiMappingResponse> GetApiMappingAsync(GetApiMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1631,6 +1662,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApiMappings">REST API Reference for GetApiMappings Operation</seealso>
         public virtual Task<GetApiMappingsResponse> GetApiMappingsAsync(GetApiMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1675,6 +1707,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApis">REST API Reference for GetApis Operation</seealso>
         public virtual Task<GetApisResponse> GetApisAsync(GetApisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1715,6 +1748,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetAuthorizer">REST API Reference for GetAuthorizer Operation</seealso>
         public virtual Task<GetAuthorizerResponse> GetAuthorizerAsync(GetAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1759,6 +1793,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetAuthorizers">REST API Reference for GetAuthorizers Operation</seealso>
         public virtual Task<GetAuthorizersResponse> GetAuthorizersAsync(GetAuthorizersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1799,6 +1834,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public virtual Task<GetDeploymentResponse> GetDeploymentAsync(GetDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1843,6 +1879,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDeployments">REST API Reference for GetDeployments Operation</seealso>
         public virtual Task<GetDeploymentsResponse> GetDeploymentsAsync(GetDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1883,6 +1920,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDomainName">REST API Reference for GetDomainName Operation</seealso>
         public virtual Task<GetDomainNameResponse> GetDomainNameAsync(GetDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1927,6 +1965,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDomainNames">REST API Reference for GetDomainNames Operation</seealso>
         public virtual Task<GetDomainNamesResponse> GetDomainNamesAsync(GetDomainNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1967,6 +2006,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegration">REST API Reference for GetIntegration Operation</seealso>
         public virtual Task<GetIntegrationResponse> GetIntegrationAsync(GetIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2007,6 +2047,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegrationResponse">REST API Reference for GetIntegrationResponse Operation</seealso>
         public virtual Task<GetIntegrationResponseResponse> GetIntegrationResponseAsync(GetIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2051,6 +2092,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegrationResponses">REST API Reference for GetIntegrationResponses Operation</seealso>
         public virtual Task<GetIntegrationResponsesResponse> GetIntegrationResponsesAsync(GetIntegrationResponsesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2095,6 +2137,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegrations">REST API Reference for GetIntegrations Operation</seealso>
         public virtual Task<GetIntegrationsResponse> GetIntegrationsAsync(GetIntegrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2135,6 +2178,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetModel">REST API Reference for GetModel Operation</seealso>
         public virtual Task<GetModelResponse> GetModelAsync(GetModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2179,6 +2223,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetModels">REST API Reference for GetModels Operation</seealso>
         public virtual Task<GetModelsResponse> GetModelsAsync(GetModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2219,6 +2264,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetModelTemplate">REST API Reference for GetModelTemplate Operation</seealso>
         public virtual Task<GetModelTemplateResponse> GetModelTemplateAsync(GetModelTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2259,6 +2305,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRoute">REST API Reference for GetRoute Operation</seealso>
         public virtual Task<GetRouteResponse> GetRouteAsync(GetRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2299,6 +2346,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRouteResponse">REST API Reference for GetRouteResponse Operation</seealso>
         public virtual Task<GetRouteResponseResponse> GetRouteResponseAsync(GetRouteResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2343,6 +2391,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRouteResponses">REST API Reference for GetRouteResponses Operation</seealso>
         public virtual Task<GetRouteResponsesResponse> GetRouteResponsesAsync(GetRouteResponsesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2387,6 +2436,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRoutes">REST API Reference for GetRoutes Operation</seealso>
         public virtual Task<GetRoutesResponse> GetRoutesAsync(GetRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2427,6 +2477,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetStage">REST API Reference for GetStage Operation</seealso>
         public virtual Task<GetStageResponse> GetStageAsync(GetStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2471,6 +2522,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetStages">REST API Reference for GetStages Operation</seealso>
         public virtual Task<GetStagesResponse> GetStagesAsync(GetStagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2520,6 +2572,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual Task<GetTagsResponse> GetTagsAsync(GetTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2560,6 +2613,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetVpcLink">REST API Reference for GetVpcLink Operation</seealso>
         public virtual Task<GetVpcLinkResponse> GetVpcLinkAsync(GetVpcLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2600,6 +2654,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetVpcLinks">REST API Reference for GetVpcLinks Operation</seealso>
         public virtual Task<GetVpcLinksResponse> GetVpcLinksAsync(GetVpcLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2649,6 +2704,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ImportApi">REST API Reference for ImportApi Operation</seealso>
         public virtual Task<ImportApiResponse> ImportApiAsync(ImportApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2698,6 +2754,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ReimportApi">REST API Reference for ReimportApi Operation</seealso>
         public virtual Task<ReimportApiResponse> ReimportApiAsync(ReimportApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2747,6 +2804,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2796,6 +2854,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2845,6 +2904,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateApi">REST API Reference for UpdateApi Operation</seealso>
         public virtual Task<UpdateApiResponse> UpdateApiAsync(UpdateApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2894,6 +2954,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateApiMapping">REST API Reference for UpdateApiMapping Operation</seealso>
         public virtual Task<UpdateApiMappingResponse> UpdateApiMappingAsync(UpdateApiMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2943,6 +3004,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateAuthorizer">REST API Reference for UpdateAuthorizer Operation</seealso>
         public virtual Task<UpdateAuthorizerResponse> UpdateAuthorizerAsync(UpdateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2992,6 +3054,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateDeployment">REST API Reference for UpdateDeployment Operation</seealso>
         public virtual Task<UpdateDeploymentResponse> UpdateDeploymentAsync(UpdateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3041,6 +3104,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateDomainName">REST API Reference for UpdateDomainName Operation</seealso>
         public virtual Task<UpdateDomainNameResponse> UpdateDomainNameAsync(UpdateDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3090,6 +3154,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateIntegration">REST API Reference for UpdateIntegration Operation</seealso>
         public virtual Task<UpdateIntegrationResponse> UpdateIntegrationAsync(UpdateIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3139,6 +3204,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateIntegrationResponse">REST API Reference for UpdateIntegrationResponse Operation</seealso>
         public virtual Task<UpdateIntegrationResponseResponse> UpdateIntegrationResponseAsync(UpdateIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3188,6 +3254,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
         public virtual Task<UpdateModelResponse> UpdateModelAsync(UpdateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3237,6 +3304,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateRoute">REST API Reference for UpdateRoute Operation</seealso>
         public virtual Task<UpdateRouteResponse> UpdateRouteAsync(UpdateRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3286,6 +3354,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateRouteResponse">REST API Reference for UpdateRouteResponse Operation</seealso>
         public virtual Task<UpdateRouteResponseResponse> UpdateRouteResponseAsync(UpdateRouteResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3335,6 +3404,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateStage">REST API Reference for UpdateStage Operation</seealso>
         public virtual Task<UpdateStageResponse> UpdateStageAsync(UpdateStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3379,6 +3449,7 @@ namespace Amazon.ApiGatewayV2
         /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
         /// A limit has been exceeded. See the accompanying error message for details.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateVpcLink">REST API Reference for UpdateVpcLink Operation</seealso>
         public virtual Task<UpdateVpcLinkResponse> UpdateVpcLinkAsync(UpdateVpcLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();

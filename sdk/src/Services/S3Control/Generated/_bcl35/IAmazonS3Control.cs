@@ -44,6 +44,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessPoint service method.</param>
         /// 
         /// <returns>The response from the CreateAccessPoint service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPoint">REST API Reference for CreateAccessPoint Operation</seealso>
         CreateAccessPointResponse CreateAccessPoint(CreateAccessPointRequest request);
 
         /// <summary>
@@ -57,6 +58,7 @@ namespace Amazon.S3Control
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAccessPoint
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPoint">REST API Reference for CreateAccessPoint Operation</seealso>
         IAsyncResult BeginCreateAccessPoint(CreateAccessPointRequest request, AsyncCallback callback, object state);
 
 
@@ -68,6 +70,7 @@ namespace Amazon.S3Control
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAccessPoint.</param>
         /// 
         /// <returns>Returns a  CreateAccessPointResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPoint">REST API Reference for CreateAccessPoint Operation</seealso>
         CreateAccessPointResponse EndCreateAccessPoint(IAsyncResult asyncResult);
 
         #endregion
@@ -118,6 +121,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateJob">REST API Reference for CreateJob Operation</seealso>
         CreateJobResponse CreateJob(CreateJobRequest request);
 
         /// <summary>
@@ -131,6 +135,7 @@ namespace Amazon.S3Control
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateJob">REST API Reference for CreateJob Operation</seealso>
         IAsyncResult BeginCreateJob(CreateJobRequest request, AsyncCallback callback, object state);
 
 
@@ -142,6 +147,7 @@ namespace Amazon.S3Control
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateJob.</param>
         /// 
         /// <returns>Returns a  CreateJobResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateJob">REST API Reference for CreateJob Operation</seealso>
         CreateJobResponse EndCreateJob(IAsyncResult asyncResult);
 
         #endregion
@@ -155,6 +161,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPoint service method.</param>
         /// 
         /// <returns>The response from the DeleteAccessPoint service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPoint">REST API Reference for DeleteAccessPoint Operation</seealso>
         DeleteAccessPointResponse DeleteAccessPoint(DeleteAccessPointRequest request);
 
         /// <summary>
@@ -168,6 +175,7 @@ namespace Amazon.S3Control
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccessPoint
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPoint">REST API Reference for DeleteAccessPoint Operation</seealso>
         IAsyncResult BeginDeleteAccessPoint(DeleteAccessPointRequest request, AsyncCallback callback, object state);
 
 
@@ -179,6 +187,7 @@ namespace Amazon.S3Control
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccessPoint.</param>
         /// 
         /// <returns>Returns a  DeleteAccessPointResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPoint">REST API Reference for DeleteAccessPoint Operation</seealso>
         DeleteAccessPointResponse EndDeleteAccessPoint(IAsyncResult asyncResult);
 
         #endregion
@@ -192,6 +201,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointPolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteAccessPointPolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicy">REST API Reference for DeleteAccessPointPolicy Operation</seealso>
         DeleteAccessPointPolicyResponse DeleteAccessPointPolicy(DeleteAccessPointPolicyRequest request);
 
         /// <summary>
@@ -205,6 +215,7 @@ namespace Amazon.S3Control
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccessPointPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicy">REST API Reference for DeleteAccessPointPolicy Operation</seealso>
         IAsyncResult BeginDeleteAccessPointPolicy(DeleteAccessPointPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -216,6 +227,7 @@ namespace Amazon.S3Control
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccessPointPolicy.</param>
         /// 
         /// <returns>Returns a  DeleteAccessPointPolicyResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicy">REST API Reference for DeleteAccessPointPolicy Operation</seealso>
         DeleteAccessPointPolicyResponse EndDeleteAccessPointPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -259,6 +271,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteJobTagging">REST API Reference for DeleteJobTagging Operation</seealso>
         DeleteJobTaggingResponse DeleteJobTagging(DeleteJobTaggingRequest request);
 
         /// <summary>
@@ -272,6 +285,7 @@ namespace Amazon.S3Control
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteJobTagging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteJobTagging">REST API Reference for DeleteJobTagging Operation</seealso>
         IAsyncResult BeginDeleteJobTagging(DeleteJobTaggingRequest request, AsyncCallback callback, object state);
 
 
@@ -283,6 +297,7 @@ namespace Amazon.S3Control
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteJobTagging.</param>
         /// 
         /// <returns>Returns a  DeleteJobTaggingResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteJobTagging">REST API Reference for DeleteJobTagging Operation</seealso>
         DeleteJobTaggingResponse EndDeleteJobTagging(IAsyncResult asyncResult);
 
         #endregion
@@ -297,6 +312,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
         /// 
         /// <returns>The response from the DeletePublicAccessBlock service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         DeletePublicAccessBlockResponse DeletePublicAccessBlock(DeletePublicAccessBlockRequest request);
 
         /// <summary>
@@ -310,6 +326,7 @@ namespace Amazon.S3Control
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePublicAccessBlock
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         IAsyncResult BeginDeletePublicAccessBlock(DeletePublicAccessBlockRequest request, AsyncCallback callback, object state);
 
 
@@ -321,6 +338,7 @@ namespace Amazon.S3Control
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePublicAccessBlock.</param>
         /// 
         /// <returns>Returns a  DeletePublicAccessBlockResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         DeletePublicAccessBlockResponse EndDeletePublicAccessBlock(IAsyncResult asyncResult);
 
         #endregion
@@ -370,6 +388,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         DescribeJobResponse DescribeJob(DescribeJobRequest request);
 
         /// <summary>
@@ -383,6 +402,7 @@ namespace Amazon.S3Control
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         IAsyncResult BeginDescribeJob(DescribeJobRequest request, AsyncCallback callback, object state);
 
 
@@ -394,6 +414,7 @@ namespace Amazon.S3Control
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeJob.</param>
         /// 
         /// <returns>Returns a  DescribeJobResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         DescribeJobResponse EndDescribeJob(IAsyncResult asyncResult);
 
         #endregion
@@ -407,6 +428,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPoint service method.</param>
         /// 
         /// <returns>The response from the GetAccessPoint service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPoint">REST API Reference for GetAccessPoint Operation</seealso>
         GetAccessPointResponse GetAccessPoint(GetAccessPointRequest request);
 
         /// <summary>
@@ -420,6 +442,7 @@ namespace Amazon.S3Control
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessPoint
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPoint">REST API Reference for GetAccessPoint Operation</seealso>
         IAsyncResult BeginGetAccessPoint(GetAccessPointRequest request, AsyncCallback callback, object state);
 
 
@@ -431,6 +454,7 @@ namespace Amazon.S3Control
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessPoint.</param>
         /// 
         /// <returns>Returns a  GetAccessPointResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPoint">REST API Reference for GetAccessPoint Operation</seealso>
         GetAccessPointResponse EndGetAccessPoint(IAsyncResult asyncResult);
 
         #endregion
@@ -444,6 +468,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicy service method.</param>
         /// 
         /// <returns>The response from the GetAccessPointPolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicy">REST API Reference for GetAccessPointPolicy Operation</seealso>
         GetAccessPointPolicyResponse GetAccessPointPolicy(GetAccessPointPolicyRequest request);
 
         /// <summary>
@@ -457,6 +482,7 @@ namespace Amazon.S3Control
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessPointPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicy">REST API Reference for GetAccessPointPolicy Operation</seealso>
         IAsyncResult BeginGetAccessPointPolicy(GetAccessPointPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -468,6 +494,7 @@ namespace Amazon.S3Control
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessPointPolicy.</param>
         /// 
         /// <returns>Returns a  GetAccessPointPolicyResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicy">REST API Reference for GetAccessPointPolicy Operation</seealso>
         GetAccessPointPolicyResponse EndGetAccessPointPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -484,6 +511,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicyStatus service method.</param>
         /// 
         /// <returns>The response from the GetAccessPointPolicyStatus service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatus">REST API Reference for GetAccessPointPolicyStatus Operation</seealso>
         GetAccessPointPolicyStatusResponse GetAccessPointPolicyStatus(GetAccessPointPolicyStatusRequest request);
 
         /// <summary>
@@ -497,6 +525,7 @@ namespace Amazon.S3Control
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessPointPolicyStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatus">REST API Reference for GetAccessPointPolicyStatus Operation</seealso>
         IAsyncResult BeginGetAccessPointPolicyStatus(GetAccessPointPolicyStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -508,6 +537,7 @@ namespace Amazon.S3Control
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessPointPolicyStatus.</param>
         /// 
         /// <returns>Returns a  GetAccessPointPolicyStatusResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatus">REST API Reference for GetAccessPointPolicyStatus Operation</seealso>
         GetAccessPointPolicyStatusResponse EndGetAccessPointPolicyStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -551,6 +581,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetJobTagging">REST API Reference for GetJobTagging Operation</seealso>
         GetJobTaggingResponse GetJobTagging(GetJobTaggingRequest request);
 
         /// <summary>
@@ -564,6 +595,7 @@ namespace Amazon.S3Control
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJobTagging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetJobTagging">REST API Reference for GetJobTagging Operation</seealso>
         IAsyncResult BeginGetJobTagging(GetJobTaggingRequest request, AsyncCallback callback, object state);
 
 
@@ -575,6 +607,7 @@ namespace Amazon.S3Control
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJobTagging.</param>
         /// 
         /// <returns>Returns a  GetJobTaggingResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetJobTagging">REST API Reference for GetJobTagging Operation</seealso>
         GetJobTaggingResponse EndGetJobTagging(IAsyncResult asyncResult);
 
         #endregion
@@ -594,6 +627,7 @@ namespace Amazon.S3Control
         /// against an account that doesn't have a <code>PublicAccessBlockConfiguration</code>
         /// set.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         GetPublicAccessBlockResponse GetPublicAccessBlock(GetPublicAccessBlockRequest request);
 
         /// <summary>
@@ -607,6 +641,7 @@ namespace Amazon.S3Control
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPublicAccessBlock
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         IAsyncResult BeginGetPublicAccessBlock(GetPublicAccessBlockRequest request, AsyncCallback callback, object state);
 
 
@@ -618,6 +653,7 @@ namespace Amazon.S3Control
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPublicAccessBlock.</param>
         /// 
         /// <returns>Returns a  GetPublicAccessBlockResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         GetPublicAccessBlockResponse EndGetPublicAccessBlock(IAsyncResult asyncResult);
 
         #endregion
@@ -635,6 +671,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the ListAccessPoints service method.</param>
         /// 
         /// <returns>The response from the ListAccessPoints service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPoints">REST API Reference for ListAccessPoints Operation</seealso>
         ListAccessPointsResponse ListAccessPoints(ListAccessPointsRequest request);
 
         /// <summary>
@@ -648,6 +685,7 @@ namespace Amazon.S3Control
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAccessPoints
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPoints">REST API Reference for ListAccessPoints Operation</seealso>
         IAsyncResult BeginListAccessPoints(ListAccessPointsRequest request, AsyncCallback callback, object state);
 
 
@@ -659,6 +697,7 @@ namespace Amazon.S3Control
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccessPoints.</param>
         /// 
         /// <returns>Returns a  ListAccessPointsResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPoints">REST API Reference for ListAccessPoints Operation</seealso>
         ListAccessPointsResponse EndListAccessPoints(IAsyncResult asyncResult);
 
         #endregion
@@ -706,6 +745,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.InvalidRequestException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListJobs">REST API Reference for ListJobs Operation</seealso>
         ListJobsResponse ListJobs(ListJobsRequest request);
 
         /// <summary>
@@ -719,6 +759,7 @@ namespace Amazon.S3Control
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJobs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListJobs">REST API Reference for ListJobs Operation</seealso>
         IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state);
 
 
@@ -730,6 +771,7 @@ namespace Amazon.S3Control
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJobs.</param>
         /// 
         /// <returns>Returns a  ListJobsResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListJobs">REST API Reference for ListJobs Operation</seealso>
         ListJobsResponse EndListJobs(IAsyncResult asyncResult);
 
         #endregion
@@ -745,6 +787,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the PutAccessPointPolicy service method.</param>
         /// 
         /// <returns>The response from the PutAccessPointPolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicy">REST API Reference for PutAccessPointPolicy Operation</seealso>
         PutAccessPointPolicyResponse PutAccessPointPolicy(PutAccessPointPolicyRequest request);
 
         /// <summary>
@@ -758,6 +801,7 @@ namespace Amazon.S3Control
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAccessPointPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicy">REST API Reference for PutAccessPointPolicy Operation</seealso>
         IAsyncResult BeginPutAccessPointPolicy(PutAccessPointPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -769,6 +813,7 @@ namespace Amazon.S3Control
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAccessPointPolicy.</param>
         /// 
         /// <returns>Returns a  PutAccessPointPolicyResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicy">REST API Reference for PutAccessPointPolicy Operation</seealso>
         PutAccessPointPolicyResponse EndPutAccessPointPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -866,6 +911,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyTagsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutJobTagging">REST API Reference for PutJobTagging Operation</seealso>
         PutJobTaggingResponse PutJobTagging(PutJobTaggingRequest request);
 
         /// <summary>
@@ -879,6 +925,7 @@ namespace Amazon.S3Control
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutJobTagging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutJobTagging">REST API Reference for PutJobTagging Operation</seealso>
         IAsyncResult BeginPutJobTagging(PutJobTaggingRequest request, AsyncCallback callback, object state);
 
 
@@ -890,6 +937,7 @@ namespace Amazon.S3Control
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutJobTagging.</param>
         /// 
         /// <returns>Returns a  PutJobTaggingResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutJobTagging">REST API Reference for PutJobTagging Operation</seealso>
         PutJobTaggingResponse EndPutJobTagging(IAsyncResult asyncResult);
 
         #endregion
@@ -904,6 +952,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
         /// 
         /// <returns>The response from the PutPublicAccessBlock service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         PutPublicAccessBlockResponse PutPublicAccessBlock(PutPublicAccessBlockRequest request);
 
         /// <summary>
@@ -917,6 +966,7 @@ namespace Amazon.S3Control
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutPublicAccessBlock
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         IAsyncResult BeginPutPublicAccessBlock(PutPublicAccessBlockRequest request, AsyncCallback callback, object state);
 
 
@@ -928,6 +978,7 @@ namespace Amazon.S3Control
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutPublicAccessBlock.</param>
         /// 
         /// <returns>Returns a  PutPublicAccessBlockResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         PutPublicAccessBlockResponse EndPutPublicAccessBlock(IAsyncResult asyncResult);
 
         #endregion
@@ -977,6 +1028,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobPriority">REST API Reference for UpdateJobPriority Operation</seealso>
         UpdateJobPriorityResponse UpdateJobPriority(UpdateJobPriorityRequest request);
 
         /// <summary>
@@ -990,6 +1042,7 @@ namespace Amazon.S3Control
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateJobPriority
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobPriority">REST API Reference for UpdateJobPriority Operation</seealso>
         IAsyncResult BeginUpdateJobPriority(UpdateJobPriorityRequest request, AsyncCallback callback, object state);
 
 
@@ -1001,6 +1054,7 @@ namespace Amazon.S3Control
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateJobPriority.</param>
         /// 
         /// <returns>Returns a  UpdateJobPriorityResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobPriority">REST API Reference for UpdateJobPriority Operation</seealso>
         UpdateJobPriorityResponse EndUpdateJobPriority(IAsyncResult asyncResult);
 
         #endregion
@@ -1053,6 +1107,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobStatus">REST API Reference for UpdateJobStatus Operation</seealso>
         UpdateJobStatusResponse UpdateJobStatus(UpdateJobStatusRequest request);
 
         /// <summary>
@@ -1066,6 +1121,7 @@ namespace Amazon.S3Control
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateJobStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobStatus">REST API Reference for UpdateJobStatus Operation</seealso>
         IAsyncResult BeginUpdateJobStatus(UpdateJobStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -1077,6 +1133,7 @@ namespace Amazon.S3Control
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateJobStatus.</param>
         /// 
         /// <returns>Returns a  UpdateJobStatusResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobStatus">REST API Reference for UpdateJobStatus Operation</seealso>
         UpdateJobStatusResponse EndUpdateJobStatus(IAsyncResult asyncResult);
 
         #endregion

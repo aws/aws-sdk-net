@@ -53,6 +53,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/BatchGetTraces">REST API Reference for BatchGetTraces Operation</seealso>
         BatchGetTracesResponse BatchGetTraces(BatchGetTracesRequest request);
 
         /// <summary>
@@ -66,6 +67,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetTraces
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/BatchGetTraces">REST API Reference for BatchGetTraces Operation</seealso>
         IAsyncResult BeginBatchGetTraces(BatchGetTracesRequest request, AsyncCallback callback, object state);
 
 
@@ -77,6 +79,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetTraces.</param>
         /// 
         /// <returns>Returns a  BatchGetTracesResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/BatchGetTraces">REST API Reference for BatchGetTraces Operation</seealso>
         BatchGetTracesResponse EndBatchGetTraces(IAsyncResult asyncResult);
 
         #endregion
@@ -96,6 +99,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         CreateGroupResponse CreateGroup(CreateGroupRequest request);
 
         /// <summary>
@@ -109,6 +113,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         IAsyncResult BeginCreateGroup(CreateGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -120,6 +125,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateGroup.</param>
         /// 
         /// <returns>Returns a  CreateGroupResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         CreateGroupResponse EndCreateGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -148,6 +154,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateSamplingRule">REST API Reference for CreateSamplingRule Operation</seealso>
         CreateSamplingRuleResponse CreateSamplingRule(CreateSamplingRuleRequest request);
 
         /// <summary>
@@ -161,6 +168,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSamplingRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateSamplingRule">REST API Reference for CreateSamplingRule Operation</seealso>
         IAsyncResult BeginCreateSamplingRule(CreateSamplingRuleRequest request, AsyncCallback callback, object state);
 
 
@@ -172,6 +180,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSamplingRule.</param>
         /// 
         /// <returns>Returns a  CreateSamplingRuleResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateSamplingRule">REST API Reference for CreateSamplingRule Operation</seealso>
         CreateSamplingRuleResponse EndCreateSamplingRule(IAsyncResult asyncResult);
 
         #endregion
@@ -191,6 +200,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         DeleteGroupResponse DeleteGroup(DeleteGroupRequest request);
 
         /// <summary>
@@ -204,6 +214,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         IAsyncResult BeginDeleteGroup(DeleteGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -215,6 +226,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGroup.</param>
         /// 
         /// <returns>Returns a  DeleteGroupResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         DeleteGroupResponse EndDeleteGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -234,6 +246,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteSamplingRule">REST API Reference for DeleteSamplingRule Operation</seealso>
         DeleteSamplingRuleResponse DeleteSamplingRule(DeleteSamplingRuleRequest request);
 
         /// <summary>
@@ -247,6 +260,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSamplingRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteSamplingRule">REST API Reference for DeleteSamplingRule Operation</seealso>
         IAsyncResult BeginDeleteSamplingRule(DeleteSamplingRuleRequest request, AsyncCallback callback, object state);
 
 
@@ -258,6 +272,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSamplingRule.</param>
         /// 
         /// <returns>Returns a  DeleteSamplingRuleResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteSamplingRule">REST API Reference for DeleteSamplingRule Operation</seealso>
         DeleteSamplingRuleResponse EndDeleteSamplingRule(IAsyncResult asyncResult);
 
         #endregion
@@ -277,6 +292,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetEncryptionConfig">REST API Reference for GetEncryptionConfig Operation</seealso>
         GetEncryptionConfigResponse GetEncryptionConfig(GetEncryptionConfigRequest request);
 
         /// <summary>
@@ -290,6 +306,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEncryptionConfig
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetEncryptionConfig">REST API Reference for GetEncryptionConfig Operation</seealso>
         IAsyncResult BeginGetEncryptionConfig(GetEncryptionConfigRequest request, AsyncCallback callback, object state);
 
 
@@ -301,6 +318,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEncryptionConfig.</param>
         /// 
         /// <returns>Returns a  GetEncryptionConfigResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetEncryptionConfig">REST API Reference for GetEncryptionConfig Operation</seealso>
         GetEncryptionConfigResponse EndGetEncryptionConfig(IAsyncResult asyncResult);
 
         #endregion
@@ -320,6 +338,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroup">REST API Reference for GetGroup Operation</seealso>
         GetGroupResponse GetGroup(GetGroupRequest request);
 
         /// <summary>
@@ -333,6 +352,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroup">REST API Reference for GetGroup Operation</seealso>
         IAsyncResult BeginGetGroup(GetGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -344,6 +364,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGroup.</param>
         /// 
         /// <returns>Returns a  GetGroupResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroup">REST API Reference for GetGroup Operation</seealso>
         GetGroupResponse EndGetGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -363,6 +384,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroups">REST API Reference for GetGroups Operation</seealso>
         GetGroupsResponse GetGroups(GetGroupsRequest request);
 
         /// <summary>
@@ -376,6 +398,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroups">REST API Reference for GetGroups Operation</seealso>
         IAsyncResult BeginGetGroups(GetGroupsRequest request, AsyncCallback callback, object state);
 
 
@@ -387,6 +410,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGroups.</param>
         /// 
         /// <returns>Returns a  GetGroupsResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroups">REST API Reference for GetGroups Operation</seealso>
         GetGroupsResponse EndGetGroups(IAsyncResult asyncResult);
 
         #endregion
@@ -406,6 +430,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingRules">REST API Reference for GetSamplingRules Operation</seealso>
         GetSamplingRulesResponse GetSamplingRules(GetSamplingRulesRequest request);
 
         /// <summary>
@@ -419,6 +444,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSamplingRules
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingRules">REST API Reference for GetSamplingRules Operation</seealso>
         IAsyncResult BeginGetSamplingRules(GetSamplingRulesRequest request, AsyncCallback callback, object state);
 
 
@@ -430,6 +456,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSamplingRules.</param>
         /// 
         /// <returns>Returns a  GetSamplingRulesResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingRules">REST API Reference for GetSamplingRules Operation</seealso>
         GetSamplingRulesResponse EndGetSamplingRules(IAsyncResult asyncResult);
 
         #endregion
@@ -449,6 +476,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingStatisticSummaries">REST API Reference for GetSamplingStatisticSummaries Operation</seealso>
         GetSamplingStatisticSummariesResponse GetSamplingStatisticSummaries(GetSamplingStatisticSummariesRequest request);
 
         /// <summary>
@@ -462,6 +490,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSamplingStatisticSummaries
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingStatisticSummaries">REST API Reference for GetSamplingStatisticSummaries Operation</seealso>
         IAsyncResult BeginGetSamplingStatisticSummaries(GetSamplingStatisticSummariesRequest request, AsyncCallback callback, object state);
 
 
@@ -473,6 +502,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSamplingStatisticSummaries.</param>
         /// 
         /// <returns>Returns a  GetSamplingStatisticSummariesResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingStatisticSummaries">REST API Reference for GetSamplingStatisticSummaries Operation</seealso>
         GetSamplingStatisticSummariesResponse EndGetSamplingStatisticSummaries(IAsyncResult asyncResult);
 
         #endregion
@@ -492,6 +522,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingTargets">REST API Reference for GetSamplingTargets Operation</seealso>
         GetSamplingTargetsResponse GetSamplingTargets(GetSamplingTargetsRequest request);
 
         /// <summary>
@@ -505,6 +536,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSamplingTargets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingTargets">REST API Reference for GetSamplingTargets Operation</seealso>
         IAsyncResult BeginGetSamplingTargets(GetSamplingTargetsRequest request, AsyncCallback callback, object state);
 
 
@@ -516,6 +548,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSamplingTargets.</param>
         /// 
         /// <returns>Returns a  GetSamplingTargetsResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingTargets">REST API Reference for GetSamplingTargets Operation</seealso>
         GetSamplingTargetsResponse EndGetSamplingTargets(IAsyncResult asyncResult);
 
         #endregion
@@ -539,6 +572,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetServiceGraph">REST API Reference for GetServiceGraph Operation</seealso>
         GetServiceGraphResponse GetServiceGraph(GetServiceGraphRequest request);
 
         /// <summary>
@@ -552,6 +586,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServiceGraph
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetServiceGraph">REST API Reference for GetServiceGraph Operation</seealso>
         IAsyncResult BeginGetServiceGraph(GetServiceGraphRequest request, AsyncCallback callback, object state);
 
 
@@ -563,6 +598,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetServiceGraph.</param>
         /// 
         /// <returns>Returns a  GetServiceGraphResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetServiceGraph">REST API Reference for GetServiceGraph Operation</seealso>
         GetServiceGraphResponse EndGetServiceGraph(IAsyncResult asyncResult);
 
         #endregion
@@ -582,6 +618,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTimeSeriesServiceStatistics">REST API Reference for GetTimeSeriesServiceStatistics Operation</seealso>
         GetTimeSeriesServiceStatisticsResponse GetTimeSeriesServiceStatistics(GetTimeSeriesServiceStatisticsRequest request);
 
         /// <summary>
@@ -595,6 +632,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTimeSeriesServiceStatistics
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTimeSeriesServiceStatistics">REST API Reference for GetTimeSeriesServiceStatistics Operation</seealso>
         IAsyncResult BeginGetTimeSeriesServiceStatistics(GetTimeSeriesServiceStatisticsRequest request, AsyncCallback callback, object state);
 
 
@@ -606,6 +644,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTimeSeriesServiceStatistics.</param>
         /// 
         /// <returns>Returns a  GetTimeSeriesServiceStatisticsResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTimeSeriesServiceStatistics">REST API Reference for GetTimeSeriesServiceStatistics Operation</seealso>
         GetTimeSeriesServiceStatisticsResponse EndGetTimeSeriesServiceStatistics(IAsyncResult asyncResult);
 
         #endregion
@@ -625,6 +664,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceGraph">REST API Reference for GetTraceGraph Operation</seealso>
         GetTraceGraphResponse GetTraceGraph(GetTraceGraphRequest request);
 
         /// <summary>
@@ -638,6 +678,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTraceGraph
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceGraph">REST API Reference for GetTraceGraph Operation</seealso>
         IAsyncResult BeginGetTraceGraph(GetTraceGraphRequest request, AsyncCallback callback, object state);
 
 
@@ -649,6 +690,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTraceGraph.</param>
         /// 
         /// <returns>Returns a  GetTraceGraphResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceGraph">REST API Reference for GetTraceGraph Operation</seealso>
         GetTraceGraphResponse EndGetTraceGraph(IAsyncResult asyncResult);
 
         #endregion
@@ -695,6 +737,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSummaries">REST API Reference for GetTraceSummaries Operation</seealso>
         GetTraceSummariesResponse GetTraceSummaries(GetTraceSummariesRequest request);
 
         /// <summary>
@@ -708,6 +751,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTraceSummaries
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSummaries">REST API Reference for GetTraceSummaries Operation</seealso>
         IAsyncResult BeginGetTraceSummaries(GetTraceSummariesRequest request, AsyncCallback callback, object state);
 
 
@@ -719,6 +763,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTraceSummaries.</param>
         /// 
         /// <returns>Returns a  GetTraceSummariesResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSummaries">REST API Reference for GetTraceSummaries Operation</seealso>
         GetTraceSummariesResponse EndGetTraceSummaries(IAsyncResult asyncResult);
 
         #endregion
@@ -738,6 +783,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutEncryptionConfig">REST API Reference for PutEncryptionConfig Operation</seealso>
         PutEncryptionConfigResponse PutEncryptionConfig(PutEncryptionConfigRequest request);
 
         /// <summary>
@@ -751,6 +797,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEncryptionConfig
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutEncryptionConfig">REST API Reference for PutEncryptionConfig Operation</seealso>
         IAsyncResult BeginPutEncryptionConfig(PutEncryptionConfigRequest request, AsyncCallback callback, object state);
 
 
@@ -762,6 +809,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEncryptionConfig.</param>
         /// 
         /// <returns>Returns a  PutEncryptionConfigResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutEncryptionConfig">REST API Reference for PutEncryptionConfig Operation</seealso>
         PutEncryptionConfigResponse EndPutEncryptionConfig(IAsyncResult asyncResult);
 
         #endregion
@@ -781,6 +829,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTelemetryRecords">REST API Reference for PutTelemetryRecords Operation</seealso>
         PutTelemetryRecordsResponse PutTelemetryRecords(PutTelemetryRecordsRequest request);
 
         /// <summary>
@@ -794,6 +843,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutTelemetryRecords
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTelemetryRecords">REST API Reference for PutTelemetryRecords Operation</seealso>
         IAsyncResult BeginPutTelemetryRecords(PutTelemetryRecordsRequest request, AsyncCallback callback, object state);
 
 
@@ -805,6 +855,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutTelemetryRecords.</param>
         /// 
         /// <returns>Returns a  PutTelemetryRecordsResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTelemetryRecords">REST API Reference for PutTelemetryRecords Operation</seealso>
         PutTelemetryRecordsResponse EndPutTelemetryRecords(IAsyncResult asyncResult);
 
         #endregion
@@ -891,6 +942,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTraceSegments">REST API Reference for PutTraceSegments Operation</seealso>
         PutTraceSegmentsResponse PutTraceSegments(PutTraceSegmentsRequest request);
 
         /// <summary>
@@ -904,6 +956,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutTraceSegments
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTraceSegments">REST API Reference for PutTraceSegments Operation</seealso>
         IAsyncResult BeginPutTraceSegments(PutTraceSegmentsRequest request, AsyncCallback callback, object state);
 
 
@@ -915,6 +968,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutTraceSegments.</param>
         /// 
         /// <returns>Returns a  PutTraceSegmentsResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTraceSegments">REST API Reference for PutTraceSegments Operation</seealso>
         PutTraceSegmentsResponse EndPutTraceSegments(IAsyncResult asyncResult);
 
         #endregion
@@ -934,6 +988,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         UpdateGroupResponse UpdateGroup(UpdateGroupRequest request);
 
         /// <summary>
@@ -947,6 +1002,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         IAsyncResult BeginUpdateGroup(UpdateGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -958,6 +1014,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGroup.</param>
         /// 
         /// <returns>Returns a  UpdateGroupResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         UpdateGroupResponse EndUpdateGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -977,6 +1034,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateSamplingRule">REST API Reference for UpdateSamplingRule Operation</seealso>
         UpdateSamplingRuleResponse UpdateSamplingRule(UpdateSamplingRuleRequest request);
 
         /// <summary>
@@ -990,6 +1048,7 @@ namespace Amazon.XRay
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSamplingRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateSamplingRule">REST API Reference for UpdateSamplingRule Operation</seealso>
         IAsyncResult BeginUpdateSamplingRule(UpdateSamplingRuleRequest request, AsyncCallback callback, object state);
 
 
@@ -1001,6 +1060,7 @@ namespace Amazon.XRay
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSamplingRule.</param>
         /// 
         /// <returns>Returns a  UpdateSamplingRuleResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateSamplingRule">REST API Reference for UpdateSamplingRule Operation</seealso>
         UpdateSamplingRuleResponse EndUpdateSamplingRule(IAsyncResult asyncResult);
 
         #endregion

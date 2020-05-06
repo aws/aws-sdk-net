@@ -140,6 +140,7 @@ namespace Amazon.CloudSearchDomain
         /// <exception cref="Amazon.CloudSearchDomain.Model.SearchException">
         /// Information about any problems encountered while processing a search request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Search">REST API Reference for Search Operation</seealso>
         public virtual SearchResponse Search(SearchRequest request)
         {
             var options = new InvokeOptions();
@@ -185,6 +186,7 @@ namespace Amazon.CloudSearchDomain
         /// <exception cref="Amazon.CloudSearchDomain.Model.SearchException">
         /// Information about any problems encountered while processing a search request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Search">REST API Reference for Search Operation</seealso>
         public virtual Task<SearchResponse> SearchAsync(SearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -228,6 +230,7 @@ namespace Amazon.CloudSearchDomain
         /// <exception cref="Amazon.CloudSearchDomain.Model.SearchException">
         /// Information about any problems encountered while processing a search request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Suggest">REST API Reference for Suggest Operation</seealso>
         public virtual SuggestResponse Suggest(SuggestRequest request)
         {
             var options = new InvokeOptions();
@@ -270,6 +273,7 @@ namespace Amazon.CloudSearchDomain
         /// <exception cref="Amazon.CloudSearchDomain.Model.SearchException">
         /// Information about any problems encountered while processing a search request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Suggest">REST API Reference for Suggest Operation</seealso>
         public virtual Task<SuggestResponse> SuggestAsync(SuggestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -317,6 +321,7 @@ namespace Amazon.CloudSearchDomain
         /// <exception cref="Amazon.CloudSearchDomain.Model.DocumentServiceException">
         /// Information about any problems encountered while processing an upload request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/UploadDocuments">REST API Reference for UploadDocuments Operation</seealso>
         public virtual UploadDocumentsResponse UploadDocuments(UploadDocumentsRequest request)
         {
             var options = new InvokeOptions();
@@ -363,6 +368,7 @@ namespace Amazon.CloudSearchDomain
         /// <exception cref="Amazon.CloudSearchDomain.Model.DocumentServiceException">
         /// Information about any problems encountered while processing an upload request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/UploadDocuments">REST API Reference for UploadDocuments Operation</seealso>
         public virtual Task<UploadDocumentsResponse> UploadDocumentsAsync(UploadDocumentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();

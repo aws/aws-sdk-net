@@ -787,7 +787,7 @@ namespace ServiceClientGenerator
         {
             get {
                 string serviceId = this.model.ServiceUid;
-                if (!string.IsNullOrEmpty(serviceId) && !IsExcludedServiceId(serviceId))
+                if (!string.IsNullOrEmpty(serviceId))
                 {
                     return string.Format(@"http://docs.aws.amazon.com/goto/WebAPI/{0}/{1}", serviceId, ShapeName);
                 }
@@ -798,27 +798,6 @@ namespace ServiceClientGenerator
             }
         }
 
-        private static List<string> _excludedServiceList = new List<string>
-        {
-            "apigateway",
-            "budgets",
-            "cloudsearch",
-            "cloudsearchdomain",
-            "elastictranscoder",
-            "es",
-            "glacier",
-            "importexport",
-            "iot-data",
-            "mobileanalytics",
-            "pinpoint",
-            "s3",
-            "sdb",
-            "xray",
-        };
         private static ConcurrentDictionary<string, bool> _checkedService = new ConcurrentDictionary<string, bool>();
-        private static bool IsExcludedServiceId(string serviceId)
-        {
-            return _checkedService.GetOrAdd(serviceId, (k) => _excludedServiceList.Any((excludedService) => k.StartsWith(excludedService, StringComparison.OrdinalIgnoreCase)));
-        }
     }
 }

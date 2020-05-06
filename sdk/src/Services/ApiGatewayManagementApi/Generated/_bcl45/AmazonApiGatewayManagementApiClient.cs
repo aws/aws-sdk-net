@@ -261,6 +261,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// The client is sending more than the allowed number of requests per unit of time or
         /// the WebSocket client side buffer is full.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
         {
             var options = new InvokeOptions();
@@ -290,6 +291,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// The client is sending more than the allowed number of requests per unit of time or
         /// the WebSocket client side buffer is full.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -320,6 +322,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// The client is sending more than the allowed number of requests per unit of time or
         /// the WebSocket client side buffer is full.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/GetConnection">REST API Reference for GetConnection Operation</seealso>
         public virtual GetConnectionResponse GetConnection(GetConnectionRequest request)
         {
             var options = new InvokeOptions();
@@ -349,6 +352,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// The client is sending more than the allowed number of requests per unit of time or
         /// the WebSocket client side buffer is full.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/GetConnection">REST API Reference for GetConnection Operation</seealso>
         public virtual Task<GetConnectionResponse> GetConnectionAsync(GetConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -382,6 +386,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// <exception cref="Amazon.ApiGatewayManagementApi.Model.PayloadTooLargeException">
         /// The data has exceeded the maximum size allowed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/PostToConnection">REST API Reference for PostToConnection Operation</seealso>
         public virtual PostToConnectionResponse PostToConnection(PostToConnectionRequest request)
         {
             var options = new InvokeOptions();
@@ -414,6 +419,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// <exception cref="Amazon.ApiGatewayManagementApi.Model.PayloadTooLargeException">
         /// The data has exceeded the maximum size allowed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/PostToConnection">REST API Reference for PostToConnection Operation</seealso>
         public virtual Task<PostToConnectionResponse> PostToConnectionAsync(PostToConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();

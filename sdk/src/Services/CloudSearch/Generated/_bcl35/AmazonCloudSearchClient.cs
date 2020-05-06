@@ -270,6 +270,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/BuildSuggesters">REST API Reference for BuildSuggesters Operation</seealso>
         public virtual BuildSuggestersResponse BuildSuggesters(BuildSuggestersRequest request)
         {
             var options = new InvokeOptions();
@@ -290,6 +291,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBuildSuggesters
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/BuildSuggesters">REST API Reference for BuildSuggesters Operation</seealso>
         public virtual IAsyncResult BeginBuildSuggesters(BuildSuggestersRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -306,6 +308,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBuildSuggesters.</param>
         /// 
         /// <returns>Returns a  BuildSuggestersResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/BuildSuggesters">REST API Reference for BuildSuggesters Operation</seealso>
         public virtual BuildSuggestersResponse EndBuildSuggesters(IAsyncResult asyncResult)
         {
             return EndInvoke<BuildSuggestersResponse>(asyncResult);
@@ -334,6 +337,7 @@ namespace Amazon.CloudSearch
         /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
         /// The request was rejected because a resource limit has already been met.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
             var options = new InvokeOptions();
@@ -354,6 +358,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual IAsyncResult BeginCreateDomain(CreateDomainRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -370,6 +375,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDomain.</param>
         /// 
         /// <returns>Returns a  CreateDomainResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual CreateDomainResponse EndCreateDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDomainResponse>(asyncResult);
@@ -407,6 +413,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineAnalysisScheme">REST API Reference for DefineAnalysisScheme Operation</seealso>
         public virtual DefineAnalysisSchemeResponse DefineAnalysisScheme(DefineAnalysisSchemeRequest request)
         {
             var options = new InvokeOptions();
@@ -427,6 +434,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDefineAnalysisScheme
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineAnalysisScheme">REST API Reference for DefineAnalysisScheme Operation</seealso>
         public virtual IAsyncResult BeginDefineAnalysisScheme(DefineAnalysisSchemeRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -443,6 +451,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDefineAnalysisScheme.</param>
         /// 
         /// <returns>Returns a  DefineAnalysisSchemeResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineAnalysisScheme">REST API Reference for DefineAnalysisScheme Operation</seealso>
         public virtual DefineAnalysisSchemeResponse EndDefineAnalysisScheme(IAsyncResult asyncResult)
         {
             return EndInvoke<DefineAnalysisSchemeResponse>(asyncResult);
@@ -480,6 +489,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineExpression">REST API Reference for DefineExpression Operation</seealso>
         public virtual DefineExpressionResponse DefineExpression(DefineExpressionRequest request)
         {
             var options = new InvokeOptions();
@@ -500,6 +510,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDefineExpression
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineExpression">REST API Reference for DefineExpression Operation</seealso>
         public virtual IAsyncResult BeginDefineExpression(DefineExpressionRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -516,6 +527,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDefineExpression.</param>
         /// 
         /// <returns>Returns a  DefineExpressionResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineExpression">REST API Reference for DefineExpression Operation</seealso>
         public virtual DefineExpressionResponse EndDefineExpression(IAsyncResult asyncResult)
         {
             return EndInvoke<DefineExpressionResponse>(asyncResult);
@@ -557,6 +569,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineIndexField">REST API Reference for DefineIndexField Operation</seealso>
         public virtual DefineIndexFieldResponse DefineIndexField(DefineIndexFieldRequest request)
         {
             var options = new InvokeOptions();
@@ -577,6 +590,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDefineIndexField
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineIndexField">REST API Reference for DefineIndexField Operation</seealso>
         public virtual IAsyncResult BeginDefineIndexField(DefineIndexFieldRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -593,6 +607,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDefineIndexField.</param>
         /// 
         /// <returns>Returns a  DefineIndexFieldResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineIndexField">REST API Reference for DefineIndexField Operation</seealso>
         public virtual DefineIndexFieldResponse EndDefineIndexField(IAsyncResult asyncResult)
         {
             return EndInvoke<DefineIndexFieldResponse>(asyncResult);
@@ -631,6 +646,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineSuggester">REST API Reference for DefineSuggester Operation</seealso>
         public virtual DefineSuggesterResponse DefineSuggester(DefineSuggesterRequest request)
         {
             var options = new InvokeOptions();
@@ -651,6 +667,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDefineSuggester
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineSuggester">REST API Reference for DefineSuggester Operation</seealso>
         public virtual IAsyncResult BeginDefineSuggester(DefineSuggesterRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -667,6 +684,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDefineSuggester.</param>
         /// 
         /// <returns>Returns a  DefineSuggesterResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineSuggester">REST API Reference for DefineSuggester Operation</seealso>
         public virtual DefineSuggesterResponse EndDefineSuggester(IAsyncResult asyncResult)
         {
             return EndInvoke<DefineSuggesterResponse>(asyncResult);
@@ -699,6 +717,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteAnalysisScheme">REST API Reference for DeleteAnalysisScheme Operation</seealso>
         public virtual DeleteAnalysisSchemeResponse DeleteAnalysisScheme(DeleteAnalysisSchemeRequest request)
         {
             var options = new InvokeOptions();
@@ -719,6 +738,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAnalysisScheme
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteAnalysisScheme">REST API Reference for DeleteAnalysisScheme Operation</seealso>
         public virtual IAsyncResult BeginDeleteAnalysisScheme(DeleteAnalysisSchemeRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -735,6 +755,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAnalysisScheme.</param>
         /// 
         /// <returns>Returns a  DeleteAnalysisSchemeResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteAnalysisScheme">REST API Reference for DeleteAnalysisScheme Operation</seealso>
         public virtual DeleteAnalysisSchemeResponse EndDeleteAnalysisScheme(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAnalysisSchemeResponse>(asyncResult);
@@ -761,6 +782,7 @@ namespace Amazon.CloudSearch
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
             var options = new InvokeOptions();
@@ -781,6 +803,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual IAsyncResult BeginDeleteDomain(DeleteDomainRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -797,6 +820,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDomain.</param>
         /// 
         /// <returns>Returns a  DeleteDomainResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual DeleteDomainResponse EndDeleteDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDomainResponse>(asyncResult);
@@ -830,6 +854,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteExpression">REST API Reference for DeleteExpression Operation</seealso>
         public virtual DeleteExpressionResponse DeleteExpression(DeleteExpressionRequest request)
         {
             var options = new InvokeOptions();
@@ -850,6 +875,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteExpression
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteExpression">REST API Reference for DeleteExpression Operation</seealso>
         public virtual IAsyncResult BeginDeleteExpression(DeleteExpressionRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -866,6 +892,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteExpression.</param>
         /// 
         /// <returns>Returns a  DeleteExpressionResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteExpression">REST API Reference for DeleteExpression Operation</seealso>
         public virtual DeleteExpressionResponse EndDeleteExpression(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteExpressionResponse>(asyncResult);
@@ -899,6 +926,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteIndexField">REST API Reference for DeleteIndexField Operation</seealso>
         public virtual DeleteIndexFieldResponse DeleteIndexField(DeleteIndexFieldRequest request)
         {
             var options = new InvokeOptions();
@@ -919,6 +947,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIndexField
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteIndexField">REST API Reference for DeleteIndexField Operation</seealso>
         public virtual IAsyncResult BeginDeleteIndexField(DeleteIndexFieldRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -935,6 +964,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIndexField.</param>
         /// 
         /// <returns>Returns a  DeleteIndexFieldResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteIndexField">REST API Reference for DeleteIndexField Operation</seealso>
         public virtual DeleteIndexFieldResponse EndDeleteIndexField(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteIndexFieldResponse>(asyncResult);
@@ -967,6 +997,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteSuggester">REST API Reference for DeleteSuggester Operation</seealso>
         public virtual DeleteSuggesterResponse DeleteSuggester(DeleteSuggesterRequest request)
         {
             var options = new InvokeOptions();
@@ -987,6 +1018,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSuggester
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteSuggester">REST API Reference for DeleteSuggester Operation</seealso>
         public virtual IAsyncResult BeginDeleteSuggester(DeleteSuggesterRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1003,6 +1035,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSuggester.</param>
         /// 
         /// <returns>Returns a  DeleteSuggesterResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteSuggester">REST API Reference for DeleteSuggester Operation</seealso>
         public virtual DeleteSuggesterResponse EndDeleteSuggester(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSuggesterResponse>(asyncResult);
@@ -1037,6 +1070,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAnalysisSchemes">REST API Reference for DescribeAnalysisSchemes Operation</seealso>
         public virtual DescribeAnalysisSchemesResponse DescribeAnalysisSchemes(DescribeAnalysisSchemesRequest request)
         {
             var options = new InvokeOptions();
@@ -1057,6 +1091,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAnalysisSchemes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAnalysisSchemes">REST API Reference for DescribeAnalysisSchemes Operation</seealso>
         public virtual IAsyncResult BeginDescribeAnalysisSchemes(DescribeAnalysisSchemesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1073,6 +1108,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAnalysisSchemes.</param>
         /// 
         /// <returns>Returns a  DescribeAnalysisSchemesResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAnalysisSchemes">REST API Reference for DescribeAnalysisSchemes Operation</seealso>
         public virtual DescribeAnalysisSchemesResponse EndDescribeAnalysisSchemes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAnalysisSchemesResponse>(asyncResult);
@@ -1114,6 +1150,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAvailabilityOptions">REST API Reference for DescribeAvailabilityOptions Operation</seealso>
         public virtual DescribeAvailabilityOptionsResponse DescribeAvailabilityOptions(DescribeAvailabilityOptionsRequest request)
         {
             var options = new InvokeOptions();
@@ -1134,6 +1171,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAvailabilityOptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAvailabilityOptions">REST API Reference for DescribeAvailabilityOptions Operation</seealso>
         public virtual IAsyncResult BeginDescribeAvailabilityOptions(DescribeAvailabilityOptionsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1150,6 +1188,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAvailabilityOptions.</param>
         /// 
         /// <returns>Returns a  DescribeAvailabilityOptionsResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAvailabilityOptions">REST API Reference for DescribeAvailabilityOptions Operation</seealso>
         public virtual DescribeAvailabilityOptionsResponse EndDescribeAvailabilityOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAvailabilityOptionsResponse>(asyncResult);
@@ -1186,6 +1225,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomainEndpointOptions">REST API Reference for DescribeDomainEndpointOptions Operation</seealso>
         public virtual DescribeDomainEndpointOptionsResponse DescribeDomainEndpointOptions(DescribeDomainEndpointOptionsRequest request)
         {
             var options = new InvokeOptions();
@@ -1206,6 +1246,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDomainEndpointOptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomainEndpointOptions">REST API Reference for DescribeDomainEndpointOptions Operation</seealso>
         public virtual IAsyncResult BeginDescribeDomainEndpointOptions(DescribeDomainEndpointOptionsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1222,6 +1263,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDomainEndpointOptions.</param>
         /// 
         /// <returns>Returns a  DescribeDomainEndpointOptionsResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomainEndpointOptions">REST API Reference for DescribeDomainEndpointOptions Operation</seealso>
         public virtual DescribeDomainEndpointOptionsResponse EndDescribeDomainEndpointOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDomainEndpointOptionsResponse>(asyncResult);
@@ -1250,6 +1292,7 @@ namespace Amazon.CloudSearch
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomains">REST API Reference for DescribeDomains Operation</seealso>
         public virtual DescribeDomainsResponse DescribeDomains()
         {
             return DescribeDomains(new DescribeDomainsRequest());
@@ -1275,6 +1318,7 @@ namespace Amazon.CloudSearch
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomains">REST API Reference for DescribeDomains Operation</seealso>
         public virtual DescribeDomainsResponse DescribeDomains(DescribeDomainsRequest request)
         {
             var options = new InvokeOptions();
@@ -1295,6 +1339,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDomains
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomains">REST API Reference for DescribeDomains Operation</seealso>
         public virtual IAsyncResult BeginDescribeDomains(DescribeDomainsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1311,6 +1356,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDomains.</param>
         /// 
         /// <returns>Returns a  DescribeDomainsResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomains">REST API Reference for DescribeDomains Operation</seealso>
         public virtual DescribeDomainsResponse EndDescribeDomains(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDomainsResponse>(asyncResult);
@@ -1344,6 +1390,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeExpressions">REST API Reference for DescribeExpressions Operation</seealso>
         public virtual DescribeExpressionsResponse DescribeExpressions(DescribeExpressionsRequest request)
         {
             var options = new InvokeOptions();
@@ -1364,6 +1411,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExpressions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeExpressions">REST API Reference for DescribeExpressions Operation</seealso>
         public virtual IAsyncResult BeginDescribeExpressions(DescribeExpressionsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1380,6 +1428,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExpressions.</param>
         /// 
         /// <returns>Returns a  DescribeExpressionsResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeExpressions">REST API Reference for DescribeExpressions Operation</seealso>
         public virtual DescribeExpressionsResponse EndDescribeExpressions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeExpressionsResponse>(asyncResult);
@@ -1413,6 +1462,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeIndexFields">REST API Reference for DescribeIndexFields Operation</seealso>
         public virtual DescribeIndexFieldsResponse DescribeIndexFields(DescribeIndexFieldsRequest request)
         {
             var options = new InvokeOptions();
@@ -1433,6 +1483,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIndexFields
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeIndexFields">REST API Reference for DescribeIndexFields Operation</seealso>
         public virtual IAsyncResult BeginDescribeIndexFields(DescribeIndexFieldsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1449,6 +1500,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIndexFields.</param>
         /// 
         /// <returns>Returns a  DescribeIndexFieldsResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeIndexFields">REST API Reference for DescribeIndexFields Operation</seealso>
         public virtual DescribeIndexFieldsResponse EndDescribeIndexFields(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeIndexFieldsResponse>(asyncResult);
@@ -1480,6 +1532,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeScalingParameters">REST API Reference for DescribeScalingParameters Operation</seealso>
         public virtual DescribeScalingParametersResponse DescribeScalingParameters(DescribeScalingParametersRequest request)
         {
             var options = new InvokeOptions();
@@ -1500,6 +1553,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeScalingParameters
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeScalingParameters">REST API Reference for DescribeScalingParameters Operation</seealso>
         public virtual IAsyncResult BeginDescribeScalingParameters(DescribeScalingParametersRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1516,6 +1570,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeScalingParameters.</param>
         /// 
         /// <returns>Returns a  DescribeScalingParametersResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeScalingParameters">REST API Reference for DescribeScalingParameters Operation</seealso>
         public virtual DescribeScalingParametersResponse EndDescribeScalingParameters(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeScalingParametersResponse>(asyncResult);
@@ -1548,6 +1603,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeServiceAccessPolicies">REST API Reference for DescribeServiceAccessPolicies Operation</seealso>
         public virtual DescribeServiceAccessPoliciesResponse DescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request)
         {
             var options = new InvokeOptions();
@@ -1568,6 +1624,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeServiceAccessPolicies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeServiceAccessPolicies">REST API Reference for DescribeServiceAccessPolicies Operation</seealso>
         public virtual IAsyncResult BeginDescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1584,6 +1641,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeServiceAccessPolicies.</param>
         /// 
         /// <returns>Returns a  DescribeServiceAccessPoliciesResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeServiceAccessPolicies">REST API Reference for DescribeServiceAccessPolicies Operation</seealso>
         public virtual DescribeServiceAccessPoliciesResponse EndDescribeServiceAccessPolicies(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeServiceAccessPoliciesResponse>(asyncResult);
@@ -1617,6 +1675,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeSuggesters">REST API Reference for DescribeSuggesters Operation</seealso>
         public virtual DescribeSuggestersResponse DescribeSuggesters(DescribeSuggestersRequest request)
         {
             var options = new InvokeOptions();
@@ -1637,6 +1696,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSuggesters
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeSuggesters">REST API Reference for DescribeSuggesters Operation</seealso>
         public virtual IAsyncResult BeginDescribeSuggesters(DescribeSuggestersRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1653,6 +1713,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSuggesters.</param>
         /// 
         /// <returns>Returns a  DescribeSuggestersResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeSuggesters">REST API Reference for DescribeSuggesters Operation</seealso>
         public virtual DescribeSuggestersResponse EndDescribeSuggesters(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSuggestersResponse>(asyncResult);
@@ -1682,6 +1743,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/IndexDocuments">REST API Reference for IndexDocuments Operation</seealso>
         public virtual IndexDocumentsResponse IndexDocuments(IndexDocumentsRequest request)
         {
             var options = new InvokeOptions();
@@ -1702,6 +1764,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndIndexDocuments
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/IndexDocuments">REST API Reference for IndexDocuments Operation</seealso>
         public virtual IAsyncResult BeginIndexDocuments(IndexDocumentsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1718,6 +1781,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginIndexDocuments.</param>
         /// 
         /// <returns>Returns a  IndexDocumentsResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/IndexDocuments">REST API Reference for IndexDocuments Operation</seealso>
         public virtual IndexDocumentsResponse EndIndexDocuments(IAsyncResult asyncResult)
         {
             return EndInvoke<IndexDocumentsResponse>(asyncResult);
@@ -1735,6 +1799,7 @@ namespace Amazon.CloudSearch
         /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
         public virtual ListDomainNamesResponse ListDomainNames()
         {
             return ListDomainNames(new ListDomainNamesRequest());
@@ -1749,6 +1814,7 @@ namespace Amazon.CloudSearch
         /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
         public virtual ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
         {
             var options = new InvokeOptions();
@@ -1769,6 +1835,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomainNames
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
         public virtual IAsyncResult BeginListDomainNames(ListDomainNamesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1785,6 +1852,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomainNames.</param>
         /// 
         /// <returns>Returns a  ListDomainNamesResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
         public virtual ListDomainNamesResponse EndListDomainNames(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDomainNamesResponse>(asyncResult);
@@ -1830,6 +1898,7 @@ namespace Amazon.CloudSearch
         /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
         /// The request was rejected because it has invalid parameters.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateAvailabilityOptions">REST API Reference for UpdateAvailabilityOptions Operation</seealso>
         public virtual UpdateAvailabilityOptionsResponse UpdateAvailabilityOptions(UpdateAvailabilityOptionsRequest request)
         {
             var options = new InvokeOptions();
@@ -1850,6 +1919,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAvailabilityOptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateAvailabilityOptions">REST API Reference for UpdateAvailabilityOptions Operation</seealso>
         public virtual IAsyncResult BeginUpdateAvailabilityOptions(UpdateAvailabilityOptionsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1866,6 +1936,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAvailabilityOptions.</param>
         /// 
         /// <returns>Returns a  UpdateAvailabilityOptionsResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateAvailabilityOptions">REST API Reference for UpdateAvailabilityOptions Operation</seealso>
         public virtual UpdateAvailabilityOptionsResponse EndUpdateAvailabilityOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAvailabilityOptionsResponse>(asyncResult);
@@ -1908,6 +1979,7 @@ namespace Amazon.CloudSearch
         /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
         /// The request was rejected because it has invalid parameters.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateDomainEndpointOptions">REST API Reference for UpdateDomainEndpointOptions Operation</seealso>
         public virtual UpdateDomainEndpointOptionsResponse UpdateDomainEndpointOptions(UpdateDomainEndpointOptionsRequest request)
         {
             var options = new InvokeOptions();
@@ -1928,6 +2000,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDomainEndpointOptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateDomainEndpointOptions">REST API Reference for UpdateDomainEndpointOptions Operation</seealso>
         public virtual IAsyncResult BeginUpdateDomainEndpointOptions(UpdateDomainEndpointOptionsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1944,6 +2017,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDomainEndpointOptions.</param>
         /// 
         /// <returns>Returns a  UpdateDomainEndpointOptionsResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateDomainEndpointOptions">REST API Reference for UpdateDomainEndpointOptions Operation</seealso>
         public virtual UpdateDomainEndpointOptionsResponse EndUpdateDomainEndpointOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDomainEndpointOptionsResponse>(asyncResult);
@@ -1984,6 +2058,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateScalingParameters">REST API Reference for UpdateScalingParameters Operation</seealso>
         public virtual UpdateScalingParametersResponse UpdateScalingParameters(UpdateScalingParametersRequest request)
         {
             var options = new InvokeOptions();
@@ -2004,6 +2079,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateScalingParameters
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateScalingParameters">REST API Reference for UpdateScalingParameters Operation</seealso>
         public virtual IAsyncResult BeginUpdateScalingParameters(UpdateScalingParametersRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2020,6 +2096,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateScalingParameters.</param>
         /// 
         /// <returns>Returns a  UpdateScalingParametersResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateScalingParameters">REST API Reference for UpdateScalingParameters Operation</seealso>
         public virtual UpdateScalingParametersResponse EndUpdateScalingParameters(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateScalingParametersResponse>(asyncResult);
@@ -2055,6 +2132,7 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateServiceAccessPolicies">REST API Reference for UpdateServiceAccessPolicies Operation</seealso>
         public virtual UpdateServiceAccessPoliciesResponse UpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request)
         {
             var options = new InvokeOptions();
@@ -2075,6 +2153,7 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateServiceAccessPolicies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateServiceAccessPolicies">REST API Reference for UpdateServiceAccessPolicies Operation</seealso>
         public virtual IAsyncResult BeginUpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2091,6 +2170,7 @@ namespace Amazon.CloudSearch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateServiceAccessPolicies.</param>
         /// 
         /// <returns>Returns a  UpdateServiceAccessPoliciesResult from CloudSearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateServiceAccessPolicies">REST API Reference for UpdateServiceAccessPolicies Operation</seealso>
         public virtual UpdateServiceAccessPoliciesResponse EndUpdateServiceAccessPolicies(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateServiceAccessPoliciesResponse>(asyncResult);

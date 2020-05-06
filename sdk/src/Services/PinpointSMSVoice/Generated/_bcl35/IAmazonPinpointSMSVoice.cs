@@ -62,6 +62,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         CreateConfigurationSetResponse CreateConfigurationSet(CreateConfigurationSetRequest request);
 
         /// <summary>
@@ -75,6 +76,7 @@ namespace Amazon.PinpointSMSVoice
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConfigurationSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         IAsyncResult BeginCreateConfigurationSet(CreateConfigurationSetRequest request, AsyncCallback callback, object state);
 
 
@@ -86,6 +88,7 @@ namespace Amazon.PinpointSMSVoice
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConfigurationSet.</param>
         /// 
         /// <returns>Returns a  CreateConfigurationSetResult from PinpointSMSVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         CreateConfigurationSetResponse EndCreateConfigurationSet(IAsyncResult asyncResult);
 
         #endregion
@@ -119,6 +122,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
         CreateConfigurationSetEventDestinationResponse CreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request);
 
         /// <summary>
@@ -132,6 +136,7 @@ namespace Amazon.PinpointSMSVoice
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConfigurationSetEventDestination
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
         IAsyncResult BeginCreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state);
 
 
@@ -143,6 +148,7 @@ namespace Amazon.PinpointSMSVoice
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConfigurationSetEventDestination.</param>
         /// 
         /// <returns>Returns a  CreateConfigurationSetEventDestinationResult from PinpointSMSVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
         CreateConfigurationSetEventDestinationResponse EndCreateConfigurationSetEventDestination(IAsyncResult asyncResult);
 
         #endregion
@@ -170,6 +176,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         DeleteConfigurationSetResponse DeleteConfigurationSet(DeleteConfigurationSetRequest request);
 
         /// <summary>
@@ -183,6 +190,7 @@ namespace Amazon.PinpointSMSVoice
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConfigurationSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         IAsyncResult BeginDeleteConfigurationSet(DeleteConfigurationSetRequest request, AsyncCallback callback, object state);
 
 
@@ -194,6 +202,7 @@ namespace Amazon.PinpointSMSVoice
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConfigurationSet.</param>
         /// 
         /// <returns>Returns a  DeleteConfigurationSetResult from PinpointSMSVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         DeleteConfigurationSetResponse EndDeleteConfigurationSet(IAsyncResult asyncResult);
 
         #endregion
@@ -221,6 +230,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/DeleteConfigurationSetEventDestination">REST API Reference for DeleteConfigurationSetEventDestination Operation</seealso>
         DeleteConfigurationSetEventDestinationResponse DeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request);
 
         /// <summary>
@@ -234,6 +244,7 @@ namespace Amazon.PinpointSMSVoice
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConfigurationSetEventDestination
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/DeleteConfigurationSetEventDestination">REST API Reference for DeleteConfigurationSetEventDestination Operation</seealso>
         IAsyncResult BeginDeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state);
 
 
@@ -245,6 +256,7 @@ namespace Amazon.PinpointSMSVoice
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConfigurationSetEventDestination.</param>
         /// 
         /// <returns>Returns a  DeleteConfigurationSetEventDestinationResult from PinpointSMSVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/DeleteConfigurationSetEventDestination">REST API Reference for DeleteConfigurationSetEventDestination Operation</seealso>
         DeleteConfigurationSetEventDestinationResponse EndDeleteConfigurationSetEventDestination(IAsyncResult asyncResult);
 
         #endregion
@@ -273,6 +285,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/GetConfigurationSetEventDestinations">REST API Reference for GetConfigurationSetEventDestinations Operation</seealso>
         GetConfigurationSetEventDestinationsResponse GetConfigurationSetEventDestinations(GetConfigurationSetEventDestinationsRequest request);
 
         /// <summary>
@@ -286,6 +299,7 @@ namespace Amazon.PinpointSMSVoice
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConfigurationSetEventDestinations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/GetConfigurationSetEventDestinations">REST API Reference for GetConfigurationSetEventDestinations Operation</seealso>
         IAsyncResult BeginGetConfigurationSetEventDestinations(GetConfigurationSetEventDestinationsRequest request, AsyncCallback callback, object state);
 
 
@@ -297,6 +311,7 @@ namespace Amazon.PinpointSMSVoice
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConfigurationSetEventDestinations.</param>
         /// 
         /// <returns>Returns a  GetConfigurationSetEventDestinationsResult from PinpointSMSVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/GetConfigurationSetEventDestinations">REST API Reference for GetConfigurationSetEventDestinations Operation</seealso>
         GetConfigurationSetEventDestinationsResponse EndGetConfigurationSetEventDestinations(IAsyncResult asyncResult);
 
         #endregion
@@ -322,6 +337,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         ListConfigurationSetsResponse ListConfigurationSets(ListConfigurationSetsRequest request);
 
         /// <summary>
@@ -335,6 +351,7 @@ namespace Amazon.PinpointSMSVoice
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConfigurationSets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         IAsyncResult BeginListConfigurationSets(ListConfigurationSetsRequest request, AsyncCallback callback, object state);
 
 
@@ -346,6 +363,7 @@ namespace Amazon.PinpointSMSVoice
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConfigurationSets.</param>
         /// 
         /// <returns>Returns a  ListConfigurationSetsResult from PinpointSMSVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         ListConfigurationSetsResponse EndListConfigurationSets(IAsyncResult asyncResult);
 
         #endregion
@@ -370,6 +388,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/SendVoiceMessage">REST API Reference for SendVoiceMessage Operation</seealso>
         SendVoiceMessageResponse SendVoiceMessage(SendVoiceMessageRequest request);
 
         /// <summary>
@@ -383,6 +402,7 @@ namespace Amazon.PinpointSMSVoice
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendVoiceMessage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/SendVoiceMessage">REST API Reference for SendVoiceMessage Operation</seealso>
         IAsyncResult BeginSendVoiceMessage(SendVoiceMessageRequest request, AsyncCallback callback, object state);
 
 
@@ -394,6 +414,7 @@ namespace Amazon.PinpointSMSVoice
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendVoiceMessage.</param>
         /// 
         /// <returns>Returns a  SendVoiceMessageResult from PinpointSMSVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/SendVoiceMessage">REST API Reference for SendVoiceMessage Operation</seealso>
         SendVoiceMessageResponse EndSendVoiceMessage(IAsyncResult asyncResult);
 
         #endregion
@@ -423,6 +444,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/UpdateConfigurationSetEventDestination">REST API Reference for UpdateConfigurationSetEventDestination Operation</seealso>
         UpdateConfigurationSetEventDestinationResponse UpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request);
 
         /// <summary>
@@ -436,6 +458,7 @@ namespace Amazon.PinpointSMSVoice
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConfigurationSetEventDestination
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/UpdateConfigurationSetEventDestination">REST API Reference for UpdateConfigurationSetEventDestination Operation</seealso>
         IAsyncResult BeginUpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state);
 
 
@@ -447,6 +470,7 @@ namespace Amazon.PinpointSMSVoice
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConfigurationSetEventDestination.</param>
         /// 
         /// <returns>Returns a  UpdateConfigurationSetEventDestinationResult from PinpointSMSVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/UpdateConfigurationSetEventDestination">REST API Reference for UpdateConfigurationSetEventDestination Operation</seealso>
         UpdateConfigurationSetEventDestinationResponse EndUpdateConfigurationSetEventDestination(IAsyncResult asyncResult);
 
         #endregion

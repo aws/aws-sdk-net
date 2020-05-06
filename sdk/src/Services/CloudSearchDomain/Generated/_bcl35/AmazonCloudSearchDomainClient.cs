@@ -137,6 +137,7 @@ namespace Amazon.CloudSearchDomain
         /// <exception cref="Amazon.CloudSearchDomain.Model.SearchException">
         /// Information about any problems encountered while processing a search request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Search">REST API Reference for Search Operation</seealso>
         public virtual SearchResponse Search(SearchRequest request)
         {
             var options = new InvokeOptions();
@@ -157,6 +158,7 @@ namespace Amazon.CloudSearchDomain
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearch
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Search">REST API Reference for Search Operation</seealso>
         public virtual IAsyncResult BeginSearch(SearchRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -173,6 +175,7 @@ namespace Amazon.CloudSearchDomain
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearch.</param>
         /// 
         /// <returns>Returns a  SearchResult from CloudSearchDomain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Search">REST API Reference for Search Operation</seealso>
         public virtual SearchResponse EndSearch(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchResponse>(asyncResult);
@@ -211,6 +214,7 @@ namespace Amazon.CloudSearchDomain
         /// <exception cref="Amazon.CloudSearchDomain.Model.SearchException">
         /// Information about any problems encountered while processing a search request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Suggest">REST API Reference for Suggest Operation</seealso>
         public virtual SuggestResponse Suggest(SuggestRequest request)
         {
             var options = new InvokeOptions();
@@ -231,6 +235,7 @@ namespace Amazon.CloudSearchDomain
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSuggest
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Suggest">REST API Reference for Suggest Operation</seealso>
         public virtual IAsyncResult BeginSuggest(SuggestRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -247,6 +252,7 @@ namespace Amazon.CloudSearchDomain
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSuggest.</param>
         /// 
         /// <returns>Returns a  SuggestResult from CloudSearchDomain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Suggest">REST API Reference for Suggest Operation</seealso>
         public virtual SuggestResponse EndSuggest(IAsyncResult asyncResult)
         {
             return EndInvoke<SuggestResponse>(asyncResult);
@@ -289,6 +295,7 @@ namespace Amazon.CloudSearchDomain
         /// <exception cref="Amazon.CloudSearchDomain.Model.DocumentServiceException">
         /// Information about any problems encountered while processing an upload request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/UploadDocuments">REST API Reference for UploadDocuments Operation</seealso>
         public virtual UploadDocumentsResponse UploadDocuments(UploadDocumentsRequest request)
         {
             var options = new InvokeOptions();
@@ -309,6 +316,7 @@ namespace Amazon.CloudSearchDomain
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadDocuments
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/UploadDocuments">REST API Reference for UploadDocuments Operation</seealso>
         public virtual IAsyncResult BeginUploadDocuments(UploadDocumentsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -325,6 +333,7 @@ namespace Amazon.CloudSearchDomain
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadDocuments.</param>
         /// 
         /// <returns>Returns a  UploadDocumentsResult from CloudSearchDomain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/UploadDocuments">REST API Reference for UploadDocuments Operation</seealso>
         public virtual UploadDocumentsResponse EndUploadDocuments(IAsyncResult asyncResult)
         {
             return EndInvoke<UploadDocumentsResponse>(asyncResult);

@@ -305,6 +305,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -367,6 +368,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -421,6 +423,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         public virtual Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -490,6 +493,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePreset">REST API Reference for CreatePreset Operation</seealso>
         public virtual Task<CreatePresetResponse> CreatePresetAsync(CreatePresetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -551,6 +555,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         public virtual Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -607,6 +612,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePreset">REST API Reference for DeletePreset Operation</seealso>
         public virtual Task<DeletePresetResponse> DeletePresetAsync(DeletePresetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -663,6 +669,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByPipeline">REST API Reference for ListJobsByPipeline Operation</seealso>
         public virtual Task<ListJobsByPipelineResponse> ListJobsByPipelineAsync(ListJobsByPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -714,6 +721,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByStatus">REST API Reference for ListJobsByStatus Operation</seealso>
         public virtual Task<ListJobsByStatusResponse> ListJobsByStatusAsync(ListJobsByStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -763,6 +771,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual Task<ListPipelinesResponse> ListPipelinesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListPipelinesAsync(new ListPipelinesRequest(), cancellationToken);
@@ -793,6 +802,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -842,6 +852,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPresets">REST API Reference for ListPresets Operation</seealso>
         public virtual Task<ListPresetsResponse> ListPresetsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListPresetsAsync(new ListPresetsRequest(), cancellationToken);
@@ -872,6 +883,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPresets">REST API Reference for ListPresets Operation</seealso>
         public virtual Task<ListPresetsResponse> ListPresetsAsync(ListPresetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -922,6 +934,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadJob">REST API Reference for ReadJob Operation</seealso>
         public virtual Task<ReadJobResponse> ReadJobAsync(ReadJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -972,6 +985,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPipeline">REST API Reference for ReadPipeline Operation</seealso>
         public virtual Task<ReadPipelineResponse> ReadPipelineAsync(ReadPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1022,6 +1036,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPreset">REST API Reference for ReadPreset Operation</seealso>
         public virtual Task<ReadPresetResponse> ReadPresetAsync(ReadPresetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1082,6 +1097,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/TestRole">REST API Reference for TestRole Operation</seealso>
         [Obsolete("This API is deprecated and will be removed in a future release.")]
         public virtual Task<TestRoleResponse> TestRoleAsync(TestRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1145,6 +1161,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         public virtual Task<UpdatePipelineResponse> UpdatePipelineAsync(UpdatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1206,6 +1223,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineNotifications">REST API Reference for UpdatePipelineNotifications Operation</seealso>
         public virtual Task<UpdatePipelineNotificationsResponse> UpdatePipelineNotificationsAsync(UpdatePipelineNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1269,6 +1287,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineStatus">REST API Reference for UpdatePipelineStatus Operation</seealso>
         public virtual Task<UpdatePipelineStatusResponse> UpdatePipelineStatusAsync(UpdatePipelineStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();

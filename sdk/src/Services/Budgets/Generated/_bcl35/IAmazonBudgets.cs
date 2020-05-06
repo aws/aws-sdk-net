@@ -135,6 +135,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
         /// An error on the client occurred. Typically, the cause is an invalid input value.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudget">REST API Reference for CreateBudget Operation</seealso>
         CreateBudgetResponse CreateBudget(CreateBudgetRequest request);
 
         /// <summary>
@@ -148,6 +149,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBudget
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudget">REST API Reference for CreateBudget Operation</seealso>
         IAsyncResult BeginCreateBudget(CreateBudgetRequest request, AsyncCallback callback, object state);
 
 
@@ -159,6 +161,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBudget.</param>
         /// 
         /// <returns>Returns a  CreateBudgetResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudget">REST API Reference for CreateBudget Operation</seealso>
         CreateBudgetResponse EndCreateBudget(IAsyncResult asyncResult);
 
         #endregion
@@ -191,6 +194,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateNotification">REST API Reference for CreateNotification Operation</seealso>
         CreateNotificationResponse CreateNotification(CreateNotificationRequest request);
 
         /// <summary>
@@ -204,6 +208,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNotification
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateNotification">REST API Reference for CreateNotification Operation</seealso>
         IAsyncResult BeginCreateNotification(CreateNotificationRequest request, AsyncCallback callback, object state);
 
 
@@ -215,6 +220,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNotification.</param>
         /// 
         /// <returns>Returns a  CreateNotificationResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateNotification">REST API Reference for CreateNotification Operation</seealso>
         CreateNotificationResponse EndCreateNotification(IAsyncResult asyncResult);
 
         #endregion
@@ -247,6 +253,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateSubscriber">REST API Reference for CreateSubscriber Operation</seealso>
         CreateSubscriberResponse CreateSubscriber(CreateSubscriberRequest request);
 
         /// <summary>
@@ -260,6 +267,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSubscriber
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateSubscriber">REST API Reference for CreateSubscriber Operation</seealso>
         IAsyncResult BeginCreateSubscriber(CreateSubscriberRequest request, AsyncCallback callback, object state);
 
 
@@ -271,6 +279,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSubscriber.</param>
         /// 
         /// <returns>Returns a  CreateSubscriberResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateSubscriber">REST API Reference for CreateSubscriber Operation</seealso>
         CreateSubscriberResponse EndCreateSubscriber(IAsyncResult asyncResult);
 
         #endregion
@@ -303,6 +312,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudget">REST API Reference for DeleteBudget Operation</seealso>
         DeleteBudgetResponse DeleteBudget(DeleteBudgetRequest request);
 
         /// <summary>
@@ -316,6 +326,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBudget
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudget">REST API Reference for DeleteBudget Operation</seealso>
         IAsyncResult BeginDeleteBudget(DeleteBudgetRequest request, AsyncCallback callback, object state);
 
 
@@ -327,6 +338,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBudget.</param>
         /// 
         /// <returns>Returns a  DeleteBudgetResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudget">REST API Reference for DeleteBudget Operation</seealso>
         DeleteBudgetResponse EndDeleteBudget(IAsyncResult asyncResult);
 
         #endregion
@@ -359,6 +371,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteNotification">REST API Reference for DeleteNotification Operation</seealso>
         DeleteNotificationResponse DeleteNotification(DeleteNotificationRequest request);
 
         /// <summary>
@@ -372,6 +385,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNotification
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteNotification">REST API Reference for DeleteNotification Operation</seealso>
         IAsyncResult BeginDeleteNotification(DeleteNotificationRequest request, AsyncCallback callback, object state);
 
 
@@ -383,6 +397,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNotification.</param>
         /// 
         /// <returns>Returns a  DeleteNotificationResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteNotification">REST API Reference for DeleteNotification Operation</seealso>
         DeleteNotificationResponse EndDeleteNotification(IAsyncResult asyncResult);
 
         #endregion
@@ -414,6 +429,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteSubscriber">REST API Reference for DeleteSubscriber Operation</seealso>
         DeleteSubscriberResponse DeleteSubscriber(DeleteSubscriberRequest request);
 
         /// <summary>
@@ -427,6 +443,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSubscriber
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteSubscriber">REST API Reference for DeleteSubscriber Operation</seealso>
         IAsyncResult BeginDeleteSubscriber(DeleteSubscriberRequest request, AsyncCallback callback, object state);
 
 
@@ -438,6 +455,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSubscriber.</param>
         /// 
         /// <returns>Returns a  DeleteSubscriberResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteSubscriber">REST API Reference for DeleteSubscriber Operation</seealso>
         DeleteSubscriberResponse EndDeleteSubscriber(IAsyncResult asyncResult);
 
         #endregion
@@ -471,6 +489,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudget">REST API Reference for DescribeBudget Operation</seealso>
         DescribeBudgetResponse DescribeBudget(DescribeBudgetRequest request);
 
         /// <summary>
@@ -484,6 +503,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBudget
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudget">REST API Reference for DescribeBudget Operation</seealso>
         IAsyncResult BeginDescribeBudget(DescribeBudgetRequest request, AsyncCallback callback, object state);
 
 
@@ -495,6 +515,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBudget.</param>
         /// 
         /// <returns>Returns a  DescribeBudgetResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudget">REST API Reference for DescribeBudget Operation</seealso>
         DescribeBudgetResponse EndDescribeBudget(IAsyncResult asyncResult);
 
         #endregion
@@ -527,6 +548,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetPerformanceHistory">REST API Reference for DescribeBudgetPerformanceHistory Operation</seealso>
         DescribeBudgetPerformanceHistoryResponse DescribeBudgetPerformanceHistory(DescribeBudgetPerformanceHistoryRequest request);
 
         /// <summary>
@@ -540,6 +562,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBudgetPerformanceHistory
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetPerformanceHistory">REST API Reference for DescribeBudgetPerformanceHistory Operation</seealso>
         IAsyncResult BeginDescribeBudgetPerformanceHistory(DescribeBudgetPerformanceHistoryRequest request, AsyncCallback callback, object state);
 
 
@@ -551,6 +574,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBudgetPerformanceHistory.</param>
         /// 
         /// <returns>Returns a  DescribeBudgetPerformanceHistoryResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetPerformanceHistory">REST API Reference for DescribeBudgetPerformanceHistory Operation</seealso>
         DescribeBudgetPerformanceHistoryResponse EndDescribeBudgetPerformanceHistory(IAsyncResult asyncResult);
 
         #endregion
@@ -590,6 +614,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgets">REST API Reference for DescribeBudgets Operation</seealso>
         DescribeBudgetsResponse DescribeBudgets(DescribeBudgetsRequest request);
 
         /// <summary>
@@ -603,6 +628,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBudgets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgets">REST API Reference for DescribeBudgets Operation</seealso>
         IAsyncResult BeginDescribeBudgets(DescribeBudgetsRequest request, AsyncCallback callback, object state);
 
 
@@ -614,6 +640,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBudgets.</param>
         /// 
         /// <returns>Returns a  DescribeBudgetsResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgets">REST API Reference for DescribeBudgets Operation</seealso>
         DescribeBudgetsResponse EndDescribeBudgets(IAsyncResult asyncResult);
 
         #endregion
@@ -645,6 +672,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeNotificationsForBudget">REST API Reference for DescribeNotificationsForBudget Operation</seealso>
         DescribeNotificationsForBudgetResponse DescribeNotificationsForBudget(DescribeNotificationsForBudgetRequest request);
 
         /// <summary>
@@ -658,6 +686,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNotificationsForBudget
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeNotificationsForBudget">REST API Reference for DescribeNotificationsForBudget Operation</seealso>
         IAsyncResult BeginDescribeNotificationsForBudget(DescribeNotificationsForBudgetRequest request, AsyncCallback callback, object state);
 
 
@@ -669,6 +698,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNotificationsForBudget.</param>
         /// 
         /// <returns>Returns a  DescribeNotificationsForBudgetResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeNotificationsForBudget">REST API Reference for DescribeNotificationsForBudget Operation</seealso>
         DescribeNotificationsForBudgetResponse EndDescribeNotificationsForBudget(IAsyncResult asyncResult);
 
         #endregion
@@ -700,6 +730,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeSubscribersForNotification">REST API Reference for DescribeSubscribersForNotification Operation</seealso>
         DescribeSubscribersForNotificationResponse DescribeSubscribersForNotification(DescribeSubscribersForNotificationRequest request);
 
         /// <summary>
@@ -713,6 +744,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSubscribersForNotification
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeSubscribersForNotification">REST API Reference for DescribeSubscribersForNotification Operation</seealso>
         IAsyncResult BeginDescribeSubscribersForNotification(DescribeSubscribersForNotificationRequest request, AsyncCallback callback, object state);
 
 
@@ -724,6 +756,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSubscribersForNotification.</param>
         /// 
         /// <returns>Returns a  DescribeSubscribersForNotificationResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeSubscribersForNotification">REST API Reference for DescribeSubscribersForNotification Operation</seealso>
         DescribeSubscribersForNotificationResponse EndDescribeSubscribersForNotification(IAsyncResult asyncResult);
 
         #endregion
@@ -761,6 +794,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudget">REST API Reference for UpdateBudget Operation</seealso>
         UpdateBudgetResponse UpdateBudget(UpdateBudgetRequest request);
 
         /// <summary>
@@ -774,6 +808,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBudget
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudget">REST API Reference for UpdateBudget Operation</seealso>
         IAsyncResult BeginUpdateBudget(UpdateBudgetRequest request, AsyncCallback callback, object state);
 
 
@@ -785,6 +820,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBudget.</param>
         /// 
         /// <returns>Returns a  UpdateBudgetResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudget">REST API Reference for UpdateBudget Operation</seealso>
         UpdateBudgetResponse EndUpdateBudget(IAsyncResult asyncResult);
 
         #endregion
@@ -813,6 +849,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateNotification">REST API Reference for UpdateNotification Operation</seealso>
         UpdateNotificationResponse UpdateNotification(UpdateNotificationRequest request);
 
         /// <summary>
@@ -826,6 +863,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNotification
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateNotification">REST API Reference for UpdateNotification Operation</seealso>
         IAsyncResult BeginUpdateNotification(UpdateNotificationRequest request, AsyncCallback callback, object state);
 
 
@@ -837,6 +875,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateNotification.</param>
         /// 
         /// <returns>Returns a  UpdateNotificationResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateNotification">REST API Reference for UpdateNotification Operation</seealso>
         UpdateNotificationResponse EndUpdateNotification(IAsyncResult asyncResult);
 
         #endregion
@@ -865,6 +904,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateSubscriber">REST API Reference for UpdateSubscriber Operation</seealso>
         UpdateSubscriberResponse UpdateSubscriber(UpdateSubscriberRequest request);
 
         /// <summary>
@@ -878,6 +918,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSubscriber
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateSubscriber">REST API Reference for UpdateSubscriber Operation</seealso>
         IAsyncResult BeginUpdateSubscriber(UpdateSubscriberRequest request, AsyncCallback callback, object state);
 
 
@@ -889,6 +930,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSubscriber.</param>
         /// 
         /// <returns>Returns a  UpdateSubscriberResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateSubscriber">REST API Reference for UpdateSubscriber Operation</seealso>
         UpdateSubscriberResponse EndUpdateSubscriber(IAsyncResult asyncResult);
 
         #endregion

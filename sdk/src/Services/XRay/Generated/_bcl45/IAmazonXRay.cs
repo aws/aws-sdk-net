@@ -55,6 +55,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/BatchGetTraces">REST API Reference for BatchGetTraces Operation</seealso>
         BatchGetTracesResponse BatchGetTraces(BatchGetTracesRequest request);
 
 
@@ -76,6 +77,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/BatchGetTraces">REST API Reference for BatchGetTraces Operation</seealso>
         Task<BatchGetTracesResponse> BatchGetTracesAsync(BatchGetTracesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -95,6 +97,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         CreateGroupResponse CreateGroup(CreateGroupRequest request);
 
 
@@ -114,6 +117,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -142,6 +146,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateSamplingRule">REST API Reference for CreateSamplingRule Operation</seealso>
         CreateSamplingRuleResponse CreateSamplingRule(CreateSamplingRuleRequest request);
 
 
@@ -170,6 +175,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateSamplingRule">REST API Reference for CreateSamplingRule Operation</seealso>
         Task<CreateSamplingRuleResponse> CreateSamplingRuleAsync(CreateSamplingRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -189,6 +195,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         DeleteGroupResponse DeleteGroup(DeleteGroupRequest request);
 
 
@@ -208,6 +215,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -227,6 +235,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteSamplingRule">REST API Reference for DeleteSamplingRule Operation</seealso>
         DeleteSamplingRuleResponse DeleteSamplingRule(DeleteSamplingRuleRequest request);
 
 
@@ -246,6 +255,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteSamplingRule">REST API Reference for DeleteSamplingRule Operation</seealso>
         Task<DeleteSamplingRuleResponse> DeleteSamplingRuleAsync(DeleteSamplingRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -265,6 +275,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetEncryptionConfig">REST API Reference for GetEncryptionConfig Operation</seealso>
         GetEncryptionConfigResponse GetEncryptionConfig(GetEncryptionConfigRequest request);
 
 
@@ -284,6 +295,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetEncryptionConfig">REST API Reference for GetEncryptionConfig Operation</seealso>
         Task<GetEncryptionConfigResponse> GetEncryptionConfigAsync(GetEncryptionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -303,6 +315,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroup">REST API Reference for GetGroup Operation</seealso>
         GetGroupResponse GetGroup(GetGroupRequest request);
 
 
@@ -322,6 +335,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroup">REST API Reference for GetGroup Operation</seealso>
         Task<GetGroupResponse> GetGroupAsync(GetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -341,6 +355,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroups">REST API Reference for GetGroups Operation</seealso>
         GetGroupsResponse GetGroups(GetGroupsRequest request);
 
 
@@ -360,6 +375,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroups">REST API Reference for GetGroups Operation</seealso>
         Task<GetGroupsResponse> GetGroupsAsync(GetGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -379,6 +395,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingRules">REST API Reference for GetSamplingRules Operation</seealso>
         GetSamplingRulesResponse GetSamplingRules(GetSamplingRulesRequest request);
 
 
@@ -398,6 +415,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingRules">REST API Reference for GetSamplingRules Operation</seealso>
         Task<GetSamplingRulesResponse> GetSamplingRulesAsync(GetSamplingRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -417,6 +435,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingStatisticSummaries">REST API Reference for GetSamplingStatisticSummaries Operation</seealso>
         GetSamplingStatisticSummariesResponse GetSamplingStatisticSummaries(GetSamplingStatisticSummariesRequest request);
 
 
@@ -436,6 +455,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingStatisticSummaries">REST API Reference for GetSamplingStatisticSummaries Operation</seealso>
         Task<GetSamplingStatisticSummariesResponse> GetSamplingStatisticSummariesAsync(GetSamplingStatisticSummariesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -455,6 +475,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingTargets">REST API Reference for GetSamplingTargets Operation</seealso>
         GetSamplingTargetsResponse GetSamplingTargets(GetSamplingTargetsRequest request);
 
 
@@ -474,6 +495,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingTargets">REST API Reference for GetSamplingTargets Operation</seealso>
         Task<GetSamplingTargetsResponse> GetSamplingTargetsAsync(GetSamplingTargetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -497,6 +519,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetServiceGraph">REST API Reference for GetServiceGraph Operation</seealso>
         GetServiceGraphResponse GetServiceGraph(GetServiceGraphRequest request);
 
 
@@ -520,6 +543,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetServiceGraph">REST API Reference for GetServiceGraph Operation</seealso>
         Task<GetServiceGraphResponse> GetServiceGraphAsync(GetServiceGraphRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -539,6 +563,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTimeSeriesServiceStatistics">REST API Reference for GetTimeSeriesServiceStatistics Operation</seealso>
         GetTimeSeriesServiceStatisticsResponse GetTimeSeriesServiceStatistics(GetTimeSeriesServiceStatisticsRequest request);
 
 
@@ -558,6 +583,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTimeSeriesServiceStatistics">REST API Reference for GetTimeSeriesServiceStatistics Operation</seealso>
         Task<GetTimeSeriesServiceStatisticsResponse> GetTimeSeriesServiceStatisticsAsync(GetTimeSeriesServiceStatisticsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -577,6 +603,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceGraph">REST API Reference for GetTraceGraph Operation</seealso>
         GetTraceGraphResponse GetTraceGraph(GetTraceGraphRequest request);
 
 
@@ -596,6 +623,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceGraph">REST API Reference for GetTraceGraph Operation</seealso>
         Task<GetTraceGraphResponse> GetTraceGraphAsync(GetTraceGraphRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -642,6 +670,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSummaries">REST API Reference for GetTraceSummaries Operation</seealso>
         GetTraceSummariesResponse GetTraceSummaries(GetTraceSummariesRequest request);
 
 
@@ -688,6 +717,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSummaries">REST API Reference for GetTraceSummaries Operation</seealso>
         Task<GetTraceSummariesResponse> GetTraceSummariesAsync(GetTraceSummariesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -707,6 +737,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutEncryptionConfig">REST API Reference for PutEncryptionConfig Operation</seealso>
         PutEncryptionConfigResponse PutEncryptionConfig(PutEncryptionConfigRequest request);
 
 
@@ -726,6 +757,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutEncryptionConfig">REST API Reference for PutEncryptionConfig Operation</seealso>
         Task<PutEncryptionConfigResponse> PutEncryptionConfigAsync(PutEncryptionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -745,6 +777,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTelemetryRecords">REST API Reference for PutTelemetryRecords Operation</seealso>
         PutTelemetryRecordsResponse PutTelemetryRecords(PutTelemetryRecordsRequest request);
 
 
@@ -764,6 +797,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTelemetryRecords">REST API Reference for PutTelemetryRecords Operation</seealso>
         Task<PutTelemetryRecordsResponse> PutTelemetryRecordsAsync(PutTelemetryRecordsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -850,6 +884,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTraceSegments">REST API Reference for PutTraceSegments Operation</seealso>
         PutTraceSegmentsResponse PutTraceSegments(PutTraceSegmentsRequest request);
 
 
@@ -936,6 +971,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTraceSegments">REST API Reference for PutTraceSegments Operation</seealso>
         Task<PutTraceSegmentsResponse> PutTraceSegmentsAsync(PutTraceSegmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -955,6 +991,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         UpdateGroupResponse UpdateGroup(UpdateGroupRequest request);
 
 
@@ -974,6 +1011,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         Task<UpdateGroupResponse> UpdateGroupAsync(UpdateGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -993,6 +1031,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateSamplingRule">REST API Reference for UpdateSamplingRule Operation</seealso>
         UpdateSamplingRuleResponse UpdateSamplingRule(UpdateSamplingRuleRequest request);
 
 
@@ -1012,6 +1051,7 @@ namespace Amazon.XRay
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateSamplingRule">REST API Reference for UpdateSamplingRule Operation</seealso>
         Task<UpdateSamplingRuleResponse> UpdateSamplingRuleAsync(UpdateSamplingRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

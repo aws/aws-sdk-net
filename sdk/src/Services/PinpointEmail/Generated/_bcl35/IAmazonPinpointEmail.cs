@@ -109,6 +109,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         CreateConfigurationSetResponse CreateConfigurationSet(CreateConfigurationSetRequest request);
 
         /// <summary>
@@ -122,6 +123,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConfigurationSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         IAsyncResult BeginCreateConfigurationSet(CreateConfigurationSetRequest request, AsyncCallback callback, object state);
 
 
@@ -133,6 +135,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConfigurationSet.</param>
         /// 
         /// <returns>Returns a  CreateConfigurationSetResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         CreateConfigurationSetResponse EndCreateConfigurationSet(IAsyncResult asyncResult);
 
         #endregion
@@ -171,6 +174,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
         CreateConfigurationSetEventDestinationResponse CreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request);
 
         /// <summary>
@@ -184,6 +188,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConfigurationSetEventDestination
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
         IAsyncResult BeginCreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state);
 
 
@@ -195,6 +200,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConfigurationSetEventDestination.</param>
         /// 
         /// <returns>Returns a  CreateConfigurationSetEventDestinationResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
         CreateConfigurationSetEventDestinationResponse EndCreateConfigurationSetEventDestination(IAsyncResult asyncResult);
 
         #endregion
@@ -226,6 +232,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDedicatedIpPool">REST API Reference for CreateDedicatedIpPool Operation</seealso>
         CreateDedicatedIpPoolResponse CreateDedicatedIpPool(CreateDedicatedIpPoolRequest request);
 
         /// <summary>
@@ -239,6 +246,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDedicatedIpPool
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDedicatedIpPool">REST API Reference for CreateDedicatedIpPool Operation</seealso>
         IAsyncResult BeginCreateDedicatedIpPool(CreateDedicatedIpPoolRequest request, AsyncCallback callback, object state);
 
 
@@ -250,6 +258,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDedicatedIpPool.</param>
         /// 
         /// <returns>Returns a  CreateDedicatedIpPoolResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDedicatedIpPool">REST API Reference for CreateDedicatedIpPool Operation</seealso>
         CreateDedicatedIpPoolResponse EndCreateDedicatedIpPool(IAsyncResult asyncResult);
 
         #endregion
@@ -299,6 +308,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDeliverabilityTestReport">REST API Reference for CreateDeliverabilityTestReport Operation</seealso>
         CreateDeliverabilityTestReportResponse CreateDeliverabilityTestReport(CreateDeliverabilityTestReportRequest request);
 
         /// <summary>
@@ -312,6 +322,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDeliverabilityTestReport
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDeliverabilityTestReport">REST API Reference for CreateDeliverabilityTestReport Operation</seealso>
         IAsyncResult BeginCreateDeliverabilityTestReport(CreateDeliverabilityTestReportRequest request, AsyncCallback callback, object state);
 
 
@@ -323,6 +334,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDeliverabilityTestReport.</param>
         /// 
         /// <returns>Returns a  CreateDeliverabilityTestReportResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDeliverabilityTestReport">REST API Reference for CreateDeliverabilityTestReport Operation</seealso>
         CreateDeliverabilityTestReportResponse EndCreateDeliverabilityTestReport(IAsyncResult asyncResult);
 
         #endregion
@@ -367,6 +379,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateEmailIdentity">REST API Reference for CreateEmailIdentity Operation</seealso>
         CreateEmailIdentityResponse CreateEmailIdentity(CreateEmailIdentityRequest request);
 
         /// <summary>
@@ -380,6 +393,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEmailIdentity
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateEmailIdentity">REST API Reference for CreateEmailIdentity Operation</seealso>
         IAsyncResult BeginCreateEmailIdentity(CreateEmailIdentityRequest request, AsyncCallback callback, object state);
 
 
@@ -391,6 +405,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEmailIdentity.</param>
         /// 
         /// <returns>Returns a  CreateEmailIdentityResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateEmailIdentity">REST API Reference for CreateEmailIdentity Operation</seealso>
         CreateEmailIdentityResponse EndCreateEmailIdentity(IAsyncResult asyncResult);
 
         #endregion
@@ -424,6 +439,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         DeleteConfigurationSetResponse DeleteConfigurationSet(DeleteConfigurationSetRequest request);
 
         /// <summary>
@@ -437,6 +453,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConfigurationSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         IAsyncResult BeginDeleteConfigurationSet(DeleteConfigurationSetRequest request, AsyncCallback callback, object state);
 
 
@@ -448,6 +465,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConfigurationSet.</param>
         /// 
         /// <returns>Returns a  DeleteConfigurationSetResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         DeleteConfigurationSetResponse EndDeleteConfigurationSet(IAsyncResult asyncResult);
 
         #endregion
@@ -479,6 +497,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteConfigurationSetEventDestination">REST API Reference for DeleteConfigurationSetEventDestination Operation</seealso>
         DeleteConfigurationSetEventDestinationResponse DeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request);
 
         /// <summary>
@@ -492,6 +511,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConfigurationSetEventDestination
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteConfigurationSetEventDestination">REST API Reference for DeleteConfigurationSetEventDestination Operation</seealso>
         IAsyncResult BeginDeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state);
 
 
@@ -503,6 +523,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConfigurationSetEventDestination.</param>
         /// 
         /// <returns>Returns a  DeleteConfigurationSetEventDestinationResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteConfigurationSetEventDestination">REST API Reference for DeleteConfigurationSetEventDestination Operation</seealso>
         DeleteConfigurationSetEventDestinationResponse EndDeleteConfigurationSetEventDestination(IAsyncResult asyncResult);
 
         #endregion
@@ -528,6 +549,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteDedicatedIpPool">REST API Reference for DeleteDedicatedIpPool Operation</seealso>
         DeleteDedicatedIpPoolResponse DeleteDedicatedIpPool(DeleteDedicatedIpPoolRequest request);
 
         /// <summary>
@@ -541,6 +563,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDedicatedIpPool
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteDedicatedIpPool">REST API Reference for DeleteDedicatedIpPool Operation</seealso>
         IAsyncResult BeginDeleteDedicatedIpPool(DeleteDedicatedIpPoolRequest request, AsyncCallback callback, object state);
 
 
@@ -552,6 +575,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDedicatedIpPool.</param>
         /// 
         /// <returns>Returns a  DeleteDedicatedIpPoolResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteDedicatedIpPool">REST API Reference for DeleteDedicatedIpPool Operation</seealso>
         DeleteDedicatedIpPoolResponse EndDeleteDedicatedIpPool(IAsyncResult asyncResult);
 
         #endregion
@@ -578,6 +602,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteEmailIdentity">REST API Reference for DeleteEmailIdentity Operation</seealso>
         DeleteEmailIdentityResponse DeleteEmailIdentity(DeleteEmailIdentityRequest request);
 
         /// <summary>
@@ -591,6 +616,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEmailIdentity
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteEmailIdentity">REST API Reference for DeleteEmailIdentity Operation</seealso>
         IAsyncResult BeginDeleteEmailIdentity(DeleteEmailIdentityRequest request, AsyncCallback callback, object state);
 
 
@@ -602,6 +628,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEmailIdentity.</param>
         /// 
         /// <returns>Returns a  DeleteEmailIdentityResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteEmailIdentity">REST API Reference for DeleteEmailIdentity Operation</seealso>
         DeleteEmailIdentityResponse EndDeleteEmailIdentity(IAsyncResult asyncResult);
 
         #endregion
@@ -622,6 +649,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetAccount">REST API Reference for GetAccount Operation</seealso>
         GetAccountResponse GetAccount(GetAccountRequest request);
 
         /// <summary>
@@ -635,6 +663,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccount
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetAccount">REST API Reference for GetAccount Operation</seealso>
         IAsyncResult BeginGetAccount(GetAccountRequest request, AsyncCallback callback, object state);
 
 
@@ -646,6 +675,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccount.</param>
         /// 
         /// <returns>Returns a  GetAccountResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetAccount">REST API Reference for GetAccount Operation</seealso>
         GetAccountResponse EndGetAccount(IAsyncResult asyncResult);
 
         #endregion
@@ -668,6 +698,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetBlacklistReports">REST API Reference for GetBlacklistReports Operation</seealso>
         GetBlacklistReportsResponse GetBlacklistReports(GetBlacklistReportsRequest request);
 
         /// <summary>
@@ -681,6 +712,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBlacklistReports
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetBlacklistReports">REST API Reference for GetBlacklistReports Operation</seealso>
         IAsyncResult BeginGetBlacklistReports(GetBlacklistReportsRequest request, AsyncCallback callback, object state);
 
 
@@ -692,6 +724,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBlacklistReports.</param>
         /// 
         /// <returns>Returns a  GetBlacklistReportsResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetBlacklistReports">REST API Reference for GetBlacklistReports Operation</seealso>
         GetBlacklistReportsResponse EndGetBlacklistReports(IAsyncResult asyncResult);
 
         #endregion
@@ -723,6 +756,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetConfigurationSet">REST API Reference for GetConfigurationSet Operation</seealso>
         GetConfigurationSetResponse GetConfigurationSet(GetConfigurationSetRequest request);
 
         /// <summary>
@@ -736,6 +770,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConfigurationSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetConfigurationSet">REST API Reference for GetConfigurationSet Operation</seealso>
         IAsyncResult BeginGetConfigurationSet(GetConfigurationSetRequest request, AsyncCallback callback, object state);
 
 
@@ -747,6 +782,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConfigurationSet.</param>
         /// 
         /// <returns>Returns a  GetConfigurationSetResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetConfigurationSet">REST API Reference for GetConfigurationSet Operation</seealso>
         GetConfigurationSetResponse EndGetConfigurationSet(IAsyncResult asyncResult);
 
         #endregion
@@ -778,6 +814,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetConfigurationSetEventDestinations">REST API Reference for GetConfigurationSetEventDestinations Operation</seealso>
         GetConfigurationSetEventDestinationsResponse GetConfigurationSetEventDestinations(GetConfigurationSetEventDestinationsRequest request);
 
         /// <summary>
@@ -791,6 +828,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConfigurationSetEventDestinations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetConfigurationSetEventDestinations">REST API Reference for GetConfigurationSetEventDestinations Operation</seealso>
         IAsyncResult BeginGetConfigurationSetEventDestinations(GetConfigurationSetEventDestinationsRequest request, AsyncCallback callback, object state);
 
 
@@ -802,6 +840,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConfigurationSetEventDestinations.</param>
         /// 
         /// <returns>Returns a  GetConfigurationSetEventDestinationsResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetConfigurationSetEventDestinations">REST API Reference for GetConfigurationSetEventDestinations Operation</seealso>
         GetConfigurationSetEventDestinationsResponse EndGetConfigurationSetEventDestinations(IAsyncResult asyncResult);
 
         #endregion
@@ -826,6 +865,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDedicatedIp">REST API Reference for GetDedicatedIp Operation</seealso>
         GetDedicatedIpResponse GetDedicatedIp(GetDedicatedIpRequest request);
 
         /// <summary>
@@ -839,6 +879,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDedicatedIp
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDedicatedIp">REST API Reference for GetDedicatedIp Operation</seealso>
         IAsyncResult BeginGetDedicatedIp(GetDedicatedIpRequest request, AsyncCallback callback, object state);
 
 
@@ -850,6 +891,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDedicatedIp.</param>
         /// 
         /// <returns>Returns a  GetDedicatedIpResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDedicatedIp">REST API Reference for GetDedicatedIp Operation</seealso>
         GetDedicatedIpResponse EndGetDedicatedIp(IAsyncResult asyncResult);
 
         #endregion
@@ -872,6 +914,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDedicatedIps">REST API Reference for GetDedicatedIps Operation</seealso>
         GetDedicatedIpsResponse GetDedicatedIps(GetDedicatedIpsRequest request);
 
         /// <summary>
@@ -885,6 +928,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDedicatedIps
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDedicatedIps">REST API Reference for GetDedicatedIps Operation</seealso>
         IAsyncResult BeginGetDedicatedIps(GetDedicatedIpsRequest request, AsyncCallback callback, object state);
 
 
@@ -896,6 +940,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDedicatedIps.</param>
         /// 
         /// <returns>Returns a  GetDedicatedIpsResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDedicatedIps">REST API Reference for GetDedicatedIps Operation</seealso>
         GetDedicatedIpsResponse EndGetDedicatedIps(IAsyncResult asyncResult);
 
         #endregion
@@ -930,6 +975,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityDashboardOptions">REST API Reference for GetDeliverabilityDashboardOptions Operation</seealso>
         GetDeliverabilityDashboardOptionsResponse GetDeliverabilityDashboardOptions(GetDeliverabilityDashboardOptionsRequest request);
 
         /// <summary>
@@ -943,6 +989,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeliverabilityDashboardOptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityDashboardOptions">REST API Reference for GetDeliverabilityDashboardOptions Operation</seealso>
         IAsyncResult BeginGetDeliverabilityDashboardOptions(GetDeliverabilityDashboardOptionsRequest request, AsyncCallback callback, object state);
 
 
@@ -954,6 +1001,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeliverabilityDashboardOptions.</param>
         /// 
         /// <returns>Returns a  GetDeliverabilityDashboardOptionsResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityDashboardOptions">REST API Reference for GetDeliverabilityDashboardOptions Operation</seealso>
         GetDeliverabilityDashboardOptionsResponse EndGetDeliverabilityDashboardOptions(IAsyncResult asyncResult);
 
         #endregion
@@ -976,6 +1024,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityTestReport">REST API Reference for GetDeliverabilityTestReport Operation</seealso>
         GetDeliverabilityTestReportResponse GetDeliverabilityTestReport(GetDeliverabilityTestReportRequest request);
 
         /// <summary>
@@ -989,6 +1038,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeliverabilityTestReport
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityTestReport">REST API Reference for GetDeliverabilityTestReport Operation</seealso>
         IAsyncResult BeginGetDeliverabilityTestReport(GetDeliverabilityTestReportRequest request, AsyncCallback callback, object state);
 
 
@@ -1000,6 +1050,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeliverabilityTestReport.</param>
         /// 
         /// <returns>Returns a  GetDeliverabilityTestReportResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityTestReport">REST API Reference for GetDeliverabilityTestReport Operation</seealso>
         GetDeliverabilityTestReportResponse EndGetDeliverabilityTestReport(IAsyncResult asyncResult);
 
         #endregion
@@ -1024,6 +1075,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainDeliverabilityCampaign">REST API Reference for GetDomainDeliverabilityCampaign Operation</seealso>
         GetDomainDeliverabilityCampaignResponse GetDomainDeliverabilityCampaign(GetDomainDeliverabilityCampaignRequest request);
 
         /// <summary>
@@ -1037,6 +1089,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomainDeliverabilityCampaign
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainDeliverabilityCampaign">REST API Reference for GetDomainDeliverabilityCampaign Operation</seealso>
         IAsyncResult BeginGetDomainDeliverabilityCampaign(GetDomainDeliverabilityCampaignRequest request, AsyncCallback callback, object state);
 
 
@@ -1048,6 +1101,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDomainDeliverabilityCampaign.</param>
         /// 
         /// <returns>Returns a  GetDomainDeliverabilityCampaignResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainDeliverabilityCampaign">REST API Reference for GetDomainDeliverabilityCampaign Operation</seealso>
         GetDomainDeliverabilityCampaignResponse EndGetDomainDeliverabilityCampaign(IAsyncResult asyncResult);
 
         #endregion
@@ -1071,6 +1125,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainStatisticsReport">REST API Reference for GetDomainStatisticsReport Operation</seealso>
         GetDomainStatisticsReportResponse GetDomainStatisticsReport(GetDomainStatisticsReportRequest request);
 
         /// <summary>
@@ -1084,6 +1139,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomainStatisticsReport
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainStatisticsReport">REST API Reference for GetDomainStatisticsReport Operation</seealso>
         IAsyncResult BeginGetDomainStatisticsReport(GetDomainStatisticsReportRequest request, AsyncCallback callback, object state);
 
 
@@ -1095,6 +1151,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDomainStatisticsReport.</param>
         /// 
         /// <returns>Returns a  GetDomainStatisticsReportResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainStatisticsReport">REST API Reference for GetDomainStatisticsReport Operation</seealso>
         GetDomainStatisticsReportResponse EndGetDomainStatisticsReport(IAsyncResult asyncResult);
 
         #endregion
@@ -1119,6 +1176,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetEmailIdentity">REST API Reference for GetEmailIdentity Operation</seealso>
         GetEmailIdentityResponse GetEmailIdentity(GetEmailIdentityRequest request);
 
         /// <summary>
@@ -1132,6 +1190,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEmailIdentity
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetEmailIdentity">REST API Reference for GetEmailIdentity Operation</seealso>
         IAsyncResult BeginGetEmailIdentity(GetEmailIdentityRequest request, AsyncCallback callback, object state);
 
 
@@ -1143,6 +1202,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEmailIdentity.</param>
         /// 
         /// <returns>Returns a  GetEmailIdentityResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetEmailIdentity">REST API Reference for GetEmailIdentity Operation</seealso>
         GetEmailIdentityResponse EndGetEmailIdentity(IAsyncResult asyncResult);
 
         #endregion
@@ -1171,6 +1231,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         ListConfigurationSetsResponse ListConfigurationSets(ListConfigurationSetsRequest request);
 
         /// <summary>
@@ -1184,6 +1245,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConfigurationSets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         IAsyncResult BeginListConfigurationSets(ListConfigurationSetsRequest request, AsyncCallback callback, object state);
 
 
@@ -1195,6 +1257,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConfigurationSets.</param>
         /// 
         /// <returns>Returns a  ListConfigurationSetsResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         ListConfigurationSetsResponse EndListConfigurationSets(IAsyncResult asyncResult);
 
         #endregion
@@ -1215,6 +1278,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDedicatedIpPools">REST API Reference for ListDedicatedIpPools Operation</seealso>
         ListDedicatedIpPoolsResponse ListDedicatedIpPools(ListDedicatedIpPoolsRequest request);
 
         /// <summary>
@@ -1228,6 +1292,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDedicatedIpPools
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDedicatedIpPools">REST API Reference for ListDedicatedIpPools Operation</seealso>
         IAsyncResult BeginListDedicatedIpPools(ListDedicatedIpPoolsRequest request, AsyncCallback callback, object state);
 
 
@@ -1239,6 +1304,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDedicatedIpPools.</param>
         /// 
         /// <returns>Returns a  ListDedicatedIpPoolsResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDedicatedIpPools">REST API Reference for ListDedicatedIpPools Operation</seealso>
         ListDedicatedIpPoolsResponse EndListDedicatedIpPools(IAsyncResult asyncResult);
 
         #endregion
@@ -1263,6 +1329,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDeliverabilityTestReports">REST API Reference for ListDeliverabilityTestReports Operation</seealso>
         ListDeliverabilityTestReportsResponse ListDeliverabilityTestReports(ListDeliverabilityTestReportsRequest request);
 
         /// <summary>
@@ -1276,6 +1343,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeliverabilityTestReports
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDeliverabilityTestReports">REST API Reference for ListDeliverabilityTestReports Operation</seealso>
         IAsyncResult BeginListDeliverabilityTestReports(ListDeliverabilityTestReportsRequest request, AsyncCallback callback, object state);
 
 
@@ -1287,6 +1355,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDeliverabilityTestReports.</param>
         /// 
         /// <returns>Returns a  ListDeliverabilityTestReportsResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDeliverabilityTestReports">REST API Reference for ListDeliverabilityTestReports Operation</seealso>
         ListDeliverabilityTestReportsResponse EndListDeliverabilityTestReports(IAsyncResult asyncResult);
 
         #endregion
@@ -1312,6 +1381,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDomainDeliverabilityCampaigns">REST API Reference for ListDomainDeliverabilityCampaigns Operation</seealso>
         ListDomainDeliverabilityCampaignsResponse ListDomainDeliverabilityCampaigns(ListDomainDeliverabilityCampaignsRequest request);
 
         /// <summary>
@@ -1325,6 +1395,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomainDeliverabilityCampaigns
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDomainDeliverabilityCampaigns">REST API Reference for ListDomainDeliverabilityCampaigns Operation</seealso>
         IAsyncResult BeginListDomainDeliverabilityCampaigns(ListDomainDeliverabilityCampaignsRequest request, AsyncCallback callback, object state);
 
 
@@ -1336,6 +1407,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomainDeliverabilityCampaigns.</param>
         /// 
         /// <returns>Returns a  ListDomainDeliverabilityCampaignsResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDomainDeliverabilityCampaigns">REST API Reference for ListDomainDeliverabilityCampaigns Operation</seealso>
         ListDomainDeliverabilityCampaignsResponse EndListDomainDeliverabilityCampaigns(IAsyncResult asyncResult);
 
         #endregion
@@ -1357,6 +1429,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListEmailIdentities">REST API Reference for ListEmailIdentities Operation</seealso>
         ListEmailIdentitiesResponse ListEmailIdentities(ListEmailIdentitiesRequest request);
 
         /// <summary>
@@ -1370,6 +1443,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEmailIdentities
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListEmailIdentities">REST API Reference for ListEmailIdentities Operation</seealso>
         IAsyncResult BeginListEmailIdentities(ListEmailIdentitiesRequest request, AsyncCallback callback, object state);
 
 
@@ -1381,6 +1455,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEmailIdentities.</param>
         /// 
         /// <returns>Returns a  ListEmailIdentitiesResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListEmailIdentities">REST API Reference for ListEmailIdentities Operation</seealso>
         ListEmailIdentitiesResponse EndListEmailIdentities(IAsyncResult asyncResult);
 
         #endregion
@@ -1408,6 +1483,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
         /// <summary>
@@ -1421,6 +1497,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -1432,6 +1509,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
 
         #endregion
@@ -1451,6 +1529,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutAccountDedicatedIpWarmupAttributes">REST API Reference for PutAccountDedicatedIpWarmupAttributes Operation</seealso>
         PutAccountDedicatedIpWarmupAttributesResponse PutAccountDedicatedIpWarmupAttributes(PutAccountDedicatedIpWarmupAttributesRequest request);
 
         /// <summary>
@@ -1464,6 +1543,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAccountDedicatedIpWarmupAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutAccountDedicatedIpWarmupAttributes">REST API Reference for PutAccountDedicatedIpWarmupAttributes Operation</seealso>
         IAsyncResult BeginPutAccountDedicatedIpWarmupAttributes(PutAccountDedicatedIpWarmupAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -1475,6 +1555,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAccountDedicatedIpWarmupAttributes.</param>
         /// 
         /// <returns>Returns a  PutAccountDedicatedIpWarmupAttributesResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutAccountDedicatedIpWarmupAttributes">REST API Reference for PutAccountDedicatedIpWarmupAttributes Operation</seealso>
         PutAccountDedicatedIpWarmupAttributesResponse EndPutAccountDedicatedIpWarmupAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -1494,6 +1575,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutAccountSendingAttributes">REST API Reference for PutAccountSendingAttributes Operation</seealso>
         PutAccountSendingAttributesResponse PutAccountSendingAttributes(PutAccountSendingAttributesRequest request);
 
         /// <summary>
@@ -1507,6 +1589,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAccountSendingAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutAccountSendingAttributes">REST API Reference for PutAccountSendingAttributes Operation</seealso>
         IAsyncResult BeginPutAccountSendingAttributes(PutAccountSendingAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -1518,6 +1601,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAccountSendingAttributes.</param>
         /// 
         /// <returns>Returns a  PutAccountSendingAttributesResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutAccountSendingAttributes">REST API Reference for PutAccountSendingAttributes Operation</seealso>
         PutAccountSendingAttributesResponse EndPutAccountSendingAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -1541,6 +1625,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetDeliveryOptions">REST API Reference for PutConfigurationSetDeliveryOptions Operation</seealso>
         PutConfigurationSetDeliveryOptionsResponse PutConfigurationSetDeliveryOptions(PutConfigurationSetDeliveryOptionsRequest request);
 
         /// <summary>
@@ -1554,6 +1639,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutConfigurationSetDeliveryOptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetDeliveryOptions">REST API Reference for PutConfigurationSetDeliveryOptions Operation</seealso>
         IAsyncResult BeginPutConfigurationSetDeliveryOptions(PutConfigurationSetDeliveryOptionsRequest request, AsyncCallback callback, object state);
 
 
@@ -1565,6 +1651,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutConfigurationSetDeliveryOptions.</param>
         /// 
         /// <returns>Returns a  PutConfigurationSetDeliveryOptionsResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetDeliveryOptions">REST API Reference for PutConfigurationSetDeliveryOptions Operation</seealso>
         PutConfigurationSetDeliveryOptionsResponse EndPutConfigurationSetDeliveryOptions(IAsyncResult asyncResult);
 
         #endregion
@@ -1588,6 +1675,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetReputationOptions">REST API Reference for PutConfigurationSetReputationOptions Operation</seealso>
         PutConfigurationSetReputationOptionsResponse PutConfigurationSetReputationOptions(PutConfigurationSetReputationOptionsRequest request);
 
         /// <summary>
@@ -1601,6 +1689,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutConfigurationSetReputationOptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetReputationOptions">REST API Reference for PutConfigurationSetReputationOptions Operation</seealso>
         IAsyncResult BeginPutConfigurationSetReputationOptions(PutConfigurationSetReputationOptionsRequest request, AsyncCallback callback, object state);
 
 
@@ -1612,6 +1701,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutConfigurationSetReputationOptions.</param>
         /// 
         /// <returns>Returns a  PutConfigurationSetReputationOptionsResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetReputationOptions">REST API Reference for PutConfigurationSetReputationOptions Operation</seealso>
         PutConfigurationSetReputationOptionsResponse EndPutConfigurationSetReputationOptions(IAsyncResult asyncResult);
 
         #endregion
@@ -1635,6 +1725,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetSendingOptions">REST API Reference for PutConfigurationSetSendingOptions Operation</seealso>
         PutConfigurationSetSendingOptionsResponse PutConfigurationSetSendingOptions(PutConfigurationSetSendingOptionsRequest request);
 
         /// <summary>
@@ -1648,6 +1739,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutConfigurationSetSendingOptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetSendingOptions">REST API Reference for PutConfigurationSetSendingOptions Operation</seealso>
         IAsyncResult BeginPutConfigurationSetSendingOptions(PutConfigurationSetSendingOptionsRequest request, AsyncCallback callback, object state);
 
 
@@ -1659,6 +1751,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutConfigurationSetSendingOptions.</param>
         /// 
         /// <returns>Returns a  PutConfigurationSetSendingOptionsResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetSendingOptions">REST API Reference for PutConfigurationSetSendingOptions Operation</seealso>
         PutConfigurationSetSendingOptionsResponse EndPutConfigurationSetSendingOptions(IAsyncResult asyncResult);
 
         #endregion
@@ -1682,6 +1775,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetTrackingOptions">REST API Reference for PutConfigurationSetTrackingOptions Operation</seealso>
         PutConfigurationSetTrackingOptionsResponse PutConfigurationSetTrackingOptions(PutConfigurationSetTrackingOptionsRequest request);
 
         /// <summary>
@@ -1695,6 +1789,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutConfigurationSetTrackingOptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetTrackingOptions">REST API Reference for PutConfigurationSetTrackingOptions Operation</seealso>
         IAsyncResult BeginPutConfigurationSetTrackingOptions(PutConfigurationSetTrackingOptionsRequest request, AsyncCallback callback, object state);
 
 
@@ -1706,6 +1801,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutConfigurationSetTrackingOptions.</param>
         /// 
         /// <returns>Returns a  PutConfigurationSetTrackingOptionsResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetTrackingOptions">REST API Reference for PutConfigurationSetTrackingOptions Operation</seealso>
         PutConfigurationSetTrackingOptionsResponse EndPutConfigurationSetTrackingOptions(IAsyncResult asyncResult);
 
         #endregion
@@ -1740,6 +1836,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDedicatedIpInPool">REST API Reference for PutDedicatedIpInPool Operation</seealso>
         PutDedicatedIpInPoolResponse PutDedicatedIpInPool(PutDedicatedIpInPoolRequest request);
 
         /// <summary>
@@ -1753,6 +1850,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutDedicatedIpInPool
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDedicatedIpInPool">REST API Reference for PutDedicatedIpInPool Operation</seealso>
         IAsyncResult BeginPutDedicatedIpInPool(PutDedicatedIpInPoolRequest request, AsyncCallback callback, object state);
 
 
@@ -1764,6 +1862,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutDedicatedIpInPool.</param>
         /// 
         /// <returns>Returns a  PutDedicatedIpInPoolResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDedicatedIpInPool">REST API Reference for PutDedicatedIpInPool Operation</seealso>
         PutDedicatedIpInPoolResponse EndPutDedicatedIpInPool(IAsyncResult asyncResult);
 
         #endregion
@@ -1786,6 +1885,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDedicatedIpWarmupAttributes">REST API Reference for PutDedicatedIpWarmupAttributes Operation</seealso>
         PutDedicatedIpWarmupAttributesResponse PutDedicatedIpWarmupAttributes(PutDedicatedIpWarmupAttributesRequest request);
 
         /// <summary>
@@ -1799,6 +1899,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutDedicatedIpWarmupAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDedicatedIpWarmupAttributes">REST API Reference for PutDedicatedIpWarmupAttributes Operation</seealso>
         IAsyncResult BeginPutDedicatedIpWarmupAttributes(PutDedicatedIpWarmupAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -1810,6 +1911,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutDedicatedIpWarmupAttributes.</param>
         /// 
         /// <returns>Returns a  PutDedicatedIpWarmupAttributesResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDedicatedIpWarmupAttributes">REST API Reference for PutDedicatedIpWarmupAttributes Operation</seealso>
         PutDedicatedIpWarmupAttributesResponse EndPutDedicatedIpWarmupAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -1849,6 +1951,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDeliverabilityDashboardOption">REST API Reference for PutDeliverabilityDashboardOption Operation</seealso>
         PutDeliverabilityDashboardOptionResponse PutDeliverabilityDashboardOption(PutDeliverabilityDashboardOptionRequest request);
 
         /// <summary>
@@ -1862,6 +1965,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutDeliverabilityDashboardOption
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDeliverabilityDashboardOption">REST API Reference for PutDeliverabilityDashboardOption Operation</seealso>
         IAsyncResult BeginPutDeliverabilityDashboardOption(PutDeliverabilityDashboardOptionRequest request, AsyncCallback callback, object state);
 
 
@@ -1873,6 +1977,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutDeliverabilityDashboardOption.</param>
         /// 
         /// <returns>Returns a  PutDeliverabilityDashboardOptionResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDeliverabilityDashboardOption">REST API Reference for PutDeliverabilityDashboardOption Operation</seealso>
         PutDeliverabilityDashboardOptionResponse EndPutDeliverabilityDashboardOption(IAsyncResult asyncResult);
 
         #endregion
@@ -1895,6 +2000,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutEmailIdentityDkimAttributes">REST API Reference for PutEmailIdentityDkimAttributes Operation</seealso>
         PutEmailIdentityDkimAttributesResponse PutEmailIdentityDkimAttributes(PutEmailIdentityDkimAttributesRequest request);
 
         /// <summary>
@@ -1908,6 +2014,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEmailIdentityDkimAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutEmailIdentityDkimAttributes">REST API Reference for PutEmailIdentityDkimAttributes Operation</seealso>
         IAsyncResult BeginPutEmailIdentityDkimAttributes(PutEmailIdentityDkimAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -1919,6 +2026,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEmailIdentityDkimAttributes.</param>
         /// 
         /// <returns>Returns a  PutEmailIdentityDkimAttributesResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutEmailIdentityDkimAttributes">REST API Reference for PutEmailIdentityDkimAttributes Operation</seealso>
         PutEmailIdentityDkimAttributesResponse EndPutEmailIdentityDkimAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -1958,6 +2066,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutEmailIdentityFeedbackAttributes">REST API Reference for PutEmailIdentityFeedbackAttributes Operation</seealso>
         PutEmailIdentityFeedbackAttributesResponse PutEmailIdentityFeedbackAttributes(PutEmailIdentityFeedbackAttributesRequest request);
 
         /// <summary>
@@ -1971,6 +2080,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEmailIdentityFeedbackAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutEmailIdentityFeedbackAttributes">REST API Reference for PutEmailIdentityFeedbackAttributes Operation</seealso>
         IAsyncResult BeginPutEmailIdentityFeedbackAttributes(PutEmailIdentityFeedbackAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -1982,6 +2092,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEmailIdentityFeedbackAttributes.</param>
         /// 
         /// <returns>Returns a  PutEmailIdentityFeedbackAttributesResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutEmailIdentityFeedbackAttributes">REST API Reference for PutEmailIdentityFeedbackAttributes Operation</seealso>
         PutEmailIdentityFeedbackAttributesResponse EndPutEmailIdentityFeedbackAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -2004,6 +2115,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutEmailIdentityMailFromAttributes">REST API Reference for PutEmailIdentityMailFromAttributes Operation</seealso>
         PutEmailIdentityMailFromAttributesResponse PutEmailIdentityMailFromAttributes(PutEmailIdentityMailFromAttributesRequest request);
 
         /// <summary>
@@ -2017,6 +2129,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEmailIdentityMailFromAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutEmailIdentityMailFromAttributes">REST API Reference for PutEmailIdentityMailFromAttributes Operation</seealso>
         IAsyncResult BeginPutEmailIdentityMailFromAttributes(PutEmailIdentityMailFromAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -2028,6 +2141,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEmailIdentityMailFromAttributes.</param>
         /// 
         /// <returns>Returns a  PutEmailIdentityMailFromAttributesResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutEmailIdentityMailFromAttributes">REST API Reference for PutEmailIdentityMailFromAttributes Operation</seealso>
         PutEmailIdentityMailFromAttributesResponse EndPutEmailIdentityMailFromAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -2083,6 +2197,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/SendEmail">REST API Reference for SendEmail Operation</seealso>
         SendEmailResponse SendEmail(SendEmailRequest request);
 
         /// <summary>
@@ -2096,6 +2211,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendEmail
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/SendEmail">REST API Reference for SendEmail Operation</seealso>
         IAsyncResult BeginSendEmail(SendEmailRequest request, AsyncCallback callback, object state);
 
 
@@ -2107,6 +2223,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendEmail.</param>
         /// 
         /// <returns>Returns a  SendEmailResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/SendEmail">REST API Reference for SendEmail Operation</seealso>
         SendEmailResponse EndSendEmail(IAsyncResult asyncResult);
 
         #endregion
@@ -2142,6 +2259,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
 
         /// <summary>
@@ -2155,6 +2273,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/TagResource">REST API Reference for TagResource Operation</seealso>
         IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -2166,6 +2285,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
         /// 
         /// <returns>Returns a  TagResourceResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse EndTagResource(IAsyncResult asyncResult);
 
         #endregion
@@ -2191,6 +2311,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
 
         /// <summary>
@@ -2204,6 +2325,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -2215,6 +2337,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
         /// 
         /// <returns>Returns a  UntagResourceResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
 
         #endregion
@@ -2246,6 +2369,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/UpdateConfigurationSetEventDestination">REST API Reference for UpdateConfigurationSetEventDestination Operation</seealso>
         UpdateConfigurationSetEventDestinationResponse UpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request);
 
         /// <summary>
@@ -2259,6 +2383,7 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConfigurationSetEventDestination
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/UpdateConfigurationSetEventDestination">REST API Reference for UpdateConfigurationSetEventDestination Operation</seealso>
         IAsyncResult BeginUpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state);
 
 
@@ -2270,6 +2395,7 @@ namespace Amazon.PinpointEmail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConfigurationSetEventDestination.</param>
         /// 
         /// <returns>Returns a  UpdateConfigurationSetEventDestinationResult from PinpointEmail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/UpdateConfigurationSetEventDestination">REST API Reference for UpdateConfigurationSetEventDestination Operation</seealso>
         UpdateConfigurationSetEventDestinationResponse EndUpdateConfigurationSetEventDestination(IAsyncResult asyncResult);
 
         #endregion

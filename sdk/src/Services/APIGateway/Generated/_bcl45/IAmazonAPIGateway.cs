@@ -74,6 +74,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateApiKey">REST API Reference for CreateApiKey Operation</seealso>
         CreateApiKeyResponse CreateApiKey(CreateApiKeyRequest request);
 
 
@@ -109,6 +110,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateApiKey">REST API Reference for CreateApiKey Operation</seealso>
         Task<CreateApiKeyResponse> CreateApiKeyAsync(CreateApiKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -141,6 +143,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateAuthorizer">REST API Reference for CreateAuthorizer Operation</seealso>
         CreateAuthorizerResponse CreateAuthorizer(CreateAuthorizerRequest request);
 
 
@@ -173,6 +176,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateAuthorizer">REST API Reference for CreateAuthorizer Operation</seealso>
         Task<CreateAuthorizerResponse> CreateAuthorizerAsync(CreateAuthorizerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -202,6 +206,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateBasePathMapping">REST API Reference for CreateBasePathMapping Operation</seealso>
         CreateBasePathMappingResponse CreateBasePathMapping(CreateBasePathMappingRequest request);
 
 
@@ -231,6 +236,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateBasePathMapping">REST API Reference for CreateBasePathMapping Operation</seealso>
         Task<CreateBasePathMappingResponse> CreateBasePathMappingAsync(CreateBasePathMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -268,6 +274,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request);
 
 
@@ -305,6 +312,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -337,6 +345,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDocumentationPart">REST API Reference for CreateDocumentationPart Operation</seealso>
         CreateDocumentationPartResponse CreateDocumentationPart(CreateDocumentationPartRequest request);
 
 
@@ -369,6 +378,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDocumentationPart">REST API Reference for CreateDocumentationPart Operation</seealso>
         Task<CreateDocumentationPartResponse> CreateDocumentationPartAsync(CreateDocumentationPartRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -401,6 +411,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDocumentationVersion">REST API Reference for CreateDocumentationVersion Operation</seealso>
         CreateDocumentationVersionResponse CreateDocumentationVersion(CreateDocumentationVersionRequest request);
 
 
@@ -433,6 +444,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDocumentationVersion">REST API Reference for CreateDocumentationVersion Operation</seealso>
         Task<CreateDocumentationVersionResponse> CreateDocumentationVersionAsync(CreateDocumentationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -459,6 +471,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDomainName">REST API Reference for CreateDomainName Operation</seealso>
         CreateDomainNameResponse CreateDomainName(CreateDomainNameRequest request);
 
 
@@ -485,6 +498,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDomainName">REST API Reference for CreateDomainName Operation</seealso>
         Task<CreateDomainNameResponse> CreateDomainNameAsync(CreateDomainNameRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -517,6 +531,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateModel">REST API Reference for CreateModel Operation</seealso>
         CreateModelResponse CreateModel(CreateModelRequest request);
 
 
@@ -549,6 +564,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateModel">REST API Reference for CreateModel Operation</seealso>
         Task<CreateModelResponse> CreateModelAsync(CreateModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -578,6 +594,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRequestValidator">REST API Reference for CreateRequestValidator Operation</seealso>
         CreateRequestValidatorResponse CreateRequestValidator(CreateRequestValidatorRequest request);
 
 
@@ -607,6 +624,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRequestValidator">REST API Reference for CreateRequestValidator Operation</seealso>
         Task<CreateRequestValidatorResponse> CreateRequestValidatorAsync(CreateRequestValidatorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -639,6 +657,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateResource">REST API Reference for CreateResource Operation</seealso>
         CreateResourceResponse CreateResource(CreateResourceRequest request);
 
 
@@ -671,6 +690,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateResource">REST API Reference for CreateResource Operation</seealso>
         Task<CreateResourceResponse> CreateResourceAsync(CreateResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -697,6 +717,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRestApi">REST API Reference for CreateRestApi Operation</seealso>
         CreateRestApiResponse CreateRestApi(CreateRestApiRequest request);
 
 
@@ -723,6 +744,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRestApi">REST API Reference for CreateRestApi Operation</seealso>
         Task<CreateRestApiResponse> CreateRestApiAsync(CreateRestApiRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -756,6 +778,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateStage">REST API Reference for CreateStage Operation</seealso>
         CreateStageResponse CreateStage(CreateStageRequest request);
 
 
@@ -789,6 +812,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateStage">REST API Reference for CreateStage Operation</seealso>
         Task<CreateStageResponse> CreateStageAsync(CreateStageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -822,6 +846,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlan">REST API Reference for CreateUsagePlan Operation</seealso>
         CreateUsagePlanResponse CreateUsagePlan(CreateUsagePlanRequest request);
 
 
@@ -855,6 +880,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlan">REST API Reference for CreateUsagePlan Operation</seealso>
         Task<CreateUsagePlanResponse> CreateUsagePlanAsync(CreateUsagePlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -884,6 +910,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlanKey">REST API Reference for CreateUsagePlanKey Operation</seealso>
         CreateUsagePlanKeyResponse CreateUsagePlanKey(CreateUsagePlanKeyRequest request);
 
 
@@ -913,6 +940,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlanKey">REST API Reference for CreateUsagePlanKey Operation</seealso>
         Task<CreateUsagePlanKeyResponse> CreateUsagePlanKeyAsync(CreateUsagePlanKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -938,6 +966,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateVpcLink">REST API Reference for CreateVpcLink Operation</seealso>
         CreateVpcLinkResponse CreateVpcLink(CreateVpcLinkRequest request);
 
 
@@ -963,6 +992,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateVpcLink">REST API Reference for CreateVpcLink Operation</seealso>
         Task<CreateVpcLinkResponse> CreateVpcLinkAsync(CreateVpcLinkRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -985,6 +1015,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteApiKey">REST API Reference for DeleteApiKey Operation</seealso>
         DeleteApiKeyResponse DeleteApiKey(DeleteApiKeyRequest request);
 
 
@@ -1007,6 +1038,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteApiKey">REST API Reference for DeleteApiKey Operation</seealso>
         Task<DeleteApiKeyResponse> DeleteApiKeyAsync(DeleteApiKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1039,6 +1071,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteAuthorizer">REST API Reference for DeleteAuthorizer Operation</seealso>
         DeleteAuthorizerResponse DeleteAuthorizer(DeleteAuthorizerRequest request);
 
 
@@ -1071,6 +1104,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteAuthorizer">REST API Reference for DeleteAuthorizer Operation</seealso>
         Task<DeleteAuthorizerResponse> DeleteAuthorizerAsync(DeleteAuthorizerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1100,6 +1134,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteBasePathMapping">REST API Reference for DeleteBasePathMapping Operation</seealso>
         DeleteBasePathMappingResponse DeleteBasePathMapping(DeleteBasePathMappingRequest request);
 
 
@@ -1129,6 +1164,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteBasePathMapping">REST API Reference for DeleteBasePathMapping Operation</seealso>
         Task<DeleteBasePathMappingResponse> DeleteBasePathMappingAsync(DeleteBasePathMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1155,6 +1191,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteClientCertificate">REST API Reference for DeleteClientCertificate Operation</seealso>
         DeleteClientCertificateResponse DeleteClientCertificate(DeleteClientCertificateRequest request);
 
 
@@ -1181,6 +1218,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteClientCertificate">REST API Reference for DeleteClientCertificate Operation</seealso>
         Task<DeleteClientCertificateResponse> DeleteClientCertificateAsync(DeleteClientCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1208,6 +1246,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
         DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request);
 
 
@@ -1235,6 +1274,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
         Task<DeleteDeploymentResponse> DeleteDeploymentAsync(DeleteDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1264,6 +1304,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDocumentationPart">REST API Reference for DeleteDocumentationPart Operation</seealso>
         DeleteDocumentationPartResponse DeleteDocumentationPart(DeleteDocumentationPartRequest request);
 
 
@@ -1293,6 +1334,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDocumentationPart">REST API Reference for DeleteDocumentationPart Operation</seealso>
         Task<DeleteDocumentationPartResponse> DeleteDocumentationPartAsync(DeleteDocumentationPartRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1322,6 +1364,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDocumentationVersion">REST API Reference for DeleteDocumentationVersion Operation</seealso>
         DeleteDocumentationVersionResponse DeleteDocumentationVersion(DeleteDocumentationVersionRequest request);
 
 
@@ -1351,6 +1394,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDocumentationVersion">REST API Reference for DeleteDocumentationVersion Operation</seealso>
         Task<DeleteDocumentationVersionResponse> DeleteDocumentationVersionAsync(DeleteDocumentationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1377,6 +1421,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDomainName">REST API Reference for DeleteDomainName Operation</seealso>
         DeleteDomainNameResponse DeleteDomainName(DeleteDomainNameRequest request);
 
 
@@ -1403,6 +1448,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDomainName">REST API Reference for DeleteDomainName Operation</seealso>
         Task<DeleteDomainNameResponse> DeleteDomainNameAsync(DeleteDomainNameRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1433,6 +1479,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteGatewayResponse">REST API Reference for DeleteGatewayResponse Operation</seealso>
         DeleteGatewayResponseResponse DeleteGatewayResponse(DeleteGatewayResponseRequest request);
 
 
@@ -1463,6 +1510,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteGatewayResponse">REST API Reference for DeleteGatewayResponse Operation</seealso>
         Task<DeleteGatewayResponseResponse> DeleteGatewayResponseAsync(DeleteGatewayResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1488,6 +1536,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
         DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request);
 
 
@@ -1513,6 +1562,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
         Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1542,6 +1592,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegrationResponse">REST API Reference for DeleteIntegrationResponse Operation</seealso>
         DeleteIntegrationResponseResponse DeleteIntegrationResponse(DeleteIntegrationResponseRequest request);
 
 
@@ -1571,6 +1622,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegrationResponse">REST API Reference for DeleteIntegrationResponse Operation</seealso>
         Task<DeleteIntegrationResponseResponse> DeleteIntegrationResponseAsync(DeleteIntegrationResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1596,6 +1648,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethod">REST API Reference for DeleteMethod Operation</seealso>
         DeleteMethodResponse DeleteMethod(DeleteMethodRequest request);
 
 
@@ -1621,6 +1674,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethod">REST API Reference for DeleteMethod Operation</seealso>
         Task<DeleteMethodResponse> DeleteMethodAsync(DeleteMethodRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1650,6 +1704,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethodResponse">REST API Reference for DeleteMethodResponse Operation</seealso>
         DeleteMethodResponseResponse DeleteMethodResponse(DeleteMethodResponseRequest request);
 
 
@@ -1679,6 +1734,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethodResponse">REST API Reference for DeleteMethodResponse Operation</seealso>
         Task<DeleteMethodResponseResponse> DeleteMethodResponseAsync(DeleteMethodResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1708,6 +1764,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         DeleteModelResponse DeleteModel(DeleteModelRequest request);
 
 
@@ -1737,6 +1794,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         Task<DeleteModelResponse> DeleteModelAsync(DeleteModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1766,6 +1824,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRequestValidator">REST API Reference for DeleteRequestValidator Operation</seealso>
         DeleteRequestValidatorResponse DeleteRequestValidator(DeleteRequestValidatorRequest request);
 
 
@@ -1795,6 +1854,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRequestValidator">REST API Reference for DeleteRequestValidator Operation</seealso>
         Task<DeleteRequestValidatorResponse> DeleteRequestValidatorAsync(DeleteRequestValidatorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1824,6 +1884,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteResource">REST API Reference for DeleteResource Operation</seealso>
         DeleteResourceResponse DeleteResource(DeleteResourceRequest request);
 
 
@@ -1853,6 +1914,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteResource">REST API Reference for DeleteResource Operation</seealso>
         Task<DeleteResourceResponse> DeleteResourceAsync(DeleteResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1879,6 +1941,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRestApi">REST API Reference for DeleteRestApi Operation</seealso>
         DeleteRestApiResponse DeleteRestApi(DeleteRestApiRequest request);
 
 
@@ -1905,6 +1968,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRestApi">REST API Reference for DeleteRestApi Operation</seealso>
         Task<DeleteRestApiResponse> DeleteRestApiAsync(DeleteRestApiRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1931,6 +1995,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteStage">REST API Reference for DeleteStage Operation</seealso>
         DeleteStageResponse DeleteStage(DeleteStageRequest request);
 
 
@@ -1957,6 +2022,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteStage">REST API Reference for DeleteStage Operation</seealso>
         Task<DeleteStageResponse> DeleteStageAsync(DeleteStageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1983,6 +2049,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlan">REST API Reference for DeleteUsagePlan Operation</seealso>
         DeleteUsagePlanResponse DeleteUsagePlan(DeleteUsagePlanRequest request);
 
 
@@ -2009,6 +2076,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlan">REST API Reference for DeleteUsagePlan Operation</seealso>
         Task<DeleteUsagePlanResponse> DeleteUsagePlanAsync(DeleteUsagePlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2039,6 +2107,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlanKey">REST API Reference for DeleteUsagePlanKey Operation</seealso>
         DeleteUsagePlanKeyResponse DeleteUsagePlanKey(DeleteUsagePlanKeyRequest request);
 
 
@@ -2069,6 +2138,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlanKey">REST API Reference for DeleteUsagePlanKey Operation</seealso>
         Task<DeleteUsagePlanKeyResponse> DeleteUsagePlanKeyAsync(DeleteUsagePlanKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2095,6 +2165,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteVpcLink">REST API Reference for DeleteVpcLink Operation</seealso>
         DeleteVpcLinkResponse DeleteVpcLink(DeleteVpcLinkRequest request);
 
 
@@ -2121,6 +2192,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteVpcLink">REST API Reference for DeleteVpcLink Operation</seealso>
         Task<DeleteVpcLinkResponse> DeleteVpcLinkAsync(DeleteVpcLinkRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2147,6 +2219,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageAuthorizersCache">REST API Reference for FlushStageAuthorizersCache Operation</seealso>
         FlushStageAuthorizersCacheResponse FlushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request);
 
 
@@ -2173,6 +2246,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageAuthorizersCache">REST API Reference for FlushStageAuthorizersCache Operation</seealso>
         Task<FlushStageAuthorizersCacheResponse> FlushStageAuthorizersCacheAsync(FlushStageAuthorizersCacheRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2199,6 +2273,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageCache">REST API Reference for FlushStageCache Operation</seealso>
         FlushStageCacheResponse FlushStageCache(FlushStageCacheRequest request);
 
 
@@ -2225,6 +2300,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageCache">REST API Reference for FlushStageCache Operation</seealso>
         Task<FlushStageCacheResponse> FlushStageCacheAsync(FlushStageCacheRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2247,6 +2323,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GenerateClientCertificate">REST API Reference for GenerateClientCertificate Operation</seealso>
         GenerateClientCertificateResponse GenerateClientCertificate(GenerateClientCertificateRequest request);
 
 
@@ -2269,6 +2346,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GenerateClientCertificate">REST API Reference for GenerateClientCertificate Operation</seealso>
         Task<GenerateClientCertificateResponse> GenerateClientCertificateAsync(GenerateClientCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2291,6 +2369,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAccount">REST API Reference for GetAccount Operation</seealso>
         GetAccountResponse GetAccount(GetAccountRequest request);
 
 
@@ -2313,6 +2392,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAccount">REST API Reference for GetAccount Operation</seealso>
         Task<GetAccountResponse> GetAccountAsync(GetAccountRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2335,6 +2415,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKey">REST API Reference for GetApiKey Operation</seealso>
         GetApiKeyResponse GetApiKey(GetApiKeyRequest request);
 
 
@@ -2357,6 +2438,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKey">REST API Reference for GetApiKey Operation</seealso>
         Task<GetApiKeyResponse> GetApiKeyAsync(GetApiKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2380,6 +2462,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKeys">REST API Reference for GetApiKeys Operation</seealso>
         GetApiKeysResponse GetApiKeys(GetApiKeysRequest request);
 
 
@@ -2403,6 +2486,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKeys">REST API Reference for GetApiKeys Operation</seealso>
         Task<GetApiKeysResponse> GetApiKeysAsync(GetApiKeysRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2428,6 +2512,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizer">REST API Reference for GetAuthorizer Operation</seealso>
         GetAuthorizerResponse GetAuthorizer(GetAuthorizerRequest request);
 
 
@@ -2453,6 +2538,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizer">REST API Reference for GetAuthorizer Operation</seealso>
         Task<GetAuthorizerResponse> GetAuthorizerAsync(GetAuthorizerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2482,6 +2568,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizers">REST API Reference for GetAuthorizers Operation</seealso>
         GetAuthorizersResponse GetAuthorizers(GetAuthorizersRequest request);
 
 
@@ -2511,6 +2598,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizers">REST API Reference for GetAuthorizers Operation</seealso>
         Task<GetAuthorizersResponse> GetAuthorizersAsync(GetAuthorizersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2533,6 +2621,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMapping">REST API Reference for GetBasePathMapping Operation</seealso>
         GetBasePathMappingResponse GetBasePathMapping(GetBasePathMappingRequest request);
 
 
@@ -2555,6 +2644,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMapping">REST API Reference for GetBasePathMapping Operation</seealso>
         Task<GetBasePathMappingResponse> GetBasePathMappingAsync(GetBasePathMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2577,6 +2667,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMappings">REST API Reference for GetBasePathMappings Operation</seealso>
         GetBasePathMappingsResponse GetBasePathMappings(GetBasePathMappingsRequest request);
 
 
@@ -2599,6 +2690,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMappings">REST API Reference for GetBasePathMappings Operation</seealso>
         Task<GetBasePathMappingsResponse> GetBasePathMappingsAsync(GetBasePathMappingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2621,6 +2713,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificate">REST API Reference for GetClientCertificate Operation</seealso>
         GetClientCertificateResponse GetClientCertificate(GetClientCertificateRequest request);
 
 
@@ -2643,6 +2736,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificate">REST API Reference for GetClientCertificate Operation</seealso>
         Task<GetClientCertificateResponse> GetClientCertificateAsync(GetClientCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2666,6 +2760,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificates">REST API Reference for GetClientCertificates Operation</seealso>
         GetClientCertificatesResponse GetClientCertificates(GetClientCertificatesRequest request);
 
 
@@ -2689,6 +2784,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificates">REST API Reference for GetClientCertificates Operation</seealso>
         Task<GetClientCertificatesResponse> GetClientCertificatesAsync(GetClientCertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2715,6 +2811,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         GetDeploymentResponse GetDeployment(GetDeploymentRequest request);
 
 
@@ -2741,6 +2838,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         Task<GetDeploymentResponse> GetDeploymentAsync(GetDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2768,6 +2866,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployments">REST API Reference for GetDeployments Operation</seealso>
         GetDeploymentsResponse GetDeployments(GetDeploymentsRequest request);
 
 
@@ -2795,6 +2894,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployments">REST API Reference for GetDeployments Operation</seealso>
         Task<GetDeploymentsResponse> GetDeploymentsAsync(GetDeploymentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2817,6 +2917,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationPart">REST API Reference for GetDocumentationPart Operation</seealso>
         GetDocumentationPartResponse GetDocumentationPart(GetDocumentationPartRequest request);
 
 
@@ -2839,6 +2940,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationPart">REST API Reference for GetDocumentationPart Operation</seealso>
         Task<GetDocumentationPartResponse> GetDocumentationPartAsync(GetDocumentationPartRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2865,6 +2967,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationParts">REST API Reference for GetDocumentationParts Operation</seealso>
         GetDocumentationPartsResponse GetDocumentationParts(GetDocumentationPartsRequest request);
 
 
@@ -2891,6 +2994,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationParts">REST API Reference for GetDocumentationParts Operation</seealso>
         Task<GetDocumentationPartsResponse> GetDocumentationPartsAsync(GetDocumentationPartsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2913,6 +3017,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationVersion">REST API Reference for GetDocumentationVersion Operation</seealso>
         GetDocumentationVersionResponse GetDocumentationVersion(GetDocumentationVersionRequest request);
 
 
@@ -2935,6 +3040,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationVersion">REST API Reference for GetDocumentationVersion Operation</seealso>
         Task<GetDocumentationVersionResponse> GetDocumentationVersionAsync(GetDocumentationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2961,6 +3067,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationVersions">REST API Reference for GetDocumentationVersions Operation</seealso>
         GetDocumentationVersionsResponse GetDocumentationVersions(GetDocumentationVersionsRequest request);
 
 
@@ -2987,6 +3094,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationVersions">REST API Reference for GetDocumentationVersions Operation</seealso>
         Task<GetDocumentationVersionsResponse> GetDocumentationVersionsAsync(GetDocumentationVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3014,6 +3122,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainName">REST API Reference for GetDomainName Operation</seealso>
         GetDomainNameResponse GetDomainName(GetDomainNameRequest request);
 
 
@@ -3041,6 +3150,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainName">REST API Reference for GetDomainName Operation</seealso>
         Task<GetDomainNameResponse> GetDomainNameAsync(GetDomainNameRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3064,6 +3174,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainNames">REST API Reference for GetDomainNames Operation</seealso>
         GetDomainNamesResponse GetDomainNames(GetDomainNamesRequest request);
 
 
@@ -3087,6 +3198,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainNames">REST API Reference for GetDomainNames Operation</seealso>
         Task<GetDomainNamesResponse> GetDomainNamesAsync(GetDomainNamesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3116,6 +3228,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetExport">REST API Reference for GetExport Operation</seealso>
         GetExportResponse GetExport(GetExportRequest request);
 
 
@@ -3145,6 +3258,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetExport">REST API Reference for GetExport Operation</seealso>
         Task<GetExportResponse> GetExportAsync(GetExportRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3167,6 +3281,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponse">REST API Reference for GetGatewayResponse Operation</seealso>
         GetGatewayResponseResponse GetGatewayResponse(GetGatewayResponseRequest request);
 
 
@@ -3189,6 +3304,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponse">REST API Reference for GetGatewayResponse Operation</seealso>
         Task<GetGatewayResponseResponse> GetGatewayResponseAsync(GetGatewayResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3218,6 +3334,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponses">REST API Reference for GetGatewayResponses Operation</seealso>
         GetGatewayResponsesResponse GetGatewayResponses(GetGatewayResponsesRequest request);
 
 
@@ -3247,6 +3364,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponses">REST API Reference for GetGatewayResponses Operation</seealso>
         Task<GetGatewayResponsesResponse> GetGatewayResponsesAsync(GetGatewayResponsesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3269,6 +3387,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegration">REST API Reference for GetIntegration Operation</seealso>
         GetIntegrationResponse GetIntegration(GetIntegrationRequest request);
 
 
@@ -3291,6 +3410,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegration">REST API Reference for GetIntegration Operation</seealso>
         Task<GetIntegrationResponse> GetIntegrationAsync(GetIntegrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3313,6 +3433,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegrationResponse">REST API Reference for GetIntegrationResponse Operation</seealso>
         GetIntegrationResponseResponse GetIntegrationResponse(GetIntegrationResponseRequest request);
 
 
@@ -3335,6 +3456,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegrationResponse">REST API Reference for GetIntegrationResponse Operation</seealso>
         Task<GetIntegrationResponseResponse> GetIntegrationResponseAsync(GetIntegrationResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3357,6 +3479,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethod">REST API Reference for GetMethod Operation</seealso>
         GetMethodResponse GetMethod(GetMethodRequest request);
 
 
@@ -3379,6 +3502,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethod">REST API Reference for GetMethod Operation</seealso>
         Task<GetMethodResponse> GetMethodAsync(GetMethodRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3401,6 +3525,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethodResponse">REST API Reference for GetMethodResponse Operation</seealso>
         GetMethodResponseResponse GetMethodResponse(GetMethodResponseRequest request);
 
 
@@ -3423,6 +3548,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethodResponse">REST API Reference for GetMethodResponse Operation</seealso>
         Task<GetMethodResponseResponse> GetMethodResponseAsync(GetMethodResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3445,6 +3571,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModel">REST API Reference for GetModel Operation</seealso>
         GetModelResponse GetModel(GetModelRequest request);
 
 
@@ -3467,6 +3594,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModel">REST API Reference for GetModel Operation</seealso>
         Task<GetModelResponse> GetModelAsync(GetModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3493,6 +3621,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModels">REST API Reference for GetModels Operation</seealso>
         GetModelsResponse GetModels(GetModelsRequest request);
 
 
@@ -3519,6 +3648,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModels">REST API Reference for GetModels Operation</seealso>
         Task<GetModelsResponse> GetModelsAsync(GetModelsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3546,6 +3676,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModelTemplate">REST API Reference for GetModelTemplate Operation</seealso>
         GetModelTemplateResponse GetModelTemplate(GetModelTemplateRequest request);
 
 
@@ -3573,6 +3704,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModelTemplate">REST API Reference for GetModelTemplate Operation</seealso>
         Task<GetModelTemplateResponse> GetModelTemplateAsync(GetModelTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3595,6 +3727,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidator">REST API Reference for GetRequestValidator Operation</seealso>
         GetRequestValidatorResponse GetRequestValidator(GetRequestValidatorRequest request);
 
 
@@ -3617,6 +3750,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidator">REST API Reference for GetRequestValidator Operation</seealso>
         Task<GetRequestValidatorResponse> GetRequestValidatorAsync(GetRequestValidatorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3643,6 +3777,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidators">REST API Reference for GetRequestValidators Operation</seealso>
         GetRequestValidatorsResponse GetRequestValidators(GetRequestValidatorsRequest request);
 
 
@@ -3669,6 +3804,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidators">REST API Reference for GetRequestValidators Operation</seealso>
         Task<GetRequestValidatorsResponse> GetRequestValidatorsAsync(GetRequestValidatorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3691,6 +3827,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResource">REST API Reference for GetResource Operation</seealso>
         GetResourceResponse GetResource(GetResourceRequest request);
 
 
@@ -3713,6 +3850,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResource">REST API Reference for GetResource Operation</seealso>
         Task<GetResourceResponse> GetResourceAsync(GetResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3739,6 +3877,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResources">REST API Reference for GetResources Operation</seealso>
         GetResourcesResponse GetResources(GetResourcesRequest request);
 
 
@@ -3765,6 +3904,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResources">REST API Reference for GetResources Operation</seealso>
         Task<GetResourcesResponse> GetResourcesAsync(GetResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3787,6 +3927,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApi">REST API Reference for GetRestApi Operation</seealso>
         GetRestApiResponse GetRestApi(GetRestApiRequest request);
 
 
@@ -3809,6 +3950,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApi">REST API Reference for GetRestApi Operation</seealso>
         Task<GetRestApiResponse> GetRestApiAsync(GetRestApiRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3832,6 +3974,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApis">REST API Reference for GetRestApis Operation</seealso>
         GetRestApisResponse GetRestApis(GetRestApisRequest request);
 
 
@@ -3855,6 +3998,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApis">REST API Reference for GetRestApis Operation</seealso>
         Task<GetRestApisResponse> GetRestApisAsync(GetRestApisRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3884,6 +4028,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdk">REST API Reference for GetSdk Operation</seealso>
         GetSdkResponse GetSdk(GetSdkRequest request);
 
 
@@ -3913,6 +4058,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdk">REST API Reference for GetSdk Operation</seealso>
         Task<GetSdkResponse> GetSdkAsync(GetSdkRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3935,6 +4081,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkType">REST API Reference for GetSdkType Operation</seealso>
         GetSdkTypeResponse GetSdkType(GetSdkTypeRequest request);
 
 
@@ -3957,6 +4104,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkType">REST API Reference for GetSdkType Operation</seealso>
         Task<GetSdkTypeResponse> GetSdkTypeAsync(GetSdkTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3976,6 +4124,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkTypes">REST API Reference for GetSdkTypes Operation</seealso>
         GetSdkTypesResponse GetSdkTypes(GetSdkTypesRequest request);
 
 
@@ -3995,6 +4144,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkTypes">REST API Reference for GetSdkTypes Operation</seealso>
         Task<GetSdkTypesResponse> GetSdkTypesAsync(GetSdkTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4017,6 +4167,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStage">REST API Reference for GetStage Operation</seealso>
         GetStageResponse GetStage(GetStageRequest request);
 
 
@@ -4039,6 +4190,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStage">REST API Reference for GetStage Operation</seealso>
         Task<GetStageResponse> GetStageAsync(GetStageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4061,6 +4213,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStages">REST API Reference for GetStages Operation</seealso>
         GetStagesResponse GetStages(GetStagesRequest request);
 
 
@@ -4083,6 +4236,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStages">REST API Reference for GetStages Operation</seealso>
         Task<GetStagesResponse> GetStagesAsync(GetStagesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4112,6 +4266,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetTags">REST API Reference for GetTags Operation</seealso>
         GetTagsResponse GetTags(GetTagsRequest request);
 
 
@@ -4141,6 +4296,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetTags">REST API Reference for GetTags Operation</seealso>
         Task<GetTagsResponse> GetTagsAsync(GetTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4167,6 +4323,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsage">REST API Reference for GetUsage Operation</seealso>
         GetUsageResponse GetUsage(GetUsageRequest request);
 
 
@@ -4193,6 +4350,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsage">REST API Reference for GetUsage Operation</seealso>
         Task<GetUsageResponse> GetUsageAsync(GetUsageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4219,6 +4377,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlan">REST API Reference for GetUsagePlan Operation</seealso>
         GetUsagePlanResponse GetUsagePlan(GetUsagePlanRequest request);
 
 
@@ -4245,6 +4404,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlan">REST API Reference for GetUsagePlan Operation</seealso>
         Task<GetUsagePlanResponse> GetUsagePlanAsync(GetUsagePlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4271,6 +4431,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanKey">REST API Reference for GetUsagePlanKey Operation</seealso>
         GetUsagePlanKeyResponse GetUsagePlanKey(GetUsagePlanKeyRequest request);
 
 
@@ -4297,6 +4458,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanKey">REST API Reference for GetUsagePlanKey Operation</seealso>
         Task<GetUsagePlanKeyResponse> GetUsagePlanKeyAsync(GetUsagePlanKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4324,6 +4486,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanKeys">REST API Reference for GetUsagePlanKeys Operation</seealso>
         GetUsagePlanKeysResponse GetUsagePlanKeys(GetUsagePlanKeysRequest request);
 
 
@@ -4351,6 +4514,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanKeys">REST API Reference for GetUsagePlanKeys Operation</seealso>
         Task<GetUsagePlanKeysResponse> GetUsagePlanKeysAsync(GetUsagePlanKeysRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4380,6 +4544,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlans">REST API Reference for GetUsagePlans Operation</seealso>
         GetUsagePlansResponse GetUsagePlans(GetUsagePlansRequest request);
 
 
@@ -4409,6 +4574,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlans">REST API Reference for GetUsagePlans Operation</seealso>
         Task<GetUsagePlansResponse> GetUsagePlansAsync(GetUsagePlansRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4431,6 +4597,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLink">REST API Reference for GetVpcLink Operation</seealso>
         GetVpcLinkResponse GetVpcLink(GetVpcLinkRequest request);
 
 
@@ -4453,6 +4620,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLink">REST API Reference for GetVpcLink Operation</seealso>
         Task<GetVpcLinkResponse> GetVpcLinkAsync(GetVpcLinkRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4476,6 +4644,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLinks">REST API Reference for GetVpcLinks Operation</seealso>
         GetVpcLinksResponse GetVpcLinks(GetVpcLinksRequest request);
 
 
@@ -4499,6 +4668,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLinks">REST API Reference for GetVpcLinks Operation</seealso>
         Task<GetVpcLinksResponse> GetVpcLinksAsync(GetVpcLinksRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4531,6 +4701,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportApiKeys">REST API Reference for ImportApiKeys Operation</seealso>
         ImportApiKeysResponse ImportApiKeys(ImportApiKeysRequest request);
 
 
@@ -4563,6 +4734,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportApiKeys">REST API Reference for ImportApiKeys Operation</seealso>
         Task<ImportApiKeysResponse> ImportApiKeysAsync(ImportApiKeysRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4592,6 +4764,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportDocumentationParts">REST API Reference for ImportDocumentationParts Operation</seealso>
         ImportDocumentationPartsResponse ImportDocumentationParts(ImportDocumentationPartsRequest request);
 
 
@@ -4621,6 +4794,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportDocumentationParts">REST API Reference for ImportDocumentationParts Operation</seealso>
         Task<ImportDocumentationPartsResponse> ImportDocumentationPartsAsync(ImportDocumentationPartsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4651,6 +4825,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportRestApi">REST API Reference for ImportRestApi Operation</seealso>
         ImportRestApiResponse ImportRestApi(ImportRestApiRequest request);
 
 
@@ -4681,6 +4856,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportRestApi">REST API Reference for ImportRestApi Operation</seealso>
         Task<ImportRestApiResponse> ImportRestApiAsync(ImportRestApiRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4711,6 +4887,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutGatewayResponse">REST API Reference for PutGatewayResponse Operation</seealso>
         PutGatewayResponseResponse PutGatewayResponse(PutGatewayResponseRequest request);
 
 
@@ -4741,6 +4918,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutGatewayResponse">REST API Reference for PutGatewayResponse Operation</seealso>
         Task<PutGatewayResponseResponse> PutGatewayResponseAsync(PutGatewayResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4770,6 +4948,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutIntegration">REST API Reference for PutIntegration Operation</seealso>
         PutIntegrationResponse PutIntegration(PutIntegrationRequest request);
 
 
@@ -4799,6 +4978,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutIntegration">REST API Reference for PutIntegration Operation</seealso>
         Task<PutIntegrationResponse> PutIntegrationAsync(PutIntegrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4831,6 +5011,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutIntegrationResponse">REST API Reference for PutIntegrationResponse Operation</seealso>
         PutIntegrationResponseResponse PutIntegrationResponse(PutIntegrationResponseRequest request);
 
 
@@ -4863,6 +5044,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutIntegrationResponse">REST API Reference for PutIntegrationResponse Operation</seealso>
         Task<PutIntegrationResponseResponse> PutIntegrationResponseAsync(PutIntegrationResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4895,6 +5077,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethod">REST API Reference for PutMethod Operation</seealso>
         PutMethodResponse PutMethod(PutMethodRequest request);
 
 
@@ -4927,6 +5110,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethod">REST API Reference for PutMethod Operation</seealso>
         Task<PutMethodResponse> PutMethodAsync(PutMethodRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4959,6 +5143,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethodResponse">REST API Reference for PutMethodResponse Operation</seealso>
         PutMethodResponseResponse PutMethodResponse(PutMethodResponseRequest request);
 
 
@@ -4991,6 +5176,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethodResponse">REST API Reference for PutMethodResponse Operation</seealso>
         Task<PutMethodResponseResponse> PutMethodResponseAsync(PutMethodResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5025,6 +5211,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutRestApi">REST API Reference for PutRestApi Operation</seealso>
         PutRestApiResponse PutRestApi(PutRestApiRequest request);
 
 
@@ -5059,6 +5246,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutRestApi">REST API Reference for PutRestApi Operation</seealso>
         Task<PutRestApiResponse> PutRestApiAsync(PutRestApiRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5091,6 +5279,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
 
 
@@ -5123,6 +5312,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5154,6 +5344,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeAuthorizer">REST API Reference for TestInvokeAuthorizer Operation</seealso>
         TestInvokeAuthorizerResponse TestInvokeAuthorizer(TestInvokeAuthorizerRequest request);
 
 
@@ -5185,6 +5376,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeAuthorizer">REST API Reference for TestInvokeAuthorizer Operation</seealso>
         Task<TestInvokeAuthorizerResponse> TestInvokeAuthorizerAsync(TestInvokeAuthorizerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5212,6 +5404,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeMethod">REST API Reference for TestInvokeMethod Operation</seealso>
         TestInvokeMethodResponse TestInvokeMethod(TestInvokeMethodRequest request);
 
 
@@ -5239,6 +5432,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeMethod">REST API Reference for TestInvokeMethod Operation</seealso>
         Task<TestInvokeMethodResponse> TestInvokeMethodAsync(TestInvokeMethodRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5268,6 +5462,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
 
 
@@ -5297,6 +5492,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5323,6 +5519,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAccount">REST API Reference for UpdateAccount Operation</seealso>
         UpdateAccountResponse UpdateAccount(UpdateAccountRequest request);
 
 
@@ -5349,6 +5546,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAccount">REST API Reference for UpdateAccount Operation</seealso>
         Task<UpdateAccountResponse> UpdateAccountAsync(UpdateAccountRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5378,6 +5576,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateApiKey">REST API Reference for UpdateApiKey Operation</seealso>
         UpdateApiKeyResponse UpdateApiKey(UpdateApiKeyRequest request);
 
 
@@ -5407,6 +5606,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateApiKey">REST API Reference for UpdateApiKey Operation</seealso>
         Task<UpdateApiKeyResponse> UpdateApiKeyAsync(UpdateApiKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5436,6 +5636,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAuthorizer">REST API Reference for UpdateAuthorizer Operation</seealso>
         UpdateAuthorizerResponse UpdateAuthorizer(UpdateAuthorizerRequest request);
 
 
@@ -5465,6 +5666,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAuthorizer">REST API Reference for UpdateAuthorizer Operation</seealso>
         Task<UpdateAuthorizerResponse> UpdateAuthorizerAsync(UpdateAuthorizerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5494,6 +5696,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateBasePathMapping">REST API Reference for UpdateBasePathMapping Operation</seealso>
         UpdateBasePathMappingResponse UpdateBasePathMapping(UpdateBasePathMappingRequest request);
 
 
@@ -5523,6 +5726,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateBasePathMapping">REST API Reference for UpdateBasePathMapping Operation</seealso>
         Task<UpdateBasePathMappingResponse> UpdateBasePathMappingAsync(UpdateBasePathMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5549,6 +5753,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateClientCertificate">REST API Reference for UpdateClientCertificate Operation</seealso>
         UpdateClientCertificateResponse UpdateClientCertificate(UpdateClientCertificateRequest request);
 
 
@@ -5575,6 +5780,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateClientCertificate">REST API Reference for UpdateClientCertificate Operation</seealso>
         Task<UpdateClientCertificateResponse> UpdateClientCertificateAsync(UpdateClientCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5605,6 +5811,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDeployment">REST API Reference for UpdateDeployment Operation</seealso>
         UpdateDeploymentResponse UpdateDeployment(UpdateDeploymentRequest request);
 
 
@@ -5635,6 +5842,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDeployment">REST API Reference for UpdateDeployment Operation</seealso>
         Task<UpdateDeploymentResponse> UpdateDeploymentAsync(UpdateDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5667,6 +5875,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDocumentationPart">REST API Reference for UpdateDocumentationPart Operation</seealso>
         UpdateDocumentationPartResponse UpdateDocumentationPart(UpdateDocumentationPartRequest request);
 
 
@@ -5699,6 +5908,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDocumentationPart">REST API Reference for UpdateDocumentationPart Operation</seealso>
         Task<UpdateDocumentationPartResponse> UpdateDocumentationPartAsync(UpdateDocumentationPartRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5728,6 +5938,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDocumentationVersion">REST API Reference for UpdateDocumentationVersion Operation</seealso>
         UpdateDocumentationVersionResponse UpdateDocumentationVersion(UpdateDocumentationVersionRequest request);
 
 
@@ -5757,6 +5968,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDocumentationVersion">REST API Reference for UpdateDocumentationVersion Operation</seealso>
         Task<UpdateDocumentationVersionResponse> UpdateDocumentationVersionAsync(UpdateDocumentationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5786,6 +5998,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDomainName">REST API Reference for UpdateDomainName Operation</seealso>
         UpdateDomainNameResponse UpdateDomainName(UpdateDomainNameRequest request);
 
 
@@ -5815,6 +6028,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDomainName">REST API Reference for UpdateDomainName Operation</seealso>
         Task<UpdateDomainNameResponse> UpdateDomainNameAsync(UpdateDomainNameRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5841,6 +6055,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateGatewayResponse">REST API Reference for UpdateGatewayResponse Operation</seealso>
         UpdateGatewayResponseResponse UpdateGatewayResponse(UpdateGatewayResponseRequest request);
 
 
@@ -5867,6 +6082,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateGatewayResponse">REST API Reference for UpdateGatewayResponse Operation</seealso>
         Task<UpdateGatewayResponseResponse> UpdateGatewayResponseAsync(UpdateGatewayResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5896,6 +6112,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegration">REST API Reference for UpdateIntegration Operation</seealso>
         UpdateIntegrationResponse UpdateIntegration(UpdateIntegrationRequest request);
 
 
@@ -5925,6 +6142,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegration">REST API Reference for UpdateIntegration Operation</seealso>
         Task<UpdateIntegrationResponse> UpdateIntegrationAsync(UpdateIntegrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5954,6 +6172,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegrationResponse">REST API Reference for UpdateIntegrationResponse Operation</seealso>
         UpdateIntegrationResponseResponse UpdateIntegrationResponse(UpdateIntegrationResponseRequest request);
 
 
@@ -5983,6 +6202,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegrationResponse">REST API Reference for UpdateIntegrationResponse Operation</seealso>
         Task<UpdateIntegrationResponseResponse> UpdateIntegrationResponseAsync(UpdateIntegrationResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6012,6 +6232,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethod">REST API Reference for UpdateMethod Operation</seealso>
         UpdateMethodResponse UpdateMethod(UpdateMethodRequest request);
 
 
@@ -6041,6 +6262,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethod">REST API Reference for UpdateMethod Operation</seealso>
         Task<UpdateMethodResponse> UpdateMethodAsync(UpdateMethodRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6073,6 +6295,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethodResponse">REST API Reference for UpdateMethodResponse Operation</seealso>
         UpdateMethodResponseResponse UpdateMethodResponse(UpdateMethodResponseRequest request);
 
 
@@ -6105,6 +6328,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethodResponse">REST API Reference for UpdateMethodResponse Operation</seealso>
         Task<UpdateMethodResponseResponse> UpdateMethodResponseAsync(UpdateMethodResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6134,6 +6358,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
         UpdateModelResponse UpdateModel(UpdateModelRequest request);
 
 
@@ -6163,6 +6388,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
         Task<UpdateModelResponse> UpdateModelAsync(UpdateModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6189,6 +6415,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRequestValidator">REST API Reference for UpdateRequestValidator Operation</seealso>
         UpdateRequestValidatorResponse UpdateRequestValidator(UpdateRequestValidatorRequest request);
 
 
@@ -6215,6 +6442,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRequestValidator">REST API Reference for UpdateRequestValidator Operation</seealso>
         Task<UpdateRequestValidatorResponse> UpdateRequestValidatorAsync(UpdateRequestValidatorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6244,6 +6472,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         UpdateResourceResponse UpdateResource(UpdateResourceRequest request);
 
 
@@ -6273,6 +6502,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         Task<UpdateResourceResponse> UpdateResourceAsync(UpdateResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6302,6 +6532,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRestApi">REST API Reference for UpdateRestApi Operation</seealso>
         UpdateRestApiResponse UpdateRestApi(UpdateRestApiRequest request);
 
 
@@ -6331,6 +6562,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRestApi">REST API Reference for UpdateRestApi Operation</seealso>
         Task<UpdateRestApiResponse> UpdateRestApiAsync(UpdateRestApiRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6360,6 +6592,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateStage">REST API Reference for UpdateStage Operation</seealso>
         UpdateStageResponse UpdateStage(UpdateStageRequest request);
 
 
@@ -6389,6 +6622,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateStage">REST API Reference for UpdateStage Operation</seealso>
         Task<UpdateStageResponse> UpdateStageAsync(UpdateStageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6416,6 +6650,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsage">REST API Reference for UpdateUsage Operation</seealso>
         UpdateUsageResponse UpdateUsage(UpdateUsageRequest request);
 
 
@@ -6443,6 +6678,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsage">REST API Reference for UpdateUsage Operation</seealso>
         Task<UpdateUsageResponse> UpdateUsageAsync(UpdateUsageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6472,6 +6708,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsagePlan">REST API Reference for UpdateUsagePlan Operation</seealso>
         UpdateUsagePlanResponse UpdateUsagePlan(UpdateUsagePlanRequest request);
 
 
@@ -6501,6 +6738,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsagePlan">REST API Reference for UpdateUsagePlan Operation</seealso>
         Task<UpdateUsagePlanResponse> UpdateUsagePlanAsync(UpdateUsagePlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6530,6 +6768,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateVpcLink">REST API Reference for UpdateVpcLink Operation</seealso>
         UpdateVpcLinkResponse UpdateVpcLink(UpdateVpcLinkRequest request);
 
 
@@ -6559,6 +6798,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateVpcLink">REST API Reference for UpdateVpcLink Operation</seealso>
         Task<UpdateVpcLinkResponse> UpdateVpcLinkAsync(UpdateVpcLinkRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
