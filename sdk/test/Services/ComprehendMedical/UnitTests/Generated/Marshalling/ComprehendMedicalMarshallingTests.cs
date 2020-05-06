@@ -72,6 +72,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ComprehendMedical")]
+        public void DescribeICD10CMInferenceJobMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeICD10CMInferenceJobRequest>();
+            var marshaller = new DescribeICD10CMInferenceJobRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeICD10CMInferenceJobRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeICD10CMInferenceJob").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeICD10CMInferenceJobResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeICD10CMInferenceJobResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ComprehendMedical")]
         public void DescribePHIDetectionJobMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribePHIDetectionJobRequest>();
@@ -93,6 +122,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribePHIDetectionJobResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribePHIDetectionJobResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ComprehendMedical")]
+        public void DescribeRxNormInferenceJobMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeRxNormInferenceJobRequest>();
+            var marshaller = new DescribeRxNormInferenceJobRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeRxNormInferenceJobRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeRxNormInferenceJob").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeRxNormInferenceJobResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeRxNormInferenceJobResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -275,6 +333,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ComprehendMedical")]
+        public void ListICD10CMInferenceJobsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ListICD10CMInferenceJobsRequest>();
+            var marshaller = new ListICD10CMInferenceJobsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ListICD10CMInferenceJobsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListICD10CMInferenceJobs").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListICD10CMInferenceJobsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListICD10CMInferenceJobsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ComprehendMedical")]
         public void ListPHIDetectionJobsMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<ListPHIDetectionJobsRequest>();
@@ -296,6 +383,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListPHIDetectionJobsResponseUnmarshaller.Instance.Unmarshall(context)
                 as ListPHIDetectionJobsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ComprehendMedical")]
+        public void ListRxNormInferenceJobsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ListRxNormInferenceJobsRequest>();
+            var marshaller = new ListRxNormInferenceJobsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ListRxNormInferenceJobsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListRxNormInferenceJobs").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListRxNormInferenceJobsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListRxNormInferenceJobsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -333,6 +449,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ComprehendMedical")]
+        public void StartICD10CMInferenceJobMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<StartICD10CMInferenceJobRequest>();
+            var marshaller = new StartICD10CMInferenceJobRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<StartICD10CMInferenceJobRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StartICD10CMInferenceJob").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = StartICD10CMInferenceJobResponseUnmarshaller.Instance.Unmarshall(context)
+                as StartICD10CMInferenceJobResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ComprehendMedical")]
         public void StartPHIDetectionJobMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<StartPHIDetectionJobRequest>();
@@ -354,6 +499,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = StartPHIDetectionJobResponseUnmarshaller.Instance.Unmarshall(context)
                 as StartPHIDetectionJobResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ComprehendMedical")]
+        public void StartRxNormInferenceJobMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<StartRxNormInferenceJobRequest>();
+            var marshaller = new StartRxNormInferenceJobRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<StartRxNormInferenceJobRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StartRxNormInferenceJob").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = StartRxNormInferenceJobResponseUnmarshaller.Instance.Unmarshall(context)
+                as StartRxNormInferenceJobResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -391,6 +565,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ComprehendMedical")]
+        public void StopICD10CMInferenceJobMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<StopICD10CMInferenceJobRequest>();
+            var marshaller = new StopICD10CMInferenceJobRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<StopICD10CMInferenceJobRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StopICD10CMInferenceJob").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = StopICD10CMInferenceJobResponseUnmarshaller.Instance.Unmarshall(context)
+                as StopICD10CMInferenceJobResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ComprehendMedical")]
         public void StopPHIDetectionJobMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<StopPHIDetectionJobRequest>();
@@ -412,6 +615,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = StopPHIDetectionJobResponseUnmarshaller.Instance.Unmarshall(context)
                 as StopPHIDetectionJobResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ComprehendMedical")]
+        public void StopRxNormInferenceJobMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<StopRxNormInferenceJobRequest>();
+            var marshaller = new StopRxNormInferenceJobRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<StopRxNormInferenceJobRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StopRxNormInferenceJob").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = StopRxNormInferenceJobResponseUnmarshaller.Instance.Unmarshall(context)
+                as StopRxNormInferenceJobResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

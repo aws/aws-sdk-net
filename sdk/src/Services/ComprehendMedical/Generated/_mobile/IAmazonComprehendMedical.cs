@@ -72,6 +72,41 @@ namespace Amazon.ComprehendMedical
 
         #endregion
                 
+        #region  DescribeICD10CMInferenceJob
+
+
+
+        /// <summary>
+        /// Gets the properties associated with an InferICD10CM job. Use this operation to get
+        /// the status of an inference job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeICD10CMInferenceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeICD10CMInferenceJob service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ResourceNotFoundException">
+        /// The resource identified by the specified Amazon Resource Name (ARN) was not found.
+        /// Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribeICD10CMInferenceJob">REST API Reference for DescribeICD10CMInferenceJob Operation</seealso>
+        Task<DescribeICD10CMInferenceJobResponse> DescribeICD10CMInferenceJobAsync(DescribeICD10CMInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribePHIDetectionJob
 
 
@@ -104,6 +139,41 @@ namespace Amazon.ComprehendMedical
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribePHIDetectionJob">REST API Reference for DescribePHIDetectionJob Operation</seealso>
         Task<DescribePHIDetectionJobResponse> DescribePHIDetectionJobAsync(DescribePHIDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeRxNormInferenceJob
+
+
+
+        /// <summary>
+        /// Gets the properties associated with an InferRxNorm job. Use this operation to get
+        /// the status of an inference job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRxNormInferenceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRxNormInferenceJob service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ResourceNotFoundException">
+        /// The resource identified by the specified Amazon Resource Name (ARN) was not found.
+        /// Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribeRxNormInferenceJob">REST API Reference for DescribeRxNormInferenceJob Operation</seealso>
+        Task<DescribeRxNormInferenceJobResponse> DescribeRxNormInferenceJobAsync(DescribeRxNormInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -384,6 +454,40 @@ namespace Amazon.ComprehendMedical
 
         #endregion
                 
+        #region  ListICD10CMInferenceJobs
+
+
+
+        /// <summary>
+        /// Gets a list of InferICD10CM jobs that you have submitted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListICD10CMInferenceJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListICD10CMInferenceJobs service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ValidationException">
+        /// The filter that you specified for the operation is invalid. Check the filter values
+        /// that you entered and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListICD10CMInferenceJobs">REST API Reference for ListICD10CMInferenceJobs Operation</seealso>
+        Task<ListICD10CMInferenceJobsResponse> ListICD10CMInferenceJobsAsync(ListICD10CMInferenceJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListPHIDetectionJobs
 
 
@@ -415,6 +519,40 @@ namespace Amazon.ComprehendMedical
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListPHIDetectionJobs">REST API Reference for ListPHIDetectionJobs Operation</seealso>
         Task<ListPHIDetectionJobsResponse> ListPHIDetectionJobsAsync(ListPHIDetectionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListRxNormInferenceJobs
+
+
+
+        /// <summary>
+        /// Gets a list of InferRxNorm jobs that you have submitted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRxNormInferenceJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRxNormInferenceJobs service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ValidationException">
+        /// The filter that you specified for the operation is invalid. Check the filter values
+        /// that you entered and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListRxNormInferenceJobs">REST API Reference for ListRxNormInferenceJobs Operation</seealso>
+        Task<ListRxNormInferenceJobsResponse> ListRxNormInferenceJobsAsync(ListRxNormInferenceJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -454,6 +592,42 @@ namespace Amazon.ComprehendMedical
 
         #endregion
                 
+        #region  StartICD10CMInferenceJob
+
+
+
+        /// <summary>
+        /// Starts an asynchronous job to detect medical conditions and link them to the ICD-10-CM
+        /// ontology. Use the <code>DescribeICD10CMInferenceJob</code> operation to track the
+        /// status of a job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartICD10CMInferenceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartICD10CMInferenceJob service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ResourceNotFoundException">
+        /// The resource identified by the specified Amazon Resource Name (ARN) was not found.
+        /// Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartICD10CMInferenceJob">REST API Reference for StartICD10CMInferenceJob Operation</seealso>
+        Task<StartICD10CMInferenceJobResponse> StartICD10CMInferenceJobAsync(StartICD10CMInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StartPHIDetectionJob
 
 
@@ -489,6 +663,42 @@ namespace Amazon.ComprehendMedical
 
         #endregion
                 
+        #region  StartRxNormInferenceJob
+
+
+
+        /// <summary>
+        /// Starts an asynchronous job to detect medication entities and link them to the RxNorm
+        /// ontology. Use the <code>DescribeRxNormInferenceJob</code> operation to track the status
+        /// of a job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRxNormInferenceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartRxNormInferenceJob service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ResourceNotFoundException">
+        /// The resource identified by the specified Amazon Resource Name (ARN) was not found.
+        /// Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartRxNormInferenceJob">REST API Reference for StartRxNormInferenceJob Operation</seealso>
+        Task<StartRxNormInferenceJobResponse> StartRxNormInferenceJobAsync(StartRxNormInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StopEntitiesDetectionV2Job
 
 
@@ -518,6 +728,35 @@ namespace Amazon.ComprehendMedical
 
         #endregion
                 
+        #region  StopICD10CMInferenceJob
+
+
+
+        /// <summary>
+        /// Stops an InferICD10CM inference job in progress.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopICD10CMInferenceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopICD10CMInferenceJob service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ResourceNotFoundException">
+        /// The resource identified by the specified Amazon Resource Name (ARN) was not found.
+        /// Check the ARN and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopICD10CMInferenceJob">REST API Reference for StopICD10CMInferenceJob Operation</seealso>
+        Task<StopICD10CMInferenceJobResponse> StopICD10CMInferenceJobAsync(StopICD10CMInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StopPHIDetectionJob
 
 
@@ -544,6 +783,35 @@ namespace Amazon.ComprehendMedical
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopPHIDetectionJob">REST API Reference for StopPHIDetectionJob Operation</seealso>
         Task<StopPHIDetectionJobResponse> StopPHIDetectionJobAsync(StopPHIDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StopRxNormInferenceJob
+
+
+
+        /// <summary>
+        /// Stops an InferRxNorm inference job in progress.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRxNormInferenceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopRxNormInferenceJob service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ResourceNotFoundException">
+        /// The resource identified by the specified Amazon Resource Name (ARN) was not found.
+        /// Check the ARN and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopRxNormInferenceJob">REST API Reference for StopRxNormInferenceJob Operation</seealso>
+        Task<StopRxNormInferenceJobResponse> StopRxNormInferenceJobAsync(StopRxNormInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
