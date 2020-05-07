@@ -33,7 +33,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
-    /// To list the tags for a log group, use <a>ListTagsLogGroup</a>. To add tags, use <a>UntagLogGroup</a>.
+    /// To list the tags for a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html">ListTagsLogGroup</a>.
+    /// To add tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html">TagLogGroup</a>.
     /// </para>
     /// </summary>
     public partial class UntagLogGroupRequest : AmazonCloudWatchLogsRequest

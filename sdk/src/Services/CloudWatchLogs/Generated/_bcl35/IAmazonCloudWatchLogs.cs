@@ -216,9 +216,9 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// This is an asynchronous call. If all the required information is provided, this operation
         /// initiates an export task and responds with the ID of the task. After the task has
-        /// started, you can use <a>DescribeExportTasks</a> to get the status of the export task.
-        /// Each account can only have one active (<code>RUNNING</code> or <code>PENDING</code>)
-        /// export task at a time. To cancel an export task, use <a>CancelExportTask</a>.
+        /// started, you can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeExportTasks.html">DescribeExportTasks</a>
+        /// to get the status of the export task. Each account can only have one active (<code>RUNNING</code>
+        /// or <code>PENDING</code>) export task at a time. To cancel an export task, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html">CancelExportTask</a>.
         /// </para>
         ///  
         /// <para>
@@ -666,6 +666,55 @@ namespace Amazon.CloudWatchLogs
         /// <returns>Returns a  DeleteMetricFilterResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteMetricFilter">REST API Reference for DeleteMetricFilter Operation</seealso>
         DeleteMetricFilterResponse EndDeleteMetricFilter(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteQueryDefinition
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueryDefinition service method.</param>
+        /// 
+        /// <returns>The response from the DeleteQueryDefinition service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteQueryDefinition">REST API Reference for DeleteQueryDefinition Operation</seealso>
+        DeleteQueryDefinitionResponse DeleteQueryDefinition(DeleteQueryDefinitionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteQueryDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueryDefinition operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteQueryDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteQueryDefinition">REST API Reference for DeleteQueryDefinition Operation</seealso>
+        IAsyncResult BeginDeleteQueryDefinition(DeleteQueryDefinitionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteQueryDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteQueryDefinition.</param>
+        /// 
+        /// <returns>Returns a  DeleteQueryDefinitionResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteQueryDefinition">REST API Reference for DeleteQueryDefinition Operation</seealso>
+        DeleteQueryDefinitionResponse EndDeleteQueryDefinition(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1141,6 +1190,52 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  DescribeQueryDefinitions
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQueryDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeQueryDefinitions service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeQueryDefinitions">REST API Reference for DescribeQueryDefinitions Operation</seealso>
+        DescribeQueryDefinitionsResponse DescribeQueryDefinitions(DescribeQueryDefinitionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeQueryDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQueryDefinitions operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeQueryDefinitions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeQueryDefinitions">REST API Reference for DescribeQueryDefinitions Operation</seealso>
+        IAsyncResult BeginDescribeQueryDefinitions(DescribeQueryDefinitionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeQueryDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeQueryDefinitions.</param>
+        /// 
+        /// <returns>Returns a  DescribeQueryDefinitionsResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeQueryDefinitions">REST API Reference for DescribeQueryDefinitions Operation</seealso>
+        DescribeQueryDefinitionsResponse EndDescribeQueryDefinitions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeResourcePolicies
 
 
@@ -1428,7 +1523,9 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// In the results, fields that start with @ are fields generated by CloudWatch Logs.
-        /// For example, <code>@timestamp</code> is the timestamp of each log event.
+        /// For example, <code>@timestamp</code> is the timestamp of each log event. For more
+        /// information about the fields that are generated by CloudWatch logs, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html">Supported
+        /// Logs and Discovered Fields</a>.
         /// </para>
         ///  
         /// <para>
@@ -1551,12 +1648,13 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// Only the fields requested in the query are returned, along with a <code>@ptr</code>
         /// field which is the identifier for the log record. You can use the value of <code>@ptr</code>
-        /// in a operation to get the full log record.
+        /// in a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogRecord.html">GetLogRecord</a>
+        /// operation to get the full log record.
         /// </para>
         ///  
         /// <para>
         ///  <code>GetQueryResults</code> does not start a query execution. To run a query, use
-        /// .
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>.
         /// </para>
         ///  
         /// <para>
@@ -1666,15 +1764,15 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// A destination encapsulates a physical resource (such as an Amazon Kinesis stream)
         /// and enables you to subscribe to a real-time stream of log events for a different account,
-        /// ingested using <a>PutLogEvents</a>.
+        /// ingested using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.
         /// </para>
         ///  
         /// <para>
         /// Through an access policy, a destination controls what is written to it. By default,
         /// <code>PutDestination</code> does not set any access policy with the destination, which
-        /// means a cross-account user cannot call <a>PutSubscriptionFilter</a> against this destination.
-        /// To enable this, the destination owner must call <a>PutDestinationPolicy</a> after
-        /// <code>PutDestination</code>.
+        /// means a cross-account user cannot call <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSubscriptionFilter.html">PutSubscriptionFilter</a>
+        /// against this destination. To enable this, the destination owner must call <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>
+        /// after <code>PutDestination</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDestination service method.</param>
@@ -1892,7 +1990,7 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Creates or updates a metric filter and associates it with the specified log group.
         /// Metric filters allow you to configure rules to extract metric data from log events
-        /// ingested through <a>PutLogEvents</a>.
+        /// ingested through <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.
         /// 
         ///  
         /// <para>
@@ -1945,6 +2043,55 @@ namespace Amazon.CloudWatchLogs
         /// <returns>Returns a  PutMetricFilterResult from CloudWatchLogs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutMetricFilter">REST API Reference for PutMetricFilter Operation</seealso>
         PutMetricFilterResponse EndPutMetricFilter(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutQueryDefinition
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutQueryDefinition service method.</param>
+        /// 
+        /// <returns>The response from the PutQueryDefinition service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutQueryDefinition">REST API Reference for PutQueryDefinition Operation</seealso>
+        PutQueryDefinitionResponse PutQueryDefinition(PutQueryDefinitionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutQueryDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutQueryDefinition operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutQueryDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutQueryDefinition">REST API Reference for PutQueryDefinition Operation</seealso>
+        IAsyncResult BeginPutQueryDefinition(PutQueryDefinitionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutQueryDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutQueryDefinition.</param>
+        /// 
+        /// <returns>Returns a  PutQueryDefinitionResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutQueryDefinition">REST API Reference for PutQueryDefinition Operation</seealso>
+        PutQueryDefinitionResponse EndPutQueryDefinition(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2058,8 +2205,9 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Creates or updates a subscription filter and associates it with the specified log
         /// group. Subscription filters allow you to subscribe to a real-time stream of log events
-        /// ingested through <a>PutLogEvents</a> and have them delivered to a specific destination.
-        /// Currently, the supported destinations are:
+        /// ingested through <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>
+        /// and have them delivered to a specific destination. Currently, the supported destinations
+        /// are:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -2166,7 +2314,7 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.MalformedQueryException">
         /// The query string is not valid. Details about this error are displayed in a <code>QueryCompileError</code>
-        /// object. For more information, see .
+        /// object. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_QueryCompileError.html">QueryCompileError</a>"/&gt;.
         /// 
         ///  
         /// <para>
@@ -2269,12 +2417,12 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// To list the tags for a log group, use <a>ListTagsLogGroup</a>. To remove tags, use
-        /// <a>UntagLogGroup</a>.
+        /// To list the tags for a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html">ListTagsLogGroup</a>.
+        /// To remove tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagLogGroup.html">UntagLogGroup</a>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about tags, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/log-group-tagging.html">Tag
+        /// For more information about tags, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html#log-group-tagging">Tag
         /// Log Groups in Amazon CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User Guide</i>.
         /// </para>
         /// </summary>
@@ -2373,7 +2521,8 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// To list the tags for a log group, use <a>ListTagsLogGroup</a>. To add tags, use <a>UntagLogGroup</a>.
+        /// To list the tags for a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html">ListTagsLogGroup</a>.
+        /// To add tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html">TagLogGroup</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagLogGroup service method.</param>
