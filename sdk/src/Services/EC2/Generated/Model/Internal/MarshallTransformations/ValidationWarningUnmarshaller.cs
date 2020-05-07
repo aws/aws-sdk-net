@@ -32,76 +32,67 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateLaunchTemplateVersion operation
+    /// Response Unmarshaller for ValidationWarning Object
     /// </summary>  
-    public class CreateLaunchTemplateVersionResponseUnmarshaller : EC2ResponseUnmarshaller
+    public class ValidationWarningUnmarshaller : IUnmarshaller<ValidationWarning, XmlUnmarshallerContext>, IUnmarshaller<ValidationWarning, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>
+        /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        public ValidationWarning Unmarshall(XmlUnmarshallerContext context)
         {
-            CreateLaunchTemplateVersionResponse response = new CreateLaunchTemplateVersionResponse();
-
+            ValidationWarning unmarshalledObject = new ValidationWarning();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
-               targetDepth = 2;
-
+               targetDepth += 2;
+            
             while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-
-                    if (context.TestExpression("launchTemplateVersion", targetDepth))
+                    if (context.TestExpression("errorSet/item", targetDepth))
                     {
-                        var unmarshaller = LaunchTemplateVersionUnmarshaller.Instance;
-                        response.LaunchTemplateVersion = unmarshaller.Unmarshall(context);
+                        var unmarshaller = ValidationErrorUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Errors.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("warning", targetDepth))
-                    {
-                        var unmarshaller = ValidationWarningUnmarshaller.Instance;
-                        response.Warning = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                } 
+                }
+                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                {
+                    return unmarshalledObject;
+                }
             }
 
-            return response;
+            return unmarshalledObject;
         }
 
         /// <summary>
         /// Unmarshaller error response to exception.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="innerException"></param>
-        /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public ValidationWarning Unmarshall(JsonUnmarshallerContext context)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            return null;
         }
-        private static CreateLaunchTemplateVersionResponseUnmarshaller _instance = new CreateLaunchTemplateVersionResponseUnmarshaller();        
 
-        internal static CreateLaunchTemplateVersionResponseUnmarshaller GetInstance()
-        {
-            return _instance;
-        }
+
+        private static ValidationWarningUnmarshaller _instance = new ValidationWarningUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateLaunchTemplateVersionResponseUnmarshaller Instance
+        public static ValidationWarningUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
-
     }
 }
