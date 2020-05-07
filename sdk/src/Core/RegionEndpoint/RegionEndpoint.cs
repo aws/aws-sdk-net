@@ -91,6 +91,11 @@ namespace Amazon
         public static readonly RegionEndpoint EUCentral1 = GetEndpoint("eu-central-1", "EU Central (Frankfurt)");
 
         /// <summary>
+        /// The Europe (Milan) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint EUSouth1 = GetEndpoint("eu-south-1", "Europe (Milan)");
+
+        /// <summary>
         /// The Asia Pacific (Hong Kong) endpoint.
         /// </summary>
         public static readonly RegionEndpoint APEast1 = GetEndpoint("ap-east-1", "Asia Pacific (Hong Kong)");
@@ -159,6 +164,11 @@ namespace Amazon
         /// The Middle East (Bahrain) endpoint.
         /// </summary>
         public static readonly RegionEndpoint MESouth1 = GetEndpoint("me-south-1", "Middle East (Bahrain)");
+
+        /// <summary>
+        /// The Africa (Cape Town) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint AFSouth1 = GetEndpoint("af-south-1", "Africa (Cape Town)");
 
         /// <summary>
         /// Represents the endpoint overridding rules in the endpoints.json
