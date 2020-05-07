@@ -32,6 +32,39 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 ""IsActive"" : true,
 ""RetirementInfo"" : null
 }";
+
+        const string sampleJsonArray = @"[{
+""Name"" : ""Alan"" ,
+""Age"" : 31,
+""CompanyName"" : ""Big River"" ,
+""CurrentStatus"" : ""Active""
+""CompanyInfo"" : {
+    ""Name"" : ""Big River"" ,
+    ""Year Founded"" : 1998,
+} ,
+""Aliases"" :
+    [ ""Al"" , ""Steve"" , ""Alan-san"" ],
+""IsActive"" : true,
+""RetirementInfo"" : null
+},
+{
+""Name"" : ""George P. Burdell"" ,
+""Age"" : 87,
+""CompanyName"" : ""Georgia Tech"" ,
+""CurrentStatus"" : ""Active""
+""CompanyInfo"" : {
+    ""Name"" : ""Georgia Tech"" ,
+    ""Year Founded"" : 1885,
+} ,
+""Aliases"" :
+    [ ""Buzz"" , ""Ed"" , ""Rat"" ],
+""IsActive"" : true,
+""RetirementInfo"" : {
+        ""Year"": 1987,
+        ""Status"": ""Graduated""
+    }
+}]";
+
         
         [TestMethod]
         [TestCategory("DynamoDBv2")]
@@ -42,6 +75,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             TestBinaryDecoding();
 
             TestPutGet();
+
+            TestArrayMethods();
         }
 
         private void TestPutGet()
@@ -222,6 +257,61 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             rt["FakeBinaryData"] = "this is fake";
             AssertExtensions.ExpectException(() => rt.DecodeBase64Attributes("FakeBinaryData"));
+        }
+
+        private static void TestArrayMethods()
+        {
+            var docs = TestArrayRoundTrip(sampleJsonArray);
+            TestArrayRoundTrip(docs.ToJsonPretty());
+        }
+
+        private static IEnumerable<Document> TestArrayRoundTrip(string jsonArray) {
+            var docs = Document.FromJsonArray(jsonArray) as IEnumerable<Document>;
+            
+            Assert.IsNotNull(docs);
+            Assert.AreEqual(2, docs.Count());
+            var first = docs.First();
+            // Verify types
+            Assert.IsTrue(first["Name"] is Primitive);            
+            Assert.IsTrue(first["Age"] is Primitive);            
+            Assert.IsTrue(first["CompanyInfo"] is Document);
+            Assert.IsTrue(first["Aliases"] is DynamoDBList);
+            Assert.IsTrue(first["IsActive"] is DynamoDBBool);
+            Assert.IsTrue(first["RetirementInfo"] is DynamoDBNull);
+            // Value tests
+            Assert.AreEqual("Alan", (string)first["Name"]);
+            Assert.AreEqual(31, (int)first["Age"]);       
+            Assert.IsNotNull(first["CompanyInfo"] as Document);
+            Assert.AreEqual("Big River", (string)first["CompanyInfo"].AsDocument()["Name"]);
+            Assert.IsTrue((bool)first["IsActive"]);
+            Assert.IsNull(first["RetirementInfo"].AsDocument());
+
+            var second = docs.Skip(1).First();
+            Assert.IsTrue(second["Name"] is Primitive);     
+            Assert.IsTrue(second["Age"] is Primitive);            
+            Assert.IsTrue(second["CompanyInfo"] is Document);
+            Assert.IsTrue(second["Aliases"] is DynamoDBList);
+            Assert.IsTrue(second["IsActive"] is DynamoDBBool);
+            Assert.IsNotNull(second["RetirementInfo"].AsDocument());
+            Assert.IsTrue(second["RetirementInfo"].AsDocument()["Year"] is Primitive);
+            Assert.IsTrue(second["RetirementInfo"].AsDocument()["Status"] is Primitive);
+            // Value tests
+            Assert.AreEqual("George P. Burdell", (string)second["Name"]);
+            Assert.AreEqual(87, (int)second["Age"]);       
+            Assert.IsNotNull(second["CompanyInfo"].AsDocument());
+            Assert.AreEqual("Georgia Tech", (string)(second["CompanyInfo"] as Document)["Name"]);
+            Assert.IsTrue((bool)second["IsActive"]);
+            Assert.IsNotNull(second["RetirementInfo"].AsDocument());
+            Assert.AreEqual(1987, (int)second["RetirementInfo"].AsDocument()["Year"]);       
+            Assert.AreEqual("Graduated", (string)second["RetirementInfo"].AsDocument()["Status"]);     
+
+            // Test round-tripping
+            string json = docs.ToJson();
+            CompareJson(jsonArray, json);  
+            string prettyJson = docs.ToJsonPretty();
+            CompareJson(jsonArray, prettyJson);
+
+            return docs;
         }
 
         // Compares two JSON strings by converting text->JSON->text and comparing the final forms

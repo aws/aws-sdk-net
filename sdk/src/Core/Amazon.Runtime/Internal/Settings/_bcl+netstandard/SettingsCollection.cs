@@ -189,7 +189,7 @@ namespace Amazon.Runtime.Internal.Settings
 
                     writer.WritePropertyName(kvp.Key);
 
-                    if (PersistenceManager.Instance.IsEncrypted(kvp.Key) || PersistenceManager.Instance.IsEncrypted(this._uniqueKey))
+                    if (PersistenceManager.IsEncrypted(kvp.Key) || PersistenceManager.IsEncrypted(this._uniqueKey))
                         value = UserCrypto.Encrypt(value);
 
                     writer.Write(value);

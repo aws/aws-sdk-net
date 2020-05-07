@@ -692,6 +692,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return JsonUtils.FromJson(json);
         }
         
+        /// <summary>
+        /// Parses JSON text to produce an array of <see cref="Document"/>.
+        /// </summary>
+        /// <param name="jsonText"></param>
+        /// <returns>An <see cref="IEnumerable{T}"/> of type <see cref="Document"/>.</returns>
+        public static IEnumerable<Document> FromJsonArray(string jsonText)
+        {
+            return JsonUtils.FromJsonArray(jsonText);
+        }
+
         #endregion
 
         #region IDictionary<string,DynamoDBEntry> Members
