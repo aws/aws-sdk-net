@@ -92,7 +92,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units
+        ///  <b> <code>CPUUtilization</code> </b> - The percentage of allocated compute units
         /// that are currently in use on the instance. This metric identifies the processing power
         /// to run the applications on the instance. Tools in your operating system can show a
         /// lower percentage than Lightsail when the instance is not allocated a full processor
@@ -109,7 +109,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces
+        ///  <b> <code>NetworkIn</code> </b> - The number of bytes received on all network interfaces
         /// by the instance. This metric identifies the volume of incoming network traffic to
         /// the instance. The number reported is the number of bytes received during the period.
         /// Because this metric is reported in 5-minute intervals, divide the reported number
@@ -125,7 +125,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces
+        ///  <b> <code>NetworkOut</code> </b> - The number of bytes sent out on all network interfaces
         /// by the instance. This metric identifies the volume of outgoing network traffic from
         /// the instance. The number reported is the number of bytes sent during the period. Because
         /// this metric is reported in 5-minute intervals, divide the reported number by 300 to
@@ -141,7 +141,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or
+        ///  <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or
         /// failed both the instance status check and the system status check. This metric can
         /// be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60
         /// seconds) granularity.
@@ -156,7 +156,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed
+        ///  <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed
         /// or failed the instance status check. This metric can be either 0 (passed) or 1 (failed).
         /// This metric data is available in 1-minute (60 seconds) granularity.
         /// </para>
@@ -170,7 +170,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed
+        ///  <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed
         /// or failed the system status check. This metric can be either 0 (passed) or 1 (failed).
         /// This metric data is available in 1-minute (60 seconds) granularity.
         /// </para>
@@ -252,29 +252,29 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Minimum</code> — The lowest value observed during the specified period. Use
+        ///  <code>Minimum</code> - The lowest value observed during the specified period. Use
         /// this value to determine low volumes of activity for your application.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Maximum</code> — The highest value observed during the specified period. Use
+        ///  <code>Maximum</code> - The highest value observed during the specified period. Use
         /// this value to determine high volumes of activity for your application.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Sum</code> — All values submitted for the matching metric added together. You
+        ///  <code>Sum</code> - All values submitted for the matching metric added together. You
         /// can use this statistic to determine the total volume of a metric.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Average</code> — The value of Sum / SampleCount during the specified period.
+        ///  <code>Average</code> - The value of Sum / SampleCount during the specified period.
         /// By comparing this statistic with the Minimum and Maximum values, you can determine
         /// the full scope of a metric and how close the average use is to the Minimum and Maximum
         /// values. This comparison helps you to know when to increase or decrease your resources.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SampleCount</code> — The count, or number, of data points used for the statistical
+        ///  <code>SampleCount</code> - The count, or number, of data points used for the statistical
         /// calculation.
         /// </para>
         ///  </li> </ul>
@@ -296,7 +296,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property Unit. 
         /// <para>
         /// The unit for the metric data request. Valid units depend on the metric data being
-        /// required. For the valid units with each available metric, see the <code>metricName</code>
+        /// requested. For the valid units to specify with each available metric, see the <code>metricName</code>
         /// parameter.
         /// </para>
         /// </summary>

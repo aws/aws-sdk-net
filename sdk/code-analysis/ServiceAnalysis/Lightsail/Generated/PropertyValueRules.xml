@@ -131,7 +131,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateLoadBalancerRequest.InstancePort</property>
-    <min>0</min>
+    <min>-1</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
@@ -697,22 +697,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.InstancePortInfo.FromPort</property>
-    <min>0</min>
+    <min>-1</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.InstancePortInfo.ToPort</property>
-    <min>0</min>
+    <min>-1</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.InstancePortState.FromPort</property>
-    <min>0</min>
+    <min>-1</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.InstancePortState.ToPort</property>
-    <min>0</min>
+    <min>-1</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
@@ -841,12 +841,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.PortInfo.FromPort</property>
-    <min>0</min>
+    <min>-1</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.PortInfo.ToPort</property>
-    <min>0</min>
+    <min>-1</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>

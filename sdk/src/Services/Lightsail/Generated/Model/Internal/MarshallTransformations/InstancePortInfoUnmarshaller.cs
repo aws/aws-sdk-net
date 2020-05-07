@@ -82,6 +82,18 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccessType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("cidrListAliases", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CidrListAliases = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("cidrs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Cidrs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("commonName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

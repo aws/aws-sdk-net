@@ -45,6 +45,28 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PortInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCidrListAliases())
+            {
+                context.Writer.WritePropertyName("cidrListAliases");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCidrListAliasesListValue in requestObject.CidrListAliases)
+                {
+                        context.Writer.Write(requestObjectCidrListAliasesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetCidrs())
+            {
+                context.Writer.WritePropertyName("cidrs");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCidrsListValue in requestObject.Cidrs)
+                {
+                        context.Writer.Write(requestObjectCidrsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetFromPort())
             {
                 context.Writer.WritePropertyName("fromPort");

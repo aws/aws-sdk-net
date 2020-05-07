@@ -37,7 +37,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property PortStates. 
         /// <para>
-        /// Information about the port states resulting from your request.
+        /// An array of objects that describe the firewall port states for the specified instance.
         /// </para>
         /// </summary>
         public List<InstancePortState> PortStates

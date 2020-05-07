@@ -64,6 +64,18 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("cidrListAliases", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CidrListAliases = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("cidrs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Cidrs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fromPort", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

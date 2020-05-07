@@ -29,12 +29,12 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the CloseInstancePublicPorts operation.
-    /// Closes the public ports on a specific Amazon Lightsail instance.
+    /// Closes ports for a specific Amazon Lightsail instance.
     /// 
     ///  
     /// <para>
-    /// The <code>close instance public ports</code> operation supports tag-based access control
-    /// via resource tags applied to the resource identified by <code>instance name</code>.
+    /// The <code>CloseInstancePublicPorts</code> action supports tag-based access control
+    /// via resource tags applied to the resource identified by <code>instanceName</code>.
     /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
     /// Dev Guide</a>.
     /// </para>
@@ -47,7 +47,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property InstanceName. 
         /// <para>
-        /// The name of the instance on which you're attempting to close the public ports.
+        /// The name of the instance for which to close ports.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -66,7 +66,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property PortInfo. 
         /// <para>
-        /// Information about the public port you are trying to close.
+        /// An object to describe the ports to close for the specified instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

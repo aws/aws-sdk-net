@@ -91,7 +91,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>CPUUtilization</code> </b> — The percentage of CPU utilization currently
+        ///  <b> <code>CPUUtilization</code> </b> - The percentage of CPU utilization currently
         /// in use on the database.
         /// </para>
         ///  
@@ -105,7 +105,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>DatabaseConnections</code> </b> — The number of database connections in
+        ///  <b> <code>DatabaseConnections</code> </b> - The number of database connections in
         /// use.
         /// </para>
         ///  
@@ -119,7 +119,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>DiskQueueDepth</code> </b> — The number of outstanding IOs (read/write
+        ///  <b> <code>DiskQueueDepth</code> </b> - The number of outstanding IOs (read/write
         /// requests) that are waiting to access the disk.
         /// </para>
         ///  
@@ -132,7 +132,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>FreeStorageSpace</code> </b> — The amount of available storage space.
+        ///  <b> <code>FreeStorageSpace</code> </b> - The amount of available storage space.
         /// </para>
         ///  
         /// <para>
@@ -144,7 +144,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>NetworkReceiveThroughput</code> </b> — The incoming (Receive) network traffic
+        ///  <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive) network traffic
         /// on the database, including both customer database traffic and AWS traffic used for
         /// monitoring and replication.
         /// </para>
@@ -158,7 +158,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>NetworkTransmitThroughput</code> </b> — The outgoing (Transmit) network
+        ///  <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing (Transmit) network
         /// traffic on the database, including both customer database traffic and AWS traffic
         /// used for monitoring and replication.
         /// </para>
@@ -275,29 +275,29 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Minimum</code> — The lowest value observed during the specified period. Use
+        ///  <code>Minimum</code> - The lowest value observed during the specified period. Use
         /// this value to determine low volumes of activity for your application.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Maximum</code> — The highest value observed during the specified period. Use
+        ///  <code>Maximum</code> - The highest value observed during the specified period. Use
         /// this value to determine high volumes of activity for your application.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Sum</code> — All values submitted for the matching metric added together. You
+        ///  <code>Sum</code> - All values submitted for the matching metric added together. You
         /// can use this statistic to determine the total volume of a metric.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Average</code> — The value of Sum / SampleCount during the specified period.
+        ///  <code>Average</code> - The value of Sum / SampleCount during the specified period.
         /// By comparing this statistic with the Minimum and Maximum values, you can determine
         /// the full scope of a metric and how close the average use is to the Minimum and Maximum
         /// values. This comparison helps you to know when to increase or decrease your resources.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SampleCount</code> — The count, or number, of data points used for the statistical
+        ///  <code>SampleCount</code> - The count, or number, of data points used for the statistical
         /// calculation.
         /// </para>
         ///  </li> </ul>

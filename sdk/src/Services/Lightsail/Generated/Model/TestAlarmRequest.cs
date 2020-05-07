@@ -77,16 +77,16 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALARM</code> — The metric is outside of the defined threshold.
+        ///  <code>ALARM</code> - The metric is outside of the defined threshold.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available,
+        ///  <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available,
         /// or not enough data is available for the metric to determine the alarm state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OK</code> — The metric is within the defined threshold.
+        ///  <code>OK</code> - The metric is within the defined threshold.
         /// </para>
         ///  </li> </ul>
         /// </summary>
