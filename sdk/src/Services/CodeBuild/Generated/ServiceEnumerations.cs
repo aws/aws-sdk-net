@@ -1595,6 +1595,10 @@ namespace Amazon.CodeBuild
         /// </summary>
         public static readonly WebhookFilterType BASE_REF = new WebhookFilterType("BASE_REF");
         /// <summary>
+        /// Constant COMMIT_MESSAGE for WebhookFilterType
+        /// </summary>
+        public static readonly WebhookFilterType COMMIT_MESSAGE = new WebhookFilterType("COMMIT_MESSAGE");
+        /// <summary>
         /// Constant EVENT for WebhookFilterType
         /// </summary>
         public static readonly WebhookFilterType EVENT = new WebhookFilterType("EVENT");
