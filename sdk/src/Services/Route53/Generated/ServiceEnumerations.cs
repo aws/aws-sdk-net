@@ -249,6 +249,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly CloudWatchRegion EuNorth1 = new CloudWatchRegion("eu-north-1");
         /// <summary>
+        /// Constant EuSouth1 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion EuSouth1 = new CloudWatchRegion("eu-south-1");
+        /// <summary>
         /// Constant EuWest1 for CloudWatchRegion
         /// </summary>
         public static readonly CloudWatchRegion EuWest1 = new CloudWatchRegion("eu-west-1");
@@ -809,6 +813,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly ResourceRecordSetRegion EuNorth1 = new ResourceRecordSetRegion("eu-north-1");
         /// <summary>
+        /// Constant EuSouth1 for ResourceRecordSetRegion
+        /// </summary>
+        public static readonly ResourceRecordSetRegion EuSouth1 = new ResourceRecordSetRegion("eu-south-1");
+        /// <summary>
         /// Constant EuWest1 for ResourceRecordSetRegion
         /// </summary>
         public static readonly ResourceRecordSetRegion EuWest1 = new ResourceRecordSetRegion("eu-west-1");
@@ -1182,6 +1190,10 @@ namespace Amazon.Route53
         /// Constant EuNorth1 for VPCRegion
         /// </summary>
         public static readonly VPCRegion EuNorth1 = new VPCRegion("eu-north-1");
+        /// <summary>
+        /// Constant EuSouth1 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion EuSouth1 = new VPCRegion("eu-south-1");
         /// <summary>
         /// Constant EuWest1 for VPCRegion
         /// </summary>
