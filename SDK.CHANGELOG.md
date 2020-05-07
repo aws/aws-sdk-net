@@ -1,3 +1,24 @@
+### 3.3.734.0 (2020-05-07 18:18 UTC)
+* AppConfig (3.3.102.21)
+	* The description of the AWS AppConfig GetConfiguration API action was amended to include important information about calling ClientConfigurationVersion when you configure clients to call GetConfiguration.
+* CloudWatchLogs (3.3.102.0)
+	* Amazon CloudWatch Logs now offers the ability to interact with Logs Insights queries via the new PutQueryDefinition, DescribeQueryDefinitions, and DeleteQueryDefinition APIs.
+* CodeBuild (3.3.110.0)
+	* Add COMMIT_MESSAGE enum for webhook filter types
+* EC2 (3.3.173.0)
+	* Amazon EC2 now adds warnings to identify issues when creating a launch template or launch template version.
+* Lightsail (3.3.104.0)
+	* This release adds support for the following options in instance public ports: Specify source IP addresses, specify ICMP protocol like PING, and enable/disable the Lightsail browser-based SSH and RDP clients' access to your instance.
+* Route53 (3.3.104.0)
+	* Amazon Route 53 now supports the EU (Milan) Region (eu-south-1) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+* SimpleSystemsManagement (3.3.123.0)
+	* This Patch Manager release supports creating patch baselines for Oracle Linux and Debian
+* Core 3.3.106.19
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.733.0 (2020-05-06 18:18 UTC)
 * CodeStarconnections (3.3.101.0)
 	* Added support for tagging resources in AWS CodeStar Connections
