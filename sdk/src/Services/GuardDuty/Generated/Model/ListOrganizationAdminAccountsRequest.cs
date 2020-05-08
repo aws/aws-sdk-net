@@ -29,7 +29,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the ListOrganizationAdminAccounts operation.
-    /// Lists the accounts configured as AWS Organization delegated administrators.
+    /// Lists the accounts configured as GuardDuty delegated administrators.
     /// </summary>
     public partial class ListOrganizationAdminAccountsRequest : AmazonGuardDutyRequest
     {

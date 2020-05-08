@@ -1064,7 +1064,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Disables GuardDuty administrator permissions for an AWS account within the Organization.
+        /// Disables an AWS account within the Organization as the GuardDuty delegated administrator.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationAdminAccount service method.</param>
         /// <param name="cancellationToken">
@@ -1185,7 +1185,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Enables GuardDuty administrator permissions for an AWS account within the organization.
+        /// Enables an AWS account within the organization as the GuardDuty delegated administrator.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationAdminAccount service method.</param>
         /// <param name="cancellationToken">
@@ -1872,7 +1872,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Lists the accounts configured as AWS Organization delegated administrators.
+        /// Lists the accounts configured as GuardDuty delegated administrators.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationAdminAccounts service method.</param>
         /// <param name="cancellationToken">
