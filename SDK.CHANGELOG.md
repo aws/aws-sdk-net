@@ -1,3 +1,12 @@
+### 3.3.735.0 (2020-05-07 23:44 UTC)
+* DynamoDBv2 (3.3.106.0)
+	* Add extension method for IEnumerable<Document>. Adds support for Array property in Dynamodb DataModel API
+* S3 (3.3.110.66)
+	* Fixed issue encoding of Unicode characters in S3 object metadata.
+* Core 3.3.106.20
+	* Fixed issue with PersistenceManager blocking credential look up when application running under a service role. Updated IpRanges to have network border group.
+	* All services packages updated to require new Core
+
 ### 3.3.734.0 (2020-05-07 18:18 UTC)
 * AppConfig (3.3.102.21)
 	* The description of the AWS AppConfig GetConfiguration API action was amended to include important information about calling ClientConfigurationVersion when you configure clients to call GetConfiguration.
