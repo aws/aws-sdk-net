@@ -1,3 +1,16 @@
+### 3.3.736.0 (2020-05-08 18:20 UTC)
+* GuardDuty (3.3.107.13)
+	* Documentation updates for GuardDuty
+* ResourceGroupsTaggingAPI (3.3.103.72)
+	* Documentation updates for resourcegroupstaggingapi
+* SageMaker (3.3.115.0)
+	* This release adds a new parameter (EnableInterContainerTrafficEncryption) to CreateProcessingJob API to allow for enabling inter-container traffic encryption on processing jobs.
+* Core 3.3.106.21
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.735.0 (2020-05-07 23:44 UTC)
 * DynamoDBv2 (3.3.106.0)
 	* Add extension method for IEnumerable<Document>. Adds support for Array property in Dynamodb DataModel API
