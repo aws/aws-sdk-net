@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The instance type and the Amazon Resource Name (ARN) of the image created on the instance.
-    /// The ARN is stored as metadata in Amazon SageMaker Studio notebooks.
+    /// The instance type and the Amazon Resource Name (ARN) of the SageMaker image created
+    /// on the instance. The ARN is stored as metadata in Amazon SageMaker Studio notebooks.
     /// </summary>
     public partial class ResourceSpec
     {
@@ -57,7 +57,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SageMakerImageArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image created on the instance.
+        /// The Amazon Resource Name (ARN) of the SageMaker image created on the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

@@ -64,6 +64,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("EnableInterContainerTrafficEncryption", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableInterContainerTrafficEncryption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EnableNetworkIsolation", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

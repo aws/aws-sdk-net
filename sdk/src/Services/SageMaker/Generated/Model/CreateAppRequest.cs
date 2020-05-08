@@ -29,13 +29,13 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApp operation.
-    /// Creates a running App for the specified UserProfile. Supported Apps are JupyterServer
-    /// and KernelGateway. This operation is automatically invoked by Amazon SageMaker Amazon
-    /// SageMaker Studio (Studio) upon access to the associated Studio Domain, and when new
-    /// kernel configurations are selected by the user. A user may have multiple Apps active
-    /// simultaneously. Apps will automatically terminate and be deleted when stopped from
-    /// within Studio, or when the DeleteApp API is manually called. UserProfiles are limited
-    /// to 5 concurrently running Apps at a time.
+    /// Creates a running App for the specified UserProfile. Supported Apps are <code>JupyterServer</code>,
+    /// <code>KernelGateway</code>, and <code>TensorBoard</code>. This operation is automatically
+    /// invoked by Amazon SageMaker Studio upon access to the associated Studio Domain, and
+    /// when new kernel configurations are selected by the user. A user may have multiple
+    /// Apps active simultaneously. Apps will automatically terminate and be deleted when
+    /// stopped from within Studio, or when the DeleteApp API is manually called. UserProfiles
+    /// are limited to 5 concurrently running Apps at a time.
     /// </summary>
     public partial class CreateAppRequest : AmazonSageMakerRequest
     {
@@ -106,7 +106,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ResourceSpec. 
         /// <para>
-        /// The instance type and quantity.
+        /// The instance type and the Amazon Resource Name (ARN) of the SageMaker image created
+        /// on the instance.
         /// </para>
         /// </summary>
         public ResourceSpec ResourceSpec

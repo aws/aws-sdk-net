@@ -103,7 +103,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HomeEfsFileSystemUid. 
         /// <para>
-        /// The homa Amazon Elastic File System (EFS) Uid.
+        /// The home Amazon Elastic File System (EFS) Uid.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]
