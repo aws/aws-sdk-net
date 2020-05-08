@@ -351,6 +351,10 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// AWS IoT Things Graph
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// AWS Key Management Service
     /// </para>
     ///  </li> <li> 
@@ -451,6 +455,10 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Amazon Simple Email Service (SES)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Amazon Simple Notification Service (SNS)
     /// </para>
     ///  </li> <li> 
@@ -476,6 +484,10 @@ namespace Amazon.ResourceGroupsTaggingAPI
     ///  </li> <li> 
     /// <para>
     /// AWS Transfer for SFTP
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// AWS WAF Regional
     /// </para>
     ///  </li> <li> 
     /// <para>

@@ -29,8 +29,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
     /// <summary>
     /// The metadata that you apply to AWS resources to help you categorize and organize them.
-    /// Each tag consists of a key and an optional value, both of which you define. For more
-    /// information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+    /// Each tag consists of a key and a value, both of which you define. For more information,
+    /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
     /// AWS Resources</a> in the <i>AWS General Reference</i>.
     /// </summary>
     public partial class Tag
@@ -61,8 +61,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The optional part of a key-value pair that make up a tag. A value acts as a descriptor
-        /// within a tag category (key).
+        /// One part of a key-value pair that make up a tag. A value acts as a descriptor within
+        /// a tag category (key). The value can be empty or null.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
