@@ -32,7 +32,7 @@ namespace Amazon.WorkLink
     public partial class AmazonWorkLinkConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.102.153");
+            InternalSDKUtils.BuildUserAgentString("3.3.102.154");
 
         private string _userAgent = UserAgentString;
 

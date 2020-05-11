@@ -1,3 +1,16 @@
+### 3.3.737.0 (2020-05-11 18:10 UTC)
+* CodeGuruReviewer (3.3.103.0)
+	* Add Bitbucket integration APIs
+* EC2 (3.3.174.0)
+	* M6g instances are our next-generation general purpose instances powered by AWS Graviton2 processors
+* Kendra (3.3.103.0)
+	* Amazon Kendra is now generally available. As part of general availability, we are launching * Developer edition * Ability to scale your Amazon Kendra index with capacity units * Support for new connectors * Support for new tagging API's * Support for Deleting data source * Metrics for data source sync operations * Metrics for query & storage utilization
+* Core 3.3.106.22
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.736.0 (2020-05-08 18:20 UTC)
 * GuardDuty (3.3.107.13)
 	* Documentation updates for GuardDuty
