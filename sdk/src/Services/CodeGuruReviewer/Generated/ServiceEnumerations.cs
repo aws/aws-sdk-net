@@ -89,6 +89,10 @@ namespace Amazon.CodeGuruReviewer
     {
 
         /// <summary>
+        /// Constant Bitbucket for ProviderType
+        /// </summary>
+        public static readonly ProviderType Bitbucket = new ProviderType("Bitbucket");
+        /// <summary>
         /// Constant CodeCommit for ProviderType
         /// </summary>
         public static readonly ProviderType CodeCommit = new ProviderType("CodeCommit");

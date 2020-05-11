@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Repository Marshaller
+    /// ThirdPartySourceRepository Marshaller
     /// </summary>       
-    public class RepositoryMarshaller : IRequestMarshaller<Repository, JsonMarshallerContext> 
+    public class ThirdPartySourceRepositoryMarshaller : IRequestMarshaller<ThirdPartySourceRepository, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,24 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Repository requestObject, JsonMarshallerContext context)
+        public void Marshall(ThirdPartySourceRepository requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBitbucket())
+            if(requestObject.IsSetConnectionArn())
             {
-                context.Writer.WritePropertyName("Bitbucket");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ThirdPartySourceRepositoryMarshaller.Instance;
-                marshaller.Marshall(requestObject.Bitbucket, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("ConnectionArn");
+                context.Writer.Write(requestObject.ConnectionArn);
             }
 
-            if(requestObject.IsSetCodeCommit())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("CodeCommit");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("Name");
+                context.Writer.Write(requestObject.Name);
+            }
 
-                var marshaller = CodeCommitRepositoryMarshaller.Instance;
-                marshaller.Marshall(requestObject.CodeCommit, context);
-
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetOwner())
+            {
+                context.Writer.WritePropertyName("Owner");
+                context.Writer.Write(requestObject.Owner);
             }
 
         }
@@ -72,7 +68,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static RepositoryMarshaller Instance = new RepositoryMarshaller();
+        public readonly static ThirdPartySourceRepositoryMarshaller Instance = new ThirdPartySourceRepositoryMarshaller();
 
     }
 }
