@@ -68,6 +68,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCapacityUnits())
+                {
+                    context.Writer.WritePropertyName("CapacityUnits");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CapacityUnitsConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CapacityUnits, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");

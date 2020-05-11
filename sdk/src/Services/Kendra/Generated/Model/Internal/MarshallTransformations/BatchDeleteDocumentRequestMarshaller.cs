@@ -68,6 +68,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDataSourceSyncJobMetricTarget())
+                {
+                    context.Writer.WritePropertyName("DataSourceSyncJobMetricTarget");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataSourceSyncJobMetricTargetMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DataSourceSyncJobMetricTarget, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDocumentIdList())
                 {
                     context.Writer.WritePropertyName("DocumentIdList");

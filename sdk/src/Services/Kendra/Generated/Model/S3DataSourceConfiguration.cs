@@ -101,7 +101,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about glob patterns, see <a href="http://wikipedia.org/wiki/Glob_%28programming%29">glob
+        /// For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
         /// (programming)</a> in <i>Wikipedia</i>.
         /// </para>
         /// </summary>

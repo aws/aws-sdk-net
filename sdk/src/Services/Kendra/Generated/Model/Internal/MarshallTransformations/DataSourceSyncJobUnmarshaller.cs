@@ -94,6 +94,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Metrics", targetDepth))
+                {
+                    var unmarshaller = DataSourceSyncJobMetricsUnmarshaller.Instance;
+                    unmarshalledObject.Metrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

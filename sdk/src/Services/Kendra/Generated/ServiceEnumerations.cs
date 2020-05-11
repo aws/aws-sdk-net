@@ -282,6 +282,10 @@ namespace Amazon.Kendra
         /// Constant SYNCING for DataSourceSyncJobStatus
         /// </summary>
         public static readonly DataSourceSyncJobStatus SYNCING = new DataSourceSyncJobStatus("SYNCING");
+        /// <summary>
+        /// Constant SYNCING_INDEXING for DataSourceSyncJobStatus
+        /// </summary>
+        public static readonly DataSourceSyncJobStatus SYNCING_INDEXING = new DataSourceSyncJobStatus("SYNCING_INDEXING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -329,9 +333,21 @@ namespace Amazon.Kendra
         /// </summary>
         public static readonly DataSourceType DATABASE = new DataSourceType("DATABASE");
         /// <summary>
+        /// Constant ONEDRIVE for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType ONEDRIVE = new DataSourceType("ONEDRIVE");
+        /// <summary>
         /// Constant S3 for DataSourceType
         /// </summary>
         public static readonly DataSourceType S3 = new DataSourceType("S3");
+        /// <summary>
+        /// Constant SALESFORCE for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType SALESFORCE = new DataSourceType("SALESFORCE");
+        /// <summary>
+        /// Constant SERVICENOW for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType SERVICENOW = new DataSourceType("SERVICENOW");
         /// <summary>
         /// Constant SHAREPOINT for DataSourceType
         /// </summary>
@@ -543,6 +559,56 @@ namespace Amazon.Kendra
 
 
     /// <summary>
+    /// Constants used for properties of type IndexEdition.
+    /// </summary>
+    public class IndexEdition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEVELOPER_EDITION for IndexEdition
+        /// </summary>
+        public static readonly IndexEdition DEVELOPER_EDITION = new IndexEdition("DEVELOPER_EDITION");
+        /// <summary>
+        /// Constant ENTERPRISE_EDITION for IndexEdition
+        /// </summary>
+        public static readonly IndexEdition ENTERPRISE_EDITION = new IndexEdition("ENTERPRISE_EDITION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IndexEdition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IndexEdition FindValue(string value)
+        {
+            return FindValue<IndexEdition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IndexEdition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IndexStatus.
     /// </summary>
     public class IndexStatus : ConstantClass
@@ -568,6 +634,10 @@ namespace Amazon.Kendra
         /// Constant SYSTEM_UPDATING for IndexStatus
         /// </summary>
         public static readonly IndexStatus SYSTEM_UPDATING = new IndexStatus("SYSTEM_UPDATING");
+        /// <summary>
+        /// Constant UPDATING for IndexStatus
+        /// </summary>
+        public static readonly IndexStatus UPDATING = new IndexStatus("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -852,6 +922,270 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RelevanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SalesforceChatterFeedIncludeFilterType.
+    /// </summary>
+    public class SalesforceChatterFeedIncludeFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE_USER for SalesforceChatterFeedIncludeFilterType
+        /// </summary>
+        public static readonly SalesforceChatterFeedIncludeFilterType ACTIVE_USER = new SalesforceChatterFeedIncludeFilterType("ACTIVE_USER");
+        /// <summary>
+        /// Constant STANDARD_USER for SalesforceChatterFeedIncludeFilterType
+        /// </summary>
+        public static readonly SalesforceChatterFeedIncludeFilterType STANDARD_USER = new SalesforceChatterFeedIncludeFilterType("STANDARD_USER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SalesforceChatterFeedIncludeFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SalesforceChatterFeedIncludeFilterType FindValue(string value)
+        {
+            return FindValue<SalesforceChatterFeedIncludeFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SalesforceChatterFeedIncludeFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SalesforceKnowledgeArticleState.
+    /// </summary>
+    public class SalesforceKnowledgeArticleState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ARCHIVED for SalesforceKnowledgeArticleState
+        /// </summary>
+        public static readonly SalesforceKnowledgeArticleState ARCHIVED = new SalesforceKnowledgeArticleState("ARCHIVED");
+        /// <summary>
+        /// Constant DRAFT for SalesforceKnowledgeArticleState
+        /// </summary>
+        public static readonly SalesforceKnowledgeArticleState DRAFT = new SalesforceKnowledgeArticleState("DRAFT");
+        /// <summary>
+        /// Constant PUBLISHED for SalesforceKnowledgeArticleState
+        /// </summary>
+        public static readonly SalesforceKnowledgeArticleState PUBLISHED = new SalesforceKnowledgeArticleState("PUBLISHED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SalesforceKnowledgeArticleState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SalesforceKnowledgeArticleState FindValue(string value)
+        {
+            return FindValue<SalesforceKnowledgeArticleState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SalesforceKnowledgeArticleState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SalesforceStandardObjectName.
+    /// </summary>
+    public class SalesforceStandardObjectName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT for SalesforceStandardObjectName
+        /// </summary>
+        public static readonly SalesforceStandardObjectName ACCOUNT = new SalesforceStandardObjectName("ACCOUNT");
+        /// <summary>
+        /// Constant CAMPAIGN for SalesforceStandardObjectName
+        /// </summary>
+        public static readonly SalesforceStandardObjectName CAMPAIGN = new SalesforceStandardObjectName("CAMPAIGN");
+        /// <summary>
+        /// Constant CASE for SalesforceStandardObjectName
+        /// </summary>
+        public static readonly SalesforceStandardObjectName CASE = new SalesforceStandardObjectName("CASE");
+        /// <summary>
+        /// Constant CONTACT for SalesforceStandardObjectName
+        /// </summary>
+        public static readonly SalesforceStandardObjectName CONTACT = new SalesforceStandardObjectName("CONTACT");
+        /// <summary>
+        /// Constant CONTRACT for SalesforceStandardObjectName
+        /// </summary>
+        public static readonly SalesforceStandardObjectName CONTRACT = new SalesforceStandardObjectName("CONTRACT");
+        /// <summary>
+        /// Constant DOCUMENT for SalesforceStandardObjectName
+        /// </summary>
+        public static readonly SalesforceStandardObjectName DOCUMENT = new SalesforceStandardObjectName("DOCUMENT");
+        /// <summary>
+        /// Constant GROUP for SalesforceStandardObjectName
+        /// </summary>
+        public static readonly SalesforceStandardObjectName GROUP = new SalesforceStandardObjectName("GROUP");
+        /// <summary>
+        /// Constant IDEA for SalesforceStandardObjectName
+        /// </summary>
+        public static readonly SalesforceStandardObjectName IDEA = new SalesforceStandardObjectName("IDEA");
+        /// <summary>
+        /// Constant LEAD for SalesforceStandardObjectName
+        /// </summary>
+        public static readonly SalesforceStandardObjectName LEAD = new SalesforceStandardObjectName("LEAD");
+        /// <summary>
+        /// Constant OPPORTUNITY for SalesforceStandardObjectName
+        /// </summary>
+        public static readonly SalesforceStandardObjectName OPPORTUNITY = new SalesforceStandardObjectName("OPPORTUNITY");
+        /// <summary>
+        /// Constant PARTNER for SalesforceStandardObjectName
+        /// </summary>
+        public static readonly SalesforceStandardObjectName PARTNER = new SalesforceStandardObjectName("PARTNER");
+        /// <summary>
+        /// Constant PRICEBOOK for SalesforceStandardObjectName
+        /// </summary>
+        public static readonly SalesforceStandardObjectName PRICEBOOK = new SalesforceStandardObjectName("PRICEBOOK");
+        /// <summary>
+        /// Constant PRODUCT for SalesforceStandardObjectName
+        /// </summary>
+        public static readonly SalesforceStandardObjectName PRODUCT = new SalesforceStandardObjectName("PRODUCT");
+        /// <summary>
+        /// Constant PROFILE for SalesforceStandardObjectName
+        /// </summary>
+        public static readonly SalesforceStandardObjectName PROFILE = new SalesforceStandardObjectName("PROFILE");
+        /// <summary>
+        /// Constant SOLUTION for SalesforceStandardObjectName
+        /// </summary>
+        public static readonly SalesforceStandardObjectName SOLUTION = new SalesforceStandardObjectName("SOLUTION");
+        /// <summary>
+        /// Constant TASK for SalesforceStandardObjectName
+        /// </summary>
+        public static readonly SalesforceStandardObjectName TASK = new SalesforceStandardObjectName("TASK");
+        /// <summary>
+        /// Constant USER for SalesforceStandardObjectName
+        /// </summary>
+        public static readonly SalesforceStandardObjectName USER = new SalesforceStandardObjectName("USER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SalesforceStandardObjectName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SalesforceStandardObjectName FindValue(string value)
+        {
+            return FindValue<SalesforceStandardObjectName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SalesforceStandardObjectName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceNowBuildVersionType.
+    /// </summary>
+    public class ServiceNowBuildVersionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LONDON for ServiceNowBuildVersionType
+        /// </summary>
+        public static readonly ServiceNowBuildVersionType LONDON = new ServiceNowBuildVersionType("LONDON");
+        /// <summary>
+        /// Constant OTHERS for ServiceNowBuildVersionType
+        /// </summary>
+        public static readonly ServiceNowBuildVersionType OTHERS = new ServiceNowBuildVersionType("OTHERS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceNowBuildVersionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceNowBuildVersionType FindValue(string value)
+        {
+            return FindValue<ServiceNowBuildVersionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceNowBuildVersionType(string value)
         {
             return FindValue(value);
         }

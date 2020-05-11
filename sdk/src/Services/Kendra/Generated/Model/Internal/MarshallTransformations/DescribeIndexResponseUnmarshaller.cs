@@ -51,6 +51,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CapacityUnits", targetDepth))
+                {
+                    var unmarshaller = CapacityUnitsConfigurationUnmarshaller.Instance;
+                    response.CapacityUnits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -67,6 +73,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<DocumentMetadataConfiguration, DocumentMetadataConfigurationUnmarshaller>(DocumentMetadataConfigurationUnmarshaller.Instance);
                     response.DocumentMetadataConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Edition", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Edition = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ErrorMessage", targetDepth))

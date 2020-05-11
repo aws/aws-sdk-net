@@ -32,7 +32,27 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class TextDocumentStatistics
     {
+        private long? _indexedTextBytes;
         private int? _indexedTextDocumentsCount;
+
+        /// <summary>
+        /// Gets and sets the property IndexedTextBytes. 
+        /// <para>
+        /// The total size, in bytes, of the indexed documents.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=0)]
+        public long IndexedTextBytes
+        {
+            get { return this._indexedTextBytes.GetValueOrDefault(); }
+            set { this._indexedTextBytes = value; }
+        }
+
+        // Check to see if IndexedTextBytes property is set
+        internal bool IsSetIndexedTextBytes()
+        {
+            return this._indexedTextBytes.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property IndexedTextDocumentsCount. 
