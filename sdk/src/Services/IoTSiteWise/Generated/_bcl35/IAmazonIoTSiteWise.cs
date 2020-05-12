@@ -2396,6 +2396,26 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Retrieves a paginated list of asset summaries.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this operation to do the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// List assets based on a specific asset model.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// List top-level assets.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can't use this operation to list all assets. To retrieve summaries for all of
+        /// your assets, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModels.html">ListAssetModels</a>
+        /// to get all of your asset model IDs. Then, use ListAssets to get all assets for each
+        /// asset model.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssets service method.</param>
         /// 
@@ -3201,8 +3221,8 @@ namespace Amazon.IoTSiteWise
         ///  <important> 
         /// <para>
         /// This action overwrites the existing model with the provided model. To avoid deleting
-        /// your asset model's properties or hierarchies, you must include their definitions in
-        /// the updated asset model payload. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.
+        /// your asset model's properties or hierarchies, you must include their IDs and definitions
+        /// in the updated asset model payload. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.
         /// </para>
         ///  
         /// <para>
@@ -3291,6 +3311,14 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Updates an asset property's alias and notification state.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This operation overwrites the property's existing alias and notification state. To
+        /// keep your existing property's alias or notification state, you must include the existing
+        /// values in the UpdateAssetProperty request. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html">DescribeAssetProperty</a>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssetProperty service method.</param>
         /// 

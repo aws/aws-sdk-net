@@ -30,6 +30,14 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Container for the parameters to the UpdateAssetProperty operation.
     /// Updates an asset property's alias and notification state.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// This operation overwrites the property's existing alias and notification state. To
+    /// keep your existing property's alias or notification state, you must include the existing
+    /// values in the UpdateAssetProperty request. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html">DescribeAssetProperty</a>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UpdateAssetPropertyRequest : AmazonIoTSiteWiseRequest
     {
@@ -86,6 +94,10 @@ namespace Amazon.IoTSiteWise.Model
         /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
         /// Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter, the alias is removed from the property.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string PropertyAlias
@@ -122,10 +134,14 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property PropertyNotificationState. 
         /// <para>
-        /// The updated MQTT notification state (enabled or disabled) for this asset property.
-        /// When the notification state is enabled, AWS IoT SiteWise publishes property value
-        /// updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
+        /// The MQTT notification state (enabled or disabled) for this asset property. When the
+        /// notification state is enabled, AWS IoT SiteWise publishes property value updates to
+        /// a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
         /// with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter, the notification state is set to <code>DISABLED</code>.
         /// </para>
         /// </summary>
         public PropertyNotificationState PropertyNotificationState

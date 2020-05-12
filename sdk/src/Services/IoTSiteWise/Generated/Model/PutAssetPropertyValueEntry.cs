@@ -126,11 +126,6 @@ namespace Amazon.IoTSiteWise.Model
         /// The list of property values to upload. You can specify up to 10 <code>propertyValues</code>
         /// array elements. 
         /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-        /// in the <i>AWS IoT SiteWise User Guide</i>.
-        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<AssetPropertyValue> PropertyValues

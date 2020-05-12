@@ -30,6 +30,26 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Container for the parameters to the ListAssets operation.
     /// Retrieves a paginated list of asset summaries.
+    /// 
+    ///  
+    /// <para>
+    /// You can use this operation to do the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// List assets based on a specific asset model.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// List top-level assets.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You can't use this operation to list all assets. To retrieve summaries for all of
+    /// your assets, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModels.html">ListAssetModels</a>
+    /// to get all of your asset model IDs. Then, use ListAssets to get all assets for each
+    /// asset model.
+    /// </para>
     /// </summary>
     public partial class ListAssetsRequest : AmazonIoTSiteWiseRequest
     {
@@ -41,8 +61,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetModelId. 
         /// <para>
-        /// The ID of the asset model by which to filter the list of assets. Omit the <code>assetModelId</code>
-        /// to list all assets (of all models).
+        /// The ID of the asset model by which to filter the list of assets. This parameter is
+        /// required if you choose <code>ALL</code> for <code>filter</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -61,8 +81,20 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// The hierarchy level by which to filter the requested list of assets.
+        /// The filter for the requested list of assets. Choose one of the following options.
+        /// Defaults to <code>ALL</code>.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code>
+        /// parameter is required if you filter by <code>ALL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy
+        /// tree.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ListAssetsFilter Filter
         {

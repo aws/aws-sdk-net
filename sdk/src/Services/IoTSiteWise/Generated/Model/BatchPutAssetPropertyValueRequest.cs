@@ -69,8 +69,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property Entries. 
         /// <para>
         /// The list of asset property value entries for the batch put request. You can specify
-        /// up to 10 entries per request. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// up to 10 entries per request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
