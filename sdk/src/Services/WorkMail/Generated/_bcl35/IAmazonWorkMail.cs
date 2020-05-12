@@ -1605,7 +1605,7 @@ namespace Amazon.WorkMail
 
 
         /// <summary>
-        /// Returns summaries of the customer's non-deleted organizations.
+        /// Returns summaries of the customer's organizations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizations service method.</param>
         /// 

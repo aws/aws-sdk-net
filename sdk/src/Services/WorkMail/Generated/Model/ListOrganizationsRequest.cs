@@ -29,7 +29,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the ListOrganizations operation.
-    /// Returns summaries of the customer's non-deleted organizations.
+    /// Returns summaries of the customer's organizations.
     /// </summary>
     public partial class ListOrganizationsRequest : AmazonWorkMailRequest
     {
