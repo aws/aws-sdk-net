@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.737.0",
+    "ProductVersion" : "3.3.738.0",
     "CoreVersion"    : "3.3.106.22",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -1033,7 +1033,7 @@
             "InPreview"               : false
         },
         "WorkMail"                        : {
-            "Version" : "3.3.103.46",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.106.22"
@@ -1769,7 +1769,7 @@
             "InPreview"               : false
         },
         "IoTSiteWise"                     : {
-            "Version" : "3.3.100.8",
+            "Version" : "3.3.100.9",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.106.22"

@@ -1,3 +1,9 @@
+### 3.3.738.0 (2020-05-12 18:12 UTC)
+* IoTSiteWise (3.3.100.9)
+	* Documentation updates for iot-bifrost
+* WorkMail (3.3.104.0)
+	* Minor API fixes and updates to the documentation.
+
 ### 3.3.737.0 (2020-05-11 18:10 UTC)
 * CodeGuruReviewer (3.3.103.0)
 	* Add Bitbucket integration APIs
