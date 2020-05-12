@@ -33,13 +33,13 @@ namespace Amazon.Kendra.Model
     ///  
     /// <para>
     /// When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>, filters
-    /// you can use a total of 3 layers. For example, you can use:
+    /// you can use 2 layers under the first attribute filter. For example, you can use:
     /// </para>
-    ///  <ol> <li> 
+    ///  
     /// <para>
     ///  <code>&lt;AndAllFilters&gt;</code> 
     /// </para>
-    ///  </li> <li> 
+    ///  <ol> <li> 
     /// <para>
     ///  <code> &lt;OrAllFilters&gt;</code> 
     /// </para>
@@ -47,7 +47,11 @@ namespace Amazon.Kendra.Model
     /// <para>
     ///  <code> &lt;EqualTo&gt;</code> 
     /// </para>
-    ///  </li> </ol>
+    ///  </li> </ol> 
+    /// <para>
+    /// If you use more than 2 layers, you receive a <code>ValidationException</code> exception
+    /// with the message "<code>AttributeFilter</code> cannot have a depth of more than 2."
+    /// </para>
     /// </summary>
     public partial class AttributeFilter
     {
@@ -68,7 +72,6 @@ namespace Amazon.Kendra.Model
         /// Performs a logical <code>AND</code> operation on all supplied filters.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
         public List<AttributeFilter> AndAllFilters
         {
             get { return this._andAllFilters; }
@@ -84,7 +87,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ContainsAll. 
         /// <para>
-        /// Returns true when a document contains all of the specified document attributes.
+        /// Returns true when a document contains all of the specified document attributes. This
+        /// filter is only appicable to <code>StringListValue</code> metadata.
         /// </para>
         /// </summary>
         public DocumentAttribute ContainsAll
@@ -102,7 +106,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ContainsAny. 
         /// <para>
-        /// Returns true when a document contains any of the specified document attributes.
+        /// Returns true when a document contains any of the specified document attributes.This
+        /// filter is only appicable to <code>StringListValue</code> metadata.
         /// </para>
         /// </summary>
         public DocumentAttribute ContainsAny
@@ -235,7 +240,6 @@ namespace Amazon.Kendra.Model
         /// Performs a logical <code>OR</code> operation on all supplied filters.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
         public List<AttributeFilter> OrAllFilters
         {
             get { return this._orAllFilters; }

@@ -41,8 +41,24 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class BatchDeleteDocumentRequest : AmazonKendraRequest
     {
+        private DataSourceSyncJobMetricTarget _dataSourceSyncJobMetricTarget;
         private List<string> _documentIdList = new List<string>();
         private string _indexId;
+
+        /// <summary>
+        /// Gets and sets the property DataSourceSyncJobMetricTarget.
+        /// </summary>
+        public DataSourceSyncJobMetricTarget DataSourceSyncJobMetricTarget
+        {
+            get { return this._dataSourceSyncJobMetricTarget; }
+            set { this._dataSourceSyncJobMetricTarget = value; }
+        }
+
+        // Check to see if DataSourceSyncJobMetricTarget property is set
+        internal bool IsSetDataSourceSyncJobMetricTarget()
+        {
+            return this._dataSourceSyncJobMetricTarget != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DocumentIdList. 

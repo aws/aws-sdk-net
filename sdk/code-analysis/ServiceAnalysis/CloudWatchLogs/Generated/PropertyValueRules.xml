@@ -109,6 +109,11 @@
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DeleteQueryDefinitionRequest.QueryDefinitionId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DeleteRetentionPolicyRequest.LogGroupName</property>
     <min>1</min>
     <max>512</max>
@@ -259,6 +264,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DescribeQueriesResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeQueryDefinitionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeQueryDefinitionsRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeQueryDefinitionsRequest.QueryDefinitionNamePrefix</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^([^:*\/]+\/?)*[^:*\/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeQueryDefinitionsResponse.NextToken</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -463,6 +487,27 @@
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.PutQueryDefinitionRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^([^:*\/]+\/?)*[^:*\/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.PutQueryDefinitionRequest.QueryDefinitionId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.PutQueryDefinitionRequest.QueryString</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.PutQueryDefinitionResponse.QueryDefinitionId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutResourcePolicyRequest.PolicyDocument</property>
     <min>1</min>
     <max>5120</max>
@@ -516,7 +561,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.StartQueryRequest.QueryString</property>
     <min>0</min>
-    <max>2048</max>
+    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.StartQueryRequest.StartTime</property>
@@ -747,6 +792,26 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.QueryDefinition.LastModified</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.QueryDefinition.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^([^:*\/]+\/?)*[^:*\/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.QueryDefinition.QueryDefinitionId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.QueryDefinition.QueryString</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.QueryInfo.CreateTime</property>
     <min>0</min>
   </property-value-rule>
@@ -764,7 +829,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.QueryInfo.QueryString</property>
     <min>0</min>
-    <max>2048</max>
+    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.ResourcePolicy.LastUpdatedTime</property>

@@ -33,7 +33,10 @@ namespace Amazon.Kendra.Model
     public partial class DataSourceConfiguration
     {
         private DatabaseConfiguration _databaseConfiguration;
+        private OneDriveConfiguration _oneDriveConfiguration;
         private S3DataSourceConfiguration _s3Configuration;
+        private SalesforceConfiguration _salesforceConfiguration;
+        private ServiceNowConfiguration _serviceNowConfiguration;
         private SharePointConfiguration _sharePointConfiguration;
 
         /// <summary>
@@ -55,6 +58,24 @@ namespace Amazon.Kendra.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OneDriveConfiguration. 
+        /// <para>
+        /// Provided configuration for data sources that connect to Microsoft OneDrive.
+        /// </para>
+        /// </summary>
+        public OneDriveConfiguration OneDriveConfiguration
+        {
+            get { return this._oneDriveConfiguration; }
+            set { this._oneDriveConfiguration = value; }
+        }
+
+        // Check to see if OneDriveConfiguration property is set
+        internal bool IsSetOneDriveConfiguration()
+        {
+            return this._oneDriveConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property S3Configuration. 
         /// <para>
         /// Provides information to create a connector for a document repository in an Amazon
@@ -71,6 +92,42 @@ namespace Amazon.Kendra.Model
         internal bool IsSetS3Configuration()
         {
             return this._s3Configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SalesforceConfiguration. 
+        /// <para>
+        /// Provides configuration information for data sources that connect to a Salesforce site.
+        /// </para>
+        /// </summary>
+        public SalesforceConfiguration SalesforceConfiguration
+        {
+            get { return this._salesforceConfiguration; }
+            set { this._salesforceConfiguration = value; }
+        }
+
+        // Check to see if SalesforceConfiguration property is set
+        internal bool IsSetSalesforceConfiguration()
+        {
+            return this._salesforceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceNowConfiguration. 
+        /// <para>
+        /// Provides configuration for data sources that connect to ServiceNow instances.
+        /// </para>
+        /// </summary>
+        public ServiceNowConfiguration ServiceNowConfiguration
+        {
+            get { return this._serviceNowConfiguration; }
+            set { this._serviceNowConfiguration = value; }
+        }
+
+        // Check to see if ServiceNowConfiguration property is set
+        internal bool IsSetServiceNowConfiguration()
+        {
+            return this._serviceNowConfiguration != null;
         }
 
         /// <summary>

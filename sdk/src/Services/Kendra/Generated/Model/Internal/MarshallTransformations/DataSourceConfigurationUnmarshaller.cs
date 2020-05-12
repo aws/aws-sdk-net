@@ -70,10 +70,28 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.DatabaseConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OneDriveConfiguration", targetDepth))
+                {
+                    var unmarshaller = OneDriveConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.OneDriveConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("S3Configuration", targetDepth))
                 {
                     var unmarshaller = S3DataSourceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3Configuration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SalesforceConfiguration", targetDepth))
+                {
+                    var unmarshaller = SalesforceConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SalesforceConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ServiceNowConfiguration", targetDepth))
+                {
+                    var unmarshaller = ServiceNowConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ServiceNowConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SharePointConfiguration", targetDepth))

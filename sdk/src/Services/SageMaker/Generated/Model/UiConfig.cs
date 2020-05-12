@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// Creating Your Custom Labeling Task Template</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Max=1024)]
         public string UiTemplateS3Uri
         {
             get { return this._uiTemplateS3Uri; }

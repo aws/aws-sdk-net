@@ -80,7 +80,6 @@ namespace Amazon.Kendra.Model
         /// A list of strings. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
         public List<string> StringListValue
         {
             get { return this._stringListValue; }

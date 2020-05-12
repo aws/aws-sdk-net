@@ -851,12 +851,12 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Closes the public ports on a specific Amazon Lightsail instance.
+        /// Closes ports for a specific Amazon Lightsail instance.
         /// 
         ///  
         /// <para>
-        /// The <code>close instance public ports</code> operation supports tag-based access control
-        /// via resource tags applied to the resource identified by <code>instance name</code>.
+        /// The <code>CloseInstancePublicPorts</code> action supports tag-based access control
+        /// via resource tags applied to the resource identified by <code>instanceName</code>.
         /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
@@ -907,12 +907,12 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Closes the public ports on a specific Amazon Lightsail instance.
+        /// Closes ports for a specific Amazon Lightsail instance.
         /// 
         ///  
         /// <para>
-        /// The <code>close instance public ports</code> operation supports tag-based access control
-        /// via resource tags applied to the resource identified by <code>instance name</code>.
+        /// The <code>CloseInstancePublicPorts</code> action supports tag-based access control
+        /// via resource tags applied to the resource identified by <code>instanceName</code>.
         /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
@@ -7542,7 +7542,8 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Returns the port states for a specific virtual private server, or <i>instance</i>.
+        /// Returns the firewall port states for a specific Amazon Lightsail instance, the IP
+        /// addresses allowed to connect to the instance through the ports, and the protocol.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInstancePortStates service method.</param>
         /// 
@@ -7590,7 +7591,8 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Returns the port states for a specific virtual private server, or <i>instance</i>.
+        /// Returns the firewall port states for a specific Amazon Lightsail instance, the IP
+        /// addresses allowed to connect to the instance through the ports, and the protocol.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInstancePortStates service method.</param>
         /// <param name="cancellationToken">
@@ -10831,12 +10833,13 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Adds public ports to an Amazon Lightsail instance.
+        /// Opens ports for a specific Amazon Lightsail instance, and specifies the IP addresses
+        /// allowed to connect to the instance through the ports, and the protocol.
         /// 
         ///  
         /// <para>
-        /// The <code>open instance public ports</code> operation supports tag-based access control
-        /// via resource tags applied to the resource identified by <code>instance name</code>.
+        /// The <code>OpenInstancePublicPorts</code> action supports tag-based access control
+        /// via resource tags applied to the resource identified by <code>instanceName</code>.
         /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
@@ -10887,12 +10890,13 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Adds public ports to an Amazon Lightsail instance.
+        /// Opens ports for a specific Amazon Lightsail instance, and specifies the IP addresses
+        /// allowed to connect to the instance through the ports, and the protocol.
         /// 
         ///  
         /// <para>
-        /// The <code>open instance public ports</code> operation supports tag-based access control
-        /// via resource tags applied to the resource identified by <code>instance name</code>.
+        /// The <code>OpenInstancePublicPorts</code> action supports tag-based access control
+        /// via resource tags applied to the resource identified by <code>instanceName</code>.
         /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
@@ -11188,14 +11192,18 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Sets the specified open ports for an Amazon Lightsail instance, and closes all ports
-        /// for every protocol not included in the current request.
+        /// Opens ports for a specific Amazon Lightsail instance, and specifies the IP addresses
+        /// allowed to connect to the instance through the ports, and the protocol. This action
+        /// also closes all currently open ports that are not included in the request. Include
+        /// all of the ports and the protocols you want to open in your <code>PutInstancePublicPorts</code>request.
+        /// Or use the <code>OpenInstancePublicPorts</code> action to open ports without closing
+        /// currently open ports.
         /// 
         ///  
         /// <para>
-        /// The <code>put instance public ports</code> operation supports tag-based access control
-        /// via resource tags applied to the resource identified by <code>instance name</code>.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// The <code>PutInstancePublicPorts</code> action supports tag-based access control via
+        /// resource tags applied to the resource identified by <code>instanceName</code>. For
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -11245,14 +11253,18 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Sets the specified open ports for an Amazon Lightsail instance, and closes all ports
-        /// for every protocol not included in the current request.
+        /// Opens ports for a specific Amazon Lightsail instance, and specifies the IP addresses
+        /// allowed to connect to the instance through the ports, and the protocol. This action
+        /// also closes all currently open ports that are not included in the request. Include
+        /// all of the ports and the protocols you want to open in your <code>PutInstancePublicPorts</code>request.
+        /// Or use the <code>OpenInstancePublicPorts</code> action to open ports without closing
+        /// currently open ports.
         /// 
         ///  
         /// <para>
-        /// The <code>put instance public ports</code> operation supports tag-based access control
-        /// via resource tags applied to the resource identified by <code>instance name</code>.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// The <code>PutInstancePublicPorts</code> action supports tag-based access control via
+        /// resource tags applied to the resource identified by <code>instanceName</code>. For
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -11650,8 +11662,8 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Sends a verification request to an email contact method to ensure it’s owned by the
-        /// requester. SMS contact methods don’t need to be verified.
+        /// Sends a verification request to an email contact method to ensure it's owned by the
+        /// requester. SMS contact methods don't need to be verified.
         /// 
         ///  
         /// <para>
@@ -11717,8 +11729,8 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Sends a verification request to an email contact method to ensure it’s owned by the
-        /// requester. SMS contact methods don’t need to be verified.
+        /// Sends a verification request to an email contact method to ensure it's owned by the
+        /// requester. SMS contact methods don't need to be verified.
         /// 
         ///  
         /// <para>

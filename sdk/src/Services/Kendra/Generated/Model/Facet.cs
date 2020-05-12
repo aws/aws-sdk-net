@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Information a document attribute
+    /// Information about a document attribute
     /// </summary>
     public partial class Facet
     {

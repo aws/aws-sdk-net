@@ -56,6 +56,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetOneDriveConfiguration())
+            {
+                context.Writer.WritePropertyName("OneDriveConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OneDriveConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.OneDriveConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetS3Configuration())
             {
                 context.Writer.WritePropertyName("S3Configuration");
@@ -63,6 +74,28 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
                 var marshaller = S3DataSourceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Configuration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSalesforceConfiguration())
+            {
+                context.Writer.WritePropertyName("SalesforceConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SalesforceConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SalesforceConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetServiceNowConfiguration())
+            {
+                context.Writer.WritePropertyName("ServiceNowConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ServiceNowConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ServiceNowConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
             }

@@ -45,6 +45,17 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Repository requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBitbucket())
+            {
+                context.Writer.WritePropertyName("Bitbucket");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ThirdPartySourceRepositoryMarshaller.Instance;
+                marshaller.Marshall(requestObject.Bitbucket, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCodeCommit())
             {
                 context.Writer.WritePropertyName("CodeCommit");

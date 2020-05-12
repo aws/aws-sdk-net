@@ -88,21 +88,30 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// DEFAULT — Use the default firewall settings from the image.
+        ///  <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance
+        /// blueprint.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INSTANCE — Use the firewall settings from the source Lightsail instance.
+        ///  <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail
+        /// instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// NONE — Default to Amazon EC2.
+        ///  <code>NONE</code> - Use the default Amazon EC2 security group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CLOSED — All ports closed.
+        ///  <code>CLOSED</code> - All ports closed.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code>
+        /// on your instance, or if you chose to allow the Lightsail browser-based SSH or RDP
+        /// clients to connect to your instance, that configuration is not carried over to your
+        /// new Amazon EC2 instance.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public PortInfoSourceType PortInfoSource

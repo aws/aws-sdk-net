@@ -90,17 +90,18 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of webhook filter. There are five webhook filter types: <code>EVENT</code>,
-        /// <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, and <code>FILE_PATH</code>.
-        /// 
+        ///  The type of webhook filter. There are six webhook filter types: <code>EVENT</code>,
+        /// <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>,
+        /// and <code>COMMIT_MESSAGE</code>. 
         /// </para>
         ///  <dl> <dt> EVENT </dt> <dd> 
         /// <para>
         ///  A webhook event triggers a build when the provided <code>pattern</code> matches one
-        /// of four event types: <code>PUSH</code>, <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>,
-        /// and <code>PULL_REQUEST_REOPENED</code>. The <code>EVENT</code> patterns are specified
-        /// as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code>
-        /// filters all push, pull request created, and pull request updated events. 
+        /// of five event types: <code>PUSH</code>, <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>,
+        /// <code>PULL_REQUEST_REOPENED</code>, and <code>PULL_REQUEST_MERGED</code>. The <code>EVENT</code>
+        /// patterns are specified as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED,
+        /// PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull request
+        /// updated events. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -139,7 +140,20 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  Works with GitHub and GitHub Enterprise push events only. 
+        ///  Works with GitHub and Bitbucket events push and pull requests events. Also works
+        /// with GitHub Enterprise push events, but does not work with GitHub Enterprise pull
+        /// request events. 
+        /// </para>
+        ///  </note> </dd> <dt>COMMIT_MESSAGE</dt> <dd> 
+        /// <para>
+        /// A webhook triggers a build when the head commit message matches the regular expression
+        /// <code>pattern</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  Works with GitHub and Bitbucket events push and pull requests events. Also works
+        /// with GitHub Enterprise push events, but does not work with GitHub Enterprise pull
+        /// request events. 
         /// </para>
         ///  </note> </dd> </dl>
         /// </summary>

@@ -4029,7 +4029,10 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a launch template. A launch template contains the parameters to launch an
         /// instance. When you launch an instance using <a>RunInstances</a>, you can specify a
-        /// launch template instead of providing the launch parameters in the request.
+        /// launch template instead of providing the launch parameters in the request. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launching
+        /// an instance from a launch template</a>in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLaunchTemplate service method.</param>
         /// 
@@ -4090,6 +4093,11 @@ namespace Amazon.EC2
         /// <para>
         /// Launch template versions are numbered in the order in which they are created. You
         /// cannot specify, change, or replace the numbering of launch template versions.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#manage-launch-template-versions">Managing
+        /// launch template versions</a>in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLaunchTemplateVersion service method.</param>

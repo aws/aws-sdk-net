@@ -29,10 +29,9 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDomain operation.
-    /// Used to delete a domain. If you on-boarded with IAM mode, you will need to delete
-    /// your domain to on-board again using SSO. Use with caution. All of the members of the
-    /// domain will lose access to their EFS volume, including data, notebooks, and other
-    /// artifacts.
+    /// Used to delete a domain. Use with caution. If <code>RetentionPolicy</code> is set
+    /// to <code>Delete</code>, all of the members of the domain will lose access to their
+    /// EFS volume, including data, notebooks, and other artifacts.
     /// </summary>
     public partial class DeleteDomainRequest : AmazonSageMakerRequest
     {
@@ -61,7 +60,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RetentionPolicy. 
         /// <para>
-        /// The retention policy for this domain, which specifies which resources will be retained
+        /// The retention policy for this domain, which specifies whether resources will be retained
         /// after the Domain is deleted. By default, all resources are retained (not automatically
         /// deleted). 
         /// </para>

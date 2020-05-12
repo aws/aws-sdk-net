@@ -76,6 +76,12 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssociationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ConnectionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedTimeStamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

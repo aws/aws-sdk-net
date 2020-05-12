@@ -1,3 +1,59 @@
+### 3.3.737.0 (2020-05-11 18:10 UTC)
+* CodeGuruReviewer (3.3.103.0)
+	* Add Bitbucket integration APIs
+* EC2 (3.3.174.0)
+	* M6g instances are our next-generation general purpose instances powered by AWS Graviton2 processors
+* Kendra (3.3.103.0)
+	* Amazon Kendra is now generally available. As part of general availability, we are launching * Developer edition * Ability to scale your Amazon Kendra index with capacity units * Support for new connectors * Support for new tagging API's * Support for Deleting data source * Metrics for data source sync operations * Metrics for query & storage utilization
+* Core 3.3.106.22
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
+### 3.3.736.0 (2020-05-08 18:20 UTC)
+* GuardDuty (3.3.107.13)
+	* Documentation updates for GuardDuty
+* ResourceGroupsTaggingAPI (3.3.103.72)
+	* Documentation updates for resourcegroupstaggingapi
+* SageMaker (3.3.115.0)
+	* This release adds a new parameter (EnableInterContainerTrafficEncryption) to CreateProcessingJob API to allow for enabling inter-container traffic encryption on processing jobs.
+* Core 3.3.106.21
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
+### 3.3.735.0 (2020-05-07 23:44 UTC)
+* DynamoDBv2 (3.3.106.0)
+	* Add extension method for IEnumerable<Document>. Adds support for Array property in Dynamodb DataModel API
+* S3 (3.3.110.66)
+	* Fixed issue encoding of Unicode characters in S3 object metadata.
+* Core 3.3.106.20
+	* Fixed issue with PersistenceManager blocking credential look up when application running under a service role. Updated IpRanges to have network border group.
+	* All services packages updated to require new Core
+
+### 3.3.734.0 (2020-05-07 18:18 UTC)
+* AppConfig (3.3.102.21)
+	* The description of the AWS AppConfig GetConfiguration API action was amended to include important information about calling ClientConfigurationVersion when you configure clients to call GetConfiguration.
+* CloudWatchLogs (3.3.102.0)
+	* Amazon CloudWatch Logs now offers the ability to interact with Logs Insights queries via the new PutQueryDefinition, DescribeQueryDefinitions, and DeleteQueryDefinition APIs.
+* CodeBuild (3.3.110.0)
+	* Add COMMIT_MESSAGE enum for webhook filter types
+* EC2 (3.3.173.0)
+	* Amazon EC2 now adds warnings to identify issues when creating a launch template or launch template version.
+* Lightsail (3.3.104.0)
+	* This release adds support for the following options in instance public ports: Specify source IP addresses, specify ICMP protocol like PING, and enable/disable the Lightsail browser-based SSH and RDP clients' access to your instance.
+* Route53 (3.3.104.0)
+	* Amazon Route 53 now supports the EU (Milan) Region (eu-south-1) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+* SimpleSystemsManagement (3.3.123.0)
+	* This Patch Manager release supports creating patch baselines for Oracle Linux and Debian
+* Core 3.3.106.19
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.733.0 (2020-05-06 18:18 UTC)
 * CodeStarconnections (3.3.101.0)
 	* Added support for tagging resources in AWS CodeStar Connections

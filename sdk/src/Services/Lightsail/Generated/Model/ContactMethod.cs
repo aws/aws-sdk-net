@@ -184,16 +184,16 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PendingVerification</code> — The contact method has not yet been verified,
+        ///  <code>PendingVerification</code> - The contact method has not yet been verified,
         /// and the verification has not yet expired.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Valid</code> — The contact method has been verified.
+        ///  <code>Valid</code> - The contact method has been verified.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InValid</code> — An attempt was made to verify the contact method, but the
+        ///  <code>InValid</code> - An attempt was made to verify the contact method, but the
         /// verification has expired.
         /// </para>
         ///  </li> </ul>

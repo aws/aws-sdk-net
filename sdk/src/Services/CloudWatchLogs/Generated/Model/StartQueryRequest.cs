@@ -148,7 +148,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Logs Insights Query Syntax</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=2048)]
+        [AWSProperty(Required=true, Min=0, Max=10000)]
         public string QueryString
         {
             get { return this._queryString; }

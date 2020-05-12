@@ -2603,6 +2603,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly OperatingSystem CENTOS = new OperatingSystem("CENTOS");
         /// <summary>
+        /// Constant DEBIAN for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem DEBIAN = new OperatingSystem("DEBIAN");
+        /// <summary>
+        /// Constant ORACLE_LINUX for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem ORACLE_LINUX = new OperatingSystem("ORACLE_LINUX");
+        /// <summary>
         /// Constant REDHAT_ENTERPRISE_LINUX for OperatingSystem
         /// </summary>
         public static readonly OperatingSystem REDHAT_ENTERPRISE_LINUX = new OperatingSystem("REDHAT_ENTERPRISE_LINUX");

@@ -46,7 +46,6 @@ namespace Amazon.Kendra.Model
         /// Information to use for user context filtering.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
         public List<Principal> AccessControlList
         {
             get { return this._accessControlList; }
@@ -67,7 +66,6 @@ namespace Amazon.Kendra.Model
         /// additional information in the query response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
         public List<DocumentAttribute> Attributes
         {
             get { return this._attributes; }
@@ -93,7 +91,6 @@ namespace Amazon.Kendra.Model
         /// REST, you must base64 encode the contents before sending.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=153600)]
         public MemoryStream Blob
         {
             get { return this._blob; }
@@ -164,7 +161,6 @@ namespace Amazon.Kendra.Model
         /// The title of the document.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
         public string Title
         {
             get { return this._title; }

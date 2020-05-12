@@ -34,7 +34,8 @@ namespace Amazon.Util
         /// </summary>
         public const string GlobalRegionIdentifier = "GLOBAL";
 
-#region Json parse keys
+        #region Json parse keys
+
         const string createDateKey = "createDate";
         const string ipv4PrefixesKey = "prefixes";
         const string ipv4PrefixKey = "ip_prefix";
@@ -42,9 +43,11 @@ namespace Amazon.Util
         const string ipv6PrefixKey = "ipv6_prefix";
         const string regionKey = "region";
         const string serviceKey = "service";
+        private const string networkBorderGroupKey = "network_border_group";
 
         const string createDateFormatString = "yyyy-MM-dd-HH-mm-ss";
-#endregion
+
+        #endregion
 
         /// <summary>
         /// Collection of service keys found in the data file.
@@ -81,7 +84,7 @@ namespace Amazon.Util
             if (!AllAddressRanges.Any())
                 throw new InvalidOperationException("No address range data has been loaded and parsed.");
 
-            return AllAddressRanges.Where(ar => ar.Service.Equals(serviceKey, StringComparison.OrdinalIgnoreCase)).ToList();
+            return AllAddressRanges.Where(ar => ar.Service.Equals(serviceKey, StringComparison.OrdinalIgnoreCase));
         }
 
         /// <summary>
@@ -92,7 +95,19 @@ namespace Amazon.Util
             if (!AllAddressRanges.Any())
                 throw new InvalidOperationException("No address range data has been loaded and parsed.");
 
-            return AllAddressRanges.Where(ar => ar.Region.Equals(regionIdentifier, StringComparison.OrdinalIgnoreCase)).ToList();
+            return AllAddressRanges.Where(ar => ar.Region.Equals(regionIdentifier, StringComparison.OrdinalIgnoreCase));
+        }
+
+        /// <summary>
+        /// Filtered collection of public IP ranges for the given network border group.
+        /// </summary>
+        public IEnumerable<AWSPublicIpAddressRange> AddressRangesByNetworkBorderGroup(string networkBorderGroup)
+        {
+            if (!AllAddressRanges.Any())
+                throw new InvalidOperationException("No address range data has been loaded and parsed.");
+
+            return AllAddressRanges.Where(ar =>
+                ar.NetworkBorderGroup.Equals(networkBorderGroup, StringComparison.OrdinalIgnoreCase));
         }
 
         /// <summary>
@@ -126,12 +141,15 @@ namespace Amazon.Util
                 {
                     retries++;
                     if (retries == maxDownloadRetries)
-                        throw new AmazonServiceException(string.Format(CultureInfo.InvariantCulture, "Error downloading public IP address ranges file from {0}.", IpAddressRangeEndpoint), e);
+                        throw new AmazonServiceException(
+                            string.Format(CultureInfo.InvariantCulture,
+                                "Error downloading public IP address ranges file from {0}.", IpAddressRangeEndpoint),
+                            e);
                 }
 
-                var delay = (int) (Math.Pow(4, retries)*100);
-                delay = Math.Min(delay, 30*1000);
-                Util.AWSSDKUtils.Sleep(delay);
+                var delay = (int) (Math.Pow(4, retries) * 100);
+                delay = Math.Min(delay, 30 * 1000);
+                AWSSDKUtils.Sleep(delay);
             }
 
             return null;
@@ -148,11 +166,15 @@ namespace Amazon.Util
                 DateTime? creationDateTime = null;
                 try
                 {
-                    var createdAt = (string)json[createDateKey];
+                    var createdAt = (string) json[createDateKey];
                     creationDateTime = DateTime.ParseExact(createdAt, createDateFormatString, null);
                 }
-                catch (FormatException) { }
-                catch (ArgumentNullException) { }
+                catch (FormatException)
+                {
+                }
+                catch (ArgumentNullException)
+                {
+                }
 
 #pragma warning disable CS0612 // Type or member is obsolete
                 instance.CreateDate = creationDateTime.GetValueOrDefault(AWSSDKUtils.CorrectedUtcNow);
@@ -178,20 +200,22 @@ namespace Amazon.Util
             }
         }
 
-        private static IEnumerable<AWSPublicIpAddressRange> ParseRange(JsonData ranges, AWSPublicIpAddressRange.AddressFormat addressFormat)
+        private static IEnumerable<AWSPublicIpAddressRange> ParseRange(JsonData ranges,
+            AWSPublicIpAddressRange.AddressFormat addressFormat)
         {
-            var prefixKey = addressFormat == AWSPublicIpAddressRange.AddressFormat.Ipv4 
-                    ? ipv4PrefixKey
-                    : ipv6PrefixKey;
+            var prefixKey = addressFormat == AWSPublicIpAddressRange.AddressFormat.Ipv4
+                ? ipv4PrefixKey
+                : ipv6PrefixKey;
 
             var parsedRanges = new List<AWSPublicIpAddressRange>();
             parsedRanges.AddRange(from JsonData range in ranges
                 select new AWSPublicIpAddressRange
                 {
                     IpAddressFormat = addressFormat,
-                    IpPrefix = (string)range[prefixKey],
-                    Region = (string)range[regionKey],
-                    Service = (string)range[serviceKey]
+                    IpPrefix = (string) range[prefixKey],
+                    Region = (string) range[regionKey],
+                    Service = (string) range[serviceKey],
+                    NetworkBorderGroup = (string) range[networkBorderGroupKey]
                 });
             return parsedRanges;
         }
@@ -222,7 +246,7 @@ namespace Amazon.Util
         /// <summary>
         /// Indicates ipv4 or v6 format of the address
         /// </summary>
-        public AddressFormat IpAddressFormat {  get; internal set; }
+        public AddressFormat IpAddressFormat { get; internal set; }
 
         /// <summary>
         /// The AWS region or GLOBAL for edge locations. Note that the CLOUDFRONT and ROUTE53 
@@ -245,5 +269,25 @@ namespace Amazon.Util
         /// code accordingly! 
         /// </remarks>
         public string Service { get; internal set; }
+
+        /// <summary>
+        /// The network border group the IP address range belongs to.
+        /// </summary>
+        /// <remarks>
+        /// AWS Local Zones allow you to seamlessly connect to the full range of services in the AWS Region such
+        /// as Amazon Simple Storage Service and Amazon DynamoDB through the same APIs and tool sets. You can extend
+        /// your VPC Region by creating a new subnet that has a Local Zone assignment. When you create a subnet in
+        /// a Local Zone, the VPC is also extended to that Local Zone.
+        /// 
+        /// A network border group is a unique set of Availability Zones or Local Zones from where AWS advertises
+        /// public IP addresses.
+        ///
+        /// When you create a VPC that has IPv6 addresses, you can choose to assign a set of Amazon-provided public
+        /// IP addresses to the VPC and also set a network border group for the addresses that limits the addresses
+        /// to the group. When you set a network border group, the IP addresses cannot move between network
+        /// border groups. The us-west-2 network border group contains the four US West (Oregon) Availability Zones.
+        /// The us-west-2-lax-1 network border group contains the Los Angeles Local Zones.
+        /// </remarks>
+        public string NetworkBorderGroup { get; internal set; }
     }
 }

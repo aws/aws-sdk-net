@@ -30,10 +30,9 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the CreatePresignedDomainUrl operation.
     /// Creates a URL for a specified UserProfile in a Domain. When accessed in a web browser,
-    /// the user will be automatically signed in to Amazon SageMaker Amazon SageMaker Studio
-    /// (Studio), and granted access to all of the Apps and files associated with that Amazon
-    /// Elastic File System (EFS). This operation can only be called when AuthMode equals
-    /// IAM.
+    /// the user will be automatically signed in to Amazon SageMaker Studio, and granted access
+    /// to all of the Apps and files associated with that Amazon Elastic File System (EFS).
+    /// This operation can only be called when AuthMode equals IAM.
     /// </summary>
     public partial class CreatePresignedDomainUrlRequest : AmazonSageMakerRequest
     {

@@ -159,7 +159,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property PageSize. 
         /// <para>
         /// Sets the number of results that are returned in each page of results. The default
-        /// page size is 100.
+        /// page size is 10. The maximum number of results returned is 100. If you ask for more
+        /// than 100 results, only 100 are returned.
         /// </para>
         /// </summary>
         public int PageSize

@@ -147,7 +147,6 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.Internal.Util.RequestMetrics.#ToString()")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.Internal.HttpHandler`1.#CompleteFailedRequest(Amazon.Runtime.IHttpRequest`1<!0>)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.Internal.Settings.PersistenceManager.#loadSettingsType(System.String)")]
-[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.Internal.Settings.PersistenceManager.#decryptAnyEncryptedValues(System.Collections.Generic.Dictionary`2<System.String,System.Collections.Generic.Dictionary`2<System.String,System.Object>>)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Util.Internal.InternalSDKUtils.#DetermineFramework()")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.Internal.AsyncRunner.#Run`1(System.Func`1<!!0>,System.Threading.CancellationToken)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope="member", Target="Amazon.Runtime.Internal.Settings.UserCrypto.#get_IsUserCryptAvailable()")]
@@ -549,6 +548,8 @@ using System.Diagnostics.CodeAnalysis;
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1024:Use properties where appropriate", Scope = "member", Target = "~M:Amazon.Runtime.ClientConfig.GetWebProxy~System.Net.IWebProxy")]
 
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("AwsSdkRules", "CR1002:Do not store ILogger instances in static members.", Justification = "<Pending>", Scope = "member", Target = "~F:Amazon.Runtime.Internal.Settings.PersistenceManager._logger")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "<Pending>", Scope = "member", Target = "~M:Amazon.Runtime.Internal.Settings.PersistenceManager.DecryptAnyEncryptedValues(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.Dictionary{System.String,System.Object}})")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Util.Internal.InternalSDKUtils.DetermineOS~System.String")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Util.Internal.InternalSDKUtils.DetermineOSVersion~System.String")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Util.Internal.InternalSDKUtils.DetermineRuntime~System.String")]

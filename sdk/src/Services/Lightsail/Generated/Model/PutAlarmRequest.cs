@@ -301,16 +301,16 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALARM</code> — The metric is outside of the defined threshold.
+        ///  <code>ALARM</code> - The metric is outside of the defined threshold.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available,
+        ///  <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available,
         /// or not enough data is available for the metric to determine the alarm state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OK</code> — The metric is within the defined threshold.
+        ///  <code>OK</code> - The metric is within the defined threshold.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -379,21 +379,21 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>breaching</code> — Assume the missing data is not within the threshold. Missing
+        ///  <code>breaching</code> - Assume the missing data is not within the threshold. Missing
         /// data counts towards the number of times the metric is not within the threshold.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>notBreaching</code> — Assume the missing data is within the threshold. Missing
+        ///  <code>notBreaching</code> - Assume the missing data is within the threshold. Missing
         /// data does not count towards the number of times the metric is not within the threshold.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ignore</code> — Ignore the missing data. Maintains the current alarm state.
+        ///  <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>missing</code> — Missing data is treated as missing.
+        ///  <code>missing</code> - Missing data is treated as missing.
         /// </para>
         ///  </li> </ul> 
         /// <para>

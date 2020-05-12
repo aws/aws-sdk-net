@@ -44,9 +44,11 @@ namespace Amazon.Kendra.Model
     {
         private string _clientToken;
         private string _description;
+        private IndexEdition _edition;
         private string _name;
         private string _roleArn;
         private ServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -86,6 +88,27 @@ namespace Amazon.Kendra.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Edition. 
+        /// <para>
+        /// The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code>
+        /// for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code>
+        /// for your production databases. Once you set the edition for an index, it can't be
+        /// changed. 
+        /// </para>
+        /// </summary>
+        public IndexEdition Edition
+        {
+            get { return this._edition; }
+            set { this._edition = value; }
+        }
+
+        // Check to see if Edition property is set
+        internal bool IsSetEdition()
+        {
+            return this._edition != null;
         }
 
         /// <summary>
@@ -145,6 +168,26 @@ namespace Amazon.Kendra.Model
         internal bool IsSetServerSideEncryptionConfiguration()
         {
             return this._serverSideEncryptionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of key-value pairs that identify the index. You can use the tags to identify
+        /// and organize your resources and to control access to resources.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

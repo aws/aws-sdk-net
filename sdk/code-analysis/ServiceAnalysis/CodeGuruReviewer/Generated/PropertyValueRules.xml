@@ -255,6 +255,12 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.RepositoryAssociation.ConnectionArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.RepositoryAssociation.Name</property>
     <min>1</min>
     <max>100</max>
@@ -283,6 +289,12 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.RepositoryAssociationSummary.ConnectionArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.RepositoryAssociationSummary.Name</property>
     <min>1</min>
     <max>100</max>
@@ -290,6 +302,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.RepositoryAssociationSummary.Owner</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^\S(.*\S)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.ThirdPartySourceRepository.ConnectionArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.ThirdPartySourceRepository.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^\S[\w.-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.ThirdPartySourceRepository.Owner</property>
     <min>1</min>
     <max>100</max>
     <pattern>^\S(.*\S)?$</pattern>

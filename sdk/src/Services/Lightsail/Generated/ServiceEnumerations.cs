@@ -2021,6 +2021,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly NetworkProtocol All = new NetworkProtocol("all");
         /// <summary>
+        /// Constant Icmp for NetworkProtocol
+        /// </summary>
+        public static readonly NetworkProtocol Icmp = new NetworkProtocol("icmp");
+        /// <summary>
         /// Constant Tcp for NetworkProtocol
         /// </summary>
         public static readonly NetworkProtocol Tcp = new NetworkProtocol("tcp");

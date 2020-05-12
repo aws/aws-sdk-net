@@ -29,14 +29,14 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDomain operation.
-    /// Creates a Domain for Amazon SageMaker Amazon SageMaker Studio (Studio), which can
-    /// be accessed by end-users in a web browser. A Domain has an associated directory, list
-    /// of authorized users, and a variety of security, application, policies, and Amazon
-    /// Virtual Private Cloud configurations. An AWS account is limited to one Domain, per
-    /// region. Users within a domain can share notebook files and other artifacts with each
-    /// other. When a Domain is created, an Amazon Elastic File System (EFS) is also created
-    /// for use by all of the users within the Domain. Each user receives a private home directory
-    /// within the EFS for notebooks, Git repositories, and data files.
+    /// Creates a Domain for Amazon SageMaker Studio, which can be accessed by end-users in
+    /// a web browser. A Domain has an associated directory, list of authorized users, and
+    /// a variety of security, application, policies, and Amazon Virtual Private Cloud configurations.
+    /// An AWS account is limited to one Domain, per region. Users within a domain can share
+    /// notebook files and other artifacts with each other. When a Domain is created, an Amazon
+    /// Elastic File System (EFS) is also created for use by all of the users within the Domain.
+    /// Each user receives a private home directory within the EFS for notebooks, Git repositories,
+    /// and data files.
     /// </summary>
     public partial class CreateDomainRequest : AmazonSageMakerRequest
     {
@@ -108,7 +108,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HomeEfsFileSystemKmsKeyId. 
         /// <para>
-        /// The AWS Key Management Service encryption key ID.
+        /// The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer
+        /// master key (CMK) is not supported.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

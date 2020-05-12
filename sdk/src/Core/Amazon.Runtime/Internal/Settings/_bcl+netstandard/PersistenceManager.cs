@@ -28,53 +28,86 @@ using ThirdParty.Json.LitJson;
 
 namespace Amazon.Runtime.Internal.Settings
 {
-    public class PersistenceManager
+    public interface IPersistenceManager
+    {
+        SettingsCollection GetSettings(string type);
+
+        void SaveSettings(string type, SettingsCollection settings);
+    }
+
+    public class InMemoryPersistenceManager: IPersistenceManager
+    {
+        private readonly Dictionary<string, SettingsCollection> _settingsDictionary = new Dictionary<string, SettingsCollection>();
+
+        public SettingsCollection GetSettings(string type)
+        {
+            if (_settingsDictionary.ContainsKey(type))
+                return _settingsDictionary[type];
+
+            return new SettingsCollection();
+        }
+
+        public void SaveSettings(string type, SettingsCollection settings)
+        {
+            _settingsDictionary[type] = settings;
+        }
+    }
+
+    public class PersistenceManager: IPersistenceManager
     {
         #region Private members
 
-        static readonly PersistenceManager INSTANCE = new PersistenceManager();
-        readonly HashSet<string> _encryptedKeys;
+        static readonly HashSet<string> ENCRYPTEDKEYS = new HashSet<string>
+        {
+            SettingsConstants.AccessKeyField,
+            SettingsConstants.SecretKeyField,
+            SettingsConstants.SessionTokenField,
+            SettingsConstants.ExternalIDField,
+            SettingsConstants.MfaSerialField,
+            SettingsConstants.SecretKeyRepository,
+            SettingsConstants.EC2InstanceUserName,
+            SettingsConstants.EC2InstancePassword,
+            SettingsConstants.ProxyUsernameEncrypted,
+            SettingsConstants.ProxyPasswordEncrypted,
+            SettingsConstants.UserIdentityField,
+            SettingsConstants.RoleSession
+        };
+
+        static readonly Logger _logger;
+        
         readonly Dictionary<string, SettingsWatcher> _watchers = new Dictionary<string, SettingsWatcher>();
 
         // static but not readonly - allows for unit testing
         static string SettingsStoreFolder = null;
-
         #endregion
-
 
         #region Constructor
         static PersistenceManager()
         {
-#if BCL
-            SettingsStoreFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData) + "/AWSToolkit";
-#else
-            SettingsStoreFolder = System.Environment.GetEnvironmentVariable("HOME");
-            if (string.IsNullOrEmpty(SettingsStoreFolder))
-                SettingsStoreFolder = System.Environment.GetEnvironmentVariable("USERPROFILE");
+            _logger = Logger.GetLogger(typeof(PersistenceManager));
 
-            SettingsStoreFolder = Path.Combine(SettingsStoreFolder, "AppData/Local/AWSToolkit");
-#endif
-            if (!Directory.Exists(SettingsStoreFolder))
-                Directory.CreateDirectory(SettingsStoreFolder);
-        }
-
-        private PersistenceManager()
-        {
-            this._encryptedKeys = new HashSet<string>
+            try
             {
-                SettingsConstants.AccessKeyField,
-                SettingsConstants.SecretKeyField,
-                SettingsConstants.SessionTokenField,
-                SettingsConstants.ExternalIDField,
-                SettingsConstants.MfaSerialField,
-                SettingsConstants.SecretKeyRepository,
-                SettingsConstants.EC2InstanceUserName,
-                SettingsConstants.EC2InstancePassword,
-                SettingsConstants.ProxyUsernameEncrypted,
-                SettingsConstants.ProxyPasswordEncrypted,
-                SettingsConstants.UserIdentityField,
-                SettingsConstants.RoleSession
-            };
+#if BCL
+                SettingsStoreFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData) + "/AWSToolkit";
+#else
+                SettingsStoreFolder = System.Environment.GetEnvironmentVariable("HOME");
+                if (string.IsNullOrEmpty(SettingsStoreFolder))
+                    SettingsStoreFolder = System.Environment.GetEnvironmentVariable("USERPROFILE");
+
+                SettingsStoreFolder = Path.Combine(SettingsStoreFolder, "AppData/Local/AWSToolkit");
+#endif
+                if (!Directory.Exists(SettingsStoreFolder))
+                    Directory.CreateDirectory(SettingsStoreFolder);
+
+                Instance = new PersistenceManager();
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                _logger.Error(ex, $"Unable to initialize '{nameof(PersistenceManager)}'. Falling back to '{nameof(InMemoryPersistenceManager)}'.");
+
+                Instance = new InMemoryPersistenceManager();
+            }
         }
 
         #endregion
@@ -82,10 +115,7 @@ namespace Amazon.Runtime.Internal.Settings
 
         #region Public methods
 
-        public static PersistenceManager Instance
-        {
-            get { return INSTANCE; }
-        }
+        public static IPersistenceManager Instance { get; set; }
 
         public SettingsCollection GetSettings(string type)
         {
@@ -143,9 +173,9 @@ namespace Amazon.Runtime.Internal.Settings
             }
         }
 
-        internal bool IsEncrypted(string key)
+        internal static bool IsEncrypted(string key)
         {
-            return this._encryptedKeys.Contains(key);
+            return ENCRYPTEDKEYS.Contains(key);
         }
 
 #endregion
@@ -228,7 +258,7 @@ namespace Amazon.Runtime.Internal.Settings
                     if (settings == null)
                         settings = new Dictionary<string, Dictionary<string, object>>();
 
-                    decryptAnyEncryptedValues(settings);
+                    DecryptAnyEncryptedValues(settings);
 
                     return new SettingsCollection(settings);
                 }
@@ -245,7 +275,7 @@ namespace Amazon.Runtime.Internal.Settings
             }
         }
 
-        void decryptAnyEncryptedValues(Dictionary<string, Dictionary<string, object>> settings)
+        static void DecryptAnyEncryptedValues(Dictionary<string, Dictionary<string, object>> settings)
         {
             foreach (var kvp in settings)
             {

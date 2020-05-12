@@ -61,6 +61,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.LaunchTemplate = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("warning", targetDepth))
+                    {
+                        var unmarshaller = ValidationWarningUnmarshaller.Instance;
+                        response.Warning = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
             }
 
