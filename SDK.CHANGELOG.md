@@ -1,3 +1,9 @@
+### 3.3.739.0 (2020-05-13 18:11 UTC)
+* ElastiCache (3.3.109.0)
+	* Amazon ElastiCache now supports auto-update of ElastiCache clusters after the "recommended apply by date" of  service update has passed. ElastiCache will use your maintenance window to schedule the auto-update of applicable clusters. For more information, see https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/Self-Service-Updates.html and https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Self-Service-Updates.html
+* Macie2 (3.3.100.0)
+	* This release introduces a new major version of the Amazon Macie API. You can use this version of the API to develop tools and applications that interact with the new Amazon Macie.
+
 ### 3.3.738.0 (2020-05-12 18:12 UTC)
 * IoTSiteWise (3.3.100.9)
 	* Documentation updates for iot-bifrost
