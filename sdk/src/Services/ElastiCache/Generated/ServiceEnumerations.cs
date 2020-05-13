@@ -737,9 +737,21 @@ namespace Amazon.ElastiCache
         /// </summary>
         public static readonly UpdateActionStatus InProgress = new UpdateActionStatus("in-progress");
         /// <summary>
+        /// Constant NotApplicable for UpdateActionStatus
+        /// </summary>
+        public static readonly UpdateActionStatus NotApplicable = new UpdateActionStatus("not-applicable");
+        /// <summary>
         /// Constant NotApplied for UpdateActionStatus
         /// </summary>
         public static readonly UpdateActionStatus NotApplied = new UpdateActionStatus("not-applied");
+        /// <summary>
+        /// Constant Scheduled for UpdateActionStatus
+        /// </summary>
+        public static readonly UpdateActionStatus Scheduled = new UpdateActionStatus("scheduled");
+        /// <summary>
+        /// Constant Scheduling for UpdateActionStatus
+        /// </summary>
+        public static readonly UpdateActionStatus Scheduling = new UpdateActionStatus("scheduling");
         /// <summary>
         /// Constant Stopped for UpdateActionStatus
         /// </summary>

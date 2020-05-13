@@ -1016,7 +1016,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The <b>GlobalReplicationGroupId</b> is the name of the Global Datastore.
+        /// The <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global Datastore.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1057,7 +1057,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The <b>GlobalReplicationGroupId</b> is the name of the Global Datastore.
+        /// The <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global Datastore.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1167,7 +1167,7 @@ namespace Amazon.ElastiCache
         /// The requested cluster is not in the <code>available</code> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available
+        /// The Global Datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -1278,7 +1278,7 @@ namespace Amazon.ElastiCache
         /// The requested cluster is not in the <code>available</code> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available
+        /// The Global Datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -1449,7 +1449,7 @@ namespace Amazon.ElastiCache
         /// The Global Datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available
+        /// The Global Datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -1475,7 +1475,7 @@ namespace Amazon.ElastiCache
         /// The Global Datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available
+        /// The Global Datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -1963,11 +1963,6 @@ namespace Amazon.ElastiCache
         /// When you receive a successful response from this operation, Amazon ElastiCache immediately
         /// begins deleting the selected resources; you cannot cancel or revert this operation.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This operation is valid for Redis only.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGlobalReplicationGroup service method.</param>
         /// 
@@ -1976,7 +1971,7 @@ namespace Amazon.ElastiCache
         /// The Global Datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available
+        /// The Global Datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
@@ -2010,11 +2005,6 @@ namespace Amazon.ElastiCache
         /// When you receive a successful response from this operation, Amazon ElastiCache immediately
         /// begins deleting the selected resources; you cannot cancel or revert this operation.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This operation is valid for Redis only.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGlobalReplicationGroup service method.</param>
         /// <param name="cancellationToken">
@@ -2026,7 +2016,7 @@ namespace Amazon.ElastiCache
         /// The Global Datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available
+        /// The Global Datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
@@ -3507,7 +3497,7 @@ namespace Amazon.ElastiCache
         /// The Global Datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available
+        /// The Global Datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -3535,7 +3525,7 @@ namespace Amazon.ElastiCache
         /// The Global Datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available
+        /// The Global Datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -3552,7 +3542,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Used to failover the primary region to a selected secondary region.
+        /// Used to failover the primary region to a selected secondary region. The selected secondary
+        /// region will be come primary, and all other clusters will become secondary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FailoverGlobalReplicationGroup service method.</param>
         /// 
@@ -3561,7 +3552,7 @@ namespace Amazon.ElastiCache
         /// The Global Datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available
+        /// The Global Datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -3575,7 +3566,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Used to failover the primary region to a selected secondary region.
+        /// Used to failover the primary region to a selected secondary region. The selected secondary
+        /// region will be come primary, and all other clusters will become secondary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FailoverGlobalReplicationGroup service method.</param>
         /// <param name="cancellationToken">
@@ -3587,7 +3579,7 @@ namespace Amazon.ElastiCache
         /// The Global Datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available
+        /// The Global Datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -3613,7 +3605,7 @@ namespace Amazon.ElastiCache
         /// The Global Datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available
+        /// The Global Datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
@@ -3636,7 +3628,7 @@ namespace Amazon.ElastiCache
         /// The Global Datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available
+        /// The Global Datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
@@ -4031,7 +4023,7 @@ namespace Amazon.ElastiCache
         /// to occur.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available
+        /// The Global Datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -4063,7 +4055,7 @@ namespace Amazon.ElastiCache
         /// to occur.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available
+        /// The Global Datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -4143,7 +4135,7 @@ namespace Amazon.ElastiCache
         /// The Global Datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available
+        /// The Global Datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
@@ -4166,7 +4158,7 @@ namespace Amazon.ElastiCache
         /// The Global Datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available
+        /// The Global Datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
@@ -4182,11 +4174,6 @@ namespace Amazon.ElastiCache
         /// <summary>
         /// Modifies the settings for a replication group.
         /// 
-        ///  
-        /// <para>
-        /// For Redis (cluster mode enabled) clusters, this operation cannot be used to change
-        /// a cluster's node type or engine version. For more information, see:
-        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling
@@ -4263,11 +4250,6 @@ namespace Amazon.ElastiCache
         /// <summary>
         /// Modifies the settings for a replication group.
         /// 
-        ///  
-        /// <para>
-        /// For Redis (cluster mode enabled) clusters, this operation cannot be used to change
-        /// a cluster's node type or engine version. For more information, see:
-        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling
@@ -4504,7 +4486,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Redistribute slots to ensure unifirom distribution across existing shards in the cluster.
+        /// Redistribute slots to ensure uniform distribution across existing shards in the cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebalanceSlotsInGlobalReplicationGroup service method.</param>
         /// 
@@ -4513,7 +4495,7 @@ namespace Amazon.ElastiCache
         /// The Global Datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available
+        /// The Global Datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
@@ -4524,7 +4506,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Redistribute slots to ensure unifirom distribution across existing shards in the cluster.
+        /// Redistribute slots to ensure uniform distribution across existing shards in the cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebalanceSlotsInGlobalReplicationGroup service method.</param>
         /// <param name="cancellationToken">
@@ -4536,7 +4518,7 @@ namespace Amazon.ElastiCache
         /// The Global Datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available
+        /// The Global Datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
@@ -4707,7 +4689,7 @@ namespace Amazon.ElastiCache
         /// to occur.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available
+        /// The Global Datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -4741,7 +4723,7 @@ namespace Amazon.ElastiCache
         /// to occur.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available
+        /// The Global Datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.

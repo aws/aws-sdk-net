@@ -34,8 +34,8 @@ namespace Amazon.ElastiCache.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// The <b>GlobalReplicationGroupId</b> represents the name of the Global Datastore, which
-    /// is what you use to associate a secondary cluster.
+    /// The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global Datastore,
+    /// which is what you use to associate a secondary cluster.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -146,7 +146,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The Elasticache engine. For preview, it is Redis only.
+        /// The Elasticache engine. For Redis only.
         /// </para>
         /// </summary>
         public string Engine

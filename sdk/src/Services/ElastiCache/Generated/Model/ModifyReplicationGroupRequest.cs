@@ -31,11 +31,6 @@ namespace Amazon.ElastiCache.Model
     /// Container for the parameters to the ModifyReplicationGroup operation.
     /// Modifies the settings for a replication group.
     /// 
-    ///  
-    /// <para>
-    /// For Redis (cluster mode enabled) clusters, this operation cannot be used to change
-    /// a cluster's node type or engine version. For more information, see:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling

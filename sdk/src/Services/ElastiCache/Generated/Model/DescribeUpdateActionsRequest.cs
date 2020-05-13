@@ -217,7 +217,7 @@ namespace Amazon.ElastiCache.Model
         /// The status of the update action.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=6)]
+        [AWSProperty(Max=9)]
         public List<string> UpdateActionStatus
         {
             get { return this._updateActionStatus; }

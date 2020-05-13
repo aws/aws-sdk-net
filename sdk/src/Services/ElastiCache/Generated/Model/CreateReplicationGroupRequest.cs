@@ -569,9 +569,10 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled)
         /// replication group, you can use this parameter to individually configure each node
-        /// group (shard), or you can omit this parameter. However, when seeding a Redis (cluster
-        /// mode enabled) cluster from a S3 rdb file, you must configure each node group (shard)
-        /// using this parameter because you must specify the slots for each node group.
+        /// group (shard), or you can omit this parameter. However, it is required when seeding
+        /// a Redis (cluster mode enabled) cluster from a S3 rdb file. You must configure each
+        /// node group (shard) using this parameter because you must specify the slots for each
+        /// node group.
         /// </para>
         /// </summary>
         public List<NodeGroupConfiguration> NodeGroupConfiguration
