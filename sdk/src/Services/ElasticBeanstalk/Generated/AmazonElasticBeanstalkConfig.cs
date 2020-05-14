@@ -32,7 +32,7 @@ namespace Amazon.ElasticBeanstalk
     public partial class AmazonElasticBeanstalkConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.101.19");
+            InternalSDKUtils.BuildUserAgentString("3.3.101.20");
 
         private string _userAgent = UserAgentString;
 
