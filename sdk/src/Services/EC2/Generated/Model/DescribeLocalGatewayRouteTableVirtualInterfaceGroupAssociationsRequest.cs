@@ -44,6 +44,29 @@ namespace Amazon.EC2.Model
         /// <para>
         /// One or more filters.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>local-gateway-id</code> - The ID of a local gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>local-gateway-route-table-id</code> - The ID of the local gateway route table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>local-gateway-route-table-virtual-interface-group-association-id</code> - The
+        /// ID of the association.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of the
+        /// virtual interface group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>state</code> - The state of the association.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {

@@ -188,7 +188,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OutpostArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Outpost.
+        /// The Amazon Resource Name (ARN) of the Outpost. If you specify an Outpost ARN, you
+        /// must also specify the Availability Zone of the Outpost subnet.
         /// </para>
         /// </summary>
         public string OutpostArn

@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class CreateLocalGatewayRouteTableVpcAssociationRequest : AmazonEC2Request
     {
         private string _localGatewayRouteTableId;
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private string _vpcId;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLocalGatewayRouteTableId()
         {
             return this._localGatewayRouteTableId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to assign to the local gateway route table VPC association.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
         /// <summary>
