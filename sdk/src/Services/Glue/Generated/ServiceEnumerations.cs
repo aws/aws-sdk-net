@@ -423,6 +423,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly CrawlState CANCELLED = new CrawlState("CANCELLED");
         /// <summary>
+        /// Constant CANCELLING for CrawlState
+        /// </summary>
+        public static readonly CrawlState CANCELLING = new CrawlState("CANCELLING");
+        /// <summary>
         /// Constant FAILED for CrawlState
         /// </summary>
         public static readonly CrawlState FAILED = new CrawlState("FAILED");
@@ -1994,6 +1998,14 @@ namespace Amazon.Glue
         /// Constant RUNNING for WorkflowRunStatus
         /// </summary>
         public static readonly WorkflowRunStatus RUNNING = new WorkflowRunStatus("RUNNING");
+        /// <summary>
+        /// Constant STOPPED for WorkflowRunStatus
+        /// </summary>
+        public static readonly WorkflowRunStatus STOPPED = new WorkflowRunStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for WorkflowRunStatus
+        /// </summary>
+        public static readonly WorkflowRunStatus STOPPING = new WorkflowRunStatus("STOPPING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
