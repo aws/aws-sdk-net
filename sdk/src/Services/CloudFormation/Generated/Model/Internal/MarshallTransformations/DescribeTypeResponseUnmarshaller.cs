@@ -117,6 +117,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         response.ExecutionRoleArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IsDefaultVersion", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        response.IsDefaultVersion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("LastUpdated", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
