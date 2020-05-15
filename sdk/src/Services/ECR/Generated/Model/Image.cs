@@ -34,6 +34,7 @@ namespace Amazon.ECR.Model
     {
         private ImageIdentifier _imageId;
         private string _imageManifest;
+        private string _imageManifestMediaType;
         private string _registryId;
         private string _repositoryName;
 
@@ -72,6 +73,24 @@ namespace Amazon.ECR.Model
         internal bool IsSetImageManifest()
         {
             return this._imageManifest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageManifestMediaType. 
+        /// <para>
+        /// The media type associated with the image manifest.
+        /// </para>
+        /// </summary>
+        public string ImageManifestMediaType
+        {
+            get { return this._imageManifestMediaType; }
+            set { this._imageManifestMediaType = value; }
+        }
+
+        // Check to see if ImageManifestMediaType property is set
+        internal bool IsSetImageManifestMediaType()
+        {
+            return this._imageManifestMediaType != null;
         }
 
         /// <summary>

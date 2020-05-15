@@ -76,7 +76,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property PartFirstByte. 
         /// <para>
-        /// The integer value of the first byte of the layer part.
+        /// The position of the first byte of the layer part witin the overall image layer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -95,7 +95,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property PartLastByte. 
         /// <para>
-        /// The integer value of the last byte of the layer part.
+        /// The position of the last byte of the layer part within the overall image layer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

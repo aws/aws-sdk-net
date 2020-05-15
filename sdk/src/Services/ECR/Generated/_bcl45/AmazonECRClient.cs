@@ -635,8 +635,8 @@ namespace Amazon.ECR
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.LimitExceededException">
         /// The operation did not succeed because it would have exceeded a service limit for your
-        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon
-        /// ECR Default Service Limits</a> in the Amazon Elastic Container Registry User Guide.
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR Service Quotas</a> in the Amazon Elastic Container Registry User Guide.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.RepositoryAlreadyExistsException">
         /// The specified repository already exists in the specified registry.
@@ -678,8 +678,8 @@ namespace Amazon.ECR
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.LimitExceededException">
         /// The operation did not succeed because it would have exceeded a service limit for your
-        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon
-        /// ECR Default Service Limits</a> in the Amazon Elastic Container Registry User Guide.
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR Service Quotas</a> in the Amazon Elastic Container Registry User Guide.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.RepositoryAlreadyExistsException">
         /// The specified repository already exists in the specified registry.
@@ -1785,8 +1785,8 @@ namespace Amazon.ECR
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.LimitExceededException">
         /// The operation did not succeed because it would have exceeded a service limit for your
-        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon
-        /// ECR Default Service Limits</a> in the Amazon Elastic Container Registry User Guide.
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR Service Quotas</a> in the Amazon Elastic Container Registry User Guide.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.ReferencedImagesNotFoundException">
         /// The manifest list is referencing an image that does not exist.
@@ -1849,8 +1849,8 @@ namespace Amazon.ECR
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.LimitExceededException">
         /// The operation did not succeed because it would have exceeded a service limit for your
-        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon
-        /// ECR Default Service Limits</a> in the Amazon Elastic Container Registry User Guide.
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR Service Quotas</a> in the Amazon Elastic Container Registry User Guide.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.ReferencedImagesNotFoundException">
         /// The manifest list is referencing an image that does not exist.
@@ -2070,7 +2070,7 @@ namespace Amazon.ECR
 
         /// <summary>
         /// Applies a repository policy to the specified repository to control access permissions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policies.html">Amazon
         /// ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetRepositoryPolicy service method.</param>
@@ -2099,7 +2099,7 @@ namespace Amazon.ECR
 
         /// <summary>
         /// Applies a repository policy to the specified repository to control access permissions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policies.html">Amazon
         /// ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetRepositoryPolicy service method.</param>
@@ -2150,8 +2150,8 @@ namespace Amazon.ECR
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.LimitExceededException">
         /// The operation did not succeed because it would have exceeded a service limit for your
-        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon
-        /// ECR Default Service Limits</a> in the Amazon Elastic Container Registry User Guide.
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR Service Quotas</a> in the Amazon Elastic Container Registry User Guide.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
         /// The specified repository could not be found. Check the spelling of the specified repository
@@ -2194,8 +2194,8 @@ namespace Amazon.ECR
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.LimitExceededException">
         /// The operation did not succeed because it would have exceeded a service limit for your
-        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon
-        /// ECR Default Service Limits</a> in the Amazon Elastic Container Registry User Guide.
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR Service Quotas</a> in the Amazon Elastic Container Registry User Guide.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
         /// The specified repository could not be found. Check the spelling of the specified repository
@@ -2484,8 +2484,8 @@ namespace Amazon.ECR
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.LimitExceededException">
         /// The operation did not succeed because it would have exceeded a service limit for your
-        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon
-        /// ECR Default Service Limits</a> in the Amazon Elastic Container Registry User Guide.
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR Service Quotas</a> in the Amazon Elastic Container Registry User Guide.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
         /// The specified repository could not be found. Check the spelling of the specified repository
@@ -2540,8 +2540,8 @@ namespace Amazon.ECR
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.LimitExceededException">
         /// The operation did not succeed because it would have exceeded a service limit for your
-        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon
-        /// ECR Default Service Limits</a> in the Amazon Elastic Container Registry User Guide.
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR Service Quotas</a> in the Amazon Elastic Container Registry User Guide.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
         /// The specified repository could not be found. Check the spelling of the specified repository
