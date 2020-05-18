@@ -1,3 +1,22 @@
+### 3.3.742.0 (2020-05-18 18:15 UTC)
+* Chime (3.3.110.0)
+	* Amazon Chime now supports redacting chat messages.
+* DynamoDBv2 (3.3.106.5)
+	* Documentation updates for dynamodb 
+* EC2 (3.3.176.0)
+	* This release changes the RunInstances CLI and SDK's so that if you do not specify a client token, a randomly generated token is used for the request to ensure idempotency.
+* ECS (3.3.117.0)
+	* This release adds support for specifying environment files to add environment variables to your containers.
+* Macie2 (3.3.100.3)
+	* Documentation updates for Amazon Macie
+* QLDB (3.3.101.0)
+	* Amazon QLDB now supports Amazon Kinesis data streams. You can now emit QLDB journal data, via the new QLDB Streams feature, directly to Amazon Kinesis supporting event processing and analytics among related use cases.
+* Core 3.3.106.25
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.741.0 (2020-05-15 18:20 UTC)
 * CloudFormation (3.3.105.0)
 	* This release adds support for the following features: 1. DescribeType and ListTypeVersions APIs now output a field IsDefaultVersion, indicating if a version is the default version for its type; 2. Add StackRollbackComplete waiter feature to wait until stack status is UPDATE_ROLLBACK_COMPLETE; 3. Add paginators in DescribeAccountLimits, ListChangeSets, ListStackInstances, ListStackSetOperationResults, ListStackSetOperations, ListStackSets APIs.
