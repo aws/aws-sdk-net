@@ -274,7 +274,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
         public virtual AcceptInvitationResponse AcceptInvitation(AcceptInvitationRequest request)
         {
             var options = new InvokeOptions();
@@ -321,7 +321,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
         public virtual Task<AcceptInvitationResponse> AcceptInvitationAsync(AcceptInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -369,7 +369,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ArchiveFindings">REST API Reference for ArchiveFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings">REST API Reference for ArchiveFindings Operation</seealso>
         public virtual ArchiveFindingsResponse ArchiveFindings(ArchiveFindingsRequest request)
         {
             var options = new InvokeOptions();
@@ -416,7 +416,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ArchiveFindings">REST API Reference for ArchiveFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings">REST API Reference for ArchiveFindings Operation</seealso>
         public virtual Task<ArchiveFindingsResponse> ArchiveFindingsAsync(ArchiveFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -464,7 +464,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/BatchGetCustomDataIdentifiers">REST API Reference for BatchGetCustomDataIdentifiers Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BatchGetCustomDataIdentifiers">REST API Reference for BatchGetCustomDataIdentifiers Operation</seealso>
         public virtual BatchGetCustomDataIdentifiersResponse BatchGetCustomDataIdentifiers(BatchGetCustomDataIdentifiersRequest request)
         {
             var options = new InvokeOptions();
@@ -511,7 +511,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/BatchGetCustomDataIdentifiers">REST API Reference for BatchGetCustomDataIdentifiers Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BatchGetCustomDataIdentifiers">REST API Reference for BatchGetCustomDataIdentifiers Operation</seealso>
         public virtual Task<BatchGetCustomDataIdentifiersResponse> BatchGetCustomDataIdentifiersAsync(BatchGetCustomDataIdentifiersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -559,7 +559,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateClassificationJob">REST API Reference for CreateClassificationJob Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateClassificationJob">REST API Reference for CreateClassificationJob Operation</seealso>
         public virtual CreateClassificationJobResponse CreateClassificationJob(CreateClassificationJobRequest request)
         {
             var options = new InvokeOptions();
@@ -606,7 +606,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateClassificationJob">REST API Reference for CreateClassificationJob Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateClassificationJob">REST API Reference for CreateClassificationJob Operation</seealso>
         public virtual Task<CreateClassificationJobResponse> CreateClassificationJobAsync(CreateClassificationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -654,7 +654,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateCustomDataIdentifier">REST API Reference for CreateCustomDataIdentifier Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateCustomDataIdentifier">REST API Reference for CreateCustomDataIdentifier Operation</seealso>
         public virtual CreateCustomDataIdentifierResponse CreateCustomDataIdentifier(CreateCustomDataIdentifierRequest request)
         {
             var options = new InvokeOptions();
@@ -701,7 +701,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateCustomDataIdentifier">REST API Reference for CreateCustomDataIdentifier Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateCustomDataIdentifier">REST API Reference for CreateCustomDataIdentifier Operation</seealso>
         public virtual Task<CreateCustomDataIdentifierResponse> CreateCustomDataIdentifierAsync(CreateCustomDataIdentifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -749,7 +749,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateFindingsFilter">REST API Reference for CreateFindingsFilter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateFindingsFilter">REST API Reference for CreateFindingsFilter Operation</seealso>
         public virtual CreateFindingsFilterResponse CreateFindingsFilter(CreateFindingsFilterRequest request)
         {
             var options = new InvokeOptions();
@@ -796,7 +796,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateFindingsFilter">REST API Reference for CreateFindingsFilter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateFindingsFilter">REST API Reference for CreateFindingsFilter Operation</seealso>
         public virtual Task<CreateFindingsFilterResponse> CreateFindingsFilterAsync(CreateFindingsFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -844,7 +844,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateInvitations">REST API Reference for CreateInvitations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateInvitations">REST API Reference for CreateInvitations Operation</seealso>
         public virtual CreateInvitationsResponse CreateInvitations(CreateInvitationsRequest request)
         {
             var options = new InvokeOptions();
@@ -891,7 +891,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateInvitations">REST API Reference for CreateInvitations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateInvitations">REST API Reference for CreateInvitations Operation</seealso>
         public virtual Task<CreateInvitationsResponse> CreateInvitationsAsync(CreateInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -939,7 +939,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateMember">REST API Reference for CreateMember Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateMember">REST API Reference for CreateMember Operation</seealso>
         public virtual CreateMemberResponse CreateMember(CreateMemberRequest request)
         {
             var options = new InvokeOptions();
@@ -986,7 +986,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateMember">REST API Reference for CreateMember Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateMember">REST API Reference for CreateMember Operation</seealso>
         public virtual Task<CreateMemberResponse> CreateMemberAsync(CreateMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1034,7 +1034,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateSampleFindings">REST API Reference for CreateSampleFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateSampleFindings">REST API Reference for CreateSampleFindings Operation</seealso>
         public virtual CreateSampleFindingsResponse CreateSampleFindings(CreateSampleFindingsRequest request)
         {
             var options = new InvokeOptions();
@@ -1081,7 +1081,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateSampleFindings">REST API Reference for CreateSampleFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateSampleFindings">REST API Reference for CreateSampleFindings Operation</seealso>
         public virtual Task<CreateSampleFindingsResponse> CreateSampleFindingsAsync(CreateSampleFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1129,7 +1129,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
         public virtual DeclineInvitationsResponse DeclineInvitations(DeclineInvitationsRequest request)
         {
             var options = new InvokeOptions();
@@ -1176,7 +1176,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
         public virtual Task<DeclineInvitationsResponse> DeclineInvitationsAsync(DeclineInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1224,7 +1224,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteCustomDataIdentifier">REST API Reference for DeleteCustomDataIdentifier Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteCustomDataIdentifier">REST API Reference for DeleteCustomDataIdentifier Operation</seealso>
         public virtual DeleteCustomDataIdentifierResponse DeleteCustomDataIdentifier(DeleteCustomDataIdentifierRequest request)
         {
             var options = new InvokeOptions();
@@ -1271,7 +1271,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteCustomDataIdentifier">REST API Reference for DeleteCustomDataIdentifier Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteCustomDataIdentifier">REST API Reference for DeleteCustomDataIdentifier Operation</seealso>
         public virtual Task<DeleteCustomDataIdentifierResponse> DeleteCustomDataIdentifierAsync(DeleteCustomDataIdentifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1319,7 +1319,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteFindingsFilter">REST API Reference for DeleteFindingsFilter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteFindingsFilter">REST API Reference for DeleteFindingsFilter Operation</seealso>
         public virtual DeleteFindingsFilterResponse DeleteFindingsFilter(DeleteFindingsFilterRequest request)
         {
             var options = new InvokeOptions();
@@ -1366,7 +1366,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteFindingsFilter">REST API Reference for DeleteFindingsFilter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteFindingsFilter">REST API Reference for DeleteFindingsFilter Operation</seealso>
         public virtual Task<DeleteFindingsFilterResponse> DeleteFindingsFilterAsync(DeleteFindingsFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1414,7 +1414,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteInvitations">REST API Reference for DeleteInvitations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteInvitations">REST API Reference for DeleteInvitations Operation</seealso>
         public virtual DeleteInvitationsResponse DeleteInvitations(DeleteInvitationsRequest request)
         {
             var options = new InvokeOptions();
@@ -1461,7 +1461,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteInvitations">REST API Reference for DeleteInvitations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteInvitations">REST API Reference for DeleteInvitations Operation</seealso>
         public virtual Task<DeleteInvitationsResponse> DeleteInvitationsAsync(DeleteInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1509,7 +1509,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteMember">REST API Reference for DeleteMember Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteMember">REST API Reference for DeleteMember Operation</seealso>
         public virtual DeleteMemberResponse DeleteMember(DeleteMemberRequest request)
         {
             var options = new InvokeOptions();
@@ -1556,7 +1556,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteMember">REST API Reference for DeleteMember Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteMember">REST API Reference for DeleteMember Operation</seealso>
         public virtual Task<DeleteMemberResponse> DeleteMemberAsync(DeleteMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1605,7 +1605,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeBuckets">REST API Reference for DescribeBuckets Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeBuckets">REST API Reference for DescribeBuckets Operation</seealso>
         public virtual DescribeBucketsResponse DescribeBuckets(DescribeBucketsRequest request)
         {
             var options = new InvokeOptions();
@@ -1653,7 +1653,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeBuckets">REST API Reference for DescribeBuckets Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeBuckets">REST API Reference for DescribeBuckets Operation</seealso>
         public virtual Task<DescribeBucketsResponse> DescribeBucketsAsync(DescribeBucketsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1701,7 +1701,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeClassificationJob">REST API Reference for DescribeClassificationJob Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeClassificationJob">REST API Reference for DescribeClassificationJob Operation</seealso>
         public virtual DescribeClassificationJobResponse DescribeClassificationJob(DescribeClassificationJobRequest request)
         {
             var options = new InvokeOptions();
@@ -1748,7 +1748,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeClassificationJob">REST API Reference for DescribeClassificationJob Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeClassificationJob">REST API Reference for DescribeClassificationJob Operation</seealso>
         public virtual Task<DescribeClassificationJobResponse> DescribeClassificationJobAsync(DescribeClassificationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1796,7 +1796,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeOrganizationConfiguration">REST API Reference for DescribeOrganizationConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeOrganizationConfiguration">REST API Reference for DescribeOrganizationConfiguration Operation</seealso>
         public virtual DescribeOrganizationConfigurationResponse DescribeOrganizationConfiguration(DescribeOrganizationConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -1843,7 +1843,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeOrganizationConfiguration">REST API Reference for DescribeOrganizationConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeOrganizationConfiguration">REST API Reference for DescribeOrganizationConfiguration Operation</seealso>
         public virtual Task<DescribeOrganizationConfigurationResponse> DescribeOrganizationConfigurationAsync(DescribeOrganizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1891,7 +1891,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisableMacie">REST API Reference for DisableMacie Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableMacie">REST API Reference for DisableMacie Operation</seealso>
         public virtual DisableMacieResponse DisableMacie(DisableMacieRequest request)
         {
             var options = new InvokeOptions();
@@ -1938,7 +1938,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisableMacie">REST API Reference for DisableMacie Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableMacie">REST API Reference for DisableMacie Operation</seealso>
         public virtual Task<DisableMacieResponse> DisableMacieAsync(DisableMacieRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1986,7 +1986,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisableOrganizationAdminAccount">REST API Reference for DisableOrganizationAdminAccount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableOrganizationAdminAccount">REST API Reference for DisableOrganizationAdminAccount Operation</seealso>
         public virtual DisableOrganizationAdminAccountResponse DisableOrganizationAdminAccount(DisableOrganizationAdminAccountRequest request)
         {
             var options = new InvokeOptions();
@@ -2033,7 +2033,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisableOrganizationAdminAccount">REST API Reference for DisableOrganizationAdminAccount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableOrganizationAdminAccount">REST API Reference for DisableOrganizationAdminAccount Operation</seealso>
         public virtual Task<DisableOrganizationAdminAccountResponse> DisableOrganizationAdminAccountAsync(DisableOrganizationAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2081,7 +2081,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
         public virtual DisassociateFromMasterAccountResponse DisassociateFromMasterAccount(DisassociateFromMasterAccountRequest request)
         {
             var options = new InvokeOptions();
@@ -2128,7 +2128,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
         public virtual Task<DisassociateFromMasterAccountResponse> DisassociateFromMasterAccountAsync(DisassociateFromMasterAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2176,7 +2176,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisassociateMember">REST API Reference for DisassociateMember Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateMember">REST API Reference for DisassociateMember Operation</seealso>
         public virtual DisassociateMemberResponse DisassociateMember(DisassociateMemberRequest request)
         {
             var options = new InvokeOptions();
@@ -2223,7 +2223,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisassociateMember">REST API Reference for DisassociateMember Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateMember">REST API Reference for DisassociateMember Operation</seealso>
         public virtual Task<DisassociateMemberResponse> DisassociateMemberAsync(DisassociateMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2271,7 +2271,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/EnableMacie">REST API Reference for EnableMacie Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableMacie">REST API Reference for EnableMacie Operation</seealso>
         public virtual EnableMacieResponse EnableMacie(EnableMacieRequest request)
         {
             var options = new InvokeOptions();
@@ -2318,7 +2318,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/EnableMacie">REST API Reference for EnableMacie Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableMacie">REST API Reference for EnableMacie Operation</seealso>
         public virtual Task<EnableMacieResponse> EnableMacieAsync(EnableMacieRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2366,7 +2366,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/EnableOrganizationAdminAccount">REST API Reference for EnableOrganizationAdminAccount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableOrganizationAdminAccount">REST API Reference for EnableOrganizationAdminAccount Operation</seealso>
         public virtual EnableOrganizationAdminAccountResponse EnableOrganizationAdminAccount(EnableOrganizationAdminAccountRequest request)
         {
             var options = new InvokeOptions();
@@ -2413,7 +2413,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/EnableOrganizationAdminAccount">REST API Reference for EnableOrganizationAdminAccount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableOrganizationAdminAccount">REST API Reference for EnableOrganizationAdminAccount Operation</seealso>
         public virtual Task<EnableOrganizationAdminAccountResponse> EnableOrganizationAdminAccountAsync(EnableOrganizationAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2462,7 +2462,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetBucketStatistics">REST API Reference for GetBucketStatistics Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetBucketStatistics">REST API Reference for GetBucketStatistics Operation</seealso>
         public virtual GetBucketStatisticsResponse GetBucketStatistics(GetBucketStatisticsRequest request)
         {
             var options = new InvokeOptions();
@@ -2510,7 +2510,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetBucketStatistics">REST API Reference for GetBucketStatistics Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetBucketStatistics">REST API Reference for GetBucketStatistics Operation</seealso>
         public virtual Task<GetBucketStatisticsResponse> GetBucketStatisticsAsync(GetBucketStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2558,7 +2558,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetClassificationExportConfiguration">REST API Reference for GetClassificationExportConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationExportConfiguration">REST API Reference for GetClassificationExportConfiguration Operation</seealso>
         public virtual GetClassificationExportConfigurationResponse GetClassificationExportConfiguration(GetClassificationExportConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -2605,7 +2605,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetClassificationExportConfiguration">REST API Reference for GetClassificationExportConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationExportConfiguration">REST API Reference for GetClassificationExportConfiguration Operation</seealso>
         public virtual Task<GetClassificationExportConfigurationResponse> GetClassificationExportConfigurationAsync(GetClassificationExportConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2653,7 +2653,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetCustomDataIdentifier">REST API Reference for GetCustomDataIdentifier Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetCustomDataIdentifier">REST API Reference for GetCustomDataIdentifier Operation</seealso>
         public virtual GetCustomDataIdentifierResponse GetCustomDataIdentifier(GetCustomDataIdentifierRequest request)
         {
             var options = new InvokeOptions();
@@ -2700,7 +2700,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetCustomDataIdentifier">REST API Reference for GetCustomDataIdentifier Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetCustomDataIdentifier">REST API Reference for GetCustomDataIdentifier Operation</seealso>
         public virtual Task<GetCustomDataIdentifierResponse> GetCustomDataIdentifierAsync(GetCustomDataIdentifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2748,7 +2748,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindings">REST API Reference for GetFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindings">REST API Reference for GetFindings Operation</seealso>
         public virtual GetFindingsResponse GetFindings(GetFindingsRequest request)
         {
             var options = new InvokeOptions();
@@ -2795,7 +2795,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindings">REST API Reference for GetFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindings">REST API Reference for GetFindings Operation</seealso>
         public virtual Task<GetFindingsResponse> GetFindingsAsync(GetFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2843,7 +2843,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindingsFilter">REST API Reference for GetFindingsFilter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsFilter">REST API Reference for GetFindingsFilter Operation</seealso>
         public virtual GetFindingsFilterResponse GetFindingsFilter(GetFindingsFilterRequest request)
         {
             var options = new InvokeOptions();
@@ -2890,7 +2890,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindingsFilter">REST API Reference for GetFindingsFilter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsFilter">REST API Reference for GetFindingsFilter Operation</seealso>
         public virtual Task<GetFindingsFilterResponse> GetFindingsFilterAsync(GetFindingsFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2938,7 +2938,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindingStatistics">REST API Reference for GetFindingStatistics Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingStatistics">REST API Reference for GetFindingStatistics Operation</seealso>
         public virtual GetFindingStatisticsResponse GetFindingStatistics(GetFindingStatisticsRequest request)
         {
             var options = new InvokeOptions();
@@ -2985,7 +2985,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindingStatistics">REST API Reference for GetFindingStatistics Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingStatistics">REST API Reference for GetFindingStatistics Operation</seealso>
         public virtual Task<GetFindingStatisticsResponse> GetFindingStatisticsAsync(GetFindingStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3034,7 +3034,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
         public virtual GetInvitationsCountResponse GetInvitationsCount(GetInvitationsCountRequest request)
         {
             var options = new InvokeOptions();
@@ -3082,7 +3082,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
         public virtual Task<GetInvitationsCountResponse> GetInvitationsCountAsync(GetInvitationsCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3131,7 +3131,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMacieSession">REST API Reference for GetMacieSession Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMacieSession">REST API Reference for GetMacieSession Operation</seealso>
         public virtual GetMacieSessionResponse GetMacieSession(GetMacieSessionRequest request)
         {
             var options = new InvokeOptions();
@@ -3179,7 +3179,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMacieSession">REST API Reference for GetMacieSession Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMacieSession">REST API Reference for GetMacieSession Operation</seealso>
         public virtual Task<GetMacieSessionResponse> GetMacieSessionAsync(GetMacieSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3227,7 +3227,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
         public virtual GetMasterAccountResponse GetMasterAccount(GetMasterAccountRequest request)
         {
             var options = new InvokeOptions();
@@ -3274,7 +3274,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
         public virtual Task<GetMasterAccountResponse> GetMasterAccountAsync(GetMasterAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3323,7 +3323,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMember">REST API Reference for GetMember Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMember">REST API Reference for GetMember Operation</seealso>
         public virtual GetMemberResponse GetMember(GetMemberRequest request)
         {
             var options = new InvokeOptions();
@@ -3371,7 +3371,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMember">REST API Reference for GetMember Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMember">REST API Reference for GetMember Operation</seealso>
         public virtual Task<GetMemberResponse> GetMemberAsync(GetMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3419,7 +3419,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetUsageStatistics">REST API Reference for GetUsageStatistics Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageStatistics">REST API Reference for GetUsageStatistics Operation</seealso>
         public virtual GetUsageStatisticsResponse GetUsageStatistics(GetUsageStatisticsRequest request)
         {
             var options = new InvokeOptions();
@@ -3466,7 +3466,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetUsageStatistics">REST API Reference for GetUsageStatistics Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageStatistics">REST API Reference for GetUsageStatistics Operation</seealso>
         public virtual Task<GetUsageStatisticsResponse> GetUsageStatisticsAsync(GetUsageStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3514,7 +3514,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetUsageTotals">REST API Reference for GetUsageTotals Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageTotals">REST API Reference for GetUsageTotals Operation</seealso>
         public virtual GetUsageTotalsResponse GetUsageTotals(GetUsageTotalsRequest request)
         {
             var options = new InvokeOptions();
@@ -3561,7 +3561,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetUsageTotals">REST API Reference for GetUsageTotals Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageTotals">REST API Reference for GetUsageTotals Operation</seealso>
         public virtual Task<GetUsageTotalsResponse> GetUsageTotalsAsync(GetUsageTotalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3610,7 +3610,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListClassificationJobs">REST API Reference for ListClassificationJobs Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationJobs">REST API Reference for ListClassificationJobs Operation</seealso>
         public virtual ListClassificationJobsResponse ListClassificationJobs(ListClassificationJobsRequest request)
         {
             var options = new InvokeOptions();
@@ -3658,7 +3658,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListClassificationJobs">REST API Reference for ListClassificationJobs Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationJobs">REST API Reference for ListClassificationJobs Operation</seealso>
         public virtual Task<ListClassificationJobsResponse> ListClassificationJobsAsync(ListClassificationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3706,7 +3706,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListCustomDataIdentifiers">REST API Reference for ListCustomDataIdentifiers Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListCustomDataIdentifiers">REST API Reference for ListCustomDataIdentifiers Operation</seealso>
         public virtual ListCustomDataIdentifiersResponse ListCustomDataIdentifiers(ListCustomDataIdentifiersRequest request)
         {
             var options = new InvokeOptions();
@@ -3753,7 +3753,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListCustomDataIdentifiers">REST API Reference for ListCustomDataIdentifiers Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListCustomDataIdentifiers">REST API Reference for ListCustomDataIdentifiers Operation</seealso>
         public virtual Task<ListCustomDataIdentifiersResponse> ListCustomDataIdentifiersAsync(ListCustomDataIdentifiersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3801,7 +3801,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListFindings">REST API Reference for ListFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindings">REST API Reference for ListFindings Operation</seealso>
         public virtual ListFindingsResponse ListFindings(ListFindingsRequest request)
         {
             var options = new InvokeOptions();
@@ -3848,7 +3848,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListFindings">REST API Reference for ListFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindings">REST API Reference for ListFindings Operation</seealso>
         public virtual Task<ListFindingsResponse> ListFindingsAsync(ListFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3896,7 +3896,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListFindingsFilters">REST API Reference for ListFindingsFilters Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindingsFilters">REST API Reference for ListFindingsFilters Operation</seealso>
         public virtual ListFindingsFiltersResponse ListFindingsFilters(ListFindingsFiltersRequest request)
         {
             var options = new InvokeOptions();
@@ -3943,7 +3943,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListFindingsFilters">REST API Reference for ListFindingsFilters Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindingsFilters">REST API Reference for ListFindingsFilters Operation</seealso>
         public virtual Task<ListFindingsFiltersResponse> ListFindingsFiltersAsync(ListFindingsFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3992,7 +3992,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         public virtual ListInvitationsResponse ListInvitations(ListInvitationsRequest request)
         {
             var options = new InvokeOptions();
@@ -4040,7 +4040,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         public virtual Task<ListInvitationsResponse> ListInvitationsAsync(ListInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4089,7 +4089,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListMembers">REST API Reference for ListMembers Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListMembers">REST API Reference for ListMembers Operation</seealso>
         public virtual ListMembersResponse ListMembers(ListMembersRequest request)
         {
             var options = new InvokeOptions();
@@ -4137,7 +4137,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListMembers">REST API Reference for ListMembers Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListMembers">REST API Reference for ListMembers Operation</seealso>
         public virtual Task<ListMembersResponse> ListMembersAsync(ListMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4186,7 +4186,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListOrganizationAdminAccounts">REST API Reference for ListOrganizationAdminAccounts Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListOrganizationAdminAccounts">REST API Reference for ListOrganizationAdminAccounts Operation</seealso>
         public virtual ListOrganizationAdminAccountsResponse ListOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request)
         {
             var options = new InvokeOptions();
@@ -4234,7 +4234,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListOrganizationAdminAccounts">REST API Reference for ListOrganizationAdminAccounts Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListOrganizationAdminAccounts">REST API Reference for ListOrganizationAdminAccounts Operation</seealso>
         public virtual Task<ListOrganizationAdminAccountsResponse> ListOrganizationAdminAccountsAsync(ListOrganizationAdminAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4256,7 +4256,7 @@ namespace Amazon.Macie2
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -4277,7 +4277,7 @@ namespace Amazon.Macie2
         /// </param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4325,7 +4325,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/PutClassificationExportConfiguration">REST API Reference for PutClassificationExportConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutClassificationExportConfiguration">REST API Reference for PutClassificationExportConfiguration Operation</seealso>
         public virtual PutClassificationExportConfigurationResponse PutClassificationExportConfiguration(PutClassificationExportConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -4372,7 +4372,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/PutClassificationExportConfiguration">REST API Reference for PutClassificationExportConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutClassificationExportConfiguration">REST API Reference for PutClassificationExportConfiguration Operation</seealso>
         public virtual Task<PutClassificationExportConfigurationResponse> PutClassificationExportConfigurationAsync(PutClassificationExportConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4394,7 +4394,7 @@ namespace Amazon.Macie2
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TagResource">REST API Reference for TagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -4415,7 +4415,7 @@ namespace Amazon.Macie2
         /// </param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TagResource">REST API Reference for TagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4463,7 +4463,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TestCustomDataIdentifier">REST API Reference for TestCustomDataIdentifier Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TestCustomDataIdentifier">REST API Reference for TestCustomDataIdentifier Operation</seealso>
         public virtual TestCustomDataIdentifierResponse TestCustomDataIdentifier(TestCustomDataIdentifierRequest request)
         {
             var options = new InvokeOptions();
@@ -4510,7 +4510,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TestCustomDataIdentifier">REST API Reference for TestCustomDataIdentifier Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TestCustomDataIdentifier">REST API Reference for TestCustomDataIdentifier Operation</seealso>
         public virtual Task<TestCustomDataIdentifierResponse> TestCustomDataIdentifierAsync(TestCustomDataIdentifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4558,7 +4558,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UnarchiveFindings">REST API Reference for UnarchiveFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings">REST API Reference for UnarchiveFindings Operation</seealso>
         public virtual UnarchiveFindingsResponse UnarchiveFindings(UnarchiveFindingsRequest request)
         {
             var options = new InvokeOptions();
@@ -4605,7 +4605,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UnarchiveFindings">REST API Reference for UnarchiveFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings">REST API Reference for UnarchiveFindings Operation</seealso>
         public virtual Task<UnarchiveFindingsResponse> UnarchiveFindingsAsync(UnarchiveFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4627,7 +4627,7 @@ namespace Amazon.Macie2
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -4648,7 +4648,7 @@ namespace Amazon.Macie2
         /// </param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4696,7 +4696,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateClassificationJob">REST API Reference for UpdateClassificationJob Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationJob">REST API Reference for UpdateClassificationJob Operation</seealso>
         public virtual UpdateClassificationJobResponse UpdateClassificationJob(UpdateClassificationJobRequest request)
         {
             var options = new InvokeOptions();
@@ -4743,7 +4743,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateClassificationJob">REST API Reference for UpdateClassificationJob Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationJob">REST API Reference for UpdateClassificationJob Operation</seealso>
         public virtual Task<UpdateClassificationJobResponse> UpdateClassificationJobAsync(UpdateClassificationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4791,7 +4791,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateFindingsFilter">REST API Reference for UpdateFindingsFilter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateFindingsFilter">REST API Reference for UpdateFindingsFilter Operation</seealso>
         public virtual UpdateFindingsFilterResponse UpdateFindingsFilter(UpdateFindingsFilterRequest request)
         {
             var options = new InvokeOptions();
@@ -4838,7 +4838,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateFindingsFilter">REST API Reference for UpdateFindingsFilter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateFindingsFilter">REST API Reference for UpdateFindingsFilter Operation</seealso>
         public virtual Task<UpdateFindingsFilterResponse> UpdateFindingsFilterAsync(UpdateFindingsFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4887,7 +4887,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateMacieSession">REST API Reference for UpdateMacieSession Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMacieSession">REST API Reference for UpdateMacieSession Operation</seealso>
         public virtual UpdateMacieSessionResponse UpdateMacieSession(UpdateMacieSessionRequest request)
         {
             var options = new InvokeOptions();
@@ -4935,7 +4935,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateMacieSession">REST API Reference for UpdateMacieSession Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMacieSession">REST API Reference for UpdateMacieSession Operation</seealso>
         public virtual Task<UpdateMacieSessionResponse> UpdateMacieSessionAsync(UpdateMacieSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4983,7 +4983,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateMemberSession">REST API Reference for UpdateMemberSession Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMemberSession">REST API Reference for UpdateMemberSession Operation</seealso>
         public virtual UpdateMemberSessionResponse UpdateMemberSession(UpdateMemberSessionRequest request)
         {
             var options = new InvokeOptions();
@@ -5030,7 +5030,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateMemberSession">REST API Reference for UpdateMemberSession Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMemberSession">REST API Reference for UpdateMemberSession Operation</seealso>
         public virtual Task<UpdateMemberSessionResponse> UpdateMemberSessionAsync(UpdateMemberSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -5078,7 +5078,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
         public virtual UpdateOrganizationConfigurationResponse UpdateOrganizationConfiguration(UpdateOrganizationConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -5125,7 +5125,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
         public virtual Task<UpdateOrganizationConfigurationResponse> UpdateOrganizationConfigurationAsync(UpdateOrganizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();

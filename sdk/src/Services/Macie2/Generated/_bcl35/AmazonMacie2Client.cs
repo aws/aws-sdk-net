@@ -271,7 +271,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
         public virtual AcceptInvitationResponse AcceptInvitation(AcceptInvitationRequest request)
         {
             var options = new InvokeOptions();
@@ -292,7 +292,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptInvitation
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
         public virtual IAsyncResult BeginAcceptInvitation(AcceptInvitationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -309,7 +309,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcceptInvitation.</param>
         /// 
         /// <returns>Returns a  AcceptInvitationResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
         public virtual AcceptInvitationResponse EndAcceptInvitation(IAsyncResult asyncResult)
         {
             return EndInvoke<AcceptInvitationResponse>(asyncResult);
@@ -352,7 +352,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ArchiveFindings">REST API Reference for ArchiveFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings">REST API Reference for ArchiveFindings Operation</seealso>
         public virtual ArchiveFindingsResponse ArchiveFindings(ArchiveFindingsRequest request)
         {
             var options = new InvokeOptions();
@@ -373,7 +373,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndArchiveFindings
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ArchiveFindings">REST API Reference for ArchiveFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings">REST API Reference for ArchiveFindings Operation</seealso>
         public virtual IAsyncResult BeginArchiveFindings(ArchiveFindingsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -390,7 +390,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginArchiveFindings.</param>
         /// 
         /// <returns>Returns a  ArchiveFindingsResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ArchiveFindings">REST API Reference for ArchiveFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings">REST API Reference for ArchiveFindings Operation</seealso>
         public virtual ArchiveFindingsResponse EndArchiveFindings(IAsyncResult asyncResult)
         {
             return EndInvoke<ArchiveFindingsResponse>(asyncResult);
@@ -433,7 +433,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/BatchGetCustomDataIdentifiers">REST API Reference for BatchGetCustomDataIdentifiers Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BatchGetCustomDataIdentifiers">REST API Reference for BatchGetCustomDataIdentifiers Operation</seealso>
         public virtual BatchGetCustomDataIdentifiersResponse BatchGetCustomDataIdentifiers(BatchGetCustomDataIdentifiersRequest request)
         {
             var options = new InvokeOptions();
@@ -454,7 +454,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetCustomDataIdentifiers
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/BatchGetCustomDataIdentifiers">REST API Reference for BatchGetCustomDataIdentifiers Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BatchGetCustomDataIdentifiers">REST API Reference for BatchGetCustomDataIdentifiers Operation</seealso>
         public virtual IAsyncResult BeginBatchGetCustomDataIdentifiers(BatchGetCustomDataIdentifiersRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -471,7 +471,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetCustomDataIdentifiers.</param>
         /// 
         /// <returns>Returns a  BatchGetCustomDataIdentifiersResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/BatchGetCustomDataIdentifiers">REST API Reference for BatchGetCustomDataIdentifiers Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BatchGetCustomDataIdentifiers">REST API Reference for BatchGetCustomDataIdentifiers Operation</seealso>
         public virtual BatchGetCustomDataIdentifiersResponse EndBatchGetCustomDataIdentifiers(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetCustomDataIdentifiersResponse>(asyncResult);
@@ -514,7 +514,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateClassificationJob">REST API Reference for CreateClassificationJob Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateClassificationJob">REST API Reference for CreateClassificationJob Operation</seealso>
         public virtual CreateClassificationJobResponse CreateClassificationJob(CreateClassificationJobRequest request)
         {
             var options = new InvokeOptions();
@@ -535,7 +535,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateClassificationJob
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateClassificationJob">REST API Reference for CreateClassificationJob Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateClassificationJob">REST API Reference for CreateClassificationJob Operation</seealso>
         public virtual IAsyncResult BeginCreateClassificationJob(CreateClassificationJobRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -552,7 +552,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateClassificationJob.</param>
         /// 
         /// <returns>Returns a  CreateClassificationJobResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateClassificationJob">REST API Reference for CreateClassificationJob Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateClassificationJob">REST API Reference for CreateClassificationJob Operation</seealso>
         public virtual CreateClassificationJobResponse EndCreateClassificationJob(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateClassificationJobResponse>(asyncResult);
@@ -595,7 +595,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateCustomDataIdentifier">REST API Reference for CreateCustomDataIdentifier Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateCustomDataIdentifier">REST API Reference for CreateCustomDataIdentifier Operation</seealso>
         public virtual CreateCustomDataIdentifierResponse CreateCustomDataIdentifier(CreateCustomDataIdentifierRequest request)
         {
             var options = new InvokeOptions();
@@ -616,7 +616,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCustomDataIdentifier
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateCustomDataIdentifier">REST API Reference for CreateCustomDataIdentifier Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateCustomDataIdentifier">REST API Reference for CreateCustomDataIdentifier Operation</seealso>
         public virtual IAsyncResult BeginCreateCustomDataIdentifier(CreateCustomDataIdentifierRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -633,7 +633,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCustomDataIdentifier.</param>
         /// 
         /// <returns>Returns a  CreateCustomDataIdentifierResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateCustomDataIdentifier">REST API Reference for CreateCustomDataIdentifier Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateCustomDataIdentifier">REST API Reference for CreateCustomDataIdentifier Operation</seealso>
         public virtual CreateCustomDataIdentifierResponse EndCreateCustomDataIdentifier(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCustomDataIdentifierResponse>(asyncResult);
@@ -676,7 +676,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateFindingsFilter">REST API Reference for CreateFindingsFilter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateFindingsFilter">REST API Reference for CreateFindingsFilter Operation</seealso>
         public virtual CreateFindingsFilterResponse CreateFindingsFilter(CreateFindingsFilterRequest request)
         {
             var options = new InvokeOptions();
@@ -697,7 +697,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFindingsFilter
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateFindingsFilter">REST API Reference for CreateFindingsFilter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateFindingsFilter">REST API Reference for CreateFindingsFilter Operation</seealso>
         public virtual IAsyncResult BeginCreateFindingsFilter(CreateFindingsFilterRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -714,7 +714,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFindingsFilter.</param>
         /// 
         /// <returns>Returns a  CreateFindingsFilterResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateFindingsFilter">REST API Reference for CreateFindingsFilter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateFindingsFilter">REST API Reference for CreateFindingsFilter Operation</seealso>
         public virtual CreateFindingsFilterResponse EndCreateFindingsFilter(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateFindingsFilterResponse>(asyncResult);
@@ -757,7 +757,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateInvitations">REST API Reference for CreateInvitations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateInvitations">REST API Reference for CreateInvitations Operation</seealso>
         public virtual CreateInvitationsResponse CreateInvitations(CreateInvitationsRequest request)
         {
             var options = new InvokeOptions();
@@ -778,7 +778,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInvitations
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateInvitations">REST API Reference for CreateInvitations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateInvitations">REST API Reference for CreateInvitations Operation</seealso>
         public virtual IAsyncResult BeginCreateInvitations(CreateInvitationsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -795,7 +795,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInvitations.</param>
         /// 
         /// <returns>Returns a  CreateInvitationsResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateInvitations">REST API Reference for CreateInvitations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateInvitations">REST API Reference for CreateInvitations Operation</seealso>
         public virtual CreateInvitationsResponse EndCreateInvitations(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateInvitationsResponse>(asyncResult);
@@ -838,7 +838,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateMember">REST API Reference for CreateMember Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateMember">REST API Reference for CreateMember Operation</seealso>
         public virtual CreateMemberResponse CreateMember(CreateMemberRequest request)
         {
             var options = new InvokeOptions();
@@ -859,7 +859,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMember
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateMember">REST API Reference for CreateMember Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateMember">REST API Reference for CreateMember Operation</seealso>
         public virtual IAsyncResult BeginCreateMember(CreateMemberRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -876,7 +876,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMember.</param>
         /// 
         /// <returns>Returns a  CreateMemberResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateMember">REST API Reference for CreateMember Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateMember">REST API Reference for CreateMember Operation</seealso>
         public virtual CreateMemberResponse EndCreateMember(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateMemberResponse>(asyncResult);
@@ -919,7 +919,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateSampleFindings">REST API Reference for CreateSampleFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateSampleFindings">REST API Reference for CreateSampleFindings Operation</seealso>
         public virtual CreateSampleFindingsResponse CreateSampleFindings(CreateSampleFindingsRequest request)
         {
             var options = new InvokeOptions();
@@ -940,7 +940,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSampleFindings
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateSampleFindings">REST API Reference for CreateSampleFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateSampleFindings">REST API Reference for CreateSampleFindings Operation</seealso>
         public virtual IAsyncResult BeginCreateSampleFindings(CreateSampleFindingsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -957,7 +957,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSampleFindings.</param>
         /// 
         /// <returns>Returns a  CreateSampleFindingsResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateSampleFindings">REST API Reference for CreateSampleFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateSampleFindings">REST API Reference for CreateSampleFindings Operation</seealso>
         public virtual CreateSampleFindingsResponse EndCreateSampleFindings(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSampleFindingsResponse>(asyncResult);
@@ -1000,7 +1000,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
         public virtual DeclineInvitationsResponse DeclineInvitations(DeclineInvitationsRequest request)
         {
             var options = new InvokeOptions();
@@ -1021,7 +1021,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeclineInvitations
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
         public virtual IAsyncResult BeginDeclineInvitations(DeclineInvitationsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1038,7 +1038,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeclineInvitations.</param>
         /// 
         /// <returns>Returns a  DeclineInvitationsResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
         public virtual DeclineInvitationsResponse EndDeclineInvitations(IAsyncResult asyncResult)
         {
             return EndInvoke<DeclineInvitationsResponse>(asyncResult);
@@ -1081,7 +1081,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteCustomDataIdentifier">REST API Reference for DeleteCustomDataIdentifier Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteCustomDataIdentifier">REST API Reference for DeleteCustomDataIdentifier Operation</seealso>
         public virtual DeleteCustomDataIdentifierResponse DeleteCustomDataIdentifier(DeleteCustomDataIdentifierRequest request)
         {
             var options = new InvokeOptions();
@@ -1102,7 +1102,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCustomDataIdentifier
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteCustomDataIdentifier">REST API Reference for DeleteCustomDataIdentifier Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteCustomDataIdentifier">REST API Reference for DeleteCustomDataIdentifier Operation</seealso>
         public virtual IAsyncResult BeginDeleteCustomDataIdentifier(DeleteCustomDataIdentifierRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1119,7 +1119,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCustomDataIdentifier.</param>
         /// 
         /// <returns>Returns a  DeleteCustomDataIdentifierResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteCustomDataIdentifier">REST API Reference for DeleteCustomDataIdentifier Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteCustomDataIdentifier">REST API Reference for DeleteCustomDataIdentifier Operation</seealso>
         public virtual DeleteCustomDataIdentifierResponse EndDeleteCustomDataIdentifier(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCustomDataIdentifierResponse>(asyncResult);
@@ -1162,7 +1162,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteFindingsFilter">REST API Reference for DeleteFindingsFilter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteFindingsFilter">REST API Reference for DeleteFindingsFilter Operation</seealso>
         public virtual DeleteFindingsFilterResponse DeleteFindingsFilter(DeleteFindingsFilterRequest request)
         {
             var options = new InvokeOptions();
@@ -1183,7 +1183,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFindingsFilter
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteFindingsFilter">REST API Reference for DeleteFindingsFilter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteFindingsFilter">REST API Reference for DeleteFindingsFilter Operation</seealso>
         public virtual IAsyncResult BeginDeleteFindingsFilter(DeleteFindingsFilterRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1200,7 +1200,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFindingsFilter.</param>
         /// 
         /// <returns>Returns a  DeleteFindingsFilterResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteFindingsFilter">REST API Reference for DeleteFindingsFilter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteFindingsFilter">REST API Reference for DeleteFindingsFilter Operation</seealso>
         public virtual DeleteFindingsFilterResponse EndDeleteFindingsFilter(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFindingsFilterResponse>(asyncResult);
@@ -1243,7 +1243,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteInvitations">REST API Reference for DeleteInvitations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteInvitations">REST API Reference for DeleteInvitations Operation</seealso>
         public virtual DeleteInvitationsResponse DeleteInvitations(DeleteInvitationsRequest request)
         {
             var options = new InvokeOptions();
@@ -1264,7 +1264,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInvitations
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteInvitations">REST API Reference for DeleteInvitations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteInvitations">REST API Reference for DeleteInvitations Operation</seealso>
         public virtual IAsyncResult BeginDeleteInvitations(DeleteInvitationsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1281,7 +1281,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInvitations.</param>
         /// 
         /// <returns>Returns a  DeleteInvitationsResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteInvitations">REST API Reference for DeleteInvitations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteInvitations">REST API Reference for DeleteInvitations Operation</seealso>
         public virtual DeleteInvitationsResponse EndDeleteInvitations(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteInvitationsResponse>(asyncResult);
@@ -1324,7 +1324,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteMember">REST API Reference for DeleteMember Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteMember">REST API Reference for DeleteMember Operation</seealso>
         public virtual DeleteMemberResponse DeleteMember(DeleteMemberRequest request)
         {
             var options = new InvokeOptions();
@@ -1345,7 +1345,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMember
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteMember">REST API Reference for DeleteMember Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteMember">REST API Reference for DeleteMember Operation</seealso>
         public virtual IAsyncResult BeginDeleteMember(DeleteMemberRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1362,7 +1362,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMember.</param>
         /// 
         /// <returns>Returns a  DeleteMemberResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteMember">REST API Reference for DeleteMember Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteMember">REST API Reference for DeleteMember Operation</seealso>
         public virtual DeleteMemberResponse EndDeleteMember(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteMemberResponse>(asyncResult);
@@ -1406,7 +1406,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeBuckets">REST API Reference for DescribeBuckets Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeBuckets">REST API Reference for DescribeBuckets Operation</seealso>
         public virtual DescribeBucketsResponse DescribeBuckets(DescribeBucketsRequest request)
         {
             var options = new InvokeOptions();
@@ -1427,7 +1427,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBuckets
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeBuckets">REST API Reference for DescribeBuckets Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeBuckets">REST API Reference for DescribeBuckets Operation</seealso>
         public virtual IAsyncResult BeginDescribeBuckets(DescribeBucketsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1444,7 +1444,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBuckets.</param>
         /// 
         /// <returns>Returns a  DescribeBucketsResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeBuckets">REST API Reference for DescribeBuckets Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeBuckets">REST API Reference for DescribeBuckets Operation</seealso>
         public virtual DescribeBucketsResponse EndDescribeBuckets(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeBucketsResponse>(asyncResult);
@@ -1487,7 +1487,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeClassificationJob">REST API Reference for DescribeClassificationJob Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeClassificationJob">REST API Reference for DescribeClassificationJob Operation</seealso>
         public virtual DescribeClassificationJobResponse DescribeClassificationJob(DescribeClassificationJobRequest request)
         {
             var options = new InvokeOptions();
@@ -1508,7 +1508,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClassificationJob
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeClassificationJob">REST API Reference for DescribeClassificationJob Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeClassificationJob">REST API Reference for DescribeClassificationJob Operation</seealso>
         public virtual IAsyncResult BeginDescribeClassificationJob(DescribeClassificationJobRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1525,7 +1525,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClassificationJob.</param>
         /// 
         /// <returns>Returns a  DescribeClassificationJobResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeClassificationJob">REST API Reference for DescribeClassificationJob Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeClassificationJob">REST API Reference for DescribeClassificationJob Operation</seealso>
         public virtual DescribeClassificationJobResponse EndDescribeClassificationJob(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeClassificationJobResponse>(asyncResult);
@@ -1568,7 +1568,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeOrganizationConfiguration">REST API Reference for DescribeOrganizationConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeOrganizationConfiguration">REST API Reference for DescribeOrganizationConfiguration Operation</seealso>
         public virtual DescribeOrganizationConfigurationResponse DescribeOrganizationConfiguration(DescribeOrganizationConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -1589,7 +1589,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeOrganizationConfiguration
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeOrganizationConfiguration">REST API Reference for DescribeOrganizationConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeOrganizationConfiguration">REST API Reference for DescribeOrganizationConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDescribeOrganizationConfiguration(DescribeOrganizationConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1606,7 +1606,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeOrganizationConfiguration.</param>
         /// 
         /// <returns>Returns a  DescribeOrganizationConfigurationResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeOrganizationConfiguration">REST API Reference for DescribeOrganizationConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeOrganizationConfiguration">REST API Reference for DescribeOrganizationConfiguration Operation</seealso>
         public virtual DescribeOrganizationConfigurationResponse EndDescribeOrganizationConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeOrganizationConfigurationResponse>(asyncResult);
@@ -1649,7 +1649,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisableMacie">REST API Reference for DisableMacie Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableMacie">REST API Reference for DisableMacie Operation</seealso>
         public virtual DisableMacieResponse DisableMacie(DisableMacieRequest request)
         {
             var options = new InvokeOptions();
@@ -1670,7 +1670,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableMacie
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisableMacie">REST API Reference for DisableMacie Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableMacie">REST API Reference for DisableMacie Operation</seealso>
         public virtual IAsyncResult BeginDisableMacie(DisableMacieRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1687,7 +1687,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableMacie.</param>
         /// 
         /// <returns>Returns a  DisableMacieResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisableMacie">REST API Reference for DisableMacie Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableMacie">REST API Reference for DisableMacie Operation</seealso>
         public virtual DisableMacieResponse EndDisableMacie(IAsyncResult asyncResult)
         {
             return EndInvoke<DisableMacieResponse>(asyncResult);
@@ -1730,7 +1730,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisableOrganizationAdminAccount">REST API Reference for DisableOrganizationAdminAccount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableOrganizationAdminAccount">REST API Reference for DisableOrganizationAdminAccount Operation</seealso>
         public virtual DisableOrganizationAdminAccountResponse DisableOrganizationAdminAccount(DisableOrganizationAdminAccountRequest request)
         {
             var options = new InvokeOptions();
@@ -1751,7 +1751,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableOrganizationAdminAccount
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisableOrganizationAdminAccount">REST API Reference for DisableOrganizationAdminAccount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableOrganizationAdminAccount">REST API Reference for DisableOrganizationAdminAccount Operation</seealso>
         public virtual IAsyncResult BeginDisableOrganizationAdminAccount(DisableOrganizationAdminAccountRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1768,7 +1768,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableOrganizationAdminAccount.</param>
         /// 
         /// <returns>Returns a  DisableOrganizationAdminAccountResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisableOrganizationAdminAccount">REST API Reference for DisableOrganizationAdminAccount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableOrganizationAdminAccount">REST API Reference for DisableOrganizationAdminAccount Operation</seealso>
         public virtual DisableOrganizationAdminAccountResponse EndDisableOrganizationAdminAccount(IAsyncResult asyncResult)
         {
             return EndInvoke<DisableOrganizationAdminAccountResponse>(asyncResult);
@@ -1811,7 +1811,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
         public virtual DisassociateFromMasterAccountResponse DisassociateFromMasterAccount(DisassociateFromMasterAccountRequest request)
         {
             var options = new InvokeOptions();
@@ -1832,7 +1832,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateFromMasterAccount
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
         public virtual IAsyncResult BeginDisassociateFromMasterAccount(DisassociateFromMasterAccountRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1849,7 +1849,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateFromMasterAccount.</param>
         /// 
         /// <returns>Returns a  DisassociateFromMasterAccountResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
         public virtual DisassociateFromMasterAccountResponse EndDisassociateFromMasterAccount(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateFromMasterAccountResponse>(asyncResult);
@@ -1892,7 +1892,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisassociateMember">REST API Reference for DisassociateMember Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateMember">REST API Reference for DisassociateMember Operation</seealso>
         public virtual DisassociateMemberResponse DisassociateMember(DisassociateMemberRequest request)
         {
             var options = new InvokeOptions();
@@ -1913,7 +1913,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateMember
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisassociateMember">REST API Reference for DisassociateMember Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateMember">REST API Reference for DisassociateMember Operation</seealso>
         public virtual IAsyncResult BeginDisassociateMember(DisassociateMemberRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1930,7 +1930,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateMember.</param>
         /// 
         /// <returns>Returns a  DisassociateMemberResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisassociateMember">REST API Reference for DisassociateMember Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateMember">REST API Reference for DisassociateMember Operation</seealso>
         public virtual DisassociateMemberResponse EndDisassociateMember(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateMemberResponse>(asyncResult);
@@ -1973,7 +1973,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/EnableMacie">REST API Reference for EnableMacie Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableMacie">REST API Reference for EnableMacie Operation</seealso>
         public virtual EnableMacieResponse EnableMacie(EnableMacieRequest request)
         {
             var options = new InvokeOptions();
@@ -1994,7 +1994,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableMacie
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/EnableMacie">REST API Reference for EnableMacie Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableMacie">REST API Reference for EnableMacie Operation</seealso>
         public virtual IAsyncResult BeginEnableMacie(EnableMacieRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2011,7 +2011,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableMacie.</param>
         /// 
         /// <returns>Returns a  EnableMacieResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/EnableMacie">REST API Reference for EnableMacie Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableMacie">REST API Reference for EnableMacie Operation</seealso>
         public virtual EnableMacieResponse EndEnableMacie(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableMacieResponse>(asyncResult);
@@ -2054,7 +2054,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/EnableOrganizationAdminAccount">REST API Reference for EnableOrganizationAdminAccount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableOrganizationAdminAccount">REST API Reference for EnableOrganizationAdminAccount Operation</seealso>
         public virtual EnableOrganizationAdminAccountResponse EnableOrganizationAdminAccount(EnableOrganizationAdminAccountRequest request)
         {
             var options = new InvokeOptions();
@@ -2075,7 +2075,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableOrganizationAdminAccount
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/EnableOrganizationAdminAccount">REST API Reference for EnableOrganizationAdminAccount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableOrganizationAdminAccount">REST API Reference for EnableOrganizationAdminAccount Operation</seealso>
         public virtual IAsyncResult BeginEnableOrganizationAdminAccount(EnableOrganizationAdminAccountRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2092,7 +2092,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableOrganizationAdminAccount.</param>
         /// 
         /// <returns>Returns a  EnableOrganizationAdminAccountResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/EnableOrganizationAdminAccount">REST API Reference for EnableOrganizationAdminAccount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableOrganizationAdminAccount">REST API Reference for EnableOrganizationAdminAccount Operation</seealso>
         public virtual EnableOrganizationAdminAccountResponse EndEnableOrganizationAdminAccount(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableOrganizationAdminAccountResponse>(asyncResult);
@@ -2136,7 +2136,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetBucketStatistics">REST API Reference for GetBucketStatistics Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetBucketStatistics">REST API Reference for GetBucketStatistics Operation</seealso>
         public virtual GetBucketStatisticsResponse GetBucketStatistics(GetBucketStatisticsRequest request)
         {
             var options = new InvokeOptions();
@@ -2157,7 +2157,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketStatistics
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetBucketStatistics">REST API Reference for GetBucketStatistics Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetBucketStatistics">REST API Reference for GetBucketStatistics Operation</seealso>
         public virtual IAsyncResult BeginGetBucketStatistics(GetBucketStatisticsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2174,7 +2174,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketStatistics.</param>
         /// 
         /// <returns>Returns a  GetBucketStatisticsResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetBucketStatistics">REST API Reference for GetBucketStatistics Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetBucketStatistics">REST API Reference for GetBucketStatistics Operation</seealso>
         public virtual GetBucketStatisticsResponse EndGetBucketStatistics(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketStatisticsResponse>(asyncResult);
@@ -2217,7 +2217,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetClassificationExportConfiguration">REST API Reference for GetClassificationExportConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationExportConfiguration">REST API Reference for GetClassificationExportConfiguration Operation</seealso>
         public virtual GetClassificationExportConfigurationResponse GetClassificationExportConfiguration(GetClassificationExportConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -2238,7 +2238,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetClassificationExportConfiguration
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetClassificationExportConfiguration">REST API Reference for GetClassificationExportConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationExportConfiguration">REST API Reference for GetClassificationExportConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetClassificationExportConfiguration(GetClassificationExportConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2255,7 +2255,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetClassificationExportConfiguration.</param>
         /// 
         /// <returns>Returns a  GetClassificationExportConfigurationResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetClassificationExportConfiguration">REST API Reference for GetClassificationExportConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationExportConfiguration">REST API Reference for GetClassificationExportConfiguration Operation</seealso>
         public virtual GetClassificationExportConfigurationResponse EndGetClassificationExportConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetClassificationExportConfigurationResponse>(asyncResult);
@@ -2298,7 +2298,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetCustomDataIdentifier">REST API Reference for GetCustomDataIdentifier Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetCustomDataIdentifier">REST API Reference for GetCustomDataIdentifier Operation</seealso>
         public virtual GetCustomDataIdentifierResponse GetCustomDataIdentifier(GetCustomDataIdentifierRequest request)
         {
             var options = new InvokeOptions();
@@ -2319,7 +2319,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCustomDataIdentifier
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetCustomDataIdentifier">REST API Reference for GetCustomDataIdentifier Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetCustomDataIdentifier">REST API Reference for GetCustomDataIdentifier Operation</seealso>
         public virtual IAsyncResult BeginGetCustomDataIdentifier(GetCustomDataIdentifierRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2336,7 +2336,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCustomDataIdentifier.</param>
         /// 
         /// <returns>Returns a  GetCustomDataIdentifierResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetCustomDataIdentifier">REST API Reference for GetCustomDataIdentifier Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetCustomDataIdentifier">REST API Reference for GetCustomDataIdentifier Operation</seealso>
         public virtual GetCustomDataIdentifierResponse EndGetCustomDataIdentifier(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCustomDataIdentifierResponse>(asyncResult);
@@ -2379,7 +2379,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindings">REST API Reference for GetFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindings">REST API Reference for GetFindings Operation</seealso>
         public virtual GetFindingsResponse GetFindings(GetFindingsRequest request)
         {
             var options = new InvokeOptions();
@@ -2400,7 +2400,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFindings
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindings">REST API Reference for GetFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindings">REST API Reference for GetFindings Operation</seealso>
         public virtual IAsyncResult BeginGetFindings(GetFindingsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2417,7 +2417,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFindings.</param>
         /// 
         /// <returns>Returns a  GetFindingsResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindings">REST API Reference for GetFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindings">REST API Reference for GetFindings Operation</seealso>
         public virtual GetFindingsResponse EndGetFindings(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFindingsResponse>(asyncResult);
@@ -2460,7 +2460,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindingsFilter">REST API Reference for GetFindingsFilter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsFilter">REST API Reference for GetFindingsFilter Operation</seealso>
         public virtual GetFindingsFilterResponse GetFindingsFilter(GetFindingsFilterRequest request)
         {
             var options = new InvokeOptions();
@@ -2481,7 +2481,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFindingsFilter
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindingsFilter">REST API Reference for GetFindingsFilter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsFilter">REST API Reference for GetFindingsFilter Operation</seealso>
         public virtual IAsyncResult BeginGetFindingsFilter(GetFindingsFilterRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2498,7 +2498,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFindingsFilter.</param>
         /// 
         /// <returns>Returns a  GetFindingsFilterResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindingsFilter">REST API Reference for GetFindingsFilter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsFilter">REST API Reference for GetFindingsFilter Operation</seealso>
         public virtual GetFindingsFilterResponse EndGetFindingsFilter(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFindingsFilterResponse>(asyncResult);
@@ -2541,7 +2541,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindingStatistics">REST API Reference for GetFindingStatistics Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingStatistics">REST API Reference for GetFindingStatistics Operation</seealso>
         public virtual GetFindingStatisticsResponse GetFindingStatistics(GetFindingStatisticsRequest request)
         {
             var options = new InvokeOptions();
@@ -2562,7 +2562,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFindingStatistics
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindingStatistics">REST API Reference for GetFindingStatistics Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingStatistics">REST API Reference for GetFindingStatistics Operation</seealso>
         public virtual IAsyncResult BeginGetFindingStatistics(GetFindingStatisticsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2579,7 +2579,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFindingStatistics.</param>
         /// 
         /// <returns>Returns a  GetFindingStatisticsResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindingStatistics">REST API Reference for GetFindingStatistics Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingStatistics">REST API Reference for GetFindingStatistics Operation</seealso>
         public virtual GetFindingStatisticsResponse EndGetFindingStatistics(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFindingStatisticsResponse>(asyncResult);
@@ -2623,7 +2623,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
         public virtual GetInvitationsCountResponse GetInvitationsCount(GetInvitationsCountRequest request)
         {
             var options = new InvokeOptions();
@@ -2644,7 +2644,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInvitationsCount
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
         public virtual IAsyncResult BeginGetInvitationsCount(GetInvitationsCountRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2661,7 +2661,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInvitationsCount.</param>
         /// 
         /// <returns>Returns a  GetInvitationsCountResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
         public virtual GetInvitationsCountResponse EndGetInvitationsCount(IAsyncResult asyncResult)
         {
             return EndInvoke<GetInvitationsCountResponse>(asyncResult);
@@ -2705,7 +2705,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMacieSession">REST API Reference for GetMacieSession Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMacieSession">REST API Reference for GetMacieSession Operation</seealso>
         public virtual GetMacieSessionResponse GetMacieSession(GetMacieSessionRequest request)
         {
             var options = new InvokeOptions();
@@ -2726,7 +2726,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMacieSession
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMacieSession">REST API Reference for GetMacieSession Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMacieSession">REST API Reference for GetMacieSession Operation</seealso>
         public virtual IAsyncResult BeginGetMacieSession(GetMacieSessionRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2743,7 +2743,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMacieSession.</param>
         /// 
         /// <returns>Returns a  GetMacieSessionResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMacieSession">REST API Reference for GetMacieSession Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMacieSession">REST API Reference for GetMacieSession Operation</seealso>
         public virtual GetMacieSessionResponse EndGetMacieSession(IAsyncResult asyncResult)
         {
             return EndInvoke<GetMacieSessionResponse>(asyncResult);
@@ -2786,7 +2786,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
         public virtual GetMasterAccountResponse GetMasterAccount(GetMasterAccountRequest request)
         {
             var options = new InvokeOptions();
@@ -2807,7 +2807,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMasterAccount
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
         public virtual IAsyncResult BeginGetMasterAccount(GetMasterAccountRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2824,7 +2824,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMasterAccount.</param>
         /// 
         /// <returns>Returns a  GetMasterAccountResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
         public virtual GetMasterAccountResponse EndGetMasterAccount(IAsyncResult asyncResult)
         {
             return EndInvoke<GetMasterAccountResponse>(asyncResult);
@@ -2868,7 +2868,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMember">REST API Reference for GetMember Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMember">REST API Reference for GetMember Operation</seealso>
         public virtual GetMemberResponse GetMember(GetMemberRequest request)
         {
             var options = new InvokeOptions();
@@ -2889,7 +2889,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMember
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMember">REST API Reference for GetMember Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMember">REST API Reference for GetMember Operation</seealso>
         public virtual IAsyncResult BeginGetMember(GetMemberRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2906,7 +2906,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMember.</param>
         /// 
         /// <returns>Returns a  GetMemberResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMember">REST API Reference for GetMember Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMember">REST API Reference for GetMember Operation</seealso>
         public virtual GetMemberResponse EndGetMember(IAsyncResult asyncResult)
         {
             return EndInvoke<GetMemberResponse>(asyncResult);
@@ -2949,7 +2949,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetUsageStatistics">REST API Reference for GetUsageStatistics Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageStatistics">REST API Reference for GetUsageStatistics Operation</seealso>
         public virtual GetUsageStatisticsResponse GetUsageStatistics(GetUsageStatisticsRequest request)
         {
             var options = new InvokeOptions();
@@ -2970,7 +2970,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsageStatistics
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetUsageStatistics">REST API Reference for GetUsageStatistics Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageStatistics">REST API Reference for GetUsageStatistics Operation</seealso>
         public virtual IAsyncResult BeginGetUsageStatistics(GetUsageStatisticsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2987,7 +2987,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsageStatistics.</param>
         /// 
         /// <returns>Returns a  GetUsageStatisticsResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetUsageStatistics">REST API Reference for GetUsageStatistics Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageStatistics">REST API Reference for GetUsageStatistics Operation</seealso>
         public virtual GetUsageStatisticsResponse EndGetUsageStatistics(IAsyncResult asyncResult)
         {
             return EndInvoke<GetUsageStatisticsResponse>(asyncResult);
@@ -3030,7 +3030,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetUsageTotals">REST API Reference for GetUsageTotals Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageTotals">REST API Reference for GetUsageTotals Operation</seealso>
         public virtual GetUsageTotalsResponse GetUsageTotals(GetUsageTotalsRequest request)
         {
             var options = new InvokeOptions();
@@ -3051,7 +3051,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsageTotals
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetUsageTotals">REST API Reference for GetUsageTotals Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageTotals">REST API Reference for GetUsageTotals Operation</seealso>
         public virtual IAsyncResult BeginGetUsageTotals(GetUsageTotalsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3068,7 +3068,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsageTotals.</param>
         /// 
         /// <returns>Returns a  GetUsageTotalsResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetUsageTotals">REST API Reference for GetUsageTotals Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageTotals">REST API Reference for GetUsageTotals Operation</seealso>
         public virtual GetUsageTotalsResponse EndGetUsageTotals(IAsyncResult asyncResult)
         {
             return EndInvoke<GetUsageTotalsResponse>(asyncResult);
@@ -3112,7 +3112,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListClassificationJobs">REST API Reference for ListClassificationJobs Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationJobs">REST API Reference for ListClassificationJobs Operation</seealso>
         public virtual ListClassificationJobsResponse ListClassificationJobs(ListClassificationJobsRequest request)
         {
             var options = new InvokeOptions();
@@ -3133,7 +3133,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClassificationJobs
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListClassificationJobs">REST API Reference for ListClassificationJobs Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationJobs">REST API Reference for ListClassificationJobs Operation</seealso>
         public virtual IAsyncResult BeginListClassificationJobs(ListClassificationJobsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3150,7 +3150,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClassificationJobs.</param>
         /// 
         /// <returns>Returns a  ListClassificationJobsResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListClassificationJobs">REST API Reference for ListClassificationJobs Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationJobs">REST API Reference for ListClassificationJobs Operation</seealso>
         public virtual ListClassificationJobsResponse EndListClassificationJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListClassificationJobsResponse>(asyncResult);
@@ -3193,7 +3193,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListCustomDataIdentifiers">REST API Reference for ListCustomDataIdentifiers Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListCustomDataIdentifiers">REST API Reference for ListCustomDataIdentifiers Operation</seealso>
         public virtual ListCustomDataIdentifiersResponse ListCustomDataIdentifiers(ListCustomDataIdentifiersRequest request)
         {
             var options = new InvokeOptions();
@@ -3214,7 +3214,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCustomDataIdentifiers
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListCustomDataIdentifiers">REST API Reference for ListCustomDataIdentifiers Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListCustomDataIdentifiers">REST API Reference for ListCustomDataIdentifiers Operation</seealso>
         public virtual IAsyncResult BeginListCustomDataIdentifiers(ListCustomDataIdentifiersRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3231,7 +3231,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCustomDataIdentifiers.</param>
         /// 
         /// <returns>Returns a  ListCustomDataIdentifiersResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListCustomDataIdentifiers">REST API Reference for ListCustomDataIdentifiers Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListCustomDataIdentifiers">REST API Reference for ListCustomDataIdentifiers Operation</seealso>
         public virtual ListCustomDataIdentifiersResponse EndListCustomDataIdentifiers(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCustomDataIdentifiersResponse>(asyncResult);
@@ -3274,7 +3274,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListFindings">REST API Reference for ListFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindings">REST API Reference for ListFindings Operation</seealso>
         public virtual ListFindingsResponse ListFindings(ListFindingsRequest request)
         {
             var options = new InvokeOptions();
@@ -3295,7 +3295,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFindings
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListFindings">REST API Reference for ListFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindings">REST API Reference for ListFindings Operation</seealso>
         public virtual IAsyncResult BeginListFindings(ListFindingsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3312,7 +3312,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFindings.</param>
         /// 
         /// <returns>Returns a  ListFindingsResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListFindings">REST API Reference for ListFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindings">REST API Reference for ListFindings Operation</seealso>
         public virtual ListFindingsResponse EndListFindings(IAsyncResult asyncResult)
         {
             return EndInvoke<ListFindingsResponse>(asyncResult);
@@ -3355,7 +3355,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListFindingsFilters">REST API Reference for ListFindingsFilters Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindingsFilters">REST API Reference for ListFindingsFilters Operation</seealso>
         public virtual ListFindingsFiltersResponse ListFindingsFilters(ListFindingsFiltersRequest request)
         {
             var options = new InvokeOptions();
@@ -3376,7 +3376,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFindingsFilters
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListFindingsFilters">REST API Reference for ListFindingsFilters Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindingsFilters">REST API Reference for ListFindingsFilters Operation</seealso>
         public virtual IAsyncResult BeginListFindingsFilters(ListFindingsFiltersRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3393,7 +3393,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFindingsFilters.</param>
         /// 
         /// <returns>Returns a  ListFindingsFiltersResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListFindingsFilters">REST API Reference for ListFindingsFilters Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindingsFilters">REST API Reference for ListFindingsFilters Operation</seealso>
         public virtual ListFindingsFiltersResponse EndListFindingsFilters(IAsyncResult asyncResult)
         {
             return EndInvoke<ListFindingsFiltersResponse>(asyncResult);
@@ -3437,7 +3437,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         public virtual ListInvitationsResponse ListInvitations(ListInvitationsRequest request)
         {
             var options = new InvokeOptions();
@@ -3458,7 +3458,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInvitations
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         public virtual IAsyncResult BeginListInvitations(ListInvitationsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3475,7 +3475,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInvitations.</param>
         /// 
         /// <returns>Returns a  ListInvitationsResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         public virtual ListInvitationsResponse EndListInvitations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListInvitationsResponse>(asyncResult);
@@ -3519,7 +3519,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListMembers">REST API Reference for ListMembers Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListMembers">REST API Reference for ListMembers Operation</seealso>
         public virtual ListMembersResponse ListMembers(ListMembersRequest request)
         {
             var options = new InvokeOptions();
@@ -3540,7 +3540,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMembers
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListMembers">REST API Reference for ListMembers Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListMembers">REST API Reference for ListMembers Operation</seealso>
         public virtual IAsyncResult BeginListMembers(ListMembersRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3557,7 +3557,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMembers.</param>
         /// 
         /// <returns>Returns a  ListMembersResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListMembers">REST API Reference for ListMembers Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListMembers">REST API Reference for ListMembers Operation</seealso>
         public virtual ListMembersResponse EndListMembers(IAsyncResult asyncResult)
         {
             return EndInvoke<ListMembersResponse>(asyncResult);
@@ -3601,7 +3601,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListOrganizationAdminAccounts">REST API Reference for ListOrganizationAdminAccounts Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListOrganizationAdminAccounts">REST API Reference for ListOrganizationAdminAccounts Operation</seealso>
         public virtual ListOrganizationAdminAccountsResponse ListOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request)
         {
             var options = new InvokeOptions();
@@ -3622,7 +3622,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOrganizationAdminAccounts
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListOrganizationAdminAccounts">REST API Reference for ListOrganizationAdminAccounts Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListOrganizationAdminAccounts">REST API Reference for ListOrganizationAdminAccounts Operation</seealso>
         public virtual IAsyncResult BeginListOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3639,7 +3639,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOrganizationAdminAccounts.</param>
         /// 
         /// <returns>Returns a  ListOrganizationAdminAccountsResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListOrganizationAdminAccounts">REST API Reference for ListOrganizationAdminAccounts Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListOrganizationAdminAccounts">REST API Reference for ListOrganizationAdminAccounts Operation</seealso>
         public virtual ListOrganizationAdminAccountsResponse EndListOrganizationAdminAccounts(IAsyncResult asyncResult)
         {
             return EndInvoke<ListOrganizationAdminAccountsResponse>(asyncResult);
@@ -3656,7 +3656,7 @@ namespace Amazon.Macie2
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -3677,7 +3677,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3694,7 +3694,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
@@ -3737,7 +3737,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/PutClassificationExportConfiguration">REST API Reference for PutClassificationExportConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutClassificationExportConfiguration">REST API Reference for PutClassificationExportConfiguration Operation</seealso>
         public virtual PutClassificationExportConfigurationResponse PutClassificationExportConfiguration(PutClassificationExportConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -3758,7 +3758,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutClassificationExportConfiguration
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/PutClassificationExportConfiguration">REST API Reference for PutClassificationExportConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutClassificationExportConfiguration">REST API Reference for PutClassificationExportConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutClassificationExportConfiguration(PutClassificationExportConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3775,7 +3775,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutClassificationExportConfiguration.</param>
         /// 
         /// <returns>Returns a  PutClassificationExportConfigurationResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/PutClassificationExportConfiguration">REST API Reference for PutClassificationExportConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutClassificationExportConfiguration">REST API Reference for PutClassificationExportConfiguration Operation</seealso>
         public virtual PutClassificationExportConfigurationResponse EndPutClassificationExportConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutClassificationExportConfigurationResponse>(asyncResult);
@@ -3792,7 +3792,7 @@ namespace Amazon.Macie2
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TagResource">REST API Reference for TagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -3813,7 +3813,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TagResource">REST API Reference for TagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3830,7 +3830,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
         /// 
         /// <returns>Returns a  TagResourceResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TagResource">REST API Reference for TagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<TagResourceResponse>(asyncResult);
@@ -3873,7 +3873,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TestCustomDataIdentifier">REST API Reference for TestCustomDataIdentifier Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TestCustomDataIdentifier">REST API Reference for TestCustomDataIdentifier Operation</seealso>
         public virtual TestCustomDataIdentifierResponse TestCustomDataIdentifier(TestCustomDataIdentifierRequest request)
         {
             var options = new InvokeOptions();
@@ -3894,7 +3894,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestCustomDataIdentifier
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TestCustomDataIdentifier">REST API Reference for TestCustomDataIdentifier Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TestCustomDataIdentifier">REST API Reference for TestCustomDataIdentifier Operation</seealso>
         public virtual IAsyncResult BeginTestCustomDataIdentifier(TestCustomDataIdentifierRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3911,7 +3911,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTestCustomDataIdentifier.</param>
         /// 
         /// <returns>Returns a  TestCustomDataIdentifierResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TestCustomDataIdentifier">REST API Reference for TestCustomDataIdentifier Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TestCustomDataIdentifier">REST API Reference for TestCustomDataIdentifier Operation</seealso>
         public virtual TestCustomDataIdentifierResponse EndTestCustomDataIdentifier(IAsyncResult asyncResult)
         {
             return EndInvoke<TestCustomDataIdentifierResponse>(asyncResult);
@@ -3954,7 +3954,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UnarchiveFindings">REST API Reference for UnarchiveFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings">REST API Reference for UnarchiveFindings Operation</seealso>
         public virtual UnarchiveFindingsResponse UnarchiveFindings(UnarchiveFindingsRequest request)
         {
             var options = new InvokeOptions();
@@ -3975,7 +3975,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnarchiveFindings
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UnarchiveFindings">REST API Reference for UnarchiveFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings">REST API Reference for UnarchiveFindings Operation</seealso>
         public virtual IAsyncResult BeginUnarchiveFindings(UnarchiveFindingsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3992,7 +3992,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnarchiveFindings.</param>
         /// 
         /// <returns>Returns a  UnarchiveFindingsResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UnarchiveFindings">REST API Reference for UnarchiveFindings Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings">REST API Reference for UnarchiveFindings Operation</seealso>
         public virtual UnarchiveFindingsResponse EndUnarchiveFindings(IAsyncResult asyncResult)
         {
             return EndInvoke<UnarchiveFindingsResponse>(asyncResult);
@@ -4009,7 +4009,7 @@ namespace Amazon.Macie2
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -4030,7 +4030,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4047,7 +4047,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
         /// 
         /// <returns>Returns a  UntagResourceResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
@@ -4090,7 +4090,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateClassificationJob">REST API Reference for UpdateClassificationJob Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationJob">REST API Reference for UpdateClassificationJob Operation</seealso>
         public virtual UpdateClassificationJobResponse UpdateClassificationJob(UpdateClassificationJobRequest request)
         {
             var options = new InvokeOptions();
@@ -4111,7 +4111,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateClassificationJob
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateClassificationJob">REST API Reference for UpdateClassificationJob Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationJob">REST API Reference for UpdateClassificationJob Operation</seealso>
         public virtual IAsyncResult BeginUpdateClassificationJob(UpdateClassificationJobRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4128,7 +4128,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateClassificationJob.</param>
         /// 
         /// <returns>Returns a  UpdateClassificationJobResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateClassificationJob">REST API Reference for UpdateClassificationJob Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationJob">REST API Reference for UpdateClassificationJob Operation</seealso>
         public virtual UpdateClassificationJobResponse EndUpdateClassificationJob(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateClassificationJobResponse>(asyncResult);
@@ -4171,7 +4171,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateFindingsFilter">REST API Reference for UpdateFindingsFilter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateFindingsFilter">REST API Reference for UpdateFindingsFilter Operation</seealso>
         public virtual UpdateFindingsFilterResponse UpdateFindingsFilter(UpdateFindingsFilterRequest request)
         {
             var options = new InvokeOptions();
@@ -4192,7 +4192,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFindingsFilter
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateFindingsFilter">REST API Reference for UpdateFindingsFilter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateFindingsFilter">REST API Reference for UpdateFindingsFilter Operation</seealso>
         public virtual IAsyncResult BeginUpdateFindingsFilter(UpdateFindingsFilterRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4209,7 +4209,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFindingsFilter.</param>
         /// 
         /// <returns>Returns a  UpdateFindingsFilterResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateFindingsFilter">REST API Reference for UpdateFindingsFilter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateFindingsFilter">REST API Reference for UpdateFindingsFilter Operation</seealso>
         public virtual UpdateFindingsFilterResponse EndUpdateFindingsFilter(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateFindingsFilterResponse>(asyncResult);
@@ -4253,7 +4253,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateMacieSession">REST API Reference for UpdateMacieSession Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMacieSession">REST API Reference for UpdateMacieSession Operation</seealso>
         public virtual UpdateMacieSessionResponse UpdateMacieSession(UpdateMacieSessionRequest request)
         {
             var options = new InvokeOptions();
@@ -4274,7 +4274,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMacieSession
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateMacieSession">REST API Reference for UpdateMacieSession Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMacieSession">REST API Reference for UpdateMacieSession Operation</seealso>
         public virtual IAsyncResult BeginUpdateMacieSession(UpdateMacieSessionRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4291,7 +4291,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMacieSession.</param>
         /// 
         /// <returns>Returns a  UpdateMacieSessionResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateMacieSession">REST API Reference for UpdateMacieSession Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMacieSession">REST API Reference for UpdateMacieSession Operation</seealso>
         public virtual UpdateMacieSessionResponse EndUpdateMacieSession(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateMacieSessionResponse>(asyncResult);
@@ -4334,7 +4334,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateMemberSession">REST API Reference for UpdateMemberSession Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMemberSession">REST API Reference for UpdateMemberSession Operation</seealso>
         public virtual UpdateMemberSessionResponse UpdateMemberSession(UpdateMemberSessionRequest request)
         {
             var options = new InvokeOptions();
@@ -4355,7 +4355,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMemberSession
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateMemberSession">REST API Reference for UpdateMemberSession Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMemberSession">REST API Reference for UpdateMemberSession Operation</seealso>
         public virtual IAsyncResult BeginUpdateMemberSession(UpdateMemberSessionRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4372,7 +4372,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMemberSession.</param>
         /// 
         /// <returns>Returns a  UpdateMemberSessionResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateMemberSession">REST API Reference for UpdateMemberSession Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMemberSession">REST API Reference for UpdateMemberSession Operation</seealso>
         public virtual UpdateMemberSessionResponse EndUpdateMemberSession(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateMemberSessionResponse>(asyncResult);
@@ -4415,7 +4415,7 @@ namespace Amazon.Macie2
         /// <exception cref="Amazon.Macie2.Model.ValidationException">
         /// Provides information about an error that occurred due to a syntax error in a request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
         public virtual UpdateOrganizationConfigurationResponse UpdateOrganizationConfiguration(UpdateOrganizationConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -4436,7 +4436,7 @@ namespace Amazon.Macie2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateOrganizationConfiguration
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateOrganizationConfiguration(UpdateOrganizationConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4453,7 +4453,7 @@ namespace Amazon.Macie2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateOrganizationConfiguration.</param>
         /// 
         /// <returns>Returns a  UpdateOrganizationConfigurationResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
         public virtual UpdateOrganizationConfigurationResponse EndUpdateOrganizationConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateOrganizationConfigurationResponse>(asyncResult);
