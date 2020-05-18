@@ -38,6 +38,7 @@ namespace Amazon.ECS.Model
         private List<string> _command = new List<string>();
         private int? _cpu;
         private List<KeyValuePair> _environment = new List<KeyValuePair>();
+        private List<EnvironmentFile> _environmentFiles = new List<EnvironmentFile>();
         private int? _memory;
         private int? _memoryReservation;
         private string _name;
@@ -100,6 +101,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetEnvironment()
         {
             return this._environment != null && this._environment.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentFiles. 
+        /// <para>
+        /// A list of files containing the environment variables to pass to a container, instead
+        /// of the value from the container definition.
+        /// </para>
+        /// </summary>
+        public List<EnvironmentFile> EnvironmentFiles
+        {
+            get { return this._environmentFiles; }
+            set { this._environmentFiles = value; }
+        }
+
+        // Check to see if EnvironmentFiles property is set
+        internal bool IsSetEnvironmentFiles()
+        {
+            return this._environmentFiles != null && this._environmentFiles.Count > 0; 
         }
 
         /// <summary>

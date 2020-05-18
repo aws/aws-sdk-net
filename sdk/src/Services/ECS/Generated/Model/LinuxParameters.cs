@@ -48,8 +48,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you are using tasks that use the Fargate launch type, <code>capabilities</code>
-        /// is supported but the <code>add</code> parameter is not supported.
+        /// For tasks that use the Fargate launch type, <code>capabilities</code> is supported
+        /// for all platform versions but the <code>add</code> parameter is only supported if
+        /// using platform version 1.4.0 or later.
         /// </para>
         ///  </note>
         /// </summary>
