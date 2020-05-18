@@ -44,6 +44,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("QLDB")]
+        public void CancelJournalKinesisStreamMarshallTest()
+        {
+            var operation = service_model.FindOperation("CancelJournalKinesisStream");
+
+            var request = InstantiateClassGenerator.Execute<CancelJournalKinesisStreamRequest>();
+            var marshaller = new CancelJournalKinesisStreamRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CancelJournalKinesisStream", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CancelJournalKinesisStreamResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CancelJournalKinesisStreamResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("QLDB")]
         public void CreateLedgerMarshallTest()
         {
             var operation = service_model.FindOperation("CreateLedger");
@@ -86,6 +118,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("DeleteLedger", request, internalRequest, service_model);            
 
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("QLDB")]
+        public void DescribeJournalKinesisStreamMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeJournalKinesisStream");
+
+            var request = InstantiateClassGenerator.Execute<DescribeJournalKinesisStreamRequest>();
+            var marshaller = new DescribeJournalKinesisStreamRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DescribeJournalKinesisStream", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DescribeJournalKinesisStreamResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DescribeJournalKinesisStreamResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
         
@@ -285,6 +349,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("QLDB")]
+        public void ListJournalKinesisStreamsForLedgerMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListJournalKinesisStreamsForLedger");
+
+            var request = InstantiateClassGenerator.Execute<ListJournalKinesisStreamsForLedgerRequest>();
+            var marshaller = new ListJournalKinesisStreamsForLedgerRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListJournalKinesisStreamsForLedger", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListJournalKinesisStreamsForLedgerResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListJournalKinesisStreamsForLedgerResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("QLDB")]
         public void ListJournalS3ExportsMarshallTest()
         {
             var operation = service_model.FindOperation("ListJournalS3Exports");
@@ -405,6 +501,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListTagsForResourceResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("QLDB")]
+        public void StreamJournalToKinesisMarshallTest()
+        {
+            var operation = service_model.FindOperation("StreamJournalToKinesis");
+
+            var request = InstantiateClassGenerator.Execute<StreamJournalToKinesisRequest>();
+            var marshaller = new StreamJournalToKinesisRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StreamJournalToKinesis", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = StreamJournalToKinesisResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as StreamJournalToKinesisResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

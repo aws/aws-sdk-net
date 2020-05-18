@@ -37,6 +37,68 @@ namespace Amazon.QLDB
     {
 
         
+        #region  CancelJournalKinesisStream
+
+
+        /// <summary>
+        /// Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its current
+        /// status must be <code>ACTIVE</code>.
+        /// 
+        ///  
+        /// <para>
+        /// You can't restart a stream after you cancel it. Canceled QLDB stream resources are
+        /// subject to a 7-day retention period, so they are automatically deleted after this
+        /// limit expires.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelJournalKinesisStream service method.</param>
+        /// 
+        /// <returns>The response from the CancelJournalKinesisStream service method, as returned by QLDB.</returns>
+        /// <exception cref="Amazon.QLDB.Model.InvalidParameterException">
+        /// One or more parameters in the request aren't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+        /// The operation failed because a condition wasn't satisfied in advance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CancelJournalKinesisStream">REST API Reference for CancelJournalKinesisStream Operation</seealso>
+        CancelJournalKinesisStreamResponse CancelJournalKinesisStream(CancelJournalKinesisStreamRequest request);
+
+
+
+        /// <summary>
+        /// Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its current
+        /// status must be <code>ACTIVE</code>.
+        /// 
+        ///  
+        /// <para>
+        /// You can't restart a stream after you cancel it. Canceled QLDB stream resources are
+        /// subject to a 7-day retention period, so they are automatically deleted after this
+        /// limit expires.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelJournalKinesisStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelJournalKinesisStream service method, as returned by QLDB.</returns>
+        /// <exception cref="Amazon.QLDB.Model.InvalidParameterException">
+        /// One or more parameters in the request aren't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+        /// The operation failed because a condition wasn't satisfied in advance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CancelJournalKinesisStream">REST API Reference for CancelJournalKinesisStream Operation</seealso>
+        Task<CancelJournalKinesisStreamResponse> CancelJournalKinesisStreamAsync(CancelJournalKinesisStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateLedger
 
 
@@ -159,6 +221,56 @@ namespace Amazon.QLDB
 
         #endregion
         
+        #region  DescribeJournalKinesisStream
+
+
+        /// <summary>
+        /// Returns detailed information about a given Amazon QLDB journal stream. The output
+        /// includes the Amazon Resource Name (ARN), stream name, current status, creation time,
+        /// and the parameters of your original stream creation request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJournalKinesisStream service method.</param>
+        /// 
+        /// <returns>The response from the DescribeJournalKinesisStream service method, as returned by QLDB.</returns>
+        /// <exception cref="Amazon.QLDB.Model.InvalidParameterException">
+        /// One or more parameters in the request aren't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+        /// The operation failed because a condition wasn't satisfied in advance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalKinesisStream">REST API Reference for DescribeJournalKinesisStream Operation</seealso>
+        DescribeJournalKinesisStreamResponse DescribeJournalKinesisStream(DescribeJournalKinesisStreamRequest request);
+
+
+
+        /// <summary>
+        /// Returns detailed information about a given Amazon QLDB journal stream. The output
+        /// includes the Amazon Resource Name (ARN), stream name, current status, creation time,
+        /// and the parameters of your original stream creation request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJournalKinesisStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeJournalKinesisStream service method, as returned by QLDB.</returns>
+        /// <exception cref="Amazon.QLDB.Model.InvalidParameterException">
+        /// One or more parameters in the request aren't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+        /// The operation failed because a condition wasn't satisfied in advance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalKinesisStream">REST API Reference for DescribeJournalKinesisStream Operation</seealso>
+        Task<DescribeJournalKinesisStreamResponse> DescribeJournalKinesisStreamAsync(DescribeJournalKinesisStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeJournalS3Export
 
 
@@ -166,6 +278,12 @@ namespace Amazon.QLDB
         /// Returns information about a journal export job, including the ledger name, export
         /// ID, when it was created, current status, and its start and end time export parameters.
         /// 
+        ///  
+        /// <para>
+        /// This action does not return any expired export jobs. For more information, see <a
+        /// href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
+        /// Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
+        /// </para>
         ///  
         /// <para>
         /// If the export job with the given <code>ExportId</code> doesn't exist, then throws
@@ -191,6 +309,12 @@ namespace Amazon.QLDB
         /// Returns information about a journal export job, including the ledger name, export
         /// ID, when it was created, current status, and its start and end time export parameters.
         /// 
+        ///  
+        /// <para>
+        /// This action does not return any expired export jobs. For more information, see <a
+        /// href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
+        /// Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
+        /// </para>
         ///  
         /// <para>
         /// If the export job with the given <code>ExportId</code> doesn't exist, then throws
@@ -505,6 +629,70 @@ namespace Amazon.QLDB
 
         #endregion
         
+        #region  ListJournalKinesisStreamsForLedger
+
+
+        /// <summary>
+        /// Returns an array of all Amazon QLDB journal stream descriptors for a given ledger.
+        /// The output of each stream descriptor includes the same details that are returned by
+        /// <code>DescribeJournalKinesisStream</code>.
+        /// 
+        ///  
+        /// <para>
+        /// This action returns a maximum of <code>MaxResults</code> items. It is paginated so
+        /// that you can retrieve all the items by calling <code>ListJournalKinesisStreamsForLedger</code>
+        /// multiple times.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJournalKinesisStreamsForLedger service method.</param>
+        /// 
+        /// <returns>The response from the ListJournalKinesisStreamsForLedger service method, as returned by QLDB.</returns>
+        /// <exception cref="Amazon.QLDB.Model.InvalidParameterException">
+        /// One or more parameters in the request aren't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+        /// The operation failed because a condition wasn't satisfied in advance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalKinesisStreamsForLedger">REST API Reference for ListJournalKinesisStreamsForLedger Operation</seealso>
+        ListJournalKinesisStreamsForLedgerResponse ListJournalKinesisStreamsForLedger(ListJournalKinesisStreamsForLedgerRequest request);
+
+
+
+        /// <summary>
+        /// Returns an array of all Amazon QLDB journal stream descriptors for a given ledger.
+        /// The output of each stream descriptor includes the same details that are returned by
+        /// <code>DescribeJournalKinesisStream</code>.
+        /// 
+        ///  
+        /// <para>
+        /// This action returns a maximum of <code>MaxResults</code> items. It is paginated so
+        /// that you can retrieve all the items by calling <code>ListJournalKinesisStreamsForLedger</code>
+        /// multiple times.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJournalKinesisStreamsForLedger service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListJournalKinesisStreamsForLedger service method, as returned by QLDB.</returns>
+        /// <exception cref="Amazon.QLDB.Model.InvalidParameterException">
+        /// One or more parameters in the request aren't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+        /// The operation failed because a condition wasn't satisfied in advance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalKinesisStreamsForLedger">REST API Reference for ListJournalKinesisStreamsForLedger Operation</seealso>
+        Task<ListJournalKinesisStreamsForLedgerResponse> ListJournalKinesisStreamsForLedgerAsync(ListJournalKinesisStreamsForLedgerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListJournalS3Exports
 
 
@@ -517,6 +705,12 @@ namespace Amazon.QLDB
         /// This action returns a maximum of <code>MaxResults</code> items, and is paginated so
         /// that you can retrieve all the items by calling <code>ListJournalS3Exports</code> multiple
         /// times.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action does not return any expired export jobs. For more information, see <a
+        /// href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
+        /// Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJournalS3Exports service method.</param>
@@ -536,6 +730,12 @@ namespace Amazon.QLDB
         /// This action returns a maximum of <code>MaxResults</code> items, and is paginated so
         /// that you can retrieve all the items by calling <code>ListJournalS3Exports</code> multiple
         /// times.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action does not return any expired export jobs. For more information, see <a
+        /// href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
+        /// Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJournalS3Exports service method.</param>
@@ -561,6 +761,12 @@ namespace Amazon.QLDB
         /// that you can retrieve all the items by calling <code>ListJournalS3ExportsForLedger</code>
         /// multiple times.
         /// </para>
+        ///  
+        /// <para>
+        /// This action does not return any expired export jobs. For more information, see <a
+        /// href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
+        /// Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJournalS3ExportsForLedger service method.</param>
         /// 
@@ -578,6 +784,12 @@ namespace Amazon.QLDB
         /// This action returns a maximum of <code>MaxResults</code> items, and is paginated so
         /// that you can retrieve all the items by calling <code>ListJournalS3ExportsForLedger</code>
         /// multiple times.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action does not return any expired export jobs. For more information, see <a
+        /// href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
+        /// Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJournalS3ExportsForLedger service method.</param>
@@ -670,6 +882,56 @@ namespace Amazon.QLDB
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StreamJournalToKinesis
+
+
+        /// <summary>
+        /// Creates a stream for a given Amazon QLDB ledger that delivers the journal data to
+        /// a specified Amazon Kinesis Data Streams resource. The stream captures every document
+        /// revision that is committed to your journal and sends it to the Kinesis data stream.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StreamJournalToKinesis service method.</param>
+        /// 
+        /// <returns>The response from the StreamJournalToKinesis service method, as returned by QLDB.</returns>
+        /// <exception cref="Amazon.QLDB.Model.InvalidParameterException">
+        /// One or more parameters in the request aren't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+        /// The operation failed because a condition wasn't satisfied in advance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/StreamJournalToKinesis">REST API Reference for StreamJournalToKinesis Operation</seealso>
+        StreamJournalToKinesisResponse StreamJournalToKinesis(StreamJournalToKinesisRequest request);
+
+
+
+        /// <summary>
+        /// Creates a stream for a given Amazon QLDB ledger that delivers the journal data to
+        /// a specified Amazon Kinesis Data Streams resource. The stream captures every document
+        /// revision that is committed to your journal and sends it to the Kinesis data stream.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StreamJournalToKinesis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StreamJournalToKinesis service method, as returned by QLDB.</returns>
+        /// <exception cref="Amazon.QLDB.Model.InvalidParameterException">
+        /// One or more parameters in the request aren't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+        /// The operation failed because a condition wasn't satisfied in advance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/StreamJournalToKinesis">REST API Reference for StreamJournalToKinesis Operation</seealso>
+        Task<StreamJournalToKinesisResponse> StreamJournalToKinesisAsync(StreamJournalToKinesisRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

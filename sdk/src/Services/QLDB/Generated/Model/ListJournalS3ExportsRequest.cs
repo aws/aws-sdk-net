@@ -38,6 +38,12 @@ namespace Amazon.QLDB.Model
     /// that you can retrieve all the items by calling <code>ListJournalS3Exports</code> multiple
     /// times.
     /// </para>
+    ///  
+    /// <para>
+    /// This action does not return any expired export jobs. For more information, see <a
+    /// href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
+    /// Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ListJournalS3ExportsRequest : AmazonQLDBRequest
     {

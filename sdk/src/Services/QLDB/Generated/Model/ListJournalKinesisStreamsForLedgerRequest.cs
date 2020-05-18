@@ -28,32 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QLDB.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListJournalS3ExportsForLedger operation.
-    /// Returns an array of journal export job descriptions for a specified ledger.
+    /// Container for the parameters to the ListJournalKinesisStreamsForLedger operation.
+    /// Returns an array of all Amazon QLDB journal stream descriptors for a given ledger.
+    /// The output of each stream descriptor includes the same details that are returned by
+    /// <code>DescribeJournalKinesisStream</code>.
     /// 
     ///  
     /// <para>
-    /// This action returns a maximum of <code>MaxResults</code> items, and is paginated so
-    /// that you can retrieve all the items by calling <code>ListJournalS3ExportsForLedger</code>
+    /// This action returns a maximum of <code>MaxResults</code> items. It is paginated so
+    /// that you can retrieve all the items by calling <code>ListJournalKinesisStreamsForLedger</code>
     /// multiple times.
     /// </para>
-    ///  
-    /// <para>
-    /// This action does not return any expired export jobs. For more information, see <a
-    /// href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
-    /// Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
-    /// </para>
     /// </summary>
-    public partial class ListJournalS3ExportsForLedgerRequest : AmazonQLDBRequest
+    public partial class ListJournalKinesisStreamsForLedgerRequest : AmazonQLDBRequest
     {
+        private string _ledgerName;
         private int? _maxResults;
-        private string _name;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property LedgerName. 
+        /// <para>
+        /// The name of the ledger.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
+        public string LedgerName
+        {
+            get { return this._ledgerName; }
+            set { this._ledgerName = value; }
+        }
+
+        // Check to see if LedgerName property is set
+        internal bool IsSetLedgerName()
+        {
+            return this._ledgerName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a single <code>ListJournalS3ExportsForLedger</code>
+        /// The maximum number of results to return in a single <code>ListJournalKinesisStreamsForLedger</code>
         /// request. (The actual number of results returned might be fewer.)
         /// </para>
         /// </summary>
@@ -71,30 +86,11 @@ namespace Amazon.QLDB.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the ledger.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A pagination token, indicating that you want to retrieve the next page of results.
         /// If you received a value for <code>NextToken</code> in the response from a previous
-        /// <code>ListJournalS3ExportsForLedger</code> call, then you should use that value as
+        /// <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as
         /// input here.
         /// </para>
         /// </summary>
