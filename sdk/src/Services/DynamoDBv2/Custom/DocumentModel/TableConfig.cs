@@ -44,6 +44,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
 
         internal Table.DynamoDBConsumer Consumer { get; set; }
+        internal bool IsEmptyStringValueEnabled { get; set; }
 
 
         /// <summary>
@@ -52,15 +53,20 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="tableName">Name of the table.</param>
         public TableConfig(string tableName)
-            : this(tableName, DynamoDBEntryConversion.CurrentConversion, Table.DynamoDBConsumer.DocumentModel, null) { }
+            : this(tableName, DynamoDBEntryConversion.CurrentConversion, Table.DynamoDBConsumer.DocumentModel, null,
+                false)
+        {
+        }
 
-        internal TableConfig(string tableName, DynamoDBEntryConversion conversion, Table.DynamoDBConsumer consumer, IEnumerable<string> storeAsEpoch)
+        internal TableConfig(string tableName, DynamoDBEntryConversion conversion, Table.DynamoDBConsumer consumer,
+            IEnumerable<string> storeAsEpoch, bool isEmptyStringValueEnabled)
         {
             if (string.IsNullOrEmpty(tableName)) throw new ArgumentNullException("tableName");
 
             TableName = tableName;
             Conversion = conversion;
             Consumer = consumer;
+            IsEmptyStringValueEnabled = isEmptyStringValueEnabled;
             AttributesToStoreAsEpoch = new List<string>();
             if (storeAsEpoch != null)
             {

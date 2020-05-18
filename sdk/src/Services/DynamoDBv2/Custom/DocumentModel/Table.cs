@@ -50,6 +50,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal Table.DynamoDBConsumer TableConsumer { get { return Config.Consumer; } }
         internal DynamoDBEntryConversion Conversion { get { return Config.Conversion; } }
+        internal bool IsEmptyStringValueEnabled { get {return Config.IsEmptyStringValueEnabled; } }
         internal IEnumerable<string> StoreAsEpoch { get { return Config.AttributesToStoreAsEpoch; } }
         internal IEnumerable<string> KeyNames { get { return Keys.Keys; } }
 
@@ -199,7 +200,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (primitive.Type != description.Type)
                     throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, "Key attribute {0} must be of type {1}", keyName, description.Type));
 
-                key[keyName] = primitive.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(Conversion));
+                var attributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(Conversion, IsEmptyStringValueEnabled);
+                key[keyName] = primitive.ConvertToAttributeValue(attributeConversionConfig);
             }
             return key;
         }
@@ -219,7 +221,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                     "Schema for table {0}, hash key {1}, is inconsistent with specified hash key value.", TableName, hashKeyName));
 
-            var hashKeyAttributeValue = hashKey.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(Conversion));
+            var hashKeyAttributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(Conversion, IsEmptyStringValueEnabled);
+            var hashKeyAttributeValue = hashKey.ConvertToAttributeValue(hashKeyAttributeConversionConfig);
             newKey[hashKeyName] = hashKeyAttributeValue;
 
             if ((rangeKey == null) != (RangeKeys.Count == 0))
@@ -238,7 +241,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (rangeKeyDescription.Type != rangeKey.Type)
                     throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                         "Schema for table {0}, range key {1}, is inconsistent with specified range key value.", TableName, hashKeyName));
-                var rangeKeyAttributeValue = rangeKey.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(Conversion));
+
+                var rangeKeyAttributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(Conversion, IsEmptyStringValueEnabled);
+                var rangeKeyAttributeValue = rangeKey.ConvertToAttributeValue(rangeKeyAttributeConversionConfig);
                 newKey[rangeKeyName] = rangeKeyAttributeValue;
             }
 
@@ -358,7 +363,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal Dictionary<string, AttributeValue> ToAttributeMap(Document doc, DynamoDBEntryConversion conversion)
         {
-            return doc.ToAttributeMap(conversion, this.StoreAsEpoch);
+            return doc.ToAttributeMap(conversion, this.StoreAsEpoch, Config.IsEmptyStringValueEnabled);
         }
 
         #endregion
@@ -422,7 +427,22 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Table object representing the specified table.</returns>
         public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName)
         {
-            return LoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion);
+            return LoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, false);
+        }
+
+        /// <summary>
+        /// Creates a Table object with the specified name, using the
+        /// passed-in client to load the table definition.
+        ///
+        /// This method will throw an exception if the table does not exist.
+        /// </summary>
+        /// <param name="ddbClient">Client to use to access DynamoDB.</param>
+        /// <param name="tableName">Name of the table.</param>
+        /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
+        /// <returns>Table object representing the specified table.</returns>
+        public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion)
+        {
+            return LoadTable(ddbClient, tableName, conversion, false);
         }
 
         /// <summary>
@@ -434,10 +454,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="ddbClient">Client to use to access DynamoDB.</param>
         /// <param name="tableName">Name of the table.</param>
         /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
+        /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
         /// <returns>Table object representing the specified table.</returns>
-        public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion)
+        public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled)
         {
-            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null);
+            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled);
 
             return LoadTable(ddbClient, config);
         }
@@ -458,13 +479,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </returns>
         public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, out Table table)
         {
-            return TryLoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, out table);
+            return TryLoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, false, out table);
         }
 
         /// <summary>
         /// Creates a Table object with the specified name, using the
         /// passed-in client to load the table definition.
-        /// 
+        ///
         /// This method will return false if the table does not exist.
         /// </summary>
         /// <param name="ddbClient">Client to use to access DynamoDB.</param>
@@ -476,7 +497,26 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </returns>
         public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, out Table table)
         {
-            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null);
+            return TryLoadTable(ddbClient, tableName, conversion, false, out table);
+        }
+
+        /// <summary>
+        /// Creates a Table object with the specified name, using the
+        /// passed-in client to load the table definition.
+        /// 
+        /// This method will return false if the table does not exist.
+        /// </summary>
+        /// <param name="ddbClient">Client to use to access DynamoDB.</param>
+        /// <param name="tableName">Name of the table.</param>
+        /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
+        /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
+        /// <param name="table">Loaded table.</param>
+        /// <returns>
+        /// True if table was successfully loaded; otherwise false.
+        /// </returns>
+        public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, out Table table)
+        {
+            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled);
             return TryLoadTable(ddbClient, config, out table);
         }
 
@@ -531,7 +571,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public Dictionary<string, AttributeValue> ToAttributeMap(Document doc)
         {
-            return doc.ToAttributeMap(this.Conversion, this.StoreAsEpoch);
+            return doc.ToAttributeMap(this.Conversion, this.StoreAsEpoch, this.IsEmptyStringValueEnabled);
         }
 
         /// <summary>
@@ -540,7 +580,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(Document doc)
         {
-            return doc.ToExpectedAttributeMap(this.Conversion, this.StoreAsEpoch);
+            return doc.ToExpectedAttributeMap(this.Conversion, this.StoreAsEpoch, this.IsEmptyStringValueEnabled);
         }
 
         /// <summary>
@@ -551,7 +591,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public Dictionary<string, AttributeValueUpdate> ToAttributeUpdateMap(Document doc, bool changedAttributesOnly)
         {
-            return doc.ToAttributeUpdateMap(this.Conversion, changedAttributesOnly, this.StoreAsEpoch);
+            return doc.ToAttributeUpdateMap(this.Conversion, changedAttributesOnly, this.StoreAsEpoch, this.IsEmptyStringValueEnabled);
         }
 
 

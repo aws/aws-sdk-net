@@ -250,9 +250,7 @@ namespace Amazon.DynamoDBv2.DataModel
             if (storage == null) return;
 
             Table table = GetTargetTable(storage.Config, flatConfig);
-            if (
-                (flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value)
-                || !storage.Config.HasVersion)
+            if ((flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value) || !storage.Config.HasVersion)
             {
                 table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), null);
             }
@@ -260,10 +258,12 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 Document expectedDocument = CreateExpectedDocumentForVersion(storage);
                 SetNewVersion(storage);
-                table.UpdateHelper(
-                    storage.Document,
-                    table.MakeKey(storage.Document),
-                    new UpdateItemOperationConfig { Expected = expectedDocument, ReturnValues = ReturnValues.None });
+                var updateItemOperationConfig = new UpdateItemOperationConfig
+                {
+                    Expected = expectedDocument,
+                    ReturnValues = ReturnValues.None,
+                };
+                table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), updateItemOperationConfig);
                 PopulateInstance(storage, value, flatConfig);
             }
         }

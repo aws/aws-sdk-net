@@ -45,7 +45,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             LoadTableAsync(ddbClient,tableName, DynamoDBEntryConversion.CurrentConversion, callback,asyncOptions);
         }
-        
+
         /// <summary>
         /// Creates a Table object with the specified name, using the
         /// passed-in client to load the table definition.
@@ -57,9 +57,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
         /// <param name="callback">The callback that will be invoked when the asynchronous operation completes.</param>
         /// <param name="asyncOptions">An instance of AsyncOptions that specifies how the async method should be executed.</param>
-        public static void LoadTableAsync(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, AmazonDynamoDBCallback<Table> callback, AsyncOptions asyncOptions = null)
+        /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
+        public static void LoadTableAsync(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, AmazonDynamoDBCallback<Table> callback, AsyncOptions asyncOptions = null, bool isEmptyStringValueEnabled = false)
         {
-            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null);
+            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled);
             LoadTableAsync(ddbClient, config, callback, asyncOptions);
         }
 

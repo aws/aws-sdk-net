@@ -76,7 +76,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Amazon.DynamoDBv2.Model.ExpectedAttributeValue</returns>
         public ExpectedAttributeValue ToExpectedAttributeValue()
         {
-            return ToExpectedAttributeValue(DynamoDBEntryConversion.CurrentConversion);
+            return ToExpectedAttributeValue(DynamoDBEntryConversion.CurrentConversion, false);
         }
 
         /// <summary>
@@ -86,11 +86,22 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Amazon.DynamoDBv2.Model.ExpectedAttributeValue</returns>
         public ExpectedAttributeValue ToExpectedAttributeValue(DynamoDBEntryConversion conversion)
         {
-            return ToExpectedAttributeValue(this.Exists, this.Values.Cast<DynamoDBEntry>(), this.Comparison, conversion);
+            return ToExpectedAttributeValue(this.Exists, this.Values.Cast<DynamoDBEntry>(), this.Comparison, conversion, false);
         }
 
-        internal static ExpectedAttributeValue ToExpectedAttributeValue(bool exists, IEnumerable<DynamoDBEntry> values, ScanOperator comparison,
-            DynamoDBEntryConversion conversion)
+        /// <summary>
+        /// Converts this ExpectedValue instance to Amazon.DynamoDBv2.Model.ExpectedAttributeValue
+        /// </summary>
+        /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
+        /// <param name="isEmptyStringValueEnabled"></param>
+        /// <returns>Amazon.DynamoDBv2.Model.ExpectedAttributeValue</returns>
+        public ExpectedAttributeValue ToExpectedAttributeValue(DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled)
+        {
+            return ToExpectedAttributeValue(this.Exists, this.Values.Cast<DynamoDBEntry>(), this.Comparison, conversion, isEmptyStringValueEnabled);
+        }
+
+        internal static ExpectedAttributeValue ToExpectedAttributeValue(bool exists, IEnumerable<DynamoDBEntry> values,
+            ScanOperator comparison, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled)
         {
             var eav = new ExpectedAttributeValue();
 
@@ -98,7 +109,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 eav.ComparisonOperator = EnumMapper.Convert(comparison);
                 foreach (var val in values)
-                    eav.AttributeValueList.Add(val.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(conversion)));
+                {
+                    var attributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(conversion, isEmptyStringValueEnabled);
+                    eav.AttributeValueList.Add(val.ConvertToAttributeValue(attributeConversionConfig));
+                }
             }
             else
                 eav.Exists = exists;
@@ -172,7 +186,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(DynamoDBEntryConversion conversion)
         {
-            return ToExpectedAttributeMap(conversion, epochAttributes: null);
+            return ToExpectedAttributeMap(conversion, epochAttributes: null, isEmptyStringValueEnabled: false);
         }
 
         /// <summary>
@@ -182,10 +196,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(Table table)
         {
-            return ToExpectedAttributeMap(table.Conversion, table.StoreAsEpoch);
+            return ToExpectedAttributeMap(table.Conversion, table.StoreAsEpoch, table.IsEmptyStringValueEnabled);
         }
 
-        private Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(DynamoDBEntryConversion conversion, IEnumerable<string> epochAttributes)
+        private Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(DynamoDBEntryConversion conversion,
+            IEnumerable<string> epochAttributes, bool isEmptyStringValueEnabled)
         {
             Dictionary<string, ExpectedAttributeValue> ret = new Dictionary<string, ExpectedAttributeValue>();
 
@@ -198,11 +213,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (epochAttributes != null && epochAttributes.Contains(attributeName))
                 {
                     var values = expectedValue.Values.Select(p => Document.DateTimeToEpochSeconds(p, attributeName)).ToList();
-                    eav = ExpectedValue.ToExpectedAttributeValue(expectedValue.Exists, values, expectedValue.Comparison, conversion);
+                    eav = ExpectedValue.ToExpectedAttributeValue(expectedValue.Exists, values, expectedValue.Comparison, conversion, isEmptyStringValueEnabled);
                 }
                 else
                 {
-                    eav = expectedValue.ToExpectedAttributeValue(conversion);
+                    eav = expectedValue.ToExpectedAttributeValue(conversion, isEmptyStringValueEnabled);
                 }
                 ret[attributeName] = eav;
             }

@@ -28,8 +28,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Cleanup existing data
                 CleanupTables();
+
                 // Recreate context
-                CreateContext(conversion);
+                CreateContext(conversion, true);
+
+                TestEmptyString();
 
                 TestEnumHashKeyObjects();
 
@@ -46,6 +49,41 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 TestStoreAsEpoch();
             }
+        }
+
+        private static void TestEmptyString()
+        {
+            var product = new Product
+            {
+                Id = 1,
+                Name = string.Empty,
+                Map = new Dictionary<string, string> // M
+                {
+                    {
+                        "Position", string.Empty
+                    }
+                },
+                CompanyInfo = new CompanyInfo // L
+                {
+                    Name = string.Empty,
+                    AllProducts = new List<Product>
+                    {
+                        new Product {Id = 12, Name = string.Empty}
+                    },
+                },
+                Components = new List<string> // SS
+                {
+                    string.Empty
+                }
+            };
+
+            Context.Save(product);
+            var savedProduct = Context.Load<Product>(1);
+
+            Assert.AreEqual(1, savedProduct.Id);
+            Assert.AreEqual(string.Empty, savedProduct.Map["Position"]);
+            Assert.AreEqual(string.Empty, savedProduct.Components[0]);
+            Assert.AreEqual(string.Empty, savedProduct.CompanyInfo.AllProducts[0].Name);
         }
 
         private static void TestUnsupportedTypes()
@@ -941,6 +979,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             // Hash key
             public string Name { get; set; }
+            public string MiddleName { get; set; }
             // Range key
             public int Age { get; set; }
 
