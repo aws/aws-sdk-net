@@ -1556,8 +1556,10 @@
         },
         "discovery": {
           "endpoints": {
+            "ap-northeast-1": {},
             "ap-southeast-2": {},
             "eu-central-1": {},
+            "us-east-1": {},
             "us-west-2": {}
           }
         },
@@ -3478,8 +3480,10 @@
         },
         "mgh": {
           "endpoints": {
+            "ap-northeast-1": {},
             "ap-southeast-2": {},
             "eu-central-1": {},
+            "us-east-1": {},
             "us-west-2": {}
           }
         },
@@ -7379,7 +7383,12 @@
             ]
           },
           "endpoints": {
-            "us-gov-west-1": {}
+            "us-gov-west-1": {
+              "credentialScope": {
+                "region": "us-gov-west-1"
+              },
+              "hostname": "greengrass.us-gov-west-1.amazonaws.com"
+            }
           },
           "isRegionalized": true
         },
@@ -8245,6 +8254,11 @@
                 "https"
               ]
             }
+          }
+        },
+        "es": {
+          "endpoints": {
+            "us-iso-east-1": {}
           }
         },
         "events": {
