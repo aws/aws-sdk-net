@@ -1484,6 +1484,10 @@ namespace Amazon.EC2
         /// Constant DirectoryServiceAuthentication for ClientVpnAuthenticationType
         /// </summary>
         public static readonly ClientVpnAuthenticationType DirectoryServiceAuthentication = new ClientVpnAuthenticationType("directory-service-authentication");
+        /// <summary>
+        /// Constant FederatedAuthentication for ClientVpnAuthenticationType
+        /// </summary>
+        public static readonly ClientVpnAuthenticationType FederatedAuthentication = new ClientVpnAuthenticationType("federated-authentication");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

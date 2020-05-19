@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClientVpnAuthentication Object
+    /// Response Unmarshaller for FederatedAuthentication Object
     /// </summary>  
-    public class ClientVpnAuthenticationUnmarshaller : IUnmarshaller<ClientVpnAuthentication, XmlUnmarshallerContext>, IUnmarshaller<ClientVpnAuthentication, JsonUnmarshallerContext>
+    public class FederatedAuthenticationUnmarshaller : IUnmarshaller<FederatedAuthentication, XmlUnmarshallerContext>, IUnmarshaller<FederatedAuthentication, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ClientVpnAuthentication Unmarshall(XmlUnmarshallerContext context)
+        public FederatedAuthentication Unmarshall(XmlUnmarshallerContext context)
         {
-            ClientVpnAuthentication unmarshalledObject = new ClientVpnAuthentication();
+            FederatedAuthentication unmarshalledObject = new FederatedAuthentication();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,28 +54,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("activeDirectory", targetDepth))
-                    {
-                        var unmarshaller = DirectoryServiceAuthenticationUnmarshaller.Instance;
-                        unmarshalledObject.ActiveDirectory = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("federatedAuthentication", targetDepth))
-                    {
-                        var unmarshaller = FederatedAuthenticationUnmarshaller.Instance;
-                        unmarshalledObject.FederatedAuthentication = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("mutualAuthentication", targetDepth))
-                    {
-                        var unmarshaller = CertificateAuthenticationUnmarshaller.Instance;
-                        unmarshalledObject.MutualAuthentication = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("type", targetDepth))
+                    if (context.TestExpression("samlProviderArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SamlProviderArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -93,18 +75,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ClientVpnAuthentication Unmarshall(JsonUnmarshallerContext context)
+        public FederatedAuthentication Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static ClientVpnAuthenticationUnmarshaller _instance = new ClientVpnAuthenticationUnmarshaller();        
+        private static FederatedAuthenticationUnmarshaller _instance = new FederatedAuthenticationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClientVpnAuthenticationUnmarshaller Instance
+        public static FederatedAuthenticationUnmarshaller Instance
         {
             get
             {

@@ -8715,8 +8715,14 @@ namespace Amazon.EC2
         /// connection. If you believe that the tunnel credentials for your VPN connection have
         /// been compromised, you can delete the VPN connection and create a new one that has
         /// new keys, without needing to delete the VPC or virtual private gateway. If you create
-        /// a new VPN connection, you must reconfigure the customer gateway using the new configuration
-        /// information returned with the new VPN connection ID.
+        /// a new VPN connection, you must reconfigure the customer gateway device using the new
+        /// configuration information returned with the new VPN connection ID.
+        /// </para>
+        ///  
+        /// <para>
+        /// For certificate-based authentication, delete all AWS Certificate Manager (ACM) private
+        /// certificates used for the AWS-side tunnel endpoints for the VPN connection before
+        /// deleting the VPN connection.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConnection service method.</param>
@@ -8743,8 +8749,14 @@ namespace Amazon.EC2
         /// connection. If you believe that the tunnel credentials for your VPN connection have
         /// been compromised, you can delete the VPN connection and create a new one that has
         /// new keys, without needing to delete the VPC or virtual private gateway. If you create
-        /// a new VPN connection, you must reconfigure the customer gateway using the new configuration
-        /// information returned with the new VPN connection ID.
+        /// a new VPN connection, you must reconfigure the customer gateway device using the new
+        /// configuration information returned with the new VPN connection ID.
+        /// </para>
+        ///  
+        /// <para>
+        /// For certificate-based authentication, delete all AWS Certificate Manager (ACM) private
+        /// certificates used for the AWS-side tunnel endpoints for the VPN connection before
+        /// deleting the VPN connection.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConnection service method.</param>
@@ -22049,8 +22061,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the target gateway of an AWS Site-to-Site VPN connection. The following migration
-        /// options are available:
+        /// Modifies the customer gateway or the target gateway of an AWS Site-to-Site VPN connection.
+        /// To modify the target gateway, the following migration options are available:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -22129,8 +22141,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the target gateway of an AWS Site-to-Site VPN connection. The following migration
-        /// options are available:
+        /// Modifies the customer gateway or the target gateway of an AWS Site-to-Site VPN connection.
+        /// To modify the target gateway, the following migration options are available:
         /// 
         ///  <ul> <li> 
         /// <para>

@@ -45,7 +45,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AccessGroupId. 
         /// <para>
-        /// The ID of the Active Directory group to grant access.
+        /// The ID of the group to grant access to, for example, the Active Directory group or
+        /// identity provider (IdP) group.
         /// </para>
         /// </summary>
         public string AccessGroupId
