@@ -42,19 +42,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code> s3://&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code> 
-        /// </para>
-        ///  
-        /// <para>
         /// For example:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>s3://examplebucket/example.mp4</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>s3://examplebucket/mediadocs/example.mp4</code> 
         /// </para>
         ///  
         /// <para>

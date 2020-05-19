@@ -78,7 +78,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code> 
+        ///  <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> 
         /// </para>
         ///  
         /// <para>

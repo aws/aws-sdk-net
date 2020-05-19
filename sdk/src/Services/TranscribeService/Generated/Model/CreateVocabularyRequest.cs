@@ -85,19 +85,6 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-        /// </code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// For example:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code> 
-        /// </para>
-        ///  
-        /// <para>
         /// For more information about S3 object names, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
         /// Keys</a> in the <i>Amazon S3 Developer Guide</i>.
         /// </para>
