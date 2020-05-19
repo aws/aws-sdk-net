@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StreamingConfiguration Marshaller
+    /// StreamingNotificationTarget Marshaller
     /// </summary>       
-    public class StreamingConfigurationMarshaller : IRequestMarshaller<StreamingConfiguration, JsonMarshallerContext> 
+    public class StreamingNotificationTargetMarshaller : IRequestMarshaller<StreamingNotificationTarget, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(StreamingConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(StreamingNotificationTarget requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDataRetentionInHours())
+            if(requestObject.IsSetNotificationTarget())
             {
-                context.Writer.WritePropertyName("DataRetentionInHours");
-                context.Writer.Write(requestObject.DataRetentionInHours);
-            }
-
-            if(requestObject.IsSetDisabled())
-            {
-                context.Writer.WritePropertyName("Disabled");
-                context.Writer.Write(requestObject.Disabled);
-            }
-
-            if(requestObject.IsSetStreamingNotificationTargets())
-            {
-                context.Writer.WritePropertyName("StreamingNotificationTargets");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectStreamingNotificationTargetsListValue in requestObject.StreamingNotificationTargets)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StreamingNotificationTargetMarshaller.Instance;
-                    marshaller.Marshall(requestObjectStreamingNotificationTargetsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("NotificationTarget");
+                context.Writer.Write(requestObject.NotificationTarget);
             }
 
         }
@@ -78,7 +56,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static StreamingConfigurationMarshaller Instance = new StreamingConfigurationMarshaller();
+        public readonly static StreamingNotificationTargetMarshaller Instance = new StreamingNotificationTargetMarshaller();
 
     }
 }

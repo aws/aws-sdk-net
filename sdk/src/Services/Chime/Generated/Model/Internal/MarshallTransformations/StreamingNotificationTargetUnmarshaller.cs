@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StreamingConfiguration Object
+    /// Response Unmarshaller for StreamingNotificationTarget Object
     /// </summary>  
-    public class StreamingConfigurationUnmarshaller : IUnmarshaller<StreamingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<StreamingConfiguration, JsonUnmarshallerContext>
+    public class StreamingNotificationTargetUnmarshaller : IUnmarshaller<StreamingNotificationTarget, XmlUnmarshallerContext>, IUnmarshaller<StreamingNotificationTarget, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StreamingConfiguration IUnmarshaller<StreamingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        StreamingNotificationTarget IUnmarshaller<StreamingNotificationTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StreamingConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public StreamingNotificationTarget Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            StreamingConfiguration unmarshalledObject = new StreamingConfiguration();
+            StreamingNotificationTarget unmarshalledObject = new StreamingNotificationTarget();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DataRetentionInHours", targetDepth))
+                if (context.TestExpression("NotificationTarget", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.DataRetentionInHours = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Disabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Disabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StreamingNotificationTargets", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<StreamingNotificationTarget, StreamingNotificationTargetUnmarshaller>(StreamingNotificationTargetUnmarshaller.Instance);
-                    unmarshalledObject.StreamingNotificationTargets = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NotificationTarget = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         }
 
 
-        private static StreamingConfigurationUnmarshaller _instance = new StreamingConfigurationUnmarshaller();        
+        private static StreamingNotificationTargetUnmarshaller _instance = new StreamingNotificationTargetUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StreamingConfigurationUnmarshaller Instance
+        public static StreamingNotificationTargetUnmarshaller Instance
         {
             get
             {
