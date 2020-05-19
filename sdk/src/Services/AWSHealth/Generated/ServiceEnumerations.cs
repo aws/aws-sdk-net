@@ -125,6 +125,60 @@ namespace Amazon.AWSHealth
 
 
     /// <summary>
+    /// Constants used for properties of type EventScopeCode.
+    /// </summary>
+    public class EventScopeCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_SPECIFIC for EventScopeCode
+        /// </summary>
+        public static readonly EventScopeCode ACCOUNT_SPECIFIC = new EventScopeCode("ACCOUNT_SPECIFIC");
+        /// <summary>
+        /// Constant NONE for EventScopeCode
+        /// </summary>
+        public static readonly EventScopeCode NONE = new EventScopeCode("NONE");
+        /// <summary>
+        /// Constant PUBLIC for EventScopeCode
+        /// </summary>
+        public static readonly EventScopeCode PUBLIC = new EventScopeCode("PUBLIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventScopeCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventScopeCode FindValue(string value)
+        {
+            return FindValue<EventScopeCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventScopeCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventStatusCode.
     /// </summary>
     public class EventStatusCode : ConstantClass

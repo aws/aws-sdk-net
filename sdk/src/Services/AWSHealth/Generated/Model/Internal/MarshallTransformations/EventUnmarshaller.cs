@@ -82,6 +82,12 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("eventScopeCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EventScopeCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("eventTypeCategory", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

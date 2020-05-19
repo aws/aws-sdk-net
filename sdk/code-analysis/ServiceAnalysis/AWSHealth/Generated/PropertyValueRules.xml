@@ -178,8 +178,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.AffectedEntity.EntityValue</property>
-    <max>256</max>
-    <pattern>.{0,256}</pattern>
+    <max>1224</max>
+    <pattern>.{0,1224}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.AffectedEntity.EventArn</property>
