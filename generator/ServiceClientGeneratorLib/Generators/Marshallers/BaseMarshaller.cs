@@ -1106,7 +1106,7 @@ this.Write(")\r\n                {\r\n                    request.Parameters.Add
                 }
                 else if (member.IsList)
                 {
-					if(!member.Shape.ListShape.IsString)
+					if(!member.Shape.ListShape.IsString && !member.Shape.ListShape.IsDouble)
 					{
 						throw new NotImplementedException(string.Format(CultureInfo.InvariantCulture,
 							"Marshalling list of {0} as query string param is not implemented.",
