@@ -1,3 +1,18 @@
+### 3.3.743.0 (2020-05-19 18:15 UTC)
+* AWSHealth (3.3.103.0)
+	* Feature: Health: AWS Health added a new field to differentiate Public events from Account-Specific events in the API request and response. Visit https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html to learn more.
+* Chime (3.3.111.0)
+	* You can now receive Voice Connector call events through SNS or SQS.
+* EC2 (3.3.177.0)
+	* This release adds support for Federated Authentication via SAML-2.0 in AWS ClientVPN.
+* TranscribeService (3.3.116.12)
+	* Documentation updates for Amazon Transcribe.
+* Core 3.3.106.26
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.742.0 (2020-05-18 18:15 UTC)
 * Chime (3.3.110.0)
 	* Amazon Chime now supports redacting chat messages.
