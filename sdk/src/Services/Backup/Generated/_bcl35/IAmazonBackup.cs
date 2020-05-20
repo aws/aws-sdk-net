@@ -776,8 +776,8 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns information about a saved resource, including the last time it was backed-up,
-        /// its Amazon Resource Name (ARN), and the AWS service type of the saved resource.
+        /// Returns information about a saved resource, including the last time it was backed
+        /// up, its Amazon Resource Name (ARN), and the AWS service type of the saved resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProtectedResource service method.</param>
         /// 
@@ -877,6 +877,53 @@ namespace Amazon.Backup
         /// <returns>Returns a  DescribeRecoveryPointResult from Backup.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRecoveryPoint">REST API Reference for DescribeRecoveryPoint Operation</seealso>
         DescribeRecoveryPointResponse EndDescribeRecoveryPoint(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeRegionSettings
+
+
+        /// <summary>
+        /// Returns the current service opt-in settings for the region. If the service has a value
+        /// set to true, AWS Backup will attempt to protect that service's resources in this region,
+        /// when included in an on-demand backup or scheduled backup plan. If the value is set
+        /// to false for a service, AWS Backup will not attempt to protect that service's resources
+        /// in this region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRegionSettings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRegionSettings service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRegionSettings">REST API Reference for DescribeRegionSettings Operation</seealso>
+        DescribeRegionSettingsResponse DescribeRegionSettings(DescribeRegionSettingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRegionSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRegionSettings operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRegionSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRegionSettings">REST API Reference for DescribeRegionSettings Operation</seealso>
+        IAsyncResult BeginDescribeRegionSettings(DescribeRegionSettingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeRegionSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRegionSettings.</param>
+        /// 
+        /// <returns>Returns a  DescribeRegionSettingsResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRegionSettings">REST API Reference for DescribeRegionSettings Operation</seealso>
+        DescribeRegionSettingsResponse EndDescribeRegionSettings(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1994,6 +2041,12 @@ namespace Amazon.Backup
         /// <summary>
         /// Returns a list of key-value pairs assigned to a target recovery point, backup plan,
         /// or backup vault.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <code>ListTags</code> are currently only supported with Amazon EFS backups.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// 
@@ -2611,6 +2664,60 @@ namespace Amazon.Backup
         /// <returns>Returns a  UpdateRecoveryPointLifecycleResult from Backup.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRecoveryPointLifecycle">REST API Reference for UpdateRecoveryPointLifecycle Operation</seealso>
         UpdateRecoveryPointLifecycleResponse EndUpdateRecoveryPointLifecycle(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateRegionSettings
+
+
+        /// <summary>
+        /// Updates the current service opt-in settings for the region. If the service has a value
+        /// set to true, AWS Backup will attempt to protect that service's resources in this region,
+        /// when included in an on-demand backup or scheduled backup plan. If the value is set
+        /// to false for a service, AWS Backup will not attempt to protect that service's resources
+        /// in this region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegionSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRegionSettings service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRegionSettings">REST API Reference for UpdateRegionSettings Operation</seealso>
+        UpdateRegionSettingsResponse UpdateRegionSettings(UpdateRegionSettingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRegionSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegionSettings operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRegionSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRegionSettings">REST API Reference for UpdateRegionSettings Operation</seealso>
+        IAsyncResult BeginUpdateRegionSettings(UpdateRegionSettingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRegionSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRegionSettings.</param>
+        /// 
+        /// <returns>Returns a  UpdateRegionSettingsResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRegionSettings">REST API Reference for UpdateRegionSettings Operation</seealso>
+        UpdateRegionSettingsResponse EndUpdateRegionSettings(IAsyncResult asyncResult);
 
         #endregion
         

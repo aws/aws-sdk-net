@@ -31,6 +31,12 @@ namespace Amazon.Backup.Model
     /// Container for the parameters to the ListTags operation.
     /// Returns a list of key-value pairs assigned to a target recovery point, backup plan,
     /// or backup vault.
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  <code>ListTags</code> are currently only supported with Amazon EFS backups.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListTagsRequest : AmazonBackupRequest
     {

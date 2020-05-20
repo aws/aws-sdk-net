@@ -82,7 +82,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property ByDestinationVaultArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy
-        /// from; for example, arn:aws:backup:us-east-1:123456789012:vault:aBackupVault. 
+        /// from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
+        /// 
         /// </para>
         /// </summary>
         public string ByDestinationVaultArn
@@ -122,10 +123,6 @@ namespace Amazon.Backup.Model
         /// Returns only backup jobs for the specified resources:
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        ///  <code>DynamoDB</code> for Amazon DynamoDB
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         ///  <code>EBS</code> for Amazon Elastic Block Store
         /// </para>

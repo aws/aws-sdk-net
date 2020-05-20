@@ -29,8 +29,8 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeProtectedResource operation.
-    /// Returns information about a saved resource, including the last time it was backed-up,
-    /// its Amazon Resource Name (ARN), and the AWS service type of the saved resource.
+    /// Returns information about a saved resource, including the last time it was backed
+    /// up, its Amazon Resource Name (ARN), and the AWS service type of the saved resource.
     /// </summary>
     public partial class DescribeProtectedResourceRequest : AmazonBackupRequest
     {

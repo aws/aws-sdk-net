@@ -305,7 +305,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of AWS resource to be backed-up; for example, an Amazon Elastic Block Store
+        /// The type of AWS resource to be backed up; for example, an Amazon Elastic Block Store
         /// (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
         /// </para>
         /// </summary>

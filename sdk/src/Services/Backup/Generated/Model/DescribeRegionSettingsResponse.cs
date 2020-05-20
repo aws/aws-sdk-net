@@ -28,30 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeCopyJob operation.
-    /// Returns metadata associated with creating a copy of a resource.
+    /// This is the response object from the DescribeRegionSettings operation.
     /// </summary>
-    public partial class DescribeCopyJobRequest : AmazonBackupRequest
+    public partial class DescribeRegionSettingsResponse : AmazonWebServiceResponse
     {
-        private string _copyJobId;
+        private Dictionary<string, bool> _resourceTypeOptInPreference = new Dictionary<string, bool>();
 
         /// <summary>
-        /// Gets and sets the property CopyJobId. 
+        /// Gets and sets the property ResourceTypeOptInPreference. 
         /// <para>
-        /// Uniquely identifies a copy job.
+        /// Returns a list of all services along with the opt-in preferences in the region.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string CopyJobId
+        public Dictionary<string, bool> ResourceTypeOptInPreference
         {
-            get { return this._copyJobId; }
-            set { this._copyJobId = value; }
+            get { return this._resourceTypeOptInPreference; }
+            set { this._resourceTypeOptInPreference = value; }
         }
 
-        // Check to see if CopyJobId property is set
-        internal bool IsSetCopyJobId()
+        // Check to see if ResourceTypeOptInPreference property is set
+        internal bool IsSetResourceTypeOptInPreference()
         {
-            return this._copyJobId != null;
+            return this._resourceTypeOptInPreference != null && this._resourceTypeOptInPreference.Count > 0; 
         }
 
     }

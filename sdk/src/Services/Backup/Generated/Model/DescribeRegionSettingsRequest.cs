@@ -28,31 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeCopyJob operation.
-    /// Returns metadata associated with creating a copy of a resource.
+    /// Container for the parameters to the DescribeRegionSettings operation.
+    /// Returns the current service opt-in settings for the region. If the service has a value
+    /// set to true, AWS Backup will attempt to protect that service's resources in this region,
+    /// when included in an on-demand backup or scheduled backup plan. If the value is set
+    /// to false for a service, AWS Backup will not attempt to protect that service's resources
+    /// in this region.
     /// </summary>
-    public partial class DescribeCopyJobRequest : AmazonBackupRequest
+    public partial class DescribeRegionSettingsRequest : AmazonBackupRequest
     {
-        private string _copyJobId;
-
-        /// <summary>
-        /// Gets and sets the property CopyJobId. 
-        /// <para>
-        /// Uniquely identifies a copy job.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string CopyJobId
-        {
-            get { return this._copyJobId; }
-            set { this._copyJobId = value; }
-        }
-
-        // Check to see if CopyJobId property is set
-        internal bool IsSetCopyJobId()
-        {
-            return this._copyJobId != null;
-        }
 
     }
 }

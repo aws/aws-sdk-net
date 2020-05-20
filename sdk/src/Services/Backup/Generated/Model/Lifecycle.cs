@@ -37,7 +37,7 @@ namespace Amazon.Backup.Model
     /// of 90 days. Therefore, on the console, the “expire after days” setting must be 90
     /// days greater than the “transition to cold after days” setting. The “transition to
     /// cold after days” setting cannot be changed after a backup has been transitioned to
-    /// cold. 
+    /// cold.
     /// </para>
     /// </summary>
     public partial class Lifecycle

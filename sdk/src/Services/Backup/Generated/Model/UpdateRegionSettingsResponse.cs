@@ -28,31 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeCopyJob operation.
-    /// Returns metadata associated with creating a copy of a resource.
+    /// This is the response object from the UpdateRegionSettings operation.
     /// </summary>
-    public partial class DescribeCopyJobRequest : AmazonBackupRequest
+    public partial class UpdateRegionSettingsResponse : AmazonWebServiceResponse
     {
-        private string _copyJobId;
-
-        /// <summary>
-        /// Gets and sets the property CopyJobId. 
-        /// <para>
-        /// Uniquely identifies a copy job.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string CopyJobId
-        {
-            get { return this._copyJobId; }
-            set { this._copyJobId = value; }
-        }
-
-        // Check to see if CopyJobId property is set
-        internal bool IsSetCopyJobId()
-        {
-            return this._copyJobId != null;
-        }
 
     }
 }

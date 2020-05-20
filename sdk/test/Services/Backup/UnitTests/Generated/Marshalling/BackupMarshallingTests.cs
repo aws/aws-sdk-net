@@ -417,6 +417,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Backup")]
+        public void DescribeRegionSettingsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeRegionSettings");
+
+            var request = InstantiateClassGenerator.Execute<DescribeRegionSettingsRequest>();
+            var marshaller = new DescribeRegionSettingsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DescribeRegionSettings", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DescribeRegionSettingsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DescribeRegionSettingsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Backup")]
         public void DescribeRestoreJobMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeRestoreJob");
@@ -1359,6 +1391,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = unmarshaller.Unmarshall(context)
                 as UpdateRecoveryPointLifecycleResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Backup")]
+        public void UpdateRegionSettingsMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateRegionSettings");
+
+            var request = InstantiateClassGenerator.Execute<UpdateRegionSettingsRequest>();
+            var marshaller = new UpdateRegionSettingsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateRegionSettings", request, internalRequest, service_model);            
+
         }
 
             }
