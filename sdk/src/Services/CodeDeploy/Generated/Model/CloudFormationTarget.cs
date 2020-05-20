@@ -28,22 +28,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Information about the target AWS Lambda function during an AWS Lambda deployment.
+    /// Information about the target to be updated by an AWS CloudFormation blue/green deployment.
+    /// This target type is used for all deployments initiated by a CloudFormation stack update.
     /// </summary>
-    public partial class LambdaTarget
+    public partial class CloudFormationTarget
     {
         private string _deploymentId;
-        private LambdaFunctionInfo _lambdaFunctionInfo;
         private DateTime? _lastUpdatedAt;
         private List<LifecycleEvent> _lifecycleEvents = new List<LifecycleEvent>();
+        private string _resourceType;
         private TargetStatus _status;
-        private string _targetArn;
         private string _targetId;
+        private double? _targetVersionWeight;
 
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
-        ///  The unique ID of a deployment. 
+        /// The unique ID of an AWS CloudFormation blue/green deployment.
         /// </para>
         /// </summary>
         public string DeploymentId
@@ -59,28 +60,10 @@ namespace Amazon.CodeDeploy.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LambdaFunctionInfo. 
-        /// <para>
-        ///  A <code>LambdaFunctionInfo</code> object that describes a target Lambda function.
-        /// 
-        /// </para>
-        /// </summary>
-        public LambdaFunctionInfo LambdaFunctionInfo
-        {
-            get { return this._lambdaFunctionInfo; }
-            set { this._lambdaFunctionInfo = value; }
-        }
-
-        // Check to see if LambdaFunctionInfo property is set
-        internal bool IsSetLambdaFunctionInfo()
-        {
-            return this._lambdaFunctionInfo != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        ///  The date and time when the target Lambda function was updated by a deployment. 
+        ///  The date and time when the target application was updated by an AWS CloudFormation
+        /// blue/green deployment. 
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt
@@ -98,7 +81,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property LifecycleEvents. 
         /// <para>
-        ///  The lifecycle events of the deployment to this target Lambda function. 
+        ///  The lifecycle events of the AWS CloudFormation blue/green deployment to this target
+        /// application. 
         /// </para>
         /// </summary>
         public List<LifecycleEvent> LifecycleEvents
@@ -114,9 +98,27 @@ namespace Amazon.CodeDeploy.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// The resource type for the AWS CloudFormation blue/green deployment.
+        /// </para>
+        /// </summary>
+        public string ResourceType
+        {
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
+        }
+
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
+        {
+            return this._resourceType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status an AWS Lambda deployment's target Lambda function. 
+        ///  The status of an AWS CloudFormation blue/green deployment's target application. 
         /// </para>
         /// </summary>
         public TargetStatus Status
@@ -132,27 +134,9 @@ namespace Amazon.CodeDeploy.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetArn. 
-        /// <para>
-        ///  The Amazon Resource Name (ARN) of the target. 
-        /// </para>
-        /// </summary>
-        public string TargetArn
-        {
-            get { return this._targetArn; }
-            set { this._targetArn = value; }
-        }
-
-        // Check to see if TargetArn property is set
-        internal bool IsSetTargetArn()
-        {
-            return this._targetArn != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        ///  The unique ID of a deployment target that has a type of <code>lambdaTarget</code>.
+        ///  The unique ID of a deployment target that has a type of <code>CloudFormationTarget</code>.
         /// 
         /// </para>
         /// </summary>
@@ -166,6 +150,25 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetTargetId()
         {
             return this._targetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetVersionWeight. 
+        /// <para>
+        /// The percentage of production traffic that the target version of an AWS CloudFormation
+        /// blue/green deployment receives.
+        /// </para>
+        /// </summary>
+        public double TargetVersionWeight
+        {
+            get { return this._targetVersionWeight.GetValueOrDefault(); }
+            set { this._targetVersionWeight = value; }
+        }
+
+        // Check to see if TargetVersionWeight property is set
+        internal bool IsSetTargetVersionWeight()
+        {
+            return this._targetVersionWeight.HasValue; 
         }
 
     }

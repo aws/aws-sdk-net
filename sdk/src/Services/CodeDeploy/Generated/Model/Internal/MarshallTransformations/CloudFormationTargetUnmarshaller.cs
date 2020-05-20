@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeploymentTarget Object
+    /// Response Unmarshaller for CloudFormationTarget Object
     /// </summary>  
-    public class DeploymentTargetUnmarshaller : IUnmarshaller<DeploymentTarget, XmlUnmarshallerContext>, IUnmarshaller<DeploymentTarget, JsonUnmarshallerContext>
+    public class CloudFormationTargetUnmarshaller : IUnmarshaller<CloudFormationTarget, XmlUnmarshallerContext>, IUnmarshaller<CloudFormationTarget, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DeploymentTarget IUnmarshaller<DeploymentTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CloudFormationTarget IUnmarshaller<CloudFormationTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,57 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DeploymentTarget Unmarshall(JsonUnmarshallerContext context)
+        public CloudFormationTarget Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DeploymentTarget unmarshalledObject = new DeploymentTarget();
+            CloudFormationTarget unmarshalledObject = new CloudFormationTarget();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("cloudFormationTarget", targetDepth))
-                {
-                    var unmarshaller = CloudFormationTargetUnmarshaller.Instance;
-                    unmarshalledObject.CloudFormationTarget = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("deploymentTargetType", targetDepth))
+                if (context.TestExpression("deploymentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentTargetType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeploymentId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ecsTarget", targetDepth))
+                if (context.TestExpression("lastUpdatedAt", targetDepth))
                 {
-                    var unmarshaller = ECSTargetUnmarshaller.Instance;
-                    unmarshalledObject.EcsTarget = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("instanceTarget", targetDepth))
+                if (context.TestExpression("lifecycleEvents", targetDepth))
                 {
-                    var unmarshaller = InstanceTargetUnmarshaller.Instance;
-                    unmarshalledObject.InstanceTarget = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<LifecycleEvent, LifecycleEventUnmarshaller>(LifecycleEventUnmarshaller.Instance);
+                    unmarshalledObject.LifecycleEvents = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("lambdaTarget", targetDepth))
+                if (context.TestExpression("resourceType", targetDepth))
                 {
-                    var unmarshaller = LambdaTargetUnmarshaller.Instance;
-                    unmarshalledObject.LambdaTarget = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("targetId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("targetVersionWeight", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.TargetVersionWeight = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +112,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         }
 
 
-        private static DeploymentTargetUnmarshaller _instance = new DeploymentTargetUnmarshaller();        
+        private static CloudFormationTargetUnmarshaller _instance = new CloudFormationTargetUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeploymentTargetUnmarshaller Instance
+        public static CloudFormationTargetUnmarshaller Instance
         {
             get
             {

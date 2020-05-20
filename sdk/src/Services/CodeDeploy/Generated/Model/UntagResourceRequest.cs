@@ -30,7 +30,7 @@ namespace Amazon.CodeDeploy.Model
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
     /// Disassociates a resource from a list of tags. The resource is identified by the <code>ResourceArn</code>
-    /// input parameter. The tags are identfied by the list of keys in the <code>TagKeys</code>
+    /// input parameter. The tags are identified by the list of keys in the <code>TagKeys</code>
     /// input parameter.
     /// </summary>
     public partial class UntagResourceRequest : AmazonCodeDeployRequest
@@ -41,8 +41,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  The ARN that specifies from which resource to disassociate the tags with the keys
-        /// in the <code>TagKeys</code> input paramter. 
+        ///  The Amazon Resource Name (ARN) that specifies from which resource to disassociate
+        /// the tags with the keys in the <code>TagKeys</code> input parameter. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]

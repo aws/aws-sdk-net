@@ -54,6 +54,11 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         ///  <b>Amazon ECS</b>: The target object is an Amazon ECS service. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
+        /// 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public List<DeploymentTarget> DeploymentTargets

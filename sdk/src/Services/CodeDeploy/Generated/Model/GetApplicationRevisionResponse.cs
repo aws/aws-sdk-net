@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of a GetApplicationRevision operation.
+    /// Represents the output of a <code>GetApplicationRevision</code> operation.
     /// </summary>
     public partial class GetApplicationRevisionResponse : AmazonWebServiceResponse
     {

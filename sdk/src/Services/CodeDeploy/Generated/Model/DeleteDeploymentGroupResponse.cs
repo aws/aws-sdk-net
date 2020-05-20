@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of a DeleteDeploymentGroup operation.
+    /// Represents the output of a <code>DeleteDeploymentGroup</code> operation.
     /// </summary>
     public partial class DeleteDeploymentGroupResponse : AmazonWebServiceResponse
     {

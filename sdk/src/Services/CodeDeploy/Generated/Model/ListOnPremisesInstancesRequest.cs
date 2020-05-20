@@ -70,11 +70,13 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Deregistered: Include deregistered on-premises instances in the resulting list.
+        ///  <code>Deregistered</code>: Include deregistered on-premises instances in the resulting
+        /// list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Registered: Include registered on-premises instances in the resulting list.
+        ///  <code>Registered</code>: Include registered on-premises instances in the resulting
+        /// list.
         /// </para>
         ///  </li> </ul>
         /// </summary>

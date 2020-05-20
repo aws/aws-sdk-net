@@ -28,29 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of a <code>DeleteGitHubAccountToken</code> operation.
+    /// This is the response object from the DeleteResourcesByExternalId operation.
     /// </summary>
-    public partial class DeleteGitHubAccountTokenResponse : AmazonWebServiceResponse
+    public partial class DeleteResourcesByExternalIdResponse : AmazonWebServiceResponse
     {
-        private string _tokenName;
-
-        /// <summary>
-        /// Gets and sets the property TokenName. 
-        /// <para>
-        /// The name of the GitHub account connection that was deleted.
-        /// </para>
-        /// </summary>
-        public string TokenName
-        {
-            get { return this._tokenName; }
-            set { this._tokenName = value; }
-        }
-
-        // Check to see if TokenName property is set
-        internal bool IsSetTokenName()
-        {
-            return this._tokenName != null;
-        }
 
     }
 }

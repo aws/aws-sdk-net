@@ -28,28 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of a <code>DeleteGitHubAccountToken</code> operation.
+    /// Container for the parameters to the DeleteResourcesByExternalId operation.
+    /// Deletes resources linked to an external ID.
     /// </summary>
-    public partial class DeleteGitHubAccountTokenResponse : AmazonWebServiceResponse
+    public partial class DeleteResourcesByExternalIdRequest : AmazonCodeDeployRequest
     {
-        private string _tokenName;
+        private string _externalId;
 
         /// <summary>
-        /// Gets and sets the property TokenName. 
+        /// Gets and sets the property ExternalId. 
         /// <para>
-        /// The name of the GitHub account connection that was deleted.
+        /// The unique ID of an external resource (for example, a CloudFormation stack ID) that
+        /// is linked to one or more CodeDeploy resources.
         /// </para>
         /// </summary>
-        public string TokenName
+        public string ExternalId
         {
-            get { return this._tokenName; }
-            set { this._tokenName = value; }
+            get { return this._externalId; }
+            set { this._externalId = value; }
         }
 
-        // Check to see if TokenName property is set
-        internal bool IsSetTokenName()
+        // Check to see if ExternalId property is set
+        internal bool IsSetExternalId()
         {
-            return this._tokenName != null;
+            return this._externalId != null;
         }
 
     }

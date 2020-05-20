@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListDeployments Request Marshaller
+    /// DeleteResourcesByExternalId Request Marshaller
     /// </summary>       
-    public class ListDeploymentsRequestMarshaller : IMarshaller<IRequest, ListDeploymentsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteResourcesByExternalIdRequestMarshaller : IMarshaller<IRequest, DeleteResourcesByExternalIdRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListDeploymentsRequest)input);
+            return this.Marshall((DeleteResourcesByExternalIdRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListDeploymentsRequest publicRequest)
+        public IRequest Marshall(DeleteResourcesByExternalIdRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeDeploy");
-            string target = "CodeDeploy_20141006.ListDeployments";
+            string target = "CodeDeploy_20141006.DeleteResourcesByExternalId";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-10-06";            
@@ -68,50 +68,10 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationName())
-                {
-                    context.Writer.WritePropertyName("applicationName");
-                    context.Writer.Write(publicRequest.ApplicationName);
-                }
-
-                if(publicRequest.IsSetCreateTimeRange())
-                {
-                    context.Writer.WritePropertyName("createTimeRange");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TimeRangeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CreateTimeRange, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDeploymentGroupName())
-                {
-                    context.Writer.WritePropertyName("deploymentGroupName");
-                    context.Writer.Write(publicRequest.DeploymentGroupName);
-                }
-
                 if(publicRequest.IsSetExternalId())
                 {
                     context.Writer.WritePropertyName("externalId");
                     context.Writer.Write(publicRequest.ExternalId);
-                }
-
-                if(publicRequest.IsSetIncludeOnlyStatuses())
-                {
-                    context.Writer.WritePropertyName("includeOnlyStatuses");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIncludeOnlyStatusesListValue in publicRequest.IncludeOnlyStatuses)
-                    {
-                            context.Writer.Write(publicRequestIncludeOnlyStatusesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
                 }
 
         
@@ -123,9 +83,9 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListDeploymentsRequestMarshaller _instance = new ListDeploymentsRequestMarshaller();        
+        private static DeleteResourcesByExternalIdRequestMarshaller _instance = new DeleteResourcesByExternalIdRequestMarshaller();        
 
-        internal static ListDeploymentsRequestMarshaller GetInstance()
+        internal static DeleteResourcesByExternalIdRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -133,7 +93,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListDeploymentsRequestMarshaller Instance
+        public static DeleteResourcesByExternalIdRequestMarshaller Instance
         {
             get
             {

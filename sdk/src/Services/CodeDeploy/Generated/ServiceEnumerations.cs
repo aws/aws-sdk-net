@@ -259,6 +259,18 @@ namespace Amazon.CodeDeploy
         /// </summary>
         public static readonly DeploymentCreator Autoscaling = new DeploymentCreator("autoscaling");
         /// <summary>
+        /// Constant CloudFormation for DeploymentCreator
+        /// </summary>
+        public static readonly DeploymentCreator CloudFormation = new DeploymentCreator("CloudFormation");
+        /// <summary>
+        /// Constant CloudFormationRollback for DeploymentCreator
+        /// </summary>
+        public static readonly DeploymentCreator CloudFormationRollback = new DeploymentCreator("CloudFormationRollback");
+        /// <summary>
+        /// Constant CodeDeploy for DeploymentCreator
+        /// </summary>
+        public static readonly DeploymentCreator CodeDeploy = new DeploymentCreator("CodeDeploy");
+        /// <summary>
         /// Constant CodeDeployRollback for DeploymentCreator
         /// </summary>
         public static readonly DeploymentCreator CodeDeployRollback = new DeploymentCreator("codeDeployRollback");
@@ -409,6 +421,10 @@ namespace Amazon.CodeDeploy
     {
 
         /// <summary>
+        /// Constant Baking for DeploymentStatus
+        /// </summary>
+        public static readonly DeploymentStatus Baking = new DeploymentStatus("Baking");
+        /// <summary>
         /// Constant Created for DeploymentStatus
         /// </summary>
         public static readonly DeploymentStatus Created = new DeploymentStatus("Created");
@@ -478,6 +494,10 @@ namespace Amazon.CodeDeploy
     public class DeploymentTargetType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CloudFormationTarget for DeploymentTargetType
+        /// </summary>
+        public static readonly DeploymentTargetType CloudFormationTarget = new DeploymentTargetType("CloudFormationTarget");
         /// <summary>
         /// Constant ECSTarget for DeploymentTargetType
         /// </summary>
@@ -710,6 +730,10 @@ namespace Amazon.CodeDeploy
         /// Constant AUTOSCALING_VALIDATION_ERROR for ErrorCode
         /// </summary>
         public static readonly ErrorCode AUTOSCALING_VALIDATION_ERROR = new ErrorCode("AUTOSCALING_VALIDATION_ERROR");
+        /// <summary>
+        /// Constant CLOUDFORMATION_STACK_FAILURE for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode CLOUDFORMATION_STACK_FAILURE = new ErrorCode("CLOUDFORMATION_STACK_FAILURE");
         /// <summary>
         /// Constant CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND for ErrorCode
         /// </summary>

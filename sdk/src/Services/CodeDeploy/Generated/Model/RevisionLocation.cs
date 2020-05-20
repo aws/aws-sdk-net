@@ -92,6 +92,12 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only).
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of
+        /// an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content is formatted
+        /// as JSON or YAML stored as a RawString.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public RevisionLocationType RevisionType

@@ -35,7 +35,8 @@ namespace Amazon.CodeDeploy.Model
     /// 
     ///  
     /// <para>
-    ///  The type of targets returned depends on the deployment's compute platform: 
+    ///  The type of targets returned depends on the deployment's compute platform or deployment
+    /// method: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -48,6 +49,11 @@ namespace Amazon.CodeDeploy.Model
     ///  </li> <li> 
     /// <para>
     ///  <b>Amazon ECS</b>: Information about Amazon ECS service targets. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>CloudFormation</b>: Information about targets of blue/green deployments initiated
+    /// by a CloudFormation stack update.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -97,6 +103,11 @@ namespace Amazon.CodeDeploy.Model
         ///  For deployments that use the Amazon ECS compute platform, the target IDs are pairs
         /// of Amazon ECS clusters and services specified using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
         /// Their target type is <code>ecsTarget</code>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation
+        /// stack IDs. Their target type is <code>cloudFormationTarget</code>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

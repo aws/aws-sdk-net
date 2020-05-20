@@ -38,8 +38,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An identifier returned from the previous ListGitHubAccountTokenNames call. It can
-        /// be used to return the next set of names in the list. 
+        /// An identifier returned from the previous <code>ListGitHubAccountTokenNames</code>
+        /// call. It can be used to return the next set of names in the list. 
         /// </para>
         /// </summary>
         public string NextToken

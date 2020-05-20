@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of a CreateDeployment operation.
+    /// Represents the output of a <code>CreateDeployment</code> operation.
     /// </summary>
     public partial class CreateDeploymentResponse : AmazonWebServiceResponse
     {
