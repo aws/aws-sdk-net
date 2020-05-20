@@ -288,6 +288,10 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.GetRetentionSettingsRequest.AccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.GetRoomRequest.AccountId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -488,6 +492,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.PutEventsConfigurationRequest.BotId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.PutRetentionSettingsRequest.AccountId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -716,6 +724,11 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.ConversationRetentionSettings.RetentionDays</property>
+    <min>1</min>
+    <max>5475</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.CreateAttendeeError.ExternalUserId</property>
     <min>2</min>
     <max>64</max>
@@ -886,6 +899,11 @@
   <property-value-rule>
     <property>Amazon.Chime.Model.RoomMembership.RoomId</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.RoomRetentionSettings.RetentionDays</property>
+    <min>1</min>
+    <max>5475</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.SigninDelegateGroup.GroupName</property>

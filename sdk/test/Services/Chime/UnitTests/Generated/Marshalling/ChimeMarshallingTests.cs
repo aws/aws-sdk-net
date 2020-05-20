@@ -1498,6 +1498,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Chime")]
+        public void GetRetentionSettingsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetRetentionSettings");
+
+            var request = InstantiateClassGenerator.Execute<GetRetentionSettingsRequest>();
+            var marshaller = new GetRetentionSettingsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetRetentionSettings", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetRetentionSettingsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetRetentionSettingsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
         public void GetRoomMarshallTest()
         {
             var operation = service_model.FindOperation("GetRoom");
@@ -2450,6 +2482,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = PutEventsConfigurationResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as PutEventsConfigurationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void PutRetentionSettingsMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutRetentionSettings");
+
+            var request = InstantiateClassGenerator.Execute<PutRetentionSettingsRequest>();
+            var marshaller = new PutRetentionSettingsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutRetentionSettings", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutRetentionSettingsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PutRetentionSettingsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
