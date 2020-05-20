@@ -1,3 +1,19 @@
+### 3.3.744.0 (2020-05-20 18:34 UTC)
+* ApplicationAutoScaling (3.3.105.17)
+	* Documentation updates for Application Auto Scaling
+* AppMesh (3.3.109.0)
+	* List APIs for all resources now contain additional information: when a resource was created, last updated, and its current version number.
+* Backup (3.3.102.0)
+	* This release allows customers to enable or disable AWS Backup support for an AWS resource type. This release also includes new APIs, update-region-settings and describe-region-settings, which can be used to opt in to a specific resource type. For all current AWS Backup customers, the default settings enable support for EBS, EC2, StorageGateway, EFS, DDB and RDS resource types. 
+* Chime (3.3.112.0)
+	* Amazon Chime enterprise account administrators can now set custom retention policies on chat data in the Amazon Chime application.
+* CodeDeploy (3.3.102.0)
+	* Amazon ECS customers using application and network load balancers can use CodeDeploy BlueGreen hook to invoke a CloudFormation stack update. With this update you can view CloudFormation deployment and target details via existing APIs and use your stack Id to list or delete all deployments associated with the stack.
+* MediaLive (3.3.111.0)
+	* AWS Elemental MediaLive now supports the ability to ingest the content that is streaming from an AWS Elemental Link device: https://aws.amazon.com/medialive/features/link/. This release also adds support for SMPTE-2038 and input state waiters.
+* SecurityHub (3.3.113.0)
+	* For findings related to controls, the finding information now includes the reason behind the current status of the control. A new field for the findings original severity allows finding providers to use the severity values from the system they use to assign severity.
+
 ### 3.3.743.0 (2020-05-19 18:15 UTC)
 * AWSHealth (3.3.103.0)
 	* Feature: Health: AWS Health added a new field to differentiate Public events from Account-Specific events in the API request and response. Visit https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html to learn more.

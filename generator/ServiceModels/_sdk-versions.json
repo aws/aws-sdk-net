@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.743.0",
+    "ProductVersion" : "3.3.744.0",
     "CoreVersion"    : "3.3.106.26",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -93,7 +93,7 @@
             "InPreview"               : false
         },
         "CodeDeploy"        : {
-            "Version" : "3.3.101.158",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.106.26"
@@ -553,7 +553,7 @@
             "InPreview"               : false
         },
         "ApplicationAutoScaling"          : {
-            "Version" : "3.3.105.16",
+            "Version" : "3.3.105.17",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.106.26"
@@ -873,7 +873,7 @@
             "InPreview"               : false
         },
         "MediaLive"                       : {
-            "Version" : "3.3.110.13",
+            "Version" : "3.3.111.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.106.26"
@@ -1169,7 +1169,7 @@
             "InPreview"               : false
         },
         "Chime"                           : {
-            "Version" : "3.3.111.0",
+            "Version" : "3.3.112.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.106.26"
@@ -1305,7 +1305,7 @@
             "InPreview"               : false
         },
         "SecurityHub"                     : {
-            "Version" : "3.3.112.21",
+            "Version" : "3.3.113.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.106.26"
@@ -1321,7 +1321,7 @@
             "InPreview"               : false
         },
         "AppMesh"                         : {
-            "Version" : "3.3.108.40",
+            "Version" : "3.3.109.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.106.26"
@@ -1361,7 +1361,7 @@
             "InPreview"               : false
         },
         "Backup"                          : {
-            "Version" : "3.3.101.59",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.106.26"
