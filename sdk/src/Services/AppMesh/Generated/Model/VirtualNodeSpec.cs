@@ -77,8 +77,8 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Listeners. 
         /// <para>
-        /// The listener that the virtual node is expected to receive inbound traffic from.  
-        ///       You can specify one listener.
+        /// The listener that the virtual node is expected to receive inbound traffic from. You
+        /// can         specify one listener.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -117,7 +117,7 @@ namespace Amazon.AppMesh.Model
         /// <para>
         /// The service discovery information for the virtual node. If your virtual node does
         /// not         expect ingress traffic, you can omit this parameter. If you specify a
-        /// <code>listener</code>,         then you must specify service discovery information.
+        ///         <code>listener</code>, then you must specify service discovery information.
         /// </para>
         /// </summary>
         public ServiceDiscovery ServiceDiscovery

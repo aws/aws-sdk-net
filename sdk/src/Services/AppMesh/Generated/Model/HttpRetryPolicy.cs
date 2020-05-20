@@ -44,7 +44,7 @@ namespace Amazon.AppMesh.Model
         /// <para>
         /// Specify at least one of the following values.
         /// </para>
-        ///          <ul>            <li>               
+        ///           <ul>            <li>               
         /// <para>
         ///                   <b>server-error</b> – HTTP status codes 500, 501,              
         ///    502, 503, 504, 505, 506, 507, 508, 510, and 511

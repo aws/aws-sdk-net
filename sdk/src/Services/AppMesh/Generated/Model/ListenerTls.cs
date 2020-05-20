@@ -61,17 +61,18 @@ namespace Amazon.AppMesh.Model
         /// </para>
         ///          <ul>            <li>               
         /// <para>
-        ///                   <b/>STRICT – Listener only accepts connections with TLS enabled.
-        /// 
+        ///                   <b/>STRICT – Listener only accepts connections with TLS        
+        ///       enabled. 
         /// </para>
         ///             </li>            <li>               
         /// <para>
-        ///                   <b/>PERMISSIVE – Listener accepts connections with or without TLS
-        /// enabled.
+        ///                   <b/>PERMISSIVE – Listener accepts connections with or          
+        ///     without TLS enabled.
         /// </para>
         ///             </li>            <li>               
         /// <para>
-        ///                   <b/>DISABLED –  Listener only accepts connections without TLS. 
+        ///                   <b/>DISABLED – Listener only accepts connections without       
+        ///        TLS. 
         /// </para>
         ///             </li>         </ul>
         /// </summary>

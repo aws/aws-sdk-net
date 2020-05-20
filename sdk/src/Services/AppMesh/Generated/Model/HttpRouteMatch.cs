@@ -29,7 +29,7 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// An object that represents the requirements for a route to match HTTP requests for
-    /// a virtual         router.
+    /// a         virtual router.
     /// </summary>
     public partial class HttpRouteMatch
     {
