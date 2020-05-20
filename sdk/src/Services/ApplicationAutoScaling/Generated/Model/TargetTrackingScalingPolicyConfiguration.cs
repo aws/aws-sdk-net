@@ -102,14 +102,15 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property ScaleInCooldown. 
         /// <para>
         /// The amount of time, in seconds, after a scale-in activity completes before another
-        /// scale in activity can start.
+        /// scale-in activity can start.
         /// </para>
         ///  
         /// <para>
-        /// The cooldown period is used to block subsequent scale-in requests until it has expired.
-        /// The intention is to scale in conservatively to protect your application's availability.
-        /// However, if another alarm triggers a scale-out policy during the cooldown period after
-        /// a scale-in, Application Auto Scaling scales out your scalable target immediately.
+        /// With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively
+        /// to protect your application’s availability, so scale-in activities are blocked until
+        /// the cooldown period has expired. However, if another alarm triggers a scale-out activity
+        /// during the scale-in cooldown period, Application Auto Scaling scales out the target
+        /// immediately. In this case, the scale-in cooldown period stops and doesn't complete.
         /// </para>
         ///  
         /// <para>
@@ -185,15 +186,16 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScaleOutCooldown. 
         /// <para>
-        /// The amount of time, in seconds, after a scale-out activity completes before another
-        /// scale-out activity can start.
+        /// The amount of time, in seconds, to wait for a previous scale-out activity to take
+        /// effect.
         /// </para>
         ///  
         /// <para>
-        /// While the cooldown period is in effect, the capacity that has been added by the previous
-        /// scale-out action that initiated the cooldown is calculated as part of the desired
-        /// capacity for the next scale out. The intention is to continuously (but not excessively)
-        /// scale out.
+        /// With the <i>scale-out cooldown period</i>, the intention is to continuously (but not
+        /// excessively) scale out. After Application Auto Scaling successfully scales out using
+        /// a target tracking scaling policy, it starts to calculate the cooldown time. While
+        /// the scale-out cooldown period is in effect, the capacity added by the initiating scale-out
+        /// activity is calculated as part of the desired capacity for the next scale-out activity.
         /// </para>
         ///  
         /// <para>

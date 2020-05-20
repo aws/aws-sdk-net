@@ -52,6 +52,15 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// </para>
     ///  
     /// <para>
+    /// We recommend caution, however, when using target tracking scaling policies with step
+    /// scaling policies because conflicts between these policies can cause undesirable behavior.
+    /// For example, if the step scaling policy initiates a scale-in activity before the target
+    /// tracking policy is ready to scale in, the scale-in activity will not be blocked. After
+    /// the scale-in activity completes, the target tracking policy could instruct the scalable
+    /// target to scale out again. 
+    /// </para>
+    ///  
+    /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
     /// Tracking Scaling Policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
     /// Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
@@ -109,7 +118,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  
         /// <para>
         ///  <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or
-        /// Amazon Keyspaces for Apache Cassandra.
+        /// Amazon Keyspaces (for Apache Cassandra).
         /// </para>
         ///  
         /// <para>

@@ -63,7 +63,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
-        /// The maximum value to scale to in response to a scale-out event.
+        /// The maximum value to scale to in response to a scale-out activity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +82,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinCapacity. 
         /// <para>
-        /// The minimum value to scale to in response to a scale-in event.
+        /// The minimum value to scale to in response to a scale-in activity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

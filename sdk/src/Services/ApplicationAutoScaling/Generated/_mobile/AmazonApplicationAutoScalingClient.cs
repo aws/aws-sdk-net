@@ -83,7 +83,7 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon Keyspaces for Apache Cassandra tables
+    /// Amazon Keyspaces (for Apache Cassandra) tables
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -777,6 +777,15 @@ namespace Amazon.ApplicationAutoScaling
         /// policy increases capacity by 200 percent, and the current capacity is 10, Application
         /// Auto Scaling uses the policy with the highest calculated capacity (200% of 10 = 20)
         /// and scales out to 30. 
+        /// </para>
+        ///  
+        /// <para>
+        /// We recommend caution, however, when using target tracking scaling policies with step
+        /// scaling policies because conflicts between these policies can cause undesirable behavior.
+        /// For example, if the step scaling policy initiates a scale-in activity before the target
+        /// tracking policy is ready to scale in, the scale-in activity will not be blocked. After
+        /// the scale-in activity completes, the target tracking policy could instruct the scalable
+        /// target to scale out again. 
         /// </para>
         ///  
         /// <para>
