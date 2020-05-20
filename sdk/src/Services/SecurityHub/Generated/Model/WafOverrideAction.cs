@@ -38,7 +38,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Type. 
         /// <para>
         ///  <code>COUNT</code> overrides the action specified by the individual rule within a
-        /// RuleGroup .
+        /// <code>RuleGroup</code> .
         /// </para>
         ///  
         /// <para>

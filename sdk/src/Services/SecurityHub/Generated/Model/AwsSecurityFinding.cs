@@ -228,7 +228,7 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The identifier for the solution-specific component (a discrete unit of logic) that
         /// generated a finding. In various security-findings providers' solutions, this generator
-        /// can be called a rule, a check, a detector, a plug-in, etc. 
+        /// can be called a rule, a check, a detector, a plugin, etc. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

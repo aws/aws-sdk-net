@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Compliance Marshaller
+    /// StatusReason Marshaller
     /// </summary>       
-    public class ComplianceMarshaller : IRequestMarshaller<Compliance, JsonMarshallerContext> 
+    public class StatusReasonMarshaller : IRequestMarshaller<StatusReason, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Compliance requestObject, JsonMarshallerContext context)
+        public void Marshall(StatusReason requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetRelatedRequirements())
+            if(requestObject.IsSetDescription())
             {
-                context.Writer.WritePropertyName("RelatedRequirements");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectRelatedRequirementsListValue in requestObject.RelatedRequirements)
-                {
-                        context.Writer.Write(requestObjectRelatedRequirementsListValue);
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("Description");
+                context.Writer.Write(requestObject.Description);
             }
 
-            if(requestObject.IsSetStatus())
+            if(requestObject.IsSetReasonCode())
             {
-                context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
-            }
-
-            if(requestObject.IsSetStatusReasons())
-            {
-                context.Writer.WritePropertyName("StatusReasons");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectStatusReasonsListValue in requestObject.StatusReasons)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StatusReasonMarshaller.Instance;
-                    marshaller.Marshall(requestObjectStatusReasonsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("ReasonCode");
+                context.Writer.Write(requestObject.ReasonCode);
             }
 
         }
@@ -83,7 +62,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ComplianceMarshaller Instance = new ComplianceMarshaller();
+        public readonly static StatusReasonMarshaller Instance = new StatusReasonMarshaller();
 
     }
 }

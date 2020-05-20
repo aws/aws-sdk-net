@@ -40,9 +40,25 @@ namespace Amazon.SecurityHub.Model
     ///  
     /// <para>
     /// When you use the <code>EnableSecurityHub</code> operation to enable Security Hub,
-    /// you also automatically enable the CIS AWS Foundations standard. You do not enable
-    /// the Payment Card Industry Data Security Standard (PCI DSS) standard. To not enable
-    /// the CIS AWS Foundations standard, set <code>EnableDefaultStandards</code> to <code>false</code>.
+    /// you also automatically enable the following standards.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// CIS AWS Foundations
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// AWS Foundational Security Best Practices
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You do not enable the Payment Card Industry Data Security Standard (PCI DSS) standard.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code>
+    /// to <code>false</code>.
     /// </para>
     ///  
     /// <para>
@@ -85,7 +101,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to add to the Hub resource when you enable Security Hub.
+        /// The tags to add to the hub resource when you enable Security Hub.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

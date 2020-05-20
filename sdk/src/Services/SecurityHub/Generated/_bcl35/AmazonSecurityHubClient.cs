@@ -918,9 +918,9 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// If the account owner accepts the invitation, the account becomes a member account
-        /// in Security Hub, and a permission policy is added that permits the master account
-        /// to view the findings generated in the member account. When Security Hub is enabled
-        /// in the invited account, findings start to be sent to both the member and master accounts.
+        /// in Security Hub. A permissions policy is added that permits the master account to
+        /// view the findings generated in the member account. When Security Hub is enabled in
+        /// the invited account, findings start to be sent to both the member and master accounts.
         /// </para>
         ///  
         /// <para>
@@ -2007,7 +2007,7 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// When you enable a product integration, a permission policy that grants permission
+        /// When you enable a product integration, a permissions policy that grants permission
         /// for the product to send findings to Security Hub is applied.
         /// </para>
         /// </summary>
@@ -2091,9 +2091,25 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// When you use the <code>EnableSecurityHub</code> operation to enable Security Hub,
-        /// you also automatically enable the CIS AWS Foundations standard. You do not enable
-        /// the Payment Card Industry Data Security Standard (PCI DSS) standard. To not enable
-        /// the CIS AWS Foundations standard, set <code>EnableDefaultStandards</code> to <code>false</code>.
+        /// you also automatically enable the following standards.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CIS AWS Foundations
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AWS Foundational Security Best Practices
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You do not enable the Payment Card Industry Data Security Standard (PCI DSS) standard.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code>
+        /// to <code>false</code>.
         /// </para>
         ///  
         /// <para>

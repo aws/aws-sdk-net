@@ -39,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property CompatibleRuntimes. 
         /// <para>
-        /// The layer's compatible runtimes. Maximum number of 5 items.
+        /// The layer's compatible runtimes. Maximum number of five items.
         /// </para>
         ///  
         /// <para>

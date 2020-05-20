@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  
     /// <para>
-    /// When you enable a product integration, a permission policy that grants permission
+    /// When you enable a product integration, a permissions policy that grants permission
     /// for the product to send findings to Security Hub is applied.
     /// </para>
     /// </summary>

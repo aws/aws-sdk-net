@@ -76,6 +76,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Normalized = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Original", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Original = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Product", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;
