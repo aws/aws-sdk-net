@@ -34,6 +34,7 @@ namespace Amazon.MediaLive.Model
     public partial class CreateInputRequest : AmazonMediaLiveRequest
     {
         private List<InputDestinationRequest> _destinations = new List<InputDestinationRequest>();
+        private List<InputDeviceSettings> _inputDevices = new List<InputDeviceSettings>();
         private List<string> _inputSecurityGroups = new List<string>();
         private List<MediaConnectFlowRequest> _mediaConnectFlows = new List<MediaConnectFlowRequest>();
         private string _name;
@@ -57,6 +58,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetDestinations()
         {
             return this._destinations != null && this._destinations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputDevices. Settings for the devices.
+        /// </summary>
+        public List<InputDeviceSettings> InputDevices
+        {
+            get { return this._inputDevices; }
+            set { this._inputDevices = value; }
+        }
+
+        // Check to see if InputDevices property is set
+        internal bool IsSetInputDevices()
+        {
+            return this._inputDevices != null && this._inputDevices.Count > 0; 
         }
 
         /// <summary>

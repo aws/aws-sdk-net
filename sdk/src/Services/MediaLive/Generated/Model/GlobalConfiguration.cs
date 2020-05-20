@@ -94,8 +94,8 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property OutputLockingMode. Indicates how MediaLive pipelines are
-        /// synchronized.PIPELINELOCKING - MediaLive will attempt to synchronize the output of
-        /// each pipeline to the other.EPOCHLOCKING - MediaLive will attempt to synchronize the
+        /// synchronized.PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of
+        /// each pipeline to the other.EPOCH_LOCKING - MediaLive will attempt to synchronize the
         /// output of each pipeline to the Unix epoch.
         /// </summary>
         public GlobalConfigurationOutputLockingMode OutputLockingMode

@@ -1827,6 +1827,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type DeviceSettingsSyncState.
+    /// </summary>
+    public class DeviceSettingsSyncState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SYNCED for DeviceSettingsSyncState
+        /// </summary>
+        public static readonly DeviceSettingsSyncState SYNCED = new DeviceSettingsSyncState("SYNCED");
+        /// <summary>
+        /// Constant SYNCING for DeviceSettingsSyncState
+        /// </summary>
+        public static readonly DeviceSettingsSyncState SYNCING = new DeviceSettingsSyncState("SYNCING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeviceSettingsSyncState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceSettingsSyncState FindValue(string value)
+        {
+            return FindValue<DeviceSettingsSyncState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceSettingsSyncState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DvbSdtOutputSdt.
     /// </summary>
     public class DvbSdtOutputSdt : ConstantClass
@@ -6913,6 +6963,356 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type InputDeviceActiveInput.
+    /// </summary>
+    public class InputDeviceActiveInput : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HDMI for InputDeviceActiveInput
+        /// </summary>
+        public static readonly InputDeviceActiveInput HDMI = new InputDeviceActiveInput("HDMI");
+        /// <summary>
+        /// Constant SDI for InputDeviceActiveInput
+        /// </summary>
+        public static readonly InputDeviceActiveInput SDI = new InputDeviceActiveInput("SDI");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputDeviceActiveInput(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputDeviceActiveInput FindValue(string value)
+        {
+            return FindValue<InputDeviceActiveInput>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputDeviceActiveInput(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputDeviceConfiguredInput.
+    /// </summary>
+    public class InputDeviceConfiguredInput : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for InputDeviceConfiguredInput
+        /// </summary>
+        public static readonly InputDeviceConfiguredInput AUTO = new InputDeviceConfiguredInput("AUTO");
+        /// <summary>
+        /// Constant HDMI for InputDeviceConfiguredInput
+        /// </summary>
+        public static readonly InputDeviceConfiguredInput HDMI = new InputDeviceConfiguredInput("HDMI");
+        /// <summary>
+        /// Constant SDI for InputDeviceConfiguredInput
+        /// </summary>
+        public static readonly InputDeviceConfiguredInput SDI = new InputDeviceConfiguredInput("SDI");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputDeviceConfiguredInput(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputDeviceConfiguredInput FindValue(string value)
+        {
+            return FindValue<InputDeviceConfiguredInput>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputDeviceConfiguredInput(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputDeviceConnectionState.
+    /// </summary>
+    public class InputDeviceConnectionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECTED for InputDeviceConnectionState
+        /// </summary>
+        public static readonly InputDeviceConnectionState CONNECTED = new InputDeviceConnectionState("CONNECTED");
+        /// <summary>
+        /// Constant DISCONNECTED for InputDeviceConnectionState
+        /// </summary>
+        public static readonly InputDeviceConnectionState DISCONNECTED = new InputDeviceConnectionState("DISCONNECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputDeviceConnectionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputDeviceConnectionState FindValue(string value)
+        {
+            return FindValue<InputDeviceConnectionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputDeviceConnectionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputDeviceIpScheme.
+    /// </summary>
+    public class InputDeviceIpScheme : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DHCP for InputDeviceIpScheme
+        /// </summary>
+        public static readonly InputDeviceIpScheme DHCP = new InputDeviceIpScheme("DHCP");
+        /// <summary>
+        /// Constant STATIC for InputDeviceIpScheme
+        /// </summary>
+        public static readonly InputDeviceIpScheme STATIC = new InputDeviceIpScheme("STATIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputDeviceIpScheme(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputDeviceIpScheme FindValue(string value)
+        {
+            return FindValue<InputDeviceIpScheme>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputDeviceIpScheme(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputDeviceScanType.
+    /// </summary>
+    public class InputDeviceScanType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERLACED for InputDeviceScanType
+        /// </summary>
+        public static readonly InputDeviceScanType INTERLACED = new InputDeviceScanType("INTERLACED");
+        /// <summary>
+        /// Constant PROGRESSIVE for InputDeviceScanType
+        /// </summary>
+        public static readonly InputDeviceScanType PROGRESSIVE = new InputDeviceScanType("PROGRESSIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputDeviceScanType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputDeviceScanType FindValue(string value)
+        {
+            return FindValue<InputDeviceScanType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputDeviceScanType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputDeviceState.
+    /// </summary>
+    public class InputDeviceState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IDLE for InputDeviceState
+        /// </summary>
+        public static readonly InputDeviceState IDLE = new InputDeviceState("IDLE");
+        /// <summary>
+        /// Constant STREAMING for InputDeviceState
+        /// </summary>
+        public static readonly InputDeviceState STREAMING = new InputDeviceState("STREAMING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputDeviceState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputDeviceState FindValue(string value)
+        {
+            return FindValue<InputDeviceState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputDeviceState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputDeviceType.
+    /// </summary>
+    public class InputDeviceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HD for InputDeviceType
+        /// </summary>
+        public static readonly InputDeviceType HD = new InputDeviceType("HD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputDeviceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputDeviceType FindValue(string value)
+        {
+            return FindValue<InputDeviceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputDeviceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InputFilter.
     /// </summary>
     public class InputFilter : ConstantClass
@@ -7654,6 +8054,10 @@ namespace Amazon.MediaLive
     public class InputType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant INPUT_DEVICE for InputType
+        /// </summary>
+        public static readonly InputType INPUT_DEVICE = new InputType("INPUT_DEVICE");
         /// <summary>
         /// Constant MEDIACONNECT for InputType
         /// </summary>
@@ -10974,6 +11378,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SmoothGroupTimestampOffsetMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Smpte2038DataPreference.
+    /// </summary>
+    public class Smpte2038DataPreference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IGNORE for Smpte2038DataPreference
+        /// </summary>
+        public static readonly Smpte2038DataPreference IGNORE = new Smpte2038DataPreference("IGNORE");
+        /// <summary>
+        /// Constant PREFER for Smpte2038DataPreference
+        /// </summary>
+        public static readonly Smpte2038DataPreference PREFER = new Smpte2038DataPreference("PREFER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Smpte2038DataPreference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Smpte2038DataPreference FindValue(string value)
+        {
+            return FindValue<Smpte2038DataPreference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Smpte2038DataPreference(string value)
         {
             return FindValue(value);
         }

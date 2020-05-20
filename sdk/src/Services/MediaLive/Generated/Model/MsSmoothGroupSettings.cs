@@ -53,9 +53,8 @@ namespace Amazon.MediaLive.Model
         private SmoothGroupTimestampOffsetMode _timestampOffsetMode;
 
         /// <summary>
-        /// Gets and sets the property AcquisitionPointId. The value of the "Acquisition Point
-        /// Identity" element used in each message placed in the sparse track.  Only enabled if
-        /// sparseTrackType is not "none".
+        /// Gets and sets the property AcquisitionPointId. The ID to include in each message in
+        /// the sparse track. Ignored if sparseTrackType is NONE.
         /// </summary>
         public string AcquisitionPointId
         {
@@ -309,10 +308,12 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SparseTrackType. If set to scte35, use incoming SCTE-35
-        /// messages to generate a sparse track in this group of MS-Smooth outputs. scte35WithoutSegmentation
-        /// is the same as scte35, except EML will not start a new segment at a SCTE-35 marker.
-        /// It will still encode an IDR frame at a SCTE-35 marker.
+        /// Gets and sets the property SparseTrackType. Identifies the type of data to place in
+        /// the sparse track:- SCTE35: Insert SCTE-35 messages from the source content. With each
+        /// message, insert an IDR frame to start a new segment.- SCTE35_WITHOUT_SEGMENTATION:
+        /// Insert SCTE-35 messages from the source content. With each message, insert an IDR
+        /// frame but don't start a new segment.- NONE: Don't generate a sparse track for any
+        /// outputs in this output group.
         /// </summary>
         public SmoothGroupSparseTrackType SparseTrackType
         {

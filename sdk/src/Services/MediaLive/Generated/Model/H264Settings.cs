@@ -207,8 +207,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FilterSettings. Settings associated with the specified
-        /// filter.
+        /// Gets and sets the property FilterSettings. Optional filters that you can apply to
+        /// an encode.
         /// </summary>
         public H264FilterSettings FilterSettings
         {
@@ -567,9 +567,12 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property QualityLevel. If set to "ENHANCEDQUALITY," improves visual
-        /// quality at an increased output cost. If this video is being delivered to a MediaLive
-        /// Multiplex, "ENHANCEDQUALITY" is always used.
+        /// Gets and sets the property QualityLevel. Leave as STANDARD_QUALITY or choose a different
+        /// value (which might result in additional costs to run the channel).- ENHANCED_QUALITY:
+        /// Produces a slightly better video quality without an increase in the bitrate. Has an
+        /// effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive
+        /// multiplex, the value must be ENHANCED_QUALITY.- STANDARD_QUALITY: Valid for any Rate
+        /// control mode.
         /// </summary>
         public H264QualityLevel QualityLevel
         {

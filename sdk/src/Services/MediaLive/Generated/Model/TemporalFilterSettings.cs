@@ -36,9 +36,11 @@ namespace Amazon.MediaLive.Model
         private TemporalFilterStrength _strength;
 
         /// <summary>
-        /// Gets and sets the property PostFilterSharpening. If set to "ENABLED," applies post-filter
-        /// sharpening to improve visual quality. This is most beneficial when using a noisy or
-        /// compressed input source and low output bitrates.
+        /// Gets and sets the property PostFilterSharpening. If you enable this filter, the results
+        /// are the following:- If the source content is noisy (it contains excessive digital
+        /// artifacts), the filter cleans up the source.- If the source content is already clean,
+        /// the filter tends to decrease the bitrate, especially when the rate control mode is
+        /// QVBR.
         /// </summary>
         public TemporalFilterPostFilterSharpening PostFilterSharpening
         {
@@ -53,8 +55,9 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Strength. Filter strength. A higher value produces stronger
-        /// filtering.
+        /// Gets and sets the property Strength. Choose a filter strength. We recommend a strength
+        /// of 1 or 2. A higher strength might take out good information, resulting in an image
+        /// that is overly soft.
         /// </summary>
         public TemporalFilterStrength Strength
         {

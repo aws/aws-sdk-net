@@ -809,7 +809,7 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property SegmentationTime. The length in seconds of each segment.
-        /// Required unless markers is set to None_.
+        /// Required unless markers is set to _none_.
         /// </summary>
         public double SegmentationTime
         {

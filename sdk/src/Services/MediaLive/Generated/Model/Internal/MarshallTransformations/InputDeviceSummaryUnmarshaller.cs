@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InputSettings Object
+    /// Response Unmarshaller for InputDeviceSummary Object
     /// </summary>  
-    public class InputSettingsUnmarshaller : IUnmarshaller<InputSettings, XmlUnmarshallerContext>, IUnmarshaller<InputSettings, JsonUnmarshallerContext>
+    public class InputDeviceSummaryUnmarshaller : IUnmarshaller<InputDeviceSummary, XmlUnmarshallerContext>, IUnmarshaller<InputDeviceSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        InputSettings IUnmarshaller<InputSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InputDeviceSummary IUnmarshaller<InputDeviceSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,75 +53,75 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InputSettings Unmarshall(JsonUnmarshallerContext context)
+        public InputDeviceSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            InputSettings unmarshalledObject = new InputSettings();
+            InputDeviceSummary unmarshalledObject = new InputDeviceSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("audioSelectors", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AudioSelector, AudioSelectorUnmarshaller>(AudioSelectorUnmarshaller.Instance);
-                    unmarshalledObject.AudioSelectors = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("captionSelectors", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<CaptionSelector, CaptionSelectorUnmarshaller>(CaptionSelectorUnmarshaller.Instance);
-                    unmarshalledObject.CaptionSelectors = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("deblockFilter", targetDepth))
+                if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeblockFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("denoiseFilter", targetDepth))
+                if (context.TestExpression("connectionState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DenoiseFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectionState = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("filterStrength", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.FilterStrength = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inputFilter", targetDepth))
+                if (context.TestExpression("deviceSettingsSyncState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InputFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceSettingsSyncState = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("networkInputSettings", targetDepth))
+                if (context.TestExpression("hdDeviceSettings", targetDepth))
                 {
-                    var unmarshaller = NetworkInputSettingsUnmarshaller.Instance;
-                    unmarshalledObject.NetworkInputSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = InputDeviceHdSettingsUnmarshaller.Instance;
+                    unmarshalledObject.HdDeviceSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("smpte2038DataPreference", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Smpte2038DataPreference = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceEndBehavior", targetDepth))
+                if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceEndBehavior = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("videoSelector", targetDepth))
+                if (context.TestExpression("macAddress", targetDepth))
                 {
-                    var unmarshaller = VideoSelectorUnmarshaller.Instance;
-                    unmarshalledObject.VideoSelector = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MacAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("networkSettings", targetDepth))
+                {
+                    var unmarshaller = InputDeviceNetworkSettingsUnmarshaller.Instance;
+                    unmarshalledObject.NetworkSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("serialNumber", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SerialNumber = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -130,12 +130,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static InputSettingsUnmarshaller _instance = new InputSettingsUnmarshaller();        
+        private static InputDeviceSummaryUnmarshaller _instance = new InputDeviceSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InputSettingsUnmarshaller Instance
+        public static InputDeviceSummaryUnmarshaller Instance
         {
             get
             {

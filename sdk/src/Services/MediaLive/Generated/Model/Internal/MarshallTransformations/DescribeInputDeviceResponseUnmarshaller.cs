@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeInput operation
+    /// Response Unmarshaller for DescribeInputDevice operation
     /// </summary>  
-    public class DescribeInputResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeInputDeviceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeInputResponse response = new DescribeInputResponse();
+            DescribeInputDeviceResponse response = new DescribeInputDeviceResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -57,16 +57,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("attachedChannels", targetDepth))
+                if (context.TestExpression("connectionState", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.AttachedChannels = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ConnectionState = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("destinations", targetDepth))
+                if (context.TestExpression("deviceSettingsSyncState", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<InputDestination, InputDestinationUnmarshaller>(InputDestinationUnmarshaller.Instance);
-                    response.Destinations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DeviceSettingsSyncState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("hdDeviceSettings", targetDepth))
+                {
+                    var unmarshaller = InputDeviceHdSettingsUnmarshaller.Instance;
+                    response.HdDeviceSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))
@@ -75,28 +81,10 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     response.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("inputClass", targetDepth))
+                if (context.TestExpression("macAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.InputClass = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inputDevices", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<InputDeviceSettings, InputDeviceSettingsUnmarshaller>(InputDeviceSettingsUnmarshaller.Instance);
-                    response.InputDevices = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inputSourceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.InputSourceType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("mediaConnectFlows", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<MediaConnectFlow, MediaConnectFlowUnmarshaller>(MediaConnectFlowUnmarshaller.Instance);
-                    response.MediaConnectFlows = unmarshaller.Unmarshall(context);
+                    response.MacAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
@@ -105,34 +93,16 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("networkSettings", targetDepth))
+                {
+                    var unmarshaller = InputDeviceNetworkSettingsUnmarshaller.Instance;
+                    response.NetworkSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("serialNumber", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.RoleArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("securityGroups", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.SecurityGroups = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sources", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<InputSource, InputSourceUnmarshaller>(InputSourceUnmarshaller.Instance);
-                    response.Sources = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("state", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.State = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    response.SerialNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))
@@ -187,9 +157,9 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             return new AmazonMediaLiveException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeInputResponseUnmarshaller _instance = new DescribeInputResponseUnmarshaller();        
+        private static DescribeInputDeviceResponseUnmarshaller _instance = new DescribeInputDeviceResponseUnmarshaller();        
 
-        internal static DescribeInputResponseUnmarshaller GetInstance()
+        internal static DescribeInputDeviceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -197,7 +167,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeInputResponseUnmarshaller Instance
+        public static DescribeInputDeviceResponseUnmarshaller Instance
         {
             get
             {
