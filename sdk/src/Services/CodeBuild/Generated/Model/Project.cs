@@ -461,7 +461,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags for this build project.
+        /// A list of tag key and value pairs associated with this build project.
         /// </para>
         ///  
         /// <para>

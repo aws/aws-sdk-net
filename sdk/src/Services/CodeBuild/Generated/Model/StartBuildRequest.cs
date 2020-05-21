@@ -279,7 +279,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
         /// A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild
-        /// request. The token is included in the StartBuild request and is valid for 5 minutes.
+        /// request. The token is included in the StartBuild request and is valid for 12 hours.
         /// If you repeat the StartBuild request with the same token, but change a parameter,
         /// AWS CodeBuild returns a parameter mismatch error. 
         /// </para>

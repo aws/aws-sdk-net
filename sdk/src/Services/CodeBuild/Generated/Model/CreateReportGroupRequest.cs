@@ -35,6 +35,7 @@ namespace Amazon.CodeBuild.Model
     {
         private ReportExportConfig _exportConfig;
         private string _name;
+        private List<Tag> _tags = new List<Tag>();
         private ReportType _type;
 
         /// <summary>
@@ -74,6 +75,30 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  A list of tag key and value pairs associated with this report group. 
+        /// </para>
+        ///  
+        /// <para>
+        /// These tags are available for use by AWS services that support AWS CodeBuild report
+        /// group tags.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
