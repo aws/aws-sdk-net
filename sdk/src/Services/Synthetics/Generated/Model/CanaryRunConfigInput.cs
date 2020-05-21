@@ -32,7 +32,28 @@ namespace Amazon.Synthetics.Model
     /// </summary>
     public partial class CanaryRunConfigInput
     {
+        private int? _memoryInMB;
         private int? _timeoutInSeconds;
+
+        /// <summary>
+        /// Gets and sets the property MemoryInMB. 
+        /// <para>
+        /// The maximum amount of memory available to the canary while it is running, in MB. The
+        /// value you specify must be a multiple of 64.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=960, Max=3008)]
+        public int MemoryInMB
+        {
+            get { return this._memoryInMB.GetValueOrDefault(); }
+            set { this._memoryInMB = value; }
+        }
+
+        // Check to see if MemoryInMB property is set
+        internal bool IsSetMemoryInMB()
+        {
+            return this._memoryInMB.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property TimeoutInSeconds. 

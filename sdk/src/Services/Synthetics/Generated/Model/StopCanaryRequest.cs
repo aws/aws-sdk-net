@@ -48,7 +48,7 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the canary that you want to stop. To find the names of your canaries,
-        /// use <a>DescribeCanaries</a>.
+        /// use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=21)]

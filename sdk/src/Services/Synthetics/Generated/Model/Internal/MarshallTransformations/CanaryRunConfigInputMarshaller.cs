@@ -45,6 +45,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CanaryRunConfigInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetMemoryInMB())
+            {
+                context.Writer.WritePropertyName("MemoryInMB");
+                context.Writer.Write(requestObject.MemoryInMB);
+            }
+
             if(requestObject.IsSetTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("TimeoutInSeconds");

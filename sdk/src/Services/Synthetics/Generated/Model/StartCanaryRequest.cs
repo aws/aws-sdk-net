@@ -40,7 +40,7 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the canary that you want to run. To find canary names, use <a>DescribeCanaries</a>.
+        /// The name of the canary that you want to run. To find canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=21)]

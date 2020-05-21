@@ -264,7 +264,7 @@ namespace Amazon.Synthetics
         /// 
         ///  
         /// <para>
-        /// Do not use <code>CreateCanary</code> to modify an existing canary. Use <a>UpdateCanary</a>
+        /// Do not use <code>CreateCanary</code> to modify an existing canary. Use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html">UpdateCanary</a>
         /// instead.
         /// </para>
         ///  

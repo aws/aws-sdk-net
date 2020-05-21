@@ -64,6 +64,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("MemoryInMB", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MemoryInMB = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TimeoutInSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
