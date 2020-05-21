@@ -113,6 +113,14 @@ namespace Amazon
         }
 
         /// <summary>
+        /// Escape and unescape S3 metadata for S3 Put/Get object requests.
+        /// Escape only escapes non-ascii values in metadata
+        /// Any "%" values in metadata could interfere with this option.
+        /// Default value is false.
+        /// </summary>
+        public static bool EnableUnicodeEncodingForObjectMetadata { get; set; } = false;
+
+        /// <summary>
         /// Was the value of the UseSignatureVersion4 property set explicitly?
         /// This can be done via configuration or by directly setting the property.
         ///

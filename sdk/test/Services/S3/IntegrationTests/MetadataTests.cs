@@ -29,6 +29,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             { "date", DateTime.Now.ToFileTime().ToString() },
             { "test", "true" }
         };
+        private static readonly Dictionary<string, string> unicodeMetadata = new Dictionary<string, string>(StringComparer.Ordinal)
+        {
+            { "test", "test" },
+            { "test2", "£" },
+            { "test3", "no non ascii characters %" },
+            { "test4", "1 non ascii character £ %" }
+        };
         private static readonly Dictionary<string, string> headers = new Dictionary<string, string>(StringComparer.Ordinal)
         {
             { "Content-Type", "text/html" },
@@ -108,6 +115,35 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
+        /// <summary>
+        /// Ensure that when escaped, a request with unicode metadata succeeds.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestSingleUploadWithUnicodeMetadata()
+        {
+            // Test simple PutObject upload
+            AWSConfigsS3.EnableUnicodeEncodingForObjectMetadata = true;
+            var key = "contentBodyPut" + random.Next();
+            PutObjectRequest putObjectRequest = new PutObjectRequest()
+            {
+                BucketName = bucketName,
+                Key = key,
+                ContentBody = "This is the content body!",
+            };
+            GetObjectRequest getObjectRequest = new GetObjectRequest()
+            {
+                BucketName = bucketName,
+                Key = key
+            };
+
+            SetMetadataAndHeaders(putObjectRequest, true);
+            Client.PutObject(putObjectRequest);
+            ValidateObjectMetadataAndHeaders(key, true);
+            AWSConfigsS3.EnableUnicodeEncodingForObjectMetadata = false;
+        }
+        
+
         [TestMethod]
         [TestCategory("S3")]
         public void TestDirectoryUploads()
@@ -171,11 +207,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 TransferUtilityTests.ValidateDirectoryContents(Client, bucketName, keyPrefix, directory);
         }
 
-        private static void ValidateObjectMetadataAndHeaders(string key)
+        private static void ValidateObjectMetadataAndHeaders(string key, bool unicode = false)
         {
             using (var response = Client.GetObject(bucketName, key))
             {
-                ValidateMetadataAndHeaders(response);
+                ValidateMetadataAndHeaders(response, unicode);
             }
         }
 
@@ -184,14 +220,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             SetMetadata(request.Metadata);
             SetHeaders(request.Headers);
         }
-        private static void SetMetadataAndHeaders(PutObjectRequest request)
+        private static void SetMetadataAndHeaders(PutObjectRequest request, bool unicode = false)
         {
-            SetMetadata(request.Metadata);
+            SetMetadata(request.Metadata, unicode);
             SetHeaders(request.Headers);
         }
-        private static void SetMetadata(MetadataCollection mc)
+        private static void SetMetadata(MetadataCollection mc, bool unicode = false)
         {
-            foreach (var kvp in metadata)
+            foreach (var kvp in unicode ? unicodeMetadata : metadata)
                 mc[kvp.Key] = kvp.Value;
         }
         private static void SetHeaders(HeadersCollection hc)
@@ -199,9 +235,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             foreach (var kvp in headers)
                 hc[kvp.Key] = kvp.Value;
         }
-        private static void ValidateMetadataAndHeaders(GetObjectResponse response)
+        private static void ValidateMetadataAndHeaders(GetObjectResponse response, bool unicode = false)
         {
-            foreach (var kvp in metadata)
+            foreach (var kvp in unicode ? unicodeMetadata : metadata)
             {
                 var name = kvp.Key;
                 var expectedValue = kvp.Value;
