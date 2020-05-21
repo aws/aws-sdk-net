@@ -1,3 +1,18 @@
+### 3.3.745.0 (2020-05-21 18:14 UTC)
+* CodeBuild (3.3.111.0)
+	* CodeBuild adds support for tagging with report groups
+* EC2 (3.3.178.0)
+	* From this release onwards ProvisionByoipCidr publicly supports IPv6. Updated ProvisionByoipCidr API to support tags for public IPv4 and IPv6 pools. Added NetworkBorderGroup to the DescribePublicIpv4Pools response.
+* S3 (3.3.111.0)
+	* Deprecates unusable input members bound to Content-MD5 header. Updates example and documentation.
+* Synthetics (3.3.101.0)
+	* AWS CloudWatch Synthetics now supports configuration of allocated memory for a canary.
+* Core 3.3.106.27
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.744.0 (2020-05-20 18:34 UTC)
 * ApplicationAutoScaling (3.3.105.17)
 	* Documentation updates for Application Auto Scaling
