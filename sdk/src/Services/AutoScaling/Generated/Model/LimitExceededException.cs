@@ -31,7 +31,8 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
     /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
-    /// see <a>DescribeAccountLimits</a>.
+    /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+    /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

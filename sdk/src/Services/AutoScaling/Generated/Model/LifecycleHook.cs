@@ -30,8 +30,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Describes a lifecycle hook, which tells Amazon EC2 Auto Scaling that you want to perform
-    /// an action whenever it launches instances or terminates instances. Used in response
-    /// to <a>DescribeLifecycleHooks</a>.
+    /// an action whenever it launches instances or terminates instances.
     /// </summary>
     public partial class LifecycleHook
     {

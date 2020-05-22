@@ -134,16 +134,21 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Attaches one or more Classic Load Balancers to the specified Auto Scaling group.
-        /// 
-        ///  
+        /// <note> 
         /// <para>
-        /// To attach an Application Load Balancer or a Network Load Balancer instead, see <a>AttachLoadBalancerTargetGroups</a>.
+        /// To attach an Application Load Balancer or a Network Load Balancer, use the <a>AttachLoadBalancerTargetGroups</a>
+        /// API operation instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Attaches one or more Classic Load Balancers to the specified Auto Scaling group. Amazon
+        /// EC2 Auto Scaling registers the running instances with these Classic Load Balancers.
         /// </para>
         ///  
         /// <para>
-        /// To describe the load balancers for an Auto Scaling group, use <a>DescribeLoadBalancers</a>.
-        /// To detach the load balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.
+        /// To describe the load balancers for an Auto Scaling group, call the <a>DescribeLoadBalancers</a>
+        /// API. To detach the load balancer from the Auto Scaling group, call the <a>DetachLoadBalancers</a>
+        /// API.
         /// </para>
         ///  
         /// <para>
@@ -168,16 +173,21 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Attaches one or more Classic Load Balancers to the specified Auto Scaling group.
-        /// 
-        ///  
+        /// <note> 
         /// <para>
-        /// To attach an Application Load Balancer or a Network Load Balancer instead, see <a>AttachLoadBalancerTargetGroups</a>.
+        /// To attach an Application Load Balancer or a Network Load Balancer, use the <a>AttachLoadBalancerTargetGroups</a>
+        /// API operation instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Attaches one or more Classic Load Balancers to the specified Auto Scaling group. Amazon
+        /// EC2 Auto Scaling registers the running instances with these Classic Load Balancers.
         /// </para>
         ///  
         /// <para>
-        /// To describe the load balancers for an Auto Scaling group, use <a>DescribeLoadBalancers</a>.
-        /// To detach the load balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.
+        /// To describe the load balancers for an Auto Scaling group, call the <a>DescribeLoadBalancers</a>
+        /// API. To detach the load balancer from the Auto Scaling group, call the <a>DetachLoadBalancers</a>
+        /// API.
         /// </para>
         ///  
         /// <para>
@@ -212,8 +222,9 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// To describe the target groups for an Auto Scaling group, use <a>DescribeLoadBalancerTargetGroups</a>.
-        /// To detach the target group from the Auto Scaling group, use <a>DetachLoadBalancerTargetGroups</a>.
+        /// To describe the target groups for an Auto Scaling group, call the <a>DescribeLoadBalancerTargetGroups</a>
+        /// API. To detach the target group from the Auto Scaling group, call the <a>DetachLoadBalancerTargetGroups</a>
+        /// API.
         /// </para>
         ///  
         /// <para>
@@ -244,8 +255,9 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// To describe the target groups for an Auto Scaling group, use <a>DescribeLoadBalancerTargetGroups</a>.
-        /// To detach the target group from the Auto Scaling group, use <a>DetachLoadBalancerTargetGroups</a>.
+        /// To describe the target groups for an Auto Scaling group, call the <a>DescribeLoadBalancerTargetGroups</a>
+        /// API. To detach the target group from the Auto Scaling group, call the <a>DetachLoadBalancerTargetGroups</a>
+        /// API.
         /// </para>
         ///  
         /// <para>
@@ -327,7 +339,8 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
         /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
-        /// see <a>DescribeAccountLimits</a>.
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -355,7 +368,8 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
         /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
-        /// see <a>DescribeAccountLimits</a>.
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -486,10 +500,18 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// If you exceed your maximum limit of Auto Scaling groups, the call fails. For information
-        /// about viewing this limit, see <a>DescribeAccountLimits</a>. For information about
-        /// updating this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+        /// If you exceed your maximum limit of Auto Scaling groups, the call fails. To query
+        /// this limit, call the <a>DescribeAccountLimits</a> API. For information about updating
+        /// this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
         /// EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For introductory exercises for creating an Auto Scaling group, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html">Getting
+        /// Started with Amazon EC2 Auto Scaling</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-register-lbs-with-asg.html">Tutorial:
+        /// Set Up a Scaled and Load-Balanced Application</a> in the <i>Amazon EC2 Auto Scaling
+        /// User Guide</i>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html">Auto
+        /// Scaling Groups</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAutoScalingGroup service method.</param>
@@ -501,7 +523,8 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
         /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
-        /// see <a>DescribeAccountLimits</a>.
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -520,10 +543,18 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// If you exceed your maximum limit of Auto Scaling groups, the call fails. For information
-        /// about viewing this limit, see <a>DescribeAccountLimits</a>. For information about
-        /// updating this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+        /// If you exceed your maximum limit of Auto Scaling groups, the call fails. To query
+        /// this limit, call the <a>DescribeAccountLimits</a> API. For information about updating
+        /// this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
         /// EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For introductory exercises for creating an Auto Scaling group, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html">Getting
+        /// Started with Amazon EC2 Auto Scaling</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-register-lbs-with-asg.html">Tutorial:
+        /// Set Up a Scaled and Load-Balanced Application</a> in the <i>Amazon EC2 Auto Scaling
+        /// User Guide</i>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html">Auto
+        /// Scaling Groups</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAutoScalingGroup service method.</param>
@@ -538,7 +569,8 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
         /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
-        /// see <a>DescribeAccountLimits</a>.
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -560,9 +592,9 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// If you exceed your maximum limit of launch configurations, the call fails. For information
-        /// about viewing this limit, see <a>DescribeAccountLimits</a>. For information about
-        /// updating this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+        /// If you exceed your maximum limit of launch configurations, the call fails. To query
+        /// this limit, call the <a>DescribeAccountLimits</a> API. For information about updating
+        /// this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
         /// EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
@@ -580,7 +612,8 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
         /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
-        /// see <a>DescribeAccountLimits</a>.
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -596,9 +629,9 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// If you exceed your maximum limit of launch configurations, the call fails. For information
-        /// about viewing this limit, see <a>DescribeAccountLimits</a>. For information about
-        /// updating this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+        /// If you exceed your maximum limit of launch configurations, the call fails. To query
+        /// this limit, call the <a>DescribeAccountLimits</a> API. For information about updating
+        /// this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
         /// EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
@@ -619,7 +652,8 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
         /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
-        /// see <a>DescribeAccountLimits</a>.
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -656,7 +690,8 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
         /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
-        /// see <a>DescribeAccountLimits</a>.
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -696,7 +731,8 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
         /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
-        /// see <a>DescribeAccountLimits</a>.
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -728,14 +764,14 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// To remove instances from the Auto Scaling group before deleting it, call <a>DetachInstances</a>
-        /// with the list of instances and the option to decrement the desired capacity. This
+        /// To remove instances from the Auto Scaling group before deleting it, call the <a>DetachInstances</a>
+        /// API with the list of instances and the option to decrement the desired capacity. This
         /// ensures that Amazon EC2 Auto Scaling does not launch replacement instances.
         /// </para>
         ///  
         /// <para>
-        /// To terminate all instances before deleting the Auto Scaling group, call <a>UpdateAutoScalingGroup</a>
-        /// and set the minimum size and desired capacity of the Auto Scaling group to zero.
+        /// To terminate all instances before deleting the Auto Scaling group, call the <a>UpdateAutoScalingGroup</a>
+        /// API and set the minimum size and desired capacity of the Auto Scaling group to zero.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAutoScalingGroup service method.</param>
@@ -771,14 +807,14 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// To remove instances from the Auto Scaling group before deleting it, call <a>DetachInstances</a>
-        /// with the list of instances and the option to decrement the desired capacity. This
+        /// To remove instances from the Auto Scaling group before deleting it, call the <a>DetachInstances</a>
+        /// API with the list of instances and the option to decrement the desired capacity. This
         /// ensures that Amazon EC2 Auto Scaling does not launch replacement instances.
         /// </para>
         ///  
         /// <para>
-        /// To terminate all instances before deleting the Auto Scaling group, call <a>UpdateAutoScalingGroup</a>
-        /// and set the minimum size and desired capacity of the Auto Scaling group to zero.
+        /// To terminate all instances before deleting the Auto Scaling group, call the <a>UpdateAutoScalingGroup</a>
+        /// API and set the minimum size and desired capacity of the Auto Scaling group to zero.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAutoScalingGroup service method.</param>
@@ -1177,7 +1213,27 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes the policy adjustment types for use with <a>PutScalingPolicy</a>.
+        /// Describes the available adjustment types for Amazon EC2 Auto Scaling scaling policies.
+        /// These settings apply to step scaling policies and simple scaling policies; they do
+        /// not apply to target tracking scaling policies.
+        /// 
+        ///  
+        /// <para>
+        /// The following adjustment types are supported:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ChangeInCapacity
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ExactCapacity
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PercentChangeInCapacity
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAdjustmentTypes service method, as returned by AutoScaling.</returns>
@@ -1190,7 +1246,27 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes the policy adjustment types for use with <a>PutScalingPolicy</a>.
+        /// Describes the available adjustment types for Amazon EC2 Auto Scaling scaling policies.
+        /// These settings apply to step scaling policies and simple scaling policies; they do
+        /// not apply to target tracking scaling policies.
+        /// 
+        ///  
+        /// <para>
+        /// The following adjustment types are supported:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ChangeInCapacity
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ExactCapacity
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PercentChangeInCapacity
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAdjustmentTypes service method.</param>
         /// 
@@ -1204,7 +1280,27 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes the policy adjustment types for use with <a>PutScalingPolicy</a>.
+        /// Describes the available adjustment types for Amazon EC2 Auto Scaling scaling policies.
+        /// These settings apply to step scaling policies and simple scaling policies; they do
+        /// not apply to target tracking scaling policies.
+        /// 
+        ///  
+        /// <para>
+        /// The following adjustment types are supported:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ChangeInCapacity
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ExactCapacity
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PercentChangeInCapacity
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1221,7 +1317,27 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes the policy adjustment types for use with <a>PutScalingPolicy</a>.
+        /// Describes the available adjustment types for Amazon EC2 Auto Scaling scaling policies.
+        /// These settings apply to step scaling policies and simple scaling policies; they do
+        /// not apply to target tracking scaling policies.
+        /// 
+        ///  
+        /// <para>
+        /// The following adjustment types are supported:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ChangeInCapacity
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ExactCapacity
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PercentChangeInCapacity
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAdjustmentTypes service method.</param>
         /// <param name="cancellationToken">
@@ -1643,7 +1759,8 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// This operation describes only Classic Load Balancers. If you have Application Load
-        /// Balancers or Network Load Balancers, use <a>DescribeLoadBalancerTargetGroups</a> instead.
+        /// Balancers or Network Load Balancers, use the <a>DescribeLoadBalancerTargetGroups</a>
+        /// API instead.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancers service method.</param>
@@ -1664,7 +1781,8 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// This operation describes only Classic Load Balancers. If you have Application Load
-        /// Balancers or Network Load Balancers, use <a>DescribeLoadBalancerTargetGroups</a> instead.
+        /// Balancers or Network Load Balancers, use the <a>DescribeLoadBalancerTargetGroups</a>
+        /// API instead.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancers service method.</param>
@@ -1727,7 +1845,7 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// The <code>GroupStandbyInstances</code> metric is not returned by default. You must
-        /// explicitly request this metric when calling <a>EnableMetricsCollection</a>.
+        /// explicitly request this metric when calling the <a>EnableMetricsCollection</a> API.
         /// </para>
         /// </summary>
         /// 
@@ -1746,7 +1864,7 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// The <code>GroupStandbyInstances</code> metric is not returned by default. You must
-        /// explicitly request this metric when calling <a>EnableMetricsCollection</a>.
+        /// explicitly request this metric when calling the <a>EnableMetricsCollection</a> API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMetricCollectionTypes service method.</param>
@@ -1766,7 +1884,7 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// The <code>GroupStandbyInstances</code> metric is not returned by default. You must
-        /// explicitly request this metric when calling <a>EnableMetricsCollection</a>.
+        /// explicitly request this metric when calling the <a>EnableMetricsCollection</a> API.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -1789,7 +1907,7 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// The <code>GroupStandbyInstances</code> metric is not returned by default. You must
-        /// explicitly request this metric when calling <a>EnableMetricsCollection</a>.
+        /// explicitly request this metric when calling the <a>EnableMetricsCollection</a> API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMetricCollectionTypes service method.</param>
@@ -2054,7 +2172,8 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes the scaling process types for use with <a>ResumeProcesses</a> and <a>SuspendProcesses</a>.
+        /// Describes the scaling process types for use with the <a>ResumeProcesses</a> and <a>SuspendProcesses</a>
+        /// APIs.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeScalingProcessTypes service method, as returned by AutoScaling.</returns>
@@ -2067,7 +2186,8 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes the scaling process types for use with <a>ResumeProcesses</a> and <a>SuspendProcesses</a>.
+        /// Describes the scaling process types for use with the <a>ResumeProcesses</a> and <a>SuspendProcesses</a>
+        /// APIs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingProcessTypes service method.</param>
         /// 
@@ -2081,7 +2201,8 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes the scaling process types for use with <a>ResumeProcesses</a> and <a>SuspendProcesses</a>.
+        /// Describes the scaling process types for use with the <a>ResumeProcesses</a> and <a>SuspendProcesses</a>
+        /// APIs.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2098,7 +2219,8 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes the scaling process types for use with <a>ResumeProcesses</a> and <a>SuspendProcesses</a>.
+        /// Describes the scaling process types for use with the <a>ResumeProcesses</a> and <a>SuspendProcesses</a>
+        /// APIs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingProcessTypes service method.</param>
         /// <param name="cancellationToken">
@@ -2120,8 +2242,8 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Describes the actions scheduled for your Auto Scaling group that haven't run or that
-        /// have not reached their end time. To describe the actions that have already run, use
-        /// <a>DescribeScalingActivities</a>.
+        /// have not reached their end time. To describe the actions that have already run, call
+        /// the <a>DescribeScalingActivities</a> API.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeScheduledActions service method, as returned by AutoScaling.</returns>
@@ -2138,8 +2260,8 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Describes the actions scheduled for your Auto Scaling group that haven't run or that
-        /// have not reached their end time. To describe the actions that have already run, use
-        /// <a>DescribeScalingActivities</a>.
+        /// have not reached their end time. To describe the actions that have already run, call
+        /// the <a>DescribeScalingActivities</a> API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledActions service method.</param>
         /// 
@@ -2157,8 +2279,8 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Describes the actions scheduled for your Auto Scaling group that haven't run or that
-        /// have not reached their end time. To describe the actions that have already run, use
-        /// <a>DescribeScalingActivities</a>.
+        /// have not reached their end time. To describe the actions that have already run, call
+        /// the <a>DescribeScalingActivities</a> API.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2179,8 +2301,8 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Describes the actions scheduled for your Auto Scaling group that haven't run or that
-        /// have not reached their end time. To describe the actions that have already run, use
-        /// <a>DescribeScalingActivities</a>.
+        /// have not reached their end time. To describe the actions that have already run, call
+        /// the <a>DescribeScalingActivities</a> API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledActions service method.</param>
         /// <param name="cancellationToken">
@@ -2218,6 +2340,11 @@ namespace Amazon.AutoScaling
         /// tag only if it matches all the filters. If there's no match, no special message is
         /// returned.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
+        /// Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by AutoScaling.</returns>
@@ -2246,6 +2373,11 @@ namespace Amazon.AutoScaling
         /// You can also specify multiple filters. The result includes information for a particular
         /// tag only if it matches all the filters. If there's no match, no special message is
         /// returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
+        /// Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
@@ -2276,6 +2408,11 @@ namespace Amazon.AutoScaling
         /// You can also specify multiple filters. The result includes information for a particular
         /// tag only if it matches all the filters. If there's no match, no special message is
         /// returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
+        /// Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -2309,6 +2446,11 @@ namespace Amazon.AutoScaling
         /// You can also specify multiple filters. The result includes information for a particular
         /// tag only if it matches all the filters. If there's no match, no special message is
         /// returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
+        /// Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
@@ -2513,14 +2655,15 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// This operation detaches only Classic Load Balancers. If you have Application Load
-        /// Balancers or Network Load Balancers, use <a>DetachLoadBalancerTargetGroups</a> instead.
+        /// Balancers or Network Load Balancers, use the <a>DetachLoadBalancerTargetGroups</a>
+        /// API instead.
         /// </para>
         ///  
         /// <para>
         /// When you detach a load balancer, it enters the <code>Removing</code> state while deregistering
         /// the instances in the group. When all instances are deregistered, then you can no longer
-        /// describe the load balancer using <a>DescribeLoadBalancers</a>. The instances remain
-        /// running.
+        /// describe the load balancer using the <a>DescribeLoadBalancers</a> API call. The instances
+        /// remain running.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachLoadBalancers service method.</param>
@@ -2541,14 +2684,15 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// This operation detaches only Classic Load Balancers. If you have Application Load
-        /// Balancers or Network Load Balancers, use <a>DetachLoadBalancerTargetGroups</a> instead.
+        /// Balancers or Network Load Balancers, use the <a>DetachLoadBalancerTargetGroups</a>
+        /// API instead.
         /// </para>
         ///  
         /// <para>
         /// When you detach a load balancer, it enters the <code>Removing</code> state while deregistering
         /// the instances in the group. When all instances are deregistered, then you can no longer
-        /// describe the load balancer using <a>DescribeLoadBalancers</a>. The instances remain
-        /// running.
+        /// describe the load balancer using the <a>DescribeLoadBalancers</a> API call. The instances
+        /// remain running.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachLoadBalancers service method.</param>
@@ -2890,12 +3034,12 @@ namespace Amazon.AutoScaling
         ///  </li> <li> 
         /// <para>
         /// If you need more time, record the lifecycle action heartbeat to keep the instance
-        /// in a pending state using <a>RecordLifecycleActionHeartbeat</a>.
+        /// in a pending state using the <a>RecordLifecycleActionHeartbeat</a> API call.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you finish before the timeout period ends, complete the lifecycle action using
-        /// <a>CompleteLifecycleAction</a>.
+        /// the <a>CompleteLifecycleAction</a> API call.
         /// </para>
         ///  </li> </ol> 
         /// <para>
@@ -2909,8 +3053,9 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// You can view the lifecycle hooks for an Auto Scaling group using <a>DescribeLifecycleHooks</a>.
-        /// If you are no longer using a lifecycle hook, you can delete it using <a>DeleteLifecycleHook</a>.
+        /// You can view the lifecycle hooks for an Auto Scaling group using the <a>DescribeLifecycleHooks</a>
+        /// API call. If you are no longer using a lifecycle hook, you can delete it by calling
+        /// the <a>DeleteLifecycleHook</a> API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleHook service method.</param>
@@ -2919,7 +3064,8 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
         /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
-        /// see <a>DescribeAccountLimits</a>.
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -2963,12 +3109,12 @@ namespace Amazon.AutoScaling
         ///  </li> <li> 
         /// <para>
         /// If you need more time, record the lifecycle action heartbeat to keep the instance
-        /// in a pending state using <a>RecordLifecycleActionHeartbeat</a>.
+        /// in a pending state using the <a>RecordLifecycleActionHeartbeat</a> API call.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you finish before the timeout period ends, complete the lifecycle action using
-        /// <a>CompleteLifecycleAction</a>.
+        /// the <a>CompleteLifecycleAction</a> API call.
         /// </para>
         ///  </li> </ol> 
         /// <para>
@@ -2982,8 +3128,9 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// You can view the lifecycle hooks for an Auto Scaling group using <a>DescribeLifecycleHooks</a>.
-        /// If you are no longer using a lifecycle hook, you can delete it using <a>DeleteLifecycleHook</a>.
+        /// You can view the lifecycle hooks for an Auto Scaling group using the <a>DescribeLifecycleHooks</a>
+        /// API call. If you are no longer using a lifecycle hook, you can delete it by calling
+        /// the <a>DeleteLifecycleHook</a> API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleHook service method.</param>
@@ -2995,7 +3142,8 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
         /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
-        /// see <a>DescribeAccountLimits</a>.
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3031,7 +3179,8 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
         /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
-        /// see <a>DescribeAccountLimits</a>.
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3070,7 +3219,8 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
         /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
-        /// see <a>DescribeAccountLimits</a>.
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3092,9 +3242,10 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information about using scaling policies to scale your Auto Scaling group
-        /// automatically, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
-        /// Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// For more information about using scaling policies to scale your Auto Scaling group,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
+        /// Tracking Scaling Policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
+        /// and Simple Scaling Policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutScalingPolicy service method.</param>
@@ -3103,7 +3254,8 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
         /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
-        /// see <a>DescribeAccountLimits</a>.
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3122,9 +3274,10 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information about using scaling policies to scale your Auto Scaling group
-        /// automatically, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
-        /// Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// For more information about using scaling policies to scale your Auto Scaling group,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
+        /// Tracking Scaling Policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
+        /// and Simple Scaling Policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutScalingPolicy service method.</param>
@@ -3136,7 +3289,8 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
         /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
-        /// see <a>DescribeAccountLimits</a>.
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3173,7 +3327,8 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
         /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
-        /// see <a>DescribeAccountLimits</a>.
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3207,7 +3362,8 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
         /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
-        /// see <a>DescribeAccountLimits</a>.
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3223,7 +3379,8 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Records a heartbeat for the lifecycle action associated with the specified token or
-        /// instance. This extends the timeout by the length of time defined using <a>PutLifecycleHook</a>.
+        /// instance. This extends the timeout by the length of time defined using the <a>PutLifecycleHook</a>
+        /// API call.
         /// 
         ///  
         /// <para>
@@ -3275,7 +3432,8 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Records a heartbeat for the lifecycle action associated with the specified token or
-        /// instance. This extends the timeout by the length of time defined using <a>PutLifecycleHook</a>.
+        /// instance. This extends the timeout by the length of time defined using the <a>PutLifecycleHook</a>
+        /// API call.
         /// 
         ///  
         /// <para>
@@ -3392,8 +3550,14 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information about desired capacity, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">What
-        /// Is Amazon EC2 Auto Scaling?</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// If a scale-in activity occurs as a result of a new <code>DesiredCapacity</code> value
+        /// that is lower than the current size of the group, the Auto Scaling group uses its
+        /// termination policy to determine which instances to terminate. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-manual-scaling.html">Manual
+        /// Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetDesiredCapacity service method.</param>
@@ -3416,8 +3580,14 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information about desired capacity, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">What
-        /// Is Amazon EC2 Auto Scaling?</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// If a scale-in activity occurs as a result of a new <code>DesiredCapacity</code> value
+        /// that is lower than the current size of the group, the Auto Scaling group uses its
+        /// termination policy to determine which instances to terminate. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-manual-scaling.html">Manual
+        /// Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetDesiredCapacity service method.</param>
@@ -3505,7 +3675,8 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
         /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
-        /// see <a>DescribeAccountLimits</a>.
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3535,7 +3706,8 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
         /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
-        /// see <a>DescribeAccountLimits</a>.
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3556,16 +3728,13 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// If you suspend either the <code>Launch</code> or <code>Terminate</code> process types,
-        /// it can prevent other process types from functioning properly.
-        /// </para>
-        ///  
-        /// <para>
-        /// To resume processes that have been suspended, use <a>ResumeProcesses</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
+        /// it can prevent other process types from functioning properly. For more information,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
         /// and Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To resume processes that have been suspended, call the <a>ResumeProcesses</a> API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SuspendProcesses service method.</param>
@@ -3590,16 +3759,13 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// If you suspend either the <code>Launch</code> or <code>Terminate</code> process types,
-        /// it can prevent other process types from functioning properly.
-        /// </para>
-        ///  
-        /// <para>
-        /// To resume processes that have been suspended, use <a>ResumeProcesses</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
+        /// it can prevent other process types from functioning properly. For more information,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
         /// and Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To resume processes that have been suspended, call the <a>ResumeProcesses</a> API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SuspendProcesses service method.</param>
@@ -3624,11 +3790,14 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Terminates the specified instance and optionally adjusts the desired group size. This
-        /// call simply makes a termination request. The instance is not terminated immediately.
+        /// Terminates the specified instance and optionally adjusts the desired group size. 
+        /// 
+        ///  
+        /// <para>
+        /// This call simply makes a termination request. The instance is not terminated immediately.
         /// When an instance is terminated, the instance status changes to <code>terminated</code>.
         /// You can't connect to or start an instance after you've terminated it.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// If you do not specify the option to decrement the desired capacity, Amazon EC2 Auto
@@ -3660,11 +3829,14 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Terminates the specified instance and optionally adjusts the desired group size. This
-        /// call simply makes a termination request. The instance is not terminated immediately.
+        /// Terminates the specified instance and optionally adjusts the desired group size. 
+        /// 
+        ///  
+        /// <para>
+        /// This call simply makes a termination request. The instance is not terminated immediately.
         /// When an instance is terminated, the instance status changes to <code>terminated</code>.
         /// You can't connect to or start an instance after you've terminated it.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// If you do not specify the option to decrement the desired capacity, Amazon EC2 Auto
@@ -3732,7 +3904,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If a scale-in event occurs as a result of a new <code>DesiredCapacity</code> value
+        /// If a scale-in activity occurs as a result of a new <code>DesiredCapacity</code> value
         /// that is lower than the current size of the group, the Auto Scaling group uses its
         /// termination policy to determine which instances to terminate.
         /// </para>
@@ -3752,9 +3924,10 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To see which parameters have been set, use <a>DescribeAutoScalingGroups</a>. You can
-        /// also view the scaling policies for an Auto Scaling group using <a>DescribePolicies</a>.
-        /// If the group has scaling policies, you can update them using <a>PutScalingPolicy</a>.
+        /// To see which parameters have been set, call the <a>DescribeAutoScalingGroups</a> API.
+        /// To view the scaling policies for an Auto Scaling group, call the <a>DescribePolicies</a>
+        /// API. If the group has scaling policies, you can update them by calling the <a>PutScalingPolicy</a>
+        /// API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAutoScalingGroup service method.</param>
@@ -3806,7 +3979,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If a scale-in event occurs as a result of a new <code>DesiredCapacity</code> value
+        /// If a scale-in activity occurs as a result of a new <code>DesiredCapacity</code> value
         /// that is lower than the current size of the group, the Auto Scaling group uses its
         /// termination policy to determine which instances to terminate.
         /// </para>
@@ -3826,9 +3999,10 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To see which parameters have been set, use <a>DescribeAutoScalingGroups</a>. You can
-        /// also view the scaling policies for an Auto Scaling group using <a>DescribePolicies</a>.
-        /// If the group has scaling policies, you can update them using <a>PutScalingPolicy</a>.
+        /// To see which parameters have been set, call the <a>DescribeAutoScalingGroups</a> API.
+        /// To view the scaling policies for an Auto Scaling group, call the <a>DescribePolicies</a>
+        /// API. If the group has scaling policies, you can update them by calling the <a>PutScalingPolicy</a>
+        /// API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAutoScalingGroup service method.</param>

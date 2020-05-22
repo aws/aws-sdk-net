@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes one or more scheduled scaling action updates for a specified Auto Scaling
-    /// group. Used in combination with <a>BatchPutScheduledUpdateGroupAction</a>.
+    /// Describes information used for one or more scheduled scaling action updates in a <a>BatchPutScheduledUpdateGroupAction</a>
+    /// operation.
     /// 
     ///  
     /// <para>
@@ -51,7 +51,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        /// The number of EC2 instances that should be running in the group.
+        /// The desired capacity is the initial capacity of the Auto Scaling group after the scheduled
+        /// action runs and the capacity it attempts to maintain.
         /// </para>
         /// </summary>
         public int DesiredCapacity
@@ -88,7 +89,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxSize. 
         /// <para>
-        /// The maximum number of instances in the Auto Scaling group.
+        /// The maximum size of the Auto Scaling group.
         /// </para>
         /// </summary>
         public int MaxSize
@@ -106,7 +107,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinSize. 
         /// <para>
-        /// The minimum number of instances in the Auto Scaling group.
+        /// The minimum size of the Auto Scaling group.
         /// </para>
         /// </summary>
         public int MinSize

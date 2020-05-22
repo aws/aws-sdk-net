@@ -29,7 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes a filter.
+    /// Describes a filter that is used to return a more specific list of results when describing
+    /// tags.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
+    /// Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class Filter
     {
@@ -39,8 +46,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the filter. The valid values are: <code>"auto-scaling-group"</code>, <code>"key"</code>,
-        /// <code>"value"</code>, and <code>"propagate-at-launch"</code>.
+        /// The name of the filter. The valid values are: <code>auto-scaling-group</code>, <code>key</code>,
+        /// <code>value</code>, and <code>propagate-at-launch</code>.
         /// </para>
         /// </summary>
         public string Name
@@ -58,7 +65,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The value of the filter.
+        /// One or more filter values. Filter values are case-sensitive.
         /// </para>
         /// </summary>
         public List<string> Values

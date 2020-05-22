@@ -30,11 +30,14 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the TerminateInstanceInAutoScalingGroup operation.
-    /// Terminates the specified instance and optionally adjusts the desired group size. This
-    /// call simply makes a termination request. The instance is not terminated immediately.
+    /// Terminates the specified instance and optionally adjusts the desired group size. 
+    /// 
+    ///  
+    /// <para>
+    /// This call simply makes a termination request. The instance is not terminated immediately.
     /// When an instance is terminated, the instance status changes to <code>terminated</code>.
     /// You can't connect to or start an instance after you've terminated it.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// If you do not specify the option to decrement the desired capacity, Amazon EC2 Auto

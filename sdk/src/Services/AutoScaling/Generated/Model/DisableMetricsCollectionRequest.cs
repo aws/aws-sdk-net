@@ -59,8 +59,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        /// One or more of the following metrics. If you omit this parameter, all metrics are
-        /// disabled.
+        /// Specifies one or more of the following metrics:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -94,7 +93,30 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         ///  <code>GroupTotalInstances</code> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GroupInServiceCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GroupPendingCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GroupStandbyCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GroupTerminatingCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GroupTotalCapacity</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you omit this parameter, all metrics are disabled. 
+        /// </para>
         /// </summary>
         public List<string> Metrics
         {
