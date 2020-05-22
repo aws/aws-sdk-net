@@ -1,3 +1,14 @@
+### 3.3.747.0 (2020-05-22 18:09 UTC)
+* AutoScaling (3.3.102.51)
+	* Documentation updates for Amazon EC2 Auto Scaling
+* IoTSiteWise (3.3.101.0)
+	* This release adds support for the standard deviation auto-computed aggregate and improved support for portal logo images in SiteWise.
+* Core 3.3.107.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.746.0 (2020-05-22 00:04 UTC)
 * S3 (3.3.111.1)
 	* Encode only unicode characters in S3 metadata.

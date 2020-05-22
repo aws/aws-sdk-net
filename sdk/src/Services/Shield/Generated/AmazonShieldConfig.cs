@@ -32,7 +32,7 @@ namespace Amazon.Shield
     public partial class AmazonShieldConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.102.51");
+            InternalSDKUtils.BuildUserAgentString("3.3.102.52");
 
         private string _userAgent = UserAgentString;
 
