@@ -1,3 +1,10 @@
+### 3.3.746.0 (2020-05-22 00:04 UTC)
+* S3 (3.3.111.1)
+	* Encode only unicode characters in S3 metadata.
+* Core 3.3.107.0
+	* Add support for unmarshall and model errors returned by service APIs; Remove exclusion list used for generating API doc URL.
+	* All services packages updated to require new Core
+
 ### 3.3.745.0 (2020-05-21 18:14 UTC)
 * CodeBuild (3.3.111.0)
 	* CodeBuild adds support for tagging with report groups
