@@ -37,7 +37,7 @@ namespace Amazon.IoTSiteWise.Model
     /// 
     ///  <important> 
     /// <para>
-    /// This action overwrites the existing model with the provided model. To avoid deleting
+    /// This operation overwrites the existing model with the provided model. To avoid deleting
     /// your asset model's properties or hierarchies, you must include their IDs and definitions
     /// in the updated asset model payload. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.
     /// </para>

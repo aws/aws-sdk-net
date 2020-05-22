@@ -29,49 +29,55 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains an image that is available at a URL.
+    /// Contains an image that is one of the following:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// An image file. Choose this option to upload a new image.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The ID of an existing image. Choose this option to keep an existing image.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class Image
     {
-        private DateTime? _lastUpdateDate;
-        private string _locationUrl;
+        private ImageFile _file;
+        private string _id;
 
         /// <summary>
-        /// Gets and sets the property LastUpdateDate. 
-        /// <para>
-        /// The date the image was last updated, in Unix epoch time.
-        /// </para>
+        /// Gets and sets the property File.
         /// </summary>
-        public DateTime LastUpdateDate
+        public ImageFile File
         {
-            get { return this._lastUpdateDate.GetValueOrDefault(); }
-            set { this._lastUpdateDate = value; }
+            get { return this._file; }
+            set { this._file = value; }
         }
 
-        // Check to see if LastUpdateDate property is set
-        internal bool IsSetLastUpdateDate()
+        // Check to see if File property is set
+        internal bool IsSetFile()
         {
-            return this._lastUpdateDate.HasValue; 
+            return this._file != null;
         }
 
         /// <summary>
-        /// Gets and sets the property LocationUrl. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// A URL at which the image is available. The URL is valid for 15 minutes for you to
-        /// view and download the image.
+        /// The ID of an existing image. Specify this parameter to keep an existing image.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
-        public string LocationUrl
+        [AWSProperty(Min=36, Max=36)]
+        public string Id
         {
-            get { return this._locationUrl; }
-            set { this._locationUrl = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if LocationUrl property is set
-        internal bool IsSetLocationUrl()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._locationUrl != null;
+            return this._id != null;
         }
 
     }

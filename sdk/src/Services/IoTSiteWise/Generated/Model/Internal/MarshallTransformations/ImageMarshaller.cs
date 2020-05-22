@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ImageFile Marshaller
+    /// Image Marshaller
     /// </summary>       
-    public class ImageFileMarshaller : IRequestMarshaller<ImageFile, JsonMarshallerContext> 
+    public class ImageMarshaller : IRequestMarshaller<Image, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,18 +43,23 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ImageFile requestObject, JsonMarshallerContext context)
+        public void Marshall(Image requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetData())
+            if(requestObject.IsSetFile())
             {
-                context.Writer.WritePropertyName("data");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Data));
+                context.Writer.WritePropertyName("file");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ImageFileMarshaller.Instance;
+                marshaller.Marshall(requestObject.File, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetType())
+            if(requestObject.IsSetId())
             {
-                context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WritePropertyName("id");
+                context.Writer.Write(requestObject.Id);
             }
 
         }
@@ -62,7 +67,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ImageFileMarshaller Instance = new ImageFileMarshaller();
+        public readonly static ImageMarshaller Instance = new ImageMarshaller();
 
     }
 }

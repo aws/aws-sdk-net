@@ -88,6 +88,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     unmarshalledObject.Minimum = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("standardDeviation", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.StandardDeviation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sum", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;

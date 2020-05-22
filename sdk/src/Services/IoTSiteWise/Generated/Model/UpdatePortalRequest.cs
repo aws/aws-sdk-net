@@ -38,7 +38,7 @@ namespace Amazon.IoTSiteWise.Model
         private string _portalContactEmail;
         private string _portalDescription;
         private string _portalId;
-        private ImageFile _portalLogoImageFile;
+        private Image _portalLogoImage;
         private string _portalName;
         private string _roleArn;
 
@@ -120,22 +120,18 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PortalLogoImageFile. 
-        /// <para>
-        /// A logo image to display in the portal. Upload a square, high-resolution image. The
-        /// image is displayed on a dark background.
-        /// </para>
+        /// Gets and sets the property PortalLogoImage.
         /// </summary>
-        public ImageFile PortalLogoImageFile
+        public Image PortalLogoImage
         {
-            get { return this._portalLogoImageFile; }
-            set { this._portalLogoImageFile = value; }
+            get { return this._portalLogoImage; }
+            set { this._portalLogoImage = value; }
         }
 
-        // Check to see if PortalLogoImageFile property is set
-        internal bool IsSetPortalLogoImageFile()
+        // Check to see if PortalLogoImage property is set
+        internal bool IsSetPortalLogoImage()
         {
-            return this._portalLogoImageFile != null;
+            return this._portalLogoImage != null;
         }
 
         /// <summary>

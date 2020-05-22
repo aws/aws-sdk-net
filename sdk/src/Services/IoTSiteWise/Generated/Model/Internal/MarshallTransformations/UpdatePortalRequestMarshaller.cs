@@ -92,13 +92,13 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PortalDescription);
                 }
 
-                if(publicRequest.IsSetPortalLogoImageFile())
+                if(publicRequest.IsSetPortalLogoImage())
                 {
-                    context.Writer.WritePropertyName("portalLogoImageFile");
+                    context.Writer.WritePropertyName("portalLogoImage");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = ImageFileMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PortalLogoImageFile, context);
+                    var marshaller = ImageMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PortalLogoImage, context);
 
                     context.Writer.WriteObjectEnd();
                 }

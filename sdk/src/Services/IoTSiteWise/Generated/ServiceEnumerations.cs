@@ -47,6 +47,10 @@ namespace Amazon.IoTSiteWise
         /// </summary>
         public static readonly AggregateType MINIMUM = new AggregateType("MINIMUM");
         /// <summary>
+        /// Constant STANDARD_DEVIATION for AggregateType
+        /// </summary>
+        public static readonly AggregateType STANDARD_DEVIATION = new AggregateType("STANDARD_DEVIATION");
+        /// <summary>
         /// Constant SUM for AggregateType
         /// </summary>
         public static readonly AggregateType SUM = new AggregateType("SUM");

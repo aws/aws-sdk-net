@@ -29,50 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains an image file.
+    /// Contains an image that is uploaded to AWS IoT SiteWise and available at a URL.
     /// </summary>
-    public partial class ImageFile
+    public partial class ImageLocation
     {
-        private MemoryStream _data;
-        private ImageFileType _type;
+        private string _id;
+        private string _url;
 
         /// <summary>
-        /// Gets and sets the property Data. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// The image file contents, represented as a base64-encoded string. The file size must
-        /// be less than 1 MB.
+        /// The ID of the image.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1500000)]
-        public MemoryStream Data
+        [AWSProperty(Required=true, Min=36, Max=36)]
+        public string Id
         {
-            get { return this._data; }
-            set { this._data = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if Data property is set
-        internal bool IsSetData()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._data != null;
+            return this._id != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Type. 
+        /// Gets and sets the property Url. 
         /// <para>
-        /// The file type of the image.
+        /// The URL where the image is available. The URL is valid for 15 minutes so that you
+        /// can view and download the image
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public ImageFileType Type
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string Url
         {
-            get { return this._type; }
-            set { this._type = value; }
+            get { return this._url; }
+            set { this._url = value; }
         }
 
-        // Check to see if Type property is set
-        internal bool IsSetType()
+        // Check to see if Url property is set
+        internal bool IsSetUrl()
         {
-            return this._type != null;
+            return this._url != null;
         }
 
     }

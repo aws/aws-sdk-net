@@ -45,7 +45,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property IdentityId. 
         /// <para>
-        /// The ID of the identity.
+        /// The ID of the identity. This parameter is required if you specify <code>identityType</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -64,7 +64,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property IdentityType. 
         /// <para>
-        /// The type of identity (user or group).
+        /// The type of identity (user or group). This parameter is required if you specify <code>identityId</code>.
         /// </para>
         /// </summary>
         public IdentityType IdentityType
@@ -120,7 +120,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the resource.
+        /// The ID of the resource. This parameter is required if you specify <code>resourceType</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -139,7 +139,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource (portal or project).
+        /// The type of resource (portal or project). This parameter is required if you specify
+        /// <code>resourceId</code>.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

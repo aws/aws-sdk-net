@@ -40,7 +40,7 @@ namespace Amazon.IoTSiteWise.Model
         private string _portalDescription;
         private string _portalId;
         private DateTime? _portalLastUpdateDate;
-        private Image _portalLogoImage;
+        private ImageLocation _portalLogoImageLocation;
         private string _portalName;
         private string _portalStartUrl;
         private PortalStatus _portalStatus;
@@ -186,21 +186,21 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PortalLogoImage. 
+        /// Gets and sets the property PortalLogoImageLocation. 
         /// <para>
-        /// The portal's logo image.
+        /// The portal's logo image, which is available at a URL.
         /// </para>
         /// </summary>
-        public Image PortalLogoImage
+        public ImageLocation PortalLogoImageLocation
         {
-            get { return this._portalLogoImage; }
-            set { this._portalLogoImage = value; }
+            get { return this._portalLogoImageLocation; }
+            set { this._portalLogoImageLocation = value; }
         }
 
-        // Check to see if PortalLogoImage property is set
-        internal bool IsSetPortalLogoImage()
+        // Check to see if PortalLogoImageLocation property is set
+        internal bool IsSetPortalLogoImageLocation()
         {
-            return this._portalLogoImage != null;
+            return this._portalLogoImageLocation != null;
         }
 
         /// <summary>

@@ -39,7 +39,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property PortalStatus. 
         /// <para>
         /// The status of the portal, which contains a state (<code>UPDATING</code> after successfully
-        /// calling this action) and any error message.
+        /// calling this operation) and any error message.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

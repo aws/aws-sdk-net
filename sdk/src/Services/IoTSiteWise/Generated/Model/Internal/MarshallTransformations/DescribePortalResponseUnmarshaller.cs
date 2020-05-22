@@ -93,10 +93,10 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.PortalLastUpdateDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("portalLogoImage", targetDepth))
+                if (context.TestExpression("portalLogoImageLocation", targetDepth))
                 {
-                    var unmarshaller = ImageUnmarshaller.Instance;
-                    response.PortalLogoImage = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ImageLocationUnmarshaller.Instance;
+                    response.PortalLogoImageLocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("portalName", targetDepth))

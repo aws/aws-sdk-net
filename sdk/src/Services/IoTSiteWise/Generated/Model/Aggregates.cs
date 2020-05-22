@@ -37,12 +37,13 @@ namespace Amazon.IoTSiteWise.Model
         private double? _count;
         private double? _maximum;
         private double? _minimum;
+        private double? _standardDeviation;
         private double? _sum;
 
         /// <summary>
         /// Gets and sets the property Average. 
         /// <para>
-        /// The average (mean) value of the time series for the last time interval window.
+        /// The average (mean) value of the time series over a time interval window.
         /// </para>
         /// </summary>
         public double Average
@@ -60,7 +61,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The count of data points in the time series for the last time interval window.
+        /// The count of data points in the time series over a time interval window.
         /// </para>
         /// </summary>
         public double Count
@@ -78,7 +79,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Maximum. 
         /// <para>
-        /// The maximum value of the time series for the last time interval window.
+        /// The maximum value of the time series over a time interval window.
         /// </para>
         /// </summary>
         public double Maximum
@@ -96,7 +97,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Minimum. 
         /// <para>
-        /// The minimum value of the time series for the last time interval window.
+        /// The minimum value of the time series over a time interval window.
         /// </para>
         /// </summary>
         public double Minimum
@@ -112,9 +113,27 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StandardDeviation. 
+        /// <para>
+        /// The standard deviation of the time series over a time interval window.
+        /// </para>
+        /// </summary>
+        public double StandardDeviation
+        {
+            get { return this._standardDeviation.GetValueOrDefault(); }
+            set { this._standardDeviation = value; }
+        }
+
+        // Check to see if StandardDeviation property is set
+        internal bool IsSetStandardDeviation()
+        {
+            return this._standardDeviation.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Sum. 
         /// <para>
-        /// The sum of the time series for the last time interval window.
+        /// The sum of the time series over a time interval window.
         /// </para>
         /// </summary>
         public double Sum

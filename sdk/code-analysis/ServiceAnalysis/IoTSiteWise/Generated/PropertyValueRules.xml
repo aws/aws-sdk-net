@@ -1431,7 +1431,24 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.IoTSiteWise.Model.Image.LocationUrl</property>
+    <property>Amazon.IoTSiteWise.Model.Image.Id</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.ImageFile.Data</property>
+    <min>1</min>
+    <max>1500000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.ImageLocation.Id</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.ImageLocation.Url</property>
     <min>1</min>
     <max>256</max>
     <pattern>^(http|https)\://\S+</pattern>
