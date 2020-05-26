@@ -70,8 +70,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DataType. 
         /// <para>
-        /// The data type for a String parameter. Supported data types include plain text and
-        /// Amazon Machine Image IDs.
+        /// The data type for a <code>String</code> parameter. Supported data types include plain
+        /// text and Amazon Machine Image IDs.
         /// </para>
         ///  
         /// <para>
@@ -87,9 +87,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When you create a String parameter and specify <code>aws:ec2:image</code>, Systems
-        /// Manager validates the parameter value you provide against that data type. The required
-        /// format is <code>ami-12345abcdeEXAMPLE</code>. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+        /// When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>,
+        /// Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>,
+        /// and that the specified AMI is available in your AWS account. For more information,
+        /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
         /// parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User
         /// Guide</i>.
         /// </para>

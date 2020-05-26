@@ -336,14 +336,10 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        /// When you associate a document with one or more instances using instance IDs or tags,
-        /// SSM Agent running on the instance processes the document and configures the instance
-        /// as specified.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you associate a document with an instance that already has an associated document,
-        /// the system returns the AssociationAlreadyExists exception.
+        /// When you associate a document with one or more instances, SSM Agent running on the
+        /// instance processes the document and configures the instance as specified. If you associate
+        /// a document with an instance that already has an associated document, the system returns
+        /// the <code>AssociationAlreadyExists</code> exception.
         /// </para>
         /// </summary>
         /// <param name="instanceId">The instance ID. <note>  <code>InstanceId</code> has been deprecated. To specify an instance ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with SSM documents that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you cannot use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter. </note></param>
@@ -417,14 +413,10 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        /// When you associate a document with one or more instances using instance IDs or tags,
-        /// SSM Agent running on the instance processes the document and configures the instance
-        /// as specified.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you associate a document with an instance that already has an associated document,
-        /// the system returns the AssociationAlreadyExists exception.
+        /// When you associate a document with one or more instances, SSM Agent running on the
+        /// instance processes the document and configures the instance as specified. If you associate
+        /// a document with an instance that already has an associated document, the system returns
+        /// the <code>AssociationAlreadyExists</code> exception.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssociation service method.</param>
@@ -588,7 +580,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Systems Manager Documents</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </summary>
         /// <param name="content">The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>AWS Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (AWS API)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (AWS CLI)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>  </li> </ul></param>
-        /// <param name="name">A name for the Systems Manager document. <important> You can't use the following strings as document name prefixes. These are reserved by AWS for use as document name prefixes: <ul> <li>  <code>aws</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
+        /// <param name="name">A name for the Systems Manager document. <important> You can't use the following strings as document name prefixes. These are reserved by AWS for use as document name prefixes: <ul> <li>  <code>aws-</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

@@ -123,7 +123,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The OpsItem data type to return.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Min=1)]
         public List<OpsResultAttribute> ResultAttributes
         {
             get { return this._resultAttributes; }
