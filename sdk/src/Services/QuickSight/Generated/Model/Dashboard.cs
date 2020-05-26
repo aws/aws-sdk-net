@@ -135,7 +135,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A display name for the dataset.
+        /// A display name for the dashboard.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

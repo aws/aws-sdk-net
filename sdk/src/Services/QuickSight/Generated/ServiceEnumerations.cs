@@ -193,6 +193,10 @@ namespace Amazon.QuickSight
     {
 
         /// <summary>
+        /// Constant ACCESS_DENIED for DashboardErrorType
+        /// </summary>
+        public static readonly DashboardErrorType ACCESS_DENIED = new DashboardErrorType("ACCESS_DENIED");
+        /// <summary>
         /// Constant COLUMN_GEOGRAPHIC_ROLE_MISMATCH for DashboardErrorType
         /// </summary>
         public static readonly DashboardErrorType COLUMN_GEOGRAPHIC_ROLE_MISMATCH = new DashboardErrorType("COLUMN_GEOGRAPHIC_ROLE_MISMATCH");
@@ -224,6 +228,10 @@ namespace Amazon.QuickSight
         /// Constant PARAMETER_VALUE_INCOMPATIBLE for DashboardErrorType
         /// </summary>
         public static readonly DashboardErrorType PARAMETER_VALUE_INCOMPATIBLE = new DashboardErrorType("PARAMETER_VALUE_INCOMPATIBLE");
+        /// <summary>
+        /// Constant SOURCE_NOT_FOUND for DashboardErrorType
+        /// </summary>
+        public static readonly DashboardErrorType SOURCE_NOT_FOUND = new DashboardErrorType("SOURCE_NOT_FOUND");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1588,6 +1596,10 @@ namespace Amazon.QuickSight
         /// Constant INTERNAL_FAILURE for TemplateErrorType
         /// </summary>
         public static readonly TemplateErrorType INTERNAL_FAILURE = new TemplateErrorType("INTERNAL_FAILURE");
+        /// <summary>
+        /// Constant SOURCE_NOT_FOUND for TemplateErrorType
+        /// </summary>
+        public static readonly TemplateErrorType SOURCE_NOT_FOUND = new TemplateErrorType("SOURCE_NOT_FOUND");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

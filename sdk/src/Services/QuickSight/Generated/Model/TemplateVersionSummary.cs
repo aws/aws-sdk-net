@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the template version.
+        /// The Amazon Resource Name (ARN) of the template version.
         /// </para>
         /// </summary>
         public string Arn

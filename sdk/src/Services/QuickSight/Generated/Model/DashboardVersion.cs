@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _arn;
         private DateTime? _createdTime;
+        private List<string> _dataSetArns = new List<string>();
         private string _description;
         private List<DashboardError> _errors = new List<DashboardError>();
         private string _sourceEntityArn;
@@ -75,6 +76,26 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCreatedTime()
         {
             return this._createdTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSetArns. 
+        /// <para>
+        /// The Amazon Resource Numbers (ARNs) for the datasets that are associated with a version
+        /// of the dashboard.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=100)]
+        public List<string> DataSetArns
+        {
+            get { return this._dataSetArns; }
+            set { this._dataSetArns = value; }
+        }
+
+        // Check to see if DataSetArns property is set
+        internal bool IsSetDataSetArns()
+        {
+            return this._dataSetArns != null && this._dataSetArns.Count > 0; 
         }
 
         /// <summary>

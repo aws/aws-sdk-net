@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DashboardSummaryList. 
         /// <para>
-        /// A structure that contains all of the dashboards shared with the user. This structure
+        /// A structure that contains all of the dashboards in your AWS account. This structure
         /// provides basic information about the dashboards.
         /// </para>
         /// </summary>
