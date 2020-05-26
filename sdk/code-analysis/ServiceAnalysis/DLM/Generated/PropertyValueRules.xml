@@ -67,6 +67,12 @@
     <pattern>policy-[A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DLM.Model.CreateRule.CronExpression</property>
+    <min>17</min>
+    <max>106</max>
+    <pattern>cron\([^\n]{11,100}\)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DLM.Model.CreateRule.Interval</property>
     <min>1</min>
   </property-value-rule>

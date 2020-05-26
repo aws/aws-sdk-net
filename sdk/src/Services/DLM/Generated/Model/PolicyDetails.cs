@@ -78,7 +78,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property ResourceTypes. 
         /// <para>
-        /// The resource type.
+        /// The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE
+        /// to create multi-volume snapshots from the volumes for an instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
