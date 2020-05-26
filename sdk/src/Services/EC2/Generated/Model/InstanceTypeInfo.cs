@@ -54,6 +54,7 @@ namespace Amazon.EC2.Model
         private ProcessorInfo _processorInfo;
         private List<string> _supportedRootDeviceTypes = new List<string>();
         private List<string> _supportedUsageClasses = new List<string>();
+        private List<string> _supportedVirtualizationTypes = new List<string>();
         private VCpuInfo _vCpuInfo;
 
         /// <summary>
@@ -433,6 +434,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetSupportedUsageClasses()
         {
             return this._supportedUsageClasses != null && this._supportedUsageClasses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedVirtualizationTypes. 
+        /// <para>
+        /// The supported virtualization types.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedVirtualizationTypes
+        {
+            get { return this._supportedVirtualizationTypes; }
+            set { this._supportedVirtualizationTypes = value; }
+        }
+
+        // Check to see if SupportedVirtualizationTypes property is set
+        internal bool IsSetSupportedVirtualizationTypes()
+        {
+            return this._supportedVirtualizationTypes != null && this._supportedVirtualizationTypes.Count > 0; 
         }
 
         /// <summary>

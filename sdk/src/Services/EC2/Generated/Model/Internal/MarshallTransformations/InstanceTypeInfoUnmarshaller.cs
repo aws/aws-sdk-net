@@ -182,6 +182,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.SupportedUsageClasses.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("supportedVirtualizationTypes/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SupportedVirtualizationTypes.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("vCpuInfo", targetDepth))
                     {
                         var unmarshaller = VCpuInfoUnmarshaller.Instance;

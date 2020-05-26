@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EbsInfo Object
+    /// Response Unmarshaller for EbsOptimizedInfo Object
     /// </summary>  
-    public class EbsInfoUnmarshaller : IUnmarshaller<EbsInfo, XmlUnmarshallerContext>, IUnmarshaller<EbsInfo, JsonUnmarshallerContext>
+    public class EbsOptimizedInfoUnmarshaller : IUnmarshaller<EbsOptimizedInfo, XmlUnmarshallerContext>, IUnmarshaller<EbsOptimizedInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EbsInfo Unmarshall(XmlUnmarshallerContext context)
+        public EbsOptimizedInfo Unmarshall(XmlUnmarshallerContext context)
         {
-            EbsInfo unmarshalledObject = new EbsInfo();
+            EbsOptimizedInfo unmarshalledObject = new EbsOptimizedInfo();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,22 +54,40 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ebsOptimizedInfo", targetDepth))
+                    if (context.TestExpression("baselineBandwidthInMbps", targetDepth))
                     {
-                        var unmarshaller = EbsOptimizedInfoUnmarshaller.Instance;
-                        unmarshalledObject.EbsOptimizedInfo = unmarshaller.Unmarshall(context);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.BaselineBandwidthInMbps = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ebsOptimizedSupport", targetDepth))
+                    if (context.TestExpression("baselineIops", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.EbsOptimizedSupport = unmarshaller.Unmarshall(context);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.BaselineIops = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("encryptionSupport", targetDepth))
+                    if (context.TestExpression("baselineThroughputInMBps", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.EncryptionSupport = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.BaselineThroughputInMBps = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("maximumBandwidthInMbps", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MaximumBandwidthInMbps = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("maximumIops", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MaximumIops = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("maximumThroughputInMBps", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.MaximumThroughputInMBps = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -87,18 +105,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EbsInfo Unmarshall(JsonUnmarshallerContext context)
+        public EbsOptimizedInfo Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static EbsInfoUnmarshaller _instance = new EbsInfoUnmarshaller();        
+        private static EbsOptimizedInfoUnmarshaller _instance = new EbsOptimizedInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EbsInfoUnmarshaller Instance
+        public static EbsOptimizedInfoUnmarshaller Instance
         {
             get
             {

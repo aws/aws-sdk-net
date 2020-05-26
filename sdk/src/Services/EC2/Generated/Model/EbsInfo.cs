@@ -33,8 +33,27 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class EbsInfo
     {
+        private EbsOptimizedInfo _ebsOptimizedInfo;
         private EbsOptimizedSupport _ebsOptimizedSupport;
         private EbsEncryptionSupport _encryptionSupport;
+
+        /// <summary>
+        /// Gets and sets the property EbsOptimizedInfo. 
+        /// <para>
+        /// Describes the optimized EBS performance for the instance type.
+        /// </para>
+        /// </summary>
+        public EbsOptimizedInfo EbsOptimizedInfo
+        {
+            get { return this._ebsOptimizedInfo; }
+            set { this._ebsOptimizedInfo = value; }
+        }
+
+        // Check to see if EbsOptimizedInfo property is set
+        internal bool IsSetEbsOptimizedInfo()
+        {
+            return this._ebsOptimizedInfo != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EbsOptimizedSupport. 

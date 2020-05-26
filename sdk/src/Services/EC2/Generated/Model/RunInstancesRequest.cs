@@ -376,6 +376,10 @@ namespace Amazon.EC2.Model
         /// accelerators are a resource you can attach to your Amazon EC2 instances to accelerate
         /// your Deep Learning (DL) inference workloads.
         /// </para>
+        ///  
+        /// <para>
+        /// You cannot specify accelerators from different generations in the same request.
+        /// </para>
         /// </summary>
         public List<ElasticInferenceAccelerator> ElasticInferenceAccelerators
         {
