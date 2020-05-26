@@ -1,3 +1,22 @@
+### 3.3.748.0 (2020-05-26 18:11 UTC)
+* DLM (3.3.107.0)
+	* Allowing cron expression in the DLM policy creation schedule. 
+* EC2 (3.3.179.0)
+	* ebsOptimizedInfo, efaSupported and supportedVirtualizationTypes added to DescribeInstanceTypes API
+* ElastiCache (3.3.110.0)
+	* Amazon ElastiCache now allows you to use resource based policies to manage access to operations performed on ElastiCache resources. Also, Amazon ElastiCache now exposes ARN (Amazon Resource Names) for ElastiCache resources such as Cache Clusters and Parameter Groups. ARNs can be used to apply IAM policies to ElastiCache resources.
+* Macie (3.3.100.185)
+	* This is a documentation-only update to the Amazon Macie Classic API. This update corrects out-of-date references to the service name.
+* QuickSight (3.3.104.0)
+	* Add DataSetArns to QuickSight DescribeDashboard API response.
+* SimpleSystemsManagement (3.3.124.0)
+	* The AWS Systems Manager GetOpsSummary API action now supports multiple OpsResultAttributes in the request. Currently, this feature only supports OpsResultAttributes with the following TypeNames: [AWS:EC2InstanceComputeOptimizer] or [AWS:EC2InstanceInformation, AWS:EC2InstanceComputeOptimizer]. These TypeNames can be used along with either or both of the following: [AWS:EC2InstanceRecommendation, AWS:RecommendationSource]
+* Core 3.3.107.2
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.747.0 (2020-05-22 18:09 UTC)
 * AutoScaling (3.3.102.51)
 	* Documentation updates for Amazon EC2 Auto Scaling

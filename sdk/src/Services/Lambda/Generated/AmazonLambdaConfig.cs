@@ -32,7 +32,7 @@ namespace Amazon.Lambda
     public partial class AmazonLambdaConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.109.31");
+            InternalSDKUtils.BuildUserAgentString("3.3.109.32");
 
         private string _userAgent = UserAgentString;
 
