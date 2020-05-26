@@ -54,6 +54,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("ARN", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ARN = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CacheParameterGroupFamily", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

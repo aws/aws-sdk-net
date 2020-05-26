@@ -33,10 +33,29 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class CacheParameterGroup
     {
+        private string _arn;
         private string _cacheParameterGroupFamily;
         private string _cacheParameterGroupName;
         private string _description;
         private bool? _isGlobal;
+
+        /// <summary>
+        /// Gets and sets the property ARN. 
+        /// <para>
+        /// The ARN (Amazon Resource Name) of the cache parameter group.
+        /// </para>
+        /// </summary>
+        public string ARN
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if ARN property is set
+        internal bool IsSetARN()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CacheParameterGroupFamily. 

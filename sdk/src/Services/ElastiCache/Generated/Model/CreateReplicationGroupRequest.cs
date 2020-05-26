@@ -615,7 +615,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NumCacheClusters. 
         /// <para>
-        /// The number of clusters this replication group initially has.
+        /// The number of nodes in the cluster.
         /// </para>
         ///  
         /// <para>

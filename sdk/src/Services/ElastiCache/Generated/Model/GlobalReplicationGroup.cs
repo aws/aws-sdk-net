@@ -42,6 +42,7 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class GlobalReplicationGroup
     {
+        private string _arn;
         private bool? _atRestEncryptionEnabled;
         private bool? _authTokenEnabled;
         private string _cacheNodeType;
@@ -54,6 +55,24 @@ namespace Amazon.ElastiCache.Model
         private List<GlobalReplicationGroupMember> _members = new List<GlobalReplicationGroupMember>();
         private string _status;
         private bool? _transitEncryptionEnabled;
+
+        /// <summary>
+        /// Gets and sets the property ARN. 
+        /// <para>
+        /// The ARN (Amazon Resource Name) of the global replication group.
+        /// </para>
+        /// </summary>
+        public string ARN
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if ARN property is set
+        internal bool IsSetARN()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AtRestEncryptionEnabled. 
