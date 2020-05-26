@@ -39,7 +39,8 @@ namespace Amazon.Macie.Model
         /// Gets and sets the property FailedS3Resources. 
         /// <para>
         /// S3 resources that couldn't be removed from being monitored and classified by Amazon
-        /// Macie. An error code and an error message are provided for each failed item. 
+        /// Macie Classic. An error code and an error message are provided for each failed item.
+        /// 
         /// </para>
         /// </summary>
         public List<FailedS3Resource> FailedS3Resources

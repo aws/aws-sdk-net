@@ -39,8 +39,8 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property MemberAccounts. 
         /// <para>
-        /// A list of the Amazon Macie member accounts returned by the action. The current master
-        /// account is also included in this list. 
+        /// A list of the Amazon Macie Classic member accounts returned by the action. The current
+        /// master account is also included in this list. 
         /// </para>
         /// </summary>
         public List<MemberAccount> MemberAccounts

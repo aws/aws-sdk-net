@@ -61,7 +61,7 @@ namespace Amazon.Macie.Model
         /// Gets and sets the property ClassificationTypeUpdate. 
         /// <para>
         /// The classification type that you want to update for the resource associated with Amazon
-        /// Macie. 
+        /// Macie Classic. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
