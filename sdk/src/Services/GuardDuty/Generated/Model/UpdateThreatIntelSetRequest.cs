@@ -82,7 +82,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The updated URI of the file that contains the ThreateIntelSet. For example: .
+        /// The updated URI of the file that contains the ThreateIntelSet.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]

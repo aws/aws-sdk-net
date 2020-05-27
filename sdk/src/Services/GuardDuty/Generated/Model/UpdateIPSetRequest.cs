@@ -99,7 +99,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The updated URI of the file that contains the IPSet. For example: .
+        /// The updated URI of the file that contains the IPSet.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]
