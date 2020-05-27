@@ -54,6 +54,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AlpnPolicy/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AlpnPolicy.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("Certificates/member", targetDepth))
                     {
                         var unmarshaller = CertificateUnmarshaller.Instance;

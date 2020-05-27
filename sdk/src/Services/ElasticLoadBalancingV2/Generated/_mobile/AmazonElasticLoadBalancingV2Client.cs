@@ -433,6 +433,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </param>
         /// 
         /// <returns>The response from the CreateListener service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.ALPNPolicyNotSupportedException">
+        /// The specified ALPN policy is not supported.
+        /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.CertificateNotFoundException">
         /// The specified certificate does not exist.
         /// </exception>
@@ -1529,6 +1532,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </param>
         /// 
         /// <returns>The response from the ModifyListener service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.ALPNPolicyNotSupportedException">
+        /// The specified ALPN policy is not supported.
+        /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.CertificateNotFoundException">
         /// The specified certificate does not exist.
         /// </exception>

@@ -271,6 +271,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElasticLoadBalancingV2")]
+        public void CreateListener_ALPNPolicyNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateListener");
+
+            var request = InstantiateClassGenerator.Execute<CreateListenerRequest>();
+            var marshaller = new CreateListenerRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ALPNPolicyNotSupportedException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateListenerResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
         public void CreateListener_CertificateNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateListener");
@@ -2430,6 +2453,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = ModifyListenerResponseUnmarshaller.Instance.Unmarshall(context)
                 as ModifyListenerResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
+        public void ModifyListener_ALPNPolicyNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyListener");
+
+            var request = InstantiateClassGenerator.Execute<ModifyListenerRequest>();
+            var marshaller = new ModifyListenerRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ALPNPolicyNotSupportedException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyListenerResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]

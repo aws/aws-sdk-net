@@ -33,6 +33,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class Listener
     {
+        private List<string> _alpnPolicy = new List<string>();
         private List<Certificate> _certificates = new List<Certificate>();
         private List<Action> _defaultActions = new List<Action>();
         private string _listenerArn;
@@ -40,6 +41,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private int? _port;
         private ProtocolEnum _protocol;
         private string _sslPolicy;
+
+        /// <summary>
+        /// Gets and sets the property AlpnPolicy. 
+        /// <para>
+        /// [TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.
+        /// </para>
+        /// </summary>
+        public List<string> AlpnPolicy
+        {
+            get { return this._alpnPolicy; }
+            set { this._alpnPolicy = value; }
+        }
+
+        // Check to see if AlpnPolicy property is set
+        internal bool IsSetAlpnPolicy()
+        {
+            return this._alpnPolicy != null && this._alpnPolicy.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Certificates. 
