@@ -1,3 +1,14 @@
+### 3.3.749.0 (2020-05-27 18:13 UTC)
+* ElasticLoadBalancingV2 (3.3.105.0)
+	* This release added support for HTTP/2 ALPN preference lists for Network Load Balancers
+* GuardDuty (3.3.107.23)
+	* Documentation updates for GuardDuty
+* Core 3.3.107.3
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.748.0 (2020-05-26 18:11 UTC)
 * DLM (3.3.107.0)
 	* Allowing cron expression in the DLM policy creation schedule. 
