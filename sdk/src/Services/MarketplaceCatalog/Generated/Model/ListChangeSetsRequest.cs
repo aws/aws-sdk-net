@@ -129,7 +129,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property Sort. 
         /// <para>
-        /// An object that contains two attributes, <code>sortBy</code> and <code>sortOrder</code>.
+        /// An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.
         /// </para>
         /// </summary>
         public Sort Sort

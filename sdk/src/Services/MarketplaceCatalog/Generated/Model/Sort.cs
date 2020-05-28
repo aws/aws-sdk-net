@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
-    /// An object that contains two attributes, <code>sortBy</code> and <code>sortOrder</code>.
+    /// An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.
     /// </summary>
     public partial class Sort
     {
