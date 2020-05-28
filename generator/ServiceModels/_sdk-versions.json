@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.749.0",
+    "ProductVersion" : "3.3.750.0",
     "CoreVersion"    : "3.3.107.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -1033,7 +1033,7 @@
             "InPreview"               : false
         },
         "WorkMail"                        : {
-            "Version" : "3.3.104.9",
+            "Version" : "3.3.105.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.3"
@@ -1329,7 +1329,7 @@
             "InPreview"               : false
         },
         "Kafka"                           : {
-            "Version" : "3.3.107.51",
+            "Version" : "3.3.108.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.3"
@@ -1521,7 +1521,7 @@
             "InPreview"               : false
         },
         "QLDBSession"                     : {
-            "Version" : "3.3.100.114",
+            "Version" : "3.3.100.115",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.3"
@@ -1569,7 +1569,7 @@
             "InPreview"               : false
         },
         "MarketplaceCatalog"              : {
-            "Version" : "3.3.100.89",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.3"

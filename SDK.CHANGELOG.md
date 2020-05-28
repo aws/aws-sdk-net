@@ -1,3 +1,13 @@
+### 3.3.750.0 (2020-05-28 18:12 UTC)
+* Kafka (3.3.108.0)
+	* New APIs for upgrading the Apache Kafka version of a cluster and to find out compatible upgrade paths
+* MarketplaceCatalog (3.3.101.0)
+	* AWS Marketplace Catalog now supports accessing initial change payloads with DescribeChangeSet operation.
+* QLDBSession (3.3.100.115)
+	* Documentation updates for Amazon QLDB Session
+* WorkMail (3.3.105.0)
+	* This release adds support for Amazon WorkMail organization-level retention policies.
+
 ### 3.3.749.0 (2020-05-27 18:13 UTC)
 * ElasticLoadBalancingV2 (3.3.105.0)
 	* This release added support for HTTP/2 ALPN preference lists for Network Load Balancers
