@@ -804,6 +804,81 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  GetCompatibleKafkaVersions
+
+        /// <summary>
+        /// Gets the Apache Kafka versions to which you can update the MSK cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCompatibleKafkaVersions service method.</param>
+        /// 
+        /// <returns>The response from the GetCompatibleKafkaVersions service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetCompatibleKafkaVersions">REST API Reference for GetCompatibleKafkaVersions Operation</seealso>
+        public virtual GetCompatibleKafkaVersionsResponse GetCompatibleKafkaVersions(GetCompatibleKafkaVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCompatibleKafkaVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCompatibleKafkaVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<GetCompatibleKafkaVersionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCompatibleKafkaVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCompatibleKafkaVersions operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCompatibleKafkaVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetCompatibleKafkaVersions">REST API Reference for GetCompatibleKafkaVersions Operation</seealso>
+        public virtual IAsyncResult BeginGetCompatibleKafkaVersions(GetCompatibleKafkaVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCompatibleKafkaVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCompatibleKafkaVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCompatibleKafkaVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCompatibleKafkaVersions.</param>
+        /// 
+        /// <returns>Returns a  GetCompatibleKafkaVersionsResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetCompatibleKafkaVersions">REST API Reference for GetCompatibleKafkaVersions Operation</seealso>
+        public virtual GetCompatibleKafkaVersionsResponse EndGetCompatibleKafkaVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCompatibleKafkaVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListClusterOperations
 
         /// <summary>
@@ -1605,6 +1680,81 @@ namespace Amazon.Kafka
         public virtual UpdateClusterConfigurationResponse EndUpdateClusterConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateClusterConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateClusterKafkaVersion
+
+        /// <summary>
+        /// Updates the Apache Kafka version for the cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterKafkaVersion service method.</param>
+        /// 
+        /// <returns>The response from the UpdateClusterKafkaVersion service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateClusterKafkaVersion">REST API Reference for UpdateClusterKafkaVersion Operation</seealso>
+        public virtual UpdateClusterKafkaVersionResponse UpdateClusterKafkaVersion(UpdateClusterKafkaVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterKafkaVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterKafkaVersionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateClusterKafkaVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateClusterKafkaVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterKafkaVersion operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateClusterKafkaVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateClusterKafkaVersion">REST API Reference for UpdateClusterKafkaVersion Operation</seealso>
+        public virtual IAsyncResult BeginUpdateClusterKafkaVersion(UpdateClusterKafkaVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterKafkaVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterKafkaVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateClusterKafkaVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateClusterKafkaVersion.</param>
+        /// 
+        /// <returns>Returns a  UpdateClusterKafkaVersionResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateClusterKafkaVersion">REST API Reference for UpdateClusterKafkaVersion Operation</seealso>
+        public virtual UpdateClusterKafkaVersionResponse EndUpdateClusterKafkaVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateClusterKafkaVersionResponse>(asyncResult);
         }
 
         #endregion

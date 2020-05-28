@@ -63,7 +63,6 @@ namespace Amazon.Kafka.Model
         /// The versions of Apache Kafka with which you can use this MSK configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> KafkaVersions
         {
             get { return this._kafkaVersions; }

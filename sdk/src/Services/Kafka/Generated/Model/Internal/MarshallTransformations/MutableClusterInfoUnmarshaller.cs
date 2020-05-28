@@ -82,6 +82,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnhancedMonitoring = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("kafkaVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KafkaVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("loggingInfo", targetDepth))
                 {
                     var unmarshaller = LoggingInfoUnmarshaller.Instance;

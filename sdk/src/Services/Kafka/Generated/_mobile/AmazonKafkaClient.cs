@@ -651,6 +651,61 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  GetCompatibleKafkaVersions
+
+        internal virtual GetCompatibleKafkaVersionsResponse GetCompatibleKafkaVersions(GetCompatibleKafkaVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCompatibleKafkaVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCompatibleKafkaVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<GetCompatibleKafkaVersionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the Apache Kafka versions to which you can update the MSK cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCompatibleKafkaVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCompatibleKafkaVersions service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetCompatibleKafkaVersions">REST API Reference for GetCompatibleKafkaVersions Operation</seealso>
+        public virtual Task<GetCompatibleKafkaVersionsResponse> GetCompatibleKafkaVersionsAsync(GetCompatibleKafkaVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCompatibleKafkaVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCompatibleKafkaVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCompatibleKafkaVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListClusterOperations
 
         internal virtual ListClusterOperationsResponse ListClusterOperations(ListClusterOperationsRequest request)
@@ -1212,6 +1267,61 @@ namespace Amazon.Kafka
             options.ResponseUnmarshaller = UpdateClusterConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateClusterConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateClusterKafkaVersion
+
+        internal virtual UpdateClusterKafkaVersionResponse UpdateClusterKafkaVersion(UpdateClusterKafkaVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterKafkaVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterKafkaVersionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateClusterKafkaVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the Apache Kafka version for the cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterKafkaVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateClusterKafkaVersion service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateClusterKafkaVersion">REST API Reference for UpdateClusterKafkaVersion Operation</seealso>
+        public virtual Task<UpdateClusterKafkaVersionResponse> UpdateClusterKafkaVersionAsync(UpdateClusterKafkaVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterKafkaVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterKafkaVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateClusterKafkaVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -106,6 +106,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.OperationState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("operationSteps", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ClusterOperationStep, ClusterOperationStepUnmarshaller>(ClusterOperationStepUnmarshaller.Instance);
+                    unmarshalledObject.OperationSteps = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("operationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
