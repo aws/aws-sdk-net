@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QLDBSession.Model
 {
     /// <summary>
-    /// Returned if the session doesn't exist anymore because it timed-out or expired.
+    /// Returned if the session doesn't exist anymore because it timed out or expired.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

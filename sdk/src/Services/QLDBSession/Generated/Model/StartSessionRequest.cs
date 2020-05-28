@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QLDBSession.Model
 {
     /// <summary>
-    /// Specifies a request to start a a new session.
+    /// Specifies a request to start a new session.
     /// </summary>
     public partial class StartSessionRequest
     {

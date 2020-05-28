@@ -30,7 +30,7 @@ namespace Amazon.QLDBSession.Model
 {
     /// <summary>
     /// Returned when a transaction cannot be written to the journal due to a failure in the
-    /// verification phase of Optimistic Concurrency Control.
+    /// verification phase of <i>optimistic concurrency control</i> (OCC).
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

@@ -57,7 +57,7 @@ namespace Amazon.QLDBSession.Model
         /// <summary>
         /// Gets and sets the property TransactionId. 
         /// <para>
-        /// The transaction id of the committed transaction.
+        /// The transaction ID of the committed transaction.
         /// </para>
         /// </summary>
         [AWSProperty(Min=22, Max=22)]
