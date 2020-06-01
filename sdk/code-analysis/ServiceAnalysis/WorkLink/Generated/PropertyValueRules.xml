@@ -81,6 +81,10 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkLink.Model.DescribeAuditStreamConfigurationResponse.AuditStreamArn</property>
+    <pattern>^arn:aws:kinesis:.+:[0-9]{12}:stream/AmazonWorkLink-.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkLink.Model.DescribeCompanyNetworkConfigurationRequest.FleetArn</property>
     <min>20</min>
     <max>2048</max>
@@ -310,6 +314,11 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkLink.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkLink.Model.ListWebsiteAuthorizationProvidersRequest.FleetArn</property>
     <min>20</min>
     <max>2048</max>
@@ -382,6 +391,20 @@
     <property>Amazon.WorkLink.Model.SignOutUserRequest.Username</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.TagResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.UntagResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.UpdateAuditStreamConfigurationRequest.AuditStreamArn</property>
+    <pattern>^arn:aws:kinesis:.+:[0-9]{12}:stream/AmazonWorkLink-.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkLink.Model.UpdateAuditStreamConfigurationRequest.FleetArn</property>

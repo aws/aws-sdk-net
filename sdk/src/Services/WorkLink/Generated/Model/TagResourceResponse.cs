@@ -29,30 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkLink.Model
 {
     /// <summary>
-    /// This is the response object from the CreateFleet operation.
+    /// This is the response object from the TagResource operation.
     /// </summary>
-    public partial class CreateFleetResponse : AmazonWebServiceResponse
+    public partial class TagResourceResponse : AmazonWebServiceResponse
     {
-        private string _fleetArn;
-
-        /// <summary>
-        /// Gets and sets the property FleetArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the fleet.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
-        public string FleetArn
-        {
-            get { return this._fleetArn; }
-            set { this._fleetArn = value; }
-        }
-
-        // Check to see if FleetArn property is set
-        internal bool IsSetFleetArn()
-        {
-            return this._fleetArn != null;
-        }
 
     }
 }

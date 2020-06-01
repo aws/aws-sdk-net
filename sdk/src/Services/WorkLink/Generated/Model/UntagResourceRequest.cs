@@ -29,31 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkLink.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeFleetMetadata operation.
-    /// Provides basic information for the specified fleet, excluding identity provider, networking,
-    /// and device configuration details.
+    /// Container for the parameters to the UntagResource operation.
+    /// Removes one or more tags from the specified resource.
     /// </summary>
-    public partial class DescribeFleetMetadataRequest : AmazonWorkLinkRequest
+    public partial class UntagResourceRequest : AmazonWorkLinkRequest
     {
-        private string _fleetArn;
+        private string _resourceArn;
+        private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property FleetArn. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the fleet.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
-        public string FleetArn
+        public string ResourceArn
         {
-            get { return this._fleetArn; }
-            set { this._fleetArn = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if FleetArn property is set
-        internal bool IsSetFleetArn()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._fleetArn != null;
+            return this._resourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        /// The list of tag keys to remove from the resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
+        public List<string> TagKeys
+        {
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
+        }
+
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
+        {
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
     }

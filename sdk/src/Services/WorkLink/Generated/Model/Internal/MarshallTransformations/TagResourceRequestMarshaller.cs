@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateFleet Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateFleetRequestMarshaller : IMarshaller<IRequest, CreateFleetRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateFleetRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,38 +52,23 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateFleetRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkLink");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-25";            
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/createFleet";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonWorkLinkException("Request object does not have required field ResourceArn set");
+            request.AddPathResource("{ResourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/tags/{ResourceArn}";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDisplayName())
-                {
-                    context.Writer.WritePropertyName("DisplayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetFleetName())
-                {
-                    context.Writer.WritePropertyName("FleetName");
-                    context.Writer.Write(publicRequest.FleetName);
-                }
-
-                if(publicRequest.IsSetOptimizeForEndUserLocation())
-                {
-                    context.Writer.WritePropertyName("OptimizeForEndUserLocation");
-                    context.Writer.Write(publicRequest.OptimizeForEndUserLocation);
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");
@@ -107,9 +92,9 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateFleetRequestMarshaller _instance = new CreateFleetRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateFleetRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -117,7 +102,7 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateFleetRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

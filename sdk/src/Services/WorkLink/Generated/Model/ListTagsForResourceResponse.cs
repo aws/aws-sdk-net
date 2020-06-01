@@ -29,29 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkLink.Model
 {
     /// <summary>
-    /// This is the response object from the CreateFleet operation.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class CreateFleetResponse : AmazonWebServiceResponse
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private string _fleetArn;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property FleetArn. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the fleet.
+        /// The tags attached to the resource. A tag is a key-value pair.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
-        public string FleetArn
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
         {
-            get { return this._fleetArn; }
-            set { this._fleetArn = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if FleetArn property is set
-        internal bool IsSetFleetArn()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._fleetArn != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
