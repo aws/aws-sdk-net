@@ -81,6 +81,7 @@ namespace Amazon.ElasticMapReduce.Model
         private JobFlowInstancesConfig _instances;
         private string _jobFlowRole;
         private KerberosAttributes _kerberosAttributes;
+        private string _logEncryptionKmsKeyId;
         private string _logUri;
         private ManagedScalingPolicy _managedScalingPolicy;
         private string _name;
@@ -339,6 +340,27 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetKerberosAttributes()
         {
             return this._kerberosAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogEncryptionKmsKeyId. 
+        /// <para>
+        /// The AWS KMS customer master key (CMK) used for encrypting log files. If a value is
+        /// not provided, the logs will remain encrypted by AES-256. This attribute is only available
+        /// with EMR version 5.30.0 and later, excluding EMR 6.0.0.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
+        public string LogEncryptionKmsKeyId
+        {
+            get { return this._logEncryptionKmsKeyId; }
+            set { this._logEncryptionKmsKeyId = value; }
+        }
+
+        // Check to see if LogEncryptionKmsKeyId property is set
+        internal bool IsSetLogEncryptionKmsKeyId()
+        {
+            return this._logEncryptionKmsKeyId != null;
         }
 
         /// <summary>

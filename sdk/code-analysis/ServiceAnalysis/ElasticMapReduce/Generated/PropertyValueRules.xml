@@ -96,6 +96,11 @@
     <max>10280</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.RunJobFlowRequest.LogEncryptionKmsKeyId</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.RunJobFlowRequest.LogUri</property>
     <min>0</min>
     <max>10280</max>
@@ -344,6 +349,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.JobFlowDetail.JobFlowRole</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.JobFlowDetail.LogEncryptionKmsKeyId</property>
     <min>0</min>
     <max>10280</max>
   </property-value-rule>
