@@ -33,13 +33,35 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UiConfig
     {
+        private string _humanTaskUiArn;
         private string _uiTemplateS3Uri;
+
+        /// <summary>
+        /// Gets and sets the property HumanTaskUiArn. 
+        /// <para>
+        /// The ARN of the worker task template used to render the worker UI and tools for labeling
+        /// job tasks. Do not use this parameter if you use UiTemplateS3Uri.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string HumanTaskUiArn
+        {
+            get { return this._humanTaskUiArn; }
+            set { this._humanTaskUiArn = value; }
+        }
+
+        // Check to see if HumanTaskUiArn property is set
+        internal bool IsSetHumanTaskUiArn()
+        {
+            return this._humanTaskUiArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property UiTemplateS3Uri. 
         /// <para>
-        /// The Amazon S3 bucket location of the UI template. For more information about the contents
-        /// of a UI template, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
+        /// The Amazon S3 bucket location of the UI template, or worker task template. This is
+        /// the template used to render the worker UI and tools for labeling job tasks. For more
+        /// information about the contents of a UI template, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
         /// Creating Your Custom Labeling Task Template</a>.
         /// </para>
         /// </summary>

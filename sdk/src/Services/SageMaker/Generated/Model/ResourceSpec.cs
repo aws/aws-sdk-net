@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// The instance type and the Amazon Resource Name (ARN) of the SageMaker image created
-    /// on the instance. The ARN is stored as metadata in Amazon SageMaker Studio notebooks.
+    /// on the instance. The ARN is stored as metadata in SageMaker Studio notebooks.
     /// </summary>
     public partial class ResourceSpec
     {

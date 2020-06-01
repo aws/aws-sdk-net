@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDomain operation.
-    /// The desciption of the domain.
+    /// The description of the domain.
     /// </summary>
     public partial class DescribeDomainRequest : AmazonSageMakerRequest
     {

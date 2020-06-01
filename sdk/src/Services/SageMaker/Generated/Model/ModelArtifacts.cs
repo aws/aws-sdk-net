@@ -30,6 +30,14 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Provides information about the location that is configured for storing model artifacts.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// Model artifacts are the output that results from training a model, and typically consist
+    /// of trained parameters, a model defintion that desribes how to compute inferences,
+    /// and other metadata.
+    /// </para>
     /// </summary>
     public partial class ModelArtifacts
     {

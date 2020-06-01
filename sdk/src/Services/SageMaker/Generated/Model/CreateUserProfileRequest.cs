@@ -30,18 +30,13 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUserProfile operation.
-    /// Creates a user profile. A user profile represents a single user within a Domain, and
-    /// is the main way to reference a "person" for the purposes of sharing, reporting and
-    /// other user-oriented features. This entity is created during on-boarding to Amazon
+    /// Creates a user profile. A user profile represents a single user within a domain, and
+    /// is the main way to reference a "person" for the purposes of sharing, reporting, and
+    /// other user-oriented features. This entity is created when a user onboards to Amazon
     /// SageMaker Studio. If an administrator invites a person by email or imports them from
-    /// SSO, a UserProfile is automatically created. 
-    /// 
-    ///  
-    /// <para>
-    ///  This entity is the primary holder of settings for an individual user and, through
-    /// the domain, has a reference to the user's private Amazon Elastic File System (EFS)
-    /// home directory. 
-    /// </para>
+    /// SSO, a user profile is automatically created. A user profile is the primary holder
+    /// of settings for an individual user and has a reference to the user's private Amazon
+    /// Elastic File System (EFS) home directory.
     /// </summary>
     public partial class CreateUserProfileRequest : AmazonSageMakerRequest
     {

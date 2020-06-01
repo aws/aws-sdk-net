@@ -29,7 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The sharing settings.
+    /// Specifies options when sharing an Amazon SageMaker Studio notebook. These settings
+    /// are specified as part of <code>DefaultUserSettings</code> when the <a>CreateDomain</a>
+    /// API is called, and as part of <code>UserSettings</code> when the <a>CreateUserProfile</a>
+    /// API is called.
     /// </summary>
     public partial class SharingSettings
     {
@@ -40,7 +43,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NotebookOutputOption. 
         /// <para>
-        /// The notebook output option.
+        /// Whether to include the notebook cell output when sharing the notebook. The default
+        /// is <code>Disabled</code>.
         /// </para>
         /// </summary>
         public NotebookOutputOption NotebookOutputOption
@@ -58,7 +62,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3KmsKeyId. 
         /// <para>
-        /// The AWS Key Management Service encryption key ID.
+        /// When <code>NotebookOutputOption</code> is <code>Allowed</code>, the AWS Key Management
+        /// Service (KMS) encryption key ID used to encrypt the notebook cell output in the Amazon
+        /// S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -77,7 +83,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3OutputPath. 
         /// <para>
-        /// The Amazon S3 output path.
+        /// When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket
+        /// used to save the notebook cell output. If <code>S3OutputPath</code> isn't specified,
+        /// a default bucket is used.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

@@ -138,7 +138,11 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrainingJobDefinitions.
+        /// Gets and sets the property TrainingJobDefinitions. 
+        /// <para>
+        /// A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for this
+        /// tuning job.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<HyperParameterTrainingJobDefinition> TrainingJobDefinitions

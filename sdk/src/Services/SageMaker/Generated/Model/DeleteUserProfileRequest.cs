@@ -30,7 +30,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUserProfile operation.
-    /// Deletes a user profile.
+    /// Deletes a user profile. When a user profile is deleted, the user loses access to their
+    /// EFS volume, including data, notebooks, and other artifacts.
     /// </summary>
     public partial class DeleteUserProfileRequest : AmazonSageMakerRequest
     {

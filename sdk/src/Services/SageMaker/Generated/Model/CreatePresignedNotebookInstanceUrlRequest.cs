@@ -37,12 +37,19 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// IAM authorization policies for this API are also enforced for every HTTP request and
-    /// WebSocket frame that attempts to connect to the notebook instance.For example, you
-    /// can restrict access to this API and to the URL that it returns to a list of IP addresses
-    /// that you specify. Use the <code>NotIpAddress</code> condition operator and the <code>aws:SourceIP</code>
-    /// condition context key to specify the list of IP addresses that you want to have access
-    /// to the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html#nbi-ip-filter">Limit
+    ///  The IAM role or user used to call this API defines the permissions to access the
+    /// notebook instance. Once the presigned URL is created, no additional permission is
+    /// required to access this URL. IAM authorization policies for this API are also enforced
+    /// for every HTTP request and WebSocket frame that attempts to connect to the notebook
+    /// instance.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can restrict access to this API and to the URL that it returns to a list of IP
+    /// addresses that you specify. Use the <code>NotIpAddress</code> condition operator and
+    /// the <code>aws:SourceIP</code> condition context key to specify the list of IP addresses
+    /// that you want to have access to the notebook instance. For more information, see <a
+    /// href="https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html#nbi-ip-filter">Limit
     /// Access to a Notebook Instance by IP Address</a>.
     /// </para>
     ///  <note> 

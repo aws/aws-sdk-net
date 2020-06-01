@@ -30,14 +30,30 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDomain operation.
-    /// Creates a Domain for Amazon SageMaker Studio, which can be accessed by end-users in
-    /// a web browser. A Domain has an associated directory, list of authorized users, and
-    /// a variety of security, application, policies, and Amazon Virtual Private Cloud configurations.
-    /// An AWS account is limited to one Domain, per region. Users within a domain can share
-    /// notebook files and other artifacts with each other. When a Domain is created, an Amazon
-    /// Elastic File System (EFS) is also created for use by all of the users within the Domain.
-    /// Each user receives a private home directory within the EFS for notebooks, Git repositories,
-    /// and data files.
+    /// Creates a <code>Domain</code> used by SageMaker Studio. A domain consists of an associated
+    /// directory, a list of authorized users, and a variety of security, application, policy,
+    /// and Amazon Virtual Private Cloud (VPC) configurations. An AWS account is limited to
+    /// one domain per region. Users within a domain can share notebook files and other artifacts
+    /// with each other.
+    /// 
+    ///  
+    /// <para>
+    /// When a domain is created, an Amazon Elastic File System (EFS) volume is also created
+    /// for use by all of the users within the domain. Each user receives a private home directory
+    /// within the EFS for notebooks, Git repositories, and data files.
+    /// </para>
+    ///  
+    /// <para>
+    /// All traffic between the domain and the EFS volume is communicated through the specified
+    /// subnet IDs. All other traffic goes over the Internet through an Amazon SageMaker system
+    /// VPC. The EFS traffic uses the NFS/TCP protocol over port 2049.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// NFS traffic over TCP on port 2049 needs to be allowed in both inbound and outbound
+    /// rules in order to launch a SageMaker Studio app successfully.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateDomainRequest : AmazonSageMakerRequest
     {
@@ -52,7 +68,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AuthMode. 
         /// <para>
-        /// The mode of authentication that member use to access the domain.
+        /// The mode of authentication that members use to access the domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -129,7 +145,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// Security setting to limit to a set of subnets.
+        /// The VPC subnets to use for communication with the EFS volume.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=16)]
@@ -148,7 +164,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+        /// Tags to associated with the Domain. Each tag consists of a key and an optional value.
+        /// Tag keys must be unique per resource. Tags are searchable using the <a>Search</a>
+        /// API.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -167,7 +185,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// Security setting to limit the domain's communication to a Amazon Virtual Private Cloud.
+        /// The ID of the Amazon Virtual Private Cloud (VPC) to use for communication with the
+        /// EFS volume.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=32)]

@@ -47,6 +47,12 @@ namespace Amazon.SageMaker.Model
     /// are being performed on the endpoint. To update an endpoint, you must create a new
     /// <code>EndpointConfig</code>.
     /// </para>
+    ///  
+    /// <para>
+    /// If you delete the <code>EndpointConfig</code> of an endpoint that is active or being
+    /// created or updated you may lose visibility into the instance type the endpoint is
+    /// using. The endpoint must be deleted in order to stop incurring charges.
+    /// </para>
     ///  </note>
     /// </summary>
     public partial class UpdateEndpointRequest : AmazonSageMakerRequest

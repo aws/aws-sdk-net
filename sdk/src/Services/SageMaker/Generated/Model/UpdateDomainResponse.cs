@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DomainArn. 
         /// <para>
-        /// The domain Amazon Resource Name (ARN).
+        /// The Amazon Resource Name (ARN) of the domain.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
