@@ -36,8 +36,8 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
-    /// To create a grant that allows a cryptographic operation only when the request includes
-    /// a particular <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
+    /// To create a grant that allows a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+    /// operation</a> only when the request includes a particular <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
     /// context</a>, use the <code>Constraints</code> parameter. For details, see <a>GrantConstraints</a>.
     /// </para>
     ///  
@@ -108,9 +108,10 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Constraints. 
         /// <para>
-        /// Allows a cryptographic operation only when the encryption context matches or includes
-        /// the encryption context specified in this structure. For more information about encryption
-        /// context, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Allows a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operation</a> only when the encryption context matches or includes the encryption
+        /// context specified in this structure. For more information about encryption context,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
         /// Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
         /// </para>
         /// </summary>

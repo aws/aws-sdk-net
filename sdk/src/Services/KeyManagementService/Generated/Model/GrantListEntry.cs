@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// Contains information about an entry in a list of grants.
+    /// Contains information about a grant.
     /// </summary>
     public partial class GrantListEntry
     {
@@ -83,7 +83,15 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property GranteePrincipal. 
         /// <para>
-        /// The principal that receives the grant's permissions.
+        /// The identity that gets the permissions in the grant.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually
+        /// contains the user or role designated as the grantee principal in the grant. However,
+        /// when the grantee principal in the grant is an AWS service, the <code>GranteePrincipal</code>
+        /// field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+        /// principal</a>, which might represent several different grantee principals.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

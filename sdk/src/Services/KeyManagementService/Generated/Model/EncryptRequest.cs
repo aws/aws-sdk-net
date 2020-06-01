@@ -41,10 +41,11 @@ namespace Amazon.KeyManagementService.Model
     ///  </li> <li> 
     /// <para>
     /// You can use the <code>Encrypt</code> operation to move encrypted data from one AWS
-    /// region to another. In the first region, generate a data key and use the plaintext
-    /// key to encrypt the data. Then, in the new region, call the <code>Encrypt</code> method
-    /// on same plaintext data key. Now, you can safely move the encrypted data and encrypted
-    /// data key to the new region, and decrypt in the new region when necessary.
+    /// Region to another. For example, in Region A, generate a data key and use the plaintext
+    /// key to encrypt your data. Then, in Region A, use the <code>Encrypt</code> operation
+    /// to encrypt the plaintext data key under a CMK in Region B. Now, you can move the encrypted
+    /// data and the encrypted data key to Region B. When necessary, you can decrypt the encrypted
+    /// data key and the encrypted data entirely within in Region B.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -186,9 +187,9 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property EncryptionContext. 
         /// <para>
         /// Specifies the encryption context that will be used to encrypt the data. An encryption
-        /// context is valid only for cryptographic operations with a symmetric CMK. The standard
-        /// asymmetric encryption algorithms that AWS KMS uses do not support an encryption context.
-        /// 
+        /// context is valid only for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a> with a symmetric CMK. The standard asymmetric encryption algorithms
+        /// that AWS KMS uses do not support an encryption context. 
         /// </para>
         ///  
         /// <para>

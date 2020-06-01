@@ -31,8 +31,8 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Container for the parameters to the EnableKey operation.
     /// Sets the key state of a customer master key (CMK) to enabled. This allows you to use
-    /// the CMK for cryptographic operations. You cannot perform this operation on a CMK in
-    /// a different AWS account.
+    /// the CMK for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+    /// operations</a>. You cannot perform this operation on a CMK in a different AWS account.
     /// 
     ///  
     /// <para>

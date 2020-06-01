@@ -30,33 +30,24 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the GenerateDataKey operation.
-    /// Generates a unique symmetric data key. This operation returns a plaintext copy of
-    /// the data key and a copy that is encrypted under a customer master key (CMK) that you
-    /// specify. You can use the plaintext key to encrypt your data outside of AWS KMS and
-    /// store the encrypted data key with the encrypted data.
+    /// Generates a unique symmetric data key for client-side encryption. This operation returns
+    /// a plaintext copy of the data key and a copy that is encrypted under a customer master
+    /// key (CMK) that you specify. You can use the plaintext key to encrypt your data outside
+    /// of AWS KMS and store the encrypted data key with the encrypted data.
     /// 
     ///  
     /// <para>
     ///  <code>GenerateDataKey</code> returns a unique data key for each request. The bytes
-    /// in the key are not related to the caller or CMK that is used to encrypt the data key.
+    /// in the plaintext key are not related to the caller or the CMK.
     /// </para>
     ///  
     /// <para>
     /// To generate a data key, specify the symmetric CMK that will be used to encrypt the
     /// data key. You cannot use an asymmetric CMK to generate data keys. To get the type
-    /// of your CMK, use the <a>DescribeKey</a> operation.
-    /// </para>
-    ///  
-    /// <para>
-    /// You must also specify the length of the data key. Use either the <code>KeySpec</code>
-    /// or <code>NumberOfBytes</code> parameters (but not both). For 128-bit and 256-bit data
-    /// keys, use the <code>KeySpec</code> parameter. 
-    /// </para>
-    ///  
-    /// <para>
-    /// If the operation succeeds, the plaintext copy of the data key is in the <code>Plaintext</code>
-    /// field of the response, and the encrypted copy of the data key in the <code>CiphertextBlob</code>
-    /// field.
+    /// of your CMK, use the <a>DescribeKey</a> operation. You must also specify the length
+    /// of the data key. Use either the <code>KeySpec</code> or <code>NumberOfBytes</code>
+    /// parameters (but not both). For 128-bit and 256-bit data keys, use the <code>KeySpec</code>
+    /// parameter. 
     /// </para>
     ///  
     /// <para>
@@ -69,7 +60,7 @@ namespace Amazon.KeyManagementService.Model
     /// You can use the optional encryption context to add additional security to the encryption
     /// operation. If you specify an <code>EncryptionContext</code>, you must specify the
     /// same encryption context (a case-sensitive exact match) when decrypting the encrypted
-    /// data key. Otherwise, the request to decrypt fails with an InvalidCiphertextException.
+    /// data key. Otherwise, the request to decrypt fails with an <code>InvalidCiphertextException</code>.
     /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
     /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
     /// </para>
@@ -82,25 +73,38 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// We recommend that you use the following pattern to encrypt data locally in your application:
+    ///  <b>How to use your data key</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// We recommend that you use the following pattern to encrypt data locally in your application.
+    /// You can write your own code or use a client-side encryption library, such as the <a
+    /// href="https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/">AWS Encryption
+    /// SDK</a>, the <a href="https://docs.aws.amazon.com/dynamodb-encryption-client/latest/devguide/">Amazon
+    /// DynamoDB Encryption Client</a>, or <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
+    /// S3 client-side encryption</a> to do these tasks for you.
+    /// </para>
+    ///  
+    /// <para>
+    /// To encrypt data outside of AWS KMS:
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Use the <code>GenerateDataKey</code> operation to get a data encryption key.
+    /// Use the <code>GenerateDataKey</code> operation to get a data key.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use the plaintext data key (returned in the <code>Plaintext</code> field of the response)
-    /// to encrypt data locally, then erase the plaintext data key from memory.
+    /// Use the plaintext data key (in the <code>Plaintext</code> field of the response) to
+    /// encrypt your data outside of AWS KMS. Then erase the plaintext data key from memory.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Store the encrypted data key (returned in the <code>CiphertextBlob</code> field of
-    /// the response) alongside the locally encrypted data.
+    /// Store the encrypted data key (in the <code>CiphertextBlob</code> field of the response)
+    /// with the encrypted data.
     /// </para>
     ///  </li> </ol> 
     /// <para>
-    /// To decrypt data locally:
+    /// To decrypt data outside of AWS KMS:
     /// </para>
     ///  <ol> <li> 
     /// <para>
@@ -109,8 +113,8 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use the plaintext data key to decrypt data locally, then erase the plaintext data
-    /// key from memory.
+    /// Use the plaintext data key to decrypt data outside of AWS KMS, then erase the plaintext
+    /// data key from memory.
     /// </para>
     ///  </li> </ol>
     /// </summary>

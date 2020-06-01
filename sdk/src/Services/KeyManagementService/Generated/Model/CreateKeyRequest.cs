@@ -332,9 +332,10 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyUsage. 
         /// <para>
-        /// Determines the cryptographic operations for which you can use the CMK. The default
-        /// value is <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric
-        /// CMKs. You can't change the <code>KeyUsage</code> value after the CMK is created.
+        /// Determines the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a> for which you can use the CMK. The default value is <code>ENCRYPT_DECRYPT</code>.
+        /// This parameter is required only for asymmetric CMKs. You can't change the <code>KeyUsage</code>
+        /// value after the CMK is created.
         /// </para>
         ///  
         /// <para>

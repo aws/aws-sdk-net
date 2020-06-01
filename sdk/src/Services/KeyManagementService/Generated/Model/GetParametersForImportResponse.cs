@@ -60,8 +60,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The identifier of the CMK to use in a subsequent <a>ImportKeyMaterial</a> request.
-        /// This is the same CMK specified in the <code>GetParametersForImport</code> request.
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+        /// ARN</a>) of the CMK to use in a subsequent <a>ImportKeyMaterial</a> request. This
+        /// is the same CMK specified in the <code>GetParametersForImport</code> request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

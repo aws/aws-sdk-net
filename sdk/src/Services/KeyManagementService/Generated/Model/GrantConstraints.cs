@@ -29,39 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// Use this structure to allow cryptographic operations in the grant only when the operation
-    /// request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
-    /// context</a>.
+    /// Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+    /// operations</a> in the grant only when the operation request includes the specified
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
+    /// context</a>. 
     /// 
     ///  
     /// <para>
-    /// AWS KMS applies the grant constraints only when the grant allows a cryptographic operation
-    /// that accepts an encryption context as input, such as the following.
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>Encrypt</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>Decrypt</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GenerateDataKey</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GenerateDataKeyWithoutPlaintext</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ReEncrypt</a> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// AWS KMS does not apply the grant constraints to other operations, such as <a>DescribeKey</a>
-    /// or <a>ScheduleKeyDeletion</a>.
+    /// AWS KMS applies the grant constraints only to cryptographic operations that support
+    /// an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric
+    /// CMK</a>. Grant constraints are not applied to operations that do not support an encryption
+    /// context, such as cryptographic operations with asymmetric CMKs and management operations,
+    /// such as <a>DescribeKey</a> or <a>ScheduleKeyDeletion</a>.
     /// </para>
     ///  <important> 
     /// <para>
@@ -92,8 +71,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property EncryptionContextEquals. 
         /// <para>
-        /// A list of key-value pairs that must match the encryption context in the cryptographic
-        /// operation request. The grant allows the operation only when the encryption context
+        /// A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operation</a> request. The grant allows the operation only when the encryption context
         /// in the request is the same as the encryption context specified in this constraint.
         /// </para>
         /// </summary>
@@ -112,9 +91,10 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property EncryptionContextSubset. 
         /// <para>
-        /// A list of key-value pairs that must be included in the encryption context of the cryptographic
-        /// operation request. The grant allows the cryptographic operation only when the encryption
-        /// context in the request includes the key-value pairs specified in this constraint,
+        /// A list of key-value pairs that must be included in the encryption context of the <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operation</a> request. The grant allows the cryptographic operation only when the
+        /// encryption context in the request includes the key-value pairs specified in this constraint,
         /// although it can include additional key-value pairs.
         /// </para>
         /// </summary>

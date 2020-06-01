@@ -80,7 +80,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Unique identifier of the CMK used to reencrypt the data.
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+        /// ARN</a>) of the CMK that was used to reencrypt the data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

@@ -903,8 +903,9 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Creates a display name for a customer managed customer master key (CMK). You can use
-        /// an alias to identify a CMK in cryptographic operations, such as <a>Encrypt</a> and
-        /// <a>GenerateDataKey</a>. You can change the CMK associated with the alias at any time.
+        /// an alias to identify a CMK in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a>, such as <a>Encrypt</a> and <a>GenerateDataKey</a>. You can change
+        /// the CMK associated with the alias at any time.
         /// 
         ///  
         /// <para>
@@ -970,8 +971,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can use an alias name or alias ARN to identify a CMK in AWS KMS cryptographic
-        /// operations and in the <a>DescribeKey</a> operation. However, you cannot use alias
+        /// You can use an alias name or alias ARN to identify a CMK in AWS KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a> and in the <a>DescribeKey</a> operation. However, you cannot use alias
         /// names or alias ARNs in API operations that manage CMKs, such as <a>DisableKey</a>
         /// or <a>GetKeyPolicy</a>. For information about the valid CMK identifiers for each AWS
         /// KMS API operation, see the descriptions of the <code>KeyId</code> parameter in the
@@ -1040,8 +1041,9 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Creates a display name for a customer managed customer master key (CMK). You can use
-        /// an alias to identify a CMK in cryptographic operations, such as <a>Encrypt</a> and
-        /// <a>GenerateDataKey</a>. You can change the CMK associated with the alias at any time.
+        /// an alias to identify a CMK in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a>, such as <a>Encrypt</a> and <a>GenerateDataKey</a>. You can change
+        /// the CMK associated with the alias at any time.
         /// 
         ///  
         /// <para>
@@ -1107,8 +1109,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can use an alias name or alias ARN to identify a CMK in AWS KMS cryptographic
-        /// operations and in the <a>DescribeKey</a> operation. However, you cannot use alias
+        /// You can use an alias name or alias ARN to identify a CMK in AWS KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a> and in the <a>DescribeKey</a> operation. However, you cannot use alias
         /// names or alias ARNs in API operations that manage CMKs, such as <a>DisableKey</a>
         /// or <a>GetKeyPolicy</a>. For information about the valid CMK identifiers for each AWS
         /// KMS API operation, see the descriptions of the <code>KeyId</code> parameter in the
@@ -1177,8 +1179,9 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Creates a display name for a customer managed customer master key (CMK). You can use
-        /// an alias to identify a CMK in cryptographic operations, such as <a>Encrypt</a> and
-        /// <a>GenerateDataKey</a>. You can change the CMK associated with the alias at any time.
+        /// an alias to identify a CMK in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a>, such as <a>Encrypt</a> and <a>GenerateDataKey</a>. You can change
+        /// the CMK associated with the alias at any time.
         /// 
         ///  
         /// <para>
@@ -1244,8 +1247,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can use an alias name or alias ARN to identify a CMK in AWS KMS cryptographic
-        /// operations and in the <a>DescribeKey</a> operation. However, you cannot use alias
+        /// You can use an alias name or alias ARN to identify a CMK in AWS KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a> and in the <a>DescribeKey</a> operation. However, you cannot use alias
         /// names or alias ARNs in API operations that manage CMKs, such as <a>DisableKey</a>
         /// or <a>GetKeyPolicy</a>. For information about the valid CMK identifiers for each AWS
         /// KMS API operation, see the descriptions of the <code>KeyId</code> parameter in the
@@ -1317,8 +1320,9 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Creates a display name for a customer managed customer master key (CMK). You can use
-        /// an alias to identify a CMK in cryptographic operations, such as <a>Encrypt</a> and
-        /// <a>GenerateDataKey</a>. You can change the CMK associated with the alias at any time.
+        /// an alias to identify a CMK in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a>, such as <a>Encrypt</a> and <a>GenerateDataKey</a>. You can change
+        /// the CMK associated with the alias at any time.
         /// 
         ///  
         /// <para>
@@ -1384,8 +1388,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can use an alias name or alias ARN to identify a CMK in AWS KMS cryptographic
-        /// operations and in the <a>DescribeKey</a> operation. However, you cannot use alias
+        /// You can use an alias name or alias ARN to identify a CMK in AWS KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a> and in the <a>DescribeKey</a> operation. However, you cannot use alias
         /// names or alias ARNs in API operations that manage CMKs, such as <a>DisableKey</a>
         /// or <a>GetKeyPolicy</a>. For information about the valid CMK identifiers for each AWS
         /// KMS API operation, see the descriptions of the <code>KeyId</code> parameter in the
@@ -1741,8 +1745,8 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// To create a grant that allows a cryptographic operation only when the request includes
-        /// a particular <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
+        /// To create a grant that allows a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operation</a> only when the request includes a particular <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
         /// context</a>, use the <code>Constraints</code> parameter. For details, see <a>GrantConstraints</a>.
         /// </para>
         ///  
@@ -1857,8 +1861,8 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// To create a grant that allows a cryptographic operation only when the request includes
-        /// a particular <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
+        /// To create a grant that allows a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operation</a> only when the request includes a particular <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
         /// context</a>, use the <code>Constraints</code> parameter. For details, see <a>GrantConstraints</a>.
         /// </para>
         ///  
@@ -2936,11 +2940,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The custom key store that you delete cannot contain any AWS KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">customer
         /// master keys (CMKs)</a>. Before deleting the key store, verify that you will never
-        /// need to use any of the CMKs in the key store for any cryptographic operations. Then,
-        /// use <a>ScheduleKeyDeletion</a> to delete the AWS KMS customer master keys (CMKs) from
-        /// the key store. When the scheduled waiting period expires, the <code>ScheduleKeyDeletion</code>
-        /// operation deletes the CMKs. Then it makes a best effort to delete the key material
-        /// from the associated cluster. However, you might need to manually <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
+        /// need to use any of the CMKs in the key store for any <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a>. Then, use <a>ScheduleKeyDeletion</a> to delete the AWS KMS customer
+        /// master keys (CMKs) from the key store. When the scheduled waiting period expires,
+        /// the <code>ScheduleKeyDeletion</code> operation deletes the CMKs. Then it makes a best
+        /// effort to delete the key material from the associated cluster. However, you might
+        /// need to manually <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
         /// the orphaned key material</a> from the cluster and its backups.
         /// </para>
         ///  
@@ -3032,11 +3037,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The custom key store that you delete cannot contain any AWS KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">customer
         /// master keys (CMKs)</a>. Before deleting the key store, verify that you will never
-        /// need to use any of the CMKs in the key store for any cryptographic operations. Then,
-        /// use <a>ScheduleKeyDeletion</a> to delete the AWS KMS customer master keys (CMKs) from
-        /// the key store. When the scheduled waiting period expires, the <code>ScheduleKeyDeletion</code>
-        /// operation deletes the CMKs. Then it makes a best effort to delete the key material
-        /// from the associated cluster. However, you might need to manually <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
+        /// need to use any of the CMKs in the key store for any <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a>. Then, use <a>ScheduleKeyDeletion</a> to delete the AWS KMS customer
+        /// master keys (CMKs) from the key store. When the scheduled waiting period expires,
+        /// the <code>ScheduleKeyDeletion</code> operation deletes the CMKs. Then it makes a best
+        /// effort to delete the key material from the associated cluster. However, you might
+        /// need to manually <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
         /// the orphaned key material</a> from the cluster and its backups.
         /// </para>
         ///  
@@ -3734,8 +3740,8 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Sets the state of a customer master key (CMK) to disabled, thereby preventing its
-        /// use for cryptographic operations. You cannot perform this operation on a CMK in a
-        /// different AWS account.
+        /// use for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a>. You cannot perform this operation on a CMK in a different AWS account.
         /// 
         ///  
         /// <para>
@@ -3790,8 +3796,8 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Sets the state of a customer master key (CMK) to disabled, thereby preventing its
-        /// use for cryptographic operations. You cannot perform this operation on a CMK in a
-        /// different AWS account.
+        /// use for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a>. You cannot perform this operation on a CMK in a different AWS account.
         /// 
         ///  
         /// <para>
@@ -3848,8 +3854,8 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Sets the state of a customer master key (CMK) to disabled, thereby preventing its
-        /// use for cryptographic operations. You cannot perform this operation on a CMK in a
-        /// different AWS account.
+        /// use for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a>. You cannot perform this operation on a CMK in a different AWS account.
         /// 
         ///  
         /// <para>
@@ -3907,8 +3913,8 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Sets the state of a customer master key (CMK) to disabled, thereby preventing its
-        /// use for cryptographic operations. You cannot perform this operation on a CMK in a
-        /// different AWS account.
+        /// use for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a>. You cannot perform this operation on a CMK in a different AWS account.
         /// 
         ///  
         /// <para>
@@ -4242,8 +4248,9 @@ namespace Amazon.KeyManagementService
         ///  <note> 
         /// <para>
         /// While a custom key store is disconnected, all attempts to create customer master keys
-        /// (CMKs) in the custom key store or to use existing CMKs in cryptographic operations
-        /// will fail. This action can prevent users from storing and accessing sensitive data.
+        /// (CMKs) in the custom key store or to use existing CMKs in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a> will fail. This action can prevent users from storing and accessing
+        /// sensitive data.
         /// </para>
         ///  </note>  
         /// <para>
@@ -4322,8 +4329,9 @@ namespace Amazon.KeyManagementService
         ///  <note> 
         /// <para>
         /// While a custom key store is disconnected, all attempts to create customer master keys
-        /// (CMKs) in the custom key store or to use existing CMKs in cryptographic operations
-        /// will fail. This action can prevent users from storing and accessing sensitive data.
+        /// (CMKs) in the custom key store or to use existing CMKs in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a> will fail. This action can prevent users from storing and accessing
+        /// sensitive data.
         /// </para>
         ///  </note>  
         /// <para>
@@ -4401,8 +4409,8 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Sets the key state of a customer master key (CMK) to enabled. This allows you to use
-        /// the CMK for cryptographic operations. You cannot perform this operation on a CMK in
-        /// a different AWS account.
+        /// the CMK for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a>. You cannot perform this operation on a CMK in a different AWS account.
         /// 
         ///  
         /// <para>
@@ -4456,8 +4464,8 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Sets the key state of a customer master key (CMK) to enabled. This allows you to use
-        /// the CMK for cryptographic operations. You cannot perform this operation on a CMK in
-        /// a different AWS account.
+        /// the CMK for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a>. You cannot perform this operation on a CMK in a different AWS account.
         /// 
         ///  
         /// <para>
@@ -4513,8 +4521,8 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Sets the key state of a customer master key (CMK) to enabled. This allows you to use
-        /// the CMK for cryptographic operations. You cannot perform this operation on a CMK in
-        /// a different AWS account.
+        /// the CMK for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a>. You cannot perform this operation on a CMK in a different AWS account.
         /// 
         ///  
         /// <para>
@@ -4571,8 +4579,8 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Sets the key state of a customer master key (CMK) to enabled. This allows you to use
-        /// the CMK for cryptographic operations. You cannot perform this operation on a CMK in
-        /// a different AWS account.
+        /// the CMK for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a>. You cannot perform this operation on a CMK in a different AWS account.
         /// 
         ///  
         /// <para>
@@ -4911,10 +4919,11 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You can use the <code>Encrypt</code> operation to move encrypted data from one AWS
-        /// region to another. In the first region, generate a data key and use the plaintext
-        /// key to encrypt the data. Then, in the new region, call the <code>Encrypt</code> method
-        /// on same plaintext data key. Now, you can safely move the encrypted data and encrypted
-        /// data key to the new region, and decrypt in the new region when necessary.
+        /// Region to another. For example, in Region A, generate a data key and use the plaintext
+        /// key to encrypt your data. Then, in Region A, use the <code>Encrypt</code> operation
+        /// to encrypt the plaintext data key under a CMK in Region B. Now, you can move the encrypted
+        /// data and the encrypted data key to Region B. When necessary, you can decrypt the encrypted
+        /// data key and the encrypted data entirely within in Region B.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -5101,10 +5110,11 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You can use the <code>Encrypt</code> operation to move encrypted data from one AWS
-        /// region to another. In the first region, generate a data key and use the plaintext
-        /// key to encrypt the data. Then, in the new region, call the <code>Encrypt</code> method
-        /// on same plaintext data key. Now, you can safely move the encrypted data and encrypted
-        /// data key to the new region, and decrypt in the new region when necessary.
+        /// Region to another. For example, in Region A, generate a data key and use the plaintext
+        /// key to encrypt your data. Then, in Region A, use the <code>Encrypt</code> operation
+        /// to encrypt the plaintext data key under a CMK in Region B. Now, you can move the encrypted
+        /// data and the encrypted data key to Region B. When necessary, you can decrypt the encrypted
+        /// data key and the encrypted data entirely within in Region B.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -5287,33 +5297,24 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Generates a unique symmetric data key. This operation returns a plaintext copy of
-        /// the data key and a copy that is encrypted under a customer master key (CMK) that you
-        /// specify. You can use the plaintext key to encrypt your data outside of AWS KMS and
-        /// store the encrypted data key with the encrypted data.
+        /// Generates a unique symmetric data key for client-side encryption. This operation returns
+        /// a plaintext copy of the data key and a copy that is encrypted under a customer master
+        /// key (CMK) that you specify. You can use the plaintext key to encrypt your data outside
+        /// of AWS KMS and store the encrypted data key with the encrypted data.
         /// 
         ///  
         /// <para>
         ///  <code>GenerateDataKey</code> returns a unique data key for each request. The bytes
-        /// in the key are not related to the caller or CMK that is used to encrypt the data key.
+        /// in the plaintext key are not related to the caller or the CMK.
         /// </para>
         ///  
         /// <para>
         /// To generate a data key, specify the symmetric CMK that will be used to encrypt the
         /// data key. You cannot use an asymmetric CMK to generate data keys. To get the type
-        /// of your CMK, use the <a>DescribeKey</a> operation.
-        /// </para>
-        ///  
-        /// <para>
-        /// You must also specify the length of the data key. Use either the <code>KeySpec</code>
-        /// or <code>NumberOfBytes</code> parameters (but not both). For 128-bit and 256-bit data
-        /// keys, use the <code>KeySpec</code> parameter. 
-        /// </para>
-        ///  
-        /// <para>
-        /// If the operation succeeds, the plaintext copy of the data key is in the <code>Plaintext</code>
-        /// field of the response, and the encrypted copy of the data key in the <code>CiphertextBlob</code>
-        /// field.
+        /// of your CMK, use the <a>DescribeKey</a> operation. You must also specify the length
+        /// of the data key. Use either the <code>KeySpec</code> or <code>NumberOfBytes</code>
+        /// parameters (but not both). For 128-bit and 256-bit data keys, use the <code>KeySpec</code>
+        /// parameter. 
         /// </para>
         ///  
         /// <para>
@@ -5326,7 +5327,7 @@ namespace Amazon.KeyManagementService
         /// You can use the optional encryption context to add additional security to the encryption
         /// operation. If you specify an <code>EncryptionContext</code>, you must specify the
         /// same encryption context (a case-sensitive exact match) when decrypting the encrypted
-        /// data key. Otherwise, the request to decrypt fails with an InvalidCiphertextException.
+        /// data key. Otherwise, the request to decrypt fails with an <code>InvalidCiphertextException</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
         /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
@@ -5339,25 +5340,38 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// We recommend that you use the following pattern to encrypt data locally in your application:
+        ///  <b>How to use your data key</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// We recommend that you use the following pattern to encrypt data locally in your application.
+        /// You can write your own code or use a client-side encryption library, such as the <a
+        /// href="https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/">AWS Encryption
+        /// SDK</a>, the <a href="https://docs.aws.amazon.com/dynamodb-encryption-client/latest/devguide/">Amazon
+        /// DynamoDB Encryption Client</a>, or <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
+        /// S3 client-side encryption</a> to do these tasks for you.
+        /// </para>
+        ///  
+        /// <para>
+        /// To encrypt data outside of AWS KMS:
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use the <code>GenerateDataKey</code> operation to get a data encryption key.
+        /// Use the <code>GenerateDataKey</code> operation to get a data key.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the plaintext data key (returned in the <code>Plaintext</code> field of the response)
-        /// to encrypt data locally, then erase the plaintext data key from memory.
+        /// Use the plaintext data key (in the <code>Plaintext</code> field of the response) to
+        /// encrypt your data outside of AWS KMS. Then erase the plaintext data key from memory.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Store the encrypted data key (returned in the <code>CiphertextBlob</code> field of
-        /// the response) alongside the locally encrypted data.
+        /// Store the encrypted data key (in the <code>CiphertextBlob</code> field of the response)
+        /// with the encrypted data.
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// To decrypt data locally:
+        /// To decrypt data outside of AWS KMS:
         /// </para>
         ///  <ol> <li> 
         /// <para>
@@ -5366,8 +5380,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the plaintext data key to decrypt data locally, then erase the plaintext data
-        /// key from memory.
+        /// Use the plaintext data key to decrypt data outside of AWS KMS, then erase the plaintext
+        /// data key from memory.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -5442,33 +5456,24 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Generates a unique symmetric data key. This operation returns a plaintext copy of
-        /// the data key and a copy that is encrypted under a customer master key (CMK) that you
-        /// specify. You can use the plaintext key to encrypt your data outside of AWS KMS and
-        /// store the encrypted data key with the encrypted data.
+        /// Generates a unique symmetric data key for client-side encryption. This operation returns
+        /// a plaintext copy of the data key and a copy that is encrypted under a customer master
+        /// key (CMK) that you specify. You can use the plaintext key to encrypt your data outside
+        /// of AWS KMS and store the encrypted data key with the encrypted data.
         /// 
         ///  
         /// <para>
         ///  <code>GenerateDataKey</code> returns a unique data key for each request. The bytes
-        /// in the key are not related to the caller or CMK that is used to encrypt the data key.
+        /// in the plaintext key are not related to the caller or the CMK.
         /// </para>
         ///  
         /// <para>
         /// To generate a data key, specify the symmetric CMK that will be used to encrypt the
         /// data key. You cannot use an asymmetric CMK to generate data keys. To get the type
-        /// of your CMK, use the <a>DescribeKey</a> operation.
-        /// </para>
-        ///  
-        /// <para>
-        /// You must also specify the length of the data key. Use either the <code>KeySpec</code>
-        /// or <code>NumberOfBytes</code> parameters (but not both). For 128-bit and 256-bit data
-        /// keys, use the <code>KeySpec</code> parameter. 
-        /// </para>
-        ///  
-        /// <para>
-        /// If the operation succeeds, the plaintext copy of the data key is in the <code>Plaintext</code>
-        /// field of the response, and the encrypted copy of the data key in the <code>CiphertextBlob</code>
-        /// field.
+        /// of your CMK, use the <a>DescribeKey</a> operation. You must also specify the length
+        /// of the data key. Use either the <code>KeySpec</code> or <code>NumberOfBytes</code>
+        /// parameters (but not both). For 128-bit and 256-bit data keys, use the <code>KeySpec</code>
+        /// parameter. 
         /// </para>
         ///  
         /// <para>
@@ -5481,7 +5486,7 @@ namespace Amazon.KeyManagementService
         /// You can use the optional encryption context to add additional security to the encryption
         /// operation. If you specify an <code>EncryptionContext</code>, you must specify the
         /// same encryption context (a case-sensitive exact match) when decrypting the encrypted
-        /// data key. Otherwise, the request to decrypt fails with an InvalidCiphertextException.
+        /// data key. Otherwise, the request to decrypt fails with an <code>InvalidCiphertextException</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
         /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
@@ -5494,25 +5499,38 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// We recommend that you use the following pattern to encrypt data locally in your application:
+        ///  <b>How to use your data key</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// We recommend that you use the following pattern to encrypt data locally in your application.
+        /// You can write your own code or use a client-side encryption library, such as the <a
+        /// href="https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/">AWS Encryption
+        /// SDK</a>, the <a href="https://docs.aws.amazon.com/dynamodb-encryption-client/latest/devguide/">Amazon
+        /// DynamoDB Encryption Client</a>, or <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
+        /// S3 client-side encryption</a> to do these tasks for you.
+        /// </para>
+        ///  
+        /// <para>
+        /// To encrypt data outside of AWS KMS:
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use the <code>GenerateDataKey</code> operation to get a data encryption key.
+        /// Use the <code>GenerateDataKey</code> operation to get a data key.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the plaintext data key (returned in the <code>Plaintext</code> field of the response)
-        /// to encrypt data locally, then erase the plaintext data key from memory.
+        /// Use the plaintext data key (in the <code>Plaintext</code> field of the response) to
+        /// encrypt your data outside of AWS KMS. Then erase the plaintext data key from memory.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Store the encrypted data key (returned in the <code>CiphertextBlob</code> field of
-        /// the response) alongside the locally encrypted data.
+        /// Store the encrypted data key (in the <code>CiphertextBlob</code> field of the response)
+        /// with the encrypted data.
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// To decrypt data locally:
+        /// To decrypt data outside of AWS KMS:
         /// </para>
         ///  <ol> <li> 
         /// <para>
@@ -5521,8 +5539,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the plaintext data key to decrypt data locally, then erase the plaintext data
-        /// key from memory.
+        /// Use the plaintext data key to decrypt data outside of AWS KMS, then erase the plaintext
+        /// data key from memory.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -5625,8 +5643,9 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// To generate a data key pair, you must specify a symmetric customer master key (CMK)
-        /// to encrypt the private key in a data key pair. You cannot use an asymmetric CMK. To
-        /// get the type of your CMK, use the <a>DescribeKey</a> operation.
+        /// to encrypt the private key in a data key pair. You cannot use an asymmetric CMK or
+        /// a CMK in a custom key store. To get the type and origin of your CMK, use the <a>DescribeKey</a>
+        /// operation. 
         /// </para>
         ///  
         /// <para>
@@ -5643,7 +5662,7 @@ namespace Amazon.KeyManagementService
         /// You can use the optional encryption context to add additional security to the encryption
         /// operation. If you specify an <code>EncryptionContext</code>, you must specify the
         /// same encryption context (a case-sensitive exact match) when decrypting the encrypted
-        /// data key. Otherwise, the request to decrypt fails with an InvalidCiphertextException.
+        /// data key. Otherwise, the request to decrypt fails with an <code>InvalidCiphertextException</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
         /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
@@ -5713,6 +5732,10 @@ namespace Amazon.KeyManagementService
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyPair">REST API Reference for GenerateDataKeyPair Operation</seealso>
         public virtual GenerateDataKeyPairResponse GenerateDataKeyPair(GenerateDataKeyPairRequest request)
@@ -5747,8 +5770,9 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// To generate a data key pair, you must specify a symmetric customer master key (CMK)
-        /// to encrypt the private key in a data key pair. You cannot use an asymmetric CMK. To
-        /// get the type of your CMK, use the <a>DescribeKey</a> operation.
+        /// to encrypt the private key in a data key pair. You cannot use an asymmetric CMK or
+        /// a CMK in a custom key store. To get the type and origin of your CMK, use the <a>DescribeKey</a>
+        /// operation. 
         /// </para>
         ///  
         /// <para>
@@ -5765,7 +5789,7 @@ namespace Amazon.KeyManagementService
         /// You can use the optional encryption context to add additional security to the encryption
         /// operation. If you specify an <code>EncryptionContext</code>, you must specify the
         /// same encryption context (a case-sensitive exact match) when decrypting the encrypted
-        /// data key. Otherwise, the request to decrypt fails with an InvalidCiphertextException.
+        /// data key. Otherwise, the request to decrypt fails with an <code>InvalidCiphertextException</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
         /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
@@ -5839,6 +5863,10 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyPair">REST API Reference for GenerateDataKeyPair Operation</seealso>
         public virtual Task<GenerateDataKeyPairResponse> GenerateDataKeyPairAsync(GenerateDataKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -5863,9 +5891,9 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// To generate a data key pair, you must specify a symmetric customer master key (CMK)
-        /// to encrypt the private key in the data key pair. You cannot use an asymmetric CMK.
-        /// To get the type of your CMK, use the <code>KeySpec</code> field in the <a>DescribeKey</a>
-        /// response.
+        /// to encrypt the private key in the data key pair. You cannot use an asymmetric CMK
+        /// or a CMK in a custom key store. To get the type and origin of your CMK, use the <code>KeySpec</code>
+        /// field in the <a>DescribeKey</a> response.
         /// </para>
         ///  
         /// <para>
@@ -5885,7 +5913,7 @@ namespace Amazon.KeyManagementService
         /// You can use the optional encryption context to add additional security to the encryption
         /// operation. If you specify an <code>EncryptionContext</code>, you must specify the
         /// same encryption context (a case-sensitive exact match) when decrypting the encrypted
-        /// data key. Otherwise, the request to decrypt fails with an InvalidCiphertextException.
+        /// data key. Otherwise, the request to decrypt fails with an <code>InvalidCiphertextException</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
         /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
@@ -5956,6 +5984,10 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyPairWithoutPlaintext">REST API Reference for GenerateDataKeyPairWithoutPlaintext Operation</seealso>
         public virtual GenerateDataKeyPairWithoutPlaintextResponse GenerateDataKeyPairWithoutPlaintext(GenerateDataKeyPairWithoutPlaintextRequest request)
         {
@@ -5976,9 +6008,9 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// To generate a data key pair, you must specify a symmetric customer master key (CMK)
-        /// to encrypt the private key in the data key pair. You cannot use an asymmetric CMK.
-        /// To get the type of your CMK, use the <code>KeySpec</code> field in the <a>DescribeKey</a>
-        /// response.
+        /// to encrypt the private key in the data key pair. You cannot use an asymmetric CMK
+        /// or a CMK in a custom key store. To get the type and origin of your CMK, use the <code>KeySpec</code>
+        /// field in the <a>DescribeKey</a> response.
         /// </para>
         ///  
         /// <para>
@@ -5998,7 +6030,7 @@ namespace Amazon.KeyManagementService
         /// You can use the optional encryption context to add additional security to the encryption
         /// operation. If you specify an <code>EncryptionContext</code>, you must specify the
         /// same encryption context (a case-sensitive exact match) when decrypting the encrypted
-        /// data key. Otherwise, the request to decrypt fails with an InvalidCiphertextException.
+        /// data key. Otherwise, the request to decrypt fails with an <code>InvalidCiphertextException</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
         /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
@@ -6071,6 +6103,10 @@ namespace Amazon.KeyManagementService
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyPairWithoutPlaintext">REST API Reference for GenerateDataKeyPairWithoutPlaintext Operation</seealso>
         public virtual Task<GenerateDataKeyPairWithoutPlaintextResponse> GenerateDataKeyPairWithoutPlaintextAsync(GenerateDataKeyPairWithoutPlaintextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6133,7 +6169,7 @@ namespace Amazon.KeyManagementService
         /// You can use the optional encryption context to add additional security to the encryption
         /// operation. If you specify an <code>EncryptionContext</code>, you must specify the
         /// same encryption context (a case-sensitive exact match) when decrypting the encrypted
-        /// data key. Otherwise, the request to decrypt fails with an InvalidCiphertextException.
+        /// data key. Otherwise, the request to decrypt fails with an <code>InvalidCiphertextException</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
         /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
@@ -6261,7 +6297,7 @@ namespace Amazon.KeyManagementService
         /// You can use the optional encryption context to add additional security to the encryption
         /// operation. If you specify an <code>EncryptionContext</code>, you must specify the
         /// same encryption context (a case-sensitive exact match) when decrypting the encrypted
-        /// data key. Otherwise, the request to decrypt fails with an InvalidCiphertextException.
+        /// data key. Otherwise, the request to decrypt fails with an <code>InvalidCiphertextException</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
         /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
@@ -7992,6 +8028,15 @@ namespace Amazon.KeyManagementService
         /// To perform this operation on a CMK in a different AWS account, specify the key ARN
         /// in the value of the <code>KeyId</code> parameter.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually
+        /// contains the user or role designated as the grantee principal in the grant. However,
+        /// when the grantee principal in the grant is an AWS service, the <code>GranteePrincipal</code>
+        /// field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+        /// principal</a>, which might represent several different grantee principals.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGrants service method.</param>
         /// 
@@ -8044,6 +8089,15 @@ namespace Amazon.KeyManagementService
         /// To perform this operation on a CMK in a different AWS account, specify the key ARN
         /// in the value of the <code>KeyId</code> parameter.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually
+        /// contains the user or role designated as the grantee principal in the grant. However,
+        /// when the grantee principal in the grant is an AWS service, the <code>GranteePrincipal</code>
+        /// field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+        /// principal</a>, which might represent several different grantee principals.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGrants service method.</param>
         /// <param name="cancellationToken">
@@ -8856,16 +8910,17 @@ namespace Amazon.KeyManagementService
         /// operation to change the customer master key (CMK) under which data is encrypted, such
         /// as when you <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotate-keys-manually">manually
         /// rotate</a> a CMK or change the CMK that protects a ciphertext. You can also use it
-        /// to reencrypt ciphertext under the same CMK, such as to change the encryption context
-        /// of a ciphertext. 
+        /// to reencrypt ciphertext under the same CMK, such as to change the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
+        /// context</a> of a ciphertext.
         /// 
         ///  
         /// <para>
         /// The <code>ReEncrypt</code> operation can decrypt ciphertext that was encrypted by
         /// using an AWS KMS CMK in an AWS KMS operation, such as <a>Encrypt</a> or <a>GenerateDataKey</a>.
-        /// It can also decrypt ciphertext that was encrypted by using the public key of an asymmetric
-        /// CMK outside of AWS KMS. However, it cannot decrypt ciphertext produced by other libraries,
-        /// such as the <a href="https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/">AWS
+        /// It can also decrypt ciphertext that was encrypted by using the public key of an <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#asymmetric-cmks">asymmetric
+        /// CMK</a> outside of AWS KMS. However, it cannot decrypt ciphertext produced by other
+        /// libraries, such as the <a href="https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/">AWS
         /// Encryption SDK</a> or <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
         /// S3 client-side encryption</a>. These libraries return a ciphertext format that is
         /// incompatible with AWS KMS.
@@ -8916,22 +8971,19 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>kms:EncryptFrom</code> permission on the source CMK
+        ///  <code>kms:ReEncryptFrom</code> permission on the source CMK
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>kms:EncryptTo</code> permission on the destination CMK
+        ///  <code>kms:ReEncryptTo</code> permission on the destination CMK
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To permit reencryption from
-        /// </para>
-        ///  
-        /// <para>
-        ///  or to a CMK, include the <code>"kms:ReEncrypt*"</code> permission in your <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">key
+        /// To permit reencryption from or to a CMK, include the <code>"kms:ReEncrypt*"</code>
+        /// permission in your <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">key
         /// policy</a>. This permission is automatically included in the key policy when you use
         /// the console to create a CMK. But you must include it manually when you create a CMK
-        /// programmatically or when you use the <a>PutKeyPolicy</a> operation set a key policy.
+        /// programmatically or when you use the <a>PutKeyPolicy</a> operation to set a key policy.
         /// </para>
         ///  
         /// <para>
@@ -9032,16 +9084,17 @@ namespace Amazon.KeyManagementService
         /// operation to change the customer master key (CMK) under which data is encrypted, such
         /// as when you <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotate-keys-manually">manually
         /// rotate</a> a CMK or change the CMK that protects a ciphertext. You can also use it
-        /// to reencrypt ciphertext under the same CMK, such as to change the encryption context
-        /// of a ciphertext. 
+        /// to reencrypt ciphertext under the same CMK, such as to change the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
+        /// context</a> of a ciphertext.
         /// 
         ///  
         /// <para>
         /// The <code>ReEncrypt</code> operation can decrypt ciphertext that was encrypted by
         /// using an AWS KMS CMK in an AWS KMS operation, such as <a>Encrypt</a> or <a>GenerateDataKey</a>.
-        /// It can also decrypt ciphertext that was encrypted by using the public key of an asymmetric
-        /// CMK outside of AWS KMS. However, it cannot decrypt ciphertext produced by other libraries,
-        /// such as the <a href="https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/">AWS
+        /// It can also decrypt ciphertext that was encrypted by using the public key of an <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#asymmetric-cmks">asymmetric
+        /// CMK</a> outside of AWS KMS. However, it cannot decrypt ciphertext produced by other
+        /// libraries, such as the <a href="https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/">AWS
         /// Encryption SDK</a> or <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
         /// S3 client-side encryption</a>. These libraries return a ciphertext format that is
         /// incompatible with AWS KMS.
@@ -9092,22 +9145,19 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>kms:EncryptFrom</code> permission on the source CMK
+        ///  <code>kms:ReEncryptFrom</code> permission on the source CMK
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>kms:EncryptTo</code> permission on the destination CMK
+        ///  <code>kms:ReEncryptTo</code> permission on the destination CMK
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To permit reencryption from
-        /// </para>
-        ///  
-        /// <para>
-        ///  or to a CMK, include the <code>"kms:ReEncrypt*"</code> permission in your <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">key
+        /// To permit reencryption from or to a CMK, include the <code>"kms:ReEncrypt*"</code>
+        /// permission in your <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">key
         /// policy</a>. This permission is automatically included in the key policy when you use
         /// the console to create a CMK. But you must include it manually when you create a CMK
-        /// programmatically or when you use the <a>PutKeyPolicy</a> operation set a key policy.
+        /// programmatically or when you use the <a>PutKeyPolicy</a> operation to set a key policy.
         /// </para>
         ///  
         /// <para>
@@ -10789,6 +10839,11 @@ namespace Amazon.KeyManagementService
         /// Service Developer Guide</i> </i>.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
@@ -10857,6 +10912,11 @@ namespace Amazon.KeyManagementService
         /// Key State Affects Use of a Customer Master Key</a> in the <i> <i>AWS Key Management
         /// Service Developer Guide</i> </i>.
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -10932,6 +10992,11 @@ namespace Amazon.KeyManagementService
         /// Service Developer Guide</i> </i>.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
@@ -11003,6 +11068,11 @@ namespace Amazon.KeyManagementService
         /// Key State Affects Use of a Customer Master Key</a> in the <i> <i>AWS Key Management
         /// Service Developer Guide</i> </i>.
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.

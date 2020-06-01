@@ -37,6 +37,15 @@ namespace Amazon.KeyManagementService.Model
     /// To perform this operation on a CMK in a different AWS account, specify the key ARN
     /// in the value of the <code>KeyId</code> parameter.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually
+    /// contains the user or role designated as the grantee principal in the grant. However,
+    /// when the grantee principal in the grant is an AWS service, the <code>GranteePrincipal</code>
+    /// field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+    /// principal</a>, which might represent several different grantee principals.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListGrantsRequest : AmazonKeyManagementServiceRequest
     {

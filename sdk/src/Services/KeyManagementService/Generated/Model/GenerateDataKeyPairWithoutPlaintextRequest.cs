@@ -38,9 +38,9 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// To generate a data key pair, you must specify a symmetric customer master key (CMK)
-    /// to encrypt the private key in the data key pair. You cannot use an asymmetric CMK.
-    /// To get the type of your CMK, use the <code>KeySpec</code> field in the <a>DescribeKey</a>
-    /// response.
+    /// to encrypt the private key in the data key pair. You cannot use an asymmetric CMK
+    /// or a CMK in a custom key store. To get the type and origin of your CMK, use the <code>KeySpec</code>
+    /// field in the <a>DescribeKey</a> response.
     /// </para>
     ///  
     /// <para>
@@ -60,7 +60,7 @@ namespace Amazon.KeyManagementService.Model
     /// You can use the optional encryption context to add additional security to the encryption
     /// operation. If you specify an <code>EncryptionContext</code>, you must specify the
     /// same encryption context (a case-sensitive exact match) when decrypting the encrypted
-    /// data key. Otherwise, the request to decrypt fails with an InvalidCiphertextException.
+    /// data key. Otherwise, the request to decrypt fails with an <code>InvalidCiphertextException</code>.
     /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
     /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
     /// </para>
@@ -139,8 +139,8 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property KeyId. 
         /// <para>
         /// Specifies the CMK that encrypts the private key in the data key pair. You must specify
-        /// a symmetric CMK. You cannot use an asymmetric CMK. To get the type of your CMK, use
-        /// the <a>DescribeKey</a> operation. 
+        /// a symmetric CMK. You cannot use an asymmetric CMK or a CMK in a custom key store.
+        /// To get the type and origin of your CMK, use the <a>DescribeKey</a> operation. 
         /// </para>
         ///  
         /// <para>

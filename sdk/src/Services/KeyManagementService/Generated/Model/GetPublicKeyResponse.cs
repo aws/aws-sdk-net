@@ -89,7 +89,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The identifier of the asymmetric CMK from which the public key was downloaded.
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+        /// ARN</a>) of the asymmetric CMK from which the public key was downloaded.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

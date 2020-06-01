@@ -58,7 +58,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The ARN of the customer master key that was used to perform the decryption.
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+        /// ARN</a>) of the CMK that was used to decrypt the ciphertext.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

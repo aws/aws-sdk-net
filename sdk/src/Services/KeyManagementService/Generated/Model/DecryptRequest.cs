@@ -153,8 +153,9 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property EncryptionContext. 
         /// <para>
         /// Specifies the encryption context to use when decrypting the data. An encryption context
-        /// is valid only for cryptographic operations with a symmetric CMK. The standard asymmetric
-        /// encryption algorithms that AWS KMS uses do not support an encryption context.
+        /// is valid only for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a> with a symmetric CMK. The standard asymmetric encryption algorithms
+        /// that AWS KMS uses do not support an encryption context.
         /// </para>
         ///  
         /// <para>

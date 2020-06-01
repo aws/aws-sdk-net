@@ -57,7 +57,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The unique identifier of the customer master key (CMK) for which deletion is scheduled.
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+        /// ARN</a>) of the CMK whose deletion is scheduled.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

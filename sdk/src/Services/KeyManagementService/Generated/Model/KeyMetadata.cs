@@ -237,8 +237,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property EncryptionAlgorithms. 
         /// <para>
-        /// A list of encryption algorithms that the CMK supports. You cannot use the CMK with
-        /// other encryption algorithms within AWS KMS.
+        /// The encryption algorithms that the CMK supports. You cannot use the CMK with other
+        /// encryption algorithms within AWS KMS.
         /// </para>
         ///  
         /// <para>
@@ -318,13 +318,12 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyState. 
         /// <para>
-        /// The state of the CMK.
+        /// The current status of the CMK.
         /// </para>
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public KeyState KeyState
@@ -342,7 +341,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyUsage. 
         /// <para>
-        /// The cryptographic operations for which you can use the CMK.
+        /// The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// operations</a> for which you can use the CMK.
         /// </para>
         /// </summary>
         public KeyUsageType KeyUsage
@@ -382,8 +382,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property SigningAlgorithms. 
         /// <para>
-        /// A list of signing algorithms that the CMK supports. You cannot use the CMK with other
-        /// signing algorithms within AWS KMS.
+        /// The signing algorithms that the CMK supports. You cannot use the CMK with other signing
+        /// algorithms within AWS KMS.
         /// </para>
         ///  
         /// <para>
