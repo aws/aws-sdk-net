@@ -83,6 +83,56 @@ namespace Amazon.FSx
 
 
     /// <summary>
+    /// Constants used for properties of type AdministrativeActionType.
+    /// </summary>
+    public class AdministrativeActionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILE_SYSTEM_UPDATE for AdministrativeActionType
+        /// </summary>
+        public static readonly AdministrativeActionType FILE_SYSTEM_UPDATE = new AdministrativeActionType("FILE_SYSTEM_UPDATE");
+        /// <summary>
+        /// Constant STORAGE_OPTIMIZATION for AdministrativeActionType
+        /// </summary>
+        public static readonly AdministrativeActionType STORAGE_OPTIMIZATION = new AdministrativeActionType("STORAGE_OPTIMIZATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AdministrativeActionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdministrativeActionType FindValue(string value)
+        {
+            return FindValue<AdministrativeActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdministrativeActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BackupLifecycle.
     /// </summary>
     public class BackupLifecycle : ConstantClass
@@ -766,6 +816,68 @@ namespace Amazon.FSx
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ServiceLimit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Status.
+    /// </summary>
+    public class Status : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for Status
+        /// </summary>
+        public static readonly Status COMPLETED = new Status("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for Status
+        /// </summary>
+        public static readonly Status FAILED = new Status("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for Status
+        /// </summary>
+        public static readonly Status IN_PROGRESS = new Status("IN_PROGRESS");
+        /// <summary>
+        /// Constant PENDING for Status
+        /// </summary>
+        public static readonly Status PENDING = new Status("PENDING");
+        /// <summary>
+        /// Constant UPDATED_OPTIMIZING for Status
+        /// </summary>
+        public static readonly Status UPDATED_OPTIMIZING = new Status("UPDATED_OPTIMIZING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Status(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Status FindValue(string value)
+        {
+            return FindValue<Status>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Status(string value)
         {
             return FindValue(value);
         }

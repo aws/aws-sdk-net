@@ -30,7 +30,7 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// The configuration that Amazon FSx uses to join the Windows File Server instance to
-    /// the self-managed Microsoft Active Directory (AD) directory.
+    /// a self-managed Microsoft Active Directory (AD) directory.
     /// </summary>
     public partial class SelfManagedActiveDirectoryConfigurationUpdates
     {

@@ -29,32 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code>
-    /// operation.
+    /// Provides information about a failed administrative action.
     /// </summary>
-    public partial class UpdateFileSystemLustreConfiguration
+    public partial class AdministrativeActionFailureDetails
     {
-        private string _weeklyMaintenanceStartTime;
+        private string _message;
 
         /// <summary>
-        /// Gets and sets the property WeeklyMaintenanceStartTime. 
+        /// Gets and sets the property Message. 
         /// <para>
-        /// The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC
-        /// time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending
-        /// with Sunday.
+        /// Error message providing details about the failure.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=7, Max=7)]
-        public string WeeklyMaintenanceStartTime
+        [AWSProperty(Min=1, Max=256)]
+        public string Message
         {
-            get { return this._weeklyMaintenanceStartTime; }
-            set { this._weeklyMaintenanceStartTime = value; }
+            get { return this._message; }
+            set { this._message = value; }
         }
 
-        // Check to see if WeeklyMaintenanceStartTime property is set
-        internal bool IsSetWeeklyMaintenanceStartTime()
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
         {
-            return this._weeklyMaintenanceStartTime != null;
+            return this._message != null;
         }
 
     }

@@ -30,21 +30,53 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFileSystem operation.
-    /// Updates a file system configuration.
+    /// Use this operation to update the configuration of an existing Amazon FSx file system.
+    /// For an Amazon FSx for Lustre file system, you can update only the WeeklyMaintenanceStartTime.
+    /// For an Amazon for Windows File Server file system, you can update the following properties:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// AutomaticBackupRetentionDays
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// DailyAutomaticBackupStartTime
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// SelfManagedActiveDirectoryConfiguration
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// StorageCapacity
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// ThroughputCapacity
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// WeeklyMaintenanceStartTime
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You can update multiple properties in a single request.
+    /// </para>
     /// </summary>
     public partial class UpdateFileSystemRequest : AmazonFSxRequest
     {
         private string _clientRequestToken;
         private string _fileSystemId;
         private UpdateFileSystemLustreConfiguration _lustreConfiguration;
+        private int? _storageCapacity;
         private UpdateFileSystemWindowsConfiguration _windowsConfiguration;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent
-        /// updates. This string is automatically filled on your behalf when you use the AWS Command
-        /// Line Interface (AWS CLI) or an AWS SDK.
+        /// A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates.
+        /// This string is automatically filled on your behalf when you use the AWS Command Line
+        /// Interface (AWS CLI) or an AWS SDK.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -61,7 +93,10 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FileSystemId.
+        /// Gets and sets the property FileSystemId. 
+        /// <para>
+        /// Identifies the file system that you are updating.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=11, Max=21)]
         public string FileSystemId
@@ -92,10 +127,35 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageCapacity. 
+        /// <para>
+        /// Use this parameter to increase the storage capacity of an Amazon FSx for Windows File
+        /// Server file system. Specifies the storage capacity target value, GiB, for the file
+        /// system you're updating. The storage capacity target value must be at least 10 percent
+        /// (%) greater than the current storage capacity value. In order to increase storage
+        /// capacity, the file system needs to have at least 16 MB/s of throughput capacity. You
+        /// cannot make a storage capacity increase request if there is an existing storage capacity
+        /// increase request in progress. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
+        /// Storage Capacity</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
+        public int StorageCapacity
+        {
+            get { return this._storageCapacity.GetValueOrDefault(); }
+            set { this._storageCapacity = value; }
+        }
+
+        // Check to see if StorageCapacity property is set
+        internal bool IsSetStorageCapacity()
+        {
+            return this._storageCapacity.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property WindowsConfiguration. 
         /// <para>
-        /// The configuration update for this Microsoft Windows file system. The only supported
-        /// options are for backup and maintenance and for self-managed Active Directory configuration.
+        /// The configuration updates for an Amazon FSx for Windows File Server file system.
         /// </para>
         /// </summary>
         public UpdateFileSystemWindowsConfiguration WindowsConfiguration

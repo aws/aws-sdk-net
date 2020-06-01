@@ -33,6 +33,7 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class FileSystem
     {
+        private List<AdministrativeAction> _administrativeActions = new List<AdministrativeAction>();
         private DateTime? _creationTime;
         private string _dnsName;
         private FileSystemFailureDetails _failureDetails;
@@ -50,6 +51,27 @@ namespace Amazon.FSx.Model
         private List<Tag> _tags = new List<Tag>();
         private string _vpcId;
         private WindowsFileSystemConfiguration _windowsConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property AdministrativeActions. 
+        /// <para>
+        /// A list of administrative actions for the file system that are in process or waiting
+        /// to be processed. Administrative actions describe changes to the Windows file system
+        /// that you have initiated using the <code>UpdateFileSystem</code> action. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<AdministrativeAction> AdministrativeActions
+        {
+            get { return this._administrativeActions; }
+            set { this._administrativeActions = value; }
+        }
+
+        // Check to see if AdministrativeActions property is set
+        internal bool IsSetAdministrativeActions()
+        {
+            return this._administrativeActions != null && this._administrativeActions.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -301,7 +323,7 @@ namespace Amazon.FSx.Model
         /// The storage capacity of the file system in gigabytes (GB).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Min=0, Max=2147483647)]
         public int StorageCapacity
         {
             get { return this._storageCapacity.GetValueOrDefault(); }

@@ -123,7 +123,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property WeeklyMaintenanceStartTime. 
         /// <para>
-        /// The UTC time that you want to begin your weekly maintenance window.
+        /// The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC
+        /// time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending
+        /// with Sunday.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=7)]

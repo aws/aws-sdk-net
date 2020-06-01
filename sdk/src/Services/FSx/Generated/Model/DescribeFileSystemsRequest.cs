@@ -101,7 +101,7 @@ namespace Amazon.FSx.Model
         /// the service's internal maximum number of items per page.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=2147483647)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

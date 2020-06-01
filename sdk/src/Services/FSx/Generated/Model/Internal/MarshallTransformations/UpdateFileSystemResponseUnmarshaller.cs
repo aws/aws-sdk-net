@@ -100,6 +100,10 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 {
                     return MissingFileSystemConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceLimitExceeded"))
+                {
+                    return ServiceLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperation"))
                 {
                     return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

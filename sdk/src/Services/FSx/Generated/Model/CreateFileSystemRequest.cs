@@ -209,7 +209,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Required=true, Min=0, Max=2147483647)]
         public int StorageCapacity
         {
             get { return this._storageCapacity.GetValueOrDefault(); }
@@ -240,7 +240,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type">
+        ///  Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
         /// Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>. 
         /// </para>
         /// </summary>
