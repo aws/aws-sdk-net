@@ -1,3 +1,22 @@
+### 3.3.751.0 (2020-06-01 18:14 UTC)
+* Athena (3.3.104.0)
+	* This release adds support for connecting Athena to your own Apache Hive Metastores in addition to the AWS Glue Data Catalog. For more information, please see https://docs.aws.amazon.com/athena/latest/ug/connect-to-data-source-hive.html
+* ElasticMapReduce (3.3.106.0)
+	* Amazon EMR now supports encrypting log files with AWS Key Management Service (KMS) customer managed keys.
+* FSx (3.3.106.0)
+	* New capabilities to update storage capacity and throughput capacity of your file systems, providing the flexibility to grow file storage and to scale up or down the available performance as needed to meet evolving storage needs over time.
+* KeyManagementService (3.3.106.0)
+	* AWS Key Management Service (AWS KMS): If the GenerateDataKeyPair or GenerateDataKeyPairWithoutPlaintext APIs are called on a CMK in a custom key store (origin == AWS_CLOUDHSM), they return an UnsupportedOperationException. If a call to UpdateAlias causes a customer to exceed the Alias resource quota, the UpdateAlias API returns a LimitExceededException.
+* SageMaker (3.3.116.0)
+	* We are releasing HumanTaskUiArn as a new parameter in CreateLabelingJob and RenderUiTemplate which can take an ARN for a system managed UI to render a task. 
+* WorkLink (3.3.103.0)
+	* Amazon WorkLink now supports resource tagging for fleets.
+* Core 3.3.107.4
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.750.0 (2020-05-28 18:12 UTC)
 * Kafka (3.3.108.0)
 	* New APIs for upgrading the Apache Kafka version of a cluster and to find out compatible upgrade paths
