@@ -29,16 +29,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Athena.Model
 {
     /// <summary>
-    /// The database in which the query execution occurs.
+    /// The database and data catalog context in which the query execution occurs.
     /// </summary>
     public partial class QueryExecutionContext
     {
+        private string _catalog;
         private string _database;
+
+        /// <summary>
+        /// Gets and sets the property Catalog. 
+        /// <para>
+        /// The name of the data catalog used in the query execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Catalog
+        {
+            get { return this._catalog; }
+            set { this._catalog = value; }
+        }
+
+        // Check to see if Catalog property is set
+        internal bool IsSetCatalog()
+        {
+            return this._catalog != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Database. 
         /// <para>
-        /// The name of the database.
+        /// The name of the database used in the query execution.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

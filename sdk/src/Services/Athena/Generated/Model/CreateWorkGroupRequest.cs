@@ -103,8 +103,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// One or more tags, separated by commas, that you want to attach to the workgroup as
-        /// you create it.
+        /// A list of comma separated tags to add to the workgroup that is created.
         /// </para>
         /// </summary>
         public List<Tag> Tags

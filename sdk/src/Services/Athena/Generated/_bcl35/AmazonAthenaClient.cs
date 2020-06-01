@@ -388,6 +388,68 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  CreateDataCatalog
+
+        /// <summary>
+        /// Creates (registers) a data catalog with the specified name and properties. Catalogs
+        /// created are visible to all users of the same AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataCatalog service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataCatalog service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateDataCatalog">REST API Reference for CreateDataCatalog Operation</seealso>
+        public virtual CreateDataCatalogResponse CreateDataCatalog(CreateDataCatalogRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataCatalogResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataCatalogResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDataCatalog operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataCatalog operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDataCatalog
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateDataCatalog">REST API Reference for CreateDataCatalog Operation</seealso>
+        public virtual IAsyncResult BeginCreateDataCatalog(CreateDataCatalogRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataCatalogResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDataCatalog operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDataCatalog.</param>
+        /// 
+        /// <returns>Returns a  CreateDataCatalogResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateDataCatalog">REST API Reference for CreateDataCatalog Operation</seealso>
+        public virtual CreateDataCatalogResponse EndCreateDataCatalog(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDataCatalogResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateNamedQuery
 
         /// <summary>
@@ -517,6 +579,67 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  DeleteDataCatalog
+
+        /// <summary>
+        /// Deletes a data catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataCatalog service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDataCatalog service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteDataCatalog">REST API Reference for DeleteDataCatalog Operation</seealso>
+        public virtual DeleteDataCatalogResponse DeleteDataCatalog(DeleteDataCatalogRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataCatalogResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataCatalogResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDataCatalog operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataCatalog operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDataCatalog
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteDataCatalog">REST API Reference for DeleteDataCatalog Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDataCatalog(DeleteDataCatalogRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataCatalogResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDataCatalog operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDataCatalog.</param>
+        /// 
+        /// <returns>Returns a  DeleteDataCatalogResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteDataCatalog">REST API Reference for DeleteDataCatalog Operation</seealso>
+        public virtual DeleteDataCatalogResponse EndDeleteDataCatalog(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDataCatalogResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteNamedQuery
 
         /// <summary>
@@ -642,6 +765,135 @@ namespace Amazon.Athena
         public virtual DeleteWorkGroupResponse EndDeleteWorkGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteWorkGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDatabase
+
+        /// <summary>
+        /// Returns a database object for the specfied database and data catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDatabase service method.</param>
+        /// 
+        /// <returns>The response from the GetDatabase service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.MetadataException">
+        /// An exception that Athena received when it called a custom metastore. Occurs if the
+        /// error is not caused by user input (<code>InvalidRequestException</code>) or from the
+        /// Athena platform (<code>InternalServerException</code>). For example, if a user-created
+        /// Lambda function is missing permissions, the Lambda <code>4XX</code> exception is returned
+        /// in a <code>MetadataException</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDatabase">REST API Reference for GetDatabase Operation</seealso>
+        public virtual GetDatabaseResponse GetDatabase(GetDatabaseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDatabaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDatabaseResponseUnmarshaller.Instance;
+
+            return Invoke<GetDatabaseResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDatabase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDatabase operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDatabase
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDatabase">REST API Reference for GetDatabase Operation</seealso>
+        public virtual IAsyncResult BeginGetDatabase(GetDatabaseRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDatabaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDatabaseResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDatabase operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDatabase.</param>
+        /// 
+        /// <returns>Returns a  GetDatabaseResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDatabase">REST API Reference for GetDatabase Operation</seealso>
+        public virtual GetDatabaseResponse EndGetDatabase(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDatabaseResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDataCatalog
+
+        /// <summary>
+        /// Returns the specified data catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataCatalog service method.</param>
+        /// 
+        /// <returns>The response from the GetDataCatalog service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDataCatalog">REST API Reference for GetDataCatalog Operation</seealso>
+        public virtual GetDataCatalogResponse GetDataCatalog(GetDataCatalogRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataCatalogResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataCatalogResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataCatalog operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataCatalog operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataCatalog
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDataCatalog">REST API Reference for GetDataCatalog Operation</seealso>
+        public virtual IAsyncResult BeginGetDataCatalog(GetDataCatalogRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataCatalogResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataCatalog operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataCatalog.</param>
+        /// 
+        /// <returns>Returns a  GetDataCatalogResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDataCatalog">REST API Reference for GetDataCatalog Operation</seealso>
+        public virtual GetDataCatalogResponse EndGetDataCatalog(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDataCatalogResponse>(asyncResult);
         }
 
         #endregion
@@ -852,6 +1104,74 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  GetTableMetadata
+
+        /// <summary>
+        /// Returns table metadata for the specified catalog, database, and table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableMetadata service method.</param>
+        /// 
+        /// <returns>The response from the GetTableMetadata service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.MetadataException">
+        /// An exception that Athena received when it called a custom metastore. Occurs if the
+        /// error is not caused by user input (<code>InvalidRequestException</code>) or from the
+        /// Athena platform (<code>InternalServerException</code>). For example, if a user-created
+        /// Lambda function is missing permissions, the Lambda <code>4XX</code> exception is returned
+        /// in a <code>MetadataException</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetTableMetadata">REST API Reference for GetTableMetadata Operation</seealso>
+        public virtual GetTableMetadataResponse GetTableMetadata(GetTableMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTableMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTableMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<GetTableMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTableMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTableMetadata operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTableMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetTableMetadata">REST API Reference for GetTableMetadata Operation</seealso>
+        public virtual IAsyncResult BeginGetTableMetadata(GetTableMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTableMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTableMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTableMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTableMetadata.</param>
+        /// 
+        /// <returns>Returns a  GetTableMetadataResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetTableMetadata">REST API Reference for GetTableMetadata Operation</seealso>
+        public virtual GetTableMetadataResponse EndGetTableMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTableMetadataResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetWorkGroup
 
         /// <summary>
@@ -913,12 +1233,141 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  ListDatabases
+
+        /// <summary>
+        /// Lists the databases in the specified data catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatabases service method.</param>
+        /// 
+        /// <returns>The response from the ListDatabases service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.MetadataException">
+        /// An exception that Athena received when it called a custom metastore. Occurs if the
+        /// error is not caused by user input (<code>InvalidRequestException</code>) or from the
+        /// Athena platform (<code>InternalServerException</code>). For example, if a user-created
+        /// Lambda function is missing permissions, the Lambda <code>4XX</code> exception is returned
+        /// in a <code>MetadataException</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDatabases">REST API Reference for ListDatabases Operation</seealso>
+        public virtual ListDatabasesResponse ListDatabases(ListDatabasesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatabasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatabasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatabasesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDatabases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDatabases operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDatabases
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDatabases">REST API Reference for ListDatabases Operation</seealso>
+        public virtual IAsyncResult BeginListDatabases(ListDatabasesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatabasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatabasesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDatabases operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDatabases.</param>
+        /// 
+        /// <returns>Returns a  ListDatabasesResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDatabases">REST API Reference for ListDatabases Operation</seealso>
+        public virtual ListDatabasesResponse EndListDatabases(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDatabasesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDataCatalogs
+
+        /// <summary>
+        /// Lists the data catalogs in the current AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataCatalogs service method.</param>
+        /// 
+        /// <returns>The response from the ListDataCatalogs service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDataCatalogs">REST API Reference for ListDataCatalogs Operation</seealso>
+        public virtual ListDataCatalogsResponse ListDataCatalogs(ListDataCatalogsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataCatalogsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataCatalogsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataCatalogsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDataCatalogs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDataCatalogs operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDataCatalogs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDataCatalogs">REST API Reference for ListDataCatalogs Operation</seealso>
+        public virtual IAsyncResult BeginListDataCatalogs(ListDataCatalogsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataCatalogsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataCatalogsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDataCatalogs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDataCatalogs.</param>
+        /// 
+        /// <returns>Returns a  ListDataCatalogsResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDataCatalogs">REST API Reference for ListDataCatalogs Operation</seealso>
+        public virtual ListDataCatalogsResponse EndListDataCatalogs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDataCatalogsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListNamedQueries
 
         /// <summary>
         /// Provides a list of available query IDs only for queries saved in the specified workgroup.
-        /// Requires that you have access to the workgroup. If a workgroup is not specified, lists
-        /// the saved queries for the primary workgroup.
+        /// Requires that you have access to the specified workgroup. If a workgroup is not specified,
+        /// lists the saved queries for the primary workgroup.
         /// 
         ///  
         /// <para>
@@ -1052,10 +1501,78 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  ListTableMetadata
+
+        /// <summary>
+        /// Lists the metadata for the tables in the specified data catalog database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTableMetadata service method.</param>
+        /// 
+        /// <returns>The response from the ListTableMetadata service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.MetadataException">
+        /// An exception that Athena received when it called a custom metastore. Occurs if the
+        /// error is not caused by user input (<code>InvalidRequestException</code>) or from the
+        /// Athena platform (<code>InternalServerException</code>). For example, if a user-created
+        /// Lambda function is missing permissions, the Lambda <code>4XX</code> exception is returned
+        /// in a <code>MetadataException</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTableMetadata">REST API Reference for ListTableMetadata Operation</seealso>
+        public virtual ListTableMetadataResponse ListTableMetadata(ListTableMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTableMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTableMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<ListTableMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTableMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTableMetadata operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTableMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTableMetadata">REST API Reference for ListTableMetadata Operation</seealso>
+        public virtual IAsyncResult BeginListTableMetadata(ListTableMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTableMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTableMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTableMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTableMetadata.</param>
+        /// 
+        /// <returns>Returns a  ListTableMetadataResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTableMetadata">REST API Reference for ListTableMetadata Operation</seealso>
+        public virtual ListTableMetadataResponse EndListTableMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTableMetadataResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
-        /// Lists the tags associated with this workgroup.
+        /// Lists the tags associated with an Athena workgroup or data catalog resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -1181,13 +1698,10 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Runs the SQL query statements contained in the <code>Query</code>. Requires you to
-        /// have access to the workgroup in which the query ran.
-        /// 
-        ///  
-        /// <para>
-        /// For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
+        /// have access to the workgroup in which the query ran. Running queries against an external
+        /// catalog requires <a>GetDataCatalog</a> permission to the catalog. For code samples
+        /// using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
         /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartQueryExecution service method.</param>
         /// 
@@ -1319,17 +1833,17 @@ namespace Amazon.Athena
         #region  TagResource
 
         /// <summary>
-        /// Adds one or more tags to the resource, such as a workgroup. A tag is a label that
-        /// you assign to an AWS Athena resource (a workgroup). Each tag consists of a key and
-        /// an optional value, both of which you define. Tags enable you to categorize resources
-        /// (workgroups) in Athena, for example, by purpose, owner, or environment. Use a consistent
-        /// set of tag keys to make it easier to search and filter workgroups in your account.
-        /// For best practices, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-        /// Tagging Strategies</a>. The key length is from 1 (minimum) to 128 (maximum) Unicode
-        /// characters in UTF-8. The tag value length is from 0 (minimum) to 256 (maximum) Unicode
-        /// characters in UTF-8. You can use letters and numbers representable in UTF-8, and the
-        /// following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag
-        /// keys must be unique per resource. If you specify more than one, separate them by commas.
+        /// Adds one or more tags to an Athena resource. A tag is a label that you assign to a
+        /// resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists
+        /// of a key and an optional value, both of which you define. For example, you can use
+        /// tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment.
+        /// Use a consistent set of tag keys to make it easier to search and filter workgroups
+        /// or data catalogs in your account. For best practices, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging
+        /// Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag
+        /// values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers
+        /// representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and
+        /// values are case-sensitive. Tag keys must be unique per resource. If you specify more
+        /// than one tag, separate them by commas.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1393,8 +1907,7 @@ namespace Amazon.Athena
         #region  UntagResource
 
         /// <summary>
-        /// Removes one or more tags from the workgroup resource. Takes as an input a list of
-        /// TagKey Strings separated by commas, and removes their tags at the same time.
+        /// Removes one or more tags from a data catalog or workgroup resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -1451,6 +1964,67 @@ namespace Amazon.Athena
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateDataCatalog
+
+        /// <summary>
+        /// Updates the data catalog that has the specified name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataCatalog service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDataCatalog service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateDataCatalog">REST API Reference for UpdateDataCatalog Operation</seealso>
+        public virtual UpdateDataCatalogResponse UpdateDataCatalog(UpdateDataCatalogRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataCatalogResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDataCatalogResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDataCatalog operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataCatalog operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDataCatalog
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateDataCatalog">REST API Reference for UpdateDataCatalog Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDataCatalog(UpdateDataCatalogRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataCatalogResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDataCatalog operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDataCatalog.</param>
+        /// 
+        /// <returns>Returns a  UpdateDataCatalogResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateDataCatalog">REST API Reference for UpdateDataCatalog Operation</seealso>
+        public virtual UpdateDataCatalogResponse EndUpdateDataCatalog(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDataCatalogResponse>(asyncResult);
         }
 
         #endregion

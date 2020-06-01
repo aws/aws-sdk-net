@@ -30,8 +30,7 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes one or more tags from the workgroup resource. Takes as an input a list of
-    /// TagKey Strings separated by commas, and removes their tags at the same time.
+    /// Removes one or more tags from a data catalog or workgroup resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonAthenaRequest
     {
@@ -41,7 +40,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// Removes one or more tags from the workgroup resource for the specified ARN.
+        /// Specifies the ARN of the resource from which tags are to be removed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
@@ -60,7 +59,8 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// Removes the tags associated with one or more tag keys from the workgroup resource.
+        /// A comma-separated list of one or more tag keys whose tags are to be removed from the
+        /// specified resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -58,7 +58,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The list of tags associated with this workgroup.
+        /// The list of tags associated with the specified resource.
         /// </para>
         /// </summary>
         public List<Tag> Tags

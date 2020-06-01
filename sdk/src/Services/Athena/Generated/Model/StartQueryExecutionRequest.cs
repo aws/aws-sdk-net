@@ -31,13 +31,10 @@ namespace Amazon.Athena.Model
     /// <summary>
     /// Container for the parameters to the StartQueryExecution operation.
     /// Runs the SQL query statements contained in the <code>Query</code>. Requires you to
-    /// have access to the workgroup in which the query ran.
-    /// 
-    ///  
-    /// <para>
-    /// For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
+    /// have access to the workgroup in which the query ran. Running queries against an external
+    /// catalog requires <a>GetDataCatalog</a> permission to the catalog. For code samples
+    /// using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
     /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
-    /// </para>
     /// </summary>
     public partial class StartQueryExecutionRequest : AmazonAthenaRequest
     {

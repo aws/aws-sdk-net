@@ -355,6 +355,48 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  CreateDataCatalog
+
+        internal virtual CreateDataCatalogResponse CreateDataCatalog(CreateDataCatalogRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataCatalogResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataCatalogResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates (registers) a data catalog with the specified name and properties. Catalogs
+        /// created are visible to all users of the same AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataCatalog service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataCatalog service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateDataCatalog">REST API Reference for CreateDataCatalog Operation</seealso>
+        public virtual Task<CreateDataCatalogResponse> CreateDataCatalogAsync(CreateDataCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataCatalogResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDataCatalogResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateNamedQuery
 
         internal virtual CreateNamedQueryResponse CreateNamedQuery(CreateNamedQueryRequest request)
@@ -444,6 +486,47 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  DeleteDataCatalog
+
+        internal virtual DeleteDataCatalogResponse DeleteDataCatalog(DeleteDataCatalogRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataCatalogResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataCatalogResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a data catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataCatalog service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataCatalog service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteDataCatalog">REST API Reference for DeleteDataCatalog Operation</seealso>
+        public virtual Task<DeleteDataCatalogResponse> DeleteDataCatalogAsync(DeleteDataCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataCatalogResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDataCatalogResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteNamedQuery
 
         internal virtual DeleteNamedQueryResponse DeleteNamedQuery(DeleteNamedQueryRequest request)
@@ -529,6 +612,95 @@ namespace Amazon.Athena
             options.ResponseUnmarshaller = DeleteWorkGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteWorkGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDatabase
+
+        internal virtual GetDatabaseResponse GetDatabase(GetDatabaseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDatabaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDatabaseResponseUnmarshaller.Instance;
+
+            return Invoke<GetDatabaseResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a database object for the specfied database and data catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDatabase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDatabase service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.MetadataException">
+        /// An exception that Athena received when it called a custom metastore. Occurs if the
+        /// error is not caused by user input (<code>InvalidRequestException</code>) or from the
+        /// Athena platform (<code>InternalServerException</code>). For example, if a user-created
+        /// Lambda function is missing permissions, the Lambda <code>4XX</code> exception is returned
+        /// in a <code>MetadataException</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDatabase">REST API Reference for GetDatabase Operation</seealso>
+        public virtual Task<GetDatabaseResponse> GetDatabaseAsync(GetDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDatabaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDatabaseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDatabaseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDataCatalog
+
+        internal virtual GetDataCatalogResponse GetDataCatalog(GetDataCatalogRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataCatalogResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataCatalogResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the specified data catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataCatalog service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataCatalog service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDataCatalog">REST API Reference for GetDataCatalog Operation</seealso>
+        public virtual Task<GetDataCatalogResponse> GetDataCatalogAsync(GetDataCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataCatalogResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDataCatalogResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -679,6 +851,54 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  GetTableMetadata
+
+        internal virtual GetTableMetadataResponse GetTableMetadata(GetTableMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTableMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTableMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<GetTableMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns table metadata for the specified catalog, database, and table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTableMetadata service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.MetadataException">
+        /// An exception that Athena received when it called a custom metastore. Occurs if the
+        /// error is not caused by user input (<code>InvalidRequestException</code>) or from the
+        /// Athena platform (<code>InternalServerException</code>). For example, if a user-created
+        /// Lambda function is missing permissions, the Lambda <code>4XX</code> exception is returned
+        /// in a <code>MetadataException</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetTableMetadata">REST API Reference for GetTableMetadata Operation</seealso>
+        public virtual Task<GetTableMetadataResponse> GetTableMetadataAsync(GetTableMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTableMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTableMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTableMetadataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetWorkGroup
 
         internal virtual GetWorkGroupResponse GetWorkGroup(GetWorkGroupRequest request)
@@ -720,6 +940,95 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  ListDatabases
+
+        internal virtual ListDatabasesResponse ListDatabases(ListDatabasesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatabasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatabasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatabasesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the databases in the specified data catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatabases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDatabases service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.MetadataException">
+        /// An exception that Athena received when it called a custom metastore. Occurs if the
+        /// error is not caused by user input (<code>InvalidRequestException</code>) or from the
+        /// Athena platform (<code>InternalServerException</code>). For example, if a user-created
+        /// Lambda function is missing permissions, the Lambda <code>4XX</code> exception is returned
+        /// in a <code>MetadataException</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDatabases">REST API Reference for ListDatabases Operation</seealso>
+        public virtual Task<ListDatabasesResponse> ListDatabasesAsync(ListDatabasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatabasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatabasesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDatabasesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDataCatalogs
+
+        internal virtual ListDataCatalogsResponse ListDataCatalogs(ListDataCatalogsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataCatalogsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataCatalogsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataCatalogsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the data catalogs in the current AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataCatalogs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataCatalogs service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDataCatalogs">REST API Reference for ListDataCatalogs Operation</seealso>
+        public virtual Task<ListDataCatalogsResponse> ListDataCatalogsAsync(ListDataCatalogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataCatalogsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataCatalogsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDataCatalogsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListNamedQueries
 
         internal virtual ListNamedQueriesResponse ListNamedQueries(ListNamedQueriesRequest request)
@@ -735,8 +1044,8 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Provides a list of available query IDs only for queries saved in the specified workgroup.
-        /// Requires that you have access to the workgroup. If a workgroup is not specified, lists
-        /// the saved queries for the primary workgroup.
+        /// Requires that you have access to the specified workgroup. If a workgroup is not specified,
+        /// lists the saved queries for the primary workgroup.
         /// 
         ///  
         /// <para>
@@ -819,6 +1128,54 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  ListTableMetadata
+
+        internal virtual ListTableMetadataResponse ListTableMetadata(ListTableMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTableMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTableMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<ListTableMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the metadata for the tables in the specified data catalog database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTableMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTableMetadata service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.MetadataException">
+        /// An exception that Athena received when it called a custom metastore. Occurs if the
+        /// error is not caused by user input (<code>InvalidRequestException</code>) or from the
+        /// Athena platform (<code>InternalServerException</code>). For example, if a user-created
+        /// Lambda function is missing permissions, the Lambda <code>4XX</code> exception is returned
+        /// in a <code>MetadataException</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTableMetadata">REST API Reference for ListTableMetadata Operation</seealso>
+        public virtual Task<ListTableMetadataResponse> ListTableMetadataAsync(ListTableMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTableMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTableMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTableMetadataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -833,7 +1190,7 @@ namespace Amazon.Athena
 
 
         /// <summary>
-        /// Lists the tags associated with this workgroup.
+        /// Lists the tags associated with an Athena workgroup or data catalog resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -919,13 +1276,10 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Runs the SQL query statements contained in the <code>Query</code>. Requires you to
-        /// have access to the workgroup in which the query ran.
-        /// 
-        ///  
-        /// <para>
-        /// For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
+        /// have access to the workgroup in which the query ran. Running queries against an external
+        /// catalog requires <a>GetDataCatalog</a> permission to the catalog. For code samples
+        /// using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
         /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartQueryExecution service method.</param>
         /// <param name="cancellationToken">
@@ -1017,17 +1371,17 @@ namespace Amazon.Athena
 
 
         /// <summary>
-        /// Adds one or more tags to the resource, such as a workgroup. A tag is a label that
-        /// you assign to an AWS Athena resource (a workgroup). Each tag consists of a key and
-        /// an optional value, both of which you define. Tags enable you to categorize resources
-        /// (workgroups) in Athena, for example, by purpose, owner, or environment. Use a consistent
-        /// set of tag keys to make it easier to search and filter workgroups in your account.
-        /// For best practices, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-        /// Tagging Strategies</a>. The key length is from 1 (minimum) to 128 (maximum) Unicode
-        /// characters in UTF-8. The tag value length is from 0 (minimum) to 256 (maximum) Unicode
-        /// characters in UTF-8. You can use letters and numbers representable in UTF-8, and the
-        /// following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag
-        /// keys must be unique per resource. If you specify more than one, separate them by commas.
+        /// Adds one or more tags to an Athena resource. A tag is a label that you assign to a
+        /// resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists
+        /// of a key and an optional value, both of which you define. For example, you can use
+        /// tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment.
+        /// Use a consistent set of tag keys to make it easier to search and filter workgroups
+        /// or data catalogs in your account. For best practices, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging
+        /// Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag
+        /// values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers
+        /// representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and
+        /// values are case-sensitive. Tag keys must be unique per resource. If you specify more
+        /// than one tag, separate them by commas.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1071,8 +1425,7 @@ namespace Amazon.Athena
 
 
         /// <summary>
-        /// Removes one or more tags from the workgroup resource. Takes as an input a list of
-        /// TagKey Strings separated by commas, and removes their tags at the same time.
+        /// Removes one or more tags from a data catalog or workgroup resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1098,6 +1451,47 @@ namespace Amazon.Athena
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDataCatalog
+
+        internal virtual UpdateDataCatalogResponse UpdateDataCatalog(UpdateDataCatalogRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataCatalogResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDataCatalogResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the data catalog that has the specified name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataCatalog service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDataCatalog service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateDataCatalog">REST API Reference for UpdateDataCatalog Operation</seealso>
+        public virtual Task<UpdateDataCatalogResponse> UpdateDataCatalogAsync(UpdateDataCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataCatalogResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDataCatalogResponse>(request, options, cancellationToken);
         }
 
         #endregion

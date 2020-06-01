@@ -30,7 +30,7 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// The metadata and rows that comprise a query result set. The metadata describes the
-    /// column structure and data types.
+    /// column structure and data types. To return a <code>ResultSet</code> object, use <a>GetQueryResults</a>.
     /// </summary>
     public partial class ResultSet
     {

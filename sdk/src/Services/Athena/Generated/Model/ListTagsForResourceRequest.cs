@@ -30,7 +30,7 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists the tags associated with this workgroup.
+    /// Lists the tags associated with an Athena workgroup or data catalog resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonAthenaRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to be returned per request that lists the tags for the
-        /// workgroup resource.
+        /// resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=75)]
@@ -62,8 +62,8 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The token for the next set of results, or null if there are no additional results
-        /// for this request, where the request lists the tags for the workgroup resource with
-        /// the specified ARN.
+        /// for this request, where the request lists the tags for the resource with the specified
+        /// ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -82,7 +82,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// Lists the tags for the workgroup resource with the specified ARN.
+        /// Lists the tags for the resource with the specified ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
