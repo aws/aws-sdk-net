@@ -35,6 +35,15 @@
 <#
     }
 #>
+<#
+    }
+    if (this.Project.TargetFrameworks.Contains("netcoreapp3.1"))
+    {
+#>
+    <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants);NETCOREAPP31</DefineConstants>
+<#
+    }
+#>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName><#=this.Project.AssemblyName#></AssemblyName>

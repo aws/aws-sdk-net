@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp1.0;netcoreapp2.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1</TargetFrameworks> <!-- There are no special codepaths for the different types of NETSTANDARD -->
     <DebugType>portable</DebugType>
     <DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -16,9 +16,6 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
     
-    <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp1.0'">$(DefineConstants);NETSTANDARD13</DefineConstants>
-    <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp2.0'">$(DefineConstants);NETSTANDARD20</DefineConstants>
-
     <NoWarn>CS1591</NoWarn>
   </PropertyGroup>
 

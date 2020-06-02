@@ -26,7 +26,7 @@
         },
         {
             "name": "NetStandard",
-            "targetFrameworks": [ "netstandard1.3", "netstandard2.0" ],
+            "targetFrameworks": [ "netstandard1.3", "netstandard2.0", "netcoreapp3.1" ],
             "defineConstants": [ "NETSTANDARD", "AWS_ASYNC_API"],
             "template": "VS2017ProjectFile",
             "binSubFolder" : "",

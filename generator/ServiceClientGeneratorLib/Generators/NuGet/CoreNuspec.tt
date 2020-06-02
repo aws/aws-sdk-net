@@ -31,6 +31,8 @@
       </group>
 	    <group targetFramework="netstandard2.0">
       </group>
+      <group targetFramework="netcoreapp3.1">
+      </group>
     </dependencies>
   </metadata> 
   <files>
@@ -52,5 +54,8 @@
 	  <file src=".\bin\Release\netstandard2.0\AWSSDK.Core.xml" target="lib\netstandard2.0"/>
 	  <file src=".\bin\Release\netstandard2.0\AWSSDK.Core.pdb" target="lib\netstandard2.0"/>
 
+    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Core.dll" target="lib\netcoreapp3.1"/>
+	  <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Core.xml" target="lib\netcoreapp3.1"/>
+	  <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Core.pdb" target="lib\netcoreapp3.1"/>
   </files>
 </package>
