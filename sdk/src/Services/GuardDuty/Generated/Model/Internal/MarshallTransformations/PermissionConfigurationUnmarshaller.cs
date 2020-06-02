@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Resource Object
+    /// Response Unmarshaller for PermissionConfiguration Object
     /// </summary>  
-    public class ResourceUnmarshaller : IUnmarshaller<Resource, XmlUnmarshallerContext>, IUnmarshaller<Resource, JsonUnmarshallerContext>
+    public class PermissionConfigurationUnmarshaller : IUnmarshaller<PermissionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PermissionConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Resource IUnmarshaller<Resource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PermissionConfiguration IUnmarshaller<PermissionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Resource Unmarshall(JsonUnmarshallerContext context)
+        public PermissionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Resource unmarshalledObject = new Resource();
+            PermissionConfiguration unmarshalledObject = new PermissionConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accessKeyDetails", targetDepth))
+                if (context.TestExpression("accountLevelPermissions", targetDepth))
                 {
-                    var unmarshaller = AccessKeyDetailsUnmarshaller.Instance;
-                    unmarshalledObject.AccessKeyDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AccountLevelPermissionsUnmarshaller.Instance;
+                    unmarshalledObject.AccountLevelPermissions = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("instanceDetails", targetDepth))
+                if (context.TestExpression("bucketLevelPermissions", targetDepth))
                 {
-                    var unmarshaller = InstanceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.InstanceDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("s3BucketDetails", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<S3BucketDetail, S3BucketDetailUnmarshaller>(S3BucketDetailUnmarshaller.Instance);
-                    unmarshalledObject.S3BucketDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BucketLevelPermissionsUnmarshaller.Instance;
+                    unmarshalledObject.BucketLevelPermissions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResourceUnmarshaller _instance = new ResourceUnmarshaller();        
+        private static PermissionConfigurationUnmarshaller _instance = new PermissionConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceUnmarshaller Instance
+        public static PermissionConfigurationUnmarshaller Instance
         {
             get
             {

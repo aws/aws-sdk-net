@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Resource Object
+    /// Response Unmarshaller for DefaultServerSideEncryption Object
     /// </summary>  
-    public class ResourceUnmarshaller : IUnmarshaller<Resource, XmlUnmarshallerContext>, IUnmarshaller<Resource, JsonUnmarshallerContext>
+    public class DefaultServerSideEncryptionUnmarshaller : IUnmarshaller<DefaultServerSideEncryption, XmlUnmarshallerContext>, IUnmarshaller<DefaultServerSideEncryption, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Resource IUnmarshaller<Resource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DefaultServerSideEncryption IUnmarshaller<DefaultServerSideEncryption, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Resource Unmarshall(JsonUnmarshallerContext context)
+        public DefaultServerSideEncryption Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Resource unmarshalledObject = new Resource();
+            DefaultServerSideEncryption unmarshalledObject = new DefaultServerSideEncryption();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accessKeyDetails", targetDepth))
-                {
-                    var unmarshaller = AccessKeyDetailsUnmarshaller.Instance;
-                    unmarshalledObject.AccessKeyDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("instanceDetails", targetDepth))
-                {
-                    var unmarshaller = InstanceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.InstanceDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceType", targetDepth))
+                if (context.TestExpression("encryptionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncryptionType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("s3BucketDetails", targetDepth))
+                if (context.TestExpression("kmsMasterKeyArn", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<S3BucketDetail, S3BucketDetailUnmarshaller>(S3BucketDetailUnmarshaller.Instance);
-                    unmarshalledObject.S3BucketDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsMasterKeyArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResourceUnmarshaller _instance = new ResourceUnmarshaller();        
+        private static DefaultServerSideEncryptionUnmarshaller _instance = new DefaultServerSideEncryptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceUnmarshaller Instance
+        public static DefaultServerSideEncryptionUnmarshaller Instance
         {
             get
             {

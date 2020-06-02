@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Resource Object
+    /// Response Unmarshaller for PublicAccess Object
     /// </summary>  
-    public class ResourceUnmarshaller : IUnmarshaller<Resource, XmlUnmarshallerContext>, IUnmarshaller<Resource, JsonUnmarshallerContext>
+    public class PublicAccessUnmarshaller : IUnmarshaller<PublicAccess, XmlUnmarshallerContext>, IUnmarshaller<PublicAccess, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Resource IUnmarshaller<Resource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PublicAccess IUnmarshaller<PublicAccess, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Resource Unmarshall(JsonUnmarshallerContext context)
+        public PublicAccess Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Resource unmarshalledObject = new Resource();
+            PublicAccess unmarshalledObject = new PublicAccess();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accessKeyDetails", targetDepth))
-                {
-                    var unmarshaller = AccessKeyDetailsUnmarshaller.Instance;
-                    unmarshalledObject.AccessKeyDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("instanceDetails", targetDepth))
-                {
-                    var unmarshaller = InstanceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.InstanceDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceType", targetDepth))
+                if (context.TestExpression("effectivePermission", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EffectivePermission = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("s3BucketDetails", targetDepth))
+                if (context.TestExpression("permissionConfiguration", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<S3BucketDetail, S3BucketDetailUnmarshaller>(S3BucketDetailUnmarshaller.Instance);
-                    unmarshalledObject.S3BucketDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = PermissionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.PermissionConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResourceUnmarshaller _instance = new ResourceUnmarshaller();        
+        private static PublicAccessUnmarshaller _instance = new PublicAccessUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceUnmarshaller Instance
+        public static PublicAccessUnmarshaller Instance
         {
             get
             {

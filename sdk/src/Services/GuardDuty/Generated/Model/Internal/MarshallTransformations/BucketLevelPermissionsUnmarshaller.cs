@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Resource Object
+    /// Response Unmarshaller for BucketLevelPermissions Object
     /// </summary>  
-    public class ResourceUnmarshaller : IUnmarshaller<Resource, XmlUnmarshallerContext>, IUnmarshaller<Resource, JsonUnmarshallerContext>
+    public class BucketLevelPermissionsUnmarshaller : IUnmarshaller<BucketLevelPermissions, XmlUnmarshallerContext>, IUnmarshaller<BucketLevelPermissions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Resource IUnmarshaller<Resource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        BucketLevelPermissions IUnmarshaller<BucketLevelPermissions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Resource Unmarshall(JsonUnmarshallerContext context)
+        public BucketLevelPermissions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Resource unmarshalledObject = new Resource();
+            BucketLevelPermissions unmarshalledObject = new BucketLevelPermissions();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accessKeyDetails", targetDepth))
+                if (context.TestExpression("accessControlList", targetDepth))
                 {
-                    var unmarshaller = AccessKeyDetailsUnmarshaller.Instance;
-                    unmarshalledObject.AccessKeyDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AccessControlListUnmarshaller.Instance;
+                    unmarshalledObject.AccessControlList = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("instanceDetails", targetDepth))
+                if (context.TestExpression("blockPublicAccess", targetDepth))
                 {
-                    var unmarshaller = InstanceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.InstanceDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BlockPublicAccessUnmarshaller.Instance;
+                    unmarshalledObject.BlockPublicAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("resourceType", targetDepth))
+                if (context.TestExpression("bucketPolicy", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("s3BucketDetails", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<S3BucketDetail, S3BucketDetailUnmarshaller>(S3BucketDetailUnmarshaller.Instance);
-                    unmarshalledObject.S3BucketDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BucketPolicyUnmarshaller.Instance;
+                    unmarshalledObject.BucketPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResourceUnmarshaller _instance = new ResourceUnmarshaller();        
+        private static BucketLevelPermissionsUnmarshaller _instance = new BucketLevelPermissionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceUnmarshaller Instance
+        public static BucketLevelPermissionsUnmarshaller Instance
         {
             get
             {

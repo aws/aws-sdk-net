@@ -2344,7 +2344,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Lists details about associated member accounts for the current GuardDuty master account.
+        /// Lists details about all member accounts for the current GuardDuty master account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMembers service method.</param>
         /// 
@@ -2367,7 +2367,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Lists details about associated member accounts for the current GuardDuty master account.
+        /// Lists details about all member accounts for the current GuardDuty master account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMembers service method.</param>
         /// <param name="cancellationToken">
