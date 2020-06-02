@@ -1,3 +1,7 @@
+### 3.3.752.0 (2020-06-02 18:12 UTC)
+* GuardDuty (3.3.108.0)
+	* Amazon GuardDuty findings now include S3 bucket details under the resource section if an S3 Bucket was one of the affected resources
+
 ### 3.3.751.0 (2020-06-01 18:14 UTC)
 * Athena (3.3.104.0)
 	* This release adds support for connecting Athena to your own Apache Hive Metastores in addition to the AWS Glue Data Catalog. For more information, please see https://docs.aws.amazon.com/athena/latest/ug/connect-to-data-source-hive.html
