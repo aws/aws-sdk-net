@@ -757,6 +757,9 @@ namespace Amazon.Runtime
         /// <exception cref="System.ArgumentOutOfRangeException">The timeout specified is less than or equal to zero and is not Infinite.</exception>
         /// </remarks>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
+#if NETSTANDARD
+        [Obsolete("ReadWriteTimeout is not consumed in asynchronous HTTP requests. Please use a cancellation token to handle stream read/write timeouts.")]
+#endif
         public TimeSpan? ReadWriteTimeout
         {
             get { return this.readWriteTimeout; }
