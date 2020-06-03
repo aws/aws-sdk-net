@@ -199,7 +199,7 @@ namespace Amazon.MediaConvert.Model
         /// rate conversion, choose a frame rate from the dropdown list or choose Custom. The
         /// framerates shown in the dropdown list are decimal approximations of fractions. If
         /// you choose Custom, specify your frame rate as a fraction. If you are creating your
-        /// transcoding job sepecification as a JSON file without the console, use FramerateControl
+        /// transcoding job specification as a JSON file without the console, use FramerateControl
         /// to specify which value the service uses for the frame rate for this output. Choose
         /// INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input.
         /// Choose SPECIFIED if you want the service to use the frame rate you specify in the
@@ -468,9 +468,12 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ParControl. Using the API, enable ParFollowSource if you
-        /// want the service to use the pixel aspect ratio from the input. Using the console,
-        /// do this by choosing Follow source for Pixel aspect ratio.
+        /// Gets and sets the property ParControl. Optional. Specify how the service determines
+        /// the pixel aspect ratio (PAR) for this output. The default behavior, Follow source
+        /// (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use
+        /// a different PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any
+        /// value other than Follow source. When you choose SPECIFIED for this setting, you must
+        /// also specify values for the parNumerator and parDenominator settings.
         /// </summary>
         public H265ParControl ParControl
         {
@@ -517,9 +520,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property QualityTuningLevel. Use Quality tuning level (H265QualityTuningLevel)
-        /// to specifiy whether to use fast single-pass, high-quality singlepass, or high-quality
-        /// multipass video encoding.
+        /// Gets and sets the property QualityTuningLevel. Optional. Use Quality tuning level
+        /// (qualityTuningLevel) to choose how you want to trade off encoding speed for output
+        /// video quality. The default behavior is faster, lower quality, single-pass encoding.
         /// </summary>
         public H265QualityTuningLevel QualityTuningLevel
         {

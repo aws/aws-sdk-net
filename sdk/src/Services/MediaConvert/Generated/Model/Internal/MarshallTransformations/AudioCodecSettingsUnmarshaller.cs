@@ -112,6 +112,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Mp3Settings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("opusSettings", targetDepth))
+                {
+                    var unmarshaller = OpusSettingsUnmarshaller.Instance;
+                    unmarshalledObject.OpusSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("vorbisSettings", targetDepth))
+                {
+                    var unmarshaller = VorbisSettingsUnmarshaller.Instance;
+                    unmarshalledObject.VorbisSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("wavSettings", targetDepth))
                 {
                     var unmarshaller = WavSettingsUnmarshaller.Instance;

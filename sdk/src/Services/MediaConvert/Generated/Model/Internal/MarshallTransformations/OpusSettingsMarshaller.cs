@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// NoiseReducerTemporalFilterSettings Marshaller
+    /// OpusSettings Marshaller
     /// </summary>       
-    public class NoiseReducerTemporalFilterSettingsMarshaller : IRequestMarshaller<NoiseReducerTemporalFilterSettings, JsonMarshallerContext> 
+    public class OpusSettingsMarshaller : IRequestMarshaller<OpusSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,30 +43,24 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(NoiseReducerTemporalFilterSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(OpusSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAggressiveMode())
+            if(requestObject.IsSetBitrate())
             {
-                context.Writer.WritePropertyName("aggressiveMode");
-                context.Writer.Write(requestObject.AggressiveMode);
+                context.Writer.WritePropertyName("bitrate");
+                context.Writer.Write(requestObject.Bitrate);
             }
 
-            if(requestObject.IsSetPostTemporalSharpening())
+            if(requestObject.IsSetChannels())
             {
-                context.Writer.WritePropertyName("postTemporalSharpening");
-                context.Writer.Write(requestObject.PostTemporalSharpening);
+                context.Writer.WritePropertyName("channels");
+                context.Writer.Write(requestObject.Channels);
             }
 
-            if(requestObject.IsSetSpeed())
+            if(requestObject.IsSetSampleRate())
             {
-                context.Writer.WritePropertyName("speed");
-                context.Writer.Write(requestObject.Speed);
-            }
-
-            if(requestObject.IsSetStrength())
-            {
-                context.Writer.WritePropertyName("strength");
-                context.Writer.Write(requestObject.Strength);
+                context.Writer.WritePropertyName("sampleRate");
+                context.Writer.Write(requestObject.SampleRate);
             }
 
         }
@@ -74,7 +68,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static NoiseReducerTemporalFilterSettingsMarshaller Instance = new NoiseReducerTemporalFilterSettingsMarshaller();
+        public readonly static OpusSettingsMarshaller Instance = new OpusSettingsMarshaller();
 
     }
 }

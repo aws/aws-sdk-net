@@ -34,7 +34,8 @@ namespace Amazon.MediaConvert.Model
     /// the value that you choose for Video codec (Codec). For each codec enum that you choose,
     /// define the corresponding settings object. The following lists the codec enum, settings
     /// object pairs. * FRAME_CAPTURE, FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings
-    /// * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+    /// * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VP8, Vp8Settings
+    /// * VP9, Vp9Settings
     /// </summary>
     public partial class VideoCodecSettings
     {
@@ -45,6 +46,8 @@ namespace Amazon.MediaConvert.Model
         private H265Settings _h265Settings;
         private Mpeg2Settings _mpeg2Settings;
         private ProresSettings _proresSettings;
+        private Vp8Settings _vp8Settings;
+        private Vp9Settings _vp9Settings;
 
         /// <summary>
         /// Gets and sets the property Av1Settings. Required when you set Codec, under VideoDescription>CodecSettings
@@ -155,6 +158,38 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetProresSettings()
         {
             return this._proresSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Vp8Settings. Required when you set (Codec) under (VideoDescription)>(CodecSettings)
+        /// to the value VP8.
+        /// </summary>
+        public Vp8Settings Vp8Settings
+        {
+            get { return this._vp8Settings; }
+            set { this._vp8Settings = value; }
+        }
+
+        // Check to see if Vp8Settings property is set
+        internal bool IsSetVp8Settings()
+        {
+            return this._vp8Settings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Vp9Settings. Required when you set (Codec) under (VideoDescription)>(CodecSettings)
+        /// to the value VP9.
+        /// </summary>
+        public Vp9Settings Vp9Settings
+        {
+            get { return this._vp9Settings; }
+            set { this._vp9Settings = value; }
+        }
+
+        // Check to see if Vp9Settings property is set
+        internal bool IsSetVp9Settings()
+        {
+            return this._vp9Settings != null;
         }
 
     }

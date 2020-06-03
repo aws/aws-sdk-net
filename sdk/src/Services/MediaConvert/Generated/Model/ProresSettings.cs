@@ -69,7 +69,7 @@ namespace Amazon.MediaConvert.Model
         /// rate conversion, choose a frame rate from the dropdown list or choose Custom. The
         /// framerates shown in the dropdown list are decimal approximations of fractions. If
         /// you choose Custom, specify your frame rate as a fraction. If you are creating your
-        /// transcoding job sepecification as a JSON file without the console, use FramerateControl
+        /// transcoding job specification as a JSON file without the console, use FramerateControl
         /// to specify which value the service uses for the frame rate for this output. Choose
         /// INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input.
         /// Choose SPECIFIED if you want the service to use the frame rate you specify in the
@@ -88,8 +88,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FramerateConversionAlgorithm. When set to INTERPOLATE,
-        /// produces smoother motion during frame rate conversion.
+        /// Gets and sets the property FramerateConversionAlgorithm. Optional. Specify how the
+        /// transcoder performs framerate conversion. The default behavior is to use duplicate
+        /// drop conversion.
         /// </summary>
         public ProresFramerateConversionAlgorithm FramerateConversionAlgorithm
         {
@@ -164,11 +165,12 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ParControl. Use (ProresParControl) to specify how the service
-        /// determines the pixel aspect ratio. Set to Follow source (INITIALIZE_FROM_SOURCE) to
-        /// use the pixel aspect ratio from the input.  To specify a different pixel aspect ratio:
-        /// Using the console, choose it from the dropdown menu. Using the API, set ProresParControl
-        /// to (SPECIFIED) and provide  for (ParNumerator) and (ParDenominator).
+        /// Gets and sets the property ParControl. Optional. Specify how the service determines
+        /// the pixel aspect ratio (PAR) for this output. The default behavior, Follow source
+        /// (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use
+        /// a different PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any
+        /// value other than Follow source. When you choose SPECIFIED for this setting, you must
+        /// also specify values for the parNumerator and parDenominator settings.
         /// </summary>
         public ProresParControl ParControl
         {

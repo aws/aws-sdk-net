@@ -93,7 +93,7 @@ namespace Amazon.MediaConvert.Model
         /// (Codec). For each codec enum that you choose, define the corresponding settings object.
         /// The following lists the codec enum, settings object pairs. * FRAME_CAPTURE, FrameCaptureSettings
         /// * AV1, Av1Settings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings
-        /// * PRORES, ProresSettings
+        /// * PRORES, ProresSettings * VP8, Vp8Settings * VP9, Vp9Settings
         /// </summary>
         public VideoCodecSettings CodecSettings
         {

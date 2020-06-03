@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NoiseReducerTemporalFilterSettings Object
+    /// Response Unmarshaller for OpusSettings Object
     /// </summary>  
-    public class NoiseReducerTemporalFilterSettingsUnmarshaller : IUnmarshaller<NoiseReducerTemporalFilterSettings, XmlUnmarshallerContext>, IUnmarshaller<NoiseReducerTemporalFilterSettings, JsonUnmarshallerContext>
+    public class OpusSettingsUnmarshaller : IUnmarshaller<OpusSettings, XmlUnmarshallerContext>, IUnmarshaller<OpusSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        NoiseReducerTemporalFilterSettings IUnmarshaller<NoiseReducerTemporalFilterSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OpusSettings IUnmarshaller<OpusSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NoiseReducerTemporalFilterSettings Unmarshall(JsonUnmarshallerContext context)
+        public OpusSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            NoiseReducerTemporalFilterSettings unmarshalledObject = new NoiseReducerTemporalFilterSettings();
+            OpusSettings unmarshalledObject = new OpusSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("aggressiveMode", targetDepth))
+                if (context.TestExpression("bitrate", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.AggressiveMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Bitrate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("postTemporalSharpening", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PostTemporalSharpening = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("speed", targetDepth))
+                if (context.TestExpression("channels", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Speed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Channels = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("strength", targetDepth))
+                if (context.TestExpression("sampleRate", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Strength = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SampleRate = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static NoiseReducerTemporalFilterSettingsUnmarshaller _instance = new NoiseReducerTemporalFilterSettingsUnmarshaller();        
+        private static OpusSettingsUnmarshaller _instance = new OpusSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NoiseReducerTemporalFilterSettingsUnmarshaller Instance
+        public static OpusSettingsUnmarshaller Instance
         {
             get
             {

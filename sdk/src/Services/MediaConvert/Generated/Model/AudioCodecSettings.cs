@@ -35,6 +35,7 @@ namespace Amazon.MediaConvert.Model
     /// define the corresponding settings object. The following lists the codec enum, settings
     /// object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings
     /// * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
+    /// * VORBIS, VorbisSettings * OPUS, OpusSettings
     /// </summary>
     public partial class AudioCodecSettings
     {
@@ -46,6 +47,8 @@ namespace Amazon.MediaConvert.Model
         private Eac3Settings _eac3Settings;
         private Mp2Settings _mp2Settings;
         private Mp3Settings _mp3Settings;
+        private OpusSettings _opusSettings;
+        private VorbisSettings _vorbisSettings;
         private WavSettings _wavSettings;
 
         /// <summary>
@@ -177,6 +180,38 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetMp3Settings()
         {
             return this._mp3Settings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpusSettings. Required when you set Codec, under AudioDescriptions>CodecSettings,
+        /// to the value OPUS.
+        /// </summary>
+        public OpusSettings OpusSettings
+        {
+            get { return this._opusSettings; }
+            set { this._opusSettings = value; }
+        }
+
+        // Check to see if OpusSettings property is set
+        internal bool IsSetOpusSettings()
+        {
+            return this._opusSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VorbisSettings. Required when you set Codec, under AudioDescriptions>CodecSettings,
+        /// to the value Vorbis.
+        /// </summary>
+        public VorbisSettings VorbisSettings
+        {
+            get { return this._vorbisSettings; }
+            set { this._vorbisSettings = value; }
+        }
+
+        // Check to see if VorbisSettings property is set
+        internal bool IsSetVorbisSettings()
+        {
+            return this._vorbisSettings != null;
         }
 
         /// <summary>

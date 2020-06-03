@@ -96,8 +96,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Extension. Use Extension (Extension) to specify the file
         /// extension for outputs in File output groups. If you do not specify a value, the service
         /// will use default extensions by container type as follows * MPEG-2 transport stream,
-        /// m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container,
-        /// the service will use codec extensions (e.g. AAC, H265, H265, AC3)
+        /// m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
+        /// webm * No Container, the service will use codec extensions (e.g. AAC, H265, H265,
+        /// AC3)
         /// </summary>
         public string Extension
         {

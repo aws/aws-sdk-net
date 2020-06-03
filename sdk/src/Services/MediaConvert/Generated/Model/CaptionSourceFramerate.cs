@@ -30,9 +30,9 @@ namespace Amazon.MediaConvert.Model
 {
     /// <summary>
     /// Ignore this setting unless your input captions format is SCC. To have the service
-    /// compensate for differing framerates between your input captions and input video, specify
-    /// the framerate of the captions file. Specify this value as a fraction, using the settings
-    /// Framerate numerator (framerateNumerator) and Framerate denominator (framerateDenominator).
+    /// compensate for differing frame rates between your input captions and input video,
+    /// specify the frame rate of the captions file. Specify this value as a fraction, using
+    /// the settings Framerate numerator (framerateNumerator) and Framerate denominator (framerateDenominator).
     /// For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001
     /// for 23.976 fps, or 30000 / 1001 for 29.97 fps.
     /// </summary>
@@ -43,7 +43,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property FramerateDenominator. Specify the denominator of the fraction
-        /// that represents the framerate for the setting Caption source framerate (CaptionSourceFramerate).
+        /// that represents the frame rate for the setting Caption source frame rate (CaptionSourceFramerate).
         /// Use this setting along with the setting Framerate numerator (framerateNumerator).
         /// </summary>
         [AWSProperty(Min=1, Max=1001)]
@@ -61,7 +61,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property FramerateNumerator. Specify the numerator of the fraction
-        /// that represents the framerate for the setting Caption source framerate (CaptionSourceFramerate).
+        /// that represents the frame rate for the setting Caption source frame rate (CaptionSourceFramerate).
         /// Use this setting along with the setting Framerate denominator (framerateDenominator).
         /// </summary>
         [AWSProperty(Min=1, Max=60000)]

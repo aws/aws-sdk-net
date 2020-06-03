@@ -128,6 +128,28 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetOpusSettings())
+            {
+                context.Writer.WritePropertyName("opusSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OpusSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.OpusSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetVorbisSettings())
+            {
+                context.Writer.WritePropertyName("vorbisSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VorbisSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.VorbisSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetWavSettings())
             {
                 context.Writer.WritePropertyName("wavSettings");
