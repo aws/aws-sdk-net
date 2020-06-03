@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     {
         private string _className;
         private DateTime? _createTime;
+        private string _databaseName;
         private string _functionName;
         private string _ownerName;
         private PrincipalType _ownerType;
@@ -75,6 +76,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetCreateTime()
         {
             return this._createTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabaseName. 
+        /// <para>
+        /// The name of the database where the function resides.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string DatabaseName
+        {
+            get { return this._databaseName; }
+            set { this._databaseName = value; }
+        }
+
+        // Check to see if DatabaseName property is set
+        internal bool IsSetDatabaseName()
+        {
+            return this._databaseName != null;
         }
 
         /// <summary>

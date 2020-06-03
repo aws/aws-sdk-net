@@ -76,6 +76,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DatabaseName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FunctionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

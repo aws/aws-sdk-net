@@ -63,7 +63,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The name of the catalog database where the functions are located.
+        /// The name of the catalog database where the functions are located. If none is provided,
+        /// functions from all the databases across the catalog will be returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
