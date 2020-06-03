@@ -78,6 +78,12 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The key of the object to copy.
         /// </summary>
+        /// <remarks>
+        /// This property will be used as part of the resource path of the HTTP request. In .NET the System.Uri class
+        /// is used to construct the uri for the request. The System.Uri class will canonicalize the uri string by compacting characters like "..". /// For example an object key of "foo/../bar/file.txt" will be transformed into "bar/file.txt" because the ".." 
+        /// is interpreted as use parent directory. For further information view the documentation for 
+        /// the Uri class: https://docs.microsoft.com/en-us/dotnet/api/system.uri
+        /// </remarks>
         public string SourceKey
         {
             get { return this.srcKey; }
@@ -137,6 +143,12 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The key to be given to the copy of the source object.
         /// </summary>
+        /// <remarks>
+        /// This property will be used as part of the resource path of the HTTP request. In .NET the System.Uri class
+        /// is used to construct the uri for the request. The System.Uri class will canonicalize the uri string by compacting characters like "..". /// For example an object key of "foo/../bar/file.txt" will be transformed into "bar/file.txt" because the ".." 
+        /// is interpreted as use parent directory. For further information view the documentation for 
+        /// the Uri class: https://docs.microsoft.com/en-us/dotnet/api/system.uri
+        /// </remarks>
         public string DestinationKey
         {
             get { return this.dstKey; }
