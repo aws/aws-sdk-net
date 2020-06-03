@@ -29,47 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateVirtualInterfaceAttributes operation.
-    /// Updates the specified attributes of the specified virtual private interface.
-    /// 
-    ///  
-    /// <para>
-    /// Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update
-    /// to the underlying physical connection if it wasn't updated to support jumbo frames.
-    /// Updating the connection disrupts network connectivity for all virtual interfaces associated
-    /// with the connection for up to 30 seconds. To check whether your connection supports
-    /// jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual q interface
-    /// supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.
-    /// </para>
+    /// Container for the parameters to the StopBgpFailoverTest operation.
+    /// Stops the virtual interface failover test.
     /// </summary>
-    public partial class UpdateVirtualInterfaceAttributesRequest : AmazonDirectConnectRequest
+    public partial class StopBgpFailoverTestRequest : AmazonDirectConnectRequest
     {
-        private int? _mtu;
         private string _virtualInterfaceId;
-
-        /// <summary>
-        /// Gets and sets the property Mtu. 
-        /// <para>
-        /// The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001.
-        /// The default value is 1500.
-        /// </para>
-        /// </summary>
-        public int Mtu
-        {
-            get { return this._mtu.GetValueOrDefault(); }
-            set { this._mtu = value; }
-        }
-
-        // Check to see if Mtu property is set
-        internal bool IsSetMtu()
-        {
-            return this._mtu.HasValue; 
-        }
 
         /// <summary>
         /// Gets and sets the property VirtualInterfaceId. 
         /// <para>
-        /// The ID of the virtual private interface.
+        /// The ID of the virtual interface you no longer want to test.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

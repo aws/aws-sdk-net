@@ -1373,6 +1373,16 @@ namespace Amazon.DirectConnect
         /// virtual interface to a Direct Connect gateway enables the possibility for connecting
         /// to multiple VPCs, including VPCs in different AWS Regions. Connecting the private
         /// virtual interface to a VGW only provides access to a single VPC within the same Region.
+        /// 
+        ///  
+        /// <para>
+        /// Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update
+        /// to the underlying physical connection if it wasn't updated to support jumbo frames.
+        /// Updating the connection disrupts network connectivity for all virtual interfaces associated
+        /// with the connection for up to 30 seconds. To check whether your connection supports
+        /// jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface
+        /// supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePrivateVirtualInterface service method.</param>
         /// <param name="cancellationToken">
@@ -1485,7 +1495,15 @@ namespace Amazon.DirectConnect
         /// gateway must be different. For example, if you use the default ASN 64512 for both
         /// your the transit gateway and Direct Connect gateway, the association request fails.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// Setting the MTU of a virtual interface to 8500 (jumbo frames) can cause an update
+        /// to the underlying physical connection if it wasn't updated to support jumbo frames.
+        /// Updating the connection disrupts network connectivity for all virtual interfaces associated
+        /// with the connection for up to 30 seconds. To check whether your connection supports
+        /// jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface
+        /// supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTransitVirtualInterface service method.</param>
         /// <param name="cancellationToken">
@@ -2791,6 +2809,142 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  ListVirtualInterfaceTestHistory
+
+        internal virtual ListVirtualInterfaceTestHistoryResponse ListVirtualInterfaceTestHistory(ListVirtualInterfaceTestHistoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVirtualInterfaceTestHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVirtualInterfaceTestHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<ListVirtualInterfaceTestHistoryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the virtual interface failover test history.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVirtualInterfaceTestHistory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVirtualInterfaceTestHistory service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceTestHistory">REST API Reference for ListVirtualInterfaceTestHistory Operation</seealso>
+        public virtual Task<ListVirtualInterfaceTestHistoryResponse> ListVirtualInterfaceTestHistoryAsync(ListVirtualInterfaceTestHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVirtualInterfaceTestHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVirtualInterfaceTestHistoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListVirtualInterfaceTestHistoryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartBgpFailoverTest
+
+        internal virtual StartBgpFailoverTestResponse StartBgpFailoverTest(StartBgpFailoverTestRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBgpFailoverTestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBgpFailoverTestResponseUnmarshaller.Instance;
+
+            return Invoke<StartBgpFailoverTestResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts the virtual interface failover test that verifies your configuration meets
+        /// your resiliency requirements by placing the BGP peering session in the DOWN state.
+        /// You can then send traffic to verify that there are no outages.
+        /// 
+        ///  
+        /// <para>
+        /// You can run the test on public, private, transit, and hosted virtual interfaces.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListVirtualInterfaceTestHistory.html">ListVirtualInterfaceTestHistory</a>
+        /// to view the virtual interface test history.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you need to stop the test before the test interval completes, use <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StopBgpFailoverTest.html">StopBgpFailoverTest</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBgpFailoverTest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartBgpFailoverTest service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StartBgpFailoverTest">REST API Reference for StartBgpFailoverTest Operation</seealso>
+        public virtual Task<StartBgpFailoverTestResponse> StartBgpFailoverTestAsync(StartBgpFailoverTestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBgpFailoverTestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBgpFailoverTestResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartBgpFailoverTestResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopBgpFailoverTest
+
+        internal virtual StopBgpFailoverTestResponse StopBgpFailoverTest(StopBgpFailoverTestRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopBgpFailoverTestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopBgpFailoverTestResponseUnmarshaller.Instance;
+
+            return Invoke<StopBgpFailoverTestResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops the virtual interface failover test.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopBgpFailoverTest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopBgpFailoverTest service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StopBgpFailoverTest">REST API Reference for StopBgpFailoverTest Operation</seealso>
+        public virtual Task<StopBgpFailoverTestResponse> StopBgpFailoverTestAsync(StopBgpFailoverTestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopBgpFailoverTestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopBgpFailoverTestResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopBgpFailoverTestResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -3013,7 +3167,7 @@ namespace Amazon.DirectConnect
         /// to the underlying physical connection if it wasn't updated to support jumbo frames.
         /// Updating the connection disrupts network connectivity for all virtual interfaces associated
         /// with the connection for up to 30 seconds. To check whether your connection supports
-        /// jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface
+        /// jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual q interface
         /// supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.
         /// </para>
         /// </summary>

@@ -180,7 +180,9 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property VirtualInterfaceName. 
         /// <para>
-        /// The name of the virtual interface assigned by the customer network.
+        /// The name of the virtual interface assigned by the customer network. The name has a
+        /// maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen
+        /// (-).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
