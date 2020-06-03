@@ -1,3 +1,22 @@
+### 3.3.753.0 (2020-06-03 18:13 UTC)
+* DirectConnect (3.3.105.0)
+	* This release supports the virtual interface failover test, which allows you to verify that traffic routes over redundant virtual interfaces when you bring your primary virtual interface out of service.
+* ElastiCache (3.3.111.0)
+	* This release improves the Multi-AZ feature in ElastiCache by adding a separate flag and proper validations.
+* Elasticsearch (3.3.107.0)
+	* Amazon Elasticsearch Service now offers support for cross-cluster search, enabling you to perform searches, aggregations, and visualizations across multiple Amazon Elasticsearch Service domains with a single query or from a single Kibana interface. New feature includes the ability to setup connection, required to perform cross-cluster search, between domains using an approval workflow.
+* Glue (3.3.119.0)
+	* Adding databaseName in the response for GetUserDefinedFunctions() API.
+* IdentityManagement (3.3.106.0)
+	* GenerateServiceLastAccessedDetails will now return ActionLastAccessed details for certain S3 control plane actions
+* MediaConvert (3.3.118.0)
+	* AWS Elemental MediaConvert SDK has added support for the encoding of VP8 or VP9 video in WebM container with Vorbis or Opus audio.
+* Core 3.3.107.5
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.752.0 (2020-06-02 18:12 UTC)
 * GuardDuty (3.3.108.0)
 	* Amazon GuardDuty findings now include S3 bucket details under the resource section if an S3 Bucket was one of the affected resources
