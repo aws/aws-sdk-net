@@ -45,6 +45,7 @@ namespace Amazon.ElastiCache.Model
         private GlobalReplicationGroupInfo _globalReplicationGroupInfo;
         private string _kmsKeyId;
         private List<string> _memberClusters = new List<string>();
+        private MultiAZStatus _multiAZ;
         private List<NodeGroup> _nodeGroups = new List<NodeGroup>();
         private ReplicationGroupPendingModifiedValues _pendingModifiedValues;
         private string _replicationGroupId;
@@ -314,6 +315,21 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetMemberClusters()
         {
             return this._memberClusters != null && this._memberClusters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiAZ.
+        /// </summary>
+        public MultiAZStatus MultiAZ
+        {
+            get { return this._multiAZ; }
+            set { this._multiAZ = value; }
+        }
+
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this._multiAZ != null;
         }
 
         /// <summary>

@@ -60,6 +60,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheParameterGroupName;
         private List<string> _cacheSecurityGroupNames = new List<string>();
         private string _engineVersion;
+        private bool? _multiAZEnabled;
         private string _nodeGroupId;
         private string _notificationTopicArn;
         private string _notificationTopicStatus;
@@ -322,6 +323,21 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiAZEnabled.
+        /// </summary>
+        public bool MultiAZEnabled
+        {
+            get { return this._multiAZEnabled.GetValueOrDefault(); }
+            set { this._multiAZEnabled = value; }
+        }
+
+        // Check to see if MultiAZEnabled property is set
+        internal bool IsSetMultiAZEnabled()
+        {
+            return this._multiAZEnabled.HasValue; 
         }
 
         /// <summary>

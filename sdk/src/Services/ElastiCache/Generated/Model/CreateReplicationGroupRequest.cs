@@ -82,6 +82,7 @@ namespace Amazon.ElastiCache.Model
         private string _engineVersion;
         private string _globalReplicationGroupId;
         private string _kmsKeyId;
+        private bool? _multiAZEnabled;
         private List<NodeGroupConfiguration> _nodeGroupConfiguration = new List<NodeGroupConfiguration>();
         private string _notificationTopicArn;
         private int? _numCacheClusters;
@@ -557,6 +558,21 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiAZEnabled.
+        /// </summary>
+        public bool MultiAZEnabled
+        {
+            get { return this._multiAZEnabled.GetValueOrDefault(); }
+            set { this._multiAZEnabled = value; }
+        }
+
+        // Check to see if MultiAZEnabled property is set
+        internal bool IsSetMultiAZEnabled()
+        {
+            return this._multiAZEnabled.HasValue; 
         }
 
         /// <summary>

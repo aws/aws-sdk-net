@@ -127,6 +127,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.MemberClusters.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("MultiAZ", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("NodeGroups/NodeGroup", targetDepth))
                     {
                         var unmarshaller = NodeGroupUnmarshaller.Instance;
