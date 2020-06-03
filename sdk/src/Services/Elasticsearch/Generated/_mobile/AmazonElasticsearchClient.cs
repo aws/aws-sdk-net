@@ -260,6 +260,53 @@ namespace Amazon.Elasticsearch
         #endregion
 
 
+        #region  AcceptInboundCrossClusterSearchConnection
+
+        internal virtual AcceptInboundCrossClusterSearchConnectionResponse AcceptInboundCrossClusterSearchConnection(AcceptInboundCrossClusterSearchConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptInboundCrossClusterSearchConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptInboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptInboundCrossClusterSearchConnectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Allows the destination domain owner to accept an inbound cross-cluster search connection
+        /// request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptInboundCrossClusterSearchConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptInboundCrossClusterSearchConnection service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.LimitExceededException">
+        /// An exception for trying to create more than allowed resources or sub-resources. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AcceptInboundCrossClusterSearchConnection">REST API Reference for AcceptInboundCrossClusterSearchConnection Operation</seealso>
+        public virtual Task<AcceptInboundCrossClusterSearchConnectionResponse> AcceptInboundCrossClusterSearchConnectionAsync(AcceptInboundCrossClusterSearchConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptInboundCrossClusterSearchConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptInboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AcceptInboundCrossClusterSearchConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AddTags
 
         internal virtual AddTagsResponse AddTags(AddTagsRequest request)
@@ -478,6 +525,57 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  CreateOutboundCrossClusterSearchConnection
+
+        internal virtual CreateOutboundCrossClusterSearchConnectionResponse CreateOutboundCrossClusterSearchConnection(CreateOutboundCrossClusterSearchConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOutboundCrossClusterSearchConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOutboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateOutboundCrossClusterSearchConnectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new cross-cluster search connection from a source domain to a destination
+        /// domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOutboundCrossClusterSearchConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateOutboundCrossClusterSearchConnection service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.LimitExceededException">
+        /// An exception for trying to create more than allowed resources or sub-resources. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceAlreadyExistsException">
+        /// An exception for creating a resource that already exists. Gives http status code of
+        /// 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateOutboundCrossClusterSearchConnection">REST API Reference for CreateOutboundCrossClusterSearchConnection Operation</seealso>
+        public virtual Task<CreateOutboundCrossClusterSearchConnectionResponse> CreateOutboundCrossClusterSearchConnectionAsync(CreateOutboundCrossClusterSearchConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOutboundCrossClusterSearchConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOutboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateOutboundCrossClusterSearchConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreatePackage
 
         internal virtual CreatePackageResponse CreatePackage(CreatePackageRequest request)
@@ -631,6 +729,92 @@ namespace Amazon.Elasticsearch
             options.ResponseUnmarshaller = DeleteElasticsearchServiceRoleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteElasticsearchServiceRoleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteInboundCrossClusterSearchConnection
+
+        internal virtual DeleteInboundCrossClusterSearchConnectionResponse DeleteInboundCrossClusterSearchConnection(DeleteInboundCrossClusterSearchConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInboundCrossClusterSearchConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInboundCrossClusterSearchConnectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Allows the destination domain owner to delete an existing inbound cross-cluster search
+        /// connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInboundCrossClusterSearchConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteInboundCrossClusterSearchConnection service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteInboundCrossClusterSearchConnection">REST API Reference for DeleteInboundCrossClusterSearchConnection Operation</seealso>
+        public virtual Task<DeleteInboundCrossClusterSearchConnectionResponse> DeleteInboundCrossClusterSearchConnectionAsync(DeleteInboundCrossClusterSearchConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInboundCrossClusterSearchConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteInboundCrossClusterSearchConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteOutboundCrossClusterSearchConnection
+
+        internal virtual DeleteOutboundCrossClusterSearchConnectionResponse DeleteOutboundCrossClusterSearchConnection(DeleteOutboundCrossClusterSearchConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOutboundCrossClusterSearchConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOutboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteOutboundCrossClusterSearchConnectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Allows the source domain owner to delete an existing outbound cross-cluster search
+        /// connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOutboundCrossClusterSearchConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteOutboundCrossClusterSearchConnection service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteOutboundCrossClusterSearchConnection">REST API Reference for DeleteOutboundCrossClusterSearchConnection Operation</seealso>
+        public virtual Task<DeleteOutboundCrossClusterSearchConnectionResponse> DeleteOutboundCrossClusterSearchConnectionAsync(DeleteOutboundCrossClusterSearchConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOutboundCrossClusterSearchConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOutboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteOutboundCrossClusterSearchConnectionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -888,6 +1072,90 @@ namespace Amazon.Elasticsearch
             options.ResponseUnmarshaller = DescribeElasticsearchInstanceTypeLimitsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeElasticsearchInstanceTypeLimitsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeInboundCrossClusterSearchConnections
+
+        internal virtual DescribeInboundCrossClusterSearchConnectionsResponse DescribeInboundCrossClusterSearchConnections(DescribeInboundCrossClusterSearchConnectionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInboundCrossClusterSearchConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInboundCrossClusterSearchConnectionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInboundCrossClusterSearchConnectionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all the inbound cross-cluster search connections for a destination domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInboundCrossClusterSearchConnections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInboundCrossClusterSearchConnections service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InvalidPaginationTokenException">
+        /// The request processing has failed because of invalid pagination token provided by
+        /// customer. Returns an HTTP status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeInboundCrossClusterSearchConnections">REST API Reference for DescribeInboundCrossClusterSearchConnections Operation</seealso>
+        public virtual Task<DescribeInboundCrossClusterSearchConnectionsResponse> DescribeInboundCrossClusterSearchConnectionsAsync(DescribeInboundCrossClusterSearchConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInboundCrossClusterSearchConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInboundCrossClusterSearchConnectionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInboundCrossClusterSearchConnectionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeOutboundCrossClusterSearchConnections
+
+        internal virtual DescribeOutboundCrossClusterSearchConnectionsResponse DescribeOutboundCrossClusterSearchConnections(DescribeOutboundCrossClusterSearchConnectionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOutboundCrossClusterSearchConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOutboundCrossClusterSearchConnectionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeOutboundCrossClusterSearchConnectionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all the outbound cross-cluster search connections for a source domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOutboundCrossClusterSearchConnections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeOutboundCrossClusterSearchConnections service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InvalidPaginationTokenException">
+        /// The request processing has failed because of invalid pagination token provided by
+        /// customer. Returns an HTTP status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeOutboundCrossClusterSearchConnections">REST API Reference for DescribeOutboundCrossClusterSearchConnections Operation</seealso>
+        public virtual Task<DescribeOutboundCrossClusterSearchConnectionsResponse> DescribeOutboundCrossClusterSearchConnectionsAsync(DescribeOutboundCrossClusterSearchConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOutboundCrossClusterSearchConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOutboundCrossClusterSearchConnectionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeOutboundCrossClusterSearchConnectionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1600,6 +1868,49 @@ namespace Amazon.Elasticsearch
             options.ResponseUnmarshaller = PurchaseReservedElasticsearchInstanceOfferingResponseUnmarshaller.Instance;
 
             return InvokeAsync<PurchaseReservedElasticsearchInstanceOfferingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RejectInboundCrossClusterSearchConnection
+
+        internal virtual RejectInboundCrossClusterSearchConnectionResponse RejectInboundCrossClusterSearchConnection(RejectInboundCrossClusterSearchConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectInboundCrossClusterSearchConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectInboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<RejectInboundCrossClusterSearchConnectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Allows the destination domain owner to reject an inbound cross-cluster search connection
+        /// request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectInboundCrossClusterSearchConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RejectInboundCrossClusterSearchConnection service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RejectInboundCrossClusterSearchConnection">REST API Reference for RejectInboundCrossClusterSearchConnection Operation</seealso>
+        public virtual Task<RejectInboundCrossClusterSearchConnectionResponse> RejectInboundCrossClusterSearchConnectionAsync(RejectInboundCrossClusterSearchConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectInboundCrossClusterSearchConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectInboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RejectInboundCrossClusterSearchConnectionResponse>(request, options, cancellationToken);
         }
 
         #endregion

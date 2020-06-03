@@ -253,6 +253,73 @@ namespace Amazon.Elasticsearch
         #endregion
 
 
+        #region  AcceptInboundCrossClusterSearchConnection
+
+        /// <summary>
+        /// Allows the destination domain owner to accept an inbound cross-cluster search connection
+        /// request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptInboundCrossClusterSearchConnection service method.</param>
+        /// 
+        /// <returns>The response from the AcceptInboundCrossClusterSearchConnection service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.LimitExceededException">
+        /// An exception for trying to create more than allowed resources or sub-resources. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AcceptInboundCrossClusterSearchConnection">REST API Reference for AcceptInboundCrossClusterSearchConnection Operation</seealso>
+        public virtual AcceptInboundCrossClusterSearchConnectionResponse AcceptInboundCrossClusterSearchConnection(AcceptInboundCrossClusterSearchConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptInboundCrossClusterSearchConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptInboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptInboundCrossClusterSearchConnectionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptInboundCrossClusterSearchConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptInboundCrossClusterSearchConnection operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptInboundCrossClusterSearchConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AcceptInboundCrossClusterSearchConnection">REST API Reference for AcceptInboundCrossClusterSearchConnection Operation</seealso>
+        public virtual IAsyncResult BeginAcceptInboundCrossClusterSearchConnection(AcceptInboundCrossClusterSearchConnectionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptInboundCrossClusterSearchConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptInboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AcceptInboundCrossClusterSearchConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcceptInboundCrossClusterSearchConnection.</param>
+        /// 
+        /// <returns>Returns a  AcceptInboundCrossClusterSearchConnectionResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AcceptInboundCrossClusterSearchConnection">REST API Reference for AcceptInboundCrossClusterSearchConnection Operation</seealso>
+        public virtual AcceptInboundCrossClusterSearchConnectionResponse EndAcceptInboundCrossClusterSearchConnection(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AcceptInboundCrossClusterSearchConnectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AddTags
 
         /// <summary>
@@ -551,6 +618,77 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  CreateOutboundCrossClusterSearchConnection
+
+        /// <summary>
+        /// Creates a new cross-cluster search connection from a source domain to a destination
+        /// domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOutboundCrossClusterSearchConnection service method.</param>
+        /// 
+        /// <returns>The response from the CreateOutboundCrossClusterSearchConnection service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.LimitExceededException">
+        /// An exception for trying to create more than allowed resources or sub-resources. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceAlreadyExistsException">
+        /// An exception for creating a resource that already exists. Gives http status code of
+        /// 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateOutboundCrossClusterSearchConnection">REST API Reference for CreateOutboundCrossClusterSearchConnection Operation</seealso>
+        public virtual CreateOutboundCrossClusterSearchConnectionResponse CreateOutboundCrossClusterSearchConnection(CreateOutboundCrossClusterSearchConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOutboundCrossClusterSearchConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOutboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateOutboundCrossClusterSearchConnectionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateOutboundCrossClusterSearchConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateOutboundCrossClusterSearchConnection operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateOutboundCrossClusterSearchConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateOutboundCrossClusterSearchConnection">REST API Reference for CreateOutboundCrossClusterSearchConnection Operation</seealso>
+        public virtual IAsyncResult BeginCreateOutboundCrossClusterSearchConnection(CreateOutboundCrossClusterSearchConnectionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOutboundCrossClusterSearchConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOutboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateOutboundCrossClusterSearchConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateOutboundCrossClusterSearchConnection.</param>
+        /// 
+        /// <returns>Returns a  CreateOutboundCrossClusterSearchConnectionResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateOutboundCrossClusterSearchConnection">REST API Reference for CreateOutboundCrossClusterSearchConnection Operation</seealso>
+        public virtual CreateOutboundCrossClusterSearchConnectionResponse EndCreateOutboundCrossClusterSearchConnection(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateOutboundCrossClusterSearchConnectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreatePackage
 
         /// <summary>
@@ -764,6 +902,132 @@ namespace Amazon.Elasticsearch
         public virtual DeleteElasticsearchServiceRoleResponse EndDeleteElasticsearchServiceRole(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteElasticsearchServiceRoleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteInboundCrossClusterSearchConnection
+
+        /// <summary>
+        /// Allows the destination domain owner to delete an existing inbound cross-cluster search
+        /// connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInboundCrossClusterSearchConnection service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInboundCrossClusterSearchConnection service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteInboundCrossClusterSearchConnection">REST API Reference for DeleteInboundCrossClusterSearchConnection Operation</seealso>
+        public virtual DeleteInboundCrossClusterSearchConnectionResponse DeleteInboundCrossClusterSearchConnection(DeleteInboundCrossClusterSearchConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInboundCrossClusterSearchConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInboundCrossClusterSearchConnectionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteInboundCrossClusterSearchConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInboundCrossClusterSearchConnection operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInboundCrossClusterSearchConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteInboundCrossClusterSearchConnection">REST API Reference for DeleteInboundCrossClusterSearchConnection Operation</seealso>
+        public virtual IAsyncResult BeginDeleteInboundCrossClusterSearchConnection(DeleteInboundCrossClusterSearchConnectionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInboundCrossClusterSearchConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteInboundCrossClusterSearchConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInboundCrossClusterSearchConnection.</param>
+        /// 
+        /// <returns>Returns a  DeleteInboundCrossClusterSearchConnectionResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteInboundCrossClusterSearchConnection">REST API Reference for DeleteInboundCrossClusterSearchConnection Operation</seealso>
+        public virtual DeleteInboundCrossClusterSearchConnectionResponse EndDeleteInboundCrossClusterSearchConnection(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteInboundCrossClusterSearchConnectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteOutboundCrossClusterSearchConnection
+
+        /// <summary>
+        /// Allows the source domain owner to delete an existing outbound cross-cluster search
+        /// connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOutboundCrossClusterSearchConnection service method.</param>
+        /// 
+        /// <returns>The response from the DeleteOutboundCrossClusterSearchConnection service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteOutboundCrossClusterSearchConnection">REST API Reference for DeleteOutboundCrossClusterSearchConnection Operation</seealso>
+        public virtual DeleteOutboundCrossClusterSearchConnectionResponse DeleteOutboundCrossClusterSearchConnection(DeleteOutboundCrossClusterSearchConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOutboundCrossClusterSearchConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOutboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteOutboundCrossClusterSearchConnectionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteOutboundCrossClusterSearchConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOutboundCrossClusterSearchConnection operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteOutboundCrossClusterSearchConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteOutboundCrossClusterSearchConnection">REST API Reference for DeleteOutboundCrossClusterSearchConnection Operation</seealso>
+        public virtual IAsyncResult BeginDeleteOutboundCrossClusterSearchConnection(DeleteOutboundCrossClusterSearchConnectionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOutboundCrossClusterSearchConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOutboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteOutboundCrossClusterSearchConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteOutboundCrossClusterSearchConnection.</param>
+        /// 
+        /// <returns>Returns a  DeleteOutboundCrossClusterSearchConnectionResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteOutboundCrossClusterSearchConnection">REST API Reference for DeleteOutboundCrossClusterSearchConnection Operation</seealso>
+        public virtual DeleteOutboundCrossClusterSearchConnectionResponse EndDeleteOutboundCrossClusterSearchConnection(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteOutboundCrossClusterSearchConnectionResponse>(asyncResult);
         }
 
         #endregion
@@ -1121,6 +1385,130 @@ namespace Amazon.Elasticsearch
         public virtual DescribeElasticsearchInstanceTypeLimitsResponse EndDescribeElasticsearchInstanceTypeLimits(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeElasticsearchInstanceTypeLimitsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeInboundCrossClusterSearchConnections
+
+        /// <summary>
+        /// Lists all the inbound cross-cluster search connections for a destination domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInboundCrossClusterSearchConnections service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInboundCrossClusterSearchConnections service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InvalidPaginationTokenException">
+        /// The request processing has failed because of invalid pagination token provided by
+        /// customer. Returns an HTTP status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeInboundCrossClusterSearchConnections">REST API Reference for DescribeInboundCrossClusterSearchConnections Operation</seealso>
+        public virtual DescribeInboundCrossClusterSearchConnectionsResponse DescribeInboundCrossClusterSearchConnections(DescribeInboundCrossClusterSearchConnectionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInboundCrossClusterSearchConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInboundCrossClusterSearchConnectionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInboundCrossClusterSearchConnectionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInboundCrossClusterSearchConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInboundCrossClusterSearchConnections operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInboundCrossClusterSearchConnections
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeInboundCrossClusterSearchConnections">REST API Reference for DescribeInboundCrossClusterSearchConnections Operation</seealso>
+        public virtual IAsyncResult BeginDescribeInboundCrossClusterSearchConnections(DescribeInboundCrossClusterSearchConnectionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInboundCrossClusterSearchConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInboundCrossClusterSearchConnectionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInboundCrossClusterSearchConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInboundCrossClusterSearchConnections.</param>
+        /// 
+        /// <returns>Returns a  DescribeInboundCrossClusterSearchConnectionsResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeInboundCrossClusterSearchConnections">REST API Reference for DescribeInboundCrossClusterSearchConnections Operation</seealso>
+        public virtual DescribeInboundCrossClusterSearchConnectionsResponse EndDescribeInboundCrossClusterSearchConnections(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeInboundCrossClusterSearchConnectionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeOutboundCrossClusterSearchConnections
+
+        /// <summary>
+        /// Lists all the outbound cross-cluster search connections for a source domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOutboundCrossClusterSearchConnections service method.</param>
+        /// 
+        /// <returns>The response from the DescribeOutboundCrossClusterSearchConnections service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InvalidPaginationTokenException">
+        /// The request processing has failed because of invalid pagination token provided by
+        /// customer. Returns an HTTP status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeOutboundCrossClusterSearchConnections">REST API Reference for DescribeOutboundCrossClusterSearchConnections Operation</seealso>
+        public virtual DescribeOutboundCrossClusterSearchConnectionsResponse DescribeOutboundCrossClusterSearchConnections(DescribeOutboundCrossClusterSearchConnectionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOutboundCrossClusterSearchConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOutboundCrossClusterSearchConnectionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeOutboundCrossClusterSearchConnectionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeOutboundCrossClusterSearchConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOutboundCrossClusterSearchConnections operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeOutboundCrossClusterSearchConnections
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeOutboundCrossClusterSearchConnections">REST API Reference for DescribeOutboundCrossClusterSearchConnections Operation</seealso>
+        public virtual IAsyncResult BeginDescribeOutboundCrossClusterSearchConnections(DescribeOutboundCrossClusterSearchConnectionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOutboundCrossClusterSearchConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOutboundCrossClusterSearchConnectionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeOutboundCrossClusterSearchConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeOutboundCrossClusterSearchConnections.</param>
+        /// 
+        /// <returns>Returns a  DescribeOutboundCrossClusterSearchConnectionsResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeOutboundCrossClusterSearchConnections">REST API Reference for DescribeOutboundCrossClusterSearchConnections Operation</seealso>
+        public virtual DescribeOutboundCrossClusterSearchConnectionsResponse EndDescribeOutboundCrossClusterSearchConnections(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeOutboundCrossClusterSearchConnectionsResponse>(asyncResult);
         }
 
         #endregion
@@ -2113,6 +2501,69 @@ namespace Amazon.Elasticsearch
         public virtual PurchaseReservedElasticsearchInstanceOfferingResponse EndPurchaseReservedElasticsearchInstanceOffering(IAsyncResult asyncResult)
         {
             return EndInvoke<PurchaseReservedElasticsearchInstanceOfferingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RejectInboundCrossClusterSearchConnection
+
+        /// <summary>
+        /// Allows the destination domain owner to reject an inbound cross-cluster search connection
+        /// request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectInboundCrossClusterSearchConnection service method.</param>
+        /// 
+        /// <returns>The response from the RejectInboundCrossClusterSearchConnection service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RejectInboundCrossClusterSearchConnection">REST API Reference for RejectInboundCrossClusterSearchConnection Operation</seealso>
+        public virtual RejectInboundCrossClusterSearchConnectionResponse RejectInboundCrossClusterSearchConnection(RejectInboundCrossClusterSearchConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectInboundCrossClusterSearchConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectInboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<RejectInboundCrossClusterSearchConnectionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RejectInboundCrossClusterSearchConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RejectInboundCrossClusterSearchConnection operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRejectInboundCrossClusterSearchConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RejectInboundCrossClusterSearchConnection">REST API Reference for RejectInboundCrossClusterSearchConnection Operation</seealso>
+        public virtual IAsyncResult BeginRejectInboundCrossClusterSearchConnection(RejectInboundCrossClusterSearchConnectionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectInboundCrossClusterSearchConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectInboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RejectInboundCrossClusterSearchConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRejectInboundCrossClusterSearchConnection.</param>
+        /// 
+        /// <returns>Returns a  RejectInboundCrossClusterSearchConnectionResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RejectInboundCrossClusterSearchConnection">REST API Reference for RejectInboundCrossClusterSearchConnection Operation</seealso>
+        public virtual RejectInboundCrossClusterSearchConnectionResponse EndRejectInboundCrossClusterSearchConnection(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RejectInboundCrossClusterSearchConnectionResponse>(asyncResult);
         }
 
         #endregion

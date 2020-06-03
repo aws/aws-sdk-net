@@ -527,6 +527,72 @@ namespace Amazon.Elasticsearch
 
 
     /// <summary>
+    /// Constants used for properties of type InboundCrossClusterSearchConnectionStatusCode.
+    /// </summary>
+    public class InboundCrossClusterSearchConnectionStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVED for InboundCrossClusterSearchConnectionStatusCode
+        /// </summary>
+        public static readonly InboundCrossClusterSearchConnectionStatusCode APPROVED = new InboundCrossClusterSearchConnectionStatusCode("APPROVED");
+        /// <summary>
+        /// Constant DELETED for InboundCrossClusterSearchConnectionStatusCode
+        /// </summary>
+        public static readonly InboundCrossClusterSearchConnectionStatusCode DELETED = new InboundCrossClusterSearchConnectionStatusCode("DELETED");
+        /// <summary>
+        /// Constant DELETING for InboundCrossClusterSearchConnectionStatusCode
+        /// </summary>
+        public static readonly InboundCrossClusterSearchConnectionStatusCode DELETING = new InboundCrossClusterSearchConnectionStatusCode("DELETING");
+        /// <summary>
+        /// Constant PENDING_ACCEPTANCE for InboundCrossClusterSearchConnectionStatusCode
+        /// </summary>
+        public static readonly InboundCrossClusterSearchConnectionStatusCode PENDING_ACCEPTANCE = new InboundCrossClusterSearchConnectionStatusCode("PENDING_ACCEPTANCE");
+        /// <summary>
+        /// Constant REJECTED for InboundCrossClusterSearchConnectionStatusCode
+        /// </summary>
+        public static readonly InboundCrossClusterSearchConnectionStatusCode REJECTED = new InboundCrossClusterSearchConnectionStatusCode("REJECTED");
+        /// <summary>
+        /// Constant REJECTING for InboundCrossClusterSearchConnectionStatusCode
+        /// </summary>
+        public static readonly InboundCrossClusterSearchConnectionStatusCode REJECTING = new InboundCrossClusterSearchConnectionStatusCode("REJECTING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InboundCrossClusterSearchConnectionStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InboundCrossClusterSearchConnectionStatusCode FindValue(string value)
+        {
+            return FindValue<InboundCrossClusterSearchConnectionStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InboundCrossClusterSearchConnectionStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogType.
     /// </summary>
     public class LogType : ConstantClass
@@ -628,6 +694,80 @@ namespace Amazon.Elasticsearch
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OptionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OutboundCrossClusterSearchConnectionStatusCode.
+    /// </summary>
+    public class OutboundCrossClusterSearchConnectionStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for OutboundCrossClusterSearchConnectionStatusCode
+        /// </summary>
+        public static readonly OutboundCrossClusterSearchConnectionStatusCode ACTIVE = new OutboundCrossClusterSearchConnectionStatusCode("ACTIVE");
+        /// <summary>
+        /// Constant DELETED for OutboundCrossClusterSearchConnectionStatusCode
+        /// </summary>
+        public static readonly OutboundCrossClusterSearchConnectionStatusCode DELETED = new OutboundCrossClusterSearchConnectionStatusCode("DELETED");
+        /// <summary>
+        /// Constant DELETING for OutboundCrossClusterSearchConnectionStatusCode
+        /// </summary>
+        public static readonly OutboundCrossClusterSearchConnectionStatusCode DELETING = new OutboundCrossClusterSearchConnectionStatusCode("DELETING");
+        /// <summary>
+        /// Constant PENDING_ACCEPTANCE for OutboundCrossClusterSearchConnectionStatusCode
+        /// </summary>
+        public static readonly OutboundCrossClusterSearchConnectionStatusCode PENDING_ACCEPTANCE = new OutboundCrossClusterSearchConnectionStatusCode("PENDING_ACCEPTANCE");
+        /// <summary>
+        /// Constant PROVISIONING for OutboundCrossClusterSearchConnectionStatusCode
+        /// </summary>
+        public static readonly OutboundCrossClusterSearchConnectionStatusCode PROVISIONING = new OutboundCrossClusterSearchConnectionStatusCode("PROVISIONING");
+        /// <summary>
+        /// Constant REJECTED for OutboundCrossClusterSearchConnectionStatusCode
+        /// </summary>
+        public static readonly OutboundCrossClusterSearchConnectionStatusCode REJECTED = new OutboundCrossClusterSearchConnectionStatusCode("REJECTED");
+        /// <summary>
+        /// Constant VALIDATING for OutboundCrossClusterSearchConnectionStatusCode
+        /// </summary>
+        public static readonly OutboundCrossClusterSearchConnectionStatusCode VALIDATING = new OutboundCrossClusterSearchConnectionStatusCode("VALIDATING");
+        /// <summary>
+        /// Constant VALIDATION_FAILED for OutboundCrossClusterSearchConnectionStatusCode
+        /// </summary>
+        public static readonly OutboundCrossClusterSearchConnectionStatusCode VALIDATION_FAILED = new OutboundCrossClusterSearchConnectionStatusCode("VALIDATION_FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OutboundCrossClusterSearchConnectionStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutboundCrossClusterSearchConnectionStatusCode FindValue(string value)
+        {
+            return FindValue<OutboundCrossClusterSearchConnectionStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutboundCrossClusterSearchConnectionStatusCode(string value)
         {
             return FindValue(value);
         }

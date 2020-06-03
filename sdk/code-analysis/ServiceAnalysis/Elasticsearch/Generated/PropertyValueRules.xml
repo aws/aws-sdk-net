@@ -19,6 +19,14 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.CreateOutboundCrossClusterSearchConnectionRequest.ConnectionAlias</property>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.CreateOutboundCrossClusterSearchConnectionResponse.ConnectionAlias</property>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Elasticsearch.Model.CreatePackageRequest.PackageDescription</property>
     <max>1024</max>
   </property-value-rule>
@@ -51,6 +59,14 @@
     <min>3</min>
     <max>28</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.DescribeInboundCrossClusterSearchConnectionsRequest.MaxResults</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.DescribeOutboundCrossClusterSearchConnectionsRequest.MaxResults</property>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.DescribePackagesRequest.MaxResults</property>
@@ -194,6 +210,17 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.DomainInformation.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.DomainInformation.OwnerId</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Elasticsearch.Model.DomainPackageDetails.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -222,6 +249,10 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.Filter.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Elasticsearch.Model.MasterUserOptions.MasterUserName</property>
     <min>1</min>
   </property-value-rule>
@@ -232,6 +263,10 @@
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.OptionStatus.UpdateVersion</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.OutboundCrossClusterSearchConnection.ConnectionAlias</property>
+    <max>20</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.PackageDetails.PackageDescription</property>
