@@ -48,12 +48,12 @@ namespace Amazon.S3.Model
                 int bytesRead = 0;
 
                 long totalIncrementTransferred = 0;
-                while ((bytesRead = (await this.ResponseStream.ReadAsync(buffer, 0, buffer.Length)
+                while ((bytesRead = (await this.ResponseStream.ReadAsync(buffer, 0, buffer.Length, cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false))) > 0)
                 {
                     cancellationToken.ThrowIfCancellationRequested();
 
-                    await downloadStream.WriteAsync(buffer, 0, bytesRead).ConfigureAwait(continueOnCapturedContext: false);
+                    await downloadStream.WriteAsync(buffer, 0, bytesRead, cancellationToken).ConfigureAwait(continueOnCapturedContext: false);
                     current += bytesRead;
                     totalIncrementTransferred += bytesRead;
 

@@ -56,14 +56,14 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        public void TestHttpRequestCancellation()
+        public async System.Threading.Tasks.Task TestHttpRequestCancellation()
         {
             var cts = new CancellationTokenSource();
             cts.Cancel();
             var token = cts.Token;
             try
             {
-                TestHttpRequest(token);
+                await TestHttpRequest(token);
             }
             catch (OperationCanceledException exception)
             {
@@ -104,7 +104,11 @@ namespace AWSSDK.UnitTests
         }
 #endif
 
+#if BCL45
+        public async System.Threading.Tasks.Task TestHttpRequest(CancellationToken cancellationToken)
+#else
         public void TestHttpRequest(CancellationToken cancellationToken)
+#endif
         {
             var request = CreateHttpRequest(cancellationToken, out var requestContext);
 
@@ -112,11 +116,19 @@ namespace AWSSDK.UnitTests
 
             var sourceStream = new MemoryStream(Encoding.UTF8.GetBytes(testContent));
             var destinationStream = new MemoryStream();
+#if BCL45
+            await request.WriteToRequestBodyAsync(destinationStream, sourceStream, null, requestContext);
+#else
             request.WriteToRequestBody(destinationStream, sourceStream, null, requestContext);
+#endif
 
             var sourceContent = Encoding.UTF8.GetBytes(testContent);
             destinationStream = new MemoryStream();
+#if BCL45
+            await request.WriteToRequestBodyAsync(destinationStream, sourceContent, null, cancellationToken);
+#else
             request.WriteToRequestBody(destinationStream, sourceContent, null);
+#endif
         }
 
         private IHttpRequest<Stream> CreateHttpRequest(CancellationToken cancellationToken, out RequestContext requestContext, TimeSpan? requestTimeout = null)
@@ -213,9 +225,9 @@ namespace AWSSDK.UnitTests
             return request;
         }
 
-        #endregion
+#endregion
 
-        #region TLS Resolution
+#region TLS Resolution
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -303,6 +315,6 @@ namespace AWSSDK.UnitTests
             _loggerMock.VerifyNoOtherCalls();
         }
 
-        #endregion
+#endregion
     }
 }
