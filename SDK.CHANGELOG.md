@@ -1,3 +1,11 @@
+### 3.3.753.1 (2020-06-03 21:18 UTC)
+* S3 (3.3.111.7)
+	* Updated to use new Core, version 3.3.107.6
+	* Refactor Asynchronous code and properly handle cancellation tokens
+* Core 3.3.107.6
+	* Refactor Asynchronous code and properly handle cancellation tokens; Make ReadWriteTimeout obsolete for NetStandard
+	* All services packages updated to require new Core
+
 ### 3.3.753.0 (2020-06-03 18:13 UTC)
 * DirectConnect (3.3.105.0)
 	* This release supports the virtual interface failover test, which allows you to verify that traffic routes over redundant virtual interfaces when you bring your primary virtual interface out of service.
