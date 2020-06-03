@@ -82,6 +82,18 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// By default, the list is sorted by service namespace.
     /// </para>
+    ///  
+    /// <para>
+    /// If you specified <code>ACTION_LEVEL</code> granularity when you generated the report,
+    /// this operation returns service and action last accessed data. This includes the most
+    /// recent access attempt for each tracked action within a service. Otherwise, this operation
+    /// returns only service data.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about service and action last accessed data, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Reducing
+    /// Permissions Using Service Last Accessed Data</a> in the <i>IAM User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class GetServiceLastAccessedDetailsRequest : AmazonIdentityManagementServiceRequest
     {

@@ -41,9 +41,11 @@ namespace Amazon.IdentityManagement.Model
     {
         private DateTime? _lastAuthenticated;
         private string _lastAuthenticatedEntity;
+        private string _lastAuthenticatedRegion;
         private string _serviceName;
         private string _serviceNamespace;
         private int? _totalAuthenticatedEntities;
+        private List<TrackedActionLastAccessed> _trackedActionsLastAccessed = new List<TrackedActionLastAccessed>();
 
         /// <summary>
         /// Gets and sets the property LastAuthenticated. 
@@ -95,6 +97,31 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetLastAuthenticatedEntity()
         {
             return this._lastAuthenticatedEntity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastAuthenticatedRegion. 
+        /// <para>
+        /// The Region from which the authenticated entity (user or role) last attempted to access
+        /// the service. AWS does not report unauthenticated requests.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field is null if no IAM entities attempted to access the service within the <a
+        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+        /// period</a>.
+        /// </para>
+        /// </summary>
+        public string LastAuthenticatedRegion
+        {
+            get { return this._lastAuthenticatedRegion; }
+            set { this._lastAuthenticatedRegion = value; }
+        }
+
+        // Check to see if LastAuthenticatedRegion property is set
+        internal bool IsSetLastAuthenticatedRegion()
+        {
+            return this._lastAuthenticatedRegion != null;
         }
 
         /// <summary>
@@ -167,6 +194,33 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetTotalAuthenticatedEntities()
         {
             return this._totalAuthenticatedEntities.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrackedActionsLastAccessed. 
+        /// <para>
+        /// An object that contains details about the most recent attempt to access a tracked
+        /// action within the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field is null if there no tracked actions or if the principal did not use the
+        /// tracked actions within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+        /// period</a>. This field is also null if the report was generated at the service level
+        /// and not the action level. For more information, see the <code>Granularity</code> field
+        /// in <a>GenerateServiceLastAccessedDetails</a>.
+        /// </para>
+        /// </summary>
+        public List<TrackedActionLastAccessed> TrackedActionsLastAccessed
+        {
+            get { return this._trackedActionsLastAccessed; }
+            set { this._trackedActionsLastAccessed = value; }
+        }
+
+        // Check to see if TrackedActionsLastAccessed property is set
+        internal bool IsSetTrackedActionsLastAccessed()
+        {
+            return this._trackedActionsLastAccessed != null && this._trackedActionsLastAccessed.Count > 0; 
         }
 
     }

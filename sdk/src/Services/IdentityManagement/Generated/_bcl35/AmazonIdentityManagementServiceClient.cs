@@ -37,80 +37,13 @@ namespace Amazon.IdentityManagement
     ///
     /// AWS Identity and Access Management 
     /// <para>
-    /// AWS Identity and Access Management (IAM) is a web service that you can use to manage
-    /// users and user permissions under your AWS account. This guide provides descriptions
-    /// of IAM actions that you can call programmatically. For general information about IAM,
-    /// see <a href="http://aws.amazon.com/iam/">AWS Identity and Access Management (IAM)</a>.
-    /// For the user guide for IAM, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/">Using
-    /// IAM</a>. 
+    /// AWS Identity and Access Management (IAM) is a web service for securely controlling
+    /// access to AWS services. With IAM, you can centrally manage users, security credentials
+    /// such as access keys, and permissions that control which AWS resources users and applications
+    /// can access. For more information about IAM, see <a href="http://aws.amazon.com/iam/">AWS
+    /// Identity and Access Management (IAM)</a> and the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/">AWS
+    /// Identity and Access Management User Guide</a>.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// AWS provides SDKs that consist of libraries and sample code for various programming
-    /// languages and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a
-    /// convenient way to create programmatic access to IAM and AWS. For example, the SDKs
-    /// take care of tasks such as cryptographically signing requests (see below), managing
-    /// errors, and retrying requests automatically. For information about the AWS SDKs, including
-    /// how to download and install them, see the <a href="http://aws.amazon.com/tools/">Tools
-    /// for Amazon Web Services</a> page. 
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// We recommend that you use the AWS SDKs to make programmatic API calls to IAM. However,
-    /// you can also use the IAM Query API to make direct calls to the IAM web service. To
-    /// learn more about the IAM Query API, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-    /// Query Requests</a> in the <i>Using IAM</i> guide. IAM supports GET and POST requests
-    /// for all actions. That is, the API does not require you to use GET for some actions
-    /// and POST for others. However, GET requests are subject to the limitation size of a
-    /// URL. Therefore, for operations that require larger sizes, use a POST request. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Signing Requests</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// Requests must be signed using an access key ID and a secret access key. We strongly
-    /// recommend that you do not use your AWS account access key ID and secret access key
-    /// for everyday work with IAM. You can use the access key ID and secret access key for
-    /// an IAM user or you can use the AWS Security Token Service to generate temporary security
-    /// credentials and use those to sign requests.
-    /// </para>
-    ///  
-    /// <para>
-    /// To sign requests, we recommend that you use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-    /// Version 4</a>. If you have an existing application that uses Signature Version 2,
-    /// you do not have to update it to use Signature Version 4. However, some operations
-    /// now require Signature Version 4. The documentation for operations that require version
-    /// 4 indicate this requirement. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Additional Resources</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information, see the following:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS
-    /// Security Credentials</a>. This topic provides general information about the types
-    /// of credentials used for accessing AWS. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
-    /// Best Practices</a>. This topic presents a list of suggestions for using the IAM service
-    /// to help secure your AWS resources. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
-    /// AWS API Requests</a>. This set of topics walk you through the process of signing a
-    /// request using an access key ID and secret access key. 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class AmazonIdentityManagementServiceClient : AmazonServiceClient, IAmazonIdentityManagementService
     {
@@ -4666,8 +4599,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information about service last accessed data, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Reducing
-        /// Policy Scope by Viewing User Activity</a> in the <i>IAM User Guide</i>.
+        /// For more information about service and action last accessed data, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Reducing
+        /// Permissions Using Service Last Accessed Data</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateServiceLastAccessedDetails service method.</param>
@@ -6360,6 +6293,18 @@ namespace Amazon.IdentityManagement
         ///  </li> </ul> 
         /// <para>
         /// By default, the list is sorted by service namespace.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specified <code>ACTION_LEVEL</code> granularity when you generated the report,
+        /// this operation returns service and action last accessed data. This includes the most
+        /// recent access attempt for each tracked action within a service. Otherwise, this operation
+        /// returns only service data.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about service and action last accessed data, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Reducing
+        /// Permissions Using Service Last Accessed Data</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceLastAccessedDetails service method.</param>

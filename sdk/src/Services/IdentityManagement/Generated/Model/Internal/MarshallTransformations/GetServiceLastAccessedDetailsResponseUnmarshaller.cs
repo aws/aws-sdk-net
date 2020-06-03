@@ -111,6 +111,12 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         response.JobStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("JobType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.JobType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Marker", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

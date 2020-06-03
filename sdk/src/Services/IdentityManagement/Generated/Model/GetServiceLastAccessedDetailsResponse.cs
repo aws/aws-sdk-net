@@ -38,6 +38,7 @@ namespace Amazon.IdentityManagement.Model
         private DateTime? _jobCompletionDate;
         private DateTime? _jobCreationDate;
         private JobStatusType _jobStatus;
+        private AccessAdvisorUsageGranularityType _jobType;
         private string _marker;
         private List<ServiceLastAccessed> _servicesLastAccessed = new List<ServiceLastAccessed>();
 
@@ -60,7 +61,7 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsTruncated.  
+        /// Gets and sets the property IsTruncated. 
         /// <para>
         /// A flag that indicates whether there are more items to return. If your results were
         /// truncated, you can make a subsequent pagination request using the <code>Marker</code>
@@ -144,6 +145,26 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetJobStatus()
         {
             return this._jobStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobType. 
+        /// <para>
+        /// The type of job. Service jobs return information about when each service was last
+        /// accessed. Action jobs also include information about when tracked actions within the
+        /// service were last accessed.
+        /// </para>
+        /// </summary>
+        public AccessAdvisorUsageGranularityType JobType
+        {
+            get { return this._jobType; }
+            set { this._jobType = value; }
+        }
+
+        // Check to see if JobType property is set
+        internal bool IsSetJobType()
+        {
+            return this._jobType != null;
         }
 
         /// <summary>

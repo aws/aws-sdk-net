@@ -62,6 +62,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Arn", StringUtils.FromString(publicRequest.Arn));
                 }
+                if(publicRequest.IsSetGranularity())
+                {
+                    request.Parameters.Add("Granularity", StringUtils.FromString(publicRequest.Granularity));
+                }
             }
             return request;
         }

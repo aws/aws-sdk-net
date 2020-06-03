@@ -96,13 +96,14 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// For more information about service last accessed data, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Reducing
-    /// Policy Scope by Viewing User Activity</a> in the <i>IAM User Guide</i>.
+    /// For more information about service and action last accessed data, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Reducing
+    /// Permissions Using Service Last Accessed Data</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class GenerateServiceLastAccessedDetailsRequest : AmazonIdentityManagementServiceRequest
     {
         private string _arn;
+        private AccessAdvisorUsageGranularityType _granularity;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -122,6 +123,28 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Granularity. 
+        /// <para>
+        /// The level of detail that you want to generate. You can specify whether you want to
+        /// generate information about the last attempt to access services or actions. If you
+        /// specify service-level granularity, this operation generates only service data. If
+        /// you specify action-level granularity, it generates service and action data. If you
+        /// don't include this optional parameter, the operation generates service data.
+        /// </para>
+        /// </summary>
+        public AccessAdvisorUsageGranularityType Granularity
+        {
+            get { return this._granularity; }
+            set { this._granularity = value; }
+        }
+
+        // Check to see if Granularity property is set
+        internal bool IsSetGranularity()
+        {
+            return this._granularity != null;
         }
 
     }

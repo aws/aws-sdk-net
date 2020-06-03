@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceLastAccessed Object
+    /// Response Unmarshaller for TrackedActionLastAccessed Object
     /// </summary>  
-    public class ServiceLastAccessedUnmarshaller : IUnmarshaller<ServiceLastAccessed, XmlUnmarshallerContext>, IUnmarshaller<ServiceLastAccessed, JsonUnmarshallerContext>
+    public class TrackedActionLastAccessedUnmarshaller : IUnmarshaller<TrackedActionLastAccessed, XmlUnmarshallerContext>, IUnmarshaller<TrackedActionLastAccessed, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ServiceLastAccessed Unmarshall(XmlUnmarshallerContext context)
+        public TrackedActionLastAccessed Unmarshall(XmlUnmarshallerContext context)
         {
-            ServiceLastAccessed unmarshalledObject = new ServiceLastAccessed();
+            TrackedActionLastAccessed unmarshalledObject = new TrackedActionLastAccessed();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,47 +54,28 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("LastAuthenticated", targetDepth))
+                    if (context.TestExpression("ActionName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ActionName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LastAccessedEntity", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LastAccessedEntity = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LastAccessedRegion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LastAccessedRegion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LastAccessedTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.LastAuthenticated = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("LastAuthenticatedEntity", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.LastAuthenticatedEntity = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("LastAuthenticatedRegion", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.LastAuthenticatedRegion = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ServiceName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ServiceNamespace", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ServiceNamespace = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TotalAuthenticatedEntities", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.TotalAuthenticatedEntities = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TrackedActionsLastAccessed/member", targetDepth))
-                    {
-                        var unmarshaller = TrackedActionLastAccessedUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.TrackedActionsLastAccessed.Add(item);
+                        unmarshalledObject.LastAccessedTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -112,18 +93,18 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ServiceLastAccessed Unmarshall(JsonUnmarshallerContext context)
+        public TrackedActionLastAccessed Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static ServiceLastAccessedUnmarshaller _instance = new ServiceLastAccessedUnmarshaller();        
+        private static TrackedActionLastAccessedUnmarshaller _instance = new TrackedActionLastAccessedUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceLastAccessedUnmarshaller Instance
+        public static TrackedActionLastAccessedUnmarshaller Instance
         {
             get
             {
