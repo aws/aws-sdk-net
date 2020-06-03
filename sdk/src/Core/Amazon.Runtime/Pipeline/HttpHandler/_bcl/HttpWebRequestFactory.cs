@@ -21,7 +21,10 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Net;
+#if AWS_ASYNC_API
 using System.Threading;
+using System.Threading.Tasks;
+#endif
 
 namespace Amazon.Runtime.Internal
 {
@@ -207,17 +210,14 @@ namespace Amazon.Runtime.Internal
 
                 while ((bytesRead = contentStream.Read(buffer, 0, bytesToRead)) > 0)
                 {
-#if AWS_ASYNC_API
-                    requestContext.CancellationToken.ThrowIfCancellationRequested();
-#endif
                     requestContent.Write(buffer, 0, bytesRead);
                 }
             }
-            catch (Exception)
+            catch
             {
                 gotException = true;
 
-                // If an exception occured while reading the input stream,
+                // If an exception occurred while reading the input stream,
                 // Abort the request to signal failure to the server and prevent
                 // potentially writing an incomplete stream to the server.
                 this.Abort();
@@ -231,7 +231,7 @@ namespace Amazon.Runtime.Internal
                 {
                     requestContent.Close();
                 }
-                catch (Exception)
+                catch
                 {
                     if (!gotException)
                         throw;
@@ -268,12 +268,114 @@ namespace Amazon.Runtime.Internal
 #if AWS_ASYNC_API
 
         /// <summary>
+        /// Writes a stream to the request body.
+        /// </summary>
+        /// <param name="requestContent">The destination where the content stream is written.</param>
+        /// <param name="contentStream">The content stream to be written.</param>
+        /// <param name="contentHeaders">HTTP content headers.</param>
+        /// <param name="requestContext">The request context.</param>
+        public async Task WriteToRequestBodyAsync(Stream requestContent, Stream contentStream,
+            IDictionary<string, string> contentHeaders, IRequestContext requestContext)
+        {
+            bool gotException = false;
+            try
+            {
+                var buffer = new byte[requestContext.ClientConfig.BufferSize];
+                int bytesRead = 0;
+                int bytesToRead = buffer.Length;
+
+                while ((bytesRead = await contentStream.ReadAsync(buffer, 0, bytesToRead, requestContext.CancellationToken)) > 0)
+                {
+                    requestContext.CancellationToken.ThrowIfCancellationRequested();
+                    await requestContent.WriteAsync(buffer, 0, bytesRead, requestContext.CancellationToken);
+                }
+            }
+            catch
+            {
+                gotException = true;
+
+                // If an exception occurred while reading the input stream,
+                // Abort the request to signal failure to the server and prevent
+                // potentially writing an incomplete stream to the server.
+                this.Abort();
+                throw;
+            }
+            finally
+            {
+                // Only bubble up exception from the close method if we haven't already got an exception
+                // reading and writing from the streams.
+                try
+                {
+                    requestContent.Close();
+                }
+                catch
+                {
+                    if (!gotException)
+                        throw;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Writes a byte array to the request body.
+        /// </summary>
+        /// <param name="requestContent">The destination where the content stream is written.</param>
+        /// <param name="content">The content stream to be written.</param>
+        /// <param name="contentHeaders">HTTP content headers.</param>
+        public async Task WriteToRequestBodyAsync(Stream requestContent, byte[] content, IDictionary<string, string> contentHeaders, CancellationToken cancellationToken = default)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            using (requestContent)
+            {
+                await requestContent.WriteAsync(content, 0, content.Length, cancellationToken);
+            }
+        }
+
+        /// <summary>
         /// Gets a handle to the request content.
         /// </summary>
         /// <returns></returns>
-        public System.Threading.Tasks.Task<Stream> GetRequestContentAsync()
+        public async Task<Stream> GetRequestContentAsync()
         {
-            return _request.GetRequestStreamAsync();
+            return await GetRequestContentAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets a handle to the request content.
+        /// </summary>
+        /// <param name="cancellationToken">Used to cancel the request on demand</param>
+        /// <returns></returns>
+        public async Task<Stream> GetRequestContentAsync(CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            using (cancellationToken.Register(() => this.Abort(), useSynchronizationContext:false))
+            {
+                try
+                {
+                    return await _request.GetRequestStreamAsync();
+                }
+                catch (WebException webException)
+                {
+                    // After HttpWebRequest.Abort() is called, GetRequestStreamAsync throws a WebException.
+                    // If request has been cancelled using cancellationToken, wrap the
+                    // WebException in an OperationCancelledException.
+                    if (cancellationToken.IsCancellationRequested)
+                    {
+                        throw new OperationCanceledException(webException.Message, webException, cancellationToken);
+                    }
+                    var errorResponse = webException.Response as HttpWebResponse;
+                    if (errorResponse != null)
+                    {
+                        throw new HttpErrorResponseException(webException.Message,
+                            webException,
+                            new HttpWebRequestResponseData(errorResponse));
+                    }
+
+                    throw;
+
+                }
+            }
+            
         }
 
         /// <summary>
@@ -281,7 +383,7 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <param name="cancellationToken">A cancellation token that can be used to cancel the asynchronous operation.</param>
         /// <returns></returns>
-        public virtual async System.Threading.Tasks.Task<IWebResponseData> GetResponseAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async Task<IWebResponseData> GetResponseAsync(System.Threading.CancellationToken cancellationToken)
         {
             using (var linkedTokenSource = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken))
             using (linkedTokenSource.Token.Register(() => this.Abort(), useSynchronizationContext: false))

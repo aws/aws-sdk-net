@@ -212,6 +212,57 @@ namespace AWSSDK_DotNet.IntegrationTests
                 return new System.Threading.Tasks.Task<IWebResponseData>(CreateResponse);
             }
 
+            public async System.Threading.Tasks.Task WriteToRequestBodyAsync(Stream requestContent, Stream contentStream,
+                       IDictionary<string, string> contentHeaders, IRequestContext requestContext)
+            {
+                bool gotException = false;
+                try
+                {
+                    var buffer = new byte[requestContext.ClientConfig.BufferSize];
+                    int bytesRead = 0;
+                    int bytesToRead = buffer.Length;
+
+                    while ((bytesRead = await contentStream.ReadAsync(buffer, 0, bytesToRead, requestContext.CancellationToken)) > 0)
+                    {
+                        requestContext.CancellationToken.ThrowIfCancellationRequested();
+                        await requestContent.WriteAsync(buffer, 0, bytesRead, requestContext.CancellationToken);
+                    }
+                }
+                catch
+                {
+                    gotException = true;
+
+                    // If an exception occured while reading the input stream,
+                    // Abort the request to signal failure to the server and prevent
+                    // potentially writing an incomplete stream to the server.
+                    this.Abort();
+                    throw;
+                }
+                finally
+                {
+                    // Only bubble up exception from the close method if we haven't already got an exception
+                    // reading and writing from the streams.
+                    try
+                    {
+                        requestContent.Close();
+                    }
+                    catch
+                    {
+                        if (!gotException)
+                            throw;
+                    }
+                }
+            }
+
+            public async System.Threading.Tasks.Task WriteToRequestBodyAsync(Stream requestContent, byte[] content, IDictionary<string, string> contentHeaders, System.Threading.CancellationToken cancellationToken = default)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                using (requestContent)
+                {
+                    await requestContent.WriteAsync(content, 0, content.Length, cancellationToken);
+                }
+            }
+
 #elif BCL && !BCL45
             public IWebResponseData EndGetResponse(IAsyncResult asyncResult)
             {
@@ -248,9 +299,6 @@ namespace AWSSDK_DotNet.IntegrationTests
 
                     while ((bytesRead = contentStream.Read(buffer, 0, bytesToRead)) > 0)
                     {
-#if AWS_ASYNC_API
-                    requestContext.CancellationToken.ThrowIfCancellationRequested();
-#endif
                         requestContent.Write(buffer, 0, bytesRead);
                     }
                 }
@@ -293,6 +341,11 @@ namespace AWSSDK_DotNet.IntegrationTests
             }
 
             public System.Threading.Tasks.Task<Stream> GetRequestContentAsync()
+            {
+                return GetRequestContentAsync(System.Threading.CancellationToken.None);
+            }
+
+            public System.Threading.Tasks.Task<Stream> GetRequestContentAsync(System.Threading.CancellationToken cancellationToken)
             {
                 return new System.Threading.Tasks.Task<Stream>(GetRequestContent);
             }

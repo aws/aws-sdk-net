@@ -83,6 +83,7 @@ using System.Diagnostics.CodeAnalysis;
 
 // Suppressions for exceptions in setters
 [module: SuppressMessage("Microsoft.Usage", "CA2219:DoNotRaiseExceptionsInExceptionClauses", Scope = "member", Target = "Amazon.Runtime.Internal.HttpRequest.#WriteToRequestBody(System.IO.Stream,System.IO.Stream,System.Collections.Generic.IDictionary`2<System.String,System.String>,Amazon.Runtime.IRequestContext)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2219:Do not raise exceptions in finally clauses", Scope = "member", Target = "~M:Amazon.Runtime.Internal.HttpRequest.WriteToRequestBodyAsync(System.IO.Stream,System.IO.Stream,System.Collections.Generic.IDictionary{System.String,System.String},Amazon.Runtime.IRequestContext)~System.Threading.Tasks.Task")]
 
 // Suppressions for DisposableFieldsShouldBeDisposed
 #if BCL35
@@ -267,6 +268,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.S3Signer.#SignRequest(Amazon.Runtime.Internal.IRequest,Amazon.Runtime.Internal.Util.RequestMetrics,System.String,System.String)")]
 [module: SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Scope="member", Target="Amazon.Runtime.Internal.CSMHandler.#CSMMetricsCapture(Amazon.Runtime.IRequestContext,Amazon.Runtime.IResponseContext)")]
 [module: SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Scope="member", Target="Amazon.Runtime.Internal.CSMHandler.#PreInvoke(Amazon.Runtime.IExecutionContext)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1822:Mark members as static", Scope = "member", Target = "~M:Amazon.Runtime.Internal.HttpRequest.WriteToRequestBodyAsync(System.IO.Stream,System.Byte[],System.Collections.Generic.IDictionary{System.String,System.String})~System.Threading.Tasks.Task")]
 
 // Link demand
 [module: SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands", Scope = "member", Target = "Amazon.Runtime.Internal.Util.TraceSourceUtil.#GetTraceSourceWithListeners(System.String,System.Diagnostics.SourceLevels)")]

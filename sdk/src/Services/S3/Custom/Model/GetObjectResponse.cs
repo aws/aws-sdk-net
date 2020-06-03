@@ -674,12 +674,12 @@ namespace Amazon.S3.Model
                 byte[] buffer = new byte[S3Constants.DefaultBufferSize];
                 int bytesRead = 0;
                 long totalIncrementTransferred = 0;
-                while ((bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length)
+                while ((bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length, cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false)) > 0)
                 {
                     cancellationToken.ThrowIfCancellationRequested();
 
-                    await downloadStream.WriteAsync(buffer, 0, bytesRead)
+                    await downloadStream.WriteAsync(buffer, 0, bytesRead, cancellationToken)
                         .ConfigureAwait(continueOnCapturedContext: false);
                     current += bytesRead;
                     totalIncrementTransferred += bytesRead;

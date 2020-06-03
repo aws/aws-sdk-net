@@ -156,8 +156,16 @@ namespace Amazon.Runtime.Internal
                         System.Runtime.ExceptionServices.ExceptionDispatchInfo edi = null;
                         try
                         {
+                            // In .NET Framework, there needs to be a cancellation token in this method since GetRequestStreamAsync
+                            // does not accept a cancellation token. A workaround is used. This isn't necessary in .NET Standard
+                            // where the stream is a property of the request.
+#if BCL45
+                            var requestContent = await httpRequest.GetRequestContentAsync(executionContext.RequestContext.CancellationToken).ConfigureAwait(false);
+                            await WriteContentToRequestBodyAsync(requestContent, httpRequest, executionContext.RequestContext);
+#else
                             var requestContent = await httpRequest.GetRequestContentAsync().ConfigureAwait(false);
                             WriteContentToRequestBody(requestContent, httpRequest, executionContext.RequestContext);
+#endif
                         }
                         catch(Exception e)
                         {
@@ -173,7 +181,7 @@ namespace Amazon.Runtime.Internal
                     }
                 
                     var response = await httpRequest.GetResponseAsync(executionContext.RequestContext.CancellationToken).
-                        ConfigureAwait(false);                
+                        ConfigureAwait(false);     
                     executionContext.ResponseContext.HttpResponse = response;     
                 }
                 // The response is not unmarshalled yet.
@@ -233,7 +241,7 @@ namespace Amazon.Runtime.Internal
                     executionContext.ResponseContext.AsyncResult.AsyncOptions = executionContext.RequestContext.AsyncOptions;
                     executionContext.ResponseContext.AsyncResult.Action = executionContext.RequestContext.Action;
                     executionContext.ResponseContext.AsyncResult.Request = executionContext.RequestContext.OriginalRequest;
-#endif 
+#endif
 
                 }
 
@@ -403,19 +411,60 @@ namespace Amazon.Runtime.Internal
                 var callback = ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)wrappedRequest.OriginalRequest).StreamUploadProgressCallback;
                 if (callback != null)
                     originalStream = httpRequest.SetupProgressListeners(originalStream, requestContext.ClientConfig.ProgressUpdateInterval, this.CallbackSender, callback);
-
-                var inputStream = (wrappedRequest.UseChunkEncoding && wrappedRequest.AWS4SignerResult != null) ||
-                        (wrappedRequest.Headers.ContainsKey(Amazon.Util.HeaderKeys.TransferEncodingHeader) && wrappedRequest.Headers[Amazon.Util.HeaderKeys.TransferEncodingHeader] == "chunked")
-                    ? new ChunkedUploadWrapperStream(originalStream,
-                                                     requestContext.ClientConfig.BufferSize,
-                                                     wrappedRequest.AWS4SignerResult)
-                    : originalStream;
-
+                var inputStream = GetInputStream(requestContext, originalStream, wrappedRequest);
                 httpRequest.WriteToRequestBody(requestContent, inputStream, 
                     requestContext.Request.Headers, requestContext);
 
             }
         }
+
+#if BCL45
+        /// <summary>
+        /// Determines the content for request body and uses the HTTP request
+        /// to write the content to the HTTP request body.
+        /// </summary>
+        /// <param name="requestContent">Content to be written.</param>
+        /// <param name="httpRequest">The HTTP request.</param>
+        /// <param name="requestContext">The request context.</param>
+        private async System.Threading.Tasks.Task WriteContentToRequestBodyAsync(TRequestContent requestContent,
+            IHttpRequest<TRequestContent> httpRequest,
+            IRequestContext requestContext)
+        {
+            IRequest wrappedRequest = requestContext.Request;
+
+            // This code path ends up using a ByteArrayContent for System.Net.HttpClient used by .NET Core.
+            // HttpClient can't seem to handle ByteArrayContent with 0 length so in that case use
+            // the StreamContent code path.
+            if (wrappedRequest.Content != null && wrappedRequest.Content.Length > 0)
+            {
+                byte[] requestData = wrappedRequest.Content;
+                requestContext.Metrics.AddProperty(Metric.RequestSize, requestData.Length);
+                await httpRequest.WriteToRequestBodyAsync(requestContent, requestData, requestContext.Request.Headers, requestContext.CancellationToken);
+            }
+            else
+            {
+                System.IO.Stream originalStream;
+                if (wrappedRequest.ContentStream == null)
+                {
+                    originalStream = new System.IO.MemoryStream();
+                    await originalStream.WriteAsync(wrappedRequest.Content, 0, wrappedRequest.Content.Length, requestContext.CancellationToken);
+                    originalStream.Position = 0;
+                }
+                else
+                {
+                    originalStream = wrappedRequest.ContentStream;
+                }
+
+                var callback = ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)wrappedRequest.OriginalRequest).StreamUploadProgressCallback;
+                if (callback != null)
+                    originalStream = httpRequest.SetupProgressListeners(originalStream, requestContext.ClientConfig.ProgressUpdateInterval, this.CallbackSender, callback);
+                var inputStream = GetInputStream(requestContext, originalStream, wrappedRequest);
+                await httpRequest.WriteToRequestBodyAsync(requestContent, inputStream,
+                    requestContext.Request.Headers, requestContext);
+
+            }
+        }
+#endif
 
         /// <summary>
         /// Creates the HttpWebRequest and configures the end point, content, user agent and proxy settings.
@@ -485,6 +534,18 @@ namespace Amazon.Runtime.Internal
 
                 _disposed = true;
             }
+        }
+
+        private static System.IO.Stream GetInputStream(IRequestContext requestContext, System.IO.Stream originalStream, IRequest wrappedRequest)
+        {
+            var requestHasConfigForChunkStream = wrappedRequest.UseChunkEncoding && wrappedRequest.AWS4SignerResult != null;
+            var hasTransferEncodingHeader = wrappedRequest.Headers.ContainsKey(HeaderKeys.TransferEncodingHeader);
+            var isTransferEncodingHeaderChunked = hasTransferEncodingHeader && wrappedRequest.Headers[HeaderKeys.TransferEncodingHeader] == "chunked";
+            return requestHasConfigForChunkStream || isTransferEncodingHeaderChunked
+                ? new ChunkedUploadWrapperStream(originalStream,
+                                                 requestContext.ClientConfig.BufferSize,
+                                                 wrappedRequest.AWS4SignerResult)
+                : originalStream;
         }
     }
 }
