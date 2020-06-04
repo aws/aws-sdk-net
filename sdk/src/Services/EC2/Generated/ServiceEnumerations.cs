@@ -4987,6 +4987,38 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C59xlarge = new InstanceType("c5.9xlarge");
         /// <summary>
+        /// Constant C5a12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5a12xlarge = new InstanceType("c5a.12xlarge");
+        /// <summary>
+        /// Constant C5a16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5a16xlarge = new InstanceType("c5a.16xlarge");
+        /// <summary>
+        /// Constant C5a24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5a24xlarge = new InstanceType("c5a.24xlarge");
+        /// <summary>
+        /// Constant C5a2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5a2xlarge = new InstanceType("c5a.2xlarge");
+        /// <summary>
+        /// Constant C5a4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5a4xlarge = new InstanceType("c5a.4xlarge");
+        /// <summary>
+        /// Constant C5a8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5a8xlarge = new InstanceType("c5a.8xlarge");
+        /// <summary>
+        /// Constant C5aLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5aLarge = new InstanceType("c5a.large");
+        /// <summary>
+        /// Constant C5aXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5aXlarge = new InstanceType("c5a.xlarge");
+        /// <summary>
         /// Constant C5d12xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C5d12xlarge = new InstanceType("c5d.12xlarge");
@@ -5146,6 +5178,10 @@ namespace Amazon.EC2
         /// Constant G4dn8xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType G4dn8xlarge = new InstanceType("g4dn.8xlarge");
+        /// <summary>
+        /// Constant G4dnMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType G4dnMetal = new InstanceType("g4dn.metal");
         /// <summary>
         /// Constant G4dnXlarge for InstanceType
         /// </summary>
