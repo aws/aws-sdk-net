@@ -915,6 +915,14 @@ namespace Amazon.Lightsail
     {
 
         /// <summary>
+        /// Constant BurstCapacityPercentage for InstanceMetricName
+        /// </summary>
+        public static readonly InstanceMetricName BurstCapacityPercentage = new InstanceMetricName("BurstCapacityPercentage");
+        /// <summary>
+        /// Constant BurstCapacityTime for InstanceMetricName
+        /// </summary>
+        public static readonly InstanceMetricName BurstCapacityTime = new InstanceMetricName("BurstCapacityTime");
+        /// <summary>
         /// Constant CPUUtilization for InstanceMetricName
         /// </summary>
         public static readonly InstanceMetricName CPUUtilization = new InstanceMetricName("CPUUtilization");
@@ -1670,6 +1678,14 @@ namespace Amazon.Lightsail
     public class MetricName : ConstantClass
     {
 
+        /// <summary>
+        /// Constant BurstCapacityPercentage for MetricName
+        /// </summary>
+        public static readonly MetricName BurstCapacityPercentage = new MetricName("BurstCapacityPercentage");
+        /// <summary>
+        /// Constant BurstCapacityTime for MetricName
+        /// </summary>
+        public static readonly MetricName BurstCapacityTime = new MetricName("BurstCapacityTime");
         /// <summary>
         /// Constant ClientTLSNegotiationErrorCount for MetricName
         /// </summary>

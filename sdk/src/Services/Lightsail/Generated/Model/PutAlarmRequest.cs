@@ -213,8 +213,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Instances</b>: <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
-        /// <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code>.
+        ///  <b>Instances</b>: <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+        /// <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
+        /// <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -230,7 +231,11 @@ namespace Amazon.Lightsail.Model
         /// <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>,
         /// and <code>NetworkTransmitThroughput</code>.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics
+        /// available in Lightsail</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public MetricName MetricName

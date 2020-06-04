@@ -39,8 +39,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property MetricData. 
         /// <para>
-        /// An array of key-value pairs containing information about the results of your get instance
-        /// metric data request.
+        /// An array of objects that describe the metric data returned.
         /// </para>
         /// </summary>
         public List<MetricDatapoint> MetricData
@@ -58,7 +57,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// The metric name to return data for.
+        /// The name of the metric returned.
         /// </para>
         /// </summary>
         public InstanceMetricName MetricName

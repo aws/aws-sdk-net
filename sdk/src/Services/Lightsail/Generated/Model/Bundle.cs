@@ -179,7 +179,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Price. 
         /// <para>
-        /// The price in US dollars (e.g., <code>5.0</code>).
+        /// The price in US dollars (e.g., <code>5.0</code>) of the bundle.
         /// </para>
         /// </summary>
         public float Price

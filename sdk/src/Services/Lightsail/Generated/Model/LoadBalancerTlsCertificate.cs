@@ -472,7 +472,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the SSL/TLS certificate. Valid values are below.
+        /// The validation status of the SSL/TLS certificate. Valid values are below.
         /// </para>
         /// </summary>
         public LoadBalancerTlsCertificateStatus Status
