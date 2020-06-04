@@ -12,9 +12,11 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Machine Learning. Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.")]
 #elif NETSTANDARD13
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon Machine Learning. Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3) - Amazon Machine Learning. Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.")]
 #elif NETSTANDARD20
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- Amazon Machine Learning. Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Machine Learning. Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.")]
+#elif NETCOREAPP31
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Machine Learning. Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

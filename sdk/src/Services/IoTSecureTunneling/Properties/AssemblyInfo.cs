@@ -12,9 +12,11 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS IoT Secure Tunneling. This release adds support for IoT Secure Tunneling to remote access devices behind restricted firewalls.")]
 #elif NETSTANDARD13
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS IoT Secure Tunneling. This release adds support for IoT Secure Tunneling to remote access devices behind restricted firewalls.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3) - AWS IoT Secure Tunneling. This release adds support for IoT Secure Tunneling to remote access devices behind restricted firewalls.")]
 #elif NETSTANDARD20
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- AWS IoT Secure Tunneling. This release adds support for IoT Secure Tunneling to remote access devices behind restricted firewalls.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS IoT Secure Tunneling. This release adds support for IoT Secure Tunneling to remote access devices behind restricted firewalls.")]
+#elif NETCOREAPP31
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS IoT Secure Tunneling. This release adds support for IoT Secure Tunneling to remote access devices behind restricted firewalls.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

@@ -1,8 +1,5 @@
 <#@ template language="C#" #>
 <#@ assembly name="System.Core" #>
-<#@ import namespace="System.Linq" #>
-<#@ import namespace="System.Text" #>
-<#@ import namespace="System.Collections.Generic" #>
 
 <?xml version="1.0" encoding="utf-8"?>
 <package> 
@@ -47,16 +44,16 @@
     <file src=".\bin\Release\net45\AWSSDK.Core.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.Core.pdb" target="lib\net45" />
 
-	  <file src=".\bin\Release\netstandard1.3\AWSSDK.Core.dll" target="lib\netstandard1.3"/>
-	  <file src=".\bin\Release\netstandard1.3\AWSSDK.Core.xml" target="lib\netstandard1.3"/>
-	  <file src=".\bin\Release\netstandard1.3\AWSSDK.Core.pdb" target="lib\netstandard1.3"/>
+    <file src=".\bin\Release\netstandard1.3\AWSSDK.Core.dll" target="lib\netstandard1.3"/>
+    <file src=".\bin\Release\netstandard1.3\AWSSDK.Core.xml" target="lib\netstandard1.3"/>
+    <file src=".\bin\Release\netstandard1.3\AWSSDK.Core.pdb" target="lib\netstandard1.3"/>
   
-	  <file src=".\bin\Release\netstandard2.0\AWSSDK.Core.dll" target="lib\netstandard2.0"/>
-	  <file src=".\bin\Release\netstandard2.0\AWSSDK.Core.xml" target="lib\netstandard2.0"/>
-	  <file src=".\bin\Release\netstandard2.0\AWSSDK.Core.pdb" target="lib\netstandard2.0"/>
+    <file src=".\bin\Release\netstandard2.0\AWSSDK.Core.dll" target="lib\netstandard2.0"/>
+    <file src=".\bin\Release\netstandard2.0\AWSSDK.Core.xml" target="lib\netstandard2.0"/>
+    <file src=".\bin\Release\netstandard2.0\AWSSDK.Core.pdb" target="lib\netstandard2.0"/>
 
     <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Core.dll" target="lib\netcoreapp3.1"/>
-	  <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Core.xml" target="lib\netcoreapp3.1"/>
-	  <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Core.pdb" target="lib\netcoreapp3.1"/>
+    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Core.xml" target="lib\netcoreapp3.1"/>
+    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Core.pdb" target="lib\netcoreapp3.1"/>
   </files>
 </package>

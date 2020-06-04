@@ -12,9 +12,11 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Elemental MediaLive. AWS Elemental MediaLive is a video service that lets you easily create live outputs for broadcast and streaming delivery.")]
 #elif NETSTANDARD13
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS Elemental MediaLive. AWS Elemental MediaLive is a video service that lets you easily create live outputs for broadcast and streaming delivery.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3) - AWS Elemental MediaLive. AWS Elemental MediaLive is a video service that lets you easily create live outputs for broadcast and streaming delivery.")]
 #elif NETSTANDARD20
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- AWS Elemental MediaLive. AWS Elemental MediaLive is a video service that lets you easily create live outputs for broadcast and streaming delivery.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Elemental MediaLive. AWS Elemental MediaLive is a video service that lets you easily create live outputs for broadcast and streaming delivery.")]
+#elif NETCOREAPP31
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Elemental MediaLive. AWS Elemental MediaLive is a video service that lets you easily create live outputs for broadcast and streaming delivery.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

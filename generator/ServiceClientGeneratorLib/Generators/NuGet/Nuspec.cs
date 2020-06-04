@@ -346,9 +346,30 @@ namespace ServiceClientGenerator.Generators.NuGet
             
             #line default
             #line hidden
-            this.Write("\" target=\"lib\\netstandard2.0\" />\r\n");
+            this.Write("\" target=\"lib\\netstandard2.0\" />\r\n\r\n    <file src=\"");
             
-            #line 95 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 96 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Path.Combine(".", "bin", "Release", "netcoreapp3.1", (string)this.Session["AssemblyName"] + ".dll")));
+            
+            #line default
+            #line hidden
+            this.Write("\" target=\"lib\\netcoreapp3.1\" />\r\n    <file src=\"");
+            
+            #line 97 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Path.Combine(".", "bin", "Release", "netcoreapp3.1", (string)this.Session["AssemblyName"] + ".xml")));
+            
+            #line default
+            #line hidden
+            this.Write("\" target=\"lib\\netcoreapp3.1\" />\r\n    <file src=\"");
+            
+            #line 98 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Path.Combine(".", "bin", "Release", "netcoreapp3.1", (string)this.Session["AssemblyName"] + ".pdb")));
+            
+            #line default
+            #line hidden
+            this.Write("\" target=\"lib\\netcoreapp3.1\" />\r\n");
+            
+            #line 99 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
 	}
 

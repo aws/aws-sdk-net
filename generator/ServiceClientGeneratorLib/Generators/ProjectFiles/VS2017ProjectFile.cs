@@ -10,9 +10,6 @@
 namespace ServiceClientGenerator.Generators.ProjectFiles
 {
     using System.Linq;
-    using System.Text;
-    using System.Collections.Generic;
-    using ServiceClientGenerator;
     using System;
     
     /// <summary>
@@ -31,7 +28,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
         {
             this.Write("<Project Sdk=\"Microsoft.NET.Sdk\">\r\n  <PropertyGroup>\r\n");
             
-            #line 9 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 6 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     if (this.Project.TargetFrameworks.Count() == 1)
     {
@@ -41,14 +38,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <TargetFramework>");
             
-            #line 13 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 10 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Project.TargetFrameworks.Single()));
             
             #line default
             #line hidden
             this.Write("</TargetFramework>\r\n");
             
-            #line 14 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 11 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
     else
@@ -59,14 +56,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <TargetFrameworks>");
             
-            #line 19 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 16 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(string.Join(";", this.Project.TargetFrameworks)));
             
             #line default
             #line hidden
             this.Write("</TargetFrameworks>\r\n");
             
-            #line 20 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 18 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -75,14 +72,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <DefineConstants>$(DefineConstants);");
             
-            #line 23 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 21 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(string.Join(";", this.Project.DefineConstants)));
             
             #line default
             #line hidden
             this.Write("</DefineConstants>\r\n");
             
-            #line 24 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 23 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     if (this.Project.TargetFrameworks.Contains("netstandard1.3"))
     {
@@ -94,7 +91,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "eConstants);NETSTANDARD13;ADD_SUPPORT_ICLONEABLE;ADD_SUPPORT_IORDERED_DICTIONARY" +
                     "</DefineConstants>\r\n");
             
-            #line 29 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 28 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
     if (this.Project.TargetFrameworks.Contains("netstandard2.0"))
@@ -106,7 +103,19 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("    <DefineConstants Condition=\"\'$(TargetFramework)\' == \'netstandard2.0\'\">$(Defin" +
                     "eConstants);NETSTANDARD20</DefineConstants>\r\n");
             
-            #line 35 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 34 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+
+    }
+    if (this.Project.TargetFrameworks.Contains("netcoreapp3.1"))
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("    <DefineConstants Condition=\"\'$(TargetFramework)\' == \'netcoreapp3.1\'\">$(Define" +
+                    "Constants);NETCOREAPP31</DefineConstants>\r\n");
+            
+            #line 40 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -116,14 +125,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("    <DebugType>portable</DebugType>\r\n    <GenerateDocumentationFile>true</Generat" +
                     "eDocumentationFile>\r\n    <AssemblyName>");
             
-            #line 40 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 45 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Project.AssemblyName));
             
             #line default
             #line hidden
             this.Write("</AssemblyName>\r\n    <PackageId>");
             
-            #line 41 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 46 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Project.AssemblyName));
             
             #line default
@@ -141,9 +150,9 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
 
 ");
             
-            #line 52 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 57 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
-    if(!string.IsNullOrEmpty(this.Project.FrameworkPathOverride))
+    if (!string.IsNullOrEmpty(this.Project.FrameworkPathOverride))
     {
 
             
@@ -152,18 +161,18 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("    <!-- workaround per https://github.com/Microsoft/msbuild/issues/1333 -->\r\n   " +
                     " <FrameworkPathOverride>");
             
-            #line 57 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 62 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Project.FrameworkPathOverride));
             
             #line default
             #line hidden
             this.Write("</FrameworkPathOverride>\r\n");
             
-            #line 58 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 63 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
-    
-    if(!string.IsNullOrEmpty(this.Project.SupressWarnings))
+
+    if (!string.IsNullOrEmpty(this.Project.SupressWarnings))
     {
 
             
@@ -171,18 +180,18 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <NoWarn>");
             
-            #line 64 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 69 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Project.SupressWarnings));
             
             #line default
             #line hidden
             this.Write("</NoWarn>\r\n");
             
-            #line 65 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 70 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
-    if(!string.IsNullOrEmpty(this.Project.OutputPathOverride))
+    if (!string.IsNullOrEmpty(this.Project.OutputPathOverride))
     {
 
             
@@ -191,14 +200,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>\r" +
                     "\n    <OutputPath>");
             
-            #line 72 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 77 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Project.OutputPathOverride));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n");
             
-            #line 73 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 78 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -211,16 +220,16 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("    <NetStandardImplicitPackageVersion  Condition=\"\'$(TargetFramework)\' == \'netst" +
                     "andard1.3\'\">1.6.0</NetStandardImplicitPackageVersion>\r\n");
             
-            #line 80 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 85 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
-    }    
+    }
 
             
             #line default
             #line hidden
             this.Write("  </PropertyGroup>\r\n");
             
-            #line 84 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 89 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     if (this.Project.SignBinaries)
     {
@@ -243,11 +252,11 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
 
 ");
             
-            #line 101 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 106 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
-    if(this.Project.IndividualFileIncludes != null)
+    if (this.Project.IndividualFileIncludes != null)
     {
 
             
@@ -255,37 +264,37 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n");
             
-            #line 108 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 113 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
-        foreach(var compileIncludeEntry in this.Project.IndividualFileIncludes)
-        {
+    foreach (var compileIncludeEntry in this.Project.IndividualFileIncludes)
+    {
 
             
             #line default
             #line hidden
             this.Write("    <Compile Include=\"");
             
-            #line 112 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 117 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(compileIncludeEntry));
             
             #line default
             #line hidden
             this.Write("\"/>\r\n");
             
-            #line 113 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 118 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
-		}
+    }
 
             
             #line default
             #line hidden
             this.Write("  </ItemGroup>\r\n");
             
-            #line 117 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 122 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
-    if(this.Project.CompileRemoveList != null)
+    if (this.Project.CompileRemoveList != null)
     {
 
             
@@ -293,57 +302,48 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n");
             
-            #line 124 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 129 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
-        foreach(var compileRemoveEntry in this.Project.CompileRemoveList)
+    foreach (var compileRemoveEntry in this.Project.CompileRemoveList)
+    {
+        if (compileRemoveEntry == "bin" || compileRemoveEntry == "obj")
         {
-		  if(compileRemoveEntry == "bin"||compileRemoveEntry == "obj")
-		  {
 
             
             #line default
             #line hidden
             this.Write("    <Compile Remove=\"**/");
             
-            #line 130 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 135 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(compileRemoveEntry));
             
             #line default
             #line hidden
             this.Write("/**\"/>\r\n\t<None Remove=\"**/");
             
-            #line 131 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 136 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(compileRemoveEntry));
             
             #line default
             #line hidden
             this.Write("/**\" />\r\n");
             
-            #line 132 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 137 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
-			continue;
-		  }
+    continue;
+        }
 
             
             #line default
             #line hidden
             this.Write("    <Compile Remove=\"**/");
             
-            #line 136 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 141 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(compileRemoveEntry));
             
             #line default
             #line hidden
             this.Write("/**\"/>\r\n");
-            
-            #line 137 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
-
-        }
-
-            
-            #line default
-            #line hidden
-            this.Write("  </ItemGroup>\r\n\r\n");
             
             #line 142 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
@@ -352,10 +352,19 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             
             #line default
             #line hidden
+            this.Write("  </ItemGroup>\r\n\r\n");
             
-            #line 145 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 147 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
-    if(this.Project.ProjectReferences != null)
+    }
+
+            
+            #line default
+            #line hidden
+            
+            #line 150 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+
+    if (this.Project.ProjectReferences != null)
     {
 
             
@@ -363,31 +372,22 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n");
             
-            #line 150 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 155 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
-        foreach(var projectReference in this.Project.ProjectReferences)
-        {
+    foreach (var projectReference in this.Project.ProjectReferences)
+    {
 
             
             #line default
             #line hidden
             this.Write("    <ProjectReference Include=\"");
             
-            #line 154 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 159 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReference.IncludePath));
             
             #line default
             #line hidden
             this.Write("\"/>\r\n");
-            
-            #line 155 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
-
-        }
-
-            
-            #line default
-            #line hidden
-            this.Write("  </ItemGroup>\r\n\r\n");
             
             #line 160 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
@@ -396,10 +396,19 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             
             #line default
             #line hidden
+            this.Write("  </ItemGroup>\r\n\r\n");
             
-            #line 163 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 165 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
-    if(this.Project.PackageReferences != null)
+    }
+
+            
+            #line default
+            #line hidden
+            
+            #line 168 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+
+    if (this.Project.PackageReferences != null)
     {
 
             
@@ -407,43 +416,43 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n");
             
-            #line 168 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 173 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
-        foreach(var package in this.Project.PackageReferences)
-        {
+    foreach (var package in this.Project.PackageReferences)
+    {
 
             
             #line default
             #line hidden
             this.Write("    <PackageReference Include=\"");
             
-            #line 172 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 177 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(package.Include));
             
             #line default
             #line hidden
             this.Write("\" Version=\"");
             
-            #line 172 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 177 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(package.Version));
             
             #line default
             #line hidden
             this.Write("\"/>\r\n");
             
-            #line 173 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 178 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
-        }
+    }
 
             
             #line default
             #line hidden
             this.Write("  </ItemGroup>\r\n\r\n");
             
-            #line 178 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 183 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
-    if(this.Project.ReferenceDependencies != null)
+    if (this.Project.ReferenceDependencies != null)
     {
 
             
@@ -451,9 +460,9 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n");
             
-            #line 184 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 189 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
-        foreach(var reference in this.Project.ReferenceDependencies)
+        foreach (var reference in this.Project.ReferenceDependencies)
         {
             if (string.IsNullOrEmpty(reference.HintPath))
             {
@@ -463,14 +472,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Reference Include=\"");
             
-            #line 190 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 195 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(reference.Name));
             
             #line default
             #line hidden
             this.Write("\"/>\r\n");
             
-            #line 191 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 196 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
             }
             else
@@ -481,21 +490,21 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Reference Include=\"");
             
-            #line 196 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 201 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(reference.Name));
             
             #line default
             #line hidden
             this.Write("\">\r\n        <HintPath>");
             
-            #line 197 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 202 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(reference.HintPath));
             
             #line default
             #line hidden
             this.Write("</HintPath>\r\n    </Reference>\r\n");
             
-            #line 199 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 204 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
             }
         }
@@ -505,10 +514,10 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n\r\n");
             
-            #line 205 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 210 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
-    if(this.Project.EmbeddedResources != null)
+    if (this.Project.EmbeddedResources != null)
     {
 
             
@@ -516,37 +525,37 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n");
             
-            #line 211 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 216 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
-        foreach(var resource in this.Project.EmbeddedResources)
-        {
+    foreach (var resource in this.Project.EmbeddedResources)
+    {
 
             
             #line default
             #line hidden
             this.Write("    <EmbeddedResource Include=\"");
             
-            #line 215 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 220 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resource));
             
             #line default
             #line hidden
             this.Write("\"/>\r\n");
             
-            #line 216 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 221 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
-        }
+    }
 
             
             #line default
             #line hidden
             this.Write("  </ItemGroup>\r\n");
             
-            #line 220 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 225 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
-    if(this.Project.Services != null)
+    if (this.Project.Services != null)
     {
 
             
@@ -554,9 +563,9 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n");
             
-            #line 227 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 232 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
-        foreach(var service in this.Project.Services)
+        foreach (var service in this.Project.Services)
         {
 
             
@@ -564,14 +573,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Service Include=\"");
             
-            #line 231 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 236 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(service));
             
             #line default
             #line hidden
             this.Write("\"/>\r\n");
             
-            #line 232 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 237 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
         }
 
@@ -580,7 +589,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n");
             
-            #line 236 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 241 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -591,9 +600,9 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 241 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+        #line 246 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
-	public Project Project { get; set; }
+    public Project Project { get; set; }
 
         
         #line default

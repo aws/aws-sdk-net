@@ -12,9 +12,11 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon AppStream. Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.")]
 #elif NETSTANDARD13
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon AppStream. Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3) - Amazon AppStream. Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.")]
 #elif NETSTANDARD20
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- Amazon AppStream. Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon AppStream. Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.")]
+#elif NETCOREAPP31
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon AppStream. Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

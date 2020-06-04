@@ -12,9 +12,11 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon WorkMail Message Flow. This release allows customers to access email messages as they flow to and from Amazon WorkMail.")]
 #elif NETSTANDARD13
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon WorkMail Message Flow. This release allows customers to access email messages as they flow to and from Amazon WorkMail.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3) - Amazon WorkMail Message Flow. This release allows customers to access email messages as they flow to and from Amazon WorkMail.")]
 #elif NETSTANDARD20
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- Amazon WorkMail Message Flow. This release allows customers to access email messages as they flow to and from Amazon WorkMail.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon WorkMail Message Flow. This release allows customers to access email messages as they flow to and from Amazon WorkMail.")]
+#elif NETCOREAPP31
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon WorkMail Message Flow. This release allows customers to access email messages as they flow to and from Amazon WorkMail.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

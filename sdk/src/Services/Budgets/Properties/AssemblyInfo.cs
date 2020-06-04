@@ -12,9 +12,11 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Budgets. AWS Budget service will provide create/get/list/update/delete budgets for cost management. ")]
 #elif NETSTANDARD13
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS Budgets. AWS Budget service will provide create/get/list/update/delete budgets for cost management. ")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3) - AWS Budgets. AWS Budget service will provide create/get/list/update/delete budgets for cost management. ")]
 #elif NETSTANDARD20
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- AWS Budgets. AWS Budget service will provide create/get/list/update/delete budgets for cost management. ")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Budgets. AWS Budget service will provide create/get/list/update/delete budgets for cost management. ")]
+#elif NETCOREAPP31
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Budgets. AWS Budget service will provide create/get/list/update/delete budgets for cost management. ")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

@@ -12,9 +12,11 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
 #elif NETSTANDARD13
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3) - Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
 #elif NETSTANDARD20
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
+#elif NETCOREAPP31
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

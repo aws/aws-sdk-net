@@ -32,7 +32,7 @@ namespace Amazon.SecurityToken
     public partial class AmazonSecurityTokenServiceClient : AmazonServiceClient, IAmazonSecurityTokenService, ICoreAmazonSTS_WebIdentity
     {
 #if BCL || (NETSTANDARD && !NETSTANDARD13)
-#if NETSTANDARD20
+#if NETSTANDARD20 || NETCOREAPP31
         SAMLImmutableCredentials ICoreAmazonSTS_SAML.CredentialsFromSAMLAuthentication(
 #else
         SAMLImmutableCredentials ICoreAmazonSTS.CredentialsFromSAMLAuthentication(

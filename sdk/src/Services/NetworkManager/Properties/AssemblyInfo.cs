@@ -12,9 +12,11 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Network Manager. This is the initial SDK release for AWS Network Manager.")]
 #elif NETSTANDARD13
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS Network Manager. This is the initial SDK release for AWS Network Manager.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3) - AWS Network Manager. This is the initial SDK release for AWS Network Manager.")]
 #elif NETSTANDARD20
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- AWS Network Manager. This is the initial SDK release for AWS Network Manager.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Network Manager. This is the initial SDK release for AWS Network Manager.")]
+#elif NETCOREAPP31
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Network Manager. This is the initial SDK release for AWS Network Manager.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

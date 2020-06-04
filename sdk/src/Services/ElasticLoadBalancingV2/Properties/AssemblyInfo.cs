@@ -12,9 +12,11 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Elastic Load Balancing. Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.")]
 #elif NETSTANDARD13
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Elastic Load Balancing. Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3) - Elastic Load Balancing. Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.")]
 #elif NETSTANDARD20
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- Elastic Load Balancing. Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Elastic Load Balancing. Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.")]
+#elif NETCOREAPP31
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Elastic Load Balancing. Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

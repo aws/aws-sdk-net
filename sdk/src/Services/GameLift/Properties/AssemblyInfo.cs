@@ -12,9 +12,11 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon GameLift. Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.")]
 #elif NETSTANDARD13
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon GameLift. Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3) - Amazon GameLift. Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.")]
 #elif NETSTANDARD20
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- Amazon GameLift. Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon GameLift. Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.")]
+#elif NETCOREAPP31
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon GameLift. Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

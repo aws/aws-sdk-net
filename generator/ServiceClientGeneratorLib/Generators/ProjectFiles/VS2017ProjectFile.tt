@@ -1,26 +1,25 @@
 ﻿<#@ template language="C#" #>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Linq" #>
-<#@ import namespace="System.Text" #>
-<#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="ServiceClientGenerator" #>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
 <#
     if (this.Project.TargetFrameworks.Count() == 1)
     {
 #>
-    <TargetFramework><#=this.Project.TargetFrameworks.Single()#></TargetFramework>
+    <TargetFramework><#=this.Project.TargetFrameworks.Single() #></TargetFramework>
 <#
     }
     else
     {
 #>
-    <TargetFrameworks><#=string.Join(";", this.Project.TargetFrameworks)#></TargetFrameworks>
+    <TargetFrameworks><#=
+                string.Join(";", this.Project.TargetFrameworks) #></TargetFrameworks>
 <#
     }
 #>
-    <DefineConstants>$(DefineConstants);<#=string.Join(";", this.Project.DefineConstants)#></DefineConstants>
+    <DefineConstants>$(DefineConstants);<#=
+                    string.Join(";", this.Project.DefineConstants) #></DefineConstants>
 <#
     if (this.Project.TargetFrameworks.Contains("netstandard1.3"))
     {
@@ -34,9 +33,6 @@
     <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.0'">$(DefineConstants);NETSTANDARD20</DefineConstants>
 <#
     }
-#>
-<#
-    }
     if (this.Project.TargetFrameworks.Contains("netcoreapp3.1"))
     {
 #>
@@ -46,8 +42,8 @@
 #>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyName><#=this.Project.AssemblyName#></AssemblyName>
-    <PackageId><#=this.Project.AssemblyName#></PackageId>
+    <AssemblyName><#=this.Project.AssemblyName #></AssemblyName>
+    <PackageId><#=this.Project.AssemblyName #></PackageId>
 
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
@@ -59,26 +55,26 @@
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
 <#
-    if(!string.IsNullOrEmpty(this.Project.FrameworkPathOverride))
+    if (!string.IsNullOrEmpty(this.Project.FrameworkPathOverride))
     {
 #>
     <!-- workaround per https://github.com/Microsoft/msbuild/issues/1333 -->
-    <FrameworkPathOverride><#=this.Project.FrameworkPathOverride#></FrameworkPathOverride>
-<#
-    }
-    
-    if(!string.IsNullOrEmpty(this.Project.SupressWarnings))
-    {
-#>
-    <NoWarn><#=this.Project.SupressWarnings#></NoWarn>
+    <FrameworkPathOverride><#=this.Project.FrameworkPathOverride #></FrameworkPathOverride>
 <#
     }
 
-    if(!string.IsNullOrEmpty(this.Project.OutputPathOverride))
+    if (!string.IsNullOrEmpty(this.Project.SupressWarnings))
+    {
+#>
+    <NoWarn><#=this.Project.SupressWarnings #></NoWarn>
+<#
+    }
+
+    if (!string.IsNullOrEmpty(this.Project.OutputPathOverride))
     {
 #>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath><#=this.Project.OutputPathOverride#></OutputPath>
+    <OutputPath><#=this.Project.OutputPathOverride #></OutputPath>
 <#
     }
 
@@ -87,7 +83,7 @@
 #>
     <NetStandardImplicitPackageVersion  Condition="'$(TargetFramework)' == 'netstandard1.3'">1.6.0</NetStandardImplicitPackageVersion>
 <#
-    }    
+    }
 #>
   </PropertyGroup>
 <#
@@ -110,59 +106,41 @@
 <#
     }
 
-    if(this.Project.IndividualFileIncludes != null)
+    if (this.Project.IndividualFileIncludes != null)
     {
 #>
   <ItemGroup>
 <#
-        foreach(var compileIncludeEntry in this.Project.IndividualFileIncludes)
-        {
+    foreach (var compileIncludeEntry in this.Project.IndividualFileIncludes)
+    {
 #>
-    <Compile Include="<#=compileIncludeEntry#>"/>
+    <Compile Include="<#=compileIncludeEntry #>"/>
 <#
-		}
+    }
 #>
   </ItemGroup>
 <#
     }
 
-    if(this.Project.CompileRemoveList != null)
+    if (this.Project.CompileRemoveList != null)
     {
 #>
   <ItemGroup>
 <#
-        foreach(var compileRemoveEntry in this.Project.CompileRemoveList)
+    foreach (var compileRemoveEntry in this.Project.CompileRemoveList)
+    {
+        if (compileRemoveEntry == "bin" || compileRemoveEntry == "obj")
         {
-		  if(compileRemoveEntry == "bin"||compileRemoveEntry == "obj")
-		  {
 #>
-    <Compile Remove="**/<#=compileRemoveEntry#>/**"/>
-	<None Remove="**/<#=compileRemoveEntry#>/**" />
+    <Compile Remove="**/<#=compileRemoveEntry #>/**"/>
+	<None Remove="**/<#=compileRemoveEntry #>/**" />
 <#
-			continue;
-		  }
-#>
-    <Compile Remove="**/<#=compileRemoveEntry#>/**"/>
-<#
+    continue;
         }
 #>
-  </ItemGroup>
-
+    <Compile Remove="**/<#=compileRemoveEntry #>/**"/>
 <#
     }
-#>
-<#
-    if(this.Project.ProjectReferences != null)
-    {
-#>
-  <ItemGroup>
-<#
-        foreach(var projectReference in this.Project.ProjectReferences)
-        {
-#>
-    <ProjectReference Include="<#=projectReference.IncludePath#>"/>
-<#
-        }
 #>
   </ItemGroup>
 
@@ -170,40 +148,58 @@
     }
 #>
 <#
-    if(this.Project.PackageReferences != null)
+    if (this.Project.ProjectReferences != null)
     {
 #>
   <ItemGroup>
 <#
-        foreach(var package in this.Project.PackageReferences)
-        {
+    foreach (var projectReference in this.Project.ProjectReferences)
+    {
 #>
-    <PackageReference Include="<#=package.Include#>" Version="<#=package.Version#>"/>
+    <ProjectReference Include="<#=projectReference.IncludePath #>"/>
 <#
-        }
+    }
 #>
   </ItemGroup>
 
 <#
     }
-    if(this.Project.ReferenceDependencies != null)
+#>
+<#
+    if (this.Project.PackageReferences != null)
     {
 #>
   <ItemGroup>
 <#
-        foreach(var reference in this.Project.ReferenceDependencies)
+    foreach (var package in this.Project.PackageReferences)
+    {
+#>
+    <PackageReference Include="<#=package.Include #>" Version="<#=package.Version #>"/>
+<#
+    }
+#>
+  </ItemGroup>
+
+<#
+    }
+    if (this.Project.ReferenceDependencies != null)
+    {
+#>
+  <ItemGroup>
+<#
+        foreach (var reference in this.Project.ReferenceDependencies)
         {
             if (string.IsNullOrEmpty(reference.HintPath))
             {
 #>
-    <Reference Include="<#=reference.Name#>"/>
+    <Reference Include="<#=reference.Name #>"/>
 <#
             }
             else
             {
 #>
-    <Reference Include="<#=reference.Name#>">
-        <HintPath><#=reference.HintPath#></HintPath>
+    <Reference Include="<#=reference.Name #>">
+        <HintPath><#=reference.HintPath #></HintPath>
     </Reference>
 <#
             }
@@ -213,31 +209,31 @@
 
 <#
     }
-    if(this.Project.EmbeddedResources != null)
+    if (this.Project.EmbeddedResources != null)
     {
 #>
   <ItemGroup>
 <#
-        foreach(var resource in this.Project.EmbeddedResources)
-        {
+    foreach (var resource in this.Project.EmbeddedResources)
+    {
 #>
-    <EmbeddedResource Include="<#=resource#>"/>
+    <EmbeddedResource Include="<#=resource #>"/>
 <#
-        }
+    }
 #>
   </ItemGroup>
 <#
     }
 
-    if(this.Project.Services != null)
+    if (this.Project.Services != null)
     {
 #>
   <ItemGroup>
 <#
-        foreach(var service in this.Project.Services)
+        foreach (var service in this.Project.Services)
         {
 #>
-    <Service Include="<#=service#>"/>
+    <Service Include="<#=service #>"/>
 <#
         }
 #>
@@ -248,5 +244,5 @@
 </Project>
 
 <#+
-	public Project Project { get; set; }
+    public Project Project { get; set; }
 #>

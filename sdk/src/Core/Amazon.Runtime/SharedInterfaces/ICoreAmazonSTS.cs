@@ -34,7 +34,7 @@ namespace Amazon.Runtime.SharedInterfaces
         /// <returns></returns>
         AssumeRoleImmutableCredentials CredentialsFromAssumeRoleAuthentication(string roleArn, string roleSessionName, AssumeRoleAWSCredentialsOptions options);
 
-#if NETSTANDARD20 // In the NETSTANDARD flavors of the SDK ICoreAmazonSTS is declared without CredentialsFromSAMLAuthentication,
+#if NETSTANDARD20 || NETCOREAPP31 // In the NETSTANDARD flavors of the SDK ICoreAmazonSTS is declared without CredentialsFromSAMLAuthentication,
     }             // we cannot add a new method to the interface for backward compatibility concerns. 
 
     /// <summary>

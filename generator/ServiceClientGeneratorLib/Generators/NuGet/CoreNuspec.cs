@@ -9,9 +9,6 @@
 // ------------------------------------------------------------------------------
 namespace ServiceClientGenerator.Generators.NuGet
 {
-    using System.Linq;
-    using System.Text;
-    using System.Collections.Generic;
     using System;
     
     /// <summary>
@@ -31,13 +28,13 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write("\r\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<package> \r\n  <metadata> \r\n    <id>AWSS" +
                     "DK.Core</id>\r\n    <title>AWSSDK - Core Runtime</title>\r\n    <version>");
             
-            #line 12 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 9 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default
             #line hidden
             
-            #line 12 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 9 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NuGetPreviewFlag"]));
             
             #line default
@@ -54,22 +51,27 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "tion.TypeExtensions\" version=\"4.1.0\" />\r\n        <dependency id=\"System.Security" +
                     ".Cryptography.Csp\" version=\"4.0.0\" />\r\n        <dependency id=\"System.Threading." +
                     "Thread\" version=\"4.0.0\" />\r\n        <dependency id=\"Microsoft.CSharp\" version=\"4" +
-                    ".0.1\" />\r\n      </group>\r\n\t    <group targetFramework=\"netstandard2.0\">\r\n      <" +
-                    "/group>\r\n    </dependencies>\r\n  </metadata> \r\n  <files>\r\n    <file src=\"..\\..\\nu" +
-                    "get-content\\account-management.ps1\" target=\"tools\" />\r\n\r\n    <file src=\".\\bin\\Re" +
-                    "lease\\net35\\AWSSDK.Core.dll\" target=\"lib\\net35\" />\r\n    <file src=\".\\bin\\Release" +
-                    "\\net35\\AWSSDK.Core.xml\" target=\"lib\\net35\" />\r\n    <file src=\".\\bin\\Release\\net3" +
-                    "5\\AWSSDK.Core.pdb\" target=\"lib\\net35\" />\r\n\r\n    <file src=\".\\bin\\Release\\net45\\A" +
-                    "WSSDK.Core.dll\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK" +
-                    ".Core.xml\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core" +
-                    ".pdb\" target=\"lib\\net45\" />\r\n\r\n\t  <file src=\".\\bin\\Release\\netstandard1.3\\AWSSDK" +
-                    ".Core.dll\" target=\"lib\\netstandard1.3\"/>\r\n\t  <file src=\".\\bin\\Release\\netstandar" +
-                    "d1.3\\AWSSDK.Core.xml\" target=\"lib\\netstandard1.3\"/>\r\n\t  <file src=\".\\bin\\Release" +
-                    "\\netstandard1.3\\AWSSDK.Core.pdb\" target=\"lib\\netstandard1.3\"/>\r\n  \r\n\t  <file src" +
-                    "=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.dll\" target=\"lib\\netstandard2.0\"/>\r\n\t" +
-                    "  <file src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.xml\" target=\"lib\\netstanda" +
-                    "rd2.0\"/>\r\n\t  <file src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.pdb\" target=\"li" +
-                    "b\\netstandard2.0\"/>\r\n\r\n  </files>\r\n</package>");
+                    ".0.1\" />\r\n      </group>\r\n\t    <group targetFramework=\"netstandard2.0\">\r\n       " +
+                    " <dependency id=\"Microsoft.Bcl.AsyncInterfaces\" version=\"1.1.0\" />\r\n      </grou" +
+                    "p>\r\n      <group targetFramework=\"netcoreapp3.1\">\r\n      </group>\r\n    </depende" +
+                    "ncies>\r\n  </metadata> \r\n  <files>\r\n    <file src=\"..\\..\\nuget-content\\account-ma" +
+                    "nagement.ps1\" target=\"tools\" />\r\n\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Cor" +
+                    "e.dll\" target=\"lib\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.xml" +
+                    "\" target=\"lib\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.pdb\" tar" +
+                    "get=\"lib\\net35\" />\r\n\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.dll\" target" +
+                    "=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.xml\" target=\"lib" +
+                    "\\net45\" />\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.pdb\" target=\"lib\\net4" +
+                    "5\" />\r\n\r\n    <file src=\".\\bin\\Release\\netstandard1.3\\AWSSDK.Core.dll\" target=\"li" +
+                    "b\\netstandard1.3\"/>\r\n    <file src=\".\\bin\\Release\\netstandard1.3\\AWSSDK.Core.xml" +
+                    "\" target=\"lib\\netstandard1.3\"/>\r\n    <file src=\".\\bin\\Release\\netstandard1.3\\AWS" +
+                    "SDK.Core.pdb\" target=\"lib\\netstandard1.3\"/>\r\n  \r\n    <file src=\".\\bin\\Release\\ne" +
+                    "tstandard2.0\\AWSSDK.Core.dll\" target=\"lib\\netstandard2.0\"/>\r\n    <file src=\".\\bi" +
+                    "n\\Release\\netstandard2.0\\AWSSDK.Core.xml\" target=\"lib\\netstandard2.0\"/>\r\n    <fi" +
+                    "le src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.pdb\" target=\"lib\\netstandard2.0" +
+                    "\"/>\r\n\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\AWSSDK.Core.dll\" target=\"lib\\n" +
+                    "etcoreapp3.1\"/>\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\AWSSDK.Core.xml\" tar" +
+                    "get=\"lib\\netcoreapp3.1\"/>\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\AWSSDK.Cor" +
+                    "e.pdb\" target=\"lib\\netcoreapp3.1\"/>\r\n  </files>\r\n</package>");
             return this.GenerationEnvironment.ToString();
         }
     }

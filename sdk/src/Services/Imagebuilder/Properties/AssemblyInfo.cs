@@ -12,9 +12,11 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - EC2 Image Builder. This is the first release of EC2 Image Builder, a service that provides a managed experience for automating the creation of EC2 AMIs.")]
 #elif NETSTANDARD13
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- EC2 Image Builder. This is the first release of EC2 Image Builder, a service that provides a managed experience for automating the creation of EC2 AMIs.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3) - EC2 Image Builder. This is the first release of EC2 Image Builder, a service that provides a managed experience for automating the creation of EC2 AMIs.")]
 #elif NETSTANDARD20
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- EC2 Image Builder. This is the first release of EC2 Image Builder, a service that provides a managed experience for automating the creation of EC2 AMIs.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - EC2 Image Builder. This is the first release of EC2 Image Builder, a service that provides a managed experience for automating the creation of EC2 AMIs.")]
+#elif NETCOREAPP31
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - EC2 Image Builder. This is the first release of EC2 Image Builder, a service that provides a managed experience for automating the creation of EC2 AMIs.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
