@@ -1,3 +1,20 @@
+### 3.3.754.0 (2020-06-04 18:21 UTC)
+* AWSMarketplaceMetering (3.3.101.91)
+	* Documentation updates for meteringmarketplace
+* EC2 (3.3.180.0)
+	* New C5a instances, the latest generation of EC2's compute-optimized instances featuring AMD's 2nd Generation EPYC processors. C5a instances offer up to 96 vCPUs, 192 GiB of instance memory, 20 Gbps in Network bandwidth; New G4dn.metal bare metal instance with 8 NVIDIA T4 GPUs.
+* Lightsail (3.3.105.0)
+	* This release adds the BurstCapacityPercentage and BurstCapacityTime instance metrics, which allow you to track the burst capacity available to your instance.
+* MediaPackageVod (3.3.106.0)
+	* You can now restrict direct access to AWS Elemental MediaPackage by securing requests for VOD content using CDN authorization. With CDN authorization, content requests require a specific HTTP header and authorization code.
+* SimpleSystemsManagement (3.3.125.0)
+	* SSM State Manager support for executing an association only at specified CRON schedule after creating/updating an association.
+* Core 3.3.107.7
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.753.1 (2020-06-03 21:18 UTC)
 * S3 (3.3.111.7)
 	* Updated to use new Core, version 3.3.107.6
