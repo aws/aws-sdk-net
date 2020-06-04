@@ -68,6 +68,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetApplyOnlyAtCronInterval())
+                {
+                    context.Writer.WritePropertyName("ApplyOnlyAtCronInterval");
+                    context.Writer.Write(publicRequest.ApplyOnlyAtCronInterval);
+                }
+
                 if(publicRequest.IsSetAssociationId())
                 {
                     context.Writer.WritePropertyName("AssociationId");

@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class CreateAssociationBatchRequestEntry
     {
+        private bool? _applyOnlyAtCronInterval;
         private string _associationName;
         private string _automationTargetParameterName;
         private AssociationComplianceSeverity _complianceSeverity;
@@ -46,6 +47,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _scheduleExpression;
         private AssociationSyncCompliance _syncCompliance;
         private List<Target> _targets = new List<Target>();
+
+        /// <summary>
+        /// Gets and sets the property ApplyOnlyAtCronInterval. 
+        /// <para>
+        /// By default, when you create a new associations, the system runs it immediately after
+        /// it is created and then according to the schedule you specified. Specify this option
+        /// if you don't want an association to run immediately after you create it.
+        /// </para>
+        /// </summary>
+        public bool ApplyOnlyAtCronInterval
+        {
+            get { return this._applyOnlyAtCronInterval.GetValueOrDefault(); }
+            set { this._applyOnlyAtCronInterval = value; }
+        }
+
+        // Check to see if ApplyOnlyAtCronInterval property is set
+        internal bool IsSetApplyOnlyAtCronInterval()
+        {
+            return this._applyOnlyAtCronInterval.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AssociationName. 

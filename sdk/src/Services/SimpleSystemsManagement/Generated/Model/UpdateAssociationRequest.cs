@@ -51,6 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class UpdateAssociationRequest : AmazonSimpleSystemsManagementRequest
     {
+        private bool? _applyOnlyAtCronInterval;
         private string _associationId;
         private string _associationName;
         private string _associationVersion;
@@ -65,6 +66,33 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _scheduleExpression;
         private AssociationSyncCompliance _syncCompliance;
         private List<Target> _targets = new List<Target>();
+
+        /// <summary>
+        /// Gets and sets the property ApplyOnlyAtCronInterval. 
+        /// <para>
+        /// By default, when you update an association, the system runs it immediately after it
+        /// is updated and then according to the schedule you specified. Specify this option if
+        /// you don't want an association to run immediately after you update it.
+        /// </para>
+        ///  
+        /// <para>
+        /// Also, if you specified this option when you created the association, you can reset
+        /// it. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when
+        /// you update the association from the command line. This parameter forces the association
+        /// to run immediately after updating it and according to the interval specified.
+        /// </para>
+        /// </summary>
+        public bool ApplyOnlyAtCronInterval
+        {
+            get { return this._applyOnlyAtCronInterval.GetValueOrDefault(); }
+            set { this._applyOnlyAtCronInterval = value; }
+        }
+
+        // Check to see if ApplyOnlyAtCronInterval property is set
+        internal bool IsSetApplyOnlyAtCronInterval()
+        {
+            return this._applyOnlyAtCronInterval.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AssociationId. 
