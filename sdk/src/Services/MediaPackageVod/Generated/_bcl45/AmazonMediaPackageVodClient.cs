@@ -1166,7 +1166,7 @@ namespace Amazon.MediaPackageVod
 
 
         /// <summary>
-        /// List tags for a given MediaPackage VOD resource
+        /// Returns a list of the tags assigned to the specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -1183,7 +1183,7 @@ namespace Amazon.MediaPackageVod
 
 
         /// <summary>
-        /// List tags for a given MediaPackage VOD resource
+        /// Returns a list of the tags assigned to the specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1207,7 +1207,7 @@ namespace Amazon.MediaPackageVod
 
 
         /// <summary>
-        /// Set tags for a given MediaPackage VOD resource
+        /// Adds tags to the specified resource. You can specify one or more tags to add.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1224,7 +1224,7 @@ namespace Amazon.MediaPackageVod
 
 
         /// <summary>
-        /// Set tags for a given MediaPackage VOD resource
+        /// Adds tags to the specified resource. You can specify one or more tags to add.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1248,7 +1248,7 @@ namespace Amazon.MediaPackageVod
 
 
         /// <summary>
-        /// Delete tags for a given MediaPackage VOD resource
+        /// Removes tags from the specified resource. You can specify one or more tags to remove.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -1265,7 +1265,7 @@ namespace Amazon.MediaPackageVod
 
 
         /// <summary>
-        /// Delete tags for a given MediaPackage VOD resource
+        /// Removes tags from the specified resource. You can specify one or more tags to remove.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1281,6 +1281,85 @@ namespace Amazon.MediaPackageVod
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePackagingGroup
+
+
+        /// <summary>
+        /// Updates a specific packaging group. You can't change the id attribute or any other
+        /// system-generated attributes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackagingGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePackagingGroup service method, as returned by MediaPackageVod.</returns>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UpdatePackagingGroup">REST API Reference for UpdatePackagingGroup Operation</seealso>
+        public virtual UpdatePackagingGroupResponse UpdatePackagingGroup(UpdatePackagingGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePackagingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePackagingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePackagingGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a specific packaging group. You can't change the id attribute or any other
+        /// system-generated attributes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackagingGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePackagingGroup service method, as returned by MediaPackageVod.</returns>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UpdatePackagingGroup">REST API Reference for UpdatePackagingGroup Operation</seealso>
+        public virtual Task<UpdatePackagingGroupResponse> UpdatePackagingGroupAsync(UpdatePackagingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePackagingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePackagingGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdatePackagingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -30,7 +30,7 @@ namespace Amazon.MediaPackageVod.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Set tags for a given MediaPackage VOD resource
+    /// Adds tags to the specified resource. You can specify one or more tags to add.
     /// </summary>
     public partial class TagResourceRequest : AmazonMediaPackageVodRequest
     {
@@ -38,7 +38,8 @@ namespace Amazon.MediaPackageVod.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. The Amazon Resource Name (ARN) for the resource.
+        /// You can get this from the response to any request to the resource.
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceArn
@@ -54,7 +55,7 @@ namespace Amazon.MediaPackageVod.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. A collection of tags associated with a resource
         /// </summary>
         [AWSProperty(Required=true)]
         public Dictionary<string, string> Tags

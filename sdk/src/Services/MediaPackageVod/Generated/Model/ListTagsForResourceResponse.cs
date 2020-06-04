@@ -36,7 +36,7 @@ namespace Amazon.MediaPackageVod.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. A collection of tags associated with a resource
         /// </summary>
         public Dictionary<string, string> Tags
         {

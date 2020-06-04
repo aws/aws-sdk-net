@@ -29,46 +29,45 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaPackageVod.Model
 {
     /// <summary>
-    /// Container for the parameters to the UntagResource operation.
-    /// Removes tags from the specified resource. You can specify one or more tags to remove.
+    /// CDN Authorization credentials
     /// </summary>
-    public partial class UntagResourceRequest : AmazonMediaPackageVodRequest
+    public partial class Authorization
     {
-        private string _resourceArn;
-        private List<string> _tagKeys = new List<string>();
+        private string _cdnIdentifierSecret;
+        private string _secretsRoleArn;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. The Amazon Resource Name (ARN) for the resource.
-        /// You can get this from the response to any request to the resource.
+        /// Gets and sets the property CdnIdentifierSecret. The Amazon Resource Name (ARN) for
+        /// the secret in AWS Secrets Manager that is used for CDN authorization.
         /// </summary>
         [AWSProperty(Required=true)]
-        public string ResourceArn
+        public string CdnIdentifierSecret
         {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
+            get { return this._cdnIdentifierSecret; }
+            set { this._cdnIdentifierSecret = value; }
         }
 
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
+        // Check to see if CdnIdentifierSecret property is set
+        internal bool IsSetCdnIdentifierSecret()
         {
-            return this._resourceArn != null;
+            return this._cdnIdentifierSecret != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. A comma-separated list of the tag keys to remove
-        /// from the resource.
+        /// Gets and sets the property SecretsRoleArn. The Amazon Resource Name (ARN) for the
+        /// IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<string> TagKeys
+        public string SecretsRoleArn
         {
-            get { return this._tagKeys; }
-            set { this._tagKeys = value; }
+            get { return this._secretsRoleArn; }
+            set { this._secretsRoleArn = value; }
         }
 
-        // Check to see if TagKeys property is set
-        internal bool IsSetTagKeys()
+        // Check to see if SecretsRoleArn property is set
+        internal bool IsSetSecretsRoleArn()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._secretsRoleArn != null;
         }
 
     }

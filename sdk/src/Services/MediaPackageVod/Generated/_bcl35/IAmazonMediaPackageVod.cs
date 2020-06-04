@@ -735,7 +735,7 @@ namespace Amazon.MediaPackageVod
 
 
         /// <summary>
-        /// List tags for a given MediaPackage VOD resource
+        /// Returns a list of the tags assigned to the specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -775,7 +775,7 @@ namespace Amazon.MediaPackageVod
 
 
         /// <summary>
-        /// Set tags for a given MediaPackage VOD resource
+        /// Adds tags to the specified resource. You can specify one or more tags to add.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -815,7 +815,7 @@ namespace Amazon.MediaPackageVod
 
 
         /// <summary>
-        /// Delete tags for a given MediaPackage VOD resource
+        /// Removes tags from the specified resource. You can specify one or more tags to remove.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -848,6 +848,65 @@ namespace Amazon.MediaPackageVod
         /// <returns>Returns a  UntagResourceResult from MediaPackageVod.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdatePackagingGroup
+
+
+        /// <summary>
+        /// Updates a specific packaging group. You can't change the id attribute or any other
+        /// system-generated attributes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackagingGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePackagingGroup service method, as returned by MediaPackageVod.</returns>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UpdatePackagingGroup">REST API Reference for UpdatePackagingGroup Operation</seealso>
+        UpdatePackagingGroupResponse UpdatePackagingGroup(UpdatePackagingGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePackagingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackagingGroup operation on AmazonMediaPackageVodClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePackagingGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UpdatePackagingGroup">REST API Reference for UpdatePackagingGroup Operation</seealso>
+        IAsyncResult BeginUpdatePackagingGroup(UpdatePackagingGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePackagingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePackagingGroup.</param>
+        /// 
+        /// <returns>Returns a  UpdatePackagingGroupResult from MediaPackageVod.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UpdatePackagingGroup">REST API Reference for UpdatePackagingGroup Operation</seealso>
+        UpdatePackagingGroupResponse EndUpdatePackagingGroup(IAsyncResult asyncResult);
 
         #endregion
         

@@ -30,14 +30,15 @@ namespace Amazon.MediaPackageVod.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// List tags for a given MediaPackage VOD resource
+    /// Returns a list of the tags assigned to the specified resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonMediaPackageVodRequest
     {
         private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. The Amazon Resource Name (ARN) for the resource.
+        /// You can get this from the response to any request to the resource.
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceArn

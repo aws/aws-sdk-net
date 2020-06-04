@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PackagingGroup Object
+    /// Response Unmarshaller for Authorization Object
     /// </summary>  
-    public class PackagingGroupUnmarshaller : IUnmarshaller<PackagingGroup, XmlUnmarshallerContext>, IUnmarshaller<PackagingGroup, JsonUnmarshallerContext>
+    public class AuthorizationUnmarshaller : IUnmarshaller<Authorization, XmlUnmarshallerContext>, IUnmarshaller<Authorization, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PackagingGroup IUnmarshaller<PackagingGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Authorization IUnmarshaller<Authorization, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PackagingGroup Unmarshall(JsonUnmarshallerContext context)
+        public Authorization Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PackagingGroup unmarshalledObject = new PackagingGroup();
+            Authorization unmarshalledObject = new Authorization();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("cdnIdentifierSecret", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CdnIdentifierSecret = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("authorization", targetDepth))
-                {
-                    var unmarshaller = AuthorizationUnmarshaller.Instance;
-                    unmarshalledObject.Authorization = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("domainName", targetDepth))
+                if (context.TestExpression("secretsRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SecretsRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         }
 
 
-        private static PackagingGroupUnmarshaller _instance = new PackagingGroupUnmarshaller();        
+        private static AuthorizationUnmarshaller _instance = new AuthorizationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PackagingGroupUnmarshaller Instance
+        public static AuthorizationUnmarshaller Instance
         {
             get
             {

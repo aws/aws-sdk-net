@@ -29,14 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaPackageVod.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreatePackagingGroup operation.
-    /// Creates a new MediaPackage VOD PackagingGroup resource.
+    /// This is the response object from the UpdatePackagingGroup operation.
     /// </summary>
-    public partial class CreatePackagingGroupRequest : AmazonMediaPackageVodRequest
+    public partial class UpdatePackagingGroupResponse : AmazonWebServiceResponse
     {
+        private string _arn;
         private Authorization _authorization;
+        private string _domainName;
         private string _id;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property Arn. The ARN of the PackagingGroup.
+        /// </summary>
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Authorization.
@@ -54,9 +70,24 @@ namespace Amazon.MediaPackageVod.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DomainName. The fully qualified domain name for Assets
+        /// in the PackagingGroup.
+        /// </summary>
+        public string DomainName
+        {
+            get { return this._domainName; }
+            set { this._domainName = value; }
+        }
+
+        // Check to see if DomainName property is set
+        internal bool IsSetDomainName()
+        {
+            return this._domainName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. The ID of the PackagingGroup.
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

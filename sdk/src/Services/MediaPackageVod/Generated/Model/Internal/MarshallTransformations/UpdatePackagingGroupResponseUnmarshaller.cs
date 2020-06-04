@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreatePackagingGroup operation
+    /// Response Unmarshaller for UpdatePackagingGroup operation
     /// </summary>  
-    public class CreatePackagingGroupResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdatePackagingGroupResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreatePackagingGroupResponse response = new CreatePackagingGroupResponse();
+            UpdatePackagingGroupResponse response = new UpdatePackagingGroupResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -132,9 +132,9 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             return new AmazonMediaPackageVodException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreatePackagingGroupResponseUnmarshaller _instance = new CreatePackagingGroupResponseUnmarshaller();        
+        private static UpdatePackagingGroupResponseUnmarshaller _instance = new UpdatePackagingGroupResponseUnmarshaller();        
 
-        internal static CreatePackagingGroupResponseUnmarshaller GetInstance()
+        internal static UpdatePackagingGroupResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -142,7 +142,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreatePackagingGroupResponseUnmarshaller Instance
+        public static UpdatePackagingGroupResponseUnmarshaller Instance
         {
             get
             {

@@ -29,14 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaPackageVod.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreatePackagingGroup operation.
-    /// Creates a new MediaPackage VOD PackagingGroup resource.
+    /// Container for the parameters to the UpdatePackagingGroup operation.
+    /// Updates a specific packaging group. You can't change the id attribute or any other
+    /// system-generated attributes.
     /// </summary>
-    public partial class CreatePackagingGroupRequest : AmazonMediaPackageVodRequest
+    public partial class UpdatePackagingGroupRequest : AmazonMediaPackageVodRequest
     {
         private Authorization _authorization;
         private string _id;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Authorization.
@@ -54,7 +54,7 @@ namespace Amazon.MediaPackageVod.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The ID of the PackagingGroup.
+        /// Gets and sets the property Id. The ID of a MediaPackage VOD PackagingGroup resource.
         /// </summary>
         [AWSProperty(Required=true)]
         public string Id
@@ -67,21 +67,6 @@ namespace Amazon.MediaPackageVod.Model
         internal bool IsSetId()
         {
             return this._id != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags.
-        /// </summary>
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
