@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A custom origin or an Amazon S3 bucket configured as a website endpoint.
+    /// A custom origin. A custom origin is any origin that is <i>not</i> an Amazon S3 bucket,
+    /// with one exception. An Amazon S3 bucket that is <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">configured
+    /// with static website hosting</a> <i>is</i> a custom origin.
     /// </summary>
     public partial class CustomOriginConfig
     {
@@ -43,7 +45,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property HTTPPort. 
         /// <para>
-        /// The HTTP port the custom origin listens on.
+        /// The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port
+        /// that the origin listens on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +65,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property HTTPSPort. 
         /// <para>
-        /// The HTTPS port the custom origin listens on.
+        /// The HTTPS port that CloudFront uses to connect to the origin. Specify the HTTPS port
+        /// that the origin listens on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,15 +85,14 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property OriginKeepaliveTimeout. 
         /// <para>
-        /// You can create a custom keep-alive timeout. All timeout units are in seconds. The
-        /// default keep-alive timeout is 5 seconds, but you can configure custom timeout lengths
-        /// using the CloudFront API. The minimum timeout length is 1 second; the maximum is 60
-        /// seconds.
+        /// Specifies how long, in seconds, CloudFront persists its connection to the origin.
+        /// The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you
+        /// don’t specify otherwise) is 5 seconds.
         /// </para>
         ///  
         /// <para>
-        /// If you need to increase the maximum time limit, contact the <a href="https://console.aws.amazon.com/support/home#/">AWS
-        /// Support Center</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Origin
+        /// Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
         public int OriginKeepaliveTimeout
@@ -107,8 +110,23 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property OriginProtocolPolicy. 
         /// <para>
-        /// The origin protocol policy to apply to your origin.
+        /// Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin.
+        /// Valid values are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>match-viewer</code> – CloudFront connects to the origin using the same protocol
+        /// that the viewer used to connect to CloudFront.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public OriginProtocolPolicy OriginProtocolPolicy
@@ -126,15 +144,15 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property OriginReadTimeout. 
         /// <para>
-        /// You can create a custom origin read timeout. All timeout units are in seconds. The
-        /// default origin read timeout is 30 seconds, but you can configure custom timeout lengths
-        /// using the CloudFront API. The minimum timeout length is 4 seconds; the maximum is
-        /// 60 seconds.
+        /// Specifies how long, in seconds, CloudFront waits for a response from the origin. This
+        /// is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second,
+        /// the maximum is 60 seconds, and the default (if you don’t specify otherwise) is 30
+        /// seconds.
         /// </para>
         ///  
         /// <para>
-        /// If you need to increase the maximum time limit, contact the <a href="https://console.aws.amazon.com/support/home#/">AWS
-        /// Support Center</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
+        /// Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
         public int OriginReadTimeout
@@ -152,8 +170,14 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property OriginSslProtocols. 
         /// <para>
-        /// The SSL/TLS protocols that you want CloudFront to use when communicating with your
-        /// origin over HTTPS.
+        /// Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your
+        /// origin over HTTPS. Valid values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>,
+        /// and <code>TLSv1.2</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols">Minimum
+        /// Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
         public OriginSslProtocols OriginSslProtocols

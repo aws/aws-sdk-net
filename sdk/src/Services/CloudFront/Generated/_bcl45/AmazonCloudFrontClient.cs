@@ -267,7 +267,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
         /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
@@ -311,7 +311,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
         /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
@@ -375,7 +375,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
         /// The default root object file name is too big or contains an invalid character.
@@ -557,7 +557,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
         /// The default root object file name is too big or contains an invalid character.
@@ -725,7 +725,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
         /// The default root object file name is too big or contains an invalid character.
@@ -895,7 +895,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
         /// The default root object file name is too big or contains an invalid character.
@@ -1055,7 +1055,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
         /// The specified profile for field-level encryption doesn't exist.
@@ -1099,7 +1099,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
         /// The specified profile for field-level encryption doesn't exist.
@@ -1147,7 +1147,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
         /// The specified public key doesn't exist.
@@ -1191,7 +1191,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
         /// The specified public key doesn't exist.
@@ -1236,7 +1236,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
         /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
@@ -1279,7 +1279,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
         /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
@@ -1315,7 +1315,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the CreatePublicKey service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PublicKeyAlreadyExistsException">
         /// The specified public key already exists.
@@ -1346,7 +1346,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the CreatePublicKey service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PublicKeyAlreadyExistsException">
         /// The specified public key already exists.
@@ -1421,7 +1421,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
@@ -1515,7 +1515,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
@@ -1575,7 +1575,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
@@ -1637,7 +1637,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
@@ -1702,7 +1702,7 @@ namespace Amazon.CloudFront
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity()
@@ -1730,7 +1730,7 @@ namespace Amazon.CloudFront
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request)
@@ -1764,7 +1764,7 @@ namespace Amazon.CloudFront
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1794,7 +1794,7 @@ namespace Amazon.CloudFront
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(DeleteCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1830,7 +1830,7 @@ namespace Amazon.CloudFront
         /// The specified distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         public virtual DeleteDistributionResponse DeleteDistribution()
@@ -1859,7 +1859,7 @@ namespace Amazon.CloudFront
         /// The specified distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         public virtual DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request)
@@ -1894,7 +1894,7 @@ namespace Amazon.CloudFront
         /// The specified distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         public virtual Task<DeleteDistributionResponse> DeleteDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1925,7 +1925,7 @@ namespace Amazon.CloudFront
         /// The specified distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         public virtual Task<DeleteDistributionResponse> DeleteDistributionAsync(DeleteDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1961,7 +1961,7 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteFieldLevelEncryptionConfig">REST API Reference for DeleteFieldLevelEncryptionConfig Operation</seealso>
         public virtual DeleteFieldLevelEncryptionConfigResponse DeleteFieldLevelEncryptionConfig(DeleteFieldLevelEncryptionConfigRequest request)
@@ -1996,7 +1996,7 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteFieldLevelEncryptionConfig">REST API Reference for DeleteFieldLevelEncryptionConfig Operation</seealso>
         public virtual Task<DeleteFieldLevelEncryptionConfigResponse> DeleteFieldLevelEncryptionConfigAsync(DeleteFieldLevelEncryptionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2032,7 +2032,7 @@ namespace Amazon.CloudFront
         /// The specified profile for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteFieldLevelEncryptionProfile">REST API Reference for DeleteFieldLevelEncryptionProfile Operation</seealso>
         public virtual DeleteFieldLevelEncryptionProfileResponse DeleteFieldLevelEncryptionProfile(DeleteFieldLevelEncryptionProfileRequest request)
@@ -2067,7 +2067,7 @@ namespace Amazon.CloudFront
         /// The specified profile for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteFieldLevelEncryptionProfile">REST API Reference for DeleteFieldLevelEncryptionProfile Operation</seealso>
         public virtual Task<DeleteFieldLevelEncryptionProfileResponse> DeleteFieldLevelEncryptionProfileAsync(DeleteFieldLevelEncryptionProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2100,7 +2100,7 @@ namespace Amazon.CloudFront
         /// The specified public key doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PublicKeyInUseException">
         /// The specified public key is in use.
@@ -2135,7 +2135,7 @@ namespace Amazon.CloudFront
         /// The specified public key doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PublicKeyInUseException">
         /// The specified public key is in use.
@@ -2228,7 +2228,7 @@ namespace Amazon.CloudFront
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// The specified CloudFront distribution is not disabled. You must disable the distribution
@@ -2315,7 +2315,7 @@ namespace Amazon.CloudFront
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// The specified CloudFront distribution is not disabled. You must disable the distribution
@@ -2408,7 +2408,7 @@ namespace Amazon.CloudFront
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// The specified CloudFront distribution is not disabled. You must disable the distribution
@@ -2497,7 +2497,7 @@ namespace Amazon.CloudFront
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// The specified CloudFront distribution is not disabled. You must disable the distribution
@@ -3447,7 +3447,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the ListCloudFrontOriginAccessIdentities service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         public virtual ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities()
@@ -3463,7 +3463,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the ListCloudFrontOriginAccessIdentities service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         public virtual ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request)
@@ -3485,7 +3485,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the ListCloudFrontOriginAccessIdentities service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         public virtual Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3503,7 +3503,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the ListCloudFrontOriginAccessIdentities service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         public virtual Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(ListCloudFrontOriginAccessIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3526,7 +3526,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the ListDistributions service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         public virtual ListDistributionsResponse ListDistributions()
@@ -3542,7 +3542,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the ListDistributions service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         public virtual ListDistributionsResponse ListDistributions(ListDistributionsRequest request)
@@ -3564,7 +3564,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the ListDistributions service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         public virtual Task<ListDistributionsResponse> ListDistributionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3582,7 +3582,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the ListDistributions service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         public virtual Task<ListDistributionsResponse> ListDistributionsAsync(ListDistributionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3606,7 +3606,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the ListDistributionsByWebACLId service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
@@ -3634,7 +3634,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the ListDistributionsByWebACLId service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
@@ -3664,7 +3664,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the ListFieldLevelEncryptionConfigs service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListFieldLevelEncryptionConfigs">REST API Reference for ListFieldLevelEncryptionConfigs Operation</seealso>
         public virtual ListFieldLevelEncryptionConfigsResponse ListFieldLevelEncryptionConfigs(ListFieldLevelEncryptionConfigsRequest request)
@@ -3688,7 +3688,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the ListFieldLevelEncryptionConfigs service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListFieldLevelEncryptionConfigs">REST API Reference for ListFieldLevelEncryptionConfigs Operation</seealso>
         public virtual Task<ListFieldLevelEncryptionConfigsResponse> ListFieldLevelEncryptionConfigsAsync(ListFieldLevelEncryptionConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3713,7 +3713,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the ListFieldLevelEncryptionProfiles service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListFieldLevelEncryptionProfiles">REST API Reference for ListFieldLevelEncryptionProfiles Operation</seealso>
         public virtual ListFieldLevelEncryptionProfilesResponse ListFieldLevelEncryptionProfiles(ListFieldLevelEncryptionProfilesRequest request)
@@ -3737,7 +3737,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the ListFieldLevelEncryptionProfiles service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListFieldLevelEncryptionProfiles">REST API Reference for ListFieldLevelEncryptionProfiles Operation</seealso>
         public virtual Task<ListFieldLevelEncryptionProfilesResponse> ListFieldLevelEncryptionProfilesAsync(ListFieldLevelEncryptionProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3764,7 +3764,7 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
@@ -3793,7 +3793,7 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
@@ -3820,7 +3820,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the ListPublicKeys service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
         public virtual ListPublicKeysResponse ListPublicKeys(ListPublicKeysRequest request)
@@ -3843,7 +3843,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the ListPublicKeys service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
         public virtual Task<ListPublicKeysResponse> ListPublicKeysAsync(ListPublicKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3866,7 +3866,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the ListStreamingDistributions service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         public virtual ListStreamingDistributionsResponse ListStreamingDistributions()
@@ -3882,7 +3882,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the ListStreamingDistributions service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         public virtual ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest request)
@@ -3904,7 +3904,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the ListStreamingDistributions service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         public virtual Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3922,7 +3922,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the ListStreamingDistributions service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         public virtual Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(ListStreamingDistributionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3949,7 +3949,7 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
         /// The tagging specified is not valid.
@@ -3981,7 +3981,7 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
         /// The tagging specified is not valid.
@@ -4014,7 +4014,7 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
         /// The tagging specified is not valid.
@@ -4046,7 +4046,7 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
         /// The tagging specified is not valid.
@@ -4079,7 +4079,7 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
         /// The tagging specified is not valid.
@@ -4111,7 +4111,7 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
         /// The tagging specified is not valid.
@@ -4150,7 +4150,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <code>If-Match</code> version is missing or not valid for the distribution.
@@ -4163,7 +4163,7 @@ namespace Amazon.CloudFront
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request)
@@ -4195,7 +4195,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <code>If-Match</code> version is missing or not valid for the distribution.
@@ -4208,7 +4208,7 @@ namespace Amazon.CloudFront
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual Task<UpdateCloudFrontOriginAccessIdentityResponse> UpdateCloudFrontOriginAccessIdentityAsync(UpdateCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4344,7 +4344,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
         /// The default root object file name is too big or contains an invalid character.
@@ -4423,7 +4423,7 @@ namespace Amazon.CloudFront
         /// No origin exists with the specified <code>Origin Id</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
         /// You cannot create more cache behaviors for the distribution.
@@ -4604,7 +4604,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
         /// The default root object file name is too big or contains an invalid character.
@@ -4683,7 +4683,7 @@ namespace Amazon.CloudFront
         /// No origin exists with the specified <code>Origin Id</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
         /// You cannot create more cache behaviors for the distribution.
@@ -4762,7 +4762,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <code>If-Match</code> version is missing or not valid for the distribution.
@@ -4774,7 +4774,7 @@ namespace Amazon.CloudFront
         /// The specified profile for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.QueryArgProfileEmptyException">
         /// No profile specified for the field-level encryption query argument.
@@ -4815,7 +4815,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <code>If-Match</code> version is missing or not valid for the distribution.
@@ -4827,7 +4827,7 @@ namespace Amazon.CloudFront
         /// The specified profile for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.QueryArgProfileEmptyException">
         /// No profile specified for the field-level encryption query argument.
@@ -4875,7 +4875,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <code>If-Match</code> version is missing or not valid for the distribution.
@@ -4887,7 +4887,7 @@ namespace Amazon.CloudFront
         /// The specified public key doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionEncryptionEntitiesException">
         /// The maximum number of encryption entities for field-level encryption have been created.
@@ -4931,7 +4931,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <code>If-Match</code> version is missing or not valid for the distribution.
@@ -4943,7 +4943,7 @@ namespace Amazon.CloudFront
         /// The specified public key doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionEncryptionEntitiesException">
         /// The maximum number of encryption entities for field-level encryption have been created.
@@ -4982,7 +4982,7 @@ namespace Amazon.CloudFront
         /// Origin and <code>CallerReference</code> cannot be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <code>If-Match</code> version is missing or not valid for the distribution.
@@ -4991,7 +4991,7 @@ namespace Amazon.CloudFront
         /// The specified public key doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdatePublicKey">REST API Reference for UpdatePublicKey Operation</seealso>
         public virtual UpdatePublicKeyResponse UpdatePublicKey(UpdatePublicKeyRequest request)
@@ -5023,7 +5023,7 @@ namespace Amazon.CloudFront
         /// Origin and <code>CallerReference</code> cannot be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <code>If-Match</code> version is missing or not valid for the distribution.
@@ -5032,7 +5032,7 @@ namespace Amazon.CloudFront
         /// The specified public key doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdatePublicKey">REST API Reference for UpdatePublicKey Operation</seealso>
         public virtual Task<UpdatePublicKeyResponse> UpdatePublicKeyAsync(UpdatePublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5068,7 +5068,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <code>If-Match</code> version is missing or not valid for the distribution.
@@ -5084,7 +5084,7 @@ namespace Amazon.CloudFront
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionCNAMEsException">
         /// Your request contains more CNAMEs than are allowed per distribution.
@@ -5128,7 +5128,7 @@ namespace Amazon.CloudFront
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
+        /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <code>If-Match</code> version is missing or not valid for the distribution.
@@ -5144,7 +5144,7 @@ namespace Amazon.CloudFront
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionCNAMEsException">
         /// Your request contains more CNAMEs than are allowed per distribution.

@@ -34,7 +34,7 @@ namespace Amazon.CloudFront.Model
     ///  
     /// <para>
     /// You must create at least as many cache behaviors (including the default cache behavior)
-    /// as you have origins if you want CloudFront to distribute objects from all of the origins.
+    /// as you have origins if you want CloudFront to serve objects from all of the origins.
     /// Each cache behavior specifies the one origin from which you want CloudFront to get
     /// objects. If you have two origins and only the default cache behavior, the default
     /// cache behavior will cause CloudFront to get objects from one of the origins, but the
@@ -42,15 +42,15 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  
     /// <para>
-    /// For the current limit on the number of cache behaviors that you can add to a distribution,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon
-    /// CloudFront Limits</a> in the <i>AWS General Reference</i>.
+    /// For the current quota (formerly known as limit) on the number of cache behaviors that
+    /// you can add to a distribution, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+    /// in the <i>Amazon CloudFront Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// If you don't want to specify any cache behaviors, include only an empty <code>CacheBehaviors</code>
-    /// element. Don't include an empty <code>CacheBehavior</code> element, or CloudFront
-    /// returns a <code>MalformedXML</code> error.
+    /// If you don’t want to specify any cache behaviors, include only an empty <code>CacheBehaviors</code>
+    /// element. Don’t include an empty <code>CacheBehavior</code> element because this is
+    /// invalid.
     /// </para>
     ///  
     /// <para>
@@ -65,7 +65,7 @@ namespace Amazon.CloudFront.Model
     ///  
     /// <para>
     /// For more information about cache behaviors, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
-    /// Behaviors</a> in the <i>Amazon CloudFront Developer Guide</i>.
+    /// Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class CacheBehavior
@@ -148,8 +148,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property FieldLevelEncryptionId. 
         /// <para>
         /// The value of <code>ID</code> for the field-level encryption configuration that you
-        /// want CloudFront to use for encrypting specific fields of data for a cache behavior
-        /// or for the default cache behavior in your distribution.
+        /// want CloudFront to use for encrypting specific fields of data for this cache behavior.
         /// </para>
         /// </summary>
         public string FieldLevelEncryptionId
@@ -321,8 +320,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property TargetOriginId. 
         /// <para>
         /// The value of <code>ID</code> for the origin that you want CloudFront to route requests
-        /// to when a request matches the path pattern either for a cache behavior or for the
-        /// default cache behavior in your distribution.
+        /// to when they match this cache behavior.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -350,19 +348,19 @@ namespace Amazon.CloudFront.Model
         /// match the <code>PathPattern</code> for this cache behavior, specify <code>true</code>
         /// for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code>
         /// and <code>Items</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-        /// Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
-        /// 
+        /// Private Content with Signed URLs and Signed Cookies</a> in the <i>Amazon CloudFront
+        /// Developer Guide</i>. 
         /// </para>
         ///  
         /// <para>
-        /// If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>,
+        /// If you don’t want to require signed URLs in requests for objects that match <code>PathPattern</code>,
         /// specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>.
         /// Omit <code>Items</code>.
         /// </para>
         ///  
         /// <para>
         /// To add, change, or remove one or more trusted signers, change <code>Enabled</code>
-        /// to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code>
+        /// to <code>true</code> (if it’s currently <code>false</code>), change <code>Quantity</code>
         /// as applicable, and specify all of the trusted signers that you want to include in
         /// the updated distribution.
         /// </para>
@@ -404,20 +402,18 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about requiring the HTTPS protocol, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
-        /// an HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer
-        /// Guide</i>.
+        /// For more information about requiring the HTTPS protocol, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring
+        /// HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
         /// The only way to guarantee that viewers retrieve an object that was fetched from the
         /// origin using HTTPS is never to use any other protocol to fetch the object. If you
-        /// have recently changed from HTTP to HTTPS, we recommend that you clear your objects'
+        /// have recently changed from HTTP to HTTPS, we recommend that you clear your objects’
         /// cache because cached objects are protocol agnostic. That means that an edge location
         /// will return an object from the cache regardless of whether the current request protocol
         /// matches the protocol used previously. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
-        /// How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront
-        /// Developer Guide</i>.
+        /// Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>

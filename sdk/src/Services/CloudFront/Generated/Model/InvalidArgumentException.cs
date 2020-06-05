@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The argument is invalid.
+    /// An argument is invalid.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

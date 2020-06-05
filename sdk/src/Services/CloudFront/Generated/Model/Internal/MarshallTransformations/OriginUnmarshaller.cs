@@ -55,6 +55,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("ConnectionAttempts", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.ConnectionAttempts = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ConnectionTimeout", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.ConnectionTimeout = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CustomHeaders", targetDepth))
                     {
                         var unmarshaller = CustomHeadersUnmarshaller.Instance;
