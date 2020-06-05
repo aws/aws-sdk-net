@@ -123,6 +123,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     response.TimeoutInMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("tlsConfig", targetDepth))
+                {
+                    var unmarshaller = TlsConfigUnmarshaller.Instance;
+                    response.TlsConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
