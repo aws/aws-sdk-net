@@ -57,6 +57,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     response.Budgets = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LaunchPaths", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<LaunchPath, LaunchPathUnmarshaller>(LaunchPathUnmarshaller.Instance);
+                    response.LaunchPaths = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProductViewSummary", targetDepth))
                 {
                     var unmarshaller = ProductViewSummaryUnmarshaller.Instance;

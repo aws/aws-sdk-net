@@ -116,8 +116,9 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>OWNER</code> key only accepts user ARNs. The owner is the user that is allowed
-        /// to see, update, terminate, and execute service actions in the provisioned product.
+        /// The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user
+        /// that is allowed to see, update, terminate, and execute service actions in the provisioned
+        /// product.
         /// </para>
         ///  
         /// <para>

@@ -29,51 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeProduct operation.
-    /// Gets information about the specified product.
+    /// A launch path object.
     /// </summary>
-    public partial class DescribeProductRequest : AmazonServiceCatalogRequest
+    public partial class LaunchPath
     {
-        private string _acceptLanguage;
         private string _id;
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property AcceptLanguage. 
-        /// <para>
-        /// The language code.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>en</code> - English (default)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>jp</code> - Japanese
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>zh</code> - Chinese
-        /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        [AWSProperty(Max=100)]
-        public string AcceptLanguage
-        {
-            get { return this._acceptLanguage; }
-            set { this._acceptLanguage = value; }
-        }
-
-        // Check to see if AcceptLanguage property is set
-        internal bool IsSetAcceptLanguage()
-        {
-            return this._acceptLanguage != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The product identifier.
+        /// The identifier of the launch path.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -92,10 +58,9 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The product name.
+        /// The name of the launch path.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8191)]
         public string Name
         {
             get { return this._name; }

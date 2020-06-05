@@ -34,6 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class DescribeProductResponse : AmazonWebServiceResponse
     {
         private List<BudgetDetail> _budgets = new List<BudgetDetail>();
+        private List<LaunchPath> _launchPaths = new List<LaunchPath>();
         private ProductViewSummary _productViewSummary;
         private List<ProvisioningArtifact> _provisioningArtifacts = new List<ProvisioningArtifact>();
 
@@ -53,6 +54,24 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetBudgets()
         {
             return this._budgets != null && this._budgets.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchPaths. 
+        /// <para>
+        /// Information about the associated launch paths.
+        /// </para>
+        /// </summary>
+        public List<LaunchPath> LaunchPaths
+        {
+            get { return this._launchPaths; }
+            set { this._launchPaths = value; }
+        }
+
+        // Check to see if LaunchPaths property is set
+        internal bool IsSetLaunchPaths()
+        {
+            return this._launchPaths != null && this._launchPaths.Count > 0; 
         }
 
         /// <summary>

@@ -37,7 +37,9 @@ namespace Amazon.ServiceCatalog.Model
     {
         private string _acceptLanguage;
         private string _productId;
+        private string _productName;
         private string _provisioningArtifactId;
+        private string _provisioningArtifactName;
         private bool? _verbose;
 
         /// <summary>
@@ -78,7 +80,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The product identifier.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public string ProductId
         {
             get { return this._productId; }
@@ -92,12 +94,31 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProductName. 
+        /// <para>
+        /// The product name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=8191)]
+        public string ProductName
+        {
+            get { return this._productName; }
+            set { this._productName = value; }
+        }
+
+        // Check to see if ProductName property is set
+        internal bool IsSetProductName()
+        {
+            return this._productName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ProvisioningArtifactId. 
         /// <para>
         /// The identifier of the provisioning artifact.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public string ProvisioningArtifactId
         {
             get { return this._provisioningArtifactId; }
@@ -108,6 +129,25 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetProvisioningArtifactId()
         {
             return this._provisioningArtifactId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisioningArtifactName. 
+        /// <para>
+        /// The provisioning artifact name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=8192)]
+        public string ProvisioningArtifactName
+        {
+            get { return this._provisioningArtifactName; }
+            set { this._provisioningArtifactName = value; }
+        }
+
+        // Check to see if ProvisioningArtifactName property is set
+        internal bool IsSetProvisioningArtifactName()
+        {
+            return this._provisioningArtifactName != null;
         }
 
         /// <summary>

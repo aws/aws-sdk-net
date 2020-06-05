@@ -64,6 +64,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The description of the provisioning artifact.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string Description
         {
             get { return this._description; }
@@ -101,6 +102,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The name of the provisioning artifact.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string Name
         {
             get { return this._name; }
