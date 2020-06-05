@@ -35,12 +35,33 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class CreateBatchInferenceJobRequest : AmazonPersonalizeRequest
     {
+        private string _filterArn;
         private BatchInferenceJobInput _jobInput;
         private string _jobName;
         private BatchInferenceJobOutput _jobOutput;
         private int? _numResults;
         private string _roleArn;
         private string _solutionVersionArn;
+
+        /// <summary>
+        /// Gets and sets the property FilterArn. 
+        /// <para>
+        /// The ARN of the filter to apply to the batch inference job. For more information on
+        /// using filters, see Using Filters with Amazon Personalize.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string FilterArn
+        {
+            get { return this._filterArn; }
+            set { this._filterArn = value; }
+        }
+
+        // Check to see if FilterArn property is set
+        internal bool IsSetFilterArn()
+        {
+            return this._filterArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property JobInput. 

@@ -660,6 +660,59 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  CreateFilter
+
+
+        /// <summary>
+        /// Creates a recommendation filter. For more information, see Using Filters with Amazon
+        /// Personalize.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFilter service method.</param>
+        /// 
+        /// <returns>The response from the CreateFilter service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter">REST API Reference for CreateFilter Operation</seealso>
+        CreateFilterResponse CreateFilter(CreateFilterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFilter operation on AmazonPersonalizeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFilter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter">REST API Reference for CreateFilter Operation</seealso>
+        IAsyncResult BeginCreateFilter(CreateFilterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFilter.</param>
+        /// 
+        /// <returns>Returns a  CreateFilterResult from Personalize.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter">REST API Reference for CreateFilter Operation</seealso>
+        CreateFilterResponse EndCreateFilter(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateSchema
 
 
@@ -1172,6 +1225,52 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  DeleteFilter
+
+
+        /// <summary>
+        /// Deletes a filter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFilter service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFilter service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteFilter">REST API Reference for DeleteFilter Operation</seealso>
+        DeleteFilterResponse DeleteFilter(DeleteFilterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFilter operation on AmazonPersonalizeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFilter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteFilter">REST API Reference for DeleteFilter Operation</seealso>
+        IAsyncResult BeginDeleteFilter(DeleteFilterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFilter.</param>
+        /// 
+        /// <returns>Returns a  DeleteFilterResult from Personalize.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteFilter">REST API Reference for DeleteFilter Operation</seealso>
+        DeleteFilterResponse EndDeleteFilter(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteSchema
 
 
@@ -1668,6 +1767,52 @@ namespace Amazon.Personalize
         /// <returns>Returns a  DescribeFeatureTransformationResult from Personalize.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeFeatureTransformation">REST API Reference for DescribeFeatureTransformation Operation</seealso>
         DescribeFeatureTransformationResponse EndDescribeFeatureTransformation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeFilter
+
+
+        /// <summary>
+        /// Describes a filter's properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFilter service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFilter service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeFilter">REST API Reference for DescribeFilter Operation</seealso>
+        DescribeFilterResponse DescribeFilter(DescribeFilterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFilter operation on AmazonPersonalizeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFilter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeFilter">REST API Reference for DescribeFilter Operation</seealso>
+        IAsyncResult BeginDescribeFilter(DescribeFilterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFilter.</param>
+        /// 
+        /// <returns>Returns a  DescribeFilterResult from Personalize.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeFilter">REST API Reference for DescribeFilter Operation</seealso>
+        DescribeFilterResponse EndDescribeFilter(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2215,6 +2360,52 @@ namespace Amazon.Personalize
         /// <returns>Returns a  ListEventTrackersResult from Personalize.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListEventTrackers">REST API Reference for ListEventTrackers Operation</seealso>
         ListEventTrackersResponse EndListEventTrackers(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListFilters
+
+
+        /// <summary>
+        /// Lists all filters that belong to a given dataset group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFilters service method.</param>
+        /// 
+        /// <returns>The response from the ListFilters service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListFilters">REST API Reference for ListFilters Operation</seealso>
+        ListFiltersResponse ListFilters(ListFiltersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFilters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFilters operation on AmazonPersonalizeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFilters
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListFilters">REST API Reference for ListFilters Operation</seealso>
+        IAsyncResult BeginListFilters(ListFiltersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFilters operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFilters.</param>
+        /// 
+        /// <returns>Returns a  ListFiltersResult from Personalize.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListFilters">REST API Reference for ListFilters Operation</seealso>
+        ListFiltersResponse EndListFilters(IAsyncResult asyncResult);
 
         #endregion
         

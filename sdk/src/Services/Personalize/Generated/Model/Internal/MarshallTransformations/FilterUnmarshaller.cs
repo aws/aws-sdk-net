@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BatchInferenceJob Object
+    /// Response Unmarshaller for Filter Object
     /// </summary>  
-    public class BatchInferenceJobUnmarshaller : IUnmarshaller<BatchInferenceJob, XmlUnmarshallerContext>, IUnmarshaller<BatchInferenceJob, JsonUnmarshallerContext>
+    public class FilterUnmarshaller : IUnmarshaller<Filter, XmlUnmarshallerContext>, IUnmarshaller<Filter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BatchInferenceJob IUnmarshaller<BatchInferenceJob, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Filter IUnmarshaller<Filter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public BatchInferenceJob Unmarshall(JsonUnmarshallerContext context)
+        public Filter Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BatchInferenceJob unmarshalledObject = new BatchInferenceJob();
+            Filter unmarshalledObject = new Filter();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("batchInferenceJobArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BatchInferenceJobArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("creationDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationDateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("datasetGroupArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatasetGroupArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("failureReason", targetDepth))
@@ -88,22 +88,10 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.FilterArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("jobInput", targetDepth))
-                {
-                    var unmarshaller = BatchInferenceJobInputUnmarshaller.Instance;
-                    unmarshalledObject.JobInput = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("jobName", targetDepth))
+                if (context.TestExpression("filterExpression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("jobOutput", targetDepth))
-                {
-                    var unmarshaller = BatchInferenceJobOutputUnmarshaller.Instance;
-                    unmarshalledObject.JobOutput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilterExpression = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastUpdatedDateTime", targetDepth))
@@ -112,22 +100,10 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastUpdatedDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("numResults", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.NumResults = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("solutionVersionArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SolutionVersionArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
@@ -142,12 +118,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         }
 
 
-        private static BatchInferenceJobUnmarshaller _instance = new BatchInferenceJobUnmarshaller();        
+        private static FilterUnmarshaller _instance = new FilterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BatchInferenceJobUnmarshaller Instance
+        public static FilterUnmarshaller Instance
         {
             get
             {

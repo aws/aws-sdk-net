@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateBatchInferenceJob Request Marshaller
+    /// ListFilters Request Marshaller
     /// </summary>       
-    public class CreateBatchInferenceJobRequestMarshaller : IMarshaller<IRequest, CreateBatchInferenceJobRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListFiltersRequestMarshaller : IMarshaller<IRequest, ListFiltersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateBatchInferenceJobRequest)input);
+            return this.Marshall((ListFiltersRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateBatchInferenceJobRequest publicRequest)
+        public IRequest Marshall(ListFiltersRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Personalize");
-            string target = "AmazonPersonalize.CreateBatchInferenceJob";
+            string target = "AmazonPersonalize.ListFilters";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-22";            
@@ -68,56 +68,22 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilterArn())
+                if(publicRequest.IsSetDatasetGroupArn())
                 {
-                    context.Writer.WritePropertyName("filterArn");
-                    context.Writer.Write(publicRequest.FilterArn);
+                    context.Writer.WritePropertyName("datasetGroupArn");
+                    context.Writer.Write(publicRequest.DatasetGroupArn);
                 }
 
-                if(publicRequest.IsSetJobInput())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("jobInput");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BatchInferenceJobInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JobInput, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetJobName())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("jobName");
-                    context.Writer.Write(publicRequest.JobName);
-                }
-
-                if(publicRequest.IsSetJobOutput())
-                {
-                    context.Writer.WritePropertyName("jobOutput");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BatchInferenceJobOutputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JobOutput, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNumResults())
-                {
-                    context.Writer.WritePropertyName("numResults");
-                    context.Writer.Write(publicRequest.NumResults);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetSolutionVersionArn())
-                {
-                    context.Writer.WritePropertyName("solutionVersionArn");
-                    context.Writer.Write(publicRequest.SolutionVersionArn);
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
         
@@ -129,9 +95,9 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateBatchInferenceJobRequestMarshaller _instance = new CreateBatchInferenceJobRequestMarshaller();        
+        private static ListFiltersRequestMarshaller _instance = new ListFiltersRequestMarshaller();        
 
-        internal static CreateBatchInferenceJobRequestMarshaller GetInstance()
+        internal static ListFiltersRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -139,7 +105,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateBatchInferenceJobRequestMarshaller Instance
+        public static ListFiltersRequestMarshaller Instance
         {
             get
             {

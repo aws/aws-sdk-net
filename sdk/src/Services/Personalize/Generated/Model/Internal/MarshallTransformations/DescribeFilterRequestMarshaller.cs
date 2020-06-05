@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateBatchInferenceJob Request Marshaller
+    /// DescribeFilter Request Marshaller
     /// </summary>       
-    public class CreateBatchInferenceJobRequestMarshaller : IMarshaller<IRequest, CreateBatchInferenceJobRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeFilterRequestMarshaller : IMarshaller<IRequest, DescribeFilterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateBatchInferenceJobRequest)input);
+            return this.Marshall((DescribeFilterRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateBatchInferenceJobRequest publicRequest)
+        public IRequest Marshall(DescribeFilterRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Personalize");
-            string target = "AmazonPersonalize.CreateBatchInferenceJob";
+            string target = "AmazonPersonalize.DescribeFilter";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-22";            
@@ -74,52 +74,6 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FilterArn);
                 }
 
-                if(publicRequest.IsSetJobInput())
-                {
-                    context.Writer.WritePropertyName("jobInput");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BatchInferenceJobInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JobInput, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetJobName())
-                {
-                    context.Writer.WritePropertyName("jobName");
-                    context.Writer.Write(publicRequest.JobName);
-                }
-
-                if(publicRequest.IsSetJobOutput())
-                {
-                    context.Writer.WritePropertyName("jobOutput");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BatchInferenceJobOutputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JobOutput, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNumResults())
-                {
-                    context.Writer.WritePropertyName("numResults");
-                    context.Writer.Write(publicRequest.NumResults);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetSolutionVersionArn())
-                {
-                    context.Writer.WritePropertyName("solutionVersionArn");
-                    context.Writer.Write(publicRequest.SolutionVersionArn);
-                }
-
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -129,9 +83,9 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateBatchInferenceJobRequestMarshaller _instance = new CreateBatchInferenceJobRequestMarshaller();        
+        private static DescribeFilterRequestMarshaller _instance = new DescribeFilterRequestMarshaller();        
 
-        internal static CreateBatchInferenceJobRequestMarshaller GetInstance()
+        internal static DescribeFilterRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -139,7 +93,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateBatchInferenceJobRequestMarshaller Instance
+        public static DescribeFilterRequestMarshaller Instance
         {
             get
             {
