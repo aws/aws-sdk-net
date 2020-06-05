@@ -86,6 +86,12 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetFilterArn())
+                {
+                    context.Writer.WritePropertyName("filterArn");
+                    context.Writer.Write(publicRequest.FilterArn);
+                }
+
                 if(publicRequest.IsSetItemId())
                 {
                     context.Writer.WritePropertyName("itemId");

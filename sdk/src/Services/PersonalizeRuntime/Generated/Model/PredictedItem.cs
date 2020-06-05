@@ -63,8 +63,8 @@ namespace Amazon.PersonalizeRuntime.Model
         /// <summary>
         /// Gets and sets the property Score. 
         /// <para>
-        /// A numeric representation of the model's certainty in the item's suitability. For more
-        /// information on scoring logic, see <a>how-scores-work</a>.
+        /// A numeric representation of the model's certainty that the item will be the next user
+        /// selection. For more information on scoring logic, see <a>how-scores-work</a>.
         /// </para>
         /// </summary>
         public double Score
