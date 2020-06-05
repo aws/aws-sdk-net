@@ -40,6 +40,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _description;
         private string _environmentName;
         private string _groupName;
+        private string _operationsRole;
         private List<ConfigurationOptionSetting> _optionSettings = new List<ConfigurationOptionSetting>();
         private List<OptionSpecification> _optionsToRemove = new List<OptionSpecification>();
         private string _platformArn;
@@ -178,6 +179,30 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OperationsRole. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's
+        /// operations role. If specified, Elastic Beanstalk uses the operations role for permissions
+        /// to downstream services during this call and during subsequent calls acting on this
+        /// environment. To specify an operations role, you must have the <code>iam:PassRole</code>
+        /// permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+        /// roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string OperationsRole
+        {
+            get { return this._operationsRole; }
+            set { this._operationsRole = value; }
+        }
+
+        // Check to see if OperationsRole property is set
+        internal bool IsSetOperationsRole()
+        {
+            return this._operationsRole != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OptionSettings. 
         /// <para>
         /// If specified, AWS Elastic Beanstalk sets the specified configuration options to the
@@ -220,8 +245,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Gets and sets the property PlatformArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the custom platform to use with the environment.
-        /// For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
-        /// Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
+        /// Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>

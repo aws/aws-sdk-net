@@ -152,6 +152,46 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElasticBeanstalk")]
+        public void AssociateEnvironmentOperationsRoleMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateEnvironmentOperationsRole");
+
+            var request = InstantiateClassGenerator.Execute<AssociateEnvironmentOperationsRoleRequest>();
+            var marshaller = new AssociateEnvironmentOperationsRoleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void AssociateEnvironmentOperationsRole_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateEnvironmentOperationsRole");
+
+            var request = InstantiateClassGenerator.Execute<AssociateEnvironmentOperationsRoleRequest>();
+            var marshaller = new AssociateEnvironmentOperationsRoleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = AssociateEnvironmentOperationsRoleResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
         public void CheckDNSAvailabilityMarshallTest()
         {
             var operation = service_model.FindOperation("CheckDNSAvailability");
@@ -1639,6 +1679,46 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = DescribePlatformVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DisassociateEnvironmentOperationsRoleMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateEnvironmentOperationsRole");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateEnvironmentOperationsRoleRequest>();
+            var marshaller = new DisassociateEnvironmentOperationsRoleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DisassociateEnvironmentOperationsRole_InsufficientPrivilegesExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateEnvironmentOperationsRole");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateEnvironmentOperationsRoleRequest>();
+            var marshaller = new DisassociateEnvironmentOperationsRoleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientPrivilegesException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DisassociateEnvironmentOperationsRoleResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

@@ -6,6 +6,16 @@
     <max>40</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.AssociateEnvironmentOperationsRoleRequest.EnvironmentName</property>
+    <min>4</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.AssociateEnvironmentOperationsRoleRequest.OperationsRole</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CheckDNSAvailabilityRequest.CNAMEPrefix</property>
     <min>4</min>
     <max>63</max>
@@ -106,6 +116,11 @@
     <max>19</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.CreateEnvironmentRequest.OperationsRole</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateEnvironmentRequest.TemplateName</property>
     <min>1</min>
     <max>100</max>
@@ -133,6 +148,11 @@
     <property>Amazon.ElasticBeanstalk.Model.CreateEnvironmentResponse.EnvironmentName</property>
     <min>4</min>
     <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.CreateEnvironmentResponse.OperationsRole</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateEnvironmentResponse.TemplateName</property>
@@ -304,6 +324,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.DisassociateEnvironmentOperationsRoleRequest.EnvironmentName</property>
+    <min>4</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.ListPlatformBranchesRequest.MaxRecords</property>
     <min>1</min>
   </property-value-rule>
@@ -364,6 +389,11 @@
     <property>Amazon.ElasticBeanstalk.Model.TerminateEnvironmentResponse.EnvironmentName</property>
     <min>4</min>
     <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.TerminateEnvironmentResponse.OperationsRole</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.TerminateEnvironmentResponse.TemplateName</property>
@@ -488,6 +518,11 @@
     <property>Amazon.ElasticBeanstalk.Model.UpdateEnvironmentResponse.EnvironmentName</property>
     <min>4</min>
     <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.UpdateEnvironmentResponse.OperationsRole</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.UpdateEnvironmentResponse.TemplateName</property>

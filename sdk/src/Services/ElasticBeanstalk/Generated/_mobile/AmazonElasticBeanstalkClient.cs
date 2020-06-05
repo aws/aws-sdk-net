@@ -47,7 +47,7 @@ namespace Amazon.ElasticBeanstalk
     /// <para>
     /// For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS
     /// Elastic Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk
-    /// WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
+    /// WSDL is <a href="https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
     /// To install the Software Development Kits (SDKs), Integrated Development Environment
     /// (IDE) Toolkits, and command line tools that enable you to access the API, go to <a
     /// href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
@@ -341,6 +341,47 @@ namespace Amazon.ElasticBeanstalk
             options.ResponseUnmarshaller = ApplyEnvironmentManagedActionResponseUnmarshaller.Instance;
 
             return InvokeAsync<ApplyEnvironmentManagedActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateEnvironmentOperationsRole
+
+        internal virtual AssociateEnvironmentOperationsRoleResponse AssociateEnvironmentOperationsRole(AssociateEnvironmentOperationsRoleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateEnvironmentOperationsRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateEnvironmentOperationsRoleResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateEnvironmentOperationsRoleResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Add or change the operations role used by an environment. After this call is made,
+        /// Elastic Beanstalk uses the associated operations role for permissions to downstream
+        /// services during subsequent calls acting on this environment. For more information,
+        /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+        /// roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEnvironmentOperationsRole service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateEnvironmentOperationsRole service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole">REST API Reference for AssociateEnvironmentOperationsRole Operation</seealso>
+        public virtual Task<AssociateEnvironmentOperationsRoleResponse> AssociateEnvironmentOperationsRoleAsync(AssociateEnvironmentOperationsRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateEnvironmentOperationsRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateEnvironmentOperationsRoleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateEnvironmentOperationsRoleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1665,6 +1706,46 @@ namespace Amazon.ElasticBeanstalk
             options.ResponseUnmarshaller = DescribePlatformVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribePlatformVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateEnvironmentOperationsRole
+
+        internal virtual DisassociateEnvironmentOperationsRoleResponse DisassociateEnvironmentOperationsRole(DisassociateEnvironmentOperationsRoleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateEnvironmentOperationsRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateEnvironmentOperationsRoleResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateEnvironmentOperationsRoleResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociate the operations role from an environment. After this call is made, Elastic
+        /// Beanstalk uses the caller's permissions for permissions to downstream services during
+        /// subsequent calls acting on this environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+        /// roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEnvironmentOperationsRole service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateEnvironmentOperationsRole service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole">REST API Reference for DisassociateEnvironmentOperationsRole Operation</seealso>
+        public virtual Task<DisassociateEnvironmentOperationsRoleResponse> DisassociateEnvironmentOperationsRoleAsync(DisassociateEnvironmentOperationsRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateEnvironmentOperationsRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateEnvironmentOperationsRoleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateEnvironmentOperationsRoleResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -92,11 +92,12 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property TagsToAdd. 
         /// <para>
-        /// A list of tags to add or update.
+        /// A list of tags to add or update. If a key of an existing tag is added, the tag's value
+        /// is updated.
         /// </para>
         ///  
         /// <para>
-        /// If a key of an existing tag is added, the tag's value is updated.
+        /// Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.
         /// </para>
         /// </summary>
         public List<Tag> TagsToAdd
@@ -114,11 +115,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property TagsToRemove. 
         /// <para>
-        /// A list of tag keys to remove.
+        /// A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.
         /// </para>
         ///  
         /// <para>
-        /// If a tag key doesn't exist, it is silently ignored.
+        /// Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.
         /// </para>
         /// </summary>
         public List<string> TagsToRemove

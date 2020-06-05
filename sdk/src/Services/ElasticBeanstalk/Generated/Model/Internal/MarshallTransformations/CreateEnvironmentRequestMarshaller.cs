@@ -78,6 +78,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));
                 }
+                if(publicRequest.IsSetOperationsRole())
+                {
+                    request.Parameters.Add("OperationsRole", StringUtils.FromString(publicRequest.OperationsRole));
+                }
                 if(publicRequest.IsSetOptionSettings())
                 {
                     int publicRequestlistValueIndex = 1;

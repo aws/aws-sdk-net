@@ -44,7 +44,7 @@ namespace Amazon.ElasticBeanstalk
     /// <para>
     /// For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS
     /// Elastic Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk
-    /// WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
+    /// WSDL is <a href="https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
     /// To install the Software Development Kits (SDKs), Integrated Development Environment
     /// (IDE) Toolkits, and command line tools that enable you to access the API, go to <a
     /// href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
@@ -374,6 +374,67 @@ namespace Amazon.ElasticBeanstalk
         public virtual ApplyEnvironmentManagedActionResponse EndApplyEnvironmentManagedAction(IAsyncResult asyncResult)
         {
             return EndInvoke<ApplyEnvironmentManagedActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AssociateEnvironmentOperationsRole
+
+        /// <summary>
+        /// Add or change the operations role used by an environment. After this call is made,
+        /// Elastic Beanstalk uses the associated operations role for permissions to downstream
+        /// services during subsequent calls acting on this environment. For more information,
+        /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+        /// roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEnvironmentOperationsRole service method.</param>
+        /// 
+        /// <returns>The response from the AssociateEnvironmentOperationsRole service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole">REST API Reference for AssociateEnvironmentOperationsRole Operation</seealso>
+        public virtual AssociateEnvironmentOperationsRoleResponse AssociateEnvironmentOperationsRole(AssociateEnvironmentOperationsRoleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateEnvironmentOperationsRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateEnvironmentOperationsRoleResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateEnvironmentOperationsRoleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateEnvironmentOperationsRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEnvironmentOperationsRole operation on AmazonElasticBeanstalkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateEnvironmentOperationsRole
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole">REST API Reference for AssociateEnvironmentOperationsRole Operation</seealso>
+        public virtual IAsyncResult BeginAssociateEnvironmentOperationsRole(AssociateEnvironmentOperationsRoleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateEnvironmentOperationsRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateEnvironmentOperationsRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateEnvironmentOperationsRole operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateEnvironmentOperationsRole.</param>
+        /// 
+        /// <returns>Returns a  AssociateEnvironmentOperationsRoleResult from ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole">REST API Reference for AssociateEnvironmentOperationsRole Operation</seealso>
+        public virtual AssociateEnvironmentOperationsRoleResponse EndAssociateEnvironmentOperationsRole(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateEnvironmentOperationsRoleResponse>(asyncResult);
         }
 
         #endregion
@@ -2170,6 +2231,66 @@ namespace Amazon.ElasticBeanstalk
         public virtual DescribePlatformVersionResponse EndDescribePlatformVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribePlatformVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateEnvironmentOperationsRole
+
+        /// <summary>
+        /// Disassociate the operations role from an environment. After this call is made, Elastic
+        /// Beanstalk uses the caller's permissions for permissions to downstream services during
+        /// subsequent calls acting on this environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+        /// roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEnvironmentOperationsRole service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateEnvironmentOperationsRole service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole">REST API Reference for DisassociateEnvironmentOperationsRole Operation</seealso>
+        public virtual DisassociateEnvironmentOperationsRoleResponse DisassociateEnvironmentOperationsRole(DisassociateEnvironmentOperationsRoleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateEnvironmentOperationsRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateEnvironmentOperationsRoleResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateEnvironmentOperationsRoleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateEnvironmentOperationsRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEnvironmentOperationsRole operation on AmazonElasticBeanstalkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateEnvironmentOperationsRole
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole">REST API Reference for DisassociateEnvironmentOperationsRole Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateEnvironmentOperationsRole(DisassociateEnvironmentOperationsRoleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateEnvironmentOperationsRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateEnvironmentOperationsRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateEnvironmentOperationsRole operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateEnvironmentOperationsRole.</param>
+        /// 
+        /// <returns>Returns a  DisassociateEnvironmentOperationsRoleResult from ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole">REST API Reference for DisassociateEnvironmentOperationsRole Operation</seealso>
+        public virtual DisassociateEnvironmentOperationsRoleResponse EndDisassociateEnvironmentOperationsRole(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateEnvironmentOperationsRoleResponse>(asyncResult);
         }
 
         #endregion
