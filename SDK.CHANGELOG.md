@@ -1,3 +1,26 @@
+### 3.3.755.0 (2020-06-05 18:14 UTC)
+* APIGateway (3.3.104.0)
+	* Amazon API Gateway now allows customers of REST APIs to skip trust chain validation for backend server certificates for HTTP and VPC Link Integration. This feature enables customers to configure their REST APIs to integrate with backends that are secured with certificates vended from private certificate authorities (CA) or certificates that are self-signed.
+* CloudFront (3.3.102.0)
+	* Amazon CloudFront adds support for configurable origin connection attempts and origin connection timeout.
+* ElasticBeanstalk (3.3.102.0)
+	* These API changes enable an IAM user to associate an operations role with an Elastic Beanstalk environment, so that the IAM user can call Elastic Beanstalk actions without having access to underlying downstream AWS services that these actions call.
+* Personalize (3.3.105.0)
+	* [Personalize] Adds ability to create and apply filters.
+* PersonalizeRuntime (3.3.104.0)
+	* [Personalize] Adds ability to apply filter to real-time recommendations
+* Pinpoint (3.3.110.0)
+	* This release enables additional functionality for the Amazon Pinpoint journeys feature. With this release, you can send messages through additional channels, including SMS, push notifications, and custom channels.
+* SageMakerRuntime (3.3.102.0)
+	* You can now specify the production variant to send the inference request to, when invoking a SageMaker Endpoint that is running two or more variants.
+* ServiceCatalog (3.3.112.0)
+	* This release adds support for DescribeProduct and DescribeProductAsAdmin by product name, DescribeProvisioningArtifact by product name or provisioning artifact name, returning launch paths as part of DescribeProduct output and adds maximum length for provisioning artifact name and provisioning artifact description.
+* Core 3.3.107.8
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.754.0 (2020-06-04 18:21 UTC)
 * AWSMarketplaceMetering (3.3.101.91)
 	* Documentation updates for meteringmarketplace
