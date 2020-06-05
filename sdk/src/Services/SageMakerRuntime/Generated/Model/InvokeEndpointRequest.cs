@@ -74,6 +74,7 @@ namespace Amazon.SageMakerRuntime.Model
         private string _customAttributes;
         private string _endpointName;
         private string _targetModel;
+        private string _targetVariant;
 
         /// <summary>
         /// Gets and sets the property Accept. 
@@ -103,10 +104,10 @@ namespace Amazon.SageMakerRuntime.Model
         ///  
         /// <para>
         /// For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common
-        /// Data Formats—Inference</a>.
+        /// Data Formats-Inference</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=5242880)]
+        [AWSProperty(Required=true, Max=6291456)]
         public MemoryStream Body
         {
             get { return this._body; }
@@ -189,8 +190,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// <summary>
         /// Gets and sets the property TargetModel. 
         /// <para>
-        /// Specifies the model to be requested for an inference when invoking a multi-model endpoint.
-        /// 
+        /// The model to request for inference when invoking a multi-model endpoint. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -204,6 +204,28 @@ namespace Amazon.SageMakerRuntime.Model
         internal bool IsSetTargetModel()
         {
             return this._targetModel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetVariant. 
+        /// <para>
+        /// Specify the production variant to send the inference request to when invoking an endpoint
+        /// that is running two or more variants. Note that this parameter overrides the default
+        /// behavior for the endpoint, which is to distribute the invocation traffic based on
+        /// the variant weights.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string TargetVariant
+        {
+            get { return this._targetVariant; }
+            set { this._targetVariant = value; }
+        }
+
+        // Check to see if TargetVariant property is set
+        internal bool IsSetTargetVariant()
+        {
+            return this._targetVariant != null;
         }
 
     }

@@ -6,7 +6,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerRuntime.Model.InvokeEndpointRequest.Body</property>
-    <max>5242880</max>
+    <max>6291456</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerRuntime.Model.InvokeEndpointRequest.ContentType</property>
@@ -27,8 +27,13 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMakerRuntime.Model.InvokeEndpointRequest.TargetVariant</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMakerRuntime.Model.InvokeEndpointResponse.Body</property>
-    <max>5242880</max>
+    <max>6291456</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerRuntime.Model.InvokeEndpointResponse.ContentType</property>

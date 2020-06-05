@@ -80,6 +80,9 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
         
             if(publicRequest.IsSetTargetModel())
                 request.Headers["X-Amzn-SageMaker-Target-Model"] = publicRequest.TargetModel;
+        
+            if(publicRequest.IsSetTargetVariant())
+                request.Headers["X-Amzn-SageMaker-Target-Variant"] = publicRequest.TargetVariant;
 
             return request;
         }

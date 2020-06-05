@@ -46,10 +46,10 @@ namespace Amazon.SageMakerRuntime.Model
         ///  
         /// <para>
         /// For information about the format of the response body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common
-        /// Data Formats—Inference</a>.
+        /// Data Formats-Inference</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=5242880)]
+        [AWSProperty(Required=true, Max=6291456)]
         public MemoryStream Body
         {
             get { return this._body; }
