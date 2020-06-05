@@ -29,32 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Specifies the content and settings for an SMS message that's sent to recipients of
-    /// a campaign.
+    /// Specifies the sender ID and message type for an SMS message that's sent to participants
+    /// in a journey.
     /// </summary>
-    public partial class CampaignSmsMessage
+    public partial class JourneySMSMessage
     {
-        private string _body;
         private MessageType _messageType;
         private string _senderId;
-
-        /// <summary>
-        /// Gets and sets the property Body. 
-        /// <para>
-        /// The body of the SMS message.
-        /// </para>
-        /// </summary>
-        public string Body
-        {
-            get { return this._body; }
-            set { this._body = value; }
-        }
-
-        // Check to see if Body property is set
-        internal bool IsSetBody()
-        {
-            return this._body != null;
-        }
 
         /// <summary>
         /// Gets and sets the property MessageType. 
@@ -79,7 +60,9 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property SenderId. 
         /// <para>
-        /// The sender ID to display on recipients' devices when they receive the SMS message.
+        /// The sender ID to display as the sender of the message on a recipient's device. Support
+        /// for sender IDs varies by country or region. For more information, see <a href="https://docs.aws.amazon.com.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
+        /// Countries and Regions</a> in the Amazon Pinpoint User Guide.
         /// </para>
         /// </summary>
         public string SenderId

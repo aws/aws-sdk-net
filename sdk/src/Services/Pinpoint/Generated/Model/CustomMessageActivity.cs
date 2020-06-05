@@ -29,24 +29,75 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Specifies the settings for an email activity in a journey. This type of activity sends
-    /// an email message to participants.
+    /// The settings for a custom message activity. This type of activity calls an AWS Lambda
+    /// function or web hook that sends messages to participants.
     /// </summary>
-    public partial class EmailMessageActivity
+    public partial class CustomMessageActivity
     {
-        private JourneyEmailMessage _messageConfig;
+        private string _deliveryUri;
+        private List<string> _endpointTypes = new List<string>();
+        private JourneyCustomMessage _messageConfig;
         private string _nextActivity;
         private string _templateName;
         private string _templateVersion;
 
         /// <summary>
-        /// Gets and sets the property MessageConfig. 
+        /// Gets and sets the property DeliveryUri. 
         /// <para>
-        /// Specifies the sender address for an email message that's sent to participants in the
-        /// journey.
+        /// The destination to send the custom message to. This value can be one of the following:
+        /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle
+        /// delivery of the custom message.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// The URL for a web application or service that supports HTTPS and can receive the message.
+        /// The URL has to be a full URL, including the HTTPS protocol.
+        /// </para>
+        /// </li></ul>
+        /// </summary>
+        public string DeliveryUri
+        {
+            get { return this._deliveryUri; }
+            set { this._deliveryUri = value; }
+        }
+
+        // Check to see if DeliveryUri property is set
+        internal bool IsSetDeliveryUri()
+        {
+            return this._deliveryUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointTypes. 
+        /// <para>
+        /// The types of endpoints to send the custom message to. Each valid value maps to a type
+        /// of channel that you can associate with an endpoint by using the ChannelType property
+        /// of an endpoint.
         /// </para>
         /// </summary>
-        public JourneyEmailMessage MessageConfig
+        public List<string> EndpointTypes
+        {
+            get { return this._endpointTypes; }
+            set { this._endpointTypes = value; }
+        }
+
+        // Check to see if EndpointTypes property is set
+        internal bool IsSetEndpointTypes()
+        {
+            return this._endpointTypes != null && this._endpointTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageConfig. 
+        /// <para>
+        /// Specifies the message data included in a custom channel message that's sent to participants
+        /// in a journey.
+        /// </para>
+        /// </summary>
+        public JourneyCustomMessage MessageConfig
         {
             get { return this._messageConfig; }
             set { this._messageConfig = value; }
@@ -61,7 +112,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property NextActivity. 
         /// <para>
-        /// The unique identifier for the next activity to perform, after the message is sent.
+        /// The unique identifier for the next activity to perform, after Amazon Pinpoint calls
+        /// the AWS Lambda function or web hook.
         /// </para>
         /// </summary>
         public string NextActivity
@@ -79,7 +131,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// The name of the email message template to use for the message. If specified, this
+        /// The name of the custom message template to use for the message. If specified, this
         /// value must match the name of an existing message template.
         /// </para>
         /// </summary>
@@ -98,7 +150,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property TemplateVersion. 
         /// <para>
-        /// The unique identifier for the version of the email template to use for the message.
+        /// The unique identifier for the version of the message template to use for the message.
         /// If specified, this value must match the identifier for an existing template version.
         /// To retrieve a list of versions and version identifiers for a template, use the <link
         ///  linkend="templates-template-name-template-type-versions">Template Versions</link>

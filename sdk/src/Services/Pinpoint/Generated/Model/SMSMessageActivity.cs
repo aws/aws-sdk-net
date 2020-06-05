@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Specifies the settings for an email activity in a journey. This type of activity sends
-    /// an email message to participants.
+    /// Specifies the settings for an SMS activity in a journey. This type of activity sends
+    /// a text message to participants.
     /// </summary>
-    public partial class EmailMessageActivity
+    public partial class SMSMessageActivity
     {
-        private JourneyEmailMessage _messageConfig;
+        private JourneySMSMessage _messageConfig;
         private string _nextActivity;
         private string _templateName;
         private string _templateVersion;
@@ -42,11 +42,11 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property MessageConfig. 
         /// <para>
-        /// Specifies the sender address for an email message that's sent to participants in the
-        /// journey.
+        /// Specifies the sender ID and message type for an SMS message that's sent to participants
+        /// in a journey.
         /// </para>
         /// </summary>
-        public JourneyEmailMessage MessageConfig
+        public JourneySMSMessage MessageConfig
         {
             get { return this._messageConfig; }
             set { this._messageConfig = value; }
@@ -79,8 +79,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// The name of the email message template to use for the message. If specified, this
-        /// value must match the name of an existing message template.
+        /// The name of the SMS message template to use for the message. If specified, this value
+        /// must match the name of an existing message template.
         /// </para>
         /// </summary>
         public string TemplateName
@@ -98,7 +98,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property TemplateVersion. 
         /// <para>
-        /// The unique identifier for the version of the email template to use for the message.
+        /// The unique identifier for the version of the SMS template to use for the message.
         /// If specified, this value must match the identifier for an existing template version.
         /// To retrieve a list of versions and version identifiers for a template, use the <link
         ///  linkend="templates-template-name-template-type-versions">Template Versions</link>

@@ -67,6 +67,10 @@ namespace Amazon.Pinpoint
         /// </summary>
         public static readonly __EndpointTypesElement GCM = new __EndpointTypesElement("GCM");
         /// <summary>
+        /// Constant PUSH for __EndpointTypesElement
+        /// </summary>
+        public static readonly __EndpointTypesElement PUSH = new __EndpointTypesElement("PUSH");
+        /// <summary>
         /// Constant SMS for __EndpointTypesElement
         /// </summary>
         public static readonly __EndpointTypesElement SMS = new __EndpointTypesElement("SMS");
@@ -322,6 +326,10 @@ namespace Amazon.Pinpoint
         /// Constant GCM for ChannelType
         /// </summary>
         public static readonly ChannelType GCM = new ChannelType("GCM");
+        /// <summary>
+        /// Constant PUSH for ChannelType
+        /// </summary>
+        public static readonly ChannelType PUSH = new ChannelType("PUSH");
         /// <summary>
         /// Constant SMS for ChannelType
         /// </summary>

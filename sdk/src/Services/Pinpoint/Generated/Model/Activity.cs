@@ -34,11 +34,14 @@ namespace Amazon.Pinpoint.Model
     public partial class Activity
     {
         private ConditionalSplitActivity _conditionalSplit;
+        private CustomMessageActivity _custom;
         private string _description;
         private EmailMessageActivity _email;
         private HoldoutActivity _holdout;
         private MultiConditionalSplitActivity _multiCondition;
+        private PushMessageActivity _push;
         private RandomSplitActivity _randomSplit;
+        private SMSMessageActivity _sms;
         private WaitActivity _wait;
 
         /// <summary>
@@ -58,6 +61,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetConditionalSplit()
         {
             return this._conditionalSplit != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CUSTOM. 
+        /// <para>
+        /// The settings for a custom message activity. This type of activity calls an AWS Lambda
+        /// function or web hook that sends messages to participants.
+        /// </para>
+        /// </summary>
+        public CustomMessageActivity CUSTOM
+        {
+            get { return this._custom; }
+            set { this._custom = value; }
+        }
+
+        // Check to see if CUSTOM property is set
+        internal bool IsSetCUSTOM()
+        {
+            return this._custom != null;
         }
 
         /// <summary>
@@ -137,6 +159,25 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PUSH. 
+        /// <para>
+        /// The settings for a push notification activity. This type of activity sends a push
+        /// notification to participants.
+        /// </para>
+        /// </summary>
+        public PushMessageActivity PUSH
+        {
+            get { return this._push; }
+            set { this._push = value; }
+        }
+
+        // Check to see if PUSH property is set
+        internal bool IsSetPUSH()
+        {
+            return this._push != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RandomSplit. 
         /// <para>
         /// The settings for a random split activity. This type of activity randomly sends specified
@@ -154,6 +195,24 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetRandomSplit()
         {
             return this._randomSplit != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SMS. 
+        /// <para>
+        /// The settings for an SMS activity. This type of activity sends a text message to participants.
+        /// </para>
+        /// </summary>
+        public SMSMessageActivity SMS
+        {
+            get { return this._sms; }
+            set { this._sms = value; }
+        }
+
+        // Check to see if SMS property is set
+        internal bool IsSetSMS()
+        {
+            return this._sms != null;
         }
 
         /// <summary>

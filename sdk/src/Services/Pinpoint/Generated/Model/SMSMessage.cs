@@ -100,10 +100,9 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property MessageType. 
         /// <para>
-        /// The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or
-        /// time-sensitive, such as a one-time password that supports a customer transaction;
-        /// and, PROMOTIONAL, the message is not critical or time-sensitive, such as a marketing
-        /// message.
+        /// The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical
+        /// or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that
+        /// aren't critical or time-sensitive, such as marketing messages).
         /// </para>
         /// </summary>
         public MessageType MessageType
