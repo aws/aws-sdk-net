@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.755.0",
+    "ProductVersion" : "3.3.756.0",
     "CoreVersion"    : "3.3.107.8",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -673,7 +673,7 @@
             "InPreview"               : false
         },
         "Shield"                          : {
-            "Version" : "3.3.102.59",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.8"
@@ -1025,7 +1025,7 @@
             "InPreview"               : false
         },
         "ServiceDiscovery"                : {
-            "Version" : "3.3.100.191",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.8"
