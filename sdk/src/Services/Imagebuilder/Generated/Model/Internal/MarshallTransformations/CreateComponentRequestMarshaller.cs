@@ -119,6 +119,17 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SemanticVersion);
                 }
 
+                if(publicRequest.IsSetSupportedOsVersions())
+                {
+                    context.Writer.WritePropertyName("supportedOsVersions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSupportedOsVersionsListValue in publicRequest.SupportedOsVersions)
+                    {
+                            context.Writer.Write(publicRequestSupportedOsVersionsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

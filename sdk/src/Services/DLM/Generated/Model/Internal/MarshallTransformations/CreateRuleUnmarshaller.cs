@@ -64,6 +64,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CronExpression", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CronExpression = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Interval", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

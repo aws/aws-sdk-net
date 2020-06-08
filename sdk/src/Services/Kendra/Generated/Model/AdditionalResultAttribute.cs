@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// 
+    /// An attribute returned from an index query.
     /// </summary>
     public partial class AdditionalResultAttribute
     {
@@ -37,7 +38,10 @@ namespace Amazon.Kendra.Model
         private AdditionalResultAttributeValueType _valueType;
 
         /// <summary>
-        /// Gets and sets the property Key.
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The key that identifies the attribute.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string Key
@@ -53,7 +57,10 @@ namespace Amazon.Kendra.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value.
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// An object that contains the attribute value.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AdditionalResultAttributeValue Value
@@ -69,7 +76,10 @@ namespace Amazon.Kendra.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ValueType.
+        /// Gets and sets the property ValueType. 
+        /// <para>
+        /// The data type of the <code>Value</code> property.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AdditionalResultAttributeValueType ValueType

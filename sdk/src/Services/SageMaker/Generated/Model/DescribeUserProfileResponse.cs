@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -65,7 +66,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The domain ID.
+        /// The ID of the domain that contains the profile.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]
@@ -103,7 +104,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HomeEfsFileSystemUid. 
         /// <para>
-        /// The homa Amazon Elastic File System (EFS) Uid.
+        /// The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]

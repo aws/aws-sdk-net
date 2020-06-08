@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -34,6 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class PutParameterRequest : AmazonSimpleSystemsManagementRequest
     {
         private string _allowedPattern;
+        private string _dataType;
         private string _description;
         private string _keyId;
         private string _name;
@@ -63,6 +65,47 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAllowedPattern()
         {
             return this._allowedPattern != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataType. 
+        /// <para>
+        /// The data type for a <code>String</code> parameter. Supported data types include plain
+        /// text and Amazon Machine Image IDs.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>The following data type values are supported.</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>text</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aws:ec2:image</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>,
+        /// Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>,
+        /// and that the specified AMI is available in your AWS account. For more information,
+        /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+        /// parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string DataType
+        {
+            get { return this._dataType; }
+            set { this._dataType = value; }
+        }
+
+        // Check to see if DataType property is set
+        internal bool IsSetDataType()
+        {
+            return this._dataType != null;
         }
 
         /// <summary>
@@ -168,8 +211,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For additional information about valid values for parameter names, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-        /// and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
+        /// requirements and constraints for parameter names</a> in the <i>AWS Systems Manager
+        /// User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -244,8 +288,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// All existing policies are preserved until you send new policies or an empty policy.
-        /// For more information about parameter policies, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
-        /// with Parameter Policies</a>. 
+        /// For more information about parameter policies, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+        /// parameter policies</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
@@ -319,8 +363,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Advanced parameters have a content size limit of 8 KB and can be configured to use
         /// parameter policies. You can create a maximum of 100,000 advanced parameters for each
         /// Region in an AWS account. Advanced parameters incur a charge. For more information,
-        /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
-        /// Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
+        /// and advanced parameter tiers</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -395,8 +439,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about configuring the default tier option, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-        /// a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// For more information about configuring the default tier option, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
+        /// a default parameter tier</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public ParameterTier Tier
@@ -429,7 +473,6 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ParameterType Type
         {
             get { return this._type; }

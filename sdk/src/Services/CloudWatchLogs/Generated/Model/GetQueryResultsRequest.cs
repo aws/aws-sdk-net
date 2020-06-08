@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -35,12 +36,13 @@ namespace Amazon.CloudWatchLogs.Model
     /// <para>
     /// Only the fields requested in the query are returned, along with a <code>@ptr</code>
     /// field which is the identifier for the log record. You can use the value of <code>@ptr</code>
-    /// in a operation to get the full log record.
+    /// in a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogRecord.html">GetLogRecord</a>
+    /// operation to get the full log record.
     /// </para>
     ///  
     /// <para>
     ///  <code>GetQueryResults</code> does not start a query execution. To run a query, use
-    /// .
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>.
     /// </para>
     ///  
     /// <para>

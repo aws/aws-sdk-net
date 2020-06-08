@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -66,7 +67,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property AwsManaged. 
         /// <para>
-        /// A Boolean value that indicates whether the specified policy is an AWS managed policy.
+        /// A boolean value that indicates whether the specified policy is an AWS managed policy.
         /// If true, then you can attach the policy to roots, OUs, or accounts, but you cannot
         /// edit it.
         /// </para>

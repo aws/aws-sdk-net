@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -59,7 +60,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property InvitationId. 
         /// <para>
-        /// This value is used to validate the master account to the member account.
+        /// The value that is used to validate the master account to the member account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

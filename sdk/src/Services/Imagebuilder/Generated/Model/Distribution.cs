@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,7 +40,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property AmiDistributionConfiguration. 
         /// <para>
-        ///  The specific AMI settings (for example, launch permissions, AMI tags). 
+        /// The specific AMI settings (for example, launch permissions, AMI tags). 
         /// </para>
         /// </summary>
         public AmiDistributionConfiguration AmiDistributionConfiguration
@@ -57,7 +58,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property LicenseConfigurationArns. 
         /// <para>
-        ///  The License Manager Configuration to associate with the AMI in the specified Region.
+        /// The License Manager Configuration to associate with the AMI in the specified Region.
         /// </para>
         /// </summary>
         public List<string> LicenseConfigurationArns
@@ -75,7 +76,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        ///  The target Region. 
+        /// The target Region. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

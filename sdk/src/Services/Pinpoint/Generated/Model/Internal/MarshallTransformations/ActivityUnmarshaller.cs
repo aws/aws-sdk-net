@@ -70,6 +70,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConditionalSplit = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CUSTOM", targetDepth))
+                {
+                    var unmarshaller = CustomMessageActivityUnmarshaller.Instance;
+                    unmarshalledObject.CUSTOM = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -94,10 +100,22 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.MultiCondition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PUSH", targetDepth))
+                {
+                    var unmarshaller = PushMessageActivityUnmarshaller.Instance;
+                    unmarshalledObject.PUSH = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RandomSplit", targetDepth))
                 {
                     var unmarshaller = RandomSplitActivityUnmarshaller.Instance;
                     unmarshalledObject.RandomSplit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SMS", targetDepth))
+                {
+                    var unmarshaller = SMSMessageActivityUnmarshaller.Instance;
+                    unmarshalledObject.SMS = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Wait", targetDepth))

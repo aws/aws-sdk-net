@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,12 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Detailed information about the source of a trial component.
+    /// Detailed information about the source of a trial component. Either <code>ProcessingJob</code>
+    /// or <code>TrainingJob</code> is returned.
     /// </summary>
     public partial class TrialComponentSourceDetail
     {
+        private ProcessingJob _processingJob;
         private string _sourceArn;
         private TrainingJob _trainingJob;
+
+        /// <summary>
+        /// Gets and sets the property ProcessingJob. 
+        /// <para>
+        /// Information about a processing job that's the source of a trial component.
+        /// </para>
+        /// </summary>
+        public ProcessingJob ProcessingJob
+        {
+            get { return this._processingJob; }
+            set { this._processingJob = value; }
+        }
+
+        // Check to see if ProcessingJob property is set
+        internal bool IsSetProcessingJob()
+        {
+            return this._processingJob != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SourceArn. 
@@ -55,7 +76,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrainingJob.
+        /// Gets and sets the property TrainingJob. 
+        /// <para>
+        /// Information about a training job that's the source of a trial component.
+        /// </para>
         /// </summary>
         public TrainingJob TrainingJob
         {

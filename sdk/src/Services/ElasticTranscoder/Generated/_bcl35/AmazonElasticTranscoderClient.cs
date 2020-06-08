@@ -284,6 +284,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual CancelJobResponse CancelJob(CancelJobRequest request)
         {
             var options = new InvokeOptions();
@@ -304,6 +305,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual IAsyncResult BeginCancelJob(CancelJobRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -320,6 +322,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelJob.</param>
         /// 
         /// <returns>Returns a  CancelJobResult from ElasticTranscoder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual CancelJobResponse EndCancelJob(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelJobResponse>(asyncResult);
@@ -364,6 +367,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
             var options = new InvokeOptions();
@@ -384,6 +388,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual IAsyncResult BeginCreateJob(CreateJobRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -400,6 +405,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateJob.</param>
         /// 
         /// <returns>Returns a  CreateJobResult from ElasticTranscoder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual CreateJobResponse EndCreateJob(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateJobResponse>(asyncResult);
@@ -436,6 +442,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         public virtual CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
         {
             var options = new InvokeOptions();
@@ -456,6 +463,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePipeline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         public virtual IAsyncResult BeginCreatePipeline(CreatePipelineRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -472,6 +480,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePipeline.</param>
         /// 
         /// <returns>Returns a  CreatePipelineResult from ElasticTranscoder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         public virtual CreatePipelineResponse EndCreatePipeline(IAsyncResult asyncResult)
         {
             return EndInvoke<CreatePipelineResponse>(asyncResult);
@@ -523,6 +532,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePreset">REST API Reference for CreatePreset Operation</seealso>
         public virtual CreatePresetResponse CreatePreset(CreatePresetRequest request)
         {
             var options = new InvokeOptions();
@@ -543,6 +553,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePreset
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePreset">REST API Reference for CreatePreset Operation</seealso>
         public virtual IAsyncResult BeginCreatePreset(CreatePresetRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -559,6 +570,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePreset.</param>
         /// 
         /// <returns>Returns a  CreatePresetResult from ElasticTranscoder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePreset">REST API Reference for CreatePreset Operation</seealso>
         public virtual CreatePresetResponse EndCreatePreset(IAsyncResult asyncResult)
         {
             return EndInvoke<CreatePresetResponse>(asyncResult);
@@ -602,6 +614,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         public virtual DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
         {
             var options = new InvokeOptions();
@@ -622,6 +635,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePipeline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         public virtual IAsyncResult BeginDeletePipeline(DeletePipelineRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -638,6 +652,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePipeline.</param>
         /// 
         /// <returns>Returns a  DeletePipelineResult from ElasticTranscoder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         public virtual DeletePipelineResponse EndDeletePipeline(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePipelineResponse>(asyncResult);
@@ -676,6 +691,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePreset">REST API Reference for DeletePreset Operation</seealso>
         public virtual DeletePresetResponse DeletePreset(DeletePresetRequest request)
         {
             var options = new InvokeOptions();
@@ -696,6 +712,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePreset
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePreset">REST API Reference for DeletePreset Operation</seealso>
         public virtual IAsyncResult BeginDeletePreset(DeletePresetRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -712,6 +729,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePreset.</param>
         /// 
         /// <returns>Returns a  DeletePresetResult from ElasticTranscoder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePreset">REST API Reference for DeletePreset Operation</seealso>
         public virtual DeletePresetResponse EndDeletePreset(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePresetResponse>(asyncResult);
@@ -750,6 +768,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByPipeline">REST API Reference for ListJobsByPipeline Operation</seealso>
         public virtual ListJobsByPipelineResponse ListJobsByPipeline(ListJobsByPipelineRequest request)
         {
             var options = new InvokeOptions();
@@ -770,6 +789,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJobsByPipeline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByPipeline">REST API Reference for ListJobsByPipeline Operation</seealso>
         public virtual IAsyncResult BeginListJobsByPipeline(ListJobsByPipelineRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -786,6 +806,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJobsByPipeline.</param>
         /// 
         /// <returns>Returns a  ListJobsByPipelineResult from ElasticTranscoder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByPipeline">REST API Reference for ListJobsByPipeline Operation</seealso>
         public virtual ListJobsByPipelineResponse EndListJobsByPipeline(IAsyncResult asyncResult)
         {
             return EndInvoke<ListJobsByPipelineResponse>(asyncResult);
@@ -819,6 +840,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByStatus">REST API Reference for ListJobsByStatus Operation</seealso>
         public virtual ListJobsByStatusResponse ListJobsByStatus(ListJobsByStatusRequest request)
         {
             var options = new InvokeOptions();
@@ -839,6 +861,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJobsByStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByStatus">REST API Reference for ListJobsByStatus Operation</seealso>
         public virtual IAsyncResult BeginListJobsByStatus(ListJobsByStatusRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -855,6 +878,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJobsByStatus.</param>
         /// 
         /// <returns>Returns a  ListJobsByStatusResult from ElasticTranscoder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByStatus">REST API Reference for ListJobsByStatus Operation</seealso>
         public virtual ListJobsByStatusResponse EndListJobsByStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<ListJobsByStatusResponse>(asyncResult);
@@ -883,6 +907,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual ListPipelinesResponse ListPipelines()
         {
             return ListPipelines(new ListPipelinesRequest());
@@ -908,6 +933,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
         {
             var options = new InvokeOptions();
@@ -928,6 +954,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPipelines
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual IAsyncResult BeginListPipelines(ListPipelinesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -944,6 +971,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPipelines.</param>
         /// 
         /// <returns>Returns a  ListPipelinesResult from ElasticTranscoder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual ListPipelinesResponse EndListPipelines(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPipelinesResponse>(asyncResult);
@@ -972,6 +1000,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPresets">REST API Reference for ListPresets Operation</seealso>
         public virtual ListPresetsResponse ListPresets()
         {
             return ListPresets(new ListPresetsRequest());
@@ -997,6 +1026,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPresets">REST API Reference for ListPresets Operation</seealso>
         public virtual ListPresetsResponse ListPresets(ListPresetsRequest request)
         {
             var options = new InvokeOptions();
@@ -1017,6 +1047,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPresets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPresets">REST API Reference for ListPresets Operation</seealso>
         public virtual IAsyncResult BeginListPresets(ListPresetsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1033,6 +1064,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPresets.</param>
         /// 
         /// <returns>Returns a  ListPresetsResult from ElasticTranscoder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPresets">REST API Reference for ListPresets Operation</seealso>
         public virtual ListPresetsResponse EndListPresets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPresetsResponse>(asyncResult);
@@ -1065,6 +1097,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadJob">REST API Reference for ReadJob Operation</seealso>
         public virtual ReadJobResponse ReadJob(ReadJobRequest request)
         {
             var options = new InvokeOptions();
@@ -1085,6 +1118,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReadJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadJob">REST API Reference for ReadJob Operation</seealso>
         public virtual IAsyncResult BeginReadJob(ReadJobRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1101,6 +1135,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReadJob.</param>
         /// 
         /// <returns>Returns a  ReadJobResult from ElasticTranscoder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadJob">REST API Reference for ReadJob Operation</seealso>
         public virtual ReadJobResponse EndReadJob(IAsyncResult asyncResult)
         {
             return EndInvoke<ReadJobResponse>(asyncResult);
@@ -1133,6 +1168,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPipeline">REST API Reference for ReadPipeline Operation</seealso>
         public virtual ReadPipelineResponse ReadPipeline(ReadPipelineRequest request)
         {
             var options = new InvokeOptions();
@@ -1153,6 +1189,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReadPipeline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPipeline">REST API Reference for ReadPipeline Operation</seealso>
         public virtual IAsyncResult BeginReadPipeline(ReadPipelineRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1169,6 +1206,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReadPipeline.</param>
         /// 
         /// <returns>Returns a  ReadPipelineResult from ElasticTranscoder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPipeline">REST API Reference for ReadPipeline Operation</seealso>
         public virtual ReadPipelineResponse EndReadPipeline(IAsyncResult asyncResult)
         {
             return EndInvoke<ReadPipelineResponse>(asyncResult);
@@ -1201,6 +1239,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPreset">REST API Reference for ReadPreset Operation</seealso>
         public virtual ReadPresetResponse ReadPreset(ReadPresetRequest request)
         {
             var options = new InvokeOptions();
@@ -1221,6 +1260,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReadPreset
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPreset">REST API Reference for ReadPreset Operation</seealso>
         public virtual IAsyncResult BeginReadPreset(ReadPresetRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1237,6 +1277,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReadPreset.</param>
         /// 
         /// <returns>Returns a  ReadPresetResult from ElasticTranscoder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPreset">REST API Reference for ReadPreset Operation</seealso>
         public virtual ReadPresetResponse EndReadPreset(IAsyncResult asyncResult)
         {
             return EndInvoke<ReadPresetResponse>(asyncResult);
@@ -1278,6 +1319,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/TestRole">REST API Reference for TestRole Operation</seealso>
         [Obsolete("This API is deprecated and will be removed in a future release.")]
         public virtual TestRoleResponse TestRole(TestRoleRequest request)
         {
@@ -1299,6 +1341,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestRole
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/TestRole">REST API Reference for TestRole Operation</seealso>
         [Obsolete("This API is deprecated and will be removed in a future release.")]
         public virtual IAsyncResult BeginTestRole(TestRoleRequest request, AsyncCallback callback, object state)
         {
@@ -1316,6 +1359,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTestRole.</param>
         /// 
         /// <returns>Returns a  TestRoleResult from ElasticTranscoder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/TestRole">REST API Reference for TestRole Operation</seealso>
         [Obsolete("This API is deprecated and will be removed in a future release.")]
         public virtual TestRoleResponse EndTestRole(IAsyncResult asyncResult)
         {
@@ -1361,6 +1405,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         public virtual UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request)
         {
             var options = new InvokeOptions();
@@ -1381,6 +1426,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePipeline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         public virtual IAsyncResult BeginUpdatePipeline(UpdatePipelineRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1397,6 +1443,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePipeline.</param>
         /// 
         /// <returns>Returns a  UpdatePipelineResult from ElasticTranscoder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         public virtual UpdatePipelineResponse EndUpdatePipeline(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdatePipelineResponse>(asyncResult);
@@ -1440,6 +1487,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineNotifications">REST API Reference for UpdatePipelineNotifications Operation</seealso>
         public virtual UpdatePipelineNotificationsResponse UpdatePipelineNotifications(UpdatePipelineNotificationsRequest request)
         {
             var options = new InvokeOptions();
@@ -1460,6 +1508,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePipelineNotifications
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineNotifications">REST API Reference for UpdatePipelineNotifications Operation</seealso>
         public virtual IAsyncResult BeginUpdatePipelineNotifications(UpdatePipelineNotificationsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1476,6 +1525,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePipelineNotifications.</param>
         /// 
         /// <returns>Returns a  UpdatePipelineNotificationsResult from ElasticTranscoder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineNotifications">REST API Reference for UpdatePipelineNotifications Operation</seealso>
         public virtual UpdatePipelineNotificationsResponse EndUpdatePipelineNotifications(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdatePipelineNotificationsResponse>(asyncResult);
@@ -1521,6 +1571,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineStatus">REST API Reference for UpdatePipelineStatus Operation</seealso>
         public virtual UpdatePipelineStatusResponse UpdatePipelineStatus(UpdatePipelineStatusRequest request)
         {
             var options = new InvokeOptions();
@@ -1541,6 +1592,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePipelineStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineStatus">REST API Reference for UpdatePipelineStatus Operation</seealso>
         public virtual IAsyncResult BeginUpdatePipelineStatus(UpdatePipelineStatusRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1557,6 +1609,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePipelineStatus.</param>
         /// 
         /// <returns>Returns a  UpdatePipelineStatusResult from ElasticTranscoder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineStatus">REST API Reference for UpdatePipelineStatus Operation</seealso>
         public virtual UpdatePipelineStatusResponse EndUpdatePipelineStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdatePipelineStatusResponse>(asyncResult);

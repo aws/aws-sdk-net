@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -77,7 +78,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property FindingPublishingFrequency. 
         /// <para>
-        /// A enum value that specifies how frequently findings are exported, such as to CloudWatch
+        /// An enum value that specifies how frequently findings are exported, such as to CloudWatch
         /// Events.
         /// </para>
         /// </summary>

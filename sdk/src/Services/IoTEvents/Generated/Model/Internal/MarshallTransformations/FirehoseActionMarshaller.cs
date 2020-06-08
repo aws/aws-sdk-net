@@ -51,6 +51,17 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DeliveryStreamName);
             }
 
+            if(requestObject.IsSetPayload())
+            {
+                context.Writer.WritePropertyName("payload");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PayloadMarshaller.Instance;
+                marshaller.Marshall(requestObject.Payload, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSeparator())
             {
                 context.Writer.WritePropertyName("separator");

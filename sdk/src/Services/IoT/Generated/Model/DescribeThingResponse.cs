@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -81,7 +82,16 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property DefaultClientId. 
         /// <para>
-        /// The default client ID.
+        /// The default MQTT client ID. For a typical device, the thing name is also used as the
+        /// default MQTT client ID. Although we don’t require a mapping between a thing's registry
+        /// name and its use of MQTT client IDs, certificates, or shadow state, we recommend that
+        /// you choose a thing name and use it as the MQTT client ID for the registry and the
+        /// Device Shadow service.
+        /// </para>
+        ///  
+        /// <para>
+        /// This lets you better organize your AWS IoT fleet without removing the flexibility
+        /// of the underlying device certificate model or shadows.
         /// </para>
         /// </summary>
         public string DefaultClientId

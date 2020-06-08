@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -31,6 +32,11 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// Represents a CloudWatch metric of your choosing for a target tracking scaling policy
     /// to use with Application Auto Scaling.
     /// 
+    ///  
+    /// <para>
+    /// For information about the available metrics for a service, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">AWS
+    /// Services That Publish CloudWatch Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+    /// </para>
     ///  
     /// <para>
     /// To create your customized metric specification:
@@ -46,7 +52,8 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// <para>
     /// Choose a metric that changes proportionally with capacity. The value of the metric
     /// should increase or decrease in inverse proportion to the number of capacity units.
-    /// That is, the value of the metric should decrease when capacity increases. 
+    /// That is, the value of the metric should decrease when capacity increases, and increase
+    /// when capacity decreases. 
     /// </para>
     ///  </li> </ul> 
     /// <para>

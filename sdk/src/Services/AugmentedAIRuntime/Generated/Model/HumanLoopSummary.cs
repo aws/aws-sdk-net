@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -59,7 +60,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// The reason why the human loop failed. A failure reason is returned only when the status
+        /// The reason why the human loop failed. A failure reason is returned when the status
         /// of the human loop is <code>Failed</code>.
         /// </para>
         /// </summary>
@@ -79,7 +80,8 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <summary>
         /// Gets and sets the property FlowDefinitionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the flow definition.
+        /// The Amazon Resource Name (ARN) of the flow definition used to configure the human
+        /// loop.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -117,7 +119,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <summary>
         /// Gets and sets the property HumanLoopStatus. 
         /// <para>
-        /// The status of the human loop. Valid values:
+        /// The status of the human loop. 
         /// </para>
         /// </summary>
         public HumanLoopStatus HumanLoopStatus

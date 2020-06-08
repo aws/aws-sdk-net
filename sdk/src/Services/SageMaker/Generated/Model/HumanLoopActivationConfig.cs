@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -35,7 +36,6 @@ namespace Amazon.SageMaker.Model
     public partial class HumanLoopActivationConfig
     {
         private HumanLoopActivationConditionsConfig _humanLoopActivationConditionsConfig;
-        private HumanLoopRequestSource _humanLoopRequestSource;
 
         /// <summary>
         /// Gets and sets the property HumanLoopActivationConditionsConfig. 
@@ -54,25 +54,6 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetHumanLoopActivationConditionsConfig()
         {
             return this._humanLoopActivationConditionsConfig != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property HumanLoopRequestSource. 
-        /// <para>
-        /// Container for configuring the source of human task requests.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public HumanLoopRequestSource HumanLoopRequestSource
-        {
-            get { return this._humanLoopRequestSource; }
-            set { this._humanLoopRequestSource = value; }
-        }
-
-        // Check to see if HumanLoopRequestSource property is set
-        internal bool IsSetHumanLoopRequestSource()
-        {
-            return this._humanLoopRequestSource != null;
         }
 
     }

@@ -77,6 +77,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetExternalMeetingId())
+                {
+                    context.Writer.WritePropertyName("ExternalMeetingId");
+                    context.Writer.Write(publicRequest.ExternalMeetingId);
+                }
+
                 if(publicRequest.IsSetMediaRegion())
                 {
                     context.Writer.WritePropertyName("MediaRegion");
@@ -98,6 +104,22 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.NotificationsConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,8 +30,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyVpnConnection operation.
-    /// Modifies the target gateway of an AWS Site-to-Site VPN connection. The following migration
-    /// options are available:
+    /// Modifies the customer gateway or the target gateway of an AWS Site-to-Site VPN connection.
+    /// To modify the target gateway, the following migration options are available:
     /// 
     ///  <ul> <li> 
     /// <para>

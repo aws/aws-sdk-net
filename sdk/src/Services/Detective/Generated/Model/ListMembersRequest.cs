@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,13 +30,8 @@ namespace Amazon.Detective.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMembers operation.
-    /// Amazon Detective is currently in preview.
-    /// 
-    ///  
-    /// <para>
     /// Retrieves the list of member accounts for a behavior graph. Does not return member
     /// accounts that were removed from the behavior graph.
-    /// </para>
     /// </summary>
     public partial class ListMembersRequest : AmazonDetectiveRequest
     {

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -57,6 +58,10 @@ namespace Amazon.Redshift.Model
     ///  </li> <li> 
     /// <para>
     /// ds2.8xlarge
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// ra3.4xlarge
     /// </para>
     ///  </li> <li> 
     /// <para>

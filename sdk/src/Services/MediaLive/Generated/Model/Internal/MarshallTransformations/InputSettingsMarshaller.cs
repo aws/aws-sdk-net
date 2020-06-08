@@ -112,6 +112,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSmpte2038DataPreference())
+            {
+                context.Writer.WritePropertyName("smpte2038DataPreference");
+                context.Writer.Write(requestObject.Smpte2038DataPreference);
+            }
+
             if(requestObject.IsSetSourceEndBehavior())
             {
                 context.Writer.WritePropertyName("sourceEndBehavior");

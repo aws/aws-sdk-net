@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,15 +34,17 @@ namespace Amazon.AppMesh.Model
     /// 
     ///          
     /// <para>
-    /// A virtual node acts as a logical pointer to a particular task group, such as an Amazon
+    ///  A virtual node acts as a logical pointer to a particular task group, such as an Amazon
     /// ECS         service or a Kubernetes deployment. When you create a virtual node, you
-    /// can specify the         service discovery information for your task group.
+    /// can specify the         service discovery information for your task group, and whether
+    /// the proxy running in a task         group will communicate with other proxies using
+    /// Transport Layer Security (TLS).
     /// </para>
     ///          
     /// <para>
-    /// Any inbound traffic that your virtual node expects should be specified as a      
-    ///      <code>listener</code>. Any outbound traffic that your virtual node expects to
-    /// reach         should be specified as a <code>backend</code>.
+    /// You define a <code>listener</code> for any inbound traffic that your virtual node
+    ///         expects. Any virtual service that your virtual node expects to communicate
+    /// to is specified         as a <code>backend</code>.
     /// </para>
     ///          
     /// <para>
@@ -62,7 +65,7 @@ namespace Amazon.AppMesh.Model
     ///          </note>         
     /// <para>
     /// For more information about virtual nodes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual
-    /// Nodes</a>.
+    /// nodes</a>.
     /// </para>
     /// </summary>
     public partial class CreateVirtualNodeRequest : AmazonAppMeshRequest

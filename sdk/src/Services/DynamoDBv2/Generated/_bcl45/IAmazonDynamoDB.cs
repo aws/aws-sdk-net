@@ -1412,7 +1412,7 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
         /// 2017.11.29</a> of global tables.
         /// </para>
         ///  </note> 
@@ -1449,6 +1449,20 @@ namespace Amazon.DynamoDBv2
         ///  </li> <li> 
         /// <para>
         ///  The global secondary indexes must have the same hash key and sort key (if present).
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  If local secondary indexes are specified, then the following conditions must also
+        /// be met: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  The local secondary indexes must have the same name. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The local secondary indexes must have the same hash key and sort key (if present).
         /// 
         /// </para>
         ///  </li> </ul> <important> 
@@ -1512,7 +1526,7 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
         /// 2017.11.29</a> of global tables.
         /// </para>
         ///  </note> 
@@ -1549,6 +1563,20 @@ namespace Amazon.DynamoDBv2
         ///  </li> <li> 
         /// <para>
         ///  The global secondary indexes must have the same hash key and sort key (if present).
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  If local secondary indexes are specified, then the following conditions must also
+        /// be met: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  The local secondary indexes must have the same name. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The local secondary indexes must have the same hash key and sort key (if present).
         /// 
         /// </para>
         ///  </li> </ul> <important> 
@@ -2832,8 +2860,10 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-        /// 2017.11.29</a> of global tables.
+        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+        /// 2017.11.29</a> of global tables. If you are using global tables <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+        /// 2019.11.21</a> you can use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html">DescribeTable</a>
+        /// instead.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2856,8 +2886,10 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-        /// 2017.11.29</a> of global tables.
+        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+        /// 2017.11.29</a> of global tables. If you are using global tables <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+        /// 2019.11.21</a> you can use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html">DescribeTable</a>
+        /// instead.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2886,7 +2918,7 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
         /// 2017.11.29</a> of global tables.
         /// </para>
         ///  </note>
@@ -2910,7 +2942,7 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
         /// 2017.11.29</a> of global tables.
         /// </para>
         ///  </note>
@@ -3267,7 +3299,7 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
         /// 2019.11.21</a> of global tables.
         /// </para>
         ///  </note>
@@ -3292,7 +3324,7 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
         /// 2019.11.21</a> of global tables.
         /// </para>
         ///  </note>
@@ -3754,7 +3786,7 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
         /// 2017.11.29</a> of global tables.
         /// </para>
         ///  </note>
@@ -3775,7 +3807,7 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
         /// 2017.11.29</a> of global tables.
         /// </para>
         ///  </note>
@@ -4082,9 +4114,18 @@ namespace Amazon.DynamoDBv2
         ///  </li> </ul> </important> 
         /// <para>
         /// When you add an item, the primary key attributes are the only required attributes.
-        /// Attribute values cannot be null. String and Binary type attributes must have lengths
-        /// greater than zero. Set type attributes cannot be empty. Requests with empty values
-        /// will be rejected with a <code>ValidationException</code> exception.
+        /// Attribute values cannot be null.
+        /// </para>
+        ///  
+        /// <para>
+        /// Empty String and Binary attribute values are allowed. Attribute values of type String
+        /// and Binary must have a length greater than zero if the attribute is used as a key
+        /// attribute for a table or index. Set type attributes cannot be empty. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Invalid Requests with empty values will be rejected with a <code>ValidationException</code>
+        /// exception.
         /// </para>
         ///  <note> 
         /// <para>
@@ -4101,7 +4142,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table to contain the item.</param>
-        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</param>
+        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</param>
         /// 
         /// <returns>The response from the PutItem service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
@@ -4201,9 +4242,18 @@ namespace Amazon.DynamoDBv2
         ///  </li> </ul> </important> 
         /// <para>
         /// When you add an item, the primary key attributes are the only required attributes.
-        /// Attribute values cannot be null. String and Binary type attributes must have lengths
-        /// greater than zero. Set type attributes cannot be empty. Requests with empty values
-        /// will be rejected with a <code>ValidationException</code> exception.
+        /// Attribute values cannot be null.
+        /// </para>
+        ///  
+        /// <para>
+        /// Empty String and Binary attribute values are allowed. Attribute values of type String
+        /// and Binary must have a length greater than zero if the attribute is used as a key
+        /// attribute for a table or index. Set type attributes cannot be empty. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Invalid Requests with empty values will be rejected with a <code>ValidationException</code>
+        /// exception.
         /// </para>
         ///  <note> 
         /// <para>
@@ -4220,7 +4270,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table to contain the item.</param>
-        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</param>
+        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</param>
         /// <param name="returnValues">Use <code>ReturnValues</code> if you want to get the item attributes as they appeared before they were updated with the <code>PutItem</code> request. For <code>PutItem</code>, the valid values are: <ul> <li>  <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.) </li> <li>  <code>ALL_OLD</code> - If <code>PutItem</code> overwrote an attribute name-value pair, then the content of the old item is returned. </li> </ul> <note> The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>PutItem</code> does not recognize any values other than <code>NONE</code> or <code>ALL_OLD</code>. </note></param>
         /// 
         /// <returns>The response from the PutItem service method, as returned by DynamoDB.</returns>
@@ -4321,9 +4371,18 @@ namespace Amazon.DynamoDBv2
         ///  </li> </ul> </important> 
         /// <para>
         /// When you add an item, the primary key attributes are the only required attributes.
-        /// Attribute values cannot be null. String and Binary type attributes must have lengths
-        /// greater than zero. Set type attributes cannot be empty. Requests with empty values
-        /// will be rejected with a <code>ValidationException</code> exception.
+        /// Attribute values cannot be null.
+        /// </para>
+        ///  
+        /// <para>
+        /// Empty String and Binary attribute values are allowed. Attribute values of type String
+        /// and Binary must have a length greater than zero if the attribute is used as a key
+        /// attribute for a table or index. Set type attributes cannot be empty. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Invalid Requests with empty values will be rejected with a <code>ValidationException</code>
+        /// exception.
         /// </para>
         ///  <note> 
         /// <para>
@@ -4440,9 +4499,18 @@ namespace Amazon.DynamoDBv2
         ///  </li> </ul> </important> 
         /// <para>
         /// When you add an item, the primary key attributes are the only required attributes.
-        /// Attribute values cannot be null. String and Binary type attributes must have lengths
-        /// greater than zero. Set type attributes cannot be empty. Requests with empty values
-        /// will be rejected with a <code>ValidationException</code> exception.
+        /// Attribute values cannot be null.
+        /// </para>
+        ///  
+        /// <para>
+        /// Empty String and Binary attribute values are allowed. Attribute values of type String
+        /// and Binary must have a length greater than zero if the attribute is used as a key
+        /// attribute for a table or index. Set type attributes cannot be empty. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Invalid Requests with empty values will be rejected with a <code>ValidationException</code>
+        /// exception.
         /// </para>
         ///  <note> 
         /// <para>
@@ -4459,7 +4527,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table to contain the item.</param>
-        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</param>
+        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -4562,9 +4630,18 @@ namespace Amazon.DynamoDBv2
         ///  </li> </ul> </important> 
         /// <para>
         /// When you add an item, the primary key attributes are the only required attributes.
-        /// Attribute values cannot be null. String and Binary type attributes must have lengths
-        /// greater than zero. Set type attributes cannot be empty. Requests with empty values
-        /// will be rejected with a <code>ValidationException</code> exception.
+        /// Attribute values cannot be null.
+        /// </para>
+        ///  
+        /// <para>
+        /// Empty String and Binary attribute values are allowed. Attribute values of type String
+        /// and Binary must have a length greater than zero if the attribute is used as a key
+        /// attribute for a table or index. Set type attributes cannot be empty. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Invalid Requests with empty values will be rejected with a <code>ValidationException</code>
+        /// exception.
         /// </para>
         ///  <note> 
         /// <para>
@@ -4581,7 +4658,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table to contain the item.</param>
-        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</param>
+        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</param>
         /// <param name="returnValues">Use <code>ReturnValues</code> if you want to get the item attributes as they appeared before they were updated with the <code>PutItem</code> request. For <code>PutItem</code>, the valid values are: <ul> <li>  <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.) </li> <li>  <code>ALL_OLD</code> - If <code>PutItem</code> overwrote an attribute name-value pair, then the content of the old item is returned. </li> </ul> <note> The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>PutItem</code> does not recognize any values other than <code>NONE</code> or <code>ALL_OLD</code>. </note></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -4686,9 +4763,18 @@ namespace Amazon.DynamoDBv2
         ///  </li> </ul> </important> 
         /// <para>
         /// When you add an item, the primary key attributes are the only required attributes.
-        /// Attribute values cannot be null. String and Binary type attributes must have lengths
-        /// greater than zero. Set type attributes cannot be empty. Requests with empty values
-        /// will be rejected with a <code>ValidationException</code> exception.
+        /// Attribute values cannot be null.
+        /// </para>
+        ///  
+        /// <para>
+        /// Empty String and Binary attribute values are allowed. Attribute values of type String
+        /// and Binary must have a length greater than zero if the attribute is used as a key
+        /// attribute for a table or index. Set type attributes cannot be empty. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Invalid Requests with empty values will be rejected with a <code>ValidationException</code>
+        /// exception.
         /// </para>
         ///  <note> 
         /// <para>
@@ -8408,7 +8494,7 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
         /// 2019.11.21</a> of global tables.
         /// </para>
         ///  </note>
@@ -8459,7 +8545,7 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
         /// 2019.11.21</a> of global tables.
         /// </para>
         ///  </note>

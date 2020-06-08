@@ -70,12 +70,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.HumanLoopActivationConditionsConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("HumanLoopRequestSource", targetDepth))
-                {
-                    var unmarshaller = HumanLoopRequestSourceUnmarshaller.Instance;
-                    unmarshalledObject.HumanLoopRequestSource = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;

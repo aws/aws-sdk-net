@@ -82,6 +82,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.EngineName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReplicationInstanceEngineMinimumVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReplicationInstanceEngineMinimumVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SupportsCDC", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

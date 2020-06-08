@@ -269,6 +269,7 @@ namespace Amazon.SimpleDB
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAttributes service method.</param>
         /// 
         /// <returns>The response from the BatchDeleteAttributes service method, as returned by SimpleDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/BatchDeleteAttributes">REST API Reference for BatchDeleteAttributes Operation</seealso>
         public virtual BatchDeleteAttributesResponse BatchDeleteAttributes(BatchDeleteAttributesRequest request)
         {
             var options = new InvokeOptions();
@@ -289,6 +290,7 @@ namespace Amazon.SimpleDB
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/BatchDeleteAttributes">REST API Reference for BatchDeleteAttributes Operation</seealso>
         public virtual IAsyncResult BeginBatchDeleteAttributes(BatchDeleteAttributesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -305,6 +307,7 @@ namespace Amazon.SimpleDB
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteAttributes.</param>
         /// 
         /// <returns>Returns a  BatchDeleteAttributesResult from SimpleDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/BatchDeleteAttributes">REST API Reference for BatchDeleteAttributes Operation</seealso>
         public virtual BatchDeleteAttributesResponse EndBatchDeleteAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchDeleteAttributesResponse>(asyncResult);
@@ -397,6 +400,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NumberSubmittedItemsExceededException">
         /// Too many items exist in a single call.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/BatchPutAttributes">REST API Reference for BatchPutAttributes Operation</seealso>
         public virtual BatchPutAttributesResponse BatchPutAttributes(BatchPutAttributesRequest request)
         {
             var options = new InvokeOptions();
@@ -417,6 +421,7 @@ namespace Amazon.SimpleDB
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchPutAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/BatchPutAttributes">REST API Reference for BatchPutAttributes Operation</seealso>
         public virtual IAsyncResult BeginBatchPutAttributes(BatchPutAttributesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -433,6 +438,7 @@ namespace Amazon.SimpleDB
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchPutAttributes.</param>
         /// 
         /// <returns>Returns a  BatchPutAttributesResult from SimpleDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/BatchPutAttributes">REST API Reference for BatchPutAttributes Operation</seealso>
         public virtual BatchPutAttributesResponse EndBatchPutAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchPutAttributesResponse>(asyncResult);
@@ -469,6 +475,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NumberDomainsExceededException">
         /// Too many domains exist per this account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
             var options = new InvokeOptions();
@@ -489,6 +496,7 @@ namespace Amazon.SimpleDB
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual IAsyncResult BeginCreateDomain(CreateDomainRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -505,6 +513,7 @@ namespace Amazon.SimpleDB
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDomain.</param>
         /// 
         /// <returns>Returns a  CreateDomainResult from SimpleDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual CreateDomainResponse EndCreateDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDomainResponse>(asyncResult);
@@ -546,6 +555,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
         public virtual DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
         {
             var options = new InvokeOptions();
@@ -566,6 +576,7 @@ namespace Amazon.SimpleDB
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
         public virtual IAsyncResult BeginDeleteAttributes(DeleteAttributesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -582,6 +593,7 @@ namespace Amazon.SimpleDB
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAttributes.</param>
         /// 
         /// <returns>Returns a  DeleteAttributesResult from SimpleDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
         public virtual DeleteAttributesResponse EndDeleteAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAttributesResponse>(asyncResult);
@@ -602,6 +614,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.MissingParameterException">
         /// The request must contain the specified missing parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
             var options = new InvokeOptions();
@@ -622,6 +635,7 @@ namespace Amazon.SimpleDB
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual IAsyncResult BeginDeleteDomain(DeleteDomainRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -638,6 +652,7 @@ namespace Amazon.SimpleDB
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDomain.</param>
         /// 
         /// <returns>Returns a  DeleteDomainResult from SimpleDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual DeleteDomainResponse EndDeleteDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDomainResponse>(asyncResult);
@@ -661,6 +676,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/DomainMetadata">REST API Reference for DomainMetadata Operation</seealso>
         public virtual DomainMetadataResponse DomainMetadata(DomainMetadataRequest request)
         {
             var options = new InvokeOptions();
@@ -681,6 +697,7 @@ namespace Amazon.SimpleDB
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDomainMetadata
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/DomainMetadata">REST API Reference for DomainMetadata Operation</seealso>
         public virtual IAsyncResult BeginDomainMetadata(DomainMetadataRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -697,6 +714,7 @@ namespace Amazon.SimpleDB
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDomainMetadata.</param>
         /// 
         /// <returns>Returns a  DomainMetadataResult from SimpleDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/DomainMetadata">REST API Reference for DomainMetadata Operation</seealso>
         public virtual DomainMetadataResponse EndDomainMetadata(IAsyncResult asyncResult)
         {
             return EndInvoke<DomainMetadataResponse>(asyncResult);
@@ -730,6 +748,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/GetAttributes">REST API Reference for GetAttributes Operation</seealso>
         public virtual GetAttributesResponse GetAttributes(GetAttributesRequest request)
         {
             var options = new InvokeOptions();
@@ -750,6 +769,7 @@ namespace Amazon.SimpleDB
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/GetAttributes">REST API Reference for GetAttributes Operation</seealso>
         public virtual IAsyncResult BeginGetAttributes(GetAttributesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -766,6 +786,7 @@ namespace Amazon.SimpleDB
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAttributes.</param>
         /// 
         /// <returns>Returns a  GetAttributesResult from SimpleDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/GetAttributes">REST API Reference for GetAttributes Operation</seealso>
         public virtual GetAttributesResponse EndGetAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAttributesResponse>(asyncResult);
@@ -791,6 +812,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual ListDomainsResponse ListDomains()
         {
             return ListDomains(new ListDomainsRequest());
@@ -813,6 +835,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
             var options = new InvokeOptions();
@@ -833,6 +856,7 @@ namespace Amazon.SimpleDB
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomains
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual IAsyncResult BeginListDomains(ListDomainsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -849,6 +873,7 @@ namespace Amazon.SimpleDB
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomains.</param>
         /// 
         /// <returns>Returns a  ListDomainsResult from SimpleDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual ListDomainsResponse EndListDomains(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDomainsResponse>(asyncResult);
@@ -927,6 +952,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NumberItemAttributesExceededException">
         /// Too many attributes in this item.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
         public virtual PutAttributesResponse PutAttributes(PutAttributesRequest request)
         {
             var options = new InvokeOptions();
@@ -947,6 +973,7 @@ namespace Amazon.SimpleDB
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
         public virtual IAsyncResult BeginPutAttributes(PutAttributesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -963,6 +990,7 @@ namespace Amazon.SimpleDB
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAttributes.</param>
         /// 
         /// <returns>Returns a  PutAttributesResult from SimpleDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
         public virtual PutAttributesResponse EndPutAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<PutAttributesResponse>(asyncResult);
@@ -1022,6 +1050,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.TooManyRequestedAttributesException">
         /// Too many attributes requested.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/Select">REST API Reference for Select Operation</seealso>
         public virtual SelectResponse Select(SelectRequest request)
         {
             var options = new InvokeOptions();
@@ -1042,6 +1071,7 @@ namespace Amazon.SimpleDB
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSelect
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/Select">REST API Reference for Select Operation</seealso>
         public virtual IAsyncResult BeginSelect(SelectRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1058,6 +1088,7 @@ namespace Amazon.SimpleDB
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSelect.</param>
         /// 
         /// <returns>Returns a  SelectResult from SimpleDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/Select">REST API Reference for Select Operation</seealso>
         public virtual SelectResponse EndSelect(IAsyncResult asyncResult)
         {
             return EndInvoke<SelectResponse>(asyncResult);

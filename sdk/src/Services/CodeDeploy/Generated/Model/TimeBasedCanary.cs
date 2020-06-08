@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// A configuration that shifts traffic from one version of a Lambda function to another
-    /// in two increments. The original and target Lambda function versions are specified
-    /// in the deployment's AppSpec file.
+    /// A configuration that shifts traffic from one version of a Lambda function or ECS task
+    /// set to another in two increments. The original and target Lambda function versions
+    /// or ECS task sets are specified in the deployment's AppSpec file.
     /// </summary>
     public partial class TimeBasedCanary
     {

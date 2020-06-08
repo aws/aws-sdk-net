@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,27 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAdjustmentTypes operation.
-    /// Describes the policy adjustment types for use with <a>PutScalingPolicy</a>.
+    /// Describes the available adjustment types for Amazon EC2 Auto Scaling scaling policies.
+    /// These settings apply to step scaling policies and simple scaling policies; they do
+    /// not apply to target tracking scaling policies.
+    /// 
+    ///  
+    /// <para>
+    /// The following adjustment types are supported:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// ChangeInCapacity
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// ExactCapacity
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// PercentChangeInCapacity
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeAdjustmentTypesRequest : AmazonAutoScalingRequest
     {

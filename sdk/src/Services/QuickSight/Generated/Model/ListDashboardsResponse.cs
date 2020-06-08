@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -40,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DashboardSummaryList. 
         /// <para>
-        /// A structure that contains all of the dashboards shared with the user. This structure
+        /// A structure that contains all of the dashboards in your AWS account. This structure
         /// provides basic information about the dashboards.
         /// </para>
         /// </summary>

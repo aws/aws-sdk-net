@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -60,6 +61,7 @@ namespace Amazon.IoT.Model
         /// action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Resources
         {
             get { return this._resources; }

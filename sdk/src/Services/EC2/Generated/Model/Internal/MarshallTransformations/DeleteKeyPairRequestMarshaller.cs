@@ -62,6 +62,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("KeyName", StringUtils.FromString(publicRequest.KeyName));
                 }
+                if(publicRequest.IsSetKeyPairId())
+                {
+                    request.Parameters.Add("KeyPairId", StringUtils.FromString(publicRequest.KeyPairId));
+                }
             }
             return request;
         }

@@ -64,6 +64,12 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("payload", targetDepth))
+                {
+                    var unmarshaller = PayloadUnmarshaller.Instance;
+                    unmarshalledObject.Payload = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("queueUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

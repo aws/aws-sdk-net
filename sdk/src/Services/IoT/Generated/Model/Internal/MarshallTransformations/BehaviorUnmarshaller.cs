@@ -76,6 +76,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.Metric = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("metricDimension", targetDepth))
+                {
+                    var unmarshaller = MetricDimensionUnmarshaller.Instance;
+                    unmarshalledObject.MetricDimension = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

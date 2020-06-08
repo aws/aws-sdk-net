@@ -2297,10 +2297,6 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly FlowDefinitionStatus Active = new FlowDefinitionStatus("Active");
         /// <summary>
-        /// Constant Deleted for FlowDefinitionStatus
-        /// </summary>
-        public static readonly FlowDefinitionStatus Deleted = new FlowDefinitionStatus("Deleted");
-        /// <summary>
         /// Constant Deleting for FlowDefinitionStatus
         /// </summary>
         public static readonly FlowDefinitionStatus Deleting = new FlowDefinitionStatus("Deleting");
@@ -2374,6 +2370,10 @@ namespace Amazon.SageMaker
         /// Constant TENSORFLOW for Framework
         /// </summary>
         public static readonly Framework TENSORFLOW = new Framework("TENSORFLOW");
+        /// <summary>
+        /// Constant TFLITE for Framework
+        /// </summary>
+        public static readonly Framework TFLITE = new Framework("TFLITE");
         /// <summary>
         /// Constant XGBOOST for Framework
         /// </summary>
@@ -3938,6 +3938,10 @@ namespace Amazon.SageMaker
         /// Constant GreaterThanOrEqualTo for Operator
         /// </summary>
         public static readonly Operator GreaterThanOrEqualTo = new Operator("GreaterThanOrEqualTo");
+        /// <summary>
+        /// Constant In for Operator
+        /// </summary>
+        public static readonly Operator In = new Operator("In");
         /// <summary>
         /// Constant LessThan for Operator
         /// </summary>
@@ -6020,6 +6024,10 @@ namespace Amazon.SageMaker
         /// Constant Sbe_c for TargetDevice
         /// </summary>
         public static readonly TargetDevice Sbe_c = new TargetDevice("sbe_c");
+        /// <summary>
+        /// Constant Sitara_am57x for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice Sitara_am57x = new TargetDevice("sitara_am57x");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -6144,6 +6152,26 @@ namespace Amazon.SageMaker
         /// Constant MlC59xlarge for TrainingInstanceType
         /// </summary>
         public static readonly TrainingInstanceType MlC59xlarge = new TrainingInstanceType("ml.c5.9xlarge");
+        /// <summary>
+        /// Constant MlC5n18xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlC5n18xlarge = new TrainingInstanceType("ml.c5n.18xlarge");
+        /// <summary>
+        /// Constant MlC5n2xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlC5n2xlarge = new TrainingInstanceType("ml.c5n.2xlarge");
+        /// <summary>
+        /// Constant MlC5n4xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlC5n4xlarge = new TrainingInstanceType("ml.c5n.4xlarge");
+        /// <summary>
+        /// Constant MlC5n9xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlC5n9xlarge = new TrainingInstanceType("ml.c5n.9xlarge");
+        /// <summary>
+        /// Constant MlC5nXlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlC5nXlarge = new TrainingInstanceType("ml.c5n.xlarge");
         /// <summary>
         /// Constant MlC5Xlarge for TrainingInstanceType
         /// </summary>
@@ -6676,6 +6704,14 @@ namespace Amazon.SageMaker
         /// Constant InProgress for TrialComponentPrimaryStatus
         /// </summary>
         public static readonly TrialComponentPrimaryStatus InProgress = new TrialComponentPrimaryStatus("InProgress");
+        /// <summary>
+        /// Constant Stopped for TrialComponentPrimaryStatus
+        /// </summary>
+        public static readonly TrialComponentPrimaryStatus Stopped = new TrialComponentPrimaryStatus("Stopped");
+        /// <summary>
+        /// Constant Stopping for TrialComponentPrimaryStatus
+        /// </summary>
+        public static readonly TrialComponentPrimaryStatus Stopping = new TrialComponentPrimaryStatus("Stopping");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

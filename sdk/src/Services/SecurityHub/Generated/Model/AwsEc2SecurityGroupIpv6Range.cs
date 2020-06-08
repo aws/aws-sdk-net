@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -37,8 +38,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property CidrIpv6. 
         /// <para>
-        /// The IPv6 CIDR range. You can either specify either a CIDR range or a source security
-        /// group, but not both. To specify a single IPv6 address, use the /128 prefix length.
+        /// The IPv6 CIDR range. You can specify either a CIDR range or a source security group,
+        /// but not both. To specify a single IPv6 address, use the /128 prefix length.
         /// </para>
         /// </summary>
         public string CidrIpv6

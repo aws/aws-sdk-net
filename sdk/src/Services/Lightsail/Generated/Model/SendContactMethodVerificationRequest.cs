@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,8 +30,8 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the SendContactMethodVerification operation.
-    /// Sends a verification request to an email contact method to ensure it’s owned by the
-    /// requester. SMS contact methods don’t need to be verified.
+    /// Sends a verification request to an email contact method to ensure it's owned by the
+    /// requester. SMS contact methods don't need to be verified.
     /// 
     ///  
     /// <para>

@@ -509,8 +509,12 @@ namespace Amazon.FMS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An AWS WAF policy, which contains a rule group and defines which resources are to
-        /// be protected by that rule group
+        /// An AWS WAF policy (type WAFV2), which defines rule groups to run first in the corresponding
+        /// AWS WAF web ACL and rule groups to run last in the web ACL.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An AWS WAF Classic policy (type WAF), which defines a rule group. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -519,9 +523,9 @@ namespace Amazon.FMS
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Each policy is specific to one of the three types. If you want to enforce more than
-        /// one policy type across accounts, you can create multiple policies. You can create
-        /// multiple policies for each type.
+        /// Each policy is specific to one of the types. If you want to enforce more than one
+        /// policy type across accounts, create multiple policies. You can create multiple policies
+        /// for each type.
         /// </para>
         ///  
         /// <para>

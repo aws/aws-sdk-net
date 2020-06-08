@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -80,9 +81,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// For information about accepted formats for lists of approved patches and rejected
-        /// patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-        /// Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems Manager
-        /// User Guide</i>.
+        /// patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+        /// package name formats for approved and rejected patch lists</a> in the <i>AWS Systems
+        /// Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -219,9 +220,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// For information about accepted formats for lists of approved patches and rejected
-        /// patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-        /// Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems Manager
-        /// User Guide</i>.
+        /// patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+        /// package name formats for approved and rejected patch lists</a> in the <i>AWS Systems
+        /// Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

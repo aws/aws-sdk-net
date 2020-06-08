@@ -56,6 +56,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCUSTOM())
+            {
+                context.Writer.WritePropertyName("CUSTOM");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomMessageActivityMarshaller.Instance;
+                marshaller.Marshall(requestObject.CUSTOM, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
@@ -95,6 +106,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPUSH())
+            {
+                context.Writer.WritePropertyName("PUSH");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PushMessageActivityMarshaller.Instance;
+                marshaller.Marshall(requestObject.PUSH, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRandomSplit())
             {
                 context.Writer.WritePropertyName("RandomSplit");
@@ -102,6 +124,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
                 var marshaller = RandomSplitActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.RandomSplit, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSMS())
+            {
+                context.Writer.WritePropertyName("SMS");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SMSMessageActivityMarshaller.Instance;
+                marshaller.Marshall(requestObject.SMS, context);
 
                 context.Writer.WriteObjectEnd();
             }

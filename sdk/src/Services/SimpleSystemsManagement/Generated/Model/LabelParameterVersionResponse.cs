@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,8 +40,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property InvalidLabels. 
         /// <para>
         /// The label does not meet the requirements. For information about parameter label requirements,
-        /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
-        /// Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
+        /// parameters</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,15 +34,8 @@ namespace Amazon.AppMesh.Model
     /// 
     ///          
     /// <para>
-    /// You can use the <code>prefix</code> parameter in your route specification for path-based
-    ///         routing of requests. For example, if your virtual service name is        
-    ///    <code>my-service.local</code> and you want the route to match requests to     
-    ///       <code>my-service.local/metrics</code>, your prefix should be         <code>/metrics</code>.
-    /// </para>
-    ///          
-    /// <para>
-    /// If your route matches a request, you can distribute traffic to one or more target
-    ///         virtual nodes with relative weighting.
+    ///  You can route several different protocols and define a retry policy for a route.
+    ///         Traffic can be routed to one or more virtual nodes.
     /// </para>
     ///          
     /// <para>
@@ -183,7 +177,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property VirtualRouterName. 
         /// <para>
         /// The name of the virtual router in which to create the route. If the virtual router
-        /// is in a shared mesh,         then you must be the owner of the virtual router resource.
+        /// is in         a shared mesh, then you must be the owner of the virtual router resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

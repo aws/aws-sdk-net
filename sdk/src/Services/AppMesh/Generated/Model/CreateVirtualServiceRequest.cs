@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -42,7 +43,7 @@ namespace Amazon.AppMesh.Model
     ///          
     /// <para>
     /// For more information about virtual services, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_services.html">Virtual
-    /// Services</a>.
+    /// services</a>.
     /// </para>
     /// </summary>
     public partial class CreateVirtualServiceRequest : AmazonAppMeshRequest

@@ -1553,7 +1553,8 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Displays the tags associated with a CloudWatch resource. Alarms support tagging.
+        /// Displays the tags associated with a CloudWatch resource. Currently, alarms and Contributor
+        /// Insights rules support tagging.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -1573,7 +1574,8 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Displays the tags associated with a CloudWatch resource. Alarms support tagging.
+        /// Displays the tags associated with a CloudWatch resource. Currently, alarms and Contributor
+        /// Insights rules support tagging.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -2390,7 +2392,8 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Assigns one or more tags (key-value pairs) to the specified CloudWatch resource. Currently,
-        /// the only CloudWatch resources that can be tagged are alarms.
+        /// the only CloudWatch resources that can be tagged are alarms and Contributor Insights
+        /// rules.
         /// 
         ///  
         /// <para>
@@ -2413,7 +2416,7 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// You can associate as many as 50 tags with a resource.
+        /// You can associate as many as 50 tags with a CloudWatch resource.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -2438,7 +2441,8 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Assigns one or more tags (key-value pairs) to the specified CloudWatch resource. Currently,
-        /// the only CloudWatch resources that can be tagged are alarms.
+        /// the only CloudWatch resources that can be tagged are alarms and Contributor Insights
+        /// rules.
         /// 
         ///  
         /// <para>
@@ -2461,7 +2465,7 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// You can associate as many as 50 tags with a resource.
+        /// You can associate as many as 50 tags with a CloudWatch resource.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>

@@ -45,6 +45,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WriteTreatmentResource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCustomDeliveryConfiguration())
+            {
+                context.Writer.WritePropertyName("CustomDeliveryConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomDeliveryConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomDeliveryConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMessageConfiguration())
             {
                 context.Writer.WritePropertyName("MessageConfiguration");

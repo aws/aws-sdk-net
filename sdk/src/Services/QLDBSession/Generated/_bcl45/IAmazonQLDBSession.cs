@@ -32,6 +32,28 @@ namespace Amazon.QLDBSession
     /// Interface for accessing QLDBSession
     ///
     /// The transactional data APIs for Amazon QLDB
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Instead of interacting directly with this API, we recommend that you use the Amazon
+    /// QLDB Driver or the QLDB Shell to execute data transactions on a ledger.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If you are working with an AWS SDK, use the QLDB Driver. The driver provides a high-level
+    /// abstraction layer above this <code>qldbsession</code> data plane and manages <code>SendCommand</code>
+    /// API calls for you. For information and a list of supported programming languages,
+    /// see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-driver.html">Getting
+    /// started with the driver</a> in the <i>Amazon QLDB Developer Guide</i>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you are working with the AWS Command Line Interface (AWS CLI), use the QLDB Shell.
+    /// The shell is a command line interface that uses the QLDB Driver to interact with a
+    /// ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/data-shell.html">Accessing
+    /// Amazon QLDB using the QLDB Shell</a>.
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial interface IAmazonQLDBSession : IAmazonService, IDisposable
     {
@@ -42,6 +64,28 @@ namespace Amazon.QLDBSession
 
         /// <summary>
         /// Sends a command to an Amazon QLDB ledger.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Instead of interacting directly with this API, we recommend that you use the Amazon
+        /// QLDB Driver or the QLDB Shell to execute data transactions on a ledger.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you are working with an AWS SDK, use the QLDB Driver. The driver provides a high-level
+        /// abstraction layer above this <code>qldbsession</code> data plane and manages <code>SendCommand</code>
+        /// API calls for you. For information and a list of supported programming languages,
+        /// see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-driver.html">Getting
+        /// started with the driver</a> in the <i>Amazon QLDB Developer Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are working with the AWS Command Line Interface (AWS CLI), use the QLDB Shell.
+        /// The shell is a command line interface that uses the QLDB Driver to interact with a
+        /// ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/data-shell.html">Accessing
+        /// Amazon QLDB using the QLDB Shell</a>.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendCommand service method.</param>
         /// 
@@ -51,14 +95,14 @@ namespace Amazon.QLDBSession
         /// value or a missing required parameter.
         /// </exception>
         /// <exception cref="Amazon.QLDBSession.Model.InvalidSessionException">
-        /// Returned if the session doesn't exist anymore because it timed-out or expired.
+        /// Returned if the session doesn't exist anymore because it timed out or expired.
         /// </exception>
         /// <exception cref="Amazon.QLDBSession.Model.LimitExceededException">
         /// Returned if a resource limit such as number of active sessions is exceeded.
         /// </exception>
         /// <exception cref="Amazon.QLDBSession.Model.OccConflictException">
         /// Returned when a transaction cannot be written to the journal due to a failure in the
-        /// verification phase of Optimistic Concurrency Control.
+        /// verification phase of <i>optimistic concurrency control</i> (OCC).
         /// </exception>
         /// <exception cref="Amazon.QLDBSession.Model.RateExceededException">
         /// Returned when the rate of requests exceeds the allowed throughput.
@@ -70,6 +114,28 @@ namespace Amazon.QLDBSession
 
         /// <summary>
         /// Sends a command to an Amazon QLDB ledger.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Instead of interacting directly with this API, we recommend that you use the Amazon
+        /// QLDB Driver or the QLDB Shell to execute data transactions on a ledger.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you are working with an AWS SDK, use the QLDB Driver. The driver provides a high-level
+        /// abstraction layer above this <code>qldbsession</code> data plane and manages <code>SendCommand</code>
+        /// API calls for you. For information and a list of supported programming languages,
+        /// see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-driver.html">Getting
+        /// started with the driver</a> in the <i>Amazon QLDB Developer Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are working with the AWS Command Line Interface (AWS CLI), use the QLDB Shell.
+        /// The shell is a command line interface that uses the QLDB Driver to interact with a
+        /// ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/data-shell.html">Accessing
+        /// Amazon QLDB using the QLDB Shell</a>.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendCommand service method.</param>
         /// <param name="cancellationToken">
@@ -82,14 +148,14 @@ namespace Amazon.QLDBSession
         /// value or a missing required parameter.
         /// </exception>
         /// <exception cref="Amazon.QLDBSession.Model.InvalidSessionException">
-        /// Returned if the session doesn't exist anymore because it timed-out or expired.
+        /// Returned if the session doesn't exist anymore because it timed out or expired.
         /// </exception>
         /// <exception cref="Amazon.QLDBSession.Model.LimitExceededException">
         /// Returned if a resource limit such as number of active sessions is exceeded.
         /// </exception>
         /// <exception cref="Amazon.QLDBSession.Model.OccConflictException">
         /// Returned when a transaction cannot be written to the journal due to a failure in the
-        /// verification phase of Optimistic Concurrency Control.
+        /// verification phase of <i>optimistic concurrency control</i> (OCC).
         /// </exception>
         /// <exception cref="Amazon.QLDBSession.Model.RateExceededException">
         /// Returned when the rate of requests exceeds the allowed throughput.

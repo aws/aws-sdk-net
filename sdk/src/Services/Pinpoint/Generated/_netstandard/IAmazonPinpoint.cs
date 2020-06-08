@@ -70,6 +70,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateApp">REST API Reference for CreateApp Operation</seealso>
         Task<CreateAppResponse> CreateAppAsync(CreateAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -109,6 +110,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateCampaign">REST API Reference for CreateCampaign Operation</seealso>
         Task<CreateCampaignResponse> CreateCampaignAsync(CreateCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -141,6 +143,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateEmailTemplate">REST API Reference for CreateEmailTemplate Operation</seealso>
         Task<CreateEmailTemplateResponse> CreateEmailTemplateAsync(CreateEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -179,6 +182,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateExportJob">REST API Reference for CreateExportJob Operation</seealso>
         Task<CreateExportJobResponse> CreateExportJobAsync(CreateExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -217,6 +221,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateImportJob">REST API Reference for CreateImportJob Operation</seealso>
         Task<CreateImportJobResponse> CreateImportJobAsync(CreateImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -255,6 +260,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateJourney">REST API Reference for CreateJourney Operation</seealso>
         Task<CreateJourneyResponse> CreateJourneyAsync(CreateJourneyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -288,6 +294,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreatePushTemplate">REST API Reference for CreatePushTemplate Operation</seealso>
         Task<CreatePushTemplateResponse> CreatePushTemplateAsync(CreatePushTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -326,6 +333,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateRecommenderConfiguration">REST API Reference for CreateRecommenderConfiguration Operation</seealso>
         Task<CreateRecommenderConfigurationResponse> CreateRecommenderConfigurationAsync(CreateRecommenderConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -365,6 +373,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSegment">REST API Reference for CreateSegment Operation</seealso>
         Task<CreateSegmentResponse> CreateSegmentAsync(CreateSegmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -397,6 +406,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSmsTemplate">REST API Reference for CreateSmsTemplate Operation</seealso>
         Task<CreateSmsTemplateResponse> CreateSmsTemplateAsync(CreateSmsTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -429,6 +439,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateVoiceTemplate">REST API Reference for CreateVoiceTemplate Operation</seealso>
         Task<CreateVoiceTemplateResponse> CreateVoiceTemplateAsync(CreateVoiceTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -468,6 +479,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteAdmChannel">REST API Reference for DeleteAdmChannel Operation</seealso>
         Task<DeleteAdmChannelResponse> DeleteAdmChannelAsync(DeleteAdmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -507,6 +519,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsChannel">REST API Reference for DeleteApnsChannel Operation</seealso>
         Task<DeleteApnsChannelResponse> DeleteApnsChannelAsync(DeleteApnsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -546,6 +559,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsSandboxChannel">REST API Reference for DeleteApnsSandboxChannel Operation</seealso>
         Task<DeleteApnsSandboxChannelResponse> DeleteApnsSandboxChannelAsync(DeleteApnsSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -585,6 +599,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsVoipChannel">REST API Reference for DeleteApnsVoipChannel Operation</seealso>
         Task<DeleteApnsVoipChannelResponse> DeleteApnsVoipChannelAsync(DeleteApnsVoipChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -624,6 +639,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsVoipSandboxChannel">REST API Reference for DeleteApnsVoipSandboxChannel Operation</seealso>
         Task<DeleteApnsVoipSandboxChannelResponse> DeleteApnsVoipSandboxChannelAsync(DeleteApnsVoipSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -662,6 +678,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         Task<DeleteAppResponse> DeleteAppAsync(DeleteAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -701,6 +718,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteBaiduChannel">REST API Reference for DeleteBaiduChannel Operation</seealso>
         Task<DeleteBaiduChannelResponse> DeleteBaiduChannelAsync(DeleteBaiduChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -739,6 +757,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteCampaign">REST API Reference for DeleteCampaign Operation</seealso>
         Task<DeleteCampaignResponse> DeleteCampaignAsync(DeleteCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -778,6 +797,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailChannel">REST API Reference for DeleteEmailChannel Operation</seealso>
         Task<DeleteEmailChannelResponse> DeleteEmailChannelAsync(DeleteEmailChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -816,6 +836,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailTemplate">REST API Reference for DeleteEmailTemplate Operation</seealso>
         Task<DeleteEmailTemplateResponse> DeleteEmailTemplateAsync(DeleteEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -854,6 +875,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         Task<DeleteEndpointResponse> DeleteEndpointAsync(DeleteEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -892,6 +914,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEventStream">REST API Reference for DeleteEventStream Operation</seealso>
         Task<DeleteEventStreamResponse> DeleteEventStreamAsync(DeleteEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -931,6 +954,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteGcmChannel">REST API Reference for DeleteGcmChannel Operation</seealso>
         Task<DeleteGcmChannelResponse> DeleteGcmChannelAsync(DeleteGcmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -969,6 +993,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteJourney">REST API Reference for DeleteJourney Operation</seealso>
         Task<DeleteJourneyResponse> DeleteJourneyAsync(DeleteJourneyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1008,6 +1033,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeletePushTemplate">REST API Reference for DeletePushTemplate Operation</seealso>
         Task<DeletePushTemplateResponse> DeletePushTemplateAsync(DeletePushTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1046,6 +1072,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteRecommenderConfiguration">REST API Reference for DeleteRecommenderConfiguration Operation</seealso>
         Task<DeleteRecommenderConfigurationResponse> DeleteRecommenderConfigurationAsync(DeleteRecommenderConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1084,6 +1111,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSegment">REST API Reference for DeleteSegment Operation</seealso>
         Task<DeleteSegmentResponse> DeleteSegmentAsync(DeleteSegmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1123,6 +1151,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsChannel">REST API Reference for DeleteSmsChannel Operation</seealso>
         Task<DeleteSmsChannelResponse> DeleteSmsChannelAsync(DeleteSmsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1161,6 +1190,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsTemplate">REST API Reference for DeleteSmsTemplate Operation</seealso>
         Task<DeleteSmsTemplateResponse> DeleteSmsTemplateAsync(DeleteSmsTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1199,6 +1229,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteUserEndpoints">REST API Reference for DeleteUserEndpoints Operation</seealso>
         Task<DeleteUserEndpointsResponse> DeleteUserEndpointsAsync(DeleteUserEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1238,6 +1269,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceChannel">REST API Reference for DeleteVoiceChannel Operation</seealso>
         Task<DeleteVoiceChannelResponse> DeleteVoiceChannelAsync(DeleteVoiceChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1276,6 +1308,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceTemplate">REST API Reference for DeleteVoiceTemplate Operation</seealso>
         Task<DeleteVoiceTemplateResponse> DeleteVoiceTemplateAsync(DeleteVoiceTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1314,6 +1347,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetAdmChannel">REST API Reference for GetAdmChannel Operation</seealso>
         Task<GetAdmChannelResponse> GetAdmChannelAsync(GetAdmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1352,6 +1386,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsChannel">REST API Reference for GetApnsChannel Operation</seealso>
         Task<GetApnsChannelResponse> GetApnsChannelAsync(GetApnsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1391,6 +1426,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsSandboxChannel">REST API Reference for GetApnsSandboxChannel Operation</seealso>
         Task<GetApnsSandboxChannelResponse> GetApnsSandboxChannelAsync(GetApnsSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1430,6 +1466,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsVoipChannel">REST API Reference for GetApnsVoipChannel Operation</seealso>
         Task<GetApnsVoipChannelResponse> GetApnsVoipChannelAsync(GetApnsVoipChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1469,6 +1506,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsVoipSandboxChannel">REST API Reference for GetApnsVoipSandboxChannel Operation</seealso>
         Task<GetApnsVoipSandboxChannelResponse> GetApnsVoipSandboxChannelAsync(GetApnsVoipSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1507,6 +1545,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApp">REST API Reference for GetApp Operation</seealso>
         Task<GetAppResponse> GetAppAsync(GetAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1545,6 +1584,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationDateRangeKpi">REST API Reference for GetApplicationDateRangeKpi Operation</seealso>
         Task<GetApplicationDateRangeKpiResponse> GetApplicationDateRangeKpiAsync(GetApplicationDateRangeKpiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1583,6 +1623,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationSettings">REST API Reference for GetApplicationSettings Operation</seealso>
         Task<GetApplicationSettingsResponse> GetApplicationSettingsAsync(GetApplicationSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1622,6 +1663,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApps">REST API Reference for GetApps Operation</seealso>
         Task<GetAppsResponse> GetAppsAsync(GetAppsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1660,6 +1702,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetBaiduChannel">REST API Reference for GetBaiduChannel Operation</seealso>
         Task<GetBaiduChannelResponse> GetBaiduChannelAsync(GetBaiduChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1698,6 +1741,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaign">REST API Reference for GetCampaign Operation</seealso>
         Task<GetCampaignResponse> GetCampaignAsync(GetCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1736,6 +1780,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignActivities">REST API Reference for GetCampaignActivities Operation</seealso>
         Task<GetCampaignActivitiesResponse> GetCampaignActivitiesAsync(GetCampaignActivitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1774,6 +1819,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignDateRangeKpi">REST API Reference for GetCampaignDateRangeKpi Operation</seealso>
         Task<GetCampaignDateRangeKpiResponse> GetCampaignDateRangeKpiAsync(GetCampaignDateRangeKpiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1813,6 +1859,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaigns">REST API Reference for GetCampaigns Operation</seealso>
         Task<GetCampaignsResponse> GetCampaignsAsync(GetCampaignsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1852,6 +1899,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersion">REST API Reference for GetCampaignVersion Operation</seealso>
         Task<GetCampaignVersionResponse> GetCampaignVersionAsync(GetCampaignVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1891,6 +1939,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersions">REST API Reference for GetCampaignVersions Operation</seealso>
         Task<GetCampaignVersionsResponse> GetCampaignVersionsAsync(GetCampaignVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1929,6 +1978,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetChannels">REST API Reference for GetChannels Operation</seealso>
         Task<GetChannelsResponse> GetChannelsAsync(GetChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1967,6 +2017,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailChannel">REST API Reference for GetEmailChannel Operation</seealso>
         Task<GetEmailChannelResponse> GetEmailChannelAsync(GetEmailChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2006,6 +2057,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailTemplate">REST API Reference for GetEmailTemplate Operation</seealso>
         Task<GetEmailTemplateResponse> GetEmailTemplateAsync(GetEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2045,6 +2097,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEndpoint">REST API Reference for GetEndpoint Operation</seealso>
         Task<GetEndpointResponse> GetEndpointAsync(GetEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2083,6 +2136,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEventStream">REST API Reference for GetEventStream Operation</seealso>
         Task<GetEventStreamResponse> GetEventStreamAsync(GetEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2122,6 +2176,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetExportJob">REST API Reference for GetExportJob Operation</seealso>
         Task<GetExportJobResponse> GetExportJobAsync(GetExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2161,6 +2216,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetExportJobs">REST API Reference for GetExportJobs Operation</seealso>
         Task<GetExportJobsResponse> GetExportJobsAsync(GetExportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2199,6 +2255,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetGcmChannel">REST API Reference for GetGcmChannel Operation</seealso>
         Task<GetGcmChannelResponse> GetGcmChannelAsync(GetGcmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2238,6 +2295,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJob">REST API Reference for GetImportJob Operation</seealso>
         Task<GetImportJobResponse> GetImportJobAsync(GetImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2277,6 +2335,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJobs">REST API Reference for GetImportJobs Operation</seealso>
         Task<GetImportJobsResponse> GetImportJobsAsync(GetImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2315,6 +2374,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourney">REST API Reference for GetJourney Operation</seealso>
         Task<GetJourneyResponse> GetJourneyAsync(GetJourneyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2354,6 +2414,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyDateRangeKpi">REST API Reference for GetJourneyDateRangeKpi Operation</seealso>
         Task<GetJourneyDateRangeKpiResponse> GetJourneyDateRangeKpiAsync(GetJourneyDateRangeKpiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2393,6 +2454,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyExecutionActivityMetrics">REST API Reference for GetJourneyExecutionActivityMetrics Operation</seealso>
         Task<GetJourneyExecutionActivityMetricsResponse> GetJourneyExecutionActivityMetricsAsync(GetJourneyExecutionActivityMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2432,6 +2494,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyExecutionMetrics">REST API Reference for GetJourneyExecutionMetrics Operation</seealso>
         Task<GetJourneyExecutionMetricsResponse> GetJourneyExecutionMetricsAsync(GetJourneyExecutionMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2471,6 +2534,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetPushTemplate">REST API Reference for GetPushTemplate Operation</seealso>
         Task<GetPushTemplateResponse> GetPushTemplateAsync(GetPushTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2509,6 +2573,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetRecommenderConfiguration">REST API Reference for GetRecommenderConfiguration Operation</seealso>
         Task<GetRecommenderConfigurationResponse> GetRecommenderConfigurationAsync(GetRecommenderConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2548,6 +2613,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetRecommenderConfigurations">REST API Reference for GetRecommenderConfigurations Operation</seealso>
         Task<GetRecommenderConfigurationsResponse> GetRecommenderConfigurationsAsync(GetRecommenderConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2587,6 +2653,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegment">REST API Reference for GetSegment Operation</seealso>
         Task<GetSegmentResponse> GetSegmentAsync(GetSegmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2625,6 +2692,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentExportJobs">REST API Reference for GetSegmentExportJobs Operation</seealso>
         Task<GetSegmentExportJobsResponse> GetSegmentExportJobsAsync(GetSegmentExportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2663,6 +2731,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentImportJobs">REST API Reference for GetSegmentImportJobs Operation</seealso>
         Task<GetSegmentImportJobsResponse> GetSegmentImportJobsAsync(GetSegmentImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2702,6 +2771,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegments">REST API Reference for GetSegments Operation</seealso>
         Task<GetSegmentsResponse> GetSegmentsAsync(GetSegmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2741,6 +2811,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersion">REST API Reference for GetSegmentVersion Operation</seealso>
         Task<GetSegmentVersionResponse> GetSegmentVersionAsync(GetSegmentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2780,6 +2851,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersions">REST API Reference for GetSegmentVersions Operation</seealso>
         Task<GetSegmentVersionsResponse> GetSegmentVersionsAsync(GetSegmentVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2818,6 +2890,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsChannel">REST API Reference for GetSmsChannel Operation</seealso>
         Task<GetSmsChannelResponse> GetSmsChannelAsync(GetSmsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2857,6 +2930,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsTemplate">REST API Reference for GetSmsTemplate Operation</seealso>
         Task<GetSmsTemplateResponse> GetSmsTemplateAsync(GetSmsTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2896,6 +2970,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetUserEndpoints">REST API Reference for GetUserEndpoints Operation</seealso>
         Task<GetUserEndpointsResponse> GetUserEndpointsAsync(GetUserEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2934,6 +3009,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceChannel">REST API Reference for GetVoiceChannel Operation</seealso>
         Task<GetVoiceChannelResponse> GetVoiceChannelAsync(GetVoiceChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2973,6 +3049,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceTemplate">REST API Reference for GetVoiceTemplate Operation</seealso>
         Task<GetVoiceTemplateResponse> GetVoiceTemplateAsync(GetVoiceTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3012,6 +3089,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListJourneys">REST API Reference for ListJourneys Operation</seealso>
         Task<ListJourneysResponse> ListJourneysAsync(ListJourneysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3030,6 +3108,7 @@ namespace Amazon.Pinpoint
         /// </param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3063,6 +3142,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
         Task<ListTemplatesResponse> ListTemplatesAsync(ListTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3101,6 +3181,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTemplateVersions">REST API Reference for ListTemplateVersions Operation</seealso>
         Task<ListTemplateVersionsResponse> ListTemplateVersionsAsync(ListTemplateVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3139,6 +3220,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PhoneNumberValidate">REST API Reference for PhoneNumberValidate Operation</seealso>
         Task<PhoneNumberValidateResponse> PhoneNumberValidateAsync(PhoneNumberValidateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3178,6 +3260,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEvents">REST API Reference for PutEvents Operation</seealso>
         Task<PutEventsResponse> PutEventsAsync(PutEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3217,6 +3300,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEventStream">REST API Reference for PutEventStream Operation</seealso>
         Task<PutEventStreamResponse> PutEventStreamAsync(PutEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3256,6 +3340,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RemoveAttributes">REST API Reference for RemoveAttributes Operation</seealso>
         Task<RemoveAttributesResponse> RemoveAttributesAsync(RemoveAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3294,6 +3379,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendMessages">REST API Reference for SendMessages Operation</seealso>
         Task<SendMessagesResponse> SendMessagesAsync(SendMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3332,6 +3418,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessages">REST API Reference for SendUsersMessages Operation</seealso>
         Task<SendUsersMessagesResponse> SendUsersMessagesAsync(SendUsersMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3350,6 +3437,7 @@ namespace Amazon.Pinpoint
         /// </param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3368,6 +3456,7 @@ namespace Amazon.Pinpoint
         /// </param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3407,6 +3496,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateAdmChannel">REST API Reference for UpdateAdmChannel Operation</seealso>
         Task<UpdateAdmChannelResponse> UpdateAdmChannelAsync(UpdateAdmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3446,6 +3536,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsChannel">REST API Reference for UpdateApnsChannel Operation</seealso>
         Task<UpdateApnsChannelResponse> UpdateApnsChannelAsync(UpdateApnsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3485,6 +3576,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsSandboxChannel">REST API Reference for UpdateApnsSandboxChannel Operation</seealso>
         Task<UpdateApnsSandboxChannelResponse> UpdateApnsSandboxChannelAsync(UpdateApnsSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3524,6 +3616,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsVoipChannel">REST API Reference for UpdateApnsVoipChannel Operation</seealso>
         Task<UpdateApnsVoipChannelResponse> UpdateApnsVoipChannelAsync(UpdateApnsVoipChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3563,6 +3656,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsVoipSandboxChannel">REST API Reference for UpdateApnsVoipSandboxChannel Operation</seealso>
         Task<UpdateApnsVoipSandboxChannelResponse> UpdateApnsVoipSandboxChannelAsync(UpdateApnsVoipSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3601,6 +3695,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApplicationSettings">REST API Reference for UpdateApplicationSettings Operation</seealso>
         Task<UpdateApplicationSettingsResponse> UpdateApplicationSettingsAsync(UpdateApplicationSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3640,6 +3735,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateBaiduChannel">REST API Reference for UpdateBaiduChannel Operation</seealso>
         Task<UpdateBaiduChannelResponse> UpdateBaiduChannelAsync(UpdateBaiduChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3678,6 +3774,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateCampaign">REST API Reference for UpdateCampaign Operation</seealso>
         Task<UpdateCampaignResponse> UpdateCampaignAsync(UpdateCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3717,6 +3814,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailChannel">REST API Reference for UpdateEmailChannel Operation</seealso>
         Task<UpdateEmailChannelResponse> UpdateEmailChannelAsync(UpdateEmailChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3756,6 +3854,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailTemplate">REST API Reference for UpdateEmailTemplate Operation</seealso>
         Task<UpdateEmailTemplateResponse> UpdateEmailTemplateAsync(UpdateEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3767,7 +3866,9 @@ namespace Amazon.Pinpoint
         /// <summary>
         /// Creates a new endpoint for an application or updates the settings and attributes of
         /// an existing endpoint for an application. You can also use this operation to define
-        /// custom attributes (Attributes, Metrics, and UserAttributes properties) for an endpoint.
+        /// custom attributes for an endpoint. If an update includes one or more values for a
+        /// custom attribute, Amazon Pinpoint replaces (overwrites) any existing values with the
+        /// new values.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEndpoint service method.</param>
         /// <param name="cancellationToken">
@@ -3796,6 +3897,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
         Task<UpdateEndpointResponse> UpdateEndpointAsync(UpdateEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3807,8 +3909,9 @@ namespace Amazon.Pinpoint
         /// <summary>
         /// Creates a new batch of endpoints for an application or updates the settings and attributes
         /// of a batch of existing endpoints for an application. You can also use this operation
-        /// to define custom attributes (Attributes, Metrics, and UserAttributes properties) for
-        /// a batch of endpoints.
+        /// to define custom attributes for a batch of endpoints. If an update includes one or
+        /// more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any existing
+        /// values with the new values.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEndpointsBatch service method.</param>
         /// <param name="cancellationToken">
@@ -3837,6 +3940,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpointsBatch">REST API Reference for UpdateEndpointsBatch Operation</seealso>
         Task<UpdateEndpointsBatchResponse> UpdateEndpointsBatchAsync(UpdateEndpointsBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3876,6 +3980,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateGcmChannel">REST API Reference for UpdateGcmChannel Operation</seealso>
         Task<UpdateGcmChannelResponse> UpdateGcmChannelAsync(UpdateGcmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3914,6 +4019,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateJourney">REST API Reference for UpdateJourney Operation</seealso>
         Task<UpdateJourneyResponse> UpdateJourneyAsync(UpdateJourneyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3952,6 +4058,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateJourneyState">REST API Reference for UpdateJourneyState Operation</seealso>
         Task<UpdateJourneyStateResponse> UpdateJourneyStateAsync(UpdateJourneyStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3991,6 +4098,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdatePushTemplate">REST API Reference for UpdatePushTemplate Operation</seealso>
         Task<UpdatePushTemplateResponse> UpdatePushTemplateAsync(UpdatePushTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4029,6 +4137,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateRecommenderConfiguration">REST API Reference for UpdateRecommenderConfiguration Operation</seealso>
         Task<UpdateRecommenderConfigurationResponse> UpdateRecommenderConfigurationAsync(UpdateRecommenderConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4068,6 +4177,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSegment">REST API Reference for UpdateSegment Operation</seealso>
         Task<UpdateSegmentResponse> UpdateSegmentAsync(UpdateSegmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4107,6 +4217,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsChannel">REST API Reference for UpdateSmsChannel Operation</seealso>
         Task<UpdateSmsChannelResponse> UpdateSmsChannelAsync(UpdateSmsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4145,6 +4256,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsTemplate">REST API Reference for UpdateSmsTemplate Operation</seealso>
         Task<UpdateSmsTemplateResponse> UpdateSmsTemplateAsync(UpdateSmsTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4183,6 +4295,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateTemplateActiveVersion">REST API Reference for UpdateTemplateActiveVersion Operation</seealso>
         Task<UpdateTemplateActiveVersionResponse> UpdateTemplateActiveVersionAsync(UpdateTemplateActiveVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4222,6 +4335,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceChannel">REST API Reference for UpdateVoiceChannel Operation</seealso>
         Task<UpdateVoiceChannelResponse> UpdateVoiceChannelAsync(UpdateVoiceChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4261,6 +4375,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceTemplate">REST API Reference for UpdateVoiceTemplate Operation</seealso>
         Task<UpdateVoiceTemplateResponse> UpdateVoiceTemplateAsync(UpdateVoiceTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

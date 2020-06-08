@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -48,12 +49,57 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class ModifyListenerRequest : AmazonElasticLoadBalancingV2Request
     {
+        private List<string> _alpnPolicy = new List<string>();
         private List<Certificate> _certificates = new List<Certificate>();
         private List<Action> _defaultActions = new List<Action>();
         private string _listenerArn;
         private int? _port;
         private ProtocolEnum _protocol;
         private string _sslPolicy;
+
+        /// <summary>
+        /// Gets and sets the property AlpnPolicy. 
+        /// <para>
+        /// [TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy.
+        /// You can specify one policy name. The following are the possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>HTTP1Only</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>HTTP2Only</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>HTTP2Optional</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>HTTP2Preferred</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>None</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
+        /// Policies</a> in the <i>Network Load Balancers Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<string> AlpnPolicy
+        {
+            get { return this._alpnPolicy; }
+            set { this._alpnPolicy = value; }
+        }
+
+        // Check to see if AlpnPolicy property is set
+        internal bool IsSetAlpnPolicy()
+        {
+            return this._alpnPolicy != null && this._alpnPolicy.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Certificates. 

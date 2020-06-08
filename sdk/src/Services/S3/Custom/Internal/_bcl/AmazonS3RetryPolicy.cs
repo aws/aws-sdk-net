@@ -40,7 +40,14 @@ namespace Amazon.S3.Internal
         /// <returns>Return true if the request should be retried.</returns>
         public override bool RetryForException(Runtime.IExecutionContext executionContext, Exception exception)
         {
-            var syncResult = RetryForExceptionSync(executionContext, exception);
+            return SharedRetryForException(executionContext, exception, RetryForExceptionSync, base.RetryForException);
+        }
+
+        internal static bool SharedRetryForException(Runtime.IExecutionContext executionContext, Exception exception,            
+            Func<Runtime.IExecutionContext, Exception, bool?> retryForExceptionSync,
+            Func<Runtime.IExecutionContext, Exception, bool> baseRetryForException)
+        {
+            var syncResult = retryForExceptionSync(executionContext, exception);
             if (syncResult.HasValue)
             {
                 return syncResult.Value;
@@ -61,7 +68,7 @@ namespace Amazon.S3.Internal
 
                 if (correctedRegion == null)
                 {
-                    return base.RetryForException(executionContext, exception);
+                    return baseRetryForException(executionContext, exception);
                 }
                 else
                 {
@@ -71,6 +78,38 @@ namespace Amazon.S3.Internal
                     return true;
                 }
             }
+        }
+    }
+
+
+    public partial class AmazonS3StandardRetryPolicy : StandardRetryPolicy
+    {
+        /// <summary>
+        /// Return true if the request should be retried. Implements additional checks 
+        /// specific to S3 on top of the checks in StandardRetryPolicy.
+        /// </summary>
+        /// <param name="executionContext">Request context containing the state of the request.</param>
+        /// <param name="exception">The exception thrown by the previous request.</param>
+        /// <returns>Return true if the request should be retried.</returns>
+        public override bool RetryForException(Runtime.IExecutionContext executionContext, Exception exception)
+        {
+            return AmazonS3RetryPolicy.SharedRetryForException(executionContext, exception, RetryForExceptionSync, base.RetryForException);
+        }
+    }
+
+
+    public partial class AmazonS3AdaptiveRetryPolicy : AdaptiveRetryPolicy
+    {
+        /// <summary>
+        /// Return true if the request should be retried. Implements additional checks 
+        /// specific to S3 on top of the checks in AdaptiveRetryPolicy.
+        /// </summary>
+        /// <param name="executionContext">Request context containing the state of the request.</param>
+        /// <param name="exception">The exception thrown by the previous request.</param>
+        /// <returns>Return true if the request should be retried.</returns>
+        public override bool RetryForException(Runtime.IExecutionContext executionContext, Exception exception)
+        {
+            return AmazonS3RetryPolicy.SharedRetryForException(executionContext, exception, RetryForExceptionSync, base.RetryForException);            
         }
     }
 }

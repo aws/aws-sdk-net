@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -62,13 +63,14 @@ namespace Amazon.ServiceDiscovery.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// After you create the service, you can submit a <a>RegisterInstance</a> request, and
-    /// AWS Cloud Map uses the values in the configuration to create the specified entities.
+    /// After you create the service, you can submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
+    /// request, and AWS Cloud Map uses the values in the configuration to create the specified
+    /// entities.
     /// </para>
     ///  
     /// <para>
     /// For the current limit on the number of instances that you can register using the same
-    /// namespace and using the same service, see <a href="http://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
+    /// namespace and using the same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
     /// Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -144,9 +146,10 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property HealthCheckConfig. 
         /// <para>
-        ///  <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional
-        /// Route 53 health check. If you specify settings for a health check, AWS Cloud Map associates
-        /// the health check with all the Route 53 DNS records that you specify in <code>DnsConfig</code>.
+        ///  <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings
+        /// for an optional Route 53 health check. If you specify settings for a health check,
+        /// AWS Cloud Map associates the health check with all the Route 53 DNS records that you
+        /// specify in <code>DnsConfig</code>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -181,7 +184,11 @@ namespace Amazon.ServiceDiscovery.Model
         /// If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
         /// or <code>HealthCheckConfig</code> but not both.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration
+        /// from an existing service.
+        /// </para>
         /// </summary>
         public HealthCheckCustomConfig HealthCheckCustomConfig
         {
@@ -199,6 +206,29 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name that you want to assign to the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want AWS Cloud Map to create an SRV record when you register an instance, and
+        /// if you're using a system that requires a specific SRV format, such as <a href="http://www.haproxy.org/">HAProxy</a>,
+        /// specify the following for <code>Name</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Start the name with an underscore (_), such as <code>_exampleservice</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// End the name with <i>._protocol</i>, such as <code>._tcp</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When you register an instance, AWS Cloud Map creates an SRV record and assigns a name
+        /// to the record by concatenating the service name and the namespace name, for example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>_exampleservice._tcp.example.com</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

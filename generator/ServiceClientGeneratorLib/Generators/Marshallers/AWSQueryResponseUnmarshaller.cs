@@ -198,7 +198,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
         {
             foreach (var member in this.Structure.Members)
             {
-                var testExpression= GeneratorHelpers.DetermineAWSQueryTestExpression(member);
+                var testExpression = GeneratorHelpers.DetermineAWSQueryTestExpression(member);
 
             
             #line default
@@ -291,9 +291,17 @@ namespace ServiceClientGenerator.Generators.Marshallers
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            errorResponse.InnerException = innerException;
+            errorResponse.StatusCode = statusCode;
+
+            var responseBodyBytes = context.GetResponseBodyBytes();
+
+            using (var streamCopy = new MemoryStream(responseBodyBytes))
+            using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
+            {
 ");
             
-            #line 132 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryResponseUnmarshaller.tt"
+            #line 140 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryResponseUnmarshaller.tt"
 
     foreach (var exception in this.Operation.Exceptions)
     {
@@ -301,33 +309,33 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("            if (errorResponse.Code != null && errorResponse.Code.Equals(\"");
+            this.Write("                if (errorResponse.Code != null && errorResponse.Code.Equals(\"");
             
-            #line 136 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryResponseUnmarshaller.tt"
+            #line 144 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Code));
             
             #line default
             #line hidden
-            this.Write("\"))\r\n            {\r\n                return new ");
+            this.Write("\"))\r\n                {\r\n                    return ");
             
-            #line 138 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryResponseUnmarshaller.tt"
+            #line 146 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
             
             #line default
             #line hidden
-            this.Write("(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, e" +
-                    "rrorResponse.RequestId, statusCode);\r\n            }\r\n");
+            this.Write("Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse);\r\n                }\r" +
+                    "\n");
             
-            #line 140 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryResponseUnmarshaller.tt"
+            #line 148 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryResponseUnmarshaller.tt"
 
     }
 
             
             #line default
             #line hidden
-            this.Write("            return new ");
+            this.Write("            }\r\n            return new ");
             
-            #line 143 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryResponseUnmarshaller.tt"
+            #line 152 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.BaseException));
             
             #line default
@@ -335,7 +343,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, e" +
                     "rrorResponse.RequestId, statusCode);\r\n        }\r\n");
             
-            #line 145 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryResponseUnmarshaller.tt"
+            #line 154 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryResponseUnmarshaller.tt"
 
 	    this.AddResponseSingletonMethod();
 
@@ -346,7 +354,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 150 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryResponseUnmarshaller.tt"
+        #line 159 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryResponseUnmarshaller.tt"
 
 // if the result fields have been wrapped in a subordinate structure, wire the accessor
 // to use it when addressing a member

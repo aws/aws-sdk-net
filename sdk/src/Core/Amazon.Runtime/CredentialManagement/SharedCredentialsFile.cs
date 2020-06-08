@@ -46,6 +46,8 @@ namespace Amazon.Runtime.CredentialManagement
         private const string StsRegionalEndpointsField = "sts_regional_endpoints";
         private const string S3UseArnRegionField = "s3_use_arn_region";
         private const string S3RegionalEndpointField = "s3_us_east_1_regional_endpoint";
+        private const string RetryModeField = "retry_mode";
+        private const string MaxAttemptsField = "max_attempts";
         private readonly Logger _logger = Logger.GetLogger(typeof(SharedCredentialsFile));
 
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
@@ -56,7 +58,9 @@ namespace Amazon.Runtime.CredentialManagement
             CredentialProcess,
             StsRegionalEndpointsField,
             S3UseArnRegionField,
-            S3RegionalEndpointField
+            S3RegionalEndpointField,
+            RetryModeField,
+            MaxAttemptsField
         };
 
         /// <summary>
@@ -244,6 +248,12 @@ namespace Amazon.Runtime.CredentialManagement
                 
             if (profile.S3RegionalEndpoint != null)
                 reservedProperties[S3RegionalEndpointField] = profile.S3RegionalEndpoint.ToString().ToLowerInvariant();
+
+            if (profile.RetryMode != null)
+                reservedProperties[RetryModeField] = profile.RetryMode.ToString().ToLowerInvariant();
+
+            if (profile.MaxAttempts != null)
+                reservedProperties[MaxAttemptsField] = profile.MaxAttempts.ToString().ToLowerInvariant();
 
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
@@ -449,6 +459,44 @@ namespace Amazon.Runtime.CredentialManagement
 #endif
                 }
 
+                RequestRetryMode? requestRetryMode = null;
+                if (reservedProperties.TryGetValue(RetryModeField, out var retryModeString))
+                {
+#if BCL35
+                    try
+                    {
+                        requestRetryMode = (RequestRetryMode) Enum.Parse(typeof(RequestRetryMode), retryModeString, true);
+                    }
+                    catch (Exception)
+                    {
+                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string legacy/standard/adaptive is expected.", retryModeString, RetryModeField, profileName);
+                        profile = null;
+                        return false;
+                    }
+#else 
+                    if (!Enum.TryParse<RequestRetryMode>(retryModeString, true, out var retryModeTemp))
+                    {
+                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string legacy/standard/adaptive is expected.", retryModeString, RetryModeField, profileName);
+                        profile = null;
+                        return false;
+                    }
+                    requestRetryMode = retryModeTemp;
+#endif
+                }
+                                
+                int? maxAttempts = null;
+                if (reservedProperties.TryGetValue(MaxAttemptsField, out var maxAttemptsString))
+                {                    
+                    if (!int.TryParse(maxAttemptsString, out var maxAttemptsTemp) || maxAttemptsTemp <= 0)
+                    {
+                        Logger.GetLogger(GetType()).InfoFormat("Invalid value {0} for {1} in profile {2}. A positive integer is expected.", maxAttemptsString, MaxAttemptsField, profileName);
+                        profile = null;
+                        return false;
+                    }
+
+                    maxAttempts = maxAttemptsTemp;
+                }
+
                 profile = new CredentialProfile(profileName, profileOptions)
                 {
                     UniqueKey = toolkitArtifactGuid,
@@ -458,7 +506,9 @@ namespace Amazon.Runtime.CredentialManagement
                     EndpointDiscoveryEnabled = endpointDiscoveryEnabled,
                     StsRegionalEndpoints = stsRegionalEndpoints,
                     S3UseArnRegion = s3UseArnRegion,
-                    S3RegionalEndpoint = s3RegionalEndpoint
+                    S3RegionalEndpoint = s3RegionalEndpoint,
+                    RetryMode = requestRetryMode,
+                    MaxAttempts = maxAttempts
                 };
 
                 if (!IsSupportedProfileType(profile.ProfileType))

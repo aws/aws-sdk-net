@@ -15,6 +15,7 @@
 using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.SecurityToken;
 using Amazon.SecurityToken.Model;
@@ -35,6 +36,10 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class FallbackFactoryTest
     {
+        private const string AWS_ENABLE_ENDPOINT_DISCOVERY_ENVIRONMENT_VARIABLE = "AWS_ENABLE_ENDPOINT_DISCOVERY";
+        private const string AWS_RETRY_MODE_ENVIRONMENT_VARIABLE = "AWS_RETRY_MODE";
+        private const string AWS_MAX_ATTEMPTS_ENVIRONMENT_VARIABLE = "AWS_MAX_ATTEMPTS";
+
         private static readonly string ProfileText = new StringBuilder()
             .AppendLine("[default]")
             .AppendLine("region=us-west-2")
@@ -53,6 +58,9 @@ namespace AWSSDK.UnitTests
             .AppendLine("[processCredential]")
             .AppendLine("region=us-west-1")
             .AppendLine($"credential_process = {ProcessAWSCredentialsTest.Executable} {ProcessAWSCredentialsTest.ArgumentsBasic} {ProcessAWSCredentialsTest.ValidVersionNumber}")
+            .AppendLine("[retries]")
+            .AppendLine("max_attempts=100")
+            .AppendLine("retry_mode=standard")            
             .ToString();
 
         [TestMethod]
@@ -67,7 +75,16 @@ namespace AWSSDK.UnitTests
                 Assert.AreEqual(RegionEndpoint.USWest2, region);
 
                 var enabled = FallbackEndpointDiscoveryEnabledFactory.GetEnabled();
-                Assert.IsFalse(enabled.HasValue);                
+                Assert.IsFalse(enabled.HasValue);
+
+                enabled = FallbackInternalConfigurationFactory.EndpointDiscoveryEnabled;
+                Assert.IsFalse(enabled.HasValue);
+
+                var retryMode = FallbackInternalConfigurationFactory.RetryMode;
+                Assert.IsFalse(retryMode.HasValue);
+
+                var maxAttempts = FallbackInternalConfigurationFactory.MaxAttempts;
+                Assert.IsFalse(maxAttempts.HasValue);
             }
         }               
 
@@ -85,6 +102,10 @@ namespace AWSSDK.UnitTests
                 var enabled = FallbackEndpointDiscoveryEnabledFactory.GetEnabled();
                 Assert.IsTrue(enabled.HasValue);
                 Assert.IsFalse(enabled.Value);
+
+                enabled = FallbackInternalConfigurationFactory.EndpointDiscoveryEnabled;
+                Assert.IsTrue(enabled.HasValue);
+                Assert.IsFalse(enabled.Value);
             }
         }
 
@@ -94,6 +115,10 @@ namespace AWSSDK.UnitTests
             using (new FallbackFactoryTestFixture(ProfileText, "other2"))
             {                
                 var enabled = FallbackEndpointDiscoveryEnabledFactory.GetEnabled();
+                Assert.IsTrue(enabled.HasValue);
+                Assert.IsTrue(enabled.Value);
+
+                enabled = FallbackInternalConfigurationFactory.EndpointDiscoveryEnabled;
                 Assert.IsTrue(enabled.HasValue);
                 Assert.IsTrue(enabled.Value);
             }
@@ -113,15 +138,59 @@ namespace AWSSDK.UnitTests
             }
         }
 
+        [TestMethod]
+        public void TestRetriesProfile()
+        {
+            using (new FallbackFactoryTestFixture(ProfileText, "retries"))
+            {
+                var retryMode = FallbackInternalConfigurationFactory.RetryMode;
+                Assert.IsTrue(retryMode.HasValue);
+                Assert.AreEqual(RequestRetryMode.Standard, retryMode.Value);
+
+                var maxAttempts = FallbackInternalConfigurationFactory.MaxAttempts;
+                Assert.IsTrue(maxAttempts.HasValue);
+                Assert.AreEqual(100, maxAttempts.Value);                                
+            }
+        }
 
         [TestMethod]
         public void TestEnableEndpointDiscoveryEnvVariable()
         {
-            using (new FallbackFactoryTestFixture(ProfileText, "other2", "false"))
+            var envVariables = new Dictionary<string, string>()
+            {
+                {  AWS_ENABLE_ENDPOINT_DISCOVERY_ENVIRONMENT_VARIABLE, "false" }                
+            };
+
+            using (new FallbackFactoryTestFixture(ProfileText, "other2", envVariables))
             {
                 var enabled = FallbackEndpointDiscoveryEnabledFactory.GetEnabled();
                 Assert.IsTrue(enabled.HasValue);
                 Assert.IsFalse(enabled.Value);
+
+                enabled = FallbackInternalConfigurationFactory.EndpointDiscoveryEnabled;
+                Assert.IsTrue(enabled.HasValue);
+                Assert.IsFalse(enabled.Value);
+            }
+        }
+
+        [TestMethod]
+        public void TestRetriesConfigurationEnvVariables()
+        {
+            var envVariables = new Dictionary<string, string>()
+            {                
+                {  AWS_RETRY_MODE_ENVIRONMENT_VARIABLE, "adaptive" },
+                {  AWS_MAX_ATTEMPTS_ENVIRONMENT_VARIABLE, "6" }
+            };
+
+            using (new FallbackFactoryTestFixture(ProfileText, "retries", envVariables))
+            {
+                var retryMode = FallbackInternalConfigurationFactory.RetryMode;
+                Assert.IsTrue(retryMode.HasValue);
+                Assert.AreEqual(RequestRetryMode.Adaptive, retryMode.Value);
+
+                var maxAttempts = FallbackInternalConfigurationFactory.MaxAttempts;
+                Assert.IsTrue(maxAttempts.HasValue);
+                Assert.AreEqual(6, maxAttempts.Value);
             }
         }
 
@@ -178,7 +247,7 @@ namespace AWSSDK.UnitTests
                 Client = mock.Object
             })
             {
-                using (new FallbackFactoryTestFixture(ProfileText, "default", null, envVariables))
+                using (new FallbackFactoryTestFixture(ProfileText, "default", envVariables))
                 {
 #endregion Setup
 
@@ -245,7 +314,7 @@ namespace AWSSDK.UnitTests
                 Client = mock.Object
             })
             {
-                using (new FallbackFactoryTestFixture(ProfileText, "default", null, envVariables))
+                using (new FallbackFactoryTestFixture(ProfileText, "default", envVariables))
                 {
 #endregion Setup
 
@@ -283,7 +352,7 @@ namespace AWSSDK.UnitTests
             var mockClient = new Mock<ICoreAmazonSTS_WebIdentity>();
             mockClient.Setup(c => c.CredentialsFromAssumeRoleWithWebIdentityAuthentication(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<AssumeRoleWithWebIdentityCredentialsOptions>()))
                 .Returns(new AssumeRoleImmutableCredentials("dummyAccessKeyId", "dummySecret", "dummyToken", DateTime.UtcNow.AddDays(1)));
-            using (new FallbackFactoryTestFixture(ProfileText, "default", null, envVariables))
+            using (new FallbackFactoryTestFixture(ProfileText, "default", envVariables))
             {
 #endregion Setup
 
@@ -379,7 +448,7 @@ namespace AWSSDK.UnitTests
             var mockClient = new Mock<ICoreAmazonSTS_WebIdentity>();
             mockClient.Setup(c => c.CredentialsFromAssumeRoleWithWebIdentityAuthentication(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<AssumeRoleWithWebIdentityCredentialsOptions>()))
                 .Returns(new AssumeRoleImmutableCredentials("dummyAccessKeyId", "dummySecret", "dummyToken", DateTime.UtcNow.AddDays(1)));
-            using (new FallbackFactoryTestFixture(profileText, "default", null, envVariables))
+            using (new FallbackFactoryTestFixture(profileText, "default", envVariables))
             {
 #endregion Setup
 
@@ -431,7 +500,7 @@ namespace AWSSDK.UnitTests
                 {  AssumeRoleWithWebIdentityCredentials.RoleSessionNameEnvVariable, roleSessionName },
             };
 
-            using (new FallbackFactoryTestFixture(ProfileText, "default", null, envVariables))
+            using (new FallbackFactoryTestFixture(ProfileText, "default", envVariables))
             {
 #endregion Setup
                 try
@@ -471,7 +540,7 @@ namespace AWSSDK.UnitTests
             var mockClient = new Mock<ICoreAmazonSTS_WebIdentity>();
             mockClient.Setup(c => c.CredentialsFromAssumeRoleWithWebIdentityAuthentication(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<AssumeRoleWithWebIdentityCredentialsOptions>()))
                 .Returns(new AssumeRoleImmutableCredentials("dummyAccessKeyId", "dummySecret", "dummyToken", DateTime.UtcNow.AddDays(1)));
-            using (new FallbackFactoryTestFixture(ProfileText, "default", null, envVariables))
+            using (new FallbackFactoryTestFixture(ProfileText, "default", envVariables))
             {
 #endregion Setup
 
@@ -554,8 +623,7 @@ namespace AWSSDK.UnitTests
 
         public class FallbackFactoryTestFixture : IDisposable
         {
-            private const string AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
-            private const string AWS_ENABLE_ENDPOINT_DISCOVERY_ENVIRONMENT_VARIABLE = "AWS_ENABLE_ENDPOINT_DISCOVERY";
+            private const string AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";            
 
             private readonly SharedCredentialsFileTestFixture sharedFixture;
             private readonly NetSDKCredentialsFileTestFixture netSdkFixture;
@@ -563,13 +631,13 @@ namespace AWSSDK.UnitTests
             private readonly CredentialProfileStoreChain originalCredsChain;
             private readonly CredentialProfileStoreChain originalRegionChain;
             private readonly CredentialProfileStoreChain originalEndpointDiscoveryEnabledChain;
+            private readonly CredentialProfileStoreChain originalConfigurationChain;
 
-            private readonly string originalAWSProfileValue;
-            private readonly string originalAWSEnableEndpointDiscoveryValue;
-
+            private readonly string originalAWSProfileValue;            
+            
             private readonly Dictionary<string, string> originalEnvironmentVariables = new Dictionary<string, string>();
 
-            public FallbackFactoryTestFixture(string sharedCredsFileContent, string awsProfileValue, string enableEndpointDiscoveryValue = null, Dictionary<string, string> newEnvironmentVariables = null)
+            public FallbackFactoryTestFixture(string sharedCredsFileContent, string awsProfileValue, Dictionary<string, string> newEnvironmentVariables = null)
             {
                 sharedFixture = new SharedCredentialsFileTestFixture(sharedCredsFileContent);
                 netSdkFixture = new NetSDKCredentialsFileTestFixture();
@@ -583,12 +651,12 @@ namespace AWSSDK.UnitTests
                 originalEndpointDiscoveryEnabledChain = (CredentialProfileStoreChain)ReflectionHelpers.Invoke(typeof(FallbackEndpointDiscoveryEnabledFactory), "credentialProfileChain");
                 ReflectionHelpers.Invoke(typeof(FallbackEndpointDiscoveryEnabledFactory), "credentialProfileChain", new CredentialProfileStoreChain(sharedFixture.CredentialsFilePath));
 
+                originalConfigurationChain = (CredentialProfileStoreChain)ReflectionHelpers.Invoke(typeof(FallbackInternalConfigurationFactory), "_credentialProfileChain");
+                ReflectionHelpers.Invoke(typeof(FallbackInternalConfigurationFactory), "_credentialProfileChain", new CredentialProfileStoreChain(sharedFixture.CredentialsFilePath));
+
                 originalAWSProfileValue = Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE);
                 Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, awsProfileValue);
-
-                originalAWSEnableEndpointDiscoveryValue = Environment.GetEnvironmentVariable(AWS_ENABLE_ENDPOINT_DISCOVERY_ENVIRONMENT_VARIABLE);
-                Environment.SetEnvironmentVariable(AWS_ENABLE_ENDPOINT_DISCOVERY_ENVIRONMENT_VARIABLE, enableEndpointDiscoveryValue);
-
+                                                
                 if (newEnvironmentVariables != null)
                 {
                     foreach (var envVariable in newEnvironmentVariables)
@@ -603,6 +671,7 @@ namespace AWSSDK.UnitTests
                 FallbackCredentialsFactory.Reset();
                 FallbackRegionFactory.Reset();
                 FallbackEndpointDiscoveryEnabledFactory.Reset();
+                FallbackInternalConfigurationFactory.Reset();
             }
 
             public void Dispose()
@@ -612,12 +681,12 @@ namespace AWSSDK.UnitTests
                     Environment.SetEnvironmentVariable(envVariable.Key, envVariable.Value);
                 }
 
-                Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, originalAWSProfileValue);
-                Environment.SetEnvironmentVariable(AWS_ENABLE_ENDPOINT_DISCOVERY_ENVIRONMENT_VARIABLE, originalAWSEnableEndpointDiscoveryValue);
+                Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, originalAWSProfileValue);                
 
                 ReflectionHelpers.Invoke(typeof(FallbackRegionFactory), "credentialProfileChain", originalRegionChain);
                 ReflectionHelpers.Invoke(typeof(FallbackCredentialsFactory), "credentialProfileChain", originalCredsChain);
                 ReflectionHelpers.Invoke(typeof(FallbackEndpointDiscoveryEnabledFactory), "credentialProfileChain", originalEndpointDiscoveryEnabledChain);
+                ReflectionHelpers.Invoke(typeof(FallbackInternalConfigurationFactory), "_credentialProfileChain", originalConfigurationChain);
 
                 netSdkFixture.Dispose();
                 sharedFixture.Dispose();
@@ -625,6 +694,7 @@ namespace AWSSDK.UnitTests
                 FallbackCredentialsFactory.Reset();
                 FallbackRegionFactory.Reset();
                 FallbackEndpointDiscoveryEnabledFactory.Reset();
+                FallbackInternalConfigurationFactory.Reset();
             }
         }
     }

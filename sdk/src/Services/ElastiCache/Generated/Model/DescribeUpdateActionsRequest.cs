@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -217,7 +218,7 @@ namespace Amazon.ElastiCache.Model
         /// The status of the update action.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=6)]
+        [AWSProperty(Max=9)]
         public List<string> UpdateActionStatus
         {
             get { return this._updateActionStatus; }

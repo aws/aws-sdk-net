@@ -9,6 +9,16 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.BatchUpdateFindingsRequest.Confidence</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.BatchUpdateFindingsRequest.Criticality</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.CreateActionTargetRequest.Description</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -188,10 +198,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.AccessDeniedException.Code</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityHub.Model.AccessDeniedException.Message</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -789,6 +795,14 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsSecurityFindingIdentifier.Id</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsSecurityFindingIdentifier.ProductArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.AwsSnsTopicDetails.KmsMasterKeyId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -838,6 +852,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.AwsWafWebAclRule.Type</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.BatchUpdateFindingsUnprocessedFinding.ErrorCode</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.BatchUpdateFindingsUnprocessedFinding.ErrorMessage</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -905,23 +927,11 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityHub.Model.InternalException.Message</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SecurityHub.Model.InvalidAccessException.Code</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityHub.Model.InvalidAccessException.Message</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SecurityHub.Model.InvalidInputException.Code</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityHub.Model.InvalidInputException.Message</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -942,10 +952,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.LimitExceededException.Code</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityHub.Model.LimitExceededException.Message</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1113,20 +1119,21 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityHub.Model.ResourceConflictException.Message</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SecurityHub.Model.ResourceNotFoundException.Code</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityHub.Model.ResourceNotFoundException.Message</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.Result.ProcessingResult</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.Severity.Original</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SeverityUpdate.Normalized</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.SortCriterion.Field</property>
@@ -1178,6 +1185,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.StandardsSubscriptionRequest.StandardsArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StatusReason.Description</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StatusReason.ReasonCode</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

@@ -96,6 +96,10 @@ namespace Amazon.FMS
         /// Constant ACCOUNT for CustomerPolicyScopeIdType
         /// </summary>
         public static readonly CustomerPolicyScopeIdType ACCOUNT = new CustomerPolicyScopeIdType("ACCOUNT");
+        /// <summary>
+        /// Constant ORG_UNIT for CustomerPolicyScopeIdType
+        /// </summary>
+        public static readonly CustomerPolicyScopeIdType ORG_UNIT = new CustomerPolicyScopeIdType("ORG_UNIT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -266,6 +270,10 @@ namespace Amazon.FMS
         /// Constant WAF for SecurityServiceType
         /// </summary>
         public static readonly SecurityServiceType WAF = new SecurityServiceType("WAF");
+        /// <summary>
+        /// Constant WAFV2 for SecurityServiceType
+        /// </summary>
+        public static readonly SecurityServiceType WAFV2 = new SecurityServiceType("WAFV2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

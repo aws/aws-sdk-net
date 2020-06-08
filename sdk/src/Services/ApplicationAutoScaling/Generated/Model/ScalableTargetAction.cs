@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -57,6 +58,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property MinCapacity. 
         /// <para>
         /// The minimum capacity.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Lambda provisioned concurrency, the minimum value allowed is 0. For all other
+        /// resources, the minimum value allowed is 1.
         /// </para>
         /// </summary>
         public int MinCapacity

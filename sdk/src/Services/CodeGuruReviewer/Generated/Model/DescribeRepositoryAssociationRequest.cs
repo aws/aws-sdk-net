@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,7 +39,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property AssociationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) identifying the association.
+        /// The Amazon Resource Name (ARN) identifying the association. You can retrieve this
+        /// ARN by calling <code>ListRepositories</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]

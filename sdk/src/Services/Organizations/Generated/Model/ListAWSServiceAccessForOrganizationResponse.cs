@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -58,10 +59,10 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If present, this value indicates that there is more output available than is included
-        /// in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should
-        /// repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.
+        /// If present, indicates that more output is available than is included in the current
+        /// response. Use this value in the <code>NextToken</code> request parameter in a subsequent
+        /// call to the operation to get the next part of the output. You should repeat this until
+        /// the <code>NextToken</code> response element comes back as <code>null</code>.
         /// </para>
         /// </summary>
         public string NextToken

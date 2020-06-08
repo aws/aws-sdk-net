@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -55,6 +56,7 @@ namespace Amazon.Kendra.Model
         private string _name;
         private string _roleArn;
         private string _schedule;
+        private List<Tag> _tags = new List<Tag>();
         private DataSourceType _type;
 
         /// <summary>
@@ -174,6 +176,26 @@ namespace Amazon.Kendra.Model
         internal bool IsSetSchedule()
         {
             return this._schedule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of key-value pairs that identify the data source. You can use the tags to identify
+        /// and organize your resources and to control access to resources.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

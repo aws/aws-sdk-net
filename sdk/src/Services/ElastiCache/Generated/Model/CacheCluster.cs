@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -32,6 +33,7 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class CacheCluster
     {
+        private string _arn;
         private bool? _atRestEncryptionEnabled;
         private bool? _authTokenEnabled;
         private DateTime? _authTokenLastModifiedDate;
@@ -58,6 +60,24 @@ namespace Amazon.ElastiCache.Model
         private int? _snapshotRetentionLimit;
         private string _snapshotWindow;
         private bool? _transitEncryptionEnabled;
+
+        /// <summary>
+        /// Gets and sets the property ARN. 
+        /// <para>
+        /// The ARN (Amazon Resource Name) of the cache cluster.
+        /// </para>
+        /// </summary>
+        public string ARN
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if ARN property is set
+        internal bool IsSetARN()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AtRestEncryptionEnabled. 

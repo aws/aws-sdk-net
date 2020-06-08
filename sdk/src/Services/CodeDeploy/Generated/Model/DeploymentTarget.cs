@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -32,15 +33,32 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class DeploymentTarget
     {
+        private CloudFormationTarget _cloudFormationTarget;
         private DeploymentTargetType _deploymentTargetType;
         private ECSTarget _ecsTarget;
         private InstanceTarget _instanceTarget;
         private LambdaTarget _lambdaTarget;
 
         /// <summary>
+        /// Gets and sets the property CloudFormationTarget.
+        /// </summary>
+        public CloudFormationTarget CloudFormationTarget
+        {
+            get { return this._cloudFormationTarget; }
+            set { this._cloudFormationTarget = value; }
+        }
+
+        // Check to see if CloudFormationTarget property is set
+        internal bool IsSetCloudFormationTarget()
+        {
+            return this._cloudFormationTarget != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DeploymentTargetType. 
         /// <para>
-        ///  The deployment type that is specific to the deployment's compute platform. 
+        /// The deployment type that is specific to the deployment's compute platform or deployments
+        /// initiated by a CloudFormation stack update.
         /// </para>
         /// </summary>
         public DeploymentTargetType DeploymentTargetType

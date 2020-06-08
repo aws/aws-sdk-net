@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Details about the action that CloudFront or AWS WAF takes when a web request matches
-    /// the conditions in the Rule.
+    /// the conditions in the rule.
     /// </summary>
     public partial class WafAction
     {
@@ -39,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// Specifies how you want AWS WAF to respond to requests that match the settings in a
-        /// Rule.
+        /// rule.
         /// </para>
         ///  
         /// <para>

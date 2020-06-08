@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,12 +30,16 @@ namespace Amazon.Detective.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGraph operation.
-    /// Amazon Detective is currently in preview.
+    /// Creates a new behavior graph for the calling account, and sets that account as the
+    /// master account. This operation is called by the account that is enabling Detective.
     /// 
     ///  
     /// <para>
-    /// Creates a new behavior graph for the calling account, and sets that account as the
-    /// master account. This operation is called by the account that is enabling Detective.
+    /// Before you try to enable Detective, make sure that your account has been enrolled
+    /// in Amazon GuardDuty for at least 48 hours. If you do not meet this requirement, you
+    /// cannot enable Detective. If you do meet the GuardDuty prerequisite, then when you
+    /// make the request to enable Detective, it checks whether your data volume is within
+    /// the Detective quota. If it exceeds the quota, then you cannot enable Detective. 
     /// </para>
     ///  
     /// <para>

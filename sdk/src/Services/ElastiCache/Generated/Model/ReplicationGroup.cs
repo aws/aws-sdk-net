@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -32,6 +33,7 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class ReplicationGroup
     {
+        private string _arn;
         private bool? _atRestEncryptionEnabled;
         private bool? _authTokenEnabled;
         private DateTime? _authTokenLastModifiedDate;
@@ -43,6 +45,7 @@ namespace Amazon.ElastiCache.Model
         private GlobalReplicationGroupInfo _globalReplicationGroupInfo;
         private string _kmsKeyId;
         private List<string> _memberClusters = new List<string>();
+        private MultiAZStatus _multiAZ;
         private List<NodeGroup> _nodeGroups = new List<NodeGroup>();
         private ReplicationGroupPendingModifiedValues _pendingModifiedValues;
         private string _replicationGroupId;
@@ -51,6 +54,24 @@ namespace Amazon.ElastiCache.Model
         private string _snapshotWindow;
         private string _status;
         private bool? _transitEncryptionEnabled;
+
+        /// <summary>
+        /// Gets and sets the property ARN. 
+        /// <para>
+        /// The ARN (Amazon Resource Name) of the replication group.
+        /// </para>
+        /// </summary>
+        public string ARN
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if ARN property is set
+        internal bool IsSetARN()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AtRestEncryptionEnabled. 
@@ -294,6 +315,21 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetMemberClusters()
         {
             return this._memberClusters != null && this._memberClusters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiAZ.
+        /// </summary>
+        public MultiAZStatus MultiAZ
+        {
+            get { return this._multiAZ; }
+            set { this._multiAZ = value; }
+        }
+
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this._multiAZ != null;
         }
 
         /// <summary>

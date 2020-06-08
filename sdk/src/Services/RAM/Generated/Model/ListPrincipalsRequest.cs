@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -160,9 +161,11 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>ec2:CapacityReservation</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code>
-        /// | <code>ec2:TransitGateway</code> | <code>license-manager:LicenseConfiguration</code>
-        /// | <code>rds:Cluster</code> | <code>route53resolver:ResolverRule</code> I <code>resource-groups:Group</code>
+        /// Valid values: <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code>
+        /// | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:Subnet</code>
+        /// | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code>
+        /// | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>license-manager:LicenseConfiguration</code>
+        /// I <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:ResolverRule</code>
         /// 
         /// </para>
         /// </summary>

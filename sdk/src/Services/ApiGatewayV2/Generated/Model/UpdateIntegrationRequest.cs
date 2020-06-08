@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -282,7 +283,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify
         /// the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify
         /// resources. You can use query parameters to target specific resources. To learn more,
-        /// see <a href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
+        /// see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
         /// For private integrations, all resources must be owned by the same AWS account.
         /// </para>
         /// </summary>
@@ -420,12 +421,12 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property TimeoutInMillis. 
         /// <para>
-        /// Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds
-        /// or 29 seconds for WebSocket APIs. The default value is 5,000 milliseconds, or 5 seconds
-        /// for HTTP APIs.
+        /// Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50
+        /// and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket
+        /// APIs and 30 seconds for HTTP APIs.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=50, Max=29000)]
+        [AWSProperty(Min=50, Max=30000)]
         public int TimeoutInMillis
         {
             get { return this._timeoutInMillis.GetValueOrDefault(); }

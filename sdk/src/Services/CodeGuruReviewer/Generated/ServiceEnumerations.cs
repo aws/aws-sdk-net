@@ -25,11 +25,73 @@ namespace Amazon.CodeGuruReviewer
 {
 
     /// <summary>
+    /// Constants used for properties of type JobState.
+    /// </summary>
+    public class JobState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Completed for JobState
+        /// </summary>
+        public static readonly JobState Completed = new JobState("Completed");
+        /// <summary>
+        /// Constant Deleting for JobState
+        /// </summary>
+        public static readonly JobState Deleting = new JobState("Deleting");
+        /// <summary>
+        /// Constant Failed for JobState
+        /// </summary>
+        public static readonly JobState Failed = new JobState("Failed");
+        /// <summary>
+        /// Constant Pending for JobState
+        /// </summary>
+        public static readonly JobState Pending = new JobState("Pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobState FindValue(string value)
+        {
+            return FindValue<JobState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ProviderType.
     /// </summary>
     public class ProviderType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Bitbucket for ProviderType
+        /// </summary>
+        public static readonly ProviderType Bitbucket = new ProviderType("Bitbucket");
         /// <summary>
         /// Constant CodeCommit for ProviderType
         /// </summary>
@@ -68,6 +130,56 @@ namespace Amazon.CodeGuruReviewer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProviderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Reaction.
+    /// </summary>
+    public class Reaction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ThumbsDown for Reaction
+        /// </summary>
+        public static readonly Reaction ThumbsDown = new Reaction("ThumbsDown");
+        /// <summary>
+        /// Constant ThumbsUp for Reaction
+        /// </summary>
+        public static readonly Reaction ThumbsUp = new Reaction("ThumbsUp");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Reaction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Reaction FindValue(string value)
+        {
+            return FindValue<Reaction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Reaction(string value)
         {
             return FindValue(value);
         }
@@ -126,6 +238,52 @@ namespace Amazon.CodeGuruReviewer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RepositoryAssociationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Type.
+    /// </summary>
+    public class Type : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PullRequest for Type
+        /// </summary>
+        public static readonly Type PullRequest = new Type("PullRequest");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Type(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Type FindValue(string value)
+        {
+            return FindValue<Type>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Type(string value)
         {
             return FindValue(value);
         }

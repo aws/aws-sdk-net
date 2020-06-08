@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,12 +34,65 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class GetSavingsPlansPurchaseRecommendationRequest : AmazonCostExplorerRequest
     {
+        private AccountScope _accountScope;
+        private Expression _filter;
         private LookbackPeriodInDays _lookbackPeriodInDays;
         private string _nextPageToken;
         private int? _pageSize;
         private PaymentOption _paymentOption;
         private SupportedSavingsPlansType _savingsPlansType;
         private TermInYears _termInYears;
+
+        /// <summary>
+        /// Gets and sets the property AccountScope. 
+        /// <para>
+        /// The account scope that you want your recommendations for. Amazon Web Services calculates
+        /// recommendations including the payer account and linked accounts if the value is set
+        /// to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated
+        /// for individual linked accounts only.
+        /// </para>
+        /// </summary>
+        public AccountScope AccountScope
+        {
+            get { return this._accountScope; }
+            set { this._accountScope = value; }
+        }
+
+        // Check to see if AccountScope property is set
+        internal bool IsSetAccountScope()
+        {
+            return this._accountScope != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code>
+        /// dimension. To filter your recommendations by Account ID, specify <code>Key</code>
+        /// as <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount
+        /// ID(s) for which you want to see Savings Plans purchase recommendations.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+        /// <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>.
+        /// With <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code>
+        /// and <code>Value</code> can be a single Account ID or multiple comma-separated Account
+        /// IDs for which you want to see Savings Plans Purchase Recommendations. <code>AND</code>
+        /// and <code>OR</code> operators are not supported.
+        /// </para>
+        /// </summary>
+        public Expression Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LookbackPeriodInDays. 
@@ -66,6 +120,7 @@ namespace Amazon.CostExplorer.Model
         /// when the response from a previous call has more results than the maximum page size.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
         public string NextPageToken
         {
             get { return this._nextPageToken; }

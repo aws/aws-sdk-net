@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,10 +30,10 @@ namespace Amazon.Macie.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateS3Resources operation.
-    /// Removes specified S3 resources from being monitored by Amazon Macie. If memberAccountId
-    /// isn't specified, the action removes specified S3 resources from Macie for the current
-    /// master account. If memberAccountId is specified, the action removes specified S3 resources
-    /// from Macie for the specified member account.
+    /// Removes specified S3 resources from being monitored by Amazon Macie Classic. If memberAccountId
+    /// isn't specified, the action removes specified S3 resources from Macie Classic for
+    /// the current master account. If memberAccountId is specified, the action removes specified
+    /// S3 resources from Macie Classic for the specified member account.
     /// </summary>
     public partial class DisassociateS3ResourcesRequest : AmazonMacieRequest
     {
@@ -43,7 +44,7 @@ namespace Amazon.Macie.Model
         /// Gets and sets the property AssociatedS3Resources. 
         /// <para>
         /// The S3 resources (buckets or prefixes) that you want to remove from being monitored
-        /// and classified by Amazon Macie. 
+        /// and classified by Amazon Macie Classic. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,8 +63,8 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property MemberAccountId. 
         /// <para>
-        /// The ID of the Amazon Macie member account whose resources you want to remove from
-        /// being monitored by Amazon Macie. 
+        /// The ID of the Amazon Macie Classic member account whose resources you want to remove
+        /// from being monitored by Amazon Macie Classic. 
         /// </para>
         /// </summary>
         public string MemberAccountId

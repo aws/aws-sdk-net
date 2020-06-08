@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -44,6 +45,7 @@ namespace Amazon.CostExplorer.Model
         /// set of accounts).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string TotalCommitment
         {
             get { return this._totalCommitment; }
@@ -63,6 +65,7 @@ namespace Amazon.CostExplorer.Model
         /// eligible usage in a specific period.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string UnusedCommitment
         {
             get { return this._unusedCommitment; }
@@ -82,6 +85,7 @@ namespace Amazon.CostExplorer.Model
         /// usage in a specific period.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string UsedCommitment
         {
             get { return this._usedCommitment; }
@@ -101,6 +105,7 @@ namespace Amazon.CostExplorer.Model
         /// for your Savings Plans.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string UtilizationPercentage
         {
             get { return this._utilizationPercentage; }

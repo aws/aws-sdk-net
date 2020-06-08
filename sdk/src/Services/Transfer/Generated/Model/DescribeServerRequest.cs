@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,11 +30,12 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeServer operation.
-    /// Describes the server that you specify by passing the <code>ServerId</code> parameter.
+    /// Describes a file transfer protocol-enabled server that you specify by passing the
+    /// <code>ServerId</code> parameter.
     /// 
     ///  
     /// <para>
-    /// The response contains a description of the server's properties. When you set <code>EndpointType</code>
+    /// The response contains a description of a server's properties. When you set <code>EndpointType</code>
     /// to VPC, the response will contain the <code>EndpointDetails</code>.
     /// </para>
     /// </summary>
@@ -44,7 +46,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned unique identifier for an SFTP server.
+        /// A system-assigned unique identifier for a file transfer protocol-enabled server.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

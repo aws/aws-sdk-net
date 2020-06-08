@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUserProfile operation.
-    /// Deletes a user profile.
+    /// Deletes a user profile. When a user profile is deleted, the user loses access to their
+    /// EFS volume, including data, notebooks, and other artifacts.
     /// </summary>
     public partial class DeleteUserProfileRequest : AmazonSageMakerRequest
     {

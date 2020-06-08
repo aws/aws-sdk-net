@@ -518,6 +518,49 @@ namespace Amazon.SecurityHub
         /// The maximum allowed size for a finding is 240 Kb. An error is returned for any finding
         /// larger than 240 Kb.
         /// </para>
+        ///  
+        /// <para>
+        /// After a finding is created, <code>BatchImportFindings</code> cannot be used to update
+        /// the following finding fields and objects, which Security Hub customers use to manage
+        /// their investigation workflow.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Confidence</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Criticality</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Note</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RelatedFindings</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Severity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Types</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UserDefinedFields</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VerificationState</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Workflow</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchImportFindings service method.</param>
         /// 
@@ -578,6 +621,128 @@ namespace Amazon.SecurityHub
         public virtual BatchImportFindingsResponse EndBatchImportFindings(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchImportFindingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchUpdateFindings
+
+        /// <summary>
+        /// Used by Security Hub customers to update information about their investigation into
+        /// a finding. Requested by master accounts or member accounts. Master accounts can update
+        /// findings for their account and their member accounts. Member accounts can update findings
+        /// for their account.
+        /// 
+        ///  
+        /// <para>
+        /// Updates from <code>BatchUpdateFindings</code> do not affect the value of <code>UpdatedAt</code>
+        /// for a finding.
+        /// </para>
+        ///  
+        /// <para>
+        /// Master accounts can use <code>BatchUpdateFindings</code> to update the following finding
+        /// fields and objects.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Confidence</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Criticality</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Note</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RelatedFindings</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Severity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Types</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UserDefinedFields</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VerificationState</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Workflow</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Member accounts can only use <code>BatchUpdateFindings</code> to update the Note object.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFindings service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateFindings service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">REST API Reference for BatchUpdateFindings Operation</seealso>
+        public virtual BatchUpdateFindingsResponse BatchUpdateFindings(BatchUpdateFindingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateFindingsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateFindingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchUpdateFindings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFindings operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchUpdateFindings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">REST API Reference for BatchUpdateFindings Operation</seealso>
+        public virtual IAsyncResult BeginBatchUpdateFindings(BatchUpdateFindingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateFindingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchUpdateFindings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchUpdateFindings.</param>
+        /// 
+        /// <returns>Returns a  BatchUpdateFindingsResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">REST API Reference for BatchUpdateFindings Operation</seealso>
+        public virtual BatchUpdateFindingsResponse EndBatchUpdateFindings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchUpdateFindingsResponse>(asyncResult);
         }
 
         #endregion
@@ -753,9 +918,9 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// If the account owner accepts the invitation, the account becomes a member account
-        /// in Security Hub, and a permission policy is added that permits the master account
-        /// to view the findings generated in the member account. When Security Hub is enabled
-        /// in the invited account, findings start to be sent to both the member and master accounts.
+        /// in Security Hub. A permissions policy is added that permits the master account to
+        /// view the findings generated in the member account. When Security Hub is enabled in
+        /// the invited account, findings start to be sent to both the member and master accounts.
         /// </para>
         ///  
         /// <para>
@@ -1842,7 +2007,7 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// When you enable a product integration, a permission policy that grants permission
+        /// When you enable a product integration, a permissions policy that grants permission
         /// for the product to send findings to Security Hub is applied.
         /// </para>
         /// </summary>
@@ -1921,16 +2086,36 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// When you enable Security Hub, you grant to Security Hub the permissions necessary
-        /// to gather findings from AWS Config, Amazon GuardDuty, Amazon Inspector, and Amazon
-        /// Macie.
+        /// to gather findings from other services that are integrated with Security Hub.
         /// </para>
         ///  
         /// <para>
         /// When you use the <code>EnableSecurityHub</code> operation to enable Security Hub,
-        /// you also automatically enable the CIS AWS Foundations standard. You do not enable
-        /// the Payment Card Industry Data Security Standard (PCI DSS) standard. To enable a standard,
-        /// use the <code> <a>BatchEnableStandards</a> </code> operation. To disable a standard,
-        /// use the <code> <a>BatchDisableStandards</a> </code> operation.
+        /// you also automatically enable the following standards.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CIS AWS Foundations
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AWS Foundational Security Best Practices
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You do not enable the Payment Card Industry Data Security Standard (PCI DSS) standard.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code>
+        /// to <code>false</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you enable Security Hub, to enable a standard, use the <code> <a>BatchEnableStandards</a>
+        /// </code> operation. To disable a standard, use the <code> <a>BatchDisableStandards</a>
+        /// </code> operation.
         /// </para>
         ///  
         /// <para>
@@ -2990,9 +3175,6 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
         /// </exception>
-        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
-        /// The request was rejected because we can't find the specified resource.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateActionTarget">REST API Reference for UpdateActionTarget Operation</seealso>
         public virtual UpdateActionTargetResponse UpdateActionTarget(UpdateActionTargetRequest request)
         {
@@ -3042,9 +3224,15 @@ namespace Amazon.SecurityHub
         #region  UpdateFindings
 
         /// <summary>
+        /// <code>UpdateFindings</code> is deprecated. Instead of <code>UpdateFindings</code>,
+        /// use <code>BatchUpdateFindings</code>.
+        /// 
+        ///  
+        /// <para>
         /// Updates the <code>Note</code> and <code>RecordState</code> of the Security Hub-aggregated
         /// findings that the filter attributes specify. Any member account that can view the
         /// finding also sees the update to the finding.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFindings service method.</param>
         /// 

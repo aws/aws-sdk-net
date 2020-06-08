@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -92,7 +93,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        ///  You can get configuration metadata about a resource at the time it was backed-up
+        ///  You can get configuration metadata about a resource at the time it was backed up
         /// by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition
         /// to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required
         /// to restore a resource. For example, you might need to provide a new resource name

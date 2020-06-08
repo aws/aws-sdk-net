@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -36,6 +37,7 @@ namespace Amazon.ManagedBlockchain.Model
         private string _description;
         private MemberFrameworkAttributes _frameworkAttributes;
         private string _id;
+        private MemberLogPublishingConfiguration _logPublishingConfiguration;
         private string _name;
         private string _networkId;
         private MemberStatus _status;
@@ -113,6 +115,24 @@ namespace Amazon.ManagedBlockchain.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogPublishingConfiguration. 
+        /// <para>
+        /// Configuration properties for logging events associated with a member.
+        /// </para>
+        /// </summary>
+        public MemberLogPublishingConfiguration LogPublishingConfiguration
+        {
+            get { return this._logPublishingConfiguration; }
+            set { this._logPublishingConfiguration = value; }
+        }
+
+        // Check to see if LogPublishingConfiguration property is set
+        internal bool IsSetLogPublishingConfiguration()
+        {
+            return this._logPublishingConfiguration != null;
         }
 
         /// <summary>

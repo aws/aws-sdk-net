@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -37,7 +38,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property IpAddressV4. 
         /// <para>
-        /// IPV4 remote address of the connection.
+        /// The IPv4 local address of the connection.
         /// </para>
         /// </summary>
         public string IpAddressV4

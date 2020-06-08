@@ -38,19 +38,12 @@ namespace Amazon.Detective
     /// <summary>
     /// Implementation for accessing Detective
     ///
-    /// <important> 
-    /// <para>
-    /// Amazon Detective is currently in preview. The Detective API can only be used by accounts
-    /// that are admitted into the preview.
-    /// </para>
-    ///  </important> 
-    /// <para>
     /// Detective uses machine learning and purpose-built visualizations to help you analyze
     /// and investigate security issues across your Amazon Web Services (AWS) workloads. Detective
     /// automatically extracts time-based events such as login attempts, API calls, and network
     /// traffic from AWS CloudTrail and Amazon Virtual Private Cloud (Amazon VPC) flow logs.
     /// It also extracts findings detected by Amazon GuardDuty.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// The Detective API primarily supports the creation and management of behavior graphs.
@@ -310,13 +303,9 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Accepts an invitation for the member account to contribute data to a behavior graph.
         /// This operation can only be called by an invited member account. 
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// The request provides the ARN of behavior graph.
@@ -353,13 +342,9 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Accepts an invitation for the member account to contribute data to a behavior graph.
         /// This operation can only be called by an invited member account. 
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// The request provides the ARN of behavior graph.
@@ -403,12 +388,16 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
+        /// Creates a new behavior graph for the calling account, and sets that account as the
+        /// master account. This operation is called by the account that is enabling Detective.
         /// 
         ///  
         /// <para>
-        /// Creates a new behavior graph for the calling account, and sets that account as the
-        /// master account. This operation is called by the account that is enabling Detective.
+        /// Before you try to enable Detective, make sure that your account has been enrolled
+        /// in Amazon GuardDuty for at least 48 hours. If you do not meet this requirement, you
+        /// cannot enable Detective. If you do meet the GuardDuty prerequisite, then when you
+        /// make the request to enable Detective, it checks whether your data volume is within
+        /// the Detective quota. If it exceeds the quota, then you cannot enable Detective. 
         /// </para>
         ///  
         /// <para>
@@ -436,6 +425,26 @@ namespace Amazon.Detective
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ServiceQuotaExceededException">
+        /// This request cannot be completed for one of the following reasons.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The request would cause the number of member accounts in the behavior graph to exceed
+        /// the maximum allowed. A behavior graph cannot have more than 1000 member accounts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The request would cause the data rate for the behavior graph to exceed the maximum
+        /// allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detective is unable to verify the data rate for the member account. This is usually
+        /// because the member account is not enrolled in Amazon GuardDuty. 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateGraph">REST API Reference for CreateGraph Operation</seealso>
         public virtual CreateGraphResponse CreateGraph(CreateGraphRequest request)
         {
@@ -448,12 +457,16 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
+        /// Creates a new behavior graph for the calling account, and sets that account as the
+        /// master account. This operation is called by the account that is enabling Detective.
         /// 
         ///  
         /// <para>
-        /// Creates a new behavior graph for the calling account, and sets that account as the
-        /// master account. This operation is called by the account that is enabling Detective.
+        /// Before you try to enable Detective, make sure that your account has been enrolled
+        /// in Amazon GuardDuty for at least 48 hours. If you do not meet this requirement, you
+        /// cannot enable Detective. If you do meet the GuardDuty prerequisite, then when you
+        /// make the request to enable Detective, it checks whether your data volume is within
+        /// the Detective quota. If it exceeds the quota, then you cannot enable Detective. 
         /// </para>
         ///  
         /// <para>
@@ -483,6 +496,26 @@ namespace Amazon.Detective
         /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ServiceQuotaExceededException">
+        /// This request cannot be completed for one of the following reasons.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The request would cause the number of member accounts in the behavior graph to exceed
+        /// the maximum allowed. A behavior graph cannot have more than 1000 member accounts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The request would cause the data rate for the behavior graph to exceed the maximum
+        /// allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detective is unable to verify the data rate for the member account. This is usually
+        /// because the member account is not enrolled in Amazon GuardDuty. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateGraph">REST API Reference for CreateGraph Operation</seealso>
         public virtual Task<CreateGraphResponse> CreateGraphAsync(CreateGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -500,14 +533,10 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Sends a request to invite the specified AWS accounts to be member accounts in the
         /// behavior graph. This operation can only be called by the master account for a behavior
         /// graph. 
-        /// </para>
+        /// 
         ///  
         /// <para>
         ///  <code>CreateMembers</code> verifies the accounts and then sends invitations to the
@@ -544,8 +573,24 @@ namespace Amazon.Detective
         /// The request refers to a nonexistent resource.
         /// </exception>
         /// <exception cref="Amazon.Detective.Model.ServiceQuotaExceededException">
-        /// This request would cause the number of member accounts in the behavior graph to exceed
+        /// This request cannot be completed for one of the following reasons.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The request would cause the number of member accounts in the behavior graph to exceed
         /// the maximum allowed. A behavior graph cannot have more than 1000 member accounts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The request would cause the data rate for the behavior graph to exceed the maximum
+        /// allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detective is unable to verify the data rate for the member account. This is usually
+        /// because the member account is not enrolled in Amazon GuardDuty. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Detective.Model.ValidationException">
         /// The request parameters are invalid.
@@ -562,14 +607,10 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Sends a request to invite the specified AWS accounts to be member accounts in the
         /// behavior graph. This operation can only be called by the master account for a behavior
         /// graph. 
-        /// </para>
+        /// 
         ///  
         /// <para>
         ///  <code>CreateMembers</code> verifies the accounts and then sends invitations to the
@@ -609,8 +650,24 @@ namespace Amazon.Detective
         /// The request refers to a nonexistent resource.
         /// </exception>
         /// <exception cref="Amazon.Detective.Model.ServiceQuotaExceededException">
-        /// This request would cause the number of member accounts in the behavior graph to exceed
+        /// This request cannot be completed for one of the following reasons.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The request would cause the number of member accounts in the behavior graph to exceed
         /// the maximum allowed. A behavior graph cannot have more than 1000 member accounts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The request would cause the data rate for the behavior graph to exceed the maximum
+        /// allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detective is unable to verify the data rate for the member account. This is usually
+        /// because the member account is not enrolled in Amazon GuardDuty. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Detective.Model.ValidationException">
         /// The request parameters are invalid.
@@ -631,13 +688,9 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Disables the specified behavior graph and queues it to be deleted. This operation
         /// removes the graph from each member account's list of behavior graphs.
-        /// </para>
+        /// 
         ///  
         /// <para>
         ///  <code>DeleteGraph</code> can only be called by the master account for a behavior
@@ -668,13 +721,9 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Disables the specified behavior graph and queues it to be deleted. This operation
         /// removes the graph from each member account's list of behavior graphs.
-        /// </para>
+        /// 
         ///  
         /// <para>
         ///  <code>DeleteGraph</code> can only be called by the master account for a behavior
@@ -712,15 +761,10 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Deletes one or more member accounts from the master account behavior graph. This operation
         /// can only be called by a Detective master account. That account cannot use <code>DeleteMembers</code>
         /// to delete their own account from the behavior graph. To disable a behavior graph,
         /// the master account uses the <code>DeleteGraph</code> API method.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMembers service method.</param>
         /// 
@@ -749,15 +793,10 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Deletes one or more member accounts from the master account behavior graph. This operation
         /// can only be called by a Detective master account. That account cannot use <code>DeleteMembers</code>
         /// to delete their own account from the behavior graph. To disable a behavior graph,
         /// the master account uses the <code>DeleteGraph</code> API method.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMembers service method.</param>
         /// <param name="cancellationToken">
@@ -793,13 +832,8 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Removes the member account from the specified behavior graph. This operation can only
         /// be called by a member account that has the <code>ENABLED</code> status.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembership service method.</param>
         /// 
@@ -828,13 +862,8 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Removes the member account from the specified behavior graph. This operation can only
         /// be called by a member account that has the <code>ENABLED</code> status.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembership service method.</param>
         /// <param name="cancellationToken">
@@ -870,12 +899,7 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Returns the membership details for specified member accounts for a behavior graph.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMembers service method.</param>
         /// 
@@ -901,12 +925,7 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Returns the membership details for specified member accounts for a behavior graph.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMembers service method.</param>
         /// <param name="cancellationToken">
@@ -939,13 +958,9 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Returns the list of behavior graphs that the calling account is a master of. This
         /// operation can only be called by a master account.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// Because an account can currently only be the master of one behavior graph within a
@@ -973,13 +988,9 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Returns the list of behavior graphs that the calling account is a master of. This
         /// operation can only be called by a master account.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// Because an account can currently only be the master of one behavior graph within a
@@ -1014,13 +1025,9 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Retrieves the list of open and accepted behavior graph invitations for the member
         /// account. This operation can only be called by a member account.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// Open invitations are invitations that the member account has not responded to.
@@ -1053,13 +1060,9 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Retrieves the list of open and accepted behavior graph invitations for the member
         /// account. This operation can only be called by a member account.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// Open invitations are invitations that the member account has not responded to.
@@ -1099,13 +1102,8 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Retrieves the list of member accounts for a behavior graph. Does not return member
         /// accounts that were removed from the behavior graph.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMembers service method.</param>
         /// 
@@ -1131,13 +1129,8 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Retrieves the list of member accounts for a behavior graph. Does not return member
         /// accounts that were removed from the behavior graph.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMembers service method.</param>
         /// <param name="cancellationToken">
@@ -1170,13 +1163,8 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Rejects an invitation to contribute the account data to a behavior graph. This operation
         /// must be called by a member account that has the <code>INVITED</code> status.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectInvitation service method.</param>
         /// 
@@ -1205,13 +1193,8 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Rejects an invitation to contribute the account data to a behavior graph. This operation
         /// must be called by a member account that has the <code>INVITED</code> status.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectInvitation service method.</param>
         /// <param name="cancellationToken">
@@ -1239,6 +1222,141 @@ namespace Amazon.Detective
             options.ResponseUnmarshaller = RejectInvitationResponseUnmarshaller.Instance;
             
             return InvokeAsync<RejectInvitationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartMonitoringMember
+
+
+        /// <summary>
+        /// Sends a request to enable data ingest for a member account that has a status of <code>ACCEPTED_BUT_DISABLED</code>.
+        /// 
+        ///  
+        /// <para>
+        /// For valid member accounts, the status is updated as follows.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If Detective enabled the member account, then the new status is <code>ENABLED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If Detective cannot enable the member account, the status remains <code>ACCEPTED_BUT_DISABLED</code>.
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMonitoringMember service method.</param>
+        /// 
+        /// <returns>The response from the StartMonitoringMember service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.ConflictException">
+        /// The request attempted an invalid action.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ServiceQuotaExceededException">
+        /// This request cannot be completed for one of the following reasons.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The request would cause the number of member accounts in the behavior graph to exceed
+        /// the maximum allowed. A behavior graph cannot have more than 1000 member accounts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The request would cause the data rate for the behavior graph to exceed the maximum
+        /// allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detective is unable to verify the data rate for the member account. This is usually
+        /// because the member account is not enrolled in Amazon GuardDuty. 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartMonitoringMember">REST API Reference for StartMonitoringMember Operation</seealso>
+        public virtual StartMonitoringMemberResponse StartMonitoringMember(StartMonitoringMemberRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMonitoringMemberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMonitoringMemberResponseUnmarshaller.Instance;
+
+            return Invoke<StartMonitoringMemberResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Sends a request to enable data ingest for a member account that has a status of <code>ACCEPTED_BUT_DISABLED</code>.
+        /// 
+        ///  
+        /// <para>
+        /// For valid member accounts, the status is updated as follows.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If Detective enabled the member account, then the new status is <code>ENABLED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If Detective cannot enable the member account, the status remains <code>ACCEPTED_BUT_DISABLED</code>.
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMonitoringMember service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMonitoringMember service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.ConflictException">
+        /// The request attempted an invalid action.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ServiceQuotaExceededException">
+        /// This request cannot be completed for one of the following reasons.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The request would cause the number of member accounts in the behavior graph to exceed
+        /// the maximum allowed. A behavior graph cannot have more than 1000 member accounts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The request would cause the data rate for the behavior graph to exceed the maximum
+        /// allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detective is unable to verify the data rate for the member account. This is usually
+        /// because the member account is not enrolled in Amazon GuardDuty. 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartMonitoringMember">REST API Reference for StartMonitoringMember Operation</seealso>
+        public virtual Task<StartMonitoringMemberResponse> StartMonitoringMemberAsync(StartMonitoringMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMonitoringMemberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMonitoringMemberResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartMonitoringMemberResponse>(request, options, cancellationToken);
         }
 
         #endregion

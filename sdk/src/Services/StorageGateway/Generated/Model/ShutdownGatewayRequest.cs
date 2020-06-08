@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -45,8 +46,8 @@ namespace Amazon.StorageGateway.Model
     ///  </note> 
     /// <para>
     /// After the gateway is shutdown, you cannot call any other API except <a>StartGateway</a>,
-    /// <a>DescribeGatewayInformation</a>, and <a>ListGateways</a>. For more information,
-    /// see <a>ActivateGateway</a>. Your applications cannot read from or write to the gateway's
+    /// <a>DescribeGatewayInformation</a> and <a>ListGateways</a>. For more information, see
+    /// <a>ActivateGateway</a>. Your applications cannot read from or write to the gateway's
     /// storage volumes, and there are no snapshots taken.
     /// </para>
     ///  <note> 

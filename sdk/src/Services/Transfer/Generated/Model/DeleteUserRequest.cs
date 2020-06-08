@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,7 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUser operation.
-    /// Deletes the user belonging to the server you specify.
+    /// Deletes the user belonging to a file transfer protocol-enabled server you specify.
     /// 
     ///  
     /// <para>
@@ -49,8 +50,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned unique identifier for an SFTP server instance that has the user
-        /// assigned to it.
+        /// A system-assigned unique identifier for a file transfer protocol-enabled server instance
+        /// that has the user assigned to it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]
@@ -69,7 +70,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// A unique string that identifies a user that is being deleted from the server.
+        /// A unique string that identifies a user that is being deleted from a file transfer
+        /// protocol-enabled server.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=32)]

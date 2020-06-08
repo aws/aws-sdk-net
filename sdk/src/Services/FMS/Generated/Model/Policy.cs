@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -47,16 +48,40 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ExcludeMap. 
         /// <para>
-        /// Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code>
-        /// values are evaluated first, with all the appropriate account IDs added to the policy.
-        /// Then the accounts listed in <code>ExcludeMap</code> are removed, resulting in the
-        /// final list of accounts to add to the policy.
+        /// Specifies the AWS account IDs and AWS Organizations organizational units (OUs) to
+        /// exclude from the policy. Specifying an OU is the equivalent of specifying all accounts
+        /// in the OU and in any of its child OUs, including any child OUs and accounts that are
+        /// added at a later time.
         /// </para>
         ///  
         /// <para>
-        /// The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code>
-        /// would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+        /// You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>,
+        /// AWS Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>,
+        /// and does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify
+        /// an <code>IncludeMap</code>, then Firewall Manager applies the policy to all accounts
+        /// except for those specified by the <code>ExcludeMap</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// You can specify account IDs, OUs, or a combination: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following
+        /// is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following
+        /// is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify accounts and OUs together in a single map, separated with a comma. For example,
+        /// the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT”
+        /// : [“ouid111”, “ouid112”]}</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Dictionary<string, List<string>> ExcludeMap
         {
@@ -94,16 +119,40 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property IncludeMap. 
         /// <para>
-        /// Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code>
-        /// is null, all accounts in the organization in AWS Organizations are included in the
-        /// policy. If <code>IncludeMap</code> is not null, only values listed in <code>IncludeMap</code>
-        /// are included in the policy.
+        /// Specifies the AWS account IDs and AWS Organizations organizational units (OUs) to
+        /// include in the policy. Specifying an OU is the equivalent of specifying all accounts
+        /// in the OU and in any of its child OUs, including any child OUs and accounts that are
+        /// added at a later time.
         /// </para>
         ///  
         /// <para>
-        /// The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
-        /// would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+        /// You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>,
+        /// AWS Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>,
+        /// and does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify
+        /// an <code>IncludeMap</code>, then Firewall Manager applies the policy to all accounts
+        /// except for those specified by the <code>ExcludeMap</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// You can specify account IDs, OUs, or a combination: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following
+        /// is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following
+        /// is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify accounts and OUs together in a single map, separated with a comma. For example,
+        /// the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT”
+        /// : [“ouid111”, “ouid112”]}</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Dictionary<string, List<string>> IncludeMap
         {

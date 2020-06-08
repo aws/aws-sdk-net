@@ -280,6 +280,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateApiKey">REST API Reference for CreateApiKey Operation</seealso>
         public virtual CreateApiKeyResponse CreateApiKey(CreateApiKeyRequest request)
         {
             var options = new InvokeOptions();
@@ -300,6 +301,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApiKey
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateApiKey">REST API Reference for CreateApiKey Operation</seealso>
         public virtual IAsyncResult BeginCreateApiKey(CreateApiKeyRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -316,6 +318,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApiKey.</param>
         /// 
         /// <returns>Returns a  CreateApiKeyResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateApiKey">REST API Reference for CreateApiKey Operation</seealso>
         public virtual CreateApiKeyResponse EndCreateApiKey(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateApiKeyResponse>(asyncResult);
@@ -350,6 +353,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateAuthorizer">REST API Reference for CreateAuthorizer Operation</seealso>
         public virtual CreateAuthorizerResponse CreateAuthorizer(CreateAuthorizerRequest request)
         {
             var options = new InvokeOptions();
@@ -370,6 +374,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAuthorizer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateAuthorizer">REST API Reference for CreateAuthorizer Operation</seealso>
         public virtual IAsyncResult BeginCreateAuthorizer(CreateAuthorizerRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -386,6 +391,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAuthorizer.</param>
         /// 
         /// <returns>Returns a  CreateAuthorizerResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateAuthorizer">REST API Reference for CreateAuthorizer Operation</seealso>
         public virtual CreateAuthorizerResponse EndCreateAuthorizer(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAuthorizerResponse>(asyncResult);
@@ -417,6 +423,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateBasePathMapping">REST API Reference for CreateBasePathMapping Operation</seealso>
         public virtual CreateBasePathMappingResponse CreateBasePathMapping(CreateBasePathMappingRequest request)
         {
             var options = new InvokeOptions();
@@ -437,6 +444,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBasePathMapping
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateBasePathMapping">REST API Reference for CreateBasePathMapping Operation</seealso>
         public virtual IAsyncResult BeginCreateBasePathMapping(CreateBasePathMappingRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -453,6 +461,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBasePathMapping.</param>
         /// 
         /// <returns>Returns a  CreateBasePathMappingResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateBasePathMapping">REST API Reference for CreateBasePathMapping Operation</seealso>
         public virtual CreateBasePathMappingResponse EndCreateBasePathMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateBasePathMappingResponse>(asyncResult);
@@ -492,6 +501,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
         {
             var options = new InvokeOptions();
@@ -512,6 +522,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDeployment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual IAsyncResult BeginCreateDeployment(CreateDeploymentRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -528,6 +539,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDeployment.</param>
         /// 
         /// <returns>Returns a  CreateDeploymentResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual CreateDeploymentResponse EndCreateDeployment(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDeploymentResponse>(asyncResult);
@@ -562,6 +574,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDocumentationPart">REST API Reference for CreateDocumentationPart Operation</seealso>
         public virtual CreateDocumentationPartResponse CreateDocumentationPart(CreateDocumentationPartRequest request)
         {
             var options = new InvokeOptions();
@@ -582,6 +595,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDocumentationPart
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDocumentationPart">REST API Reference for CreateDocumentationPart Operation</seealso>
         public virtual IAsyncResult BeginCreateDocumentationPart(CreateDocumentationPartRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -598,6 +612,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDocumentationPart.</param>
         /// 
         /// <returns>Returns a  CreateDocumentationPartResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDocumentationPart">REST API Reference for CreateDocumentationPart Operation</seealso>
         public virtual CreateDocumentationPartResponse EndCreateDocumentationPart(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDocumentationPartResponse>(asyncResult);
@@ -632,6 +647,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDocumentationVersion">REST API Reference for CreateDocumentationVersion Operation</seealso>
         public virtual CreateDocumentationVersionResponse CreateDocumentationVersion(CreateDocumentationVersionRequest request)
         {
             var options = new InvokeOptions();
@@ -652,6 +668,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDocumentationVersion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDocumentationVersion">REST API Reference for CreateDocumentationVersion Operation</seealso>
         public virtual IAsyncResult BeginCreateDocumentationVersion(CreateDocumentationVersionRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -668,6 +685,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDocumentationVersion.</param>
         /// 
         /// <returns>Returns a  CreateDocumentationVersionResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDocumentationVersion">REST API Reference for CreateDocumentationVersion Operation</seealso>
         public virtual CreateDocumentationVersionResponse EndCreateDocumentationVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDocumentationVersionResponse>(asyncResult);
@@ -696,6 +714,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDomainName">REST API Reference for CreateDomainName Operation</seealso>
         public virtual CreateDomainNameResponse CreateDomainName(CreateDomainNameRequest request)
         {
             var options = new InvokeOptions();
@@ -716,6 +735,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDomainName
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDomainName">REST API Reference for CreateDomainName Operation</seealso>
         public virtual IAsyncResult BeginCreateDomainName(CreateDomainNameRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -732,6 +752,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDomainName.</param>
         /// 
         /// <returns>Returns a  CreateDomainNameResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDomainName">REST API Reference for CreateDomainName Operation</seealso>
         public virtual CreateDomainNameResponse EndCreateDomainName(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDomainNameResponse>(asyncResult);
@@ -766,6 +787,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateModel">REST API Reference for CreateModel Operation</seealso>
         public virtual CreateModelResponse CreateModel(CreateModelRequest request)
         {
             var options = new InvokeOptions();
@@ -786,6 +808,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateModel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateModel">REST API Reference for CreateModel Operation</seealso>
         public virtual IAsyncResult BeginCreateModel(CreateModelRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -802,6 +825,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateModel.</param>
         /// 
         /// <returns>Returns a  CreateModelResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateModel">REST API Reference for CreateModel Operation</seealso>
         public virtual CreateModelResponse EndCreateModel(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateModelResponse>(asyncResult);
@@ -833,6 +857,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRequestValidator">REST API Reference for CreateRequestValidator Operation</seealso>
         public virtual CreateRequestValidatorResponse CreateRequestValidator(CreateRequestValidatorRequest request)
         {
             var options = new InvokeOptions();
@@ -853,6 +878,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRequestValidator
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRequestValidator">REST API Reference for CreateRequestValidator Operation</seealso>
         public virtual IAsyncResult BeginCreateRequestValidator(CreateRequestValidatorRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -869,6 +895,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRequestValidator.</param>
         /// 
         /// <returns>Returns a  CreateRequestValidatorResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRequestValidator">REST API Reference for CreateRequestValidator Operation</seealso>
         public virtual CreateRequestValidatorResponse EndCreateRequestValidator(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateRequestValidatorResponse>(asyncResult);
@@ -903,6 +930,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateResource">REST API Reference for CreateResource Operation</seealso>
         public virtual CreateResourceResponse CreateResource(CreateResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -923,6 +951,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateResource">REST API Reference for CreateResource Operation</seealso>
         public virtual IAsyncResult BeginCreateResource(CreateResourceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -939,6 +968,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateResource.</param>
         /// 
         /// <returns>Returns a  CreateResourceResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateResource">REST API Reference for CreateResource Operation</seealso>
         public virtual CreateResourceResponse EndCreateResource(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateResourceResponse>(asyncResult);
@@ -967,6 +997,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRestApi">REST API Reference for CreateRestApi Operation</seealso>
         public virtual CreateRestApiResponse CreateRestApi(CreateRestApiRequest request)
         {
             var options = new InvokeOptions();
@@ -987,6 +1018,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRestApi
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRestApi">REST API Reference for CreateRestApi Operation</seealso>
         public virtual IAsyncResult BeginCreateRestApi(CreateRestApiRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1003,6 +1035,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRestApi.</param>
         /// 
         /// <returns>Returns a  CreateRestApiResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRestApi">REST API Reference for CreateRestApi Operation</seealso>
         public virtual CreateRestApiResponse EndCreateRestApi(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateRestApiResponse>(asyncResult);
@@ -1038,6 +1071,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateStage">REST API Reference for CreateStage Operation</seealso>
         public virtual CreateStageResponse CreateStage(CreateStageRequest request)
         {
             var options = new InvokeOptions();
@@ -1058,6 +1092,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateStage">REST API Reference for CreateStage Operation</seealso>
         public virtual IAsyncResult BeginCreateStage(CreateStageRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1074,6 +1109,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStage.</param>
         /// 
         /// <returns>Returns a  CreateStageResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateStage">REST API Reference for CreateStage Operation</seealso>
         public virtual CreateStageResponse EndCreateStage(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateStageResponse>(asyncResult);
@@ -1109,6 +1145,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlan">REST API Reference for CreateUsagePlan Operation</seealso>
         public virtual CreateUsagePlanResponse CreateUsagePlan(CreateUsagePlanRequest request)
         {
             var options = new InvokeOptions();
@@ -1129,6 +1166,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUsagePlan
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlan">REST API Reference for CreateUsagePlan Operation</seealso>
         public virtual IAsyncResult BeginCreateUsagePlan(CreateUsagePlanRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1145,6 +1183,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUsagePlan.</param>
         /// 
         /// <returns>Returns a  CreateUsagePlanResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlan">REST API Reference for CreateUsagePlan Operation</seealso>
         public virtual CreateUsagePlanResponse EndCreateUsagePlan(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateUsagePlanResponse>(asyncResult);
@@ -1176,6 +1215,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlanKey">REST API Reference for CreateUsagePlanKey Operation</seealso>
         public virtual CreateUsagePlanKeyResponse CreateUsagePlanKey(CreateUsagePlanKeyRequest request)
         {
             var options = new InvokeOptions();
@@ -1196,6 +1236,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUsagePlanKey
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlanKey">REST API Reference for CreateUsagePlanKey Operation</seealso>
         public virtual IAsyncResult BeginCreateUsagePlanKey(CreateUsagePlanKeyRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1212,6 +1253,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUsagePlanKey.</param>
         /// 
         /// <returns>Returns a  CreateUsagePlanKeyResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlanKey">REST API Reference for CreateUsagePlanKey Operation</seealso>
         public virtual CreateUsagePlanKeyResponse EndCreateUsagePlanKey(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateUsagePlanKeyResponse>(asyncResult);
@@ -1239,6 +1281,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateVpcLink">REST API Reference for CreateVpcLink Operation</seealso>
         public virtual CreateVpcLinkResponse CreateVpcLink(CreateVpcLinkRequest request)
         {
             var options = new InvokeOptions();
@@ -1259,6 +1302,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpcLink
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateVpcLink">REST API Reference for CreateVpcLink Operation</seealso>
         public virtual IAsyncResult BeginCreateVpcLink(CreateVpcLinkRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1275,6 +1319,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpcLink.</param>
         /// 
         /// <returns>Returns a  CreateVpcLinkResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateVpcLink">REST API Reference for CreateVpcLink Operation</seealso>
         public virtual CreateVpcLinkResponse EndCreateVpcLink(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateVpcLinkResponse>(asyncResult);
@@ -1299,6 +1344,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteApiKey">REST API Reference for DeleteApiKey Operation</seealso>
         public virtual DeleteApiKeyResponse DeleteApiKey(DeleteApiKeyRequest request)
         {
             var options = new InvokeOptions();
@@ -1319,6 +1365,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApiKey
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteApiKey">REST API Reference for DeleteApiKey Operation</seealso>
         public virtual IAsyncResult BeginDeleteApiKey(DeleteApiKeyRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1335,6 +1382,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApiKey.</param>
         /// 
         /// <returns>Returns a  DeleteApiKeyResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteApiKey">REST API Reference for DeleteApiKey Operation</seealso>
         public virtual DeleteApiKeyResponse EndDeleteApiKey(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteApiKeyResponse>(asyncResult);
@@ -1369,6 +1417,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteAuthorizer">REST API Reference for DeleteAuthorizer Operation</seealso>
         public virtual DeleteAuthorizerResponse DeleteAuthorizer(DeleteAuthorizerRequest request)
         {
             var options = new InvokeOptions();
@@ -1389,6 +1438,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAuthorizer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteAuthorizer">REST API Reference for DeleteAuthorizer Operation</seealso>
         public virtual IAsyncResult BeginDeleteAuthorizer(DeleteAuthorizerRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1405,6 +1455,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAuthorizer.</param>
         /// 
         /// <returns>Returns a  DeleteAuthorizerResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteAuthorizer">REST API Reference for DeleteAuthorizer Operation</seealso>
         public virtual DeleteAuthorizerResponse EndDeleteAuthorizer(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAuthorizerResponse>(asyncResult);
@@ -1436,6 +1487,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteBasePathMapping">REST API Reference for DeleteBasePathMapping Operation</seealso>
         public virtual DeleteBasePathMappingResponse DeleteBasePathMapping(DeleteBasePathMappingRequest request)
         {
             var options = new InvokeOptions();
@@ -1456,6 +1508,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBasePathMapping
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteBasePathMapping">REST API Reference for DeleteBasePathMapping Operation</seealso>
         public virtual IAsyncResult BeginDeleteBasePathMapping(DeleteBasePathMappingRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1472,6 +1525,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBasePathMapping.</param>
         /// 
         /// <returns>Returns a  DeleteBasePathMappingResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteBasePathMapping">REST API Reference for DeleteBasePathMapping Operation</seealso>
         public virtual DeleteBasePathMappingResponse EndDeleteBasePathMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBasePathMappingResponse>(asyncResult);
@@ -1500,6 +1554,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteClientCertificate">REST API Reference for DeleteClientCertificate Operation</seealso>
         public virtual DeleteClientCertificateResponse DeleteClientCertificate(DeleteClientCertificateRequest request)
         {
             var options = new InvokeOptions();
@@ -1520,6 +1575,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteClientCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteClientCertificate">REST API Reference for DeleteClientCertificate Operation</seealso>
         public virtual IAsyncResult BeginDeleteClientCertificate(DeleteClientCertificateRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1536,6 +1592,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteClientCertificate.</param>
         /// 
         /// <returns>Returns a  DeleteClientCertificateResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteClientCertificate">REST API Reference for DeleteClientCertificate Operation</seealso>
         public virtual DeleteClientCertificateResponse EndDeleteClientCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteClientCertificateResponse>(asyncResult);
@@ -1565,6 +1622,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
         public virtual DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request)
         {
             var options = new InvokeOptions();
@@ -1585,6 +1643,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDeployment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
         public virtual IAsyncResult BeginDeleteDeployment(DeleteDeploymentRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1601,6 +1660,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDeployment.</param>
         /// 
         /// <returns>Returns a  DeleteDeploymentResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
         public virtual DeleteDeploymentResponse EndDeleteDeployment(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDeploymentResponse>(asyncResult);
@@ -1632,6 +1692,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDocumentationPart">REST API Reference for DeleteDocumentationPart Operation</seealso>
         public virtual DeleteDocumentationPartResponse DeleteDocumentationPart(DeleteDocumentationPartRequest request)
         {
             var options = new InvokeOptions();
@@ -1652,6 +1713,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDocumentationPart
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDocumentationPart">REST API Reference for DeleteDocumentationPart Operation</seealso>
         public virtual IAsyncResult BeginDeleteDocumentationPart(DeleteDocumentationPartRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1668,6 +1730,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDocumentationPart.</param>
         /// 
         /// <returns>Returns a  DeleteDocumentationPartResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDocumentationPart">REST API Reference for DeleteDocumentationPart Operation</seealso>
         public virtual DeleteDocumentationPartResponse EndDeleteDocumentationPart(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDocumentationPartResponse>(asyncResult);
@@ -1699,6 +1762,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDocumentationVersion">REST API Reference for DeleteDocumentationVersion Operation</seealso>
         public virtual DeleteDocumentationVersionResponse DeleteDocumentationVersion(DeleteDocumentationVersionRequest request)
         {
             var options = new InvokeOptions();
@@ -1719,6 +1783,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDocumentationVersion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDocumentationVersion">REST API Reference for DeleteDocumentationVersion Operation</seealso>
         public virtual IAsyncResult BeginDeleteDocumentationVersion(DeleteDocumentationVersionRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1735,6 +1800,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDocumentationVersion.</param>
         /// 
         /// <returns>Returns a  DeleteDocumentationVersionResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDocumentationVersion">REST API Reference for DeleteDocumentationVersion Operation</seealso>
         public virtual DeleteDocumentationVersionResponse EndDeleteDocumentationVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDocumentationVersionResponse>(asyncResult);
@@ -1763,6 +1829,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDomainName">REST API Reference for DeleteDomainName Operation</seealso>
         public virtual DeleteDomainNameResponse DeleteDomainName(DeleteDomainNameRequest request)
         {
             var options = new InvokeOptions();
@@ -1783,6 +1850,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDomainName
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDomainName">REST API Reference for DeleteDomainName Operation</seealso>
         public virtual IAsyncResult BeginDeleteDomainName(DeleteDomainNameRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1799,6 +1867,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDomainName.</param>
         /// 
         /// <returns>Returns a  DeleteDomainNameResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDomainName">REST API Reference for DeleteDomainName Operation</seealso>
         public virtual DeleteDomainNameResponse EndDeleteDomainName(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDomainNameResponse>(asyncResult);
@@ -1831,6 +1900,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteGatewayResponse">REST API Reference for DeleteGatewayResponse Operation</seealso>
         public virtual DeleteGatewayResponseResponse DeleteGatewayResponse(DeleteGatewayResponseRequest request)
         {
             var options = new InvokeOptions();
@@ -1851,6 +1921,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGatewayResponse
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteGatewayResponse">REST API Reference for DeleteGatewayResponse Operation</seealso>
         public virtual IAsyncResult BeginDeleteGatewayResponse(DeleteGatewayResponseRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1867,6 +1938,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGatewayResponse.</param>
         /// 
         /// <returns>Returns a  DeleteGatewayResponseResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteGatewayResponse">REST API Reference for DeleteGatewayResponse Operation</seealso>
         public virtual DeleteGatewayResponseResponse EndDeleteGatewayResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteGatewayResponseResponse>(asyncResult);
@@ -1894,6 +1966,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
         public virtual DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
         {
             var options = new InvokeOptions();
@@ -1914,6 +1987,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIntegration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
         public virtual IAsyncResult BeginDeleteIntegration(DeleteIntegrationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1930,6 +2004,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIntegration.</param>
         /// 
         /// <returns>Returns a  DeleteIntegrationResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
         public virtual DeleteIntegrationResponse EndDeleteIntegration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteIntegrationResponse>(asyncResult);
@@ -1961,6 +2036,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegrationResponse">REST API Reference for DeleteIntegrationResponse Operation</seealso>
         public virtual DeleteIntegrationResponseResponse DeleteIntegrationResponse(DeleteIntegrationResponseRequest request)
         {
             var options = new InvokeOptions();
@@ -1981,6 +2057,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIntegrationResponse
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegrationResponse">REST API Reference for DeleteIntegrationResponse Operation</seealso>
         public virtual IAsyncResult BeginDeleteIntegrationResponse(DeleteIntegrationResponseRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1997,6 +2074,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIntegrationResponse.</param>
         /// 
         /// <returns>Returns a  DeleteIntegrationResponseResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegrationResponse">REST API Reference for DeleteIntegrationResponse Operation</seealso>
         public virtual DeleteIntegrationResponseResponse EndDeleteIntegrationResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteIntegrationResponseResponse>(asyncResult);
@@ -2024,6 +2102,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethod">REST API Reference for DeleteMethod Operation</seealso>
         public virtual DeleteMethodResponse DeleteMethod(DeleteMethodRequest request)
         {
             var options = new InvokeOptions();
@@ -2044,6 +2123,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMethod
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethod">REST API Reference for DeleteMethod Operation</seealso>
         public virtual IAsyncResult BeginDeleteMethod(DeleteMethodRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2060,6 +2140,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMethod.</param>
         /// 
         /// <returns>Returns a  DeleteMethodResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethod">REST API Reference for DeleteMethod Operation</seealso>
         public virtual DeleteMethodResponse EndDeleteMethod(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteMethodResponse>(asyncResult);
@@ -2091,6 +2172,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethodResponse">REST API Reference for DeleteMethodResponse Operation</seealso>
         public virtual DeleteMethodResponseResponse DeleteMethodResponse(DeleteMethodResponseRequest request)
         {
             var options = new InvokeOptions();
@@ -2111,6 +2193,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMethodResponse
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethodResponse">REST API Reference for DeleteMethodResponse Operation</seealso>
         public virtual IAsyncResult BeginDeleteMethodResponse(DeleteMethodResponseRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2127,6 +2210,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMethodResponse.</param>
         /// 
         /// <returns>Returns a  DeleteMethodResponseResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethodResponse">REST API Reference for DeleteMethodResponse Operation</seealso>
         public virtual DeleteMethodResponseResponse EndDeleteMethodResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteMethodResponseResponse>(asyncResult);
@@ -2158,6 +2242,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual DeleteModelResponse DeleteModel(DeleteModelRequest request)
         {
             var options = new InvokeOptions();
@@ -2178,6 +2263,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteModel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual IAsyncResult BeginDeleteModel(DeleteModelRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2194,6 +2280,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteModel.</param>
         /// 
         /// <returns>Returns a  DeleteModelResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual DeleteModelResponse EndDeleteModel(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteModelResponse>(asyncResult);
@@ -2225,6 +2312,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRequestValidator">REST API Reference for DeleteRequestValidator Operation</seealso>
         public virtual DeleteRequestValidatorResponse DeleteRequestValidator(DeleteRequestValidatorRequest request)
         {
             var options = new InvokeOptions();
@@ -2245,6 +2333,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRequestValidator
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRequestValidator">REST API Reference for DeleteRequestValidator Operation</seealso>
         public virtual IAsyncResult BeginDeleteRequestValidator(DeleteRequestValidatorRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2261,6 +2350,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRequestValidator.</param>
         /// 
         /// <returns>Returns a  DeleteRequestValidatorResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRequestValidator">REST API Reference for DeleteRequestValidator Operation</seealso>
         public virtual DeleteRequestValidatorResponse EndDeleteRequestValidator(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRequestValidatorResponse>(asyncResult);
@@ -2292,6 +2382,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteResource">REST API Reference for DeleteResource Operation</seealso>
         public virtual DeleteResourceResponse DeleteResource(DeleteResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -2312,6 +2403,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteResource">REST API Reference for DeleteResource Operation</seealso>
         public virtual IAsyncResult BeginDeleteResource(DeleteResourceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2328,6 +2420,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResource.</param>
         /// 
         /// <returns>Returns a  DeleteResourceResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteResource">REST API Reference for DeleteResource Operation</seealso>
         public virtual DeleteResourceResponse EndDeleteResource(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteResourceResponse>(asyncResult);
@@ -2356,6 +2449,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRestApi">REST API Reference for DeleteRestApi Operation</seealso>
         public virtual DeleteRestApiResponse DeleteRestApi(DeleteRestApiRequest request)
         {
             var options = new InvokeOptions();
@@ -2376,6 +2470,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRestApi
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRestApi">REST API Reference for DeleteRestApi Operation</seealso>
         public virtual IAsyncResult BeginDeleteRestApi(DeleteRestApiRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2392,6 +2487,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRestApi.</param>
         /// 
         /// <returns>Returns a  DeleteRestApiResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRestApi">REST API Reference for DeleteRestApi Operation</seealso>
         public virtual DeleteRestApiResponse EndDeleteRestApi(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRestApiResponse>(asyncResult);
@@ -2420,6 +2516,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteStage">REST API Reference for DeleteStage Operation</seealso>
         public virtual DeleteStageResponse DeleteStage(DeleteStageRequest request)
         {
             var options = new InvokeOptions();
@@ -2440,6 +2537,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteStage">REST API Reference for DeleteStage Operation</seealso>
         public virtual IAsyncResult BeginDeleteStage(DeleteStageRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2456,6 +2554,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStage.</param>
         /// 
         /// <returns>Returns a  DeleteStageResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteStage">REST API Reference for DeleteStage Operation</seealso>
         public virtual DeleteStageResponse EndDeleteStage(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteStageResponse>(asyncResult);
@@ -2484,6 +2583,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlan">REST API Reference for DeleteUsagePlan Operation</seealso>
         public virtual DeleteUsagePlanResponse DeleteUsagePlan(DeleteUsagePlanRequest request)
         {
             var options = new InvokeOptions();
@@ -2504,6 +2604,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUsagePlan
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlan">REST API Reference for DeleteUsagePlan Operation</seealso>
         public virtual IAsyncResult BeginDeleteUsagePlan(DeleteUsagePlanRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2520,6 +2621,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUsagePlan.</param>
         /// 
         /// <returns>Returns a  DeleteUsagePlanResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlan">REST API Reference for DeleteUsagePlan Operation</seealso>
         public virtual DeleteUsagePlanResponse EndDeleteUsagePlan(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteUsagePlanResponse>(asyncResult);
@@ -2552,6 +2654,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlanKey">REST API Reference for DeleteUsagePlanKey Operation</seealso>
         public virtual DeleteUsagePlanKeyResponse DeleteUsagePlanKey(DeleteUsagePlanKeyRequest request)
         {
             var options = new InvokeOptions();
@@ -2572,6 +2675,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUsagePlanKey
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlanKey">REST API Reference for DeleteUsagePlanKey Operation</seealso>
         public virtual IAsyncResult BeginDeleteUsagePlanKey(DeleteUsagePlanKeyRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2588,6 +2692,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUsagePlanKey.</param>
         /// 
         /// <returns>Returns a  DeleteUsagePlanKeyResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlanKey">REST API Reference for DeleteUsagePlanKey Operation</seealso>
         public virtual DeleteUsagePlanKeyResponse EndDeleteUsagePlanKey(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteUsagePlanKeyResponse>(asyncResult);
@@ -2616,6 +2721,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteVpcLink">REST API Reference for DeleteVpcLink Operation</seealso>
         public virtual DeleteVpcLinkResponse DeleteVpcLink(DeleteVpcLinkRequest request)
         {
             var options = new InvokeOptions();
@@ -2636,6 +2742,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpcLink
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteVpcLink">REST API Reference for DeleteVpcLink Operation</seealso>
         public virtual IAsyncResult BeginDeleteVpcLink(DeleteVpcLinkRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2652,6 +2759,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcLink.</param>
         /// 
         /// <returns>Returns a  DeleteVpcLinkResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteVpcLink">REST API Reference for DeleteVpcLink Operation</seealso>
         public virtual DeleteVpcLinkResponse EndDeleteVpcLink(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVpcLinkResponse>(asyncResult);
@@ -2680,6 +2788,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageAuthorizersCache">REST API Reference for FlushStageAuthorizersCache Operation</seealso>
         public virtual FlushStageAuthorizersCacheResponse FlushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request)
         {
             var options = new InvokeOptions();
@@ -2700,6 +2809,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndFlushStageAuthorizersCache
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageAuthorizersCache">REST API Reference for FlushStageAuthorizersCache Operation</seealso>
         public virtual IAsyncResult BeginFlushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2716,6 +2826,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginFlushStageAuthorizersCache.</param>
         /// 
         /// <returns>Returns a  FlushStageAuthorizersCacheResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageAuthorizersCache">REST API Reference for FlushStageAuthorizersCache Operation</seealso>
         public virtual FlushStageAuthorizersCacheResponse EndFlushStageAuthorizersCache(IAsyncResult asyncResult)
         {
             return EndInvoke<FlushStageAuthorizersCacheResponse>(asyncResult);
@@ -2744,6 +2855,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageCache">REST API Reference for FlushStageCache Operation</seealso>
         public virtual FlushStageCacheResponse FlushStageCache(FlushStageCacheRequest request)
         {
             var options = new InvokeOptions();
@@ -2764,6 +2876,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndFlushStageCache
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageCache">REST API Reference for FlushStageCache Operation</seealso>
         public virtual IAsyncResult BeginFlushStageCache(FlushStageCacheRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2780,6 +2893,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginFlushStageCache.</param>
         /// 
         /// <returns>Returns a  FlushStageCacheResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageCache">REST API Reference for FlushStageCache Operation</seealso>
         public virtual FlushStageCacheResponse EndFlushStageCache(IAsyncResult asyncResult)
         {
             return EndInvoke<FlushStageCacheResponse>(asyncResult);
@@ -2804,6 +2918,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GenerateClientCertificate">REST API Reference for GenerateClientCertificate Operation</seealso>
         public virtual GenerateClientCertificateResponse GenerateClientCertificate(GenerateClientCertificateRequest request)
         {
             var options = new InvokeOptions();
@@ -2824,6 +2939,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGenerateClientCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GenerateClientCertificate">REST API Reference for GenerateClientCertificate Operation</seealso>
         public virtual IAsyncResult BeginGenerateClientCertificate(GenerateClientCertificateRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2840,6 +2956,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateClientCertificate.</param>
         /// 
         /// <returns>Returns a  GenerateClientCertificateResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GenerateClientCertificate">REST API Reference for GenerateClientCertificate Operation</seealso>
         public virtual GenerateClientCertificateResponse EndGenerateClientCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<GenerateClientCertificateResponse>(asyncResult);
@@ -2864,6 +2981,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAccount">REST API Reference for GetAccount Operation</seealso>
         public virtual GetAccountResponse GetAccount(GetAccountRequest request)
         {
             var options = new InvokeOptions();
@@ -2884,6 +3002,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccount
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAccount">REST API Reference for GetAccount Operation</seealso>
         public virtual IAsyncResult BeginGetAccount(GetAccountRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2900,6 +3019,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccount.</param>
         /// 
         /// <returns>Returns a  GetAccountResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAccount">REST API Reference for GetAccount Operation</seealso>
         public virtual GetAccountResponse EndGetAccount(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAccountResponse>(asyncResult);
@@ -2924,6 +3044,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKey">REST API Reference for GetApiKey Operation</seealso>
         public virtual GetApiKeyResponse GetApiKey(GetApiKeyRequest request)
         {
             var options = new InvokeOptions();
@@ -2944,6 +3065,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApiKey
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKey">REST API Reference for GetApiKey Operation</seealso>
         public virtual IAsyncResult BeginGetApiKey(GetApiKeyRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2960,6 +3082,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApiKey.</param>
         /// 
         /// <returns>Returns a  GetApiKeyResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKey">REST API Reference for GetApiKey Operation</seealso>
         public virtual GetApiKeyResponse EndGetApiKey(IAsyncResult asyncResult)
         {
             return EndInvoke<GetApiKeyResponse>(asyncResult);
@@ -2985,6 +3108,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKeys">REST API Reference for GetApiKeys Operation</seealso>
         public virtual GetApiKeysResponse GetApiKeys(GetApiKeysRequest request)
         {
             var options = new InvokeOptions();
@@ -3005,6 +3129,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApiKeys
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKeys">REST API Reference for GetApiKeys Operation</seealso>
         public virtual IAsyncResult BeginGetApiKeys(GetApiKeysRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3021,6 +3146,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApiKeys.</param>
         /// 
         /// <returns>Returns a  GetApiKeysResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKeys">REST API Reference for GetApiKeys Operation</seealso>
         public virtual GetApiKeysResponse EndGetApiKeys(IAsyncResult asyncResult)
         {
             return EndInvoke<GetApiKeysResponse>(asyncResult);
@@ -3048,6 +3174,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizer">REST API Reference for GetAuthorizer Operation</seealso>
         public virtual GetAuthorizerResponse GetAuthorizer(GetAuthorizerRequest request)
         {
             var options = new InvokeOptions();
@@ -3068,6 +3195,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAuthorizer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizer">REST API Reference for GetAuthorizer Operation</seealso>
         public virtual IAsyncResult BeginGetAuthorizer(GetAuthorizerRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3084,6 +3212,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAuthorizer.</param>
         /// 
         /// <returns>Returns a  GetAuthorizerResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizer">REST API Reference for GetAuthorizer Operation</seealso>
         public virtual GetAuthorizerResponse EndGetAuthorizer(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAuthorizerResponse>(asyncResult);
@@ -3115,6 +3244,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizers">REST API Reference for GetAuthorizers Operation</seealso>
         public virtual GetAuthorizersResponse GetAuthorizers(GetAuthorizersRequest request)
         {
             var options = new InvokeOptions();
@@ -3135,6 +3265,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAuthorizers
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizers">REST API Reference for GetAuthorizers Operation</seealso>
         public virtual IAsyncResult BeginGetAuthorizers(GetAuthorizersRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3151,6 +3282,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAuthorizers.</param>
         /// 
         /// <returns>Returns a  GetAuthorizersResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizers">REST API Reference for GetAuthorizers Operation</seealso>
         public virtual GetAuthorizersResponse EndGetAuthorizers(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAuthorizersResponse>(asyncResult);
@@ -3175,6 +3307,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMapping">REST API Reference for GetBasePathMapping Operation</seealso>
         public virtual GetBasePathMappingResponse GetBasePathMapping(GetBasePathMappingRequest request)
         {
             var options = new InvokeOptions();
@@ -3195,6 +3328,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBasePathMapping
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMapping">REST API Reference for GetBasePathMapping Operation</seealso>
         public virtual IAsyncResult BeginGetBasePathMapping(GetBasePathMappingRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3211,6 +3345,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBasePathMapping.</param>
         /// 
         /// <returns>Returns a  GetBasePathMappingResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMapping">REST API Reference for GetBasePathMapping Operation</seealso>
         public virtual GetBasePathMappingResponse EndGetBasePathMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBasePathMappingResponse>(asyncResult);
@@ -3235,6 +3370,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMappings">REST API Reference for GetBasePathMappings Operation</seealso>
         public virtual GetBasePathMappingsResponse GetBasePathMappings(GetBasePathMappingsRequest request)
         {
             var options = new InvokeOptions();
@@ -3255,6 +3391,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBasePathMappings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMappings">REST API Reference for GetBasePathMappings Operation</seealso>
         public virtual IAsyncResult BeginGetBasePathMappings(GetBasePathMappingsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3271,6 +3408,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBasePathMappings.</param>
         /// 
         /// <returns>Returns a  GetBasePathMappingsResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMappings">REST API Reference for GetBasePathMappings Operation</seealso>
         public virtual GetBasePathMappingsResponse EndGetBasePathMappings(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBasePathMappingsResponse>(asyncResult);
@@ -3295,6 +3433,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificate">REST API Reference for GetClientCertificate Operation</seealso>
         public virtual GetClientCertificateResponse GetClientCertificate(GetClientCertificateRequest request)
         {
             var options = new InvokeOptions();
@@ -3315,6 +3454,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetClientCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificate">REST API Reference for GetClientCertificate Operation</seealso>
         public virtual IAsyncResult BeginGetClientCertificate(GetClientCertificateRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3331,6 +3471,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetClientCertificate.</param>
         /// 
         /// <returns>Returns a  GetClientCertificateResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificate">REST API Reference for GetClientCertificate Operation</seealso>
         public virtual GetClientCertificateResponse EndGetClientCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<GetClientCertificateResponse>(asyncResult);
@@ -3356,6 +3497,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificates">REST API Reference for GetClientCertificates Operation</seealso>
         public virtual GetClientCertificatesResponse GetClientCertificates(GetClientCertificatesRequest request)
         {
             var options = new InvokeOptions();
@@ -3376,6 +3518,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetClientCertificates
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificates">REST API Reference for GetClientCertificates Operation</seealso>
         public virtual IAsyncResult BeginGetClientCertificates(GetClientCertificatesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3392,6 +3535,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetClientCertificates.</param>
         /// 
         /// <returns>Returns a  GetClientCertificatesResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificates">REST API Reference for GetClientCertificates Operation</seealso>
         public virtual GetClientCertificatesResponse EndGetClientCertificates(IAsyncResult asyncResult)
         {
             return EndInvoke<GetClientCertificatesResponse>(asyncResult);
@@ -3420,6 +3564,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public virtual GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
         {
             var options = new InvokeOptions();
@@ -3440,6 +3585,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeployment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public virtual IAsyncResult BeginGetDeployment(GetDeploymentRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3456,6 +3602,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeployment.</param>
         /// 
         /// <returns>Returns a  GetDeploymentResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public virtual GetDeploymentResponse EndGetDeployment(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDeploymentResponse>(asyncResult);
@@ -3485,6 +3632,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployments">REST API Reference for GetDeployments Operation</seealso>
         public virtual GetDeploymentsResponse GetDeployments(GetDeploymentsRequest request)
         {
             var options = new InvokeOptions();
@@ -3505,6 +3653,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeployments
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployments">REST API Reference for GetDeployments Operation</seealso>
         public virtual IAsyncResult BeginGetDeployments(GetDeploymentsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3521,6 +3670,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeployments.</param>
         /// 
         /// <returns>Returns a  GetDeploymentsResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployments">REST API Reference for GetDeployments Operation</seealso>
         public virtual GetDeploymentsResponse EndGetDeployments(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDeploymentsResponse>(asyncResult);
@@ -3545,6 +3695,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationPart">REST API Reference for GetDocumentationPart Operation</seealso>
         public virtual GetDocumentationPartResponse GetDocumentationPart(GetDocumentationPartRequest request)
         {
             var options = new InvokeOptions();
@@ -3565,6 +3716,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocumentationPart
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationPart">REST API Reference for GetDocumentationPart Operation</seealso>
         public virtual IAsyncResult BeginGetDocumentationPart(GetDocumentationPartRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3581,6 +3733,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDocumentationPart.</param>
         /// 
         /// <returns>Returns a  GetDocumentationPartResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationPart">REST API Reference for GetDocumentationPart Operation</seealso>
         public virtual GetDocumentationPartResponse EndGetDocumentationPart(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDocumentationPartResponse>(asyncResult);
@@ -3609,6 +3762,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationParts">REST API Reference for GetDocumentationParts Operation</seealso>
         public virtual GetDocumentationPartsResponse GetDocumentationParts(GetDocumentationPartsRequest request)
         {
             var options = new InvokeOptions();
@@ -3629,6 +3783,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocumentationParts
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationParts">REST API Reference for GetDocumentationParts Operation</seealso>
         public virtual IAsyncResult BeginGetDocumentationParts(GetDocumentationPartsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3645,6 +3800,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDocumentationParts.</param>
         /// 
         /// <returns>Returns a  GetDocumentationPartsResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationParts">REST API Reference for GetDocumentationParts Operation</seealso>
         public virtual GetDocumentationPartsResponse EndGetDocumentationParts(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDocumentationPartsResponse>(asyncResult);
@@ -3669,6 +3825,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationVersion">REST API Reference for GetDocumentationVersion Operation</seealso>
         public virtual GetDocumentationVersionResponse GetDocumentationVersion(GetDocumentationVersionRequest request)
         {
             var options = new InvokeOptions();
@@ -3689,6 +3846,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocumentationVersion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationVersion">REST API Reference for GetDocumentationVersion Operation</seealso>
         public virtual IAsyncResult BeginGetDocumentationVersion(GetDocumentationVersionRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3705,6 +3863,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDocumentationVersion.</param>
         /// 
         /// <returns>Returns a  GetDocumentationVersionResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationVersion">REST API Reference for GetDocumentationVersion Operation</seealso>
         public virtual GetDocumentationVersionResponse EndGetDocumentationVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDocumentationVersionResponse>(asyncResult);
@@ -3733,6 +3892,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationVersions">REST API Reference for GetDocumentationVersions Operation</seealso>
         public virtual GetDocumentationVersionsResponse GetDocumentationVersions(GetDocumentationVersionsRequest request)
         {
             var options = new InvokeOptions();
@@ -3753,6 +3913,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocumentationVersions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationVersions">REST API Reference for GetDocumentationVersions Operation</seealso>
         public virtual IAsyncResult BeginGetDocumentationVersions(GetDocumentationVersionsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3769,6 +3930,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDocumentationVersions.</param>
         /// 
         /// <returns>Returns a  GetDocumentationVersionsResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationVersions">REST API Reference for GetDocumentationVersions Operation</seealso>
         public virtual GetDocumentationVersionsResponse EndGetDocumentationVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDocumentationVersionsResponse>(asyncResult);
@@ -3798,6 +3960,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainName">REST API Reference for GetDomainName Operation</seealso>
         public virtual GetDomainNameResponse GetDomainName(GetDomainNameRequest request)
         {
             var options = new InvokeOptions();
@@ -3818,6 +3981,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomainName
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainName">REST API Reference for GetDomainName Operation</seealso>
         public virtual IAsyncResult BeginGetDomainName(GetDomainNameRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3834,6 +3998,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDomainName.</param>
         /// 
         /// <returns>Returns a  GetDomainNameResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainName">REST API Reference for GetDomainName Operation</seealso>
         public virtual GetDomainNameResponse EndGetDomainName(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDomainNameResponse>(asyncResult);
@@ -3859,6 +4024,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainNames">REST API Reference for GetDomainNames Operation</seealso>
         public virtual GetDomainNamesResponse GetDomainNames(GetDomainNamesRequest request)
         {
             var options = new InvokeOptions();
@@ -3879,6 +4045,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomainNames
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainNames">REST API Reference for GetDomainNames Operation</seealso>
         public virtual IAsyncResult BeginGetDomainNames(GetDomainNamesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3895,6 +4062,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDomainNames.</param>
         /// 
         /// <returns>Returns a  GetDomainNamesResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainNames">REST API Reference for GetDomainNames Operation</seealso>
         public virtual GetDomainNamesResponse EndGetDomainNames(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDomainNamesResponse>(asyncResult);
@@ -3926,6 +4094,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetExport">REST API Reference for GetExport Operation</seealso>
         public virtual GetExportResponse GetExport(GetExportRequest request)
         {
             var options = new InvokeOptions();
@@ -3946,6 +4115,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetExport
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetExport">REST API Reference for GetExport Operation</seealso>
         public virtual IAsyncResult BeginGetExport(GetExportRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3962,6 +4132,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetExport.</param>
         /// 
         /// <returns>Returns a  GetExportResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetExport">REST API Reference for GetExport Operation</seealso>
         public virtual GetExportResponse EndGetExport(IAsyncResult asyncResult)
         {
             return EndInvoke<GetExportResponse>(asyncResult);
@@ -3986,6 +4157,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponse">REST API Reference for GetGatewayResponse Operation</seealso>
         public virtual GetGatewayResponseResponse GetGatewayResponse(GetGatewayResponseRequest request)
         {
             var options = new InvokeOptions();
@@ -4006,6 +4178,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGatewayResponse
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponse">REST API Reference for GetGatewayResponse Operation</seealso>
         public virtual IAsyncResult BeginGetGatewayResponse(GetGatewayResponseRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4022,6 +4195,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGatewayResponse.</param>
         /// 
         /// <returns>Returns a  GetGatewayResponseResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponse">REST API Reference for GetGatewayResponse Operation</seealso>
         public virtual GetGatewayResponseResponse EndGetGatewayResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<GetGatewayResponseResponse>(asyncResult);
@@ -4053,6 +4227,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponses">REST API Reference for GetGatewayResponses Operation</seealso>
         public virtual GetGatewayResponsesResponse GetGatewayResponses(GetGatewayResponsesRequest request)
         {
             var options = new InvokeOptions();
@@ -4073,6 +4248,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGatewayResponses
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponses">REST API Reference for GetGatewayResponses Operation</seealso>
         public virtual IAsyncResult BeginGetGatewayResponses(GetGatewayResponsesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4089,6 +4265,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGatewayResponses.</param>
         /// 
         /// <returns>Returns a  GetGatewayResponsesResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponses">REST API Reference for GetGatewayResponses Operation</seealso>
         public virtual GetGatewayResponsesResponse EndGetGatewayResponses(IAsyncResult asyncResult)
         {
             return EndInvoke<GetGatewayResponsesResponse>(asyncResult);
@@ -4113,6 +4290,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegration">REST API Reference for GetIntegration Operation</seealso>
         public virtual GetIntegrationResponse GetIntegration(GetIntegrationRequest request)
         {
             var options = new InvokeOptions();
@@ -4133,6 +4311,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIntegration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegration">REST API Reference for GetIntegration Operation</seealso>
         public virtual IAsyncResult BeginGetIntegration(GetIntegrationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4149,6 +4328,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIntegration.</param>
         /// 
         /// <returns>Returns a  GetIntegrationResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegration">REST API Reference for GetIntegration Operation</seealso>
         public virtual GetIntegrationResponse EndGetIntegration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetIntegrationResponse>(asyncResult);
@@ -4173,6 +4353,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegrationResponse">REST API Reference for GetIntegrationResponse Operation</seealso>
         public virtual GetIntegrationResponseResponse GetIntegrationResponse(GetIntegrationResponseRequest request)
         {
             var options = new InvokeOptions();
@@ -4193,6 +4374,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIntegrationResponse
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegrationResponse">REST API Reference for GetIntegrationResponse Operation</seealso>
         public virtual IAsyncResult BeginGetIntegrationResponse(GetIntegrationResponseRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4209,6 +4391,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIntegrationResponse.</param>
         /// 
         /// <returns>Returns a  GetIntegrationResponseResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegrationResponse">REST API Reference for GetIntegrationResponse Operation</seealso>
         public virtual GetIntegrationResponseResponse EndGetIntegrationResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<GetIntegrationResponseResponse>(asyncResult);
@@ -4233,6 +4416,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethod">REST API Reference for GetMethod Operation</seealso>
         public virtual GetMethodResponse GetMethod(GetMethodRequest request)
         {
             var options = new InvokeOptions();
@@ -4253,6 +4437,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMethod
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethod">REST API Reference for GetMethod Operation</seealso>
         public virtual IAsyncResult BeginGetMethod(GetMethodRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4269,6 +4454,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMethod.</param>
         /// 
         /// <returns>Returns a  GetMethodResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethod">REST API Reference for GetMethod Operation</seealso>
         public virtual GetMethodResponse EndGetMethod(IAsyncResult asyncResult)
         {
             return EndInvoke<GetMethodResponse>(asyncResult);
@@ -4293,6 +4479,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethodResponse">REST API Reference for GetMethodResponse Operation</seealso>
         public virtual GetMethodResponseResponse GetMethodResponse(GetMethodResponseRequest request)
         {
             var options = new InvokeOptions();
@@ -4313,6 +4500,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMethodResponse
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethodResponse">REST API Reference for GetMethodResponse Operation</seealso>
         public virtual IAsyncResult BeginGetMethodResponse(GetMethodResponseRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4329,6 +4517,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMethodResponse.</param>
         /// 
         /// <returns>Returns a  GetMethodResponseResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethodResponse">REST API Reference for GetMethodResponse Operation</seealso>
         public virtual GetMethodResponseResponse EndGetMethodResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<GetMethodResponseResponse>(asyncResult);
@@ -4353,6 +4542,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModel">REST API Reference for GetModel Operation</seealso>
         public virtual GetModelResponse GetModel(GetModelRequest request)
         {
             var options = new InvokeOptions();
@@ -4373,6 +4563,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetModel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModel">REST API Reference for GetModel Operation</seealso>
         public virtual IAsyncResult BeginGetModel(GetModelRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4389,6 +4580,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetModel.</param>
         /// 
         /// <returns>Returns a  GetModelResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModel">REST API Reference for GetModel Operation</seealso>
         public virtual GetModelResponse EndGetModel(IAsyncResult asyncResult)
         {
             return EndInvoke<GetModelResponse>(asyncResult);
@@ -4417,6 +4609,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModels">REST API Reference for GetModels Operation</seealso>
         public virtual GetModelsResponse GetModels(GetModelsRequest request)
         {
             var options = new InvokeOptions();
@@ -4437,6 +4630,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetModels
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModels">REST API Reference for GetModels Operation</seealso>
         public virtual IAsyncResult BeginGetModels(GetModelsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4453,6 +4647,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetModels.</param>
         /// 
         /// <returns>Returns a  GetModelsResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModels">REST API Reference for GetModels Operation</seealso>
         public virtual GetModelsResponse EndGetModels(IAsyncResult asyncResult)
         {
             return EndInvoke<GetModelsResponse>(asyncResult);
@@ -4482,6 +4677,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModelTemplate">REST API Reference for GetModelTemplate Operation</seealso>
         public virtual GetModelTemplateResponse GetModelTemplate(GetModelTemplateRequest request)
         {
             var options = new InvokeOptions();
@@ -4502,6 +4698,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetModelTemplate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModelTemplate">REST API Reference for GetModelTemplate Operation</seealso>
         public virtual IAsyncResult BeginGetModelTemplate(GetModelTemplateRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4518,6 +4715,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetModelTemplate.</param>
         /// 
         /// <returns>Returns a  GetModelTemplateResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModelTemplate">REST API Reference for GetModelTemplate Operation</seealso>
         public virtual GetModelTemplateResponse EndGetModelTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<GetModelTemplateResponse>(asyncResult);
@@ -4542,6 +4740,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidator">REST API Reference for GetRequestValidator Operation</seealso>
         public virtual GetRequestValidatorResponse GetRequestValidator(GetRequestValidatorRequest request)
         {
             var options = new InvokeOptions();
@@ -4562,6 +4761,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRequestValidator
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidator">REST API Reference for GetRequestValidator Operation</seealso>
         public virtual IAsyncResult BeginGetRequestValidator(GetRequestValidatorRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4578,6 +4778,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRequestValidator.</param>
         /// 
         /// <returns>Returns a  GetRequestValidatorResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidator">REST API Reference for GetRequestValidator Operation</seealso>
         public virtual GetRequestValidatorResponse EndGetRequestValidator(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRequestValidatorResponse>(asyncResult);
@@ -4606,6 +4807,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidators">REST API Reference for GetRequestValidators Operation</seealso>
         public virtual GetRequestValidatorsResponse GetRequestValidators(GetRequestValidatorsRequest request)
         {
             var options = new InvokeOptions();
@@ -4626,6 +4828,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRequestValidators
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidators">REST API Reference for GetRequestValidators Operation</seealso>
         public virtual IAsyncResult BeginGetRequestValidators(GetRequestValidatorsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4642,6 +4845,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRequestValidators.</param>
         /// 
         /// <returns>Returns a  GetRequestValidatorsResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidators">REST API Reference for GetRequestValidators Operation</seealso>
         public virtual GetRequestValidatorsResponse EndGetRequestValidators(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRequestValidatorsResponse>(asyncResult);
@@ -4666,6 +4870,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResource">REST API Reference for GetResource Operation</seealso>
         public virtual GetResourceResponse GetResource(GetResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -4686,6 +4891,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResource">REST API Reference for GetResource Operation</seealso>
         public virtual IAsyncResult BeginGetResource(GetResourceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4702,6 +4908,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResource.</param>
         /// 
         /// <returns>Returns a  GetResourceResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResource">REST API Reference for GetResource Operation</seealso>
         public virtual GetResourceResponse EndGetResource(IAsyncResult asyncResult)
         {
             return EndInvoke<GetResourceResponse>(asyncResult);
@@ -4730,6 +4937,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResources">REST API Reference for GetResources Operation</seealso>
         public virtual GetResourcesResponse GetResources(GetResourcesRequest request)
         {
             var options = new InvokeOptions();
@@ -4750,6 +4958,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResources
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResources">REST API Reference for GetResources Operation</seealso>
         public virtual IAsyncResult BeginGetResources(GetResourcesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4766,6 +4975,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResources.</param>
         /// 
         /// <returns>Returns a  GetResourcesResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResources">REST API Reference for GetResources Operation</seealso>
         public virtual GetResourcesResponse EndGetResources(IAsyncResult asyncResult)
         {
             return EndInvoke<GetResourcesResponse>(asyncResult);
@@ -4790,6 +5000,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApi">REST API Reference for GetRestApi Operation</seealso>
         public virtual GetRestApiResponse GetRestApi(GetRestApiRequest request)
         {
             var options = new InvokeOptions();
@@ -4810,6 +5021,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRestApi
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApi">REST API Reference for GetRestApi Operation</seealso>
         public virtual IAsyncResult BeginGetRestApi(GetRestApiRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4826,6 +5038,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRestApi.</param>
         /// 
         /// <returns>Returns a  GetRestApiResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApi">REST API Reference for GetRestApi Operation</seealso>
         public virtual GetRestApiResponse EndGetRestApi(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRestApiResponse>(asyncResult);
@@ -4851,6 +5064,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApis">REST API Reference for GetRestApis Operation</seealso>
         public virtual GetRestApisResponse GetRestApis(GetRestApisRequest request)
         {
             var options = new InvokeOptions();
@@ -4871,6 +5085,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRestApis
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApis">REST API Reference for GetRestApis Operation</seealso>
         public virtual IAsyncResult BeginGetRestApis(GetRestApisRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4887,6 +5102,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRestApis.</param>
         /// 
         /// <returns>Returns a  GetRestApisResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApis">REST API Reference for GetRestApis Operation</seealso>
         public virtual GetRestApisResponse EndGetRestApis(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRestApisResponse>(asyncResult);
@@ -4918,6 +5134,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdk">REST API Reference for GetSdk Operation</seealso>
         public virtual GetSdkResponse GetSdk(GetSdkRequest request)
         {
             var options = new InvokeOptions();
@@ -4938,6 +5155,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSdk
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdk">REST API Reference for GetSdk Operation</seealso>
         public virtual IAsyncResult BeginGetSdk(GetSdkRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4954,6 +5172,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSdk.</param>
         /// 
         /// <returns>Returns a  GetSdkResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdk">REST API Reference for GetSdk Operation</seealso>
         public virtual GetSdkResponse EndGetSdk(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSdkResponse>(asyncResult);
@@ -4978,6 +5197,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkType">REST API Reference for GetSdkType Operation</seealso>
         public virtual GetSdkTypeResponse GetSdkType(GetSdkTypeRequest request)
         {
             var options = new InvokeOptions();
@@ -4998,6 +5218,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSdkType
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkType">REST API Reference for GetSdkType Operation</seealso>
         public virtual IAsyncResult BeginGetSdkType(GetSdkTypeRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5014,6 +5235,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSdkType.</param>
         /// 
         /// <returns>Returns a  GetSdkTypeResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkType">REST API Reference for GetSdkType Operation</seealso>
         public virtual GetSdkTypeResponse EndGetSdkType(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSdkTypeResponse>(asyncResult);
@@ -5035,6 +5257,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkTypes">REST API Reference for GetSdkTypes Operation</seealso>
         public virtual GetSdkTypesResponse GetSdkTypes(GetSdkTypesRequest request)
         {
             var options = new InvokeOptions();
@@ -5055,6 +5278,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSdkTypes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkTypes">REST API Reference for GetSdkTypes Operation</seealso>
         public virtual IAsyncResult BeginGetSdkTypes(GetSdkTypesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5071,6 +5295,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSdkTypes.</param>
         /// 
         /// <returns>Returns a  GetSdkTypesResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkTypes">REST API Reference for GetSdkTypes Operation</seealso>
         public virtual GetSdkTypesResponse EndGetSdkTypes(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSdkTypesResponse>(asyncResult);
@@ -5095,6 +5320,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStage">REST API Reference for GetStage Operation</seealso>
         public virtual GetStageResponse GetStage(GetStageRequest request)
         {
             var options = new InvokeOptions();
@@ -5115,6 +5341,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStage">REST API Reference for GetStage Operation</seealso>
         public virtual IAsyncResult BeginGetStage(GetStageRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5131,6 +5358,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStage.</param>
         /// 
         /// <returns>Returns a  GetStageResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStage">REST API Reference for GetStage Operation</seealso>
         public virtual GetStageResponse EndGetStage(IAsyncResult asyncResult)
         {
             return EndInvoke<GetStageResponse>(asyncResult);
@@ -5155,6 +5383,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStages">REST API Reference for GetStages Operation</seealso>
         public virtual GetStagesResponse GetStages(GetStagesRequest request)
         {
             var options = new InvokeOptions();
@@ -5175,6 +5404,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStages
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStages">REST API Reference for GetStages Operation</seealso>
         public virtual IAsyncResult BeginGetStages(GetStagesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5191,6 +5421,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStages.</param>
         /// 
         /// <returns>Returns a  GetStagesResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStages">REST API Reference for GetStages Operation</seealso>
         public virtual GetStagesResponse EndGetStages(IAsyncResult asyncResult)
         {
             return EndInvoke<GetStagesResponse>(asyncResult);
@@ -5222,6 +5453,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual GetTagsResponse GetTags(GetTagsRequest request)
         {
             var options = new InvokeOptions();
@@ -5242,6 +5474,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual IAsyncResult BeginGetTags(GetTagsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5258,6 +5491,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTags.</param>
         /// 
         /// <returns>Returns a  GetTagsResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual GetTagsResponse EndGetTags(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTagsResponse>(asyncResult);
@@ -5286,6 +5520,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsage">REST API Reference for GetUsage Operation</seealso>
         public virtual GetUsageResponse GetUsage(GetUsageRequest request)
         {
             var options = new InvokeOptions();
@@ -5306,6 +5541,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsage">REST API Reference for GetUsage Operation</seealso>
         public virtual IAsyncResult BeginGetUsage(GetUsageRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5322,6 +5558,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsage.</param>
         /// 
         /// <returns>Returns a  GetUsageResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsage">REST API Reference for GetUsage Operation</seealso>
         public virtual GetUsageResponse EndGetUsage(IAsyncResult asyncResult)
         {
             return EndInvoke<GetUsageResponse>(asyncResult);
@@ -5350,6 +5587,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlan">REST API Reference for GetUsagePlan Operation</seealso>
         public virtual GetUsagePlanResponse GetUsagePlan(GetUsagePlanRequest request)
         {
             var options = new InvokeOptions();
@@ -5370,6 +5608,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsagePlan
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlan">REST API Reference for GetUsagePlan Operation</seealso>
         public virtual IAsyncResult BeginGetUsagePlan(GetUsagePlanRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5386,6 +5625,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsagePlan.</param>
         /// 
         /// <returns>Returns a  GetUsagePlanResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlan">REST API Reference for GetUsagePlan Operation</seealso>
         public virtual GetUsagePlanResponse EndGetUsagePlan(IAsyncResult asyncResult)
         {
             return EndInvoke<GetUsagePlanResponse>(asyncResult);
@@ -5414,6 +5654,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanKey">REST API Reference for GetUsagePlanKey Operation</seealso>
         public virtual GetUsagePlanKeyResponse GetUsagePlanKey(GetUsagePlanKeyRequest request)
         {
             var options = new InvokeOptions();
@@ -5434,6 +5675,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsagePlanKey
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanKey">REST API Reference for GetUsagePlanKey Operation</seealso>
         public virtual IAsyncResult BeginGetUsagePlanKey(GetUsagePlanKeyRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5450,6 +5692,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsagePlanKey.</param>
         /// 
         /// <returns>Returns a  GetUsagePlanKeyResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanKey">REST API Reference for GetUsagePlanKey Operation</seealso>
         public virtual GetUsagePlanKeyResponse EndGetUsagePlanKey(IAsyncResult asyncResult)
         {
             return EndInvoke<GetUsagePlanKeyResponse>(asyncResult);
@@ -5479,6 +5722,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanKeys">REST API Reference for GetUsagePlanKeys Operation</seealso>
         public virtual GetUsagePlanKeysResponse GetUsagePlanKeys(GetUsagePlanKeysRequest request)
         {
             var options = new InvokeOptions();
@@ -5499,6 +5743,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsagePlanKeys
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanKeys">REST API Reference for GetUsagePlanKeys Operation</seealso>
         public virtual IAsyncResult BeginGetUsagePlanKeys(GetUsagePlanKeysRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5515,6 +5760,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsagePlanKeys.</param>
         /// 
         /// <returns>Returns a  GetUsagePlanKeysResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanKeys">REST API Reference for GetUsagePlanKeys Operation</seealso>
         public virtual GetUsagePlanKeysResponse EndGetUsagePlanKeys(IAsyncResult asyncResult)
         {
             return EndInvoke<GetUsagePlanKeysResponse>(asyncResult);
@@ -5546,6 +5792,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlans">REST API Reference for GetUsagePlans Operation</seealso>
         public virtual GetUsagePlansResponse GetUsagePlans(GetUsagePlansRequest request)
         {
             var options = new InvokeOptions();
@@ -5566,6 +5813,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsagePlans
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlans">REST API Reference for GetUsagePlans Operation</seealso>
         public virtual IAsyncResult BeginGetUsagePlans(GetUsagePlansRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5582,6 +5830,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsagePlans.</param>
         /// 
         /// <returns>Returns a  GetUsagePlansResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlans">REST API Reference for GetUsagePlans Operation</seealso>
         public virtual GetUsagePlansResponse EndGetUsagePlans(IAsyncResult asyncResult)
         {
             return EndInvoke<GetUsagePlansResponse>(asyncResult);
@@ -5606,6 +5855,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLink">REST API Reference for GetVpcLink Operation</seealso>
         public virtual GetVpcLinkResponse GetVpcLink(GetVpcLinkRequest request)
         {
             var options = new InvokeOptions();
@@ -5626,6 +5876,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVpcLink
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLink">REST API Reference for GetVpcLink Operation</seealso>
         public virtual IAsyncResult BeginGetVpcLink(GetVpcLinkRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5642,6 +5893,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVpcLink.</param>
         /// 
         /// <returns>Returns a  GetVpcLinkResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLink">REST API Reference for GetVpcLink Operation</seealso>
         public virtual GetVpcLinkResponse EndGetVpcLink(IAsyncResult asyncResult)
         {
             return EndInvoke<GetVpcLinkResponse>(asyncResult);
@@ -5667,6 +5919,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLinks">REST API Reference for GetVpcLinks Operation</seealso>
         public virtual GetVpcLinksResponse GetVpcLinks(GetVpcLinksRequest request)
         {
             var options = new InvokeOptions();
@@ -5687,6 +5940,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVpcLinks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLinks">REST API Reference for GetVpcLinks Operation</seealso>
         public virtual IAsyncResult BeginGetVpcLinks(GetVpcLinksRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5703,6 +5957,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVpcLinks.</param>
         /// 
         /// <returns>Returns a  GetVpcLinksResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLinks">REST API Reference for GetVpcLinks Operation</seealso>
         public virtual GetVpcLinksResponse EndGetVpcLinks(IAsyncResult asyncResult)
         {
             return EndInvoke<GetVpcLinksResponse>(asyncResult);
@@ -5737,6 +5992,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportApiKeys">REST API Reference for ImportApiKeys Operation</seealso>
         public virtual ImportApiKeysResponse ImportApiKeys(ImportApiKeysRequest request)
         {
             var options = new InvokeOptions();
@@ -5757,6 +6013,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportApiKeys
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportApiKeys">REST API Reference for ImportApiKeys Operation</seealso>
         public virtual IAsyncResult BeginImportApiKeys(ImportApiKeysRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5773,6 +6030,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportApiKeys.</param>
         /// 
         /// <returns>Returns a  ImportApiKeysResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportApiKeys">REST API Reference for ImportApiKeys Operation</seealso>
         public virtual ImportApiKeysResponse EndImportApiKeys(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportApiKeysResponse>(asyncResult);
@@ -5804,6 +6062,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportDocumentationParts">REST API Reference for ImportDocumentationParts Operation</seealso>
         public virtual ImportDocumentationPartsResponse ImportDocumentationParts(ImportDocumentationPartsRequest request)
         {
             var options = new InvokeOptions();
@@ -5824,6 +6083,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportDocumentationParts
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportDocumentationParts">REST API Reference for ImportDocumentationParts Operation</seealso>
         public virtual IAsyncResult BeginImportDocumentationParts(ImportDocumentationPartsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5840,6 +6100,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportDocumentationParts.</param>
         /// 
         /// <returns>Returns a  ImportDocumentationPartsResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportDocumentationParts">REST API Reference for ImportDocumentationParts Operation</seealso>
         public virtual ImportDocumentationPartsResponse EndImportDocumentationParts(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportDocumentationPartsResponse>(asyncResult);
@@ -5872,6 +6133,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportRestApi">REST API Reference for ImportRestApi Operation</seealso>
         public virtual ImportRestApiResponse ImportRestApi(ImportRestApiRequest request)
         {
             var options = new InvokeOptions();
@@ -5892,6 +6154,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportRestApi
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportRestApi">REST API Reference for ImportRestApi Operation</seealso>
         public virtual IAsyncResult BeginImportRestApi(ImportRestApiRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5908,6 +6171,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportRestApi.</param>
         /// 
         /// <returns>Returns a  ImportRestApiResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportRestApi">REST API Reference for ImportRestApi Operation</seealso>
         public virtual ImportRestApiResponse EndImportRestApi(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportRestApiResponse>(asyncResult);
@@ -5940,6 +6204,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutGatewayResponse">REST API Reference for PutGatewayResponse Operation</seealso>
         public virtual PutGatewayResponseResponse PutGatewayResponse(PutGatewayResponseRequest request)
         {
             var options = new InvokeOptions();
@@ -5960,6 +6225,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutGatewayResponse
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutGatewayResponse">REST API Reference for PutGatewayResponse Operation</seealso>
         public virtual IAsyncResult BeginPutGatewayResponse(PutGatewayResponseRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5976,6 +6242,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutGatewayResponse.</param>
         /// 
         /// <returns>Returns a  PutGatewayResponseResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutGatewayResponse">REST API Reference for PutGatewayResponse Operation</seealso>
         public virtual PutGatewayResponseResponse EndPutGatewayResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<PutGatewayResponseResponse>(asyncResult);
@@ -6007,6 +6274,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutIntegration">REST API Reference for PutIntegration Operation</seealso>
         public virtual PutIntegrationResponse PutIntegration(PutIntegrationRequest request)
         {
             var options = new InvokeOptions();
@@ -6027,6 +6295,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutIntegration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutIntegration">REST API Reference for PutIntegration Operation</seealso>
         public virtual IAsyncResult BeginPutIntegration(PutIntegrationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -6043,6 +6312,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutIntegration.</param>
         /// 
         /// <returns>Returns a  PutIntegrationResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutIntegration">REST API Reference for PutIntegration Operation</seealso>
         public virtual PutIntegrationResponse EndPutIntegration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutIntegrationResponse>(asyncResult);
@@ -6077,6 +6347,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutIntegrationResponse">REST API Reference for PutIntegrationResponse Operation</seealso>
         public virtual PutIntegrationResponseResponse PutIntegrationResponse(PutIntegrationResponseRequest request)
         {
             var options = new InvokeOptions();
@@ -6097,6 +6368,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutIntegrationResponse
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutIntegrationResponse">REST API Reference for PutIntegrationResponse Operation</seealso>
         public virtual IAsyncResult BeginPutIntegrationResponse(PutIntegrationResponseRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -6113,6 +6385,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutIntegrationResponse.</param>
         /// 
         /// <returns>Returns a  PutIntegrationResponseResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutIntegrationResponse">REST API Reference for PutIntegrationResponse Operation</seealso>
         public virtual PutIntegrationResponseResponse EndPutIntegrationResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<PutIntegrationResponseResponse>(asyncResult);
@@ -6147,6 +6420,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethod">REST API Reference for PutMethod Operation</seealso>
         public virtual PutMethodResponse PutMethod(PutMethodRequest request)
         {
             var options = new InvokeOptions();
@@ -6167,6 +6441,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutMethod
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethod">REST API Reference for PutMethod Operation</seealso>
         public virtual IAsyncResult BeginPutMethod(PutMethodRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -6183,6 +6458,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutMethod.</param>
         /// 
         /// <returns>Returns a  PutMethodResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethod">REST API Reference for PutMethod Operation</seealso>
         public virtual PutMethodResponse EndPutMethod(IAsyncResult asyncResult)
         {
             return EndInvoke<PutMethodResponse>(asyncResult);
@@ -6217,6 +6493,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethodResponse">REST API Reference for PutMethodResponse Operation</seealso>
         public virtual PutMethodResponseResponse PutMethodResponse(PutMethodResponseRequest request)
         {
             var options = new InvokeOptions();
@@ -6237,6 +6514,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutMethodResponse
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethodResponse">REST API Reference for PutMethodResponse Operation</seealso>
         public virtual IAsyncResult BeginPutMethodResponse(PutMethodResponseRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -6253,6 +6531,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutMethodResponse.</param>
         /// 
         /// <returns>Returns a  PutMethodResponseResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethodResponse">REST API Reference for PutMethodResponse Operation</seealso>
         public virtual PutMethodResponseResponse EndPutMethodResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<PutMethodResponseResponse>(asyncResult);
@@ -6289,6 +6568,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutRestApi">REST API Reference for PutRestApi Operation</seealso>
         public virtual PutRestApiResponse PutRestApi(PutRestApiRequest request)
         {
             var options = new InvokeOptions();
@@ -6309,6 +6589,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRestApi
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutRestApi">REST API Reference for PutRestApi Operation</seealso>
         public virtual IAsyncResult BeginPutRestApi(PutRestApiRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -6325,6 +6606,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRestApi.</param>
         /// 
         /// <returns>Returns a  PutRestApiResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutRestApi">REST API Reference for PutRestApi Operation</seealso>
         public virtual PutRestApiResponse EndPutRestApi(IAsyncResult asyncResult)
         {
             return EndInvoke<PutRestApiResponse>(asyncResult);
@@ -6359,6 +6641,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -6379,6 +6662,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -6395,6 +6679,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
         /// 
         /// <returns>Returns a  TagResourceResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<TagResourceResponse>(asyncResult);
@@ -6428,6 +6713,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeAuthorizer">REST API Reference for TestInvokeAuthorizer Operation</seealso>
         public virtual TestInvokeAuthorizerResponse TestInvokeAuthorizer(TestInvokeAuthorizerRequest request)
         {
             var options = new InvokeOptions();
@@ -6448,6 +6734,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestInvokeAuthorizer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeAuthorizer">REST API Reference for TestInvokeAuthorizer Operation</seealso>
         public virtual IAsyncResult BeginTestInvokeAuthorizer(TestInvokeAuthorizerRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -6464,6 +6751,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTestInvokeAuthorizer.</param>
         /// 
         /// <returns>Returns a  TestInvokeAuthorizerResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeAuthorizer">REST API Reference for TestInvokeAuthorizer Operation</seealso>
         public virtual TestInvokeAuthorizerResponse EndTestInvokeAuthorizer(IAsyncResult asyncResult)
         {
             return EndInvoke<TestInvokeAuthorizerResponse>(asyncResult);
@@ -6493,6 +6781,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeMethod">REST API Reference for TestInvokeMethod Operation</seealso>
         public virtual TestInvokeMethodResponse TestInvokeMethod(TestInvokeMethodRequest request)
         {
             var options = new InvokeOptions();
@@ -6513,6 +6802,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestInvokeMethod
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeMethod">REST API Reference for TestInvokeMethod Operation</seealso>
         public virtual IAsyncResult BeginTestInvokeMethod(TestInvokeMethodRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -6529,6 +6819,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTestInvokeMethod.</param>
         /// 
         /// <returns>Returns a  TestInvokeMethodResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeMethod">REST API Reference for TestInvokeMethod Operation</seealso>
         public virtual TestInvokeMethodResponse EndTestInvokeMethod(IAsyncResult asyncResult)
         {
             return EndInvoke<TestInvokeMethodResponse>(asyncResult);
@@ -6560,6 +6851,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -6580,6 +6872,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -6596,6 +6889,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
         /// 
         /// <returns>Returns a  UntagResourceResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
@@ -6624,6 +6918,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAccount">REST API Reference for UpdateAccount Operation</seealso>
         public virtual UpdateAccountResponse UpdateAccount(UpdateAccountRequest request)
         {
             var options = new InvokeOptions();
@@ -6644,6 +6939,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAccount
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAccount">REST API Reference for UpdateAccount Operation</seealso>
         public virtual IAsyncResult BeginUpdateAccount(UpdateAccountRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -6660,6 +6956,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAccount.</param>
         /// 
         /// <returns>Returns a  UpdateAccountResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAccount">REST API Reference for UpdateAccount Operation</seealso>
         public virtual UpdateAccountResponse EndUpdateAccount(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAccountResponse>(asyncResult);
@@ -6691,6 +6988,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateApiKey">REST API Reference for UpdateApiKey Operation</seealso>
         public virtual UpdateApiKeyResponse UpdateApiKey(UpdateApiKeyRequest request)
         {
             var options = new InvokeOptions();
@@ -6711,6 +7009,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApiKey
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateApiKey">REST API Reference for UpdateApiKey Operation</seealso>
         public virtual IAsyncResult BeginUpdateApiKey(UpdateApiKeyRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -6727,6 +7026,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApiKey.</param>
         /// 
         /// <returns>Returns a  UpdateApiKeyResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateApiKey">REST API Reference for UpdateApiKey Operation</seealso>
         public virtual UpdateApiKeyResponse EndUpdateApiKey(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateApiKeyResponse>(asyncResult);
@@ -6758,6 +7058,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAuthorizer">REST API Reference for UpdateAuthorizer Operation</seealso>
         public virtual UpdateAuthorizerResponse UpdateAuthorizer(UpdateAuthorizerRequest request)
         {
             var options = new InvokeOptions();
@@ -6778,6 +7079,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAuthorizer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAuthorizer">REST API Reference for UpdateAuthorizer Operation</seealso>
         public virtual IAsyncResult BeginUpdateAuthorizer(UpdateAuthorizerRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -6794,6 +7096,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAuthorizer.</param>
         /// 
         /// <returns>Returns a  UpdateAuthorizerResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAuthorizer">REST API Reference for UpdateAuthorizer Operation</seealso>
         public virtual UpdateAuthorizerResponse EndUpdateAuthorizer(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAuthorizerResponse>(asyncResult);
@@ -6825,6 +7128,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateBasePathMapping">REST API Reference for UpdateBasePathMapping Operation</seealso>
         public virtual UpdateBasePathMappingResponse UpdateBasePathMapping(UpdateBasePathMappingRequest request)
         {
             var options = new InvokeOptions();
@@ -6845,6 +7149,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBasePathMapping
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateBasePathMapping">REST API Reference for UpdateBasePathMapping Operation</seealso>
         public virtual IAsyncResult BeginUpdateBasePathMapping(UpdateBasePathMappingRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -6861,6 +7166,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBasePathMapping.</param>
         /// 
         /// <returns>Returns a  UpdateBasePathMappingResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateBasePathMapping">REST API Reference for UpdateBasePathMapping Operation</seealso>
         public virtual UpdateBasePathMappingResponse EndUpdateBasePathMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateBasePathMappingResponse>(asyncResult);
@@ -6889,6 +7195,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateClientCertificate">REST API Reference for UpdateClientCertificate Operation</seealso>
         public virtual UpdateClientCertificateResponse UpdateClientCertificate(UpdateClientCertificateRequest request)
         {
             var options = new InvokeOptions();
@@ -6909,6 +7216,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateClientCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateClientCertificate">REST API Reference for UpdateClientCertificate Operation</seealso>
         public virtual IAsyncResult BeginUpdateClientCertificate(UpdateClientCertificateRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -6925,6 +7233,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateClientCertificate.</param>
         /// 
         /// <returns>Returns a  UpdateClientCertificateResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateClientCertificate">REST API Reference for UpdateClientCertificate Operation</seealso>
         public virtual UpdateClientCertificateResponse EndUpdateClientCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateClientCertificateResponse>(asyncResult);
@@ -6957,6 +7266,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDeployment">REST API Reference for UpdateDeployment Operation</seealso>
         public virtual UpdateDeploymentResponse UpdateDeployment(UpdateDeploymentRequest request)
         {
             var options = new InvokeOptions();
@@ -6977,6 +7287,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDeployment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDeployment">REST API Reference for UpdateDeployment Operation</seealso>
         public virtual IAsyncResult BeginUpdateDeployment(UpdateDeploymentRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -6993,6 +7304,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDeployment.</param>
         /// 
         /// <returns>Returns a  UpdateDeploymentResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDeployment">REST API Reference for UpdateDeployment Operation</seealso>
         public virtual UpdateDeploymentResponse EndUpdateDeployment(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDeploymentResponse>(asyncResult);
@@ -7027,6 +7339,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDocumentationPart">REST API Reference for UpdateDocumentationPart Operation</seealso>
         public virtual UpdateDocumentationPartResponse UpdateDocumentationPart(UpdateDocumentationPartRequest request)
         {
             var options = new InvokeOptions();
@@ -7047,6 +7360,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDocumentationPart
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDocumentationPart">REST API Reference for UpdateDocumentationPart Operation</seealso>
         public virtual IAsyncResult BeginUpdateDocumentationPart(UpdateDocumentationPartRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7063,6 +7377,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDocumentationPart.</param>
         /// 
         /// <returns>Returns a  UpdateDocumentationPartResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDocumentationPart">REST API Reference for UpdateDocumentationPart Operation</seealso>
         public virtual UpdateDocumentationPartResponse EndUpdateDocumentationPart(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDocumentationPartResponse>(asyncResult);
@@ -7094,6 +7409,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDocumentationVersion">REST API Reference for UpdateDocumentationVersion Operation</seealso>
         public virtual UpdateDocumentationVersionResponse UpdateDocumentationVersion(UpdateDocumentationVersionRequest request)
         {
             var options = new InvokeOptions();
@@ -7114,6 +7430,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDocumentationVersion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDocumentationVersion">REST API Reference for UpdateDocumentationVersion Operation</seealso>
         public virtual IAsyncResult BeginUpdateDocumentationVersion(UpdateDocumentationVersionRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7130,6 +7447,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDocumentationVersion.</param>
         /// 
         /// <returns>Returns a  UpdateDocumentationVersionResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDocumentationVersion">REST API Reference for UpdateDocumentationVersion Operation</seealso>
         public virtual UpdateDocumentationVersionResponse EndUpdateDocumentationVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDocumentationVersionResponse>(asyncResult);
@@ -7161,6 +7479,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDomainName">REST API Reference for UpdateDomainName Operation</seealso>
         public virtual UpdateDomainNameResponse UpdateDomainName(UpdateDomainNameRequest request)
         {
             var options = new InvokeOptions();
@@ -7181,6 +7500,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDomainName
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDomainName">REST API Reference for UpdateDomainName Operation</seealso>
         public virtual IAsyncResult BeginUpdateDomainName(UpdateDomainNameRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7197,6 +7517,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDomainName.</param>
         /// 
         /// <returns>Returns a  UpdateDomainNameResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDomainName">REST API Reference for UpdateDomainName Operation</seealso>
         public virtual UpdateDomainNameResponse EndUpdateDomainName(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDomainNameResponse>(asyncResult);
@@ -7225,6 +7546,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateGatewayResponse">REST API Reference for UpdateGatewayResponse Operation</seealso>
         public virtual UpdateGatewayResponseResponse UpdateGatewayResponse(UpdateGatewayResponseRequest request)
         {
             var options = new InvokeOptions();
@@ -7245,6 +7567,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGatewayResponse
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateGatewayResponse">REST API Reference for UpdateGatewayResponse Operation</seealso>
         public virtual IAsyncResult BeginUpdateGatewayResponse(UpdateGatewayResponseRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7261,6 +7584,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGatewayResponse.</param>
         /// 
         /// <returns>Returns a  UpdateGatewayResponseResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateGatewayResponse">REST API Reference for UpdateGatewayResponse Operation</seealso>
         public virtual UpdateGatewayResponseResponse EndUpdateGatewayResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateGatewayResponseResponse>(asyncResult);
@@ -7292,6 +7616,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegration">REST API Reference for UpdateIntegration Operation</seealso>
         public virtual UpdateIntegrationResponse UpdateIntegration(UpdateIntegrationRequest request)
         {
             var options = new InvokeOptions();
@@ -7312,6 +7637,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIntegration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegration">REST API Reference for UpdateIntegration Operation</seealso>
         public virtual IAsyncResult BeginUpdateIntegration(UpdateIntegrationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7328,6 +7654,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateIntegration.</param>
         /// 
         /// <returns>Returns a  UpdateIntegrationResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegration">REST API Reference for UpdateIntegration Operation</seealso>
         public virtual UpdateIntegrationResponse EndUpdateIntegration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateIntegrationResponse>(asyncResult);
@@ -7359,6 +7686,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegrationResponse">REST API Reference for UpdateIntegrationResponse Operation</seealso>
         public virtual UpdateIntegrationResponseResponse UpdateIntegrationResponse(UpdateIntegrationResponseRequest request)
         {
             var options = new InvokeOptions();
@@ -7379,6 +7707,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIntegrationResponse
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegrationResponse">REST API Reference for UpdateIntegrationResponse Operation</seealso>
         public virtual IAsyncResult BeginUpdateIntegrationResponse(UpdateIntegrationResponseRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7395,6 +7724,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateIntegrationResponse.</param>
         /// 
         /// <returns>Returns a  UpdateIntegrationResponseResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegrationResponse">REST API Reference for UpdateIntegrationResponse Operation</seealso>
         public virtual UpdateIntegrationResponseResponse EndUpdateIntegrationResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateIntegrationResponseResponse>(asyncResult);
@@ -7426,6 +7756,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethod">REST API Reference for UpdateMethod Operation</seealso>
         public virtual UpdateMethodResponse UpdateMethod(UpdateMethodRequest request)
         {
             var options = new InvokeOptions();
@@ -7446,6 +7777,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMethod
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethod">REST API Reference for UpdateMethod Operation</seealso>
         public virtual IAsyncResult BeginUpdateMethod(UpdateMethodRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7462,6 +7794,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMethod.</param>
         /// 
         /// <returns>Returns a  UpdateMethodResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethod">REST API Reference for UpdateMethod Operation</seealso>
         public virtual UpdateMethodResponse EndUpdateMethod(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateMethodResponse>(asyncResult);
@@ -7496,6 +7829,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethodResponse">REST API Reference for UpdateMethodResponse Operation</seealso>
         public virtual UpdateMethodResponseResponse UpdateMethodResponse(UpdateMethodResponseRequest request)
         {
             var options = new InvokeOptions();
@@ -7516,6 +7850,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMethodResponse
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethodResponse">REST API Reference for UpdateMethodResponse Operation</seealso>
         public virtual IAsyncResult BeginUpdateMethodResponse(UpdateMethodResponseRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7532,6 +7867,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMethodResponse.</param>
         /// 
         /// <returns>Returns a  UpdateMethodResponseResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethodResponse">REST API Reference for UpdateMethodResponse Operation</seealso>
         public virtual UpdateMethodResponseResponse EndUpdateMethodResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateMethodResponseResponse>(asyncResult);
@@ -7563,6 +7899,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
         public virtual UpdateModelResponse UpdateModel(UpdateModelRequest request)
         {
             var options = new InvokeOptions();
@@ -7583,6 +7920,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateModel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
         public virtual IAsyncResult BeginUpdateModel(UpdateModelRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7599,6 +7937,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateModel.</param>
         /// 
         /// <returns>Returns a  UpdateModelResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
         public virtual UpdateModelResponse EndUpdateModel(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateModelResponse>(asyncResult);
@@ -7627,6 +7966,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRequestValidator">REST API Reference for UpdateRequestValidator Operation</seealso>
         public virtual UpdateRequestValidatorResponse UpdateRequestValidator(UpdateRequestValidatorRequest request)
         {
             var options = new InvokeOptions();
@@ -7647,6 +7987,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRequestValidator
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRequestValidator">REST API Reference for UpdateRequestValidator Operation</seealso>
         public virtual IAsyncResult BeginUpdateRequestValidator(UpdateRequestValidatorRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7663,6 +8004,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRequestValidator.</param>
         /// 
         /// <returns>Returns a  UpdateRequestValidatorResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRequestValidator">REST API Reference for UpdateRequestValidator Operation</seealso>
         public virtual UpdateRequestValidatorResponse EndUpdateRequestValidator(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateRequestValidatorResponse>(asyncResult);
@@ -7694,6 +8036,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         public virtual UpdateResourceResponse UpdateResource(UpdateResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -7714,6 +8057,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         public virtual IAsyncResult BeginUpdateResource(UpdateResourceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7730,6 +8074,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateResource.</param>
         /// 
         /// <returns>Returns a  UpdateResourceResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         public virtual UpdateResourceResponse EndUpdateResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateResourceResponse>(asyncResult);
@@ -7761,6 +8106,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRestApi">REST API Reference for UpdateRestApi Operation</seealso>
         public virtual UpdateRestApiResponse UpdateRestApi(UpdateRestApiRequest request)
         {
             var options = new InvokeOptions();
@@ -7781,6 +8127,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRestApi
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRestApi">REST API Reference for UpdateRestApi Operation</seealso>
         public virtual IAsyncResult BeginUpdateRestApi(UpdateRestApiRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7797,6 +8144,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRestApi.</param>
         /// 
         /// <returns>Returns a  UpdateRestApiResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRestApi">REST API Reference for UpdateRestApi Operation</seealso>
         public virtual UpdateRestApiResponse EndUpdateRestApi(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateRestApiResponse>(asyncResult);
@@ -7828,6 +8176,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateStage">REST API Reference for UpdateStage Operation</seealso>
         public virtual UpdateStageResponse UpdateStage(UpdateStageRequest request)
         {
             var options = new InvokeOptions();
@@ -7848,6 +8197,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateStage">REST API Reference for UpdateStage Operation</seealso>
         public virtual IAsyncResult BeginUpdateStage(UpdateStageRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7864,6 +8214,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStage.</param>
         /// 
         /// <returns>Returns a  UpdateStageResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateStage">REST API Reference for UpdateStage Operation</seealso>
         public virtual UpdateStageResponse EndUpdateStage(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateStageResponse>(asyncResult);
@@ -7893,6 +8244,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsage">REST API Reference for UpdateUsage Operation</seealso>
         public virtual UpdateUsageResponse UpdateUsage(UpdateUsageRequest request)
         {
             var options = new InvokeOptions();
@@ -7913,6 +8265,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUsage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsage">REST API Reference for UpdateUsage Operation</seealso>
         public virtual IAsyncResult BeginUpdateUsage(UpdateUsageRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7929,6 +8282,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUsage.</param>
         /// 
         /// <returns>Returns a  UpdateUsageResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsage">REST API Reference for UpdateUsage Operation</seealso>
         public virtual UpdateUsageResponse EndUpdateUsage(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateUsageResponse>(asyncResult);
@@ -7960,6 +8314,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsagePlan">REST API Reference for UpdateUsagePlan Operation</seealso>
         public virtual UpdateUsagePlanResponse UpdateUsagePlan(UpdateUsagePlanRequest request)
         {
             var options = new InvokeOptions();
@@ -7980,6 +8335,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUsagePlan
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsagePlan">REST API Reference for UpdateUsagePlan Operation</seealso>
         public virtual IAsyncResult BeginUpdateUsagePlan(UpdateUsagePlanRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7996,6 +8352,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUsagePlan.</param>
         /// 
         /// <returns>Returns a  UpdateUsagePlanResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsagePlan">REST API Reference for UpdateUsagePlan Operation</seealso>
         public virtual UpdateUsagePlanResponse EndUpdateUsagePlan(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateUsagePlanResponse>(asyncResult);
@@ -8027,6 +8384,7 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
         /// The request is denied because the caller has insufficient permissions.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateVpcLink">REST API Reference for UpdateVpcLink Operation</seealso>
         public virtual UpdateVpcLinkResponse UpdateVpcLink(UpdateVpcLinkRequest request)
         {
             var options = new InvokeOptions();
@@ -8047,6 +8405,7 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVpcLink
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateVpcLink">REST API Reference for UpdateVpcLink Operation</seealso>
         public virtual IAsyncResult BeginUpdateVpcLink(UpdateVpcLinkRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -8063,6 +8422,7 @@ namespace Amazon.APIGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVpcLink.</param>
         /// 
         /// <returns>Returns a  UpdateVpcLinkResult from APIGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateVpcLink">REST API Reference for UpdateVpcLink Operation</seealso>
         public virtual UpdateVpcLinkResponse EndUpdateVpcLink(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateVpcLinkResponse>(asyncResult);

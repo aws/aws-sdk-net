@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,11 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Specifies the settings for a campaign treatment. A treatment is a variation of a campaign
-    /// that's used for A/B testing of a campaign.
+    /// Specifies the settings for a campaign treatment. A <i>treatment</i> is a variation
+    /// of a campaign that's used for A/B testing of a campaign.
     /// </summary>
     public partial class TreatmentResource
     {
+        private CustomDeliveryConfiguration _customDeliveryConfiguration;
         private string _id;
         private MessageConfiguration _messageConfiguration;
         private Schedule _schedule;
@@ -41,6 +43,26 @@ namespace Amazon.Pinpoint.Model
         private TemplateConfiguration _templateConfiguration;
         private string _treatmentDescription;
         private string _treatmentName;
+
+        /// <summary>
+        /// Gets and sets the property CustomDeliveryConfiguration. 
+        /// <para>
+        /// The delivery configuration settings for sending the treatment through a custom channel.
+        /// This object is required if the MessageConfiguration object for the treatment specifies
+        /// a CustomMessage object.
+        /// </para>
+        /// </summary>
+        public CustomDeliveryConfiguration CustomDeliveryConfiguration
+        {
+            get { return this._customDeliveryConfiguration; }
+            set { this._customDeliveryConfiguration = value; }
+        }
+
+        // Check to see if CustomDeliveryConfiguration property is set
+        internal bool IsSetCustomDeliveryConfiguration()
+        {
+            return this._customDeliveryConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -173,8 +195,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property TreatmentName. 
         /// <para>
-        /// The custom name of the treatment. A treatment is a variation of a campaign that's
-        /// used for A/B testing of a campaign.
+        /// The custom name of the treatment.
         /// </para>
         /// </summary>
         public string TreatmentName

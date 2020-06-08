@@ -76,10 +76,22 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.DocumentTitleFieldName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExclusionPatterns", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ExclusionPatterns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FieldMappings", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<DataSourceToIndexFieldMapping, DataSourceToIndexFieldMappingUnmarshaller>(DataSourceToIndexFieldMappingUnmarshaller.Instance);
                     unmarshalledObject.FieldMappings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InclusionPatterns", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.InclusionPatterns = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SecretArn", targetDepth))
@@ -98,6 +110,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Urls = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UseChangeLog", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UseChangeLog = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VpcConfiguration", targetDepth))

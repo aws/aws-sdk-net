@@ -3,6 +3,7 @@
 <#@ import namespace="System.Linq" #>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+   <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
 <#
     if (this.Project.TargetFrameworks.Count() == 1)
     {
@@ -77,7 +78,6 @@
     <OutputPath><#=this.Project.OutputPathOverride #></OutputPath>
 <#
     }
-
     if (this.Project.TargetFrameworks.Contains("netstandard1.3"))
     {
 #>
@@ -87,6 +87,18 @@
 #>
   </PropertyGroup>
 <#
+	if (!this.Project.AssemblyName.Contains("UnitTests"))
+	{
+#>
+  <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'false' Or '$(RuleSetFileForBuild)' == '' ">
+	<CodeAnalysisRuleSet><#=this.Project.FxcopAnalyzerRuleSetFilePath#></CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'true' ">
+	<CodeAnalysisRuleSet><#=this.Project.FxcopAnalyzerRuleSetFilePathForBuild#></CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+<#
+	}
     if (this.Project.SignBinaries)
     {
 #>
@@ -105,8 +117,15 @@
 
 <#
     }
-
-    if (this.Project.IndividualFileIncludes != null)
+    if(this.Project.CustomRoslynAnalyzersDllDirectory != null)
+    {
+#>
+  <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
+    <Analyzer Include= "<#=this.Project.CustomRoslynAnalyzersDllDirectory#>" />
+  </ItemGroup>
+<#
+    }
+    if(this.Project.IndividualFileIncludes != null)
     {
 #>
   <ItemGroup>
@@ -169,14 +188,46 @@
     if (this.Project.PackageReferences != null)
     {
 #>
+  <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
+<#
+        foreach(var package in this.Project.PackageReferences.Where(p => p.IsAnalyzer))
+        {
+            if(package.HasPrivateAssets)
+            {
+#>
+        <PackageReference Include="<#=package.Include#>" Version="<#=package.Version#>">
+            <PrivateAssets><#=package.PrivateAssets#></PrivateAssets>
+        </PackageReference>
+<#
+            }
+            else
+            {
+#>
+	    <PackageReference Include="<#=package.Include#>" Version="<#=package.Version#>"/>
+<#
+		    }
+        }
+#>
+  </ItemGroup>
   <ItemGroup>
 <#
-    foreach (var package in this.Project.PackageReferences)
-    {
+        foreach(var package in this.Project.PackageReferences.Where(p => !p.IsAnalyzer))
+        {
+            if(package.HasPrivateAssets)
+            {
 #>
-    <PackageReference Include="<#=package.Include #>" Version="<#=package.Version #>"/>
+        <PackageReference Include="<#=package.Include#>" Version="<#=package.Version#>">
+            <PrivateAssets><#=package.PrivateAssets#></PrivateAssets>
+        </PackageReference>
 <#
-    }
+            }
+            else
+            {
+#>
+	    <PackageReference Include="<#=package.Include#>" Version="<#=package.Version#>"/>
+<#
+		    }
+        }
 #>
   </ItemGroup>
 

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,30 +30,53 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateServer operation.
-    /// Updates the server properties after that server has been created.
+    /// Updates the file transfer protocol-enabled server's properties after that server has
+    /// been created.
     /// 
     ///  
     /// <para>
-    /// The <code>UpdateServer</code> call returns the <code>ServerId</code> of the Secure
-    /// File Transfer Protocol (SFTP) server you updated.
+    /// The <code>UpdateServer</code> call returns the <code>ServerId</code> of the server
+    /// you updated.
     /// </para>
     /// </summary>
     public partial class UpdateServerRequest : AmazonTransferRequest
     {
+        private string _certificate;
         private EndpointDetails _endpointDetails;
         private EndpointType _endpointType;
         private string _hostKey;
         private IdentityProviderDetails _identityProviderDetails;
         private string _loggingRole;
+        private List<string> _protocols = new List<string>();
         private string _serverId;
+
+        /// <summary>
+        /// Gets and sets the property Certificate. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required
+        /// when <code>Protocols</code> is set to <code>FTPS</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1600)]
+        public string Certificate
+        {
+            get { return this._certificate; }
+            set { this._certificate = value; }
+        }
+
+        // Check to see if Certificate property is set
+        internal bool IsSetCertificate()
+        {
+            return this._certificate != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EndpointDetails. 
         /// <para>
-        /// The virtual private cloud (VPC) endpoint settings that are configured for your SFTP
-        /// server. With a VPC endpoint, you can restrict access to your SFTP server to resources
-        /// only within your VPC. To control incoming internet traffic, you will need to associate
-        /// one or more Elastic IP addresses with your server's endpoint. 
+        /// The virtual private cloud (VPC) endpoint settings that are configured for your file
+        /// transfer protocol-enabled server. With a VPC endpoint, you can restrict access to
+        /// your server to resources only within your VPC. To control incoming internet traffic,
+        /// you will need to associate one or more Elastic IP addresses with your server's endpoint.
         /// </para>
         /// </summary>
         public EndpointDetails EndpointDetails
@@ -70,9 +94,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of endpoint that you want your SFTP server to connect to. You can choose
-        /// to connect to the public internet or a virtual private cloud (VPC) endpoint. With
-        /// a VPC endpoint, your SFTP server isn't accessible over the public internet. 
+        /// The type of endpoint that you want your file transfer protocol-enabled server to connect
+        /// to. You can choose to connect to the public internet or a VPC endpoint. With a VPC
+        /// endpoint, your server isn't accessible over the public internet.
         /// </para>
         /// </summary>
         public EndpointType EndpointType
@@ -94,14 +118,15 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you aren't planning to migrate existing users from an existing SFTP server to a
-        /// new AWS SFTP server, don't update the host key. Accidentally changing a server's host
-        /// key can be disruptive.
+        /// If you aren't planning to migrate existing users from an existing file transfer protocol-enabled
+        /// server to a new server, don't update the host key. Accidentally changing a server's
+        /// host key can be disruptive.
         /// </para>
         ///  </important> 
         /// <para>
-        ///  For more information, see "https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key"
-        /// in the <i>AWS SFTP User Guide.</i> 
+        /// For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key">Changing
+        /// the Host Key for Your AWS Transfer Family Server</a> in the <i>AWS Transfer Family
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -120,8 +145,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property IdentityProviderDetails. 
         /// <para>
-        /// This response parameter is an array containing all of the information required to
-        /// call a customer's authentication API method.
+        /// An array containing all of the information required to call a customer's authentication
+        /// API method.
         /// </para>
         /// </summary>
         public IdentityProviderDetails IdentityProviderDetails
@@ -139,8 +164,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property LoggingRole. 
         /// <para>
-        /// A value that changes the AWS Identity and Access Management (IAM) role that allows
-        /// Amazon S3 events to be logged in Amazon CloudWatch, turning logging on or off.
+        /// Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 events
+        /// to be logged in Amazon CloudWatch, turning logging on or off.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -157,10 +182,43 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Protocols. 
+        /// <para>
+        /// Specifies the file transfer protocol or protocols over which your file transfer protocol
+        /// client can connect to your server's endpoint. The available protocols are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// File Transfer Protocol (FTP): Unencrypted file transfer
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=3)]
+        public List<string> Protocols
+        {
+            get { return this._protocols; }
+            set { this._protocols = value; }
+        }
+
+        // Check to see if Protocols property is set
+        internal bool IsSetProtocols()
+        {
+            return this._protocols != null && this._protocols.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned unique identifier for an SFTP server instance that the user account
-        /// is assigned to.
+        /// A system-assigned unique identifier for a file transfer protocol-enabled server instance
+        /// that the user account is assigned to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

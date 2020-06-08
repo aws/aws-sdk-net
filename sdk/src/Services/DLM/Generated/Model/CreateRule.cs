@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,20 +30,49 @@ namespace Amazon.DLM.Model
 {
     /// <summary>
     /// Specifies when to create snapshots of EBS volumes.
+    /// 
+    ///  
+    /// <para>
+    /// You must specify either a Cron expression or an interval, interval unit, and start
+    /// time. You cannot specify both.
+    /// </para>
     /// </summary>
     public partial class CreateRule
     {
+        private string _cronExpression;
         private int? _interval;
         private IntervalUnitValues _intervalUnit;
         private List<string> _times = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Interval. 
+        /// Gets and sets the property CronExpression. 
         /// <para>
-        /// The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
+        /// The schedule, as a Cron expression. The schedule interval must be between 1 hour and
+        /// 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+        /// expressions</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Min=17, Max=106)]
+        public string CronExpression
+        {
+            get { return this._cronExpression; }
+            set { this._cronExpression = value; }
+        }
+
+        // Check to see if CronExpression property is set
+        internal bool IsSetCronExpression()
+        {
+            return this._cronExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Interval. 
+        /// <para>
+        /// The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and
+        /// 24.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
         public int Interval
         {
             get { return this._interval.GetValueOrDefault(); }
@@ -61,7 +91,6 @@ namespace Amazon.DLM.Model
         /// The interval unit.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public IntervalUnitValues IntervalUnit
         {
             get { return this._intervalUnit; }
@@ -81,7 +110,8 @@ namespace Amazon.DLM.Model
         /// </para>
         ///  
         /// <para>
-        /// The operation occurs within a one-hour window following the specified time.
+        /// The operation occurs within a one-hour window following the specified time. If you
+        /// do not specify a time, Amazon DLM selects a time within the next 24 hours.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1)]

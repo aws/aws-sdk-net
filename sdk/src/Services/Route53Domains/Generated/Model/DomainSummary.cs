@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -77,7 +78,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property Expiry. 
         /// <para>
-        /// Expiration date of the domain in Coordinated Universal Time (UTC).
+        /// Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).
         /// </para>
         /// </summary>
         public DateTime Expiry

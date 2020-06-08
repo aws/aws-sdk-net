@@ -54,6 +54,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("ARN", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ARN = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("AtRestEncryptionEnabled", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
@@ -119,6 +125,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         var unmarshaller = StringUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.MemberClusters.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("MultiAZ", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("NodeGroups/NodeGroup", targetDepth))

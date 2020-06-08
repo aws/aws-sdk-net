@@ -65,6 +65,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateApp">REST API Reference for CreateApp Operation</seealso>
         CreateAppResponse CreateApp(CreateAppRequest request);
 
         /// <summary>
@@ -78,6 +79,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApp
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateApp">REST API Reference for CreateApp Operation</seealso>
         IAsyncResult BeginCreateApp(CreateAppRequest request, AsyncCallback callback, object state);
 
 
@@ -89,6 +91,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApp.</param>
         /// 
         /// <returns>Returns a  CreateAppResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateApp">REST API Reference for CreateApp Operation</seealso>
         CreateAppResponse EndCreateApp(IAsyncResult asyncResult);
 
         #endregion
@@ -124,6 +127,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateCampaign">REST API Reference for CreateCampaign Operation</seealso>
         CreateCampaignResponse CreateCampaign(CreateCampaignRequest request);
 
         /// <summary>
@@ -137,6 +141,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCampaign
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateCampaign">REST API Reference for CreateCampaign Operation</seealso>
         IAsyncResult BeginCreateCampaign(CreateCampaignRequest request, AsyncCallback callback, object state);
 
 
@@ -148,6 +153,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCampaign.</param>
         /// 
         /// <returns>Returns a  CreateCampaignResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateCampaign">REST API Reference for CreateCampaign Operation</seealso>
         CreateCampaignResponse EndCreateCampaign(IAsyncResult asyncResult);
 
         #endregion
@@ -176,6 +182,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateEmailTemplate">REST API Reference for CreateEmailTemplate Operation</seealso>
         CreateEmailTemplateResponse CreateEmailTemplate(CreateEmailTemplateRequest request);
 
         /// <summary>
@@ -189,6 +196,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEmailTemplate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateEmailTemplate">REST API Reference for CreateEmailTemplate Operation</seealso>
         IAsyncResult BeginCreateEmailTemplate(CreateEmailTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -200,6 +208,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEmailTemplate.</param>
         /// 
         /// <returns>Returns a  CreateEmailTemplateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateEmailTemplate">REST API Reference for CreateEmailTemplate Operation</seealso>
         CreateEmailTemplateResponse EndCreateEmailTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -234,6 +243,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateExportJob">REST API Reference for CreateExportJob Operation</seealso>
         CreateExportJobResponse CreateExportJob(CreateExportJobRequest request);
 
         /// <summary>
@@ -247,6 +257,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateExportJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateExportJob">REST API Reference for CreateExportJob Operation</seealso>
         IAsyncResult BeginCreateExportJob(CreateExportJobRequest request, AsyncCallback callback, object state);
 
 
@@ -258,6 +269,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateExportJob.</param>
         /// 
         /// <returns>Returns a  CreateExportJobResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateExportJob">REST API Reference for CreateExportJob Operation</seealso>
         CreateExportJobResponse EndCreateExportJob(IAsyncResult asyncResult);
 
         #endregion
@@ -292,6 +304,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateImportJob">REST API Reference for CreateImportJob Operation</seealso>
         CreateImportJobResponse CreateImportJob(CreateImportJobRequest request);
 
         /// <summary>
@@ -305,6 +318,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateImportJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateImportJob">REST API Reference for CreateImportJob Operation</seealso>
         IAsyncResult BeginCreateImportJob(CreateImportJobRequest request, AsyncCallback callback, object state);
 
 
@@ -316,6 +330,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateImportJob.</param>
         /// 
         /// <returns>Returns a  CreateImportJobResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateImportJob">REST API Reference for CreateImportJob Operation</seealso>
         CreateImportJobResponse EndCreateImportJob(IAsyncResult asyncResult);
 
         #endregion
@@ -350,6 +365,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateJourney">REST API Reference for CreateJourney Operation</seealso>
         CreateJourneyResponse CreateJourney(CreateJourneyRequest request);
 
         /// <summary>
@@ -363,6 +379,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateJourney
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateJourney">REST API Reference for CreateJourney Operation</seealso>
         IAsyncResult BeginCreateJourney(CreateJourneyRequest request, AsyncCallback callback, object state);
 
 
@@ -374,6 +391,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateJourney.</param>
         /// 
         /// <returns>Returns a  CreateJourneyResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateJourney">REST API Reference for CreateJourney Operation</seealso>
         CreateJourneyResponse EndCreateJourney(IAsyncResult asyncResult);
 
         #endregion
@@ -403,6 +421,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreatePushTemplate">REST API Reference for CreatePushTemplate Operation</seealso>
         CreatePushTemplateResponse CreatePushTemplate(CreatePushTemplateRequest request);
 
         /// <summary>
@@ -416,6 +435,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePushTemplate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreatePushTemplate">REST API Reference for CreatePushTemplate Operation</seealso>
         IAsyncResult BeginCreatePushTemplate(CreatePushTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -427,6 +447,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePushTemplate.</param>
         /// 
         /// <returns>Returns a  CreatePushTemplateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreatePushTemplate">REST API Reference for CreatePushTemplate Operation</seealso>
         CreatePushTemplateResponse EndCreatePushTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -461,6 +482,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateRecommenderConfiguration">REST API Reference for CreateRecommenderConfiguration Operation</seealso>
         CreateRecommenderConfigurationResponse CreateRecommenderConfiguration(CreateRecommenderConfigurationRequest request);
 
         /// <summary>
@@ -474,6 +496,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRecommenderConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateRecommenderConfiguration">REST API Reference for CreateRecommenderConfiguration Operation</seealso>
         IAsyncResult BeginCreateRecommenderConfiguration(CreateRecommenderConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -485,6 +508,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRecommenderConfiguration.</param>
         /// 
         /// <returns>Returns a  CreateRecommenderConfigurationResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateRecommenderConfiguration">REST API Reference for CreateRecommenderConfiguration Operation</seealso>
         CreateRecommenderConfigurationResponse EndCreateRecommenderConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -520,6 +544,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSegment">REST API Reference for CreateSegment Operation</seealso>
         CreateSegmentResponse CreateSegment(CreateSegmentRequest request);
 
         /// <summary>
@@ -533,6 +558,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSegment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSegment">REST API Reference for CreateSegment Operation</seealso>
         IAsyncResult BeginCreateSegment(CreateSegmentRequest request, AsyncCallback callback, object state);
 
 
@@ -544,6 +570,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSegment.</param>
         /// 
         /// <returns>Returns a  CreateSegmentResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSegment">REST API Reference for CreateSegment Operation</seealso>
         CreateSegmentResponse EndCreateSegment(IAsyncResult asyncResult);
 
         #endregion
@@ -572,6 +599,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSmsTemplate">REST API Reference for CreateSmsTemplate Operation</seealso>
         CreateSmsTemplateResponse CreateSmsTemplate(CreateSmsTemplateRequest request);
 
         /// <summary>
@@ -585,6 +613,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSmsTemplate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSmsTemplate">REST API Reference for CreateSmsTemplate Operation</seealso>
         IAsyncResult BeginCreateSmsTemplate(CreateSmsTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -596,6 +625,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSmsTemplate.</param>
         /// 
         /// <returns>Returns a  CreateSmsTemplateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSmsTemplate">REST API Reference for CreateSmsTemplate Operation</seealso>
         CreateSmsTemplateResponse EndCreateSmsTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -624,6 +654,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateVoiceTemplate">REST API Reference for CreateVoiceTemplate Operation</seealso>
         CreateVoiceTemplateResponse CreateVoiceTemplate(CreateVoiceTemplateRequest request);
 
         /// <summary>
@@ -637,6 +668,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVoiceTemplate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateVoiceTemplate">REST API Reference for CreateVoiceTemplate Operation</seealso>
         IAsyncResult BeginCreateVoiceTemplate(CreateVoiceTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -648,6 +680,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVoiceTemplate.</param>
         /// 
         /// <returns>Returns a  CreateVoiceTemplateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateVoiceTemplate">REST API Reference for CreateVoiceTemplate Operation</seealso>
         CreateVoiceTemplateResponse EndCreateVoiceTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -683,6 +716,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteAdmChannel">REST API Reference for DeleteAdmChannel Operation</seealso>
         DeleteAdmChannelResponse DeleteAdmChannel(DeleteAdmChannelRequest request);
 
         /// <summary>
@@ -696,6 +730,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAdmChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteAdmChannel">REST API Reference for DeleteAdmChannel Operation</seealso>
         IAsyncResult BeginDeleteAdmChannel(DeleteAdmChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -707,6 +742,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAdmChannel.</param>
         /// 
         /// <returns>Returns a  DeleteAdmChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteAdmChannel">REST API Reference for DeleteAdmChannel Operation</seealso>
         DeleteAdmChannelResponse EndDeleteAdmChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -742,6 +778,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsChannel">REST API Reference for DeleteApnsChannel Operation</seealso>
         DeleteApnsChannelResponse DeleteApnsChannel(DeleteApnsChannelRequest request);
 
         /// <summary>
@@ -755,6 +792,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApnsChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsChannel">REST API Reference for DeleteApnsChannel Operation</seealso>
         IAsyncResult BeginDeleteApnsChannel(DeleteApnsChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -766,6 +804,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApnsChannel.</param>
         /// 
         /// <returns>Returns a  DeleteApnsChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsChannel">REST API Reference for DeleteApnsChannel Operation</seealso>
         DeleteApnsChannelResponse EndDeleteApnsChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -801,6 +840,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsSandboxChannel">REST API Reference for DeleteApnsSandboxChannel Operation</seealso>
         DeleteApnsSandboxChannelResponse DeleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest request);
 
         /// <summary>
@@ -814,6 +854,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApnsSandboxChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsSandboxChannel">REST API Reference for DeleteApnsSandboxChannel Operation</seealso>
         IAsyncResult BeginDeleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -825,6 +866,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApnsSandboxChannel.</param>
         /// 
         /// <returns>Returns a  DeleteApnsSandboxChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsSandboxChannel">REST API Reference for DeleteApnsSandboxChannel Operation</seealso>
         DeleteApnsSandboxChannelResponse EndDeleteApnsSandboxChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -860,6 +902,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsVoipChannel">REST API Reference for DeleteApnsVoipChannel Operation</seealso>
         DeleteApnsVoipChannelResponse DeleteApnsVoipChannel(DeleteApnsVoipChannelRequest request);
 
         /// <summary>
@@ -873,6 +916,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApnsVoipChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsVoipChannel">REST API Reference for DeleteApnsVoipChannel Operation</seealso>
         IAsyncResult BeginDeleteApnsVoipChannel(DeleteApnsVoipChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -884,6 +928,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApnsVoipChannel.</param>
         /// 
         /// <returns>Returns a  DeleteApnsVoipChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsVoipChannel">REST API Reference for DeleteApnsVoipChannel Operation</seealso>
         DeleteApnsVoipChannelResponse EndDeleteApnsVoipChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -919,6 +964,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsVoipSandboxChannel">REST API Reference for DeleteApnsVoipSandboxChannel Operation</seealso>
         DeleteApnsVoipSandboxChannelResponse DeleteApnsVoipSandboxChannel(DeleteApnsVoipSandboxChannelRequest request);
 
         /// <summary>
@@ -932,6 +978,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApnsVoipSandboxChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsVoipSandboxChannel">REST API Reference for DeleteApnsVoipSandboxChannel Operation</seealso>
         IAsyncResult BeginDeleteApnsVoipSandboxChannel(DeleteApnsVoipSandboxChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -943,6 +990,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApnsVoipSandboxChannel.</param>
         /// 
         /// <returns>Returns a  DeleteApnsVoipSandboxChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsVoipSandboxChannel">REST API Reference for DeleteApnsVoipSandboxChannel Operation</seealso>
         DeleteApnsVoipSandboxChannelResponse EndDeleteApnsVoipSandboxChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -977,6 +1025,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         DeleteAppResponse DeleteApp(DeleteAppRequest request);
 
         /// <summary>
@@ -990,6 +1039,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApp
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         IAsyncResult BeginDeleteApp(DeleteAppRequest request, AsyncCallback callback, object state);
 
 
@@ -1001,6 +1051,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApp.</param>
         /// 
         /// <returns>Returns a  DeleteAppResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         DeleteAppResponse EndDeleteApp(IAsyncResult asyncResult);
 
         #endregion
@@ -1036,6 +1087,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteBaiduChannel">REST API Reference for DeleteBaiduChannel Operation</seealso>
         DeleteBaiduChannelResponse DeleteBaiduChannel(DeleteBaiduChannelRequest request);
 
         /// <summary>
@@ -1049,6 +1101,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBaiduChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteBaiduChannel">REST API Reference for DeleteBaiduChannel Operation</seealso>
         IAsyncResult BeginDeleteBaiduChannel(DeleteBaiduChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -1060,6 +1113,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBaiduChannel.</param>
         /// 
         /// <returns>Returns a  DeleteBaiduChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteBaiduChannel">REST API Reference for DeleteBaiduChannel Operation</seealso>
         DeleteBaiduChannelResponse EndDeleteBaiduChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -1094,6 +1148,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteCampaign">REST API Reference for DeleteCampaign Operation</seealso>
         DeleteCampaignResponse DeleteCampaign(DeleteCampaignRequest request);
 
         /// <summary>
@@ -1107,6 +1162,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCampaign
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteCampaign">REST API Reference for DeleteCampaign Operation</seealso>
         IAsyncResult BeginDeleteCampaign(DeleteCampaignRequest request, AsyncCallback callback, object state);
 
 
@@ -1118,6 +1174,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCampaign.</param>
         /// 
         /// <returns>Returns a  DeleteCampaignResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteCampaign">REST API Reference for DeleteCampaign Operation</seealso>
         DeleteCampaignResponse EndDeleteCampaign(IAsyncResult asyncResult);
 
         #endregion
@@ -1153,6 +1210,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailChannel">REST API Reference for DeleteEmailChannel Operation</seealso>
         DeleteEmailChannelResponse DeleteEmailChannel(DeleteEmailChannelRequest request);
 
         /// <summary>
@@ -1166,6 +1224,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEmailChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailChannel">REST API Reference for DeleteEmailChannel Operation</seealso>
         IAsyncResult BeginDeleteEmailChannel(DeleteEmailChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -1177,6 +1236,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEmailChannel.</param>
         /// 
         /// <returns>Returns a  DeleteEmailChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailChannel">REST API Reference for DeleteEmailChannel Operation</seealso>
         DeleteEmailChannelResponse EndDeleteEmailChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -1211,6 +1271,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailTemplate">REST API Reference for DeleteEmailTemplate Operation</seealso>
         DeleteEmailTemplateResponse DeleteEmailTemplate(DeleteEmailTemplateRequest request);
 
         /// <summary>
@@ -1224,6 +1285,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEmailTemplate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailTemplate">REST API Reference for DeleteEmailTemplate Operation</seealso>
         IAsyncResult BeginDeleteEmailTemplate(DeleteEmailTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -1235,6 +1297,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEmailTemplate.</param>
         /// 
         /// <returns>Returns a  DeleteEmailTemplateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailTemplate">REST API Reference for DeleteEmailTemplate Operation</seealso>
         DeleteEmailTemplateResponse EndDeleteEmailTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -1269,6 +1332,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request);
 
         /// <summary>
@@ -1282,6 +1346,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEndpoint
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         IAsyncResult BeginDeleteEndpoint(DeleteEndpointRequest request, AsyncCallback callback, object state);
 
 
@@ -1293,6 +1358,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEndpoint.</param>
         /// 
         /// <returns>Returns a  DeleteEndpointResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         DeleteEndpointResponse EndDeleteEndpoint(IAsyncResult asyncResult);
 
         #endregion
@@ -1327,6 +1393,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEventStream">REST API Reference for DeleteEventStream Operation</seealso>
         DeleteEventStreamResponse DeleteEventStream(DeleteEventStreamRequest request);
 
         /// <summary>
@@ -1340,6 +1407,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEventStream
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEventStream">REST API Reference for DeleteEventStream Operation</seealso>
         IAsyncResult BeginDeleteEventStream(DeleteEventStreamRequest request, AsyncCallback callback, object state);
 
 
@@ -1351,6 +1419,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEventStream.</param>
         /// 
         /// <returns>Returns a  DeleteEventStreamResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEventStream">REST API Reference for DeleteEventStream Operation</seealso>
         DeleteEventStreamResponse EndDeleteEventStream(IAsyncResult asyncResult);
 
         #endregion
@@ -1386,6 +1455,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteGcmChannel">REST API Reference for DeleteGcmChannel Operation</seealso>
         DeleteGcmChannelResponse DeleteGcmChannel(DeleteGcmChannelRequest request);
 
         /// <summary>
@@ -1399,6 +1469,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGcmChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteGcmChannel">REST API Reference for DeleteGcmChannel Operation</seealso>
         IAsyncResult BeginDeleteGcmChannel(DeleteGcmChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -1410,6 +1481,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGcmChannel.</param>
         /// 
         /// <returns>Returns a  DeleteGcmChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteGcmChannel">REST API Reference for DeleteGcmChannel Operation</seealso>
         DeleteGcmChannelResponse EndDeleteGcmChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -1444,6 +1516,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteJourney">REST API Reference for DeleteJourney Operation</seealso>
         DeleteJourneyResponse DeleteJourney(DeleteJourneyRequest request);
 
         /// <summary>
@@ -1457,6 +1530,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteJourney
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteJourney">REST API Reference for DeleteJourney Operation</seealso>
         IAsyncResult BeginDeleteJourney(DeleteJourneyRequest request, AsyncCallback callback, object state);
 
 
@@ -1468,6 +1542,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteJourney.</param>
         /// 
         /// <returns>Returns a  DeleteJourneyResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteJourney">REST API Reference for DeleteJourney Operation</seealso>
         DeleteJourneyResponse EndDeleteJourney(IAsyncResult asyncResult);
 
         #endregion
@@ -1503,6 +1578,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeletePushTemplate">REST API Reference for DeletePushTemplate Operation</seealso>
         DeletePushTemplateResponse DeletePushTemplate(DeletePushTemplateRequest request);
 
         /// <summary>
@@ -1516,6 +1592,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePushTemplate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeletePushTemplate">REST API Reference for DeletePushTemplate Operation</seealso>
         IAsyncResult BeginDeletePushTemplate(DeletePushTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -1527,6 +1604,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePushTemplate.</param>
         /// 
         /// <returns>Returns a  DeletePushTemplateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeletePushTemplate">REST API Reference for DeletePushTemplate Operation</seealso>
         DeletePushTemplateResponse EndDeletePushTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -1561,6 +1639,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteRecommenderConfiguration">REST API Reference for DeleteRecommenderConfiguration Operation</seealso>
         DeleteRecommenderConfigurationResponse DeleteRecommenderConfiguration(DeleteRecommenderConfigurationRequest request);
 
         /// <summary>
@@ -1574,6 +1653,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRecommenderConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteRecommenderConfiguration">REST API Reference for DeleteRecommenderConfiguration Operation</seealso>
         IAsyncResult BeginDeleteRecommenderConfiguration(DeleteRecommenderConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -1585,6 +1665,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRecommenderConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteRecommenderConfigurationResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteRecommenderConfiguration">REST API Reference for DeleteRecommenderConfiguration Operation</seealso>
         DeleteRecommenderConfigurationResponse EndDeleteRecommenderConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -1619,6 +1700,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSegment">REST API Reference for DeleteSegment Operation</seealso>
         DeleteSegmentResponse DeleteSegment(DeleteSegmentRequest request);
 
         /// <summary>
@@ -1632,6 +1714,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSegment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSegment">REST API Reference for DeleteSegment Operation</seealso>
         IAsyncResult BeginDeleteSegment(DeleteSegmentRequest request, AsyncCallback callback, object state);
 
 
@@ -1643,6 +1726,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSegment.</param>
         /// 
         /// <returns>Returns a  DeleteSegmentResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSegment">REST API Reference for DeleteSegment Operation</seealso>
         DeleteSegmentResponse EndDeleteSegment(IAsyncResult asyncResult);
 
         #endregion
@@ -1678,6 +1762,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsChannel">REST API Reference for DeleteSmsChannel Operation</seealso>
         DeleteSmsChannelResponse DeleteSmsChannel(DeleteSmsChannelRequest request);
 
         /// <summary>
@@ -1691,6 +1776,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSmsChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsChannel">REST API Reference for DeleteSmsChannel Operation</seealso>
         IAsyncResult BeginDeleteSmsChannel(DeleteSmsChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -1702,6 +1788,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSmsChannel.</param>
         /// 
         /// <returns>Returns a  DeleteSmsChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsChannel">REST API Reference for DeleteSmsChannel Operation</seealso>
         DeleteSmsChannelResponse EndDeleteSmsChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -1736,6 +1823,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsTemplate">REST API Reference for DeleteSmsTemplate Operation</seealso>
         DeleteSmsTemplateResponse DeleteSmsTemplate(DeleteSmsTemplateRequest request);
 
         /// <summary>
@@ -1749,6 +1837,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSmsTemplate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsTemplate">REST API Reference for DeleteSmsTemplate Operation</seealso>
         IAsyncResult BeginDeleteSmsTemplate(DeleteSmsTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -1760,6 +1849,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSmsTemplate.</param>
         /// 
         /// <returns>Returns a  DeleteSmsTemplateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsTemplate">REST API Reference for DeleteSmsTemplate Operation</seealso>
         DeleteSmsTemplateResponse EndDeleteSmsTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -1794,6 +1884,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteUserEndpoints">REST API Reference for DeleteUserEndpoints Operation</seealso>
         DeleteUserEndpointsResponse DeleteUserEndpoints(DeleteUserEndpointsRequest request);
 
         /// <summary>
@@ -1807,6 +1898,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUserEndpoints
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteUserEndpoints">REST API Reference for DeleteUserEndpoints Operation</seealso>
         IAsyncResult BeginDeleteUserEndpoints(DeleteUserEndpointsRequest request, AsyncCallback callback, object state);
 
 
@@ -1818,6 +1910,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUserEndpoints.</param>
         /// 
         /// <returns>Returns a  DeleteUserEndpointsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteUserEndpoints">REST API Reference for DeleteUserEndpoints Operation</seealso>
         DeleteUserEndpointsResponse EndDeleteUserEndpoints(IAsyncResult asyncResult);
 
         #endregion
@@ -1853,6 +1946,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceChannel">REST API Reference for DeleteVoiceChannel Operation</seealso>
         DeleteVoiceChannelResponse DeleteVoiceChannel(DeleteVoiceChannelRequest request);
 
         /// <summary>
@@ -1866,6 +1960,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVoiceChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceChannel">REST API Reference for DeleteVoiceChannel Operation</seealso>
         IAsyncResult BeginDeleteVoiceChannel(DeleteVoiceChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -1877,6 +1972,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVoiceChannel.</param>
         /// 
         /// <returns>Returns a  DeleteVoiceChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceChannel">REST API Reference for DeleteVoiceChannel Operation</seealso>
         DeleteVoiceChannelResponse EndDeleteVoiceChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -1911,6 +2007,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceTemplate">REST API Reference for DeleteVoiceTemplate Operation</seealso>
         DeleteVoiceTemplateResponse DeleteVoiceTemplate(DeleteVoiceTemplateRequest request);
 
         /// <summary>
@@ -1924,6 +2021,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVoiceTemplate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceTemplate">REST API Reference for DeleteVoiceTemplate Operation</seealso>
         IAsyncResult BeginDeleteVoiceTemplate(DeleteVoiceTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -1935,6 +2033,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVoiceTemplate.</param>
         /// 
         /// <returns>Returns a  DeleteVoiceTemplateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceTemplate">REST API Reference for DeleteVoiceTemplate Operation</seealso>
         DeleteVoiceTemplateResponse EndDeleteVoiceTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -1969,6 +2068,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetAdmChannel">REST API Reference for GetAdmChannel Operation</seealso>
         GetAdmChannelResponse GetAdmChannel(GetAdmChannelRequest request);
 
         /// <summary>
@@ -1982,6 +2082,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAdmChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetAdmChannel">REST API Reference for GetAdmChannel Operation</seealso>
         IAsyncResult BeginGetAdmChannel(GetAdmChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -1993,6 +2094,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAdmChannel.</param>
         /// 
         /// <returns>Returns a  GetAdmChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetAdmChannel">REST API Reference for GetAdmChannel Operation</seealso>
         GetAdmChannelResponse EndGetAdmChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -2027,6 +2129,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsChannel">REST API Reference for GetApnsChannel Operation</seealso>
         GetApnsChannelResponse GetApnsChannel(GetApnsChannelRequest request);
 
         /// <summary>
@@ -2040,6 +2143,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApnsChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsChannel">REST API Reference for GetApnsChannel Operation</seealso>
         IAsyncResult BeginGetApnsChannel(GetApnsChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -2051,6 +2155,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApnsChannel.</param>
         /// 
         /// <returns>Returns a  GetApnsChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsChannel">REST API Reference for GetApnsChannel Operation</seealso>
         GetApnsChannelResponse EndGetApnsChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -2086,6 +2191,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsSandboxChannel">REST API Reference for GetApnsSandboxChannel Operation</seealso>
         GetApnsSandboxChannelResponse GetApnsSandboxChannel(GetApnsSandboxChannelRequest request);
 
         /// <summary>
@@ -2099,6 +2205,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApnsSandboxChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsSandboxChannel">REST API Reference for GetApnsSandboxChannel Operation</seealso>
         IAsyncResult BeginGetApnsSandboxChannel(GetApnsSandboxChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -2110,6 +2217,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApnsSandboxChannel.</param>
         /// 
         /// <returns>Returns a  GetApnsSandboxChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsSandboxChannel">REST API Reference for GetApnsSandboxChannel Operation</seealso>
         GetApnsSandboxChannelResponse EndGetApnsSandboxChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -2145,6 +2253,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsVoipChannel">REST API Reference for GetApnsVoipChannel Operation</seealso>
         GetApnsVoipChannelResponse GetApnsVoipChannel(GetApnsVoipChannelRequest request);
 
         /// <summary>
@@ -2158,6 +2267,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApnsVoipChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsVoipChannel">REST API Reference for GetApnsVoipChannel Operation</seealso>
         IAsyncResult BeginGetApnsVoipChannel(GetApnsVoipChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -2169,6 +2279,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApnsVoipChannel.</param>
         /// 
         /// <returns>Returns a  GetApnsVoipChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsVoipChannel">REST API Reference for GetApnsVoipChannel Operation</seealso>
         GetApnsVoipChannelResponse EndGetApnsVoipChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -2204,6 +2315,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsVoipSandboxChannel">REST API Reference for GetApnsVoipSandboxChannel Operation</seealso>
         GetApnsVoipSandboxChannelResponse GetApnsVoipSandboxChannel(GetApnsVoipSandboxChannelRequest request);
 
         /// <summary>
@@ -2217,6 +2329,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApnsVoipSandboxChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsVoipSandboxChannel">REST API Reference for GetApnsVoipSandboxChannel Operation</seealso>
         IAsyncResult BeginGetApnsVoipSandboxChannel(GetApnsVoipSandboxChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -2228,6 +2341,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApnsVoipSandboxChannel.</param>
         /// 
         /// <returns>Returns a  GetApnsVoipSandboxChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsVoipSandboxChannel">REST API Reference for GetApnsVoipSandboxChannel Operation</seealso>
         GetApnsVoipSandboxChannelResponse EndGetApnsVoipSandboxChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -2262,6 +2376,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApp">REST API Reference for GetApp Operation</seealso>
         GetAppResponse GetApp(GetAppRequest request);
 
         /// <summary>
@@ -2275,6 +2390,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApp
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApp">REST API Reference for GetApp Operation</seealso>
         IAsyncResult BeginGetApp(GetAppRequest request, AsyncCallback callback, object state);
 
 
@@ -2286,6 +2402,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApp.</param>
         /// 
         /// <returns>Returns a  GetAppResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApp">REST API Reference for GetApp Operation</seealso>
         GetAppResponse EndGetApp(IAsyncResult asyncResult);
 
         #endregion
@@ -2320,6 +2437,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationDateRangeKpi">REST API Reference for GetApplicationDateRangeKpi Operation</seealso>
         GetApplicationDateRangeKpiResponse GetApplicationDateRangeKpi(GetApplicationDateRangeKpiRequest request);
 
         /// <summary>
@@ -2333,6 +2451,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApplicationDateRangeKpi
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationDateRangeKpi">REST API Reference for GetApplicationDateRangeKpi Operation</seealso>
         IAsyncResult BeginGetApplicationDateRangeKpi(GetApplicationDateRangeKpiRequest request, AsyncCallback callback, object state);
 
 
@@ -2344,6 +2463,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApplicationDateRangeKpi.</param>
         /// 
         /// <returns>Returns a  GetApplicationDateRangeKpiResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationDateRangeKpi">REST API Reference for GetApplicationDateRangeKpi Operation</seealso>
         GetApplicationDateRangeKpiResponse EndGetApplicationDateRangeKpi(IAsyncResult asyncResult);
 
         #endregion
@@ -2378,6 +2498,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationSettings">REST API Reference for GetApplicationSettings Operation</seealso>
         GetApplicationSettingsResponse GetApplicationSettings(GetApplicationSettingsRequest request);
 
         /// <summary>
@@ -2391,6 +2512,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApplicationSettings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationSettings">REST API Reference for GetApplicationSettings Operation</seealso>
         IAsyncResult BeginGetApplicationSettings(GetApplicationSettingsRequest request, AsyncCallback callback, object state);
 
 
@@ -2402,6 +2524,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApplicationSettings.</param>
         /// 
         /// <returns>Returns a  GetApplicationSettingsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationSettings">REST API Reference for GetApplicationSettings Operation</seealso>
         GetApplicationSettingsResponse EndGetApplicationSettings(IAsyncResult asyncResult);
 
         #endregion
@@ -2437,6 +2560,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApps">REST API Reference for GetApps Operation</seealso>
         GetAppsResponse GetApps(GetAppsRequest request);
 
         /// <summary>
@@ -2450,6 +2574,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApps
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApps">REST API Reference for GetApps Operation</seealso>
         IAsyncResult BeginGetApps(GetAppsRequest request, AsyncCallback callback, object state);
 
 
@@ -2461,6 +2586,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApps.</param>
         /// 
         /// <returns>Returns a  GetAppsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApps">REST API Reference for GetApps Operation</seealso>
         GetAppsResponse EndGetApps(IAsyncResult asyncResult);
 
         #endregion
@@ -2495,6 +2621,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetBaiduChannel">REST API Reference for GetBaiduChannel Operation</seealso>
         GetBaiduChannelResponse GetBaiduChannel(GetBaiduChannelRequest request);
 
         /// <summary>
@@ -2508,6 +2635,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBaiduChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetBaiduChannel">REST API Reference for GetBaiduChannel Operation</seealso>
         IAsyncResult BeginGetBaiduChannel(GetBaiduChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -2519,6 +2647,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBaiduChannel.</param>
         /// 
         /// <returns>Returns a  GetBaiduChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetBaiduChannel">REST API Reference for GetBaiduChannel Operation</seealso>
         GetBaiduChannelResponse EndGetBaiduChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -2553,6 +2682,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaign">REST API Reference for GetCampaign Operation</seealso>
         GetCampaignResponse GetCampaign(GetCampaignRequest request);
 
         /// <summary>
@@ -2566,6 +2696,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCampaign
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaign">REST API Reference for GetCampaign Operation</seealso>
         IAsyncResult BeginGetCampaign(GetCampaignRequest request, AsyncCallback callback, object state);
 
 
@@ -2577,6 +2708,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCampaign.</param>
         /// 
         /// <returns>Returns a  GetCampaignResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaign">REST API Reference for GetCampaign Operation</seealso>
         GetCampaignResponse EndGetCampaign(IAsyncResult asyncResult);
 
         #endregion
@@ -2611,6 +2743,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignActivities">REST API Reference for GetCampaignActivities Operation</seealso>
         GetCampaignActivitiesResponse GetCampaignActivities(GetCampaignActivitiesRequest request);
 
         /// <summary>
@@ -2624,6 +2757,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCampaignActivities
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignActivities">REST API Reference for GetCampaignActivities Operation</seealso>
         IAsyncResult BeginGetCampaignActivities(GetCampaignActivitiesRequest request, AsyncCallback callback, object state);
 
 
@@ -2635,6 +2769,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCampaignActivities.</param>
         /// 
         /// <returns>Returns a  GetCampaignActivitiesResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignActivities">REST API Reference for GetCampaignActivities Operation</seealso>
         GetCampaignActivitiesResponse EndGetCampaignActivities(IAsyncResult asyncResult);
 
         #endregion
@@ -2669,6 +2804,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignDateRangeKpi">REST API Reference for GetCampaignDateRangeKpi Operation</seealso>
         GetCampaignDateRangeKpiResponse GetCampaignDateRangeKpi(GetCampaignDateRangeKpiRequest request);
 
         /// <summary>
@@ -2682,6 +2818,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCampaignDateRangeKpi
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignDateRangeKpi">REST API Reference for GetCampaignDateRangeKpi Operation</seealso>
         IAsyncResult BeginGetCampaignDateRangeKpi(GetCampaignDateRangeKpiRequest request, AsyncCallback callback, object state);
 
 
@@ -2693,6 +2830,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCampaignDateRangeKpi.</param>
         /// 
         /// <returns>Returns a  GetCampaignDateRangeKpiResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignDateRangeKpi">REST API Reference for GetCampaignDateRangeKpi Operation</seealso>
         GetCampaignDateRangeKpiResponse EndGetCampaignDateRangeKpi(IAsyncResult asyncResult);
 
         #endregion
@@ -2728,6 +2866,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaigns">REST API Reference for GetCampaigns Operation</seealso>
         GetCampaignsResponse GetCampaigns(GetCampaignsRequest request);
 
         /// <summary>
@@ -2741,6 +2880,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCampaigns
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaigns">REST API Reference for GetCampaigns Operation</seealso>
         IAsyncResult BeginGetCampaigns(GetCampaignsRequest request, AsyncCallback callback, object state);
 
 
@@ -2752,6 +2892,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCampaigns.</param>
         /// 
         /// <returns>Returns a  GetCampaignsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaigns">REST API Reference for GetCampaigns Operation</seealso>
         GetCampaignsResponse EndGetCampaigns(IAsyncResult asyncResult);
 
         #endregion
@@ -2787,6 +2928,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersion">REST API Reference for GetCampaignVersion Operation</seealso>
         GetCampaignVersionResponse GetCampaignVersion(GetCampaignVersionRequest request);
 
         /// <summary>
@@ -2800,6 +2942,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCampaignVersion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersion">REST API Reference for GetCampaignVersion Operation</seealso>
         IAsyncResult BeginGetCampaignVersion(GetCampaignVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -2811,6 +2954,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCampaignVersion.</param>
         /// 
         /// <returns>Returns a  GetCampaignVersionResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersion">REST API Reference for GetCampaignVersion Operation</seealso>
         GetCampaignVersionResponse EndGetCampaignVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -2846,6 +2990,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersions">REST API Reference for GetCampaignVersions Operation</seealso>
         GetCampaignVersionsResponse GetCampaignVersions(GetCampaignVersionsRequest request);
 
         /// <summary>
@@ -2859,6 +3004,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCampaignVersions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersions">REST API Reference for GetCampaignVersions Operation</seealso>
         IAsyncResult BeginGetCampaignVersions(GetCampaignVersionsRequest request, AsyncCallback callback, object state);
 
 
@@ -2870,6 +3016,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCampaignVersions.</param>
         /// 
         /// <returns>Returns a  GetCampaignVersionsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersions">REST API Reference for GetCampaignVersions Operation</seealso>
         GetCampaignVersionsResponse EndGetCampaignVersions(IAsyncResult asyncResult);
 
         #endregion
@@ -2904,6 +3051,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetChannels">REST API Reference for GetChannels Operation</seealso>
         GetChannelsResponse GetChannels(GetChannelsRequest request);
 
         /// <summary>
@@ -2917,6 +3065,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetChannels
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetChannels">REST API Reference for GetChannels Operation</seealso>
         IAsyncResult BeginGetChannels(GetChannelsRequest request, AsyncCallback callback, object state);
 
 
@@ -2928,6 +3077,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetChannels.</param>
         /// 
         /// <returns>Returns a  GetChannelsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetChannels">REST API Reference for GetChannels Operation</seealso>
         GetChannelsResponse EndGetChannels(IAsyncResult asyncResult);
 
         #endregion
@@ -2962,6 +3112,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailChannel">REST API Reference for GetEmailChannel Operation</seealso>
         GetEmailChannelResponse GetEmailChannel(GetEmailChannelRequest request);
 
         /// <summary>
@@ -2975,6 +3126,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEmailChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailChannel">REST API Reference for GetEmailChannel Operation</seealso>
         IAsyncResult BeginGetEmailChannel(GetEmailChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -2986,6 +3138,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEmailChannel.</param>
         /// 
         /// <returns>Returns a  GetEmailChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailChannel">REST API Reference for GetEmailChannel Operation</seealso>
         GetEmailChannelResponse EndGetEmailChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -3021,6 +3174,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailTemplate">REST API Reference for GetEmailTemplate Operation</seealso>
         GetEmailTemplateResponse GetEmailTemplate(GetEmailTemplateRequest request);
 
         /// <summary>
@@ -3034,6 +3188,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEmailTemplate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailTemplate">REST API Reference for GetEmailTemplate Operation</seealso>
         IAsyncResult BeginGetEmailTemplate(GetEmailTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -3045,6 +3200,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEmailTemplate.</param>
         /// 
         /// <returns>Returns a  GetEmailTemplateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailTemplate">REST API Reference for GetEmailTemplate Operation</seealso>
         GetEmailTemplateResponse EndGetEmailTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -3080,6 +3236,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEndpoint">REST API Reference for GetEndpoint Operation</seealso>
         GetEndpointResponse GetEndpoint(GetEndpointRequest request);
 
         /// <summary>
@@ -3093,6 +3250,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEndpoint
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEndpoint">REST API Reference for GetEndpoint Operation</seealso>
         IAsyncResult BeginGetEndpoint(GetEndpointRequest request, AsyncCallback callback, object state);
 
 
@@ -3104,6 +3262,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEndpoint.</param>
         /// 
         /// <returns>Returns a  GetEndpointResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEndpoint">REST API Reference for GetEndpoint Operation</seealso>
         GetEndpointResponse EndGetEndpoint(IAsyncResult asyncResult);
 
         #endregion
@@ -3138,6 +3297,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEventStream">REST API Reference for GetEventStream Operation</seealso>
         GetEventStreamResponse GetEventStream(GetEventStreamRequest request);
 
         /// <summary>
@@ -3151,6 +3311,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEventStream
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEventStream">REST API Reference for GetEventStream Operation</seealso>
         IAsyncResult BeginGetEventStream(GetEventStreamRequest request, AsyncCallback callback, object state);
 
 
@@ -3162,6 +3323,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEventStream.</param>
         /// 
         /// <returns>Returns a  GetEventStreamResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEventStream">REST API Reference for GetEventStream Operation</seealso>
         GetEventStreamResponse EndGetEventStream(IAsyncResult asyncResult);
 
         #endregion
@@ -3197,6 +3359,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetExportJob">REST API Reference for GetExportJob Operation</seealso>
         GetExportJobResponse GetExportJob(GetExportJobRequest request);
 
         /// <summary>
@@ -3210,6 +3373,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetExportJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetExportJob">REST API Reference for GetExportJob Operation</seealso>
         IAsyncResult BeginGetExportJob(GetExportJobRequest request, AsyncCallback callback, object state);
 
 
@@ -3221,6 +3385,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetExportJob.</param>
         /// 
         /// <returns>Returns a  GetExportJobResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetExportJob">REST API Reference for GetExportJob Operation</seealso>
         GetExportJobResponse EndGetExportJob(IAsyncResult asyncResult);
 
         #endregion
@@ -3256,6 +3421,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetExportJobs">REST API Reference for GetExportJobs Operation</seealso>
         GetExportJobsResponse GetExportJobs(GetExportJobsRequest request);
 
         /// <summary>
@@ -3269,6 +3435,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetExportJobs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetExportJobs">REST API Reference for GetExportJobs Operation</seealso>
         IAsyncResult BeginGetExportJobs(GetExportJobsRequest request, AsyncCallback callback, object state);
 
 
@@ -3280,6 +3447,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetExportJobs.</param>
         /// 
         /// <returns>Returns a  GetExportJobsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetExportJobs">REST API Reference for GetExportJobs Operation</seealso>
         GetExportJobsResponse EndGetExportJobs(IAsyncResult asyncResult);
 
         #endregion
@@ -3314,6 +3482,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetGcmChannel">REST API Reference for GetGcmChannel Operation</seealso>
         GetGcmChannelResponse GetGcmChannel(GetGcmChannelRequest request);
 
         /// <summary>
@@ -3327,6 +3496,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGcmChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetGcmChannel">REST API Reference for GetGcmChannel Operation</seealso>
         IAsyncResult BeginGetGcmChannel(GetGcmChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -3338,6 +3508,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGcmChannel.</param>
         /// 
         /// <returns>Returns a  GetGcmChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetGcmChannel">REST API Reference for GetGcmChannel Operation</seealso>
         GetGcmChannelResponse EndGetGcmChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -3373,6 +3544,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJob">REST API Reference for GetImportJob Operation</seealso>
         GetImportJobResponse GetImportJob(GetImportJobRequest request);
 
         /// <summary>
@@ -3386,6 +3558,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetImportJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJob">REST API Reference for GetImportJob Operation</seealso>
         IAsyncResult BeginGetImportJob(GetImportJobRequest request, AsyncCallback callback, object state);
 
 
@@ -3397,6 +3570,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetImportJob.</param>
         /// 
         /// <returns>Returns a  GetImportJobResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJob">REST API Reference for GetImportJob Operation</seealso>
         GetImportJobResponse EndGetImportJob(IAsyncResult asyncResult);
 
         #endregion
@@ -3432,6 +3606,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJobs">REST API Reference for GetImportJobs Operation</seealso>
         GetImportJobsResponse GetImportJobs(GetImportJobsRequest request);
 
         /// <summary>
@@ -3445,6 +3620,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetImportJobs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJobs">REST API Reference for GetImportJobs Operation</seealso>
         IAsyncResult BeginGetImportJobs(GetImportJobsRequest request, AsyncCallback callback, object state);
 
 
@@ -3456,6 +3632,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetImportJobs.</param>
         /// 
         /// <returns>Returns a  GetImportJobsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJobs">REST API Reference for GetImportJobs Operation</seealso>
         GetImportJobsResponse EndGetImportJobs(IAsyncResult asyncResult);
 
         #endregion
@@ -3490,6 +3667,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourney">REST API Reference for GetJourney Operation</seealso>
         GetJourneyResponse GetJourney(GetJourneyRequest request);
 
         /// <summary>
@@ -3503,6 +3681,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJourney
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourney">REST API Reference for GetJourney Operation</seealso>
         IAsyncResult BeginGetJourney(GetJourneyRequest request, AsyncCallback callback, object state);
 
 
@@ -3514,6 +3693,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJourney.</param>
         /// 
         /// <returns>Returns a  GetJourneyResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourney">REST API Reference for GetJourney Operation</seealso>
         GetJourneyResponse EndGetJourney(IAsyncResult asyncResult);
 
         #endregion
@@ -3549,6 +3729,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyDateRangeKpi">REST API Reference for GetJourneyDateRangeKpi Operation</seealso>
         GetJourneyDateRangeKpiResponse GetJourneyDateRangeKpi(GetJourneyDateRangeKpiRequest request);
 
         /// <summary>
@@ -3562,6 +3743,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJourneyDateRangeKpi
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyDateRangeKpi">REST API Reference for GetJourneyDateRangeKpi Operation</seealso>
         IAsyncResult BeginGetJourneyDateRangeKpi(GetJourneyDateRangeKpiRequest request, AsyncCallback callback, object state);
 
 
@@ -3573,6 +3755,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJourneyDateRangeKpi.</param>
         /// 
         /// <returns>Returns a  GetJourneyDateRangeKpiResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyDateRangeKpi">REST API Reference for GetJourneyDateRangeKpi Operation</seealso>
         GetJourneyDateRangeKpiResponse EndGetJourneyDateRangeKpi(IAsyncResult asyncResult);
 
         #endregion
@@ -3608,6 +3791,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyExecutionActivityMetrics">REST API Reference for GetJourneyExecutionActivityMetrics Operation</seealso>
         GetJourneyExecutionActivityMetricsResponse GetJourneyExecutionActivityMetrics(GetJourneyExecutionActivityMetricsRequest request);
 
         /// <summary>
@@ -3621,6 +3805,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJourneyExecutionActivityMetrics
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyExecutionActivityMetrics">REST API Reference for GetJourneyExecutionActivityMetrics Operation</seealso>
         IAsyncResult BeginGetJourneyExecutionActivityMetrics(GetJourneyExecutionActivityMetricsRequest request, AsyncCallback callback, object state);
 
 
@@ -3632,6 +3817,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJourneyExecutionActivityMetrics.</param>
         /// 
         /// <returns>Returns a  GetJourneyExecutionActivityMetricsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyExecutionActivityMetrics">REST API Reference for GetJourneyExecutionActivityMetrics Operation</seealso>
         GetJourneyExecutionActivityMetricsResponse EndGetJourneyExecutionActivityMetrics(IAsyncResult asyncResult);
 
         #endregion
@@ -3667,6 +3853,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyExecutionMetrics">REST API Reference for GetJourneyExecutionMetrics Operation</seealso>
         GetJourneyExecutionMetricsResponse GetJourneyExecutionMetrics(GetJourneyExecutionMetricsRequest request);
 
         /// <summary>
@@ -3680,6 +3867,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJourneyExecutionMetrics
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyExecutionMetrics">REST API Reference for GetJourneyExecutionMetrics Operation</seealso>
         IAsyncResult BeginGetJourneyExecutionMetrics(GetJourneyExecutionMetricsRequest request, AsyncCallback callback, object state);
 
 
@@ -3691,6 +3879,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJourneyExecutionMetrics.</param>
         /// 
         /// <returns>Returns a  GetJourneyExecutionMetricsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyExecutionMetrics">REST API Reference for GetJourneyExecutionMetrics Operation</seealso>
         GetJourneyExecutionMetricsResponse EndGetJourneyExecutionMetrics(IAsyncResult asyncResult);
 
         #endregion
@@ -3726,6 +3915,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetPushTemplate">REST API Reference for GetPushTemplate Operation</seealso>
         GetPushTemplateResponse GetPushTemplate(GetPushTemplateRequest request);
 
         /// <summary>
@@ -3739,6 +3929,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPushTemplate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetPushTemplate">REST API Reference for GetPushTemplate Operation</seealso>
         IAsyncResult BeginGetPushTemplate(GetPushTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -3750,6 +3941,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPushTemplate.</param>
         /// 
         /// <returns>Returns a  GetPushTemplateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetPushTemplate">REST API Reference for GetPushTemplate Operation</seealso>
         GetPushTemplateResponse EndGetPushTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -3784,6 +3976,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetRecommenderConfiguration">REST API Reference for GetRecommenderConfiguration Operation</seealso>
         GetRecommenderConfigurationResponse GetRecommenderConfiguration(GetRecommenderConfigurationRequest request);
 
         /// <summary>
@@ -3797,6 +3990,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRecommenderConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetRecommenderConfiguration">REST API Reference for GetRecommenderConfiguration Operation</seealso>
         IAsyncResult BeginGetRecommenderConfiguration(GetRecommenderConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -3808,6 +4002,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRecommenderConfiguration.</param>
         /// 
         /// <returns>Returns a  GetRecommenderConfigurationResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetRecommenderConfiguration">REST API Reference for GetRecommenderConfiguration Operation</seealso>
         GetRecommenderConfigurationResponse EndGetRecommenderConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -3843,6 +4038,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetRecommenderConfigurations">REST API Reference for GetRecommenderConfigurations Operation</seealso>
         GetRecommenderConfigurationsResponse GetRecommenderConfigurations(GetRecommenderConfigurationsRequest request);
 
         /// <summary>
@@ -3856,6 +4052,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRecommenderConfigurations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetRecommenderConfigurations">REST API Reference for GetRecommenderConfigurations Operation</seealso>
         IAsyncResult BeginGetRecommenderConfigurations(GetRecommenderConfigurationsRequest request, AsyncCallback callback, object state);
 
 
@@ -3867,6 +4064,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRecommenderConfigurations.</param>
         /// 
         /// <returns>Returns a  GetRecommenderConfigurationsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetRecommenderConfigurations">REST API Reference for GetRecommenderConfigurations Operation</seealso>
         GetRecommenderConfigurationsResponse EndGetRecommenderConfigurations(IAsyncResult asyncResult);
 
         #endregion
@@ -3902,6 +4100,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegment">REST API Reference for GetSegment Operation</seealso>
         GetSegmentResponse GetSegment(GetSegmentRequest request);
 
         /// <summary>
@@ -3915,6 +4114,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSegment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegment">REST API Reference for GetSegment Operation</seealso>
         IAsyncResult BeginGetSegment(GetSegmentRequest request, AsyncCallback callback, object state);
 
 
@@ -3926,6 +4126,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSegment.</param>
         /// 
         /// <returns>Returns a  GetSegmentResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegment">REST API Reference for GetSegment Operation</seealso>
         GetSegmentResponse EndGetSegment(IAsyncResult asyncResult);
 
         #endregion
@@ -3960,6 +4161,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentExportJobs">REST API Reference for GetSegmentExportJobs Operation</seealso>
         GetSegmentExportJobsResponse GetSegmentExportJobs(GetSegmentExportJobsRequest request);
 
         /// <summary>
@@ -3973,6 +4175,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSegmentExportJobs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentExportJobs">REST API Reference for GetSegmentExportJobs Operation</seealso>
         IAsyncResult BeginGetSegmentExportJobs(GetSegmentExportJobsRequest request, AsyncCallback callback, object state);
 
 
@@ -3984,6 +4187,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSegmentExportJobs.</param>
         /// 
         /// <returns>Returns a  GetSegmentExportJobsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentExportJobs">REST API Reference for GetSegmentExportJobs Operation</seealso>
         GetSegmentExportJobsResponse EndGetSegmentExportJobs(IAsyncResult asyncResult);
 
         #endregion
@@ -4018,6 +4222,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentImportJobs">REST API Reference for GetSegmentImportJobs Operation</seealso>
         GetSegmentImportJobsResponse GetSegmentImportJobs(GetSegmentImportJobsRequest request);
 
         /// <summary>
@@ -4031,6 +4236,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSegmentImportJobs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentImportJobs">REST API Reference for GetSegmentImportJobs Operation</seealso>
         IAsyncResult BeginGetSegmentImportJobs(GetSegmentImportJobsRequest request, AsyncCallback callback, object state);
 
 
@@ -4042,6 +4248,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSegmentImportJobs.</param>
         /// 
         /// <returns>Returns a  GetSegmentImportJobsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentImportJobs">REST API Reference for GetSegmentImportJobs Operation</seealso>
         GetSegmentImportJobsResponse EndGetSegmentImportJobs(IAsyncResult asyncResult);
 
         #endregion
@@ -4077,6 +4284,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegments">REST API Reference for GetSegments Operation</seealso>
         GetSegmentsResponse GetSegments(GetSegmentsRequest request);
 
         /// <summary>
@@ -4090,6 +4298,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSegments
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegments">REST API Reference for GetSegments Operation</seealso>
         IAsyncResult BeginGetSegments(GetSegmentsRequest request, AsyncCallback callback, object state);
 
 
@@ -4101,6 +4310,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSegments.</param>
         /// 
         /// <returns>Returns a  GetSegmentsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegments">REST API Reference for GetSegments Operation</seealso>
         GetSegmentsResponse EndGetSegments(IAsyncResult asyncResult);
 
         #endregion
@@ -4136,6 +4346,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersion">REST API Reference for GetSegmentVersion Operation</seealso>
         GetSegmentVersionResponse GetSegmentVersion(GetSegmentVersionRequest request);
 
         /// <summary>
@@ -4149,6 +4360,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSegmentVersion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersion">REST API Reference for GetSegmentVersion Operation</seealso>
         IAsyncResult BeginGetSegmentVersion(GetSegmentVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -4160,6 +4372,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSegmentVersion.</param>
         /// 
         /// <returns>Returns a  GetSegmentVersionResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersion">REST API Reference for GetSegmentVersion Operation</seealso>
         GetSegmentVersionResponse EndGetSegmentVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -4195,6 +4408,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersions">REST API Reference for GetSegmentVersions Operation</seealso>
         GetSegmentVersionsResponse GetSegmentVersions(GetSegmentVersionsRequest request);
 
         /// <summary>
@@ -4208,6 +4422,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSegmentVersions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersions">REST API Reference for GetSegmentVersions Operation</seealso>
         IAsyncResult BeginGetSegmentVersions(GetSegmentVersionsRequest request, AsyncCallback callback, object state);
 
 
@@ -4219,6 +4434,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSegmentVersions.</param>
         /// 
         /// <returns>Returns a  GetSegmentVersionsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersions">REST API Reference for GetSegmentVersions Operation</seealso>
         GetSegmentVersionsResponse EndGetSegmentVersions(IAsyncResult asyncResult);
 
         #endregion
@@ -4253,6 +4469,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsChannel">REST API Reference for GetSmsChannel Operation</seealso>
         GetSmsChannelResponse GetSmsChannel(GetSmsChannelRequest request);
 
         /// <summary>
@@ -4266,6 +4483,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSmsChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsChannel">REST API Reference for GetSmsChannel Operation</seealso>
         IAsyncResult BeginGetSmsChannel(GetSmsChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -4277,6 +4495,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSmsChannel.</param>
         /// 
         /// <returns>Returns a  GetSmsChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsChannel">REST API Reference for GetSmsChannel Operation</seealso>
         GetSmsChannelResponse EndGetSmsChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -4312,6 +4531,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsTemplate">REST API Reference for GetSmsTemplate Operation</seealso>
         GetSmsTemplateResponse GetSmsTemplate(GetSmsTemplateRequest request);
 
         /// <summary>
@@ -4325,6 +4545,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSmsTemplate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsTemplate">REST API Reference for GetSmsTemplate Operation</seealso>
         IAsyncResult BeginGetSmsTemplate(GetSmsTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -4336,6 +4557,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSmsTemplate.</param>
         /// 
         /// <returns>Returns a  GetSmsTemplateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsTemplate">REST API Reference for GetSmsTemplate Operation</seealso>
         GetSmsTemplateResponse EndGetSmsTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -4371,6 +4593,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetUserEndpoints">REST API Reference for GetUserEndpoints Operation</seealso>
         GetUserEndpointsResponse GetUserEndpoints(GetUserEndpointsRequest request);
 
         /// <summary>
@@ -4384,6 +4607,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUserEndpoints
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetUserEndpoints">REST API Reference for GetUserEndpoints Operation</seealso>
         IAsyncResult BeginGetUserEndpoints(GetUserEndpointsRequest request, AsyncCallback callback, object state);
 
 
@@ -4395,6 +4619,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUserEndpoints.</param>
         /// 
         /// <returns>Returns a  GetUserEndpointsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetUserEndpoints">REST API Reference for GetUserEndpoints Operation</seealso>
         GetUserEndpointsResponse EndGetUserEndpoints(IAsyncResult asyncResult);
 
         #endregion
@@ -4429,6 +4654,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceChannel">REST API Reference for GetVoiceChannel Operation</seealso>
         GetVoiceChannelResponse GetVoiceChannel(GetVoiceChannelRequest request);
 
         /// <summary>
@@ -4442,6 +4668,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVoiceChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceChannel">REST API Reference for GetVoiceChannel Operation</seealso>
         IAsyncResult BeginGetVoiceChannel(GetVoiceChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -4453,6 +4680,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVoiceChannel.</param>
         /// 
         /// <returns>Returns a  GetVoiceChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceChannel">REST API Reference for GetVoiceChannel Operation</seealso>
         GetVoiceChannelResponse EndGetVoiceChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -4488,6 +4716,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceTemplate">REST API Reference for GetVoiceTemplate Operation</seealso>
         GetVoiceTemplateResponse GetVoiceTemplate(GetVoiceTemplateRequest request);
 
         /// <summary>
@@ -4501,6 +4730,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVoiceTemplate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceTemplate">REST API Reference for GetVoiceTemplate Operation</seealso>
         IAsyncResult BeginGetVoiceTemplate(GetVoiceTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -4512,6 +4742,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVoiceTemplate.</param>
         /// 
         /// <returns>Returns a  GetVoiceTemplateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceTemplate">REST API Reference for GetVoiceTemplate Operation</seealso>
         GetVoiceTemplateResponse EndGetVoiceTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -4547,6 +4778,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListJourneys">REST API Reference for ListJourneys Operation</seealso>
         ListJourneysResponse ListJourneys(ListJourneysRequest request);
 
         /// <summary>
@@ -4560,6 +4792,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJourneys
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListJourneys">REST API Reference for ListJourneys Operation</seealso>
         IAsyncResult BeginListJourneys(ListJourneysRequest request, AsyncCallback callback, object state);
 
 
@@ -4571,6 +4804,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJourneys.</param>
         /// 
         /// <returns>Returns a  ListJourneysResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListJourneys">REST API Reference for ListJourneys Operation</seealso>
         ListJourneysResponse EndListJourneys(IAsyncResult asyncResult);
 
         #endregion
@@ -4585,6 +4819,7 @@ namespace Amazon.Pinpoint
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
         /// <summary>
@@ -4598,6 +4833,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -4609,6 +4845,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
 
         #endregion
@@ -4638,6 +4875,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
         ListTemplatesResponse ListTemplates(ListTemplatesRequest request);
 
         /// <summary>
@@ -4651,6 +4889,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTemplates
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
         IAsyncResult BeginListTemplates(ListTemplatesRequest request, AsyncCallback callback, object state);
 
 
@@ -4662,6 +4901,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTemplates.</param>
         /// 
         /// <returns>Returns a  ListTemplatesResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
         ListTemplatesResponse EndListTemplates(IAsyncResult asyncResult);
 
         #endregion
@@ -4696,6 +4936,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTemplateVersions">REST API Reference for ListTemplateVersions Operation</seealso>
         ListTemplateVersionsResponse ListTemplateVersions(ListTemplateVersionsRequest request);
 
         /// <summary>
@@ -4709,6 +4950,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTemplateVersions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTemplateVersions">REST API Reference for ListTemplateVersions Operation</seealso>
         IAsyncResult BeginListTemplateVersions(ListTemplateVersionsRequest request, AsyncCallback callback, object state);
 
 
@@ -4720,6 +4962,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTemplateVersions.</param>
         /// 
         /// <returns>Returns a  ListTemplateVersionsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTemplateVersions">REST API Reference for ListTemplateVersions Operation</seealso>
         ListTemplateVersionsResponse EndListTemplateVersions(IAsyncResult asyncResult);
 
         #endregion
@@ -4754,6 +4997,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PhoneNumberValidate">REST API Reference for PhoneNumberValidate Operation</seealso>
         PhoneNumberValidateResponse PhoneNumberValidate(PhoneNumberValidateRequest request);
 
         /// <summary>
@@ -4767,6 +5011,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPhoneNumberValidate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PhoneNumberValidate">REST API Reference for PhoneNumberValidate Operation</seealso>
         IAsyncResult BeginPhoneNumberValidate(PhoneNumberValidateRequest request, AsyncCallback callback, object state);
 
 
@@ -4778,6 +5023,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPhoneNumberValidate.</param>
         /// 
         /// <returns>Returns a  PhoneNumberValidateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PhoneNumberValidate">REST API Reference for PhoneNumberValidate Operation</seealso>
         PhoneNumberValidateResponse EndPhoneNumberValidate(IAsyncResult asyncResult);
 
         #endregion
@@ -4813,6 +5059,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEvents">REST API Reference for PutEvents Operation</seealso>
         PutEventsResponse PutEvents(PutEventsRequest request);
 
         /// <summary>
@@ -4826,6 +5073,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEvents
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEvents">REST API Reference for PutEvents Operation</seealso>
         IAsyncResult BeginPutEvents(PutEventsRequest request, AsyncCallback callback, object state);
 
 
@@ -4837,6 +5085,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEvents.</param>
         /// 
         /// <returns>Returns a  PutEventsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEvents">REST API Reference for PutEvents Operation</seealso>
         PutEventsResponse EndPutEvents(IAsyncResult asyncResult);
 
         #endregion
@@ -4872,6 +5121,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEventStream">REST API Reference for PutEventStream Operation</seealso>
         PutEventStreamResponse PutEventStream(PutEventStreamRequest request);
 
         /// <summary>
@@ -4885,6 +5135,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEventStream
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEventStream">REST API Reference for PutEventStream Operation</seealso>
         IAsyncResult BeginPutEventStream(PutEventStreamRequest request, AsyncCallback callback, object state);
 
 
@@ -4896,6 +5147,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEventStream.</param>
         /// 
         /// <returns>Returns a  PutEventStreamResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEventStream">REST API Reference for PutEventStream Operation</seealso>
         PutEventStreamResponse EndPutEventStream(IAsyncResult asyncResult);
 
         #endregion
@@ -4931,6 +5183,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RemoveAttributes">REST API Reference for RemoveAttributes Operation</seealso>
         RemoveAttributesResponse RemoveAttributes(RemoveAttributesRequest request);
 
         /// <summary>
@@ -4944,6 +5197,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RemoveAttributes">REST API Reference for RemoveAttributes Operation</seealso>
         IAsyncResult BeginRemoveAttributes(RemoveAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -4955,6 +5209,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveAttributes.</param>
         /// 
         /// <returns>Returns a  RemoveAttributesResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RemoveAttributes">REST API Reference for RemoveAttributes Operation</seealso>
         RemoveAttributesResponse EndRemoveAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -4989,6 +5244,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendMessages">REST API Reference for SendMessages Operation</seealso>
         SendMessagesResponse SendMessages(SendMessagesRequest request);
 
         /// <summary>
@@ -5002,6 +5258,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendMessages
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendMessages">REST API Reference for SendMessages Operation</seealso>
         IAsyncResult BeginSendMessages(SendMessagesRequest request, AsyncCallback callback, object state);
 
 
@@ -5013,6 +5270,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendMessages.</param>
         /// 
         /// <returns>Returns a  SendMessagesResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendMessages">REST API Reference for SendMessages Operation</seealso>
         SendMessagesResponse EndSendMessages(IAsyncResult asyncResult);
 
         #endregion
@@ -5047,6 +5305,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessages">REST API Reference for SendUsersMessages Operation</seealso>
         SendUsersMessagesResponse SendUsersMessages(SendUsersMessagesRequest request);
 
         /// <summary>
@@ -5060,6 +5319,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendUsersMessages
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessages">REST API Reference for SendUsersMessages Operation</seealso>
         IAsyncResult BeginSendUsersMessages(SendUsersMessagesRequest request, AsyncCallback callback, object state);
 
 
@@ -5071,6 +5331,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendUsersMessages.</param>
         /// 
         /// <returns>Returns a  SendUsersMessagesResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessages">REST API Reference for SendUsersMessages Operation</seealso>
         SendUsersMessagesResponse EndSendUsersMessages(IAsyncResult asyncResult);
 
         #endregion
@@ -5085,6 +5346,7 @@ namespace Amazon.Pinpoint
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
 
         /// <summary>
@@ -5098,6 +5360,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/TagResource">REST API Reference for TagResource Operation</seealso>
         IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -5109,6 +5372,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
         /// 
         /// <returns>Returns a  TagResourceResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse EndTagResource(IAsyncResult asyncResult);
 
         #endregion
@@ -5123,6 +5387,7 @@ namespace Amazon.Pinpoint
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
 
         /// <summary>
@@ -5136,6 +5401,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -5147,6 +5413,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
         /// 
         /// <returns>Returns a  UntagResourceResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
 
         #endregion
@@ -5182,6 +5449,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateAdmChannel">REST API Reference for UpdateAdmChannel Operation</seealso>
         UpdateAdmChannelResponse UpdateAdmChannel(UpdateAdmChannelRequest request);
 
         /// <summary>
@@ -5195,6 +5463,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAdmChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateAdmChannel">REST API Reference for UpdateAdmChannel Operation</seealso>
         IAsyncResult BeginUpdateAdmChannel(UpdateAdmChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -5206,6 +5475,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAdmChannel.</param>
         /// 
         /// <returns>Returns a  UpdateAdmChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateAdmChannel">REST API Reference for UpdateAdmChannel Operation</seealso>
         UpdateAdmChannelResponse EndUpdateAdmChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -5241,6 +5511,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsChannel">REST API Reference for UpdateApnsChannel Operation</seealso>
         UpdateApnsChannelResponse UpdateApnsChannel(UpdateApnsChannelRequest request);
 
         /// <summary>
@@ -5254,6 +5525,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApnsChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsChannel">REST API Reference for UpdateApnsChannel Operation</seealso>
         IAsyncResult BeginUpdateApnsChannel(UpdateApnsChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -5265,6 +5537,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApnsChannel.</param>
         /// 
         /// <returns>Returns a  UpdateApnsChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsChannel">REST API Reference for UpdateApnsChannel Operation</seealso>
         UpdateApnsChannelResponse EndUpdateApnsChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -5300,6 +5573,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsSandboxChannel">REST API Reference for UpdateApnsSandboxChannel Operation</seealso>
         UpdateApnsSandboxChannelResponse UpdateApnsSandboxChannel(UpdateApnsSandboxChannelRequest request);
 
         /// <summary>
@@ -5313,6 +5587,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApnsSandboxChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsSandboxChannel">REST API Reference for UpdateApnsSandboxChannel Operation</seealso>
         IAsyncResult BeginUpdateApnsSandboxChannel(UpdateApnsSandboxChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -5324,6 +5599,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApnsSandboxChannel.</param>
         /// 
         /// <returns>Returns a  UpdateApnsSandboxChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsSandboxChannel">REST API Reference for UpdateApnsSandboxChannel Operation</seealso>
         UpdateApnsSandboxChannelResponse EndUpdateApnsSandboxChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -5359,6 +5635,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsVoipChannel">REST API Reference for UpdateApnsVoipChannel Operation</seealso>
         UpdateApnsVoipChannelResponse UpdateApnsVoipChannel(UpdateApnsVoipChannelRequest request);
 
         /// <summary>
@@ -5372,6 +5649,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApnsVoipChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsVoipChannel">REST API Reference for UpdateApnsVoipChannel Operation</seealso>
         IAsyncResult BeginUpdateApnsVoipChannel(UpdateApnsVoipChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -5383,6 +5661,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApnsVoipChannel.</param>
         /// 
         /// <returns>Returns a  UpdateApnsVoipChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsVoipChannel">REST API Reference for UpdateApnsVoipChannel Operation</seealso>
         UpdateApnsVoipChannelResponse EndUpdateApnsVoipChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -5418,6 +5697,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsVoipSandboxChannel">REST API Reference for UpdateApnsVoipSandboxChannel Operation</seealso>
         UpdateApnsVoipSandboxChannelResponse UpdateApnsVoipSandboxChannel(UpdateApnsVoipSandboxChannelRequest request);
 
         /// <summary>
@@ -5431,6 +5711,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApnsVoipSandboxChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsVoipSandboxChannel">REST API Reference for UpdateApnsVoipSandboxChannel Operation</seealso>
         IAsyncResult BeginUpdateApnsVoipSandboxChannel(UpdateApnsVoipSandboxChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -5442,6 +5723,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApnsVoipSandboxChannel.</param>
         /// 
         /// <returns>Returns a  UpdateApnsVoipSandboxChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsVoipSandboxChannel">REST API Reference for UpdateApnsVoipSandboxChannel Operation</seealso>
         UpdateApnsVoipSandboxChannelResponse EndUpdateApnsVoipSandboxChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -5476,6 +5758,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApplicationSettings">REST API Reference for UpdateApplicationSettings Operation</seealso>
         UpdateApplicationSettingsResponse UpdateApplicationSettings(UpdateApplicationSettingsRequest request);
 
         /// <summary>
@@ -5489,6 +5772,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApplicationSettings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApplicationSettings">REST API Reference for UpdateApplicationSettings Operation</seealso>
         IAsyncResult BeginUpdateApplicationSettings(UpdateApplicationSettingsRequest request, AsyncCallback callback, object state);
 
 
@@ -5500,6 +5784,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApplicationSettings.</param>
         /// 
         /// <returns>Returns a  UpdateApplicationSettingsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApplicationSettings">REST API Reference for UpdateApplicationSettings Operation</seealso>
         UpdateApplicationSettingsResponse EndUpdateApplicationSettings(IAsyncResult asyncResult);
 
         #endregion
@@ -5535,6 +5820,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateBaiduChannel">REST API Reference for UpdateBaiduChannel Operation</seealso>
         UpdateBaiduChannelResponse UpdateBaiduChannel(UpdateBaiduChannelRequest request);
 
         /// <summary>
@@ -5548,6 +5834,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBaiduChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateBaiduChannel">REST API Reference for UpdateBaiduChannel Operation</seealso>
         IAsyncResult BeginUpdateBaiduChannel(UpdateBaiduChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -5559,6 +5846,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBaiduChannel.</param>
         /// 
         /// <returns>Returns a  UpdateBaiduChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateBaiduChannel">REST API Reference for UpdateBaiduChannel Operation</seealso>
         UpdateBaiduChannelResponse EndUpdateBaiduChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -5593,6 +5881,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateCampaign">REST API Reference for UpdateCampaign Operation</seealso>
         UpdateCampaignResponse UpdateCampaign(UpdateCampaignRequest request);
 
         /// <summary>
@@ -5606,6 +5895,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCampaign
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateCampaign">REST API Reference for UpdateCampaign Operation</seealso>
         IAsyncResult BeginUpdateCampaign(UpdateCampaignRequest request, AsyncCallback callback, object state);
 
 
@@ -5617,6 +5907,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCampaign.</param>
         /// 
         /// <returns>Returns a  UpdateCampaignResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateCampaign">REST API Reference for UpdateCampaign Operation</seealso>
         UpdateCampaignResponse EndUpdateCampaign(IAsyncResult asyncResult);
 
         #endregion
@@ -5652,6 +5943,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailChannel">REST API Reference for UpdateEmailChannel Operation</seealso>
         UpdateEmailChannelResponse UpdateEmailChannel(UpdateEmailChannelRequest request);
 
         /// <summary>
@@ -5665,6 +5957,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEmailChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailChannel">REST API Reference for UpdateEmailChannel Operation</seealso>
         IAsyncResult BeginUpdateEmailChannel(UpdateEmailChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -5676,6 +5969,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEmailChannel.</param>
         /// 
         /// <returns>Returns a  UpdateEmailChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailChannel">REST API Reference for UpdateEmailChannel Operation</seealso>
         UpdateEmailChannelResponse EndUpdateEmailChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -5711,6 +6005,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailTemplate">REST API Reference for UpdateEmailTemplate Operation</seealso>
         UpdateEmailTemplateResponse UpdateEmailTemplate(UpdateEmailTemplateRequest request);
 
         /// <summary>
@@ -5724,6 +6019,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEmailTemplate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailTemplate">REST API Reference for UpdateEmailTemplate Operation</seealso>
         IAsyncResult BeginUpdateEmailTemplate(UpdateEmailTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -5735,6 +6031,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEmailTemplate.</param>
         /// 
         /// <returns>Returns a  UpdateEmailTemplateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailTemplate">REST API Reference for UpdateEmailTemplate Operation</seealso>
         UpdateEmailTemplateResponse EndUpdateEmailTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -5745,7 +6042,9 @@ namespace Amazon.Pinpoint
         /// <summary>
         /// Creates a new endpoint for an application or updates the settings and attributes of
         /// an existing endpoint for an application. You can also use this operation to define
-        /// custom attributes (Attributes, Metrics, and UserAttributes properties) for an endpoint.
+        /// custom attributes for an endpoint. If an update includes one or more values for a
+        /// custom attribute, Amazon Pinpoint replaces (overwrites) any existing values with the
+        /// new values.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEndpoint service method.</param>
         /// 
@@ -5771,6 +6070,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
         UpdateEndpointResponse UpdateEndpoint(UpdateEndpointRequest request);
 
         /// <summary>
@@ -5784,6 +6084,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEndpoint
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
         IAsyncResult BeginUpdateEndpoint(UpdateEndpointRequest request, AsyncCallback callback, object state);
 
 
@@ -5795,6 +6096,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEndpoint.</param>
         /// 
         /// <returns>Returns a  UpdateEndpointResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
         UpdateEndpointResponse EndUpdateEndpoint(IAsyncResult asyncResult);
 
         #endregion
@@ -5805,8 +6107,9 @@ namespace Amazon.Pinpoint
         /// <summary>
         /// Creates a new batch of endpoints for an application or updates the settings and attributes
         /// of a batch of existing endpoints for an application. You can also use this operation
-        /// to define custom attributes (Attributes, Metrics, and UserAttributes properties) for
-        /// a batch of endpoints.
+        /// to define custom attributes for a batch of endpoints. If an update includes one or
+        /// more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any existing
+        /// values with the new values.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEndpointsBatch service method.</param>
         /// 
@@ -5832,6 +6135,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpointsBatch">REST API Reference for UpdateEndpointsBatch Operation</seealso>
         UpdateEndpointsBatchResponse UpdateEndpointsBatch(UpdateEndpointsBatchRequest request);
 
         /// <summary>
@@ -5845,6 +6149,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEndpointsBatch
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpointsBatch">REST API Reference for UpdateEndpointsBatch Operation</seealso>
         IAsyncResult BeginUpdateEndpointsBatch(UpdateEndpointsBatchRequest request, AsyncCallback callback, object state);
 
 
@@ -5856,6 +6161,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEndpointsBatch.</param>
         /// 
         /// <returns>Returns a  UpdateEndpointsBatchResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpointsBatch">REST API Reference for UpdateEndpointsBatch Operation</seealso>
         UpdateEndpointsBatchResponse EndUpdateEndpointsBatch(IAsyncResult asyncResult);
 
         #endregion
@@ -5891,6 +6197,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateGcmChannel">REST API Reference for UpdateGcmChannel Operation</seealso>
         UpdateGcmChannelResponse UpdateGcmChannel(UpdateGcmChannelRequest request);
 
         /// <summary>
@@ -5904,6 +6211,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGcmChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateGcmChannel">REST API Reference for UpdateGcmChannel Operation</seealso>
         IAsyncResult BeginUpdateGcmChannel(UpdateGcmChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -5915,6 +6223,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGcmChannel.</param>
         /// 
         /// <returns>Returns a  UpdateGcmChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateGcmChannel">REST API Reference for UpdateGcmChannel Operation</seealso>
         UpdateGcmChannelResponse EndUpdateGcmChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -5949,6 +6258,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateJourney">REST API Reference for UpdateJourney Operation</seealso>
         UpdateJourneyResponse UpdateJourney(UpdateJourneyRequest request);
 
         /// <summary>
@@ -5962,6 +6272,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateJourney
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateJourney">REST API Reference for UpdateJourney Operation</seealso>
         IAsyncResult BeginUpdateJourney(UpdateJourneyRequest request, AsyncCallback callback, object state);
 
 
@@ -5973,6 +6284,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateJourney.</param>
         /// 
         /// <returns>Returns a  UpdateJourneyResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateJourney">REST API Reference for UpdateJourney Operation</seealso>
         UpdateJourneyResponse EndUpdateJourney(IAsyncResult asyncResult);
 
         #endregion
@@ -6007,6 +6319,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateJourneyState">REST API Reference for UpdateJourneyState Operation</seealso>
         UpdateJourneyStateResponse UpdateJourneyState(UpdateJourneyStateRequest request);
 
         /// <summary>
@@ -6020,6 +6333,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateJourneyState
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateJourneyState">REST API Reference for UpdateJourneyState Operation</seealso>
         IAsyncResult BeginUpdateJourneyState(UpdateJourneyStateRequest request, AsyncCallback callback, object state);
 
 
@@ -6031,6 +6345,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateJourneyState.</param>
         /// 
         /// <returns>Returns a  UpdateJourneyStateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateJourneyState">REST API Reference for UpdateJourneyState Operation</seealso>
         UpdateJourneyStateResponse EndUpdateJourneyState(IAsyncResult asyncResult);
 
         #endregion
@@ -6066,6 +6381,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdatePushTemplate">REST API Reference for UpdatePushTemplate Operation</seealso>
         UpdatePushTemplateResponse UpdatePushTemplate(UpdatePushTemplateRequest request);
 
         /// <summary>
@@ -6079,6 +6395,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePushTemplate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdatePushTemplate">REST API Reference for UpdatePushTemplate Operation</seealso>
         IAsyncResult BeginUpdatePushTemplate(UpdatePushTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -6090,6 +6407,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePushTemplate.</param>
         /// 
         /// <returns>Returns a  UpdatePushTemplateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdatePushTemplate">REST API Reference for UpdatePushTemplate Operation</seealso>
         UpdatePushTemplateResponse EndUpdatePushTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -6124,6 +6442,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateRecommenderConfiguration">REST API Reference for UpdateRecommenderConfiguration Operation</seealso>
         UpdateRecommenderConfigurationResponse UpdateRecommenderConfiguration(UpdateRecommenderConfigurationRequest request);
 
         /// <summary>
@@ -6137,6 +6456,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRecommenderConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateRecommenderConfiguration">REST API Reference for UpdateRecommenderConfiguration Operation</seealso>
         IAsyncResult BeginUpdateRecommenderConfiguration(UpdateRecommenderConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -6148,6 +6468,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRecommenderConfiguration.</param>
         /// 
         /// <returns>Returns a  UpdateRecommenderConfigurationResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateRecommenderConfiguration">REST API Reference for UpdateRecommenderConfiguration Operation</seealso>
         UpdateRecommenderConfigurationResponse EndUpdateRecommenderConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -6183,6 +6504,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSegment">REST API Reference for UpdateSegment Operation</seealso>
         UpdateSegmentResponse UpdateSegment(UpdateSegmentRequest request);
 
         /// <summary>
@@ -6196,6 +6518,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSegment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSegment">REST API Reference for UpdateSegment Operation</seealso>
         IAsyncResult BeginUpdateSegment(UpdateSegmentRequest request, AsyncCallback callback, object state);
 
 
@@ -6207,6 +6530,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSegment.</param>
         /// 
         /// <returns>Returns a  UpdateSegmentResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSegment">REST API Reference for UpdateSegment Operation</seealso>
         UpdateSegmentResponse EndUpdateSegment(IAsyncResult asyncResult);
 
         #endregion
@@ -6242,6 +6566,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsChannel">REST API Reference for UpdateSmsChannel Operation</seealso>
         UpdateSmsChannelResponse UpdateSmsChannel(UpdateSmsChannelRequest request);
 
         /// <summary>
@@ -6255,6 +6580,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSmsChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsChannel">REST API Reference for UpdateSmsChannel Operation</seealso>
         IAsyncResult BeginUpdateSmsChannel(UpdateSmsChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -6266,6 +6592,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSmsChannel.</param>
         /// 
         /// <returns>Returns a  UpdateSmsChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsChannel">REST API Reference for UpdateSmsChannel Operation</seealso>
         UpdateSmsChannelResponse EndUpdateSmsChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -6300,6 +6627,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsTemplate">REST API Reference for UpdateSmsTemplate Operation</seealso>
         UpdateSmsTemplateResponse UpdateSmsTemplate(UpdateSmsTemplateRequest request);
 
         /// <summary>
@@ -6313,6 +6641,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSmsTemplate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsTemplate">REST API Reference for UpdateSmsTemplate Operation</seealso>
         IAsyncResult BeginUpdateSmsTemplate(UpdateSmsTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -6324,6 +6653,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSmsTemplate.</param>
         /// 
         /// <returns>Returns a  UpdateSmsTemplateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsTemplate">REST API Reference for UpdateSmsTemplate Operation</seealso>
         UpdateSmsTemplateResponse EndUpdateSmsTemplate(IAsyncResult asyncResult);
 
         #endregion
@@ -6358,6 +6688,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateTemplateActiveVersion">REST API Reference for UpdateTemplateActiveVersion Operation</seealso>
         UpdateTemplateActiveVersionResponse UpdateTemplateActiveVersion(UpdateTemplateActiveVersionRequest request);
 
         /// <summary>
@@ -6371,6 +6702,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTemplateActiveVersion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateTemplateActiveVersion">REST API Reference for UpdateTemplateActiveVersion Operation</seealso>
         IAsyncResult BeginUpdateTemplateActiveVersion(UpdateTemplateActiveVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -6382,6 +6714,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTemplateActiveVersion.</param>
         /// 
         /// <returns>Returns a  UpdateTemplateActiveVersionResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateTemplateActiveVersion">REST API Reference for UpdateTemplateActiveVersion Operation</seealso>
         UpdateTemplateActiveVersionResponse EndUpdateTemplateActiveVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -6417,6 +6750,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceChannel">REST API Reference for UpdateVoiceChannel Operation</seealso>
         UpdateVoiceChannelResponse UpdateVoiceChannel(UpdateVoiceChannelRequest request);
 
         /// <summary>
@@ -6430,6 +6764,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVoiceChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceChannel">REST API Reference for UpdateVoiceChannel Operation</seealso>
         IAsyncResult BeginUpdateVoiceChannel(UpdateVoiceChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -6441,6 +6776,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVoiceChannel.</param>
         /// 
         /// <returns>Returns a  UpdateVoiceChannelResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceChannel">REST API Reference for UpdateVoiceChannel Operation</seealso>
         UpdateVoiceChannelResponse EndUpdateVoiceChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -6476,6 +6812,7 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceTemplate">REST API Reference for UpdateVoiceTemplate Operation</seealso>
         UpdateVoiceTemplateResponse UpdateVoiceTemplate(UpdateVoiceTemplateRequest request);
 
         /// <summary>
@@ -6489,6 +6826,7 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVoiceTemplate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceTemplate">REST API Reference for UpdateVoiceTemplate Operation</seealso>
         IAsyncResult BeginUpdateVoiceTemplate(UpdateVoiceTemplateRequest request, AsyncCallback callback, object state);
 
 
@@ -6500,6 +6838,7 @@ namespace Amazon.Pinpoint
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVoiceTemplate.</param>
         /// 
         /// <returns>Returns a  UpdateVoiceTemplateResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceTemplate">REST API Reference for UpdateVoiceTemplate Operation</seealso>
         UpdateVoiceTemplateResponse EndUpdateVoiceTemplate(IAsyncResult asyncResult);
 
         #endregion

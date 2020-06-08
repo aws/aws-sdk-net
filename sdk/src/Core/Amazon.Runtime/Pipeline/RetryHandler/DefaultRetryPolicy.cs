@@ -14,6 +14,7 @@
 */
 
 using Amazon.Util;
+using AWSSDK.Runtime.Internal.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -23,48 +24,14 @@ using System.Threading;
 namespace Amazon.Runtime.Internal
 {
     /// <summary>
-    /// The default implementation of the retry policy.
+    /// The default implementation of the legacy retry policy.
     /// </summary>
     public partial class DefaultRetryPolicy : RetryPolicy
     {
-        // This parameter sets the cost of making a retry call on a request.The default value is set at 5.
-        private const int THROTTLE_RETRY_REQUEST_COST = 5;
-        //maximum capacity in a bucket set to 100.
-        private const int THROTTLED_RETRIES = 100;
-        // For every successful request, lesser value capacity would be released. This
-        // is done to ensure that the bucket has a strategy for filling up if an explosion of bad retry requests 
-        // were to deplete the entire capacity.The default value is set at 1.
-        private const int THROTTLE_REQUEST_COST = 1;
         //The status code returned from a service request when an invalid endpoint is used.
         private const int INVALID_ENDPOINT_EXCEPTION_STATUSCODE = 421;        
         //Holds on to the singleton instance.
-        private static readonly CapacityManager _capacityManagerInstance = new CapacityManager(THROTTLED_RETRIES, THROTTLE_RETRY_REQUEST_COST, THROTTLE_REQUEST_COST);
-        private int _maxBackoffInMilliseconds = (int)TimeSpan.FromSeconds(30).TotalMilliseconds;
-        //This parameter serves as the value to the CapacityManager.Container datastructure.
-        //Its properties include the available capacity left for making a retry request and the maximum
-        //capacity size.
-        private RetryCapacity _retryCapacity;
-        // Set of HTTP status codes to retry on.
-        private ICollection<HttpStatusCode> _httpStatusCodesToRetryOn = new HashSet<HttpStatusCode>
-        {
-            HttpStatusCode.InternalServerError,
-            HttpStatusCode.ServiceUnavailable,
-            HttpStatusCode.BadGateway,
-            HttpStatusCode.GatewayTimeout
-        };
-
-        // Set of web exception status codes to retry on.
-        private ICollection<WebExceptionStatus> _webExceptionStatusesToRetryOn = new HashSet<WebExceptionStatus>
-        {
-            WebExceptionStatus.ConnectFailure,
-
-            WebExceptionStatus.ConnectionClosed,
-            WebExceptionStatus.KeepAliveFailure,
-            WebExceptionStatus.NameResolutionFailure,
-            WebExceptionStatus.ReceiveFailure,
-            WebExceptionStatus.SendFailure,
-            WebExceptionStatus.Timeout
-        };
+        private static readonly CapacityManager _capacityManagerInstance = new CapacityManager(throttleRetryCount: 100, throttleRetryCost: 5, throttleCost: 1);
 
         private static readonly HashSet<string> _netStandardRetryErrorMessages = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
@@ -74,52 +41,12 @@ namespace Amazon.Runtime.Internal
             "Failed sending data to the peer"
         };
 
-        // Set of AWS error codes to retry on.
-        private ICollection<string> _errorCodesToRetryOn = new HashSet<string>
-        {
-            "Throttling",
-            "ThrottlingException",
-            "ProvisionedThroughputExceededException",
-            "RequestTimeout",
-            "RequestThrottledException"
-        };
-
         /// <summary>
         /// The maximum value of exponential backoff in milliseconds, which will be used to wait
-        /// before retrying a request.
+        /// before retrying a request. The default is 30000 milliseconds.
         /// </summary>
-        public int MaxBackoffInMilliseconds
-        {
-            get { return _maxBackoffInMilliseconds; }
-            set { _maxBackoffInMilliseconds = value; }
-        }
-
-        /// <summary>
-        /// List of HTTP Status codes codes which are returned as part of the error response.
-        /// These status codes will be retried.
-        /// </summary>
-        public ICollection<HttpStatusCode> HttpStatusCodesToRetryOn
-        {
-            get { return _httpStatusCodesToRetryOn; }
-        }
-
-        /// <summary>
-        /// List of AWS specific error codes which are returned as part of the error response.
-        /// These error codes will be retried.
-        /// </summary>
-        public ICollection<string> ErrorCodesToRetryOn
-        {
-            get { return _errorCodesToRetryOn; }
-        }
-
-        /// <summary>
-        /// List of WebExceptionStatus for a WebException which will be retried.
-        /// </summary>
-        public ICollection<WebExceptionStatus> WebExceptionStatusesToRetryOn
-        {
-            get { return _webExceptionStatusesToRetryOn; }
-        }
-
+        public int MaxBackoffInMilliseconds { get; set; } = 30000;
+                                
         /// <summary>
         /// Constructor for DefaultRetryPolicy.
         /// </summary>
@@ -143,7 +70,7 @@ namespace Amazon.Runtime.Internal
             if (config.ThrottleRetries)
             {
                 string serviceURL = config.DetermineServiceURL();
-                _retryCapacity = _capacityManagerInstance.GetRetryCapacity(serviceURL);
+                RetryCapacity = _capacityManagerInstance.GetRetryCapacity(serviceURL);
             } 
         }
 
@@ -177,7 +104,7 @@ namespace Amazon.Runtime.Internal
         /// requests and response context.</param>
         public override bool OnRetry(IExecutionContext executionContext)
         {
-            return OnRetry(executionContext, false);
+            return OnRetry(executionContext, false, false);
         }
 
         /// <summary>
@@ -190,14 +117,26 @@ namespace Amazon.Runtime.Internal
         /// <param name="bypassAcquireCapacity">true to bypass any attempt to acquire capacity on a retry</param>
         public override bool OnRetry(IExecutionContext executionContext, bool bypassAcquireCapacity)
         {
-            if (!bypassAcquireCapacity && executionContext.RequestContext.ClientConfig.ThrottleRetries && _retryCapacity != null)
+            return OnRetry(executionContext, bypassAcquireCapacity, false);
+        }
+
+        /// <summary>
+        /// Virtual method that gets called when a retry request is initiated. If retry throttling is
+        /// enabled, the value returned is true if the required capacity is retured, false otherwise. 
+        /// If retry throttling is disabled, true is returned.
+        /// </summary>
+        /// <param name="executionContext">The execution context which contains both the
+        /// requests and response context.</param>
+        /// <param name="bypassAcquireCapacity">true to bypass any attempt to acquire capacity on a retry</param>
+        /// <param name="isThrottlingError">true if the error that will be retried is a throtting error</param>        
+        public override bool OnRetry(IExecutionContext executionContext, bool bypassAcquireCapacity, bool isThrottlingError)
+        {
+            if (!bypassAcquireCapacity && executionContext.RequestContext.ClientConfig.ThrottleRetries && RetryCapacity != null)
             {
-                return _capacityManagerInstance.TryAcquireCapacity(_retryCapacity);                
+                return _capacityManagerInstance.TryAcquireCapacity(RetryCapacity, executionContext.RequestContext.LastCapacityType);
             }
-            else
-            {
-                return true;
-            }
+            
+            return true;            
         }
 
         /// <summary>
@@ -208,9 +147,9 @@ namespace Amazon.Runtime.Internal
         /// <param name="executionContext">Request context containing the state of the request.</param>
         public override void NotifySuccess(IExecutionContext executionContext)
         {
-            if(executionContext.RequestContext.ClientConfig.ThrottleRetries && _retryCapacity!=null)
+            if(executionContext.RequestContext.ClientConfig.ThrottleRetries && RetryCapacity != null)
             {
-                _capacityManagerInstance.TryReleaseCapacity(executionContext.RequestContext.Retries>0 ? true:false, _retryCapacity);
+                _capacityManagerInstance.ReleaseCapacity(executionContext.RequestContext.LastCapacityType, RetryCapacity);
             }
         }
         /// <summary>
@@ -232,100 +171,40 @@ namespace Amazon.Runtime.Internal
         /// <returns>Return true if the request should be retried.</returns>
         private bool RetryForExceptionSync(Exception exception, IExecutionContext executionContext)
         {
-            // An IOException was thrown by the underlying http client.
-            if (exception is IOException)
-            {
-
-#if !NETSTANDARD  // ThreadAbortException is not NetStandard
-
-                // Don't retry IOExceptions that are caused by a ThreadAbortException
-                if (IsInnerException<ThreadAbortException>(exception))
-                    return false;
-
-#endif
-                // Retry all other IOExceptions
-                return true;
-            }
-
-#if NETSTANDARD
-            // Version 7.35 libcurl which is the default version installed with Ubuntu 14.04 
-            // has issues under high concurrency causing response streams being disposed
-            // during unmarshalling. To work around this issue will add the ObjectDisposedException
-            // to the list of exceptions to retry.
-            if (IsInnerException<ObjectDisposedException>(exception))
-                return true;
-
-            if (exception is System.Net.Http.HttpRequestException)
-            {
-                if (ContainErrorMessage(exception))
-                    return true;
-            }
-
-            if (exception is OperationCanceledException && !executionContext.RequestContext.CancellationToken.IsCancellationRequested)
-            {
-                //OperationCanceledException thrown by HttpClient not the CancellationToken supplied by the user.
-                //This exception can wrap at least IOExceptions, ObjectDisposedExceptions and should be retried.
-                //It will only get in here if the OperationCanceledException thrown from HttpClient did not contain
-                //an inner exception which is handled in the HttpRequestMessageFactory.
-                return true;             
-            }
-#endif
-
-            // A AmazonServiceException was thrown by ErrorHandler
+            // AmazonServiceException is thrown by ErrorHandler if it is this type of exception.
             var serviceException = exception as AmazonServiceException;
-            if (serviceException != null)
-            {
 
-                // For 500 internal server errors and 503 service
-                // unavailable errors, we want to retry, but we need to use
-                // an exponential back-off strategy so that we don't overload
-                // a server with a flood of retries. If we've surpassed our
-                // retry limit we handle the error response as a non-retryable
-                // error and go ahead and throw it back to the user as an exception.
-                //
-                // 502 and 504 are returned by proxies. These can also be returned for 
-                // S3 accelerate requests which are served by CloudFront.
-                if (this.HttpStatusCodesToRetryOn.Contains(serviceException.StatusCode))
+            // To try and smooth out an occasional throttling error, we'll pause and 
+            // retry, hoping that the pause is long enough for the request to get through
+            // the next time. Only the error code should be used to determine if an 
+            // error is a throttling error.
+            if (IsThrottlingError(exception))
+            {
+                return true;
+            }
+
+            // Check for transient errors, but we need to use
+            // an exponential back-off strategy so that we don't overload
+            // a server with a flood of retries. If we've surpassed our
+            // retry limit we handle the error response as a non-retryable
+            // error and go ahead and throw it back to the user as an exception.
+            if (IsTransientError(executionContext, exception) || IsServiceTimeoutError(exception))
+            {
+                return true;
+            }                        
+
+            //Check for Invalid Endpoint Exception indicating that the Endpoint Discovery
+            //endpoint used was invalid for the request. One retry attempt is allowed for this
+            //type of exception.            
+            if (serviceException?.StatusCode == (HttpStatusCode)INVALID_ENDPOINT_EXCEPTION_STATUSCODE)
+            {
+                if (executionContext.RequestContext.EndpointDiscoveryRetries < 1)
                 {
+                    executionContext.RequestContext.EndpointDiscoveryRetries++;
                     return true;
                 }
 
-                // Throttling is reported as a 400 or 503 error from services. To try and
-                // smooth out an occasional throttling error, we'll pause and retry,
-                // hoping that the pause is long enough for the request to get through
-                // the next time.                
-                if ((serviceException.StatusCode == HttpStatusCode.BadRequest ||
-                    serviceException.StatusCode == HttpStatusCode.ServiceUnavailable))
-                {
-                    string errorCode = serviceException.ErrorCode;
-                    if (this.ErrorCodesToRetryOn.Contains(errorCode))
-                    {
-                        return true;
-                    }
-                }
-
-                //Check for Invalid Endpoint Exception indicating that the Endpoint Discovery
-                //endpoint used was invalid for the request. One retry attempt is allowed for this
-                //type of exception.
-                if (serviceException.StatusCode == (HttpStatusCode)INVALID_ENDPOINT_EXCEPTION_STATUSCODE)
-                {
-                    if(executionContext.RequestContext.EndpointDiscoveryRetries < 1)
-                    {
-                        executionContext.RequestContext.EndpointDiscoveryRetries++;
-                        return true;
-                    }
-
-                    return false;
-                }
-                                
-                WebException webException;
-                if (IsInnerException<WebException>(exception, out webException))
-                {
-                    if (this.WebExceptionStatusesToRetryOn.Contains(webException.Status))
-                    {
-                        return true;
-                    }
-                }
+                return false;
             }
 
             return false;
@@ -350,12 +229,16 @@ namespace Amazon.Runtime.Internal
             DefaultRetryPolicy.WaitBeforeRetry(executionContext.RequestContext.Retries, this.MaxBackoffInMilliseconds);
         }
 
+        /// <summary>
+        /// Waits for an amount of time using an exponential backoff algorithm.
+        /// </summary>
+        /// <param name="retries">The request retry index. The first request is expected to be 0 while 
+        /// the first retry will be 1.</param>
+        /// <param name="maxBackoffInMilliseconds">The max number of milliseconds to wait</param>
         public static void WaitBeforeRetry(int retries, int maxBackoffInMilliseconds)
         {
             AWSSDKUtils.Sleep(CalculateRetryDelay(retries, maxBackoffInMilliseconds));
-        }
-
-        
+        }        
 
         private static int CalculateRetryDelay(int retries, int maxBackoffInMilliseconds)
         {
@@ -369,39 +252,24 @@ namespace Amazon.Runtime.Internal
             return delay;
         }
 
+        [Obsolete("This method is no longer used within DefaultRetryPolicy")]
         protected static bool ContainErrorMessage(Exception exception)
         {
-            if (exception == null)
-                return false;
-
-            if (_netStandardRetryErrorMessages.Contains(exception.Message))
-                return true;
-            return ContainErrorMessage(exception.InnerException);
+            return ContainErrorMessage(exception, _netStandardRetryErrorMessages);            
         }
 
+        [Obsolete("This method has been moved to AWSSDK.Runtime.Internal.Util.ExceptionUtils")]
         protected static bool IsInnerException<T>(Exception exception)
             where T : Exception
         {
-            T innerException;
-            return IsInnerException<T>(exception, out innerException);
+            return ExceptionUtils.IsInnerException<T>(exception);            
         }
 
+        [Obsolete("This method has been moved to AWSSDK.Runtime.Internal.Util.ExceptionUtils")]
         protected static bool IsInnerException<T>(Exception exception, out T inner)
             where T : Exception
         {
-            inner = null;
-            var innerExceptionType = typeof(T);
-            var currentException = exception;
-            while (currentException.InnerException != null)
-            {
-                inner = currentException.InnerException as T;
-                if (inner != null)
-                {
-                    return true;
-                }
-                currentException = currentException.InnerException;
-            }
-            return false;
+            return ExceptionUtils.IsInnerException<T>(exception, out inner);
         }
     }
 }

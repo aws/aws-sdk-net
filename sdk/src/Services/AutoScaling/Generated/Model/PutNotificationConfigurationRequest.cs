@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -72,8 +73,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NotificationTypes. 
         /// <para>
-        /// The type of event that causes the notification to be sent. For more information about
-        /// notification types supported by Amazon EC2 Auto Scaling, see <a>DescribeAutoScalingNotificationTypes</a>.
+        /// The type of event that causes the notification to be sent. To query the notification
+        /// types supported by Amazon EC2 Auto Scaling, call the <a>DescribeAutoScalingNotificationTypes</a>
+        /// API.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

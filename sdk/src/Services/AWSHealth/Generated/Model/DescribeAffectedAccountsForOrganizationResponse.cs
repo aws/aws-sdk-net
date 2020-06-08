@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,6 +34,7 @@ namespace Amazon.AWSHealth.Model
     public partial class DescribeAffectedAccountsForOrganizationResponse : AmazonWebServiceResponse
     {
         private List<string> _affectedAccounts = new List<string>();
+        private EventScopeCode _eventScopeCode;
         private string _nextToken;
 
         /// <summary>
@@ -51,6 +53,21 @@ namespace Amazon.AWSHealth.Model
         internal bool IsSetAffectedAccounts()
         {
             return this._affectedAccounts != null && this._affectedAccounts.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventScopeCode.
+        /// </summary>
+        public EventScopeCode EventScopeCode
+        {
+            get { return this._eventScopeCode; }
+            set { this._eventScopeCode = value; }
+        }
+
+        // Check to see if EventScopeCode property is set
+        internal bool IsSetEventScopeCode()
+        {
+            return this._eventScopeCode != null;
         }
 
         /// <summary>

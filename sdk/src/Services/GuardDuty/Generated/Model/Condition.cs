@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -48,7 +49,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Eq. 
         /// <para>
-        /// Represents the equal condition to be applied to a single field when querying for findings.
+        /// Represents the <i>equal</i> condition to be applied to a single field when querying
+        /// for findings.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the Equals property should be used instead.")]
@@ -67,7 +69,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Equals. 
         /// <para>
-        /// Represents an <b>equal</b> condition to be applied to a single field when querying
+        /// Represents an <i>equal</i> <b/> condition to be applied to a single field when querying
         /// for findings.
         /// </para>
         /// </summary>
@@ -86,7 +88,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property GreaterThan. 
         /// <para>
-        /// Represents a greater than condition to be applied to a single field when querying
+        /// Represents a <i>greater than</i> condition to be applied to a single field when querying
         /// for findings.
         /// </para>
         /// </summary>
@@ -105,8 +107,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property GreaterThanOrEqual. 
         /// <para>
-        /// Represents a greater than equal condition to be applied to a single field when querying
-        /// for findings.
+        /// Represents a <i>greater than or equal</i> condition to be applied to a single field
+        /// when querying for findings.
         /// </para>
         /// </summary>
         public long GreaterThanOrEqual
@@ -124,7 +126,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Gt. 
         /// <para>
-        /// Represents a greater than condition to be applied to a single field when querying
+        /// Represents a <i>greater than</i> condition to be applied to a single field when querying
         /// for findings.
         /// </para>
         /// </summary>
@@ -144,8 +146,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Gte. 
         /// <para>
-        /// Represents a greater than equal condition to be applied to a single field when querying
-        /// for findings.
+        /// Represents a <i>greater than or equal</i> condition to be applied to a single field
+        /// when querying for findings.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the GreaterThanOrEqual property should be used instead.")]
@@ -164,8 +166,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property LessThan. 
         /// <para>
-        /// Represents a less than condition to be applied to a single field when querying for
-        /// findings.
+        /// Represents a <i>less than</i> condition to be applied to a single field when querying
+        /// for findings.
         /// </para>
         /// </summary>
         public long LessThan
@@ -183,8 +185,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property LessThanOrEqual. 
         /// <para>
-        /// Represents a less than equal condition to be applied to a single field when querying
-        /// for findings.
+        /// Represents a <i>less than or equal</i> condition to be applied to a single field when
+        /// querying for findings.
         /// </para>
         /// </summary>
         public long LessThanOrEqual
@@ -202,8 +204,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Lt. 
         /// <para>
-        /// Represents a less than condition to be applied to a single field when querying for
-        /// findings.
+        /// Represents a <i>less than</i> condition to be applied to a single field when querying
+        /// for findings.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the LessThan property should be used instead.")]
@@ -222,8 +224,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Lte. 
         /// <para>
-        /// Represents a less than equal condition to be applied to a single field when querying
-        /// for findings.
+        /// Represents a <i>less than or equal</i> condition to be applied to a single field when
+        /// querying for findings.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the LessThanOrEqual property should be used instead.")]
@@ -242,8 +244,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Neq. 
         /// <para>
-        /// Represents the not equal condition to be applied to a single field when querying for
-        /// findings.
+        /// Represents the <i>not equal</i> condition to be applied to a single field when querying
+        /// for findings.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the NotEquals property should be used instead.")]
@@ -262,8 +264,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property NotEquals. 
         /// <para>
-        /// Represents an <b>not equal</b> condition to be applied to a single field when querying
-        /// for findings.
+        /// Represents a <i>not equal</i> <b/> condition to be applied to a single field when
+        /// querying for findings.
         /// </para>
         /// </summary>
         public List<string> NotEquals

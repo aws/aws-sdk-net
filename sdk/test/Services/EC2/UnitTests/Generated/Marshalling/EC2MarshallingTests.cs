@@ -1581,6 +1581,11 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreatePlacementGroupResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreatePlacementGroupResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         
@@ -3322,6 +3327,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DeregisterInstanceEventNotificationAttributesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeregisterInstanceEventNotificationAttributes");
+
+            var request = InstantiateClassGenerator.Execute<DeregisterInstanceEventNotificationAttributesRequest>();
+            var marshaller = new DeregisterInstanceEventNotificationAttributesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeregisterInstanceEventNotificationAttributesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeregisterInstanceEventNotificationAttributesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DeregisterTransitGatewayMulticastGroupMembersMarshallTest()
         {
             var operation = service_model.FindOperation("DeregisterTransitGatewayMulticastGroupMembers");
@@ -4321,6 +4350,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DescribeInstanceCreditSpecificationsResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeInstanceCreditSpecificationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeInstanceEventNotificationAttributesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeInstanceEventNotificationAttributes");
+
+            var request = InstantiateClassGenerator.Execute<DescribeInstanceEventNotificationAttributesRequest>();
+            var marshaller = new DescribeInstanceEventNotificationAttributesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeInstanceEventNotificationAttributesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeInstanceEventNotificationAttributesResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -8335,6 +8388,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = RegisterImageResponseUnmarshaller.Instance.Unmarshall(context)
                 as RegisterImageResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void RegisterInstanceEventNotificationAttributesMarshallTest()
+        {
+            var operation = service_model.FindOperation("RegisterInstanceEventNotificationAttributes");
+
+            var request = InstantiateClassGenerator.Execute<RegisterInstanceEventNotificationAttributesRequest>();
+            var marshaller = new RegisterInstanceEventNotificationAttributesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = RegisterInstanceEventNotificationAttributesResponseUnmarshaller.Instance.Unmarshall(context)
+                as RegisterInstanceEventNotificationAttributesResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

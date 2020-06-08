@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,8 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSnapshotSchedule operation.
-    /// Creates a snapshot schedule with the rate of every 12 hours.
+    /// Create a snapshot schedule that can be associated to a cluster and which overrides
+    /// the default system backup schedule.
     /// </summary>
     public partial class CreateSnapshotScheduleRequest : AmazonRedshiftRequest
     {

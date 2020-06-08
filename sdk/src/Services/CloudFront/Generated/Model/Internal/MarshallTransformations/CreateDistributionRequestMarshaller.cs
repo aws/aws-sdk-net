@@ -694,6 +694,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             if (publicRequestDistributionConfigOriginsItemsValue != null) 
                             {
                                 xmlWriter.WriteStartElement("Origin", "http://cloudfront.amazonaws.com/doc/2019-03-26/");            
+                                if(publicRequestDistributionConfigOriginsItemsValue.IsSetConnectionAttempts())
+                                    xmlWriter.WriteElementString("ConnectionAttempts", "http://cloudfront.amazonaws.com/doc/2019-03-26/", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.ConnectionAttempts));                 
+                
+                                if(publicRequestDistributionConfigOriginsItemsValue.IsSetConnectionTimeout())
+                                    xmlWriter.WriteElementString("ConnectionTimeout", "http://cloudfront.amazonaws.com/doc/2019-03-26/", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.ConnectionTimeout));                 
+                
                                 
                                 if (publicRequestDistributionConfigOriginsItemsValue.CustomHeaders != null) 
                                 {

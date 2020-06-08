@@ -66,12 +66,12 @@ namespace Amazon.Runtime.Internal
                 using (httpErrorResponse.ResponseBody)
                 {
                     var unmarshaller = requestContext.Unmarshaller;
-                    var readEntireResponse = true;
 
                     var errorContext = unmarshaller.CreateContext(httpErrorResponse,
-                        readEntireResponse,
+                        true,
                         httpErrorResponse.ResponseBody.OpenResponse(),
-                        requestContext.Metrics);
+                        requestContext.Metrics,
+                        true);
 
                     try
                     {
@@ -148,7 +148,8 @@ namespace Amazon.Runtime.Internal
                         httpErrorResponse,
                         readEntireResponse,
                         httpErrorResponse.ResponseBody.OpenResponse(),
-                        requestContext.Metrics);
+                        requestContext.Metrics,
+                        true);
                     try
                     {
                         responseContext.Response = unmarshaller.Unmarshall(errorContext);

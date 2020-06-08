@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -58,8 +59,22 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SettingId. 
         /// <para>
-        /// The ID of the service setting to update.
+        /// The Amazon Resource Name (ARN) of the service setting to reset. For example, <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
+        /// The setting ID can be one of the following.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>/ssm/parameter-store/default-parameter-tier</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>/ssm/parameter-store/high-throughput-enabled</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>/ssm/managed-instance/activation-tier</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
         public string SettingId
@@ -77,7 +92,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SettingValue. 
         /// <para>
-        /// The new value to specify for the service setting.
+        /// The new value to specify for the service setting. For the <code>/ssm/parameter-store/default-parameter-tier</code>
+        /// setting ID, the setting value can be one of the following.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Standard
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Advanced
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Intelligent-Tiering
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the <code>/ssm/parameter-store/high-throughput-enabled</code>, and <code>/ssm/managed-instance/activation-tier</code>
+        /// setting IDs, the setting value can be true or false.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4096)]

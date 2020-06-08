@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -34,7 +35,7 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  
     /// <para>
-    /// When you enable a product integration, a permission policy that grants permission
+    /// When you enable a product integration, a permissions policy that grants permission
     /// for the product to send findings to Security Hub is applied.
     /// </para>
     /// </summary>

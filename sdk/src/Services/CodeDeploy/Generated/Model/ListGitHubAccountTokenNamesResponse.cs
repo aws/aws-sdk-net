@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of a ListGitHubAccountTokenNames operation.
+    /// Represents the output of a <code>ListGitHubAccountTokenNames</code> operation.
     /// </summary>
     public partial class ListGitHubAccountTokenNamesResponse : AmazonWebServiceResponse
     {
@@ -39,8 +40,8 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If a large amount of information is returned, an identifier is also returned. It can
-        /// be used in a subsequent ListGitHubAccountTokenNames call to return the next set of
-        /// names in the list. 
+        /// be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the
+        /// next set of names in the list. 
         /// </para>
         /// </summary>
         public string NextToken

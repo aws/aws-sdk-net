@@ -57,6 +57,22 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Disabled);
             }
 
+            if(requestObject.IsSetStreamingNotificationTargets())
+            {
+                context.Writer.WritePropertyName("StreamingNotificationTargets");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectStreamingNotificationTargetsListValue in requestObject.StreamingNotificationTargets)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StreamingNotificationTargetMarshaller.Instance;
+                    marshaller.Marshall(requestObjectStreamingNotificationTargetsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

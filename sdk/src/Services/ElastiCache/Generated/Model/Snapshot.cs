@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,6 +34,7 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class Snapshot
     {
+        private string _arn;
         private AutomaticFailoverStatus _automaticFailover;
         private bool? _autoMinorVersionUpgrade;
         private DateTime? _cacheClusterCreateTime;
@@ -58,6 +60,24 @@ namespace Amazon.ElastiCache.Model
         private string _snapshotWindow;
         private string _topicArn;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property ARN. 
+        /// <para>
+        /// The ARN (Amazon Resource Name) of the snapshot.
+        /// </para>
+        /// </summary>
+        public string ARN
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if ARN property is set
+        internal bool IsSetARN()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AutomaticFailover. 

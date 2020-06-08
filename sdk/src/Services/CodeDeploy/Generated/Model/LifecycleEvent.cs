@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -77,8 +78,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property LifecycleEventName. 
         /// <para>
-        /// The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall,
-        /// ApplicationStart, or ValidateService.
+        /// The deployment lifecycle event name, such as <code>ApplicationStop</code>, <code>BeforeInstall</code>,
+        /// <code>AfterInstall</code>, <code>ApplicationStart</code>, or <code>ValidateService</code>.
         /// </para>
         /// </summary>
         public string LifecycleEventName

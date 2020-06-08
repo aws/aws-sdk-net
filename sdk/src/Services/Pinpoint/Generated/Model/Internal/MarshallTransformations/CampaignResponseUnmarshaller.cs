@@ -88,6 +88,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomDeliveryConfiguration", targetDepth))
+                {
+                    var unmarshaller = CustomDeliveryConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.CustomDeliveryConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DefaultState", targetDepth))
                 {
                     var unmarshaller = CampaignStateUnmarshaller.Instance;

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -31,8 +32,8 @@ namespace Amazon.GuardDuty.Model
     /// Container for the parameters to the CreateDetector operation.
     /// Creates a single Amazon GuardDuty detector. A detector is a resource that represents
     /// the GuardDuty service. To start using GuardDuty, you must create a detector in each
-    /// region that you enable the service. You can have only one detector per account per
-    /// region.
+    /// Region where you enable the service. You can have only one detector per account per
+    /// Region.
     /// </summary>
     public partial class CreateDetectorRequest : AmazonGuardDutyRequest
     {
@@ -63,7 +64,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Enable. 
         /// <para>
-        /// A boolean value that specifies whether the detector is to be enabled.
+        /// A Boolean value that specifies whether the detector is to be enabled.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +83,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property FindingPublishingFrequency. 
         /// <para>
-        /// A enum value that specifies how frequently customer got Finding updates published.
+        /// An enum value that specifies how frequently updated findings are exported.
         /// </para>
         /// </summary>
         public FindingPublishingFrequency FindingPublishingFrequency

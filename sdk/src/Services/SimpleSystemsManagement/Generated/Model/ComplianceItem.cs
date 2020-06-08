@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -30,7 +31,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Information about the compliance as defined by the resource type. For example, for
     /// a patch resource type, <code>Items</code> includes information about the PatchSeverity,
-    /// Classification, etc.
+    /// Classification, and so on.
     /// </summary>
     public partial class ComplianceItem
     {

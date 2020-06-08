@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -44,8 +45,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property CompletionWindowMinutes. 
         /// <para>
-        /// The amount of time AWS Backup attempts a backup before canceling the job and returning
-        /// an error.
+        /// A value in minutes after a backup job is successfully started before it must be completed
+        /// or it will be canceled by AWS Backup. This value is optional.
         /// </para>
         /// </summary>
         public long CompletionWindowMinutes
@@ -90,8 +91,8 @@ namespace Amazon.Backup.Model
         /// <para>
         /// Backups transitioned to cold storage must be stored in cold storage for a minimum
         /// of 90 days. Therefore, the “expire after days” setting must be 90 days greater than
-        /// the “transition to cold after days”. The “transition to cold after days” setting cannot
-        /// be changed after a backup has been transitioned to cold. 
+        /// the “transition to cold after days” setting. The “transition to cold after days” setting
+        /// cannot be changed after a backup has been transitioned to cold. 
         /// </para>
         /// </summary>
         public Lifecycle Lifecycle
@@ -128,7 +129,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RuleName. 
         /// <para>
-        /// &gt;An optional display name for a backup rule.
+        /// An optional display name for a backup rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -165,7 +166,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property StartWindowMinutes. 
         /// <para>
-        /// The amount of time in minutes before beginning a backup.
+        /// A value in minutes after a backup is scheduled before a job will be canceled if it
+        /// doesn't start successfully. This value is optional.
         /// </para>
         /// </summary>
         public long StartWindowMinutes

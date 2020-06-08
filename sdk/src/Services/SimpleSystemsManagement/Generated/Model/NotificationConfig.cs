@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -60,9 +61,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The different events for which you can receive notifications. These events include
         /// the following: All (events), InProgress, Success, TimedOut, Cancelled, Failed. To
-        /// learn more about these events, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Configuring
-        /// Amazon SNS Notifications for AWS Systems Manager</a> in the <i>AWS Systems Manager
-        /// User Guide</i>.
+        /// learn more about these events, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+        /// Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS Systems
+        /// Manager User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> NotificationEvents

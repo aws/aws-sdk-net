@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -98,8 +99,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1024 bytes
-        /// long. They cannot be edited.
+        /// Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024
+        /// bytes long. They cannot be edited.
         /// </para>
         /// </summary>
         public string VersionId

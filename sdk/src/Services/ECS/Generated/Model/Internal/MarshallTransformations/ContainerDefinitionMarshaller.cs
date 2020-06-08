@@ -158,6 +158,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetEnvironmentFiles())
+            {
+                context.Writer.WritePropertyName("environmentFiles");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEnvironmentFilesListValue in requestObject.EnvironmentFiles)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EnvironmentFileMarshaller.Instance;
+                    marshaller.Marshall(requestObjectEnvironmentFilesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetEssential())
             {
                 context.Writer.WritePropertyName("essential");

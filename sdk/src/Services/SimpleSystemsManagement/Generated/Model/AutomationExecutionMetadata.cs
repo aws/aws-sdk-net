@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -97,9 +98,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or
         /// CrossAccount. CrossAccount is an Automation that runs in multiple AWS Regions and
-        /// accounts. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
-        /// Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager
-        /// User Guide</i>. 
+        /// accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
+        /// Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS Systems
+        /// Manager User Guide</i>. 
         /// </para>
         /// </summary>
         public AutomationType AutomationType
@@ -262,7 +263,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property LogFile. 
         /// <para>
-        /// An Amazon S3 bucket where execution information is stored.
+        /// An S3 bucket where execution information is stored.
         /// </para>
         /// </summary>
         public string LogFile

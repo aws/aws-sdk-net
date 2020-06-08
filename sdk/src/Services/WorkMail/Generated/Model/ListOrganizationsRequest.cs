@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the ListOrganizations operation.
-    /// Returns summaries of the customer's non-deleted organizations.
+    /// Returns summaries of the customer's organizations.
     /// </summary>
     public partial class ListOrganizationsRequest : AmazonWorkMailRequest
     {

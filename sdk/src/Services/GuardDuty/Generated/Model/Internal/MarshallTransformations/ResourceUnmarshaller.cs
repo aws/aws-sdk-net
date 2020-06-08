@@ -82,6 +82,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("s3BucketDetails", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<S3BucketDetail, S3BucketDetailUnmarshaller>(S3BucketDetailUnmarshaller.Instance);
+                    unmarshalledObject.S3BucketDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

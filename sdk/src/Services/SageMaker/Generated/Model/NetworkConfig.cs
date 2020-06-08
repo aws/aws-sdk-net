@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -34,8 +35,29 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class NetworkConfig
     {
+        private bool? _enableInterContainerTrafficEncryption;
         private bool? _enableNetworkIsolation;
         private VpcConfig _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property EnableInterContainerTrafficEncryption. 
+        /// <para>
+        /// Whether to encrypt all communications between distributed processing jobs. Choose
+        /// <code>True</code> to encrypt communications. Encryption provides greater security
+        /// for distributed processing jobs, but the processing might take longer.
+        /// </para>
+        /// </summary>
+        public bool EnableInterContainerTrafficEncryption
+        {
+            get { return this._enableInterContainerTrafficEncryption.GetValueOrDefault(); }
+            set { this._enableInterContainerTrafficEncryption = value; }
+        }
+
+        // Check to see if EnableInterContainerTrafficEncryption property is set
+        internal bool IsSetEnableInterContainerTrafficEncryption()
+        {
+            return this._enableInterContainerTrafficEncryption.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property EnableNetworkIsolation. 

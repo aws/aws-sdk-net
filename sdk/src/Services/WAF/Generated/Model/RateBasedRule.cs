@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,12 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAF.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    /// This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
+    /// WAF Classic</a> in the developer guide.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+    /// WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints
+    /// for regional and global use. 
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// A <code>RateBasedRule</code> is identical to a regular <a>Rule</a>, with one addition:
     /// a <code>RateBasedRule</code> counts the number of requests that arrive from a specified
     /// IP address every five minutes. For example, based on recent requests that you've seen
     /// from an attacker, you might create a <code>RateBasedRule</code> that includes the
     /// following conditions: 
-    /// 
+    /// </para>
     ///  <ul> <li> 
     /// <para>
     /// The requests come from 192.0.2.44.
@@ -44,12 +58,12 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// In the rule, you also define the rate limit as 15,000.
+    /// In the rule, you also define the rate limit as 1,000.
     /// </para>
     ///  
     /// <para>
-    /// Requests that meet both of these conditions and exceed 15,000 requests every five
-    /// minutes trigger the rule's action (block or count), which is defined in the web ACL.
+    /// Requests that meet both of these conditions and exceed 1,000 requests every five minutes
+    /// trigger the rule's action (block or count), which is defined in the web ACL.
     /// </para>
     /// </summary>
     public partial class RateBasedRule
@@ -92,6 +106,7 @@ namespace Amazon.WAF.Model
         /// after you create the <code>RateBasedRule</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string MetricName
         {
             get { return this._metricName; }

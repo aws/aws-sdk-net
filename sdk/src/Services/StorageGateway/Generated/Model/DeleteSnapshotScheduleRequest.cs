@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -42,8 +43,9 @@ namespace Amazon.StorageGateway.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// To list or delete a snapshot, you must use the Amazon EC2 API. in <i>Amazon Elastic
-    /// Compute Cloud API Reference</i>.
+    /// To list or delete a snapshot, you must use the Amazon EC2 API. For more information,
+    /// go to <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
+    /// in the <i>Amazon Elastic Compute Cloud API Reference</i>.
     /// </para>
     ///  </note>
     /// </summary>

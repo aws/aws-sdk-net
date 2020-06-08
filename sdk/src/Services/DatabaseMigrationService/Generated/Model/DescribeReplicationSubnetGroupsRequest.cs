@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -41,6 +42,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// Filters applied to the describe action.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid filter names: replication-subnet-group-id
         /// </para>
         /// </summary>
         public List<Filter> Filters

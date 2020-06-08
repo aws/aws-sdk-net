@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,7 +39,8 @@ namespace Amazon.Macie.Model
         /// Gets and sets the property FailedS3Resources. 
         /// <para>
         /// S3 resources that couldn't be removed from being monitored and classified by Amazon
-        /// Macie. An error code and an error message are provided for each failed item. 
+        /// Macie Classic. An error code and an error message are provided for each failed item.
+        /// 
         /// </para>
         /// </summary>
         public List<FailedS3Resource> FailedS3Resources

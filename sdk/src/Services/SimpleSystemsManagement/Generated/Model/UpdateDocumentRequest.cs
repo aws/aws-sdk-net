@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -101,7 +102,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// (Required) The version of the document that you want to update. 
+        /// (Required) The latest version of the document that you want to update. The latest
+        /// document version can be specified using the $LATEST variable or by the version number.
+        /// Updating a previous version of a document is not supported.
         /// </para>
         /// </summary>
         public string DocumentVersion

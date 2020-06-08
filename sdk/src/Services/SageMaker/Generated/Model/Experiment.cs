@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A summary of the properties of an experiment as returned by the <a>Search</a> API.
+    /// The properties of an experiment as returned by the <a>Search</a> API.
     /// </summary>
     public partial class Experiment
     {

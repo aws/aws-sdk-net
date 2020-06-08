@@ -1756,6 +1756,16 @@ namespace Amazon.DirectConnect
         /// virtual interface to a Direct Connect gateway enables the possibility for connecting
         /// to multiple VPCs, including VPCs in different AWS Regions. Connecting the private
         /// virtual interface to a VGW only provides access to a single VPC within the same Region.
+        /// 
+        ///  
+        /// <para>
+        /// Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update
+        /// to the underlying physical connection if it wasn't updated to support jumbo frames.
+        /// Updating the connection disrupts network connectivity for all virtual interfaces associated
+        /// with the connection for up to 30 seconds. To check whether your connection supports
+        /// jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface
+        /// supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePrivateVirtualInterface service method.</param>
         /// 
@@ -1908,7 +1918,15 @@ namespace Amazon.DirectConnect
         /// gateway must be different. For example, if you use the default ASN 64512 for both
         /// your the transit gateway and Direct Connect gateway, the association request fails.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// Setting the MTU of a virtual interface to 8500 (jumbo frames) can cause an update
+        /// to the underlying physical connection if it wasn't updated to support jumbo frames.
+        /// Updating the connection disrupts network connectivity for all virtual interfaces associated
+        /// with the connection for up to 30 seconds. To check whether your connection supports
+        /// jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface
+        /// supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTransitVirtualInterface service method.</param>
         /// 
@@ -3708,6 +3726,202 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  ListVirtualInterfaceTestHistory
+
+        /// <summary>
+        /// Lists the virtual interface failover test history.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVirtualInterfaceTestHistory service method.</param>
+        /// 
+        /// <returns>The response from the ListVirtualInterfaceTestHistory service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceTestHistory">REST API Reference for ListVirtualInterfaceTestHistory Operation</seealso>
+        public virtual ListVirtualInterfaceTestHistoryResponse ListVirtualInterfaceTestHistory(ListVirtualInterfaceTestHistoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVirtualInterfaceTestHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVirtualInterfaceTestHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<ListVirtualInterfaceTestHistoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVirtualInterfaceTestHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVirtualInterfaceTestHistory operation on AmazonDirectConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVirtualInterfaceTestHistory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceTestHistory">REST API Reference for ListVirtualInterfaceTestHistory Operation</seealso>
+        public virtual IAsyncResult BeginListVirtualInterfaceTestHistory(ListVirtualInterfaceTestHistoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVirtualInterfaceTestHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVirtualInterfaceTestHistoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListVirtualInterfaceTestHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVirtualInterfaceTestHistory.</param>
+        /// 
+        /// <returns>Returns a  ListVirtualInterfaceTestHistoryResult from DirectConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceTestHistory">REST API Reference for ListVirtualInterfaceTestHistory Operation</seealso>
+        public virtual ListVirtualInterfaceTestHistoryResponse EndListVirtualInterfaceTestHistory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListVirtualInterfaceTestHistoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartBgpFailoverTest
+
+        /// <summary>
+        /// Starts the virtual interface failover test that verifies your configuration meets
+        /// your resiliency requirements by placing the BGP peering session in the DOWN state.
+        /// You can then send traffic to verify that there are no outages.
+        /// 
+        ///  
+        /// <para>
+        /// You can run the test on public, private, transit, and hosted virtual interfaces.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListVirtualInterfaceTestHistory.html">ListVirtualInterfaceTestHistory</a>
+        /// to view the virtual interface test history.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you need to stop the test before the test interval completes, use <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StopBgpFailoverTest.html">StopBgpFailoverTest</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBgpFailoverTest service method.</param>
+        /// 
+        /// <returns>The response from the StartBgpFailoverTest service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StartBgpFailoverTest">REST API Reference for StartBgpFailoverTest Operation</seealso>
+        public virtual StartBgpFailoverTestResponse StartBgpFailoverTest(StartBgpFailoverTestRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBgpFailoverTestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBgpFailoverTestResponseUnmarshaller.Instance;
+
+            return Invoke<StartBgpFailoverTestResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartBgpFailoverTest operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartBgpFailoverTest operation on AmazonDirectConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartBgpFailoverTest
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StartBgpFailoverTest">REST API Reference for StartBgpFailoverTest Operation</seealso>
+        public virtual IAsyncResult BeginStartBgpFailoverTest(StartBgpFailoverTestRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBgpFailoverTestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBgpFailoverTestResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartBgpFailoverTest operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartBgpFailoverTest.</param>
+        /// 
+        /// <returns>Returns a  StartBgpFailoverTestResult from DirectConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StartBgpFailoverTest">REST API Reference for StartBgpFailoverTest Operation</seealso>
+        public virtual StartBgpFailoverTestResponse EndStartBgpFailoverTest(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartBgpFailoverTestResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopBgpFailoverTest
+
+        /// <summary>
+        /// Stops the virtual interface failover test.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopBgpFailoverTest service method.</param>
+        /// 
+        /// <returns>The response from the StopBgpFailoverTest service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StopBgpFailoverTest">REST API Reference for StopBgpFailoverTest Operation</seealso>
+        public virtual StopBgpFailoverTestResponse StopBgpFailoverTest(StopBgpFailoverTestRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopBgpFailoverTestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopBgpFailoverTestResponseUnmarshaller.Instance;
+
+            return Invoke<StopBgpFailoverTestResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopBgpFailoverTest operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopBgpFailoverTest operation on AmazonDirectConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopBgpFailoverTest
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StopBgpFailoverTest">REST API Reference for StopBgpFailoverTest Operation</seealso>
+        public virtual IAsyncResult BeginStopBgpFailoverTest(StopBgpFailoverTestRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopBgpFailoverTestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopBgpFailoverTestResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopBgpFailoverTest operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopBgpFailoverTest.</param>
+        /// 
+        /// <returns>Returns a  StopBgpFailoverTestResult from DirectConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StopBgpFailoverTest">REST API Reference for StopBgpFailoverTest Operation</seealso>
+        public virtual StopBgpFailoverTestResponse EndStopBgpFailoverTest(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopBgpFailoverTestResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         /// <summary>
@@ -3999,7 +4213,7 @@ namespace Amazon.DirectConnect
         /// to the underlying physical connection if it wasn't updated to support jumbo frames.
         /// Updating the connection disrupts network connectivity for all virtual interfaces associated
         /// with the connection for up to 30 seconds. To check whether your connection supports
-        /// jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface
+        /// jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual q interface
         /// supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.
         /// </para>
         /// </summary>

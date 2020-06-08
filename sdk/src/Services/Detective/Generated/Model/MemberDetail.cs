@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,20 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Detective.Model
 {
     /// <summary>
-    /// Amazon Detective is currently in preview.
-    /// 
-    ///  
-    /// <para>
     /// Details about a member account that was invited to contribute to a behavior graph.
-    /// </para>
     /// </summary>
     public partial class MemberDetail
     {
         private string _accountId;
+        private MemberDisabledReason _disabledReason;
         private string _emailAddress;
         private string _graphArn;
         private DateTime? _invitedTime;
         private string _masterId;
+        private double? _percentOfGraphUtilization;
+        private DateTime? _percentOfGraphUtilizationUpdatedTime;
         private MemberStatus _status;
         private DateTime? _updatedTime;
 
@@ -62,6 +61,41 @@ namespace Amazon.Detective.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisabledReason. 
+        /// <para>
+        /// For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason
+        /// that the member account is not enabled.
+        /// </para>
+        ///  
+        /// <para>
+        /// The reason can have one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause
+        /// the data volume for the behavior graph to be too high.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data
+        /// volume for the member account. This is usually because the member account is not enrolled
+        /// in Amazon GuardDuty. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public MemberDisabledReason DisabledReason
+        {
+            get { return this._disabledReason; }
+            set { this._disabledReason = value; }
+        }
+
+        // Check to see if DisabledReason property is set
+        internal bool IsSetDisabledReason()
+        {
+            return this._disabledReason != null;
         }
 
         /// <summary>
@@ -140,6 +174,54 @@ namespace Amazon.Detective.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PercentOfGraphUtilization. 
+        /// <para>
+        /// The member account data volume as a percentage of the maximum allowed data volume.
+        /// 0 indicates 0 percent, and 100 indicates 100 percent.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that this is not the percentage of the behavior graph data volume.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, the data volume for the behavior graph is 80 GB per day. The maximum
+        /// data volume is 160 GB per day. If the data volume for the member account is 40 GB
+        /// per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the
+        /// maximum allowed data volume. 
+        /// </para>
+        /// </summary>
+        public double PercentOfGraphUtilization
+        {
+            get { return this._percentOfGraphUtilization.GetValueOrDefault(); }
+            set { this._percentOfGraphUtilization = value; }
+        }
+
+        // Check to see if PercentOfGraphUtilization property is set
+        internal bool IsSetPercentOfGraphUtilization()
+        {
+            return this._percentOfGraphUtilization.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PercentOfGraphUtilizationUpdatedTime. 
+        /// <para>
+        /// The date and time when the graph utilization percentage was last updated.
+        /// </para>
+        /// </summary>
+        public DateTime PercentOfGraphUtilizationUpdatedTime
+        {
+            get { return this._percentOfGraphUtilizationUpdatedTime.GetValueOrDefault(); }
+            set { this._percentOfGraphUtilizationUpdatedTime = value; }
+        }
+
+        // Check to see if PercentOfGraphUtilizationUpdatedTime property is set
+        internal bool IsSetPercentOfGraphUtilizationUpdatedTime()
+        {
+            return this._percentOfGraphUtilizationUpdatedTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The current membership status of the member account. The status can have one of the
@@ -167,6 +249,12 @@ namespace Amazon.Detective.Model
         /// <para>
         ///  <code>ENABLED</code> - Indicates that the member account accepted the invitation
         /// to contribute to the behavior graph.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the
+        /// invitation but is prevented from contributing data to the behavior graph. <code>DisabledReason</code>
+        /// provides the reason why the member account is not enabled.
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -79,6 +79,18 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.S3PutObjectCopy = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("S3PutObjectLegalHold", targetDepth))
+                    {
+                        var unmarshaller = S3SetObjectLegalHoldOperationUnmarshaller.Instance;
+                        unmarshalledObject.S3PutObjectLegalHold = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("S3PutObjectRetention", targetDepth))
+                    {
+                        var unmarshaller = S3SetObjectRetentionOperationUnmarshaller.Instance;
+                        unmarshalledObject.S3PutObjectRetention = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("S3PutObjectTagging", targetDepth))
                     {
                         var unmarshaller = S3SetObjectTaggingOperationUnmarshaller.Instance;

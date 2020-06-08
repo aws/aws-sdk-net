@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -40,8 +41,8 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of the domain for which you want Amazon Route 53 to resend a confirmation
-        /// email to the registrant contact.
+        /// The name of the domain for which you want Route 53 to resend a confirmation email
+        /// to the registrant contact.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

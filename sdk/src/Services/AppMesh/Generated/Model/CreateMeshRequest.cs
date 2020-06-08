@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,14 +30,19 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMesh operation.
-    /// Creates a service mesh. A service mesh is a logical boundary for network traffic between
-    ///         the services that reside within it.
+    /// Creates a service mesh.
     /// 
     ///          
     /// <para>
-    /// After you create your service mesh, you can create virtual services, virtual nodes,
-    ///         virtual routers, and routes to distribute traffic between the applications
-    /// in your         mesh.
+    ///  A service mesh is a logical boundary for network traffic between services that are
+    ///         represented by resources within the mesh. After you create your service mesh,
+    /// you can         create virtual services, virtual nodes, virtual routers, and routes
+    /// to distribute traffic         between the applications in your mesh.
+    /// </para>
+    ///          
+    /// <para>
+    /// For more information about service meshes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/meshes.html">Service
+    /// meshes</a>.
     /// </para>
     /// </summary>
     public partial class CreateMeshRequest : AmazonAppMeshRequest

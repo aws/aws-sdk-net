@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,8 @@ namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
     /// Specifies the schema to which you want Kinesis Data Firehose to configure your data
-    /// before it writes it to Amazon S3.
+    /// before it writes it to Amazon S3. This parameter is required if <code>Enabled</code>
+    /// is set to true.
     /// </summary>
     public partial class SchemaConfiguration
     {
@@ -47,6 +49,7 @@ namespace Amazon.KinesisFirehose.Model
         /// is used by default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string CatalogId
         {
             get { return this._catalogId; }
@@ -66,6 +69,7 @@ namespace Amazon.KinesisFirehose.Model
         /// data.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string DatabaseName
         {
             get { return this._databaseName; }
@@ -84,6 +88,7 @@ namespace Amazon.KinesisFirehose.Model
         /// If you don't specify an AWS Region, the default is the current Region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Region
         {
             get { return this._region; }
@@ -104,6 +109,7 @@ namespace Amazon.KinesisFirehose.Model
         /// allowed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string RoleARN
         {
             get { return this._roleARN; }
@@ -123,6 +129,7 @@ namespace Amazon.KinesisFirehose.Model
         /// your data schema.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string TableName
         {
             get { return this._tableName; }
@@ -144,6 +151,7 @@ namespace Amazon.KinesisFirehose.Model
         /// up.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string VersionId
         {
             get { return this._versionId; }

@@ -35,6 +35,10 @@ namespace Amazon.KinesisFirehose
         /// </summary>
         public static readonly CompressionFormat GZIP = new CompressionFormat("GZIP");
         /// <summary>
+        /// Constant HADOOP_SNAPPY for CompressionFormat
+        /// </summary>
+        public static readonly CompressionFormat HADOOP_SNAPPY = new CompressionFormat("HADOOP_SNAPPY");
+        /// <summary>
         /// Constant Snappy for CompressionFormat
         /// </summary>
         public static readonly CompressionFormat Snappy = new CompressionFormat("Snappy");
@@ -155,13 +159,25 @@ namespace Amazon.KinesisFirehose
     {
 
         /// <summary>
+        /// Constant CREATE_ENI_FAILED for DeliveryStreamFailureType
+        /// </summary>
+        public static readonly DeliveryStreamFailureType CREATE_ENI_FAILED = new DeliveryStreamFailureType("CREATE_ENI_FAILED");
+        /// <summary>
         /// Constant CREATE_KMS_GRANT_FAILED for DeliveryStreamFailureType
         /// </summary>
         public static readonly DeliveryStreamFailureType CREATE_KMS_GRANT_FAILED = new DeliveryStreamFailureType("CREATE_KMS_GRANT_FAILED");
         /// <summary>
+        /// Constant DELETE_ENI_FAILED for DeliveryStreamFailureType
+        /// </summary>
+        public static readonly DeliveryStreamFailureType DELETE_ENI_FAILED = new DeliveryStreamFailureType("DELETE_ENI_FAILED");
+        /// <summary>
         /// Constant DISABLED_KMS_KEY for DeliveryStreamFailureType
         /// </summary>
         public static readonly DeliveryStreamFailureType DISABLED_KMS_KEY = new DeliveryStreamFailureType("DISABLED_KMS_KEY");
+        /// <summary>
+        /// Constant ENI_ACCESS_DENIED for DeliveryStreamFailureType
+        /// </summary>
+        public static readonly DeliveryStreamFailureType ENI_ACCESS_DENIED = new DeliveryStreamFailureType("ENI_ACCESS_DENIED");
         /// <summary>
         /// Constant INVALID_KMS_KEY for DeliveryStreamFailureType
         /// </summary>
@@ -182,6 +198,22 @@ namespace Amazon.KinesisFirehose
         /// Constant RETIRE_KMS_GRANT_FAILED for DeliveryStreamFailureType
         /// </summary>
         public static readonly DeliveryStreamFailureType RETIRE_KMS_GRANT_FAILED = new DeliveryStreamFailureType("RETIRE_KMS_GRANT_FAILED");
+        /// <summary>
+        /// Constant SECURITY_GROUP_ACCESS_DENIED for DeliveryStreamFailureType
+        /// </summary>
+        public static readonly DeliveryStreamFailureType SECURITY_GROUP_ACCESS_DENIED = new DeliveryStreamFailureType("SECURITY_GROUP_ACCESS_DENIED");
+        /// <summary>
+        /// Constant SECURITY_GROUP_NOT_FOUND for DeliveryStreamFailureType
+        /// </summary>
+        public static readonly DeliveryStreamFailureType SECURITY_GROUP_NOT_FOUND = new DeliveryStreamFailureType("SECURITY_GROUP_NOT_FOUND");
+        /// <summary>
+        /// Constant SUBNET_ACCESS_DENIED for DeliveryStreamFailureType
+        /// </summary>
+        public static readonly DeliveryStreamFailureType SUBNET_ACCESS_DENIED = new DeliveryStreamFailureType("SUBNET_ACCESS_DENIED");
+        /// <summary>
+        /// Constant SUBNET_NOT_FOUND for DeliveryStreamFailureType
+        /// </summary>
+        public static readonly DeliveryStreamFailureType SUBNET_NOT_FOUND = new DeliveryStreamFailureType("SUBNET_NOT_FOUND");
         /// <summary>
         /// Constant UNKNOWN_ERROR for DeliveryStreamFailureType
         /// </summary>

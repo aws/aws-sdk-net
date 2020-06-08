@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -35,8 +36,28 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListSecurityProfilesRequest : AmazonIoTRequest
     {
+        private string _dimensionName;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property DimensionName. 
+        /// <para>
+        /// A filter to limit results to the security profiles that use the defined dimension.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string DimensionName
+        {
+            get { return this._dimensionName; }
+            set { this._dimensionName = value; }
+        }
+
+        // Check to see if DimensionName property is set
+        internal bool IsSetDimensionName()
+        {
+            return this._dimensionName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

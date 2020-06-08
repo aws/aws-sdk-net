@@ -133,6 +133,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         unmarshalledObject.HealthStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("OperationsRole", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OperationsRole = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("PlatformArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

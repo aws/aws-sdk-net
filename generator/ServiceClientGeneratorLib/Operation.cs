@@ -647,11 +647,11 @@ namespace ServiceClientGenerator
         /// <summary>
         /// The list of errors that the service returns which will be turned into exceptions.
         /// </summary>
-        public IList<ExceptionModel> Exceptions
+        public IList<ExceptionShape> Exceptions
         {
             get
             {
-                IList<ExceptionModel> list = new List<ExceptionModel>();
+                var hashSet = new HashSet<ExceptionShape>();
                 var errors = this.data[ServiceModel.ErrorsKey];
                 if (errors != null && errors.IsArray)
                 {
@@ -661,14 +661,11 @@ namespace ServiceClientGenerator
                         if (extendsNode == null)
                             continue;
                         var structure = this.model.FindShape(extendsNode.ToString());
-                        var documentationNode = structure.data[ServiceModel.DocumentationKey];
-                        var documentation = documentationNode == null ? "" : documentationNode.ToString();
-
-                        list.Add(new ExceptionModel(error, extendsNode.ToString(), documentation, structure));
+                        hashSet.Add((ExceptionShape)structure);
                     }
                 }
 
-                return list.OrderBy(x => x.Name).ToList();
+                return hashSet.OrderBy(x => x.Name).ToList();
             }
         }
 
@@ -790,7 +787,7 @@ namespace ServiceClientGenerator
         {
             get {
                 string serviceId = this.model.ServiceUid;
-                if (!string.IsNullOrEmpty(serviceId) && !IsExcludedServiceId(serviceId))
+                if (!string.IsNullOrEmpty(serviceId))
                 {
                     return string.Format(@"http://docs.aws.amazon.com/goto/WebAPI/{0}/{1}", serviceId, ShapeName);
                 }
@@ -801,27 +798,6 @@ namespace ServiceClientGenerator
             }
         }
 
-        private static List<string> _excludedServiceList = new List<string>
-        {
-            "apigateway",
-            "budgets",
-            "cloudsearch",
-            "cloudsearchdomain",
-            "elastictranscoder",
-            "es",
-            "glacier",
-            "importexport",
-            "iot-data",
-            "mobileanalytics",
-            "pinpoint",
-            "s3",
-            "sdb",
-            "xray",
-        };
         private static ConcurrentDictionary<string, bool> _checkedService = new ConcurrentDictionary<string, bool>();
-        private static bool IsExcludedServiceId(string serviceId)
-        {
-            return _checkedService.GetOrAdd(serviceId, (k) => _excludedServiceList.Any((excludedService) => k.StartsWith(excludedService, StringComparison.OrdinalIgnoreCase)));
-        }
     }
 }

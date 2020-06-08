@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,9 +30,16 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the PutLifecycleEventHookExecutionStatus operation.
-    /// Sets the result of a Lambda validation function. The function validates one or both
-    /// lifecycle events (<code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>)
-    /// and returns <code>Succeeded</code> or <code>Failed</code>.
+    /// Sets the result of a Lambda validation function. The function validates lifecycle
+    /// hooks during a deployment that uses the AWS Lambda or Amazon ECS compute platform.
+    /// For AWS Lambda deployments, the available lifecycle hooks are <code>BeforeAllowTraffic</code>
+    /// and <code>AfterAllowTraffic</code>. For Amazon ECS deployments, the available lifecycle
+    /// hooks are <code>BeforeInstall</code>, <code>AfterInstall</code>, <code>AfterAllowTestTraffic</code>,
+    /// <code>BeforeAllowTraffic</code>, and <code>AfterAllowTraffic</code>. Lambda validation
+    /// functions return <code>Succeeded</code> or <code>Failed</code>. For more information,
+    /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec
+    /// 'hooks' Section for an AWS Lambda Deployment </a> and <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec
+    /// 'hooks' Section for an Amazon ECS Deployment</a>.
     /// </summary>
     public partial class PutLifecycleEventHookExecutionStatusRequest : AmazonCodeDeployRequest
     {

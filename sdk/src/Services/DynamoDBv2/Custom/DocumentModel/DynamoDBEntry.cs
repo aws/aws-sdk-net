@@ -39,11 +39,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             public CircularReferenceTracking CRT { get; private set; }
             public DynamoDBEntryConversion Conversion { get; private set; }
+            public bool IsEmptyStringValueEnabled { get; set; }
 
-            public AttributeConversionConfig(DynamoDBEntryConversion conversion)
+            public AttributeConversionConfig(DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled)
             {
                 Conversion = conversion;
                 CRT = new CircularReferenceTracking();
+                IsEmptyStringValueEnabled = isEmptyStringValueEnabled;
             }
         }
 

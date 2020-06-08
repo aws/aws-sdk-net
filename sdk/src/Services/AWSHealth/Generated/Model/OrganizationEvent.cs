@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -35,6 +36,7 @@ namespace Amazon.AWSHealth.Model
     {
         private string _arn;
         private DateTime? _endTime;
+        private EventScopeCode _eventScopeCode;
         private EventTypeCategory _eventTypeCategory;
         private string _eventTypeCode;
         private DateTime? _lastUpdatedTime;
@@ -80,6 +82,21 @@ namespace Amazon.AWSHealth.Model
         internal bool IsSetEndTime()
         {
             return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventScopeCode.
+        /// </summary>
+        public EventScopeCode EventScopeCode
+        {
+            get { return this._eventScopeCode; }
+            set { this._eventScopeCode = value; }
+        }
+
+        // Check to see if EventScopeCode property is set
+        internal bool IsSetEventScopeCode()
+        {
+            return this._eventScopeCode != null;
         }
 
         /// <summary>

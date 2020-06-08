@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -34,6 +35,7 @@ namespace Amazon.MarketplaceCatalog.Model
     public partial class ChangeSummary
     {
         private string _changeType;
+        private string _details;
         private Entity _entity;
         private List<ErrorDetail> _errorDetailList = new List<ErrorDetail>();
 
@@ -54,6 +56,25 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetChangeType()
         {
             return this._changeType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Details. 
+        /// <para>
+        /// This object contains details specific to the change type of the requested change.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=16384)]
+        public string Details
+        {
+            get { return this._details; }
+            set { this._details = value; }
+        }
+
+        // Check to see if Details property is set
+        internal bool IsSetDetails()
+        {
+            return this._details != null;
         }
 
         /// <summary>

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -65,19 +66,20 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property Deployed. 
         /// <para>
         ///  Whether to list revisions based on whether the revision is the target revision of
-        /// an deployment group: 
+        /// a deployment group: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// include: List revisions that are target revisions of a deployment group.
+        ///  <code>include</code>: List revisions that are target revisions of a deployment group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// exclude: Do not list revisions that are target revisions of a deployment group.
+        ///  <code>exclude</code>: Do not list revisions that are target revisions of a deployment
+        /// group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ignore: List all revisions.
+        ///  <code>ignore</code>: List all revisions.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -160,15 +162,16 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// registerTime: Sort by the time the revisions were registered with AWS CodeDeploy.
+        ///  <code>registerTime</code>: Sort by the time the revisions were registered with AWS
+        /// CodeDeploy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// firstUsedTime: Sort by the time the revisions were first used in a deployment.
+        ///  <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// lastUsedTime: Sort by the time the revisions were last used in a deployment.
+        ///  <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -195,11 +198,11 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// ascending: ascending order.
+        ///  <code>ascending</code>: ascending order.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// descending: descending order.
+        ///  <code>descending</code>: descending order.
         /// </para>
         ///  </li> </ul> 
         /// <para>

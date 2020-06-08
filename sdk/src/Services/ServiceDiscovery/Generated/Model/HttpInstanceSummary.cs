@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
-    /// In a response to a <a>DiscoverInstance</a> request, <code>HttpInstanceSummary</code>
-    /// contains information about one instance that matches the values that you specified
-    /// in the request.
+    /// In a response to a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>
+    /// request, <code>HttpInstanceSummary</code> contains information about one instance
+    /// that matches the values that you specified in the request.
     /// </summary>
     public partial class HttpInstanceSummary
     {

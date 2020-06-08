@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,10 +34,13 @@ namespace Amazon.AppMesh.Model
     public partial class RouteRef
     {
         private string _arn;
+        private DateTime? _createdAt;
+        private DateTime? _lastUpdatedAt;
         private string _meshName;
         private string _meshOwner;
         private string _resourceOwner;
         private string _routeName;
+        private long? _version;
         private string _virtualRouterName;
 
         /// <summary>
@@ -56,6 +60,38 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public DateTime CreatedAt
+        {
+            get { return this._createdAt.GetValueOrDefault(); }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUpdatedAt.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public DateTime LastUpdatedAt
+        {
+            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            set { this._lastUpdatedAt = value; }
+        }
+
+        // Check to see if LastUpdatedAt property is set
+        internal bool IsSetLastUpdatedAt()
+        {
+            return this._lastUpdatedAt.HasValue; 
         }
 
         /// <summary>
@@ -103,8 +139,8 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property ResourceOwner. 
         /// <para>
         /// The AWS IAM account ID of the resource owner. If the account ID is not your own, then
-        /// it's               the ID of the mesh owner, or another account that the mesh is shared
-        /// with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+        /// it's               the ID of the mesh owner or of another account that the mesh is
+        /// shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
         /// with Shared Meshes</a>.
         /// </para>
         /// </summary>
@@ -138,6 +174,22 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetRouteName()
         {
             return this._routeName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public long Version
+        {
+            get { return this._version.GetValueOrDefault(); }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version.HasValue; 
         }
 
         /// <summary>

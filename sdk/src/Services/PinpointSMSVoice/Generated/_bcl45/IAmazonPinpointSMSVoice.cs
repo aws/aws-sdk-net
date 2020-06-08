@@ -64,6 +64,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         CreateConfigurationSetResponse CreateConfigurationSet(CreateConfigurationSetRequest request);
 
 
@@ -95,6 +96,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         Task<CreateConfigurationSetResponse> CreateConfigurationSetAsync(CreateConfigurationSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -128,6 +130,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
         CreateConfigurationSetEventDestinationResponse CreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request);
 
 
@@ -161,6 +164,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
         Task<CreateConfigurationSetEventDestinationResponse> CreateConfigurationSetEventDestinationAsync(CreateConfigurationSetEventDestinationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -188,6 +192,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         DeleteConfigurationSetResponse DeleteConfigurationSet(DeleteConfigurationSetRequest request);
 
 
@@ -215,6 +220,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         Task<DeleteConfigurationSetResponse> DeleteConfigurationSetAsync(DeleteConfigurationSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -242,6 +248,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/DeleteConfigurationSetEventDestination">REST API Reference for DeleteConfigurationSetEventDestination Operation</seealso>
         DeleteConfigurationSetEventDestinationResponse DeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request);
 
 
@@ -269,6 +276,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/DeleteConfigurationSetEventDestination">REST API Reference for DeleteConfigurationSetEventDestination Operation</seealso>
         Task<DeleteConfigurationSetEventDestinationResponse> DeleteConfigurationSetEventDestinationAsync(DeleteConfigurationSetEventDestinationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -297,6 +305,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/GetConfigurationSetEventDestinations">REST API Reference for GetConfigurationSetEventDestinations Operation</seealso>
         GetConfigurationSetEventDestinationsResponse GetConfigurationSetEventDestinations(GetConfigurationSetEventDestinationsRequest request);
 
 
@@ -325,6 +334,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/GetConfigurationSetEventDestinations">REST API Reference for GetConfigurationSetEventDestinations Operation</seealso>
         Task<GetConfigurationSetEventDestinationsResponse> GetConfigurationSetEventDestinationsAsync(GetConfigurationSetEventDestinationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -350,6 +360,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         ListConfigurationSetsResponse ListConfigurationSets(ListConfigurationSetsRequest request);
 
 
@@ -375,6 +386,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         Task<ListConfigurationSetsResponse> ListConfigurationSetsAsync(ListConfigurationSetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -399,6 +411,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/SendVoiceMessage">REST API Reference for SendVoiceMessage Operation</seealso>
         SendVoiceMessageResponse SendVoiceMessage(SendVoiceMessageRequest request);
 
 
@@ -423,6 +436,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/SendVoiceMessage">REST API Reference for SendVoiceMessage Operation</seealso>
         Task<SendVoiceMessageResponse> SendVoiceMessageAsync(SendVoiceMessageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -452,6 +466,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/UpdateConfigurationSetEventDestination">REST API Reference for UpdateConfigurationSetEventDestination Operation</seealso>
         UpdateConfigurationSetEventDestinationResponse UpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request);
 
 
@@ -481,6 +496,7 @@ namespace Amazon.PinpointSMSVoice
         /// You've issued too many requests to the resource. Wait a few minutes, and then try
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/UpdateConfigurationSetEventDestination">REST API Reference for UpdateConfigurationSetEventDestination Operation</seealso>
         Task<UpdateConfigurationSetEventDestinationResponse> UpdateConfigurationSetEventDestinationAsync(UpdateConfigurationSetEventDestinationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

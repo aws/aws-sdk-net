@@ -58,7 +58,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             AWSConfigsDynamoDB.Context.TableNamePrefix = TableNamePrefix;
 
             // Construct single context object to use for all operations
-            CreateContext(DynamoDBEntryConversion.V1);
+            CreateContext(DynamoDBEntryConversion.V1, false);
         }
 
         private static void ClientBeforeRequestEvent(object sender, Amazon.Runtime.RequestEventArgs e)
@@ -90,11 +90,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ClearTable(numericHashRangeTableName);
         }
 
-        public static void CreateContext(DynamoDBEntryConversion conversion)
+        public static void CreateContext(DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled)
         {
             var config = new DynamoDBContextConfig
             {
                 //IgnoreNullValues = true
+                IsEmptyStringValueEnabled = isEmptyStringValueEnabled,
                 Conversion = conversion
             };
             Context = new DynamoDBContext(Client, config);
@@ -126,7 +127,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         public static void ClearTable(string tableName)
         {
-            var table = Table.LoadTable(Client, tableName, DynamoDBEntryConversion.V1);
+            var table = Table.LoadTable(Client, tableName, DynamoDBEntryConversion.V1, true);
             var keyNames = table.Keys.Keys.ToList();
             
             // Retrieve all keys

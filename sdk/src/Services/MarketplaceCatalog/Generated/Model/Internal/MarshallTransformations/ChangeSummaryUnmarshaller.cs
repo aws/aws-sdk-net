@@ -70,6 +70,12 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                     unmarshalledObject.ChangeType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Details", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Details = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Entity", targetDepth))
                 {
                     var unmarshaller = EntityUnmarshaller.Instance;

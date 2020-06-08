@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -30,14 +31,14 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the DescribeOpsItems operation.
     /// Query a set of OpsItems. You must have permission in AWS Identity and Access Management
-    /// (IAM) to query a list of OpsItems. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-    /// Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// (IAM) to query a list of OpsItems. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+    /// started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
     /// 
     ///  
     /// <para>
     /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
     /// remediate operational issues impacting the performance and health of their AWS resources.
-    /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+    /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
     /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
     /// </para>
     /// </summary>
@@ -88,7 +89,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OpsItemFilters. 
         /// <para>
-        /// One or more filters to limit the reponse.
+        /// One or more filters to limit the response.
         /// </para>
         ///  <ul> <li> 
         /// <para>

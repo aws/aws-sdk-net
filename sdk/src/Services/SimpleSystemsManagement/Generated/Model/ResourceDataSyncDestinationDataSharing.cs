@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,9 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Synchronize Systems Manager Inventory data from multiple AWS accounts defined in AWS
-    /// Organizations to a centralized Amazon S3 bucket. Data is synchronized to individual
-    /// key prefixes in the central bucket. Each key prefix represents a different AWS account
-    /// ID.
+    /// Organizations to a centralized S3 bucket. Data is synchronized to individual key prefixes
+    /// in the central bucket. Each key prefix represents a different AWS account ID.
     /// </summary>
     public partial class ResourceDataSyncDestinationDataSharing
     {

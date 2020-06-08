@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,7 @@ namespace Amazon.Macie.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateMemberAccount operation.
-    /// Removes the specified member account from Amazon Macie.
+    /// Removes the specified member account from Amazon Macie Classic.
     /// </summary>
     public partial class DisassociateMemberAccountRequest : AmazonMacieRequest
     {
@@ -38,7 +39,7 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property MemberAccountId. 
         /// <para>
-        /// The ID of the member account that you want to remove from Amazon Macie.
+        /// The ID of the member account that you want to remove from Amazon Macie Classic.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

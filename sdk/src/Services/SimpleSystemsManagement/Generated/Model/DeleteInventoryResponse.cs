@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -61,8 +62,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property DeletionSummary. 
         /// <para>
         /// A summary of the delete operation. For more information about this summary, see <a
-        /// href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-delete.html#sysman-inventory-delete-summary">Understanding
-        /// the Delete Inventory Summary</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete-summary">Deleting
+        /// custom inventory</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public InventoryDeletionSummary DeletionSummary

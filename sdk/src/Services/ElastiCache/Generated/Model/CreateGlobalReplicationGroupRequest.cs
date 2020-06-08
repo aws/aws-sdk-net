@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -37,7 +38,7 @@ namespace Amazon.ElastiCache.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// The <b>GlobalReplicationGroupId</b> is the name of the Global Datastore.
+    /// The <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global Datastore.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -73,8 +74,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property GlobalReplicationGroupIdSuffix. 
         /// <para>
-        /// The suffix for name of a Global Datastore. The suffix guarantees uniqueness of the
-        /// Global Datastore name across multiple regions.
+        /// The suffix name of a Global Datastore. The suffix guarantees uniqueness of the Global
+        /// Datastore name across multiple regions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

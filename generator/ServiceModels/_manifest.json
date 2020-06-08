@@ -11,6 +11,20 @@
             "frameworkReferences" : [
                 {"name": "System.Configuration"},
                 {"name": "System.Data.Entity", "hintPath" : "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\v3.5\\System.Data.Entity.dll"}
+            ],
+            "packageReferences": [
+                {
+                    "include": "Microsoft.CodeAnalysis.FxCopAnalyzers",
+                    "version": "2.9.3",
+                    "privateAssets": "all",
+                    "analyzer": true
+                },
+                {
+                    "include": "Microsoft.DotNet.Analyzers.Compatibility",
+                    "version": "0.2.12-alpha",
+                    "privateAssets": "all",
+                    "analyzer": true
+                }
             ]
         },
         {
@@ -22,6 +36,20 @@
             "nugetTargetPlatform": "net45",
             "frameworkReferences" : [
                 {"name": "System.Configuration"}
+            ],
+            "packageReferences": [
+              {
+                "include": "Microsoft.CodeAnalysis.FxCopAnalyzers",
+                "version": "2.9.3",
+                "privateAssets": "all",
+                "analyzer": true
+              },
+              {
+                "include": "Microsoft.DotNet.Analyzers.Compatibility",
+                "version": "0.2.12-alpha",
+                "privateAssets": "all",
+                "analyzer": true
+              }
             ]
         },
         {
@@ -31,7 +59,21 @@
             "template": "VS2017ProjectFile",
             "binSubFolder" : "",
             "configurations" : [],
-            "excludeFolders": ["_bcl35", "_bcl45", "_bcl", "obj"]
+            "excludeFolders": ["_bcl35", "_bcl45", "_bcl", "obj"],
+            "packageReferences": [
+              {
+                "include": "Microsoft.CodeAnalysis.FxCopAnalyzers",
+                "version": "2.9.3",
+                "privateAssets": "all",
+                "analyzer": true
+              },
+              {
+                "include": "Microsoft.DotNet.Analyzers.Compatibility",
+                "version": "0.2.12-alpha",
+                "privateAssets": "all",
+                "analyzer": true
+              }
+            ]
         }        
     ],
     "unittestprojects":[

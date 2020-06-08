@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -215,7 +216,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// The pre-signed URL must be a valid request for the <code>CopyDBSClusterSnapshot</code>
+        /// The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code>
         /// API action that can be executed in the source AWS Region that contains the encrypted
         /// DB cluster snapshot to be copied. The pre-signed URL request must contain the following
         /// parameter values:

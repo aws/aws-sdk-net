@@ -197,6 +197,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionPropertyKey CONFIG_FILES = new ConnectionPropertyKey("CONFIG_FILES");
         /// <summary>
+        /// Constant CONNECTION_URL for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey CONNECTION_URL = new ConnectionPropertyKey("CONNECTION_URL");
+        /// <summary>
         /// Constant CUSTOM_JDBC_CERT for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey CUSTOM_JDBC_CERT = new ConnectionPropertyKey("CUSTOM_JDBC_CERT");
@@ -240,6 +244,10 @@ namespace Amazon.Glue
         /// Constant JDBC_ENGINE_VERSION for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey JDBC_ENGINE_VERSION = new ConnectionPropertyKey("JDBC_ENGINE_VERSION");
+        /// <summary>
+        /// Constant KAFKA_BOOTSTRAP_SERVERS for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_BOOTSTRAP_SERVERS = new ConnectionPropertyKey("KAFKA_BOOTSTRAP_SERVERS");
         /// <summary>
         /// Constant PASSWORD for ConnectionPropertyKey
         /// </summary>
@@ -302,6 +310,14 @@ namespace Amazon.Glue
         /// Constant JDBC for ConnectionType
         /// </summary>
         public static readonly ConnectionType JDBC = new ConnectionType("JDBC");
+        /// <summary>
+        /// Constant KAFKA for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType KAFKA = new ConnectionType("KAFKA");
+        /// <summary>
+        /// Constant MONGODB for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType MONGODB = new ConnectionType("MONGODB");
         /// <summary>
         /// Constant SFTP for ConnectionType
         /// </summary>
@@ -406,6 +422,10 @@ namespace Amazon.Glue
         /// Constant CANCELLED for CrawlState
         /// </summary>
         public static readonly CrawlState CANCELLED = new CrawlState("CANCELLED");
+        /// <summary>
+        /// Constant CANCELLING for CrawlState
+        /// </summary>
+        public static readonly CrawlState CANCELLING = new CrawlState("CANCELLING");
         /// <summary>
         /// Constant FAILED for CrawlState
         /// </summary>
@@ -1978,6 +1998,14 @@ namespace Amazon.Glue
         /// Constant RUNNING for WorkflowRunStatus
         /// </summary>
         public static readonly WorkflowRunStatus RUNNING = new WorkflowRunStatus("RUNNING");
+        /// <summary>
+        /// Constant STOPPED for WorkflowRunStatus
+        /// </summary>
+        public static readonly WorkflowRunStatus STOPPED = new WorkflowRunStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for WorkflowRunStatus
+        /// </summary>
+        public static readonly WorkflowRunStatus STOPPING = new WorkflowRunStatus("STOPPING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

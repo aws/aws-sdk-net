@@ -500,6 +500,10 @@
       <Project>{A91AAA7A-2E05-4F9A-BCDA-0EBDF580147D}</Project>
       <Name>AWSSDK.IoTSecureTunneling.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/IoTSiteWise/AWSSDK.IoTSiteWise.CodeAnalysis.csproj">
+      <Project>{33582910-C352-4051-807A-66541519A477}</Project>
+      <Name>AWSSDK.IoTSiteWise.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/IoTThingsGraph/AWSSDK.IoTThingsGraph.CodeAnalysis.csproj">
       <Project>{E1340219-BBFF-4AFA-AB2E-0AEB09614F70}</Project>
       <Name>AWSSDK.IoTThingsGraph.CodeAnalysis</Name>
@@ -579,6 +583,10 @@
     <ProjectReference Include="../ServiceAnalysis/Macie/AWSSDK.Macie.CodeAnalysis.csproj">
       <Project>{D0FFC9AF-C480-4E92-BD03-2DCBD4BABA72}</Project>
       <Name>AWSSDK.Macie.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Macie2/AWSSDK.Macie2.CodeAnalysis.csproj">
+      <Project>{D774395B-8CE5-4430-9EE3-9C6E3D299326}</Project>
+      <Name>AWSSDK.Macie2.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ManagedBlockchain/AWSSDK.ManagedBlockchain.CodeAnalysis.csproj">
       <Project>{26BEB3CC-1EB9-472C-91F4-F99B549826D9}</Project>
@@ -875,6 +883,10 @@
     <ProjectReference Include="../ServiceAnalysis/StorageGateway/AWSSDK.StorageGateway.CodeAnalysis.csproj">
       <Project>{EAA89879-58E1-4469-83F2-C6479AEA119E}</Project>
       <Name>AWSSDK.StorageGateway.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Synthetics/AWSSDK.Synthetics.CodeAnalysis.csproj">
+      <Project>{87A5016B-5D72-4F13-BE02-E352EC9C6B04}</Project>
+      <Name>AWSSDK.Synthetics.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Textract/AWSSDK.Textract.CodeAnalysis.csproj">
       <Project>{7405B582-7CF7-4142-A230-3E9AA662244F}</Project>

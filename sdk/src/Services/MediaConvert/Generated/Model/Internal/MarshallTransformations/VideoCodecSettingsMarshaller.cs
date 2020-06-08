@@ -117,6 +117,28 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetVp8Settings())
+            {
+                context.Writer.WritePropertyName("vp8Settings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = Vp8SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Vp8Settings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetVp9Settings())
+            {
+                context.Writer.WritePropertyName("vp9Settings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = Vp9SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Vp9Settings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

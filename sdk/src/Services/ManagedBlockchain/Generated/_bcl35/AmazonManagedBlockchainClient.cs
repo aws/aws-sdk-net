@@ -1515,6 +1515,152 @@ namespace Amazon.ManagedBlockchain
 
         #endregion
         
+        #region  UpdateMember
+
+        /// <summary>
+        /// Updates a member configuration with new parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMember service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMember service method, as returned by ManagedBlockchain.</returns>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InvalidRequestException">
+        /// The action or operation requested is invalid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
+        /// A requested resource does not exist on the network. It may have been deleted or referenced
+        /// inaccurately.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
+        /// The request or operation could not be performed because a service is throttling requests.
+        /// The most common source of throttling errors is launching EC2 instances such that your
+        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
+        /// resources if possible.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateMember">REST API Reference for UpdateMember Operation</seealso>
+        public virtual UpdateMemberResponse UpdateMember(UpdateMemberRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMemberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMemberResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMemberResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMember operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMember operation on AmazonManagedBlockchainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMember
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateMember">REST API Reference for UpdateMember Operation</seealso>
+        public virtual IAsyncResult BeginUpdateMember(UpdateMemberRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMemberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMemberResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMember operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMember.</param>
+        /// 
+        /// <returns>Returns a  UpdateMemberResult from ManagedBlockchain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateMember">REST API Reference for UpdateMember Operation</seealso>
+        public virtual UpdateMemberResponse EndUpdateMember(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateMemberResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateNode
+
+        /// <summary>
+        /// Updates a node configuration with new parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNode service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNode service method, as returned by ManagedBlockchain.</returns>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InvalidRequestException">
+        /// The action or operation requested is invalid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
+        /// A requested resource does not exist on the network. It may have been deleted or referenced
+        /// inaccurately.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
+        /// The request or operation could not be performed because a service is throttling requests.
+        /// The most common source of throttling errors is launching EC2 instances such that your
+        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
+        /// resources if possible.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateNode">REST API Reference for UpdateNode Operation</seealso>
+        public virtual UpdateNodeResponse UpdateNode(UpdateNodeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNodeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNodeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNode operation on AmazonManagedBlockchainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNode
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateNode">REST API Reference for UpdateNode Operation</seealso>
+        public virtual IAsyncResult BeginUpdateNode(UpdateNodeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNodeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateNode operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateNode.</param>
+        /// 
+        /// <returns>Returns a  UpdateNodeResult from ManagedBlockchain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateNode">REST API Reference for UpdateNode Operation</seealso>
+        public virtual UpdateNodeResponse EndUpdateNode(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateNodeResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  VoteOnProposal
 
         /// <summary>

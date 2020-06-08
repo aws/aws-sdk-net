@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -61,7 +62,7 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// Information about the groups of EC2 instance tags that an instance must be identified
         /// by in order for it to be included in the replacement environment for a blue/green
-        /// deployment. Cannot be used in the same call as tagFilters.
+        /// deployment. Cannot be used in the same call as <code>tagFilters</code>.
         /// </para>
         /// </summary>
         public EC2TagSet Ec2TagSet
@@ -80,7 +81,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property TagFilters. 
         /// <para>
         /// The tag filter key, type, and value used to identify Amazon EC2 instances in a replacement
-        /// environment for a blue/green deployment. Cannot be used in the same call as ec2TagSet.
+        /// environment for a blue/green deployment. Cannot be used in the same call as <code>ec2TagSet</code>.
         /// </para>
         /// </summary>
         public List<EC2TagFilter> TagFilters

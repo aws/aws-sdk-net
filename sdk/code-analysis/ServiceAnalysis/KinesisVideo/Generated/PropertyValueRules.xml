@@ -26,6 +26,7 @@
     <property>Amazon.KinesisVideo.Model.CreateStreamRequest.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.CreateStreamRequest.MediaType</property>
@@ -330,6 +331,7 @@
     <property>Amazon.KinesisVideo.Model.StreamInfo.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.StreamInfo.MediaType</property>

@@ -70,6 +70,18 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClearTimer = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dynamoDB", targetDepth))
+                {
+                    var unmarshaller = DynamoDBActionUnmarshaller.Instance;
+                    unmarshalledObject.DynamoDB = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dynamoDBv2", targetDepth))
+                {
+                    var unmarshaller = DynamoDBv2ActionUnmarshaller.Instance;
+                    unmarshalledObject.DynamoDBv2 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("firehose", targetDepth))
                 {
                     var unmarshaller = FirehoseActionUnmarshaller.Instance;
@@ -80,6 +92,12 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IotEventsActionUnmarshaller.Instance;
                     unmarshalledObject.IotEvents = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("iotSiteWise", targetDepth))
+                {
+                    var unmarshaller = IotSiteWiseActionUnmarshaller.Instance;
+                    unmarshalledObject.IotSiteWise = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("iotTopicPublish", targetDepth))

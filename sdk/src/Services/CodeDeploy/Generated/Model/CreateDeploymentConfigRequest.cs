@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -96,7 +97,7 @@ namespace Amazon.CodeDeploy.Model
         /// FLEET_PERCENT: The value parameter represents the minimum number of healthy instances
         /// as a percentage of the total number of instances in the deployment. If you specify
         /// FLEET_PERCENT, at the start of the deployment, AWS CodeDeploy converts the percentage
-        /// to the equivalent number of instance and rounds up fractional instances.
+        /// to the equivalent number of instances and rounds up fractional instances.
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -34,6 +35,7 @@ namespace Amazon.DataExchange.Model
     {
         private List<AssetDestinationEntry> _assetDestinations = new List<AssetDestinationEntry>();
         private string _dataSetId;
+        private ExportServerSideEncryption _encryption;
         private string _revisionId;
 
         /// <summary>
@@ -72,6 +74,24 @@ namespace Amazon.DataExchange.Model
         internal bool IsSetDataSetId()
         {
             return this._dataSetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Encryption. 
+        /// <para>
+        /// Encryption configuration for the export job.
+        /// </para>
+        /// </summary>
+        public ExportServerSideEncryption Encryption
+        {
+            get { return this._encryption; }
+            set { this._encryption = value; }
+        }
+
+        // Check to see if Encryption property is set
+        internal bool IsSetEncryption()
+        {
+            return this._encryption != null;
         }
 
         /// <summary>

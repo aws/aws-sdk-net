@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -61,7 +62,7 @@ namespace Amazon.IoT.Model
         /// parameter allows you to create a staged rollout.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1000)]
         public int MaximumPerMinute
         {
             get { return this._maximumPerMinute.GetValueOrDefault(); }

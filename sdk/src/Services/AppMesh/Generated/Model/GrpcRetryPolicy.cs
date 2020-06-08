@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -64,7 +65,7 @@ namespace Amazon.AppMesh.Model
         /// <para>
         /// Specify at least one of the following values.
         /// </para>
-        ///          <ul>            <li>               
+        ///           <ul>            <li>               
         /// <para>
         ///                   <b>server-error</b> – HTTP status codes 500, 501,              
         ///    502, 503, 504, 505, 506, 507, 508, 510, and 511

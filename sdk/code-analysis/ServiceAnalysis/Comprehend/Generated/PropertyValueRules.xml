@@ -568,14 +568,6 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Comprehend.Model.BatchSizeLimitExceededException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Comprehend.Model.ConcurrentModificationException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Comprehend.Model.DocumentClass.Name</property>
     <min>1</min>
   </property-value-rule>
@@ -784,22 +776,6 @@
     <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Comprehend.Model.InternalServerException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Comprehend.Model.InvalidFilterException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Comprehend.Model.InvalidRequestException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Comprehend.Model.JobNotFoundException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Comprehend.Model.KeyPhrase.Text</property>
     <min>1</min>
   </property-value-rule>
@@ -832,10 +808,6 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Comprehend.Model.KmsKeyValidationException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Comprehend.Model.OutputDataConfig.KmsKeyId</property>
     <max>2048</max>
   </property-value-rule>
@@ -843,22 +815,6 @@
     <property>Amazon.Comprehend.Model.OutputDataConfig.S3Uri</property>
     <max>1024</max>
     <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Comprehend.Model.ResourceInUseException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Comprehend.Model.ResourceLimitExceededException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Comprehend.Model.ResourceNotFoundException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Comprehend.Model.ResourceUnavailableException.Message</property>
-    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Comprehend.Model.SentimentDetectionJobFilter.JobName</property>
@@ -903,22 +859,6 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Comprehend.Model.TextSizeLimitExceededException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Comprehend.Model.TooManyRequestsException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Comprehend.Model.TooManyTagKeysException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Comprehend.Model.TooManyTagsException.Message</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Comprehend.Model.TopicsDetectionJobFilter.JobName</property>
     <min>1</min>
     <max>256</max>
@@ -945,9 +885,5 @@
   <property-value-rule>
     <property>Amazon.Comprehend.Model.TopicsDetectionJobProperties.VolumeKmsKeyId</property>
     <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Comprehend.Model.UnsupportedLanguageException.Message</property>
-    <min>1</min>
   </property-value-rule>
 </property-value-rules>

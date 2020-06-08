@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -116,7 +117,7 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property VpcConfiguration. 
         /// <para>
         /// If you include this field, Amazon S3 restricts access to this access point to requests
-        /// from the specified Virtual Private Cloud (VPC).
+        /// from the specified virtual private cloud (VPC).
         /// </para>
         /// </summary>
         public VpcConfiguration VpcConfiguration

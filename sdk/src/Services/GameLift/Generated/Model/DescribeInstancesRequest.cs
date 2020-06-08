@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -40,6 +41,33 @@ namespace Amazon.GameLift.Model
     /// as a set of sequential pages. If successful, an <a>Instance</a> object is returned
     /// for each result.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
+    /// Access Fleet Instances</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug
+    /// Fleet Issues</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeInstances</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetInstanceAccess</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeInstancesRequest : AmazonGameLiftRequest
     {

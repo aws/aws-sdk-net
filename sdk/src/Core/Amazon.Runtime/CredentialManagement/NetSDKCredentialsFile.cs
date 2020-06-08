@@ -54,6 +54,9 @@ namespace Amazon.Runtime.CredentialManagement
 
         private const string S3RegionalEndpointField = "S3RegionalEndpoint";
 
+        private const string RetryModeField = "RetryMode";
+        private const string MaxAttemptsField = "MaxAttempts";
+
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             SettingsConstants.DisplayNameField,
@@ -62,7 +65,9 @@ namespace Amazon.Runtime.CredentialManagement
             EndpointDiscoveryEnabledField,
             S3UseArnRegionField,
             StsRegionalEndpointsField,
-            S3RegionalEndpointField
+            S3RegionalEndpointField,
+            RetryModeField,
+            MaxAttemptsField
         };
 
         private static readonly CredentialProfilePropertyMapping PropertyMapping =
@@ -224,6 +229,42 @@ namespace Amazon.Runtime.CredentialManagement
 #endif
                     }
 
+                    RequestRetryMode? requestRetryMode = null;
+                    if (reservedProperties.TryGetValue(RetryModeField, out var retryModeString))
+                    {
+#if BCL35
+                        try
+                        {
+                            requestRetryMode = (RequestRetryMode)Enum.Parse(typeof(RequestRetryMode), retryModeString, true);
+                        }
+                        catch (Exception)
+                        {
+                            profile = null;
+                            return false;
+                        }
+#else
+                        if (!Enum.TryParse<RequestRetryMode>(retryModeString, true, out var tempRetryMode))
+                        {
+                            profile = null;
+                            return false;
+                        }
+                        requestRetryMode = tempRetryMode;
+#endif
+                    }
+
+                    int? maxAttempts = null;
+                    if (reservedProperties.TryGetValue(MaxAttemptsField, out var maxAttemptsString))
+                    {
+                        if (!int.TryParse(maxAttemptsString, out var maxAttemptsTemp) || maxAttemptsTemp <= 0)
+                        {
+                            Logger.GetLogger(GetType()).InfoFormat("Invalid value {0} for {1} in profile {2}. A positive integer is expected.", maxAttemptsString, MaxAttemptsField, profileName);
+                            profile = null;
+                            return false;
+                        }
+
+                        maxAttempts = maxAttemptsTemp;
+                    }
+
                     profile = new CredentialProfile(profileName, profileOptions)
                     {
                         UniqueKey = uniqueKey,
@@ -233,7 +274,9 @@ namespace Amazon.Runtime.CredentialManagement
                         EndpointDiscoveryEnabled = endpointDiscoveryEnabled,
                         StsRegionalEndpoints = stsRegionalEndpoints,
                         S3UseArnRegion = s3UseArnRegion,
-                        S3RegionalEndpoint = s3RegionalEndpoint
+                        S3RegionalEndpoint = s3RegionalEndpoint,
+                        RetryMode = requestRetryMode,
+                        MaxAttempts = maxAttempts
                     };
                     return true;
                 }
@@ -280,6 +323,12 @@ namespace Amazon.Runtime.CredentialManagement
                     
                 if (profile.S3RegionalEndpoint != null)
                     reservedProperties[S3RegionalEndpointField] = profile.S3RegionalEndpoint.ToString().ToLowerInvariant();
+
+                if (profile.RetryMode != null)
+                    reservedProperties[RetryModeField] = profile.RetryMode.ToString().ToLowerInvariant();
+
+                if (profile.MaxAttempts != null)
+                    reservedProperties[MaxAttemptsField] = profile.MaxAttempts.ToString().ToLowerInvariant();
 
                 var profileDictionary = PropertyMapping.CombineProfileParts(
                     profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);

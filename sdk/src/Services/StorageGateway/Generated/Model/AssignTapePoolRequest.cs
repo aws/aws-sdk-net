@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -32,7 +33,7 @@ namespace Amazon.StorageGateway.Model
     /// Assigns a tape to a tape pool for archiving. The tape assigned to a pool is archived
     /// in the S3 storage class that is associated with the pool. When you use your backup
     /// application to eject the tape, the tape is archived directly into the S3 storage class
-    /// (Glacier or Deep Archive) that corresponds to the pool.
+    /// (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
     /// 
     ///  
     /// <para>
@@ -50,7 +51,8 @@ namespace Amazon.StorageGateway.Model
         /// The ID of the pool that you want to add your tape to for archiving. The tape in this
         /// pool is archived in the S3 storage class that is associated with the pool. When you
         /// use your backup application to eject the tape, the tape is archived directly into
-        /// the storage class (Glacier or Deep Archive) that corresponds to the pool.
+        /// the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the
+        /// pool.
         /// </para>
         ///  
         /// <para>

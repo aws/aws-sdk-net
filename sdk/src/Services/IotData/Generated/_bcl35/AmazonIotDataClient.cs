@@ -123,6 +123,7 @@ namespace Amazon.IotData
         /// <exception cref="Amazon.IotData.Model.UnsupportedDocumentEncodingException">
         /// The document encoding is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/DeleteThingShadow">REST API Reference for DeleteThingShadow Operation</seealso>
         public virtual DeleteThingShadowResponse DeleteThingShadow(DeleteThingShadowRequest request)
         {
             var options = new InvokeOptions();
@@ -143,6 +144,7 @@ namespace Amazon.IotData
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteThingShadow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/DeleteThingShadow">REST API Reference for DeleteThingShadow Operation</seealso>
         public virtual IAsyncResult BeginDeleteThingShadow(DeleteThingShadowRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -159,6 +161,7 @@ namespace Amazon.IotData
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteThingShadow.</param>
         /// 
         /// <returns>Returns a  DeleteThingShadowResult from IotData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/DeleteThingShadow">REST API Reference for DeleteThingShadow Operation</seealso>
         public virtual DeleteThingShadowResponse EndDeleteThingShadow(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteThingShadowResponse>(asyncResult);
@@ -204,6 +207,7 @@ namespace Amazon.IotData
         /// <exception cref="Amazon.IotData.Model.UnsupportedDocumentEncodingException">
         /// The document encoding is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/GetThingShadow">REST API Reference for GetThingShadow Operation</seealso>
         public virtual GetThingShadowResponse GetThingShadow(GetThingShadowRequest request)
         {
             var options = new InvokeOptions();
@@ -224,6 +228,7 @@ namespace Amazon.IotData
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetThingShadow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/GetThingShadow">REST API Reference for GetThingShadow Operation</seealso>
         public virtual IAsyncResult BeginGetThingShadow(GetThingShadowRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -240,6 +245,7 @@ namespace Amazon.IotData
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetThingShadow.</param>
         /// 
         /// <returns>Returns a  GetThingShadowResult from IotData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/GetThingShadow">REST API Reference for GetThingShadow Operation</seealso>
         public virtual GetThingShadowResponse EndGetThingShadow(IAsyncResult asyncResult)
         {
             return EndInvoke<GetThingShadowResponse>(asyncResult);
@@ -273,6 +279,7 @@ namespace Amazon.IotData
         /// <exception cref="Amazon.IotData.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/Publish">REST API Reference for Publish Operation</seealso>
         public virtual PublishResponse Publish(PublishRequest request)
         {
             var options = new InvokeOptions();
@@ -293,6 +300,7 @@ namespace Amazon.IotData
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPublish
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/Publish">REST API Reference for Publish Operation</seealso>
         public virtual IAsyncResult BeginPublish(PublishRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -309,6 +317,7 @@ namespace Amazon.IotData
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPublish.</param>
         /// 
         /// <returns>Returns a  PublishResult from IotData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/Publish">REST API Reference for Publish Operation</seealso>
         public virtual PublishResponse EndPublish(IAsyncResult asyncResult)
         {
             return EndInvoke<PublishResponse>(asyncResult);
@@ -357,6 +366,7 @@ namespace Amazon.IotData
         /// <exception cref="Amazon.IotData.Model.UnsupportedDocumentEncodingException">
         /// The document encoding is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/UpdateThingShadow">REST API Reference for UpdateThingShadow Operation</seealso>
         public virtual UpdateThingShadowResponse UpdateThingShadow(UpdateThingShadowRequest request)
         {
             var options = new InvokeOptions();
@@ -377,6 +387,7 @@ namespace Amazon.IotData
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateThingShadow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/UpdateThingShadow">REST API Reference for UpdateThingShadow Operation</seealso>
         public virtual IAsyncResult BeginUpdateThingShadow(UpdateThingShadowRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -393,6 +404,7 @@ namespace Amazon.IotData
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateThingShadow.</param>
         /// 
         /// <returns>Returns a  UpdateThingShadowResult from IotData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/UpdateThingShadow">REST API Reference for UpdateThingShadow Operation</seealso>
         public virtual UpdateThingShadowResponse EndUpdateThingShadow(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateThingShadowResponse>(asyncResult);

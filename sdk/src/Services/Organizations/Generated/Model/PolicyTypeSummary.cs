@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,9 +39,9 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the policy type as it relates to the associated root. You can attach
-        /// a policy of the specified type to a root or to an OU or account in that root. To do
-        /// so, the policy must be available in the organization and enabled for that root.
+        /// The status of the policy type as it relates to the associated root. To attach a policy
+        /// of the specified type to a root or to an OU or account in that root, it must be available
+        /// in the organization and enabled for that root.
         /// </para>
         /// </summary>
         public PolicyTypeStatus Status

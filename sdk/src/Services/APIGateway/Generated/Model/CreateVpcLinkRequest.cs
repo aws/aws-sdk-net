@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -100,8 +101,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property TargetArns. 
         /// <para>
-        /// [Required] The ARNs of network load balancers of the VPC targeted by the VPC link.
-        /// The network load balancers must be owned by the same AWS account of the API owner.
+        /// [Required] The ARN of the network load balancer of the VPC targeted by the VPC link.
+        /// The network load balancer must be owned by the same AWS account of the API owner.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

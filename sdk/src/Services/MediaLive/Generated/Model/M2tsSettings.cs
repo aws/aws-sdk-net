@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -809,7 +810,7 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property SegmentationTime. The length in seconds of each segment.
-        /// Required unless markers is set to None_.
+        /// Required unless markers is set to _none_.
         /// </summary>
         public double SegmentationTime
         {

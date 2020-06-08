@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -41,7 +42,7 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property ChannelARN. 
         /// <para>
-        /// The ARN of the signaling channel that you want to delete.
+        /// The Amazon Resource Name (ARN) of the signaling channel that you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -62,7 +63,7 @@ namespace Amazon.KinesisVideo.Model
         /// <para>
         /// The current version of the signaling channel that you want to delete. You can obtain
         /// the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code>
-        /// APIs.
+        /// API operations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

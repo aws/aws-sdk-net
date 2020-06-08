@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -30,7 +31,7 @@ namespace Amazon.CodeDeploy.Model
     /// <summary>
     /// Container for the parameters to the BatchGetApplications operation.
     /// Gets information about one or more applications. The maximum number of applications
-    /// that can be returned is 25.
+    /// that can be returned is 100.
     /// </summary>
     public partial class BatchGetApplicationsRequest : AmazonCodeDeployRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property ApplicationNames. 
         /// <para>
         /// A list of application names separated by spaces. The maximum number of application
-        /// names you can specify is 25.
+        /// names you can specify is 100.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

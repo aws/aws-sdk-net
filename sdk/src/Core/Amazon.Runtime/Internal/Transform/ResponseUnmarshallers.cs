@@ -30,7 +30,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// </summary>
     public abstract class ResponseUnmarshaller : IResponseUnmarshaller<AmazonWebServiceResponse, UnmarshallerContext>
     {
-        public virtual UnmarshallerContext CreateContext(IWebResponseData response, bool readEntireResponse, Stream stream, RequestMetrics metrics)
+        public virtual UnmarshallerContext CreateContext(IWebResponseData response, bool readEntireResponse, Stream stream, RequestMetrics metrics, bool isException)
         {
             if (response == null)
             {
@@ -38,8 +38,9 @@ namespace Amazon.Runtime.Internal.Transform
             }
 
             UnmarshallerContext context = ConstructUnmarshallerContext(stream,
-                ShouldReadEntireResponse(response,readEntireResponse),
-                response);
+                ShouldReadEntireResponse(response, readEntireResponse),
+                response,
+                isException);
 
             return context;
         }
@@ -78,7 +79,7 @@ namespace Amazon.Runtime.Internal.Transform
         }
 
         protected abstract UnmarshallerContext ConstructUnmarshallerContext(
-            Stream responseStream, bool maintainResponseBody, IWebResponseData response);
+            Stream responseStream, bool maintainResponseBody, IWebResponseData response, bool isException);
 
         protected virtual bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse)
         {
@@ -129,9 +130,9 @@ namespace Amazon.Runtime.Internal.Transform
 
         public abstract AmazonServiceException UnmarshallException(XmlUnmarshallerContext input, Exception innerException, HttpStatusCode statusCode);
 
-        protected override UnmarshallerContext ConstructUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData response)
+        protected override UnmarshallerContext ConstructUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData response, bool isException)
         {
-            return new XmlUnmarshallerContext(responseStream, maintainResponseBody, response);
+            return new XmlUnmarshallerContext(responseStream, maintainResponseBody, response, isException);
         }
     }
 
@@ -159,9 +160,9 @@ namespace Amazon.Runtime.Internal.Transform
             return response;
         }
 
-        protected override UnmarshallerContext ConstructUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData response)
+        protected override UnmarshallerContext ConstructUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData response, bool isException)
         {
-            return new EC2UnmarshallerContext(responseStream, maintainResponseBody, response);
+            return new EC2UnmarshallerContext(responseStream, maintainResponseBody, response, isException);
         }
     }
 
@@ -204,9 +205,9 @@ namespace Amazon.Runtime.Internal.Transform
 
         public abstract AmazonServiceException UnmarshallException(JsonUnmarshallerContext input, Exception innerException, HttpStatusCode statusCode);
 
-        protected override UnmarshallerContext ConstructUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData response)
+        protected override UnmarshallerContext ConstructUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData response, bool isException)
         {
-            return new JsonUnmarshallerContext(responseStream, maintainResponseBody, response);
+            return new JsonUnmarshallerContext(responseStream, maintainResponseBody, response, isException);
         }
 
         protected override bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse)

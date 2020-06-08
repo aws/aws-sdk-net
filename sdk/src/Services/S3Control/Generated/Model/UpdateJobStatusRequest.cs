@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -30,7 +31,30 @@ namespace Amazon.S3Control.Model
     /// <summary>
     /// Container for the parameters to the UpdateJobStatus operation.
     /// Updates the status for the specified job. Use this operation to confirm that you want
-    /// to run a job or to cancel an existing job.
+    /// to run a job or to cancel an existing job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+    /// S3 Batch Operations</a> in the Amazon Simple Storage Service Developer Guide.
+    /// 
+    ///   
+    /// <para>
+    /// Related actions include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateJob</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListJobs</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeJob</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateJobStatus</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class UpdateJobStatusRequest : AmazonS3ControlRequest
     {

@@ -596,7 +596,8 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"CreatePlacementGroupRequest"}
+      "input":{"shape":"CreatePlacementGroupRequest"},
+      "output":{"shape":"CreatePlacementGroupResult"}
     },
     "CreateReservedInstancesListing":{
       "name":"CreateReservedInstancesListing",
@@ -1268,6 +1269,15 @@
       },
       "input":{"shape":"DeregisterImageRequest"}
     },
+    "DeregisterInstanceEventNotificationAttributes":{
+      "name":"DeregisterInstanceEventNotificationAttributes",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeregisterInstanceEventNotificationAttributesRequest"},
+      "output":{"shape":"DeregisterInstanceEventNotificationAttributesResult"}
+    },
     "DeregisterTransitGatewayMulticastGroupMembers":{
       "name":"DeregisterTransitGatewayMulticastGroupMembers",
       "http":{
@@ -1645,6 +1655,15 @@
       },
       "input":{"shape":"DescribeInstanceCreditSpecificationsRequest"},
       "output":{"shape":"DescribeInstanceCreditSpecificationsResult"}
+    },
+    "DescribeInstanceEventNotificationAttributes":{
+      "name":"DescribeInstanceEventNotificationAttributes",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeInstanceEventNotificationAttributesRequest"},
+      "output":{"shape":"DescribeInstanceEventNotificationAttributesResult"}
     },
     "DescribeInstanceStatus":{
       "name":"DescribeInstanceStatus",
@@ -3166,6 +3185,15 @@
       },
       "input":{"shape":"RegisterImageRequest"},
       "output":{"shape":"RegisterImageResult"}
+    },
+    "RegisterInstanceEventNotificationAttributes":{
+      "name":"RegisterInstanceEventNotificationAttributes",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"RegisterInstanceEventNotificationAttributesRequest"},
+      "output":{"shape":"RegisterInstanceEventNotificationAttributesResult"}
     },
     "RegisterTransitGatewayMulticastGroupMembers":{
       "name":"RegisterTransitGatewayMulticastGroupMembers",
@@ -4798,6 +4826,9 @@
       }
     },
     "BareMetalFlag":{"type":"boolean"},
+    "BaselineBandwidthInMbps":{"type":"integer"},
+    "BaselineIops":{"type":"integer"},
+    "BaselineThroughputInMBps":{"type":"double"},
     "BatchState":{
       "type":"string",
       "enum":[
@@ -5611,6 +5642,10 @@
         "MutualAuthentication":{
           "shape":"CertificateAuthentication",
           "locationName":"mutualAuthentication"
+        },
+        "FederatedAuthentication":{
+          "shape":"FederatedAuthentication",
+          "locationName":"federatedAuthentication"
         }
       }
     },
@@ -5626,7 +5661,8 @@
       "members":{
         "Type":{"shape":"ClientVpnAuthenticationType"},
         "ActiveDirectory":{"shape":"DirectoryServiceAuthenticationRequest"},
-        "MutualAuthentication":{"shape":"CertificateAuthenticationRequest"}
+        "MutualAuthentication":{"shape":"CertificateAuthenticationRequest"},
+        "FederatedAuthentication":{"shape":"FederatedAuthenticationRequest"}
       }
     },
     "ClientVpnAuthenticationRequestList":{
@@ -5637,7 +5673,8 @@
       "type":"string",
       "enum":[
         "certificate-authentication",
-        "directory-service-authentication"
+        "directory-service-authentication",
+        "federated-authentication"
       ]
     },
     "ClientVpnAuthorizationRuleStatus":{
@@ -6787,6 +6824,10 @@
         "DryRun":{
           "shape":"Boolean",
           "locationName":"dryRun"
+        },
+        "TagSpecifications":{
+          "shape":"TagSpecificationList",
+          "locationName":"TagSpecification"
         }
       }
     },
@@ -6814,6 +6855,10 @@
         "LaunchTemplate":{
           "shape":"LaunchTemplate",
           "locationName":"launchTemplate"
+        },
+        "Warning":{
+          "shape":"ValidationWarning",
+          "locationName":"warning"
         }
       }
     },
@@ -6836,6 +6881,10 @@
         "LaunchTemplateVersion":{
           "shape":"LaunchTemplateVersion",
           "locationName":"launchTemplateVersion"
+        },
+        "Warning":{
+          "shape":"ValidationWarning",
+          "locationName":"warning"
         }
       }
     },
@@ -6871,6 +6920,10 @@
       "members":{
         "LocalGatewayRouteTableId":{"shape":"LocalGatewayRoutetableId"},
         "VpcId":{"shape":"VpcId"},
+        "TagSpecifications":{
+          "shape":"TagSpecificationList",
+          "locationName":"TagSpecification"
+        },
         "DryRun":{"shape":"Boolean"}
       }
     },
@@ -7081,7 +7134,20 @@
           "shape":"PlacementStrategy",
           "locationName":"strategy"
         },
-        "PartitionCount":{"shape":"Integer"}
+        "PartitionCount":{"shape":"Integer"},
+        "TagSpecifications":{
+          "shape":"TagSpecificationList",
+          "locationName":"TagSpecification"
+        }
+      }
+    },
+    "CreatePlacementGroupResult":{
+      "type":"structure",
+      "members":{
+        "PlacementGroup":{
+          "shape":"PlacementGroup",
+          "locationName":"placementGroup"
+        }
       }
     },
     "CreateReservedInstancesListingRequest":{
@@ -8248,9 +8314,9 @@
     },
     "DeleteKeyPairRequest":{
       "type":"structure",
-      "required":["KeyName"],
       "members":{
         "KeyName":{"shape":"KeyPairName"},
+        "KeyPairId":{"shape":"KeyPairId"},
         "DryRun":{
           "shape":"Boolean",
           "locationName":"dryRun"
@@ -8980,6 +9046,32 @@
         "DryRun":{
           "shape":"Boolean",
           "locationName":"dryRun"
+        }
+      }
+    },
+    "DeregisterInstanceEventNotificationAttributesRequest":{
+      "type":"structure",
+      "members":{
+        "DryRun":{"shape":"Boolean"},
+        "InstanceTagAttribute":{"shape":"DeregisterInstanceTagAttributeRequest"}
+      }
+    },
+    "DeregisterInstanceEventNotificationAttributesResult":{
+      "type":"structure",
+      "members":{
+        "InstanceTagAttribute":{
+          "shape":"InstanceTagNotificationAttribute",
+          "locationName":"instanceTagAttribute"
+        }
+      }
+    },
+    "DeregisterInstanceTagAttributeRequest":{
+      "type":"structure",
+      "members":{
+        "IncludeAllTagsOfInstance":{"shape":"Boolean"},
+        "InstanceTagKeys":{
+          "shape":"InstanceTagKeySet",
+          "locationName":"InstanceTagKey"
         }
       }
     },
@@ -10303,6 +10395,21 @@
         "NextToken":{
           "shape":"String",
           "locationName":"nextToken"
+        }
+      }
+    },
+    "DescribeInstanceEventNotificationAttributesRequest":{
+      "type":"structure",
+      "members":{
+        "DryRun":{"shape":"Boolean"}
+      }
+    },
+    "DescribeInstanceEventNotificationAttributesResult":{
+      "type":"structure",
+      "members":{
+        "InstanceTagAttribute":{
+          "shape":"InstanceTagNotificationAttribute",
+          "locationName":"instanceTagAttribute"
         }
       }
     },
@@ -13403,6 +13510,10 @@
         "EncryptionSupport":{
           "shape":"EbsEncryptionSupport",
           "locationName":"encryptionSupport"
+        },
+        "EbsOptimizedInfo":{
+          "shape":"EbsOptimizedInfo",
+          "locationName":"ebsOptimizedInfo"
         }
       }
     },
@@ -13440,6 +13551,35 @@
         }
       }
     },
+    "EbsOptimizedInfo":{
+      "type":"structure",
+      "members":{
+        "BaselineBandwidthInMbps":{
+          "shape":"BaselineBandwidthInMbps",
+          "locationName":"baselineBandwidthInMbps"
+        },
+        "BaselineThroughputInMBps":{
+          "shape":"BaselineThroughputInMBps",
+          "locationName":"baselineThroughputInMBps"
+        },
+        "BaselineIops":{
+          "shape":"BaselineIops",
+          "locationName":"baselineIops"
+        },
+        "MaximumBandwidthInMbps":{
+          "shape":"MaximumBandwidthInMbps",
+          "locationName":"maximumBandwidthInMbps"
+        },
+        "MaximumThroughputInMBps":{
+          "shape":"MaximumThroughputInMBps",
+          "locationName":"maximumThroughputInMBps"
+        },
+        "MaximumIops":{
+          "shape":"MaximumIops",
+          "locationName":"maximumIops"
+        }
+      }
+    },
     "EbsOptimizedSupport":{
       "type":"string",
       "enum":[
@@ -13448,6 +13588,7 @@
         "default"
       ]
     },
+    "EfaSupportedFlag":{"type":"boolean"},
     "EgressOnlyInternetGateway":{
       "type":"structure",
       "members":{
@@ -13923,6 +14064,13 @@
         "locationName":"item"
       }
     },
+    "ErrorSet":{
+      "type":"list",
+      "member":{
+        "shape":"ValidationError",
+        "locationName":"item"
+      }
+    },
     "EventCode":{
       "type":"string",
       "enum":[
@@ -14303,6 +14451,21 @@
         "disabling",
         "disabled"
       ]
+    },
+    "FederatedAuthentication":{
+      "type":"structure",
+      "members":{
+        "SamlProviderArn":{
+          "shape":"String",
+          "locationName":"samlProviderArn"
+        }
+      }
+    },
+    "FederatedAuthenticationRequest":{
+      "type":"structure",
+      "members":{
+        "SAMLProviderArn":{"shape":"String"}
+      }
     },
     "Filter":{
       "type":"structure",
@@ -16472,6 +16635,10 @@
         "PublicKeyMaterial":{
           "shape":"Blob",
           "locationName":"publicKeyMaterial"
+        },
+        "TagSpecifications":{
+          "shape":"TagSpecificationList",
+          "locationName":"TagSpecification"
         }
       }
     },
@@ -16485,6 +16652,14 @@
         "KeyName":{
           "shape":"String",
           "locationName":"keyName"
+        },
+        "KeyPairId":{
+          "shape":"String",
+          "locationName":"keyPairId"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "locationName":"tagSet"
         }
       }
     },
@@ -17638,6 +17813,26 @@
         }
       }
     },
+    "InstanceTagKeySet":{
+      "type":"list",
+      "member":{
+        "shape":"String",
+        "locationName":"item"
+      }
+    },
+    "InstanceTagNotificationAttribute":{
+      "type":"structure",
+      "members":{
+        "InstanceTagKeys":{
+          "shape":"InstanceTagKeySet",
+          "locationName":"instanceTagKeySet"
+        },
+        "IncludeAllTagsOfInstance":{
+          "shape":"Boolean",
+          "locationName":"includeAllTagsOfInstance"
+        }
+      }
+    },
     "InstanceType":{
       "type":"string",
       "enum":[
@@ -17776,6 +17971,14 @@
         "c5.18xlarge",
         "c5.24xlarge",
         "c5.metal",
+        "c5a.large",
+        "c5a.xlarge",
+        "c5a.2xlarge",
+        "c5a.4xlarge",
+        "c5a.8xlarge",
+        "c5a.12xlarge",
+        "c5a.16xlarge",
+        "c5a.24xlarge",
         "c5d.large",
         "c5d.xlarge",
         "c5d.2xlarge",
@@ -17805,6 +18008,7 @@
         "g4dn.8xlarge",
         "g4dn.12xlarge",
         "g4dn.16xlarge",
+        "g4dn.metal",
         "cg1.4xlarge",
         "p2.xlarge",
         "p2.8xlarge",
@@ -17911,7 +18115,16 @@
         "inf1.xlarge",
         "inf1.2xlarge",
         "inf1.6xlarge",
-        "inf1.24xlarge"
+        "inf1.24xlarge",
+        "m6g.metal",
+        "m6g.medium",
+        "m6g.large",
+        "m6g.xlarge",
+        "m6g.2xlarge",
+        "m6g.4xlarge",
+        "m6g.8xlarge",
+        "m6g.12xlarge",
+        "m6g.16xlarge"
       ]
     },
     "InstanceTypeHypervisor":{
@@ -17943,6 +18156,10 @@
         "SupportedRootDeviceTypes":{
           "shape":"RootDeviceTypeList",
           "locationName":"supportedRootDeviceTypes"
+        },
+        "SupportedVirtualizationTypes":{
+          "shape":"VirtualizationTypeList",
+          "locationName":"supportedVirtualizationTypes"
         },
         "BareMetal":{
           "shape":"BareMetalFlag",
@@ -18340,6 +18557,10 @@
         "KeyPairId":{
           "shape":"String",
           "locationName":"keyPairId"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "locationName":"tagSet"
         }
       }
     },
@@ -19653,6 +19874,9 @@
     "MaxIpv6AddrPerInterface":{"type":"integer"},
     "MaxNetworkInterfaces":{"type":"integer"},
     "MaxResults":{"type":"integer"},
+    "MaximumBandwidthInMbps":{"type":"integer"},
+    "MaximumIops":{"type":"integer"},
+    "MaximumThroughputInMBps":{"type":"double"},
     "MembershipType":{
       "type":"string",
       "enum":[
@@ -20267,7 +20491,9 @@
         "SubnetId":{
           "shape":"SubnetId",
           "locationName":"subnetId"
-        }
+        },
+        "MapCustomerOwnedIpOnLaunch":{"shape":"AttributeBooleanValue"},
+        "CustomerOwnedIpv4Pool":{"shape":"CoipPoolId"}
       }
     },
     "ModifyTrafficMirrorFilterNetworkServicesRequest":{
@@ -21029,6 +21255,10 @@
         "EnaSupport":{
           "shape":"EnaSupport",
           "locationName":"enaSupport"
+        },
+        "EfaSupported":{
+          "shape":"EfaSupportedFlag",
+          "locationName":"efaSupported"
         }
       }
     },
@@ -22179,7 +22409,11 @@
         "CidrAuthorizationContext":{"shape":"CidrAuthorizationContext"},
         "PubliclyAdvertisable":{"shape":"Boolean"},
         "Description":{"shape":"String"},
-        "DryRun":{"shape":"Boolean"}
+        "DryRun":{"shape":"Boolean"},
+        "PoolTagSpecifications":{
+          "shape":"TagSpecificationList",
+          "locationName":"PoolTagSpecification"
+        }
       }
     },
     "ProvisionByoipCidrResult":{
@@ -22245,6 +22479,10 @@
         "TotalAvailableAddressCount":{
           "shape":"Integer",
           "locationName":"totalAvailableAddressCount"
+        },
+        "NetworkBorderGroup":{
+          "shape":"String",
+          "locationName":"networkBorderGroup"
         },
         "Tags":{
           "shape":"TagList",
@@ -22603,6 +22841,32 @@
         "ImageId":{
           "shape":"String",
           "locationName":"imageId"
+        }
+      }
+    },
+    "RegisterInstanceEventNotificationAttributesRequest":{
+      "type":"structure",
+      "members":{
+        "DryRun":{"shape":"Boolean"},
+        "InstanceTagAttribute":{"shape":"RegisterInstanceTagAttributeRequest"}
+      }
+    },
+    "RegisterInstanceEventNotificationAttributesResult":{
+      "type":"structure",
+      "members":{
+        "InstanceTagAttribute":{
+          "shape":"InstanceTagNotificationAttribute",
+          "locationName":"instanceTagAttribute"
+        }
+      }
+    },
+    "RegisterInstanceTagAttributeRequest":{
+      "type":"structure",
+      "members":{
+        "IncludeAllTagsOfInstance":{"shape":"Boolean"},
+        "InstanceTagKeys":{
+          "shape":"InstanceTagKeySet",
+          "locationName":"InstanceTagKey"
         }
       }
     },
@@ -24394,6 +24658,7 @@
         },
         "ClientToken":{
           "shape":"String",
+          "idempotencyToken":true,
           "locationName":"clientToken"
         },
         "DisableApiTermination":{
@@ -26207,6 +26472,14 @@
         "MapPublicIpOnLaunch":{
           "shape":"Boolean",
           "locationName":"mapPublicIpOnLaunch"
+        },
+        "MapCustomerOwnedIpOnLaunch":{
+          "shape":"Boolean",
+          "locationName":"mapCustomerOwnedIpOnLaunch"
+        },
+        "CustomerOwnedIpv4Pool":{
+          "shape":"CoipPoolId",
+          "locationName":"customerOwnedIpv4Pool"
         },
         "State":{
           "shape":"SubnetState",
@@ -28231,6 +28504,28 @@
         }
       }
     },
+    "ValidationError":{
+      "type":"structure",
+      "members":{
+        "Code":{
+          "shape":"String",
+          "locationName":"code"
+        },
+        "Message":{
+          "shape":"String",
+          "locationName":"message"
+        }
+      }
+    },
+    "ValidationWarning":{
+      "type":"structure",
+      "members":{
+        "Errors":{
+          "shape":"ErrorSet",
+          "locationName":"errorSet"
+        }
+      }
+    },
     "ValueStringList":{
       "type":"list",
       "member":{
@@ -28291,6 +28586,13 @@
         "hvm",
         "paravirtual"
       ]
+    },
+    "VirtualizationTypeList":{
+      "type":"list",
+      "member":{
+        "shape":"VirtualizationType",
+        "locationName":"item"
+      }
     },
     "Volume":{
       "type":"structure",

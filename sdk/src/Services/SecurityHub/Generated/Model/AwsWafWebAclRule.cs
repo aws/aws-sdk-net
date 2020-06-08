@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -43,7 +44,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Action. 
         /// <para>
         /// Specifies the action that CloudFront or AWS WAF takes when a web request matches the
-        /// conditions in the Rule. 
+        /// conditions in the rule. 
         /// </para>
         /// </summary>
         public WafAction Action
@@ -117,10 +118,10 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// Specifies the order in which the Rules in a WebACL are evaluated. Rules with a lower
-        /// value for Priority are evaluated before Rules with a higher value. The value must
-        /// be a unique integer. If you add multiple Rules to a WebACL, the values do not need
-        /// to be consecutive.
+        /// Specifies the order in which the rules in a WebACL are evaluated. Rules with a lower
+        /// value for <code>Priority</code> are evaluated before rules with a higher value. The
+        /// value must be a unique integer. If you add multiple rules to a WebACL, the values
+        /// do not need to be consecutive.
         /// </para>
         /// </summary>
         public int Priority
@@ -138,7 +139,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property RuleId. 
         /// <para>
-        /// The identifier for a Rule.
+        /// The identifier for a rule.
         /// </para>
         /// </summary>
         public string RuleId

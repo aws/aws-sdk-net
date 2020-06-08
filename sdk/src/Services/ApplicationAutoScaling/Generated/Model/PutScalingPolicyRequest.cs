@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,24 +30,14 @@ namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the PutScalingPolicy operation.
-    /// Creates or updates a policy for an Application Auto Scaling scalable target.
+    /// Creates or updates a scaling policy for an Application Auto Scaling scalable target.
     /// 
     ///  
     /// <para>
     /// Each scalable target is identified by a service namespace, resource ID, and scalable
     /// dimension. A scaling policy applies to the scalable target identified by those three
     /// attributes. You cannot create a scaling policy until you have registered the resource
-    /// as a scalable target using <a>RegisterScalableTarget</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// To update a policy, specify its policy name and the parameters that you want to change.
-    /// Any parameters that you don't specify are not changed by this update request.
-    /// </para>
-    ///  
-    /// <para>
-    /// You can view the scaling policies for a service namespace using <a>DescribeScalingPolicies</a>.
-    /// If you are no longer using a scaling policy, you can delete it using <a>DeleteScalingPolicy</a>.
+    /// as a scalable target.
     /// </para>
     ///  
     /// <para>
@@ -62,9 +53,26 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// Learn more about how to work with scaling policies in the <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html">Application
-    /// Auto Scaling User Guide</a>.
+    /// We recommend caution, however, when using target tracking scaling policies with step
+    /// scaling policies because conflicts between these policies can cause undesirable behavior.
+    /// For example, if the step scaling policy initiates a scale-in activity before the target
+    /// tracking policy is ready to scale in, the scale-in activity will not be blocked. After
+    /// the scale-in activity completes, the target tracking policy could instruct the scalable
+    /// target to scale out again. 
     /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
+    /// Tracking Scaling Policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
+    /// Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// If a scalable target is deregistered, the scalable target is no longer available to
+    /// execute scaling policies. Any scaling policies that were specified for the scalable
+    /// target are deleted.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class PutScalingPolicyRequest : AmazonApplicationAutoScalingRequest
     {
@@ -110,7 +118,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, or AWS Lambda
+        ///  <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or
+        /// Amazon Keyspaces (for Apache Cassandra).
         /// </para>
         ///  
         /// <para>
@@ -196,6 +205,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// unique identifier is the function name with a function version or alias name suffix
         /// that is not <code>$LATEST</code>. Example: <code>function:my-function:prod</code>
         /// or <code>function:my-function:1</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier
+        /// is the table name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -283,6 +297,16 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency
         /// for a Lambda function.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for
+        /// an Amazon Keyspaces table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
+        /// for an Amazon Keyspaces table.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -301,10 +325,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ServiceNamespace. 
         /// <para>
-        /// The namespace of the AWS service that provides the resource or <code>custom-resource</code>
-        /// for a resource provided by your own application or service. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-        /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+        /// The namespace of the AWS service that provides the resource. For a resource provided
+        /// by your own application or service, use <code>custom-resource</code> instead.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

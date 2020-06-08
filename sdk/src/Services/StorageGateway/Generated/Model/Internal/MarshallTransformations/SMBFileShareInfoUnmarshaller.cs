@@ -70,6 +70,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdminUserList = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AuditDestinationARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AuditDestinationARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Authentication", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

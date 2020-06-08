@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstanceTypes operation.
-    /// Returns a list of all instance types offered in your current AWS Region. The results
+    /// Describes the details of the instance types that are offered in a location. The results
     /// can be filtered by the attributes of the instance types.
     /// </summary>
     public partial class DescribeInstanceTypesRequest : AmazonEC2Request
@@ -63,6 +64,36 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>current-generation</code> - Indicates whether this instance type is the latest
         /// generation instance type of an instance family. (<code>true</code> | <code>false</code>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The baseline
+        /// bandwidth performance for an EBS-optimized instance type, in Mbps.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline
+        /// throughput performance for an EBS-optimized instance type, in MBps.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output
+        /// storage operations per second for an EBS-optimized instance type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ebs-info.ebs-optimized-info.maximum-bandwidth-in-mbps</code> - The maximum
+        /// bandwidth performance for an EBS-optimized instance type, in Mbps.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum
+        /// throughput performance for an EBS-optimized instance type, in MBps.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ebs-info.ebs-optimized-info.maximum-iops</code> - The maximum input/output
+        /// storage operations per second for an EBS-optimized instance type.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -121,6 +152,11 @@ namespace Amazon.EC2.Model
         ///  <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter
         /// (ENA) is supported or required. (<code>required</code> | <code>supported</code> |
         /// <code>unsupported</code>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-info.efa-supported</code> - Indicates whether the instance type supports
+        /// Elastic Fabric Adapter (EFA). (<code>true</code> | <code>false</code>)
         /// </para>
         ///  </li> <li> 
         /// <para>

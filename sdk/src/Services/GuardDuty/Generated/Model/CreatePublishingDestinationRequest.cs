@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePublishingDestination operation.
-    /// Creates a publishing destination to send findings to. The resource to send findings
+    /// Creates a publishing destination to export findings to. The resource to export findings
     /// to must exist before you use this operation.
     /// </summary>
     public partial class CreatePublishingDestinationRequest : AmazonGuardDutyRequest
@@ -61,8 +62,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DestinationProperties. 
         /// <para>
-        /// Properties of the publishing destination, including the ARNs for the destination and
-        /// the KMS key used for encryption.
+        /// The properties of the publishing destination, including the ARNs for the destination
+        /// and the KMS key used for encryption.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,7 +82,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DestinationType. 
         /// <para>
-        /// The type of resource for the publishing destination. Currently only S3 is supported.
+        /// The type of resource for the publishing destination. Currently only Amazon S3 buckets
+        /// are supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -40,6 +41,7 @@ namespace Amazon.MediaConvert.Model
         private MovSettings _movSettings;
         private Mp4Settings _mp4Settings;
         private MpdSettings _mpdSettings;
+        private MxfSettings _mxfSettings;
 
         /// <summary>
         /// Gets and sets the property CmfcSettings. Settings for MP4 segments in CMAF
@@ -169,6 +171,21 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetMpdSettings()
         {
             return this._mpdSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MxfSettings. MXF settings
+        /// </summary>
+        public MxfSettings MxfSettings
+        {
+            get { return this._mxfSettings; }
+            set { this._mxfSettings = value; }
+        }
+
+        // Check to see if MxfSettings property is set
+        internal bool IsSetMxfSettings()
+        {
+            return this._mxfSettings != null;
         }
 
     }

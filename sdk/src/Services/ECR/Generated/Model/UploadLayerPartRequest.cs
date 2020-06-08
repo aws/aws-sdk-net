@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,9 +40,9 @@ namespace Amazon.ECR.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-    /// use by customers for pulling and pushing images. In most cases, you should use the
-    /// <code>docker</code> CLI to pull, tag, and push images.
+    /// This operation is used by the Amazon ECR proxy and is not generally used by customers
+    /// for pulling and pushing images. In most cases, you should use the <code>docker</code>
+    /// CLI to pull, tag, and push images.
     /// </para>
     ///  </note>
     /// </summary>
@@ -76,7 +77,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property PartFirstByte. 
         /// <para>
-        /// The integer value of the first byte of the layer part.
+        /// The position of the first byte of the layer part witin the overall image layer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -95,7 +96,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property PartLastByte. 
         /// <para>
-        /// The integer value of the last byte of the layer part.
+        /// The position of the last byte of the layer part within the overall image layer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

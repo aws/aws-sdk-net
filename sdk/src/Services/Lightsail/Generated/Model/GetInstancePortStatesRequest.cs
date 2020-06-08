@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,8 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the GetInstancePortStates operation.
-    /// Returns the port states for a specific virtual private server, or <i>instance</i>.
+    /// Returns the firewall port states for a specific Amazon Lightsail instance, the IP
+    /// addresses allowed to connect to the instance through the ports, and the protocol.
     /// </summary>
     public partial class GetInstancePortStatesRequest : AmazonLightsailRequest
     {
@@ -38,7 +40,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property InstanceName. 
         /// <para>
-        /// The name of the instance.
+        /// The name of the instance for which to return firewall port states.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

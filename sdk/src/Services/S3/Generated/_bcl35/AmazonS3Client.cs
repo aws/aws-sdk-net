@@ -222,7 +222,18 @@ namespace Amazon.S3
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.S3.Internal.AmazonS3ResponseHandler());
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.ErrorCallbackHandler>(new Amazon.S3.Internal.AmazonS3ExceptionHandler());
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.S3.Internal.AmazonS3RedirectHandler());
-            pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.S3.Internal.AmazonS3RetryPolicy(this.Config)));
+            if(this.Config.RetryMode == RequestRetryMode.Legacy)
+            {
+                pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.S3.Internal.AmazonS3RetryPolicy(this.Config)));
+            }
+            if(this.Config.RetryMode == RequestRetryMode.Standard)
+            {
+                pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.S3.Internal.AmazonS3StandardRetryPolicy(this.Config)));
+            }
+            if(this.Config.RetryMode == RequestRetryMode.Adaptive)
+            {
+                pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.S3.Internal.AmazonS3AdaptiveRetryPolicy(this.Config)));
+            }
         }    
         /// <summary>
         /// Capture metadata for the service.
@@ -303,6 +314,7 @@ namespace Amazon.S3
         /// <param name="uploadId">Upload ID that identifies the multipart upload.</param>
         /// 
         /// <returns>The response from the AbortMultipartUpload service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         public virtual AbortMultipartUploadResponse AbortMultipartUpload(string bucketName, string key, string uploadId)
         {
             var request = new AbortMultipartUploadRequest();
@@ -362,6 +374,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the AbortMultipartUpload service method.</param>
         /// 
         /// <returns>The response from the AbortMultipartUpload service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         public virtual AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
         {
             var options = new InvokeOptions();
@@ -382,6 +395,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAbortMultipartUpload
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         public virtual IAsyncResult BeginAbortMultipartUpload(AbortMultipartUploadRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -398,6 +412,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAbortMultipartUpload.</param>
         /// 
         /// <returns>Returns a  AbortMultipartUploadResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         public virtual AbortMultipartUploadResponse EndAbortMultipartUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<AbortMultipartUploadResponse>(asyncResult);
@@ -506,7 +521,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
-        /// The following operations are related to <code>DeleteBucketMetricsConfiguration</code>:
+        /// The following operations are related to <code>CompleteMultipartUpload</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -533,6 +548,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartUpload service method.</param>
         /// 
         /// <returns>The response from the CompleteMultipartUpload service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CompleteMultipartUpload">REST API Reference for CompleteMultipartUpload Operation</seealso>
         public virtual CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
         {
             var options = new InvokeOptions();
@@ -553,6 +569,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCompleteMultipartUpload
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CompleteMultipartUpload">REST API Reference for CompleteMultipartUpload Operation</seealso>
         public virtual IAsyncResult BeginCompleteMultipartUpload(CompleteMultipartUploadRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -569,6 +586,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCompleteMultipartUpload.</param>
         /// 
         /// <returns>Returns a  CompleteMultipartUploadResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CompleteMultipartUpload">REST API Reference for CompleteMultipartUpload Operation</seealso>
         public virtual CompleteMultipartUploadResponse EndCompleteMultipartUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<CompleteMultipartUploadResponse>(asyncResult);
@@ -585,63 +603,17 @@ namespace Amazon.S3
         /// <para>
         /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
         /// your object up to 5 GB in size in a single atomic operation using this API. However,
-        /// for copying an object greater than 5 GB, you must use the multipart upload Upload
-        /// Part - Copy API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
+        /// to copy an object greater than 5 GB, you must use the multipart upload Upload Part
+        /// - Copy API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
         /// Object Using the REST Multipart Upload API</a>.
         /// </para>
         ///  </note> 
-        /// <para>
-        /// When copying an object, you can preserve all metadata (default) or specify new metadata.
-        /// However, the ACL is not preserved and is set to private for the user making the request.
-        /// To override the default ACL setting, specify a new ACL when generating a copy request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
-        /// ACLs</a>.
-        /// </para>
-        ///  <important> 
-        /// <para>
-        /// Amazon S3 transfer acceleration does not support cross-region copies. If you request
-        /// a cross-region copy using a transfer acceleration endpoint, you get a 400 <code>Bad
-        /// Request</code> error. For more information about transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
-        /// Acceleration</a>.
-        /// </para>
-        ///  </important> 
         /// <para>
         /// All copy requests must be authenticated. Additionally, you must have <i>read</i> access
         /// to the source object and <i>write</i> access to the destination bucket. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
         /// Authentication</a>. Both the Region that you want to copy the object from and the
         /// Region that you want to copy the object to must be enabled for your account.
-        /// </para>
-        ///  
-        /// <para>
-        /// To only copy an object under certain conditions, such as whether the <code>Etag</code>
-        /// matches or whether the object was modified before or after a specified date, use the
-        /// request parameters <code>x-amz-copy-source-if-match</code>, <code>x-amz-copy-source-if-none-match</code>,
-        /// <code>x-amz-copy-source-if-unmodified-since</code>, or <code> x-amz-copy-source-if-modified-since</code>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// All headers with the <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>,
-        /// must be signed.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// You can use this operation to change the storage class of an object that is already
-        /// stored in Amazon S3 using the <code>StorageClass</code> parameter. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-        /// Classes</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// The source object that you are copying can be encrypted or unencrypted. If the source
-        /// object is encrypted, it can be encrypted by server-side encryption using AWS managed
-        /// encryption keys or by using a customer-provided encryption key. When copying an object,
-        /// you can request that Amazon S3 encrypt the target object by using either the AWS managed
-        /// encryption keys or by using your own encryption key. You can do this regardless of
-        /// the form of server-side encryption that was used to encrypt the source, or even if
-        /// the source object was not encrypted. For more information about server-side encryption,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
-        /// Server-Side Encryption</a>.
         /// </para>
         ///  
         /// <para>
@@ -664,13 +636,71 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Consider the following when using request headers:
+        /// The copy request charge is based on the storage class and Region that you specify
+        /// for the destination object. For pricing information, see <a href="https://aws.amazon.com/s3/pricing/">Amazon
+        /// S3 pricing</a>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Amazon S3 transfer acceleration does not support cross-Region copies. If you request
+        /// a cross-Region copy using a transfer acceleration endpoint, you get a 400 <code>Bad
+        /// Request</code> error. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
+        /// Acceleration</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  <b>Metadata</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// When copying an object, you can preserve all metadata (default) or specify new metadata.
+        /// However, the ACL is not preserved and is set to private for the user making the request.
+        /// To override the default ACL setting, specify a new ACL when generating a copy request.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+        /// ACLs</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify whether you want the object metadata copied from the source object or replaced
+        /// with metadata provided in the request, you can optionally add the <code>x-amz-metadata-directive</code>
+        /// header. When you grant permissions, you can use the <code>s3:x-amz-metadata-directive</code>
+        /// condition key to enforce certain metadata behavior when objects are uploaded. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html">Specifying
+        /// Conditions in a Policy</a> in the <i>Amazon S3 Developer Guide</i>. For a complete
+        /// list of Amazon S3-specific condition keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
+        /// Resources, and Condition Keys for Amazon S3</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b> <code>x-amz-copy-source-if</code> Headers</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To only copy an object under certain conditions, such as whether the <code>Etag</code>
+        /// matches or whether the object was modified before or after a specified date, use the
+        /// following request parameters:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Consideration 1 – If both the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code>
-        /// headers are present in the request and evaluate as follows, Amazon S3 returns 200
-        /// OK and copies the data:
+        ///  <code>x-amz-copy-source-if-match</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>x-amz-copy-source-if-none-match</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>x-amz-copy-source-if-unmodified-since</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>x-amz-copy-source-if-modified-since</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  If both the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code>
+        /// headers are present in the request and evaluate as follows, Amazon S3 returns <code>200
+        /// OK</code> and copies the data:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -680,12 +710,11 @@ namespace Amazon.S3
         /// <para>
         ///  <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to false
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  </li> </ul> 
         /// <para>
-        ///  Consideration 2 – If both of the <code>x-amz-copy-source-if-none-match</code> and
-        /// <code>x-amz-copy-source-if-modified-since</code> headers are present in the request
-        /// and evaluate as follows, Amazon S3 returns the <code>412 Precondition Failed</code>
-        /// response code:
+        /// If both the <code>x-amz-copy-source-if-none-match</code> and <code>x-amz-copy-source-if-modified-since</code>
+        /// headers are present in the request and evaluate as follows, Amazon S3 returns the
+        /// <code>412 Precondition Failed</code> response code:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -695,21 +724,67 @@ namespace Amazon.S3
         /// <para>
         ///  <code>x-amz-copy-source-if-modified-since</code> condition evaluates to true
         /// </para>
-        ///  </li> </ul> </li> </ul> 
+        ///  </li> </ul> <note> 
         /// <para>
-        /// The copy request charge is based on the storage class and Region you specify for the
-        /// destination object. For pricing information, see <a href="https://aws.amazon.com/s3/pricing/">Amazon
-        /// S3 Pricing</a>.
+        /// All headers with the <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>,
+        /// must be signed.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Encryption</b> 
         /// </para>
         ///  
         /// <para>
-        /// Following are other considerations when using <code>CopyObject</code>:
+        /// The source object that you are copying can be encrypted or unencrypted. The source
+        /// object can be encrypted with server-side encryption using AWS managed encryption keys
+        /// (SSE-S3 or SSE-KMS) or by using a customer-provided encryption key. With server-side
+        /// encryption, Amazon S3 encrypts your data as it writes it to disks in its data centers
+        /// and decrypts the data when you access it. 
         /// </para>
-        ///  <dl> <dt>Versioning</dt> <dd> 
+        ///  
+        /// <para>
+        /// You can optionally use the appropriate encryption-related headers to request server-side
+        /// encryption for the target object. You have the option to provide your own encryption
+        /// key or use SSE-S3 or SSE-KMS, regardless of the form of server-side encryption that
+        /// was used to encrypt the source object. You can even request encryption if the source
+        /// object was not encrypted. For more information about server-side encryption, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
+        /// Server-Side Encryption</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Access Control List (ACL)-Specific Request Headers</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// When copying an object, you can optionally use headers to grant ACL-based permissions.
+        /// By default, all objects are private. Only the owner has full access control. When
+        /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
+        /// groups defined by Amazon S3. These permissions are then added to the ACL on the object.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// Control List (ACL) Overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
+        /// ACLs Using the REST API</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Storage Class Options</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <code>CopyObject</code> operation to change the storage class of an
+        /// object that is already stored in Amazon S3 using the <code>StorageClass</code> parameter.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+        /// Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Versioning</b> 
+        /// </para>
+        ///  
         /// <para>
         /// By default, <code>x-amz-copy-source</code> identifies the current version of an object
-        /// to copy. (If the current version is a delete marker, Amazon S3 behaves as if the object
-        /// was deleted.) To copy a different version, use the <code>versionId</code> subresource.
+        /// to copy. If the current version is a delete marker, Amazon S3 behaves as if the object
+        /// was deleted. To copy a different version, use the <code>versionId</code> subresource.
         /// </para>
         ///  
         /// <para>
@@ -729,189 +804,7 @@ namespace Amazon.S3
         /// before you can use it as a source object for the copy operation. For more information,
         /// see .
         /// </para>
-        ///  </dd> <dt>Access Permissions</dt> <dd> 
-        /// <para>
-        /// When copying an object, you can optionally specify the accounts or groups that should
-        /// be granted specific permissions on the new object. There are two ways to grant the
-        /// permissions using the request headers:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Specify a canned ACL with the <code>x-amz-acl</code> request header. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
-        /// ACL</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify access permissions explicitly with the <code>x-amz-grant-read</code>, <code>x-amz-grant-read-acp</code>,
-        /// <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code> headers.
-        /// These parameters map to the set of permissions that Amazon S3 supports in an ACL.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
-        /// Control List (ACL) Overview</a>.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// You can use either a canned ACL or specify access permissions explicitly. You cannot
-        /// do both.
-        /// </para>
-        ///  </dd> <dt>Server-Side- Encryption-Specific Request Headers</dt> <dd> 
-        /// <para>
-        /// To encrypt the target object, you must provide the appropriate encryption-related
-        /// request headers. The one you use depends on whether you want to use AWS managed encryption
-        /// keys or provide your own encryption key. 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To encrypt the target object using server-side encryption with an AWS managed encryption
-        /// key, provide the following request headers, as appropriate.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>x-amz-server-side​-encryption</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>x-amz-server-side-encryption-aws-kms-key-id</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>x-amz-server-side-encryption-context</code> 
-        /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-        /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS managed
-        /// CMK in AWS KMS to protect the data. If you want to use a customer managed AWS KMS
-        /// CMK, you must provide the <code>x-amz-server-side-encryption-aws-kms-key-id</code>
-        /// of the symmetric customer managed CMK. Amazon S3 only supports symmetric CMKs and
-        /// not asymmetric CMKs. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-        /// Symmetric and Asymmetric Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
-        /// </para>
-        ///  </note> <important> 
-        /// <para>
-        /// All GET and PUT requests for an object protected by AWS KMS fail if you don't make
-        /// them with SSL or by using SigV4.
-        /// </para>
-        ///  </important> 
-        /// <para>
-        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in KMS</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To encrypt the target object using server-side encryption with an encryption key that
-        /// you provide, use the following headers.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// If the source object is encrypted using server-side encryption with customer-provided
-        /// encryption keys, you must use the following headers.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// x-amz-copy-source​-server-side​-encryption​-customer-algorithm
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-copy-source​-server-side​-encryption​-customer-key
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-copy-source-​server-side​-encryption​-customer-key-MD5
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in Amazon KMS</a>.
-        /// </para>
-        ///  </li> </ul> </dd> <dt>Access-Control-List (ACL)-Specific Request Headers</dt> <dd>
-        /// 
-        /// <para>
-        /// You also can use the following access control–related headers with this operation.
-        /// By default, all objects are private. Only the owner has full access control. When
-        /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the access control
-        /// list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
-        /// ACLs</a>. With this operation, you can grant access permissions using one of the following
-        /// two methods:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Specify a canned ACL (<code>x-amz-acl</code>) — Amazon S3 supports a set of predefined
-        /// ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees
-        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
-        /// ACL</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify access permissions explicitly — To explicitly grant access permissions to
-        /// specific AWS accounts or groups, use the following headers. Each header maps to specific
-        /// permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
-        /// Control List (ACL) Overview</a>. In the header, you specify a list of grantees who
-        /// get the specific permission. To grant permissions explicitly, use:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// x-amz-grant-read
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-grant-write
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-grant-read-acp
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-grant-write-acp
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-grant-full-control
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// You specify each grantee as a type=value pair, where the type is one of the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-        /// account
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>uri</code> – if you are granting permissions to a predefined group
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
-        /// identified by email addresses permissions to read object data and its metadata:
-        /// </para>
         ///  
-        /// <para>
-        ///  <code>x-amz-grant-read: emailAddress="xyz@amazon.com", emailAddress="abc@amazon.com"
-        /// </code> 
-        /// </para>
-        ///  </li> </ul> </dd> </dl> 
         /// <para>
         /// The following operations are related to <code>CopyObject</code>:
         /// </para>
@@ -935,6 +828,7 @@ namespace Amazon.S3
         /// <param name="destinationKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// 
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">REST API Reference for CopyObject Operation</seealso>
         public virtual CopyObjectResponse CopyObject(string sourceBucket, string sourceKey, string destinationBucket, string destinationKey)
         {
             var request = new CopyObjectRequest();
@@ -953,63 +847,17 @@ namespace Amazon.S3
         /// <para>
         /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
         /// your object up to 5 GB in size in a single atomic operation using this API. However,
-        /// for copying an object greater than 5 GB, you must use the multipart upload Upload
-        /// Part - Copy API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
+        /// to copy an object greater than 5 GB, you must use the multipart upload Upload Part
+        /// - Copy API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
         /// Object Using the REST Multipart Upload API</a>.
         /// </para>
         ///  </note> 
-        /// <para>
-        /// When copying an object, you can preserve all metadata (default) or specify new metadata.
-        /// However, the ACL is not preserved and is set to private for the user making the request.
-        /// To override the default ACL setting, specify a new ACL when generating a copy request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
-        /// ACLs</a>.
-        /// </para>
-        ///  <important> 
-        /// <para>
-        /// Amazon S3 transfer acceleration does not support cross-region copies. If you request
-        /// a cross-region copy using a transfer acceleration endpoint, you get a 400 <code>Bad
-        /// Request</code> error. For more information about transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
-        /// Acceleration</a>.
-        /// </para>
-        ///  </important> 
         /// <para>
         /// All copy requests must be authenticated. Additionally, you must have <i>read</i> access
         /// to the source object and <i>write</i> access to the destination bucket. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
         /// Authentication</a>. Both the Region that you want to copy the object from and the
         /// Region that you want to copy the object to must be enabled for your account.
-        /// </para>
-        ///  
-        /// <para>
-        /// To only copy an object under certain conditions, such as whether the <code>Etag</code>
-        /// matches or whether the object was modified before or after a specified date, use the
-        /// request parameters <code>x-amz-copy-source-if-match</code>, <code>x-amz-copy-source-if-none-match</code>,
-        /// <code>x-amz-copy-source-if-unmodified-since</code>, or <code> x-amz-copy-source-if-modified-since</code>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// All headers with the <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>,
-        /// must be signed.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// You can use this operation to change the storage class of an object that is already
-        /// stored in Amazon S3 using the <code>StorageClass</code> parameter. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-        /// Classes</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// The source object that you are copying can be encrypted or unencrypted. If the source
-        /// object is encrypted, it can be encrypted by server-side encryption using AWS managed
-        /// encryption keys or by using a customer-provided encryption key. When copying an object,
-        /// you can request that Amazon S3 encrypt the target object by using either the AWS managed
-        /// encryption keys or by using your own encryption key. You can do this regardless of
-        /// the form of server-side encryption that was used to encrypt the source, or even if
-        /// the source object was not encrypted. For more information about server-side encryption,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
-        /// Server-Side Encryption</a>.
         /// </para>
         ///  
         /// <para>
@@ -1032,13 +880,71 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Consider the following when using request headers:
+        /// The copy request charge is based on the storage class and Region that you specify
+        /// for the destination object. For pricing information, see <a href="https://aws.amazon.com/s3/pricing/">Amazon
+        /// S3 pricing</a>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Amazon S3 transfer acceleration does not support cross-Region copies. If you request
+        /// a cross-Region copy using a transfer acceleration endpoint, you get a 400 <code>Bad
+        /// Request</code> error. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
+        /// Acceleration</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  <b>Metadata</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// When copying an object, you can preserve all metadata (default) or specify new metadata.
+        /// However, the ACL is not preserved and is set to private for the user making the request.
+        /// To override the default ACL setting, specify a new ACL when generating a copy request.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+        /// ACLs</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify whether you want the object metadata copied from the source object or replaced
+        /// with metadata provided in the request, you can optionally add the <code>x-amz-metadata-directive</code>
+        /// header. When you grant permissions, you can use the <code>s3:x-amz-metadata-directive</code>
+        /// condition key to enforce certain metadata behavior when objects are uploaded. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html">Specifying
+        /// Conditions in a Policy</a> in the <i>Amazon S3 Developer Guide</i>. For a complete
+        /// list of Amazon S3-specific condition keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
+        /// Resources, and Condition Keys for Amazon S3</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b> <code>x-amz-copy-source-if</code> Headers</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To only copy an object under certain conditions, such as whether the <code>Etag</code>
+        /// matches or whether the object was modified before or after a specified date, use the
+        /// following request parameters:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Consideration 1 – If both the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code>
-        /// headers are present in the request and evaluate as follows, Amazon S3 returns 200
-        /// OK and copies the data:
+        ///  <code>x-amz-copy-source-if-match</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>x-amz-copy-source-if-none-match</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>x-amz-copy-source-if-unmodified-since</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>x-amz-copy-source-if-modified-since</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  If both the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code>
+        /// headers are present in the request and evaluate as follows, Amazon S3 returns <code>200
+        /// OK</code> and copies the data:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1048,12 +954,11 @@ namespace Amazon.S3
         /// <para>
         ///  <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to false
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  </li> </ul> 
         /// <para>
-        ///  Consideration 2 – If both of the <code>x-amz-copy-source-if-none-match</code> and
-        /// <code>x-amz-copy-source-if-modified-since</code> headers are present in the request
-        /// and evaluate as follows, Amazon S3 returns the <code>412 Precondition Failed</code>
-        /// response code:
+        /// If both the <code>x-amz-copy-source-if-none-match</code> and <code>x-amz-copy-source-if-modified-since</code>
+        /// headers are present in the request and evaluate as follows, Amazon S3 returns the
+        /// <code>412 Precondition Failed</code> response code:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1063,21 +968,67 @@ namespace Amazon.S3
         /// <para>
         ///  <code>x-amz-copy-source-if-modified-since</code> condition evaluates to true
         /// </para>
-        ///  </li> </ul> </li> </ul> 
+        ///  </li> </ul> <note> 
         /// <para>
-        /// The copy request charge is based on the storage class and Region you specify for the
-        /// destination object. For pricing information, see <a href="https://aws.amazon.com/s3/pricing/">Amazon
-        /// S3 Pricing</a>.
+        /// All headers with the <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>,
+        /// must be signed.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Encryption</b> 
         /// </para>
         ///  
         /// <para>
-        /// Following are other considerations when using <code>CopyObject</code>:
+        /// The source object that you are copying can be encrypted or unencrypted. The source
+        /// object can be encrypted with server-side encryption using AWS managed encryption keys
+        /// (SSE-S3 or SSE-KMS) or by using a customer-provided encryption key. With server-side
+        /// encryption, Amazon S3 encrypts your data as it writes it to disks in its data centers
+        /// and decrypts the data when you access it. 
         /// </para>
-        ///  <dl> <dt>Versioning</dt> <dd> 
+        ///  
+        /// <para>
+        /// You can optionally use the appropriate encryption-related headers to request server-side
+        /// encryption for the target object. You have the option to provide your own encryption
+        /// key or use SSE-S3 or SSE-KMS, regardless of the form of server-side encryption that
+        /// was used to encrypt the source object. You can even request encryption if the source
+        /// object was not encrypted. For more information about server-side encryption, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
+        /// Server-Side Encryption</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Access Control List (ACL)-Specific Request Headers</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// When copying an object, you can optionally use headers to grant ACL-based permissions.
+        /// By default, all objects are private. Only the owner has full access control. When
+        /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
+        /// groups defined by Amazon S3. These permissions are then added to the ACL on the object.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// Control List (ACL) Overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
+        /// ACLs Using the REST API</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Storage Class Options</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <code>CopyObject</code> operation to change the storage class of an
+        /// object that is already stored in Amazon S3 using the <code>StorageClass</code> parameter.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+        /// Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Versioning</b> 
+        /// </para>
+        ///  
         /// <para>
         /// By default, <code>x-amz-copy-source</code> identifies the current version of an object
-        /// to copy. (If the current version is a delete marker, Amazon S3 behaves as if the object
-        /// was deleted.) To copy a different version, use the <code>versionId</code> subresource.
+        /// to copy. If the current version is a delete marker, Amazon S3 behaves as if the object
+        /// was deleted. To copy a different version, use the <code>versionId</code> subresource.
         /// </para>
         ///  
         /// <para>
@@ -1097,189 +1048,7 @@ namespace Amazon.S3
         /// before you can use it as a source object for the copy operation. For more information,
         /// see .
         /// </para>
-        ///  </dd> <dt>Access Permissions</dt> <dd> 
-        /// <para>
-        /// When copying an object, you can optionally specify the accounts or groups that should
-        /// be granted specific permissions on the new object. There are two ways to grant the
-        /// permissions using the request headers:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Specify a canned ACL with the <code>x-amz-acl</code> request header. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
-        /// ACL</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify access permissions explicitly with the <code>x-amz-grant-read</code>, <code>x-amz-grant-read-acp</code>,
-        /// <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code> headers.
-        /// These parameters map to the set of permissions that Amazon S3 supports in an ACL.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
-        /// Control List (ACL) Overview</a>.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// You can use either a canned ACL or specify access permissions explicitly. You cannot
-        /// do both.
-        /// </para>
-        ///  </dd> <dt>Server-Side- Encryption-Specific Request Headers</dt> <dd> 
-        /// <para>
-        /// To encrypt the target object, you must provide the appropriate encryption-related
-        /// request headers. The one you use depends on whether you want to use AWS managed encryption
-        /// keys or provide your own encryption key. 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To encrypt the target object using server-side encryption with an AWS managed encryption
-        /// key, provide the following request headers, as appropriate.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>x-amz-server-side​-encryption</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>x-amz-server-side-encryption-aws-kms-key-id</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>x-amz-server-side-encryption-context</code> 
-        /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-        /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS managed
-        /// CMK in AWS KMS to protect the data. If you want to use a customer managed AWS KMS
-        /// CMK, you must provide the <code>x-amz-server-side-encryption-aws-kms-key-id</code>
-        /// of the symmetric customer managed CMK. Amazon S3 only supports symmetric CMKs and
-        /// not asymmetric CMKs. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-        /// Symmetric and Asymmetric Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
-        /// </para>
-        ///  </note> <important> 
-        /// <para>
-        /// All GET and PUT requests for an object protected by AWS KMS fail if you don't make
-        /// them with SSL or by using SigV4.
-        /// </para>
-        ///  </important> 
-        /// <para>
-        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in KMS</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To encrypt the target object using server-side encryption with an encryption key that
-        /// you provide, use the following headers.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// If the source object is encrypted using server-side encryption with customer-provided
-        /// encryption keys, you must use the following headers.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// x-amz-copy-source​-server-side​-encryption​-customer-algorithm
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-copy-source​-server-side​-encryption​-customer-key
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-copy-source-​server-side​-encryption​-customer-key-MD5
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in Amazon KMS</a>.
-        /// </para>
-        ///  </li> </ul> </dd> <dt>Access-Control-List (ACL)-Specific Request Headers</dt> <dd>
-        /// 
-        /// <para>
-        /// You also can use the following access control–related headers with this operation.
-        /// By default, all objects are private. Only the owner has full access control. When
-        /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the access control
-        /// list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
-        /// ACLs</a>. With this operation, you can grant access permissions using one of the following
-        /// two methods:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Specify a canned ACL (<code>x-amz-acl</code>) — Amazon S3 supports a set of predefined
-        /// ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees
-        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
-        /// ACL</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify access permissions explicitly — To explicitly grant access permissions to
-        /// specific AWS accounts or groups, use the following headers. Each header maps to specific
-        /// permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
-        /// Control List (ACL) Overview</a>. In the header, you specify a list of grantees who
-        /// get the specific permission. To grant permissions explicitly, use:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// x-amz-grant-read
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-grant-write
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-grant-read-acp
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-grant-write-acp
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-grant-full-control
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// You specify each grantee as a type=value pair, where the type is one of the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-        /// account
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>uri</code> – if you are granting permissions to a predefined group
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
-        /// identified by email addresses permissions to read object data and its metadata:
-        /// </para>
         ///  
-        /// <para>
-        ///  <code>x-amz-grant-read: emailAddress="xyz@amazon.com", emailAddress="abc@amazon.com"
-        /// </code> 
-        /// </para>
-        ///  </li> </ul> </dd> </dl> 
         /// <para>
         /// The following operations are related to <code>CopyObject</code>:
         /// </para>
@@ -1304,6 +1073,7 @@ namespace Amazon.S3
         /// <param name="destinationKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// 
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">REST API Reference for CopyObject Operation</seealso>
         public virtual CopyObjectResponse CopyObject(string sourceBucket, string sourceKey, string sourceVersionId, string destinationBucket, string destinationKey)
         {
             var request = new CopyObjectRequest();
@@ -1323,63 +1093,17 @@ namespace Amazon.S3
         /// <para>
         /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
         /// your object up to 5 GB in size in a single atomic operation using this API. However,
-        /// for copying an object greater than 5 GB, you must use the multipart upload Upload
-        /// Part - Copy API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
+        /// to copy an object greater than 5 GB, you must use the multipart upload Upload Part
+        /// - Copy API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
         /// Object Using the REST Multipart Upload API</a>.
         /// </para>
         ///  </note> 
-        /// <para>
-        /// When copying an object, you can preserve all metadata (default) or specify new metadata.
-        /// However, the ACL is not preserved and is set to private for the user making the request.
-        /// To override the default ACL setting, specify a new ACL when generating a copy request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
-        /// ACLs</a>.
-        /// </para>
-        ///  <important> 
-        /// <para>
-        /// Amazon S3 transfer acceleration does not support cross-region copies. If you request
-        /// a cross-region copy using a transfer acceleration endpoint, you get a 400 <code>Bad
-        /// Request</code> error. For more information about transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
-        /// Acceleration</a>.
-        /// </para>
-        ///  </important> 
         /// <para>
         /// All copy requests must be authenticated. Additionally, you must have <i>read</i> access
         /// to the source object and <i>write</i> access to the destination bucket. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
         /// Authentication</a>. Both the Region that you want to copy the object from and the
         /// Region that you want to copy the object to must be enabled for your account.
-        /// </para>
-        ///  
-        /// <para>
-        /// To only copy an object under certain conditions, such as whether the <code>Etag</code>
-        /// matches or whether the object was modified before or after a specified date, use the
-        /// request parameters <code>x-amz-copy-source-if-match</code>, <code>x-amz-copy-source-if-none-match</code>,
-        /// <code>x-amz-copy-source-if-unmodified-since</code>, or <code> x-amz-copy-source-if-modified-since</code>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// All headers with the <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>,
-        /// must be signed.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// You can use this operation to change the storage class of an object that is already
-        /// stored in Amazon S3 using the <code>StorageClass</code> parameter. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-        /// Classes</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// The source object that you are copying can be encrypted or unencrypted. If the source
-        /// object is encrypted, it can be encrypted by server-side encryption using AWS managed
-        /// encryption keys or by using a customer-provided encryption key. When copying an object,
-        /// you can request that Amazon S3 encrypt the target object by using either the AWS managed
-        /// encryption keys or by using your own encryption key. You can do this regardless of
-        /// the form of server-side encryption that was used to encrypt the source, or even if
-        /// the source object was not encrypted. For more information about server-side encryption,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
-        /// Server-Side Encryption</a>.
         /// </para>
         ///  
         /// <para>
@@ -1402,13 +1126,71 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Consider the following when using request headers:
+        /// The copy request charge is based on the storage class and Region that you specify
+        /// for the destination object. For pricing information, see <a href="https://aws.amazon.com/s3/pricing/">Amazon
+        /// S3 pricing</a>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Amazon S3 transfer acceleration does not support cross-Region copies. If you request
+        /// a cross-Region copy using a transfer acceleration endpoint, you get a 400 <code>Bad
+        /// Request</code> error. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
+        /// Acceleration</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  <b>Metadata</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// When copying an object, you can preserve all metadata (default) or specify new metadata.
+        /// However, the ACL is not preserved and is set to private for the user making the request.
+        /// To override the default ACL setting, specify a new ACL when generating a copy request.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+        /// ACLs</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify whether you want the object metadata copied from the source object or replaced
+        /// with metadata provided in the request, you can optionally add the <code>x-amz-metadata-directive</code>
+        /// header. When you grant permissions, you can use the <code>s3:x-amz-metadata-directive</code>
+        /// condition key to enforce certain metadata behavior when objects are uploaded. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html">Specifying
+        /// Conditions in a Policy</a> in the <i>Amazon S3 Developer Guide</i>. For a complete
+        /// list of Amazon S3-specific condition keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
+        /// Resources, and Condition Keys for Amazon S3</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b> <code>x-amz-copy-source-if</code> Headers</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To only copy an object under certain conditions, such as whether the <code>Etag</code>
+        /// matches or whether the object was modified before or after a specified date, use the
+        /// following request parameters:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Consideration 1 – If both the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code>
-        /// headers are present in the request and evaluate as follows, Amazon S3 returns 200
-        /// OK and copies the data:
+        ///  <code>x-amz-copy-source-if-match</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>x-amz-copy-source-if-none-match</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>x-amz-copy-source-if-unmodified-since</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>x-amz-copy-source-if-modified-since</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  If both the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code>
+        /// headers are present in the request and evaluate as follows, Amazon S3 returns <code>200
+        /// OK</code> and copies the data:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1418,12 +1200,11 @@ namespace Amazon.S3
         /// <para>
         ///  <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to false
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  </li> </ul> 
         /// <para>
-        ///  Consideration 2 – If both of the <code>x-amz-copy-source-if-none-match</code> and
-        /// <code>x-amz-copy-source-if-modified-since</code> headers are present in the request
-        /// and evaluate as follows, Amazon S3 returns the <code>412 Precondition Failed</code>
-        /// response code:
+        /// If both the <code>x-amz-copy-source-if-none-match</code> and <code>x-amz-copy-source-if-modified-since</code>
+        /// headers are present in the request and evaluate as follows, Amazon S3 returns the
+        /// <code>412 Precondition Failed</code> response code:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1433,21 +1214,67 @@ namespace Amazon.S3
         /// <para>
         ///  <code>x-amz-copy-source-if-modified-since</code> condition evaluates to true
         /// </para>
-        ///  </li> </ul> </li> </ul> 
+        ///  </li> </ul> <note> 
         /// <para>
-        /// The copy request charge is based on the storage class and Region you specify for the
-        /// destination object. For pricing information, see <a href="https://aws.amazon.com/s3/pricing/">Amazon
-        /// S3 Pricing</a>.
+        /// All headers with the <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>,
+        /// must be signed.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Encryption</b> 
         /// </para>
         ///  
         /// <para>
-        /// Following are other considerations when using <code>CopyObject</code>:
+        /// The source object that you are copying can be encrypted or unencrypted. The source
+        /// object can be encrypted with server-side encryption using AWS managed encryption keys
+        /// (SSE-S3 or SSE-KMS) or by using a customer-provided encryption key. With server-side
+        /// encryption, Amazon S3 encrypts your data as it writes it to disks in its data centers
+        /// and decrypts the data when you access it. 
         /// </para>
-        ///  <dl> <dt>Versioning</dt> <dd> 
+        ///  
+        /// <para>
+        /// You can optionally use the appropriate encryption-related headers to request server-side
+        /// encryption for the target object. You have the option to provide your own encryption
+        /// key or use SSE-S3 or SSE-KMS, regardless of the form of server-side encryption that
+        /// was used to encrypt the source object. You can even request encryption if the source
+        /// object was not encrypted. For more information about server-side encryption, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
+        /// Server-Side Encryption</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Access Control List (ACL)-Specific Request Headers</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// When copying an object, you can optionally use headers to grant ACL-based permissions.
+        /// By default, all objects are private. Only the owner has full access control. When
+        /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
+        /// groups defined by Amazon S3. These permissions are then added to the ACL on the object.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// Control List (ACL) Overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
+        /// ACLs Using the REST API</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Storage Class Options</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <code>CopyObject</code> operation to change the storage class of an
+        /// object that is already stored in Amazon S3 using the <code>StorageClass</code> parameter.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+        /// Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Versioning</b> 
+        /// </para>
+        ///  
         /// <para>
         /// By default, <code>x-amz-copy-source</code> identifies the current version of an object
-        /// to copy. (If the current version is a delete marker, Amazon S3 behaves as if the object
-        /// was deleted.) To copy a different version, use the <code>versionId</code> subresource.
+        /// to copy. If the current version is a delete marker, Amazon S3 behaves as if the object
+        /// was deleted. To copy a different version, use the <code>versionId</code> subresource.
         /// </para>
         ///  
         /// <para>
@@ -1467,189 +1294,7 @@ namespace Amazon.S3
         /// before you can use it as a source object for the copy operation. For more information,
         /// see .
         /// </para>
-        ///  </dd> <dt>Access Permissions</dt> <dd> 
-        /// <para>
-        /// When copying an object, you can optionally specify the accounts or groups that should
-        /// be granted specific permissions on the new object. There are two ways to grant the
-        /// permissions using the request headers:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Specify a canned ACL with the <code>x-amz-acl</code> request header. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
-        /// ACL</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify access permissions explicitly with the <code>x-amz-grant-read</code>, <code>x-amz-grant-read-acp</code>,
-        /// <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code> headers.
-        /// These parameters map to the set of permissions that Amazon S3 supports in an ACL.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
-        /// Control List (ACL) Overview</a>.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// You can use either a canned ACL or specify access permissions explicitly. You cannot
-        /// do both.
-        /// </para>
-        ///  </dd> <dt>Server-Side- Encryption-Specific Request Headers</dt> <dd> 
-        /// <para>
-        /// To encrypt the target object, you must provide the appropriate encryption-related
-        /// request headers. The one you use depends on whether you want to use AWS managed encryption
-        /// keys or provide your own encryption key. 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To encrypt the target object using server-side encryption with an AWS managed encryption
-        /// key, provide the following request headers, as appropriate.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>x-amz-server-side​-encryption</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>x-amz-server-side-encryption-aws-kms-key-id</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>x-amz-server-side-encryption-context</code> 
-        /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-        /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS managed
-        /// CMK in AWS KMS to protect the data. If you want to use a customer managed AWS KMS
-        /// CMK, you must provide the <code>x-amz-server-side-encryption-aws-kms-key-id</code>
-        /// of the symmetric customer managed CMK. Amazon S3 only supports symmetric CMKs and
-        /// not asymmetric CMKs. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-        /// Symmetric and Asymmetric Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
-        /// </para>
-        ///  </note> <important> 
-        /// <para>
-        /// All GET and PUT requests for an object protected by AWS KMS fail if you don't make
-        /// them with SSL or by using SigV4.
-        /// </para>
-        ///  </important> 
-        /// <para>
-        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in KMS</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To encrypt the target object using server-side encryption with an encryption key that
-        /// you provide, use the following headers.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// If the source object is encrypted using server-side encryption with customer-provided
-        /// encryption keys, you must use the following headers.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// x-amz-copy-source​-server-side​-encryption​-customer-algorithm
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-copy-source​-server-side​-encryption​-customer-key
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-copy-source-​server-side​-encryption​-customer-key-MD5
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in Amazon KMS</a>.
-        /// </para>
-        ///  </li> </ul> </dd> <dt>Access-Control-List (ACL)-Specific Request Headers</dt> <dd>
-        /// 
-        /// <para>
-        /// You also can use the following access control–related headers with this operation.
-        /// By default, all objects are private. Only the owner has full access control. When
-        /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the access control
-        /// list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
-        /// ACLs</a>. With this operation, you can grant access permissions using one of the following
-        /// two methods:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Specify a canned ACL (<code>x-amz-acl</code>) — Amazon S3 supports a set of predefined
-        /// ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees
-        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
-        /// ACL</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify access permissions explicitly — To explicitly grant access permissions to
-        /// specific AWS accounts or groups, use the following headers. Each header maps to specific
-        /// permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
-        /// Control List (ACL) Overview</a>. In the header, you specify a list of grantees who
-        /// get the specific permission. To grant permissions explicitly, use:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// x-amz-grant-read
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-grant-write
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-grant-read-acp
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-grant-write-acp
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-grant-full-control
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// You specify each grantee as a type=value pair, where the type is one of the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-        /// account
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>uri</code> – if you are granting permissions to a predefined group
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
-        /// identified by email addresses permissions to read object data and its metadata:
-        /// </para>
         ///  
-        /// <para>
-        ///  <code>x-amz-grant-read: emailAddress="xyz@amazon.com", emailAddress="abc@amazon.com"
-        /// </code> 
-        /// </para>
-        ///  </li> </ul> </dd> </dl> 
         /// <para>
         /// The following operations are related to <code>CopyObject</code>:
         /// </para>
@@ -1670,6 +1315,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the CopyObject service method.</param>
         /// 
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">REST API Reference for CopyObject Operation</seealso>
         public virtual CopyObjectResponse CopyObject(CopyObjectRequest request)
         {
             var options = new InvokeOptions();
@@ -1690,6 +1336,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyObject
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">REST API Reference for CopyObject Operation</seealso>
         public virtual IAsyncResult BeginCopyObject(CopyObjectRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1706,6 +1353,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyObject.</param>
         /// 
         /// <returns>Returns a  CopyObjectResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">REST API Reference for CopyObject Operation</seealso>
         public virtual CopyObjectResponse EndCopyObject(IAsyncResult asyncResult)
         {
             return EndInvoke<CopyObjectResponse>(asyncResult);
@@ -1905,6 +1553,7 @@ namespace Amazon.S3
         /// <param name="uploadId">Upload ID identifying the multipart upload whose part is being copied.</param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
         public virtual CopyPartResponse CopyPart(string sourceBucket, string sourceKey, string destinationBucket, string destinationKey, string uploadId)
         {
             var request = new CopyPartRequest();
@@ -2108,6 +1757,7 @@ namespace Amazon.S3
         /// <param name="uploadId">Upload ID identifying the multipart upload whose part is being copied.</param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
         public virtual CopyPartResponse CopyPart(string sourceBucket, string sourceKey, string sourceVersionId, string destinationBucket, string destinationKey, string uploadId)
         {
             var request = new CopyPartRequest();
@@ -2307,6 +1957,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the CopyPart service method.</param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
         public virtual CopyPartResponse CopyPart(CopyPartRequest request)
         {
             var options = new InvokeOptions();
@@ -2327,6 +1978,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyPart
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
         public virtual IAsyncResult BeginCopyPart(CopyPartRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2343,6 +1995,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyPart.</param>
         /// 
         /// <returns>Returns a  CopyPartResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
         public virtual CopyPartResponse EndCopyPart(IAsyncResult asyncResult)
         {
             return EndInvoke<CopyPartResponse>(asyncResult);
@@ -2371,6 +2024,7 @@ namespace Amazon.S3
         /// <param name="bucketName">Specifies the bucket being deleted.</param>
         /// 
         /// <returns>The response from the DeleteBucket service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
         public virtual DeleteBucketResponse DeleteBucket(string bucketName)
         {
             var request = new DeleteBucketRequest();
@@ -2398,6 +2052,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucket service method.</param>
         /// 
         /// <returns>The response from the DeleteBucket service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
         public virtual DeleteBucketResponse DeleteBucket(DeleteBucketRequest request)
         {
             var options = new InvokeOptions();
@@ -2418,6 +2073,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucket
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucket(DeleteBucketRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2434,6 +2090,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucket.</param>
         /// 
         /// <returns>Returns a  DeleteBucketResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
         public virtual DeleteBucketResponse EndDeleteBucket(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBucketResponse>(asyncResult);
@@ -2451,7 +2108,7 @@ namespace Amazon.S3
         /// <para>
         /// To use this operation, you must have permissions to perform the <code>s3:PutAnalyticsConfiguration</code>
         /// action. The bucket owner has this permission by default. The bucket owner can grant
-        /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+        /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
         /// </para>
@@ -2481,6 +2138,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketAnalyticsConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketAnalyticsConfiguration">REST API Reference for DeleteBucketAnalyticsConfiguration Operation</seealso>
         public virtual DeleteBucketAnalyticsConfigurationResponse DeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -2501,6 +2159,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketAnalyticsConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketAnalyticsConfiguration">REST API Reference for DeleteBucketAnalyticsConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2517,6 +2176,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketAnalyticsConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteBucketAnalyticsConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketAnalyticsConfiguration">REST API Reference for DeleteBucketAnalyticsConfiguration Operation</seealso>
         public virtual DeleteBucketAnalyticsConfigurationResponse EndDeleteBucketAnalyticsConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBucketAnalyticsConfigurationResponse>(asyncResult);
@@ -2528,7 +2188,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// This implementation of the DELETE operation removes default encryption from the bucket.
-        /// For information about the Amazon S3 default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//bucket-encryption.html">Amazon
+        /// For information about the Amazon S3 default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
         /// S3 Default Bucket Encryption</a> in the <i>Amazon Simple Storage Service Developer
         /// Guide</i>.
         /// 
@@ -2536,8 +2196,8 @@ namespace Amazon.S3
         /// <para>
         /// To use this operation, you must have permissions to perform the <code>s3:PutEncryptionConfiguration</code>
         /// action. The bucket owner has this permission by default. The bucket owner can grant
-        /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
-        /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//s3-access-control.html">Managing
+        /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+        /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
         /// Access Permissions to your Amazon S3 Resources</a> in the <i>Amazon Simple Storage
         /// Service Developer Guide</i>.
         /// </para>
@@ -2556,6 +2216,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketEncryption service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketEncryption service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketEncryption">REST API Reference for DeleteBucketEncryption Operation</seealso>
         public virtual DeleteBucketEncryptionResponse DeleteBucketEncryption(DeleteBucketEncryptionRequest request)
         {
             var options = new InvokeOptions();
@@ -2576,6 +2237,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketEncryption
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketEncryption">REST API Reference for DeleteBucketEncryption Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketEncryption(DeleteBucketEncryptionRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2592,6 +2254,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketEncryption.</param>
         /// 
         /// <returns>Returns a  DeleteBucketEncryptionResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketEncryption">REST API Reference for DeleteBucketEncryption Operation</seealso>
         public virtual DeleteBucketEncryptionResponse EndDeleteBucketEncryption(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBucketEncryptionResponse>(asyncResult);
@@ -2638,6 +2301,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketInventoryConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketInventoryConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketInventoryConfiguration">REST API Reference for DeleteBucketInventoryConfiguration Operation</seealso>
         public virtual DeleteBucketInventoryConfigurationResponse DeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -2658,6 +2322,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketInventoryConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketInventoryConfiguration">REST API Reference for DeleteBucketInventoryConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2674,6 +2339,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketInventoryConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteBucketInventoryConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketInventoryConfiguration">REST API Reference for DeleteBucketInventoryConfiguration Operation</seealso>
         public virtual DeleteBucketInventoryConfigurationResponse EndDeleteBucketInventoryConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBucketInventoryConfigurationResponse>(asyncResult);
@@ -2727,6 +2393,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetricsConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketMetricsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetricsConfiguration">REST API Reference for DeleteBucketMetricsConfiguration Operation</seealso>
         public virtual DeleteBucketMetricsConfigurationResponse DeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -2747,6 +2414,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketMetricsConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetricsConfiguration">REST API Reference for DeleteBucketMetricsConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2763,6 +2431,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketMetricsConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteBucketMetricsConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetricsConfiguration">REST API Reference for DeleteBucketMetricsConfiguration Operation</seealso>
         public virtual DeleteBucketMetricsConfigurationResponse EndDeleteBucketMetricsConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBucketMetricsConfigurationResponse>(asyncResult);
@@ -2814,6 +2483,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name.</param>
         /// 
         /// <returns>The response from the DeleteBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
         public virtual DeleteBucketPolicyResponse DeleteBucketPolicy(string bucketName)
         {
             var request = new DeleteBucketPolicyRequest();
@@ -2864,6 +2534,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketPolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
         public virtual DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request)
         {
             var options = new InvokeOptions();
@@ -2884,6 +2555,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketPolicy(DeleteBucketPolicyRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2900,6 +2572,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketPolicy.</param>
         /// 
         /// <returns>Returns a  DeleteBucketPolicyResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
         public virtual DeleteBucketPolicyResponse EndDeleteBucketPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBucketPolicyResponse>(asyncResult);
@@ -2946,6 +2619,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketReplication service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketReplication service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">REST API Reference for DeleteBucketReplication Operation</seealso>
         public virtual DeleteBucketReplicationResponse DeleteBucketReplication(DeleteBucketReplicationRequest request)
         {
             var options = new InvokeOptions();
@@ -2966,6 +2640,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketReplication
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">REST API Reference for DeleteBucketReplication Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketReplication(DeleteBucketReplicationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2982,6 +2657,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketReplication.</param>
         /// 
         /// <returns>Returns a  DeleteBucketReplicationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">REST API Reference for DeleteBucketReplication Operation</seealso>
         public virtual DeleteBucketReplicationResponse EndDeleteBucketReplication(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBucketReplicationResponse>(asyncResult);
@@ -3017,6 +2693,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket that has the tag set to be removed.</param>
         /// 
         /// <returns>The response from the DeleteBucketTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketTagging">REST API Reference for DeleteBucketTagging Operation</seealso>
         public virtual DeleteBucketTaggingResponse DeleteBucketTagging(string bucketName)
         {
             var request = new DeleteBucketTaggingRequest();
@@ -3051,6 +2728,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketTagging service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketTagging">REST API Reference for DeleteBucketTagging Operation</seealso>
         public virtual DeleteBucketTaggingResponse DeleteBucketTagging(DeleteBucketTaggingRequest request)
         {
             var options = new InvokeOptions();
@@ -3071,6 +2749,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketTagging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketTagging">REST API Reference for DeleteBucketTagging Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketTagging(DeleteBucketTaggingRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3087,6 +2766,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketTagging.</param>
         /// 
         /// <returns>Returns a  DeleteBucketTaggingResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketTagging">REST API Reference for DeleteBucketTagging Operation</seealso>
         public virtual DeleteBucketTaggingResponse EndDeleteBucketTagging(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBucketTaggingResponse>(asyncResult);
@@ -3133,6 +2813,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name for which you want to remove the website configuration. </param>
         /// 
         /// <returns>The response from the DeleteBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketWebsite">REST API Reference for DeleteBucketWebsite Operation</seealso>
         public virtual DeleteBucketWebsiteResponse DeleteBucketWebsite(string bucketName)
         {
             var request = new DeleteBucketWebsiteRequest();
@@ -3178,6 +2859,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketWebsite service method.</param>
         /// 
         /// <returns>The response from the DeleteBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketWebsite">REST API Reference for DeleteBucketWebsite Operation</seealso>
         public virtual DeleteBucketWebsiteResponse DeleteBucketWebsite(DeleteBucketWebsiteRequest request)
         {
             var options = new InvokeOptions();
@@ -3198,6 +2880,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketWebsite
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketWebsite">REST API Reference for DeleteBucketWebsite Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketWebsite(DeleteBucketWebsiteRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3214,6 +2897,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketWebsite.</param>
         /// 
         /// <returns>Returns a  DeleteBucketWebsiteResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketWebsite">REST API Reference for DeleteBucketWebsite Operation</seealso>
         public virtual DeleteBucketWebsiteResponse EndDeleteBucketWebsite(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBucketWebsiteResponse>(asyncResult);
@@ -3253,6 +2937,7 @@ namespace Amazon.S3
         /// <param name="bucketName">Specifies the bucket whose <code>cors</code> configuration is being deleted.</param>
         /// 
         /// <returns>The response from the DeleteCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">REST API Reference for DeleteCORSConfiguration Operation</seealso>
         public virtual DeleteCORSConfigurationResponse DeleteCORSConfiguration(string bucketName)
         {
             var request = new DeleteCORSConfigurationRequest();
@@ -3291,6 +2976,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteCORSConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">REST API Reference for DeleteCORSConfiguration Operation</seealso>
         public virtual DeleteCORSConfigurationResponse DeleteCORSConfiguration(DeleteCORSConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -3311,6 +2997,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCORSConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">REST API Reference for DeleteCORSConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteCORSConfiguration(DeleteCORSConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3327,6 +3014,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCORSConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteCORSConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">REST API Reference for DeleteCORSConfiguration Operation</seealso>
         public virtual DeleteCORSConfigurationResponse EndDeleteCORSConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCORSConfigurationResponse>(asyncResult);
@@ -3375,6 +3063,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name of the lifecycle to delete.</param>
         /// 
         /// <returns>The response from the DeleteLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketLifecycle">REST API Reference for DeleteLifecycleConfiguration Operation</seealso>
         public virtual DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(string bucketName)
         {
             var request = new DeleteLifecycleConfigurationRequest();
@@ -3422,6 +3111,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketLifecycle">REST API Reference for DeleteLifecycleConfiguration Operation</seealso>
         public virtual DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -3442,6 +3132,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLifecycleConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketLifecycle">REST API Reference for DeleteLifecycleConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3458,6 +3149,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLifecycleConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteLifecycleConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketLifecycle">REST API Reference for DeleteLifecycleConfiguration Operation</seealso>
         public virtual DeleteLifecycleConfigurationResponse EndDeleteLifecycleConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLifecycleConfigurationResponse>(asyncResult);
@@ -3514,6 +3206,7 @@ namespace Amazon.S3
         /// <param name="key">Key name of the object to delete.</param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         public virtual DeleteObjectResponse DeleteObject(string bucketName, string key)
         {
             var request = new DeleteObjectRequest();
@@ -3571,6 +3264,7 @@ namespace Amazon.S3
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         public virtual DeleteObjectResponse DeleteObject(string bucketName, string key, string versionId)
         {
             var request = new DeleteObjectRequest();
@@ -3627,6 +3321,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteObject service method.</param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         public virtual DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
         {
             var options = new InvokeOptions();
@@ -3647,6 +3342,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteObject
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         public virtual IAsyncResult BeginDeleteObject(DeleteObjectRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3663,6 +3359,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteObject.</param>
         /// 
         /// <returns>Returns a  DeleteObjectResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         public virtual DeleteObjectResponse EndDeleteObject(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteObjectResponse>(asyncResult);
@@ -3740,6 +3437,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteObjects service method.</param>
         /// 
         /// <returns>The response from the DeleteObjects service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">REST API Reference for DeleteObjects Operation</seealso>
         public virtual DeleteObjectsResponse DeleteObjects(DeleteObjectsRequest request)
         {
             var options = new InvokeOptions();
@@ -3760,6 +3458,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteObjects
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">REST API Reference for DeleteObjects Operation</seealso>
         public virtual IAsyncResult BeginDeleteObjects(DeleteObjectsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3776,6 +3475,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteObjects.</param>
         /// 
         /// <returns>Returns a  DeleteObjectsResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">REST API Reference for DeleteObjects Operation</seealso>
         public virtual DeleteObjectsResponse EndDeleteObjects(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteObjectsResponse>(asyncResult);
@@ -3818,6 +3518,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeleteObjectTagging service method.</param>
         /// 
         /// <returns>The response from the DeleteObjectTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjectTagging">REST API Reference for DeleteObjectTagging Operation</seealso>
         public virtual DeleteObjectTaggingResponse DeleteObjectTagging(DeleteObjectTaggingRequest request)
         {
             var options = new InvokeOptions();
@@ -3838,6 +3539,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteObjectTagging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjectTagging">REST API Reference for DeleteObjectTagging Operation</seealso>
         public virtual IAsyncResult BeginDeleteObjectTagging(DeleteObjectTaggingRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3854,6 +3556,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteObjectTagging.</param>
         /// 
         /// <returns>Returns a  DeleteObjectTaggingResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjectTagging">REST API Reference for DeleteObjectTagging Operation</seealso>
         public virtual DeleteObjectTaggingResponse EndDeleteObjectTagging(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteObjectTaggingResponse>(asyncResult);
@@ -3872,7 +3575,7 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteBucketMetricsConfiguration</code>:
+        /// The following operations are related to <code>DeletePublicAccessBlock</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3896,6 +3599,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
         /// 
         /// <returns>The response from the DeletePublicAccessBlock service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         public virtual DeletePublicAccessBlockResponse DeletePublicAccessBlock(DeletePublicAccessBlockRequest request)
         {
             var options = new InvokeOptions();
@@ -3916,6 +3620,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePublicAccessBlock
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         public virtual IAsyncResult BeginDeletePublicAccessBlock(DeletePublicAccessBlockRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3932,6 +3637,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePublicAccessBlock.</param>
         /// 
         /// <returns>Returns a  DeletePublicAccessBlockResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         public virtual DeletePublicAccessBlockResponse EndDeletePublicAccessBlock(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePublicAccessBlockResponse>(asyncResult);
@@ -3959,6 +3665,7 @@ namespace Amazon.S3
         /// <param name="bucketName">Specifies the S3 bucket whose ACL is being requested.</param>
         /// 
         /// <returns>The response from the GetACL service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetACL Operation</seealso>
         public virtual GetACLResponse GetACL(string bucketName)
         {
             var request = new GetACLRequest();
@@ -3985,6 +3692,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetACL service method.</param>
         /// 
         /// <returns>The response from the GetACL service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetACL Operation</seealso>
         public virtual GetACLResponse GetACL(GetACLRequest request)
         {
             var options = new InvokeOptions();
@@ -4005,6 +3713,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetACL
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetACL Operation</seealso>
         public virtual IAsyncResult BeginGetACL(GetACLRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4021,6 +3730,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetACL.</param>
         /// 
         /// <returns>Returns a  GetACLResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetACL Operation</seealso>
         public virtual GetACLResponse EndGetACL(IAsyncResult asyncResult)
         {
             return EndInvoke<GetACLResponse>(asyncResult);
@@ -4040,8 +3750,8 @@ namespace Amazon.S3
         /// <para>
         /// To use this operation, you must have permission to perform the <code>s3:GetAccelerateConfiguration</code>
         /// action. The bucket owner has this permission by default. The bucket owner can grant
-        /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
-        /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//s3-access-control.html">Managing
+        /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+        /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
         /// Access Permissions to your Amazon S3 Resources</a> in the <i>Amazon Simple Storage
         /// Service Developer Guide</i>.
         /// </para>
@@ -4059,7 +3769,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// For more information about transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//transfer-acceleration.html">Transfer
+        /// For more information about transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
         /// Acceleration</a> in the Amazon Simple Storage Service Developer Guide.
         /// </para>
         ///  <p class="title"> <b>Related Resources</b> 
@@ -4073,6 +3783,7 @@ namespace Amazon.S3
         /// <param name="bucketName">Name of the bucket for which the accelerate configuration is retrieved.</param>
         /// 
         /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">REST API Reference for GetBucketAccelerateConfiguration Operation</seealso>
         public virtual GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(string bucketName)
         {
             var request = new GetBucketAccelerateConfigurationRequest();
@@ -4091,8 +3802,8 @@ namespace Amazon.S3
         /// <para>
         /// To use this operation, you must have permission to perform the <code>s3:GetAccelerateConfiguration</code>
         /// action. The bucket owner has this permission by default. The bucket owner can grant
-        /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
-        /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//s3-access-control.html">Managing
+        /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+        /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
         /// Access Permissions to your Amazon S3 Resources</a> in the <i>Amazon Simple Storage
         /// Service Developer Guide</i>.
         /// </para>
@@ -4110,7 +3821,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// For more information about transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//transfer-acceleration.html">Transfer
+        /// For more information about transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
         /// Acceleration</a> in the Amazon Simple Storage Service Developer Guide.
         /// </para>
         ///  <p class="title"> <b>Related Resources</b> 
@@ -4124,6 +3835,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketAccelerateConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">REST API Reference for GetBucketAccelerateConfiguration Operation</seealso>
         public virtual GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -4144,6 +3856,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketAccelerateConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">REST API Reference for GetBucketAccelerateConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4160,6 +3873,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketAccelerateConfiguration.</param>
         /// 
         /// <returns>Returns a  GetBucketAccelerateConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">REST API Reference for GetBucketAccelerateConfiguration Operation</seealso>
         public virtual GetBucketAccelerateConfigurationResponse EndGetBucketAccelerateConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketAccelerateConfigurationResponse>(asyncResult);
@@ -4207,6 +3921,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketAnalyticsConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAnalyticsConfiguration">REST API Reference for GetBucketAnalyticsConfiguration Operation</seealso>
         public virtual GetBucketAnalyticsConfigurationResponse GetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -4227,6 +3942,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketAnalyticsConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAnalyticsConfiguration">REST API Reference for GetBucketAnalyticsConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4243,6 +3959,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketAnalyticsConfiguration.</param>
         /// 
         /// <returns>Returns a  GetBucketAnalyticsConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAnalyticsConfiguration">REST API Reference for GetBucketAnalyticsConfiguration Operation</seealso>
         public virtual GetBucketAnalyticsConfigurationResponse EndGetBucketAnalyticsConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketAnalyticsConfigurationResponse>(asyncResult);
@@ -4282,6 +3999,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketEncryption service method.</param>
         /// 
         /// <returns>The response from the GetBucketEncryption service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketEncryption">REST API Reference for GetBucketEncryption Operation</seealso>
         public virtual GetBucketEncryptionResponse GetBucketEncryption(GetBucketEncryptionRequest request)
         {
             var options = new InvokeOptions();
@@ -4302,6 +4020,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketEncryption
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketEncryption">REST API Reference for GetBucketEncryption Operation</seealso>
         public virtual IAsyncResult BeginGetBucketEncryption(GetBucketEncryptionRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4318,6 +4037,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketEncryption.</param>
         /// 
         /// <returns>Returns a  GetBucketEncryptionResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketEncryption">REST API Reference for GetBucketEncryption Operation</seealso>
         public virtual GetBucketEncryptionResponse EndGetBucketEncryption(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketEncryptionResponse>(asyncResult);
@@ -4365,6 +4085,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketInventoryConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetBucketInventoryConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketInventoryConfiguration">REST API Reference for GetBucketInventoryConfiguration Operation</seealso>
         public virtual GetBucketInventoryConfigurationResponse GetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -4385,6 +4106,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketInventoryConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketInventoryConfiguration">REST API Reference for GetBucketInventoryConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4401,6 +4123,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketInventoryConfiguration.</param>
         /// 
         /// <returns>Returns a  GetBucketInventoryConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketInventoryConfiguration">REST API Reference for GetBucketInventoryConfiguration Operation</seealso>
         public virtual GetBucketInventoryConfigurationResponse EndGetBucketInventoryConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketInventoryConfigurationResponse>(asyncResult);
@@ -4436,6 +4159,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The name of the bucket for which to get the location.</param>
         /// 
         /// <returns>The response from the GetBucketLocation service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLocation">REST API Reference for GetBucketLocation Operation</seealso>
         public virtual GetBucketLocationResponse GetBucketLocation(string bucketName)
         {
             var request = new GetBucketLocationRequest();
@@ -4470,6 +4194,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLocation service method.</param>
         /// 
         /// <returns>The response from the GetBucketLocation service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLocation">REST API Reference for GetBucketLocation Operation</seealso>
         public virtual GetBucketLocationResponse GetBucketLocation(GetBucketLocationRequest request)
         {
             var options = new InvokeOptions();
@@ -4490,6 +4215,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketLocation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLocation">REST API Reference for GetBucketLocation Operation</seealso>
         public virtual IAsyncResult BeginGetBucketLocation(GetBucketLocationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4506,6 +4232,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketLocation.</param>
         /// 
         /// <returns>Returns a  GetBucketLocationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLocation">REST API Reference for GetBucketLocation Operation</seealso>
         public virtual GetBucketLocationResponse EndGetBucketLocation(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketLocationResponse>(asyncResult);
@@ -4536,6 +4263,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name for which to get the logging information.</param>
         /// 
         /// <returns>The response from the GetBucketLogging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLogging">REST API Reference for GetBucketLogging Operation</seealso>
         public virtual GetBucketLoggingResponse GetBucketLogging(string bucketName)
         {
             var request = new GetBucketLoggingRequest();
@@ -4565,6 +4293,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLogging service method.</param>
         /// 
         /// <returns>The response from the GetBucketLogging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLogging">REST API Reference for GetBucketLogging Operation</seealso>
         public virtual GetBucketLoggingResponse GetBucketLogging(GetBucketLoggingRequest request)
         {
             var options = new InvokeOptions();
@@ -4585,6 +4314,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketLogging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLogging">REST API Reference for GetBucketLogging Operation</seealso>
         public virtual IAsyncResult BeginGetBucketLogging(GetBucketLoggingRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4601,6 +4331,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketLogging.</param>
         /// 
         /// <returns>Returns a  GetBucketLoggingResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLogging">REST API Reference for GetBucketLogging Operation</seealso>
         public virtual GetBucketLoggingResponse EndGetBucketLogging(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketLoggingResponse>(asyncResult);
@@ -4653,6 +4384,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketMetricsConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetBucketMetricsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetricsConfiguration">REST API Reference for GetBucketMetricsConfiguration Operation</seealso>
         public virtual GetBucketMetricsConfigurationResponse GetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -4673,6 +4405,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketMetricsConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetricsConfiguration">REST API Reference for GetBucketMetricsConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4689,6 +4422,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketMetricsConfiguration.</param>
         /// 
         /// <returns>Returns a  GetBucketMetricsConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetricsConfiguration">REST API Reference for GetBucketMetricsConfiguration Operation</seealso>
         public virtual GetBucketMetricsConfigurationResponse EndGetBucketMetricsConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketMetricsConfigurationResponse>(asyncResult);
@@ -4731,9 +4465,10 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Name of the bucket for which to get the notification configuration</param>
+        /// <param name="bucketName">Name of the bucket for which to get the notification configuration.</param>
         /// 
         /// <returns>The response from the GetBucketNotification service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">REST API Reference for GetBucketNotification Operation</seealso>
         public virtual GetBucketNotificationResponse GetBucketNotification(string bucketName)
         {
             var request = new GetBucketNotificationRequest();
@@ -4778,6 +4513,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketNotification service method.</param>
         /// 
         /// <returns>The response from the GetBucketNotification service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">REST API Reference for GetBucketNotification Operation</seealso>
         public virtual GetBucketNotificationResponse GetBucketNotification(GetBucketNotificationRequest request)
         {
             var options = new InvokeOptions();
@@ -4798,6 +4534,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketNotification
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">REST API Reference for GetBucketNotification Operation</seealso>
         public virtual IAsyncResult BeginGetBucketNotification(GetBucketNotificationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4814,6 +4551,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketNotification.</param>
         /// 
         /// <returns>Returns a  GetBucketNotificationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">REST API Reference for GetBucketNotification Operation</seealso>
         public virtual GetBucketNotificationResponse EndGetBucketNotification(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketNotificationResponse>(asyncResult);
@@ -4860,6 +4598,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name for which to get the bucket policy.</param>
         /// 
         /// <returns>The response from the GetBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
         public virtual GetBucketPolicyResponse GetBucketPolicy(string bucketName)
         {
             var request = new GetBucketPolicyRequest();
@@ -4905,6 +4644,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicy service method.</param>
         /// 
         /// <returns>The response from the GetBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
         public virtual GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest request)
         {
             var options = new InvokeOptions();
@@ -4925,6 +4665,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetBucketPolicy(GetBucketPolicyRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -4941,6 +4682,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketPolicy.</param>
         /// 
         /// <returns>Returns a  GetBucketPolicyResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
         public virtual GetBucketPolicyResponse EndGetBucketPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketPolicyResponse>(asyncResult);
@@ -4987,6 +4729,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicyStatus service method.</param>
         /// 
         /// <returns>The response from the GetBucketPolicyStatus service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicyStatus">REST API Reference for GetBucketPolicyStatus Operation</seealso>
         public virtual GetBucketPolicyStatusResponse GetBucketPolicyStatus(GetBucketPolicyStatusRequest request)
         {
             var options = new InvokeOptions();
@@ -5007,6 +4750,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketPolicyStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicyStatus">REST API Reference for GetBucketPolicyStatus Operation</seealso>
         public virtual IAsyncResult BeginGetBucketPolicyStatus(GetBucketPolicyStatusRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5023,6 +4767,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketPolicyStatus.</param>
         /// 
         /// <returns>Returns a  GetBucketPolicyStatusResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicyStatus">REST API Reference for GetBucketPolicyStatus Operation</seealso>
         public virtual GetBucketPolicyStatusResponse EndGetBucketPolicyStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketPolicyStatusResponse>(asyncResult);
@@ -5038,6 +4783,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketReplication service method.</param>
         /// 
         /// <returns>The response from the GetBucketReplication service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication">REST API Reference for GetBucketReplication Operation</seealso>
         public virtual GetBucketReplicationResponse GetBucketReplication(GetBucketReplicationRequest request)
         {
             var options = new InvokeOptions();
@@ -5058,6 +4804,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketReplication
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication">REST API Reference for GetBucketReplication Operation</seealso>
         public virtual IAsyncResult BeginGetBucketReplication(GetBucketReplicationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5074,6 +4821,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketReplication.</param>
         /// 
         /// <returns>Returns a  GetBucketReplicationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication">REST API Reference for GetBucketReplication Operation</seealso>
         public virtual GetBucketReplicationResponse EndGetBucketReplication(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketReplicationResponse>(asyncResult);
@@ -5101,6 +4849,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The name of the bucket for which to get the payment request configuration</param>
         /// 
         /// <returns>The response from the GetBucketRequestPayment service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">REST API Reference for GetBucketRequestPayment Operation</seealso>
         public virtual GetBucketRequestPaymentResponse GetBucketRequestPayment(string bucketName)
         {
             var request = new GetBucketRequestPaymentRequest();
@@ -5127,6 +4876,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketRequestPayment service method.</param>
         /// 
         /// <returns>The response from the GetBucketRequestPayment service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">REST API Reference for GetBucketRequestPayment Operation</seealso>
         public virtual GetBucketRequestPaymentResponse GetBucketRequestPayment(GetBucketRequestPaymentRequest request)
         {
             var options = new InvokeOptions();
@@ -5147,6 +4897,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketRequestPayment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">REST API Reference for GetBucketRequestPayment Operation</seealso>
         public virtual IAsyncResult BeginGetBucketRequestPayment(GetBucketRequestPaymentRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5163,6 +4914,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketRequestPayment.</param>
         /// 
         /// <returns>Returns a  GetBucketRequestPaymentResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">REST API Reference for GetBucketRequestPayment Operation</seealso>
         public virtual GetBucketRequestPaymentResponse EndGetBucketRequestPayment(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketRequestPaymentResponse>(asyncResult);
@@ -5210,6 +4962,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketTagging service method.</param>
         /// 
         /// <returns>The response from the GetBucketTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketTagging">REST API Reference for GetBucketTagging Operation</seealso>
         public virtual GetBucketTaggingResponse GetBucketTagging(GetBucketTaggingRequest request)
         {
             var options = new InvokeOptions();
@@ -5230,6 +4983,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketTagging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketTagging">REST API Reference for GetBucketTagging Operation</seealso>
         public virtual IAsyncResult BeginGetBucketTagging(GetBucketTaggingRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5246,6 +5000,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketTagging.</param>
         /// 
         /// <returns>Returns a  GetBucketTaggingResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketTagging">REST API Reference for GetBucketTagging Operation</seealso>
         public virtual GetBucketTaggingResponse EndGetBucketTagging(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketTaggingResponse>(asyncResult);
@@ -5289,6 +5044,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The name of the bucket for which to get the versioning information.</param>
         /// 
         /// <returns>The response from the GetBucketVersioning service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketVersioning">REST API Reference for GetBucketVersioning Operation</seealso>
         public virtual GetBucketVersioningResponse GetBucketVersioning(string bucketName)
         {
             var request = new GetBucketVersioningRequest();
@@ -5331,6 +5087,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketVersioning service method.</param>
         /// 
         /// <returns>The response from the GetBucketVersioning service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketVersioning">REST API Reference for GetBucketVersioning Operation</seealso>
         public virtual GetBucketVersioningResponse GetBucketVersioning(GetBucketVersioningRequest request)
         {
             var options = new InvokeOptions();
@@ -5351,6 +5108,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketVersioning
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketVersioning">REST API Reference for GetBucketVersioning Operation</seealso>
         public virtual IAsyncResult BeginGetBucketVersioning(GetBucketVersioningRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5367,6 +5125,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketVersioning.</param>
         /// 
         /// <returns>Returns a  GetBucketVersioningResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketVersioning">REST API Reference for GetBucketVersioning Operation</seealso>
         public virtual GetBucketVersioningResponse EndGetBucketVersioning(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketVersioningResponse>(asyncResult);
@@ -5406,6 +5165,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name for which to get the website configuration.</param>
         /// 
         /// <returns>The response from the GetBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketWebsite">REST API Reference for GetBucketWebsite Operation</seealso>
         public virtual GetBucketWebsiteResponse GetBucketWebsite(string bucketName)
         {
             var request = new GetBucketWebsiteRequest();
@@ -5444,6 +5204,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetBucketWebsite service method.</param>
         /// 
         /// <returns>The response from the GetBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketWebsite">REST API Reference for GetBucketWebsite Operation</seealso>
         public virtual GetBucketWebsiteResponse GetBucketWebsite(GetBucketWebsiteRequest request)
         {
             var options = new InvokeOptions();
@@ -5464,6 +5225,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketWebsite
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketWebsite">REST API Reference for GetBucketWebsite Operation</seealso>
         public virtual IAsyncResult BeginGetBucketWebsite(GetBucketWebsiteRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5480,6 +5242,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketWebsite.</param>
         /// 
         /// <returns>Returns a  GetBucketWebsiteResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketWebsite">REST API Reference for GetBucketWebsite Operation</seealso>
         public virtual GetBucketWebsiteResponse EndGetBucketWebsite(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketWebsiteResponse>(asyncResult);
@@ -5519,6 +5282,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name for which to get the cors configuration.</param>
         /// 
         /// <returns>The response from the GetCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">REST API Reference for GetCORSConfiguration Operation</seealso>
         public virtual GetCORSConfigurationResponse GetCORSConfiguration(string bucketName)
         {
             var request = new GetCORSConfigurationRequest();
@@ -5557,6 +5321,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetCORSConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">REST API Reference for GetCORSConfiguration Operation</seealso>
         public virtual GetCORSConfigurationResponse GetCORSConfiguration(GetCORSConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -5577,6 +5342,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCORSConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">REST API Reference for GetCORSConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetCORSConfiguration(GetCORSConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5593,6 +5359,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCORSConfiguration.</param>
         /// 
         /// <returns>Returns a  GetCORSConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">REST API Reference for GetCORSConfiguration Operation</seealso>
         public virtual GetCORSConfigurationResponse EndGetCORSConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCORSConfigurationResponse>(asyncResult);
@@ -5648,7 +5415,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
-        /// The following operations are related to <code>DeleteBucketMetricsConfiguration</code>:
+        /// The following operations are related to <code>GetBucketLifecycleConfiguration</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5667,6 +5434,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The name of the bucket for which to get the lifecycle information.</param>
         /// 
         /// <returns>The response from the GetLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">REST API Reference for GetLifecycleConfiguration Operation</seealso>
         public virtual GetLifecycleConfigurationResponse GetLifecycleConfiguration(string bucketName)
         {
             var request = new GetLifecycleConfigurationRequest();
@@ -5721,7 +5489,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
-        /// The following operations are related to <code>DeleteBucketMetricsConfiguration</code>:
+        /// The following operations are related to <code>GetBucketLifecycleConfiguration</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5740,6 +5508,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">REST API Reference for GetLifecycleConfiguration Operation</seealso>
         public virtual GetLifecycleConfigurationResponse GetLifecycleConfiguration(GetLifecycleConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -5760,6 +5529,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLifecycleConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">REST API Reference for GetLifecycleConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetLifecycleConfiguration(GetLifecycleConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5776,6 +5546,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLifecycleConfiguration.</param>
         /// 
         /// <returns>Returns a  GetLifecycleConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">REST API Reference for GetLifecycleConfiguration Operation</seealso>
         public virtual GetLifecycleConfigurationResponse EndGetLifecycleConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetLifecycleConfigurationResponse>(asyncResult);
@@ -5990,6 +5761,7 @@ namespace Amazon.S3
         /// <param name="key">Key of the object to get.</param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">REST API Reference for GetObject Operation</seealso>
         public virtual GetObjectResponse GetObject(string bucketName, string key)
         {
             var request = new GetObjectRequest();
@@ -6205,6 +5977,7 @@ namespace Amazon.S3
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">REST API Reference for GetObject Operation</seealso>
         public virtual GetObjectResponse GetObject(string bucketName, string key, string versionId)
         {
             var request = new GetObjectRequest();
@@ -6419,6 +6192,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObject service method.</param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">REST API Reference for GetObject Operation</seealso>
         public virtual GetObjectResponse GetObject(GetObjectRequest request)
         {
             var options = new InvokeOptions();
@@ -6439,6 +6213,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObject
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">REST API Reference for GetObject Operation</seealso>
         public virtual IAsyncResult BeginGetObject(GetObjectRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -6455,6 +6230,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObject.</param>
         /// 
         /// <returns>Returns a  GetObjectResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">REST API Reference for GetObject Operation</seealso>
         public virtual GetObjectResponse EndGetObject(IAsyncResult asyncResult)
         {
             return EndInvoke<GetObjectResponse>(asyncResult);
@@ -6471,6 +6247,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectLegalHold service method.</param>
         /// 
         /// <returns>The response from the GetObjectLegalHold service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">REST API Reference for GetObjectLegalHold Operation</seealso>
         public virtual GetObjectLegalHoldResponse GetObjectLegalHold(GetObjectLegalHoldRequest request)
         {
             var options = new InvokeOptions();
@@ -6491,6 +6268,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectLegalHold
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">REST API Reference for GetObjectLegalHold Operation</seealso>
         public virtual IAsyncResult BeginGetObjectLegalHold(GetObjectLegalHoldRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -6507,6 +6285,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectLegalHold.</param>
         /// 
         /// <returns>Returns a  GetObjectLegalHoldResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">REST API Reference for GetObjectLegalHold Operation</seealso>
         public virtual GetObjectLegalHoldResponse EndGetObjectLegalHold(IAsyncResult asyncResult)
         {
             return EndInvoke<GetObjectLegalHoldResponse>(asyncResult);
@@ -6525,6 +6304,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectLockConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetObjectLockConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">REST API Reference for GetObjectLockConfiguration Operation</seealso>
         public virtual GetObjectLockConfigurationResponse GetObjectLockConfiguration(GetObjectLockConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -6545,6 +6325,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectLockConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">REST API Reference for GetObjectLockConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetObjectLockConfiguration(GetObjectLockConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -6561,6 +6342,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectLockConfiguration.</param>
         /// 
         /// <returns>Returns a  GetObjectLockConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">REST API Reference for GetObjectLockConfiguration Operation</seealso>
         public virtual GetObjectLockConfigurationResponse EndGetObjectLockConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetObjectLockConfigurationResponse>(asyncResult);
@@ -6695,6 +6477,7 @@ namespace Amazon.S3
         /// <param name="key">The object key.</param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">REST API Reference for GetObjectMetadata Operation</seealso>
         public virtual GetObjectMetadataResponse GetObjectMetadata(string bucketName, string key)
         {
             var request = new GetObjectMetadataRequest();
@@ -6830,6 +6613,7 @@ namespace Amazon.S3
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">REST API Reference for GetObjectMetadata Operation</seealso>
         public virtual GetObjectMetadataResponse GetObjectMetadata(string bucketName, string key, string versionId)
         {
             var request = new GetObjectMetadataRequest();
@@ -6964,6 +6748,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectMetadata service method.</param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">REST API Reference for GetObjectMetadata Operation</seealso>
         public virtual GetObjectMetadataResponse GetObjectMetadata(GetObjectMetadataRequest request)
         {
             var options = new InvokeOptions();
@@ -6984,6 +6769,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectMetadata
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">REST API Reference for GetObjectMetadata Operation</seealso>
         public virtual IAsyncResult BeginGetObjectMetadata(GetObjectMetadataRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7000,6 +6786,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectMetadata.</param>
         /// 
         /// <returns>Returns a  GetObjectMetadataResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">REST API Reference for GetObjectMetadata Operation</seealso>
         public virtual GetObjectMetadataResponse EndGetObjectMetadata(IAsyncResult asyncResult)
         {
             return EndInvoke<GetObjectMetadataResponse>(asyncResult);
@@ -7016,6 +6803,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectRetention service method.</param>
         /// 
         /// <returns>The response from the GetObjectRetention service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">REST API Reference for GetObjectRetention Operation</seealso>
         public virtual GetObjectRetentionResponse GetObjectRetention(GetObjectRetentionRequest request)
         {
             var options = new InvokeOptions();
@@ -7036,6 +6824,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectRetention
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">REST API Reference for GetObjectRetention Operation</seealso>
         public virtual IAsyncResult BeginGetObjectRetention(GetObjectRetentionRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7052,6 +6841,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectRetention.</param>
         /// 
         /// <returns>Returns a  GetObjectRetentionResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">REST API Reference for GetObjectRetention Operation</seealso>
         public virtual GetObjectRetentionResponse EndGetObjectRetention(IAsyncResult asyncResult)
         {
             return EndInvoke<GetObjectRetentionResponse>(asyncResult);
@@ -7096,6 +6886,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectTagging service method.</param>
         /// 
         /// <returns>The response from the GetObjectTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTagging">REST API Reference for GetObjectTagging Operation</seealso>
         public virtual GetObjectTaggingResponse GetObjectTagging(GetObjectTaggingRequest request)
         {
             var options = new InvokeOptions();
@@ -7116,6 +6907,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectTagging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTagging">REST API Reference for GetObjectTagging Operation</seealso>
         public virtual IAsyncResult BeginGetObjectTagging(GetObjectTaggingRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7132,6 +6924,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectTagging.</param>
         /// 
         /// <returns>Returns a  GetObjectTaggingResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTagging">REST API Reference for GetObjectTagging Operation</seealso>
         public virtual GetObjectTaggingResponse EndGetObjectTagging(IAsyncResult asyncResult)
         {
             return EndInvoke<GetObjectTaggingResponse>(asyncResult);
@@ -7169,6 +6962,7 @@ namespace Amazon.S3
         /// <param name="key">The object key for which to get the information.</param>
         /// 
         /// <returns>The response from the GetObjectTorrent service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">REST API Reference for GetObjectTorrent Operation</seealso>
         public virtual GetObjectTorrentResponse GetObjectTorrent(string bucketName, string key)
         {
             var request = new GetObjectTorrentRequest();
@@ -7205,6 +6999,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetObjectTorrent service method.</param>
         /// 
         /// <returns>The response from the GetObjectTorrent service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">REST API Reference for GetObjectTorrent Operation</seealso>
         public virtual GetObjectTorrentResponse GetObjectTorrent(GetObjectTorrentRequest request)
         {
             var options = new InvokeOptions();
@@ -7225,6 +7020,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectTorrent
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">REST API Reference for GetObjectTorrent Operation</seealso>
         public virtual IAsyncResult BeginGetObjectTorrent(GetObjectTorrentRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7241,6 +7037,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectTorrent.</param>
         /// 
         /// <returns>Returns a  GetObjectTorrentResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">REST API Reference for GetObjectTorrent Operation</seealso>
         public virtual GetObjectTorrentResponse EndGetObjectTorrent(IAsyncResult asyncResult)
         {
             return EndInvoke<GetObjectTorrentResponse>(asyncResult);
@@ -7297,6 +7094,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock service method.</param>
         /// 
         /// <returns>The response from the GetPublicAccessBlock service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         public virtual GetPublicAccessBlockResponse GetPublicAccessBlock(GetPublicAccessBlockRequest request)
         {
             var options = new InvokeOptions();
@@ -7317,6 +7115,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPublicAccessBlock
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         public virtual IAsyncResult BeginGetPublicAccessBlock(GetPublicAccessBlockRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7333,6 +7132,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPublicAccessBlock.</param>
         /// 
         /// <returns>Returns a  GetPublicAccessBlockResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         public virtual GetPublicAccessBlockResponse EndGetPublicAccessBlock(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPublicAccessBlockResponse>(asyncResult);
@@ -7360,6 +7160,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the HeadBucket service method.</param>
         /// 
         /// <returns>The response from the HeadBucket service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">REST API Reference for HeadBucket Operation</seealso>
         internal virtual HeadBucketResponse HeadBucket(HeadBucketRequest request)
         {
             var options = new InvokeOptions();
@@ -7380,6 +7181,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndHeadBucket
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">REST API Reference for HeadBucket Operation</seealso>
         internal virtual IAsyncResult BeginHeadBucket(HeadBucketRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7396,6 +7198,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginHeadBucket.</param>
         /// 
         /// <returns>Returns a  HeadBucketResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">REST API Reference for HeadBucket Operation</seealso>
         internal virtual HeadBucketResponse EndHeadBucket(IAsyncResult asyncResult)
         {
             return EndInvoke<HeadBucketResponse>(asyncResult);
@@ -7621,26 +7424,67 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-        /// account
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Using email addresses to specify a grantee is only supported in the following AWS
+        /// Regions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// US East (N. Virginia)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// US West (N. California)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  US West (Oregon)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Asia Pacific (Singapore)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Sydney)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Tokyo)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Europe (Ireland)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// South America (São Paulo)
+        /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+        /// and Endpoints</a> in the AWS General Reference.
+        /// </para>
+        ///  </note> </li> </ul> 
+        /// <para>
         /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
-        /// identified by email addresses permissions to read object data and its metadata:
+        /// identified by account IDs permissions to read object data and its metadata:
         /// </para>
         ///  
         /// <para>
-        ///  <code>x-amz-grant-read: emailAddress="xyz@amazon.com", emailAddress="abc@amazon.com"
-        /// </code> 
+        ///  <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> 
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
@@ -7672,6 +7516,7 @@ namespace Amazon.S3
         /// <param name="key">Object key for which the multipart upload is to be initiated.</param>
         /// 
         /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         public virtual InitiateMultipartUploadResponse InitiateMultipartUpload(string bucketName, string key)
         {
             var request = new InitiateMultipartUploadRequest();
@@ -7897,26 +7742,67 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-        /// account
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Using email addresses to specify a grantee is only supported in the following AWS
+        /// Regions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// US East (N. Virginia)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// US West (N. California)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  US West (Oregon)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Asia Pacific (Singapore)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Sydney)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Tokyo)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Europe (Ireland)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// South America (São Paulo)
+        /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+        /// and Endpoints</a> in the AWS General Reference.
+        /// </para>
+        ///  </note> </li> </ul> 
+        /// <para>
         /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
-        /// identified by email addresses permissions to read object data and its metadata:
+        /// identified by account IDs permissions to read object data and its metadata:
         /// </para>
         ///  
         /// <para>
-        ///  <code>x-amz-grant-read: emailAddress="xyz@amazon.com", emailAddress="abc@amazon.com"
-        /// </code> 
+        ///  <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> 
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
@@ -7947,6 +7833,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the InitiateMultipartUpload service method.</param>
         /// 
         /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         public virtual InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
         {
             var options = new InvokeOptions();
@@ -7967,6 +7854,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInitiateMultipartUpload
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         public virtual IAsyncResult BeginInitiateMultipartUpload(InitiateMultipartUploadRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -7983,6 +7871,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInitiateMultipartUpload.</param>
         /// 
         /// <returns>Returns a  InitiateMultipartUploadResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         public virtual InitiateMultipartUploadResponse EndInitiateMultipartUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<InitiateMultipartUploadResponse>(asyncResult);
@@ -8040,6 +7929,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListBucketAnalyticsConfigurations service method.</param>
         /// 
         /// <returns>The response from the ListBucketAnalyticsConfigurations service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketAnalyticsConfigurations">REST API Reference for ListBucketAnalyticsConfigurations Operation</seealso>
         public virtual ListBucketAnalyticsConfigurationsResponse ListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request)
         {
             var options = new InvokeOptions();
@@ -8060,6 +7950,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBucketAnalyticsConfigurations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketAnalyticsConfigurations">REST API Reference for ListBucketAnalyticsConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -8076,6 +7967,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBucketAnalyticsConfigurations.</param>
         /// 
         /// <returns>Returns a  ListBucketAnalyticsConfigurationsResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketAnalyticsConfigurations">REST API Reference for ListBucketAnalyticsConfigurations Operation</seealso>
         public virtual ListBucketAnalyticsConfigurationsResponse EndListBucketAnalyticsConfigurations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListBucketAnalyticsConfigurationsResponse>(asyncResult);
@@ -8133,6 +8025,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListBucketInventoryConfigurations service method.</param>
         /// 
         /// <returns>The response from the ListBucketInventoryConfigurations service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketInventoryConfigurations">REST API Reference for ListBucketInventoryConfigurations Operation</seealso>
         public virtual ListBucketInventoryConfigurationsResponse ListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request)
         {
             var options = new InvokeOptions();
@@ -8153,6 +8046,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBucketInventoryConfigurations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketInventoryConfigurations">REST API Reference for ListBucketInventoryConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -8169,6 +8063,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBucketInventoryConfigurations.</param>
         /// 
         /// <returns>Returns a  ListBucketInventoryConfigurationsResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketInventoryConfigurations">REST API Reference for ListBucketInventoryConfigurations Operation</seealso>
         public virtual ListBucketInventoryConfigurationsResponse EndListBucketInventoryConfigurations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListBucketInventoryConfigurationsResponse>(asyncResult);
@@ -8228,6 +8123,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListBucketMetricsConfigurations service method.</param>
         /// 
         /// <returns>The response from the ListBucketMetricsConfigurations service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketMetricsConfigurations">REST API Reference for ListBucketMetricsConfigurations Operation</seealso>
         public virtual ListBucketMetricsConfigurationsResponse ListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request)
         {
             var options = new InvokeOptions();
@@ -8248,6 +8144,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBucketMetricsConfigurations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketMetricsConfigurations">REST API Reference for ListBucketMetricsConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -8264,6 +8161,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBucketMetricsConfigurations.</param>
         /// 
         /// <returns>Returns a  ListBucketMetricsConfigurationsResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketMetricsConfigurations">REST API Reference for ListBucketMetricsConfigurations Operation</seealso>
         public virtual ListBucketMetricsConfigurationsResponse EndListBucketMetricsConfigurations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListBucketMetricsConfigurationsResponse>(asyncResult);
@@ -8278,6 +8176,7 @@ namespace Amazon.S3
         /// </summary>
         /// 
         /// <returns>The response from the ListBuckets service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">REST API Reference for ListBuckets Operation</seealso>
         public virtual ListBucketsResponse ListBuckets()
         {
             return ListBuckets(new ListBucketsRequest());
@@ -8289,6 +8188,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListBuckets service method.</param>
         /// 
         /// <returns>The response from the ListBuckets service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">REST API Reference for ListBuckets Operation</seealso>
         public virtual ListBucketsResponse ListBuckets(ListBucketsRequest request)
         {
             var options = new InvokeOptions();
@@ -8309,6 +8209,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBuckets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">REST API Reference for ListBuckets Operation</seealso>
         public virtual IAsyncResult BeginListBuckets(ListBucketsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -8325,6 +8226,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBuckets.</param>
         /// 
         /// <returns>Returns a  ListBucketsResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">REST API Reference for ListBuckets Operation</seealso>
         public virtual ListBucketsResponse EndListBuckets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListBucketsResponse>(asyncResult);
@@ -8395,6 +8297,7 @@ namespace Amazon.S3
         /// <param name="bucketName">Name of the bucket to which the multipart upload was initiated.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         public virtual ListMultipartUploadsResponse ListMultipartUploads(string bucketName)
         {
             var request = new ListMultipartUploadsRequest();
@@ -8465,6 +8368,7 @@ namespace Amazon.S3
         /// <param name="prefix">Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.)</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         public virtual ListMultipartUploadsResponse ListMultipartUploads(string bucketName, string prefix)
         {
             var request = new ListMultipartUploadsRequest();
@@ -8535,6 +8439,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListMultipartUploads service method.</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         public virtual ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
         {
             var options = new InvokeOptions();
@@ -8555,6 +8460,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMultipartUploads
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         public virtual IAsyncResult BeginListMultipartUploads(ListMultipartUploadsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -8571,6 +8477,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMultipartUploads.</param>
         /// 
         /// <returns>Returns a  ListMultipartUploadsResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         public virtual ListMultipartUploadsResponse EndListMultipartUploads(IAsyncResult asyncResult)
         {
             return EndInvoke<ListMultipartUploadsResponse>(asyncResult);
@@ -8621,6 +8528,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The name of the bucket containing the objects.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
         public virtual ListObjectsResponse ListObjects(string bucketName)
         {
             var request = new ListObjectsRequest();
@@ -8671,6 +8579,7 @@ namespace Amazon.S3
         /// <param name="prefix">Limits the response to keys that begin with the specified prefix.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
         public virtual ListObjectsResponse ListObjects(string bucketName, string prefix)
         {
             var request = new ListObjectsRequest();
@@ -8721,6 +8630,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListObjects service method.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
         public virtual ListObjectsResponse ListObjects(ListObjectsRequest request)
         {
             var options = new InvokeOptions();
@@ -8741,6 +8651,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListObjects
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
         public virtual IAsyncResult BeginListObjects(ListObjectsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -8757,6 +8668,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListObjects.</param>
         /// 
         /// <returns>Returns a  ListObjectsResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
         public virtual ListObjectsResponse EndListObjects(IAsyncResult asyncResult)
         {
             return EndInvoke<ListObjectsResponse>(asyncResult);
@@ -8816,6 +8728,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListObjectsV2 service method.</param>
         /// 
         /// <returns>The response from the ListObjectsV2 service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectsV2">REST API Reference for ListObjectsV2 Operation</seealso>
         public virtual ListObjectsV2Response ListObjectsV2(ListObjectsV2Request request)
         {
             var options = new InvokeOptions();
@@ -8836,6 +8749,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListObjectsV2
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectsV2">REST API Reference for ListObjectsV2 Operation</seealso>
         public virtual IAsyncResult BeginListObjectsV2(ListObjectsV2Request request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -8852,6 +8766,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListObjectsV2.</param>
         /// 
         /// <returns>Returns a  ListObjectsV2Result from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectsV2">REST API Reference for ListObjectsV2 Operation</seealso>
         public virtual ListObjectsV2Response EndListObjectsV2(IAsyncResult asyncResult)
         {
             return EndInvoke<ListObjectsV2Response>(asyncResult);
@@ -8914,6 +8829,7 @@ namespace Amazon.S3
         /// <param name="uploadId">Upload ID identifying the multipart upload whose parts are being listed.</param>
         /// 
         /// <returns>The response from the ListParts service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListParts">REST API Reference for ListParts Operation</seealso>
         public virtual ListPartsResponse ListParts(string bucketName, string key, string uploadId)
         {
             var request = new ListPartsRequest();
@@ -8975,6 +8891,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListParts service method.</param>
         /// 
         /// <returns>The response from the ListParts service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListParts">REST API Reference for ListParts Operation</seealso>
         public virtual ListPartsResponse ListParts(ListPartsRequest request)
         {
             var options = new InvokeOptions();
@@ -8995,6 +8912,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListParts
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListParts">REST API Reference for ListParts Operation</seealso>
         public virtual IAsyncResult BeginListParts(ListPartsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -9011,6 +8929,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListParts.</param>
         /// 
         /// <returns>Returns a  ListPartsResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListParts">REST API Reference for ListParts Operation</seealso>
         public virtual ListPartsResponse EndListParts(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPartsResponse>(asyncResult);
@@ -9059,6 +8978,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The bucket name that contains the objects.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         public virtual ListVersionsResponse ListVersions(string bucketName)
         {
             var request = new ListVersionsRequest();
@@ -9107,6 +9027,7 @@ namespace Amazon.S3
         /// <param name="prefix">Use this parameter to select only those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different groupings of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.) You can use prefix with delimiter to roll up numerous objects into a single result under CommonPrefixes. </param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         public virtual ListVersionsResponse ListVersions(string bucketName, string prefix)
         {
             var request = new ListVersionsRequest();
@@ -9155,6 +9076,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the ListVersions service method.</param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         public virtual ListVersionsResponse ListVersions(ListVersionsRequest request)
         {
             var options = new InvokeOptions();
@@ -9175,6 +9097,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVersions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         public virtual IAsyncResult BeginListVersions(ListVersionsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -9191,6 +9114,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVersions.</param>
         /// 
         /// <returns>Returns a  ListVersionsResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         public virtual ListVersionsResponse EndListVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListVersionsResponse>(asyncResult);
@@ -9262,18 +9186,60 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-        /// account
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Using email addresses to specify a grantee is only supported in the following AWS
+        /// Regions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// US East (N. Virginia)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// US West (N. California)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  US West (Oregon)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Asia Pacific (Singapore)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Sydney)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Tokyo)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Europe (Ireland)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// South America (São Paulo)
+        /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+        /// and Endpoints</a> in the AWS General Reference.
+        /// </para>
+        ///  </note> </li> </ul> 
         /// <para>
         /// For example, the following <code>x-amz-grant-write</code> header grants create, overwrite,
         /// and delete objects permission to LogDelivery group predefined by Amazon S3 and two
@@ -9281,8 +9247,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        ///  <code>x-amz-grant-write: uri="http://acs.amazonaws.com/groups/s3/LogDelivery", emailAddress="xyz@amazon.com",
-        /// emailAddress="abc@amazon.com" </code> 
+        ///  <code>x-amz-grant-write: uri="http://acs.amazonaws.com/groups/s3/LogDelivery", id="111122223333",
+        /// id="555566667777" </code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -9299,20 +9265,6 @@ namespace Amazon.S3
         /// request elements) in the following ways:
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        /// By Email address:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="AmazonCustomerByEmail"&gt;&lt;EmailAddress&gt;&lt;&gt;Grantees@email.com&lt;&gt;&lt;/EmailAddress&gt;lt;/Grantee&gt;</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// The grantee is resolved to the CanonicalUser and, in a response to a GET Object acl
-        /// request, appears as the CanonicalUser.
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         /// By the person's ID:
         /// </para>
@@ -9334,7 +9286,63 @@ namespace Amazon.S3
         ///  <code>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Group"&gt;&lt;URI&gt;&lt;&gt;http://acs.amazonaws.com/groups/global/AuthenticatedUsers&lt;&gt;&lt;/URI&gt;&lt;/Grantee&gt;</code>
         /// 
         /// </para>
-        ///  </li> </ul> <p class="title"> <b>Related Resources</b> 
+        ///  </li> <li> 
+        /// <para>
+        /// By Email address:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="AmazonCustomerByEmail"&gt;&lt;EmailAddress&gt;&lt;&gt;Grantees@email.com&lt;&gt;&lt;/EmailAddress&gt;lt;/Grantee&gt;</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The grantee is resolved to the CanonicalUser and, in a response to a GET Object acl
+        /// request, appears as the CanonicalUser. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Using email addresses to specify a grantee is only supported in the following AWS
+        /// Regions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// US East (N. Virginia)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// US West (N. California)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  US West (Oregon)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Asia Pacific (Singapore)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Sydney)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Tokyo)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Europe (Ireland)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// South America (São Paulo)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+        /// and Endpoints</a> in the AWS General Reference.
+        /// </para>
+        ///  </note> </li> </ul> <p class="title"> <b>Related Resources</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -9353,6 +9361,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutACL service method.</param>
         /// 
         /// <returns>The response from the PutACL service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAcl">REST API Reference for PutACL Operation</seealso>
         public virtual PutACLResponse PutACL(PutACLRequest request)
         {
             var options = new InvokeOptions();
@@ -9373,6 +9382,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutACL
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAcl">REST API Reference for PutACL Operation</seealso>
         public virtual IAsyncResult BeginPutACL(PutACLRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -9389,6 +9399,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutACL.</param>
         /// 
         /// <returns>Returns a  PutACLResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAcl">REST API Reference for PutACL Operation</seealso>
         public virtual PutACLResponse EndPutACL(IAsyncResult asyncResult)
         {
             return EndInvoke<PutACLResponse>(asyncResult);
@@ -9414,7 +9425,7 @@ namespace Amazon.S3
         /// By default, the bucket is created in the US East (N. Virginia) Region. You can optionally
         /// specify a Region in the request body. You might choose a Region to optimize latency,
         /// minimize costs, or address regulatory requirements. For example, if you reside in
-        /// Europe, you will probably find it advantageous to create buckets in the EU (Ireland)
+        /// Europe, you will probably find it advantageous to create buckets in the Europe (Ireland)
         /// Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
         /// to Select a Region for Your Buckets</a>.
         /// </para>
@@ -9455,26 +9466,67 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-        /// account
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Using email addresses to specify a grantee is only supported in the following AWS
+        /// Regions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// US East (N. Virginia)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// US West (N. California)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  US West (Oregon)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Asia Pacific (Singapore)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Sydney)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Tokyo)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Europe (Ireland)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// South America (São Paulo)
+        /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+        /// and Endpoints</a> in the AWS General Reference.
+        /// </para>
+        ///  </note> </li> </ul> 
+        /// <para>
         /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
-        /// identified by email addresses permissions to read object data and its metadata:
+        /// identified by account IDs permissions to read object data and its metadata:
         /// </para>
         ///  
         /// <para>
-        ///  <code>x-amz-grant-read: emailAddress="xyz@amazon.com", emailAddress="abc@amazon.com"
-        /// </code> 
+        ///  <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -9498,6 +9550,7 @@ namespace Amazon.S3
         /// <param name="bucketName">The name of the bucket to create.</param>
         /// 
         /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">REST API Reference for PutBucket Operation</seealso>
         public virtual PutBucketResponse PutBucket(string bucketName)
         {
             var request = new PutBucketRequest();
@@ -9522,7 +9575,7 @@ namespace Amazon.S3
         /// By default, the bucket is created in the US East (N. Virginia) Region. You can optionally
         /// specify a Region in the request body. You might choose a Region to optimize latency,
         /// minimize costs, or address regulatory requirements. For example, if you reside in
-        /// Europe, you will probably find it advantageous to create buckets in the EU (Ireland)
+        /// Europe, you will probably find it advantageous to create buckets in the Europe (Ireland)
         /// Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
         /// to Select a Region for Your Buckets</a>.
         /// </para>
@@ -9563,26 +9616,67 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-        /// account
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Using email addresses to specify a grantee is only supported in the following AWS
+        /// Regions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// US East (N. Virginia)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// US West (N. California)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  US West (Oregon)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Asia Pacific (Singapore)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Sydney)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Tokyo)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Europe (Ireland)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// South America (São Paulo)
+        /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+        /// and Endpoints</a> in the AWS General Reference.
+        /// </para>
+        ///  </note> </li> </ul> 
+        /// <para>
         /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
-        /// identified by email addresses permissions to read object data and its metadata:
+        /// identified by account IDs permissions to read object data and its metadata:
         /// </para>
         ///  
         /// <para>
-        ///  <code>x-amz-grant-read: emailAddress="xyz@amazon.com", emailAddress="abc@amazon.com"
-        /// </code> 
+        ///  <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -9606,6 +9700,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucket service method.</param>
         /// 
         /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">REST API Reference for PutBucket Operation</seealso>
         public virtual PutBucketResponse PutBucket(PutBucketRequest request)
         {
             var options = new InvokeOptions();
@@ -9626,6 +9721,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucket
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">REST API Reference for PutBucket Operation</seealso>
         public virtual IAsyncResult BeginPutBucket(PutBucketRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -9642,6 +9738,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucket.</param>
         /// 
         /// <returns>Returns a  PutBucketResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">REST API Reference for PutBucket Operation</seealso>
         public virtual PutBucketResponse EndPutBucket(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketResponse>(asyncResult);
@@ -9714,6 +9811,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketAccelerateConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAccelerateConfiguration">REST API Reference for PutBucketAccelerateConfiguration Operation</seealso>
         public virtual PutBucketAccelerateConfigurationResponse PutBucketAccelerateConfiguration(PutBucketAccelerateConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -9734,6 +9832,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketAccelerateConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAccelerateConfiguration">REST API Reference for PutBucketAccelerateConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutBucketAccelerateConfiguration(PutBucketAccelerateConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -9750,6 +9849,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketAccelerateConfiguration.</param>
         /// 
         /// <returns>Returns a  PutBucketAccelerateConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAccelerateConfiguration">REST API Reference for PutBucketAccelerateConfiguration Operation</seealso>
         public virtual PutBucketAccelerateConfigurationResponse EndPutBucketAccelerateConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketAccelerateConfigurationResponse>(asyncResult);
@@ -9849,6 +9949,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketAnalyticsConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAnalyticsConfiguration">REST API Reference for PutBucketAnalyticsConfiguration Operation</seealso>
         public virtual PutBucketAnalyticsConfigurationResponse PutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -9869,6 +9970,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketAnalyticsConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAnalyticsConfiguration">REST API Reference for PutBucketAnalyticsConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -9885,6 +9987,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketAnalyticsConfiguration.</param>
         /// 
         /// <returns>Returns a  PutBucketAnalyticsConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAnalyticsConfiguration">REST API Reference for PutBucketAnalyticsConfiguration Operation</seealso>
         public virtual PutBucketAnalyticsConfigurationResponse EndPutBucketAnalyticsConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketAnalyticsConfigurationResponse>(asyncResult);
@@ -9902,7 +10005,9 @@ namespace Amazon.S3
         /// <para>
         /// This implementation of the <code>PUT</code> operation sets default encryption for
         /// a bucket using server-side encryption with Amazon S3-managed keys SSE-S3 or AWS KMS
-        /// customer master keys (CMKs) (SSE-KMS).
+        /// customer master keys (CMKs) (SSE-KMS). For information about the Amazon S3 default
+        /// encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
+        /// S3 Default Bucket Encryption</a>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -9933,6 +10038,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketEncryption service method.</param>
         /// 
         /// <returns>The response from the PutBucketEncryption service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketEncryption">REST API Reference for PutBucketEncryption Operation</seealso>
         public virtual PutBucketEncryptionResponse PutBucketEncryption(PutBucketEncryptionRequest request)
         {
             var options = new InvokeOptions();
@@ -9953,6 +10059,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketEncryption
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketEncryption">REST API Reference for PutBucketEncryption Operation</seealso>
         public virtual IAsyncResult BeginPutBucketEncryption(PutBucketEncryptionRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -9969,6 +10076,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketEncryption.</param>
         /// 
         /// <returns>Returns a  PutBucketEncryptionResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketEncryption">REST API Reference for PutBucketEncryption Operation</seealso>
         public virtual PutBucketEncryptionResponse EndPutBucketEncryption(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketEncryptionResponse>(asyncResult);
@@ -9997,7 +10105,7 @@ namespace Amazon.S3
         /// bucket where you want the inventory to be stored, and whether to generate the inventory
         /// daily or weekly. You can also configure what object metadata to include and whether
         /// to inventory all object versions or only current versions. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//storage-inventory.html">Amazon
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-inventory.html">Amazon
         /// S3 Inventory</a> in the Amazon Simple Storage Service Developer Guide.
         /// </para>
         ///  <important> 
@@ -10005,14 +10113,14 @@ namespace Amazon.S3
         /// You must create a bucket policy on the <i>destination</i> bucket to grant permissions
         /// to Amazon S3 to write objects to the bucket in the defined location. For an example
         /// policy, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html#example-bucket-policies-use-case-9">
-        /// Granting Permissions for Amazon S3 Inventory and Storage Class Analysis.</a> 
+        /// Granting Permissions for Amazon S3 Inventory and Storage Class Analysis</a>.
         /// </para>
         ///  </important> 
         /// <para>
         /// To use this operation, you must have permissions to perform the <code>s3:PutInventoryConfiguration</code>
         /// action. The bucket owner has this permission by default and can grant this permission
-        /// to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
-        /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//s3-access-control.html">Managing
+        /// to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+        /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a> in the Amazon Simple Storage Service
         /// Developer Guide.
         /// </para>
@@ -10049,7 +10157,7 @@ namespace Amazon.S3
         /// <para>
         ///  <i>Cause:</i> You are not the owner of the specified bucket, or you do not have the
         /// <code>s3:PutInventoryConfiguration</code> bucket permission to set the configuration
-        /// on the bucket 
+        /// on the bucket. 
         /// </para>
         ///  </li> </ul> </li> </ul> <p class="title"> <b>Related Resources</b> 
         /// </para>
@@ -10070,6 +10178,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketInventoryConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutBucketInventoryConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketInventoryConfiguration">REST API Reference for PutBucketInventoryConfiguration Operation</seealso>
         public virtual PutBucketInventoryConfigurationResponse PutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -10090,6 +10199,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketInventoryConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketInventoryConfiguration">REST API Reference for PutBucketInventoryConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -10106,6 +10216,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketInventoryConfiguration.</param>
         /// 
         /// <returns>Returns a  PutBucketInventoryConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketInventoryConfiguration">REST API Reference for PutBucketInventoryConfiguration Operation</seealso>
         public virtual PutBucketInventoryConfigurationResponse EndPutBucketInventoryConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketInventoryConfigurationResponse>(asyncResult);
@@ -10217,6 +10328,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketLogging service method.</param>
         /// 
         /// <returns>The response from the PutBucketLogging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLogging">REST API Reference for PutBucketLogging Operation</seealso>
         public virtual PutBucketLoggingResponse PutBucketLogging(PutBucketLoggingRequest request)
         {
             var options = new InvokeOptions();
@@ -10237,6 +10349,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketLogging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLogging">REST API Reference for PutBucketLogging Operation</seealso>
         public virtual IAsyncResult BeginPutBucketLogging(PutBucketLoggingRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -10253,6 +10366,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketLogging.</param>
         /// 
         /// <returns>Returns a  PutBucketLoggingResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLogging">REST API Reference for PutBucketLogging Operation</seealso>
         public virtual PutBucketLoggingResponse EndPutBucketLogging(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketLoggingResponse>(asyncResult);
@@ -10320,6 +10434,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketMetricsConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutBucketMetricsConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketMetricsConfiguration">REST API Reference for PutBucketMetricsConfiguration Operation</seealso>
         public virtual PutBucketMetricsConfigurationResponse PutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -10340,6 +10455,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketMetricsConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketMetricsConfiguration">REST API Reference for PutBucketMetricsConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -10356,6 +10472,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketMetricsConfiguration.</param>
         /// 
         /// <returns>Returns a  PutBucketMetricsConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketMetricsConfiguration">REST API Reference for PutBucketMetricsConfiguration Operation</seealso>
         public virtual PutBucketMetricsConfigurationResponse EndPutBucketMetricsConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketMetricsConfigurationResponse>(asyncResult);
@@ -10447,6 +10564,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketNotification service method.</param>
         /// 
         /// <returns>The response from the PutBucketNotification service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketNotificationConfiguration">REST API Reference for PutBucketNotification Operation</seealso>
         public virtual PutBucketNotificationResponse PutBucketNotification(PutBucketNotificationRequest request)
         {
             var options = new InvokeOptions();
@@ -10467,6 +10585,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketNotification
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketNotificationConfiguration">REST API Reference for PutBucketNotification Operation</seealso>
         public virtual IAsyncResult BeginPutBucketNotification(PutBucketNotificationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -10483,6 +10602,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketNotification.</param>
         /// 
         /// <returns>Returns a  PutBucketNotificationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketNotificationConfiguration">REST API Reference for PutBucketNotification Operation</seealso>
         public virtual PutBucketNotificationResponse EndPutBucketNotification(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketNotificationResponse>(asyncResult);
@@ -10500,7 +10620,7 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// If you don't have <code>PutBucketPolic</code>y permissions, Amazon S3 returns a <code>403
+        /// If you don't have <code>PutBucketPolicy</code> permissions, Amazon S3 returns a <code>403
         /// Access Denied</code> error. If you have the correct permissions, but you're not using
         /// an identity that belongs to the bucket owner's account, Amazon S3 returns a <code>405
         /// Method Not Allowed</code> error.
@@ -10534,6 +10654,7 @@ namespace Amazon.S3
         /// <param name="policy">The bucket policy as a JSON document.</param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         public virtual PutBucketPolicyResponse PutBucketPolicy(string bucketName, string policy)
         {
             var request = new PutBucketPolicyRequest();
@@ -10551,7 +10672,7 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// If you don't have <code>PutBucketPolic</code>y permissions, Amazon S3 returns a <code>403
+        /// If you don't have <code>PutBucketPolicy</code> permissions, Amazon S3 returns a <code>403
         /// Access Denied</code> error. If you have the correct permissions, but you're not using
         /// an identity that belongs to the bucket owner's account, Amazon S3 returns a <code>405
         /// Method Not Allowed</code> error.
@@ -10586,6 +10707,7 @@ namespace Amazon.S3
         /// <param name="contentMD5">The MD5 hash of the request body.</param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         public virtual PutBucketPolicyResponse PutBucketPolicy(string bucketName, string policy, string contentMD5)
         {
             var request = new PutBucketPolicyRequest();
@@ -10604,7 +10726,7 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// If you don't have <code>PutBucketPolic</code>y permissions, Amazon S3 returns a <code>403
+        /// If you don't have <code>PutBucketPolicy</code> permissions, Amazon S3 returns a <code>403
         /// Access Denied</code> error. If you have the correct permissions, but you're not using
         /// an identity that belongs to the bucket owner's account, Amazon S3 returns a <code>405
         /// Method Not Allowed</code> error.
@@ -10637,6 +10759,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketPolicy service method.</param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         public virtual PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest request)
         {
             var options = new InvokeOptions();
@@ -10657,6 +10780,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutBucketPolicy(PutBucketPolicyRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -10673,6 +10797,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketPolicy.</param>
         /// 
         /// <returns>Returns a  PutBucketPolicyResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         public virtual PutBucketPolicyResponse EndPutBucketPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketPolicyResponse>(asyncResult);
@@ -10763,6 +10888,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketReplication service method.</param>
         /// 
         /// <returns>The response from the PutBucketReplication service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">REST API Reference for PutBucketReplication Operation</seealso>
         public virtual PutBucketReplicationResponse PutBucketReplication(PutBucketReplicationRequest request)
         {
             var options = new InvokeOptions();
@@ -10783,6 +10909,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketReplication
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">REST API Reference for PutBucketReplication Operation</seealso>
         public virtual IAsyncResult BeginPutBucketReplication(PutBucketReplicationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -10799,6 +10926,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketReplication.</param>
         /// 
         /// <returns>Returns a  PutBucketReplicationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">REST API Reference for PutBucketReplication Operation</seealso>
         public virtual PutBucketReplicationResponse EndPutBucketReplication(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketReplicationResponse>(asyncResult);
@@ -10833,6 +10961,7 @@ namespace Amazon.S3
         /// <param name="requestPaymentConfiguration">Container for Payer.</param>
         /// 
         /// <returns>The response from the PutBucketRequestPayment service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketRequestPayment">REST API Reference for PutBucketRequestPayment Operation</seealso>
         public virtual PutBucketRequestPaymentResponse PutBucketRequestPayment(string bucketName, RequestPaymentConfiguration requestPaymentConfiguration)
         {
             var request = new PutBucketRequestPaymentRequest();
@@ -10866,6 +10995,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketRequestPayment service method.</param>
         /// 
         /// <returns>The response from the PutBucketRequestPayment service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketRequestPayment">REST API Reference for PutBucketRequestPayment Operation</seealso>
         public virtual PutBucketRequestPaymentResponse PutBucketRequestPayment(PutBucketRequestPaymentRequest request)
         {
             var options = new InvokeOptions();
@@ -10886,6 +11016,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketRequestPayment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketRequestPayment">REST API Reference for PutBucketRequestPayment Operation</seealso>
         public virtual IAsyncResult BeginPutBucketRequestPayment(PutBucketRequestPaymentRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -10902,6 +11033,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketRequestPayment.</param>
         /// 
         /// <returns>Returns a  PutBucketRequestPaymentResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketRequestPayment">REST API Reference for PutBucketRequestPayment Operation</seealso>
         public virtual PutBucketRequestPaymentResponse EndPutBucketRequestPayment(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketRequestPaymentResponse>(asyncResult);
@@ -10949,8 +11081,8 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// Description: The tag provided was not a valid tag. This error can occur if the tag
-        /// did not pass input validation. For information about tag restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2//allocation-tag-restrictions.html">User-Defined
-        /// Tag Restrictions</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2//aws-tag-restrictions.html">AWS-Generated
+        /// did not pass input validation. For information about tag restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+        /// Tag Restrictions</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html">AWS-Generated
         /// Cost Allocation Tag Restrictions</a>.
         /// </para>
         ///  </li> </ul> </li> <li> 
@@ -10996,6 +11128,7 @@ namespace Amazon.S3
         /// <param name="tagSet">A property of PutBucketTaggingRequest used to execute the PutBucketTagging service method.</param>
         /// 
         /// <returns>The response from the PutBucketTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
         public virtual PutBucketTaggingResponse PutBucketTagging(string bucketName, List<Tag> tagSet)
         {
             var request = new PutBucketTaggingRequest();
@@ -11043,8 +11176,8 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// Description: The tag provided was not a valid tag. This error can occur if the tag
-        /// did not pass input validation. For information about tag restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2//allocation-tag-restrictions.html">User-Defined
-        /// Tag Restrictions</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2//aws-tag-restrictions.html">AWS-Generated
+        /// did not pass input validation. For information about tag restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+        /// Tag Restrictions</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html">AWS-Generated
         /// Cost Allocation Tag Restrictions</a>.
         /// </para>
         ///  </li> </ul> </li> <li> 
@@ -11089,6 +11222,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketTagging service method.</param>
         /// 
         /// <returns>The response from the PutBucketTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
         public virtual PutBucketTaggingResponse PutBucketTagging(PutBucketTaggingRequest request)
         {
             var options = new InvokeOptions();
@@ -11109,6 +11243,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketTagging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
         public virtual IAsyncResult BeginPutBucketTagging(PutBucketTaggingRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -11125,6 +11260,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketTagging.</param>
         /// 
         /// <returns>Returns a  PutBucketTaggingResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
         public virtual PutBucketTaggingResponse EndPutBucketTagging(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketTaggingResponse>(asyncResult);
@@ -11193,6 +11329,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutBucketVersioning service method.</param>
         /// 
         /// <returns>The response from the PutBucketVersioning service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketVersioning">REST API Reference for PutBucketVersioning Operation</seealso>
         public virtual PutBucketVersioningResponse PutBucketVersioning(PutBucketVersioningRequest request)
         {
             var options = new InvokeOptions();
@@ -11213,6 +11350,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketVersioning
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketVersioning">REST API Reference for PutBucketVersioning Operation</seealso>
         public virtual IAsyncResult BeginPutBucketVersioning(PutBucketVersioningRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -11229,6 +11367,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketVersioning.</param>
         /// 
         /// <returns>Returns a  PutBucketVersioningResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketVersioning">REST API Reference for PutBucketVersioning Operation</seealso>
         public virtual PutBucketVersioningResponse EndPutBucketVersioning(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketVersioningResponse>(asyncResult);
@@ -11345,12 +11484,19 @@ namespace Amazon.S3
         /// <para>
         ///  <code>HttpRedirectCode</code> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// Amazon S3 has a limitation of 50 routing rules per website configuration. If you require
+        /// more than 50 routing rules, you can use object redirect. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">Configuring
+        /// an Object Redirect</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="bucketName">The bucket name.</param>
         /// <param name="websiteConfiguration">Container for the request.</param>
         /// 
         /// <returns>The response from the PutBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketWebsite">REST API Reference for PutBucketWebsite Operation</seealso>
         public virtual PutBucketWebsiteResponse PutBucketWebsite(string bucketName, WebsiteConfiguration websiteConfiguration)
         {
             var request = new PutBucketWebsiteRequest();
@@ -11467,11 +11613,18 @@ namespace Amazon.S3
         /// <para>
         ///  <code>HttpRedirectCode</code> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// Amazon S3 has a limitation of 50 routing rules per website configuration. If you require
+        /// more than 50 routing rules, you can use object redirect. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">Configuring
+        /// an Object Redirect</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketWebsite service method.</param>
         /// 
         /// <returns>The response from the PutBucketWebsite service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketWebsite">REST API Reference for PutBucketWebsite Operation</seealso>
         public virtual PutBucketWebsiteResponse PutBucketWebsite(PutBucketWebsiteRequest request)
         {
             var options = new InvokeOptions();
@@ -11492,6 +11645,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketWebsite
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketWebsite">REST API Reference for PutBucketWebsite Operation</seealso>
         public virtual IAsyncResult BeginPutBucketWebsite(PutBucketWebsiteRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -11508,6 +11662,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketWebsite.</param>
         /// 
         /// <returns>Returns a  PutBucketWebsiteResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketWebsite">REST API Reference for PutBucketWebsite Operation</seealso>
         public virtual PutBucketWebsiteResponse EndPutBucketWebsite(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketWebsiteResponse>(asyncResult);
@@ -11586,9 +11741,10 @@ namespace Amazon.S3
         ///  </li> </ul>
         /// </summary>
         /// <param name="bucketName">Specifies the bucket impacted by the <code>cors</code>configuration.</param>
-        /// <param name="configuration">Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="configuration">Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the PutCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">REST API Reference for PutCORSConfiguration Operation</seealso>
         public virtual PutCORSConfigurationResponse PutCORSConfiguration(string bucketName, CORSConfiguration configuration)
         {
             var request = new PutCORSConfigurationRequest();
@@ -11669,6 +11825,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutCORSConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutCORSConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">REST API Reference for PutCORSConfiguration Operation</seealso>
         public virtual PutCORSConfigurationResponse PutCORSConfiguration(PutCORSConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -11689,6 +11846,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutCORSConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">REST API Reference for PutCORSConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutCORSConfiguration(PutCORSConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -11705,6 +11863,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutCORSConfiguration.</param>
         /// 
         /// <returns>Returns a  PutCORSConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">REST API Reference for PutCORSConfiguration Operation</seealso>
         public virtual PutCORSConfigurationResponse EndPutCORSConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutCORSConfigurationResponse>(asyncResult);
@@ -11818,6 +11977,7 @@ namespace Amazon.S3
         /// <param name="configuration">A property of PutLifecycleConfigurationRequest used to execute the PutLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">REST API Reference for PutLifecycleConfiguration Operation</seealso>
         public virtual PutLifecycleConfigurationResponse PutLifecycleConfiguration(string bucketName, LifecycleConfiguration configuration)
         {
             var request = new PutLifecycleConfigurationRequest();
@@ -11930,6 +12090,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutLifecycleConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">REST API Reference for PutLifecycleConfiguration Operation</seealso>
         public virtual PutLifecycleConfigurationResponse PutLifecycleConfiguration(PutLifecycleConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -11950,6 +12111,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutLifecycleConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">REST API Reference for PutLifecycleConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutLifecycleConfiguration(PutLifecycleConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -11966,6 +12128,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutLifecycleConfiguration.</param>
         /// 
         /// <returns>Returns a  PutLifecycleConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">REST API Reference for PutLifecycleConfiguration Operation</seealso>
         public virtual PutLifecycleConfigurationResponse EndPutLifecycleConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutLifecycleConfigurationResponse>(asyncResult);
@@ -12001,13 +12164,17 @@ namespace Amazon.S3
         /// </para>
         ///  <note> 
         /// <para>
-        /// To configure your application to send the request headers before sending the request
-        /// body, use the <code>100-continue</code> HTTP status code. For PUT operations, this
-        /// helps you avoid sending the message body if the message is rejected based on the headers
-        /// (for example, because authentication fails or a redirect occurs). For more information
-        /// on the <code>100-continue</code> HTTP status code, see Section 8.2.3 of <a href="http://www.ietf.org/rfc/rfc2616.txt">http://www.ietf.org/rfc/rfc2616.txt</a>.
+        ///  The <code>Content-MD5</code> header is required for any request to upload an object
+        /// with a retention period configured using Amazon S3 Object Lock. For more information
+        /// about Amazon S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html">Amazon
+        /// S3 Object Lock Overview</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// 
         /// </para>
         ///  </note> 
+        /// <para>
+        ///  <b>Server-side Encryption</b> 
+        /// </para>
+        ///  
         /// <para>
         /// You can optionally request server-side encryption. With server-side encryption, Amazon
         /// S3 encrypts your data as it writes it to disks in its data centers and decrypts the
@@ -12015,303 +12182,30 @@ namespace Amazon.S3
         /// use AWS managed encryption keys. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
         /// Server-Side Encryption</a>.
         /// </para>
-        ///  <dl> <dt>Access Permissions</dt> <dd> 
+        ///  
         /// <para>
-        /// You can optionally specify the accounts or groups that should be granted specific
-        /// permissions on the new object. There are two ways to grant the permissions using the
-        /// request headers:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Specify a canned ACL with the <code>x-amz-acl</code> request header. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
-        /// ACL</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify access permissions explicitly with the <code>x-amz-grant-read</code>, <code>x-amz-grant-read-acp</code>,
-        /// <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code> headers.
-        /// These parameters map to the set of permissions that Amazon S3 supports in an ACL.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
-        /// Control List (ACL) Overview</a>.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// You can use either a canned ACL or specify access permissions explicitly. You cannot
-        /// do both.
-        /// </para>
-        ///  </dd> <dt>Server-Side- Encryption-Specific Request Headers</dt> <dd> 
-        /// <para>
-        /// You can optionally tell Amazon S3 to encrypt data at rest using server-side encryption.
-        /// Server-side encryption is for data encryption at rest. Amazon S3 encrypts your data
-        /// as it writes it to disks in its data centers and decrypts it when you access it. The
-        /// option you use depends on whether you want to use AWS managed encryption keys or provide
-        /// your own encryption key. 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Use encryption keys managed by Amazon S3 or customer master keys (CMKs) stored in
-        /// AWS Key Management Service (AWS KMS) – If you want AWS to manage the keys used to
-        /// encrypt data, specify the following headers in the request.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// x-amz-server-side​-encryption
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-server-side-encryption-aws-kms-key-id
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-server-side-encryption-context
-        /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-        /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS managed
-        /// CMK in AWS KMS to protect the data. If you want to use a customer managed AWS KMS
-        /// CMK, you must provide the <code>x-amz-server-side-encryption-aws-kms-key-id</code>
-        /// of the symmetric customer managed CMK. Amazon S3 only supports symmetric CMKs and
-        /// not asymmetric CMKs. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-        /// Symmetric and Asymmetric Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
-        /// </para>
-        ///  </note> <important> 
-        /// <para>
-        /// All GET and PUT requests for an object protected by AWS KMS fail if you don't make
-        /// them with SSL or by using SigV4.
-        /// </para>
-        ///  </important> 
-        /// <para>
-        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in AWS</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Use customer-provided encryption keys – If you want to manage your own encryption
-        /// keys, provide all the following headers in the request.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information about server-side encryption with CMKs stored in KMS (SSE-KMS),
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in AWS</a>.
-        /// </para>
-        ///  </li> </ul> </dd> <dt>Access-Control-List (ACL)-Specific Request Headers</dt> <dd>
-        /// 
-        /// <para>
-        /// You also can use the following access control–related headers with this operation.
-        /// By default, all objects are private. Only the owner has full access control. When
-        /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the Access Control
-        /// List (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
-        /// ACLs</a>. With this operation, you can grant access permissions using one of the following
-        /// two methods:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Specify a canned ACL (<code>x-amz-acl</code>) — Amazon S3 supports a set of predefined
-        /// ACLs, known as canned ACLs. Each canned ACL has a predefined set of grantees and permissions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
-        /// ACL</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify access permissions explicitly — To explicitly grant access permissions to
-        /// specific AWS accounts or groups, use the following headers. Each header maps to specific
-        /// permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
-        /// Control List (ACL) Overview</a>. In the header, you specify a list of grantees who
-        /// get the specific permission. To grant permissions explicitly use:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// x-amz-grant-read
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-grant-write
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-grant-read-acp
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-grant-write-acp
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-grant-full-control
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// You specify each grantee as a type=value pair, where the type is one of the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
-        /// account
-        /// </para>
-        ///  <important> 
-        /// <para>
-        /// Using email addresses to specify a grantee is only supported in the following AWS
-        /// Regions: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// US East (N. Virginia)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// US West (N. California)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  US West (Oregon)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  Asia Pacific (Singapore)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Asia Pacific (Sydney)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Asia Pacific (Tokyo)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// EU (Ireland)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// South America (São Paulo)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
-        /// and Endpoints</a> in the AWS General Reference
-        /// </para>
-        ///  </important> </li> <li> 
-        /// <para>
-        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>uri</code> – if you are granting permissions to a predefined group
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
-        /// identified by email addresses permissions to read object data and its metadata:
+        ///  <b>Access Control List (ACL)-Specific Request Headers</b> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>x-amz-grant-read: emailAddress="xyz@amazon.com", emailAddress="abc@amazon.com"
-        /// </code> 
+        /// You can use headers to grant ACL- based permissions. By default, all objects are private.
+        /// Only the owner has full access control. When adding a new object, you can grant permissions
+        /// to individual AWS accounts or to predefined groups defined by Amazon S3. These permissions
+        /// are then added to the ACL on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// Control List (ACL) Overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
+        /// ACLs Using the REST API</a>. 
         /// </para>
-        ///  </li> </ul> </dd> <dt>Server-Side- Encryption-Specific Request Headers</dt> <dd>
-        /// 
-        /// <para>
-        /// You can optionally tell Amazon S3 to encrypt data at rest using server-side encryption.
-        /// Server-side encryption is for data encryption at rest. Amazon S3 encrypts your data
-        /// as it writes it to disks in its data centers and decrypts it when you access it. The
-        /// option you use depends on whether you want to use AWS-managed encryption keys or provide
-        /// your own encryption key. 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Use encryption keys managed by Amazon S3 or customer master keys (CMKs) stored in
-        /// AWS Key Management Service (AWS KMS) – If you want AWS to manage the keys used to
-        /// encrypt data, specify the following headers in the request.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// x-amz-server-side​-encryption
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-server-side-encryption-aws-kms-key-id
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-server-side-encryption-context
-        /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-        /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS managed
-        /// CMK in AWS KMS to protect the data. If you want to use a customer managed AWS KMS
-        /// CMK, you must provide the <code>x-amz-server-side-encryption-aws-kms-key-id</code>
-        /// of the symmetric customer managed CMK. Amazon S3 only supports symmetric CMKs and
-        /// not asymmetric CMKs. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-        /// Symmetric and Asymmetric Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
-        /// </para>
-        ///  </note> <important> 
-        /// <para>
-        /// All GET and PUT requests for an object protected by AWS KMS fail if you don't make
-        /// them with SSL or by using SigV4.
-        /// </para>
-        ///  </important> 
-        /// <para>
-        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Use customer-provided encryption keys – If you want to manage your own encryption
-        /// keys, provide all the following headers in the request.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// If you use this feature, the ETag value that Amazon S3 returns in the response is
-        /// not the MD5 of the object.
-        /// </para>
-        ///  </note> <ul> <li> 
-        /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
-        /// </para>
-        ///  </li> </ul> </dd> </dl> 
+        ///  
         /// <para>
         ///  <b>Storage Class Options</b> 
         /// </para>
         ///  
         /// <para>
-        /// By default, Amazon S3 uses the Standard storage class to store newly created objects.
-        /// The Standard storage class provides high durability and high availability. You can
-        /// specify other storage classes depending on the performance needs. For more information,
+        /// By default, Amazon S3 uses the STANDARD storage class to store newly created objects.
+        /// The STANDARD storage class provides high durability and high availability. Depending
+        /// on performance needs, you can specify a different storage class. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-        /// Classes</a> in the Amazon Simple Storage Service Developer Guide.
+        /// Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -12320,12 +12214,15 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// If you enable versioning for a bucket, Amazon S3 automatically generates a unique
-        /// version ID for the object being stored. Amazon S3 returns this ID in the response
-        /// using the <code>x-amz-version-id response</code> header. If versioning is suspended,
-        /// Amazon S3 always uses null as the version ID for the object stored. For more information
-        /// about returning the versioning state of a bucket, see <a>GetBucketVersioning</a>.
-        /// If you enable versioning for a bucket, when Amazon S3 receives multiple write requests
+        /// version ID for the object being stored. Amazon S3 returns this ID in the response.
+        /// When you enable versioning for a bucket, if Amazon S3 receives multiple write requests
         /// for the same object simultaneously, it stores all of the objects.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/AddingObjectstoVersioningEnabledBuckets.html">Adding
+        /// Objects to Versioning Enabled Buckets</a>. For information about returning the versioning
+        /// state of a bucket, see <a>GetBucketVersioning</a>. 
         /// </para>
         ///  <p class="title"> <b>Related Resources</b> 
         /// </para>
@@ -12342,6 +12239,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutObject service method.</param>
         /// 
         /// <returns>The response from the PutObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObject">REST API Reference for PutObject Operation</seealso>
         public virtual PutObjectResponse PutObject(PutObjectRequest request)
         {
             var options = new InvokeOptions();
@@ -12362,6 +12260,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutObject
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObject">REST API Reference for PutObject Operation</seealso>
         public virtual IAsyncResult BeginPutObject(PutObjectRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -12378,6 +12277,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObject.</param>
         /// 
         /// <returns>Returns a  PutObjectResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObject">REST API Reference for PutObject Operation</seealso>
         public virtual PutObjectResponse EndPutObject(IAsyncResult asyncResult)
         {
             return EndInvoke<PutObjectResponse>(asyncResult);
@@ -12402,6 +12302,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutObjectLegalHold service method.</param>
         /// 
         /// <returns>The response from the PutObjectLegalHold service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">REST API Reference for PutObjectLegalHold Operation</seealso>
         public virtual PutObjectLegalHoldResponse PutObjectLegalHold(PutObjectLegalHoldRequest request)
         {
             var options = new InvokeOptions();
@@ -12422,6 +12323,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutObjectLegalHold
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">REST API Reference for PutObjectLegalHold Operation</seealso>
         public virtual IAsyncResult BeginPutObjectLegalHold(PutObjectLegalHoldRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -12438,6 +12340,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObjectLegalHold.</param>
         /// 
         /// <returns>Returns a  PutObjectLegalHoldResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">REST API Reference for PutObjectLegalHold Operation</seealso>
         public virtual PutObjectLegalHoldResponse EndPutObjectLegalHold(IAsyncResult asyncResult)
         {
             return EndInvoke<PutObjectLegalHoldResponse>(asyncResult);
@@ -12469,6 +12372,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutObjectLockConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutObjectLockConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">REST API Reference for PutObjectLockConfiguration Operation</seealso>
         public virtual PutObjectLockConfigurationResponse PutObjectLockConfiguration(PutObjectLockConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -12489,6 +12393,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutObjectLockConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">REST API Reference for PutObjectLockConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutObjectLockConfiguration(PutObjectLockConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -12505,6 +12410,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObjectLockConfiguration.</param>
         /// 
         /// <returns>Returns a  PutObjectLockConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">REST API Reference for PutObjectLockConfiguration Operation</seealso>
         public virtual PutObjectLockConfigurationResponse EndPutObjectLockConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutObjectLockConfigurationResponse>(asyncResult);
@@ -12529,6 +12435,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutObjectRetention service method.</param>
         /// 
         /// <returns>The response from the PutObjectRetention service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">REST API Reference for PutObjectRetention Operation</seealso>
         public virtual PutObjectRetentionResponse PutObjectRetention(PutObjectRetentionRequest request)
         {
             var options = new InvokeOptions();
@@ -12549,6 +12456,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutObjectRetention
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">REST API Reference for PutObjectRetention Operation</seealso>
         public virtual IAsyncResult BeginPutObjectRetention(PutObjectRetentionRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -12565,6 +12473,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObjectRetention.</param>
         /// 
         /// <returns>Returns a  PutObjectRetentionResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">REST API Reference for PutObjectRetention Operation</seealso>
         public virtual PutObjectRetentionResponse EndPutObjectRetention(IAsyncResult asyncResult)
         {
             return EndInvoke<PutObjectRetentionResponse>(asyncResult);
@@ -12575,7 +12484,7 @@ namespace Amazon.S3
         #region  PutObjectTagging
 
         /// <summary>
-        /// Sets the supplied tag-set to an object that already exists in a bucket
+        /// Sets the supplied tag-set to an object that already exists in a bucket.
         /// 
         ///  
         /// <para>
@@ -12657,6 +12566,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutObjectTagging service method.</param>
         /// 
         /// <returns>The response from the PutObjectTagging service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectTagging">REST API Reference for PutObjectTagging Operation</seealso>
         public virtual PutObjectTaggingResponse PutObjectTagging(PutObjectTaggingRequest request)
         {
             var options = new InvokeOptions();
@@ -12677,6 +12587,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutObjectTagging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectTagging">REST API Reference for PutObjectTagging Operation</seealso>
         public virtual IAsyncResult BeginPutObjectTagging(PutObjectTaggingRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -12693,6 +12604,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObjectTagging.</param>
         /// 
         /// <returns>Returns a  PutObjectTaggingResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectTagging">REST API Reference for PutObjectTagging Operation</seealso>
         public virtual PutObjectTaggingResponse EndPutObjectTagging(IAsyncResult asyncResult)
         {
             return EndInvoke<PutObjectTaggingResponse>(asyncResult);
@@ -12747,6 +12659,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
         /// 
         /// <returns>The response from the PutPublicAccessBlock service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         public virtual PutPublicAccessBlockResponse PutPublicAccessBlock(PutPublicAccessBlockRequest request)
         {
             var options = new InvokeOptions();
@@ -12767,6 +12680,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutPublicAccessBlock
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         public virtual IAsyncResult BeginPutPublicAccessBlock(PutPublicAccessBlockRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -12783,6 +12697,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutPublicAccessBlock.</param>
         /// 
         /// <returns>Returns a  PutPublicAccessBlockResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         public virtual PutPublicAccessBlockResponse EndPutPublicAccessBlock(IAsyncResult asyncResult)
         {
             return EndInvoke<PutPublicAccessBlockResponse>(asyncResult);
@@ -12810,9 +12725,8 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// To use this operation, you must have permissions to perform the <code>s3:RestoreObject</code>
-        /// and <code>s3:GetObject</code> actions. The bucket owner has this permission by default
-        /// and can grant this permission to others. For more information about permissions, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+        /// action. The bucket owner has this permission by default and can grant this permission
+        /// to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a> in the <i>Amazon Simple Storage
         /// Service Developer Guide</i>.
@@ -12900,8 +12814,8 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
-        /// For more information about using SQL with Glacier Select restore, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL
-        /// Reference for Amazon S3 Select and Glacier Select</a> in the <i>Amazon Simple Storage
+        /// For more information about using SQL with S3 Glacier Select restore, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL
+        /// Reference for Amazon S3 Select and S3 Glacier Select</a> in the <i>Amazon Simple Storage
         /// Service Developer Guide</i>. 
         /// </para>
         ///  
@@ -12978,9 +12892,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Standard</code> </b> - Standard retrievals allow you to access any of your
-        /// archived objects within several hours. This is the default option for the GLACIER
-        /// and DEEP_ARCHIVE retrieval requests that do not specify the retrieval option. Standard
+        ///  <b> <code>Standard</code> </b> - S3 Standard retrievals allow you to access any of
+        /// your archived objects within several hours. This is the default option for the GLACIER
+        /// and DEEP_ARCHIVE retrieval requests that do not specify the retrieval option. S3 Standard
         /// retrievals typically complete within 3-5 hours from the GLACIER storage class and
         /// typically complete within 12 hours from the DEEP_ARCHIVE storage class. 
         /// </para>
@@ -13086,9 +13000,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: Glacier expedited retrievals are currently not available. Try again later.
-        /// (Returned if there is insufficient capacity to process the Expedited request. This
-        /// error applies only to Expedited retrievals and not to Standard or Bulk retrievals.)</i>
+        ///  <i>Cause: S3 Glacier expedited retrievals are currently not available. Try again
+        /// later. (Returned if there is insufficient capacity to process the Expedited request.
+        /// This error applies only to Expedited retrievals and not to S3 Standard or Bulk retrievals.)</i>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -13112,8 +13026,8 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL
-        /// Reference for Amazon S3 Select and Glacier Select </a> in the <i>Amazon Simple Storage
-        /// Service Developer Guide</i> 
+        /// Reference for Amazon S3 Select and S3 Glacier Select </a> in the <i>Amazon Simple
+        /// Storage Service Developer Guide</i> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -13121,6 +13035,7 @@ namespace Amazon.S3
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         public virtual RestoreObjectResponse RestoreObject(string bucketName, string key)
         {
             var request = new RestoreObjectRequest();
@@ -13148,9 +13063,8 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// To use this operation, you must have permissions to perform the <code>s3:RestoreObject</code>
-        /// and <code>s3:GetObject</code> actions. The bucket owner has this permission by default
-        /// and can grant this permission to others. For more information about permissions, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+        /// action. The bucket owner has this permission by default and can grant this permission
+        /// to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a> in the <i>Amazon Simple Storage
         /// Service Developer Guide</i>.
@@ -13238,8 +13152,8 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
-        /// For more information about using SQL with Glacier Select restore, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL
-        /// Reference for Amazon S3 Select and Glacier Select</a> in the <i>Amazon Simple Storage
+        /// For more information about using SQL with S3 Glacier Select restore, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL
+        /// Reference for Amazon S3 Select and S3 Glacier Select</a> in the <i>Amazon Simple Storage
         /// Service Developer Guide</i>. 
         /// </para>
         ///  
@@ -13316,9 +13230,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Standard</code> </b> - Standard retrievals allow you to access any of your
-        /// archived objects within several hours. This is the default option for the GLACIER
-        /// and DEEP_ARCHIVE retrieval requests that do not specify the retrieval option. Standard
+        ///  <b> <code>Standard</code> </b> - S3 Standard retrievals allow you to access any of
+        /// your archived objects within several hours. This is the default option for the GLACIER
+        /// and DEEP_ARCHIVE retrieval requests that do not specify the retrieval option. S3 Standard
         /// retrievals typically complete within 3-5 hours from the GLACIER storage class and
         /// typically complete within 12 hours from the DEEP_ARCHIVE storage class. 
         /// </para>
@@ -13424,9 +13338,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: Glacier expedited retrievals are currently not available. Try again later.
-        /// (Returned if there is insufficient capacity to process the Expedited request. This
-        /// error applies only to Expedited retrievals and not to Standard or Bulk retrievals.)</i>
+        ///  <i>Cause: S3 Glacier expedited retrievals are currently not available. Try again
+        /// later. (Returned if there is insufficient capacity to process the Expedited request.
+        /// This error applies only to Expedited retrievals and not to S3 Standard or Bulk retrievals.)</i>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -13450,8 +13364,8 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL
-        /// Reference for Amazon S3 Select and Glacier Select </a> in the <i>Amazon Simple Storage
-        /// Service Developer Guide</i> 
+        /// Reference for Amazon S3 Select and S3 Glacier Select </a> in the <i>Amazon Simple
+        /// Storage Service Developer Guide</i> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -13460,6 +13374,7 @@ namespace Amazon.S3
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         public virtual RestoreObjectResponse RestoreObject(string bucketName, string key, int days)
         {
             var request = new RestoreObjectRequest();
@@ -13488,9 +13403,8 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// To use this operation, you must have permissions to perform the <code>s3:RestoreObject</code>
-        /// and <code>s3:GetObject</code> actions. The bucket owner has this permission by default
-        /// and can grant this permission to others. For more information about permissions, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+        /// action. The bucket owner has this permission by default and can grant this permission
+        /// to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a> in the <i>Amazon Simple Storage
         /// Service Developer Guide</i>.
@@ -13578,8 +13492,8 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
-        /// For more information about using SQL with Glacier Select restore, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL
-        /// Reference for Amazon S3 Select and Glacier Select</a> in the <i>Amazon Simple Storage
+        /// For more information about using SQL with S3 Glacier Select restore, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL
+        /// Reference for Amazon S3 Select and S3 Glacier Select</a> in the <i>Amazon Simple Storage
         /// Service Developer Guide</i>. 
         /// </para>
         ///  
@@ -13656,9 +13570,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Standard</code> </b> - Standard retrievals allow you to access any of your
-        /// archived objects within several hours. This is the default option for the GLACIER
-        /// and DEEP_ARCHIVE retrieval requests that do not specify the retrieval option. Standard
+        ///  <b> <code>Standard</code> </b> - S3 Standard retrievals allow you to access any of
+        /// your archived objects within several hours. This is the default option for the GLACIER
+        /// and DEEP_ARCHIVE retrieval requests that do not specify the retrieval option. S3 Standard
         /// retrievals typically complete within 3-5 hours from the GLACIER storage class and
         /// typically complete within 12 hours from the DEEP_ARCHIVE storage class. 
         /// </para>
@@ -13764,9 +13678,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: Glacier expedited retrievals are currently not available. Try again later.
-        /// (Returned if there is insufficient capacity to process the Expedited request. This
-        /// error applies only to Expedited retrievals and not to Standard or Bulk retrievals.)</i>
+        ///  <i>Cause: S3 Glacier expedited retrievals are currently not available. Try again
+        /// later. (Returned if there is insufficient capacity to process the Expedited request.
+        /// This error applies only to Expedited retrievals and not to S3 Standard or Bulk retrievals.)</i>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -13790,8 +13704,8 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL
-        /// Reference for Amazon S3 Select and Glacier Select </a> in the <i>Amazon Simple Storage
-        /// Service Developer Guide</i> 
+        /// Reference for Amazon S3 Select and S3 Glacier Select </a> in the <i>Amazon Simple
+        /// Storage Service Developer Guide</i> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -13800,6 +13714,7 @@ namespace Amazon.S3
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         public virtual RestoreObjectResponse RestoreObject(string bucketName, string key, string versionId)
         {
             var request = new RestoreObjectRequest();
@@ -13828,9 +13743,8 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// To use this operation, you must have permissions to perform the <code>s3:RestoreObject</code>
-        /// and <code>s3:GetObject</code> actions. The bucket owner has this permission by default
-        /// and can grant this permission to others. For more information about permissions, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+        /// action. The bucket owner has this permission by default and can grant this permission
+        /// to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a> in the <i>Amazon Simple Storage
         /// Service Developer Guide</i>.
@@ -13918,8 +13832,8 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
-        /// For more information about using SQL with Glacier Select restore, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL
-        /// Reference for Amazon S3 Select and Glacier Select</a> in the <i>Amazon Simple Storage
+        /// For more information about using SQL with S3 Glacier Select restore, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL
+        /// Reference for Amazon S3 Select and S3 Glacier Select</a> in the <i>Amazon Simple Storage
         /// Service Developer Guide</i>. 
         /// </para>
         ///  
@@ -13996,9 +13910,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Standard</code> </b> - Standard retrievals allow you to access any of your
-        /// archived objects within several hours. This is the default option for the GLACIER
-        /// and DEEP_ARCHIVE retrieval requests that do not specify the retrieval option. Standard
+        ///  <b> <code>Standard</code> </b> - S3 Standard retrievals allow you to access any of
+        /// your archived objects within several hours. This is the default option for the GLACIER
+        /// and DEEP_ARCHIVE retrieval requests that do not specify the retrieval option. S3 Standard
         /// retrievals typically complete within 3-5 hours from the GLACIER storage class and
         /// typically complete within 12 hours from the DEEP_ARCHIVE storage class. 
         /// </para>
@@ -14104,9 +14018,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: Glacier expedited retrievals are currently not available. Try again later.
-        /// (Returned if there is insufficient capacity to process the Expedited request. This
-        /// error applies only to Expedited retrievals and not to Standard or Bulk retrievals.)</i>
+        ///  <i>Cause: S3 Glacier expedited retrievals are currently not available. Try again
+        /// later. (Returned if there is insufficient capacity to process the Expedited request.
+        /// This error applies only to Expedited retrievals and not to S3 Standard or Bulk retrievals.)</i>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -14130,8 +14044,8 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL
-        /// Reference for Amazon S3 Select and Glacier Select </a> in the <i>Amazon Simple Storage
-        /// Service Developer Guide</i> 
+        /// Reference for Amazon S3 Select and S3 Glacier Select </a> in the <i>Amazon Simple
+        /// Storage Service Developer Guide</i> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -14141,6 +14055,7 @@ namespace Amazon.S3
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         public virtual RestoreObjectResponse RestoreObject(string bucketName, string key, string versionId, int days)
         {
             var request = new RestoreObjectRequest();
@@ -14170,9 +14085,8 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// To use this operation, you must have permissions to perform the <code>s3:RestoreObject</code>
-        /// and <code>s3:GetObject</code> actions. The bucket owner has this permission by default
-        /// and can grant this permission to others. For more information about permissions, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+        /// action. The bucket owner has this permission by default and can grant this permission
+        /// to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a> in the <i>Amazon Simple Storage
         /// Service Developer Guide</i>.
@@ -14260,8 +14174,8 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
-        /// For more information about using SQL with Glacier Select restore, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL
-        /// Reference for Amazon S3 Select and Glacier Select</a> in the <i>Amazon Simple Storage
+        /// For more information about using SQL with S3 Glacier Select restore, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL
+        /// Reference for Amazon S3 Select and S3 Glacier Select</a> in the <i>Amazon Simple Storage
         /// Service Developer Guide</i>. 
         /// </para>
         ///  
@@ -14338,9 +14252,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Standard</code> </b> - Standard retrievals allow you to access any of your
-        /// archived objects within several hours. This is the default option for the GLACIER
-        /// and DEEP_ARCHIVE retrieval requests that do not specify the retrieval option. Standard
+        ///  <b> <code>Standard</code> </b> - S3 Standard retrievals allow you to access any of
+        /// your archived objects within several hours. This is the default option for the GLACIER
+        /// and DEEP_ARCHIVE retrieval requests that do not specify the retrieval option. S3 Standard
         /// retrievals typically complete within 3-5 hours from the GLACIER storage class and
         /// typically complete within 12 hours from the DEEP_ARCHIVE storage class. 
         /// </para>
@@ -14446,9 +14360,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: Glacier expedited retrievals are currently not available. Try again later.
-        /// (Returned if there is insufficient capacity to process the Expedited request. This
-        /// error applies only to Expedited retrievals and not to Standard or Bulk retrievals.)</i>
+        ///  <i>Cause: S3 Glacier expedited retrievals are currently not available. Try again
+        /// later. (Returned if there is insufficient capacity to process the Expedited request.
+        /// This error applies only to Expedited retrievals and not to S3 Standard or Bulk retrievals.)</i>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -14472,14 +14386,15 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL
-        /// Reference for Amazon S3 Select and Glacier Select </a> in the <i>Amazon Simple Storage
-        /// Service Developer Guide</i> 
+        /// Reference for Amazon S3 Select and S3 Glacier Select </a> in the <i>Amazon Simple
+        /// Storage Service Developer Guide</i> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreObject service method.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         public virtual RestoreObjectResponse RestoreObject(RestoreObjectRequest request)
         {
             var options = new InvokeOptions();
@@ -14500,6 +14415,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreObject
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         public virtual IAsyncResult BeginRestoreObject(RestoreObjectRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -14516,6 +14432,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreObject.</param>
         /// 
         /// <returns>Returns a  RestoreObjectResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         public virtual RestoreObjectResponse EndRestoreObject(IAsyncResult asyncResult)
         {
             return EndInvoke<RestoreObjectResponse>(asyncResult);
@@ -14541,7 +14458,7 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// For more information about using SQL with Amazon S3 Select, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">
-        /// SQL Reference for Amazon S3 Select and Glacier Select</a> in the <i>Amazon Simple
+        /// SQL Reference for Amazon S3 Select and S3 Glacier Select</a> in the <i>Amazon Simple
         /// Storage Service Developer Guide</i>.
         /// </para>
         ///   
@@ -14623,9 +14540,9 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Range</code>: While you can specify a scan range for a Amazon S3 Select request,
-        /// see <a>SelectObjectContentRequest$ScanRange</a> in the request parameters below, you
-        /// cannot specify the range of bytes of an object to return. 
+        ///  <code>Range</code>: Although you can specify a scan range for an Amazon S3 Select
+        /// request (see <a>SelectObjectContentRequest$ScanRange</a> in the request parameters),
+        /// you cannot specify the range of bytes of an object to return. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14640,8 +14557,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// For a list of special errors for this operation and for general information about
-        /// Amazon S3 errors and a list of error codes, see <a>ErrorResponses</a> 
+        /// For a list of special errors for this operation, see <a>SelectObjectContentErrorCodeList</a>
+        /// 
         /// </para>
         ///  <p class="title"> <b>Related Resources</b> 
         /// </para>
@@ -14662,6 +14579,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the SelectObjectContent service method.</param>
         /// 
         /// <returns>The response from the SelectObjectContent service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContent">REST API Reference for SelectObjectContent Operation</seealso>
         public virtual SelectObjectContentResponse SelectObjectContent(SelectObjectContentRequest request)
         {
             var options = new InvokeOptions();
@@ -14682,6 +14600,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSelectObjectContent
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContent">REST API Reference for SelectObjectContent Operation</seealso>
         public virtual IAsyncResult BeginSelectObjectContent(SelectObjectContentRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -14698,6 +14617,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSelectObjectContent.</param>
         /// 
         /// <returns>Returns a  SelectObjectContentResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContent">REST API Reference for SelectObjectContent Operation</seealso>
         public virtual SelectObjectContentResponse EndSelectObjectContent(IAsyncResult asyncResult)
         {
             return EndInvoke<SelectObjectContentResponse>(asyncResult);
@@ -14840,6 +14760,7 @@ namespace Amazon.S3
         /// <param name="request">Container for the necessary parameters to execute the UploadPart service method.</param>
         /// 
         /// <returns>The response from the UploadPart service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPart">REST API Reference for UploadPart Operation</seealso>
         public virtual UploadPartResponse UploadPart(UploadPartRequest request)
         {
             var options = new InvokeOptions();
@@ -14860,6 +14781,7 @@ namespace Amazon.S3
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadPart
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPart">REST API Reference for UploadPart Operation</seealso>
         public virtual IAsyncResult BeginUploadPart(UploadPartRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -14876,6 +14798,7 @@ namespace Amazon.S3
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadPart.</param>
         /// 
         /// <returns>Returns a  UploadPartResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPart">REST API Reference for UploadPart Operation</seealso>
         public virtual UploadPartResponse EndUploadPart(IAsyncResult asyncResult)
         {
             return EndInvoke<UploadPartResponse>(asyncResult);

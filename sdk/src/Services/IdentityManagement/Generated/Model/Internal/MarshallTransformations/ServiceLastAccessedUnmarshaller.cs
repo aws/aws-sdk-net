@@ -66,6 +66,12 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         unmarshalledObject.LastAuthenticatedEntity = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("LastAuthenticatedRegion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LastAuthenticatedRegion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ServiceName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -82,6 +88,13 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
                         unmarshalledObject.TotalAuthenticatedEntities = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TrackedActionsLastAccessed/member", targetDepth))
+                    {
+                        var unmarshaller = TrackedActionLastAccessedUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TrackedActionsLastAccessed.Add(item);
                         continue;
                     }
                 }

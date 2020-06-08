@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -34,7 +35,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// 
     ///  <note> 
     /// <para>
-    /// To get a list of operations that match specified criteria, see <a>ListOperations</a>.
+    /// To get a list of operations that match specified criteria, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html">ListOperations</a>.
     /// </para>
     ///  </note>
     /// </summary>

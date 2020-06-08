@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private FlowDefinitionStatus _flowDefinitionStatus;
         private HumanLoopActivationConfig _humanLoopActivationConfig;
         private HumanLoopConfig _humanLoopConfig;
+        private HumanLoopRequestSource _humanLoopRequestSource;
         private FlowDefinitionOutputConfig _outputConfig;
         private string _roleArn;
 
@@ -170,6 +172,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetHumanLoopConfig()
         {
             return this._humanLoopConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HumanLoopRequestSource. 
+        /// <para>
+        /// Container for configuring the source of human task requests. Used to specify if Amazon
+        /// Rekognition or Amazon Textract is used as an integration source.
+        /// </para>
+        /// </summary>
+        public HumanLoopRequestSource HumanLoopRequestSource
+        {
+            get { return this._humanLoopRequestSource; }
+            set { this._humanLoopRequestSource = value; }
+        }
+
+        // Check to see if HumanLoopRequestSource property is set
+        internal bool IsSetHumanLoopRequestSource()
+        {
+            return this._humanLoopRequestSource != null;
         }
 
         /// <summary>

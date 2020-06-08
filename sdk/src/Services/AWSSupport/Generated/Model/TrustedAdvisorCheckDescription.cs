@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -61,7 +62,7 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the Trusted Advisor check, which includes the alert criteria and
-        /// recommended actions (contains HTML markup).
+        /// recommended operations (contains HTML markup).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

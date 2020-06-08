@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -93,8 +94,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// This example demonstrates how to target only Amazon EC2 instances and VPCs in your
-    /// maintenance window.
+    /// This example demonstrates how to target only EC2 instances and VPCs in your maintenance
+    /// window.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -109,9 +110,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  </li> </ul> 
     /// <para>
     /// For information about how to send commands that target instances using <code>Key,Value</code>
-    /// parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Using
-    /// Targets and Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager
-    /// User Guide</i>.
+    /// parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting
+    /// multiple instances</a> in the <i>AWS Systems Manager User Guide</i>.
     /// </para>
     /// </summary>
     public partial class Target
@@ -143,7 +143,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// User-defined criteria that maps to <code>Key</code>. For example, if you specified
         /// <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run
-        /// a command on instances that include Amazon EC2 tags of <code>ServerRole,WebServer</code>.
+        /// a command on instances that include EC2 tags of <code>ServerRole,WebServer</code>.
         /// 
         /// </para>
         /// </summary>

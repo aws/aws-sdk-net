@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -91,7 +92,7 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// If not specified, the value configured in the deployment group is used as the default.
         /// If the deployment group does not have a deployment configuration associated with it,
-        /// CodeDeployDefault.OneAtATime is used by default.
+        /// <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -152,7 +153,7 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  
         /// <para>
-        /// The fileExistsBehavior parameter takes any of the following values:
+        /// The <code>fileExistsBehavior</code> parameter takes any of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -186,11 +187,13 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property IgnoreApplicationStopFailures. 
         /// <para>
-        ///  If true, then if an ApplicationStop, BeforeBlockTraffic, or AfterBlockTraffic deployment
-        /// lifecycle event to an instance fails, then the deployment continues to the next deployment
-        /// lifecycle event. For example, if ApplicationStop fails, the deployment continues with
-        /// DownloadBundle. If BeforeBlockTraffic fails, the deployment continues with BlockTraffic.
-        /// If AfterBlockTraffic fails, the deployment continues with ApplicationStop. 
+        ///  If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>,
+        /// or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails,
+        /// then the deployment continues to the next deployment lifecycle event. For example,
+        /// if <code>ApplicationStop</code> fails, the deployment continues with <code>DownloadBundle</code>.
+        /// If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>.
+        /// If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -201,18 +204,18 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  
         /// <para>
-        ///  During a deployment, the AWS CodeDeploy agent runs the scripts specified for ApplicationStop,
-        /// BeforeBlockTraffic, and AfterBlockTraffic in the AppSpec file from the previous successful
-        /// deployment. (All other scripts are run from the AppSpec file in the current deployment.)
-        /// If one of these scripts contains an error and does not run successfully, the deployment
-        /// can fail. 
+        ///  During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+        /// <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec
+        /// file from the previous successful deployment. (All other scripts are run from the
+        /// AppSpec file in the current deployment.) If one of these scripts contains an error
+        /// and does not run successfully, the deployment can fail. 
         /// </para>
         ///  
         /// <para>
         ///  If the cause of the failure is a script from the last successful deployment that
         /// will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code>
-        /// to specify that the ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic failures
-        /// should be ignored. 
+        /// to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>,
+        /// and <code>AfterBlockTraffic</code> failures should be ignored. 
         /// </para>
         /// </summary>
         public bool IgnoreApplicationStopFailures

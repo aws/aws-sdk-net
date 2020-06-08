@@ -1,0 +1,221 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.Redshift.Model
+{
+    /// <summary>
+    /// Container for the parameters to the DescribeUsageLimits operation.
+    /// Shows usage limits on a cluster. Results are filtered based on the combination of
+    /// input usage limit identifier, cluster identifier, and feature type parameters:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// If usage limit identifier, cluster identifier, and feature type are not provided,
+    /// then all usage limit objects for the current account in the current region are returned.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If usage limit identifier is provided, then the corresponding usage limit object is
+    /// returned.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If cluster identifier is provided, then all usage limit objects for the specified
+    /// cluster are returned.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If cluster identifier and feature type are provided, then all usage limit objects
+    /// for the combination of cluster and feature are returned.
+    /// </para>
+    ///  </li> </ul>
+    /// </summary>
+    public partial class DescribeUsageLimitsRequest : AmazonRedshiftRequest
+    {
+        private string _clusterIdentifier;
+        private UsageLimitFeatureType _featureType;
+        private string _marker;
+        private int? _maxRecords;
+        private List<string> _tagKeys = new List<string>();
+        private List<string> _tagValues = new List<string>();
+        private string _usageLimitId;
+
+        /// <summary>
+        /// Gets and sets the property ClusterIdentifier. 
+        /// <para>
+        /// The identifier of the cluster for which you want to describe usage limits.
+        /// </para>
+        /// </summary>
+        public string ClusterIdentifier
+        {
+            get { return this._clusterIdentifier; }
+            set { this._clusterIdentifier = value; }
+        }
+
+        // Check to see if ClusterIdentifier property is set
+        internal bool IsSetClusterIdentifier()
+        {
+            return this._clusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FeatureType. 
+        /// <para>
+        /// The feature type for which you want to describe usage limits.
+        /// </para>
+        /// </summary>
+        public UsageLimitFeatureType FeatureType
+        {
+            get { return this._featureType; }
+            set { this._featureType = value; }
+        }
+
+        // Check to see if FeatureType property is set
+        internal bool IsSetFeatureType()
+        {
+            return this._featureType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// An optional parameter that specifies the starting point to return a set of response
+        /// records. When the results of a <a>DescribeUsageLimits</a> request exceed the value
+        /// specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
+        /// field of the response. You can retrieve the next set of response records by providing
+        /// the returned marker value in the <code>Marker</code> parameter and retrying the request.
+        /// 
+        /// </para>
+        /// </summary>
+        public string Marker
+        {
+            get { return this._marker; }
+            set { this._marker = value; }
+        }
+
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this._marker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        /// The maximum number of response records to return in each call. If the number of remaining
+        /// response records exceeds the specified <code>MaxRecords</code> value, a value is returned
+        /// in a <code>marker</code> field of the response. You can retrieve the next set of records
+        /// by retrying the command with the returned marker value. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>100</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: minimum 20, maximum 100.
+        /// </para>
+        /// </summary>
+        public int MaxRecords
+        {
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
+        }
+
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
+        {
+            return this._maxRecords.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        /// A tag key or keys for which you want to return all matching usage limit objects that
+        /// are associated with the specified key or keys. For example, suppose that you have
+        /// parameter groups that are tagged with keys called <code>owner</code> and <code>environment</code>.
+        /// If you specify both of these tag keys in the request, Amazon Redshift returns a response
+        /// with the usage limit objects have either or both of these tag keys associated with
+        /// them.
+        /// </para>
+        /// </summary>
+        public List<string> TagKeys
+        {
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
+        }
+
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
+        {
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagValues. 
+        /// <para>
+        /// A tag value or values for which you want to return all matching usage limit objects
+        /// that are associated with the specified tag value or values. For example, suppose that
+        /// you have parameter groups that are tagged with values called <code>admin</code> and
+        /// <code>test</code>. If you specify both of these tag values in the request, Amazon
+        /// Redshift returns a response with the usage limit objects that have either or both
+        /// of these tag values associated with them.
+        /// </para>
+        /// </summary>
+        public List<string> TagValues
+        {
+            get { return this._tagValues; }
+            set { this._tagValues = value; }
+        }
+
+        // Check to see if TagValues property is set
+        internal bool IsSetTagValues()
+        {
+            return this._tagValues != null && this._tagValues.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsageLimitId. 
+        /// <para>
+        /// The identifier of the usage limit to describe.
+        /// </para>
+        /// </summary>
+        public string UsageLimitId
+        {
+            get { return this._usageLimitId; }
+            set { this._usageLimitId = value; }
+        }
+
+        // Check to see if UsageLimitId property is set
+        internal bool IsSetUsageLimitId()
+        {
+            return this._usageLimitId != null;
+        }
+
+    }
+}

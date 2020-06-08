@@ -125,6 +125,56 @@ namespace Amazon.GameLift
 
 
     /// <summary>
+    /// Constants used for properties of type BalancingStrategy.
+    /// </summary>
+    public class BalancingStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SPOT_ONLY for BalancingStrategy
+        /// </summary>
+        public static readonly BalancingStrategy SPOT_ONLY = new BalancingStrategy("SPOT_ONLY");
+        /// <summary>
+        /// Constant SPOT_PREFERRED for BalancingStrategy
+        /// </summary>
+        public static readonly BalancingStrategy SPOT_PREFERRED = new BalancingStrategy("SPOT_PREFERRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BalancingStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BalancingStrategy FindValue(string value)
+        {
+            return FindValue<BalancingStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BalancingStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BuildStatus.
     /// </summary>
     public class BuildStatus : ConstantClass
@@ -902,6 +952,570 @@ namespace Amazon.GameLift
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FleetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GameServerClaimStatus.
+    /// </summary>
+    public class GameServerClaimStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLAIMED for GameServerClaimStatus
+        /// </summary>
+        public static readonly GameServerClaimStatus CLAIMED = new GameServerClaimStatus("CLAIMED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GameServerClaimStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GameServerClaimStatus FindValue(string value)
+        {
+            return FindValue<GameServerClaimStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GameServerClaimStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GameServerGroupAction.
+    /// </summary>
+    public class GameServerGroupAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant REPLACE_INSTANCE_TYPES for GameServerGroupAction
+        /// </summary>
+        public static readonly GameServerGroupAction REPLACE_INSTANCE_TYPES = new GameServerGroupAction("REPLACE_INSTANCE_TYPES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GameServerGroupAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GameServerGroupAction FindValue(string value)
+        {
+            return FindValue<GameServerGroupAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GameServerGroupAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GameServerGroupDeleteOption.
+    /// </summary>
+    public class GameServerGroupDeleteOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FORCE_DELETE for GameServerGroupDeleteOption
+        /// </summary>
+        public static readonly GameServerGroupDeleteOption FORCE_DELETE = new GameServerGroupDeleteOption("FORCE_DELETE");
+        /// <summary>
+        /// Constant RETAIN for GameServerGroupDeleteOption
+        /// </summary>
+        public static readonly GameServerGroupDeleteOption RETAIN = new GameServerGroupDeleteOption("RETAIN");
+        /// <summary>
+        /// Constant SAFE_DELETE for GameServerGroupDeleteOption
+        /// </summary>
+        public static readonly GameServerGroupDeleteOption SAFE_DELETE = new GameServerGroupDeleteOption("SAFE_DELETE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GameServerGroupDeleteOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GameServerGroupDeleteOption FindValue(string value)
+        {
+            return FindValue<GameServerGroupDeleteOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GameServerGroupDeleteOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GameServerGroupInstanceType.
+    /// </summary>
+    public class GameServerGroupInstanceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant C42xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C42xlarge = new GameServerGroupInstanceType("c4.2xlarge");
+        /// <summary>
+        /// Constant C44xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C44xlarge = new GameServerGroupInstanceType("c4.4xlarge");
+        /// <summary>
+        /// Constant C48xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C48xlarge = new GameServerGroupInstanceType("c4.8xlarge");
+        /// <summary>
+        /// Constant C4Large for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C4Large = new GameServerGroupInstanceType("c4.large");
+        /// <summary>
+        /// Constant C4Xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C4Xlarge = new GameServerGroupInstanceType("c4.xlarge");
+        /// <summary>
+        /// Constant C512xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C512xlarge = new GameServerGroupInstanceType("c5.12xlarge");
+        /// <summary>
+        /// Constant C518xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C518xlarge = new GameServerGroupInstanceType("c5.18xlarge");
+        /// <summary>
+        /// Constant C524xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C524xlarge = new GameServerGroupInstanceType("c5.24xlarge");
+        /// <summary>
+        /// Constant C52xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C52xlarge = new GameServerGroupInstanceType("c5.2xlarge");
+        /// <summary>
+        /// Constant C54xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C54xlarge = new GameServerGroupInstanceType("c5.4xlarge");
+        /// <summary>
+        /// Constant C59xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C59xlarge = new GameServerGroupInstanceType("c5.9xlarge");
+        /// <summary>
+        /// Constant C5Large for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C5Large = new GameServerGroupInstanceType("c5.large");
+        /// <summary>
+        /// Constant C5Xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C5Xlarge = new GameServerGroupInstanceType("c5.xlarge");
+        /// <summary>
+        /// Constant M410xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M410xlarge = new GameServerGroupInstanceType("m4.10xlarge");
+        /// <summary>
+        /// Constant M42xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M42xlarge = new GameServerGroupInstanceType("m4.2xlarge");
+        /// <summary>
+        /// Constant M44xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M44xlarge = new GameServerGroupInstanceType("m4.4xlarge");
+        /// <summary>
+        /// Constant M4Large for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M4Large = new GameServerGroupInstanceType("m4.large");
+        /// <summary>
+        /// Constant M4Xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M4Xlarge = new GameServerGroupInstanceType("m4.xlarge");
+        /// <summary>
+        /// Constant M512xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M512xlarge = new GameServerGroupInstanceType("m5.12xlarge");
+        /// <summary>
+        /// Constant M516xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M516xlarge = new GameServerGroupInstanceType("m5.16xlarge");
+        /// <summary>
+        /// Constant M524xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M524xlarge = new GameServerGroupInstanceType("m5.24xlarge");
+        /// <summary>
+        /// Constant M52xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M52xlarge = new GameServerGroupInstanceType("m5.2xlarge");
+        /// <summary>
+        /// Constant M54xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M54xlarge = new GameServerGroupInstanceType("m5.4xlarge");
+        /// <summary>
+        /// Constant M58xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M58xlarge = new GameServerGroupInstanceType("m5.8xlarge");
+        /// <summary>
+        /// Constant M5Large for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M5Large = new GameServerGroupInstanceType("m5.large");
+        /// <summary>
+        /// Constant M5Xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M5Xlarge = new GameServerGroupInstanceType("m5.xlarge");
+        /// <summary>
+        /// Constant R416xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R416xlarge = new GameServerGroupInstanceType("r4.16xlarge");
+        /// <summary>
+        /// Constant R42xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R42xlarge = new GameServerGroupInstanceType("r4.2xlarge");
+        /// <summary>
+        /// Constant R44xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R44xlarge = new GameServerGroupInstanceType("r4.4xlarge");
+        /// <summary>
+        /// Constant R48xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R48xlarge = new GameServerGroupInstanceType("r4.8xlarge");
+        /// <summary>
+        /// Constant R4Large for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R4Large = new GameServerGroupInstanceType("r4.large");
+        /// <summary>
+        /// Constant R4Xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R4Xlarge = new GameServerGroupInstanceType("r4.xlarge");
+        /// <summary>
+        /// Constant R512xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R512xlarge = new GameServerGroupInstanceType("r5.12xlarge");
+        /// <summary>
+        /// Constant R516xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R516xlarge = new GameServerGroupInstanceType("r5.16xlarge");
+        /// <summary>
+        /// Constant R524xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R524xlarge = new GameServerGroupInstanceType("r5.24xlarge");
+        /// <summary>
+        /// Constant R52xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R52xlarge = new GameServerGroupInstanceType("r5.2xlarge");
+        /// <summary>
+        /// Constant R54xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R54xlarge = new GameServerGroupInstanceType("r5.4xlarge");
+        /// <summary>
+        /// Constant R58xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R58xlarge = new GameServerGroupInstanceType("r5.8xlarge");
+        /// <summary>
+        /// Constant R5Large for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R5Large = new GameServerGroupInstanceType("r5.large");
+        /// <summary>
+        /// Constant R5Xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R5Xlarge = new GameServerGroupInstanceType("r5.xlarge");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GameServerGroupInstanceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GameServerGroupInstanceType FindValue(string value)
+        {
+            return FindValue<GameServerGroupInstanceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GameServerGroupInstanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GameServerGroupStatus.
+    /// </summary>
+    public class GameServerGroupStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVATING for GameServerGroupStatus
+        /// </summary>
+        public static readonly GameServerGroupStatus ACTIVATING = new GameServerGroupStatus("ACTIVATING");
+        /// <summary>
+        /// Constant ACTIVE for GameServerGroupStatus
+        /// </summary>
+        public static readonly GameServerGroupStatus ACTIVE = new GameServerGroupStatus("ACTIVE");
+        /// <summary>
+        /// Constant DELETE_SCHEDULED for GameServerGroupStatus
+        /// </summary>
+        public static readonly GameServerGroupStatus DELETE_SCHEDULED = new GameServerGroupStatus("DELETE_SCHEDULED");
+        /// <summary>
+        /// Constant DELETED for GameServerGroupStatus
+        /// </summary>
+        public static readonly GameServerGroupStatus DELETED = new GameServerGroupStatus("DELETED");
+        /// <summary>
+        /// Constant DELETING for GameServerGroupStatus
+        /// </summary>
+        public static readonly GameServerGroupStatus DELETING = new GameServerGroupStatus("DELETING");
+        /// <summary>
+        /// Constant ERROR for GameServerGroupStatus
+        /// </summary>
+        public static readonly GameServerGroupStatus ERROR = new GameServerGroupStatus("ERROR");
+        /// <summary>
+        /// Constant NEW for GameServerGroupStatus
+        /// </summary>
+        public static readonly GameServerGroupStatus NEW = new GameServerGroupStatus("NEW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GameServerGroupStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GameServerGroupStatus FindValue(string value)
+        {
+            return FindValue<GameServerGroupStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GameServerGroupStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GameServerHealthCheck.
+    /// </summary>
+    public class GameServerHealthCheck : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HEALTHY for GameServerHealthCheck
+        /// </summary>
+        public static readonly GameServerHealthCheck HEALTHY = new GameServerHealthCheck("HEALTHY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GameServerHealthCheck(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GameServerHealthCheck FindValue(string value)
+        {
+            return FindValue<GameServerHealthCheck>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GameServerHealthCheck(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GameServerProtectionPolicy.
+    /// </summary>
+    public class GameServerProtectionPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL_PROTECTION for GameServerProtectionPolicy
+        /// </summary>
+        public static readonly GameServerProtectionPolicy FULL_PROTECTION = new GameServerProtectionPolicy("FULL_PROTECTION");
+        /// <summary>
+        /// Constant NO_PROTECTION for GameServerProtectionPolicy
+        /// </summary>
+        public static readonly GameServerProtectionPolicy NO_PROTECTION = new GameServerProtectionPolicy("NO_PROTECTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GameServerProtectionPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GameServerProtectionPolicy FindValue(string value)
+        {
+            return FindValue<GameServerProtectionPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GameServerProtectionPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GameServerUtilizationStatus.
+    /// </summary>
+    public class GameServerUtilizationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for GameServerUtilizationStatus
+        /// </summary>
+        public static readonly GameServerUtilizationStatus AVAILABLE = new GameServerUtilizationStatus("AVAILABLE");
+        /// <summary>
+        /// Constant UTILIZED for GameServerUtilizationStatus
+        /// </summary>
+        public static readonly GameServerUtilizationStatus UTILIZED = new GameServerUtilizationStatus("UTILIZED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GameServerUtilizationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GameServerUtilizationStatus FindValue(string value)
+        {
+            return FindValue<GameServerUtilizationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GameServerUtilizationStatus(string value)
         {
             return FindValue(value);
         }
@@ -1772,6 +2386,56 @@ namespace Amazon.GameLift
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ScalingStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder ASCENDING = new SortOrder("ASCENDING");
+        /// <summary>
+        /// Constant DESCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder DESCENDING = new SortOrder("DESCENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortOrder(string value)
         {
             return FindValue(value);
         }

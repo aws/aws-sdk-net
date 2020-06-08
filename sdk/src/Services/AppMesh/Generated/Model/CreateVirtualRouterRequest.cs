@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,19 +34,17 @@ namespace Amazon.AppMesh.Model
     /// 
     ///          
     /// <para>
-    /// Any inbound traffic that your virtual router expects should be specified as a    
-    ///        <code>listener</code>. 
-    /// </para>
-    ///          
-    /// <para>
-    /// Virtual routers handle traffic for one or more virtual services within your mesh.
-    /// After         you create your virtual router, create and associate routes for your
-    /// virtual router that         direct incoming requests to different virtual nodes.
+    /// Specify a <code>listener</code> for any inbound traffic that your virtual router 
+    ///        receives. Create a virtual router for each protocol and port that you need
+    /// to route.         Virtual routers handle traffic for one or more virtual services
+    /// within your mesh. After you         create your virtual router, create and associate
+    /// routes for your virtual router that direct         incoming requests to different
+    /// virtual nodes.
     /// </para>
     ///          
     /// <para>
     /// For more information about virtual routers, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html">Virtual
-    /// Routers</a>.
+    /// routers</a>.
     /// </para>
     /// </summary>
     public partial class CreateVirtualRouterRequest : AmazonAppMeshRequest

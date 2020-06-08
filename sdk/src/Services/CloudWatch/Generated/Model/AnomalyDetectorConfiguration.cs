@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -71,6 +72,7 @@ namespace Amazon.CloudWatch.Model
         /// database</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public string MetricTimezone
         {
             get { return this._metricTimezone; }

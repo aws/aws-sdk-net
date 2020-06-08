@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// The estimated cost savings that might be realized if the recommended actions are taken.
+    /// The estimated cost savings that might be realized if the recommended operations are
+    /// taken.
     /// </summary>
     public partial class TrustedAdvisorCostOptimizingSummary
     {
@@ -38,8 +40,8 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property EstimatedMonthlySavings. 
         /// <para>
-        /// The estimated monthly savings that might be realized if the recommended actions are
-        /// taken.
+        /// The estimated monthly savings that might be realized if the recommended operations
+        /// are taken.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +60,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property EstimatedPercentMonthlySavings. 
         /// <para>
-        /// The estimated percentage of savings that might be realized if the recommended actions
+        /// The estimated percentage of savings that might be realized if the recommended operations
         /// are taken.
         /// </para>
         /// </summary>

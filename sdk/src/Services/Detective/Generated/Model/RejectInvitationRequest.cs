@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,13 +30,8 @@ namespace Amazon.Detective.Model
 {
     /// <summary>
     /// Container for the parameters to the RejectInvitation operation.
-    /// Amazon Detective is currently in preview.
-    /// 
-    ///  
-    /// <para>
     /// Rejects an invitation to contribute the account data to a behavior graph. This operation
     /// must be called by a member account that has the <code>INVITED</code> status.
-    /// </para>
     /// </summary>
     public partial class RejectInvitationRequest : AmazonDetectiveRequest
     {

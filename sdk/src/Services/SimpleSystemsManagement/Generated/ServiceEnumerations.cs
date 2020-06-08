@@ -228,6 +228,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant Name for AssociationFilterKey
         /// </summary>
         public static readonly AssociationFilterKey Name = new AssociationFilterKey("Name");
+        /// <summary>
+        /// Constant ResourceGroupName for AssociationFilterKey
+        /// </summary>
+        public static readonly AssociationFilterKey ResourceGroupName = new AssociationFilterKey("ResourceGroupName");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -366,6 +370,56 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AssociationStatusName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssociationSyncCompliance.
+    /// </summary>
+    public class AssociationSyncCompliance : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for AssociationSyncCompliance
+        /// </summary>
+        public static readonly AssociationSyncCompliance AUTO = new AssociationSyncCompliance("AUTO");
+        /// <summary>
+        /// Constant MANUAL for AssociationSyncCompliance
+        /// </summary>
+        public static readonly AssociationSyncCompliance MANUAL = new AssociationSyncCompliance("MANUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssociationSyncCompliance(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociationSyncCompliance FindValue(string value)
+        {
+            return FindValue<AssociationSyncCompliance>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociationSyncCompliance(string value)
         {
             return FindValue(value);
         }
@@ -1168,6 +1222,56 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ComplianceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ComplianceUploadType.
+    /// </summary>
+    public class ComplianceUploadType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for ComplianceUploadType
+        /// </summary>
+        public static readonly ComplianceUploadType COMPLETE = new ComplianceUploadType("COMPLETE");
+        /// <summary>
+        /// Constant PARTIAL for ComplianceUploadType
+        /// </summary>
+        public static readonly ComplianceUploadType PARTIAL = new ComplianceUploadType("PARTIAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComplianceUploadType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComplianceUploadType FindValue(string value)
+        {
+            return FindValue<ComplianceUploadType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComplianceUploadType(string value)
         {
             return FindValue(value);
         }
@@ -2498,6 +2602,14 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant CENTOS for OperatingSystem
         /// </summary>
         public static readonly OperatingSystem CENTOS = new OperatingSystem("CENTOS");
+        /// <summary>
+        /// Constant DEBIAN for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem DEBIAN = new OperatingSystem("DEBIAN");
+        /// <summary>
+        /// Constant ORACLE_LINUX for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem ORACLE_LINUX = new OperatingSystem("ORACLE_LINUX");
         /// <summary>
         /// Constant REDHAT_ENTERPRISE_LINUX for OperatingSystem
         /// </summary>

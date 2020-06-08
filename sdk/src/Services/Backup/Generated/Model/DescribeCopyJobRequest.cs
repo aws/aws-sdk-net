@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,7 +39,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property CopyJobId. 
         /// <para>
-        /// Uniquely identifies a request to AWS Backup to copy a resource.
+        /// Uniquely identifies a copy job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

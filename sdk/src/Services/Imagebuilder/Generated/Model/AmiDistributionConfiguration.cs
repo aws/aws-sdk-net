@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -40,7 +41,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property AmiTags. 
         /// <para>
-        ///  The tags to apply to AMIs distributed to this Region. 
+        /// The tags to apply to AMIs distributed to this Region. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -59,7 +60,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the distribution configuration. 
+        /// The description of the distribution configuration. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -97,7 +98,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the distribution configuration. 
+        /// The name of the distribution configuration. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=127)]

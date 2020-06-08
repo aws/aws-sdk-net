@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -165,11 +166,10 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property CustomCertificate. 
         /// <para>
-        /// Supported on servers running Chef Automate 2. A PEM-formatted HTTPS certificate. The
-        /// value can be be a single, self-signed certificate, or a certificate chain. If you
-        /// specify a custom certificate, you must also specify values for <code>CustomDomain</code>
-        /// and <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code>
-        /// value:
+        /// A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate,
+        /// or a certificate chain. If you specify a custom certificate, you must also specify
+        /// values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following
+        /// are requirements for the <code>CustomCertificate</code> value:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -213,13 +213,13 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property CustomDomain. 
         /// <para>
-        /// Supported on servers running Chef Automate 2. An optional public endpoint of a server,
-        /// such as <code>https://aws.my-company.com</code>. To access the server, create a CNAME
-        /// DNS record in your preferred DNS service that points the custom domain to the endpoint
-        /// that is generated when the server is created (the value of the CreateServer Endpoint
-        /// attribute). You cannot access the server by using the generated <code>Endpoint</code>
-        /// value if the server is using a custom domain. If you specify a custom domain, you
-        /// must also specify values for <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.
+        /// An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>.
+        /// To access the server, create a CNAME DNS record in your preferred DNS service that
+        /// points the custom domain to the endpoint that is generated when the server is created
+        /// (the value of the CreateServer Endpoint attribute). You cannot access the server by
+        /// using the generated <code>Endpoint</code> value if the server is using a custom domain.
+        /// If you specify a custom domain, you must also specify values for <code>CustomCertificate</code>
+        /// and <code>CustomPrivateKey</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=253)]
@@ -238,10 +238,10 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property CustomPrivateKey. 
         /// <para>
-        /// Supported on servers running Chef Automate 2. A private key in PEM format for connecting
-        /// to the server by using HTTPS. The private key must not be encrypted; it cannot be
-        /// protected by a password or passphrase. If you specify a custom private key, you must
-        /// also specify values for <code>CustomDomain</code> and <code>CustomCertificate</code>.
+        /// A private key in PEM format for connecting to the server by using HTTPS. The private
+        /// key must not be encrypted; it cannot be protected by a password or passphrase. If
+        /// you specify a custom private key, you must also specify values for <code>CustomDomain</code>
+        /// and <code>CustomCertificate</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -644,13 +644,13 @@ namespace Amazon.OpsWorksCM.Model
         ///  </li> <li> 
         /// <para>
         /// The key can be a maximum of 127 characters, and can contain only Unicode letters,
-        /// numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
+        /// numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// The value can be a maximum 255 characters, and contain only Unicode letters, numbers,
-        /// or separators, or the following special characters: <code>+ - = . _ : /</code> 
+        /// or separators, or the following special characters: <code>+ - = . _ : / @</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

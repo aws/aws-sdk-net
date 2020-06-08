@@ -82,6 +82,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("filterArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FilterArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jobInput", targetDepth))
                 {
                     var unmarshaller = BatchInferenceJobInputUnmarshaller.Instance;

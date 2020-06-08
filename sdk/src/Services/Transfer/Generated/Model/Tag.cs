@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -61,7 +62,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// This property contains one or more values that you assigned to the key name you create.
+        /// Contains one or more values that you assigned to the key name you create.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

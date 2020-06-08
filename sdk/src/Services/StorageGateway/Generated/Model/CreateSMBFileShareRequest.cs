@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -31,8 +32,8 @@ namespace Amazon.StorageGateway.Model
     /// Container for the parameters to the CreateSMBFileShare operation.
     /// Creates a Server Message Block (SMB) file share on an existing file gateway. In Storage
     /// Gateway, a file share is a file system mount point backed by Amazon S3 cloud storage.
-    /// Storage Gateway expose file shares using a SMB interface. This operation is only supported
-    /// for file gateways.
+    /// Storage Gateway expose file shares using an SMB interface. This operation is only
+    /// supported for file gateways.
     /// 
     ///  <important> 
     /// <para>
@@ -52,6 +53,7 @@ namespace Amazon.StorageGateway.Model
     public partial class CreateSMBFileShareRequest : AmazonStorageGatewayRequest
     {
         private List<string> _adminUserList = new List<string>();
+        private string _auditDestinationARN;
         private string _authentication;
         private string _clientToken;
         private string _defaultStorageClass;
@@ -93,6 +95,25 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetAdminUserList()
         {
             return this._adminUserList != null && this._adminUserList.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuditDestinationARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the storage used for the audit logs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string AuditDestinationARN
+        {
+            get { return this._auditDestinationARN; }
+            set { this._auditDestinationARN = value; }
+        }
+
+        // Check to see if AuditDestinationARN property is set
+        internal bool IsSetAuditDestinationARN()
+        {
+            return this._auditDestinationARN != null;
         }
 
         /// <summary>
@@ -148,7 +169,7 @@ namespace Amazon.StorageGateway.Model
         /// Optional.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=20)]
+        [AWSProperty(Min=5, Max=50)]
         public string DefaultStorageClass
         {
             get { return this._defaultStorageClass; }
@@ -164,8 +185,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the file gateway on which you want to create a file
-        /// share.
+        /// The ARN of the file gateway on which you want to create a file share.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=50, Max=500)]
@@ -205,7 +225,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property InvalidUserList. 
         /// <para>
         /// A list of users or groups in the Active Directory that are not allowed to access the
-        /// file share. A group must be prefixed with the @ character. For example <code>@group1</code>.
+        /// file share. A group must be prefixed with the @ character. For example, <code>@group1</code>.
         /// Can only be set if Authentication is set to <code>ActiveDirectory</code>.
         /// </para>
         /// </summary>
@@ -225,7 +245,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSEncrypted. 
         /// <para>
-        /// True to use Amazon S3 server side encryption with your own AWS KMS key, or false to
+        /// True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to
         /// use a key managed by Amazon S3. Optional.
         /// </para>
         /// </summary>
@@ -244,7 +264,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSKey. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption.
+        /// The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption.
         /// This value can only be set when KMSEncrypted is true. Optional.
         /// </para>
         /// </summary>

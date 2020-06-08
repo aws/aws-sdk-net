@@ -334,6 +334,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         public virtual AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
         {
             var options = new InvokeOptions();
@@ -354,6 +355,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAbortMultipartUpload
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         public virtual IAsyncResult BeginAbortMultipartUpload(AbortMultipartUploadRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -370,6 +372,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAbortMultipartUpload.</param>
         /// 
         /// <returns>Returns a  AbortMultipartUploadResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         public virtual AbortMultipartUploadResponse EndAbortMultipartUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<AbortMultipartUploadResponse>(asyncResult);
@@ -418,6 +421,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortVaultLock">REST API Reference for AbortVaultLock Operation</seealso>
         public virtual AbortVaultLockResponse AbortVaultLock(AbortVaultLockRequest request)
         {
             var options = new InvokeOptions();
@@ -438,6 +442,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAbortVaultLock
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortVaultLock">REST API Reference for AbortVaultLock Operation</seealso>
         public virtual IAsyncResult BeginAbortVaultLock(AbortVaultLockRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -454,6 +459,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAbortVaultLock.</param>
         /// 
         /// <returns>Returns a  AbortVaultLockResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortVaultLock">REST API Reference for AbortVaultLock Operation</seealso>
         public virtual AbortVaultLockResponse EndAbortVaultLock(IAsyncResult asyncResult)
         {
             return EndInvoke<AbortVaultLockResponse>(asyncResult);
@@ -490,6 +496,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AddTagsToVault">REST API Reference for AddTagsToVault Operation</seealso>
         public virtual AddTagsToVaultResponse AddTagsToVault(AddTagsToVaultRequest request)
         {
             var options = new InvokeOptions();
@@ -510,6 +517,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTagsToVault
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AddTagsToVault">REST API Reference for AddTagsToVault Operation</seealso>
         public virtual IAsyncResult BeginAddTagsToVault(AddTagsToVaultRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -526,6 +534,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTagsToVault.</param>
         /// 
         /// <returns>Returns a  AddTagsToVaultResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AddTagsToVault">REST API Reference for AddTagsToVault Operation</seealso>
         public virtual AddTagsToVaultResponse EndAddTagsToVault(IAsyncResult asyncResult)
         {
             return EndInvoke<AddTagsToVaultResponse>(asyncResult);
@@ -603,6 +612,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteMultipartUpload">REST API Reference for CompleteMultipartUpload Operation</seealso>
         public virtual CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
         {
             var options = new InvokeOptions();
@@ -623,6 +633,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCompleteMultipartUpload
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteMultipartUpload">REST API Reference for CompleteMultipartUpload Operation</seealso>
         public virtual IAsyncResult BeginCompleteMultipartUpload(CompleteMultipartUploadRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -639,6 +650,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCompleteMultipartUpload.</param>
         /// 
         /// <returns>Returns a  CompleteMultipartUploadResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteMultipartUpload">REST API Reference for CompleteMultipartUpload Operation</seealso>
         public virtual CompleteMultipartUploadResponse EndCompleteMultipartUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<CompleteMultipartUploadResponse>(asyncResult);
@@ -687,6 +699,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteVaultLock">REST API Reference for CompleteVaultLock Operation</seealso>
         public virtual CompleteVaultLockResponse CompleteVaultLock(CompleteVaultLockRequest request)
         {
             var options = new InvokeOptions();
@@ -707,6 +720,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCompleteVaultLock
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteVaultLock">REST API Reference for CompleteVaultLock Operation</seealso>
         public virtual IAsyncResult BeginCompleteVaultLock(CompleteVaultLockRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -723,6 +737,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCompleteVaultLock.</param>
         /// 
         /// <returns>Returns a  CompleteVaultLockResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteVaultLock">REST API Reference for CompleteVaultLock Operation</seealso>
         public virtual CompleteVaultLockResponse EndCompleteVaultLock(IAsyncResult asyncResult)
         {
             return EndInvoke<CompleteVaultLockResponse>(asyncResult);
@@ -783,6 +798,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CreateVault">REST API Reference for CreateVault Operation</seealso>
         public virtual CreateVaultResponse CreateVault(CreateVaultRequest request)
         {
             var options = new InvokeOptions();
@@ -803,6 +819,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVault
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CreateVault">REST API Reference for CreateVault Operation</seealso>
         public virtual IAsyncResult BeginCreateVault(CreateVaultRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -819,6 +836,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVault.</param>
         /// 
         /// <returns>Returns a  CreateVaultResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CreateVault">REST API Reference for CreateVault Operation</seealso>
         public virtual CreateVaultResponse EndCreateVault(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateVaultResponse>(asyncResult);
@@ -881,6 +899,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteArchive">REST API Reference for DeleteArchive Operation</seealso>
         public virtual DeleteArchiveResponse DeleteArchive(DeleteArchiveRequest request)
         {
             var options = new InvokeOptions();
@@ -901,6 +920,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteArchive
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteArchive">REST API Reference for DeleteArchive Operation</seealso>
         public virtual IAsyncResult BeginDeleteArchive(DeleteArchiveRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -917,6 +937,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteArchive.</param>
         /// 
         /// <returns>Returns a  DeleteArchiveResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteArchive">REST API Reference for DeleteArchive Operation</seealso>
         public virtual DeleteArchiveResponse EndDeleteArchive(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteArchiveResponse>(asyncResult);
@@ -972,6 +993,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVault">REST API Reference for DeleteVault Operation</seealso>
         public virtual DeleteVaultResponse DeleteVault(DeleteVaultRequest request)
         {
             var options = new InvokeOptions();
@@ -992,6 +1014,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVault
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVault">REST API Reference for DeleteVault Operation</seealso>
         public virtual IAsyncResult BeginDeleteVault(DeleteVaultRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1008,6 +1031,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVault.</param>
         /// 
         /// <returns>Returns a  DeleteVaultResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVault">REST API Reference for DeleteVault Operation</seealso>
         public virtual DeleteVaultResponse EndDeleteVault(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVaultResponse>(asyncResult);
@@ -1047,6 +1071,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultAccessPolicy">REST API Reference for DeleteVaultAccessPolicy Operation</seealso>
         public virtual DeleteVaultAccessPolicyResponse DeleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request)
         {
             var options = new InvokeOptions();
@@ -1067,6 +1092,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVaultAccessPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultAccessPolicy">REST API Reference for DeleteVaultAccessPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1083,6 +1109,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVaultAccessPolicy.</param>
         /// 
         /// <returns>Returns a  DeleteVaultAccessPolicyResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultAccessPolicy">REST API Reference for DeleteVaultAccessPolicy Operation</seealso>
         public virtual DeleteVaultAccessPolicyResponse EndDeleteVaultAccessPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVaultAccessPolicyResponse>(asyncResult);
@@ -1129,6 +1156,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultNotifications">REST API Reference for DeleteVaultNotifications Operation</seealso>
         public virtual DeleteVaultNotificationsResponse DeleteVaultNotifications(DeleteVaultNotificationsRequest request)
         {
             var options = new InvokeOptions();
@@ -1149,6 +1177,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVaultNotifications
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultNotifications">REST API Reference for DeleteVaultNotifications Operation</seealso>
         public virtual IAsyncResult BeginDeleteVaultNotifications(DeleteVaultNotificationsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1165,6 +1194,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVaultNotifications.</param>
         /// 
         /// <returns>Returns a  DeleteVaultNotificationsResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultNotifications">REST API Reference for DeleteVaultNotifications Operation</seealso>
         public virtual DeleteVaultNotificationsResponse EndDeleteVaultNotifications(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVaultNotificationsResponse>(asyncResult);
@@ -1221,6 +1251,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         public virtual DescribeJobResponse DescribeJob(DescribeJobRequest request)
         {
             var options = new InvokeOptions();
@@ -1241,6 +1272,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         public virtual IAsyncResult BeginDescribeJob(DescribeJobRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1257,6 +1289,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeJob.</param>
         /// 
         /// <returns>Returns a  DescribeJobResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         public virtual DescribeJobResponse EndDescribeJob(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeJobResponse>(asyncResult);
@@ -1308,6 +1341,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeVault">REST API Reference for DescribeVault Operation</seealso>
         public virtual DescribeVaultResponse DescribeVault(DescribeVaultRequest request)
         {
             var options = new InvokeOptions();
@@ -1328,6 +1362,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVault
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeVault">REST API Reference for DescribeVault Operation</seealso>
         public virtual IAsyncResult BeginDescribeVault(DescribeVaultRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1344,6 +1379,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVault.</param>
         /// 
         /// <returns>Returns a  DescribeVaultResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeVault">REST API Reference for DescribeVault Operation</seealso>
         public virtual DescribeVaultResponse EndDescribeVault(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVaultResponse>(asyncResult);
@@ -1371,6 +1407,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetDataRetrievalPolicy">REST API Reference for GetDataRetrievalPolicy Operation</seealso>
         public virtual GetDataRetrievalPolicyResponse GetDataRetrievalPolicy(GetDataRetrievalPolicyRequest request)
         {
             var options = new InvokeOptions();
@@ -1391,6 +1428,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataRetrievalPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetDataRetrievalPolicy">REST API Reference for GetDataRetrievalPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetDataRetrievalPolicy(GetDataRetrievalPolicyRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1407,6 +1445,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataRetrievalPolicy.</param>
         /// 
         /// <returns>Returns a  GetDataRetrievalPolicyResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetDataRetrievalPolicy">REST API Reference for GetDataRetrievalPolicy Operation</seealso>
         public virtual GetDataRetrievalPolicyResponse EndGetDataRetrievalPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDataRetrievalPolicyResponse>(asyncResult);
@@ -1491,6 +1530,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetJobOutput">REST API Reference for GetJobOutput Operation</seealso>
         public virtual GetJobOutputResponse GetJobOutput(GetJobOutputRequest request)
         {
             var options = new InvokeOptions();
@@ -1511,6 +1551,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJobOutput
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetJobOutput">REST API Reference for GetJobOutput Operation</seealso>
         public virtual IAsyncResult BeginGetJobOutput(GetJobOutputRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1527,6 +1568,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJobOutput.</param>
         /// 
         /// <returns>Returns a  GetJobOutputResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetJobOutput">REST API Reference for GetJobOutput Operation</seealso>
         public virtual GetJobOutputResponse EndGetJobOutput(IAsyncResult asyncResult)
         {
             return EndInvoke<GetJobOutputResponse>(asyncResult);
@@ -1560,6 +1602,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultAccessPolicy">REST API Reference for GetVaultAccessPolicy Operation</seealso>
         public virtual GetVaultAccessPolicyResponse GetVaultAccessPolicy(GetVaultAccessPolicyRequest request)
         {
             var options = new InvokeOptions();
@@ -1580,6 +1623,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVaultAccessPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultAccessPolicy">REST API Reference for GetVaultAccessPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetVaultAccessPolicy(GetVaultAccessPolicyRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1596,6 +1640,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVaultAccessPolicy.</param>
         /// 
         /// <returns>Returns a  GetVaultAccessPolicyResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultAccessPolicy">REST API Reference for GetVaultAccessPolicy Operation</seealso>
         public virtual GetVaultAccessPolicyResponse EndGetVaultAccessPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<GetVaultAccessPolicyResponse>(asyncResult);
@@ -1656,6 +1701,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultLock">REST API Reference for GetVaultLock Operation</seealso>
         public virtual GetVaultLockResponse GetVaultLock(GetVaultLockRequest request)
         {
             var options = new InvokeOptions();
@@ -1676,6 +1722,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVaultLock
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultLock">REST API Reference for GetVaultLock Operation</seealso>
         public virtual IAsyncResult BeginGetVaultLock(GetVaultLockRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1692,6 +1739,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVaultLock.</param>
         /// 
         /// <returns>Returns a  GetVaultLockResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultLock">REST API Reference for GetVaultLock Operation</seealso>
         public virtual GetVaultLockResponse EndGetVaultLock(IAsyncResult asyncResult)
         {
             return EndInvoke<GetVaultLockResponse>(asyncResult);
@@ -1744,6 +1792,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultNotifications">REST API Reference for GetVaultNotifications Operation</seealso>
         public virtual GetVaultNotificationsResponse GetVaultNotifications(GetVaultNotificationsRequest request)
         {
             var options = new InvokeOptions();
@@ -1764,6 +1813,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVaultNotifications
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultNotifications">REST API Reference for GetVaultNotifications Operation</seealso>
         public virtual IAsyncResult BeginGetVaultNotifications(GetVaultNotificationsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1780,6 +1830,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVaultNotifications.</param>
         /// 
         /// <returns>Returns a  GetVaultNotificationsResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultNotifications">REST API Reference for GetVaultNotifications Operation</seealso>
         public virtual GetVaultNotificationsResponse EndGetVaultNotifications(IAsyncResult asyncResult)
         {
             return EndInvoke<GetVaultNotificationsResponse>(asyncResult);
@@ -1819,6 +1870,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateJob">REST API Reference for InitiateJob Operation</seealso>
         public virtual InitiateJobResponse InitiateJob(InitiateJobRequest request)
         {
             var options = new InvokeOptions();
@@ -1839,6 +1891,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInitiateJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateJob">REST API Reference for InitiateJob Operation</seealso>
         public virtual IAsyncResult BeginInitiateJob(InitiateJobRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1855,6 +1908,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInitiateJob.</param>
         /// 
         /// <returns>Returns a  InitiateJobResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateJob">REST API Reference for InitiateJob Operation</seealso>
         public virtual InitiateJobResponse EndInitiateJob(IAsyncResult asyncResult)
         {
             return EndInvoke<InitiateJobResponse>(asyncResult);
@@ -1927,6 +1981,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         public virtual InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
         {
             var options = new InvokeOptions();
@@ -1947,6 +2002,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInitiateMultipartUpload
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         public virtual IAsyncResult BeginInitiateMultipartUpload(InitiateMultipartUploadRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1963,6 +2019,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInitiateMultipartUpload.</param>
         /// 
         /// <returns>Returns a  InitiateMultipartUploadResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         public virtual InitiateMultipartUploadResponse EndInitiateMultipartUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<InitiateMultipartUploadResponse>(asyncResult);
@@ -2038,6 +2095,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateVaultLock">REST API Reference for InitiateVaultLock Operation</seealso>
         public virtual InitiateVaultLockResponse InitiateVaultLock(InitiateVaultLockRequest request)
         {
             var options = new InvokeOptions();
@@ -2058,6 +2116,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInitiateVaultLock
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateVaultLock">REST API Reference for InitiateVaultLock Operation</seealso>
         public virtual IAsyncResult BeginInitiateVaultLock(InitiateVaultLockRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2074,6 +2133,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInitiateVaultLock.</param>
         /// 
         /// <returns>Returns a  InitiateVaultLockResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateVaultLock">REST API Reference for InitiateVaultLock Operation</seealso>
         public virtual InitiateVaultLockResponse EndInitiateVaultLock(IAsyncResult asyncResult)
         {
             return EndInvoke<InitiateVaultLockResponse>(asyncResult);
@@ -2148,6 +2208,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
             var options = new InvokeOptions();
@@ -2168,6 +2229,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJobs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2184,6 +2246,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJobs.</param>
         /// 
         /// <returns>Returns a  ListJobsResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual ListJobsResponse EndListJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListJobsResponse>(asyncResult);
@@ -2248,6 +2311,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         public virtual ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
         {
             var options = new InvokeOptions();
@@ -2268,6 +2332,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMultipartUploads
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         public virtual IAsyncResult BeginListMultipartUploads(ListMultipartUploadsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2284,6 +2349,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMultipartUploads.</param>
         /// 
         /// <returns>Returns a  ListMultipartUploadsResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         public virtual ListMultipartUploadsResponse EndListMultipartUploads(IAsyncResult asyncResult)
         {
             return EndInvoke<ListMultipartUploadsResponse>(asyncResult);
@@ -2341,6 +2407,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListParts">REST API Reference for ListParts Operation</seealso>
         public virtual ListPartsResponse ListParts(ListPartsRequest request)
         {
             var options = new InvokeOptions();
@@ -2361,6 +2428,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListParts
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListParts">REST API Reference for ListParts Operation</seealso>
         public virtual IAsyncResult BeginListParts(ListPartsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2377,6 +2445,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListParts.</param>
         /// 
         /// <returns>Returns a  ListPartsResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListParts">REST API Reference for ListParts Operation</seealso>
         public virtual ListPartsResponse EndListParts(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPartsResponse>(asyncResult);
@@ -2401,6 +2470,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListProvisionedCapacity">REST API Reference for ListProvisionedCapacity Operation</seealso>
         public virtual ListProvisionedCapacityResponse ListProvisionedCapacity(ListProvisionedCapacityRequest request)
         {
             var options = new InvokeOptions();
@@ -2421,6 +2491,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProvisionedCapacity
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListProvisionedCapacity">REST API Reference for ListProvisionedCapacity Operation</seealso>
         public virtual IAsyncResult BeginListProvisionedCapacity(ListProvisionedCapacityRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2437,6 +2508,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProvisionedCapacity.</param>
         /// 
         /// <returns>Returns a  ListProvisionedCapacityResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListProvisionedCapacity">REST API Reference for ListProvisionedCapacity Operation</seealso>
         public virtual ListProvisionedCapacityResponse EndListProvisionedCapacity(IAsyncResult asyncResult)
         {
             return EndInvoke<ListProvisionedCapacityResponse>(asyncResult);
@@ -2467,6 +2539,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListTagsForVault">REST API Reference for ListTagsForVault Operation</seealso>
         public virtual ListTagsForVaultResponse ListTagsForVault(ListTagsForVaultRequest request)
         {
             var options = new InvokeOptions();
@@ -2487,6 +2560,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForVault
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListTagsForVault">REST API Reference for ListTagsForVault Operation</seealso>
         public virtual IAsyncResult BeginListTagsForVault(ListTagsForVaultRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2503,6 +2577,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForVault.</param>
         /// 
         /// <returns>Returns a  ListTagsForVaultResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListTagsForVault">REST API Reference for ListTagsForVault Operation</seealso>
         public virtual ListTagsForVaultResponse EndListTagsForVault(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForVaultResponse>(asyncResult);
@@ -2556,6 +2631,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListVaults">REST API Reference for ListVaults Operation</seealso>
         public virtual ListVaultsResponse ListVaults()
         {
             return ListVaults(new ListVaultsRequest());
@@ -2606,6 +2682,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListVaults">REST API Reference for ListVaults Operation</seealso>
         public virtual ListVaultsResponse ListVaults(ListVaultsRequest request)
         {
             var options = new InvokeOptions();
@@ -2626,6 +2703,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVaults
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListVaults">REST API Reference for ListVaults Operation</seealso>
         public virtual IAsyncResult BeginListVaults(ListVaultsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2642,6 +2720,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVaults.</param>
         /// 
         /// <returns>Returns a  ListVaultsResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListVaults">REST API Reference for ListVaults Operation</seealso>
         public virtual ListVaultsResponse EndListVaults(IAsyncResult asyncResult)
         {
             return EndInvoke<ListVaultsResponse>(asyncResult);
@@ -2669,6 +2748,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/PurchaseProvisionedCapacity">REST API Reference for PurchaseProvisionedCapacity Operation</seealso>
         public virtual PurchaseProvisionedCapacityResponse PurchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request)
         {
             var options = new InvokeOptions();
@@ -2689,6 +2769,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurchaseProvisionedCapacity
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/PurchaseProvisionedCapacity">REST API Reference for PurchaseProvisionedCapacity Operation</seealso>
         public virtual IAsyncResult BeginPurchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2705,6 +2786,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurchaseProvisionedCapacity.</param>
         /// 
         /// <returns>Returns a  PurchaseProvisionedCapacityResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/PurchaseProvisionedCapacity">REST API Reference for PurchaseProvisionedCapacity Operation</seealso>
         public virtual PurchaseProvisionedCapacityResponse EndPurchaseProvisionedCapacity(IAsyncResult asyncResult)
         {
             return EndInvoke<PurchaseProvisionedCapacityResponse>(asyncResult);
@@ -2736,6 +2818,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/RemoveTagsFromVault">REST API Reference for RemoveTagsFromVault Operation</seealso>
         public virtual RemoveTagsFromVaultResponse RemoveTagsFromVault(RemoveTagsFromVaultRequest request)
         {
             var options = new InvokeOptions();
@@ -2756,6 +2839,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTagsFromVault
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/RemoveTagsFromVault">REST API Reference for RemoveTagsFromVault Operation</seealso>
         public virtual IAsyncResult BeginRemoveTagsFromVault(RemoveTagsFromVaultRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2772,6 +2856,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTagsFromVault.</param>
         /// 
         /// <returns>Returns a  RemoveTagsFromVaultResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/RemoveTagsFromVault">REST API Reference for RemoveTagsFromVault Operation</seealso>
         public virtual RemoveTagsFromVaultResponse EndRemoveTagsFromVault(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveTagsFromVaultResponse>(asyncResult);
@@ -2806,6 +2891,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetDataRetrievalPolicy">REST API Reference for SetDataRetrievalPolicy Operation</seealso>
         public virtual SetDataRetrievalPolicyResponse SetDataRetrievalPolicy(SetDataRetrievalPolicyRequest request)
         {
             var options = new InvokeOptions();
@@ -2826,6 +2912,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetDataRetrievalPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetDataRetrievalPolicy">REST API Reference for SetDataRetrievalPolicy Operation</seealso>
         public virtual IAsyncResult BeginSetDataRetrievalPolicy(SetDataRetrievalPolicyRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2842,6 +2929,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetDataRetrievalPolicy.</param>
         /// 
         /// <returns>Returns a  SetDataRetrievalPolicyResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetDataRetrievalPolicy">REST API Reference for SetDataRetrievalPolicy Operation</seealso>
         public virtual SetDataRetrievalPolicyResponse EndSetDataRetrievalPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<SetDataRetrievalPolicyResponse>(asyncResult);
@@ -2875,6 +2963,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultAccessPolicy">REST API Reference for SetVaultAccessPolicy Operation</seealso>
         public virtual SetVaultAccessPolicyResponse SetVaultAccessPolicy(SetVaultAccessPolicyRequest request)
         {
             var options = new InvokeOptions();
@@ -2895,6 +2984,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetVaultAccessPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultAccessPolicy">REST API Reference for SetVaultAccessPolicy Operation</seealso>
         public virtual IAsyncResult BeginSetVaultAccessPolicy(SetVaultAccessPolicyRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2911,6 +3001,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetVaultAccessPolicy.</param>
         /// 
         /// <returns>Returns a  SetVaultAccessPolicyResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultAccessPolicy">REST API Reference for SetVaultAccessPolicy Operation</seealso>
         public virtual SetVaultAccessPolicyResponse EndSetVaultAccessPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<SetVaultAccessPolicyResponse>(asyncResult);
@@ -2983,6 +3074,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultNotifications">REST API Reference for SetVaultNotifications Operation</seealso>
         public virtual SetVaultNotificationsResponse SetVaultNotifications(SetVaultNotificationsRequest request)
         {
             var options = new InvokeOptions();
@@ -3003,6 +3095,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetVaultNotifications
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultNotifications">REST API Reference for SetVaultNotifications Operation</seealso>
         public virtual IAsyncResult BeginSetVaultNotifications(SetVaultNotificationsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3019,6 +3112,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetVaultNotifications.</param>
         /// 
         /// <returns>Returns a  SetVaultNotificationsResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultNotifications">REST API Reference for SetVaultNotifications Operation</seealso>
         public virtual SetVaultNotificationsResponse EndSetVaultNotifications(IAsyncResult asyncResult)
         {
             return EndInvoke<SetVaultNotificationsResponse>(asyncResult);
@@ -3098,6 +3192,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadArchive">REST API Reference for UploadArchive Operation</seealso>
         public virtual UploadArchiveResponse UploadArchive(UploadArchiveRequest request)
         {
             var options = new InvokeOptions();
@@ -3118,6 +3213,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadArchive
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadArchive">REST API Reference for UploadArchive Operation</seealso>
         public virtual IAsyncResult BeginUploadArchive(UploadArchiveRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3134,6 +3230,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadArchive.</param>
         /// 
         /// <returns>Returns a  UploadArchiveResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadArchive">REST API Reference for UploadArchive Operation</seealso>
         public virtual UploadArchiveResponse EndUploadArchive(IAsyncResult asyncResult)
         {
             return EndInvoke<UploadArchiveResponse>(asyncResult);
@@ -3224,6 +3321,7 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadMultipartPart">REST API Reference for UploadMultipartPart Operation</seealso>
         public virtual UploadMultipartPartResponse UploadMultipartPart(UploadMultipartPartRequest request)
         {
             var options = new InvokeOptions();
@@ -3244,6 +3342,7 @@ namespace Amazon.Glacier
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadMultipartPart
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadMultipartPart">REST API Reference for UploadMultipartPart Operation</seealso>
         public virtual IAsyncResult BeginUploadMultipartPart(UploadMultipartPartRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3260,6 +3359,7 @@ namespace Amazon.Glacier
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadMultipartPart.</param>
         /// 
         /// <returns>Returns a  UploadMultipartPartResult from Glacier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadMultipartPart">REST API Reference for UploadMultipartPart Operation</seealso>
         public virtual UploadMultipartPartResponse EndUploadMultipartPart(IAsyncResult asyncResult)
         {
             return EndInvoke<UploadMultipartPartResponse>(asyncResult);

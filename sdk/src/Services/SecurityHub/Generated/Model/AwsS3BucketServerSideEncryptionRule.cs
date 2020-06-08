@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ApplyServerSideEncryptionByDefault. 
         /// <para>
         /// Specifies the default server-side encryption to apply to new objects in the bucket.
-        /// If a <code>PUT</code> Object request doesn't specify any server-side encryption, this
+        /// If a <code>PUT</code> object request doesn't specify any server-side encryption, this
         /// default encryption is applied.
         /// </para>
         /// </summary>

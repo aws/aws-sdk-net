@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -188,10 +189,6 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Specify the fields using the <code>${field-id}</code> format, separated by spaces.
         /// For the AWS CLI, use single quotation marks (' ') to surround the parameter value.
-        /// </para>
-        ///  
-        /// <para>
-        /// Only applicable to flow logs that are published to an Amazon S3 bucket.
         /// </para>
         /// </summary>
         public string LogFormat

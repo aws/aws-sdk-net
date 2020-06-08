@@ -68,6 +68,12 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCWEMonitorEnabled())
+                {
+                    context.Writer.WritePropertyName("CWEMonitorEnabled");
+                    context.Writer.Write(publicRequest.CWEMonitorEnabled);
+                }
+
                 if(publicRequest.IsSetOpsCenterEnabled())
                 {
                     context.Writer.WritePropertyName("OpsCenterEnabled");

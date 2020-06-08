@@ -355,6 +355,42 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     
+                    if (publicRequest.Operation.S3PutObjectLegalHold != null) 
+                    {
+                        xmlWriter.WriteStartElement("S3PutObjectLegalHold", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                        
+                        if (publicRequest.Operation.S3PutObjectLegalHold.LegalHold != null) 
+                        {
+                            xmlWriter.WriteStartElement("LegalHold", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                            if(publicRequest.Operation.S3PutObjectLegalHold.LegalHold.IsSetStatus())
+                                xmlWriter.WriteElementString("Status", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Operation.S3PutObjectLegalHold.LegalHold.Status));                 
+            
+                            xmlWriter.WriteEndElement();
+                        }
+                        xmlWriter.WriteEndElement();
+                    }
+                    
+                    if (publicRequest.Operation.S3PutObjectRetention != null) 
+                    {
+                        xmlWriter.WriteStartElement("S3PutObjectRetention", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                        if(publicRequest.Operation.S3PutObjectRetention.IsSetBypassGovernanceRetention())
+                            xmlWriter.WriteElementString("BypassGovernanceRetention", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Operation.S3PutObjectRetention.BypassGovernanceRetention));                 
+        
+                        
+                        if (publicRequest.Operation.S3PutObjectRetention.Retention != null) 
+                        {
+                            xmlWriter.WriteStartElement("Retention", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                            if(publicRequest.Operation.S3PutObjectRetention.Retention.IsSetMode())
+                                xmlWriter.WriteElementString("Mode", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Operation.S3PutObjectRetention.Retention.Mode));                 
+            
+                            if(publicRequest.Operation.S3PutObjectRetention.Retention.IsSetRetainUntilDate())
+                                xmlWriter.WriteElementString("RetainUntilDate", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequest.Operation.S3PutObjectRetention.Retention.RetainUntilDate));                 
+            
+                            xmlWriter.WriteEndElement();
+                        }
+                        xmlWriter.WriteEndElement();
+                    }
+                    
                     if (publicRequest.Operation.S3PutObjectTagging != null) 
                     {
                         xmlWriter.WriteStartElement("S3PutObjectTagging", "http://awss3control.amazonaws.com/doc/2018-08-20/");            

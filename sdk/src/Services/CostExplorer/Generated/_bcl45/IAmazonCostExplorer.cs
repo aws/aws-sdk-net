@@ -50,7 +50,7 @@ namespace Amazon.CostExplorer
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For information about costs associated with the Cost Explorer API, see <a href="https://aws.amazon.com/aws-cost-management/pricing/">AWS
+    /// For information about costs associated with the Cost Explorer API, see <a href="http://aws.amazon.com/aws-cost-management/pricing/">AWS
     /// Cost Management Pricing</a>.
     /// </para>
     /// </summary>
@@ -62,17 +62,7 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        ///  <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is
-        /// subject to change. Your use of Cost Categories is subject to the Beta Service Participation
-        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
-        /// (Section 1.10).</b> </i> 
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Creates a new Cost Category with the requested name and rules.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCostCategoryDefinition service method.</param>
         /// 
@@ -90,17 +80,7 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        ///  <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is
-        /// subject to change. Your use of Cost Categories is subject to the Beta Service Participation
-        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
-        /// (Section 1.10).</b> </i> 
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Creates a new Cost Category with the requested name and rules.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCostCategoryDefinition service method.</param>
         /// <param name="cancellationToken">
@@ -124,18 +104,8 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        ///  <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is
-        /// subject to change. Your use of Cost Categories is subject to the Beta Service Participation
-        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
-        /// (Section 1.10).</b> </i> 
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Deletes a Cost Category. Expenses from this month going forward will no longer be
         /// categorized with this Cost Category.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCostCategoryDefinition service method.</param>
         /// 
@@ -152,18 +122,8 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        ///  <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is
-        /// subject to change. Your use of Cost Categories is subject to the Beta Service Participation
-        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
-        /// (Section 1.10).</b> </i> 
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Deletes a Cost Category. Expenses from this month going forward will no longer be
         /// categorized with this Cost Category.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCostCategoryDefinition service method.</param>
         /// <param name="cancellationToken">
@@ -186,18 +146,9 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        ///  <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is
-        /// subject to change. Your use of Cost Categories is subject to the Beta Service Participation
-        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
-        /// (Section 1.10).</b> </i> 
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Returns the name, ARN, rules, definition, and effective dates of a Cost Category that's
         /// defined in the account.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// You have the option to use <code>EffectiveOn</code> to return a Cost Category that
@@ -221,18 +172,9 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        ///  <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is
-        /// subject to change. Your use of Cost Categories is subject to the Beta Service Participation
-        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
-        /// (Section 1.10).</b> </i> 
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Returns the name, ARN, rules, definition, and effective dates of a Cost Category that's
         /// defined in the account.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// You have the option to use <code>EffectiveOn</code> to return a Cost Category that
@@ -266,7 +208,7 @@ namespace Amazon.CostExplorer
         /// usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>,
         /// that you want the request to return. You can also filter and group your data by various
         /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
-        /// For a complete list of valid dimensions, see the <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+        /// For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
         /// operation. Master accounts in an organization in AWS Organizations have access to
         /// all member accounts.
         /// </summary>
@@ -299,7 +241,7 @@ namespace Amazon.CostExplorer
         /// usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>,
         /// that you want the request to return. You can also filter and group your data by various
         /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
-        /// For a complete list of valid dimensions, see the <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+        /// For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
         /// operation. Master accounts in an organization in AWS Organizations have access to
         /// all member accounts.
         /// </summary>
@@ -338,7 +280,7 @@ namespace Amazon.CostExplorer
         /// which cost and usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>,
         /// that you want the request to return. You can also filter and group your data by various
         /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
-        /// For a complete list of valid dimensions, see the <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+        /// For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
         /// operation. Master accounts in an organization in AWS Organizations have access to
         /// all member accounts. This API is currently available for the Amazon Elastic Compute
         /// Cloud – Compute service only.
@@ -380,7 +322,7 @@ namespace Amazon.CostExplorer
         /// which cost and usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>,
         /// that you want the request to return. You can also filter and group your data by various
         /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
-        /// For a complete list of valid dimensions, see the <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+        /// For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
         /// operation. Master accounts in an organization in AWS Organizations have access to
         /// all member accounts. This API is currently available for the Amazon Elastic Compute
         /// Cloud – Compute service only.
@@ -531,8 +473,9 @@ namespace Amazon.CostExplorer
         /// Retrieves the reservation coverage for your account. This enables you to see how much
         /// of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database
         /// Service, or Amazon Redshift usage is covered by a reservation. An organization's master
-        /// account can see the coverage of the associated member accounts. For any time period,
-        /// you can filter data about reservation usage by the following dimensions:
+        /// account can see the coverage of the associated member accounts. This supports dimensions,
+        /// Cost Categories, and nested expressions. For any time period, you can filter data
+        /// about reservation usage by the following dimensions:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -609,8 +552,9 @@ namespace Amazon.CostExplorer
         /// Retrieves the reservation coverage for your account. This enables you to see how much
         /// of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database
         /// Service, or Amazon Redshift usage is covered by a reservation. An organization's master
-        /// account can see the coverage of the associated member accounts. For any time period,
-        /// you can filter data about reservation usage by the following dimensions:
+        /// account can see the coverage of the associated member accounts. This supports dimensions,
+        /// Cost Categories, and nested expressions. For any time period, you can filter data
+        /// about reservation usage by the following dimensions:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -892,8 +836,9 @@ namespace Amazon.CostExplorer
         /// <summary>
         /// Retrieves the Savings Plans covered for your account. This enables you to see how
         /// much of your cost is covered by a Savings Plan. An organization’s master account can
-        /// see the coverage of the associated member accounts. For any time period, you can filter
-        /// data for Savings Plans usage with the following dimensions:
+        /// see the coverage of the associated member accounts. This supports dimensions, Cost
+        /// Categories, and nested expressions. For any time period, you can filter data for Savings
+        /// Plans usage with the following dimensions:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -937,8 +882,9 @@ namespace Amazon.CostExplorer
         /// <summary>
         /// Retrieves the Savings Plans covered for your account. This enables you to see how
         /// much of your cost is covered by a Savings Plan. An organization’s master account can
-        /// see the coverage of the associated member accounts. For any time period, you can filter
-        /// data for Savings Plans usage with the following dimensions:
+        /// see the coverage of the associated member accounts. This supports dimensions, Cost
+        /// Categories, and nested expressions. For any time period, you can filter data for Savings
+        /// Plans usage with the following dimensions:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -1264,21 +1210,13 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        ///  <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is
-        /// subject to change. Your use of Cost Categories is subject to the Beta Service Participation
-        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
-        /// (Section 1.10).</b> </i> 
-        /// </para>
-        ///  </important> 
-        /// <para>
-        /// Returns the name, ARN and effective dates of all Cost Categories defined in the account.
-        /// You have the option to use <code>EffectiveOn</code> to return a list of Cost Categories
-        /// that were active on a specific date. If there is no <code>EffectiveOn</code> specified,
-        /// you’ll see Cost Categories that are effective on the current date. If Cost Category
-        /// is still effective, <code>EffectiveEnd</code> is omitted in the response. 
-        /// </para>
+        /// Returns the name, ARN, <code>NumberOfRules</code> and effective dates of all Cost
+        /// Categories defined in the account. You have the option to use <code>EffectiveOn</code>
+        /// to return a list of Cost Categories that were active on a specific date. If there
+        /// is no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are effective
+        /// on the current date. If Cost Category is still effective, <code>EffectiveEnd</code>
+        /// is omitted in the response. <code>ListCostCategoryDefinitions</code> supports pagination.
+        /// The request can have a <code>MaxResults</code> range up to 100.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCostCategoryDefinitions service method.</param>
         /// 
@@ -1292,21 +1230,13 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        ///  <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is
-        /// subject to change. Your use of Cost Categories is subject to the Beta Service Participation
-        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
-        /// (Section 1.10).</b> </i> 
-        /// </para>
-        ///  </important> 
-        /// <para>
-        /// Returns the name, ARN and effective dates of all Cost Categories defined in the account.
-        /// You have the option to use <code>EffectiveOn</code> to return a list of Cost Categories
-        /// that were active on a specific date. If there is no <code>EffectiveOn</code> specified,
-        /// you’ll see Cost Categories that are effective on the current date. If Cost Category
-        /// is still effective, <code>EffectiveEnd</code> is omitted in the response. 
-        /// </para>
+        /// Returns the name, ARN, <code>NumberOfRules</code> and effective dates of all Cost
+        /// Categories defined in the account. You have the option to use <code>EffectiveOn</code>
+        /// to return a list of Cost Categories that were active on a specific date. If there
+        /// is no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are effective
+        /// on the current date. If Cost Category is still effective, <code>EffectiveEnd</code>
+        /// is omitted in the response. <code>ListCostCategoryDefinitions</code> supports pagination.
+        /// The request can have a <code>MaxResults</code> range up to 100.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCostCategoryDefinitions service method.</param>
         /// <param name="cancellationToken">
@@ -1326,19 +1256,9 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        ///  <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is
-        /// subject to change. Your use of Cost Categories is subject to the Beta Service Participation
-        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
-        /// (Section 1.10).</b> </i> 
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Updates an existing Cost Category. Changes made to the Cost Category rules will be
         /// used to categorize the current month’s expenses and future expenses. This won’t change
         /// categorization for the previous months.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCostCategoryDefinition service method.</param>
         /// 
@@ -1359,19 +1279,9 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        ///  <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is
-        /// subject to change. Your use of Cost Categories is subject to the Beta Service Participation
-        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
-        /// (Section 1.10).</b> </i> 
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Updates an existing Cost Category. Changes made to the Cost Category rules will be
         /// used to categorize the current month’s expenses and future expenses. This won’t change
         /// categorization for the previous months.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCostCategoryDefinition service method.</param>
         /// <param name="cancellationToken">

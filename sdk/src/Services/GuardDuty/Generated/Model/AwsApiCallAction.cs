@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -41,7 +42,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Api. 
         /// <para>
-        /// AWS API name.
+        /// The AWS API name.
         /// </para>
         /// </summary>
         public string Api
@@ -59,7 +60,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property CallerType. 
         /// <para>
-        /// AWS API caller type.
+        /// The AWS API caller type.
         /// </para>
         /// </summary>
         public string CallerType
@@ -77,7 +78,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DomainDetails. 
         /// <para>
-        /// Domain information for the AWS API call.
+        /// The domain information for the AWS API call.
         /// </para>
         /// </summary>
         public DomainDetails DomainDetails
@@ -95,7 +96,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property RemoteIpDetails. 
         /// <para>
-        /// Remote IP information of the connection.
+        /// The remote IP information of the connection.
         /// </para>
         /// </summary>
         public RemoteIpDetails RemoteIpDetails
@@ -113,7 +114,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// AWS service name whose API was invoked.
+        /// The AWS service name whose API was invoked.
         /// </para>
         /// </summary>
         public string ServiceName

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -43,14 +44,14 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// To remove instances from the Auto Scaling group before deleting it, call <a>DetachInstances</a>
-    /// with the list of instances and the option to decrement the desired capacity. This
+    /// To remove instances from the Auto Scaling group before deleting it, call the <a>DetachInstances</a>
+    /// API with the list of instances and the option to decrement the desired capacity. This
     /// ensures that Amazon EC2 Auto Scaling does not launch replacement instances.
     /// </para>
     ///  
     /// <para>
-    /// To terminate all instances before deleting the Auto Scaling group, call <a>UpdateAutoScalingGroup</a>
-    /// and set the minimum size and desired capacity of the Auto Scaling group to zero.
+    /// To terminate all instances before deleting the Auto Scaling group, call the <a>UpdateAutoScalingGroup</a>
+    /// API and set the minimum size and desired capacity of the Auto Scaling group to zero.
     /// </para>
     /// </summary>
     public partial class DeleteAutoScalingGroupRequest : AmazonAutoScalingRequest

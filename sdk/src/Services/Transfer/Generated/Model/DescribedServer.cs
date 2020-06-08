@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,19 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Describes the properties of the server that was specified. Information returned includes
-    /// the following: the server Amazon Resource Name (ARN), the authentication configuration
-    /// and type, the logging role, the server ID and state, and assigned tags or metadata.
+    /// Describes the properties of a file transfer protocol-enabled server that was specified.
+    /// Information returned includes the following: the server Amazon Resource Name (ARN),
+    /// the authentication configuration and type, the logging role, the server ID and state,
+    /// and assigned tags or metadata.
     /// </summary>
     public partial class DescribedServer
     {
         private string _arn;
+        private string _certificate;
         private EndpointDetails _endpointDetails;
         private EndpointType _endpointType;
         private string _hostKeyFingerprint;
         private IdentityProviderDetails _identityProviderDetails;
         private IdentityProviderType _identityProviderType;
         private string _loggingRole;
+        private List<string> _protocols = new List<string>();
         private string _serverId;
         private State _state;
         private List<Tag> _tags = new List<Tag>();
@@ -49,7 +53,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// Specifies the unique Amazon Resource Name (ARN) for the server to be described.
+        /// Specifies the unique Amazon Resource Name (ARN) for a file transfer protocol-enabled
+        /// server to be described.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1600)]
@@ -66,10 +71,30 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Certificate. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required
+        /// when <code>Protocols</code> is set to <code>FTPS</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1600)]
+        public string Certificate
+        {
+            get { return this._certificate; }
+            set { this._certificate = value; }
+        }
+
+        // Check to see if Certificate property is set
+        internal bool IsSetCertificate()
+        {
+            return this._certificate != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EndpointDetails. 
         /// <para>
-        /// The virtual private cloud (VPC) endpoint settings that you configured for your SFTP
-        /// server.
+        /// The virtual private cloud (VPC) endpoint settings that you configured for your file
+        /// transfer protocol-enabled server.
         /// </para>
         /// </summary>
         public EndpointDetails EndpointDetails
@@ -87,8 +112,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of endpoint that your SFTP server is connected to. If your SFTP server is
-        /// connected to a VPC endpoint, your server isn't accessible over the public internet.
+        /// The type of endpoint that your file transfer protocol-enabled server is connected
+        /// to. If your server is connected to a VPC endpoint, your server isn't accessible over
+        /// the public internet.
         /// </para>
         /// </summary>
         public EndpointType EndpointType
@@ -106,9 +132,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property HostKeyFingerprint. 
         /// <para>
-        /// This value contains the message-digest algorithm (MD5) hash of the server's host key.
-        /// This value is equivalent to the output of the <code>ssh-keygen -l -E md5 -f my-new-server-key</code>
-        /// command.
+        /// Contains the message-digest algorithm (MD5) hash of a file transfer protocol-enabled
+        /// server's host key. This value is equivalent to the output of the <code>ssh-keygen
+        /// -l -E md5 -f my-new-server-key</code> command.
         /// </para>
         /// </summary>
         public string HostKeyFingerprint
@@ -127,7 +153,8 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property IdentityProviderDetails. 
         /// <para>
         /// Specifies information to call a customer-supplied authentication API. This field is
-        /// not populated when the <code>IdentityProviderType</code> of the server is <code>SERVICE_MANAGED</code>&gt;.
+        /// not populated when the <code>IdentityProviderType</code> of a file transfer protocol-enabled
+        /// server is <code>SERVICE_MANAGED</code>.
         /// </para>
         /// </summary>
         public IdentityProviderDetails IdentityProviderDetails
@@ -145,11 +172,11 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property IdentityProviderType. 
         /// <para>
-        /// This property defines the mode of authentication method enabled for this service.
-        /// A value of <code>SERVICE_MANAGED</code> means that you are using this server to store
-        /// and access SFTP user credentials within the service. A value of <code>API_GATEWAY</code>
-        /// indicates that you have integrated an API Gateway endpoint that will be invoked for
-        /// authenticating your user into the service.
+        /// Defines the mode of authentication method enabled for this service. A value of <code>SERVICE_MANAGED</code>
+        /// means that you are using this file transfer protocol-enabled server to store and access
+        /// user credentials within the service. A value of <code>API_GATEWAY</code> indicates
+        /// that you have integrated an API Gateway endpoint that will be invoked for authenticating
+        /// your user into the service.
         /// </para>
         /// </summary>
         public IdentityProviderType IdentityProviderType
@@ -167,7 +194,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property LoggingRole. 
         /// <para>
-        /// This property is an AWS Identity and Access Management (IAM) entity that allows the
+        /// An AWS Identity and Access Management (IAM) entity that allows a file transfer protocol-enabled
         /// server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user activity
         /// can be viewed in your CloudWatch logs.
         /// </para>
@@ -186,10 +213,43 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Protocols. 
+        /// <para>
+        /// Specifies the file transfer protocol or protocols over which your file transfer protocol
+        /// client can connect to your server's endpoint. The available protocols are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// File Transfer Protocol (FTP): Unencrypted file transfer
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=3)]
+        public List<string> Protocols
+        {
+            get { return this._protocols; }
+            set { this._protocols = value; }
+        }
+
+        // Check to see if Protocols property is set
+        internal bool IsSetProtocols()
+        {
+            return this._protocols != null && this._protocols.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// This property is a unique system-assigned identifier for the SFTP server that you
-        /// instantiate.
+        /// Unique system-assigned identifier for a file transfer protocol-enabled server that
+        /// you instantiate.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=19)]
@@ -208,9 +268,10 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The condition of the SFTP server for the server that was described. A value of <code>ONLINE</code>
-        /// indicates that the server can accept jobs and transfer files. A <code>State</code>
-        /// value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.
+        /// The condition of a file transfer protocol-enabled server for the server that was described.
+        /// A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer
+        /// files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot
+        /// perform file transfer operations.
         /// </para>
         ///  
         /// <para>
@@ -235,8 +296,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// This property contains the key-value pairs that you can use to search for and group
-        /// servers that were assigned to the server that was described.
+        /// Contains the key-value pairs that you can use to search for and group file transfer
+        /// protocol-enabled servers that were assigned to the server that was described.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -255,7 +316,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserCount. 
         /// <para>
-        /// The number of users that are assigned to the SFTP server you specified with the <code>ServerId</code>.
+        /// The number of users that are assigned to a file transfer protocol-enabled server you
+        /// specified with the <code>ServerId</code>.
         /// </para>
         /// </summary>
         public int UserCount

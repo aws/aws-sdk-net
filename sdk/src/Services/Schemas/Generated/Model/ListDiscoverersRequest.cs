@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,7 +40,11 @@ namespace Amazon.Schemas.Model
         private string _sourceArnPrefix;
 
         /// <summary>
-        /// Gets and sets the property DiscovererIdPrefix.
+        /// Gets and sets the property DiscovererIdPrefix. 
+        /// <para>
+        /// Specifying this limits the results to only those discoverer IDs that start with the
+        /// specified prefix.
+        /// </para>
         /// </summary>
         public string DiscovererIdPrefix
         {
@@ -69,7 +74,12 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token that specifies the next page of results to return. To request the first
+        /// page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared
+        /// with other accounts.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -84,7 +94,11 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceArnPrefix.
+        /// Gets and sets the property SourceArnPrefix. 
+        /// <para>
+        /// Specifying this limits the results to only those ARNs that start with the specified
+        /// prefix.
+        /// </para>
         /// </summary>
         public string SourceArnPrefix
         {

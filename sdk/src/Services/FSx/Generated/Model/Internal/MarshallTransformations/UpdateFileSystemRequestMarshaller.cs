@@ -96,6 +96,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetStorageCapacity())
+                {
+                    context.Writer.WritePropertyName("StorageCapacity");
+                    context.Writer.Write(publicRequest.StorageCapacity);
+                }
+
                 if(publicRequest.IsSetWindowsConfiguration())
                 {
                     context.Writer.WritePropertyName("WindowsConfiguration");

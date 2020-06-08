@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,7 +40,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        ///  The idempotency token used to make this request idempotent. 
+        /// The idempotency token used to make this request idempotent. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -58,7 +59,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImagePipelineArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.
+        /// The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.
         /// 
         /// </para>
         /// </summary>

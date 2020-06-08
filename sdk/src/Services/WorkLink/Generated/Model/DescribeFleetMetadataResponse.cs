@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,6 +40,7 @@ namespace Amazon.WorkLink.Model
         private FleetStatus _fleetStatus;
         private DateTime? _lastUpdatedTime;
         private bool? _optimizeForEndUserLocation;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property CompanyCode. 
@@ -168,6 +170,25 @@ namespace Amazon.WorkLink.Model
         internal bool IsSetOptimizeForEndUserLocation()
         {
             return this._optimizeForEndUserLocation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags attached to the resource. A tag is a key-value pair.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

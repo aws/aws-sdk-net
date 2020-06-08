@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -71,11 +72,10 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Amazon Resource Name (<a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
         /// that is assigned to a GameLift alias resource and uniquely identifies it. ARNs are
-        /// unique across all Regions.. In a GameLift alias ARN, the resource ID matches the alias
+        /// unique across all Regions. In a GameLift alias ARN, the resource ID matches the alias
         /// ID value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
         public string AliasArn
         {
             get { return this._aliasArn; }

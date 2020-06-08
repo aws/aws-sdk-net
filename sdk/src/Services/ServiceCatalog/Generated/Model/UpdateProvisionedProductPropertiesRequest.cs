@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -115,8 +116,9 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>OWNER</code> key only accepts user ARNs. The owner is the user that is allowed
-        /// to see, update, terminate, and execute service actions in the provisioned product.
+        /// The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user
+        /// that is allowed to see, update, terminate, and execute service actions in the provisioned
+        /// product.
         /// </para>
         ///  
         /// <para>

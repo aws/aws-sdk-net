@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -51,8 +52,8 @@ namespace Amazon.ServiceDiscovery.Model
     ///  </important> 
     /// <para>
     /// To change the status of a custom health check, submit an <code>UpdateInstanceCustomHealthStatus</code>
-    /// request. Cloud Map doesn't monitor the status of the resource, it just keeps a record
-    /// of the status specified in the most recent <code>UpdateInstanceCustomHealthStatus</code>
+    /// request. AWS Cloud Map doesn't monitor the status of the resource, it just keeps a
+    /// record of the status specified in the most recent <code>UpdateInstanceCustomHealthStatus</code>
     /// request.
     /// </para>
     ///  
@@ -66,7 +67,7 @@ namespace Amazon.ServiceDiscovery.Model
     ///  
     /// <para>
     /// The failure threshold indicates the number of 30-second intervals you want AWS Cloud
-    /// Map to wait between the time that your application sends an <a>UpdateInstanceCustomHealthStatus</a>
+    /// Map to wait between the time that your application sends an <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateInstanceCustomHealthStatus.html">UpdateInstanceCustomHealthStatus</a>
     /// request and the time that AWS Cloud Map stops routing internet traffic to the corresponding
     /// resource.
     /// </para>
@@ -102,10 +103,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// that time to change the status back to healthy, AWS Cloud Map stops routing traffic
     /// to the resource.
     /// </para>
-    ///  </li> </ol> 
-    /// <para>
-    /// Note the following about configuring custom health checks.
-    /// </para>
+    ///  </li> </ol>
     /// </summary>
     public partial class HealthCheckCustomConfig
     {
@@ -114,19 +112,19 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property FailureThreshold. 
         /// <para>
-        /// The number of 30-second intervals that you want Cloud Map to wait after receiving
+        /// The number of 30-second intervals that you want AWS Cloud Map to wait after receiving
         /// an <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health
         /// status of a service instance. For example, suppose you specify a value of <code>2</code>
         /// for <code>FailureTheshold</code>, and then your application sends an <code>UpdateInstanceCustomHealthStatus</code>
-        /// request. Cloud Map waits for approximately 60 seconds (2 x 30) before changing the
-        /// status of the service instance based on that request.
+        /// request. AWS Cloud Map waits for approximately 60 seconds (2 x 30) before changing
+        /// the status of the service instance based on that request.
         /// </para>
         ///  
         /// <para>
         /// Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request
         /// with the same value before <code>FailureThreshold x 30</code> seconds has passed doesn't
-        /// accelerate the change. Cloud Map still waits <code>FailureThreshold x 30</code> seconds
-        /// after the first request to make the change.
+        /// accelerate the change. AWS Cloud Map still waits <code>FailureThreshold x 30</code>
+        /// seconds after the first request to make the change.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

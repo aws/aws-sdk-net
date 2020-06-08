@@ -45,6 +45,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EFSVolumeConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAuthorizationConfig())
+            {
+                context.Writer.WritePropertyName("authorizationConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EFSAuthorizationConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.AuthorizationConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFileSystemId())
             {
                 context.Writer.WritePropertyName("fileSystemId");
@@ -55,6 +66,18 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("rootDirectory");
                 context.Writer.Write(requestObject.RootDirectory);
+            }
+
+            if(requestObject.IsSetTransitEncryption())
+            {
+                context.Writer.WritePropertyName("transitEncryption");
+                context.Writer.Write(requestObject.TransitEncryption);
+            }
+
+            if(requestObject.IsSetTransitEncryptionPort())
+            {
+                context.Writer.WritePropertyName("transitEncryptionPort");
+                context.Writer.Write(requestObject.TransitEncryptionPort);
             }
 
         }

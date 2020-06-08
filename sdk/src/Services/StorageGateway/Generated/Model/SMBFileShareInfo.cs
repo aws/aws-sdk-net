@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -35,6 +36,7 @@ namespace Amazon.StorageGateway.Model
     public partial class SMBFileShareInfo
     {
         private List<string> _adminUserList = new List<string>();
+        private string _auditDestinationARN;
         private string _authentication;
         private string _defaultStorageClass;
         private string _fileShareARN;
@@ -77,6 +79,25 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AuditDestinationARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the storage used for the audit logs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string AuditDestinationARN
+        {
+            get { return this._auditDestinationARN; }
+            set { this._auditDestinationARN = value; }
+        }
+
+        // Check to see if AuditDestinationARN property is set
+        internal bool IsSetAuditDestinationARN()
+        {
+            return this._auditDestinationARN != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Authentication.
         /// </summary>
         [AWSProperty(Min=5, Max=15)]
@@ -101,7 +122,7 @@ namespace Amazon.StorageGateway.Model
         /// Optional.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=20)]
+        [AWSProperty(Min=5, Max=50)]
         public string DefaultStorageClass
         {
             get { return this._defaultStorageClass; }

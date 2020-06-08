@@ -68,6 +68,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCertificate())
+                {
+                    context.Writer.WritePropertyName("Certificate");
+                    context.Writer.Write(publicRequest.Certificate);
+                }
+
                 if(publicRequest.IsSetEndpointDetails())
                 {
                     context.Writer.WritePropertyName("EndpointDetails");
@@ -106,6 +112,17 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("LoggingRole");
                     context.Writer.Write(publicRequest.LoggingRole);
+                }
+
+                if(publicRequest.IsSetProtocols())
+                {
+                    context.Writer.WritePropertyName("Protocols");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestProtocolsListValue in publicRequest.Protocols)
+                    {
+                            context.Writer.Write(publicRequestProtocolsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetServerId())

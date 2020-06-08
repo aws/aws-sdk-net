@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,23 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the GetConfiguration operation.
-    /// Retrieve information about a configuration.
+    /// Receive information about a configuration.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// AWS AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter
+    /// to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code>
+    /// with each call to <code>GetConfiguration</code>, your clients receive the current
+    /// configuration. You are charged each time your clients receive a configuration.
+    /// </para>
+    ///  
+    /// <para>
+    /// To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code>
+    /// value with every call to <code>GetConfiguration</code>. This value must be saved on
+    /// your client. Subsequent calls to <code>GetConfiguration</code> must pass this value
+    /// by using the <code>ClientConfigurationVersion</code> parameter. 
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class GetConfigurationRequest : AmazonAppConfigRequest
     {
@@ -61,7 +78,27 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property ClientConfigurationVersion. 
         /// <para>
-        /// The configuration version returned in the most recent GetConfiguration response.
+        /// The configuration version returned in the most recent <code>GetConfiguration</code>
+        /// response.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// AWS AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter
+        /// to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code>
+        /// with each call to <code>GetConfiguration</code>, your clients receive the current
+        /// configuration. You are charged each time your clients receive a configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code>
+        /// value with every call to <code>GetConfiguration</code>. This value must be saved on
+        /// your client. Subsequent calls to <code>GetConfiguration</code> must pass this value
+        /// by using the <code>ClientConfigurationVersion</code> parameter. 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For more information about working with configurations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving
+        /// the Configuration</a> in the <i>AWS AppConfig User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

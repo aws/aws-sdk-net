@@ -208,6 +208,10 @@ namespace Amazon.ManagedBlockchain
         /// Constant DELETING for MemberStatus
         /// </summary>
         public static readonly MemberStatus DELETING = new MemberStatus("DELETING");
+        /// <summary>
+        /// Constant UPDATING for MemberStatus
+        /// </summary>
+        public static readonly MemberStatus UPDATING = new MemberStatus("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -336,6 +340,10 @@ namespace Amazon.ManagedBlockchain
         /// Constant FAILED for NodeStatus
         /// </summary>
         public static readonly NodeStatus FAILED = new NodeStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATING for NodeStatus
+        /// </summary>
+        public static readonly NodeStatus UPDATING = new NodeStatus("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

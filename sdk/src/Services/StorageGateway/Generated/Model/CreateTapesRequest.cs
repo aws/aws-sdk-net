@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -100,7 +101,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSEncrypted. 
         /// <para>
-        /// True to use Amazon S3 server side encryption with your own AWS KMS key, or false to
+        /// True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to
         /// use a key managed by Amazon S3. Optional.
         /// </para>
         /// </summary>
@@ -119,7 +120,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSKey. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption.
+        /// The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption.
         /// This value can only be set when KMSEncrypted is true. Optional.
         /// </para>
         /// </summary>
@@ -161,7 +162,8 @@ namespace Amazon.StorageGateway.Model
         /// The ID of the pool that you want to add your tape to for archiving. The tape in this
         /// pool is archived in the S3 storage class that is associated with the pool. When you
         /// use your backup application to eject the tape, the tape is archived directly into
-        /// the storage class (Glacier or Deep Archive) that corresponds to the pool.
+        /// the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the
+        /// pool.
         /// </para>
         ///  
         /// <para>
@@ -241,7 +243,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The size must be aligned by gigabyte (1024*1024*1024 byte).
+        /// The size must be aligned by gigabyte (1024*1024*1024 bytes).
         /// </para>
         ///  </note>
         /// </summary>

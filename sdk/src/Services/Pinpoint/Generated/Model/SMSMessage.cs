@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -35,6 +36,7 @@ namespace Amazon.Pinpoint.Model
     {
         private string _body;
         private string _keyword;
+        private string _mediaUrl;
         private MessageType _messageType;
         private string _originationNumber;
         private string _senderId;
@@ -78,12 +80,29 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MediaUrl. 
+        /// <para>
+        /// The URL of an image or video to display in the SMS message.
+        /// </para>
+        /// </summary>
+        public string MediaUrl
+        {
+            get { return this._mediaUrl; }
+            set { this._mediaUrl = value; }
+        }
+
+        // Check to see if MediaUrl property is set
+        internal bool IsSetMediaUrl()
+        {
+            return this._mediaUrl != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MessageType. 
         /// <para>
-        /// The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or
-        /// time-sensitive, such as a one-time password that supports a customer transaction;
-        /// and, PROMOTIONAL, the message is not critical or time-sensitive, such as a marketing
-        /// message.
+        /// The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical
+        /// or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that
+        /// aren't critical or time-sensitive, such as marketing messages).
         /// </para>
         /// </summary>
         public MessageType MessageType

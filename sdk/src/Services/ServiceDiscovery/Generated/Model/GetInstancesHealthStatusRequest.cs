@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -60,7 +61,8 @@ namespace Amazon.ServiceDiscovery.Model
         ///  <note> 
         /// <para>
         /// To get the IDs for the instances that you've registered by using a specified service,
-        /// submit a <a>ListInstances</a> request.
+        /// submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a>
+        /// request.
         /// </para>
         ///  </note>
         /// </summary>

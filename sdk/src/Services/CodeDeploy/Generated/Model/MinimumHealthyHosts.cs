@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -42,20 +43,21 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// HOST_COUNT: The minimum number of healthy instance as an absolute value.
+        ///  <code>HOST_COUNT</code>: The minimum number of healthy instances as an absolute value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FLEET_PERCENT: The minimum number of healthy instance as a percentage of the total
-        /// number of instance in the deployment.
+        ///  <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a percentage
+        /// of the total number of instances in the deployment.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// In an example of nine instance, if a HOST_COUNT of six is specified, deploy to up
+        /// In an example of nine instances, if a HOST_COUNT of six is specified, deploy to up
         /// to three instances at a time. The deployment is successful if six or more instances
         /// are deployed to successfully. Otherwise, the deployment fails. If a FLEET_PERCENT
-        /// of 40 is specified, deploy to up to five instance at a time. The deployment is successful
-        /// if four or more instance are deployed to successfully. Otherwise, the deployment fails.
+        /// of 40 is specified, deploy to up to five instances at a time. The deployment is successful
+        /// if four or more instances are deployed to successfully. Otherwise, the deployment
+        /// fails.
         /// </para>
         ///  <note> 
         /// <para>

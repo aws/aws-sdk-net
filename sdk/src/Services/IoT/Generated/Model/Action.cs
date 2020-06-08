@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -73,7 +74,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property CloudwatchLogs. 
         /// <para>
-        /// Send data to CloudWatch logs.
+        /// Send data to CloudWatch Logs.
         /// </para>
         /// </summary>
         public CloudwatchLogsAction CloudwatchLogs

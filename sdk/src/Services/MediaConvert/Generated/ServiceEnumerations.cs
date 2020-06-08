@@ -1081,9 +1081,17 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly AudioCodec MP3 = new AudioCodec("MP3");
         /// <summary>
+        /// Constant OPUS for AudioCodec
+        /// </summary>
+        public static readonly AudioCodec OPUS = new AudioCodec("OPUS");
+        /// <summary>
         /// Constant PASSTHROUGH for AudioCodec
         /// </summary>
         public static readonly AudioCodec PASSTHROUGH = new AudioCodec("PASSTHROUGH");
+        /// <summary>
+        /// Constant VORBIS for AudioCodec
+        /// </summary>
+        public static readonly AudioCodec VORBIS = new AudioCodec("VORBIS");
         /// <summary>
         /// Constant WAV for AudioCodec
         /// </summary>
@@ -3442,6 +3450,10 @@ namespace Amazon.MediaConvert
         /// Constant RAW for ContainerType
         /// </summary>
         public static readonly ContainerType RAW = new ContainerType("RAW");
+        /// <summary>
+        /// Constant WEBM for ContainerType
+        /// </summary>
+        public static readonly ContainerType WEBM = new ContainerType("WEBM");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -13417,6 +13429,110 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type MxfAfdSignaling.
+    /// </summary>
+    public class MxfAfdSignaling : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COPY_FROM_VIDEO for MxfAfdSignaling
+        /// </summary>
+        public static readonly MxfAfdSignaling COPY_FROM_VIDEO = new MxfAfdSignaling("COPY_FROM_VIDEO");
+        /// <summary>
+        /// Constant NO_COPY for MxfAfdSignaling
+        /// </summary>
+        public static readonly MxfAfdSignaling NO_COPY = new MxfAfdSignaling("NO_COPY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MxfAfdSignaling(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MxfAfdSignaling FindValue(string value)
+        {
+            return FindValue<MxfAfdSignaling>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MxfAfdSignaling(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NoiseFilterPostTemporalSharpening.
+    /// </summary>
+    public class NoiseFilterPostTemporalSharpening : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for NoiseFilterPostTemporalSharpening
+        /// </summary>
+        public static readonly NoiseFilterPostTemporalSharpening AUTO = new NoiseFilterPostTemporalSharpening("AUTO");
+        /// <summary>
+        /// Constant DISABLED for NoiseFilterPostTemporalSharpening
+        /// </summary>
+        public static readonly NoiseFilterPostTemporalSharpening DISABLED = new NoiseFilterPostTemporalSharpening("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for NoiseFilterPostTemporalSharpening
+        /// </summary>
+        public static readonly NoiseFilterPostTemporalSharpening ENABLED = new NoiseFilterPostTemporalSharpening("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NoiseFilterPostTemporalSharpening(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NoiseFilterPostTemporalSharpening FindValue(string value)
+        {
+            return FindValue<NoiseFilterPostTemporalSharpening>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NoiseFilterPostTemporalSharpening(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NoiseReducerFilter.
     /// </summary>
     public class NoiseReducerFilter : ConstantClass
@@ -15134,6 +15250,14 @@ namespace Amazon.MediaConvert
         /// Constant PRORES for VideoCodec
         /// </summary>
         public static readonly VideoCodec PRORES = new VideoCodec("PRORES");
+        /// <summary>
+        /// Constant VP8 for VideoCodec
+        /// </summary>
+        public static readonly VideoCodec VP8 = new VideoCodec("VP8");
+        /// <summary>
+        /// Constant VP9 for VideoCodec
+        /// </summary>
+        public static readonly VideoCodec VP9 = new VideoCodec("VP9");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -15214,6 +15338,498 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VideoTimecodeInsertion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Vp8FramerateControl.
+    /// </summary>
+    public class Vp8FramerateControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INITIALIZE_FROM_SOURCE for Vp8FramerateControl
+        /// </summary>
+        public static readonly Vp8FramerateControl INITIALIZE_FROM_SOURCE = new Vp8FramerateControl("INITIALIZE_FROM_SOURCE");
+        /// <summary>
+        /// Constant SPECIFIED for Vp8FramerateControl
+        /// </summary>
+        public static readonly Vp8FramerateControl SPECIFIED = new Vp8FramerateControl("SPECIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Vp8FramerateControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Vp8FramerateControl FindValue(string value)
+        {
+            return FindValue<Vp8FramerateControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Vp8FramerateControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Vp8FramerateConversionAlgorithm.
+    /// </summary>
+    public class Vp8FramerateConversionAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DUPLICATE_DROP for Vp8FramerateConversionAlgorithm
+        /// </summary>
+        public static readonly Vp8FramerateConversionAlgorithm DUPLICATE_DROP = new Vp8FramerateConversionAlgorithm("DUPLICATE_DROP");
+        /// <summary>
+        /// Constant INTERPOLATE for Vp8FramerateConversionAlgorithm
+        /// </summary>
+        public static readonly Vp8FramerateConversionAlgorithm INTERPOLATE = new Vp8FramerateConversionAlgorithm("INTERPOLATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Vp8FramerateConversionAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Vp8FramerateConversionAlgorithm FindValue(string value)
+        {
+            return FindValue<Vp8FramerateConversionAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Vp8FramerateConversionAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Vp8ParControl.
+    /// </summary>
+    public class Vp8ParControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INITIALIZE_FROM_SOURCE for Vp8ParControl
+        /// </summary>
+        public static readonly Vp8ParControl INITIALIZE_FROM_SOURCE = new Vp8ParControl("INITIALIZE_FROM_SOURCE");
+        /// <summary>
+        /// Constant SPECIFIED for Vp8ParControl
+        /// </summary>
+        public static readonly Vp8ParControl SPECIFIED = new Vp8ParControl("SPECIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Vp8ParControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Vp8ParControl FindValue(string value)
+        {
+            return FindValue<Vp8ParControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Vp8ParControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Vp8QualityTuningLevel.
+    /// </summary>
+    public class Vp8QualityTuningLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MULTI_PASS for Vp8QualityTuningLevel
+        /// </summary>
+        public static readonly Vp8QualityTuningLevel MULTI_PASS = new Vp8QualityTuningLevel("MULTI_PASS");
+        /// <summary>
+        /// Constant MULTI_PASS_HQ for Vp8QualityTuningLevel
+        /// </summary>
+        public static readonly Vp8QualityTuningLevel MULTI_PASS_HQ = new Vp8QualityTuningLevel("MULTI_PASS_HQ");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Vp8QualityTuningLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Vp8QualityTuningLevel FindValue(string value)
+        {
+            return FindValue<Vp8QualityTuningLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Vp8QualityTuningLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Vp8RateControlMode.
+    /// </summary>
+    public class Vp8RateControlMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant VBR for Vp8RateControlMode
+        /// </summary>
+        public static readonly Vp8RateControlMode VBR = new Vp8RateControlMode("VBR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Vp8RateControlMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Vp8RateControlMode FindValue(string value)
+        {
+            return FindValue<Vp8RateControlMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Vp8RateControlMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Vp9FramerateControl.
+    /// </summary>
+    public class Vp9FramerateControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INITIALIZE_FROM_SOURCE for Vp9FramerateControl
+        /// </summary>
+        public static readonly Vp9FramerateControl INITIALIZE_FROM_SOURCE = new Vp9FramerateControl("INITIALIZE_FROM_SOURCE");
+        /// <summary>
+        /// Constant SPECIFIED for Vp9FramerateControl
+        /// </summary>
+        public static readonly Vp9FramerateControl SPECIFIED = new Vp9FramerateControl("SPECIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Vp9FramerateControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Vp9FramerateControl FindValue(string value)
+        {
+            return FindValue<Vp9FramerateControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Vp9FramerateControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Vp9FramerateConversionAlgorithm.
+    /// </summary>
+    public class Vp9FramerateConversionAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DUPLICATE_DROP for Vp9FramerateConversionAlgorithm
+        /// </summary>
+        public static readonly Vp9FramerateConversionAlgorithm DUPLICATE_DROP = new Vp9FramerateConversionAlgorithm("DUPLICATE_DROP");
+        /// <summary>
+        /// Constant INTERPOLATE for Vp9FramerateConversionAlgorithm
+        /// </summary>
+        public static readonly Vp9FramerateConversionAlgorithm INTERPOLATE = new Vp9FramerateConversionAlgorithm("INTERPOLATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Vp9FramerateConversionAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Vp9FramerateConversionAlgorithm FindValue(string value)
+        {
+            return FindValue<Vp9FramerateConversionAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Vp9FramerateConversionAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Vp9ParControl.
+    /// </summary>
+    public class Vp9ParControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INITIALIZE_FROM_SOURCE for Vp9ParControl
+        /// </summary>
+        public static readonly Vp9ParControl INITIALIZE_FROM_SOURCE = new Vp9ParControl("INITIALIZE_FROM_SOURCE");
+        /// <summary>
+        /// Constant SPECIFIED for Vp9ParControl
+        /// </summary>
+        public static readonly Vp9ParControl SPECIFIED = new Vp9ParControl("SPECIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Vp9ParControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Vp9ParControl FindValue(string value)
+        {
+            return FindValue<Vp9ParControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Vp9ParControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Vp9QualityTuningLevel.
+    /// </summary>
+    public class Vp9QualityTuningLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MULTI_PASS for Vp9QualityTuningLevel
+        /// </summary>
+        public static readonly Vp9QualityTuningLevel MULTI_PASS = new Vp9QualityTuningLevel("MULTI_PASS");
+        /// <summary>
+        /// Constant MULTI_PASS_HQ for Vp9QualityTuningLevel
+        /// </summary>
+        public static readonly Vp9QualityTuningLevel MULTI_PASS_HQ = new Vp9QualityTuningLevel("MULTI_PASS_HQ");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Vp9QualityTuningLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Vp9QualityTuningLevel FindValue(string value)
+        {
+            return FindValue<Vp9QualityTuningLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Vp9QualityTuningLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Vp9RateControlMode.
+    /// </summary>
+    public class Vp9RateControlMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant VBR for Vp9RateControlMode
+        /// </summary>
+        public static readonly Vp9RateControlMode VBR = new Vp9RateControlMode("VBR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Vp9RateControlMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Vp9RateControlMode FindValue(string value)
+        {
+            return FindValue<Vp9RateControlMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Vp9RateControlMode(string value)
         {
             return FindValue(value);
         }

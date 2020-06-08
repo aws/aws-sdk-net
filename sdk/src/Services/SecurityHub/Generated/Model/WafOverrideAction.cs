@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Type. 
         /// <para>
         ///  <code>COUNT</code> overrides the action specified by the individual rule within a
-        /// RuleGroup .
+        /// <code>RuleGroup</code> .
         /// </para>
         ///  
         /// <para>

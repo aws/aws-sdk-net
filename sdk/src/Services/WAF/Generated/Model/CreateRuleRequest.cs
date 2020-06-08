@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,12 +30,25 @@ namespace Amazon.WAF.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRule operation.
+    /// <note> 
+    /// <para>
+    /// This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
+    /// WAF Classic</a> in the developer guide.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+    /// WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints
+    /// for regional and global use. 
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Creates a <code>Rule</code>, which contains the <code>IPSet</code> objects, <code>ByteMatchSet</code>
     /// objects, and other predicates that identify the requests that you want to block. If
     /// you add more than one predicate to a <code>Rule</code>, a request must match all of
     /// the specifications to be allowed or blocked. For example, suppose that you add the
     /// following to a <code>Rule</code>:
-    /// 
+    /// </para>
     ///  <ul> <li> 
     /// <para>
     /// An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code> 
@@ -104,7 +118,7 @@ namespace Amazon.WAF.Model
         /// The value returned by the most recent call to <a>GetChangeToken</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ChangeToken
         {
             get { return this._changeToken; }
@@ -127,7 +141,7 @@ namespace Amazon.WAF.Model
         /// after you create the <code>Rule</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string MetricName
         {
             get { return this._metricName; }

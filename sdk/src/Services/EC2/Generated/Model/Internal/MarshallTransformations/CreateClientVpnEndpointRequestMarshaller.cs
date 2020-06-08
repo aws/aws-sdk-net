@@ -70,6 +70,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 request.Parameters.Add("Authentication" + "." + publicRequestlistValueIndex + "." + "ActiveDirectory" + "." + "DirectoryId", StringUtils.FromString(publicRequestlistValue.ActiveDirectory.DirectoryId));
                             }
                         }
+                        if(publicRequestlistValue.IsSetFederatedAuthentication())
+                        {
+                            if(publicRequestlistValue.FederatedAuthentication.IsSetSAMLProviderArn())
+                            {
+                                request.Parameters.Add("Authentication" + "." + publicRequestlistValueIndex + "." + "FederatedAuthentication" + "." + "SAMLProviderArn", StringUtils.FromString(publicRequestlistValue.FederatedAuthentication.SAMLProviderArn));
+                            }
+                        }
                         if(publicRequestlistValue.IsSetMutualAuthentication())
                         {
                             if(publicRequestlistValue.MutualAuthentication.IsSetClientRootCertificateChainArn())

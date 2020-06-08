@@ -11,6 +11,7 @@
 
 using System;
 using System.IO;
+using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -34,11 +35,10 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 		{
 		#>
 
-
         [TestMethod]
-		[TestCategory("UnitTest")]
-		[TestCategory("Query")]
-		[TestCategory("<#=this.Config.TestCategory#>")]
+        [TestCategory("UnitTest")]
+        [TestCategory("<#=this.Config.ServiceModel.Type#>")]
+        [TestCategory("<#=this.Config.TestCategory#>")]
         public void <#=operation.Name#>MarshallTest()
         {
             var operation = service_model.FindOperation("<#=operation.Name#>");
@@ -63,10 +63,36 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             }
 #>
         }
+<#
+            foreach (var exception in operation.Exceptions)
+            {
+#>
 
-		<#
-		}
-		#>
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("<#=this.Config.ServiceModel.Type#>")]
+        [TestCategory("<#=this.Config.TestCategory#>")]
+        public void <#=operation.Name#>_<#=exception.Name#>MarshallTest()
+        {
+            var operation = service_model.FindOperation("<#=operation.Name#>");
 
+            var request = InstantiateClassGenerator.Execute<<#=operation.Name#>Request>();
+            var marshaller = new <#=operation.Name#>RequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("<#=exception.Name#>"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = <#=operation.Name#>ResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+<#
+            }
+        }
+#>
     }
 }

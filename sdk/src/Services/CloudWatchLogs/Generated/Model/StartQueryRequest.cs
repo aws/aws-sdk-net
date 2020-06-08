@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -148,7 +149,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Logs Insights Query Syntax</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=2048)]
+        [AWSProperty(Required=true, Min=0, Max=10000)]
         public string QueryString
         {
             get { return this._queryString; }

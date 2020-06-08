@@ -49,6 +49,30 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         /// <summary>
+        /// Parses JSON text to produce an <see cref="IEnumerable{T}"/> of type <see cref="Document"/>.
+        /// </summary>
+        /// <param name="jsonText"></param>
+        /// <returns>An <see cref="IEnumerable{T}"/> of type <see cref="Document"/></returns>
+        public static IEnumerable<Document> FromJsonArray(string jsonText)
+        {
+            var json = JsonMapper.ToObject(jsonText);
+            if (!json.IsArray)
+                throw new InvalidOperationException("Expected array at JSON root.");
+            
+            var array = new List<Document>();
+            for(int i=0;i<json.Count;i++)
+            {
+                var item = json[i];
+                var entry = ToEntry(item, DynamoDBEntryConversion.V2) as Document;
+                if (entry == null)
+                    throw new InvalidOperationException();
+                array.Add(entry);
+            }
+
+            return array;
+        }
+
+        /// <summary>
         /// Creates JSON text for a given Document
         /// </summary>
         /// <param name="document"></param>
@@ -256,7 +280,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         // Writes a JSON representation of the given DynamoDBEntry
-        private static void WriteJson(DynamoDBEntry entry, JsonWriter writer, DynamoDBEntryConversion conversion)
+        internal static void WriteJson(DynamoDBEntry entry, JsonWriter writer, DynamoDBEntryConversion conversion)
         {
             entry = entry.ToConvertedEntry(conversion);
 

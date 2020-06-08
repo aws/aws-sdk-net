@@ -561,6 +561,14 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
@@ -597,6 +605,14 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
@@ -1562,7 +1578,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB
-        /// cluster as a Read Replica of another DB cluster or Amazon RDS MySQL DB instance. For
+        /// cluster as a read replica of another DB cluster or Amazon RDS MySQL DB instance. For
         /// cross-region replication where the DB cluster identified by <code>ReplicationSourceIdentifier</code>
         /// is encrypted, you must also specify the <code>PreSignedUrl</code> parameter.
         /// </para>
@@ -1659,7 +1675,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB
-        /// cluster as a Read Replica of another DB cluster or Amazon RDS MySQL DB instance. For
+        /// cluster as a read replica of another DB cluster or Amazon RDS MySQL DB instance. For
         /// cross-region replication where the DB cluster identified by <code>ReplicationSourceIdentifier</code>
         /// is encrypted, you must also specify the <code>PreSignedUrl</code> parameter.
         /// </para>
@@ -2244,21 +2260,21 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates a new DB instance that acts as a Read Replica for an existing source DB instance.
-        /// You can create a Read Replica for a DB instance running MySQL, MariaDB, Oracle, or
-        /// PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
+        /// Creates a new DB instance that acts as a read replica for an existing source DB instance.
+        /// You can create a read replica for a DB instance running MySQL, MariaDB, Oracle, PostgreSQL,
+        /// or SQL Server. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
         /// with Read Replicas</a> in the <i>Amazon RDS User Guide</i>. 
         /// 
         ///  
         /// <para>
-        /// Amazon Aurora doesn't support this action. You must call the <code>CreateDBInstance</code>
-        /// action to create a DB instance for an Aurora DB cluster. 
+        /// Amazon Aurora doesn't support this action. Call the <code>CreateDBInstance</code>
+        /// action to create a DB instance for an Aurora DB cluster.
         /// </para>
         ///  
         /// <para>
-        /// All Read Replica DB instances are created with backups disabled. All other DB instance
+        /// All read replica DB instances are created with backups disabled. All other DB instance
         /// attributes (including DB security groups and DB parameter groups) are inherited from
-        /// the source DB instance, except as specified following. 
+        /// the source DB instance, except as specified.
         /// </para>
         ///  <important> 
         /// <para>
@@ -2345,21 +2361,21 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates a new DB instance that acts as a Read Replica for an existing source DB instance.
-        /// You can create a Read Replica for a DB instance running MySQL, MariaDB, Oracle, or
-        /// PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
+        /// Creates a new DB instance that acts as a read replica for an existing source DB instance.
+        /// You can create a read replica for a DB instance running MySQL, MariaDB, Oracle, PostgreSQL,
+        /// or SQL Server. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
         /// with Read Replicas</a> in the <i>Amazon RDS User Guide</i>. 
         /// 
         ///  
         /// <para>
-        /// Amazon Aurora doesn't support this action. You must call the <code>CreateDBInstance</code>
-        /// action to create a DB instance for an Aurora DB cluster. 
+        /// Amazon Aurora doesn't support this action. Call the <code>CreateDBInstance</code>
+        /// action to create a DB instance for an Aurora DB cluster.
         /// </para>
         ///  
         /// <para>
-        /// All Read Replica DB instances are created with backups disabled. All other DB instance
+        /// All read replica DB instances are created with backups disabled. All other DB instance
         /// attributes (including DB security groups and DB parameter groups) are inherited from
-        /// the source DB instance, except as specified following. 
+        /// the source DB instance, except as specified.
         /// </para>
         ///  <important> 
         /// <para>
@@ -3582,7 +3598,7 @@ namespace Amazon.RDS
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The DB cluster is a Read Replica of another Amazon Aurora DB cluster.
+        /// The DB cluster is a read replica of another Amazon Aurora DB cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3591,7 +3607,7 @@ namespace Amazon.RDS
         ///  </li> </ul> 
         /// <para>
         /// To delete a DB instance in this case, first call the <code>PromoteReadReplicaDBCluster</code>
-        /// API action to promote the DB cluster so it's no longer a Read Replica. After the promotion
+        /// API action to promote the DB cluster so it's no longer a read replica. After the promotion
         /// completes, then call the <code>DeleteDBInstance</code> API action to delete the final
         /// instance in the DB cluster.
         /// </para>
@@ -3657,7 +3673,7 @@ namespace Amazon.RDS
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The DB cluster is a Read Replica of another Amazon Aurora DB cluster.
+        /// The DB cluster is a read replica of another Amazon Aurora DB cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3666,7 +3682,7 @@ namespace Amazon.RDS
         ///  </li> </ul> 
         /// <para>
         /// To delete a DB instance in this case, first call the <code>PromoteReadReplicaDBCluster</code>
-        /// API action to promote the DB cluster so it's no longer a Read Replica. After the promotion
+        /// API action to promote the DB cluster so it's no longer a read replica. After the promotion
         /// completes, then call the <code>DeleteDBInstance</code> API action to delete the final
         /// instance in the DB cluster.
         /// </para>
@@ -7044,7 +7060,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Returns a list of the source AWS Regions where the current AWS Region can create a
-        /// Read Replica or copy a DB snapshot from. This API action supports pagination.
+        /// read replica or copy a DB snapshot from. This API action supports pagination.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSourceRegions service method.</param>
         /// 
@@ -7062,7 +7078,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Returns a list of the source AWS Regions where the current AWS Region can create a
-        /// Read Replica or copy a DB snapshot from. This API action supports pagination.
+        /// read replica or copy a DB snapshot from. This API action supports pagination.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSourceRegions service method.</param>
         /// <param name="cancellationToken">
@@ -7375,6 +7391,14 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
@@ -7409,6 +7433,14 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
@@ -8577,8 +8609,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new
-        /// engine version. 
+        /// Updates a manual DB snapshot with a new engine version. The snapshot can be encrypted
+        /// or unencrypted, but not shared or public. 
         /// 
         ///  
         /// <para>
@@ -8603,8 +8635,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new
-        /// engine version. 
+        /// Updates a manual DB snapshot with a new engine version. The snapshot can be encrypted
+        /// or unencrypted, but not shared or public. 
         /// 
         ///  
         /// <para>
@@ -9037,16 +9069,16 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Promotes a Read Replica DB instance to a standalone DB instance.
+        /// Promotes a read replica DB instance to a standalone DB instance.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
         /// Backup duration is a function of the amount of changes to the database since the previous
-        /// backup. If you plan to promote a Read Replica to a standalone instance, we recommend
+        /// backup. If you plan to promote a read replica to a standalone instance, we recommend
         /// that you enable backups and complete at least one backup prior to promotion. In addition,
-        /// a Read Replica cannot be promoted to a standalone instance when it is in the <code>backing-up</code>
-        /// status. If you have enabled backups on your Read Replica, configure the automated
-        /// backup window so that daily backups do not interfere with Read Replica promotion.
+        /// a read replica cannot be promoted to a standalone instance when it is in the <code>backing-up</code>
+        /// status. If you have enabled backups on your read replica, configure the automated
+        /// backup window so that daily backups do not interfere with read replica promotion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9075,16 +9107,16 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Promotes a Read Replica DB instance to a standalone DB instance.
+        /// Promotes a read replica DB instance to a standalone DB instance.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
         /// Backup duration is a function of the amount of changes to the database since the previous
-        /// backup. If you plan to promote a Read Replica to a standalone instance, we recommend
+        /// backup. If you plan to promote a read replica to a standalone instance, we recommend
         /// that you enable backups and complete at least one backup prior to promotion. In addition,
-        /// a Read Replica cannot be promoted to a standalone instance when it is in the <code>backing-up</code>
-        /// status. If you have enabled backups on your Read Replica, configure the automated
-        /// backup window so that daily backups do not interfere with Read Replica promotion.
+        /// a read replica cannot be promoted to a standalone instance when it is in the <code>backing-up</code>
+        /// status. If you have enabled backups on your read replica, configure the automated
+        /// backup window so that daily backups do not interfere with read replica promotion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9120,7 +9152,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Promotes a Read Replica DB cluster to a standalone DB cluster.
+        /// Promotes a read replica DB cluster to a standalone DB cluster.
         /// 
         ///  <note> 
         /// <para>
@@ -9149,7 +9181,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Promotes a Read Replica DB cluster to a standalone DB cluster.
+        /// Promotes a read replica DB cluster to a standalone DB cluster.
         /// 
         ///  <note> 
         /// <para>
@@ -9721,6 +9753,14 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
@@ -9755,6 +9795,14 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
@@ -9955,6 +10003,19 @@ namespace Amazon.RDS
         /// 
         ///  <note> 
         /// <para>
+        /// This action only restores the DB cluster, not the DB instances for that DB cluster.
+        /// You must invoke the <code>CreateDBInstance</code> action to create DB instances for
+        /// the restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>.
+        /// You can create DB instances only after the <code>RestoreDBClusterFromS3</code> action
+        /// has completed and the DB cluster is available.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// </para>
+        ///  <note> 
+        /// <para>
         /// This action only applies to Aurora DB clusters.
         /// </para>
         ///  </note>
@@ -10031,6 +10092,19 @@ namespace Amazon.RDS
         /// Migrating Data to an Amazon Aurora MySQL DB Cluster</a> in the <i>Amazon Aurora User
         /// Guide</i>.
         /// 
+        ///  <note> 
+        /// <para>
+        /// This action only restores the DB cluster, not the DB instances for that DB cluster.
+        /// You must invoke the <code>CreateDBInstance</code> action to create DB instances for
+        /// the restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>.
+        /// You can create DB instances only after the <code>RestoreDBClusterFromS3</code> action
+        /// has completed and the DB cluster is available.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// </para>
         ///  <note> 
         /// <para>
         /// This action only applies to Aurora DB clusters.
@@ -10110,21 +10184,24 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates a new DB cluster from a DB snapshot or DB cluster snapshot.
+        /// Creates a new DB cluster from a DB snapshot or DB cluster snapshot. This action only
+        /// applies to Aurora DB clusters.
         /// 
         ///  
         /// <para>
-        /// If a DB snapshot is specified, the target DB cluster is created from the source DB
-        /// snapshot with a default configuration and default security group.
-        /// </para>
-        ///  
-        /// <para>
-        /// If a DB cluster snapshot is specified, the target DB cluster is created from the source
-        /// DB cluster restore point with the same configuration as the original source DB cluster.
+        /// The target DB cluster is created from the source snapshot with a default configuration.
         /// If you don't specify a security group, the new DB cluster is associated with the default
         /// security group.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This action only restores the DB cluster, not the DB instances for that DB cluster.
+        /// You must invoke the <code>CreateDBInstance</code> action to create DB instances for
+        /// the restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>.
+        /// You can create DB instances only after the <code>RestoreDBClusterFromSnapshot</code>
+        /// action has completed and the DB cluster is available.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
         /// What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
@@ -10155,9 +10232,6 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
-        /// </exception>
-        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
-        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
@@ -10200,10 +10274,6 @@ namespace Amazon.RDS
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
         /// </exception>
-        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
-        /// The request would result in the user exceeding the allowed amount of storage available
-        /// across all DB instances.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">REST API Reference for RestoreDBClusterFromSnapshot Operation</seealso>
         public virtual RestoreDBClusterFromSnapshotResponse RestoreDBClusterFromSnapshot(RestoreDBClusterFromSnapshotRequest request)
         {
@@ -10216,21 +10286,24 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates a new DB cluster from a DB snapshot or DB cluster snapshot.
+        /// Creates a new DB cluster from a DB snapshot or DB cluster snapshot. This action only
+        /// applies to Aurora DB clusters.
         /// 
         ///  
         /// <para>
-        /// If a DB snapshot is specified, the target DB cluster is created from the source DB
-        /// snapshot with a default configuration and default security group.
-        /// </para>
-        ///  
-        /// <para>
-        /// If a DB cluster snapshot is specified, the target DB cluster is created from the source
-        /// DB cluster restore point with the same configuration as the original source DB cluster.
+        /// The target DB cluster is created from the source snapshot with a default configuration.
         /// If you don't specify a security group, the new DB cluster is associated with the default
         /// security group.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This action only restores the DB cluster, not the DB instances for that DB cluster.
+        /// You must invoke the <code>CreateDBInstance</code> action to create DB instances for
+        /// the restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>.
+        /// You can create DB instances only after the <code>RestoreDBClusterFromSnapshot</code>
+        /// action has completed and the DB cluster is available.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
         /// What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
@@ -10268,9 +10341,6 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
-        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
-        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
-        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
         /// <code>Domain</code> doesn't refer to an existing Active Directory domain.
         /// </exception>
@@ -10304,10 +10374,6 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
-        /// The request would result in the user exceeding the allowed amount of storage available
-        /// across all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available

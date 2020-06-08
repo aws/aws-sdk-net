@@ -54,6 +54,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("ebsOptimizedInfo", targetDepth))
+                    {
+                        var unmarshaller = EbsOptimizedInfoUnmarshaller.Instance;
+                        unmarshalledObject.EbsOptimizedInfo = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ebsOptimizedSupport", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

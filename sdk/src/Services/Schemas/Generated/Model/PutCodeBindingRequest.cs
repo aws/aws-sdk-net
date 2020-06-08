@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,7 +40,10 @@ namespace Amazon.Schemas.Model
         private string _schemaVersion;
 
         /// <summary>
-        /// Gets and sets the property Language.
+        /// Gets and sets the property Language. 
+        /// <para>
+        /// The language of the code binding.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Language
@@ -55,7 +59,10 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RegistryName.
+        /// Gets and sets the property RegistryName. 
+        /// <para>
+        /// The name of the registry.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RegistryName
@@ -71,7 +78,10 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SchemaName.
+        /// Gets and sets the property SchemaName. 
+        /// <para>
+        /// The name of the schema.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SchemaName
@@ -87,7 +97,10 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SchemaVersion.
+        /// Gets and sets the property SchemaVersion. 
+        /// <para>
+        /// Specifying this limits the results to only this schema version.
+        /// </para>
         /// </summary>
         public string SchemaVersion
         {

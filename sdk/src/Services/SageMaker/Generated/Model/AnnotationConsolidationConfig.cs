@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -46,12 +47,12 @@ namespace Amazon.SageMaker.Model
         /// classification task types, Amazon SageMaker Ground Truth provides the following Lambda
         /// functions:
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <i>Bounding box</i> - Finds the most similar boxes from different workers based on
+        ///  <b>Bounding box</b> - Finds the most similar boxes from different workers based on
         /// the Jaccard index of the boxes.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
         ///  <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code> 
         /// </para>
@@ -103,12 +104,12 @@ namespace Amazon.SageMaker.Model
         /// <para>
         ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code> 
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> 
         /// <para>
-        ///  <i>Image classification</i> - Uses a variant of the Expectation Maximization approach
+        ///  <b>Image classification</b> - Uses a variant of the Expectation Maximization approach
         /// to estimate the true class of an image based on annotations from individual workers.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
         ///  <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code> 
         /// </para>
@@ -163,12 +164,78 @@ namespace Amazon.SageMaker.Model
         ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
         /// 
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> 
         /// <para>
-        ///  <i>Semantic segmentation</i> - Treats each pixel in an image as a multi-class classification
-        /// and treats pixel annotations from workers as "votes" for the correct label.
+        ///  <b>Multi-label image classification</b> - Uses a variant of the Expectation Maximization
+        /// approach to estimate the true classes of an image based on annotations from individual
+        /// workers.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClassMultiLabel</code>
+        /// 
         /// </para>
         ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-ImageMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-ImageMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-ImageMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-ImageMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-ImageMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-ImageMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Semantic segmentation</b> - Treats each pixel in an image as a multi-class classification
+        /// and treats pixel annotations from workers as "votes" for the correct label.
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
         /// 
@@ -228,12 +295,12 @@ namespace Amazon.SageMaker.Model
         ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
         /// 
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> 
         /// <para>
-        ///  <i>Text classification</i> - Uses a variant of the Expectation Maximization approach
+        ///  <b>Text classification</b> - Uses a variant of the Expectation Maximization approach
         /// to estimate the true class of text based on annotations from individual workers.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
         ///  <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code> 
         /// </para>
@@ -287,12 +354,78 @@ namespace Amazon.SageMaker.Model
         ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
         /// 
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> 
         /// <para>
-        ///  <i>Named entity recognition</i> - Groups similar selections and calculates aggregate
-        /// boundaries, resolving to most-assigned label.
+        ///  <b>Multi-label text classification</b> - Uses a variant of the Expectation Maximization
+        /// approach to estimate the true classes of text based on annotations from individual
+        /// workers.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClassMultiLabel</code>
+        /// 
         /// </para>
         ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-TextMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-TextMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-TextMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-TextMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-TextMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-TextMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClassMultiLabel</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Named entity recognition</b> - Groups similar selections and calculates aggregate
+        /// boundaries, resolving to most-assigned label.
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
         /// 
@@ -352,13 +485,13 @@ namespace Amazon.SageMaker.Model
         ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
         /// 
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> 
         /// <para>
-        ///  <i>Bounding box verification</i> - Uses a variant of the Expectation Maximization
+        ///  <b>Bounding box verification</b> - Uses a variant of the Expectation Maximization
         /// approach to estimate the true class of verification judgement for bounding box labels
         /// based on annotations from individual workers.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
         ///  <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
         /// 
@@ -418,13 +551,13 @@ namespace Amazon.SageMaker.Model
         ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
         /// 
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> 
         /// <para>
-        ///  <i>Semantic segmentation verification</i> - Uses a variant of the Expectation Maximization
+        ///  <b>Semantic segmentation verification</b> - Uses a variant of the Expectation Maximization
         /// approach to estimate the true class of verification judgment for semantic segmentation
         /// labels based on annotations from individual workers.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
         ///  <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
         /// 
@@ -484,12 +617,12 @@ namespace Amazon.SageMaker.Model
         ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
         /// 
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> 
         /// <para>
-        ///  <i>Bounding box adjustment</i> - Finds the most similar boxes from different workers
+        ///  <b>Bounding box adjustment</b> - Finds the most similar boxes from different workers
         /// based on the Jaccard index of the adjusted annotations.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
         ///  <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentBoundingBox</code>
         /// 
@@ -549,13 +682,13 @@ namespace Amazon.SageMaker.Model
         ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
         /// 
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> 
         /// <para>
-        ///  <i>Semantic segmentation adjustment</i> - Treats each pixel in an image as a multi-class
+        ///  <b>Semantic segmentation adjustment</b> - Treats each pixel in an image as a multi-class
         /// classification and treats pixel adjusted annotations from workers as "votes" for the
         /// correct label.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
         ///  <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
         /// 

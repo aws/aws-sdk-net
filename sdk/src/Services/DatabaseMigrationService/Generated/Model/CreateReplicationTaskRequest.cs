@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -44,6 +45,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _tableMappings;
         private List<Tag> _tags = new List<Tag>();
         private string _targetEndpointArn;
+        private string _taskData;
 
         /// <summary>
         /// Gets and sets the property CdcStartPosition. 
@@ -219,8 +221,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationTaskSettings. 
         /// <para>
-        /// Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-        /// Settings</a> in the <i>AWS Database Migration User Guide.</i> 
+        /// Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+        /// Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database
+        /// Migration User Guide.</i> 
         /// </para>
         /// </summary>
         public string ReplicationTaskSettings
@@ -257,8 +260,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property TableMappings. 
         /// <para>
-        /// The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-        /// Mapping</a> in the <i>AWS Database Migration User Guide.</i> 
+        /// The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
+        /// Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -309,6 +313,27 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetTargetEndpointArn()
         {
             return this._targetEndpointArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskData. 
+        /// <para>
+        /// Supplemental information that the task requires to migrate the data for certain source
+        /// and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+        /// Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+        /// 
+        /// </para>
+        /// </summary>
+        public string TaskData
+        {
+            get { return this._taskData; }
+            set { this._taskData = value; }
+        }
+
+        // Check to see if TaskData property is set
+        internal bool IsSetTaskData()
+        {
+            return this._taskData != null;
         }
 
     }

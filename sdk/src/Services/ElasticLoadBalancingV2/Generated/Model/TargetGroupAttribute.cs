@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -66,8 +67,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following attributes are supported by Application Load Balancers if the target
-        /// is not a Lambda function:
+        /// The following attributes are supported only if the load balancer is an Application
+        /// Load Balancer and the target is an instance or an IP address:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -78,8 +79,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>slow_start.duration_seconds</code> - The time period, in seconds, during which
-        /// a newly registered target receives a linearly increasing share of the traffic to the
-        /// target group. After this time period ends, the target receives its full share of traffic.
+        /// a newly registered target receives an increasing share of the traffic to the target
+        /// group. After this time period ends, the target receives its full share of traffic.
         /// The range is 30-900 seconds (15 minutes). Slow start mode is disabled by default.
         /// </para>
         ///  </li> <li> 
@@ -91,13 +92,14 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following attribute is supported only if the target is a Lambda function.
+        /// The following attribute is supported only if the load balancer is an Application Load
+        /// Balancer and the target is a Lambda function:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and
-        /// response headers exchanged between the load balancer and the Lambda function include
-        /// arrays of values or strings. The value is <code>true</code> or <code>false</code>.
+        /// response headers that are exchanged between the load balancer and the Lambda function
+        /// include arrays of values or strings. The value is <code>true</code> or <code>false</code>.
         /// The default is <code>false</code>. If the value is <code>false</code> and the request
         /// contains a duplicate header field name or query parameter key, the load balancer uses
         /// the last value sent by the client.

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,8 @@ namespace Amazon.FraudDetector.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDetectorVersion operation.
-    /// Deletes the detector version.
+    /// Deletes the detector version. You cannot delete detector versions that are in <code>ACTIVE</code>
+    /// status.
     /// </summary>
     public partial class DeleteDetectorVersionRequest : AmazonFraudDetectorRequest
     {

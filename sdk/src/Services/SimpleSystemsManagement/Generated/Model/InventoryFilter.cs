@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -60,6 +61,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The type of filter.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>Exists</code> filter must be used with aggregators. For more information,
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
+        /// inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public InventoryQueryOperatorType Type
         {

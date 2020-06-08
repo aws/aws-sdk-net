@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,12 +30,7 @@ namespace Amazon.Detective.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMembers operation.
-    /// Amazon Detective is currently in preview.
-    /// 
-    ///  
-    /// <para>
     /// Returns the membership details for specified member accounts for a behavior graph.
-    /// </para>
     /// </summary>
     public partial class GetMembersRequest : AmazonDetectiveRequest
     {

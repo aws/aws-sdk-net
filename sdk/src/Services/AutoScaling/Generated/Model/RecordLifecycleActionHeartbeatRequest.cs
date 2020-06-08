@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -30,7 +31,8 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the RecordLifecycleActionHeartbeat operation.
     /// Records a heartbeat for the lifecycle action associated with the specified token or
-    /// instance. This extends the timeout by the length of time defined using <a>PutLifecycleHook</a>.
+    /// instance. This extends the timeout by the length of time defined using the <a>PutLifecycleHook</a>
+    /// API call.
     /// 
     ///  
     /// <para>

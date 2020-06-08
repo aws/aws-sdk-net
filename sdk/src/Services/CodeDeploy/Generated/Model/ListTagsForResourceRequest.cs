@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,8 +30,8 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Returns a list of tags for the resource identified by a specified ARN. Tags are used
-    /// to organize and categorize your CodeDeploy resources.
+    /// Returns a list of tags for the resource identified by a specified Amazon Resource
+    /// Name (ARN). Tags are used to organize and categorize your CodeDeploy resources.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonCodeDeployRequest
     {

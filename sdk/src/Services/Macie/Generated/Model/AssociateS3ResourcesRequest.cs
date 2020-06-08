@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,10 +30,11 @@ namespace Amazon.Macie.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateS3Resources operation.
-    /// Associates specified S3 resources with Amazon Macie for monitoring and data classification.
-    /// If memberAccountId isn't specified, the action associates specified S3 resources with
-    /// Macie for the current master account. If memberAccountId is specified, the action
-    /// associates specified S3 resources with Macie for the specified member account.
+    /// Associates specified S3 resources with Amazon Macie Classic for monitoring and data
+    /// classification. If memberAccountId isn't specified, the action associates specified
+    /// S3 resources with Macie Classic for the current master account. If memberAccountId
+    /// is specified, the action associates specified S3 resources with Macie Classic for
+    /// the specified member account.
     /// </summary>
     public partial class AssociateS3ResourcesRequest : AmazonMacieRequest
     {
@@ -42,8 +44,8 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property MemberAccountId. 
         /// <para>
-        /// The ID of the Amazon Macie member account whose resources you want to associate with
-        /// Macie. 
+        /// The ID of the Amazon Macie Classic member account whose resources you want to associate
+        /// with Macie Classic. 
         /// </para>
         /// </summary>
         public string MemberAccountId
@@ -61,8 +63,8 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property S3Resources. 
         /// <para>
-        /// The S3 resources that you want to associate with Amazon Macie for monitoring and data
-        /// classification. 
+        /// The S3 resources that you want to associate with Amazon Macie Classic for monitoring
+        /// and data classification. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

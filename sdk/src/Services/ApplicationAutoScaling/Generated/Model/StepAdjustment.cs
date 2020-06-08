@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
-    /// Represents a step adjustment for a <a>StepScalingPolicyConfiguration</a>. Describes
-    /// an adjustment based on the difference between the value of the aggregated CloudWatch
-    /// metric and the breach threshold that you've defined for the alarm. 
+    /// Represents a step adjustment for a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>.
+    /// Describes an adjustment based on the difference between the value of the aggregated
+    /// CloudWatch metric and the breach threshold that you've defined for the alarm. 
     /// 
     ///  
     /// <para>
@@ -129,8 +130,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property ScalingAdjustment. 
         /// <para>
         /// The amount by which to scale, based on the specified adjustment type. A positive value
-        /// adds to the current scalable dimension while a negative number removes from the current
-        /// scalable dimension.
+        /// adds to the current capacity while a negative number removes from the current capacity.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -217,6 +217,10 @@ namespace Amazon.CostExplorer
         /// </summary>
         public static readonly Dimension LINKED_ACCOUNT = new Dimension("LINKED_ACCOUNT");
         /// <summary>
+        /// Constant LINKED_ACCOUNT_NAME for Dimension
+        /// </summary>
+        public static readonly Dimension LINKED_ACCOUNT_NAME = new Dimension("LINKED_ACCOUNT_NAME");
+        /// <summary>
         /// Constant OPERATING_SYSTEM for Dimension
         /// </summary>
         public static readonly Dimension OPERATING_SYSTEM = new Dimension("OPERATING_SYSTEM");
@@ -272,6 +276,10 @@ namespace Amazon.CostExplorer
         /// Constant SERVICE for Dimension
         /// </summary>
         public static readonly Dimension SERVICE = new Dimension("SERVICE");
+        /// <summary>
+        /// Constant SERVICE_CODE for Dimension
+        /// </summary>
+        public static readonly Dimension SERVICE_CODE = new Dimension("SERVICE_CODE");
         /// <summary>
         /// Constant SUBSCRIPTION_ID for Dimension
         /// </summary>
@@ -487,6 +495,72 @@ namespace Amazon.CostExplorer
 
 
     /// <summary>
+    /// Constants used for properties of type MatchOption.
+    /// </summary>
+    public class MatchOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CASE_INSENSITIVE for MatchOption
+        /// </summary>
+        public static readonly MatchOption CASE_INSENSITIVE = new MatchOption("CASE_INSENSITIVE");
+        /// <summary>
+        /// Constant CASE_SENSITIVE for MatchOption
+        /// </summary>
+        public static readonly MatchOption CASE_SENSITIVE = new MatchOption("CASE_SENSITIVE");
+        /// <summary>
+        /// Constant CONTAINS for MatchOption
+        /// </summary>
+        public static readonly MatchOption CONTAINS = new MatchOption("CONTAINS");
+        /// <summary>
+        /// Constant ENDS_WITH for MatchOption
+        /// </summary>
+        public static readonly MatchOption ENDS_WITH = new MatchOption("ENDS_WITH");
+        /// <summary>
+        /// Constant EQUALS for MatchOption
+        /// </summary>
+        public static readonly MatchOption EQUALS = new MatchOption("EQUALS");
+        /// <summary>
+        /// Constant STARTS_WITH for MatchOption
+        /// </summary>
+        public static readonly MatchOption STARTS_WITH = new MatchOption("STARTS_WITH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MatchOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MatchOption FindValue(string value)
+        {
+            return FindValue<MatchOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MatchOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Metric.
     /// </summary>
     public class Metric : ConstantClass
@@ -666,6 +740,56 @@ namespace Amazon.CostExplorer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PaymentOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecommendationTarget.
+    /// </summary>
+    public class RecommendationTarget : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CROSS_INSTANCE_FAMILY for RecommendationTarget
+        /// </summary>
+        public static readonly RecommendationTarget CROSS_INSTANCE_FAMILY = new RecommendationTarget("CROSS_INSTANCE_FAMILY");
+        /// <summary>
+        /// Constant SAME_INSTANCE_FAMILY for RecommendationTarget
+        /// </summary>
+        public static readonly RecommendationTarget SAME_INSTANCE_FAMILY = new RecommendationTarget("SAME_INSTANCE_FAMILY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecommendationTarget(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendationTarget FindValue(string value)
+        {
+            return FindValue<RecommendationTarget>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendationTarget(string value)
         {
             return FindValue(value);
         }

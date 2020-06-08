@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -36,9 +37,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// <para>
     /// This is an asynchronous call. If all the required information is provided, this operation
     /// initiates an export task and responds with the ID of the task. After the task has
-    /// started, you can use <a>DescribeExportTasks</a> to get the status of the export task.
-    /// Each account can only have one active (<code>RUNNING</code> or <code>PENDING</code>)
-    /// export task at a time. To cancel an export task, use <a>CancelExportTask</a>.
+    /// started, you can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeExportTasks.html">DescribeExportTasks</a>
+    /// to get the status of the export task. Each account can only have one active (<code>RUNNING</code>
+    /// or <code>PENDING</code>) export task at a time. To cancel an export task, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html">CancelExportTask</a>.
     /// </para>
     ///  
     /// <para>

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,9 +30,9 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the Search operation.
-    /// Finds Amazon SageMaker resources that match a search query. Matching resource objects
-    /// are returned as a list of <code>SearchResult</code> objects in the response. You can
-    /// sort the search results by any resource property in a ascending or descending order.
+    /// Finds Amazon SageMaker resources that match a search query. Matching resources are
+    /// returned as a list of <code>SearchRecord</code> objects in the response. You can sort
+    /// the search results by any resource property in a ascending or descending order.
     /// 
     ///  
     /// <para>
@@ -50,7 +51,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a <code>SearchResponse</code>.
+        /// The maximum number of results to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -69,10 +70,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If more than <code>MaxResults</code> resource objects match the specified <code>SearchExpression</code>,
-        /// the <code>SearchResponse</code> includes a <code>NextToken</code>. The <code>NextToken</code>
-        /// can be passed to the next <code>SearchRequest</code> to continue retrieving results
-        /// for the specified <code>SearchExpression</code> and <code>Sort</code> parameters.
+        /// If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>,
+        /// the response includes a <code>NextToken</code>. The <code>NextToken</code> can be
+        /// passed to the next <code>SearchRequest</code> to continue retrieving results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -110,9 +110,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SearchExpression. 
         /// <para>
-        /// A Boolean conditional statement. Resource objects must satisfy this condition to be
-        /// included in search results. You must provide at least one subexpression, filter, or
-        /// nested filter. The maximum number of recursive <code>SubExpressions</code>, <code>NestedFilters</code>,
+        /// A Boolean conditional statement. Resources must satisfy this condition to be included
+        /// in search results. You must provide at least one subexpression, filter, or nested
+        /// filter. The maximum number of recursive <code>SubExpressions</code>, <code>NestedFilters</code>,
         /// and <code>Filters</code> that can be included in a <code>SearchExpression</code> object
         /// is 50.
         /// </para>

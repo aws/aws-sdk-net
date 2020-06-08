@@ -92,6 +92,14 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool? IgnoreNullValues { get; set; }
 
         /// <summary>
+        /// Property that directs DynamoDBContext to enable empty string values
+        /// on attributes during a Save operation.
+        /// If the property is false (or not set), empty string values will be
+        /// interpreted as null values.
+        /// </summary>
+        public bool? IsEmptyStringValueEnabled { get; set; }
+
+        /// <summary>
         /// Conversion specification which controls how conversion between
         /// .NET and DynamoDB types happens.
         /// </summary>
@@ -274,7 +282,8 @@ namespace Amazon.DynamoDBv2.DataModel
             BackwardQuery = null,
             IndexName = null,
             ConditionalOperator = ConditionalOperatorValues.And,
-            Conversion = null
+            Conversion = null,
+            IsEmptyStringValueEnabled = null
         };
         private static DynamoDBContextConfig _emptyContextConfig = new DynamoDBContextConfig
         {
@@ -282,7 +291,8 @@ namespace Amazon.DynamoDBv2.DataModel
             SkipVersionCheck = null,
             TableNamePrefix = null,
             IgnoreNullValues = null,
-            Conversion = null
+            Conversion = null,
+            IsEmptyStringValueEnabled = null
         };
 
         public DynamoDBFlatConfig(DynamoDBOperationConfig operationConfig, DynamoDBContextConfig contextConfig)
@@ -295,6 +305,7 @@ namespace Amazon.DynamoDBv2.DataModel
             bool consistentRead = operationConfig.ConsistentRead ?? contextConfig.ConsistentRead ?? false;
             bool skipVersionCheck = operationConfig.SkipVersionCheck ?? contextConfig.SkipVersionCheck ?? false;
             bool ignoreNullValues = operationConfig.IgnoreNullValues ?? contextConfig.IgnoreNullValues ?? false;
+            bool isEmptyStringValueEnabled = operationConfig.IsEmptyStringValueEnabled ?? contextConfig.IsEmptyStringValueEnabled ?? false;
             string overrideTableName =
                 !string.IsNullOrEmpty(operationConfig.OverrideTableName) ? operationConfig.OverrideTableName : string.Empty;
             string tableNamePrefix =
@@ -310,6 +321,7 @@ namespace Amazon.DynamoDBv2.DataModel
             ConsistentRead = consistentRead;
             SkipVersionCheck = skipVersionCheck;
             IgnoreNullValues = ignoreNullValues;
+            IsEmptyStringValueEnabled = isEmptyStringValueEnabled;
             OverrideTableName = overrideTableName;
             TableNamePrefix = tableNamePrefix;
             BackwardQuery = backwardQuery;
@@ -349,6 +361,14 @@ namespace Amazon.DynamoDBv2.DataModel
         /// interpreted as directives to delete the specific attribute.
         /// </summary>
         public bool? IgnoreNullValues { get; set; }
+
+        /// <summary>
+        /// Property that directs DynamoDBContext to enable empty string values
+        /// on attributes during a Save operation.
+        /// If the property is false (or not set), empty string values will be
+        /// interpreted as null values.
+        /// </summary>
+        public bool IsEmptyStringValueEnabled { get; set; }
 
         /// <summary>
         /// Property that indicates the table to save an object to overriding the DynamoDBTable attribute 

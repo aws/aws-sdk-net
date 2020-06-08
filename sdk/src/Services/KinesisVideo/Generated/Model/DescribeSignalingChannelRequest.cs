@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -30,7 +31,8 @@ namespace Amazon.KinesisVideo.Model
     /// <summary>
     /// Container for the parameters to the DescribeSignalingChannel operation.
     /// Returns the most current information about the signaling channel. You must specify
-    /// either the name or the ARN of the channel that you want to describe.
+    /// either the name or the Amazon Resource Name (ARN) of the channel that you want to
+    /// describe.
     /// </summary>
     public partial class DescribeSignalingChannelRequest : AmazonKinesisVideoRequest
     {

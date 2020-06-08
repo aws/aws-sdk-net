@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -40,10 +41,15 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property CampaignHook. 
         /// <para>
-        /// The settings for the AWS Lambda function to use by default as a code hook for campaigns
-        /// in the application. To override these settings for a specific campaign, use the <link
-        ///  linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define
-        /// custom Lambda function settings for the campaign.
+        /// The settings for the AWS Lambda function to invoke by default as a code hook for campaigns
+        /// in the application. You can use this hook to customize segments that are used by campaigns
+        /// in the application.
+        /// </para>
+        ///  
+        /// <para>
+        /// To override these settings and define custom settings for a specific campaign, use
+        /// the CampaignHook object of the <link  linkend="apps-application-id-campaigns-campaign-id">Campaign</link>
+        /// resource.
         /// </para>
         /// </summary>
         public CampaignHook CampaignHook
@@ -79,9 +85,11 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Limits. 
         /// <para>
-        /// The default sending limits for campaigns in the application. To override these limits
-        /// for a specific campaign, use the <link  linkend="apps-application-id-campaigns-campaign-id">Campaign</link>
-        /// resource to define custom limits for the campaign.
+        /// The default sending limits for campaigns and journeys in the application. To override
+        /// these limits and define custom limits for a specific campaign or journey, use the
+        /// <link  linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource
+        /// or the <link  linkend="apps-application-id-journeys-journey-id">Journey</link> resource,
+        /// respectively.
         /// </para>
         /// </summary>
         public CampaignLimits Limits

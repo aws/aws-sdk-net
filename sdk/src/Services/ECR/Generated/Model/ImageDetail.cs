@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -118,6 +119,11 @@ namespace Amazon.ECR.Model
         /// Gets and sets the property ImageSizeInBytes. 
         /// <para>
         /// The size, in bytes, of the image in the repository.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the image is a manifest list, this will be the max size of all manifests in the
+        /// list.
         /// </para>
         ///  <note> 
         /// <para>

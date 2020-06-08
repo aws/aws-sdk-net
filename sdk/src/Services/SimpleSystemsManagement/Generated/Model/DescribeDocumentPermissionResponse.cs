@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -58,7 +59,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AccountSharingInfoList. 
         /// <para>
-        /// A list of of AWS accounts where the current document is shared and the version shared
+        /// A list of AWS accounts where the current document is shared and the version shared
         /// with each account.
         /// </para>
         /// </summary>

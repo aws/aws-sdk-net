@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the network interface of the Ec2 instance.
+    /// Contains information about the elastic network interface of the EC2 instance.
     /// </summary>
     public partial class NetworkInterface
     {
@@ -46,7 +47,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Ipv6Addresses. 
         /// <para>
-        /// A list of EC2 instance IPv6 address information.
+        /// A list of IPv6 addresses for the EC2 instance.
         /// </para>
         /// </summary>
         public List<string> Ipv6Addresses
@@ -64,7 +65,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaceId. 
         /// <para>
-        /// The ID of the network interface
+        /// The ID of the network interface.
         /// </para>
         /// </summary>
         public string NetworkInterfaceId
@@ -82,7 +83,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property PrivateDnsName. 
         /// <para>
-        /// Private DNS name of the EC2 instance.
+        /// The private DNS name of the EC2 instance.
         /// </para>
         /// </summary>
         public string PrivateDnsName
@@ -100,7 +101,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddress. 
         /// <para>
-        /// Private IP address of the EC2 instance.
+        /// The private IP address of the EC2 instance.
         /// </para>
         /// </summary>
         public string PrivateIpAddress
@@ -136,7 +137,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property PublicDnsName. 
         /// <para>
-        /// Public DNS name of the EC2 instance.
+        /// The public DNS name of the EC2 instance.
         /// </para>
         /// </summary>
         public string PublicDnsName
@@ -154,7 +155,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property PublicIp. 
         /// <para>
-        /// Public IP address of the EC2 instance.
+        /// The public IP address of the EC2 instance.
         /// </para>
         /// </summary>
         public string PublicIp
@@ -172,7 +173,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// Security groups associated with the EC2 instance.
+        /// The security groups associated with the EC2 instance.
         /// </para>
         /// </summary>
         public List<SecurityGroup> SecurityGroups

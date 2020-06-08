@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -52,11 +53,6 @@ namespace Amazon.ElastiCache.Model
     /// When you receive a successful response from this operation, Amazon ElastiCache immediately
     /// begins deleting the selected resources; you cannot cancel or revert this operation.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// This operation is valid for Redis only.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class DeleteGlobalReplicationGroupRequest : AmazonElastiCacheRequest
     {
@@ -85,8 +81,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property RetainPrimaryReplicationGroup. 
         /// <para>
-        /// If set to <code>true</code>, the primary replication is retained as a standalone replication
-        /// group. 
+        /// The primary replication group is retained as a standalone replication group. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

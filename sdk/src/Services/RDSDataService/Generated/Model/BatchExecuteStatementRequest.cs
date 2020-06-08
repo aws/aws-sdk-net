@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -80,8 +81,23 @@ namespace Amazon.RDSDataService.Model
         /// </para>
         ///  
         /// <para>
-        /// The maximum number of parameters in a parameter set is 1,000.
+        /// The SQL statement is executed as many times as the number of parameter sets provided.
+        /// To execute a SQL statement with no parameters, use one of the following options:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify one or more empty parameter sets.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code>
+        /// operation.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Array parameters are not supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<List<SqlParameter>> ParameterSets
         {

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,7 +39,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// Port number of the remote connection.
+        /// The port number of the remote connection.
         /// </para>
         /// </summary>
         public int Port
@@ -56,7 +57,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property PortName. 
         /// <para>
-        /// Port name of the remote connection.
+        /// The port name of the remote connection.
         /// </para>
         /// </summary>
         public string PortName

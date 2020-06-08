@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the RebalanceSlotsInGlobalReplicationGroup operation.
-    /// Redistribute slots to ensure unifirom distribution across existing shards in the cluster.
+    /// Redistribute slots to ensure uniform distribution across existing shards in the cluster.
     /// </summary>
     public partial class RebalanceSlotsInGlobalReplicationGroupRequest : AmazonElastiCacheRequest
     {

@@ -70,6 +70,12 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                     unmarshalledObject.Cidr = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Events", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ByoipCidrEvent, ByoipCidrEventUnmarshaller>(ByoipCidrEventUnmarshaller.Instance);
+                    unmarshalledObject.Events = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

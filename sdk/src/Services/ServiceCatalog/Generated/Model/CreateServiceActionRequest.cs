@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -79,7 +80,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <dl> <dt>Name</dt> <dd> 
         /// <para>
-        /// The name of the AWS Systems Manager Document. For example, <code>AWS-RestartEC2Instance</code>.
+        /// The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using a shared SSM document, you must provide the ARN instead of the name.
         /// </para>
         ///  </dd> <dt>Version</dt> <dd> 
         /// <para>

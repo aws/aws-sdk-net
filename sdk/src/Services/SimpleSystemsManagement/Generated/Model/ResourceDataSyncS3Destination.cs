@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Information about the target Amazon S3 bucket for the Resource Data Sync.
+    /// Information about the target S3 bucket for the Resource Data Sync.
     /// </summary>
     public partial class ResourceDataSyncS3Destination
     {
@@ -43,7 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property AWSKMSKeyARN. 
         /// <para>
         /// The ARN of an encryption key for a destination in Amazon S3. Must belong to the same
-        /// Region as the destination Amazon S3 bucket.
+        /// Region as the destination S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -62,7 +63,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
-        /// The name of the Amazon S3 bucket where the aggregated data is stored.
+        /// The name of the S3 bucket where the aggregated data is stored.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -118,7 +119,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region with the Amazon S3 bucket targeted by the Resource Data Sync.
+        /// The AWS Region with the S3 bucket targeted by the Resource Data Sync.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

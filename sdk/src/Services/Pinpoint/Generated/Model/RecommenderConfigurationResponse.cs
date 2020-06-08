@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -50,14 +51,14 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property Attributes. 
         /// <para>
         /// A map that defines 1-10 custom endpoint or user attributes, depending on the value
-        /// for the RecommenderUserIdType property. Each of these attributes temporarily stores
-        /// a recommended item that's retrieved from the recommender model and sent to an AWS
-        /// Lambda function for additional processing. Each attribute can be used as a message
-        /// variable in a message template.
+        /// for the RecommendationProviderIdType property. Each of these attributes temporarily
+        /// stores a recommended item that's retrieved from the recommender model and sent to
+        /// an AWS Lambda function for additional processing. Each attribute can be used as a
+        /// message variable in a message template.
         /// </para>
         ///  
         /// <para>
-        /// This value is null if the configuration doesn't invoke an AWS Lambda function (LambdaFunctionArn)
+        /// This value is null if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri)
         /// to perform additional processing of recommendation data.
         /// </para>
         /// </summary>
@@ -249,13 +250,13 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property RecommendationsDisplayName. 
         /// <para>
         /// The custom display name for the standard endpoint or user attribute (RecommendationItems)
-        /// that temporarily stores a recommended item for each endpoint or user, depending on
-        /// the value for the RecommenderUserIdType property. This name appears in the <b>Attribute
-        /// finder</b> pane of the template editor on the Amazon Pinpoint console.
+        /// that temporarily stores recommended items for each endpoint or user, depending on
+        /// the value for the RecommendationProviderIdType property. This name appears in the
+        /// <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console.
         /// </para>
         ///  
         /// <para>
-        /// This value is null if the configuration doesn't invoke an AWS Lambda function (LambdaFunctionArn)
+        /// This value is null if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri)
         /// to perform additional processing of recommendation data.
         /// </para>
         /// </summary>
@@ -275,9 +276,8 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property RecommendationsPerMessage. 
         /// <para>
         /// The number of recommended items that are retrieved from the model for each endpoint
-        /// or user, depending on the value for the RecommenderUserIdType property. This number
-        /// determines how many recommended attributes are available for use as message variables
-        /// in message templates.
+        /// or user, depending on the value for the RecommendationProviderIdType property. This
+        /// number determines how many recommended items are available for use in message variables.
         /// </para>
         /// </summary>
         public int RecommendationsPerMessage

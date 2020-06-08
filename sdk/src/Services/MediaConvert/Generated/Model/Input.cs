@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -72,7 +73,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property AudioSelectors. Use Audio selectors (AudioSelectors) to
         /// specify a track or set of tracks from the input that you will use in your outputs.
-        /// You can use mutiple Audio selectors per input.
+        /// You can use multiple Audio selectors per input.
         /// </summary>
         public Dictionary<string, AudioSelector> AudioSelectors
         {
@@ -89,7 +90,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property CaptionSelectors. Use Captions selectors (CaptionSelectors)
         /// to specify the captions data from the input that you will use in your outputs. You
-        /// can use mutiple captions selectors per input.
+        /// can use multiple captions selectors per input.
         /// </summary>
         public Dictionary<string, CaptionSelector> CaptionSelectors
         {
@@ -123,7 +124,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property DeblockFilter. Enable Deblock (InputDeblockFilter) to produce
-        /// smoother motion in the output. Default is disabled. Only manaully controllable for
+        /// smoother motion in the output. Default is disabled. Only manually controllable for
         /// MPEG2 and uncompressed video inputs.
         /// </summary>
         public InputDeblockFilter DeblockFilter

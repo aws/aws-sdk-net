@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -78,7 +79,7 @@ namespace Amazon.StorageGateway.Model
         /// Optional.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=20)]
+        [AWSProperty(Min=5, Max=50)]
         public string DefaultStorageClass
         {
             get { return this._defaultStorageClass; }
@@ -178,7 +179,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSEncrypted. 
         /// <para>
-        /// True to use Amazon S3 server side encryption with your own AWS KMS key, or false to
+        /// True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to
         /// use a key managed by Amazon S3. Optional. 
         /// </para>
         /// </summary>

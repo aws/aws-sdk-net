@@ -162,6 +162,17 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TimeoutInMillis);
                 }
 
+                if(publicRequest.IsSetTlsConfig())
+                {
+                    context.Writer.WritePropertyName("tlsConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TlsConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TlsConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetType())
                 {
                     context.Writer.WritePropertyName("type");

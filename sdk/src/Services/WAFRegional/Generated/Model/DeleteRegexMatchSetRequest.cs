@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,10 +30,23 @@ namespace Amazon.WAFRegional.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRegexMatchSet operation.
+    /// <note> 
+    /// <para>
+    /// This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
+    /// WAF Classic</a> in the developer guide.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+    /// WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints
+    /// for regional and global use. 
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Permanently deletes a <a>RegexMatchSet</a>. You can't delete a <code>RegexMatchSet</code>
     /// if it's still used in any <code>Rules</code> or if it still includes any <code>RegexMatchTuples</code>
     /// objects (any filters).
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// If you just want to remove a <code>RegexMatchSet</code> from a <code>Rule</code>,
@@ -69,7 +83,7 @@ namespace Amazon.WAFRegional.Model
         /// The value returned by the most recent call to <a>GetChangeToken</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ChangeToken
         {
             get { return this._changeToken; }

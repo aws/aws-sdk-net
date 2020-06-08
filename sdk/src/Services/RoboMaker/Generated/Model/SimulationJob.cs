@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -34,6 +35,7 @@ namespace Amazon.RoboMaker.Model
     {
         private string _arn;
         private string _clientRequestToken;
+        private ComputeResponse _compute;
         private List<DataSource> _dataSources = new List<DataSource>();
         private FailureBehavior _failureBehavior;
         private SimulationJobErrorCode _failureCode;
@@ -89,6 +91,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Compute. 
+        /// <para>
+        /// Compute information for the simulation job
+        /// </para>
+        /// </summary>
+        public ComputeResponse Compute
+        {
+            get { return this._compute; }
+            set { this._compute = value; }
+        }
+
+        // Check to see if Compute property is set
+        internal bool IsSetCompute()
+        {
+            return this._compute != null;
         }
 
         /// <summary>

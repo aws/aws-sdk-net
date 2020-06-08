@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -98,10 +99,10 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property NetworkOrigin. 
         /// <para>
-        /// Indicates whether this access point allows access from the public Internet. If <code>VpcConfiguration</code>
+        /// Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code>
         /// is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>,
-        /// and the access point doesn't allow access from the public Internet. Otherwise, <code>NetworkOrigin</code>
-        /// is <code>Internet</code>, and the access point allows access from the public Internet,
+        /// and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code>
+        /// is <code>Internet</code>, and the access point allows access from the public internet,
         /// subject to the access point and bucket access policies.
         /// </para>
         /// </summary>
@@ -135,7 +136,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property VpcConfiguration. 
         /// <para>
-        /// Contains the Virtual Private Cloud (VPC) configuration for the specified access point.
+        /// Contains the virtual private cloud (VPC) configuration for the specified access point.
         /// </para>
         /// </summary>
         public VpcConfiguration VpcConfiguration

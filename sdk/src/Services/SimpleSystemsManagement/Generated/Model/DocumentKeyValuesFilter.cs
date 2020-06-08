@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -36,7 +37,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// Other valid values include Owner, Name, PlatformTypes, and DocumentType.
+    /// Other valid values include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
+    /// <code>DocumentType</code>, and <code>TargetType</code>.
     /// </para>
     ///  
     /// <para>
@@ -60,7 +62,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// To specify a custom key and value pair, use the format <code>Key=tag:[tagName],Values=[valueName]</code>.
+    /// To specify a custom key and value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
     /// </para>
     ///  
     /// <para>

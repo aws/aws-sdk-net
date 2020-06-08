@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -82,8 +83,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        /// One or more of the following metrics. If you omit this parameter, all metrics are
-        /// enabled.
+        /// Specifies which group-level metrics to start collecting. You can specify one or more
+        /// of the following metrics:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -117,7 +118,34 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         ///  <code>GroupTotalInstances</code> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// The instance weighting feature supports the following additional metrics: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>GroupInServiceCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GroupPendingCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GroupStandbyCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GroupTerminatingCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GroupTotalCapacity</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you omit this parameter, all metrics are enabled. 
+        /// </para>
         /// </summary>
         public List<string> Metrics
         {

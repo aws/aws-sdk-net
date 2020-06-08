@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -37,8 +38,8 @@ namespace Amazon.Route53Domains.Model
     /// We recommend that you renew your domain several weeks before the expiration date.
     /// Some TLD registries delete domains before the expiration date if you haven't renewed
     /// far enough in advance. For more information about renewing domain registration, see
-    /// <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-renew.html">Renewing
-    /// Registration for a Domain</a> in the Amazon Route 53 Developer Guide.
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-renew.html">Renewing
+    /// Registration for a Domain</a> in the <i>Amazon Route 53 Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class RenewDomainRequest : AmazonRoute53DomainsRequest
@@ -91,7 +92,7 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// The number of years that you want to renew the domain for. The maximum number of years
         /// depends on the top-level domain. For the range of valid values for your domain, see
-        /// <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
         /// that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer
         /// Guide</i>.
         /// </para>

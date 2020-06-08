@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -64,7 +65,7 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// When specified, the vocabularies returned in the list are limited to vocabularies
         /// whose name contains the specified string. The search is case-insensitive, <code>ListVocabularies</code>
-        /// will return both "vocabularyname" and "VocabularyName" in the response list.
+        /// returns both "vocabularyname" and "VocabularyName" in the response list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

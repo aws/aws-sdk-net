@@ -133,8 +133,20 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (this.Value == null)
                 return null;
 
-            if (this.Type != DynamoDBEntryType.Binary && string.IsNullOrEmpty(this.StringValue))
-                return null;
+            if (conversionConfig.IsEmptyStringValueEnabled)
+            {
+                if (this.Type != DynamoDBEntryType.Binary && StringValue == null)
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                if (this.Type != DynamoDBEntryType.Binary && string.IsNullOrEmpty(this.StringValue))
+                {
+                    return null;
+                }
+            }
 
             AttributeValue attribute = new AttributeValue();
             switch (this.Type)

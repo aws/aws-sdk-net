@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -69,8 +70,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property ConfigurationSet. 
         /// <para>
-        /// The configuration set that's applied to email that's sent through the channel by using
-        /// the <a href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+        /// The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon
+        /// SES configuration set</a> that's applied to messages that are sent through the channel.
         /// </para>
         /// </summary>
         public string ConfigurationSet
@@ -124,7 +125,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property FromAddress. 
         /// <para>
-        /// The verified email address that you send email from when you send email through the
+        /// The verified email address that email is sent from when you send email through the
         /// channel.
         /// </para>
         /// </summary>
@@ -181,7 +182,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property Identity.  
         /// <para>
         /// The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email
-        /// Service (Amazon SES), that you use when you send email through the channel.
+        /// Service (Amazon SES), that's used when you send email through the channel.
         /// </para>
         /// </summary>
         public string Identity
@@ -253,7 +254,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property MessagesPerSecond. 
         /// <para>
-        /// The maximum number of emails that you can send through the channel each second.
+        /// The maximum number of emails that can be sent through the channel each second.
         /// </para>
         /// </summary>
         public int MessagesPerSecond

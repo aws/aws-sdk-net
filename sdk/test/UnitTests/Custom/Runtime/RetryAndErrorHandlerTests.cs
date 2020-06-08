@@ -58,6 +58,26 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
         }
 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void RetryForNestedIOException()
+        {
+            Tester.Reset();
+            Tester.Action = (int callCount) =>
+            {
+                throw new ArgumentOutOfRangeException("Mocked exception", new IOException());
+            };
+
+            Utils.AssertExceptionExpected(() =>
+            {
+                var request = CreateTestContext();
+                RuntimePipeline.InvokeSync(request);
+            },
+            typeof(ArgumentOutOfRangeException));
+            Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
+        }
+
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         public void RetryForWebExceptionWithConnectFailure()

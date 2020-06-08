@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,31 @@ namespace Amazon.WAFRegional.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// 
+    /// <note> 
+    /// <para>
+    /// This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
+    /// WAF Classic</a> in the developer guide.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+    /// WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints
+    /// for regional and global use. 
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Retrieves the tags associated with the specified AWS resource. Tags are key:value
+    /// pairs that you can use to categorize and manage your resources, for purposes like
+    /// billing. For example, you might set the tag key to "customer" and the value to the
+    /// customer name or ID. You can specify one or more tags to add to each AWS resource,
+    /// up to 50 tags for a resource.
+    /// </para>
+    ///  
+    /// <para>
+    /// Tagging is only available through the API, SDKs, and CLI. You can't manage or view
+    /// tags through the AWS WAF Classic console. You can tag the AWS resources that you manage
+    /// through AWS WAF Classic: web ACLs, rule groups, and rules. 
+    /// </para>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonWAFRegionalRequest
     {
@@ -56,7 +81,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property NextMarker.
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1224)]
         public string NextMarker
         {
             get { return this._nextMarker; }

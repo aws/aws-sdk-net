@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,7 +40,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the resource that you want to tag. 
+        /// The Amazon Resource Name (ARN) of the resource that you want to tag. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +59,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  The tags to apply to the resource. 
+        /// The tags to apply to the resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

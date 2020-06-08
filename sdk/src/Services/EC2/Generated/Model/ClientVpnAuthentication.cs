@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,13 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the authentication methods used by a Client VPN endpoint. Client VPN supports
-    /// Active Directory and mutual authentication. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication">Authentication</a>
+    /// Describes the authentication methods used by a Client VPN endpoint. For more information,
+    /// see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication">Authentication</a>
     /// in the <i>AWS Client VPN Administrator Guide</i>.
     /// </summary>
     public partial class ClientVpnAuthentication
     {
         private DirectoryServiceAuthentication _activeDirectory;
+        private FederatedAuthentication _federatedAuthentication;
         private CertificateAuthentication _mutualAuthentication;
         private ClientVpnAuthenticationType _type;
 
@@ -54,6 +56,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetActiveDirectory()
         {
             return this._activeDirectory != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FederatedAuthentication. 
+        /// <para>
+        /// Information about the IAM SAML identity provider, if applicable.
+        /// </para>
+        /// </summary>
+        public FederatedAuthentication FederatedAuthentication
+        {
+            get { return this._federatedAuthentication; }
+            set { this._federatedAuthentication = value; }
+        }
+
+        // Check to see if FederatedAuthentication property is set
+        internal bool IsSetFederatedAuthentication()
+        {
+            return this._federatedAuthentication != null;
         }
 
         /// <summary>

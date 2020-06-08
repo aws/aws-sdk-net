@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -50,7 +51,8 @@ namespace Amazon.SageMaker.Model
         /// The <a>HyperParameterTuningJobConfig</a> object that describes the tuning job, including
         /// the search strategy, the objective metric used to evaluate training jobs, ranges of
         /// parameters to search, and resource limits for the tuning job. For more information,
-        /// see <a>automatic-model-tuning</a> 
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+        /// Hyperparameter Tuning Works</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -136,7 +138,11 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrainingJobDefinitions.
+        /// Gets and sets the property TrainingJobDefinitions. 
+        /// <para>
+        /// A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for this
+        /// tuning job.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<HyperParameterTrainingJobDefinition> TrainingJobDefinitions

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -147,7 +148,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property IamRole. 
         /// <para>
         /// The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems
-        /// Manager managed instances. This call does not return the IAM role for Amazon EC2 instances.
+        /// Manager managed instances. This call does not return the IAM role for EC2 instances.
         /// 
         /// </para>
         /// </summary>

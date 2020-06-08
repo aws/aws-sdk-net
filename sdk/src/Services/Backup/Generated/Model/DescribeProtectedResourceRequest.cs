@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,8 +30,8 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeProtectedResource operation.
-    /// Returns information about a saved resource, including the last time it was backed-up,
-    /// its Amazon Resource Name (ARN), and the AWS service type of the saved resource.
+    /// Returns information about a saved resource, including the last time it was backed
+    /// up, its Amazon Resource Name (ARN), and the AWS service type of the saved resource.
     /// </summary>
     public partial class DescribeProtectedResourceRequest : AmazonBackupRequest
     {

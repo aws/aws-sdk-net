@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,17 +30,30 @@ namespace Amazon.WAFRegional.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRateBasedRule operation.
+    /// <note> 
+    /// <para>
+    /// This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
+    /// WAF Classic</a> in the developer guide.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+    /// WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints
+    /// for regional and global use. 
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Creates a <a>RateBasedRule</a>. The <code>RateBasedRule</code> contains a <code>RateLimit</code>,
     /// which specifies the maximum number of requests that AWS WAF allows from a specified
     /// IP address in a five-minute period. The <code>RateBasedRule</code> also contains the
     /// <code>IPSet</code> objects, <code>ByteMatchSet</code> objects, and other predicates
     /// that identify the requests that you want to count or block if these requests exceed
     /// the <code>RateLimit</code>.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// If you add more than one predicate to a <code>RateBasedRule</code>, a request not
-    /// only must exceed the <code>RateLimit</code>, but it also must match all the specifications
+    /// only must exceed the <code>RateLimit</code>, but it also must match all the conditions
     /// to be counted or blocked. For example, suppose you add the following to a <code>RateBasedRule</code>:
     /// </para>
     ///  <ul> <li> 
@@ -53,7 +67,7 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Further, you specify a <code>RateLimit</code> of 15,000.
+    /// Further, you specify a <code>RateLimit</code> of 1,000.
     /// </para>
     ///  
     /// <para>
@@ -61,10 +75,10 @@ namespace Amazon.WAFRegional.Model
     /// you want to block requests that meet the conditions in the rule. For a request to
     /// be blocked, it must come from the IP address 192.0.2.44 <i>and</i> the <code>User-Agent</code>
     /// header in the request must contain the value <code>BadBot</code>. Further, requests
-    /// that match these two conditions must be received at a rate of more than 15,000 requests
+    /// that match these two conditions must be received at a rate of more than 1,000 requests
     /// every five minutes. If both conditions are met and the rate is exceeded, AWS WAF blocks
-    /// the requests. If the rate drops below 15,000 for a five-minute period, AWS WAF no
-    /// longer blocks the requests.
+    /// the requests. If the rate drops below 1,000 for a five-minute period, AWS WAF no longer
+    /// blocks the requests.
     /// </para>
     ///  
     /// <para>
@@ -85,7 +99,7 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Further, you specify a <code>RateLimit</code> of 15,000.
+    /// Further, you specify a <code>RateLimit</code> of 1,000.
     /// </para>
     ///  
     /// <para>
@@ -149,7 +163,7 @@ namespace Amazon.WAFRegional.Model
         /// information, see <a>GetChangeTokenStatus</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ChangeToken
         {
             get { return this._changeToken; }
@@ -172,7 +186,7 @@ namespace Amazon.WAFRegional.Model
         /// after you create the <code>RateBasedRule</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string MetricName
         {
             get { return this._metricName; }

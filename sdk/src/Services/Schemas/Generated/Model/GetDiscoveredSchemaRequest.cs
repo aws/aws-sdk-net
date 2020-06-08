@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,7 +40,9 @@ namespace Amazon.Schemas.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        /// An array of strings that
+        /// An array of strings where each string is a JSON event. These are the events that were
+        /// used to generate the schema. The array includes a single type of event and has a maximum
+        /// size of 10 events.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

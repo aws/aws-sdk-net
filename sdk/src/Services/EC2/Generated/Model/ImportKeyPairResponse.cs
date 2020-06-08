@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -34,6 +35,8 @@ namespace Amazon.EC2.Model
     {
         private string _keyFingerprint;
         private string _keyName;
+        private string _keyPairId;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property KeyFingerprint. 
@@ -69,6 +72,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetKeyName()
         {
             return this._keyName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyPairId. 
+        /// <para>
+        /// The ID of the resulting key pair.
+        /// </para>
+        /// </summary>
+        public string KeyPairId
+        {
+            get { return this._keyPairId; }
+            set { this._keyPairId = value; }
+        }
+
+        // Check to see if KeyPairId property is set
+        internal bool IsSetKeyPairId()
+        {
+            return this._keyPairId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags applied to the imported key pair.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

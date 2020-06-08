@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -182,8 +183,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceName. 
         /// <para>
-        /// The name of the invocation target. For Amazon EC2 instances this is the value for
-        /// the aws:Name tag. For on-premises instances, this is the name of the instance.
+        /// The name of the invocation target. For EC2 instances this is the value for the aws:Name
+        /// tag. For on-premises instances, this is the name of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -258,10 +259,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StandardErrorUrl. 
         /// <para>
-        /// The URL to the plugin's StdErr file in Amazon S3, if the Amazon S3 bucket was defined
-        /// for the parent command. For an invocation, StandardErrorUrl is populated if there
-        /// is just one plugin defined for the command, and the Amazon S3 bucket was defined for
-        /// the command.
+        /// The URL to the plugin's StdErr file in Amazon S3, if the S3 bucket was defined for
+        /// the parent command. For an invocation, StandardErrorUrl is populated if there is just
+        /// one plugin defined for the command, and the S3 bucket was defined for the command.
         /// </para>
         /// </summary>
         public string StandardErrorUrl
@@ -279,10 +279,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StandardOutputUrl. 
         /// <para>
-        /// The URL to the plugin's StdOut file in Amazon S3, if the Amazon S3 bucket was defined
-        /// for the parent command. For an invocation, StandardOutputUrl is populated if there
-        /// is just one plugin defined for the command, and the Amazon S3 bucket was defined for
-        /// the command.
+        /// The URL to the plugin's StdOut file in Amazon S3, if the S3 bucket was defined for
+        /// the parent command. For an invocation, StandardOutputUrl is populated if there is
+        /// just one plugin defined for the command, and the S3 bucket was defined for the command.
         /// </para>
         /// </summary>
         public string StandardOutputUrl
@@ -322,8 +321,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// by the command). StatusDetails includes more information than Status because it includes
         /// states resulting from error and concurrency control parameters. StatusDetails can
         /// show different results than Status. For more information about these statuses, see
-        /// <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-        /// Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can
+        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+        /// command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can
         /// be one of the following values:
         /// </para>
         ///  <ul> <li> 

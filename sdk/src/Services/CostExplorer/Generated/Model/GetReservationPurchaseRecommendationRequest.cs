@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -71,6 +72,7 @@ namespace Amazon.CostExplorer.Model
         /// The account ID that is associated with the recommendation. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -86,14 +88,10 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property AccountScope. 
         /// <para>
-        /// The account scope that you want recommendations for. <code>PAYER</code> means that
-        /// AWS includes the master account and any member accounts when it calculates its recommendations.
-        /// <code>LINKED</code> means that AWS includes only member accounts when it calculates
-        /// its recommendations.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values are <code>PAYER</code> and <code>LINKED</code>.
+        /// The account scope that you want your recommendations for. Amazon Web Services calculates
+        /// recommendations including the payer account and linked accounts if the value is set
+        /// to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated
+        /// for individual linked accounts only.
         /// </para>
         /// </summary>
         public AccountScope AccountScope
@@ -133,6 +131,7 @@ namespace Amazon.CostExplorer.Model
         /// The pagination token that indicates the next set of results that you want to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
         public string NextPageToken
         {
             get { return this._nextPageToken; }
@@ -188,7 +187,7 @@ namespace Amazon.CostExplorer.Model
         /// The specific service that you want recommendations for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string Service
         {
             get { return this._service; }

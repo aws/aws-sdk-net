@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -89,7 +90,7 @@ namespace Amazon.KinesisFirehose.Model
         /// data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string HECEndpoint
         {
             get { return this._hecEndpoint; }
@@ -128,7 +129,7 @@ namespace Amazon.KinesisFirehose.Model
         /// endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string HECToken
         {
             get { return this._hecToken; }

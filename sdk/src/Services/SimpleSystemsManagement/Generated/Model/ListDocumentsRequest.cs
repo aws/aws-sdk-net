@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -47,7 +48,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates ListDocumentsRequest with the parameterized properties
         /// </summary>
-        /// <param name="documentFilterList">One or more filters. Use a filter to return a more specific list of results.</param>
+        /// <param name="documentFilterList">This data type is deprecated. Instead, use <code>Filters</code>.</param>
         public ListDocumentsRequest(List<DocumentFilter> documentFilterList)
         {
             _documentFilterList = documentFilterList;
@@ -56,7 +57,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentFilterList. 
         /// <para>
-        /// One or more filters. Use a filter to return a more specific list of results.
+        /// This data type is deprecated. Instead, use <code>Filters</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -75,7 +76,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters. Use a filter to return a more specific list of results.
+        /// One or more DocumentKeyValuesFilter objects. Use a filter to return a more specific
+        /// list of results. For keys, you can specify one or more key-value pair tags that have
+        /// been applied to a document. Other valid keys include <code>Owner</code>, <code>Name</code>,
+        /// <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>.
+        /// For example, to return documents you own use <code>Key=Owner,Values=Self</code>. To
+        /// specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=6)]

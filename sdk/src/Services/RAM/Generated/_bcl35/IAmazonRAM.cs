@@ -138,9 +138,6 @@ namespace Amazon.RAM
         /// <exception cref="Amazon.RAM.Model.InvalidStateTransitionException">
         /// The requested state transition is not valid.
         /// </exception>
-        /// <exception cref="Amazon.RAM.Model.InvalidStateTransitionException">
-        /// The requested state transition is not valid.
-        /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
         /// The format of an Amazon Resource Name (ARN) is not valid.
         /// </exception>
@@ -155,9 +152,6 @@ namespace Amazon.RAM
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
         /// The service is not available.
-        /// </exception>
-        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
-        /// A specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
         /// A specified resource was not found.
@@ -658,6 +652,9 @@ namespace Amazon.RAM
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
         /// The format of an Amazon Resource Name (ARN) is not valid.
         /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ResourceArnNotFoundException">
+        /// An Amazon Resource Name (ARN) was not found.
+        /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
         /// The service could not respond to the request due to an internal problem.
         /// </exception>
@@ -785,6 +782,9 @@ namespace Amazon.RAM
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
         /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareInvitations">REST API Reference for GetResourceShareInvitations Operation</seealso>
         GetResourceShareInvitationsResponse GetResourceShareInvitations(GetResourceShareInvitationsRequest request);
@@ -1181,6 +1181,58 @@ namespace Amazon.RAM
 
         #endregion
         
+        #region  ListResourceTypes
+
+
+        /// <summary>
+        /// Lists the shareable resource types supported by AWS RAM.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceTypes service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceTypes service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The specified value for NextToken is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceTypes">REST API Reference for ListResourceTypes Operation</seealso>
+        ListResourceTypesResponse ListResourceTypes(ListResourceTypesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceTypes operation on AmazonRAMClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourceTypes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceTypes">REST API Reference for ListResourceTypes Operation</seealso>
+        IAsyncResult BeginListResourceTypes(ListResourceTypesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResourceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourceTypes.</param>
+        /// 
+        /// <returns>Returns a  ListResourceTypesResult from RAM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceTypes">REST API Reference for ListResourceTypes Operation</seealso>
+        ListResourceTypesResponse EndListResourceTypes(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PromoteResourceShareCreatedFromPolicy
 
 
@@ -1224,6 +1276,9 @@ namespace Amazon.RAM
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
         /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromoteResourceShareCreatedFromPolicy">REST API Reference for PromoteResourceShareCreatedFromPolicy Operation</seealso>
         PromoteResourceShareCreatedFromPolicyResponse PromoteResourceShareCreatedFromPolicy(PromoteResourceShareCreatedFromPolicyRequest request);

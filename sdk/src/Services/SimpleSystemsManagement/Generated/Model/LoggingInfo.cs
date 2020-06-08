@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Information about an Amazon S3 bucket to write instance-level logs to.
+    /// Information about an S3 bucket to write instance-level logs to.
     /// 
     ///  <note> 
     /// <para>
@@ -49,7 +50,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property S3BucketName. 
         /// <para>
-        /// The name of an Amazon S3 bucket where execution logs are stored .
+        /// The name of an S3 bucket where execution logs are stored .
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=63)]
@@ -68,7 +69,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property S3KeyPrefix. 
         /// <para>
-        /// (Optional) The Amazon S3 bucket subfolder. 
+        /// (Optional) The S3 bucket subfolder. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
@@ -87,7 +88,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property S3Region. 
         /// <para>
-        /// The region where the Amazon S3 bucket is located.
+        /// The Region where the S3 bucket is located.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=20)]

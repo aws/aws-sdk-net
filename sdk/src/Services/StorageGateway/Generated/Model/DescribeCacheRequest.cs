@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -30,7 +31,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the DescribeCache operation.
     /// Returns information about the cache of a gateway. This operation is only supported
-    /// in the cached volume, tape and file gateway types.
+    /// in the cached volume, tape, and file gateway types.
     /// 
     ///  
     /// <para>

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -222,8 +223,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property InstanceId. 
         /// <para>
         /// The ID of the managed instance targeted by the command. A managed instance can be
-        /// an Amazon EC2 instance or an instance in your hybrid environment that is configured
-        /// for Systems Manager.
+        /// an EC2 instance or an instance in your hybrid environment that is configured for Systems
+        /// Manager.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -342,7 +343,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StandardOutputUrl. 
         /// <para>
         /// The URL for the complete text written by the plugin to stdout in Amazon S3. If an
-        /// Amazon S3 bucket was not specified, then this string is empty.
+        /// S3 bucket was not specified, then this string is empty.
         /// </para>
         /// </summary>
         public string StandardOutputUrl
@@ -381,8 +382,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A detailed status of the command execution for an invocation. StatusDetails includes
         /// more information than Status because it includes states resulting from error and concurrency
         /// control parameters. StatusDetails can show different results than Status. For more
-        /// information about these statuses, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-        /// Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can
+        /// information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+        /// command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can
         /// be one of the following values:
         /// </para>
         ///  <ul> <li> 
@@ -397,12 +398,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  </li> <li> 
         /// <para>
         /// Delayed: The system attempted to send the command to the target, but the target was
-        /// not available. The instance might not be available because of network issues, the
-        /// instance was stopped, etc. The system will try to deliver the command again.
+        /// not available. The instance might not be available because of network issues, because
+        /// the instance was stopped, or for similar reasons. The system will try to send the
+        /// command again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Success: The command or plugin was run successfully. This is a terminal state.
+        /// Success: The command or plugin ran successfully. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>

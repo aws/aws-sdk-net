@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -51,6 +52,7 @@ namespace Amazon.PersonalizeRuntime.Model
     {
         private string _campaignArn;
         private Dictionary<string, string> _context = new Dictionary<string, string>();
+        private string _filterArn;
         private string _itemId;
         private int? _numResults;
         private string _userId;
@@ -79,8 +81,7 @@ namespace Amazon.PersonalizeRuntime.Model
         /// <para>
         /// The contextual metadata to use when getting recommendations. Contextual metadata includes
         /// any interaction information that might be relevant when getting a user's recommendations,
-        /// such as the user's current location or device type. For more information, see Contextual
-        /// Metadata.
+        /// such as the user's current location or device type.
         /// </para>
         /// </summary>
         [AWSProperty(Max=150)]
@@ -94,6 +95,26 @@ namespace Amazon.PersonalizeRuntime.Model
         internal bool IsSetContext()
         {
             return this._context != null && this._context.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterArn. 
+        /// <para>
+        /// The ARN of the filter to apply to the returned recommendations. For more information,
+        /// see Using Filters with Amazon Personalize.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string FilterArn
+        {
+            get { return this._filterArn; }
+            set { this._filterArn = value; }
+        }
+
+        // Check to see if FilterArn property is set
+        internal bool IsSetFilterArn()
+        {
+            return this._filterArn != null;
         }
 
         /// <summary>

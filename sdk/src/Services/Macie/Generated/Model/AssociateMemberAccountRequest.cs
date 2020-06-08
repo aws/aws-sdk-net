@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,7 @@ namespace Amazon.Macie.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateMemberAccount operation.
-    /// Associates a specified AWS account with Amazon Macie as a member account.
+    /// Associates a specified AWS account with Amazon Macie Classic as a member account.
     /// </summary>
     public partial class AssociateMemberAccountRequest : AmazonMacieRequest
     {
@@ -38,8 +39,8 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property MemberAccountId. 
         /// <para>
-        /// The ID of the AWS account that you want to associate with Amazon Macie as a member
-        /// account.
+        /// The ID of the AWS account that you want to associate with Amazon Macie Classic as
+        /// a member account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

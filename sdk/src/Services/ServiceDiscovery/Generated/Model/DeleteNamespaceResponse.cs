@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,7 +39,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property OperationId. 
         /// <para>
         /// A value that you can use to determine whether the request completed successfully.
-        /// To get the status of the operation, see <a>GetOperation</a>.
+        /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

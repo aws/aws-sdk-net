@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -60,7 +61,7 @@ namespace Amazon.IoTEvents.Model
         /// Gets and sets the property OnExit. 
         /// <para>
         /// When exiting this state, perform these <code>actions</code> if the specified <code>condition</code>
-        /// is TRUE.
+        /// is <code>TRUE</code>.
         /// </para>
         /// </summary>
         public OnExitLifecycle OnExit

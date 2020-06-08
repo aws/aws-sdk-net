@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -49,7 +50,10 @@ namespace Amazon.Kendra.Model
         private QueryResultType _type;
 
         /// <summary>
-        /// Gets and sets the property AdditionalAttributes.
+        /// Gets and sets the property AdditionalAttributes. 
+        /// <para>
+        /// One or more additional attribues associated with the query result.
+        /// </para>
         /// </summary>
         public List<AdditionalResultAttribute> AdditionalAttributes
         {
@@ -70,7 +74,6 @@ namespace Amazon.Kendra.Model
         /// example, the document author (Author) or the source URI (SourceUri) of the document.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
         public List<DocumentAttribute> DocumentAttributes
         {
             get { return this._documentAttributes; }

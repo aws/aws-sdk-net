@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -35,9 +36,8 @@ namespace Amazon.KinesisVideo.Model
     ///  
     /// <para>
     /// If the <code>MessageTtlSeconds</code> value is updated (either increased or reduced),
-    /// then it only applies to new messages sent via this channel after it's been updated.
-    /// Existing messages are still expire as per the previous <code>MessageTtlSeconds</code>
-    /// value.
+    /// it only applies to new messages sent via this channel after it's been updated. Existing
+    /// messages are still expired as per the previous <code>MessageTtlSeconds</code> value.
     /// </para>
     /// </summary>
     public partial class UpdateSignalingChannelRequest : AmazonKinesisVideoRequest
@@ -49,7 +49,7 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property ChannelARN. 
         /// <para>
-        /// The ARN of the signaling channel that you want to update.
+        /// The Amazon Resource Name (ARN) of the signaling channel that you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

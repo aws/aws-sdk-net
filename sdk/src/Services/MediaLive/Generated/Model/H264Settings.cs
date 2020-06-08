@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -40,8 +41,10 @@ namespace Amazon.MediaLive.Model
         private H264ColorMetadata _colorMetadata;
         private H264ColorSpaceSettings _colorSpaceSettings;
         private H264EntropyEncoding _entropyEncoding;
+        private H264FilterSettings _filterSettings;
         private FixedAfd _fixedAfd;
         private H264FlickerAq _flickerAq;
+        private H264ForceFieldPictures _forceFieldPictures;
         private H264FramerateControl _framerateControl;
         private int? _framerateDenominator;
         private int? _framerateNumerator;
@@ -59,6 +62,7 @@ namespace Amazon.MediaLive.Model
         private int? _parDenominator;
         private int? _parNumerator;
         private H264Profile _profile;
+        private H264QualityLevel _qualityLevel;
         private int? _qvbrQualityLevel;
         private H264RateControlMode _rateControlMode;
         private H264ScanType _scanType;
@@ -204,6 +208,22 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FilterSettings. Optional filters that you can apply to
+        /// an encode.
+        /// </summary>
+        public H264FilterSettings FilterSettings
+        {
+            get { return this._filterSettings; }
+            set { this._filterSettings = value; }
+        }
+
+        // Check to see if FilterSettings property is set
+        internal bool IsSetFilterSettings()
+        {
+            return this._filterSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FixedAfd. Four bit AFD value to write on all frames of
         /// video in the output stream. Only valid when afdSignaling is set to 'Fixed'.
         /// </summary>
@@ -233,6 +253,27 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetFlickerAq()
         {
             return this._flickerAq != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForceFieldPictures. This setting applies only when scan
+        /// type is "interlaced." It controls whether coding is performed on a field basis or
+        /// on a frame basis. (When the video is progressive, the coding is always performed on
+        /// a frame basis.)enabled: Force MediaLive to code on a field basis, so that odd and
+        /// even sets of fields are coded separately.disabled: Code the two sets of fields separately
+        /// (on a field basis) or together (on a frame basis using PAFF), depending on what is
+        /// most appropriate for the content.
+        /// </summary>
+        public H264ForceFieldPictures ForceFieldPictures
+        {
+            get { return this._forceFieldPictures; }
+            set { this._forceFieldPictures = value; }
+        }
+
+        // Check to see if ForceFieldPictures property is set
+        internal bool IsSetForceFieldPictures()
+        {
+            return this._forceFieldPictures != null;
         }
 
         /// <summary>
@@ -524,6 +565,26 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetProfile()
         {
             return this._profile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QualityLevel. Leave as STANDARD_QUALITY or choose a different
+        /// value (which might result in additional costs to run the channel).- ENHANCED_QUALITY:
+        /// Produces a slightly better video quality without an increase in the bitrate. Has an
+        /// effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive
+        /// multiplex, the value must be ENHANCED_QUALITY.- STANDARD_QUALITY: Valid for any Rate
+        /// control mode.
+        /// </summary>
+        public H264QualityLevel QualityLevel
+        {
+            get { return this._qualityLevel; }
+            set { this._qualityLevel = value; }
+        }
+
+        // Check to see if QualityLevel property is set
+        internal bool IsSetQualityLevel()
+        {
+            return this._qualityLevel != null;
         }
 
         /// <summary>

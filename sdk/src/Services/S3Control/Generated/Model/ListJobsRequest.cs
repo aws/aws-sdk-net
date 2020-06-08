@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,8 +30,32 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the ListJobs operation.
-    /// Lists current jobs and jobs that have ended within the last 30 days for the AWS account
-    /// making the request.
+    /// Lists current Amazon S3 Batch Operations jobs and jobs that have ended within the
+    /// last 30 days for the AWS account making the request. For more information, see <a
+    /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+    /// S3 Batch Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+    /// 
+    ///  
+    /// <para>
+    /// Related actions include:
+    /// </para>
+    ///   <ul> <li> 
+    /// <para>
+    ///  <a>CreateJob</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeJob</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateJobPriority</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateJobStatus</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListJobsRequest : AmazonS3ControlRequest
     {

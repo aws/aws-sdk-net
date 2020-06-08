@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -111,6 +112,11 @@ namespace Amazon.EC2.Model
         /// Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
         /// Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// To create a subnet in an Outpost, set this value to the Availability Zone for the
+        /// Outpost and specify the Outpost ARN.
+        /// </para>
         /// </summary>
         public string AvailabilityZone
         {
@@ -183,7 +189,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OutpostArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Outpost.
+        /// The Amazon Resource Name (ARN) of the Outpost. If you specify an Outpost ARN, you
+        /// must also specify the Availability Zone of the Outpost subnet.
         /// </para>
         /// </summary>
         public string OutpostArn

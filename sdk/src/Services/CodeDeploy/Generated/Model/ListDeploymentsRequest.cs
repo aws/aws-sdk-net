@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -37,6 +38,7 @@ namespace Amazon.CodeDeploy.Model
         private string _applicationName;
         private TimeRange _createTimeRange;
         private string _deploymentGroupName;
+        private string _externalId;
         private List<string> _includeOnlyStatuses = new List<string>();
         private string _nextToken;
 
@@ -111,33 +113,52 @@ namespace Amazon.CodeDeploy.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExternalId. 
+        /// <para>
+        /// The unique ID of an external resource for returning deployments linked to the external
+        /// resource.
+        /// </para>
+        /// </summary>
+        public string ExternalId
+        {
+            get { return this._externalId; }
+            set { this._externalId = value; }
+        }
+
+        // Check to see if ExternalId property is set
+        internal bool IsSetExternalId()
+        {
+            return this._externalId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IncludeOnlyStatuses. 
         /// <para>
         /// A subset of deployments to list by status:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Created: Include created deployments in the resulting list.
+        ///  <code>Created</code>: Include created deployments in the resulting list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Queued: Include queued deployments in the resulting list.
+        ///  <code>Queued</code>: Include queued deployments in the resulting list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In Progress: Include in-progress deployments in the resulting list.
+        ///  <code>In Progress</code>: Include in-progress deployments in the resulting list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Succeeded: Include successful deployments in the resulting list.
+        ///  <code>Succeeded</code>: Include successful deployments in the resulting list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Failed: Include failed deployments in the resulting list.
+        ///  <code>Failed</code>: Include failed deployments in the resulting list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Stopped: Include stopped deployments in the resulting list.
+        ///  <code>Stopped</code>: Include stopped deployments in the resulting list.
         /// </para>
         ///  </li> </ul>
         /// </summary>

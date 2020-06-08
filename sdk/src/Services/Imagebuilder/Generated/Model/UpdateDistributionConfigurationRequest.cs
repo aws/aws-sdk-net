@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -42,7 +43,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        ///  The idempotency token of the distribution configuration. 
+        /// The idempotency token of the distribution configuration. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -61,7 +62,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the distribution configuration. 
+        /// The description of the distribution configuration. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -80,7 +81,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DistributionConfigurationArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the distribution configuration that you want to
+        /// The Amazon Resource Name (ARN) of the distribution configuration that you want to
         /// update. 
         /// </para>
         /// </summary>
@@ -100,7 +101,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Distributions. 
         /// <para>
-        ///  The distributions of the distribution configuration. 
+        /// The distributions of the distribution configuration. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

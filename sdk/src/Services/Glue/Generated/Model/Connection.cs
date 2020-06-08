@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -99,7 +100,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC connection.
+        ///  <code>JDBC_CONNECTION_URL</code> - The URL for connecting to a JDBC data source.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -129,6 +130,17 @@ namespace Amazon.Glue.Model
         /// used for domain match or distinguished name match to prevent a man-in-the-middle attack.
         /// In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>; in Microsoft
         /// SQL Server, this is used as the <code>hostNameInCertificate</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data
+        /// source.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs
+        /// that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka
+        /// client will connect to and bootstrap itself.
         /// </para>
         ///  </li> </ul>
         /// </summary>

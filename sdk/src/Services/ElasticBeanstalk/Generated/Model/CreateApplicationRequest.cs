@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -47,7 +48,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Instantiates CreateApplicationRequest with the parameterized properties
         /// </summary>
-        /// <param name="applicationName">The name of the application. Constraint: This name must be unique within your account. If the specified name already exists, the action returns an <code>InvalidParameterValue</code> error.</param>
+        /// <param name="applicationName">The name of the application. Must be unique within your account.</param>
         public CreateApplicationRequest(string applicationName)
         {
             _applicationName = applicationName;
@@ -56,12 +57,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of the application.
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraint: This name must be unique within your account. If the specified name already
-        /// exists, the action returns an <code>InvalidParameterValue</code> error.
+        /// The name of the application. Must be unique within your account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -80,7 +76,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Describes the application.
+        /// Your description of the application.
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]
@@ -99,7 +95,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ResourceLifecycleConfig. 
         /// <para>
-        /// Specify an application resource lifecycle configuration to prevent your application
+        /// Specifies an application resource lifecycle configuration to prevent your application
         /// from accumulating too many versions.
         /// </para>
         /// </summary>

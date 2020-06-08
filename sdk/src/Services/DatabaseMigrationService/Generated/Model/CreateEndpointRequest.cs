@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -47,6 +48,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private KinesisSettings _kinesisSettings;
         private string _kmsKeyId;
         private MongoDbSettings _mongoDbSettings;
+        private NeptuneSettings _neptuneSettings;
         private string _password;
         private int? _port;
         private RedshiftSettings _redshiftSettings;
@@ -290,10 +292,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property KafkaSettings. 
         /// <para>
-        /// Settings in JSON format for the target Apache Kafka endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
-        /// Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database Migration
-        /// User Guide.</i> 
+        /// Settings in JSON format for the target Apache Kafka endpoint. For more information
+        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+        /// Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS Database
+        /// Migration User Guide.</i> 
         /// </para>
         /// </summary>
         public KafkaSettings KafkaSettings
@@ -312,9 +314,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property KinesisSettings. 
         /// <para>
         /// Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
-        /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
-        /// Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database
-        /// Migration User Guide.</i> 
+        /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
+        /// Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a> in
+        /// the <i>AWS Database Migration User Guide.</i> 
         /// </para>
         /// </summary>
         public KinesisSettings KinesisSettings
@@ -362,7 +364,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property MongoDbSettings. 
         /// <para>
         /// Settings in JSON format for the source MongoDB endpoint. For more information about
-        /// the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">Using
+        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Using
         /// MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS Database
         /// Migration Service User Guide.</i> 
         /// </para>
@@ -377,6 +379,26 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetMongoDbSettings()
         {
             return this._mongoDbSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NeptuneSettings. 
+        /// <para>
+        /// Settings in JSON format for the target Amazon Neptune endpoint. For more information
+        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings</a>
+        /// in the <i>AWS Database Migration Service User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public NeptuneSettings NeptuneSettings
+        {
+            get { return this._neptuneSettings; }
+            set { this._neptuneSettings = value; }
+        }
+
+        // Check to see if NeptuneSettings property is set
+        internal bool IsSetNeptuneSettings()
+        {
+            return this._neptuneSettings != null;
         }
 
         /// <summary>

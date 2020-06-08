@@ -49,7 +49,10 @@ namespace UnitTests
             "DisableHostPrefixInjection",
             "EndpointDiscoveryEnabled",
             "EndpointDiscoveryCacheLimit",
-            "UseAlternateUserAgentHeader"
+            "UseAlternateUserAgentHeader",
+            "IsMaxErrorRetrySet",
+            "RetryMode",
+            "FastFailRequests"
         };
 
         [Fact]

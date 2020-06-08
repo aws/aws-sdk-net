@@ -45,6 +45,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InputAttachment requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAutomaticInputFailoverSettings())
+            {
+                context.Writer.WritePropertyName("automaticInputFailoverSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AutomaticInputFailoverSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutomaticInputFailoverSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInputAttachmentName())
             {
                 context.Writer.WritePropertyName("inputAttachmentName");

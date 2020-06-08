@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,8 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Returns information related to the type of user authentication that is in use for
-    /// a server's users. A server can have only one method of authentication.
+    /// a file transfer protocol-enabled server's users. A server can have only one method
+    /// of authentication.
     /// </summary>
     public partial class IdentityProviderDetails
     {
@@ -39,8 +41,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property InvocationRole. 
         /// <para>
-        /// The <code>InvocationRole</code> parameter provides the type of <code>InvocationRole</code>
-        /// used to authenticate the user account.
+        /// Provides the type of <code>InvocationRole</code> used to authenticate the user account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -59,8 +60,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The <code>Url</code> parameter provides contains the location of the service endpoint
-        /// used to authenticate users.
+        /// Contains the location of the service endpoint used to authenticate users.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

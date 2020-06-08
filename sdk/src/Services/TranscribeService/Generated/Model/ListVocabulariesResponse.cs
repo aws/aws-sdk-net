@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,7 +34,7 @@ namespace Amazon.TranscribeService.Model
     public partial class ListVocabulariesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private TranscriptionJobStatus _status;
+        private VocabularyState _status;
         private List<VocabularyInfo> _vocabularies = new List<VocabularyInfo>();
 
         /// <summary>
@@ -65,7 +66,7 @@ namespace Amazon.TranscribeService.Model
         /// The requested vocabulary state.
         /// </para>
         /// </summary>
-        public TranscriptionJobStatus Status
+        public VocabularyState Status
         {
             get { return this._status; }
             set { this._status = value; }

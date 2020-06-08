@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,6 +34,7 @@ namespace Amazon.Kendra.Model
     public partial class IndexConfigurationSummary
     {
         private DateTime? _createdAt;
+        private IndexEdition _edition;
         private string _id;
         private string _name;
         private IndexStatus _status;
@@ -55,6 +57,25 @@ namespace Amazon.Kendra.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Edition. 
+        /// <para>
+        /// Indicates whether the index is a enterprise edition index or a developer edition index.
+        /// 
+        /// </para>
+        /// </summary>
+        public IndexEdition Edition
+        {
+            get { return this._edition; }
+            set { this._edition = value; }
+        }
+
+        // Check to see if Edition property is set
+        internal bool IsSetEdition()
+        {
+            return this._edition != null;
         }
 
         /// <summary>

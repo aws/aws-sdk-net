@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes an override for a launch template.
+    /// Describes an override for a launch template. Currently, the only supported override
+    /// is instance type.
+    /// 
+    ///  
+    /// <para>
+    /// The maximum number of instance type overrides that can be associated with an Auto
+    /// Scaling group is 20.
+    /// </para>
     /// </summary>
     public partial class LaunchTemplateOverrides
     {
@@ -38,7 +46,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type.
+        /// The instance type. You must use an instance type that is supported in your requested
+        /// Region and Availability Zones. 
         /// </para>
         ///  
         /// <para>

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -65,7 +66,8 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property InputFormatConfiguration. 
         /// <para>
         /// Specifies the deserializer that you want Kinesis Data Firehose to use to convert the
-        /// format of your data from JSON.
+        /// format of your data from JSON. This parameter is required if <code>Enabled</code>
+        /// is set to true.
         /// </para>
         /// </summary>
         public InputFormatConfiguration InputFormatConfiguration
@@ -84,7 +86,8 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property OutputFormatConfiguration. 
         /// <para>
         /// Specifies the serializer that you want Kinesis Data Firehose to use to convert the
-        /// format of your data to the Parquet or ORC format.
+        /// format of your data to the Parquet or ORC format. This parameter is required if <code>Enabled</code>
+        /// is set to true.
         /// </para>
         /// </summary>
         public OutputFormatConfiguration OutputFormatConfiguration
@@ -102,7 +105,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property SchemaConfiguration. 
         /// <para>
-        /// Specifies the AWS Glue Data Catalog table that contains the column information.
+        /// Specifies the AWS Glue Data Catalog table that contains the column information. This
+        /// parameter is required if <code>Enabled</code> is set to true.
         /// </para>
         /// </summary>
         public SchemaConfiguration SchemaConfiguration

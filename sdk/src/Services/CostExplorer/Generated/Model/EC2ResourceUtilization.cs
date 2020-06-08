@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -42,6 +43,7 @@ namespace Amazon.CostExplorer.Model
         ///  Maximum observed or expected CPU utilization of the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string MaxCpuUtilizationPercentage
         {
             get { return this._maxCpuUtilizationPercentage; }
@@ -60,6 +62,7 @@ namespace Amazon.CostExplorer.Model
         ///  Maximum observed or expected memory utilization of the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string MaxMemoryUtilizationPercentage
         {
             get { return this._maxMemoryUtilizationPercentage; }
@@ -79,6 +82,7 @@ namespace Amazon.CostExplorer.Model
         /// EBS storage).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string MaxStorageUtilizationPercentage
         {
             get { return this._maxStorageUtilizationPercentage; }

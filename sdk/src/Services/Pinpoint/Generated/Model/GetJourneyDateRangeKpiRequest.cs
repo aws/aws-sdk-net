@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -109,7 +110,7 @@ namespace Amazon.Pinpoint.Model
         /// to retrieve data for. This value describes the associated metric and consists of two
         /// or more terms, which are comprised of lowercase alphanumeric characters, separated
         /// by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list
-        /// of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+        /// of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
         /// Pinpoint Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -130,7 +131,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The  string that specifies which page of results to return in a paginated response.
-        /// This parameter is currently not supported for application, campaign, and journey metrics.
+        /// This parameter is not supported for application, campaign, and journey metrics.
         /// </para>
         /// </summary>
         public string NextToken
@@ -149,7 +150,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property PageSize. 
         /// <para>
         /// The maximum number of items to include in each page of a paginated response. This
-        /// parameter is currently not supported for application, campaign, and journey metrics.
+        /// parameter is not supported for application, campaign, and journey metrics.
         /// </para>
         /// </summary>
         public string PageSize

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -58,7 +59,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AttachmentsInformation. 
         /// <para>
-        /// Details about the document attachments, including names, locations, sizes, etc.
+        /// Details about the document attachments, including names, locations, sizes, and so
+        /// on.
         /// </para>
         /// </summary>
         public List<AttachmentInformation> AttachmentsInformation
@@ -437,7 +439,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The target type which defines the kinds of resources the document can run on. For
         /// example, /AWS::EC2::Instance. For a list of valid resource types, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-        /// Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. 
+        /// resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes a lifecycle hook. Used in combination with <a>CreateAutoScalingGroup</a>.
+    /// Describes information used to specify a lifecycle hook for an Auto Scaling group.
     /// 
     ///  
     /// <para>
@@ -60,23 +61,16 @@ namespace Amazon.AutoScaling.Model
     ///  </li> <li> 
     /// <para>
     /// If you need more time, record the lifecycle action heartbeat to keep the instance
-    /// in a pending state using <a>RecordLifecycleActionHeartbeat</a>.
+    /// in a pending state.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you finish before the timeout period ends, complete the lifecycle action using
-    /// <a>CompleteLifecycleAction</a>.
+    /// If you finish before the timeout period ends, complete the lifecycle action.
     /// </para>
     ///  </li> </ol> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
     /// EC2 Auto Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    /// You can view the lifecycle hooks for an Auto Scaling group using <a>DescribeLifecycleHooks</a>.
-    /// You can modify an existing lifecycle hook or create new lifecycle hooks using <a>PutLifecycleHook</a>.
-    /// If you are no longer using a lifecycle hook, you can delete it using <a>DeleteLifecycleHook</a>.
     /// </para>
     /// </summary>
     public partial class LifecycleHookSpecification

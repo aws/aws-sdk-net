@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,8 @@ namespace Amazon.Macie.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMemberAccounts operation.
-    /// Lists all Amazon Macie member accounts for the current Amazon Macie master account.
+    /// Lists all Amazon Macie Classic member accounts for the current Amazon Macie Classic
+    /// master account.
     /// </summary>
     public partial class ListMemberAccountsRequest : AmazonMacieRequest
     {

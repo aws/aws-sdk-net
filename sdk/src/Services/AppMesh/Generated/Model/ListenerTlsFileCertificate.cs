@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object that represents a local file certificate. The certificate must meet specific
-    /// requirements and you must have proxy authorization enabled. For more information,
-    /// see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites">Transport
+    /// An object that represents a local file certificate.         The certificate must meet
+    /// specific requirements and you must have proxy authorization enabled. For more information,
+    /// see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport
     /// Layer Security (TLS)</a>.
     /// </summary>
     public partial class ListenerTlsFileCertificate
@@ -61,7 +62,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property PrivateKey. 
         /// <para>
         /// The private key for a certificate stored on the file system of the virtual node that
-        /// the proxy is running on.
+        /// the         proxy is running on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

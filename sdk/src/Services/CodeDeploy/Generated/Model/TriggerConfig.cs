@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -75,8 +76,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TriggerTargetArn. 
         /// <para>
-        /// The ARN of the Amazon Simple Notification Service topic through which notifications
-        /// about deployment or instance events are sent.
+        /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through
+        /// which notifications about deployment or instance events are sent.
         /// </para>
         /// </summary>
         public string TriggerTargetArn

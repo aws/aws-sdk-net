@@ -62,6 +62,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Status);
             }
 
+            if(requestObject.IsSetStatusReasons())
+            {
+                context.Writer.WritePropertyName("StatusReasons");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectStatusReasonsListValue in requestObject.StatusReasons)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StatusReasonMarshaller.Instance;
+                    marshaller.Marshall(requestObjectStatusReasonsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

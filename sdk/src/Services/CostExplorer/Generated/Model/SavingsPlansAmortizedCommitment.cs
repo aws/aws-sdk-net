@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -44,6 +45,7 @@ namespace Amazon.CostExplorer.Model
         /// a <code>Partial</code> or a <code>NoUpfront</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string AmortizedRecurringCommitment
         {
             get { return this._amortizedRecurringCommitment; }
@@ -63,6 +65,7 @@ namespace Amazon.CostExplorer.Model
         /// or <code>PartialUpfront</code> Savings Plans.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string AmortizedUpfrontCommitment
         {
             get { return this._amortizedUpfrontCommitment; }
@@ -82,6 +85,7 @@ namespace Amazon.CostExplorer.Model
         /// Plans purchase method. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string TotalAmortizedCommitment
         {
             get { return this._totalAmortizedCommitment; }

@@ -132,10 +132,10 @@ namespace Amazon.Lambda
         /// To grant permission to another account, specify the account ID as the <code>Principal</code>.
         /// For AWS services, the principal is a domain-style identifier defined by the service,
         /// like <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>. For AWS services,
-        /// you can also specify the ARN or owning account of the associated resource as the <code>SourceArn</code>
-        /// or <code>SourceAccount</code>. If you grant permission to a service principal without
-        /// specifying the source, other accounts could potentially configure resources in their
-        /// account to invoke your Lambda function.
+        /// you can also specify the ARN of the associated resource as the <code>SourceArn</code>.
+        /// If you grant permission to a service principal without specifying the source, other
+        /// accounts could potentially configure resources in their account to invoke your Lambda
+        /// function.
         /// </para>
         ///  
         /// <para>
@@ -1652,7 +1652,8 @@ namespace Amazon.Lambda
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permission for the <code>lambda:InvokeFunction</code> action.
+        /// This operation requires permission for the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Invoke service method.</param>

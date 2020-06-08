@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -288,7 +289,9 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property TranscriptionJobName. 
         /// <para>
         /// The name of the job. Note that you can't use the strings "." or ".." by themselves
-        /// as the job name. The name must also be unique within an AWS account.
+        /// as the job name. The name must also be unique within an AWS account. If you try to
+        /// create a transcription job with the same name as a previous transcription job you
+        /// will receive a <code>ConflictException</code> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

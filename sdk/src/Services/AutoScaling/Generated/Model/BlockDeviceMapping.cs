@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -61,7 +62,11 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Ebs. 
         /// <para>
-        /// The information about the Amazon EBS volume.
+        /// Parameters used to automatically set up EBS volumes when an instance is launched.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.
         /// </para>
         /// </summary>
         public Ebs Ebs
@@ -79,12 +84,18 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NoDevice. 
         /// <para>
-        /// Suppresses a device mapping.
+        /// Setting this value to <code>true</code> suppresses the specified device included in
+        /// the block device mapping of the AMI.
         /// </para>
         ///  
         /// <para>
-        /// If this parameter is true for the root device, the instance might fail the EC2 health
-        /// check. In that case, Amazon EC2 Auto Scaling launches a replacement instance.
+        /// If <code>NoDevice</code> is <code>true</code> for the root device, instances might
+        /// fail the EC2 health check. In that case, Amazon EC2 Auto Scaling launches replacement
+        /// instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify <code>NoDevice</code>, you cannot specify <code>Ebs</code>.
         /// </para>
         /// </summary>
         public bool NoDevice
@@ -103,6 +114,10 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property VirtualName. 
         /// <para>
         /// The name of the virtual device (for example, <code>ephemeral0</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

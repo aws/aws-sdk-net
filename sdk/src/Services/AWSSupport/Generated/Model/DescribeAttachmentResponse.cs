@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,7 +39,13 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Attachment. 
         /// <para>
-        /// The attachment content and file name.
+        /// This object includes the attachment content and file name.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the previous response syntax, the value for the <code>data</code> parameter appears
+        /// as <code>blob</code>, which is represented as a base64-encoded string. The value for
+        /// <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.
         /// </para>
         /// </summary>
         public Attachment Attachment

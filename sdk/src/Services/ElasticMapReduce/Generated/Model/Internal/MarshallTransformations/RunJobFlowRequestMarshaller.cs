@@ -174,10 +174,27 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetLogEncryptionKmsKeyId())
+                {
+                    context.Writer.WritePropertyName("LogEncryptionKmsKeyId");
+                    context.Writer.Write(publicRequest.LogEncryptionKmsKeyId);
+                }
+
                 if(publicRequest.IsSetLogUri())
                 {
                     context.Writer.WritePropertyName("LogUri");
                     context.Writer.Write(publicRequest.LogUri);
+                }
+
+                if(publicRequest.IsSetManagedScalingPolicy())
+                {
+                    context.Writer.WritePropertyName("ManagedScalingPolicy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ManagedScalingPolicyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ManagedScalingPolicy, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetName())

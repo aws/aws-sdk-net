@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -179,8 +180,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineFamily. 
         /// <para>
-        /// Currently, this value is always <code>MYSQL</code>. The engine family applies to both
-        /// RDS MySQL and Aurora MySQL.
+        /// The engine family applies to MySQL and PostgreSQL for both RDS and Aurora.
         /// </para>
         /// </summary>
         public string EngineFamily

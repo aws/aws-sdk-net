@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -35,6 +36,7 @@ namespace Amazon.Personalize.Model
         private string _batchInferenceJobArn;
         private DateTime? _creationDateTime;
         private string _failureReason;
+        private string _filterArn;
         private BatchInferenceJobInput _jobInput;
         private string _jobName;
         private BatchInferenceJobOutput _jobOutput;
@@ -97,6 +99,25 @@ namespace Amazon.Personalize.Model
         internal bool IsSetFailureReason()
         {
             return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterArn. 
+        /// <para>
+        /// The ARN of the filter used on the batch inference job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string FilterArn
+        {
+            get { return this._filterArn; }
+            set { this._filterArn = value; }
+        }
+
+        // Check to see if FilterArn property is set
+        internal bool IsSetFilterArn()
+        {
+            return this._filterArn != null;
         }
 
         /// <summary>

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -49,7 +50,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ChangeDescription. 
         /// <para>
-        ///  The change description of the component. Describes what change has been made in this
+        /// The change description of the component. Describes what change has been made in this
         /// version, or what makes this version different from other versions of this component.
         /// 
         /// </para>
@@ -70,7 +71,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        ///  The idempotency token of the component. 
+        /// The idempotency token of the component. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -128,7 +129,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        ///  The format of the resource that you want to import as a component. 
+        /// The format of the resource that you want to import as a component. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -147,7 +148,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        ///  The ID of the KMS key that should be used to encrypt this component. 
+        /// The ID of the KMS key that should be used to encrypt this component. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -185,7 +186,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        ///  The platform of the component. 
+        /// The platform of the component. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -225,7 +226,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  The tags of the component. 
+        /// The tags of the component. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

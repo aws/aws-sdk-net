@@ -161,6 +161,11 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.DescribeOrganizationConfigurationRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.DescribePublishingDestinationRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
@@ -346,6 +351,11 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ListOrganizationAdminAccountsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.ListPublishingDestinationsRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
@@ -443,6 +453,11 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.UpdateOrganizationConfigurationRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.UpdatePublishingDestinationRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
@@ -471,6 +486,11 @@
     <property>Amazon.GuardDuty.Model.AccountDetail.Email</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.AdminAccount.AdminStatus</property>
+    <min>1</min>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.Destination.DestinationType</property>

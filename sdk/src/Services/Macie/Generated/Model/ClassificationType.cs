@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie.Model
 {
     /// <summary>
-    /// The classification type that Amazon Macie applies to the associated S3 resources.
+    /// The classification type that Amazon Macie Classic applies to the associated S3 resources.
     /// </summary>
     public partial class ClassificationType
     {
@@ -39,8 +40,8 @@ namespace Amazon.Macie.Model
         /// Gets and sets the property Continuous. 
         /// <para>
         /// A continuous classification of the objects that are added to a specified S3 bucket.
-        /// Amazon Macie begins performing continuous classification after a bucket is successfully
-        /// associated with Amazon Macie. 
+        /// Amazon Macie Classic begins performing continuous classification after a bucket is
+        /// successfully associated with Amazon Macie Classic. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

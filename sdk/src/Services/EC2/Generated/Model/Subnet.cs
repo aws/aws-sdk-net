@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -37,8 +38,10 @@ namespace Amazon.EC2.Model
         private string _availabilityZoneId;
         private int? _availableIpAddressCount;
         private string _cidrBlock;
+        private string _customerOwnedIpv4Pool;
         private bool? _defaultForAz;
         private List<SubnetIpv6CidrBlockAssociation> _ipv6CidrBlockAssociationSet = new List<SubnetIpv6CidrBlockAssociation>();
+        private bool? _mapCustomerOwnedIpOnLaunch;
         private bool? _mapPublicIpOnLaunch;
         private string _outpostArn;
         private string _ownerId;
@@ -141,6 +144,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomerOwnedIpv4Pool. 
+        /// <para>
+        /// The customer-owned IPv4 address pool associated with the subnet.
+        /// </para>
+        /// </summary>
+        public string CustomerOwnedIpv4Pool
+        {
+            get { return this._customerOwnedIpv4Pool; }
+            set { this._customerOwnedIpv4Pool = value; }
+        }
+
+        // Check to see if CustomerOwnedIpv4Pool property is set
+        internal bool IsSetCustomerOwnedIpv4Pool()
+        {
+            return this._customerOwnedIpv4Pool != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DefaultForAz. 
         /// <para>
         /// Indicates whether this is the default subnet for the Availability Zone.
@@ -174,6 +195,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpv6CidrBlockAssociationSet()
         {
             return this._ipv6CidrBlockAssociationSet != null && this._ipv6CidrBlockAssociationSet.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MapCustomerOwnedIpOnLaunch. 
+        /// <para>
+        /// Indicates whether a network interface created in this subnet (including a network
+        /// interface created by <a>RunInstances</a>) receives a customer-owned IPv4 address.
+        /// </para>
+        /// </summary>
+        public bool MapCustomerOwnedIpOnLaunch
+        {
+            get { return this._mapCustomerOwnedIpOnLaunch.GetValueOrDefault(); }
+            set { this._mapCustomerOwnedIpOnLaunch = value; }
+        }
+
+        // Check to see if MapCustomerOwnedIpOnLaunch property is set
+        internal bool IsSetMapCustomerOwnedIpOnLaunch()
+        {
+            return this._mapCustomerOwnedIpOnLaunch.HasValue; 
         }
 
         /// <summary>

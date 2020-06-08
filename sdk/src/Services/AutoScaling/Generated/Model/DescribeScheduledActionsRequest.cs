@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -30,8 +31,8 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the DescribeScheduledActions operation.
     /// Describes the actions scheduled for your Auto Scaling group that haven't run or that
-    /// have not reached their end time. To describe the actions that have already run, use
-    /// <a>DescribeScalingActivities</a>.
+    /// have not reached their end time. To describe the actions that have already run, call
+    /// the <a>DescribeScalingActivities</a> API.
     /// </summary>
     public partial class DescribeScheduledActionsRequest : AmazonAutoScalingRequest
     {

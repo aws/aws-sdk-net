@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,8 +34,27 @@ namespace Amazon.IoTEvents.Model
     /// </summary>
     public partial class SqsAction
     {
+        private Payload _payload;
         private string _queueUrl;
         private bool? _useBase64;
+
+        /// <summary>
+        /// Gets and sets the property Payload. 
+        /// <para>
+        /// You can configure the action payload when you send a message to an Amazon SQS queue.
+        /// </para>
+        /// </summary>
+        public Payload Payload
+        {
+            get { return this._payload; }
+            set { this._payload = value; }
+        }
+
+        // Check to see if Payload property is set
+        internal bool IsSetPayload()
+        {
+            return this._payload != null;
+        }
 
         /// <summary>
         /// Gets and sets the property QueueUrl. 
@@ -59,7 +79,7 @@ namespace Amazon.IoTEvents.Model
         /// Gets and sets the property UseBase64. 
         /// <para>
         /// Set this to TRUE if you want the data to be base-64 encoded before it is written to
-        /// the queue.
+        /// the queue. Otherwise, set this to FALSE.
         /// </para>
         /// </summary>
         public bool UseBase64

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The Lustre configuration for the file system being created. This value is required
-    /// if <code>FileSystemType</code> is set to <code>LUSTRE</code>.
+    /// The Lustre configuration for the file system being created.
     /// </summary>
     public partial class CreateFileSystemLustreConfiguration
     {
@@ -168,13 +168,12 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property PerUnitStorageThroughput. 
         /// <para>
-        ///  (Optional) For the <code>PERSISTENT_1</code> deployment type, describes the amount
+        ///  Required for the <code>PERSISTENT_1</code> deployment type, describes the amount
         /// of read and write throughput for each 1 tebibyte of storage, in MB/s/TiB. File system
         /// throughput capacity is calculated by multiplying ﬁle system storage capacity (TiB)
         /// by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB ﬁle system, provisioning
-        /// 50 MB/s/TiB of PerUnitStorageThroughput yields 120 MB/s of ﬁle system throughput.
-        /// You pay for the amount of throughput that you provision. (Default = 200 MB/s/TiB)
-        /// 
+        /// 50 MB/s/TiB of PerUnitStorageThroughput yields 117 MB/s of ﬁle system throughput.
+        /// You pay for the amount of throughput that you provision. 
         /// </para>
         ///  
         /// <para>
@@ -197,7 +196,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property WeeklyMaintenanceStartTime. 
         /// <para>
-        /// The preferred time to perform weekly maintenance, in the UTC time zone.
+        /// The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC
+        /// time zone, where d is the weekday number, from 1 through 7, beginning with Monday
+        /// and ending with Sunday.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=7)]

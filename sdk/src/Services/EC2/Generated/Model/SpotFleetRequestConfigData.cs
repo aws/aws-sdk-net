@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -159,8 +160,8 @@ namespace Amazon.EC2.Model
         /// on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
         /// Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot
         /// Fleet can terminate Spot Instances on your behalf when you cancel its Spot Fleet request
-        /// using <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you
-        /// set <code>TerminateInstancesWithExpiration</code>.
+        /// using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
+        /// or when the Spot Fleet request expires, if you set <code>TerminateInstancesWithExpiration</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

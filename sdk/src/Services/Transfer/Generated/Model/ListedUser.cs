@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -42,8 +43,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// This property is the unique Amazon Resource Name (ARN) for the user that you want
-        /// to learn about.
+        /// The unique Amazon Resource Name (ARN) for the user that you want to learn about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1600)]
@@ -62,8 +62,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property HomeDirectory. 
         /// <para>
-        /// This value specifies the location that files are written to or read from an Amazon
-        /// S3 bucket for the user you specify by their ARN.
+        /// Specifies the location that files are written to or read from an Amazon S3 bucket
+        /// for the user you specify by their ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -84,9 +84,9 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// The type of landing directory (folder) you mapped for your users' home directory.
         /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket
-        /// paths as is in their SFTP clients. If you set it <code>LOGICAL</code>, you will need
-        /// to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to
-        /// make S3 paths visible to your user.
+        /// paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>,
+        /// you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how
+        /// you want to make Amazon S3 paths visible to your users.
         /// </para>
         /// </summary>
         public HomeDirectoryType HomeDirectoryType
@@ -105,9 +105,9 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property Role. 
         /// <para>
         /// The role in use by this user. A <i>role</i> is an AWS Identity and Access Management
-        /// (IAM) entity that, in this case, allows the SFTP server to act on a user's behalf.
-        /// It allows the server to inherit the trust relationship that enables that user to perform
-        /// file operations to their Amazon S3 bucket.
+        /// (IAM) entity that, in this case, allows a file transfer protocol-enabled server to
+        /// act on a user's behalf. It allows the server to inherit the trust relationship that
+        /// enables that user to perform file operations to their Amazon S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -126,7 +126,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property SshPublicKeyCount. 
         /// <para>
-        /// This value is the number of SSH public keys stored for the user you specified.
+        /// The number of SSH public keys stored for the user you specified.
         /// </para>
         /// </summary>
         public int SshPublicKeyCount

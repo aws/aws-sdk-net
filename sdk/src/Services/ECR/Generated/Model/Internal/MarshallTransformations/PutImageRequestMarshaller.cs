@@ -74,6 +74,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ImageManifest);
                 }
 
+                if(publicRequest.IsSetImageManifestMediaType())
+                {
+                    context.Writer.WritePropertyName("imageManifestMediaType");
+                    context.Writer.Write(publicRequest.ImageManifestMediaType);
+                }
+
                 if(publicRequest.IsSetImageTag())
                 {
                     context.Writer.WritePropertyName("imageTag");

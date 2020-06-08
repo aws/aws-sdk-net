@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -32,7 +33,26 @@ namespace Amazon.CodeGuruReviewer.Model
     /// </summary>
     public partial class Repository
     {
+        private ThirdPartySourceRepository _bitbucket;
         private CodeCommitRepository _codeCommit;
+
+        /// <summary>
+        /// Gets and sets the property Bitbucket. 
+        /// <para>
+        ///  Information about a Bitbucket Cloud repository. 
+        /// </para>
+        /// </summary>
+        public ThirdPartySourceRepository Bitbucket
+        {
+            get { return this._bitbucket; }
+            set { this._bitbucket = value; }
+        }
+
+        // Check to see if Bitbucket property is set
+        internal bool IsSetBitbucket()
+        {
+            return this._bitbucket != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CodeCommit. 

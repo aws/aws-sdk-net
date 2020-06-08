@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -45,9 +46,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// This is the value of the resource that will have the tag removed. An Amazon Resource
-        /// Name (ARN) is an identifier for a specific AWS resource, such as a server, user, or
-        /// role.
+        /// The value of the resource that will have the tag removed. An Amazon Resource Name
+        /// (ARN) is an identifier for a specific AWS resource, such as a server, user, or role.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1600)]

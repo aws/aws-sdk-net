@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -61,7 +62,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property CampaignHook. 
         /// <para>
-        /// The settings for the AWS Lambda function to use by default as a code hook for campaigns
+        /// The settings for the AWS Lambda function to invoke by default as a code hook for campaigns
+        /// in the application. You can use this hook to customize segments that are used by campaigns
         /// in the application.
         /// </para>
         /// </summary>
@@ -98,7 +100,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Limits. 
         /// <para>
-        /// The default sending limits for campaigns in the application.
+        /// The default sending limits for campaigns and journeys in the application.
         /// </para>
         /// </summary>
         public CampaignLimits Limits

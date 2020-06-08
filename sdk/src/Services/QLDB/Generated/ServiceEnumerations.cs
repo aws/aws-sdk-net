@@ -25,6 +25,56 @@ namespace Amazon.QLDB
 {
 
     /// <summary>
+    /// Constants used for properties of type ErrorCause.
+    /// </summary>
+    public class ErrorCause : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IAM_PERMISSION_REVOKED for ErrorCause
+        /// </summary>
+        public static readonly ErrorCause IAM_PERMISSION_REVOKED = new ErrorCause("IAM_PERMISSION_REVOKED");
+        /// <summary>
+        /// Constant KINESIS_STREAM_NOT_FOUND for ErrorCause
+        /// </summary>
+        public static readonly ErrorCause KINESIS_STREAM_NOT_FOUND = new ErrorCause("KINESIS_STREAM_NOT_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ErrorCause(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ErrorCause FindValue(string value)
+        {
+            return FindValue<ErrorCause>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ErrorCause(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExportStatus.
     /// </summary>
     public class ExportStatus : ConstantClass
@@ -230,6 +280,68 @@ namespace Amazon.QLDB
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator S3ObjectEncryptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StreamStatus.
+    /// </summary>
+    public class StreamStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for StreamStatus
+        /// </summary>
+        public static readonly StreamStatus ACTIVE = new StreamStatus("ACTIVE");
+        /// <summary>
+        /// Constant CANCELED for StreamStatus
+        /// </summary>
+        public static readonly StreamStatus CANCELED = new StreamStatus("CANCELED");
+        /// <summary>
+        /// Constant COMPLETED for StreamStatus
+        /// </summary>
+        public static readonly StreamStatus COMPLETED = new StreamStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for StreamStatus
+        /// </summary>
+        public static readonly StreamStatus FAILED = new StreamStatus("FAILED");
+        /// <summary>
+        /// Constant IMPAIRED for StreamStatus
+        /// </summary>
+        public static readonly StreamStatus IMPAIRED = new StreamStatus("IMPAIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StreamStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StreamStatus FindValue(string value)
+        {
+            return FindValue<StreamStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StreamStatus(string value)
         {
             return FindValue(value);
         }

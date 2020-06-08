@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -46,10 +47,29 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class CacheSecurityGroup
     {
+        private string _arn;
         private string _cacheSecurityGroupName;
         private string _description;
         private List<EC2SecurityGroup> _ec2SecurityGroups = new List<EC2SecurityGroup>();
         private string _ownerId;
+
+        /// <summary>
+        /// Gets and sets the property ARN. 
+        /// <para>
+        /// The ARN (Amazon Resource Name) of the cache security group.
+        /// </para>
+        /// </summary>
+        public string ARN
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if ARN property is set
+        internal bool IsSetARN()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CacheSecurityGroupName. 

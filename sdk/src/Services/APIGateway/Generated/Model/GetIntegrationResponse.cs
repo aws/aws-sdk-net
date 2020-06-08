@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -48,6 +49,7 @@ namespace Amazon.APIGateway.Model
         private Dictionary<string, string> _requestParameters = new Dictionary<string, string>();
         private Dictionary<string, string> _requestTemplates = new Dictionary<string, string>();
         private int? _timeoutInMillis;
+        private TlsConfig _tlsConfig;
         private IntegrationType _type;
         private string _uri;
 
@@ -339,6 +341,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetTimeoutInMillis()
         {
             return this._timeoutInMillis.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TlsConfig. 
+        /// <para>
+        /// Specifies the TLS configuration for an integration.
+        /// </para>
+        /// </summary>
+        public TlsConfig TlsConfig
+        {
+            get { return this._tlsConfig; }
+            set { this._tlsConfig = value; }
+        }
+
+        // Check to see if TlsConfig property is set
+        internal bool IsSetTlsConfig()
+        {
+            return this._tlsConfig != null;
         }
 
         /// <summary>

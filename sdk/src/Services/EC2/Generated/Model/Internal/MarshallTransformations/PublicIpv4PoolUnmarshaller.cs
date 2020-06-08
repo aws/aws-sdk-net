@@ -60,6 +60,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("networkBorderGroup", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NetworkBorderGroup = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("poolAddressRangeSet/item", targetDepth))
                     {
                         var unmarshaller = PublicIpv4PoolRangeUnmarshaller.Instance;

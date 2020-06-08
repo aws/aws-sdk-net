@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,8 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The launch template to use. You must specify either the launch template ID or launch
-    /// template name in the request.
+    /// Describes the Amazon EC2 launch template and the launch template version that can
+    /// be used by an EC2 Fleet to configure Amazon EC2 instances. For information about launch
+    /// templates, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launching
+    /// an instance from a launch template</a> in the <i>Amazon Elastic Compute Cloud User
+    /// Guide</i>.
     /// </summary>
     public partial class FleetLaunchTemplateSpecificationRequest
     {
@@ -40,7 +44,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateId. 
         /// <para>
-        /// The ID of the launch template.
+        /// The ID of the launch template. If you specify the template ID, you can't specify the
+        /// template name.
         /// </para>
         /// </summary>
         public string LaunchTemplateId
@@ -58,7 +63,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateName. 
         /// <para>
-        /// The name of the launch template.
+        /// The name of the launch template. If you specify the template name, you can't specify
+        /// the template ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]
@@ -77,8 +83,18 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version number of the launch template. Note: This is a required parameter and
-        /// will be updated soon. 
+        /// The launch template version number, <code>$Latest</code>, or <code>$Default</code>.
+        /// You must specify a value, otherwise the request fails.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is <code>$Latest</code>, Amazon EC2 uses the latest version of the launch
+        /// template.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is <code>$Default</code>, Amazon EC2 uses the default version of the
+        /// launch template.
         /// </para>
         /// </summary>
         public string Version

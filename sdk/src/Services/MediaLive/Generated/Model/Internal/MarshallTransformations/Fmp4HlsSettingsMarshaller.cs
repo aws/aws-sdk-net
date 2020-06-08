@@ -51,6 +51,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AudioRenditionSets);
             }
 
+            if(requestObject.IsSetNielsenId3Behavior())
+            {
+                context.Writer.WritePropertyName("nielsenId3Behavior");
+                context.Writer.Write(requestObject.NielsenId3Behavior);
+            }
+
+            if(requestObject.IsSetTimedMetadataBehavior())
+            {
+                context.Writer.WritePropertyName("timedMetadataBehavior");
+                context.Writer.Write(requestObject.TimedMetadataBehavior);
+            }
+
         }
 
         /// <summary>

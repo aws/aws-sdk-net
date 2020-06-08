@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -36,24 +37,30 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// Each scalable target is identified by a service namespace, resource ID, and scalable
     /// dimension. A scheduled action applies to the scalable target identified by those three
     /// attributes. You cannot create a scheduled action until you have registered the resource
-    /// as a scalable target using <a>RegisterScalableTarget</a>. 
+    /// as a scalable target.
     /// </para>
     ///  
     /// <para>
-    /// To update an action, specify its name and the parameters that you want to change.
-    /// If you don't specify start and end times, the old values are deleted. Any other parameters
-    /// that you don't specify are not changed by this update request.
+    /// When start and end times are specified with a recurring schedule using a cron expression
+    /// or rates, they form the boundaries of when the recurring action starts and stops.
     /// </para>
     ///  
     /// <para>
-    /// You can view the scheduled actions using <a>DescribeScheduledActions</a>. If you are
-    /// no longer using a scheduled action, you can delete it using <a>DeleteScheduledAction</a>.
+    /// To update a scheduled action, specify the parameters that you want to change. If you
+    /// don't specify start and end times, the old values are deleted.
     /// </para>
     ///  
     /// <para>
-    /// Learn more about how to work with scheduled actions in the <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html">Application
-    /// Auto Scaling User Guide</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
+    /// Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// If a scalable target is deregistered, the scalable target is no longer available to
+    /// run scheduled actions. Any scheduled actions that were specified for the scalable
+    /// target are deleted.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class PutScheduledActionRequest : AmazonApplicationAutoScalingRequest
     {
@@ -69,7 +76,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The date and time for the scheduled action to end.
+        /// The date and time for the recurring schedule to end.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -149,6 +156,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// unique identifier is the function name with a function version or alias name suffix
         /// that is not <code>$LATEST</code>. Example: <code>function:my-function:prod</code>
         /// or <code>function:my-function:1</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier
+        /// is the table name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -236,6 +248,16 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency
         /// for a Lambda function.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for
+        /// an Amazon Keyspaces table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
+        /// for an Amazon Keyspaces table.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -254,8 +276,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScalableTargetAction. 
         /// <para>
-        /// The new minimum and maximum capacity. You can set both values or just one. During
-        /// the scheduled time, if the current capacity is below the minimum capacity, Application
+        /// The new minimum and maximum capacity. You can set both values or just one. At the
+        /// scheduled time, if the current capacity is below the minimum capacity, Application
         /// Auto Scaling scales out to the minimum capacity. If the current capacity is above
         /// the maximum capacity, Application Auto Scaling scales in to the maximum capacity.
         /// </para>
@@ -291,7 +313,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// At expressions are useful for one-time schedules. Specify the time, in UTC.
+        /// At expressions are useful for one-time schedules. Specify the time in UTC.
         /// </para>
         ///  
         /// <para>
@@ -303,6 +325,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// For more information about cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
         /// Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For examples of using these expressions, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
+        /// Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -321,7 +348,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScheduledActionName. 
         /// <para>
-        /// The name of the scheduled action.
+        /// The name of the scheduled action. This name must be unique among all other scheduled
+        /// actions on the specified scalable target. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -340,10 +368,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ServiceNamespace. 
         /// <para>
-        /// The namespace of the AWS service that provides the resource or <code>custom-resource</code>
-        /// for a resource provided by your own application or service. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-        /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+        /// The namespace of the AWS service that provides the resource. For a resource provided
+        /// by your own application or service, use <code>custom-resource</code> instead.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -362,7 +388,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The date and time for the scheduled action to start.
+        /// The date and time for this scheduled action to start.
         /// </para>
         /// </summary>
         public DateTime StartTime

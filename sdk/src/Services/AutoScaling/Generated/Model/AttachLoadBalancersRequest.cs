@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,16 +30,21 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachLoadBalancers operation.
-    /// Attaches one or more Classic Load Balancers to the specified Auto Scaling group.
-    /// 
-    ///  
+    /// <note> 
     /// <para>
-    /// To attach an Application Load Balancer or a Network Load Balancer instead, see <a>AttachLoadBalancerTargetGroups</a>.
+    /// To attach an Application Load Balancer or a Network Load Balancer, use the <a>AttachLoadBalancerTargetGroups</a>
+    /// API operation instead.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Attaches one or more Classic Load Balancers to the specified Auto Scaling group. Amazon
+    /// EC2 Auto Scaling registers the running instances with these Classic Load Balancers.
     /// </para>
     ///  
     /// <para>
-    /// To describe the load balancers for an Auto Scaling group, use <a>DescribeLoadBalancers</a>.
-    /// To detach the load balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.
+    /// To describe the load balancers for an Auto Scaling group, call the <a>DescribeLoadBalancers</a>
+    /// API. To detach the load balancer from the Auto Scaling group, call the <a>DetachLoadBalancers</a>
+    /// API.
     /// </para>
     ///  
     /// <para>

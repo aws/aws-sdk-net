@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -47,6 +48,7 @@ namespace Amazon.CostExplorer.Model
         /// The Availability Zone of the recommended reservation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -83,6 +85,7 @@ namespace Amazon.CostExplorer.Model
         /// The instance family of the recommended reservation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Family
         {
             get { return this._family; }
@@ -101,6 +104,7 @@ namespace Amazon.CostExplorer.Model
         /// The type of instance that AWS recommends.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string InstanceType
         {
             get { return this._instanceType; }
@@ -120,6 +124,7 @@ namespace Amazon.CostExplorer.Model
         /// of operating system, license model, and software on an instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Platform
         {
             get { return this._platform; }
@@ -138,6 +143,7 @@ namespace Amazon.CostExplorer.Model
         /// The AWS Region of the recommended reservation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Region
         {
             get { return this._region; }
@@ -174,6 +180,7 @@ namespace Amazon.CostExplorer.Model
         /// Whether the recommended reservation is dedicated or shared.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Tenancy
         {
             get { return this._tenancy; }

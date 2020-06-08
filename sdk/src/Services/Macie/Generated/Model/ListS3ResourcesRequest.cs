@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,10 +30,10 @@ namespace Amazon.Macie.Model
 {
     /// <summary>
     /// Container for the parameters to the ListS3Resources operation.
-    /// Lists all the S3 resources associated with Amazon Macie. If memberAccountId isn't
-    /// specified, the action lists the S3 resources associated with Amazon Macie for the
-    /// current master account. If memberAccountId is specified, the action lists the S3 resources
-    /// associated with Amazon Macie for the specified member account.
+    /// Lists all the S3 resources associated with Amazon Macie Classic. If memberAccountId
+    /// isn't specified, the action lists the S3 resources associated with Amazon Macie Classic
+    /// for the current master account. If memberAccountId is specified, the action lists
+    /// the S3 resources associated with Amazon Macie Classic for the specified member account.
     /// </summary>
     public partial class ListS3ResourcesRequest : AmazonMacieRequest
     {
@@ -63,8 +64,8 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property MemberAccountId. 
         /// <para>
-        /// The Amazon Macie member account ID whose associated S3 resources you want to list.
-        /// 
+        /// The Amazon Macie Classic member account ID whose associated S3 resources you want
+        /// to list. 
         /// </para>
         /// </summary>
         public string MemberAccountId

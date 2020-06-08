@@ -85,6 +85,7 @@ namespace Amazon.CloudSearchDomain
         /// <exception cref="Amazon.CloudSearchDomain.Model.SearchException">
         /// Information about any problems encountered while processing a search request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Search">REST API Reference for Search Operation</seealso>
         SearchResponse Search(SearchRequest request);
 
         /// <summary>
@@ -98,6 +99,7 @@ namespace Amazon.CloudSearchDomain
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearch
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Search">REST API Reference for Search Operation</seealso>
         IAsyncResult BeginSearch(SearchRequest request, AsyncCallback callback, object state);
 
 
@@ -109,6 +111,7 @@ namespace Amazon.CloudSearchDomain
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearch.</param>
         /// 
         /// <returns>Returns a  SearchResult from CloudSearchDomain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Search">REST API Reference for Search Operation</seealso>
         SearchResponse EndSearch(IAsyncResult asyncResult);
 
         #endregion
@@ -145,6 +148,7 @@ namespace Amazon.CloudSearchDomain
         /// <exception cref="Amazon.CloudSearchDomain.Model.SearchException">
         /// Information about any problems encountered while processing a search request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Suggest">REST API Reference for Suggest Operation</seealso>
         SuggestResponse Suggest(SuggestRequest request);
 
         /// <summary>
@@ -158,6 +162,7 @@ namespace Amazon.CloudSearchDomain
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSuggest
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Suggest">REST API Reference for Suggest Operation</seealso>
         IAsyncResult BeginSuggest(SuggestRequest request, AsyncCallback callback, object state);
 
 
@@ -169,6 +174,7 @@ namespace Amazon.CloudSearchDomain
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSuggest.</param>
         /// 
         /// <returns>Returns a  SuggestResult from CloudSearchDomain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Suggest">REST API Reference for Suggest Operation</seealso>
         SuggestResponse EndSuggest(IAsyncResult asyncResult);
 
         #endregion
@@ -209,6 +215,7 @@ namespace Amazon.CloudSearchDomain
         /// <exception cref="Amazon.CloudSearchDomain.Model.DocumentServiceException">
         /// Information about any problems encountered while processing an upload request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/UploadDocuments">REST API Reference for UploadDocuments Operation</seealso>
         UploadDocumentsResponse UploadDocuments(UploadDocumentsRequest request);
 
         /// <summary>
@@ -222,6 +229,7 @@ namespace Amazon.CloudSearchDomain
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadDocuments
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/UploadDocuments">REST API Reference for UploadDocuments Operation</seealso>
         IAsyncResult BeginUploadDocuments(UploadDocumentsRequest request, AsyncCallback callback, object state);
 
 
@@ -233,6 +241,7 @@ namespace Amazon.CloudSearchDomain
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadDocuments.</param>
         /// 
         /// <returns>Returns a  UploadDocumentsResult from CloudSearchDomain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/UploadDocuments">REST API Reference for UploadDocuments Operation</seealso>
         UploadDocumentsResponse EndUploadDocuments(IAsyncResult asyncResult);
 
         #endregion

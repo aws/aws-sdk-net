@@ -106,6 +106,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.NetworkInputSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("smpte2038DataPreference", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Smpte2038DataPreference = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sourceEndBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

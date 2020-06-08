@@ -91,6 +91,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DeploymentGroupName);
                 }
 
+                if(publicRequest.IsSetExternalId())
+                {
+                    context.Writer.WritePropertyName("externalId");
+                    context.Writer.Write(publicRequest.ExternalId);
+                }
+
                 if(publicRequest.IsSetIncludeOnlyStatuses())
                 {
                     context.Writer.WritePropertyName("includeOnlyStatuses");

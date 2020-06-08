@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -471,7 +472,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the SSL/TLS certificate. Valid values are below.
+        /// The validation status of the SSL/TLS certificate. Valid values are below.
         /// </para>
         /// </summary>
         public LoadBalancerTlsCertificateStatus Status

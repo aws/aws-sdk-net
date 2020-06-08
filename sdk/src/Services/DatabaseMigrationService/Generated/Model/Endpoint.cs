@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -68,6 +69,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private KinesisSettings _kinesisSettings;
         private string _kmsKeyId;
         private MongoDbSettings _mongoDbSettings;
+        private NeptuneSettings _neptuneSettings;
         private int? _port;
         private RedshiftSettings _redshiftSettings;
         private S3Settings _s3Settings;
@@ -436,6 +438,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetMongoDbSettings()
         {
             return this._mongoDbSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NeptuneSettings. 
+        /// <para>
+        /// The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
+        /// structure.
+        /// </para>
+        /// </summary>
+        public NeptuneSettings NeptuneSettings
+        {
+            get { return this._neptuneSettings; }
+            set { this._neptuneSettings = value; }
+        }
+
+        // Check to see if NeptuneSettings property is set
+        internal bool IsSetNeptuneSettings()
+        {
+            return this._neptuneSettings != null;
         }
 
         /// <summary>

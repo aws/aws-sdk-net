@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -291,17 +292,17 @@ namespace Amazon.CodeBuild.Model
         ///  </li> <li> 
         /// <para>
         /// The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code>
-        /// is available only in regions US East (N. Virginia), US East (N. Virginia), US West
-        /// (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific
-        /// (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
-        /// (Beijing), and China (Ningxia).
+        /// is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon),
+        /// Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo),
+        /// Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing),
+        /// and China (Ningxia).
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions
-        /// US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central),
-        /// EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul),
-        /// Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).
+        /// US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland),
+        /// EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific
+        /// (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).
         /// </para>
         ///  </li> </ul>
         /// </summary>

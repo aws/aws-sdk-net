@@ -1484,6 +1484,10 @@ namespace Amazon.EC2
         /// Constant DirectoryServiceAuthentication for ClientVpnAuthenticationType
         /// </summary>
         public static readonly ClientVpnAuthenticationType DirectoryServiceAuthentication = new ClientVpnAuthenticationType("directory-service-authentication");
+        /// <summary>
+        /// Constant FederatedAuthentication for ClientVpnAuthenticationType
+        /// </summary>
+        public static readonly ClientVpnAuthenticationType FederatedAuthentication = new ClientVpnAuthenticationType("federated-authentication");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -4983,6 +4987,38 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C59xlarge = new InstanceType("c5.9xlarge");
         /// <summary>
+        /// Constant C5a12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5a12xlarge = new InstanceType("c5a.12xlarge");
+        /// <summary>
+        /// Constant C5a16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5a16xlarge = new InstanceType("c5a.16xlarge");
+        /// <summary>
+        /// Constant C5a24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5a24xlarge = new InstanceType("c5a.24xlarge");
+        /// <summary>
+        /// Constant C5a2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5a2xlarge = new InstanceType("c5a.2xlarge");
+        /// <summary>
+        /// Constant C5a4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5a4xlarge = new InstanceType("c5a.4xlarge");
+        /// <summary>
+        /// Constant C5a8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5a8xlarge = new InstanceType("c5a.8xlarge");
+        /// <summary>
+        /// Constant C5aLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5aLarge = new InstanceType("c5a.large");
+        /// <summary>
+        /// Constant C5aXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5aXlarge = new InstanceType("c5a.xlarge");
+        /// <summary>
         /// Constant C5d12xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C5d12xlarge = new InstanceType("c5d.12xlarge");
@@ -5142,6 +5178,10 @@ namespace Amazon.EC2
         /// Constant G4dn8xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType G4dn8xlarge = new InstanceType("g4dn.8xlarge");
+        /// <summary>
+        /// Constant G4dnMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType G4dnMetal = new InstanceType("g4dn.metal");
         /// <summary>
         /// Constant G4dnXlarge for InstanceType
         /// </summary>
@@ -5530,6 +5570,42 @@ namespace Amazon.EC2
         /// Constant M5Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M5Xlarge = new InstanceType("m5.xlarge");
+        /// <summary>
+        /// Constant M6g12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6g12xlarge = new InstanceType("m6g.12xlarge");
+        /// <summary>
+        /// Constant M6g16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6g16xlarge = new InstanceType("m6g.16xlarge");
+        /// <summary>
+        /// Constant M6g2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6g2xlarge = new InstanceType("m6g.2xlarge");
+        /// <summary>
+        /// Constant M6g4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6g4xlarge = new InstanceType("m6g.4xlarge");
+        /// <summary>
+        /// Constant M6g8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6g8xlarge = new InstanceType("m6g.8xlarge");
+        /// <summary>
+        /// Constant M6gLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6gLarge = new InstanceType("m6g.large");
+        /// <summary>
+        /// Constant M6gMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6gMedium = new InstanceType("m6g.medium");
+        /// <summary>
+        /// Constant M6gMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6gMetal = new InstanceType("m6g.metal");
+        /// <summary>
+        /// Constant M6gXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6gXlarge = new InstanceType("m6g.xlarge");
         /// <summary>
         /// Constant P216xlarge for InstanceType
         /// </summary>

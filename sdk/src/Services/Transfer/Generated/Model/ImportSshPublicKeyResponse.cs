@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// This response identifies the user, the server they belong to, and the identifier of
-    /// the SSH public key associated with that user. A user can have more than one key on
-    /// each server that they are associated with.
+    /// Identifies the user, the file transfer protocol-enabled server they belong to, and
+    /// the identifier of the SSH public key associated with that user. A user can have more
+    /// than one key on each server that they are associated with.
     /// </summary>
     public partial class ImportSshPublicKeyResponse : AmazonWebServiceResponse
     {
@@ -41,7 +42,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned unique identifier for an SFTP server.
+        /// A system-assigned unique identifier for a file transfer protocol-enabled server.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]
@@ -60,7 +61,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property SshPublicKeyId. 
         /// <para>
-        /// This identifier is the name given to a public key by the system that was imported.
+        /// The name given to a public key by the system that was imported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=21, Max=21)]

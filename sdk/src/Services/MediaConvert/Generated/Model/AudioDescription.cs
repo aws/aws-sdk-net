@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -127,7 +128,8 @@ namespace Amazon.MediaConvert.Model
         /// (Codec). For each codec enum that you choose, define the corresponding settings object.
         /// The following lists the codec enum, settings object pairs. * AAC, AacSettings * MP2,
         /// Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings
-        /// * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
+        /// * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings * VORBIS, VorbisSettings * OPUS,
+        /// OpusSettings
         /// </summary>
         public AudioCodecSettings CodecSettings
         {

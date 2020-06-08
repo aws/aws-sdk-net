@@ -84,6 +84,16 @@
     <pattern>^p-[0-9a-zA-Z_]{8,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Organizations.Model.DeregisterDelegatedAdministratorRequest.AccountId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.DeregisterDelegatedAdministratorRequest.ServicePrincipal</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+=,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Organizations.Model.DescribeAccountRequest.AccountId</property>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
@@ -173,6 +183,26 @@
     <max>20</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Organizations.Model.ListDelegatedAdministratorsRequest.MaxResults</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.ListDelegatedAdministratorsRequest.ServicePrincipal</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+=,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.ListDelegatedServicesForAccountRequest.AccountId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.ListDelegatedServicesForAccountRequest.MaxResults</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Organizations.Model.ListHandshakesForAccountRequest.MaxResults</property>
     <min>1</min>
     <max>20</max>
@@ -243,6 +273,16 @@
   <property-value-rule>
     <property>Amazon.Organizations.Model.MoveAccountRequest.SourceParentId</property>
     <pattern>^(r-[0-9a-z]{4,32})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.RegisterDelegatedAdministratorRequest.AccountId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.RegisterDelegatedAdministratorRequest.ServicePrincipal</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+=,.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.RemoveAccountFromOrganizationRequest.AccountId</property>
@@ -324,6 +364,32 @@
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreateAccountStatus.Id</property>
     <pattern>^car-[a-z0-9]{8,32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.DelegatedAdministrator.Arn</property>
+    <pattern>^arn:aws:organizations::\d{12}:account\/o-[a-z0-9]{10,32}\/\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.DelegatedAdministrator.Email</property>
+    <min>6</min>
+    <max>64</max>
+    <pattern>[^\s@]+@[^\s@]+\.[^\s@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.DelegatedAdministrator.Id</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.DelegatedAdministrator.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[\u0020-\u007E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.DelegatedService.ServicePrincipal</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+=,.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.EffectivePolicy.PolicyContent</property>

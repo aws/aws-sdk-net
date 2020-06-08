@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,6 +34,11 @@ namespace Amazon.EC2.Model
     /// public IP addresses when addressed between a linked EC2-Classic instance and instances
     /// in the VPC to which it's linked. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
     /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// 
+    ///  
+    /// <para>
+    /// You must specify a VPC ID in the request.
+    /// </para>
     /// </summary>
     public partial class DisableVpcClassicLinkDnsSupportRequest : AmazonEC2Request
     {

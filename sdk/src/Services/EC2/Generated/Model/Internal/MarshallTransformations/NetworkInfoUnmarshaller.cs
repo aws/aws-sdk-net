@@ -54,6 +54,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("efaSupported", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.EfaSupported = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("enaSupport", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

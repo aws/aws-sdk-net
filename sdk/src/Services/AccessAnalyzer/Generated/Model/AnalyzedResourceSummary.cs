@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,6 +34,7 @@ namespace Amazon.AccessAnalyzer.Model
     public partial class AnalyzedResourceSummary
     {
         private string _resourceArn;
+        private string _resourceOwnerAccount;
         private ResourceType _resourceType;
 
         /// <summary>
@@ -52,6 +54,25 @@ namespace Amazon.AccessAnalyzer.Model
         internal bool IsSetResourceArn()
         {
             return this._resourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceOwnerAccount. 
+        /// <para>
+        /// The AWS account ID that owns the resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string ResourceOwnerAccount
+        {
+            get { return this._resourceOwnerAccount; }
+            set { this._resourceOwnerAccount = value; }
+        }
+
+        // Check to see if ResourceOwnerAccount property is set
+        internal bool IsSetResourceOwnerAccount()
+        {
+            return this._resourceOwnerAccount != null;
         }
 
         /// <summary>

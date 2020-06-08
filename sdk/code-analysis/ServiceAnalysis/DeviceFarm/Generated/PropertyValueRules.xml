@@ -914,11 +914,6 @@
     <max>16</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DeviceFarm.Model.ArgumentException.Message</property>
-    <min>0</min>
-    <max>16384</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Artifact.Arn</property>
     <min>32</min>
     <max>1011</max>
@@ -933,11 +928,6 @@
     <property>Amazon.DeviceFarm.Model.Artifact.Url</property>
     <min>0</min>
     <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DeviceFarm.Model.CannotDeleteException.Message</property>
-    <min>0</min>
-    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Device.Arn</property>
@@ -979,11 +969,6 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DeviceFarm.Model.IdempotencyException.Message</property>
-    <min>0</min>
-    <max>16384</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.IncompatibilityMessage.Message</property>
     <min>0</min>
     <max>16384</max>
@@ -1003,16 +988,6 @@
     <property>Amazon.DeviceFarm.Model.InstanceProfile.Name</property>
     <min>0</min>
     <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DeviceFarm.Model.InternalServiceException.Message</property>
-    <min>0</min>
-    <max>16384</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DeviceFarm.Model.InvalidOperationException.Message</property>
-    <min>0</min>
-    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Job.Arn</property>
@@ -1035,11 +1010,6 @@
     <property>Amazon.DeviceFarm.Model.Job.Name</property>
     <min>0</min>
     <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DeviceFarm.Model.LimitExceededException.Message</property>
-    <min>0</min>
-    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.NetworkProfile.Arn</property>
@@ -1066,16 +1036,6 @@
     <property>Amazon.DeviceFarm.Model.NetworkProfile.UplinkLossPercent</property>
     <min>0</min>
     <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DeviceFarm.Model.NotEligibleException.Message</property>
-    <min>0</min>
-    <max>16384</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DeviceFarm.Model.NotFoundException.Message</property>
-    <min>0</min>
-    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Offering.Description</property>
@@ -1245,11 +1205,6 @@
     <min>32</min>
     <max>1011</max>
     <pattern>^arn:.+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DeviceFarm.Model.ServiceAccountException.Message</property>
-    <min>0</min>
-    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Suite.Arn</property>

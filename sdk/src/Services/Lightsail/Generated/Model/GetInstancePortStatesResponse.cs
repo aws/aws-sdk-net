@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -37,7 +38,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property PortStates. 
         /// <para>
-        /// Information about the port states resulting from your request.
+        /// An array of objects that describe the firewall port states for the specified instance.
         /// </para>
         /// </summary>
         public List<InstancePortState> PortStates

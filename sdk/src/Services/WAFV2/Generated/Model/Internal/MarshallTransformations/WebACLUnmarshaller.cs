@@ -94,10 +94,28 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ManagedByFirewallManager", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ManagedByFirewallManager = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PostProcessFirewallManagerRuleGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FirewallManagerRuleGroup, FirewallManagerRuleGroupUnmarshaller>(FirewallManagerRuleGroupUnmarshaller.Instance);
+                    unmarshalledObject.PostProcessFirewallManagerRuleGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PreProcessFirewallManagerRuleGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FirewallManagerRuleGroup, FirewallManagerRuleGroupUnmarshaller>(FirewallManagerRuleGroupUnmarshaller.Instance);
+                    unmarshalledObject.PreProcessFirewallManagerRuleGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Rules", targetDepth))

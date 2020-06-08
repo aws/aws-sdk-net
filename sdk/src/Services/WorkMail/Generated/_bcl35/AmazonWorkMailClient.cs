@@ -1110,6 +1110,71 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  DeleteRetentionPolicy
+
+        /// <summary>
+        /// Deletes the specified retention policy from the specified organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRetentionPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRetentionPolicy service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state (Active or Synchronizing) to perform certain
+        /// operations on the organization or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteRetentionPolicy">REST API Reference for DeleteRetentionPolicy Operation</seealso>
+        public virtual DeleteRetentionPolicyResponse DeleteRetentionPolicy(DeleteRetentionPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRetentionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRetentionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRetentionPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRetentionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRetentionPolicy operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRetentionPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteRetentionPolicy">REST API Reference for DeleteRetentionPolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeleteRetentionPolicy(DeleteRetentionPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRetentionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRetentionPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRetentionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRetentionPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteRetentionPolicyResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteRetentionPolicy">REST API Reference for DeleteRetentionPolicy Operation</seealso>
+        public virtual DeleteRetentionPolicyResponse EndDeleteRetentionPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteRetentionPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteUser
 
         /// <summary>
@@ -1758,6 +1823,74 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  GetDefaultRetentionPolicy
+
+        /// <summary>
+        /// Gets the default retention policy details for the specified organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultRetentionPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetDefaultRetentionPolicy service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state (Active or Synchronizing) to perform certain
+        /// operations on the organization or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetDefaultRetentionPolicy">REST API Reference for GetDefaultRetentionPolicy Operation</seealso>
+        public virtual GetDefaultRetentionPolicyResponse GetDefaultRetentionPolicy(GetDefaultRetentionPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDefaultRetentionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDefaultRetentionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetDefaultRetentionPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDefaultRetentionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultRetentionPolicy operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDefaultRetentionPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetDefaultRetentionPolicy">REST API Reference for GetDefaultRetentionPolicy Operation</seealso>
+        public virtual IAsyncResult BeginGetDefaultRetentionPolicy(GetDefaultRetentionPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDefaultRetentionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDefaultRetentionPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDefaultRetentionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDefaultRetentionPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetDefaultRetentionPolicyResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetDefaultRetentionPolicy">REST API Reference for GetDefaultRetentionPolicy Operation</seealso>
+        public virtual GetDefaultRetentionPolicyResponse EndGetDefaultRetentionPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDefaultRetentionPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetMailboxDetails
 
         /// <summary>
@@ -2169,7 +2302,7 @@ namespace Amazon.WorkMail
         #region  ListOrganizations
 
         /// <summary>
-        /// Returns summaries of the customer's non-deleted organizations.
+        /// Returns summaries of the customer's organizations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizations service method.</param>
         /// 
@@ -2629,6 +2762,74 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  PutRetentionPolicy
+
+        /// <summary>
+        /// Puts a retention policy to the specified organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRetentionPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutRetentionPolicy service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.LimitExceededException">
+        /// The request exceeds the limit of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state (Active or Synchronizing) to perform certain
+        /// operations on the organization or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutRetentionPolicy">REST API Reference for PutRetentionPolicy Operation</seealso>
+        public virtual PutRetentionPolicyResponse PutRetentionPolicy(PutRetentionPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRetentionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRetentionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutRetentionPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRetentionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRetentionPolicy operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRetentionPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutRetentionPolicy">REST API Reference for PutRetentionPolicy Operation</seealso>
+        public virtual IAsyncResult BeginPutRetentionPolicy(PutRetentionPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRetentionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRetentionPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutRetentionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRetentionPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutRetentionPolicyResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutRetentionPolicy">REST API Reference for PutRetentionPolicy Operation</seealso>
+        public virtual PutRetentionPolicyResponse EndPutRetentionPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutRetentionPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RegisterToWorkMail
 
         /// <summary>
@@ -3037,9 +3238,6 @@ namespace Amazon.WorkMail
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
         /// You are performing an operation on a user, group, or resource that isn't in the expected
         /// state, such as trying to delete an active user.
-        /// </exception>
-        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
-        /// One or more of the input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.

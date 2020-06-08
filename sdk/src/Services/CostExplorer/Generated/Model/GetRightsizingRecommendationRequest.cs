@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -42,10 +43,33 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class GetRightsizingRecommendationRequest : AmazonCostExplorerRequest
     {
+        private RightsizingRecommendationConfiguration _configuration;
         private Expression _filter;
         private string _nextPageToken;
         private int? _pageSize;
         private string _service;
+
+        /// <summary>
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        ///  Enables you to customize recommendations across two attributes. You can choose to
+        /// view recommendations for instances within the same instance families or across different
+        /// instance families. You can also choose to view your estimated savings associated with
+        /// recommendations with consideration of existing Savings Plans or RI benefits, or niether.
+        /// 
+        /// </para>
+        /// </summary>
+        public RightsizingRecommendationConfiguration Configuration
+        {
+            get { return this._configuration; }
+            set { this._configuration = value; }
+        }
+
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
+        {
+            return this._configuration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Filter.
@@ -68,6 +92,7 @@ namespace Amazon.CostExplorer.Model
         /// The pagination token that indicates the next set of results that you want to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
         public string NextPageToken
         {
             get { return this._nextPageToken; }
@@ -106,7 +131,7 @@ namespace Amazon.CostExplorer.Model
         /// is "<code>AmazonEC2</code>".
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string Service
         {
             get { return this._service; }

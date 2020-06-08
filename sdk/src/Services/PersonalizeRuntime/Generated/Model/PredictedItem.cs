@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,6 +39,7 @@ namespace Amazon.PersonalizeRuntime.Model
     public partial class PredictedItem
     {
         private string _itemId;
+        private double? _score;
 
         /// <summary>
         /// Gets and sets the property ItemId. 
@@ -56,6 +58,25 @@ namespace Amazon.PersonalizeRuntime.Model
         internal bool IsSetItemId()
         {
             return this._itemId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Score. 
+        /// <para>
+        /// A numeric representation of the model's certainty that the item will be the next user
+        /// selection. For more information on scoring logic, see <a>how-scores-work</a>.
+        /// </para>
+        /// </summary>
+        public double Score
+        {
+            get { return this._score.GetValueOrDefault(); }
+            set { this._score = value; }
+        }
+
+        // Check to see if Score property is set
+        internal bool IsSetScore()
+        {
+            return this._score.HasValue; 
         }
 
     }

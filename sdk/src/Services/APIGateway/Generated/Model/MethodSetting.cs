@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -128,6 +129,9 @@ namespace Amazon.APIGateway.Model
         /// Specifies the logging level for this method, which affects the log entries pushed
         /// to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>,
         /// and the available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
+        /// Choose <code>ERROR</code> to write only error-level entries to CloudWatch Logs, or
+        /// choose <code>INFO</code> to include all <code>ERROR</code> events as well as extra
+        /// informational events.
         /// </para>
         /// </summary>
         public string LoggingLevel

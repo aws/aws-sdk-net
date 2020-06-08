@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,7 @@ namespace Amazon.ElasticInference.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds the specified tag(s) to an Elastic Inference Accelerator.
+    /// Adds the specified tags to an Elastic Inference Accelerator.
     /// </summary>
     public partial class TagResourceRequest : AmazonElasticInferenceRequest
     {
@@ -37,8 +38,10 @@ namespace Amazon.ElasticInference.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. The ARN of the Elastic Inference Accelerator
-        /// to tag.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        ///  The ARN of the Elastic Inference Accelerator to tag. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
         public string ResourceArn
@@ -54,7 +57,10 @@ namespace Amazon.ElasticInference.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. The tags to add to the Elastic Inference Accelerator.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  The tags to add to the Elastic Inference Accelerator. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
         public Dictionary<string, string> Tags

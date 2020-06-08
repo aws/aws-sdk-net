@@ -11,6 +11,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.ListInputDevicesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.ListInputsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -70,6 +75,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.AudioSelector.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.AudioTrack.Track</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>

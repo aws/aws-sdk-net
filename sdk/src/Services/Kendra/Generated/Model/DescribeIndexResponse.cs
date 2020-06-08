@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -32,9 +33,11 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class DescribeIndexResponse : AmazonWebServiceResponse
     {
+        private CapacityUnitsConfiguration _capacityUnits;
         private DateTime? _createdAt;
         private string _description;
         private List<DocumentMetadataConfiguration> _documentMetadataConfigurations = new List<DocumentMetadataConfiguration>();
+        private IndexEdition _edition;
         private string _errorMessage;
         private string _id;
         private IndexStatistics _indexStatistics;
@@ -43,6 +46,27 @@ namespace Amazon.Kendra.Model
         private ServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
         private IndexStatus _status;
         private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property CapacityUnits. 
+        /// <para>
+        /// For enterprise edtion indexes, you can choose to use additional capacity to meet the
+        /// needs of your application. This contains the capacity units used for the index. A
+        /// 0 for the query capacity or the storage capacity indicates that the index is using
+        /// the default capacity for the index.
+        /// </para>
+        /// </summary>
+        public CapacityUnitsConfiguration CapacityUnits
+        {
+            get { return this._capacityUnits; }
+            set { this._capacityUnits = value; }
+        }
+
+        // Check to see if CapacityUnits property is set
+        internal bool IsSetCapacityUnits()
+        {
+            return this._capacityUnits != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -98,6 +122,25 @@ namespace Amazon.Kendra.Model
         internal bool IsSetDocumentMetadataConfigurations()
         {
             return this._documentMetadataConfigurations != null && this._documentMetadataConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Edition. 
+        /// <para>
+        /// The Amazon Kendra edition used for the index. You decide the edition when you create
+        /// the index.
+        /// </para>
+        /// </summary>
+        public IndexEdition Edition
+        {
+            get { return this._edition; }
+            set { this._edition = value; }
+        }
+
+        // Check to see if Edition property is set
+        internal bool IsSetEdition()
+        {
+            return this._edition != null;
         }
 
         /// <summary>

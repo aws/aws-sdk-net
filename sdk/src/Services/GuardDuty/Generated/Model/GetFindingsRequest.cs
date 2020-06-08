@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -60,7 +61,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property FindingIds. 
         /// <para>
-        /// IDs of the findings that you want to retrieve.
+        /// The IDs of the findings that you want to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -30,7 +31,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
     /// remediate operational issues impacting the performance and health of their AWS resources.
-    /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+    /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
     /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
     /// </summary>
     public partial class OpsItem
@@ -209,8 +210,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Use the <code>/aws/resources</code> key in OperationalData to specify a related resource
         /// in the request. Use the <code>/aws/automations</code> key in OperationalData to associate
         /// an Automation runbook with the OpsItem. To view AWS CLI example commands that use
-        /// these keys, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-        /// OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+        /// OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, OpsItemDataValue> OperationalData
@@ -304,8 +305,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The origin of the OpsItem, such as Amazon EC2 or AWS Systems Manager. The impacted
-        /// resource is a subset of source.
+        /// The origin of the OpsItem, such as Amazon EC2 or Systems Manager. The impacted resource
+        /// is a subset of source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -325,8 +326,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or
-        /// <code>Resolved</code>. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing
-        /// OpsItem Details</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing
+        /// OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public OpsItemStatus Status

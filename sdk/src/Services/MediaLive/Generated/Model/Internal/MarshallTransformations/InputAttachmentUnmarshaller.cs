@@ -64,6 +64,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("automaticInputFailoverSettings", targetDepth))
+                {
+                    var unmarshaller = AutomaticInputFailoverSettingsUnmarshaller.Instance;
+                    unmarshalledObject.AutomaticInputFailoverSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inputAttachmentName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

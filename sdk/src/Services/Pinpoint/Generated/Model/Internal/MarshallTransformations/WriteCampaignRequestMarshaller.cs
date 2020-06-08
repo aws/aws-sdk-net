@@ -61,6 +61,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetCustomDeliveryConfiguration())
+            {
+                context.Writer.WritePropertyName("CustomDeliveryConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomDeliveryConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomDeliveryConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");

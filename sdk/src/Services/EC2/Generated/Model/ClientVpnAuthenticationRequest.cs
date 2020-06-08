@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,14 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the authentication method to be used by a Client VPN endpoint. Client VPN
-    /// supports Active Directory and mutual authentication. For more information, see <a
-    /// href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication">Authentication</a>
+    /// Describes the authentication method to be used by a Client VPN endpoint. For more
+    /// information, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication">Authentication</a>
     /// in the <i>AWS Client VPN Administrator Guide</i>.
     /// </summary>
     public partial class ClientVpnAuthenticationRequest
     {
         private DirectoryServiceAuthenticationRequest _activeDirectory;
+        private FederatedAuthenticationRequest _federatedAuthentication;
         private CertificateAuthenticationRequest _mutualAuthentication;
         private ClientVpnAuthenticationType _type;
 
@@ -56,6 +57,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetActiveDirectory()
         {
             return this._activeDirectory != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FederatedAuthentication. 
+        /// <para>
+        /// Information about the IAM SAML identity provider to be used, if applicable. You must
+        /// provide this information if <b>Type</b> is <code>federated-authentication</code>.
+        /// </para>
+        /// </summary>
+        public FederatedAuthenticationRequest FederatedAuthentication
+        {
+            get { return this._federatedAuthentication; }
+            set { this._federatedAuthentication = value; }
+        }
+
+        // Check to see if FederatedAuthentication property is set
+        internal bool IsSetFederatedAuthentication()
+        {
+            return this._federatedAuthentication != null;
         }
 
         /// <summary>
@@ -80,9 +100,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of client authentication to be used. Specify <code>certificate-authentication</code>
-        /// to use certificate-based authentication, or <code>directory-service-authentication</code>
-        /// to use Active Directory authentication.
+        /// The type of client authentication to be used.
         /// </para>
         /// </summary>
         public ClientVpnAuthenticationType Type

@@ -139,11 +139,6 @@
     <max>5</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Translate.Model.DetectedLanguageLowConfidenceException.Message</property>
-    <max>10000</max>
-    <pattern>[\P{M}\p{M}]{0,10000}</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Translate.Model.EncryptionKey.Id</property>
     <min>1</min>
     <max>400</max>
@@ -160,44 +155,9 @@
     <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Translate.Model.InternalServerException.Message</property>
-    <max>10000</max>
-    <pattern>[\P{M}\p{M}]{0,10000}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Translate.Model.InvalidFilterException.Message</property>
-    <max>10000</max>
-    <pattern>[\P{M}\p{M}]{0,10000}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Translate.Model.InvalidParameterValueException.Message</property>
-    <max>10000</max>
-    <pattern>[\P{M}\p{M}]{0,10000}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Translate.Model.InvalidRequestException.Message</property>
-    <max>10000</max>
-    <pattern>[\P{M}\p{M}]{0,10000}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Translate.Model.LimitExceededException.Message</property>
-    <max>10000</max>
-    <pattern>[\P{M}\p{M}]{0,10000}</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Translate.Model.OutputDataConfig.S3Uri</property>
     <max>1024</max>
     <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Translate.Model.ResourceNotFoundException.Message</property>
-    <max>10000</max>
-    <pattern>[\P{M}\p{M}]{0,10000}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Translate.Model.ServiceUnavailableException.Message</property>
-    <max>10000</max>
-    <pattern>[\P{M}\p{M}]{0,10000}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Translate.Model.Term.SourceText</property>
@@ -244,11 +204,6 @@
     <max>5</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Translate.Model.TextSizeLimitExceededException.Message</property>
-    <max>10000</max>
-    <pattern>[\P{M}\p{M}]{0,10000}</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Translate.Model.TextTranslationJobFilter.JobName</property>
     <min>1</min>
     <max>256</max>
@@ -276,16 +231,6 @@
     <property>Amazon.Translate.Model.TextTranslationJobProperties.SourceLanguageCode</property>
     <min>2</min>
     <max>5</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Translate.Model.TooManyRequestsException.Message</property>
-    <max>10000</max>
-    <pattern>[\P{M}\p{M}]{0,10000}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Translate.Model.UnsupportedLanguagePairException.Message</property>
-    <max>10000</max>
-    <pattern>[\P{M}\p{M}]{0,10000}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Translate.Model.UnsupportedLanguagePairException.SourceLanguageCode</property>

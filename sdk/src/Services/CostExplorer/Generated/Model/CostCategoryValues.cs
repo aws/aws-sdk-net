@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,17 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// <important> 
-    /// <para>
-    ///  <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is
-    /// subject to change. Your use of Cost Categories is subject to the Beta Service Participation
-    /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
-    /// (Section 1.10).</b> </i> 
-    /// </para>
-    ///  </important> 
-    /// <para>
-    /// The values that are available for Cost Categories.
-    /// </para>
+    /// The Cost Categories values used for filtering the costs.
     /// </summary>
     public partial class CostCategoryValues
     {

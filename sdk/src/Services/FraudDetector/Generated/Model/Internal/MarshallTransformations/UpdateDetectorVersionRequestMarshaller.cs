@@ -113,6 +113,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetRuleExecutionMode())
+                {
+                    context.Writer.WritePropertyName("ruleExecutionMode");
+                    context.Writer.Write(publicRequest.RuleExecutionMode);
+                }
+
                 if(publicRequest.IsSetRules())
                 {
                     context.Writer.WritePropertyName("rules");

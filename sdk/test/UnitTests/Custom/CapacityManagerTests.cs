@@ -88,12 +88,12 @@ namespace AWSSDK_DotNet35.UnitTests
             Assert.IsNotNull(retryCapacity);
             Assert.IsTrue(capacityManagerInstance.TryAcquireCapacity(retryCapacity));
 
-            capacityManagerInstance.TryReleaseCapacity(true, retryCapacity);
+            capacityManagerInstance.ReleaseCapacity(CapacityManager.CapacityType.Retry, retryCapacity);
             Assert.AreEqual(throttleRetryCost * throttleRetryCount, retryCapacity.AvailableCapacity);
             var consumedCapacity = retryCapacity.MaxCapacity - retryCapacity.AvailableCapacity;
             Assert.AreEqual(0, consumedCapacity);
 
-            capacityManagerInstance.TryReleaseCapacity(false, retryCapacity);
+            capacityManagerInstance.ReleaseCapacity(CapacityManager.CapacityType.Increment, retryCapacity);
             Assert.AreEqual(throttleRetryCost * throttleRetryCount, retryCapacity.AvailableCapacity);
             consumedCapacity = retryCapacity.MaxCapacity - retryCapacity.AvailableCapacity;
             Assert.AreEqual(0, consumedCapacity);
@@ -116,7 +116,7 @@ namespace AWSSDK_DotNet35.UnitTests
             retryCapacity = capacityManagerInstance.GetRetryCapacity("ReleaseCapacityInvalidUnitTest");
             Assert.IsNotNull(retryCapacity);
 
-            capacityManagerInstance.TryReleaseCapacity(false, retryCapacity);
+            capacityManagerInstance.ReleaseCapacity(CapacityManager.CapacityType.Increment, retryCapacity);
             Assert.AreEqual(throttleRetryCost * throttleRetryCount, retryCapacity.AvailableCapacity);
             var consumedCapacity = retryCapacity.MaxCapacity - retryCapacity.AvailableCapacity;
             Assert.AreEqual(0, consumedCapacity);

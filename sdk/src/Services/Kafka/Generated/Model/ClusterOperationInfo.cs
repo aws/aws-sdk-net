@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,6 +40,7 @@ namespace Amazon.Kafka.Model
         private ErrorInfo _errorInfo;
         private string _operationArn;
         private string _operationState;
+        private List<ClusterOperationStep> _operationSteps = new List<ClusterOperationStep>();
         private string _operationType;
         private MutableClusterInfo _sourceClusterInfo;
         private MutableClusterInfo _targetClusterInfo;
@@ -167,6 +169,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetOperationState()
         {
             return this._operationState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperationSteps.             
+        /// <para>
+        /// Steps completed during the operation.
+        /// </para>
+        /// </summary>
+        public List<ClusterOperationStep> OperationSteps
+        {
+            get { return this._operationSteps; }
+            set { this._operationSteps = value; }
+        }
+
+        // Check to see if OperationSteps property is set
+        internal bool IsSetOperationSteps()
+        {
+            return this._operationSteps != null && this._operationSteps.Count > 0; 
         }
 
         /// <summary>

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,8 +30,8 @@ namespace Amazon.MigrationHubConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeHomeRegionControls operation.
-    /// This API permits filtering on the <code>ControlId</code>, <code>HomeRegion</code>,
-    /// and <code>RegionControlScope</code> fields.
+    /// This API permits filtering on the <code>ControlId</code> and <code>HomeRegion</code>
+    /// fields.
     /// </summary>
     public partial class DescribeHomeRegionControlsRequest : AmazonMigrationHubConfigRequest
     {

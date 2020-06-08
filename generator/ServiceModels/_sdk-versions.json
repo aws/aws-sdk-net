@@ -1761,6 +1761,30 @@
                 "Core" : "3.5.0.0"
             },
             "InPreview"               : false
+        },
+        "Synthetics"                      : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "IoTSiteWise"                     : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "Macie2"                          : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
         }
     }
 }

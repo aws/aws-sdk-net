@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -153,7 +154,7 @@ namespace Amazon.Lightsail.Model
         /// The instance port where you're creating your load balancer.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=65535)]
+        [AWSProperty(Required=true, Min=-1, Max=65535)]
         public int InstancePort
         {
             get { return this._instancePort.GetValueOrDefault(); }

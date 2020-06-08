@@ -29,7 +29,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public abstract class S3ReponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override UnmarshallerContext CreateContext(IWebResponseData response, bool readEntireResponse, Stream stream, RequestMetrics metrics)
+        public override UnmarshallerContext CreateContext(IWebResponseData response, bool readEntireResponse, Stream stream, RequestMetrics metrics, bool isException)
         {
             if (response.IsHeaderPresent(HeaderKeys.XAmzId2Header))
                 metrics.AddProperty(Metric.AmzId2, response.GetHeaderValue(HeaderKeys.XAmzId2Header));
@@ -37,7 +37,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (response.IsHeaderPresent(HeaderKeys.XAmzCloudFrontIdHeader))
                 metrics.AddProperty(Metric.AmzCfId, response.GetHeaderValue(HeaderKeys.XAmzCloudFrontIdHeader));
 
-            return base.CreateContext(response, readEntireResponse, stream, metrics);
+            return base.CreateContext(response, readEntireResponse, stream, metrics, isException);
         }
 
         public override AmazonWebServiceResponse Unmarshall(UnmarshallerContext input)
@@ -61,9 +61,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return response;
         }
 
-        protected override UnmarshallerContext ConstructUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData response)
+        protected override UnmarshallerContext ConstructUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData response, bool isException)
         {
-            return new S3UnmarshallerContext(responseStream, maintainResponseBody, response);
+            return new S3UnmarshallerContext(responseStream, maintainResponseBody, response, isException);
         }
 
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -40,7 +41,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Enforce. 
         /// <para>
         /// Whether the policy is enforced. The default is <code>True</code>, if a value isn't
-        /// specified.
+        ///         specified.
         /// </para>
         /// </summary>
         public bool Enforce
@@ -58,7 +59,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Ports. 
         /// <para>
-        /// The range of ports that the policy is enforced for.
+        /// One or more ports that the policy is enforced for.
         /// </para>
         /// </summary>
         public List<int> Ports

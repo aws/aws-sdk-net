@@ -703,6 +703,80 @@ namespace Amazon.ManagedBlockchain
 
         #endregion
                 
+        #region  UpdateMember
+
+
+
+        /// <summary>
+        /// Updates a member configuration with new parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMember service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMember service method, as returned by ManagedBlockchain.</returns>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InvalidRequestException">
+        /// The action or operation requested is invalid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
+        /// A requested resource does not exist on the network. It may have been deleted or referenced
+        /// inaccurately.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
+        /// The request or operation could not be performed because a service is throttling requests.
+        /// The most common source of throttling errors is launching EC2 instances such that your
+        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
+        /// resources if possible.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateMember">REST API Reference for UpdateMember Operation</seealso>
+        Task<UpdateMemberResponse> UpdateMemberAsync(UpdateMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateNode
+
+
+
+        /// <summary>
+        /// Updates a node configuration with new parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNode service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateNode service method, as returned by ManagedBlockchain.</returns>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InvalidRequestException">
+        /// The action or operation requested is invalid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
+        /// A requested resource does not exist on the network. It may have been deleted or referenced
+        /// inaccurately.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
+        /// The request or operation could not be performed because a service is throttling requests.
+        /// The most common source of throttling errors is launching EC2 instances such that your
+        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
+        /// resources if possible.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateNode">REST API Reference for UpdateNode Operation</seealso>
+        Task<UpdateNodeResponse> UpdateNodeAsync(UpdateNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  VoteOnProposal
 
 

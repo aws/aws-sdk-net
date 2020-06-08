@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -34,14 +35,14 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Systems Manager makes it possible to manage them using Systems Manager capabilities.
     /// You use the activation code and ID when installing SSM Agent on machines in your hybrid
     /// environment. For more information about requirements for managing on-premises instances
-    /// and VMs using Systems Manager, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-    /// Up AWS Systems Manager for Hybrid Environments</a> in the <i>AWS Systems Manager User
+    /// and VMs using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
+    /// up AWS Systems Manager for hybrid environments</a> in the <i>AWS Systems Manager User
     /// Guide</i>. 
     /// 
     ///  <note> 
     /// <para>
-    /// On-premises servers or VMs that are registered with Systems Manager and Amazon EC2
-    /// instances that you manage with Systems Manager are all called <i>managed instances</i>.
+    /// On-premises servers or VMs that are registered with Systems Manager and EC2 instances
+    /// that you manage with Systems Manager are all called <i>managed instances</i>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -128,8 +129,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The Amazon Identity and Access Management (IAM) role that you want to assign to the
         /// managed instance. This IAM role must provide AssumeRole permissions for the Systems
         /// Manager service principal <code>ssm.amazonaws.com</code>. For more information, see
-        /// <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
-        /// an IAM Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager User
+        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
+        /// an IAM service role for a hybrid environment</a> in the <i>AWS Systems Manager User
         /// Guide</i>.
         /// </para>
         /// </summary>

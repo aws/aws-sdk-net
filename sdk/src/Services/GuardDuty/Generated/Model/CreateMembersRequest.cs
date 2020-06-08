@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -61,8 +62,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The unique ID of the detector of the GuardDuty account with which you want to associate
-        /// member accounts.
+        /// The unique ID of the detector of the GuardDuty account that you want to associate
+        /// member accounts with.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

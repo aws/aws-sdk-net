@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -98,11 +99,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// test_folder is the name of the Amazon S3 bucket;
+        /// test_folder is the name of the S3 bucket;
         /// </para>
         ///  
         /// <para>
-        ///  ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
+        /// ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
         /// </para>
         ///  
         /// <para>
@@ -140,11 +141,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// test_folder is the name of the Amazon S3 bucket;
+        /// test_folder is the name of the S3 bucket;
         /// </para>
         ///  
         /// <para>
-        ///  ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
+        /// ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
         /// </para>
         ///  
         /// <para>
@@ -172,7 +173,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property OutputS3Region. 
         /// <para>
         /// (Deprecated) You can no longer specify this parameter. The system ignores it. Instead,
-        /// Systems Manager automatically determines the Amazon S3 bucket region.
+        /// Systems Manager automatically determines the S3 bucket region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=20)]
@@ -266,7 +267,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StandardOutputUrl. 
         /// <para>
         /// The URL for the complete text written by the plugin to stdout in Amazon S3. If the
-        /// Amazon S3 bucket for the command was not specified, then this string is empty.
+        /// S3 bucket for the command was not specified, then this string is empty.
         /// </para>
         /// </summary>
         public string StandardOutputUrl
@@ -305,8 +306,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A detailed status of the plugin execution. StatusDetails includes more information
         /// than Status because it includes states resulting from error and concurrency control
         /// parameters. StatusDetails can show different results than Status. For more information
-        /// about these statuses, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-        /// Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can
+        /// about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+        /// command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can
         /// be one of the following values:
         /// </para>
         ///  <ul> <li> 

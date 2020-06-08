@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -92,7 +93,7 @@ namespace Amazon.SecurityHub.Model
         ///  </li> <li> 
         /// <para>
         /// For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository
-        /// that contains the source code and the buildspec file (for example, <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
+        /// that contains the source code and the build spec file (for example, <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
         /// ).
         /// </para>
         ///  </li> <li> 
@@ -110,12 +111,12 @@ namespace Amazon.SecurityHub.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         /// For source code in a GitHub repository, the HTTPS clone URL to the repository that
-        /// contains the source and the buildspec file.
+        /// contains the source and the build spec file.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For source code in a Bitbucket repository, the HTTPS clone URL to the repository that
-        /// contains the source and the buildspec file. 
+        /// contains the source and the build spec file. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

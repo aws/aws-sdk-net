@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -46,7 +47,6 @@ namespace Amazon.Kendra.Model
         /// Information to use for user context filtering.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
         public List<Principal> AccessControlList
         {
             get { return this._accessControlList; }
@@ -67,7 +67,6 @@ namespace Amazon.Kendra.Model
         /// additional information in the query response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
         public List<DocumentAttribute> Attributes
         {
             get { return this._attributes; }
@@ -83,10 +82,16 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Blob. 
         /// <para>
-        /// The contents of the document as a base-64 encoded string.
+        /// The contents of the document. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code
+        /// might not need to encode the document file bytes if you're using an AWS SDK to call
+        /// Amazon Kendra operations. If you are calling the Amazon Kendra endpoint directly using
+        /// REST, you must base64 encode the contents before sending.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=153600)]
         public MemoryStream Blob
         {
             get { return this._blob; }
@@ -157,7 +162,6 @@ namespace Amazon.Kendra.Model
         /// The title of the document.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
         public string Title
         {
             get { return this._title; }

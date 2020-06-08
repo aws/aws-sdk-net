@@ -62,6 +62,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Metric);
             }
 
+            if(requestObject.IsSetMetricDimension())
+            {
+                context.Writer.WritePropertyName("metricDimension");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MetricDimensionMarshaller.Instance;
+                marshaller.Marshall(requestObject.MetricDimension, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

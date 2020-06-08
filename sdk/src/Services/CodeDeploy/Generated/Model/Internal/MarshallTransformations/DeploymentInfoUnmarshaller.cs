@@ -160,6 +160,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.ErrorInformation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("externalId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExternalId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fileExistsBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -45,8 +46,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// This property contains the unique Amazon Resource Name (ARN) for the user that was
-        /// requested to be described.
+        /// Contains the unique Amazon Resource Name (ARN) for the user that was requested to
+        /// be described.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1600)]
@@ -65,9 +66,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property HomeDirectory. 
         /// <para>
-        /// This property specifies the landing directory (or folder), which is the location that
-        /// files are written to or read from in an Amazon S3 bucket for the described user. An
-        /// example is <code>/<i>your s3 bucket name</i>/home/<i>username</i> </code>.
+        /// Specifies the landing directory (or folder), which is the location that files are
+        /// written to or read from in an Amazon S3 bucket for the described user. An example
+        /// is <code>/<i>your s3 bucket name</i>/home/<i>username</i> </code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -86,22 +87,16 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property HomeDirectoryMappings. 
         /// <para>
-        /// Logical directory mappings that you specified for what S3 paths and keys should be
-        /// visible to your user and how you want to make them visible. You will need to specify
+        /// Logical directory mappings that you specified for what Amazon S3 paths and keys should
+        /// be visible to your user and how you want to make them visible. You will need to specify
         /// the "<code>Entry</code>" and "<code>Target</code>" pair, where <code>Entry</code>
-        /// shows how the path is made visible and <code>Target</code> is the actual S3 path.
-        /// If you only specify a target, it will be displayed as is. You will need to also make
-        /// sure that your AWS IAM Role provides access to paths in <code>Target</code>.
+        /// shows how the path is made visible and <code>Target</code> is the actual Amazon S3
+        /// path. If you only specify a target, it will be displayed as is. You will need to also
+        /// make sure that your AWS IAM Role provides access to paths in <code>Target</code>.
         /// </para>
         ///  
         /// <para>
-        /// In most cases, you can use this value instead of the scope down policy to lock your
-        /// user down to the designated home directory ("chroot"). To do this, you can set <code>Entry</code>
-        /// to '/' and set <code>Target</code> to the HomeDirectory parameter value. 
-        /// </para>
-        ///  
-        /// <para>
-        /// In most cases, you can use this value instead of the scope down policy to lock your
+        /// In most cases, you can use this value instead of the scope-down policy to lock your
         /// user down to the designated home directory ("chroot"). To do this, you can set <code>Entry</code>
         /// to '/' and set <code>Target</code> to the HomeDirectory parameter value.
         /// </para>
@@ -122,11 +117,12 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property HomeDirectoryType. 
         /// <para>
-        /// The type of landing directory (folder) you mapped for your users' to see when they
-        /// log into the SFTP server. If you set it to <code>PATH</code>, the user will see the
-        /// absolute Amazon S3 bucket paths as is in their SFTP clients. If you set it <code>LOGICAL</code>,
-        /// you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how
-        /// you want to make S3 paths visible to your user.
+        /// The type of landing directory (folder) you mapped for your users to see when they
+        /// log into the file transfer protocol-enabled server. If you set it to <code>PATH</code>,
+        /// the user will see the absolute Amazon S3 bucket paths as is in their file transfer
+        /// protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings
+        /// in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths
+        /// visible to your users.
         /// </para>
         /// </summary>
         public HomeDirectoryType HomeDirectoryType
@@ -163,12 +159,12 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// This property specifies the IAM role that controls your user's access to your Amazon
-        /// S3 bucket. The policies attached to this role will determine the level of access you
-        /// want to provide your users when transferring files into and out of your Amazon S3
-        /// bucket or buckets. The IAM role should also contain a trust relationship that allows
-        /// the SFTP server to access your resources when servicing your SFTP user's transfer
-        /// requests.
+        /// Specifies the IAM role that controls your users' access to your Amazon S3 bucket.
+        /// The policies attached to this role will determine the level of access you want to
+        /// provide your users when transferring files into and out of your Amazon S3 bucket or
+        /// buckets. The IAM role should also contain a trust relationship that allows a file
+        /// transfer protocol-enabled server to access your resources when servicing your users'
+        /// transfer requests.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -187,8 +183,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property SshPublicKeys. 
         /// <para>
-        /// This property contains the public key portion of the Secure Shell (SSH) keys stored
-        /// for the described user.
+        /// Contains the public key portion of the Secure Shell (SSH) keys stored for the described
+        /// user.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
@@ -207,8 +203,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// This property contains the key-value pairs for the user requested. Tag can be used
-        /// to search for and group users for a variety of purposes.
+        /// Contains the key-value pairs for the user requested. Tag can be used to search for
+        /// and group users for a variety of purposes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -227,9 +223,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// This property is the name of the user that was requested to be described. User names
-        /// are used for authentication purposes. This is the string that will be used by your
-        /// user when they log in to your SFTP server.
+        /// The name of the user that was requested to be described. User names are used for authentication
+        /// purposes. This is the string that will be used by your user when they log in to your
+        /// file transfer protocol-enabled server.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=32)]

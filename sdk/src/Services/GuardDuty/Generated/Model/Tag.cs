@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about a tag associated with the Ec2 instance.
+    /// Contains information about a tag associated with the EC2 instance.
     /// </summary>
     public partial class Tag
     {
@@ -38,7 +39,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// EC2 instance tag key.
+        /// The EC2 instance tag key.
         /// </para>
         /// </summary>
         public string Key
@@ -56,7 +57,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// EC2 instance tag value.
+        /// The EC2 instance tag value.
         /// </para>
         /// </summary>
         public string Value

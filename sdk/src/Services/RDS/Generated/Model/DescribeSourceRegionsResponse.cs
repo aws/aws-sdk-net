@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -60,7 +61,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SourceRegions. 
         /// <para>
         /// A list of SourceRegion instances that contains each source AWS Region that the current
-        /// AWS Region can get a Read Replica or a DB snapshot from.
+        /// AWS Region can get a read replica or a DB snapshot from.
         /// </para>
         /// </summary>
         public List<SourceRegion> SourceRegions

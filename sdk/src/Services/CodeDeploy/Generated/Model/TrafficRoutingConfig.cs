@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,8 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// The configuration that specifies how traffic is shifted from one version of a Lambda
-    /// function to another version during an AWS Lambda deployment.
+    /// function to another version during an AWS Lambda deployment, or from one Amazon ECS
+    /// task set to another during an Amazon ECS deployment.
     /// </summary>
     public partial class TrafficRoutingConfig
     {
@@ -40,9 +42,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TimeBasedCanary. 
         /// <para>
-        /// A configuration that shifts traffic from one version of a Lambda function to another
-        /// in two increments. The original and target Lambda function versions are specified
-        /// in the deployment's AppSpec file.
+        /// A configuration that shifts traffic from one version of a Lambda function or ECS task
+        /// set to another in two increments. The original and target Lambda function versions
+        /// or ECS task sets are specified in the deployment's AppSpec file.
         /// </para>
         /// </summary>
         public TimeBasedCanary TimeBasedCanary
@@ -60,9 +62,10 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TimeBasedLinear. 
         /// <para>
-        /// A configuration that shifts traffic from one version of a Lambda function to another
-        /// in equal increments, with an equal number of minutes between each increment. The original
-        /// and target Lambda function versions are specified in the deployment's AppSpec file.
+        /// A configuration that shifts traffic from one version of a Lambda function or ECS task
+        /// set to another in equal increments, with an equal number of minutes between each increment.
+        /// The original and target Lambda function versions or ECS task sets are specified in
+        /// the deployment's AppSpec file.
         /// </para>
         /// </summary>
         public TimeBasedLinear TimeBasedLinear
@@ -81,7 +84,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of traffic shifting (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>)
-        /// used by a deployment configuration .
+        /// used by a deployment configuration.
         /// </para>
         /// </summary>
         public TrafficRoutingType Type

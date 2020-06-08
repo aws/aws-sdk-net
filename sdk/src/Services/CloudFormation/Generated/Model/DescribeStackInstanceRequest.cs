@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -30,7 +31,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the DescribeStackInstance operation.
     /// Returns the stack instance that's associated with the specified stack set, AWS account,
-    /// and region.
+    /// and Region.
     /// 
     ///  
     /// <para>
@@ -65,7 +66,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackInstanceRegion. 
         /// <para>
-        /// The name of a region that's associated with this stack instance.
+        /// The name of a Region that's associated with this stack instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

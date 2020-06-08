@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -41,7 +42,8 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <summary>
         /// Gets and sets the property DataAttributes. 
         /// <para>
-        /// Attributes of the data specified by the customer.
+        /// Attributes of the specified data. Use <code>DataAttributes</code> to specify if your
+        /// data is free of personally identifiable information and/or free of adult content.
         /// </para>
         /// </summary>
         public HumanLoopDataAttributes DataAttributes
@@ -59,7 +61,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <summary>
         /// Gets and sets the property FlowDefinitionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the flow definition.
+        /// The Amazon Resource Name (ARN) of the flow definition associated with this human loop.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
@@ -78,7 +80,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <summary>
         /// Gets and sets the property HumanLoopInput. 
         /// <para>
-        /// An object containing information about the human loop.
+        /// An object that contains information about the human loop.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

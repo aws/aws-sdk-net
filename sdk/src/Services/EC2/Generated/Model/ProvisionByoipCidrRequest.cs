@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -55,6 +56,7 @@ namespace Amazon.EC2.Model
         private string _cidr;
         private CidrAuthorizationContext _cidrAuthorizationContext;
         private string _description;
+        private List<TagSpecification> _poolTagSpecifications = new List<TagSpecification>();
         private bool? _publiclyAdvertisable;
 
         /// <summary>
@@ -114,6 +116,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PoolTagSpecifications. 
+        /// <para>
+        /// The tags to apply to the address pool.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> PoolTagSpecifications
+        {
+            get { return this._poolTagSpecifications; }
+            set { this._poolTagSpecifications = value; }
+        }
+
+        // Check to see if PoolTagSpecifications property is set
+        internal bool IsSetPoolTagSpecifications()
+        {
+            return this._poolTagSpecifications != null && this._poolTagSpecifications.Count > 0; 
         }
 
         /// <summary>

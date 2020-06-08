@@ -25,20 +25,33 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.ListConnectionsRequest.MaxResults</property>
-    <min>1</min>
-    <max>50</max>
+    <min>0</min>
+    <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.ListConnectionsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9=\-\\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.ListConnectionsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9=\-\\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStarconnections.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStarconnections.Model.TagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStarconnections.Model.UntagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.Connection.ConnectionArn</property>
@@ -58,11 +71,13 @@
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.CodeStarconnections.Model.LimitExceededException.Message</property>
-    <max>600</max>
+    <property>Amazon.CodeStarconnections.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.CodeStarconnections.Model.ResourceNotFoundException.Message</property>
-    <max>600</max>
+    <property>Amazon.CodeStarconnections.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
 </property-value-rules>

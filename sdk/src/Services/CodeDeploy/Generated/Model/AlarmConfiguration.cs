@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -81,13 +82,13 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// true: The deployment proceeds even if alarm status information can't be retrieved
-        /// from Amazon CloudWatch.
+        ///  <code>true</code>: The deployment proceeds even if alarm status information can't
+        /// be retrieved from Amazon CloudWatch.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// false: The deployment stops if alarm status information can't be retrieved from Amazon
-        /// CloudWatch.
+        ///  <code>false</code>: The deployment stops if alarm status information can't be retrieved
+        /// from Amazon CloudWatch.
         /// </para>
         ///  </li> </ul>
         /// </summary>

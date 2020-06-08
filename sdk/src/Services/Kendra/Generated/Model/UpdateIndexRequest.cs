@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,11 +34,36 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class UpdateIndexRequest : AmazonKendraRequest
     {
+        private CapacityUnitsConfiguration _capacityUnits;
         private string _description;
         private List<DocumentMetadataConfiguration> _documentMetadataConfigurationUpdates = new List<DocumentMetadataConfiguration>();
         private string _id;
         private string _name;
         private string _roleArn;
+
+        /// <summary>
+        /// Gets and sets the property CapacityUnits. 
+        /// <para>
+        /// Sets the number of addtional storage and query capacity units that should be used
+        /// by the index. You can change the capacity of the index up to 5 times per day.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using extra storage units, you can't reduce the storage capacity below
+        /// that required to meet the storage needs for your index.
+        /// </para>
+        /// </summary>
+        public CapacityUnitsConfiguration CapacityUnits
+        {
+            get { return this._capacityUnits; }
+            set { this._capacityUnits = value; }
+        }
+
+        // Check to see if CapacityUnits property is set
+        internal bool IsSetCapacityUnits()
+        {
+            return this._capacityUnits != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

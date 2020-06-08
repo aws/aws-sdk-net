@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,8 +39,13 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property CampaignStatus. 
         /// <para>
         /// The current status of the campaign, or the current status of a treatment that belongs
-        /// to an A/B test campaign. If a campaign uses A/B testing, the campaign has a status
-        /// of COMPLETED only if all campaign treatments have a status of COMPLETED.
+        /// to an A/B test campaign.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a campaign uses A/B testing, the campaign has a status of COMPLETED only if all
+        /// campaign treatments have a status of COMPLETED. If you delete the segment that's associated
+        /// with a campaign, the campaign fails and has a status of DELETED.
         /// </para>
         /// </summary>
         public CampaignStatus CampaignStatus

@@ -76,6 +76,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.CertificateId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("certificateMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CertificateMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("creationDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

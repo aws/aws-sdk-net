@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -37,9 +38,9 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <para>
     /// AWS CLI usage: <code>start-session</code> is an interactive command that requires
     /// the Session Manager plugin to be installed on the client machine making the call.
-    /// For information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">
-    /// Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems Manager
-    /// User Guide</i>.
+    /// For information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Install
+    /// the Session Manager plugin for the AWS CLI</a> in the <i>AWS Systems Manager User
+    /// Guide</i>.
     /// </para>
     ///  
     /// <para>

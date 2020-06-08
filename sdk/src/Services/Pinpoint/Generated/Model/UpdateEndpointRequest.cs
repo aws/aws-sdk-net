@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -31,7 +32,9 @@ namespace Amazon.Pinpoint.Model
     /// Container for the parameters to the UpdateEndpoint operation.
     /// Creates a new endpoint for an application or updates the settings and attributes of
     /// an existing endpoint for an application. You can also use this operation to define
-    /// custom attributes (Attributes, Metrics, and UserAttributes properties) for an endpoint.
+    /// custom attributes for an endpoint. If an update includes one or more values for a
+    /// custom attribute, Amazon Pinpoint replaces (overwrites) any existing values with the
+    /// new values.
     /// </summary>
     public partial class UpdateEndpointRequest : AmazonPinpointRequest
     {

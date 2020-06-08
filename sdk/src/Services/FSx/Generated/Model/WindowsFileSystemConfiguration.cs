@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -136,14 +137,24 @@ namespace Amazon.FSx.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>MULTI_AZ_1</code> - Specifies a high availability file system that is configured
-        /// for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability.
+        /// for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability,
+        /// and supports SSD and HDD storage.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for
-        /// single AZ redundancy.
+        /// single AZ redundancy, only supports SSD storage.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SINGLE_AZ_2</code> - Latest generation Single AZ file system. Specifies a file
+        /// system that is configured for single AZ redundancy and supports SSD and HDD storage.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">Single-AZ
+        /// and Multi-AZ File Systems</a>.
+        /// </para>
         /// </summary>
         public WindowsDeploymentType DeploymentType
         {
@@ -185,12 +196,12 @@ namespace Amazon.FSx.Model
         ///  
         /// <para>
         /// Use this IP address when mounting the file system on Linux SMB clients or Windows
-        /// SMB clients that are not joined to a Microsoft Active Directory. Applicable for both
-        /// <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code> deployment types. This IP address
-        /// is temporarily unavailable when the file system is undergoing maintenance. For Linux
-        /// and Windows SMB clients that are joined to an Active Directory, use the file system's
-        /// DNSName instead. For more information and instruction on mapping and mounting file
-        /// shares, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html</a>.
+        /// SMB clients that are not joined to a Microsoft Active Directory. Applicable for all
+        /// Windows file system deployment types. This IP address is temporarily unavailable when
+        /// the file system is undergoing maintenance. For Linux and Windows SMB clients that
+        /// are joined to an Active Directory, use the file system's DNSName instead. For more
+        /// information on mapping and mounting file shares, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">Accessing
+        /// File Shares</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=15)]
@@ -216,8 +227,9 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  
         /// <para>
-        /// For <code>SINGLE_AZ_1</code> deployment types, this value is the same as that for
-        /// <code>SubnetIDs</code>.
+        /// For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value
+        /// is the same as that for <code>SubnetIDs</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources">Availability
+        /// and Durability: Single-AZ and Multi-AZ File Systems</a> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=15, Max=24)]
@@ -241,7 +253,8 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  
         /// <para>
-        /// For <code>SINGLE_AZ_1</code> deployment types, this is the DNS name of the file system.
+        /// For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this is
+        /// the DNS name of the file system.
         /// </para>
         ///  
         /// <para>
@@ -298,7 +311,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property WeeklyMaintenanceStartTime. 
         /// <para>
-        /// The preferred time to perform weekly maintenance, in the UTC time zone.
+        /// The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC
+        /// time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending
+        /// with Sunday.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=7)]

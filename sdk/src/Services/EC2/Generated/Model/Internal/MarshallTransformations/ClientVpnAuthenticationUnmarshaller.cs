@@ -60,6 +60,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ActiveDirectory = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("federatedAuthentication", targetDepth))
+                    {
+                        var unmarshaller = FederatedAuthenticationUnmarshaller.Instance;
+                        unmarshalledObject.FederatedAuthentication = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("mutualAuthentication", targetDepth))
                     {
                         var unmarshaller = CertificateAuthenticationUnmarshaller.Instance;

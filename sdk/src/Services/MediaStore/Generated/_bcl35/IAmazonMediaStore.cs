@@ -302,6 +302,60 @@ namespace Amazon.MediaStore
 
         #endregion
         
+        #region  DeleteMetricPolicy
+
+
+        /// <summary>
+        /// Deletes the metric policy that is associated with the specified container. If there
+        /// is no metric policy associated with the container, MediaStore doesn't send metrics
+        /// to CloudWatch.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMetricPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMetricPolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.PolicyNotFoundException">
+        /// The policy that you specified in the request does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteMetricPolicy">REST API Reference for DeleteMetricPolicy Operation</seealso>
+        DeleteMetricPolicyResponse DeleteMetricPolicy(DeleteMetricPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMetricPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMetricPolicy operation on AmazonMediaStoreClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMetricPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteMetricPolicy">REST API Reference for DeleteMetricPolicy Operation</seealso>
+        IAsyncResult BeginDeleteMetricPolicy(DeleteMetricPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMetricPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMetricPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteMetricPolicyResult from MediaStore.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteMetricPolicy">REST API Reference for DeleteMetricPolicy Operation</seealso>
+        DeleteMetricPolicyResponse EndDeleteMetricPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeContainer
 
 
@@ -515,6 +569,58 @@ namespace Amazon.MediaStore
         /// <returns>Returns a  GetLifecyclePolicyResult from MediaStore.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
         GetLifecyclePolicyResponse EndGetLifecyclePolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetMetricPolicy
+
+
+        /// <summary>
+        /// Returns the metric policy for the specified container.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetMetricPolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.PolicyNotFoundException">
+        /// The policy that you specified in the request does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetMetricPolicy">REST API Reference for GetMetricPolicy Operation</seealso>
+        GetMetricPolicyResponse GetMetricPolicy(GetMetricPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMetricPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricPolicy operation on AmazonMediaStoreClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMetricPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetMetricPolicy">REST API Reference for GetMetricPolicy Operation</seealso>
+        IAsyncResult BeginGetMetricPolicy(GetMetricPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMetricPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMetricPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetMetricPolicyResult from MediaStore.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetMetricPolicy">REST API Reference for GetMetricPolicy Operation</seealso>
+        GetMetricPolicyResponse EndGetMetricPolicy(IAsyncResult asyncResult);
 
         #endregion
         
@@ -803,6 +909,57 @@ namespace Amazon.MediaStore
         /// <returns>Returns a  PutLifecyclePolicyResult from MediaStore.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutLifecyclePolicy">REST API Reference for PutLifecyclePolicy Operation</seealso>
         PutLifecyclePolicyResponse EndPutLifecyclePolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutMetricPolicy
+
+
+        /// <summary>
+        /// The metric policy that you want to add to the container. A metric policy allows AWS
+        /// Elemental MediaStore to send metrics to Amazon CloudWatch. It takes up to 20 minutes
+        /// for the new policy to take effect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutMetricPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutMetricPolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutMetricPolicy">REST API Reference for PutMetricPolicy Operation</seealso>
+        PutMetricPolicyResponse PutMetricPolicy(PutMetricPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutMetricPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutMetricPolicy operation on AmazonMediaStoreClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutMetricPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutMetricPolicy">REST API Reference for PutMetricPolicy Operation</seealso>
+        IAsyncResult BeginPutMetricPolicy(PutMetricPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutMetricPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutMetricPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutMetricPolicyResult from MediaStore.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutMetricPolicy">REST API Reference for PutMetricPolicy Operation</seealso>
+        PutMetricPolicyResponse EndPutMetricPolicy(IAsyncResult asyncResult);
 
         #endregion
         

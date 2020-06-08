@@ -238,6 +238,79 @@ namespace Amazon.TranscribeService
         #endregion
 
 
+        #region  CreateMedicalVocabulary
+
+
+        /// <summary>
+        /// Creates a new custom vocabulary that you can use to change how Amazon Transcribe Medical
+        /// transcribes your audio file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMedicalVocabulary service method.</param>
+        /// 
+        /// <returns>The response from the CreateMedicalVocabulary service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// The resource name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateMedicalVocabulary">REST API Reference for CreateMedicalVocabulary Operation</seealso>
+        public virtual CreateMedicalVocabularyResponse CreateMedicalVocabulary(CreateMedicalVocabularyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMedicalVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMedicalVocabularyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMedicalVocabularyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new custom vocabulary that you can use to change how Amazon Transcribe Medical
+        /// transcribes your audio file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMedicalVocabulary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMedicalVocabulary service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// The resource name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateMedicalVocabulary">REST API Reference for CreateMedicalVocabulary Operation</seealso>
+        public virtual Task<CreateMedicalVocabularyResponse> CreateMedicalVocabularyAsync(CreateMedicalVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMedicalVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMedicalVocabularyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateMedicalVocabularyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateVocabulary
 
 
@@ -254,15 +327,7 @@ namespace Amazon.TranscribeService
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code>
-        /// field is a duplicate of a previously entered job name. Resend your request with a
-        /// different name.
-        /// 
-        ///  
-        /// <para>
-        /// When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
-        /// running at the same time. Resend the second request later.
-        /// </para>
+        /// The resource name already exists.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -298,15 +363,7 @@ namespace Amazon.TranscribeService
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code>
-        /// field is a duplicate of a previously entered job name. Resend your request with a
-        /// different name.
-        /// 
-        ///  
-        /// <para>
-        /// When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
-        /// running at the same time. Resend the second request later.
-        /// </para>
+        /// The resource name already exists.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -343,15 +400,7 @@ namespace Amazon.TranscribeService
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code>
-        /// field is a duplicate of a previously entered job name. Resend your request with a
-        /// different name.
-        /// 
-        ///  
-        /// <para>
-        /// When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
-        /// running at the same time. Resend the second request later.
-        /// </para>
+        /// The resource name already exists.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -387,15 +436,7 @@ namespace Amazon.TranscribeService
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code>
-        /// field is a duplicate of a previously entered job name. Resend your request with a
-        /// different name.
-        /// 
-        ///  
-        /// <para>
-        /// When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
-        /// running at the same time. Resend the second request later.
-        /// </para>
+        /// The resource name already exists.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -412,6 +453,144 @@ namespace Amazon.TranscribeService
             options.ResponseUnmarshaller = CreateVocabularyFilterResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateVocabularyFilterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteMedicalTranscriptionJob
+
+
+        /// <summary>
+        /// Deletes a transcription job generated by Amazon Transcribe Medical and any related
+        /// information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMedicalTranscriptionJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMedicalTranscriptionJob service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalTranscriptionJob">REST API Reference for DeleteMedicalTranscriptionJob Operation</seealso>
+        public virtual DeleteMedicalTranscriptionJobResponse DeleteMedicalTranscriptionJob(DeleteMedicalTranscriptionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMedicalTranscriptionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMedicalTranscriptionJobResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMedicalTranscriptionJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a transcription job generated by Amazon Transcribe Medical and any related
+        /// information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMedicalTranscriptionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMedicalTranscriptionJob service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalTranscriptionJob">REST API Reference for DeleteMedicalTranscriptionJob Operation</seealso>
+        public virtual Task<DeleteMedicalTranscriptionJobResponse> DeleteMedicalTranscriptionJobAsync(DeleteMedicalTranscriptionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMedicalTranscriptionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMedicalTranscriptionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteMedicalTranscriptionJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteMedicalVocabulary
+
+
+        /// <summary>
+        /// Deletes a vocabulary from Amazon Transcribe Medical.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMedicalVocabulary service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMedicalVocabulary service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalVocabulary">REST API Reference for DeleteMedicalVocabulary Operation</seealso>
+        public virtual DeleteMedicalVocabularyResponse DeleteMedicalVocabulary(DeleteMedicalVocabularyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMedicalVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMedicalVocabularyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMedicalVocabularyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a vocabulary from Amazon Transcribe Medical.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMedicalVocabulary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMedicalVocabulary service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalVocabulary">REST API Reference for DeleteMedicalVocabulary Operation</seealso>
+        public virtual Task<DeleteMedicalVocabularyResponse> DeleteMedicalVocabularyAsync(DeleteMedicalVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMedicalVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMedicalVocabularyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteMedicalVocabularyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -621,6 +800,154 @@ namespace Amazon.TranscribeService
             options.ResponseUnmarshaller = DeleteVocabularyFilterResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteVocabularyFilterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMedicalTranscriptionJob
+
+
+        /// <summary>
+        /// Returns information about a transcription job from Amazon Transcribe Medical. To see
+        /// the status of the job, check the <code>TranscriptionJobStatus</code> field. If the
+        /// status is <code>COMPLETED</code>, the job is finished. You find the results of the
+        /// completed job in the <code>TranscriptFileUri</code> field.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMedicalTranscriptionJob service method.</param>
+        /// 
+        /// <returns>The response from the GetMedicalTranscriptionJob service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalTranscriptionJob">REST API Reference for GetMedicalTranscriptionJob Operation</seealso>
+        public virtual GetMedicalTranscriptionJobResponse GetMedicalTranscriptionJob(GetMedicalTranscriptionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMedicalTranscriptionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMedicalTranscriptionJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetMedicalTranscriptionJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about a transcription job from Amazon Transcribe Medical. To see
+        /// the status of the job, check the <code>TranscriptionJobStatus</code> field. If the
+        /// status is <code>COMPLETED</code>, the job is finished. You find the results of the
+        /// completed job in the <code>TranscriptFileUri</code> field.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMedicalTranscriptionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMedicalTranscriptionJob service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalTranscriptionJob">REST API Reference for GetMedicalTranscriptionJob Operation</seealso>
+        public virtual Task<GetMedicalTranscriptionJobResponse> GetMedicalTranscriptionJobAsync(GetMedicalTranscriptionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMedicalTranscriptionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMedicalTranscriptionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMedicalTranscriptionJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMedicalVocabulary
+
+
+        /// <summary>
+        /// Retrieve information about a medical vocabulary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMedicalVocabulary service method.</param>
+        /// 
+        /// <returns>The response from the GetMedicalVocabulary service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalVocabulary">REST API Reference for GetMedicalVocabulary Operation</seealso>
+        public virtual GetMedicalVocabularyResponse GetMedicalVocabulary(GetMedicalVocabularyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMedicalVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMedicalVocabularyResponseUnmarshaller.Instance;
+
+            return Invoke<GetMedicalVocabularyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieve information about a medical vocabulary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMedicalVocabulary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMedicalVocabulary service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalVocabulary">REST API Reference for GetMedicalVocabulary Operation</seealso>
+        public virtual Task<GetMedicalVocabularyResponse> GetMedicalVocabularyAsync(GetMedicalVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMedicalVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMedicalVocabularyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMedicalVocabularyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -846,6 +1173,140 @@ namespace Amazon.TranscribeService
 
         #endregion
         
+        #region  ListMedicalTranscriptionJobs
+
+
+        /// <summary>
+        /// Lists medical transcription jobs with a specified status or substring that matches
+        /// their names.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMedicalTranscriptionJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListMedicalTranscriptionJobs service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalTranscriptionJobs">REST API Reference for ListMedicalTranscriptionJobs Operation</seealso>
+        public virtual ListMedicalTranscriptionJobsResponse ListMedicalTranscriptionJobs(ListMedicalTranscriptionJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMedicalTranscriptionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMedicalTranscriptionJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMedicalTranscriptionJobsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists medical transcription jobs with a specified status or substring that matches
+        /// their names.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMedicalTranscriptionJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMedicalTranscriptionJobs service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalTranscriptionJobs">REST API Reference for ListMedicalTranscriptionJobs Operation</seealso>
+        public virtual Task<ListMedicalTranscriptionJobsResponse> ListMedicalTranscriptionJobsAsync(ListMedicalTranscriptionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMedicalTranscriptionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMedicalTranscriptionJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListMedicalTranscriptionJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListMedicalVocabularies
+
+
+        /// <summary>
+        /// Returns a list of vocabularies that match the specified criteria. You get the entire
+        /// list of vocabularies if you don't enter a value in any of the request parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMedicalVocabularies service method.</param>
+        /// 
+        /// <returns>The response from the ListMedicalVocabularies service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalVocabularies">REST API Reference for ListMedicalVocabularies Operation</seealso>
+        public virtual ListMedicalVocabulariesResponse ListMedicalVocabularies(ListMedicalVocabulariesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMedicalVocabulariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMedicalVocabulariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListMedicalVocabulariesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of vocabularies that match the specified criteria. You get the entire
+        /// list of vocabularies if you don't enter a value in any of the request parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMedicalVocabularies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMedicalVocabularies service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalVocabularies">REST API Reference for ListMedicalVocabularies Operation</seealso>
+        public virtual Task<ListMedicalVocabulariesResponse> ListMedicalVocabulariesAsync(ListMedicalVocabulariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMedicalVocabulariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMedicalVocabulariesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListMedicalVocabulariesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTranscriptionJobs
 
 
@@ -1043,6 +1504,77 @@ namespace Amazon.TranscribeService
 
         #endregion
         
+        #region  StartMedicalTranscriptionJob
+
+
+        /// <summary>
+        /// Start a batch job to transcribe medical speech to text.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMedicalTranscriptionJob service method.</param>
+        /// 
+        /// <returns>The response from the StartMedicalTranscriptionJob service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// The resource name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartMedicalTranscriptionJob">REST API Reference for StartMedicalTranscriptionJob Operation</seealso>
+        public virtual StartMedicalTranscriptionJobResponse StartMedicalTranscriptionJob(StartMedicalTranscriptionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMedicalTranscriptionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMedicalTranscriptionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartMedicalTranscriptionJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Start a batch job to transcribe medical speech to text.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMedicalTranscriptionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMedicalTranscriptionJob service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// The resource name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartMedicalTranscriptionJob">REST API Reference for StartMedicalTranscriptionJob Operation</seealso>
+        public virtual Task<StartMedicalTranscriptionJobResponse> StartMedicalTranscriptionJobAsync(StartMedicalTranscriptionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMedicalTranscriptionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMedicalTranscriptionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartMedicalTranscriptionJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartTranscriptionJob
 
 
@@ -1058,15 +1590,7 @@ namespace Amazon.TranscribeService
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code>
-        /// field is a duplicate of a previously entered job name. Resend your request with a
-        /// different name.
-        /// 
-        ///  
-        /// <para>
-        /// When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
-        /// running at the same time. Resend the second request later.
-        /// </para>
+        /// The resource name already exists.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -1101,15 +1625,7 @@ namespace Amazon.TranscribeService
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code>
-        /// field is a duplicate of a previously entered job name. Resend your request with a
-        /// different name.
-        /// 
-        ///  
-        /// <para>
-        /// When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
-        /// running at the same time. Resend the second request later.
-        /// </para>
+        /// The resource name already exists.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -1126,6 +1642,87 @@ namespace Amazon.TranscribeService
             options.ResponseUnmarshaller = StartTranscriptionJobResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartTranscriptionJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateMedicalVocabulary
+
+
+        /// <summary>
+        /// Updates an existing vocabulary with new values in a different text file. The <code>UpdateMedicalVocabulary</code>
+        /// operation overwrites all of the existing information with the values that you provide
+        /// in the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMedicalVocabulary service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMedicalVocabulary service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// The resource name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateMedicalVocabulary">REST API Reference for UpdateMedicalVocabulary Operation</seealso>
+        public virtual UpdateMedicalVocabularyResponse UpdateMedicalVocabulary(UpdateMedicalVocabularyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMedicalVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMedicalVocabularyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMedicalVocabularyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an existing vocabulary with new values in a different text file. The <code>UpdateMedicalVocabulary</code>
+        /// operation overwrites all of the existing information with the values that you provide
+        /// in the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMedicalVocabulary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMedicalVocabulary service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// The resource name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateMedicalVocabulary">REST API Reference for UpdateMedicalVocabulary Operation</seealso>
+        public virtual Task<UpdateMedicalVocabularyResponse> UpdateMedicalVocabularyAsync(UpdateMedicalVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMedicalVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMedicalVocabularyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateMedicalVocabularyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1147,15 +1744,7 @@ namespace Amazon.TranscribeService
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code>
-        /// field is a duplicate of a previously entered job name. Resend your request with a
-        /// different name.
-        /// 
-        ///  
-        /// <para>
-        /// When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
-        /// running at the same time. Resend the second request later.
-        /// </para>
+        /// The resource name already exists.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -1195,15 +1784,7 @@ namespace Amazon.TranscribeService
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code>
-        /// field is a duplicate of a previously entered job name. Resend your request with a
-        /// different name.
-        /// 
-        ///  
-        /// <para>
-        /// When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
-        /// running at the same time. Resend the second request later.
-        /// </para>
+        /// The resource name already exists.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.

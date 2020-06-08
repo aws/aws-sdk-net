@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,8 @@ namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
     /// A complex type that contains information about an operation that matches the criteria
-    /// that you specified in a <a>ListOperations</a> request.
+    /// that you specified in a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html">ListOperations</a>
+    /// request.
     /// </summary>
     public partial class OperationSummary
     {

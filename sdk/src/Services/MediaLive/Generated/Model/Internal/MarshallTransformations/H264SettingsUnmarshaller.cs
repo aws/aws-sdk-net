@@ -112,6 +112,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.EntropyEncoding = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("filterSettings", targetDepth))
+                {
+                    var unmarshaller = H264FilterSettingsUnmarshaller.Instance;
+                    unmarshalledObject.FilterSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fixedAfd", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -122,6 +128,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FlickerAq = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("forceFieldPictures", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ForceFieldPictures = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("framerateControl", targetDepth))
@@ -224,6 +236,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Profile = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("qualityLevel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.QualityLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("qvbrQualityLevel", targetDepth))

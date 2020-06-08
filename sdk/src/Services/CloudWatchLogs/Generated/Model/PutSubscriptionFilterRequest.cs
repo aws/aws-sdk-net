@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -31,8 +32,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// Container for the parameters to the PutSubscriptionFilter operation.
     /// Creates or updates a subscription filter and associates it with the specified log
     /// group. Subscription filters allow you to subscribe to a real-time stream of log events
-    /// ingested through <a>PutLogEvents</a> and have them delivered to a specific destination.
-    /// Currently, the supported destinations are:
+    /// ingested through <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>
+    /// and have them delivered to a specific destination. Currently, the supported destinations
+    /// are:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -138,7 +140,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// A name for the subscription filter. If you are updating an existing filter, you must
         /// specify the correct name in <code>filterName</code>. Otherwise, the call fails because
         /// you cannot associate a second filter with a log group. To find the name of the filter
-        /// currently associated with a log group, use <a>DescribeSubscriptionFilters</a>.
+        /// currently associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

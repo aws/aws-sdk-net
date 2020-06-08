@@ -130,6 +130,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.KerberosAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LogEncryptionKmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LogEncryptionKmsKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LogUri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

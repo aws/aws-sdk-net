@@ -68,6 +68,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetThroughputCapacity())
+            {
+                context.Writer.WritePropertyName("ThroughputCapacity");
+                context.Writer.Write(requestObject.ThroughputCapacity);
+            }
+
             if(requestObject.IsSetWeeklyMaintenanceStartTime())
             {
                 context.Writer.WritePropertyName("WeeklyMaintenanceStartTime");

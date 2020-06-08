@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,8 +30,8 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the ListServers operation.
-    /// Lists the Secure File Transfer Protocol (SFTP) servers that are associated with your
-    /// AWS account.
+    /// Lists the file transfer protocol-enabled servers that are associated with your AWS
+    /// account.
     /// </summary>
     public partial class ListServersRequest : AmazonTransferRequest
     {
@@ -40,8 +41,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Specifies the number of servers to return as a response to the <code>ListServers</code>
-        /// query.
+        /// Specifies the number of file transfer protocol-enabled servers to return as a response
+        /// to the <code>ListServers</code> query.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -60,9 +61,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When additional results are obtained from the <code>ListServers</code> command, a
-        /// <code>NextToken</code> parameter is returned in the output. You can then pass the
-        /// <code>NextToken</code> parameter in a subsequent command to continue listing additional
+        /// When additional results are obtained from the<code>ListServers</code> command, a <code>NextToken</code>
+        /// parameter is returned in the output. You can then pass the <code>NextToken</code>
+        /// parameter in a subsequent command to continue listing additional file transfer protocol-enabled
         /// servers.
         /// </para>
         /// </summary>

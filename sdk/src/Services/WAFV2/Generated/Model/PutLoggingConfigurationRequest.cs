@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -52,7 +53,7 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  
     /// <para>
-    /// Create the data firehose with a PUT source and in the region that you are operating.
+    /// Create the data firehose with a PUT source and in the Region that you are operating.
     /// If you are capturing logs for Amazon CloudFront, always create the firehose in US
     /// East (N. Virginia). 
     /// </para>

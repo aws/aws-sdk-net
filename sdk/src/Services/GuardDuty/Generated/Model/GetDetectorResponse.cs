@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -42,7 +43,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Detector creation timestamp.
+        /// The timestamp of when the detector was created.
         /// </para>
         /// </summary>
         public string CreatedAt
@@ -60,7 +61,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property FindingPublishingFrequency. 
         /// <para>
-        /// Finding publishing frequency.
+        /// The publishing frequency of the finding.
         /// </para>
         /// </summary>
         public FindingPublishingFrequency FindingPublishingFrequency
@@ -135,7 +136,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// Detector last update timestamp.
+        /// The last-updated timestamp for the detector.
         /// </para>
         /// </summary>
         public string UpdatedAt

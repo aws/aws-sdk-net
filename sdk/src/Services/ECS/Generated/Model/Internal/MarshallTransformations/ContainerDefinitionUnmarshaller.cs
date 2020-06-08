@@ -124,6 +124,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Environment = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("environmentFiles", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EnvironmentFile, EnvironmentFileUnmarshaller>(EnvironmentFileUnmarshaller.Instance);
+                    unmarshalledObject.EnvironmentFiles = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("essential", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

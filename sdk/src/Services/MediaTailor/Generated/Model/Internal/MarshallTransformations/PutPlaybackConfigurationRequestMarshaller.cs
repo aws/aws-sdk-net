@@ -72,6 +72,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AdDecisionServerUrl);
                 }
 
+                if(publicRequest.IsSetAvailSuppression())
+                {
+                    context.Writer.WritePropertyName("AvailSuppression");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AvailSuppressionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AvailSuppression, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCdnConfiguration())
                 {
                     context.Writer.WritePropertyName("CdnConfiguration");

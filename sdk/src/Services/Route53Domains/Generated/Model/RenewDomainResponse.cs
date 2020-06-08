@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -37,8 +38,8 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property OperationId. 
         /// <para>
-        /// The identifier for tracking the progress of the request. To use this ID to query the
-        /// operation status, use <a>GetOperationDetail</a>.
+        /// Identifier for tracking the progress of the request. To query the operation status,
+        /// use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

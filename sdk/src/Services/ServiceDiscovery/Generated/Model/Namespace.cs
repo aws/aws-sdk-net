@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -199,8 +200,25 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the namespace. Valid values are <code>DNS_PUBLIC</code> and <code>DNS_PRIVATE</code>.
+        /// The type of the namespace. The methods for discovering instances depends on the value
+        /// that you specify:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>HTTP</code>: Instances can be discovered only programmatically, using the AWS
+        /// Cloud Map <code>DiscoverInstances</code> API.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DNS_PUBLIC</code>: Instances can be discovered using public DNS queries and
+        /// using the <code>DiscoverInstances</code> API.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DNS_PRIVATE</code>: Instances can be discovered using DNS queries in VPCs and
+        /// using the <code>DiscoverInstances</code> API.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public NamespaceType Type
         {

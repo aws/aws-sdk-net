@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,7 +34,7 @@ namespace Amazon.CostExplorer.Model
     /// usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>,
     /// that you want the request to return. You can also filter and group your data by various
     /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
-    /// For a complete list of valid dimensions, see the <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+    /// For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
     /// operation. Master accounts in an organization in AWS Organizations have access to
     /// all member accounts.
     /// </summary>
@@ -52,7 +53,7 @@ namespace Amazon.CostExplorer.Model
         /// Filters AWS costs by different dimensions. For example, you can specify <code>SERVICE</code>
         /// and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's
         /// usage of that service. You can nest <code>Expression</code> objects to define any
-        /// combination of dimension filters. For more information, see <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+        /// combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
         /// 
         /// </para>
         /// </summary>
@@ -122,7 +123,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property Metrics. 
         /// <para>
         /// Which metrics are returned in the query. For more information about blended and unblended
-        /// rates, see <a href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+        /// rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
         /// does the "blended" annotation appear on some line items in my bill?</a>. 
         /// </para>
         ///  
@@ -164,6 +165,7 @@ namespace Amazon.CostExplorer.Model
         /// from a previous call has more results than the maximum page size.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
         public string NextPageToken
         {
             get { return this._nextPageToken; }

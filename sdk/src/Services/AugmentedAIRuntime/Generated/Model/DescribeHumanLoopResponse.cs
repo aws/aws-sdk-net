@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -63,7 +64,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <summary>
         /// Gets and sets the property FailureCode. 
         /// <para>
-        /// A failure code denoting a specific type of failure.
+        /// A failure code that identifies the type of failure.
         /// </para>
         /// </summary>
         public string FailureCode
@@ -81,8 +82,8 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// The reason why a human loop has failed. The failure reason is returned when the human
-        /// loop status is <code>Failed</code>.
+        /// The reason why a human loop failed. The failure reason is returned when the status
+        /// of the human loop is <code>Failed</code>.
         /// </para>
         /// </summary>
         public string FailureReason
@@ -138,7 +139,9 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <summary>
         /// Gets and sets the property HumanLoopName. 
         /// <para>
-        /// The name of the human loop.
+        /// The name of the human loop. The name must be lowercase, unique within the Region in
+        /// your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and -
+        /// (hyphen).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -157,7 +160,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <summary>
         /// Gets and sets the property HumanLoopOutput. 
         /// <para>
-        /// An object containing information about the output of the human loop.
+        /// An object that contains information about the output of the human loop.
         /// </para>
         /// </summary>
         public HumanLoopOutput HumanLoopOutput
@@ -175,7 +178,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <summary>
         /// Gets and sets the property HumanLoopStatus. 
         /// <para>
-        /// The status of the human loop. Valid values:
+        /// The status of the human loop. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

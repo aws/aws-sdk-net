@@ -508,6 +508,10 @@
     <pattern>^[a-zA-Z0-9_\-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.DescribeProductRequest.Name</property>
+    <max>8191</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.DescribeProductAsAdminRequest.AcceptLanguage</property>
     <max>100</max>
   </property-value-rule>
@@ -516,6 +520,10 @@
     <min>1</min>
     <max>100</max>
     <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.DescribeProductAsAdminRequest.Name</property>
+    <max>8191</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.DescribeProductViewRequest.AcceptLanguage</property>
@@ -573,10 +581,18 @@
     <pattern>^[a-zA-Z0-9_\-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.DescribeProvisioningArtifactRequest.ProductName</property>
+    <max>8191</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.DescribeProvisioningArtifactRequest.ProvisioningArtifactId</property>
     <min>1</min>
     <max>100</max>
     <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.DescribeProvisioningArtifactRequest.ProvisioningArtifactName</property>
+    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.DescribeProvisioningParametersRequest.AcceptLanguage</property>
@@ -1479,6 +1495,14 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.UpdateProvisioningArtifactRequest.Description</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.UpdateProvisioningArtifactRequest.Name</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.UpdateProvisioningArtifactRequest.ProductId</property>
     <min>1</min>
     <max>100</max>
@@ -1595,6 +1619,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.FailedServiceActionAssociation.ServiceActionId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.LaunchPath.Id</property>
     <min>1</min>
     <max>100</max>
     <pattern>^[a-zA-Z0-9_\-]*</pattern>
@@ -1833,10 +1863,22 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9._-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisioningArtifact.Description</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ProvisioningArtifact.Id</property>
     <min>1</min>
     <max>100</max>
     <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisioningArtifact.Name</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisioningArtifactDetail.Description</property>
+    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ProvisioningArtifactDetail.Id</property>
@@ -1845,15 +1887,35 @@
     <pattern>^[a-zA-Z0-9_\-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisioningArtifactDetail.Name</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ProvisioningArtifactParameter.ParameterKey</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisioningArtifactProperties.Description</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisioningArtifactProperties.Name</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisioningArtifactSummary.Description</property>
+    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ProvisioningArtifactSummary.Id</property>
     <min>1</min>
     <max>100</max>
     <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisioningArtifactSummary.Name</property>
+    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ProvisioningParameter.Key</property>

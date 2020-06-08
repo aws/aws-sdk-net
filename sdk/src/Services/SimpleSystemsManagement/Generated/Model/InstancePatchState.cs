@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -178,15 +179,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property InstallOverrideList. 
         /// <para>
         /// An https URL or an Amazon S3 path-style URL to a list of patches to be installed.
-        /// This patch installation list, which you maintain in an Amazon S3 bucket in YAML format
-        /// and specify in the SSM document <code>AWS-RunPatchBaseline</code>, overrides the patches
+        /// This patch installation list, which you maintain in an S3 bucket in YAML format and
+        /// specify in the SSM document <code>AWS-RunPatchBaseline</code>, overrides the patches
         /// specified by the default patch baseline.
         /// </para>
         ///  
         /// <para>
         /// For more information about the <code>InstallOverrideList</code> parameter, see <a
-        /// href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-        /// the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+        /// the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

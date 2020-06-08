@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,6 +34,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeOrderableDBInstanceOptionsRequest : AmazonRDSRequest
     {
+        private string _availabilityZoneGroup;
         private string _dbInstanceClass;
         private string _engine;
         private string _engineVersion;
@@ -41,6 +43,29 @@ namespace Amazon.RDS.Model
         private string _marker;
         private int? _maxRecords;
         private bool? _vpc;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneGroup. 
+        /// <para>
+        /// The Availability Zone group associated with a Local Zone. Specify this parameter to
+        /// retrieve available offerings for the Local Zones in the group.
+        /// </para>
+        ///  
+        /// <para>
+        /// Omit this parameter to show the available offerings in the specified AWS Region.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneGroup
+        {
+            get { return this._availabilityZoneGroup; }
+            set { this._availabilityZoneGroup = value; }
+        }
+
+        // Check to see if AvailabilityZoneGroup property is set
+        internal bool IsSetAvailabilityZoneGroup()
+        {
+            return this._availabilityZoneGroup != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 

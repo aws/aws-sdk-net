@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -60,7 +61,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property Rules. 
         /// <para>
         /// An array of <code>BackupRule</code> objects, each of which specifies a scheduled task
-        /// that is used to back up a selection of resources.
+        /// that is used to back up a selection of resources. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

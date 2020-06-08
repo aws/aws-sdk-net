@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -31,8 +32,8 @@ namespace Amazon.CodeGuruReviewer.Model
     /// Container for the parameters to the AssociateRepository operation.
     /// Associates an AWS CodeCommit repository with Amazon CodeGuru Reviewer. When you associate
     /// an AWS CodeCommit repository with Amazon CodeGuru Reviewer, Amazon CodeGuru Reviewer
-    /// will provide recommendations for each pull request. You can view recommendations in
-    /// the AWS CodeCommit repository.
+    /// will provide recommendations for each pull request raised within the repository. You
+    /// can view recommendations in the AWS CodeCommit repository.
     /// 
     ///  
     /// <para>
@@ -52,23 +53,23 @@ namespace Amazon.CodeGuruReviewer.Model
         /// </para>
         ///  
         /// <para>
-        /// If you want to add a new repository association, this parameter specifies a unique
-        /// identifier for the new repository association that helps ensure idempotency.
+        /// To add a new repository association, this parameter specifies a unique identifier
+        /// for the new repository association that helps ensure idempotency.
         /// </para>
         ///  
         /// <para>
-        /// If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
-        /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes
+        /// If you use the AWS CLI or one of the AWS SDKs to call this operation, you can leave
+        /// this parameter empty. The CLI or SDK generates a random UUID for you and includes
         /// that in the request. If you don't use the SDK and instead generate a raw HTTP request
-        /// to the Secrets Manager service endpoint, then you must generate a ClientRequestToken
-        /// yourself for new versions and include that value in the request.
+        /// to the Secrets Manager service endpoint, you must generate a ClientRequestToken yourself
+        /// for new versions and include that value in the request.
         /// </para>
         ///  
         /// <para>
-        /// You typically only need to interact with this value if you implement your own retry
-        /// logic and want to ensure that a given repository association is not created twice.
-        /// We recommend that you generate a UUID-type value to ensure uniqueness within the specified
-        /// repository association.
+        /// You typically interact with this value if you implement your own retry logic and want
+        /// to ensure that a given repository association is not created twice. We recommend that
+        /// you generate a UUID-type value to ensure uniqueness within the specified repository
+        /// association.
         /// </para>
         ///  
         /// <para>

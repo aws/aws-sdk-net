@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -37,7 +38,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DefaultResourceSpec. 
         /// <para>
-        /// The instance type and quantity.
+        /// The default instance type and the Amazon Resource Name (ARN) of the SageMaker image
+        /// created on the instance.
         /// </para>
         /// </summary>
         public ResourceSpec DefaultResourceSpec

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -68,10 +69,9 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property CompletionDate. 
         /// <para>
-        /// The date and time a job to create a copy job is completed, in Unix format and Coordinated
-        /// Universal Time (UTC). The value of CompletionDate is accurate to milliseconds. For
-        /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
-        /// AM. 
+        /// The date and time a copy job is completed, in Unix format and Coordinated Universal
+        /// Time (UTC). The value of CompletionDate is accurate to milliseconds. For example,
+        /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. 
         /// </para>
         /// </summary>
         public DateTime CompletionDate
@@ -89,7 +89,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property CopyJobId. 
         /// <para>
-        /// Uniquely identifies a request to AWS Backup to copy a resource.
+        /// Uniquely identifies a copy job.
         /// </para>
         /// </summary>
         public string CopyJobId
@@ -143,7 +143,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property DestinationBackupVaultArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for
-        /// example, arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+        /// example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
         /// </para>
         /// </summary>
         public string DestinationBackupVaultArn
@@ -161,8 +161,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property DestinationRecoveryPointArn. 
         /// <para>
-        /// An ARN that uniquely identifies a destination recovery point; for example, arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
-        /// 
+        /// An ARN that uniquely identifies a destination recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
         /// </para>
         /// </summary>
         public string DestinationRecoveryPointArn
@@ -180,7 +179,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property IamRoleArn. 
         /// <para>
-        /// Specifies the IAM role ARN used to copy the target recovery point; for example, arn:aws:iam::123456789012:role/S3Access.
+        /// Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
         /// </para>
         /// </summary>
         public string IamRoleArn
@@ -198,9 +197,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The type of AWS resource to be copied; for example, an Amazon Elastic Block Store
-        /// (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
-        /// 
+        /// The AWS resource to be copied; for example, an Amazon Elastic Block Store (Amazon
+        /// EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
         /// </para>
         /// </summary>
         public string ResourceArn
@@ -220,7 +218,6 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The type of AWS resource to be copied; for example, an Amazon Elastic Block Store
         /// (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
-        /// 
         /// </para>
         /// </summary>
         public string ResourceType
@@ -239,7 +236,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property SourceBackupVaultArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example,
-        /// arn:aws:backup:us-east-1:123456789012:vault:aBackupVault. 
+        /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. 
         /// </para>
         /// </summary>
         public string SourceBackupVaultArn
@@ -257,8 +254,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property SourceRecoveryPointArn. 
         /// <para>
-        /// An ARN that uniquely identifies a source recovery point; for example, arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
-        /// 
+        /// An ARN that uniquely identifies a source recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
         /// </para>
         /// </summary>
         public string SourceRecoveryPointArn
@@ -276,7 +272,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The current state of a resource recovery point.
+        /// The current state of a copy job.
         /// </para>
         /// </summary>
         public CopyJobState State
@@ -294,7 +290,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// A detailed message explaining the status of the job that to copy a resource.
+        /// A detailed message explaining the status of the job to copy a resource.
         /// </para>
         /// </summary>
         public string StatusMessage

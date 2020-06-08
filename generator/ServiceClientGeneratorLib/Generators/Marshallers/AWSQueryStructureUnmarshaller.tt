@@ -38,7 +38,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     {
         foreach (var member in this.Structure.Members)
         {
-            var testExpression= GeneratorHelpers.DetermineAWSQueryTestExpression(member);
+            var testExpression = GeneratorHelpers.DetermineAWSQueryTestExpression(member);
 #>
                     if (context.TestExpression("<#=testExpression#>", targetDepth))
                     {

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,8 +30,8 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStackInstances operation.
-    /// Creates stack instances for the specified accounts, within the specified regions.
-    /// A stack instance refers to a stack in a specific account and region. You must specify
+    /// Creates stack instances for the specified accounts, within the specified Regions.
+    /// A stack instance refers to a stack in a specific account and Region. You must specify
     /// at least one value for either <code>Accounts</code> or <code>DeploymentTargets</code>,
     /// and you must specify at least one value for <code>Regions</code>.
     /// </summary>
@@ -47,8 +48,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Accounts. 
         /// <para>
-        /// [Self-managed permissions] The names of one or more AWS accounts that you want to
-        /// create stack instances in the specified region(s) for.
+        /// [<code>Self-managed</code> permissions] The names of one or more AWS accounts that
+        /// you want to create stack instances in the specified Region(s) for.
         /// </para>
         ///  
         /// <para>
@@ -152,7 +153,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Any overridden parameter values will be applied to all stack instances in the specified
-        /// accounts and regions. When specifying parameters and their values, be aware of how
+        /// accounts and Regions. When specifying parameters and their values, be aware of how
         /// AWS CloudFormation sets parameter values during stack instance operations:
         /// </para>
         ///  <ul> <li> 
@@ -210,7 +211,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// The names of one or more regions where you want to create stack instances using the
+        /// The names of one or more Regions where you want to create stack instances using the
         /// specified AWS account(s). 
         /// </para>
         /// </summary>

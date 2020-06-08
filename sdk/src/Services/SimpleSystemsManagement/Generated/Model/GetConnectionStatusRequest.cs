@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -30,7 +31,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the GetConnectionStatus operation.
     /// Retrieves the Session Manager connection status for an instance to determine whether
-    /// it is connected and ready to receive Session Manager connections.
+    /// it is running and ready to receive Session Manager connections.
     /// </summary>
     public partial class GetConnectionStatusRequest : AmazonSimpleSystemsManagementRequest
     {

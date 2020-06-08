@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,15 +30,15 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the StartServer operation.
-    /// Changes the state of a Secure File Transfer Protocol (SFTP) server from <code>OFFLINE</code>
-    /// to <code>ONLINE</code>. It has no impact on an SFTP server that is already <code>ONLINE</code>.
+    /// Changes the state of a file transfer protocol-enabled server from <code>OFFLINE</code>
+    /// to <code>ONLINE</code>. It has no impact on a server that is already <code>ONLINE</code>.
     /// An <code>ONLINE</code> server can accept and process file transfer jobs.
     /// 
     ///  
     /// <para>
     /// The state of <code>STARTING</code> indicates that the server is in an intermediate
     /// state, either not fully able to respond, or not fully online. The values of <code>START_FAILED</code>
-    /// can indicate an error condition. 
+    /// can indicate an error condition.
     /// </para>
     ///  
     /// <para>
@@ -51,7 +52,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned unique identifier for an SFTP server that you start.
+        /// A system-assigned unique identifier for a file transfer protocol-enabled server that
+        /// you start.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

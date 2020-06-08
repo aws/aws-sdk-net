@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -40,7 +41,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The unique ID of the detector the filter is associated with.
+        /// The unique ID of the detector that the filter is associated with.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
@@ -59,8 +60,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 50. The maximum value is 50.
+        /// You can use this parameter to indicate the maximum number of items that you want in
+        /// the response. The default value is 50. The maximum value is 50.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -80,7 +81,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the list action. For subsequent calls to the action
+        /// to null on your first call to the list action. For subsequent calls to the action,
         /// fill nextToken in the request with the value of NextToken from the previous response
         /// to continue listing data.
         /// </para>

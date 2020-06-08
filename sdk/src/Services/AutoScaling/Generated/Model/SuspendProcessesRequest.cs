@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -35,16 +36,13 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// If you suspend either the <code>Launch</code> or <code>Terminate</code> process types,
-    /// it can prevent other process types from functioning properly.
-    /// </para>
-    ///  
-    /// <para>
-    /// To resume processes that have been suspended, use <a>ResumeProcesses</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
+    /// it can prevent other process types from functioning properly. For more information,
+    /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
     /// and Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// To resume processes that have been suspended, call the <a>ResumeProcesses</a> API.
     /// </para>
     /// </summary>
     public partial class SuspendProcessesRequest : AmazonAutoScalingRequest

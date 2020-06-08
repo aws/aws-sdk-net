@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -149,6 +150,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Prefixes for Amazon S3 Objects</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string ErrorOutputPrefix
         {
             get { return this._errorOutputPrefix; }
@@ -169,6 +171,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Prefixes for Amazon S3 Objects</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Prefix
         {
             get { return this._prefix; }

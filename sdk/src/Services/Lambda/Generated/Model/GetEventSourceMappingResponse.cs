@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -178,7 +179,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumBatchingWindowInSeconds. 
         /// <para>
-        /// The maximum amount of time to gather records before invoking the function, in seconds.
+        /// (Streams) The maximum amount of time to gather records before invoking the function,
+        /// in seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]

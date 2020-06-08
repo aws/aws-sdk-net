@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -50,6 +51,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _stopReason;
         private string _tableMappings;
         private string _targetEndpointArn;
+        private string _taskData;
 
         /// <summary>
         /// Gets and sets the property CdcStartPosition. 
@@ -401,6 +403,27 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetTargetEndpointArn()
         {
             return this._targetEndpointArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskData. 
+        /// <para>
+        /// Supplemental information that the task requires to migrate the data for certain source
+        /// and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+        /// Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+        /// 
+        /// </para>
+        /// </summary>
+        public string TaskData
+        {
+            get { return this._taskData; }
+            set { this._taskData = value; }
+        }
+
+        // Check to see if TaskData property is set
+        internal bool IsSetTaskData()
+        {
+            return this._taskData != null;
         }
 
     }

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -54,7 +55,12 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token that specifies the next page of results to return. To request the first
+        /// page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared
+        /// with other accounts.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -69,7 +75,11 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RegistryNamePrefix.
+        /// Gets and sets the property RegistryNamePrefix. 
+        /// <para>
+        /// Specifying this limits the results to only those registry names that start with the
+        /// specified prefix.
+        /// </para>
         /// </summary>
         public string RegistryNamePrefix
         {
@@ -84,7 +94,11 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Scope.
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// Can be set to Local or AWS to limit responses to your custom registries, or the ones
+        /// provided by AWS.
+        /// </para>
         /// </summary>
         public string Scope
         {

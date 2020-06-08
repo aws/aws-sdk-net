@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -51,8 +52,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you are using tasks that use the Fargate launch type, the <code>add</code> parameter
-        /// is not supported.
+        /// The <code>SYS_PTRACE</code> capability is supported for tasks that use the Fargate
+        /// launch type if they are also using platform version 1.4.0. The other capabilities
+        /// are not supported for any platform versions.
         /// </para>
         ///  </note> 
         /// <para>

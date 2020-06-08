@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,7 +39,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// Represents the finding attribute (for example, accountId) by which to sort findings.
+        /// Represents the finding attribute (for example, accountId) to sort findings by.
         /// </para>
         /// </summary>
         public string AttributeName
@@ -56,7 +57,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property OrderBy. 
         /// <para>
-        /// Order by which the sorted findings are to be displayed.
+        /// The order by which the sorted findings are to be displayed.
         /// </para>
         /// </summary>
         public OrderBy OrderBy

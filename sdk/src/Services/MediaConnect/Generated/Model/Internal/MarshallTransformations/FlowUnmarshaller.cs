@@ -130,6 +130,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("vpcInterfaces", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<VpcInterface, VpcInterfaceUnmarshaller>(VpcInterfaceUnmarshaller.Instance);
+                    unmarshalledObject.VpcInterfaces = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,8 +30,8 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the DeclineInvitations operation.
-    /// Declines invitations sent to the current member account by AWS account specified by
-    /// their account IDs.
+    /// Declines invitations sent to the current member account by AWS accounts specified
+    /// by their account IDs.
     /// </summary>
     public partial class DeclineInvitationsRequest : AmazonGuardDutyRequest
     {

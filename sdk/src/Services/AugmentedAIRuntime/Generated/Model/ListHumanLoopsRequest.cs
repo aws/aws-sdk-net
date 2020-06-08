@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -103,7 +104,8 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <para>
         /// The total number of items to return. If the total number of available items is more
         /// than the value specified in <code>MaxResults</code>, then a <code>NextToken</code>
-        /// will be provided in the output that you can use to resume pagination.
+        /// is returned in the output. You can use this token to display the next page of results.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -122,7 +124,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to resume pagination.
+        /// A token to display the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -141,8 +143,8 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// An optional value that specifies whether you want the results sorted in <code>Ascending</code>
-        /// or <code>Descending</code> order.
+        /// Optional. The order for displaying results. Valid values: <code>Ascending</code> and
+        /// <code>Descending</code>.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

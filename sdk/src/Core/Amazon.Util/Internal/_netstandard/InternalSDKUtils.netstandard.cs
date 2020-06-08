@@ -33,7 +33,9 @@ namespace Amazon.Util.Internal
         private static string _userAgentBaseName = "aws-sdk-dotnet-netstandard";
         private static readonly string SpecialPlatformInformation;
 
+#pragma warning disable CA1810 // Initialize reference type static fields inline
         static InternalSDKUtils()
+#pragma warning restore CA1810 // Initialize reference type static fields inline
         {
             if (GetExecutionEnvironment() == null)
             {
@@ -41,7 +43,9 @@ namespace Amazon.Util.Internal
                 {
                     SpecialPlatformInformation = GetXamarinInformation() ?? GetUnityInformation();
                 }
+#pragma warning disable CA1031 // Do not catch general exception types
                 catch
+#pragma warning restore CA1031 // Do not catch general exception types
                 {
                     SpecialPlatformInformation = null;
                 }
@@ -61,7 +65,7 @@ namespace Amazon.Util.Internal
 
             var platform = runtime + idiom;
 
-            if (platform == string.Empty)
+            if (string.IsNullOrEmpty(platform))
             {
                 platform = UnknownPlatform;
             }

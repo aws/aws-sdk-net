@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,9 +34,30 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class RenderUiTemplateRequest : AmazonSageMakerRequest
     {
+        private string _humanTaskUiArn;
         private string _roleArn;
         private RenderableTask _task;
         private UiTemplate _uiTemplate;
+
+        /// <summary>
+        /// Gets and sets the property HumanTaskUiArn. 
+        /// <para>
+        /// The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide
+        /// a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string HumanTaskUiArn
+        {
+            get { return this._humanTaskUiArn; }
+            set { this._humanTaskUiArn = value; }
+        }
+
+        // Check to see if HumanTaskUiArn property is set
+        internal bool IsSetHumanTaskUiArn()
+        {
+            return this._humanTaskUiArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RoleArn. 
@@ -82,7 +104,6 @@ namespace Amazon.SageMaker.Model
         /// A <code>Template</code> object containing the worker UI template to render.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public UiTemplate UiTemplate
         {
             get { return this._uiTemplate; }

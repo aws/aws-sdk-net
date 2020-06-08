@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -35,6 +36,11 @@ namespace Amazon.EC2.Model
     /// of an instance in a VPC resolves to its private IP address when addressed from a linked
     /// EC2-Classic instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
     /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// 
+    ///  
+    /// <para>
+    /// You must specify a VPC ID in the request.
+    /// </para>
     /// </summary>
     public partial class EnableVpcClassicLinkDnsSupportRequest : AmazonEC2Request
     {

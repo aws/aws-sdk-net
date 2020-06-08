@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -35,7 +36,7 @@ namespace Amazon.DynamoDBv2.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+    /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
     /// 2017.11.29</a> of global tables.
     /// </para>
     ///  </note> 
@@ -72,6 +73,20 @@ namespace Amazon.DynamoDBv2.Model
     ///  </li> <li> 
     /// <para>
     ///  The global secondary indexes must have the same hash key and sort key (if present).
+    /// 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  If local secondary indexes are specified, then the following conditions must also
+    /// be met: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  The local secondary indexes must have the same name. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  The local secondary indexes must have the same hash key and sort key (if present).
     /// 
     /// </para>
     ///  </li> </ul> <important> 

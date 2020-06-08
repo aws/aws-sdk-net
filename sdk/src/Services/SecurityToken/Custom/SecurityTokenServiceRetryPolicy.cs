@@ -64,4 +64,90 @@ namespace Amazon.SecurityToken
         }
 #endif
     }
+
+
+    /// <summary>
+    /// An implementation of the <see cref="StandardRetryPolicy"/> that retries certain additional
+    /// STS errors when doing AssumeRoleWithWebIdentity requests.
+    /// </summary>
+    public class SecurityTokenServiceStandardRetryPolicy : StandardRetryPolicy
+    {
+        /// <summary>
+        /// Constructor for SecurityTokenServiceStandardRetryPolicy.
+        /// </summary>
+        public SecurityTokenServiceStandardRetryPolicy(IClientConfig config) : base(config)
+        {
+        }
+
+        /// <summary>
+        /// Returns true if the request should be retried.
+        /// </summary>
+        public override bool RetryForException(IExecutionContext executionContext, Exception exception)
+        {
+            if (executionContext.RequestContext.OriginalRequest is AssumeRoleWithWebIdentityRequest && (exception is IDPCommunicationErrorException || exception is InvalidIdentityTokenException))
+            {
+                return true;
+            }
+
+            return base.RetryForException(executionContext, exception);
+        }
+
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Returns true if the request should be retried.
+        /// </summary>
+        public override Task<bool> RetryForExceptionAsync(IExecutionContext executionContext, Exception exception)
+        {
+            if (executionContext.RequestContext.OriginalRequest is AssumeRoleWithWebIdentityRequest && (exception is IDPCommunicationErrorException || exception is InvalidIdentityTokenException))
+            {
+                return Task.FromResult(true);
+            }
+
+            return base.RetryForExceptionAsync(executionContext, exception);
+        }
+#endif
+    }
+
+
+    /// <summary>
+    /// An implementation of the <see cref="AdaptiveRetryPolicy"/> that retries certain additional
+    /// STS errors when doing AssumeRoleWithWebIdentity requests.
+    /// </summary>
+    public class SecurityTokenServiceAdaptiveRetryPolicy : AdaptiveRetryPolicy
+    {
+        /// <summary>
+        /// Constructor for SecurityTokenServiceAdaptiveRetryPolicy.
+        /// </summary>
+        public SecurityTokenServiceAdaptiveRetryPolicy(IClientConfig config) : base(config)
+        {
+        }
+
+        /// <summary>
+        /// Returns true if the request should be retried.
+        /// </summary>
+        public override bool RetryForException(IExecutionContext executionContext, Exception exception)
+        {
+            if (executionContext.RequestContext.OriginalRequest is AssumeRoleWithWebIdentityRequest && (exception is IDPCommunicationErrorException || exception is InvalidIdentityTokenException))
+            {
+                return true;
+            }
+
+            return base.RetryForException(executionContext, exception);
+        }
+
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Returns true if the request should be retried.
+        /// </summary>
+        public override Task<bool> RetryForExceptionAsync(IExecutionContext executionContext, Exception exception)
+        {
+            if (executionContext.RequestContext.OriginalRequest is AssumeRoleWithWebIdentityRequest && (exception is IDPCommunicationErrorException || exception is InvalidIdentityTokenException))
+            {
+                return Task.FromResult(true);
+            }
+
+            return base.RetryForExceptionAsync(executionContext, exception);
+        }
+#endif
+    }
 }

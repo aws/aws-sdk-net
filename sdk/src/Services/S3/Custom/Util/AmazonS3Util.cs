@@ -329,7 +329,29 @@ namespace Amazon.S3.Util
         internal static void SetMetadataHeaders(IRequest request, MetadataCollection metadata)
         {
             foreach (var name in metadata.Keys)
-                request.Headers[name] = metadata[name];
+            {
+                request.Headers[name] = AWSConfigsS3.EnableUnicodeEncodingForObjectMetadata
+                    ? EscapeNonAscii(metadata[name]) : metadata[name];
+            }   
+        }
+
+        /// <summary>
+        /// Only escape non-ascii characters in a string
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        private static string EscapeNonAscii(string text)
+        {
+            var sb = new StringBuilder("");
+            foreach (char c in text)
+            {
+                sb.Append(
+                    ((int)c > 127) 
+                    ? Uri.EscapeDataString(c.ToString()) 
+                    : c.ToString()
+                );
+            }
+            return sb.ToString();
         }
 
         internal static DateTime? ParseExpiresHeader(string rawValue, string requestId)

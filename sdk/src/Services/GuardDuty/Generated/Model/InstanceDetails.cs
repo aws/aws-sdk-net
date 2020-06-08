@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -49,7 +50,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The availability zone of the EC2 instance.
+        /// The Availability Zone of the EC2 instance.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -193,7 +194,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaces. 
         /// <para>
-        /// The network interface information of the EC2 instance.
+        /// The elastic network interface information of the EC2 instance.
         /// </para>
         /// </summary>
         public List<NetworkInterface> NetworkInterfaces

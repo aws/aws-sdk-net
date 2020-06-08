@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -40,9 +41,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The Apache <a href="https://velocity.apache.org/engine/devel/vtl-reference-guide.html"
-        /// target="_blank">Velocity Template Language (VTL)</a> template content used for the
-        /// template resource.
+        /// The Apache <a href="https://velocity.apache.org/engine/devel/vtl-reference.html" target="_blank">Velocity
+        /// Template Language (VTL)</a> template content used for the template resource.
         /// </para>
         /// </summary>
         public string Value

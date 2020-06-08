@@ -114,6 +114,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         Task<CreateConfigurationSetResponse> CreateConfigurationSetAsync(CreateConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -156,6 +157,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
         Task<CreateConfigurationSetEventDestinationResponse> CreateConfigurationSetEventDestinationAsync(CreateConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -191,6 +193,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDedicatedIpPool">REST API Reference for CreateDedicatedIpPool Operation</seealso>
         Task<CreateDedicatedIpPoolResponse> CreateDedicatedIpPoolAsync(CreateDedicatedIpPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -244,6 +247,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDeliverabilityTestReport">REST API Reference for CreateDeliverabilityTestReport Operation</seealso>
         Task<CreateDeliverabilityTestReportResponse> CreateDeliverabilityTestReportAsync(CreateDeliverabilityTestReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -292,6 +296,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateEmailIdentity">REST API Reference for CreateEmailIdentity Operation</seealso>
         Task<CreateEmailIdentityResponse> CreateEmailIdentityAsync(CreateEmailIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -329,6 +334,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         Task<DeleteConfigurationSetResponse> DeleteConfigurationSetAsync(DeleteConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -364,6 +370,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteConfigurationSetEventDestination">REST API Reference for DeleteConfigurationSetEventDestination Operation</seealso>
         Task<DeleteConfigurationSetEventDestinationResponse> DeleteConfigurationSetEventDestinationAsync(DeleteConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -393,6 +400,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteDedicatedIpPool">REST API Reference for DeleteDedicatedIpPool Operation</seealso>
         Task<DeleteDedicatedIpPoolResponse> DeleteDedicatedIpPoolAsync(DeleteDedicatedIpPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -423,6 +431,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteEmailIdentity">REST API Reference for DeleteEmailIdentity Operation</seealso>
         Task<DeleteEmailIdentityResponse> DeleteEmailIdentityAsync(DeleteEmailIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -447,6 +456,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetAccount">REST API Reference for GetAccount Operation</seealso>
         Task<GetAccountResponse> GetAccountAsync(GetAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -473,6 +483,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetBlacklistReports">REST API Reference for GetBlacklistReports Operation</seealso>
         Task<GetBlacklistReportsResponse> GetBlacklistReportsAsync(GetBlacklistReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -508,6 +519,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetConfigurationSet">REST API Reference for GetConfigurationSet Operation</seealso>
         Task<GetConfigurationSetResponse> GetConfigurationSetAsync(GetConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -543,6 +555,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetConfigurationSetEventDestinations">REST API Reference for GetConfigurationSetEventDestinations Operation</seealso>
         Task<GetConfigurationSetEventDestinationsResponse> GetConfigurationSetEventDestinationsAsync(GetConfigurationSetEventDestinationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -571,6 +584,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDedicatedIp">REST API Reference for GetDedicatedIp Operation</seealso>
         Task<GetDedicatedIpResponse> GetDedicatedIpAsync(GetDedicatedIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -597,6 +611,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDedicatedIps">REST API Reference for GetDedicatedIps Operation</seealso>
         Task<GetDedicatedIpsResponse> GetDedicatedIpsAsync(GetDedicatedIpsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -635,6 +650,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityDashboardOptions">REST API Reference for GetDeliverabilityDashboardOptions Operation</seealso>
         Task<GetDeliverabilityDashboardOptionsResponse> GetDeliverabilityDashboardOptionsAsync(GetDeliverabilityDashboardOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -661,6 +677,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityTestReport">REST API Reference for GetDeliverabilityTestReport Operation</seealso>
         Task<GetDeliverabilityTestReportResponse> GetDeliverabilityTestReportAsync(GetDeliverabilityTestReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -689,6 +706,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainDeliverabilityCampaign">REST API Reference for GetDomainDeliverabilityCampaign Operation</seealso>
         Task<GetDomainDeliverabilityCampaignResponse> GetDomainDeliverabilityCampaignAsync(GetDomainDeliverabilityCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -716,6 +734,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainStatisticsReport">REST API Reference for GetDomainStatisticsReport Operation</seealso>
         Task<GetDomainStatisticsReportResponse> GetDomainStatisticsReportAsync(GetDomainStatisticsReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -744,6 +763,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetEmailIdentity">REST API Reference for GetEmailIdentity Operation</seealso>
         Task<GetEmailIdentityResponse> GetEmailIdentityAsync(GetEmailIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -776,6 +796,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         Task<ListConfigurationSetsResponse> ListConfigurationSetsAsync(ListConfigurationSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -800,6 +821,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDedicatedIpPools">REST API Reference for ListDedicatedIpPools Operation</seealso>
         Task<ListDedicatedIpPoolsResponse> ListDedicatedIpPoolsAsync(ListDedicatedIpPoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -828,6 +850,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDeliverabilityTestReports">REST API Reference for ListDeliverabilityTestReports Operation</seealso>
         Task<ListDeliverabilityTestReportsResponse> ListDeliverabilityTestReportsAsync(ListDeliverabilityTestReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -857,6 +880,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDomainDeliverabilityCampaigns">REST API Reference for ListDomainDeliverabilityCampaigns Operation</seealso>
         Task<ListDomainDeliverabilityCampaignsResponse> ListDomainDeliverabilityCampaignsAsync(ListDomainDeliverabilityCampaignsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -882,6 +906,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListEmailIdentities">REST API Reference for ListEmailIdentities Operation</seealso>
         Task<ListEmailIdentitiesResponse> ListEmailIdentitiesAsync(ListEmailIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -913,6 +938,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -936,6 +962,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutAccountDedicatedIpWarmupAttributes">REST API Reference for PutAccountDedicatedIpWarmupAttributes Operation</seealso>
         Task<PutAccountDedicatedIpWarmupAttributesResponse> PutAccountDedicatedIpWarmupAttributesAsync(PutAccountDedicatedIpWarmupAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -959,6 +986,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutAccountSendingAttributes">REST API Reference for PutAccountSendingAttributes Operation</seealso>
         Task<PutAccountSendingAttributesResponse> PutAccountSendingAttributesAsync(PutAccountSendingAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -986,6 +1014,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetDeliveryOptions">REST API Reference for PutConfigurationSetDeliveryOptions Operation</seealso>
         Task<PutConfigurationSetDeliveryOptionsResponse> PutConfigurationSetDeliveryOptionsAsync(PutConfigurationSetDeliveryOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1013,6 +1042,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetReputationOptions">REST API Reference for PutConfigurationSetReputationOptions Operation</seealso>
         Task<PutConfigurationSetReputationOptionsResponse> PutConfigurationSetReputationOptionsAsync(PutConfigurationSetReputationOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1040,6 +1070,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetSendingOptions">REST API Reference for PutConfigurationSetSendingOptions Operation</seealso>
         Task<PutConfigurationSetSendingOptionsResponse> PutConfigurationSetSendingOptionsAsync(PutConfigurationSetSendingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1067,6 +1098,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetTrackingOptions">REST API Reference for PutConfigurationSetTrackingOptions Operation</seealso>
         Task<PutConfigurationSetTrackingOptionsResponse> PutConfigurationSetTrackingOptionsAsync(PutConfigurationSetTrackingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1105,6 +1137,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDedicatedIpInPool">REST API Reference for PutDedicatedIpInPool Operation</seealso>
         Task<PutDedicatedIpInPoolResponse> PutDedicatedIpInPoolAsync(PutDedicatedIpInPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1131,6 +1164,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDedicatedIpWarmupAttributes">REST API Reference for PutDedicatedIpWarmupAttributes Operation</seealso>
         Task<PutDedicatedIpWarmupAttributesResponse> PutDedicatedIpWarmupAttributesAsync(PutDedicatedIpWarmupAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1174,6 +1208,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDeliverabilityDashboardOption">REST API Reference for PutDeliverabilityDashboardOption Operation</seealso>
         Task<PutDeliverabilityDashboardOptionResponse> PutDeliverabilityDashboardOptionAsync(PutDeliverabilityDashboardOptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1200,6 +1235,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutEmailIdentityDkimAttributes">REST API Reference for PutEmailIdentityDkimAttributes Operation</seealso>
         Task<PutEmailIdentityDkimAttributesResponse> PutEmailIdentityDkimAttributesAsync(PutEmailIdentityDkimAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1243,6 +1279,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutEmailIdentityFeedbackAttributes">REST API Reference for PutEmailIdentityFeedbackAttributes Operation</seealso>
         Task<PutEmailIdentityFeedbackAttributesResponse> PutEmailIdentityFeedbackAttributesAsync(PutEmailIdentityFeedbackAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1269,6 +1306,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutEmailIdentityMailFromAttributes">REST API Reference for PutEmailIdentityMailFromAttributes Operation</seealso>
         Task<PutEmailIdentityMailFromAttributesResponse> PutEmailIdentityMailFromAttributesAsync(PutEmailIdentityMailFromAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1328,6 +1366,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/SendEmail">REST API Reference for SendEmail Operation</seealso>
         Task<SendEmailResponse> SendEmailAsync(SendEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1367,6 +1406,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1396,6 +1436,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1431,6 +1472,7 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/UpdateConfigurationSetEventDestination">REST API Reference for UpdateConfigurationSetEventDestination Operation</seealso>
         Task<UpdateConfigurationSetEventDestinationResponse> UpdateConfigurationSetEventDestinationAsync(UpdateConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

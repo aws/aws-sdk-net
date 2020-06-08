@@ -26,26 +26,6 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Schemas.Model.LockServiceLinkedRoleRequest.RoleArn</property>
-    <min>1</min>
-    <max>1600</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Schemas.Model.LockServiceLinkedRoleRequest.Timeout</property>
-    <min>1</min>
-    <max>29000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Schemas.Model.LockServiceLinkedRoleResponse.ReasonOfFailure</property>
-    <min>1</min>
-    <max>1600</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Schemas.Model.UnlockServiceLinkedRoleRequest.RoleArn</property>
-    <min>1</min>
-    <max>1600</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Schemas.Model.UpdateDiscovererRequest.Description</property>
     <min>0</min>
     <max>256</max>
@@ -111,7 +91,27 @@
     <max>1600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Schemas.Model.LockServiceLinkedRoleRequest.RoleArn</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Schemas.Model.LockServiceLinkedRoleRequest.Timeout</property>
+    <min>1</min>
+    <max>29000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Schemas.Model.LockServiceLinkedRoleResponse.ReasonOfFailure</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Schemas.Model.UnlockServiceLinkedRoleInput.RoleArn</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Schemas.Model.UnlockServiceLinkedRoleRequest.RoleArn</property>
     <min>1</min>
     <max>1600</max>
   </property-value-rule>

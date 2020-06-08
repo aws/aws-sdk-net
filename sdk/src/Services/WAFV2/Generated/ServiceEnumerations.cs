@@ -1209,6 +1209,10 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ParameterExceptionField FIELD_TO_MATCH = new ParameterExceptionField("FIELD_TO_MATCH");
         /// <summary>
+        /// Constant FIREWALL_MANAGER_STATEMENT for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField FIREWALL_MANAGER_STATEMENT = new ParameterExceptionField("FIREWALL_MANAGER_STATEMENT");
+        /// <summary>
         /// Constant GEO_MATCH_STATEMENT for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField GEO_MATCH_STATEMENT = new ParameterExceptionField("GEO_MATCH_STATEMENT");

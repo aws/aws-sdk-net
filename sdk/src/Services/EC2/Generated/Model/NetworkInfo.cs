@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -32,12 +33,31 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class NetworkInfo
     {
+        private bool? _efaSupported;
         private EnaSupport _enaSupport;
         private int? _ipv4AddressesPerInterface;
         private int? _ipv6AddressesPerInterface;
         private bool? _ipv6Supported;
         private int? _maximumNetworkInterfaces;
         private string _networkPerformance;
+
+        /// <summary>
+        /// Gets and sets the property EfaSupported. 
+        /// <para>
+        /// Indicates whether Elastic Fabric Adapter (EFA) is supported.
+        /// </para>
+        /// </summary>
+        public bool EfaSupported
+        {
+            get { return this._efaSupported.GetValueOrDefault(); }
+            set { this._efaSupported = value; }
+        }
+
+        // Check to see if EfaSupported property is set
+        internal bool IsSetEfaSupported()
+        {
+            return this._efaSupported.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property EnaSupport. 

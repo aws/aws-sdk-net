@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,11 +30,24 @@ namespace Amazon.WAFRegional.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSampledRequests operation.
+    /// <note> 
+    /// <para>
+    /// This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
+    /// WAF Classic</a> in the developer guide.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+    /// WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints
+    /// for regional and global use. 
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Gets detailed information about a specified number of requests--a sample--that AWS
     /// WAF randomly selects from among the first 5,000 requests that your AWS resource received
     /// during a time range that you choose. You can specify a sample size of up to 500 requests,
     /// and you can specify any time range in the previous three hours.
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <code>GetSampledRequests</code> returns a time range, which is usually the time range
@@ -107,9 +121,10 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property TimeWindow. 
         /// <para>
         /// The start date and time and the end date and time of the range for which you want
-        /// <code>GetSampledRequests</code> to return a sample of requests. Specify the date and
-        /// time in the following format: <code>"2016-09-27T14:50Z"</code>. You can specify any
-        /// time range in the previous three hours.
+        /// <code>GetSampledRequests</code> to return a sample of requests. You must specify the
+        /// times in Coordinated Universal Time (UTC) format. UTC format includes the special
+        /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can
+        /// specify any time range in the previous three hours.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

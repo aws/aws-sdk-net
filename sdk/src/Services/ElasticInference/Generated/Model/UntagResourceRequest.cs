@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,7 @@ namespace Amazon.ElasticInference.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes the specified tag(s) from an Elastic Inference Accelerator.
+    /// Removes the specified tags from an Elastic Inference Accelerator.
     /// </summary>
     public partial class UntagResourceRequest : AmazonElasticInferenceRequest
     {
@@ -37,8 +38,10 @@ namespace Amazon.ElasticInference.Model
         private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. The ARN of the Elastic Inference Accelerator
-        /// to untag.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        ///  The ARN of the Elastic Inference Accelerator to untag. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
         public string ResourceArn
@@ -54,8 +57,10 @@ namespace Amazon.ElasticInference.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. The list of tags to remove from the Elastic Inference
-        /// Accelerator.
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        ///  The list of tags to remove from the Elastic Inference Accelerator. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> TagKeys

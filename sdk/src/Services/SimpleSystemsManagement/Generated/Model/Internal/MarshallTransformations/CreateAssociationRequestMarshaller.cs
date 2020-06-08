@@ -68,6 +68,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetApplyOnlyAtCronInterval())
+                {
+                    context.Writer.WritePropertyName("ApplyOnlyAtCronInterval");
+                    context.Writer.Write(publicRequest.ApplyOnlyAtCronInterval);
+                }
+
                 if(publicRequest.IsSetAssociationName())
                 {
                     context.Writer.WritePropertyName("AssociationName");
@@ -150,6 +156,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ScheduleExpression");
                     context.Writer.Write(publicRequest.ScheduleExpression);
+                }
+
+                if(publicRequest.IsSetSyncCompliance())
+                {
+                    context.Writer.WritePropertyName("SyncCompliance");
+                    context.Writer.Write(publicRequest.SyncCompliance);
                 }
 
                 if(publicRequest.IsSetTargets())

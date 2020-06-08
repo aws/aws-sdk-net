@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,7 +39,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property DeploymentTarget. 
         /// <para>
         ///  A deployment target that contains information about a deployment such as its status,
-        /// lifecyle events, and when it was last updated. It also contains metadata about the
+        /// lifecycle events, and when it was last updated. It also contains metadata about the
         /// deployment target. The deployment target metadata depends on the deployment target's
         /// type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or <code>ecsTarget</code>).
         /// 

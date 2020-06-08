@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -66,8 +67,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property CompleteWindowMinutes. 
         /// <para>
-        /// The amount of time AWS Backup attempts a backup before canceling the job and returning
-        /// an error.
+        /// A value in minutes after a backup job is successfully started before it must be completed
+        /// or it will be canceled by AWS Backup. This value is optional.
         /// </para>
         /// </summary>
         public long CompleteWindowMinutes
@@ -189,7 +190,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property StartWindowMinutes. 
         /// <para>
-        /// The amount of time in minutes before beginning a backup.
+        /// A value in minutes after a backup is scheduled before a job will be canceled if it
+        /// doesn't start successfully. This value is optional.
         /// </para>
         /// </summary>
         public long StartWindowMinutes

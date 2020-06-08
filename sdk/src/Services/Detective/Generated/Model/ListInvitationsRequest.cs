@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,13 +30,9 @@ namespace Amazon.Detective.Model
 {
     /// <summary>
     /// Container for the parameters to the ListInvitations operation.
-    /// Amazon Detective is currently in preview.
-    /// 
-    ///  
-    /// <para>
     /// Retrieves the list of open and accepted behavior graph invitations for the member
     /// account. This operation can only be called by a member account.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// Open invitations are invitations that the member account has not responded to.

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,6 +40,7 @@ namespace Amazon.MediaLive.Model
         private int? _filterStrength;
         private InputFilter _inputFilter;
         private NetworkInputSettings _networkInputSettings;
+        private Smpte2038DataPreference _smpte2038DataPreference;
         private InputSourceEndBehavior _sourceEndBehavior;
         private VideoSelector _videoSelector;
 
@@ -154,6 +156,25 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetNetworkInputSettings()
         {
             return this._networkInputSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Smpte2038DataPreference. Specifies whether to extract applicable
+        /// ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions,
+        /// timecode, AFD, and SCTE-104 messages.- PREFER: Extract from SMPTE-2038 if present
+        /// in this input, otherwise extract from another source (if any).- IGNORE: Never extract
+        /// any ancillary data from SMPTE-2038.
+        /// </summary>
+        public Smpte2038DataPreference Smpte2038DataPreference
+        {
+            get { return this._smpte2038DataPreference; }
+            set { this._smpte2038DataPreference = value; }
+        }
+
+        // Check to see if Smpte2038DataPreference property is set
+        internal bool IsSetSmpte2038DataPreference()
+        {
+            return this._smpte2038DataPreference != null;
         }
 
         /// <summary>

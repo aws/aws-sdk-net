@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -62,6 +63,7 @@ namespace Amazon.CostExplorer.Model
         /// The class of instance that AWS recommends.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string InstanceClass
         {
             get { return this._instanceClass; }
@@ -80,6 +82,7 @@ namespace Amazon.CostExplorer.Model
         /// The size of instance that AWS recommends.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string InstanceSize
         {
             get { return this._instanceSize; }
@@ -98,6 +101,7 @@ namespace Amazon.CostExplorer.Model
         /// The AWS Region of the recommended reservation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Region
         {
             get { return this._region; }

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -112,6 +113,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<ComplianceItemEntry> _items = new List<ComplianceItemEntry>();
         private string _resourceId;
         private string _resourceType;
+        private ComplianceUploadType _uploadType;
 
         /// <summary>
         /// Gets and sets the property ComplianceType. 
@@ -180,7 +182,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Information about the compliance as defined by the resource type. For example, for
         /// a patch compliance type, <code>Items</code> includes information about the PatchSeverity,
-        /// Classification, etc.
+        /// Classification, and so on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10000)]
@@ -233,6 +235,38 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UploadType. 
+        /// <para>
+        /// The mode for uploading compliance items. You can specify <code>COMPLETE</code> or
+        /// <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing
+        /// compliance information for the resource. You must provide a full list of compliance
+        /// items each time you send the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific
+        /// association. The association must be configured with <code>SyncCompliance</code> set
+        /// to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This attribute is only valid for association compliance.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ComplianceUploadType UploadType
+        {
+            get { return this._uploadType; }
+            set { this._uploadType = value; }
+        }
+
+        // Check to see if UploadType property is set
+        internal bool IsSetUploadType()
+        {
+            return this._uploadType != null;
         }
 
     }

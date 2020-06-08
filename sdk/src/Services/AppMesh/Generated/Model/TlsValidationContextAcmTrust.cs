@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,7 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// An object that represents a TLS validation context trust for an AWS Certicate Manager
-    /// (ACM) certificate.
+    /// (ACM)         certificate.
     /// </summary>
     public partial class TlsValidationContextAcmTrust
     {

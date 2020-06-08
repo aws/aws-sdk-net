@@ -13,12 +13,12 @@
   <property-value-rule>
     <property>Amazon.ApiGatewayV2.Model.CreateIntegrationRequest.TimeoutInMillis</property>
     <min>50</min>
-    <max>29000</max>
+    <max>30000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApiGatewayV2.Model.CreateIntegrationResponse.TimeoutInMillis</property>
     <min>50</min>
-    <max>29000</max>
+    <max>30000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApiGatewayV2.Model.GetAuthorizerResponse.AuthorizerResultTtlInSeconds</property>
@@ -28,7 +28,7 @@
   <property-value-rule>
     <property>Amazon.ApiGatewayV2.Model.GetIntegrationResponse.TimeoutInMillis</property>
     <min>50</min>
-    <max>29000</max>
+    <max>30000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApiGatewayV2.Model.UpdateAuthorizerRequest.AuthorizerResultTtlInSeconds</property>
@@ -43,12 +43,12 @@
   <property-value-rule>
     <property>Amazon.ApiGatewayV2.Model.UpdateIntegrationRequest.TimeoutInMillis</property>
     <min>50</min>
-    <max>29000</max>
+    <max>30000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApiGatewayV2.Model.UpdateIntegrationResponse.TimeoutInMillis</property>
     <min>50</min>
-    <max>29000</max>
+    <max>30000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApiGatewayV2.Model.Authorizer.AuthorizerResultTtlInSeconds</property>
@@ -68,12 +68,12 @@
   <property-value-rule>
     <property>Amazon.ApiGatewayV2.Model.CreateIntegrationInput.TimeoutInMillis</property>
     <min>50</min>
-    <max>29000</max>
+    <max>30000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApiGatewayV2.Model.Integration.TimeoutInMillis</property>
     <min>50</min>
-    <max>29000</max>
+    <max>30000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApiGatewayV2.Model.UpdateAuthorizerInput.AuthorizerResultTtlInSeconds</property>
@@ -83,6 +83,6 @@
   <property-value-rule>
     <property>Amazon.ApiGatewayV2.Model.UpdateIntegrationInput.TimeoutInMillis</property>
     <min>50</min>
-    <max>29000</max>
+    <max>30000</max>
   </property-value-rule>
 </property-value-rules>

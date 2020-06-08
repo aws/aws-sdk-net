@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,7 +39,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ComponentBuildVersionArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the component build version to delete. 
+        /// The Amazon Resource Name (ARN) of the component build version to delete. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

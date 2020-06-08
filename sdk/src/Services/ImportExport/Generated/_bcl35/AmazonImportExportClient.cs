@@ -270,6 +270,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.UnableToCancelJobIdException">
         /// AWS Import/Export cannot cancel the job
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual CancelJobResponse CancelJob(CancelJobRequest request)
         {
             var options = new InvokeOptions();
@@ -290,6 +291,7 @@ namespace Amazon.ImportExport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual IAsyncResult BeginCancelJob(CancelJobRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -306,6 +308,7 @@ namespace Amazon.ImportExport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelJob.</param>
         /// 
         /// <returns>Returns a  CancelJobResult from ImportExport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual CancelJobResponse EndCancelJob(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelJobResponse>(asyncResult);
@@ -381,6 +384,7 @@ namespace Amazon.ImportExport
         /// bucket, exportBucket, or logBucket field to a bucket that the account, as specified
         /// by the manifest's Access Key ID, has write permissions to.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
             var options = new InvokeOptions();
@@ -401,6 +405,7 @@ namespace Amazon.ImportExport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual IAsyncResult BeginCreateJob(CreateJobRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -417,6 +422,7 @@ namespace Amazon.ImportExport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateJob.</param>
         /// 
         /// <returns>Returns a  CreateJobResult from ImportExport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual CreateJobResponse EndCreateJob(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateJobResponse>(asyncResult);
@@ -456,6 +462,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetShippingLabel">REST API Reference for GetShippingLabel Operation</seealso>
         public virtual GetShippingLabelResponse GetShippingLabel(GetShippingLabelRequest request)
         {
             var options = new InvokeOptions();
@@ -476,6 +483,7 @@ namespace Amazon.ImportExport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetShippingLabel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetShippingLabel">REST API Reference for GetShippingLabel Operation</seealso>
         public virtual IAsyncResult BeginGetShippingLabel(GetShippingLabelRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -492,6 +500,7 @@ namespace Amazon.ImportExport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetShippingLabel.</param>
         /// 
         /// <returns>Returns a  GetShippingLabelResult from ImportExport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetShippingLabel">REST API Reference for GetShippingLabel Operation</seealso>
         public virtual GetShippingLabelResponse EndGetShippingLabel(IAsyncResult asyncResult)
         {
             return EndInvoke<GetShippingLabelResponse>(asyncResult);
@@ -526,6 +535,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetStatus">REST API Reference for GetStatus Operation</seealso>
         public virtual GetStatusResponse GetStatus(GetStatusRequest request)
         {
             var options = new InvokeOptions();
@@ -546,6 +556,7 @@ namespace Amazon.ImportExport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetStatus">REST API Reference for GetStatus Operation</seealso>
         public virtual IAsyncResult BeginGetStatus(GetStatusRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -562,6 +573,7 @@ namespace Amazon.ImportExport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStatus.</param>
         /// 
         /// <returns>Returns a  GetStatusResult from ImportExport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetStatus">REST API Reference for GetStatus Operation</seealso>
         public virtual GetStatusResponse EndGetStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<GetStatusResponse>(asyncResult);
@@ -590,6 +602,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual ListJobsResponse ListJobs()
         {
             return ListJobs(new ListJobsRequest());
@@ -615,6 +628,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
         /// The client tool version is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
             var options = new InvokeOptions();
@@ -635,6 +649,7 @@ namespace Amazon.ImportExport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJobs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -651,6 +666,7 @@ namespace Amazon.ImportExport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJobs.</param>
         /// 
         /// <returns>Returns a  ListJobsResult from ImportExport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual ListJobsResponse EndListJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListJobsResponse>(asyncResult);
@@ -729,6 +745,7 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.UnableToUpdateJobIdException">
         /// AWS Import/Export cannot update the job
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         public virtual UpdateJobResponse UpdateJob(UpdateJobRequest request)
         {
             var options = new InvokeOptions();
@@ -749,6 +766,7 @@ namespace Amazon.ImportExport
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         public virtual IAsyncResult BeginUpdateJob(UpdateJobRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -765,6 +783,7 @@ namespace Amazon.ImportExport
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateJob.</param>
         /// 
         /// <returns>Returns a  UpdateJobResult from ImportExport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         public virtual UpdateJobResponse EndUpdateJob(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateJobResponse>(asyncResult);

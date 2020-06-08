@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -53,6 +54,11 @@ namespace Amazon.CodeDeploy.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>Amazon ECS</b>: The target object is an Amazon ECS service. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>

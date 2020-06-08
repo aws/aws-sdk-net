@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Settings to configure an action so that it occurs immediately. This is only supported
-    /// for input switch actions currently.
+    /// Settings to configure an action so that it occurs as soon as possible.
     /// </summary>
     public partial class ImmediateModeScheduleActionStartSettings
     {

@@ -1,0 +1,79 @@
+﻿<#@ template language="C#" inherits="BaseResponseUnmarshaller" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+    AddLicenseHeader("2020");
+
+    AddCommonUsingStatements();
+#>
+
+namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for <#=this.UnmarshallerBaseName #> operation
+    /// </summary>  
+    public class <#=this.UnmarshallerBaseName #>Unmarshaller : IErrorResponseUnmarshaller<<#=this.UnmarshallerBaseName #>, XmlUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public <#=this.UnmarshallerBaseName #> Unmarshall(XmlUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="errorResponse"></param>
+        /// <returns></returns>
+        public <#=this.UnmarshallerBaseName #> Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        {
+            <#=this.UnmarshallerBaseName #> response = new <#=this.UnmarshallerBaseName #>(errorResponse.Message, errorResponse.InnerException, 
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+
+            while (context.Read())
+            {
+                if (context.IsStartElement || context.IsAttribute)
+                {
+<#    
+    foreach (var member in this.Structure.Members)
+    {
+        if(member.Shape.IsList)
+        {
+            var listMarshallName = member.Shape.ListMarshallName ?? "member";
+#>
+                    if (context.TestExpression("<#=member.MarshallName#>/<#=listMarshallName#>"))
+                    {
+                        var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+                        response.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
+                    }
+<#
+        }
+        else
+        {
+#>
+                    if (context.TestExpression("<#=member.MarshallName#>"))
+                    {
+                        var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+                        response.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
+                    }
+<#
+        }
+    }
+#>
+                }
+            }
+            return response;
+        }
+
+<#
+    this.AddStructureSingletonMethod();
+#>
+    }
+}

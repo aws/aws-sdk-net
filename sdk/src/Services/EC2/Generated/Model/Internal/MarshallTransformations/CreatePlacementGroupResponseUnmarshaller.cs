@@ -55,6 +55,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("placementGroup", targetDepth))
+                    {
+                        var unmarshaller = PlacementGroupUnmarshaller.Instance;
+                        response.PlacementGroup = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
             }
 

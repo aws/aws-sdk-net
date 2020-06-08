@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -35,16 +36,36 @@ namespace Amazon.SecurityHub.Model
     ///  
     /// <para>
     /// When you enable Security Hub, you grant to Security Hub the permissions necessary
-    /// to gather findings from AWS Config, Amazon GuardDuty, Amazon Inspector, and Amazon
-    /// Macie.
+    /// to gather findings from other services that are integrated with Security Hub.
     /// </para>
     ///  
     /// <para>
     /// When you use the <code>EnableSecurityHub</code> operation to enable Security Hub,
-    /// you also automatically enable the CIS AWS Foundations standard. You do not enable
-    /// the Payment Card Industry Data Security Standard (PCI DSS) standard. To enable a standard,
-    /// use the <code> <a>BatchEnableStandards</a> </code> operation. To disable a standard,
-    /// use the <code> <a>BatchDisableStandards</a> </code> operation.
+    /// you also automatically enable the following standards.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// CIS AWS Foundations
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// AWS Foundational Security Best Practices
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You do not enable the Payment Card Industry Data Security Standard (PCI DSS) standard.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code>
+    /// to <code>false</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// After you enable Security Hub, to enable a standard, use the <code> <a>BatchEnableStandards</a>
+    /// </code> operation. To disable a standard, use the <code> <a>BatchDisableStandards</a>
+    /// </code> operation.
     /// </para>
     ///  
     /// <para>
@@ -54,12 +75,34 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class EnableSecurityHubRequest : AmazonSecurityHubRequest
     {
+        private bool? _enableDefaultStandards;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property EnableDefaultStandards. 
+        /// <para>
+        /// Whether to enable the security standards that Security Hub has designated as automatically
+        /// enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it
+        /// is set to <code>true</code>. To not enable the automatically enabled standards, set
+        /// <code>EnableDefaultStandards</code> to <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool EnableDefaultStandards
+        {
+            get { return this._enableDefaultStandards.GetValueOrDefault(); }
+            set { this._enableDefaultStandards = value; }
+        }
+
+        // Check to see if EnableDefaultStandards property is set
+        internal bool IsSetEnableDefaultStandards()
+        {
+            return this._enableDefaultStandards.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to add to the Hub resource when you enable Security Hub.
+        /// The tags to add to the hub resource when you enable Security Hub.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

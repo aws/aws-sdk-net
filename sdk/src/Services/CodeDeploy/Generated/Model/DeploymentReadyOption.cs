@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -72,8 +73,8 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property WaitTimeInMinutes. 
         /// <para>
         /// The number of minutes to wait before the status of a blue/green deployment is changed
-        /// to Stopped if rerouting is not started manually. Applies only to the STOP_DEPLOYMENT
-        /// option for actionOnTimeout
+        /// to Stopped if rerouting is not started manually. Applies only to the <code>STOP_DEPLOYMENT</code>
+        /// option for <code>actionOnTimeout</code>.
         /// </para>
         /// </summary>
         public int WaitTimeInMinutes

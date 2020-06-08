@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of a ListDeploymentConfigs operation.
+    /// Represents the output of a <code>ListDeploymentConfigs</code> operation.
     /// </summary>
     public partial class ListDeploymentConfigsResponse : AmazonWebServiceResponse
     {
@@ -38,7 +39,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentConfigsList. 
         /// <para>
-        /// A list of deployment configurations, including built-in configurations such as CodeDeployDefault.OneAtATime.
+        /// A list of deployment configurations, including built-in configurations such as <code>CodeDeployDefault.OneAtATime</code>.
         /// </para>
         /// </summary>
         public List<string> DeploymentConfigsList

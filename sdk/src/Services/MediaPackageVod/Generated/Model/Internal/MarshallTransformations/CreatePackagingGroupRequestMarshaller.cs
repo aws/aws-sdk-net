@@ -66,10 +66,35 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAuthorization())
+                {
+                    context.Writer.WritePropertyName("authorization");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AuthorizationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Authorization, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetId())
                 {
                     context.Writer.WritePropertyName("id");
                     context.Writer.Write(publicRequest.Id);
+                }
+
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("tags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    {
+                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                            context.Writer.Write(publicRequestTagsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
                 }
 
         

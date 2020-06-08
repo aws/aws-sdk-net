@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,6 +34,7 @@ namespace Amazon.Pinpoint.Model
     public partial class WriteCampaignRequest
     {
         private List<WriteTreatmentResource> _additionalTreatments = new List<WriteTreatmentResource>();
+        private CustomDeliveryConfiguration _customDeliveryConfiguration;
         private string _description;
         private int? _holdoutPercent;
         private CampaignHook _hook;
@@ -65,6 +67,26 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetAdditionalTreatments()
         {
             return this._additionalTreatments != null && this._additionalTreatments.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDeliveryConfiguration. 
+        /// <para>
+        /// The delivery configuration settings for sending the campaign through a custom channel.
+        /// This object is required if the MessageConfiguration object for the campaign specifies
+        /// a CustomMessage object.
+        /// </para>
+        /// </summary>
+        public CustomDeliveryConfiguration CustomDeliveryConfiguration
+        {
+            get { return this._customDeliveryConfiguration; }
+            set { this._customDeliveryConfiguration = value; }
+        }
+
+        // Check to see if CustomDeliveryConfiguration property is set
+        internal bool IsSetCustomDeliveryConfiguration()
+        {
+            return this._customDeliveryConfiguration != null;
         }
 
         /// <summary>
@@ -107,7 +129,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Hook. 
         /// <para>
-        /// The settings for the AWS Lambda function to use as a code hook for the campaign.
+        /// The settings for the AWS Lambda function to invoke as a code hook for the campaign.
+        /// You can use this hook to customize the segment that's used by the campaign.
         /// </para>
         /// </summary>
         public CampaignHook Hook
@@ -126,7 +149,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property IsPaused. 
         /// <para>
         /// Specifies whether to pause the campaign. A paused campaign doesn't run unless you
-        /// resume it by setting this value to false.
+        /// resume it by changing this value to false.
         /// </para>
         /// </summary>
         public bool IsPaused
@@ -289,7 +312,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property TreatmentDescription. 
         /// <para>
-        /// A custom description of a variation of the campaign to use for A/B testing.
+        /// A custom description of the default treatment for the campaign.
         /// </para>
         /// </summary>
         public string TreatmentDescription
@@ -307,7 +330,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property TreatmentName. 
         /// <para>
-        /// A custom name for a variation of the campaign to use for A/B testing.
+        /// A custom name of the default treatment for the campaign, if the campaign has multiple
+        /// treatments. A <i>treatment</i> is a variation of a campaign that's used for A/B testing.
         /// </para>
         /// </summary>
         public string TreatmentName

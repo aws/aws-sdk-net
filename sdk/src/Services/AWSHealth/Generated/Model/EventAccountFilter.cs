@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -42,7 +43,7 @@ namespace Amazon.AWSHealth.Model
         /// The 12-digit AWS account numbers that contains the affected entities.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=12)]
+        [AWSProperty(Max=12)]
         public string AwsAccountId
         {
             get { return this._awsAccountId; }

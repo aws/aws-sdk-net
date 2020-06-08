@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,7 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// The configuration that Amazon FSx uses to join the Windows File Server instance to
-    /// the self-managed Microsoft Active Directory (AD) directory.
+    /// a self-managed Microsoft Active Directory (AD) directory.
     /// </summary>
     public partial class SelfManagedActiveDirectoryConfigurationUpdates
     {

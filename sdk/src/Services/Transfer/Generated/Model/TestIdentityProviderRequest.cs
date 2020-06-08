@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,23 +30,24 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the TestIdentityProvider operation.
-    /// If the <code>IdentityProviderType</code> of the server is <code>API_Gateway</code>,
-    /// tests whether your API Gateway is set up successfully. We highly recommend that you
-    /// call this operation to test your authentication method as soon as you create your
-    /// server. By doing so, you can troubleshoot issues with the API Gateway integration
-    /// to ensure that your users can successfully use the service.
+    /// If the <code>IdentityProviderType</code> of a file transfer protocol-enabled server
+    /// is <code>API_Gateway</code>, tests whether your API Gateway is set up successfully.
+    /// We highly recommend that you call this operation to test your authentication method
+    /// as soon as you create your server. By doing so, you can troubleshoot issues with the
+    /// API Gateway integration to ensure that your users can successfully use the service.
     /// </summary>
     public partial class TestIdentityProviderRequest : AmazonTransferRequest
     {
         private string _serverId;
+        private Protocol _serverProtocol;
         private string _userName;
         private string _userPassword;
 
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned identifier for a specific server. That server's user authentication
-        /// method is tested with a user name and password.
+        /// A system-assigned identifier for a specific file transfer protocol-enabled server.
+        /// That server's user authentication method is tested with a user name and password.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]
@@ -62,9 +64,44 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ServerProtocol. 
+        /// <para>
+        /// The type of file transfer protocol to be tested.
+        /// </para>
+        ///  
+        /// <para>
+        /// The available protocols are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Secure Shell (SSH) File Transfer Protocol (SFTP)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// File Transfer Protocol Secure (FTPS)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// File Transfer Protocol (FTP)
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public Protocol ServerProtocol
+        {
+            get { return this._serverProtocol; }
+            set { this._serverProtocol = value; }
+        }
+
+        // Check to see if ServerProtocol property is set
+        internal bool IsSetServerProtocol()
+        {
+            return this._serverProtocol != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// This request parameter is the name of the user account to be tested.
+        /// The name of the user account to be tested.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=32)]

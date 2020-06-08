@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,6 +30,7 @@ namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
     /// Specifies the deserializer you want to use to convert the format of the input data.
+    /// This parameter is required if <code>Enabled</code> is set to true.
     /// </summary>
     public partial class InputFormatConfiguration
     {

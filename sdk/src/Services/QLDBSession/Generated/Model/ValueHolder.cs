@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QLDBSession.Model
 {
     /// <summary>
-    /// A structure that can contains values in multiple encoding formats.
+    /// A structure that can contain an Amazon Ion value in multiple encoding formats.
     /// </summary>
     public partial class ValueHolder
     {
@@ -38,7 +39,7 @@ namespace Amazon.QLDBSession.Model
         /// <summary>
         /// Gets and sets the property IonBinary. 
         /// <para>
-        /// An Amazon Ion binary value contained in a <code>ValueHolder</code> structure. 
+        /// An Amazon Ion binary value contained in a <code>ValueHolder</code> structure.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=131072)]
@@ -57,7 +58,7 @@ namespace Amazon.QLDBSession.Model
         /// <summary>
         /// Gets and sets the property IonText. 
         /// <para>
-        /// An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure. 
+        /// An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1048576)]

@@ -12,54 +12,40 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.IO;
+using System.Net;
 
 namespace Amazon.Runtime.Internal
 {
     public class ErrorResponse
     {
-        private ErrorType type;
-        private string 
-            code, message, requestId;
-
         /// <summary>
         /// Error type, one of Sender, Receiver, Unknown
         /// Only applies to XML-based services.
         /// </summary>
-        public ErrorType Type
-        {
-            get { return type; }
-            set { type = value; }
-        }
+        public ErrorType Type { get; set; }
 
         /// <summary>
         /// Name of the exception class to return
         /// </summary>
-        public string Code
-        {
-            get { return code; }
-            set { code = value; }
-        }
+        public string Code { get; set; }
 
         /// <summary>
         /// Error message
         /// </summary>
-        public string Message
-        {
-            get { return message; }
-            set { message = value; }
-        }
+        public string Message { get; set; }
 
         /// <summary>
         /// RequestId of the error.
         /// Only applies to XML-based services.
         /// </summary>
-        public string RequestId
-        {
-            get { return requestId; }
-            set { requestId = value; }
-        }
+        public string RequestId { get; set; }
+
+        public Exception InnerException { get; set; }
+
+        public HttpStatusCode StatusCode { get; set; }
     }
 }

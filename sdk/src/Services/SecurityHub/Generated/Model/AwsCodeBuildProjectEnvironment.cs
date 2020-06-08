@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -119,24 +120,24 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The environment type <code>ARM_CONTAINER</code> is available only in regions US East
+        /// The environment type <code>ARM_CONTAINER</code> is available only in Regions US East
         /// (N. Virginia), US East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific (Mumbai),
         /// Asia Pacific (Tokyo), Asia Pacific (Sydney), and Europe (Frankfurt).
         /// </para>
         ///  
         /// <para>
         /// The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge
-        /// is available only in regions US East (N. Virginia), US East (N. Virginia), US West
+        /// is available only in Regions US East (N. Virginia), US East (N. Virginia), US West
         /// (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt),
         /// Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific
         /// (Sydney), China (Beijing), and China (Ningxia).
         /// </para>
         ///  
         /// <para>
-        /// The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions
+        /// The environment type <code>LINUX_GPU_CONTAINER</code> is available only in Regions
         /// US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central),
         /// Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia
-        /// Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing),
+        /// Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing),
         /// and China (Ningxia).
         /// </para>
         ///  

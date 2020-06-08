@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -63,15 +64,15 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// tar: A tar archive file.
+        ///  <code>tar</code>: A tar archive file.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// tgz: A compressed tar archive file.
+        ///  <code>tgz</code>: A compressed tar archive file.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// zip: A zip archive file.
+        ///  <code>zip</code>: A zip archive file.
         /// </para>
         ///  </li> </ul>
         /// </summary>

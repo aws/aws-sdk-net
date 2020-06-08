@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -36,6 +37,7 @@ namespace Amazon.GuardDuty.Model
         private AccessKeyDetails _accessKeyDetails;
         private InstanceDetails _instanceDetails;
         private string _resourceType;
+        private List<S3BucketDetail> _s3BucketDetails = new List<S3BucketDetail>();
 
         /// <summary>
         /// Gets and sets the property AccessKeyDetails. 
@@ -78,7 +80,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of the AWS resource.
+        /// The type of AWS resource.
         /// </para>
         /// </summary>
         public string ResourceType
@@ -91,6 +93,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3BucketDetails. 
+        /// <para>
+        /// Contains information on the S3 bucket.
+        /// </para>
+        /// </summary>
+        public List<S3BucketDetail> S3BucketDetails
+        {
+            get { return this._s3BucketDetails; }
+            set { this._s3BucketDetails = value; }
+        }
+
+        // Check to see if S3BucketDetails property is set
+        internal bool IsSetS3BucketDetails()
+        {
+            return this._s3BucketDetails != null && this._s3BucketDetails.Count > 0; 
         }
 
     }

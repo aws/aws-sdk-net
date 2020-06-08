@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,7 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// An object that represents the requirements for a route to match HTTP requests for
-    /// a virtual         router.
+    /// a         virtual router.
     /// </summary>
     public partial class HttpRouteMatch
     {

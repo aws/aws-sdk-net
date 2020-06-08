@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -40,7 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KmsMasterKeyId. 
         /// <para>
-        /// The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+        /// The ID of an AWS managed customer master key (CMK) for Amazon SNS or a custom CMK.
         /// </para>
         /// </summary>
         public string KmsMasterKeyId

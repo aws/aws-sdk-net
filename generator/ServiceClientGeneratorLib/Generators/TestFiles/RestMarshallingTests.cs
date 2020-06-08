@@ -37,24 +37,25 @@ namespace ServiceClientGenerator.Generators.TestFiles
             
             #line default
             #line hidden
-            this.Write("\r\n\r\nusing System;\r\nusing System.Globalization;\r\nusing System.IO;\r\nusing System.Te" +
-                    "xt;\r\nusing Microsoft.VisualStudio.TestTools.UnitTesting;\r\n\r\nusing ");
-            
-            #line 18 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
-            
-            #line default
-            #line hidden
-            this.Write(";\r\nusing ");
+            this.Write("\r\n\r\nusing System;\r\nusing System.Globalization;\r\nusing System.IO;\r\nusing System.Li" +
+                    "nq;\r\nusing System.Text;\r\nusing Microsoft.VisualStudio.TestTools.UnitTesting;\r\n\r\n" +
+                    "using ");
             
             #line 19 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
-            this.Write(".Model;\r\nusing ");
+            this.Write(";\r\nusing ");
             
             #line 20 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
+            
+            #line default
+            #line hidden
+            this.Write(".Model;\r\nusing ");
+            
+            #line 21 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -71,7 +72,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class ");
             
-            #line 30 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 31 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -79,14 +80,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             this.Write("MarshallingTests\r\n    {\r\n        static readonly ServiceModel service_model = Uti" +
                     "ls.LoadServiceModel(\"");
             
-            #line 32 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 33 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceDirectoryName));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t");
             
-            #line 33 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 34 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
 		foreach(var operation in this.Config.ServiceModel.Operations)
 		{
@@ -96,42 +97,42 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             #line hidden
             this.Write("\r\n        [TestMethod]\r\n\t\t[TestCategory(\"UnitTest\")]\r\n\t\t[TestCategory(\"");
             
-            #line 40 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 41 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.Type));
             
             #line default
             #line hidden
             this.Write("\")]\r\n\t\t[TestCategory(\"");
             
-            #line 41 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 42 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.TestCategory));
             
             #line default
             #line hidden
             this.Write("\")]\r\n        public void ");
             
-            #line 42 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 43 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("MarshallTest()\r\n        {\r\n\t\t\tvar operation = service_model.FindOperation(\"");
             
-            #line 44 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 45 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\r\n            var request = InstantiateClassGenerator.Execute<");
             
-            #line 46 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 47 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request>();\r\n            var marshaller = new ");
             
-            #line 47 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 48 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -139,14 +140,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             this.Write("RequestMarshaller();\r\n\r\n            var internalRequest = marshaller.Marshall(req" +
                     "uest);\r\n            TestTools.RequestValidator.Validate(\"");
             
-            #line 50 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 51 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\", request, internalRequest, service_model);\t\t\t\r\n\r\n");
             
-            #line 52 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 53 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
             if(operation.ResponseStructure != null)
             {
@@ -156,7 +157,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             #line hidden
             this.Write("\t\t\tvar webResponse = new WebResponseData\r\n\t\t\t{\r\n\t\t\t\tHeaders = {\r\n");
             
-            #line 59 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 60 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
 
 if( operation.ResponseHeaderMembers.Count() > 0 )
@@ -173,21 +174,21 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             #line hidden
             this.Write("\t\t\t\t\t{\"");
             
-            #line 70 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 71 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("\",Convert.ToBase64String(Encoding.UTF8.GetBytes(\"");
             
-            #line 70 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 71 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("_Value\"))},\r\n");
             
-            #line 71 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 72 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 	
 					}
 					else
@@ -198,21 +199,21 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             #line hidden
             this.Write("\t\t\t\t\t{\"");
             
-            #line 76 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 77 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("\",\"");
             
-            #line 76 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 77 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("_Value\"},\r\n");
             
-            #line 77 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 78 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 	
 					}
 				}
@@ -224,14 +225,14 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             #line hidden
             this.Write("\t\t\t\t\t{\"");
             
-            #line 83 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 84 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("\",int.MaxValue.ToString(CultureInfo.InvariantCulture)},\r\n");
             
-            #line 84 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 85 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 	
 				}
                 else if (member.Shape.IsLong)
@@ -242,14 +243,14 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             #line hidden
             this.Write("\t\t\t\t\t{\"");
             
-            #line 89 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 90 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("\",long.MaxValue.ToString(CultureInfo.InvariantCulture)},\r\n");
             
-            #line 90 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 91 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 	
                 }
 				else if (member.Shape.IsDateTime)
@@ -260,21 +261,21 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             #line hidden
             this.Write("\t\t\t\t\t{\"");
             
-            #line 95 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 96 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("\",ValidatorUtils.GetTestDate(TimestampFormat.");
             
-            #line 95 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 96 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.TimestampFormat));
             
             #line default
             #line hidden
             this.Write(")},\r\n");
             
-            #line 96 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 97 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 	
                 }
 				else
@@ -290,7 +291,7 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             this.Write("\t\t\t\t\t{\"x-amzn-RequestId\", Guid.NewGuid().ToString()},\r\n\t\t\t\t\t{\"x-amz-crc32\",\"0\"}\r\n" +
                     "\t\t\t\t}\r\n\t\t\t};\r\n");
             
-            #line 108 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 109 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
 				if(this.Config.ServiceModel.Type == ServiceType.Rest_Xml)
 				{
@@ -303,7 +304,7 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
 			ResponseUnmarshaller unmarshaller = ");
             
-            #line 115 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 116 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -311,7 +312,7 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             this.Write("ResponseUnmarshaller.Instance;\r\n            var response = unmarshaller.Unmarshal" +
                     "l(context)\r\n\t\t\t\tas ");
             
-            #line 117 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 118 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -319,7 +320,7 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             this.Write("Response;   \r\n            InstantiateClassGenerator.ValidateObjectFullyInstantiat" +
                     "ed(response);       \r\n");
             
-            #line 119 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 120 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
 				}
 				else
@@ -334,7 +335,7 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
 			ResponseUnmarshaller unmarshaller = ");
             
-            #line 128 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 129 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -342,7 +343,7 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             this.Write("ResponseUnmarshaller.Instance;\r\n            var response = unmarshaller.Unmarshal" +
                     "l(context)\r\n\t\t\t\tas ");
             
-            #line 130 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 131 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -350,7 +351,7 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             this.Write("Response;   \r\n            InstantiateClassGenerator.ValidateObjectFullyInstantiat" +
                     "ed(response);   \t\t\t\r\n");
             
-            #line 132 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 133 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 				
 				}
             }
@@ -358,12 +359,305 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
             
             #line default
             #line hidden
-            this.Write("        }\r\n\r\n\t\t");
+            this.Write("        }\r\n");
             
             #line 138 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
-		}
-		
+            foreach (var exception in operation.Exceptions)
+            {
+
+            
+            #line default
+            #line hidden
+            this.Write("\r\n        [TestMethod]\r\n        [TestCategory(\"UnitTest\")]\r\n        [TestCategory" +
+                    "(\"");
+            
+            #line 145 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.Type));
+            
+            #line default
+            #line hidden
+            this.Write("\")]\r\n        [TestCategory(\"");
+            
+            #line 146 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.TestCategory));
+            
+            #line default
+            #line hidden
+            this.Write("\")]\r\n        public void ");
+            
+            #line 147 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+            
+            #line default
+            #line hidden
+            this.Write("_");
+            
+            #line 147 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
+            
+            #line default
+            #line hidden
+            this.Write("MarshallTest()\r\n        {\r\n            var operation = service_model.FindOperatio" +
+                    "n(\"");
+            
+            #line 149 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\");\r\n\r\n            var request = InstantiateClassGenerator.Execute<");
+            
+            #line 151 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+            
+            #line default
+            #line hidden
+            this.Write("Request>();\r\n            var marshaller = new ");
+            
+            #line 152 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+            
+            #line default
+            #line hidden
+            this.Write("RequestMarshaller();\r\n            var internalRequest = marshaller.Marshall(reque" +
+                    "st);\r\n\r\n            TestTools.RequestValidator.Validate(\"");
+            
+            #line 155 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\", request, internalRequest, service_model);\r\n\r\n            var exception = opera" +
+                    "tion.Exceptions.First(e => e.Name.Equals(\"");
+            
+            #line 157 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\"));\r\n            var webResponse = new WebResponseData\r\n            {\r\n         " +
+                    "       Headers = {\r\n");
+            
+            #line 161 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+
+            if( operation.ResponseHeaderMembers.Count() > 0 )
+            {
+                foreach (var member in operation.ResponseHeaderMembers)
+                {
+                    if (member.Shape.IsString)
+                    {
+                        if (member.IsJsonValue)
+                        {
+
+            
+            #line default
+            #line hidden
+            this.Write("                    {\"");
+            
+            #line 171 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+            
+            #line default
+            #line hidden
+            this.Write("\",Convert.ToBase64String(Encoding.UTF8.GetBytes(\"");
+            
+            #line 171 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+            
+            #line default
+            #line hidden
+            this.Write("_Value\"))},\r\n");
+            
+            #line 172 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+
+                        }
+                        else
+                        {
+
+            
+            #line default
+            #line hidden
+            this.Write("                    {\"");
+            
+            #line 177 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+            
+            #line default
+            #line hidden
+            this.Write("\",\"");
+            
+            #line 177 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+            
+            #line default
+            #line hidden
+            this.Write("_Value\"},\r\n");
+            
+            #line 178 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+
+                        }
+
+                    }
+                    else if (member.Shape.IsInt)
+                    {
+
+            
+            #line default
+            #line hidden
+            this.Write("                    {\"");
+            
+            #line 185 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+            
+            #line default
+            #line hidden
+            this.Write("\",int.MaxValue.ToString(CultureInfo.InvariantCulture)},\r\n");
+            
+            #line 186 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+
+                    }
+                    else if (member.Shape.IsLong)
+                    {
+
+            
+            #line default
+            #line hidden
+            this.Write("                    {\"");
+            
+            #line 191 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+            
+            #line default
+            #line hidden
+            this.Write("\",long.MaxValue.ToString(CultureInfo.InvariantCulture)},\r\n");
+            
+            #line 192 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+
+                    }
+                    else if (member.Shape.IsDateTime)
+                    {
+
+            
+            #line default
+            #line hidden
+            this.Write("                    {\"");
+            
+            #line 197 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+            
+            #line default
+            #line hidden
+            this.Write("\",ValidatorUtils.GetTestDate(TimestampFormat.");
+            
+            #line 197 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.TimestampFormat));
+            
+            #line default
+            #line hidden
+            this.Write(")},\r\n");
+            
+            #line 198 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+
+                    }
+                    else
+                    {
+                        throw new Exception("Member " + member.Shape.Name + " cannot be handled because it's type, " + member.Shape.Type + ", is not handled.  Please Update RestMarshallingTests.tt.");
+                    }
+                }
+            }
+
+            
+            #line default
+            #line hidden
+            this.Write("                    {\"x-amzn-RequestId\", Guid.NewGuid().ToString()},\r\n           " +
+                    "         {\"x-amz-crc32\",\"0\"},\r\n");
+            
+            #line 209 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+
+                if(this.Config.ServiceModel.Type != ServiceType.Rest_Xml)
+                {
+
+            
+            #line default
+            #line hidden
+            this.Write("                    {\"x-amzn-ErrorType\",\"");
+            
+            #line 213 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\"},\r\n");
+            
+            #line 214 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+
+                }
+
+            
+            #line default
+            #line hidden
+            this.Write("                }\r\n            };\r\n\r\n");
+            
+            #line 220 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+
+                if(this.Config.ServiceModel.Type == ServiceType.Rest_Xml)
+                {
+
+            
+            #line default
+            #line hidden
+            this.Write(@"            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers[""Content-Length""] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ");
+            
+            #line 227 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+            
+            #line default
+            #line hidden
+            this.Write("ResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpS" +
+                    "tatusCode.OK);\r\n\r\n            InstantiateClassGenerator.ValidateObjectFullyInsta" +
+                    "ntiated(response);\r\n");
+            
+            #line 230 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+
+                }
+                else
+                {
+
+            
+            #line default
+            #line hidden
+            this.Write(@"            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers[""Content-Length""] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ");
+            
+            #line 238 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+            
+            #line default
+            #line hidden
+            this.Write("ResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpS" +
+                    "tatusCode.OK);\r\n\r\n            InstantiateClassGenerator.ValidateObjectFullyInsta" +
+                    "ntiated(response);\r\n");
+            
+            #line 241 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+
+                }
+
+            
+            #line default
+            #line hidden
+            this.Write("        }\r\n");
+            
+            #line 245 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+
+            }
+        }
+
             
             #line default
             #line hidden

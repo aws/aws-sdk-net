@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -42,7 +43,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The  string that specifies which page of results to return in a paginated response.
-        /// This parameter is currently not supported for application, campaign, and journey metrics.
+        /// This parameter is not supported for application, campaign, and journey metrics.
         /// </para>
         /// </summary>
         public string NextToken
@@ -61,7 +62,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property PageSize. 
         /// <para>
         /// The maximum number of items to include in each page of a paginated response. This
-        /// parameter is currently not supported for application, campaign, and journey metrics.
+        /// parameter is not supported for application, campaign, and journey metrics.
         /// </para>
         /// </summary>
         public string PageSize

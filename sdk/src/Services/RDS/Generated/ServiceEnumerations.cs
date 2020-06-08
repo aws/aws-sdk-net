@@ -258,6 +258,18 @@ namespace Amazon.RDS
         /// Constant Modifying for DBProxyStatus
         /// </summary>
         public static readonly DBProxyStatus Modifying = new DBProxyStatus("modifying");
+        /// <summary>
+        /// Constant Reactivating for DBProxyStatus
+        /// </summary>
+        public static readonly DBProxyStatus Reactivating = new DBProxyStatus("reactivating");
+        /// <summary>
+        /// Constant Suspended for DBProxyStatus
+        /// </summary>
+        public static readonly DBProxyStatus Suspended = new DBProxyStatus("suspended");
+        /// <summary>
+        /// Constant Suspending for DBProxyStatus
+        /// </summary>
+        public static readonly DBProxyStatus Suspending = new DBProxyStatus("suspending");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -304,6 +316,10 @@ namespace Amazon.RDS
         /// Constant MYSQL for EngineFamily
         /// </summary>
         public static readonly EngineFamily MYSQL = new EngineFamily("MYSQL");
+        /// <summary>
+        /// Constant POSTGRESQL for EngineFamily
+        /// </summary>
+        public static readonly EngineFamily POSTGRESQL = new EngineFamily("POSTGRESQL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -450,6 +466,118 @@ namespace Amazon.RDS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetHealthReason.
+    /// </summary>
+    public class TargetHealthReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTH_FAILURE for TargetHealthReason
+        /// </summary>
+        public static readonly TargetHealthReason AUTH_FAILURE = new TargetHealthReason("AUTH_FAILURE");
+        /// <summary>
+        /// Constant CONNECTION_FAILED for TargetHealthReason
+        /// </summary>
+        public static readonly TargetHealthReason CONNECTION_FAILED = new TargetHealthReason("CONNECTION_FAILED");
+        /// <summary>
+        /// Constant PENDING_PROXY_CAPACITY for TargetHealthReason
+        /// </summary>
+        public static readonly TargetHealthReason PENDING_PROXY_CAPACITY = new TargetHealthReason("PENDING_PROXY_CAPACITY");
+        /// <summary>
+        /// Constant UNREACHABLE for TargetHealthReason
+        /// </summary>
+        public static readonly TargetHealthReason UNREACHABLE = new TargetHealthReason("UNREACHABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetHealthReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetHealthReason FindValue(string value)
+        {
+            return FindValue<TargetHealthReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetHealthReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetState.
+    /// </summary>
+    public class TargetState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for TargetState
+        /// </summary>
+        public static readonly TargetState AVAILABLE = new TargetState("AVAILABLE");
+        /// <summary>
+        /// Constant REGISTERING for TargetState
+        /// </summary>
+        public static readonly TargetState REGISTERING = new TargetState("REGISTERING");
+        /// <summary>
+        /// Constant UNAVAILABLE for TargetState
+        /// </summary>
+        public static readonly TargetState UNAVAILABLE = new TargetState("UNAVAILABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetState FindValue(string value)
+        {
+            return FindValue<TargetState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetState(string value)
         {
             return FindValue(value);
         }

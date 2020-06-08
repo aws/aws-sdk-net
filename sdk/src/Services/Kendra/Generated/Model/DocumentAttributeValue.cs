@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -80,7 +81,6 @@ namespace Amazon.Kendra.Model
         /// A list of strings. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
         public List<string> StringListValue
         {
             get { return this._stringListValue; }

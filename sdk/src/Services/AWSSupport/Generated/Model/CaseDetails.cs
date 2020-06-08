@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -76,11 +77,33 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>status.</b> The status of the case in the AWS Support Center. The possible values
-    /// are: <code>resolved</code>, <code>pending-customer-action</code>, <code>opened</code>,
-    /// <code>unassigned</code>, and <code>work-in-progress</code>.
+    ///  <b>status.</b> The status of the case in the AWS Support Center. Valid values:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>opened</code> 
     /// </para>
     ///  </li> <li> 
+    /// <para>
+    ///  <code>pending-customer-action</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>reopened</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>resolved</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>unassigned</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>work-in-progress</code> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
     /// <para>
     ///  <b>subject.</b> The subject line of the case.
     /// </para>
@@ -264,9 +287,37 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the case. Valid values: <code>resolved</code> | <code>pending-customer-action</code>
-        /// | <code>opened</code> | <code>unassigned</code> | <code>work-in-progress</code>.
+        /// The status of the case.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>opened</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>pending-customer-action</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>reopened</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>resolved</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>unassigned</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>work-in-progress</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Status
         {

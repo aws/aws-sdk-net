@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -81,7 +82,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the list action. For subsequent calls to the action
+        /// to null on your first call to the list action. For subsequent calls to the action,
         /// fill nextToken in the request with the value of NextToken from the previous response
         /// to continue listing data.
         /// </para>
@@ -102,7 +103,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property OnlyAssociated. 
         /// <para>
         /// Specifies whether to only return associated members or to return all members (including
-        /// members which haven't been invited yet or have been disassociated).
+        /// members who haven't been invited yet or have been disassociated).
         /// </para>
         /// </summary>
         public string OnlyAssociated

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -35,12 +36,6 @@ namespace Amazon.ApplicationAutoScaling.Model
     ///  
     /// <para>
     /// You can filter the results using <code>ResourceId</code> and <code>ScalableDimension</code>.
-    /// </para>
-    ///  
-    /// <para>
-    /// Scaling activities are triggered by CloudWatch alarms that are associated with scaling
-    /// policies. To view the scaling policies for a service namespace, see <a>DescribeScalingPolicies</a>.
-    /// To create a scaling policy or update an existing one, see <a>PutScalingPolicy</a>.
     /// </para>
     /// </summary>
     public partial class DescribeScalingActivitiesRequest : AmazonApplicationAutoScalingRequest
@@ -163,6 +158,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// that is not <code>$LATEST</code>. Example: <code>function:my-function:prod</code>
         /// or <code>function:my-function:1</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier
+        /// is the table name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -250,6 +250,16 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency
         /// for a Lambda function.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for
+        /// an Amazon Keyspaces table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
+        /// for an Amazon Keyspaces table.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public ScalableDimension ScalableDimension
@@ -267,10 +277,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ServiceNamespace. 
         /// <para>
-        /// The namespace of the AWS service that provides the resource or <code>custom-resource</code>
-        /// for a resource provided by your own application or service. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-        /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+        /// The namespace of the AWS service that provides the resource. For a resource provided
+        /// by your own application or service, use <code>custom-resource</code> instead.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

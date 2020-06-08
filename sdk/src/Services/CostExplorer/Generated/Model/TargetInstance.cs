@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -45,6 +46,7 @@ namespace Amazon.CostExplorer.Model
         ///  The currency code that Amazon Web Services used to calculate the costs for this instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string CurrencyCode
         {
             get { return this._currencyCode; }
@@ -82,6 +84,7 @@ namespace Amazon.CostExplorer.Model
         ///  Expected cost to operate this instance type on a monthly basis.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedMonthlyCost
         {
             get { return this._estimatedMonthlyCost; }
@@ -100,6 +103,7 @@ namespace Amazon.CostExplorer.Model
         ///  Estimated savings resulting from modification, on a monthly basis.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedMonthlySavings
         {
             get { return this._estimatedMonthlySavings; }

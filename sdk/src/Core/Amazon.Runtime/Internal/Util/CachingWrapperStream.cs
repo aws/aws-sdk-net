@@ -36,7 +36,7 @@ namespace Amazon.Runtime.Internal.Util
     /// </summary>
     public class CachingWrapperStream : WrapperStream
     {
-        private int _cacheLimit;
+        private readonly int? _cacheLimit;
 
         private int _cachedBytes = 0;
 
@@ -46,14 +46,25 @@ namespace Amazon.Runtime.Internal.Util
         public List<Byte> AllReadBytes { get; private set; }
 
         /// <summary>
+        /// All the bytes read by the stream constrained with _cacheLimit
+        /// </summary>
+        public List<Byte> LoggableReadBytes { 
+            get
+            {
+                var limit = _cacheLimit ?? AWSConfigs.LoggingConfig.LogResponsesSizeLimit;
+                return AllReadBytes.Take(limit).ToList();
+            }
+        }
+
+        /// <summary>
         /// Initializes the CachingWrapperStream with a base stream.
         /// </summary>
         /// <param name="baseStream">The stream to be wrapped.</param>
         /// <param name="cacheLimit">Maximum number of bytes to be cached.</param>
-        public CachingWrapperStream(Stream baseStream, int cacheLimit) : base(baseStream)
+        public CachingWrapperStream(Stream baseStream, int? cacheLimit = null) : base(baseStream)
         {
             _cacheLimit = cacheLimit;
-            this.AllReadBytes = new List<byte>(cacheLimit);
+            this.AllReadBytes = new List<byte>();
         }
 
         /// <summary>
@@ -96,15 +107,24 @@ namespace Amazon.Runtime.Internal.Util
         private void UpdateCacheAfterReading(byte[] buffer, int offset, int numberOfBytesRead)
         {
             // Limit the cached bytes to _cacheLimit
-            if (_cachedBytes < _cacheLimit)
+            if (_cacheLimit.HasValue)
             {
-                int remainingBytes = _cacheLimit - _cachedBytes;
-                int bytesToCache = Math.Min(numberOfBytesRead, remainingBytes);
+                if (_cachedBytes < _cacheLimit.Value)
+                {
+                    int remainingBytes = _cacheLimit.Value - _cachedBytes;
+                    int bytesToCache = Math.Min(numberOfBytesRead, remainingBytes);
 
-                var readBytes = new byte[bytesToCache];
-                System.Array.Copy(buffer, offset, readBytes, 0, bytesToCache);
+                    var readBytes = new byte[bytesToCache];
+                    System.Array.Copy(buffer, offset, readBytes, 0, bytesToCache);
+                    AllReadBytes.AddRange(readBytes);
+                    _cachedBytes += bytesToCache;
+                }
+            }
+            else
+            {
+                var readBytes = new byte[numberOfBytesRead];
+                System.Array.Copy(buffer, offset, readBytes, 0, numberOfBytesRead);
                 AllReadBytes.AddRange(readBytes);
-                _cachedBytes += bytesToCache;
             }
         }
 

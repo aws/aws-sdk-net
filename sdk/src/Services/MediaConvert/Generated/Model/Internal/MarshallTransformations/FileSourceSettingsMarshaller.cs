@@ -51,6 +51,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Convert608To708);
             }
 
+            if(requestObject.IsSetFramerate())
+            {
+                context.Writer.WritePropertyName("framerate");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CaptionSourceFramerateMarshaller.Instance;
+                marshaller.Marshall(requestObject.Framerate, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSourceFile())
             {
                 context.Writer.WritePropertyName("sourceFile");

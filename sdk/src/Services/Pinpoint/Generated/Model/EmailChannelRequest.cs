@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -41,8 +42,9 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property ConfigurationSet. 
         /// <para>
-        /// The configuration set that you want to apply to email that you send through the channel
-        /// by using the <a href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+        /// The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon
+        /// SES configuration set</a> that you want to apply to messages that you send through
+        /// the channel.
         /// </para>
         /// </summary>
         public string ConfigurationSet

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -45,6 +46,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _environmentName;
         private EnvironmentHealth _health;
         private EnvironmentHealthStatus _healthStatus;
+        private string _operationsRole;
         private string _platformArn;
         private EnvironmentResourcesDescription _resources;
         private string _solutionStackName;
@@ -330,9 +332,30 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OperationsRole. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the environment's operations role. For more information,
+        /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+        /// roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string OperationsRole
+        {
+            get { return this._operationsRole; }
+            set { this._operationsRole = value; }
+        }
+
+        // Check to see if OperationsRole property is set
+        internal bool IsSetOperationsRole()
+        {
+            return this._operationsRole != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PlatformArn. 
         /// <para>
-        /// The ARN of the platform.
+        /// The ARN of the platform version.
         /// </para>
         /// </summary>
         public string PlatformArn

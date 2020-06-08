@@ -78,6 +78,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.TargetArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("TargetHealth", targetDepth))
+                    {
+                        var unmarshaller = TargetHealthUnmarshaller.Instance;
+                        unmarshalledObject.TargetHealth = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("TrackedClusterId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

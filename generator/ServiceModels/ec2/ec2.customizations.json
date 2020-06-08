@@ -18,10 +18,25 @@
                 "targetType": "Amazon.Runtime.Internal.Unmarshaller"
             },
 			{
+                "condition":"this.Config.RetryMode == RequestRetryMode.Legacy",
                 "operation":"replace",
                 "newType":"Amazon.Runtime.Internal.RetryHandler",
                 "targetType":"Amazon.Runtime.Internal.RetryHandler",
                 "constructorInput":"new Amazon.EC2.Internal.EC2RetryPolicy(this.Config)"
+            },
+			{
+                "condition":"this.Config.RetryMode == RequestRetryMode.Standard",
+                "operation":"replace",
+                "newType":"Amazon.Runtime.Internal.RetryHandler",
+                "targetType":"Amazon.Runtime.Internal.RetryHandler",
+                "constructorInput":"new Amazon.EC2.Internal.EC2StandardRetryPolicy(this.Config)"
+            },
+			{
+                "condition":"this.Config.RetryMode == RequestRetryMode.Adaptive",
+                "operation":"replace",
+                "newType":"Amazon.Runtime.Internal.RetryHandler",
+                "targetType":"Amazon.Runtime.Internal.RetryHandler",
+                "constructorInput":"new Amazon.EC2.Internal.EC2AdaptiveRetryPolicy(this.Config)"
             }
         ]
     },

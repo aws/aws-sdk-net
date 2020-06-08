@@ -79,6 +79,11 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.CreateIndexRequest.ClientToken</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.CreateIndexRequest.Description</property>
     <min>1</min>
     <max>1000</max>
@@ -98,6 +103,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.CreateIndexResponse.Id</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DeleteDataSourceRequest.Id</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DeleteDataSourceRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
@@ -337,6 +354,11 @@
     <max>800</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.ListTagsForResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.QueryRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
@@ -392,6 +414,16 @@
     <property>Amazon.Kendra.Model.SubmitFeedbackRequest.QueryId</property>
     <min>1</min>
     <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.TagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.UntagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.UpdateDataSourceRequest.Description</property>
@@ -451,13 +483,6 @@
     <property>Amazon.Kendra.Model.AccessControlListConfiguration.KeyPath</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Kendra.Model.AccessDeniedException.Message</property>
-    <min>1</min>
-    <max>2048</max>
-    <pattern>^\P{C}*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.AclConfiguration.AllowedGroupsColumnName</property>
@@ -493,6 +518,14 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.CapacityUnitsConfiguration.QueryCapacityUnits</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.CapacityUnitsConfiguration.StorageCapacityUnits</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.ClickFeedback.ResultId</property>
     <min>1</min>
     <max>73</max>
@@ -514,12 +547,6 @@
     <min>1</min>
     <max>100</max>
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Kendra.Model.ConflictException.Message</property>
-    <min>1</min>
-    <max>2048</max>
-    <pattern>^\P{C}*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.ConnectionConfiguration.DatabaseHost</property>
@@ -578,15 +605,48 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.DataSourceSyncJobMetrics.DocumentsAdded</property>
+    <pattern>(([1-9][0-9]*)|0)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DataSourceSyncJobMetrics.DocumentsDeleted</property>
+    <pattern>(([1-9][0-9]*)|0)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DataSourceSyncJobMetrics.DocumentsFailed</property>
+    <pattern>(([1-9][0-9]*)|0)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DataSourceSyncJobMetrics.DocumentsModified</property>
+    <pattern>(([1-9][0-9]*)|0)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DataSourceSyncJobMetrics.DocumentsScanned</property>
+    <pattern>(([1-9][0-9]*)|0)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DataSourceSyncJobMetricTarget.DataSourceId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DataSourceSyncJobMetricTarget.DataSourceSyncJobId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.DataSourceToIndexFieldMapping.DataSourceFieldName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z][a-zA-Z0-9_]*$</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_.]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.DataSourceToIndexFieldMapping.DateFieldFormat</property>
     <min>4</min>
     <max>40</max>
+    <pattern>^(?!\s).*(?&lt;!\s)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.DataSourceToIndexFieldMapping.IndexFieldName</property>
@@ -595,19 +655,9 @@
     <pattern>^\P{C}*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Kendra.Model.Document.Blob</property>
-    <min>1</min>
-    <max>153600</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Kendra.Model.Document.Id</property>
     <min>1</min>
     <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Kendra.Model.Document.Title</property>
-    <min>1</min>
-    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.DocumentAttribute.Key</property>
@@ -619,7 +669,6 @@
     <property>Amazon.Kendra.Model.DocumentAttributeValue.StringValue</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^\P{C}*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.DocumentMetadataConfiguration.Name</property>
@@ -630,7 +679,6 @@
     <property>Amazon.Kendra.Model.DocumentsMetadataConfiguration.S3Prefix</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.Facet.DocumentAttributeKey</property>
@@ -673,10 +721,16 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Kendra.Model.InternalServerException.Message</property>
+    <property>Amazon.Kendra.Model.OneDriveConfiguration.SecretArn</property>
     <min>1</min>
-    <max>2048</max>
-    <pattern>^\P{C}*$</pattern>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.OneDriveConfiguration.TenantDomain</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([a-zA-Z0-9]+(-[a-zA-Z0-9]+)*\.)+[a-z]{2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.Principal.Name</property>
@@ -693,7 +747,7 @@
     <property>Amazon.Kendra.Model.QueryResultItem.DocumentURI</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^(https?|ftp|file):\/\/(.*)</pattern>
+    <pattern>^(https?|ftp|file):\/\/([^\s]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.QueryResultItem.Id</property>
@@ -717,30 +771,6 @@
     <max>73</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Kendra.Model.ResourceAlreadyExistException.Message</property>
-    <min>1</min>
-    <max>2048</max>
-    <pattern>^\P{C}*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Kendra.Model.ResourceInUseException.Message</property>
-    <min>1</min>
-    <max>2048</max>
-    <pattern>^\P{C}*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Kendra.Model.ResourceNotFoundException.Message</property>
-    <min>1</min>
-    <max>2048</max>
-    <pattern>^\P{C}*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Kendra.Model.ResourceUnavailableException.Message</property>
-    <min>1</min>
-    <max>2048</max>
-    <pattern>^\P{C}*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Kendra.Model.S3DataSourceConfiguration.BucketName</property>
     <min>3</min>
     <max>63</max>
@@ -756,7 +786,78 @@
     <property>Amazon.Kendra.Model.S3Path.Key</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.SalesforceChatterFeedConfiguration.DocumentDataFieldName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.SalesforceChatterFeedConfiguration.DocumentTitleFieldName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.SalesforceConfiguration.SecretArn</property>
+    <min>1</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.SalesforceConfiguration.ServerUrl</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(https?|ftp|file):\/\/([^\s]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.SalesforceCustomKnowledgeArticleTypeConfiguration.DocumentDataFieldName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.SalesforceCustomKnowledgeArticleTypeConfiguration.DocumentTitleFieldName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.SalesforceCustomKnowledgeArticleTypeConfiguration.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.SalesforceStandardKnowledgeArticleTypeConfiguration.DocumentDataFieldName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.SalesforceStandardKnowledgeArticleTypeConfiguration.DocumentTitleFieldName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.SalesforceStandardObjectAttachmentConfiguration.DocumentTitleFieldName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.SalesforceStandardObjectConfiguration.DocumentDataFieldName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.SalesforceStandardObjectConfiguration.DocumentTitleFieldName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_.]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.ServerSideEncryptionConfiguration.KmsKeyId</property>
@@ -764,22 +865,66 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Kendra.Model.ServiceQuotaExceededException.Message</property>
+    <property>Amazon.Kendra.Model.ServiceNowConfiguration.HostUrl</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>^(?!(^(https?|ftp|file):\/\/))[a-z0-9-]+(\.service-now\.com)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ServiceNowConfiguration.SecretArn</property>
+    <min>1</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ServiceNowKnowledgeArticleConfiguration.DocumentDataFieldName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ServiceNowKnowledgeArticleConfiguration.DocumentTitleFieldName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ServiceNowServiceCatalogConfiguration.DocumentDataFieldName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ServiceNowServiceCatalogConfiguration.DocumentTitleFieldName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_.]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.SharePointConfiguration.DocumentTitleFieldName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z][a-zA-Z0-9_]*$</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_.]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.SharePointConfiguration.SecretArn</property>
     <min>1</min>
     <max>1284</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.TextDocumentStatistics.IndexedTextBytes</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.TextDocumentStatistics.IndexedTextDocumentsCount</property>
@@ -789,17 +934,5 @@
     <property>Amazon.Kendra.Model.TextWithHighlights.Text</property>
     <min>1</min>
     <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Kendra.Model.ThrottlingException.Message</property>
-    <min>1</min>
-    <max>2048</max>
-    <pattern>^\P{C}*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Kendra.Model.ValidationException.Message</property>
-    <min>1</min>
-    <max>2048</max>
-    <pattern>^\P{C}*$</pattern>
   </property-value-rule>
 </property-value-rules>

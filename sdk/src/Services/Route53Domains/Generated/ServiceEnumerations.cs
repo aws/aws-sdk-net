@@ -1157,6 +1157,14 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly ExtraParamName CA_BUSINESS_ENTITY_TYPE = new ExtraParamName("CA_BUSINESS_ENTITY_TYPE");
         /// <summary>
+        /// Constant CA_LEGAL_REPRESENTATIVE for ExtraParamName
+        /// </summary>
+        public static readonly ExtraParamName CA_LEGAL_REPRESENTATIVE = new ExtraParamName("CA_LEGAL_REPRESENTATIVE");
+        /// <summary>
+        /// Constant CA_LEGAL_REPRESENTATIVE_CAPACITY for ExtraParamName
+        /// </summary>
+        public static readonly ExtraParamName CA_LEGAL_REPRESENTATIVE_CAPACITY = new ExtraParamName("CA_LEGAL_REPRESENTATIVE_CAPACITY");
+        /// <summary>
         /// Constant CA_LEGAL_TYPE for ExtraParamName
         /// </summary>
         public static readonly ExtraParamName CA_LEGAL_TYPE = new ExtraParamName("CA_LEGAL_TYPE");
@@ -1196,6 +1204,10 @@ namespace Amazon.Route53Domains
         /// Constant FI_ORGANIZATION_TYPE for ExtraParamName
         /// </summary>
         public static readonly ExtraParamName FI_ORGANIZATION_TYPE = new ExtraParamName("FI_ORGANIZATION_TYPE");
+        /// <summary>
+        /// Constant IT_NATIONALITY for ExtraParamName
+        /// </summary>
+        public static readonly ExtraParamName IT_NATIONALITY = new ExtraParamName("IT_NATIONALITY");
         /// <summary>
         /// Constant IT_PIN for ExtraParamName
         /// </summary>
@@ -1364,6 +1376,14 @@ namespace Amazon.Route53Domains
         /// Constant EXPIRE_DOMAIN for OperationType
         /// </summary>
         public static readonly OperationType EXPIRE_DOMAIN = new OperationType("EXPIRE_DOMAIN");
+        /// <summary>
+        /// Constant INTERNAL_TRANSFER_IN_DOMAIN for OperationType
+        /// </summary>
+        public static readonly OperationType INTERNAL_TRANSFER_IN_DOMAIN = new OperationType("INTERNAL_TRANSFER_IN_DOMAIN");
+        /// <summary>
+        /// Constant INTERNAL_TRANSFER_OUT_DOMAIN for OperationType
+        /// </summary>
+        public static readonly OperationType INTERNAL_TRANSFER_OUT_DOMAIN = new OperationType("INTERNAL_TRANSFER_OUT_DOMAIN");
         /// <summary>
         /// Constant PUSH_DOMAIN for OperationType
         /// </summary>

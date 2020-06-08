@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -31,9 +32,9 @@ namespace Amazon.S3Control.Model
     /// Container for the parameters to the ListAccessPoints operation.
     /// Returns a list of the access points currently associated with the specified bucket.
     /// You can retrieve up to 1000 access points per call. If the specified bucket has more
-    /// than 1000 access points (or the number specified in <code>maxResults</code>, whichever
-    /// is less), then the response will include a continuation token that you can use to
-    /// list the additional access points.
+    /// than 1,000 access points (or the number specified in <code>maxResults</code>, whichever
+    /// is less), the response will include a continuation token that you can use to list
+    /// the additional access points.
     /// </summary>
     public partial class ListAccessPointsRequest : AmazonS3ControlRequest
     {

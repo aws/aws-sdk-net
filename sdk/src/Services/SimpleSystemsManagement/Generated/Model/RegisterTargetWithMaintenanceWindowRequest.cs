@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -205,7 +206,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// For more information about these examples formats, including the best use case for
         /// each one, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-        /// Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager User
+        /// Register targets with a maintenance window</a> in the <i>AWS Systems Manager User
         /// Guide</i>.
         /// </para>
         /// </summary>

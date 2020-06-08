@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,9 +30,22 @@ namespace Amazon.WAFRegional.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRateBasedRule operation.
+    /// <note> 
+    /// <para>
+    /// This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
+    /// WAF Classic</a> in the developer guide.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+    /// WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints
+    /// for regional and global use. 
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Inserts or deletes <a>Predicate</a> objects in a rule and updates the <code>RateLimit</code>
     /// in the rule. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Each <code>Predicate</code> object identifies a predicate, such as a <a>ByteMatchSet</a>
@@ -56,7 +70,7 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Further, you specify a <code>RateLimit</code> of 15,000.
+    /// Further, you specify a <code>RateLimit</code> of 1,000.
     /// </para>
     ///  
     /// <para>
@@ -64,7 +78,7 @@ namespace Amazon.WAFRegional.Model
     /// you want to block requests that satisfy the rule. For a request to be blocked, it
     /// must come from the IP address 192.0.2.44 <i>and</i> the <code>User-Agent</code> header
     /// in the request must contain the value <code>BadBot</code>. Further, requests that
-    /// match these two conditions much be received at a rate of more than 15,000 every five
+    /// match these two conditions much be received at a rate of more than 1,000 every five
     /// minutes. If the rate drops below this limit, AWS WAF no longer blocks the requests.
     /// </para>
     ///  
@@ -86,7 +100,7 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Further, you specify a <code>RateLimit</code> of 15,000.
+    /// Further, you specify a <code>RateLimit</code> of 1,000.
     /// </para>
     ///  
     /// <para>
@@ -107,7 +121,7 @@ namespace Amazon.WAFRegional.Model
         /// The value returned by the most recent call to <a>GetChangeToken</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ChangeToken
         {
             get { return this._changeToken; }

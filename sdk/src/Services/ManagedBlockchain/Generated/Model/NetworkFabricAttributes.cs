@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,7 +40,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// Gets and sets the property Edition. 
         /// <para>
         /// The edition of Amazon Managed Blockchain that Hyperledger Fabric uses. For more information,
-        /// see <a href="https://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain
+        /// see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain
         /// Pricing</a>.
         /// </para>
         /// </summary>

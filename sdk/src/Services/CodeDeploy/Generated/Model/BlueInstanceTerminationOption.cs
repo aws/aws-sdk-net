@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -45,12 +46,12 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// TERMINATE: Instances are terminated after a specified wait time.
+        ///  <code>TERMINATE</code>: Instances are terminated after a specified wait time.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// KEEP_ALIVE: Instances are left running after they are deregistered from the load balancer
-        /// and removed from the deployment group.
+        ///  <code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from
+        /// the load balancer and removed from the deployment group.
         /// </para>
         ///  </li> </ul>
         /// </summary>

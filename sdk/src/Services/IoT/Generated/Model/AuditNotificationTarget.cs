@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -79,6 +80,7 @@ namespace Amazon.IoT.Model
         /// The ARN of the target (SNS topic) to which audit notifications are sent.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string TargetArn
         {
             get { return this._targetArn; }

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -58,8 +59,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The optional part of a key-value pair that make up a tag. A value acts as a descriptor
-        /// within a tag category (key).
+        /// One part of a key-value pair that make up a tag. A value acts as a descriptor within
+        /// a tag category (key). The value can be empty or null.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]

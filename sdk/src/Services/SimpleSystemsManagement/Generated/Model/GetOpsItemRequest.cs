@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -31,14 +32,14 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Container for the parameters to the GetOpsItem operation.
     /// Get information about an OpsItem by using the ID. You must have permission in AWS
     /// Identity and Access Management (IAM) to view information about an OpsItem. For more
-    /// information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-    /// Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+    /// started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
     /// 
     ///  
     /// <para>
     /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
     /// remediate operational issues impacting the performance and health of their AWS resources.
-    /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+    /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
     /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
     /// </para>
     /// </summary>

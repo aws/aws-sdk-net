@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -43,6 +44,7 @@ namespace Amazon.AppConfig.Model
         private string _deploymentStrategyId;
         private string _description;
         private string _environmentId;
+        private List<DeploymentEvent> _eventLog = new List<DeploymentEvent>();
         private int? _finalBakeTimeInMinutes;
         private float? _growthFactor;
         private GrowthType _growthType;
@@ -251,6 +253,25 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetEnvironmentId()
         {
             return this._environmentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventLog. 
+        /// <para>
+        /// A list containing all events related to a deployment. The most recent events are displayed
+        /// first.
+        /// </para>
+        /// </summary>
+        public List<DeploymentEvent> EventLog
+        {
+            get { return this._eventLog; }
+            set { this._eventLog = value; }
+        }
+
+        // Check to see if EventLog property is set
+        internal bool IsSetEventLog()
+        {
+            return this._eventLog != null && this._eventLog.Count > 0; 
         }
 
         /// <summary>

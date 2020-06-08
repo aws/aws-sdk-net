@@ -140,16 +140,6 @@
     <pattern>[a-zA-Z0-9_\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ResourceGroups.Model.BadRequestException.Message</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ResourceGroups.Model.ForbiddenException.Message</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.ResourceGroups.Model.Group.Description</property>
     <max>512</max>
     <pattern>[\sa-zA-Z0-9_\.-]*</pattern>
@@ -185,21 +175,6 @@
     <pattern>[a-zA-Z0-9_\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ResourceGroups.Model.InternalServerErrorException.Message</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ResourceGroups.Model.MethodNotAllowedException.Message</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ResourceGroups.Model.NotFoundException.Message</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.ResourceGroups.Model.ResourceIdentifier.ResourceArn</property>
     <pattern>arn:aws(-[a-z]+)*:[a-z0-9\-]*:([a-z]{2}-[a-z]+-\d{1})?:([0-9]{12})?:.+</pattern>
   </property-value-rule>
@@ -217,15 +192,5 @@
     <min>1</min>
     <max>128</max>
     <pattern>^\w+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ResourceGroups.Model.TooManyRequestsException.Message</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ResourceGroups.Model.UnauthorizedException.Message</property>
-    <min>1</min>
-    <max>1024</max>
   </property-value-rule>
 </property-value-rules>

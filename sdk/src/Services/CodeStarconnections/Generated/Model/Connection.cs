@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,8 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeStarconnections.Model
 {
     /// <summary>
-    /// The configuration that allows a service such as CodePipeline to connect to a third-party
-    /// code repository.
+    /// The AWS::CodeStarConnections::Connection resource can be used to connect external
+    /// source providers with services like AWS CodePipeline.
+    /// 
+    ///  
+    /// <para>
+    /// Note: A connection created through CloudFormation is in `PENDING` status by default.
+    /// You can make its status `AVAILABLE` by editing the connection in the CodePipeline
+    /// console.
+    /// </para>
     /// </summary>
     public partial class Connection
     {
@@ -104,8 +112,8 @@ namespace Amazon.CodeStarconnections.Model
         /// <summary>
         /// Gets and sets the property OwnerAccountId. 
         /// <para>
-        /// The name of the external provider where your third-party code repository is configured.
-        /// For Bitbucket, this is the account ID of the owner of the Bitbucket repository.
+        /// The identifier of the external provider where your third-party code repository is
+        /// configured. For Bitbucket, this is the account ID of the owner of the Bitbucket repository.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

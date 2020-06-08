@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDomain operation.
-    /// Updates a domain. Changes will impact all of the people in the domain.
+    /// Updates the default settings for new user profiles in the domain.
     /// </summary>
     public partial class UpdateDomainRequest : AmazonSageMakerRequest
     {
@@ -57,7 +58,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The domain ID.
+        /// The ID of the domain to be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]

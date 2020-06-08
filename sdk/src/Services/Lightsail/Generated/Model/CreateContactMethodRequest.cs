@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -59,7 +60,7 @@ namespace Amazon.Lightsail.Model
         /// that follow this format can have a maximum of 15 digits, and they are prefixed with
         /// the plus character (+) and the country code. For example, a U.S. phone number in E.164
         /// format would be specified as +1XXX5550100. For more information, see <a href="https://en.wikipedia.org/wiki/E.164">E.164</a>
-        /// in Wikipedia.
+        /// on <i>Wikipedia</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

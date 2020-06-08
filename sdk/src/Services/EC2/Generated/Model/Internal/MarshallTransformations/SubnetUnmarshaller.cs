@@ -84,6 +84,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CidrBlock = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("customerOwnedIpv4Pool", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CustomerOwnedIpv4Pool = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("defaultForAz", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
@@ -95,6 +101,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         var unmarshaller = SubnetIpv6CidrBlockAssociationUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Ipv6CidrBlockAssociationSet.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("mapCustomerOwnedIpOnLaunch", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.MapCustomerOwnedIpOnLaunch = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("mapPublicIpOnLaunch", targetDepth))

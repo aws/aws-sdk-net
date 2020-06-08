@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -37,7 +38,7 @@ namespace Amazon.DirectConnect.Model
     /// to the underlying physical connection if it wasn't updated to support jumbo frames.
     /// Updating the connection disrupts network connectivity for all virtual interfaces associated
     /// with the connection for up to 30 seconds. To check whether your connection supports
-    /// jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface
+    /// jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual q interface
     /// supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.
     /// </para>
     /// </summary>

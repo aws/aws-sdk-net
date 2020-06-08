@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -37,8 +38,7 @@ namespace Amazon.SageMaker.Model
     /// <para>
     /// When Amazon SageMaker receives the request, it sets the endpoint status to <code>Updating</code>.
     /// After updating the endpoint, it sets the status to <code>InService</code>. To check
-    /// the status of an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-    /// API. 
+    /// the status of an endpoint, use the <a>DescribeEndpoint</a> API. 
     /// </para>
     ///  <note> 
     /// <para>
@@ -46,6 +46,12 @@ namespace Amazon.SageMaker.Model
     /// or while the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations
     /// are being performed on the endpoint. To update an endpoint, you must create a new
     /// <code>EndpointConfig</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you delete the <code>EndpointConfig</code> of an endpoint that is active or being
+    /// created or updated you may lose visibility into the instance type the endpoint is
+    /// using. The endpoint must be deleted in order to stop incurring charges.
     /// </para>
     ///  </note>
     /// </summary>
@@ -97,12 +103,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ExcludeRetainedVariantProperties. 
         /// <para>
-        /// When you are updating endpoint resources with <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateEndpoint.html#SageMaker-UpdateEndpoint-request-RetainAllVariantProperties">RetainAllVariantProperties</a>,
+        /// When you are updating endpoint resources with <a>UpdateEndpointInput$RetainAllVariantProperties</a>,
         /// whose value is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code>
-        /// specifies the list of type <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_VariantProperty.html">VariantProperty</a>
-        /// to override with the values provided by <code>EndpointConfig</code>. If you don't
-        /// specify a value for <code>ExcludeAllVariantProperties</code>, no variant properties
-        /// are overridden. 
+        /// specifies the list of type <a>VariantProperty</a> to override with the values provided
+        /// by <code>EndpointConfig</code>. If you don't specify a value for <code>ExcludeAllVariantProperties</code>,
+        /// no variant properties are overridden. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -55,7 +56,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// For more information, see <a>CreateService</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.
     /// </para>
     ///  
     /// <para>
@@ -78,7 +79,7 @@ namespace Amazon.ServiceDiscovery.Model
     ///  </li> </ul> 
     /// <para>
     /// For the current limit on the number of instances that you can register using the same
-    /// namespace and using the same service, see <a href="http://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
+    /// namespace and using the same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
     /// Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -120,7 +121,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// If you want AWS Cloud Map to create an Amazon Route 53 alias record that routes traffic
         /// to an Elastic Load Balancing load balancer, specify the DNS name that is associated
         /// with the load balancer. For information about how to get the DNS name, see "DNSName"
-        /// in the topic <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
+        /// in the topic <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
         /// in the <i>Route 53 API Reference</i>.
         /// </para>
         ///  
@@ -226,8 +227,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  
         /// <para>
-        /// This value is required if you specified settings for an SRV record when you created
-        /// the service.
+        /// This value is required if you specified settings for an SRV record or a Route 53 health
+        /// check when you created the service.
         /// </para>
         ///  
         /// <para>
@@ -285,7 +286,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// If the service that is specified by <code>ServiceId</code> includes settings for an
         /// SRV record, the value of <code>InstanceId</code> is automatically included as part
-        /// of the value for the SRV record. For more information, see <a>DnsRecord$Type</a>.
+        /// of the value for the SRV record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
+        /// &gt; Type</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>

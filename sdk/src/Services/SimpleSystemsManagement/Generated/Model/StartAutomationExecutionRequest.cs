@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -236,9 +237,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// A location is a combination of AWS Regions and/or AWS accounts where you want to run
         /// the Automation. Use this action to start an Automation in multiple Regions and multiple
-        /// accounts. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
-        /// Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager
-        /// User Guide</i>. 
+        /// accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
+        /// Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS Systems
+        /// Manager User Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

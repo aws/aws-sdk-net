@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,7 +39,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <summary>
         /// Gets and sets the property HumanLoopName. 
         /// <para>
-        /// The name of the human loop you want to stop.
+        /// The name of the human loop that you want to stop.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

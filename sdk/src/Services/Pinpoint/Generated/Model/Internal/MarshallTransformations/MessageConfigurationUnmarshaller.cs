@@ -82,6 +82,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.BaiduMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomMessage", targetDepth))
+                {
+                    var unmarshaller = CampaignCustomMessageUnmarshaller.Instance;
+                    unmarshalledObject.CustomMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DefaultMessage", targetDepth))
                 {
                     var unmarshaller = MessageUnmarshaller.Instance;

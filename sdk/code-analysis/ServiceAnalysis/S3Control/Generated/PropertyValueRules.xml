@@ -3,6 +3,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.CreateAccessPointRequest.AccountId</property>
     <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.CreateAccessPointRequest.Bucket</property>
@@ -17,6 +18,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.CreateJobRequest.AccountId</property>
     <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.CreateJobRequest.ClientRequestToken</property>
@@ -37,6 +39,7 @@
     <property>Amazon.S3Control.Model.CreateJobRequest.RoleArn</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>arn:[^:]+:iam::\d{12}:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.CreateJobResponse.JobId</property>
@@ -46,6 +49,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.DeleteAccessPointRequest.AccountId</property>
     <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.DeleteAccessPointRequest.Name</property>
@@ -55,6 +59,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.DeleteAccessPointPolicyRequest.AccountId</property>
     <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.DeleteAccessPointPolicyRequest.Name</property>
@@ -64,6 +69,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.DeleteJobTaggingRequest.AccountId</property>
     <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.DeleteJobTaggingRequest.JobId</property>
@@ -73,10 +79,12 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.DeletePublicAccessBlockRequest.AccountId</property>
     <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.DescribeJobRequest.AccountId</property>
     <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.DescribeJobRequest.JobId</property>
@@ -86,6 +94,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetAccessPointRequest.AccountId</property>
     <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetAccessPointRequest.Name</property>
@@ -105,6 +114,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetAccessPointPolicyRequest.AccountId</property>
     <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetAccessPointPolicyRequest.Name</property>
@@ -114,6 +124,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetAccessPointPolicyStatusRequest.AccountId</property>
     <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetAccessPointPolicyStatusRequest.Name</property>
@@ -123,6 +134,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetJobTaggingRequest.AccountId</property>
     <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetJobTaggingRequest.JobId</property>
@@ -132,10 +144,12 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetPublicAccessBlockRequest.AccountId</property>
     <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.ListAccessPointsRequest.AccountId</property>
     <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.ListAccessPointsRequest.Bucket</property>
@@ -160,6 +174,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.ListJobsRequest.AccountId</property>
     <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.ListJobsRequest.MaxResults</property>
@@ -170,15 +185,18 @@
     <property>Amazon.S3Control.Model.ListJobsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>^[A-Za-z0-9\+\:\/\=\?\#-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.ListJobsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>^[A-Za-z0-9\+\:\/\=\?\#-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.PutAccessPointPolicyRequest.AccountId</property>
     <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.PutAccessPointPolicyRequest.Name</property>
@@ -188,6 +206,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.PutJobTaggingRequest.AccountId</property>
     <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.PutJobTaggingRequest.JobId</property>
@@ -197,10 +216,12 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.PutPublicAccessBlockRequest.AccountId</property>
     <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.UpdateJobPriorityRequest.AccountId</property>
     <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.UpdateJobPriorityRequest.JobId</property>
@@ -225,6 +246,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.UpdateJobStatusRequest.AccountId</property>
     <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.UpdateJobStatusRequest.JobId</property>
@@ -257,31 +279,6 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.S3Control.Model.BadRequestException.Message</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.S3Control.Model.IdempotencyException.Message</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.S3Control.Model.InternalServiceException.Message</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.S3Control.Model.InvalidNextTokenException.Message</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.S3Control.Model.InvalidRequestException.Message</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.S3Control.Model.JobDescriptor.Description</property>
     <min>1</min>
     <max>256</max>
@@ -290,6 +287,7 @@
     <property>Amazon.S3Control.Model.JobDescriptor.JobArn</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>arn:[^:]+:s3:[a-zA-Z0-9\-]+:\d{12}:job\/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.JobDescriptor.JobId</property>
@@ -305,6 +303,7 @@
     <property>Amazon.S3Control.Model.JobDescriptor.RoleArn</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>arn:[^:]+:iam::\d{12}:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.JobDescriptor.StatusUpdateReason</property>
@@ -350,6 +349,7 @@
     <property>Amazon.S3Control.Model.JobManifestLocation.ObjectArn</property>
     <min>1</min>
     <max>2000</max>
+    <pattern>arn:[^:]+:s3:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.JobManifestLocation.ObjectVersionId</property>
@@ -372,6 +372,7 @@
     <property>Amazon.S3Control.Model.JobReport.Bucket</property>
     <min>1</min>
     <max>128</max>
+    <pattern>arn:[^:]+:s3:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.JobReport.Prefix</property>
@@ -379,19 +380,10 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.S3Control.Model.JobStatusException.Message</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.S3Control.Model.LambdaInvokeOperation.FunctionArn</property>
     <min>1</min>
     <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.S3Control.Model.NotFoundException.Message</property>
-    <min>1</min>
-    <max>1024</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.S3CopyObjectOperation.RedirectLocation</property>
@@ -412,6 +404,7 @@
     <property>Amazon.S3Control.Model.S3CopyObjectOperation.TargetResource</property>
     <min>1</min>
     <max>128</max>
+    <pattern>arn:[^:]+:s3:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.S3Grantee.DisplayName</property>
@@ -475,20 +468,12 @@
     <property>Amazon.S3Control.Model.S3Tag.Key</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:=+\-@%]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.S3Tag.Value</property>
     <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.S3Control.Model.TooManyRequestsException.Message</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.S3Control.Model.TooManyTagsException.Message</property>
-    <min>1</min>
-    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:=+\-@%]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.VpcConfiguration.VpcId</property>

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -43,6 +44,7 @@ namespace Amazon.MediaConnect.Model
         private Protocol _protocol;
         private string _sourceArn;
         private string _streamId;
+        private string _vpcInterfaceName;
         private string _whitelistCidr;
 
         /// <summary>
@@ -204,6 +206,22 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetStreamId()
         {
             return this._streamId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcInterfaceName. The name of the VPC Interface to configure
+        /// this Source with.
+        /// </summary>
+        public string VpcInterfaceName
+        {
+            get { return this._vpcInterfaceName; }
+            set { this._vpcInterfaceName = value; }
+        }
+
+        // Check to see if VpcInterfaceName property is set
+        internal bool IsSetVpcInterfaceName()
+        {
+            return this._vpcInterfaceName != null;
         }
 
         /// <summary>

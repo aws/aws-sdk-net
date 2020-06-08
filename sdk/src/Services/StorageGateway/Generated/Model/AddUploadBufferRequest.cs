@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -49,8 +50,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property DiskIds. 
         /// <para>
         /// An array of strings that identify disks that are to be configured as working storage.
-        /// Each string have a minimum length of 1 and maximum length of 300. You can get the
-        /// disk IDs from the <a>ListLocalDisks</a> API.
+        /// Each string has a minimum length of 1 and maximum length of 300. You can get the disk
+        /// IDs from the <a>ListLocalDisks</a> API.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

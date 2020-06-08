@@ -77,6 +77,17 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetCompute())
+                {
+                    context.Writer.WritePropertyName("compute");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ComputeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Compute, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDataSources())
                 {
                     context.Writer.WritePropertyName("dataSources");

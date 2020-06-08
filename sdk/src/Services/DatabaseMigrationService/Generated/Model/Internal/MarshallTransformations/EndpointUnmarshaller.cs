@@ -166,6 +166,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.MongoDbSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NeptuneSettings", targetDepth))
+                {
+                    var unmarshaller = NeptuneSettingsUnmarshaller.Instance;
+                    unmarshalledObject.NeptuneSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Port", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

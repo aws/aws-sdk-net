@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -60,7 +61,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The URI of the file that contains the IPSet. For example (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+        /// The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
@@ -79,7 +80,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The user friendly name for the IPSet.
+        /// The user-friendly name for the IPSet.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
@@ -98,7 +99,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of ipSet file uploaded.
+        /// The status of IPSet file that was uploaded.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
@@ -117,7 +118,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags of the IP set resource.
+        /// The tags of the IPSet resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

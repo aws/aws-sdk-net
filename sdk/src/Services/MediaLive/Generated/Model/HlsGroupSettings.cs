@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -554,8 +555,9 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputSelection. MANIFESTSANDSEGMENTS: Generates manifests
-        /// (master manifest, if applicable, and media manifests) for this output group.SEGMENTSONLY:
+        /// Gets and sets the property OutputSelection. MANIFESTS_AND_SEGMENTS: Generates manifests
+        /// (master manifest, if applicable, and media manifests) for this output group.VARIANT_MANIFESTS_AND_SEGMENTS:
+        /// Generates media manifests for this output group, but not a master manifest.SEGMENTS_ONLY:
         /// Does not generate any manifests for this output group.
         /// </summary>
         public HlsOutputSelection OutputSelection
@@ -747,8 +749,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TsFileMode. SEGMENTEDFILES: Emit the program as segments
-        /// - multiple .ts media files.SINGLEFILE: Applies only if Mode field is VOD. Emit the
+        /// Gets and sets the property TsFileMode. SEGMENTED_FILES: Emit the program as segments
+        /// - multiple .ts media files.SINGLE_FILE: Applies only if Mode field is VOD. Emit the
         /// program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags
         /// to index segments for playback. A typical use for this value is when sending the output
         /// to AWS Elemental MediaConvert, which can accept only a single media file. Playback

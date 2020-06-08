@@ -82,6 +82,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetInputDevices())
+                {
+                    context.Writer.WritePropertyName("inputDevices");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestInputDevicesListValue in publicRequest.InputDevices)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InputDeviceSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequestInputDevicesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetInputSecurityGroups())
                 {
                     context.Writer.WritePropertyName("inputSecurityGroups");

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -97,10 +98,11 @@ namespace Amazon.CodeBuild.Model
         ///  <dl> <dt> EVENT </dt> <dd> 
         /// <para>
         ///  A webhook event triggers a build when the provided <code>pattern</code> matches one
-        /// of four event types: <code>PUSH</code>, <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>,
-        /// and <code>PULL_REQUEST_REOPENED</code>. The <code>EVENT</code> patterns are specified
-        /// as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code>
-        /// filters all push, pull request created, and pull request updated events. 
+        /// of five event types: <code>PUSH</code>, <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>,
+        /// <code>PULL_REQUEST_REOPENED</code>, and <code>PULL_REQUEST_MERGED</code>. The <code>EVENT</code>
+        /// patterns are specified as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED,
+        /// PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull request
+        /// updated events. 
         /// </para>
         ///  <note> 
         /// <para>

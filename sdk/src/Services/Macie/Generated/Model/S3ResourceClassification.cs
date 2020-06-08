@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie.Model
 {
     /// <summary>
-    /// The S3 resources that you want to associate with Amazon Macie for monitoring and data
-    /// classification. This data type is used as a request parameter in the AssociateS3Resources
+    /// The S3 resources that you want to associate with Amazon Macie Classic for monitoring
+    /// and data classification. This data type is used as a request parameter in the AssociateS3Resources
     /// action and a response parameter in the ListS3Resources action.
     /// </summary>
     public partial class S3ResourceClassification
@@ -41,7 +42,7 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
-        /// The name of the S3 bucket that you want to associate with Amazon Macie.
+        /// The name of the S3 bucket that you want to associate with Amazon Macie Classic.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=500)]
@@ -61,7 +62,7 @@ namespace Amazon.Macie.Model
         /// Gets and sets the property ClassificationType. 
         /// <para>
         /// The classification type that you want to specify for the resource associated with
-        /// Amazon Macie. 
+        /// Amazon Macie Classic. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +81,7 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// The prefix of the S3 bucket that you want to associate with Amazon Macie.
+        /// The prefix of the S3 bucket that you want to associate with Amazon Macie Classic.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10000)]

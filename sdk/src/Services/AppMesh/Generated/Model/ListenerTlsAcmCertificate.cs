@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,7 +40,7 @@ namespace Amazon.AppMesh.Model
         /// <para>
         /// The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific
         /// requirements and you must have proxy authorization enabled. For more information,
-        /// see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites">Transport
+        /// see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport
         /// Layer Security (TLS)</a>.
         /// </para>
         /// </summary>

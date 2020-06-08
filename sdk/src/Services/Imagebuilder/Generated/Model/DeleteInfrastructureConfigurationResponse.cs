@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,7 +39,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property InfrastructureConfigurationArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the infrastructure configuration that was deleted.
+        /// The Amazon Resource Name (ARN) of the infrastructure configuration that was deleted.
         /// 
         /// </para>
         /// </summary>
@@ -57,7 +58,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        ///  The request ID that uniquely identifies this request. 
+        /// The request ID that uniquely identifies this request. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

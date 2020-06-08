@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -71,7 +72,7 @@ namespace Amazon.MediaStore.Model
         /// tags: customer:CompanyA, priority:Medium, and type:Contract.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }

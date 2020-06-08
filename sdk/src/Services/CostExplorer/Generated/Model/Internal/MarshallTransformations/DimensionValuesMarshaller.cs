@@ -51,6 +51,17 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Key);
             }
 
+            if(requestObject.IsSetMatchOptions())
+            {
+                context.Writer.WritePropertyName("MatchOptions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectMatchOptionsListValue in requestObject.MatchOptions)
+                {
+                        context.Writer.Write(requestObjectMatchOptionsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetValues())
             {
                 context.Writer.WritePropertyName("Values");

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -105,7 +106,7 @@ namespace Amazon.AWSHealth.Model
         /// The ID of the affected entity.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Max=1224)]
         public string EntityValue
         {
             get { return this._entityValue; }

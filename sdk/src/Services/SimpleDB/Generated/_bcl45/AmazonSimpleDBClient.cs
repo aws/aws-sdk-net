@@ -272,6 +272,7 @@ namespace Amazon.SimpleDB
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAttributes service method.</param>
         /// 
         /// <returns>The response from the BatchDeleteAttributes service method, as returned by SimpleDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/BatchDeleteAttributes">REST API Reference for BatchDeleteAttributes Operation</seealso>
         public virtual BatchDeleteAttributesResponse BatchDeleteAttributes(BatchDeleteAttributesRequest request)
         {
             var options = new InvokeOptions();
@@ -299,6 +300,7 @@ namespace Amazon.SimpleDB
         /// </param>
         /// 
         /// <returns>The response from the BatchDeleteAttributes service method, as returned by SimpleDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/BatchDeleteAttributes">REST API Reference for BatchDeleteAttributes Operation</seealso>
         public virtual Task<BatchDeleteAttributesResponse> BatchDeleteAttributesAsync(BatchDeleteAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -396,6 +398,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NumberSubmittedItemsExceededException">
         /// Too many items exist in a single call.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/BatchPutAttributes">REST API Reference for BatchPutAttributes Operation</seealso>
         public virtual BatchPutAttributesResponse BatchPutAttributes(BatchPutAttributesRequest request)
         {
             var options = new InvokeOptions();
@@ -492,6 +495,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NumberSubmittedItemsExceededException">
         /// Too many items exist in a single call.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/BatchPutAttributes">REST API Reference for BatchPutAttributes Operation</seealso>
         public virtual Task<BatchPutAttributesResponse> BatchPutAttributesAsync(BatchPutAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -533,6 +537,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NumberDomainsExceededException">
         /// Too many domains exist per this account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
             var options = new InvokeOptions();
@@ -573,6 +578,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NumberDomainsExceededException">
         /// Too many domains exist per this account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -619,6 +625,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
         public virtual DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
         {
             var options = new InvokeOptions();
@@ -664,6 +671,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
         public virtual Task<DeleteAttributesResponse> DeleteAttributesAsync(DeleteAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -689,6 +697,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.MissingParameterException">
         /// The request must contain the specified missing parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
             var options = new InvokeOptions();
@@ -713,6 +722,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.MissingParameterException">
         /// The request must contain the specified missing parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -741,6 +751,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/DomainMetadata">REST API Reference for DomainMetadata Operation</seealso>
         public virtual DomainMetadataResponse DomainMetadata(DomainMetadataRequest request)
         {
             var options = new InvokeOptions();
@@ -768,6 +779,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/DomainMetadata">REST API Reference for DomainMetadata Operation</seealso>
         public virtual Task<DomainMetadataResponse> DomainMetadataAsync(DomainMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -806,6 +818,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/GetAttributes">REST API Reference for GetAttributes Operation</seealso>
         public virtual GetAttributesResponse GetAttributes(GetAttributesRequest request)
         {
             var options = new InvokeOptions();
@@ -843,6 +856,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/GetAttributes">REST API Reference for GetAttributes Operation</seealso>
         public virtual Task<GetAttributesResponse> GetAttributesAsync(GetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -873,6 +887,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual ListDomainsResponse ListDomains()
         {
             return ListDomains(new ListDomainsRequest());
@@ -896,6 +911,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
             var options = new InvokeOptions();
@@ -925,6 +941,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual Task<ListDomainsResponse> ListDomainsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListDomainsAsync(new ListDomainsRequest(), cancellationToken);
@@ -950,6 +967,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1033,6 +1051,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NumberItemAttributesExceededException">
         /// Too many attributes in this item.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
         public virtual PutAttributesResponse PutAttributes(PutAttributesRequest request)
         {
             var options = new InvokeOptions();
@@ -1115,6 +1134,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.NumberItemAttributesExceededException">
         /// Too many attributes in this item.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
         public virtual Task<PutAttributesResponse> PutAttributesAsync(PutAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1179,6 +1199,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.TooManyRequestedAttributesException">
         /// Too many attributes requested.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/Select">REST API Reference for Select Operation</seealso>
         public virtual SelectResponse Select(SelectRequest request)
         {
             var options = new InvokeOptions();
@@ -1242,6 +1263,7 @@ namespace Amazon.SimpleDB
         /// <exception cref="Amazon.SimpleDB.Model.TooManyRequestedAttributesException">
         /// Too many attributes requested.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/Select">REST API Reference for Select Operation</seealso>
         public virtual Task<SelectResponse> SelectAsync(SelectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();

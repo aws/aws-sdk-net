@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -35,6 +36,7 @@ namespace Amazon.CodeBuild.Model
     {
         private string _arn;
         private ReportExportConfig _exportConfig;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -80,6 +82,30 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetExportConfig()
         {
             return this._exportConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  An updated list of tag key and value pairs associated with this report group. 
+        /// </para>
+        ///  
+        /// <para>
+        /// These tags are available for use by AWS services that support AWS CodeBuild report
+        /// group tags.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -101,8 +102,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Stage. 
         /// <para>
         /// The name of the API's stage that you want to use for this mapping. Specify '(none)'
-        /// if you do not want callers to explicitly specify the stage name after any base path
-        /// name.
+        /// if you want callers to explicitly specify the stage name after any base path name.
         /// </para>
         /// </summary>
         public string Stage

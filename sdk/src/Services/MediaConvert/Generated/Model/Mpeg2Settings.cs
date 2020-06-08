@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -157,7 +158,7 @@ namespace Amazon.MediaConvert.Model
         /// rate conversion, choose a frame rate from the dropdown list or choose Custom. The
         /// framerates shown in the dropdown list are decimal approximations of fractions. If
         /// you choose Custom, specify your frame rate as a fraction. If you are creating your
-        /// transcoding job sepecification as a JSON file without the console, use FramerateControl
+        /// transcoding job specification as a JSON file without the console, use FramerateControl
         /// to specify which value the service uses for the frame rate for this output. Choose
         /// INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input.
         /// Choose SPECIFIED if you want the service to use the frame rate you specify in the
@@ -176,8 +177,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FramerateConversionAlgorithm. When set to INTERPOLATE,
-        /// produces smoother motion during frame rate conversion.
+        /// Gets and sets the property FramerateConversionAlgorithm. Optional. Specify how the
+        /// transcoder performs framerate conversion. The default behavior is to use duplicate
+        /// drop conversion.
         /// </summary>
         public Mpeg2FramerateConversionAlgorithm FramerateConversionAlgorithm
         {
@@ -410,9 +412,12 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ParControl. Using the API, enable ParFollowSource if you
-        /// want the service to use the pixel aspect ratio from the input. Using the console,
-        /// do this by choosing Follow source for Pixel aspect ratio.
+        /// Gets and sets the property ParControl. Optional. Specify how the service determines
+        /// the pixel aspect ratio (PAR) for this output. The default behavior, Follow source
+        /// (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use
+        /// a different PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any
+        /// value other than Follow source. When you choose SPECIFIED for this setting, you must
+        /// also specify values for the parNumerator and parDenominator settings.
         /// </summary>
         public Mpeg2ParControl ParControl
         {
@@ -459,8 +464,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property QualityTuningLevel. Use Quality tuning level (Mpeg2QualityTuningLevel)
-        /// to specifiy whether to use single-pass or multipass video encoding.
+        /// Gets and sets the property QualityTuningLevel. Optional. Use Quality tuning level
+        /// (qualityTuningLevel) to choose how you want to trade off encoding speed for output
+        /// video quality. The default behavior is faster, lower quality, single-pass encoding.
         /// </summary>
         public Mpeg2QualityTuningLevel QualityTuningLevel
         {

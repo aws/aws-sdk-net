@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -49,6 +50,12 @@ namespace Amazon.CloudFormation.Model
     /// For more information on how to develop types and ready them for registeration, see
     /// <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
     /// Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can have a maximum of 50 resource type versions registered at a time. This maximum
+    /// is per account and per region. Use <a href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a>
+    /// to deregister specific resource type versions if necessary.
     /// </para>
     ///  
     /// <para>

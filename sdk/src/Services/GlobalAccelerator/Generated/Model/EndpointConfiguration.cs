@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -51,8 +52,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html">
-        /// Viewing Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator
+        /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html">
+        /// Preserve Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator
         /// Developer Guide</i>.
         /// </para>
         /// </summary>

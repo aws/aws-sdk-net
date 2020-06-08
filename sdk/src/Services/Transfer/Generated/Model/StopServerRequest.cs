@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,11 +30,11 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the StopServer operation.
-    /// Changes the state of an SFTP server from <code>ONLINE</code> to <code>OFFLINE</code>.
-    /// An <code>OFFLINE</code> server cannot accept and process file transfer jobs. Information
-    /// tied to your server such as server and user properties are not affected by stopping
-    /// your server. Stopping a server will not reduce or impact your Secure File Transfer
-    /// Protocol (SFTP) endpoint billing.
+    /// Changes the state of a file transfer protocol-enabled server from <code>ONLINE</code>
+    /// to <code>OFFLINE</code>. An <code>OFFLINE</code> server cannot accept and process
+    /// file transfer jobs. Information tied to your server, such as server and user properties,
+    /// are not affected by stopping your server. Stopping the server will not reduce or impact
+    /// your file transfer protocol endpoint billing.
     /// 
     ///  
     /// <para>
@@ -53,7 +54,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned unique identifier for an SFTP server that you stopped.
+        /// A system-assigned unique identifier for a file transfer protocol-enabled server that
+        /// you stopped.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

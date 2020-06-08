@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -37,6 +38,7 @@ namespace Amazon.Kendra.Model
         private ErrorCode _errorCode;
         private string _errorMessage;
         private string _executionId;
+        private DataSourceSyncJobMetrics _metrics;
         private DateTime? _startTime;
         private DataSourceSyncJobStatus _status;
 
@@ -134,6 +136,25 @@ namespace Amazon.Kendra.Model
         internal bool IsSetExecutionId()
         {
             return this._executionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metrics. 
+        /// <para>
+        /// Maps a batch delete document request to a specific data source sync job. This is optional
+        /// and should only be supplied when documents are deleted by a connector.
+        /// </para>
+        /// </summary>
+        public DataSourceSyncJobMetrics Metrics
+        {
+            get { return this._metrics; }
+            set { this._metrics = value; }
+        }
+
+        // Check to see if Metrics property is set
+        internal bool IsSetMetrics()
+        {
+            return this._metrics != null;
         }
 
         /// <summary>

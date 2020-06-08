@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
-    /// <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional
-    /// health check. If you specify settings for a health check, AWS Cloud Map associates
-    /// the health check with the records that you specify in <code>DnsConfig</code>.
+    /// <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings
+    /// for an optional health check. If you specify settings for a health check, AWS Cloud
+    /// Map associates the health check with the records that you specify in <code>DnsConfig</code>.
     /// 
     ///  <important> 
     /// <para>
@@ -87,7 +88,7 @@ namespace Amazon.ServiceDiscovery.Model
     ///  
     /// <para>
     /// Health checkers perform checks from all Route 53 health-checking regions. For a list
-    /// of the current regions, see <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a>.
+    /// of the current regions, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a>.
     /// </para>
     ///  
     /// <para>
@@ -103,7 +104,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// Route 53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records.
     /// When <code>EvaluateTargetHealth</code> is true, the alias record inherits the health
     /// of the referenced AWS resource. such as an ELB load balancer. For more information,
-    /// see <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth">EvaluateTargetHealth</a>.
+    /// see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth">EvaluateTargetHealth</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -132,7 +133,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// The number of consecutive health checks that an endpoint must pass or fail for Route
         /// 53 to change the current status of the endpoint from unhealthy to healthy or vice
-        /// versa. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+        /// versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
         /// Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer
         /// Guide</i>.
         /// </para>
@@ -219,7 +220,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+        /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
         /// Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer
         /// Guide</i>.
         /// </para>

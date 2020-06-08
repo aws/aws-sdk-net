@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -35,6 +36,7 @@ namespace Amazon.Kafka.Model
         private List<BrokerEBSVolumeInfo> _brokerEBSVolumeInfo = new List<BrokerEBSVolumeInfo>();
         private ConfigurationInfo _configurationInfo;
         private EnhancedMonitoring _enhancedMonitoring;
+        private string _kafkaVersion;
         private LoggingInfo _loggingInfo;
         private int? _numberOfBrokerNodes;
         private OpenMonitoring _openMonitoring;
@@ -92,6 +94,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetEnhancedMonitoring()
         {
             return this._enhancedMonitoring != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KafkaVersion.             
+        /// <para>
+        /// The Kafka version.
+        /// </para>
+        /// </summary>
+        public string KafkaVersion
+        {
+            get { return this._kafkaVersion; }
+            set { this._kafkaVersion = value; }
+        }
+
+        // Check to see if KafkaVersion property is set
+        internal bool IsSetKafkaVersion()
+        {
+            return this._kafkaVersion != null;
         }
 
         /// <summary>

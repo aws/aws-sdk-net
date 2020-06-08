@@ -488,31 +488,6 @@
     <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.OpsWorksCM.Model.InvalidNextTokenException.Message</property>
-    <max>10000</max>
-    <pattern>(?s).*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.OpsWorksCM.Model.InvalidStateException.Message</property>
-    <max>10000</max>
-    <pattern>(?s).*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.OpsWorksCM.Model.LimitExceededException.Message</property>
-    <max>10000</max>
-    <pattern>(?s).*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.OpsWorksCM.Model.ResourceAlreadyExistsException.Message</property>
-    <max>10000</max>
-    <pattern>(?s).*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.OpsWorksCM.Model.ResourceNotFoundException.Message</property>
-    <max>10000</max>
-    <pattern>(?s).*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.OpsWorksCM.Model.ServerEvent.LogUrl</property>
     <max>10000</max>
     <pattern>(?s).*</pattern>
@@ -538,10 +513,5 @@
     <min>0</min>
     <max>256</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.OpsWorksCM.Model.ValidationException.Message</property>
-    <max>10000</max>
-    <pattern>(?s).*</pattern>
   </property-value-rule>
 </property-value-rules>

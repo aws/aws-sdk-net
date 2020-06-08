@@ -76,6 +76,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StatusReasons", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StatusReason, StatusReasonUnmarshaller>(StatusReasonUnmarshaller.Instance);
+                    unmarshalledObject.StatusReasons = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

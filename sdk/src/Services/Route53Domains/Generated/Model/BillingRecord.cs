@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -61,8 +62,8 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// The name of the domain that the billing record applies to. If the domain name contains
         /// characters other than a-z, 0-9, and - (hyphen), such as an internationalized domain
-        /// name, then this value is in Punycode. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
-        /// Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.
+        /// name, then this value is in Punycode. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+        /// Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

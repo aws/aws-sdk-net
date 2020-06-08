@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -113,7 +114,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// An optional field specifying the version of the artifact associated with the document.
         /// For example, "Release 12, Update 6". This value is unique across all versions of a
-        /// document, and cannot be changed.
+        /// document and can't be changed.
         /// </para>
         /// </summary>
         public string VersionName

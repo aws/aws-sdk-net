@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -36,9 +37,11 @@ namespace Amazon.Chime.Model
     public partial class CreateMeetingRequest : AmazonChimeRequest
     {
         private string _clientRequestToken;
+        private string _externalMeetingId;
         private string _mediaRegion;
         private string _meetingHostId;
         private MeetingNotificationConfiguration _notificationsConfiguration;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -58,6 +61,25 @@ namespace Amazon.Chime.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalMeetingId. 
+        /// <para>
+        /// The external meeting ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=64)]
+        public string ExternalMeetingId
+        {
+            get { return this._externalMeetingId; }
+            set { this._externalMeetingId = value; }
+        }
+
+        // Check to see if ExternalMeetingId property is set
+        internal bool IsSetExternalMeetingId()
+        {
+            return this._externalMeetingId != null;
         }
 
         /// <summary>
@@ -118,6 +140,25 @@ namespace Amazon.Chime.Model
         internal bool IsSetNotificationsConfiguration()
         {
             return this._notificationsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tag key-value pairs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

@@ -35,6 +35,149 @@ namespace Amazon.ElasticInference
     {
 
         
+        #region  DescribeAcceleratorOfferings
+
+
+        /// <summary>
+        /// Describes the locations in which a given accelerator type or set of types is present
+        /// in a given region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAcceleratorOfferings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAcceleratorOfferings service method, as returned by ElasticInference.</returns>
+        /// <exception cref="Amazon.ElasticInference.Model.BadRequestException">
+        /// Raised when a malformed input has been provided to the API.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticInference.Model.InternalServerException">
+        /// Raised when an unexpected error occurred during request processing.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticInference.Model.ResourceNotFoundException">
+        /// Raised when the requested resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAcceleratorOfferings">REST API Reference for DescribeAcceleratorOfferings Operation</seealso>
+        DescribeAcceleratorOfferingsResponse DescribeAcceleratorOfferings(DescribeAcceleratorOfferingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAcceleratorOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAcceleratorOfferings operation on AmazonElasticInferenceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAcceleratorOfferings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAcceleratorOfferings">REST API Reference for DescribeAcceleratorOfferings Operation</seealso>
+        IAsyncResult BeginDescribeAcceleratorOfferings(DescribeAcceleratorOfferingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAcceleratorOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAcceleratorOfferings.</param>
+        /// 
+        /// <returns>Returns a  DescribeAcceleratorOfferingsResult from ElasticInference.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAcceleratorOfferings">REST API Reference for DescribeAcceleratorOfferings Operation</seealso>
+        DescribeAcceleratorOfferingsResponse EndDescribeAcceleratorOfferings(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeAccelerators
+
+
+        /// <summary>
+        /// Describes information over a provided set of accelerators belonging to an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccelerators service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccelerators service method, as returned by ElasticInference.</returns>
+        /// <exception cref="Amazon.ElasticInference.Model.BadRequestException">
+        /// Raised when a malformed input has been provided to the API.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticInference.Model.InternalServerException">
+        /// Raised when an unexpected error occurred during request processing.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticInference.Model.ResourceNotFoundException">
+        /// Raised when the requested resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAccelerators">REST API Reference for DescribeAccelerators Operation</seealso>
+        DescribeAcceleratorsResponse DescribeAccelerators(DescribeAcceleratorsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccelerators operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccelerators operation on AmazonElasticInferenceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAccelerators
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAccelerators">REST API Reference for DescribeAccelerators Operation</seealso>
+        IAsyncResult BeginDescribeAccelerators(DescribeAcceleratorsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAccelerators operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAccelerators.</param>
+        /// 
+        /// <returns>Returns a  DescribeAcceleratorsResult from ElasticInference.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAccelerators">REST API Reference for DescribeAccelerators Operation</seealso>
+        DescribeAcceleratorsResponse EndDescribeAccelerators(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeAcceleratorTypes
+
+
+        /// <summary>
+        /// Describes the accelerator types available in a given region, as well as their characteristics,
+        /// such as memory and throughput.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAcceleratorTypes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAcceleratorTypes service method, as returned by ElasticInference.</returns>
+        /// <exception cref="Amazon.ElasticInference.Model.InternalServerException">
+        /// Raised when an unexpected error occurred during request processing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAcceleratorTypes">REST API Reference for DescribeAcceleratorTypes Operation</seealso>
+        DescribeAcceleratorTypesResponse DescribeAcceleratorTypes(DescribeAcceleratorTypesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAcceleratorTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAcceleratorTypes operation on AmazonElasticInferenceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAcceleratorTypes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAcceleratorTypes">REST API Reference for DescribeAcceleratorTypes Operation</seealso>
+        IAsyncResult BeginDescribeAcceleratorTypes(DescribeAcceleratorTypesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAcceleratorTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAcceleratorTypes.</param>
+        /// 
+        /// <returns>Returns a  DescribeAcceleratorTypesResult from ElasticInference.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAcceleratorTypes">REST API Reference for DescribeAcceleratorTypes Operation</seealso>
+        DescribeAcceleratorTypesResponse EndDescribeAcceleratorTypes(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -88,7 +231,7 @@ namespace Amazon.ElasticInference
 
 
         /// <summary>
-        /// Adds the specified tag(s) to an Elastic Inference Accelerator.
+        /// Adds the specified tags to an Elastic Inference Accelerator.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -137,7 +280,7 @@ namespace Amazon.ElasticInference
 
 
         /// <summary>
-        /// Removes the specified tag(s) from an Elastic Inference Accelerator.
+        /// Removes the specified tags from an Elastic Inference Accelerator.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -106,7 +107,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// A timestamp that indicaties when the instance information was last updated.
+        /// A timestamp that indicates when the instance information was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt
@@ -146,27 +147,27 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Pending: The deployment is pending for this instance.
+        ///  <code>Pending</code>: The deployment is pending for this instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In Progress: The deployment is in progress for this instance.
+        ///  <code>In Progress</code>: The deployment is in progress for this instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Succeeded: The deployment has succeeded for this instance.
+        ///  <code>Succeeded</code>: The deployment has succeeded for this instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Failed: The deployment has failed for this instance.
+        ///  <code>Failed</code>: The deployment has failed for this instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Skipped: The deployment has been skipped for this instance.
+        ///  <code>Skipped</code>: The deployment has been skipped for this instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Unknown: The deployment status is unknown for this instance.
+        ///  <code>Unknown</code>: The deployment status is unknown for this instance.
         /// </para>
         ///  </li> </ul>
         /// </summary>

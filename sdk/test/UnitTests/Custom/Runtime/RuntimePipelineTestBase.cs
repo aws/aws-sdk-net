@@ -42,6 +42,11 @@ namespace AWSSDK.UnitTests
 
         protected virtual IExecutionContext CreateTestContext(AbstractAWSSigner signer, ResponseUnmarshaller responseUnmarshaller)
         {
+            return CreateTestContext(signer, responseUnmarshaller, null);
+        }
+        
+        protected virtual IExecutionContext CreateTestContext(AbstractAWSSigner signer, ResponseUnmarshaller responseUnmarshaller, ClientConfig config)
+        {
             var putObjectRequest = new PutObjectRequest
             {
                 Key = "TestKey",
@@ -57,7 +62,7 @@ namespace AWSSDK.UnitTests
                 OriginalRequest = putObjectRequest,
                 Request = new PutObjectRequestMarshaller().Marshall(putObjectRequest),
                 Unmarshaller = responseUnmarshaller,
-                ClientConfig = new AmazonS3Config
+                ClientConfig = config ?? new AmazonS3Config
                 {
                     RegionEndpoint = RegionEndpoint.USEast1
                 }

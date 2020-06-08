@@ -385,6 +385,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly NodegroupIssueCode Ec2SecurityGroupNotFound = new NodegroupIssueCode("Ec2SecurityGroupNotFound");
         /// <summary>
+        /// Constant Ec2SubnetInvalidConfiguration for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode Ec2SubnetInvalidConfiguration = new NodegroupIssueCode("Ec2SubnetInvalidConfiguration");
+        /// <summary>
         /// Constant Ec2SubnetNotFound for NodegroupIssueCode
         /// </summary>
         public static readonly NodegroupIssueCode Ec2SubnetNotFound = new NodegroupIssueCode("Ec2SubnetNotFound");
@@ -392,6 +396,10 @@ namespace Amazon.EKS
         /// Constant IamInstanceProfileNotFound for NodegroupIssueCode
         /// </summary>
         public static readonly NodegroupIssueCode IamInstanceProfileNotFound = new NodegroupIssueCode("IamInstanceProfileNotFound");
+        /// <summary>
+        /// Constant IamLimitExceeded for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode IamLimitExceeded = new NodegroupIssueCode("IamLimitExceeded");
         /// <summary>
         /// Constant IamNodeRoleNotFound for NodegroupIssueCode
         /// </summary>
@@ -408,6 +416,10 @@ namespace Amazon.EKS
         /// Constant InternalFailure for NodegroupIssueCode
         /// </summary>
         public static readonly NodegroupIssueCode InternalFailure = new NodegroupIssueCode("InternalFailure");
+        /// <summary>
+        /// Constant NodeCreationFailure for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode NodeCreationFailure = new NodegroupIssueCode("NodeCreationFailure");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

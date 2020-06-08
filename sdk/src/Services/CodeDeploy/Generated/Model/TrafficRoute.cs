@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,8 +39,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ListenerArns. 
         /// <para>
-        ///  The ARN of one listener. The listener identifies the route between a target group
-        /// and a load balancer. This is an array of strings with a maximum size of one. 
+        ///  The Amazon Resource Name (ARN) of one listener. The listener identifies the route
+        /// between a target group and a load balancer. This is an array of strings with a maximum
+        /// size of one. 
         /// </para>
         /// </summary>
         public List<string> ListenerArns

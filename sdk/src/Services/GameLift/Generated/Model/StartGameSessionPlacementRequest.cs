@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -229,7 +230,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionQueueName. 
         /// <para>
-        /// Name of the queue to use to place the new game session. You can use either the qieue
+        /// Name of the queue to use to place the new game session. You can use either the queue
         /// name or ARN value. 
         /// </para>
         /// </summary>

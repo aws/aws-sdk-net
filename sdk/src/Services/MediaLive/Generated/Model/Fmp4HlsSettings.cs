@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,6 +34,8 @@ namespace Amazon.MediaLive.Model
     public partial class Fmp4HlsSettings
     {
         private string _audioRenditionSets;
+        private Fmp4NielsenId3Behavior _nielsenId3Behavior;
+        private Fmp4TimedMetadataBehavior _timedMetadataBehavior;
 
         /// <summary>
         /// Gets and sets the property AudioRenditionSets. List all the audio groups that are
@@ -49,6 +52,39 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetAudioRenditionSets()
         {
             return this._audioRenditionSets != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NielsenId3Behavior. If set to passthrough, Nielsen inaudible
+        /// tones for media tracking will be detected in the input audio and an equivalent ID3
+        /// tag will be inserted in the output.
+        /// </summary>
+        public Fmp4NielsenId3Behavior NielsenId3Behavior
+        {
+            get { return this._nielsenId3Behavior; }
+            set { this._nielsenId3Behavior = value; }
+        }
+
+        // Check to see if NielsenId3Behavior property is set
+        internal bool IsSetNielsenId3Behavior()
+        {
+            return this._nielsenId3Behavior != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimedMetadataBehavior. When set to passthrough, timed metadata
+        /// is passed through from input to output.
+        /// </summary>
+        public Fmp4TimedMetadataBehavior TimedMetadataBehavior
+        {
+            get { return this._timedMetadataBehavior; }
+            set { this._timedMetadataBehavior = value; }
+        }
+
+        // Check to see if TimedMetadataBehavior property is set
+        internal bool IsSetTimedMetadataBehavior()
+        {
+            return this._timedMetadataBehavior != null;
         }
 
     }

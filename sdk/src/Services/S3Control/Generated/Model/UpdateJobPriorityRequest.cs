@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,31 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateJobPriority operation.
-    /// Updates an existing job's priority.
+    /// Updates an existing Amazon S3 Batch Operations job's priority. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+    /// S3 Batch Operations</a> in the Amazon Simple Storage Service Developer Guide.
+    /// 
+    ///   
+    /// <para>
+    /// Related actions include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateJob</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListJobs</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeJob</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateJobStatus</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class UpdateJobPriorityRequest : AmazonS3ControlRequest
     {

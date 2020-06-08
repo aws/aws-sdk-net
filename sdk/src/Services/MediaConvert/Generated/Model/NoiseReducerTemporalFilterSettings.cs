@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,6 +34,7 @@ namespace Amazon.MediaConvert.Model
     public partial class NoiseReducerTemporalFilterSettings
     {
         private int? _aggressiveMode;
+        private NoiseFilterPostTemporalSharpening _postTemporalSharpening;
         private int? _speed;
         private int? _strength;
 
@@ -52,6 +54,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAggressiveMode()
         {
             return this._aggressiveMode.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PostTemporalSharpening. Optional. When you set Noise reducer
+        /// (noiseReducer) to Temporal (TEMPORAL), you can optionally use this setting to apply
+        /// additional sharpening. The default behavior, Auto (AUTO) allows the transcoder to
+        /// determine whether to apply filtering, depending on input type and quality.
+        /// </summary>
+        public NoiseFilterPostTemporalSharpening PostTemporalSharpening
+        {
+            get { return this._postTemporalSharpening; }
+            set { this._postTemporalSharpening = value; }
+        }
+
+        // Check to see if PostTemporalSharpening property is set
+        internal bool IsSetPostTemporalSharpening()
+        {
+            return this._postTemporalSharpening != null;
         }
 
         /// <summary>

@@ -57,6 +57,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DocumentTitleFieldName);
             }
 
+            if(requestObject.IsSetExclusionPatterns())
+            {
+                context.Writer.WritePropertyName("ExclusionPatterns");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectExclusionPatternsListValue in requestObject.ExclusionPatterns)
+                {
+                        context.Writer.Write(requestObjectExclusionPatternsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetFieldMappings())
             {
                 context.Writer.WritePropertyName("FieldMappings");
@@ -69,6 +80,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     marshaller.Marshall(requestObjectFieldMappingsListValue, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetInclusionPatterns())
+            {
+                context.Writer.WritePropertyName("InclusionPatterns");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInclusionPatternsListValue in requestObject.InclusionPatterns)
+                {
+                        context.Writer.Write(requestObjectInclusionPatternsListValue);
                 }
                 context.Writer.WriteArrayEnd();
             }
@@ -94,6 +116,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectUrlsListValue);
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetUseChangeLog())
+            {
+                context.Writer.WritePropertyName("UseChangeLog");
+                context.Writer.Write(requestObject.UseChangeLog);
             }
 
             if(requestObject.IsSetVpcConfiguration())

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// A structure that contains information about a stack set. A stack set enables you to
-    /// provision stacks into AWS accounts and across regions by using a single CloudFormation
+    /// provision stacks into AWS accounts and across Regions by using a single CloudFormation
     /// template. In the stack set, you specify the template to use, as well as any parameters
     /// and capabilities that the template requires.
     /// </summary>
@@ -166,8 +167,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnitIds. 
         /// <para>
-        /// [<code>Service-managed</code> permissions] The organization root ID or organizational
-        /// unit (OUs) IDs to which stacks in your stack set have been deployed.
+        /// Reserved for internal use. No data returned.
         /// </para>
         /// </summary>
         public List<string> OrganizationalUnitIds

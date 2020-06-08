@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,8 +40,8 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for a customer master key (CMK) in AWS Key Management
-        /// Service (AWS KMS).
+        /// The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key
+        /// Management Service (AWS KMS). Amazon QLDB does not support asymmetric CMKs.
         /// </para>
         ///  
         /// <para>

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -34,6 +35,7 @@ namespace Amazon.CodeGuruReviewer.Model
     {
         private string _associationArn;
         private string _associationId;
+        private string _connectionArn;
         private DateTime? _createdTimeStamp;
         private DateTime? _lastUpdatedTimeStamp;
         private string _name;
@@ -64,7 +66,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property AssociationId. 
         /// <para>
-        /// The id of the repository association.
+        /// The ID of the repository association.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -78,6 +80,25 @@ namespace Amazon.CodeGuruReviewer.Model
         internal bool IsSetAssociationId()
         {
             return this._associationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) identifying the repository connection. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string ConnectionArn
+        {
+            get { return this._connectionArn; }
+            set { this._connectionArn = value; }
+        }
+
+        // Check to see if ConnectionArn property is set
+        internal bool IsSetConnectionArn()
+        {
+            return this._connectionArn != null;
         }
 
         /// <summary>

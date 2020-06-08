@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeUserProfile operation.
-    /// Describes the user profile.
+    /// Describes a user profile. For more information, see <code>CreateUserProfile</code>.
     /// </summary>
     public partial class DescribeUserProfileRequest : AmazonSageMakerRequest
     {

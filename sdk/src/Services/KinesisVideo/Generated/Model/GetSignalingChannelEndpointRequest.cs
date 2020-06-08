@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -36,9 +37,9 @@ namespace Amazon.KinesisVideo.Model
     ///  
     /// <para>
     ///  <code>Protocols</code> is used to determine the communication mechanism. For example,
-    /// specifying <code>WSS</code> as the protocol, results in this API producing a secure
-    /// websocket endpoint, and specifying <code>HTTPS</code> as the protocol, results in
-    /// this API generating an HTTPS endpoint. 
+    /// if you specify <code>WSS</code> as the protocol, this API produces a secure websocket
+    /// endpoint. If you specify <code>HTTPS</code> as the protocol, this API generates an
+    /// HTTPS endpoint. 
     /// </para>
     ///  
     /// <para>
@@ -57,7 +58,8 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property ChannelARN. 
         /// <para>
-        /// The ARN of the signalling channel for which you want to get an endpoint.
+        /// The Amazon Resource Name (ARN) of the signalling channel for which you want to get
+        /// an endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

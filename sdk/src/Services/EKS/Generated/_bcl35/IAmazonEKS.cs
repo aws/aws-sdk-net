@@ -364,7 +364,7 @@ namespace Amazon.EKS
         ///  
         /// <para>
         /// If you have managed node groups or Fargate profiles attached to the cluster, you must
-        /// delete them first. For more information, see <a>DeleteNodegroup</a> and<a>DeleteFargateProfile</a>.
+        /// delete them first. For more information, see <a>DeleteNodegroup</a> and <a>DeleteFargateProfile</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
@@ -916,8 +916,8 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Lists the Amazon EKS node groups associated with the specified cluster in your AWS
-        /// account in the specified Region.
+        /// Lists the Amazon EKS managed node groups associated with the specified cluster in
+        /// your AWS account in the specified Region. Self-managed node groups are not listed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNodegroups service method.</param>
         /// 

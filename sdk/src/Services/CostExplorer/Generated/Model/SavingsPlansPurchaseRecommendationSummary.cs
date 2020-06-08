@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -51,6 +52,7 @@ namespace Amazon.CostExplorer.Model
         /// potential savings.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string CurrencyCode
         {
             get { return this._currencyCode; }
@@ -70,6 +72,7 @@ namespace Amazon.CostExplorer.Model
         /// period.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string CurrentOnDemandSpend
         {
             get { return this._currentOnDemandSpend; }
@@ -88,6 +91,7 @@ namespace Amazon.CostExplorer.Model
         /// The recommended Savings Plans cost on a daily (24 hourly) basis.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string DailyCommitmentToPurchase
         {
             get { return this._dailyCommitmentToPurchase; }
@@ -106,6 +110,7 @@ namespace Amazon.CostExplorer.Model
         /// The estimated monthly savings amount, based on the recommended Savings Plans purchase.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedMonthlySavingsAmount
         {
             get { return this._estimatedMonthlySavingsAmount; }
@@ -125,6 +130,7 @@ namespace Amazon.CostExplorer.Model
         /// on your usage of the selected time period and the Savings Plans you own. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedOnDemandCostWithCurrentCommitment
         {
             get { return this._estimatedOnDemandCostWithCurrentCommitment; }
@@ -144,6 +150,7 @@ namespace Amazon.CostExplorer.Model
         /// savings.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedROI
         {
             get { return this._estimatedROI; }
@@ -163,6 +170,7 @@ namespace Amazon.CostExplorer.Model
         /// recommended Savings Plans.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedSavingsAmount
         {
             get { return this._estimatedSavingsAmount; }
@@ -182,6 +190,7 @@ namespace Amazon.CostExplorer.Model
         /// period. This is calculated as <code>estimatedSavingsAmount</code>/ <code>CurrentOnDemandSpend</code>*100.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedSavingsPercentage
         {
             get { return this._estimatedSavingsPercentage; }
@@ -202,6 +211,7 @@ namespace Amazon.CostExplorer.Model
         /// usage.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string EstimatedTotalCost
         {
             get { return this._estimatedTotalCost; }
@@ -220,6 +230,7 @@ namespace Amazon.CostExplorer.Model
         /// The recommended hourly commitment based on the recommendation parameters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string HourlyCommitmentToPurchase
         {
             get { return this._hourlyCommitmentToPurchase; }
@@ -238,6 +249,7 @@ namespace Amazon.CostExplorer.Model
         /// The aggregate number of Savings Plans recommendations that exist for your account.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string TotalRecommendationCount
         {
             get { return this._totalRecommendationCount; }

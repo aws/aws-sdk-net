@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,7 +39,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Lat. 
         /// <para>
-        /// Latitude information of remote IP address.
+        /// The latitude information of the remote IP address.
         /// </para>
         /// </summary>
         public double Lat
@@ -56,7 +57,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Lon. 
         /// <para>
-        /// Longitude information of remote IP address.
+        /// The longitude information of the remote IP address.
         /// </para>
         /// </summary>
         public double Lon

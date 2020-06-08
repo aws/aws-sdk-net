@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -30,6 +31,15 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// <summary>
     /// Represents a predefined metric for a target tracking scaling policy to use with Application
     /// Auto Scaling.
+    /// 
+    ///  
+    /// <para>
+    /// Only the AWS services that you're using send metrics to Amazon CloudWatch. To determine
+    /// whether a desired metric already exists by looking up its namespace and dimension
+    /// using the CloudWatch metrics dashboard in the console, follow the procedure in <a
+    /// href="https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html">Building
+    /// Dashboards with CloudWatch</a> in the <i>Application Auto Scaling User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class PredefinedMetricSpecification
     {

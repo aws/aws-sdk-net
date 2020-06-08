@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -60,7 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property InstanceId. 
         /// <para>
         /// (Required) The ID of the managed instance targeted by the command. A managed instance
-        /// can be an Amazon EC2 instance or an instance in your hybrid environment that is configured
+        /// can be an EC2 instance or an instance in your hybrid environment that is configured
         /// for Systems Manager.
         /// </para>
         /// </summary>

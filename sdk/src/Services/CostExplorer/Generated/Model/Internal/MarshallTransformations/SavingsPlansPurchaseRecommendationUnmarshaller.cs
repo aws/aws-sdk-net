@@ -64,6 +64,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AccountScope", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AccountScope = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LookbackPeriodInDays", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

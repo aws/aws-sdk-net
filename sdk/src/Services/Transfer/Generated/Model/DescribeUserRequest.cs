@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,8 +30,8 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeUser operation.
-    /// Describes the user assigned to a specific server, as identified by its <code>ServerId</code>
-    /// property.
+    /// Describes the user assigned to the specific file transfer protocol-enabled server,
+    /// as identified by its <code>ServerId</code> property.
     /// 
     ///  
     /// <para>
@@ -46,7 +47,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned unique identifier for an SFTP server that has this user assigned.
+        /// A system-assigned unique identifier for a file transfer protocol-enabled server that
+        /// has this user assigned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]
@@ -65,8 +67,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The name of the user assigned to one or more servers. User names are part of the sign-in
-        /// credentials to use the AWS Transfer for SFTP service and perform file transfer tasks.
+        /// The name of the user assigned to one or more file transfer protocol-enabled servers.
+        /// User names are part of the sign-in credentials to use the AWS Transfer Family service
+        /// and perform file transfer tasks.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=32)]

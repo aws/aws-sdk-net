@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -34,6 +35,7 @@ namespace Amazon.MediaLive.Model
     {
         private AudioLanguageSelection _audioLanguageSelection;
         private AudioPidSelection _audioPidSelection;
+        private AudioTrackSelection _audioTrackSelection;
 
         /// <summary>
         /// Gets and sets the property AudioLanguageSelection.
@@ -63,6 +65,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetAudioPidSelection()
         {
             return this._audioPidSelection != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AudioTrackSelection.
+        /// </summary>
+        public AudioTrackSelection AudioTrackSelection
+        {
+            get { return this._audioTrackSelection; }
+            set { this._audioTrackSelection = value; }
+        }
+
+        // Check to see if AudioTrackSelection property is set
+        internal bool IsSetAudioTrackSelection()
+        {
+            return this._audioTrackSelection != null;
         }
 
     }

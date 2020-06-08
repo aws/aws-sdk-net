@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -31,8 +32,9 @@ namespace Amazon.Pinpoint.Model
     /// Container for the parameters to the UpdateEndpointsBatch operation.
     /// Creates a new batch of endpoints for an application or updates the settings and attributes
     /// of a batch of existing endpoints for an application. You can also use this operation
-    /// to define custom attributes (Attributes, Metrics, and UserAttributes properties) for
-    /// a batch of endpoints.
+    /// to define custom attributes for a batch of endpoints. If an update includes one or
+    /// more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any existing
+    /// values with the new values.
     /// </summary>
     public partial class UpdateEndpointsBatchRequest : AmazonPinpointRequest
     {

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,7 +39,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property FindingIds. 
         /// <para>
-        /// The IDs of the findings you are listing.
+        /// The IDs of the findings that you're listing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]
@@ -57,7 +58,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination parameter to be used on the next list operation to retrieve more items.
+        /// The pagination parameter to be used on the next list operation to retrieve more items.
         /// </para>
         /// </summary>
         public string NextToken

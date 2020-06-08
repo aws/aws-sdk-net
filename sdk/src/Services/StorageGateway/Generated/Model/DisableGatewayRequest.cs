@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -40,7 +41,7 @@ namespace Amazon.StorageGateway.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// Once a gateway is disabled it cannot be enabled.
+    /// After a gateway is disabled, it cannot be enabled.
     /// </para>
     ///  </important>
     /// </summary>

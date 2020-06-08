@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -74,6 +75,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Redshift COPY command examples</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=204800)]
         public string CopyOptions
         {
             get { return this._copyOptions; }
@@ -92,6 +94,7 @@ namespace Amazon.KinesisFirehose.Model
         /// A comma-separated list of column names.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=204800)]
         public string DataTableColumns
         {
             get { return this._dataTableColumns; }
@@ -110,7 +113,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The name of the target table. The table must already exist in the database.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string DataTableName
         {
             get { return this._dataTableName; }

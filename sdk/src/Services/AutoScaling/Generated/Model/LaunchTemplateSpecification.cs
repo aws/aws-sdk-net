@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes a launch template and the launch template version.
+    /// Describes the Amazon EC2 launch template and the launch template version that can
+    /// be used by an Auto Scaling group to configure Amazon EC2 instances.
     /// 
     ///  
     /// <para>
@@ -47,8 +49,13 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateId. 
         /// <para>
-        /// The ID of the launch template. You must specify either a template ID or a template
-        /// name.
+        /// The ID of the launch template. To get the template ID, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
+        /// API operation. New launch templates can be created using the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
+        /// API.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify either a template ID or a template name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -67,8 +74,13 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateName. 
         /// <para>
-        /// The name of the launch template. You must specify either a template name or a template
-        /// ID.
+        /// The name of the launch template. To get the template name, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
+        /// API operation. New launch templates can be created using the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
+        /// API.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify either a template ID or a template name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]
@@ -87,11 +99,18 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version number, <code>$Latest</code>, or <code>$Default</code>. If the value is
-        /// <code>$Latest</code>, Amazon EC2 Auto Scaling selects the latest version of the launch
-        /// template when launching instances. If the value is <code>$Default</code>, Amazon EC2
-        /// Auto Scaling selects the default version of the launch template when launching instances.
-        /// The default value is <code>$Default</code>.
+        /// The version number, <code>$Latest</code>, or <code>$Default</code>. To get the version
+        /// number, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplateVersions.html">DescribeLaunchTemplateVersions</a>
+        /// API operation. New launch template versions can be created using the Amazon EC2 <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html">CreateLaunchTemplateVersion</a>
+        /// API.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is <code>$Latest</code>, Amazon EC2 Auto Scaling selects the latest version
+        /// of the launch template when launching instances. If the value is <code>$Default</code>,
+        /// Amazon EC2 Auto Scaling selects the default version of the launch template when launching
+        /// instances. The default value is <code>$Default</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

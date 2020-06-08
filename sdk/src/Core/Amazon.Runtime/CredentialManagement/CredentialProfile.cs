@@ -72,6 +72,17 @@ namespace Amazon.Runtime.CredentialManagement
         public S3UsEast1RegionalEndpointValue? S3RegionalEndpoint { get; set; }
 
         /// <summary>
+        /// The request retry mode  as legacy, standard, or adaptive
+        /// </summary>
+        public RequestRetryMode? RetryMode { get; set; }
+
+        /// <summary>
+        /// Specified how many HTTP requests an SDK should make for a single
+        /// SDK operation invocation before giving up.
+        /// </summary>
+        public int? MaxAttempts { get; set; }
+
+        /// <summary>
         /// An optional dictionary of name-value pairs stored with the CredentialProfile
         /// </summary>
         internal Dictionary<string, string> Properties
@@ -170,7 +181,10 @@ namespace Amazon.Runtime.CredentialManagement
                 "Properties = " + GetPropertiesString() + "," +
                 "ProfileType = " + ProfileType + "," +
                 "UniqueKey = " + UniqueKey + "," +
-                "CanCreateAWSCredentials = " + CanCreateAWSCredentials + "]";
+                "CanCreateAWSCredentials = " + CanCreateAWSCredentials + "," +
+                "RetryMode= " + RetryMode + "," +
+                "MaxAttempts= " + MaxAttempts +
+                "]";
         }
 
         public override bool Equals(object obj)

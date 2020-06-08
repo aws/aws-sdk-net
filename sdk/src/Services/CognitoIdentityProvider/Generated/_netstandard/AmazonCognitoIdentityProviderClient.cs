@@ -6520,9 +6520,6 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
         /// </exception>
-        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
-        /// This exception is thrown when a user is not authorized.
-        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
         /// </exception>

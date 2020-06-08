@@ -94,6 +94,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("hopDestinations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<HopDestination, HopDestinationUnmarshaller>(HopDestinationUnmarshaller.Instance);
+                    unmarshalledObject.HopDestinations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdated", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -95,7 +96,8 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property VocabularyFilterName. 
         /// <para>
         /// The vocabulary filter name. The name must be unique within the account that contains
-        /// it.
+        /// it.If you try to create a vocabulary filter with the same name as a previous vocabulary
+        /// filter you will receive a <code>ConflictException</code> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,9 +40,9 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If you specify this parameter and the result of a ListTagsForResource call is truncated,
-        /// the response includes a token that you can use in the next request to fetch the next
-        /// batch of tags. 
+        /// If you specify this parameter and the result of a <code>ListTagsForResource</code>
+        /// call is truncated, the response includes a token that you can use in the next request
+        /// to fetch the next batch of tags. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=512)]
@@ -60,7 +61,8 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The ARN of the signaling channel for which you want to list tags.
+        /// The Amazon Resource Name (ARN) of the signaling channel for which you want to list
+        /// tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

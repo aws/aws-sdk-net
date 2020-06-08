@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -59,8 +60,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property FunctionAlias. 
         /// <para>
-        ///  The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
-        /// to AWS Lambda Aliases</a>. 
+        ///  The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS
+        /// Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.
         /// </para>
         /// </summary>
         public string FunctionAlias

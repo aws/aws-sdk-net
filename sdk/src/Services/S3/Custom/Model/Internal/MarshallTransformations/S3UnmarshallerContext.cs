@@ -32,8 +32,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <param name="responseStream"><c>Stream</c> with the XML from a service response.</param>
         /// <param name="maintainResponseBody"> If set to true, maintains a copy of the complete response body as the stream is being read.</param>
         /// <param name="responseData">Response data coming back from the request</param>
-        public S3UnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData responseData)
-            : base(responseStream, maintainResponseBody, responseData)
+        /// <param name="isException">If set to is true, configure unmarshaller with exception specifics.</param>
+
+        public S3UnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData responseData, bool isException)
+            : base(responseStream, maintainResponseBody, responseData, isException)
         {
         }
 

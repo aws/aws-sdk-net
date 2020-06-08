@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -34,6 +35,7 @@ namespace Amazon.IoT.Model
     {
         private BehaviorCriteria _criteria;
         private string _metric;
+        private MetricDimension _metricDimension;
         private string _name;
 
         /// <summary>
@@ -70,6 +72,26 @@ namespace Amazon.IoT.Model
         internal bool IsSetMetric()
         {
             return this._metric != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricDimension. 
+        /// <para>
+        /// The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code>
+        /// dimension, you can narrow down the scope of the metric only to MQTT topics whose name
+        /// match the pattern specified in the dimension.
+        /// </para>
+        /// </summary>
+        public MetricDimension MetricDimension
+        {
+            get { return this._metricDimension; }
+            set { this._metricDimension = value; }
+        }
+
+        // Check to see if MetricDimension property is set
+        internal bool IsSetMetricDimension()
+        {
+            return this._metricDimension != null;
         }
 
         /// <summary>

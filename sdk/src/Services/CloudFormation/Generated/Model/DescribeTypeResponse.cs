@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,6 +39,7 @@ namespace Amazon.CloudFormation.Model
         private string _description;
         private string _documentationUrl;
         private string _executionRoleArn;
+        private bool? _isDefaultVersion;
         private DateTime? _lastUpdated;
         private LoggingConfig _loggingConfig;
         private ProvisioningType _provisioningType;
@@ -185,6 +187,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetExecutionRoleArn()
         {
             return this._executionRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsDefaultVersion. 
+        /// <para>
+        /// Whether the specified type version is set as the default version.
+        /// </para>
+        /// </summary>
+        public bool IsDefaultVersion
+        {
+            get { return this._isDefaultVersion.GetValueOrDefault(); }
+            set { this._isDefaultVersion = value; }
+        }
+
+        // Check to see if IsDefaultVersion property is set
+        internal bool IsSetIsDefaultVersion()
+        {
+            return this._isDefaultVersion.HasValue; 
         }
 
         /// <summary>

@@ -96,6 +96,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetHumanLoopRequestSource())
+                {
+                    context.Writer.WritePropertyName("HumanLoopRequestSource");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = HumanLoopRequestSourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.HumanLoopRequestSource, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetOutputConfig())
                 {
                     context.Writer.WritePropertyName("OutputConfig");

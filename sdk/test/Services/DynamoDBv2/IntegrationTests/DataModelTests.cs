@@ -28,8 +28,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Cleanup existing data
                 CleanupTables();
+
                 // Recreate context
-                CreateContext(conversion);
+                CreateContext(conversion, true);
+
+                TestEmptyString();
 
                 TestEnumHashKeyObjects();
 
@@ -46,6 +49,41 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 TestStoreAsEpoch();
             }
+        }
+
+        private static void TestEmptyString()
+        {
+            var product = new Product
+            {
+                Id = 1,
+                Name = string.Empty,
+                Map = new Dictionary<string, string> // M
+                {
+                    {
+                        "Position", string.Empty
+                    }
+                },
+                CompanyInfo = new CompanyInfo // L
+                {
+                    Name = string.Empty,
+                    AllProducts = new List<Product>
+                    {
+                        new Product {Id = 12, Name = string.Empty}
+                    },
+                },
+                Components = new List<string> // SS
+                {
+                    string.Empty
+                }
+            };
+
+            Context.Save(product);
+            var savedProduct = Context.Load<Product>(1);
+
+            Assert.AreEqual(1, savedProduct.Id);
+            Assert.AreEqual(string.Empty, savedProduct.Map["Position"]);
+            Assert.AreEqual(string.Empty, savedProduct.Components[0]);
+            Assert.AreEqual(string.Empty, savedProduct.CompanyInfo.AllProducts[0].Name);
         }
 
         private static void TestUnsupportedTypes()
@@ -327,6 +365,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                             new Product { Id = 12, Name = "CloudDebugger" },
                             new Product { Id = 13, Name = "CloudDebuggerTester" }
                         },
+                        FeaturedProducts = new Product[]
+                        {
+                            new Product { Id = 14, Name = "CloudDebugger" },
+                            new Product { Id = 15, Name = "CloudDebuggerTester" }
+                        },
+                        FeaturedBrands = new string[]{ "Cloud", "Debugger" },
                         CompetitorProducts = new Dictionary<string, List<Product>>
                         {
                             {
@@ -392,6 +436,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(product.CompanyInfo.AllProducts.Count, retrieved.CompanyInfo.AllProducts.Count);
                 Assert.AreEqual(product.CompanyInfo.AllProducts[0].Id, retrieved.CompanyInfo.AllProducts[0].Id);
                 Assert.AreEqual(product.CompanyInfo.AllProducts[1].Id, retrieved.CompanyInfo.AllProducts[1].Id);
+                Assert.AreEqual(product.CompanyInfo.FeaturedProducts.Length, retrieved.CompanyInfo.FeaturedProducts.Length);
+                Assert.AreEqual(product.CompanyInfo.FeaturedProducts[0].Id, retrieved.CompanyInfo.FeaturedProducts[0].Id);
+                Assert.AreEqual(product.CompanyInfo.FeaturedProducts[1].Id, retrieved.CompanyInfo.FeaturedProducts[1].Id);
+                Assert.AreEqual(product.CompanyInfo.FeaturedBrands.Length, retrieved.CompanyInfo.FeaturedBrands.Length);
+                Assert.AreEqual(product.CompanyInfo.FeaturedBrands[0], retrieved.CompanyInfo.FeaturedBrands[0]);
+                Assert.AreEqual(product.CompanyInfo.FeaturedBrands[1], retrieved.CompanyInfo.FeaturedBrands[1]);
                 Assert.AreEqual(product.Map.Count, retrieved.Map.Count);
                 Assert.AreEqual(product.CompanyInfo.CompetitorProducts.Count, retrieved.CompanyInfo.CompetitorProducts.Count);
                 
@@ -864,6 +914,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             public DateTime Founded { get; set; }
             public Product MostPopularProduct { get; set; }
             public List<Product> AllProducts { get; set; }
+            public Product[] FeaturedProducts { get; set; }
+            public string[] FeaturedBrands { get; set; }
             public Dictionary<string, List<Product>> CompetitorProducts { get; set; }
 
             [DynamoDBIgnore]
@@ -927,6 +979,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             // Hash key
             public string Name { get; set; }
+            public string MiddleName { get; set; }
             // Range key
             public int Age { get; set; }
 

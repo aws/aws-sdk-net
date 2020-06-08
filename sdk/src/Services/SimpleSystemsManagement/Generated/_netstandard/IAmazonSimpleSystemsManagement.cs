@@ -38,26 +38,27 @@ namespace Amazon.SimpleSystemsManagement
     /// automating the creation of Amazon Machine Images (AMIs), and configuring operating
     /// systems (OSs) and applications at scale. Systems Manager lets you remotely and securely
     /// manage the configuration of your managed instances. A <i>managed instance</i> is any
-    /// Amazon EC2 instance or on-premises machine in your hybrid environment that has been
-    /// configured for Systems Manager.
+    /// Amazon Elastic Compute Cloud instance (EC2 instance), or any on-premises server or
+    /// virtual machine (VM) in your hybrid environment that has been configured for Systems
+    /// Manager.
     /// </para>
     ///  
     /// <para>
-    /// This reference is intended to be used with the <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">AWS
+    /// This reference is intended to be used with the <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">AWS
     /// Systems Manager User Guide</a>.
     /// </para>
     ///  
     /// <para>
     /// To get started, verify prerequisites and configure managed instances. For more information,
-    /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting
-    /// Up AWS Systems Manager</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting
+    /// up AWS Systems Manager</a> in the <i>AWS Systems Manager User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// For information about other API actions you can perform on Amazon EC2 instances, see
-    /// the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API
-    /// Reference</a>. For information about how to use a Query API, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making
-    /// API Requests</a>. 
+    /// For information about other API actions you can perform on EC2 instances, see the
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>.
+    /// For information about how to use a Query API, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making
+    /// API requests</a>. 
     /// </para>
     /// </summary>
     public partial interface IAmazonSimpleSystemsManagement : IAmazonService, IDisposable
@@ -86,13 +87,12 @@ namespace Amazon.SimpleSystemsManagement
         /// We recommend that you devise a set of tag keys that meets your needs for each resource
         /// type. Using a consistent set of tag keys makes it easier for you to manage your resources.
         /// You can search and filter the resources based on the tags you add. Tags don't have
-        /// any semantic meaning to Amazon EC2 and are interpreted strictly as a string of characters.
-        /// 
+        /// any semantic meaning to and are interpreted strictly as a string of characters. 
         /// </para>
         ///  
         /// <para>
-        /// For more information about tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-        /// Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information about using tags with EC2 instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+        /// your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
@@ -281,7 +281,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -302,14 +302,14 @@ namespace Amazon.SimpleSystemsManagement
         /// Systems Manager makes it possible to manage them using Systems Manager capabilities.
         /// You use the activation code and ID when installing SSM Agent on machines in your hybrid
         /// environment. For more information about requirements for managing on-premises instances
-        /// and VMs using Systems Manager, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-        /// Up AWS Systems Manager for Hybrid Environments</a> in the <i>AWS Systems Manager User
+        /// and VMs using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
+        /// up AWS Systems Manager for hybrid environments</a> in the <i>AWS Systems Manager User
         /// Guide</i>. 
         /// 
         ///  <note> 
         /// <para>
-        /// On-premises servers or VMs that are registered with Systems Manager and Amazon EC2
-        /// instances that you manage with Systems Manager are all called <i>managed instances</i>.
+        /// On-premises servers or VMs that are registered with Systems Manager and EC2 instances
+        /// that you manage with Systems Manager are all called <i>managed instances</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -336,14 +336,10 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        /// When you associate a document with one or more instances using instance IDs or tags,
-        /// SSM Agent running on the instance processes the document and configures the instance
-        /// as specified.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you associate a document with an instance that already has an associated document,
-        /// the system returns the AssociationAlreadyExists exception.
+        /// When you associate a document with one or more instances, SSM Agent running on the
+        /// instance processes the document and configures the instance as specified. If you associate
+        /// a document with an instance that already has an associated document, the system returns
+        /// the <code>AssociationAlreadyExists</code> exception.
         /// </para>
         /// </summary>
         /// <param name="instanceId">The instance ID. <note>  <code>InstanceId</code> has been deprecated. To specify an instance ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with SSM documents that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you cannot use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter. </note></param>
@@ -400,7 +396,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
-        /// The target is not valid or does not exist. It might not be configured for EC2 Systems
+        /// The target is not valid or does not exist. It might not be configured for Systems
         /// Manager or you might not have permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
@@ -417,14 +413,10 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        /// When you associate a document with one or more instances using instance IDs or tags,
-        /// SSM Agent running on the instance processes the document and configures the instance
-        /// as specified.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you associate a document with an instance that already has an associated document,
-        /// the system returns the AssociationAlreadyExists exception.
+        /// When you associate a document with one or more instances, SSM Agent running on the
+        /// instance processes the document and configures the instance as specified. If you associate
+        /// a document with an instance that already has an associated document, the system returns
+        /// the <code>AssociationAlreadyExists</code> exception.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssociation service method.</param>
@@ -480,7 +472,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
-        /// The target is not valid or does not exist. It might not be configured for EC2 Systems
+        /// The target is not valid or does not exist. It might not be configured for Systems
         /// Manager or you might not have permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
@@ -565,7 +557,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
-        /// The target is not valid or does not exist. It might not be configured for EC2 Systems
+        /// The target is not valid or does not exist. It might not be configured for Systems
         /// Manager or you might not have permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
@@ -581,16 +573,14 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Creates a Systems Manager document.
-        /// 
-        ///  
-        /// <para>
-        /// After you create a document, you can use CreateAssociation to associate it with one
-        /// or more running instances.
-        /// </para>
+        /// Creates a Systems Manager (SSM) document. An SSM document defines the actions that
+        /// Systems Manager performs on your managed instances. For more information about SSM
+        /// documents, including information about supported schemas, features, and syntax, see
+        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">AWS
+        /// Systems Manager Documents</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </summary>
-        /// <param name="content">A valid JSON or YAML string.</param>
-        /// <param name="name">A name for the Systems Manager document. <important> Do not use the following to begin the names of documents you create. They are reserved by AWS for use as document prefixes: <ul> <li>  <code>aws</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
+        /// <param name="content">The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>AWS Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (AWS API)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (AWS CLI)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>  </li> </ul></param>
+        /// <param name="name">A name for the Systems Manager document. <important> You can't use the following strings as document name prefixes. These are reserved by AWS for use as document name prefixes: <ul> <li>  <code>aws-</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -619,13 +609,11 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Creates a Systems Manager document.
-        /// 
-        ///  
-        /// <para>
-        /// After you create a document, you can use CreateAssociation to associate it with one
-        /// or more running instances.
-        /// </para>
+        /// Creates a Systems Manager (SSM) document. An SSM document defines the actions that
+        /// Systems Manager performs on your managed instances. For more information about SSM
+        /// documents, including information about supported schemas, features, and syntax, see
+        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">AWS
+        /// Systems Manager Documents</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDocument service method.</param>
         /// <param name="cancellationToken">
@@ -694,7 +682,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">REST API Reference for CreateMaintenanceWindow Operation</seealso>
@@ -708,14 +696,14 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Creates a new OpsItem. You must have permission in AWS Identity and Access Management
-        /// (IAM) to create a new OpsItem. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-        /// Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// (IAM) to create a new OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+        /// started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
         /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
         /// remediate operational issues impacting the performance and health of their AWS resources.
-        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
         /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
@@ -737,7 +725,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemLimitExceededException">
         /// The request caused OpsItems to exceed one or more quotas. For information about OpsItem
-        /// quotas, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What
+        /// quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What
         /// are the resource limits for OpsCenter?</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsItem">REST API Reference for CreateOpsItem Operation</seealso>
@@ -779,7 +767,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">REST API Reference for CreatePatchBaseline Operation</seealso>
@@ -799,19 +787,19 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// You can configure Systems Manager Inventory to use the <code>SyncToDestination</code>
-        /// type to synchronize Inventory data from multiple AWS Regions to a single Amazon S3
-        /// bucket. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
+        /// type to synchronize Inventory data from multiple AWS Regions to a single S3 bucket.
+        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
         /// Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// You can configure Systems Manager Explorer to use the <code>SyncFromSource</code>
         /// type to synchronize operational work items (OpsItems) and operational data (OpsData)
-        /// from multiple AWS Regions to a single Amazon S3 bucket. This type can synchronize
-        /// OpsItems and OpsData from multiple AWS accounts and Regions or <code>EntireOrganization</code>
-        /// by using AWS Organizations. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
-        /// Up Explorer to Display Data from Multiple Accounts and Regions</a> in the <i>AWS Systems
-        /// Manager User Guide</i>.
+        /// from multiple AWS Regions to a single S3 bucket. This type can synchronize OpsItems
+        /// and OpsData from multiple AWS accounts and Regions or <code>EntireOrganization</code>
+        /// by using AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
+        /// up Systems Manager Explorer to display data from multiple accounts and Regions</a>
+        /// in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1310,7 +1298,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -1345,7 +1333,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -1780,7 +1768,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -1848,18 +1836,22 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Describes one or more of your instances. You can use this to get information about
-        /// instances like the operating system platform, the SSM Agent version (Linux), status
-        /// etc. If you specify one or more instance IDs, it returns information for those instances.
+        /// Describes one or more of your instances, including information about the operating
+        /// system platform, the version of SSM Agent installed on the instance, instance status,
+        /// and so on.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify one or more instance IDs, it returns information for those instances.
         /// If you do not specify instance IDs, it returns information for all your instances.
         /// If you specify an instance ID that is not valid or an instance that you do not own,
-        /// you receive an error. 
-        /// 
+        /// you receive an error.
+        /// </para>
         ///  <note> 
         /// <para>
         /// The IamRole field for this API action is the Amazon Identity and Access Management
         /// (IAM) role assigned to on-premises instances. This call does not return the IAM role
-        /// for Amazon EC2 instances.
+        /// for EC2 instances.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1907,18 +1899,22 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Describes one or more of your instances. You can use this to get information about
-        /// instances like the operating system platform, the SSM Agent version (Linux), status
-        /// etc. If you specify one or more instance IDs, it returns information for those instances.
+        /// Describes one or more of your instances, including information about the operating
+        /// system platform, the version of SSM Agent installed on the instance, instance status,
+        /// and so on.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify one or more instance IDs, it returns information for those instances.
         /// If you do not specify instance IDs, it returns information for all your instances.
         /// If you specify an instance ID that is not valid or an instance that you do not own,
-        /// you receive an error. 
-        /// 
+        /// you receive an error.
+        /// </para>
         ///  <note> 
         /// <para>
         /// The IamRole field for this API action is the Amazon Identity and Access Management
         /// (IAM) role assigned to on-premises instances. This call does not return the IAM role
-        /// for Amazon EC2 instances.
+        /// for EC2 instances.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2138,7 +2134,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -2169,7 +2165,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -2221,7 +2217,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -2274,7 +2270,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -2305,7 +2301,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -2322,14 +2318,14 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Query a set of OpsItems. You must have permission in AWS Identity and Access Management
-        /// (IAM) to query a list of OpsItems. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-        /// Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// (IAM) to query a list of OpsItems. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+        /// started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
         /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
         /// remediate operational issues impacting the performance and health of their AWS resources.
-        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
         /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
@@ -2667,7 +2663,7 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Retrieves the Session Manager connection status for an instance to determine whether
-        /// it is connected and ready to receive Session Manager connections.
+        /// it is running and ready to receive Session Manager connections.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConnectionStatus service method.</param>
         /// <param name="cancellationToken">
@@ -2730,10 +2726,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedFeatureRequiredException">
-        /// Microsoft application patching is only available on EC2 instances and Advanced Instances.
-        /// To patch Microsoft applications on on-premises servers and VMs, you must enable Advanced
-        /// Instances. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Using
-        /// the Advanced-Instances Tier</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// Microsoft application patching is only available on EC2 instances and advanced instances.
+        /// To patch Microsoft applications on on-premises servers and VMs, you must enable advanced
+        /// instances. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Using
+        /// the advanced-instances tier</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedOperatingSystemException">
         /// The operating systems you specified is not supported, or the operation is not supported
@@ -2881,7 +2877,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -2912,7 +2908,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -2943,7 +2939,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -2974,7 +2970,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -3005,7 +3001,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -3023,14 +3019,14 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Get information about an OpsItem by using the ID. You must have permission in AWS
         /// Identity and Access Management (IAM) to view information about an OpsItem. For more
-        /// information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-        /// Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+        /// started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
         /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
         /// remediate operational issues impacting the performance and health of their AWS resources.
-        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
         /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
@@ -3244,7 +3240,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -4286,13 +4282,13 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the PutParameter service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.HierarchyLevelLimitExceededException">
-        /// A hierarchy can have a maximum of 15 levels. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-        /// and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
+        /// and constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.HierarchyTypeMismatchException">
         /// Parameter Store does not support changing a parameter type in a hierarchy. For example,
-        /// you can't change a parameter from a String type to a SecureString type. You must create
-        /// a new, unique parameter.
+        /// you can't change a parameter from a <code>String</code> type to a <code>SecureString</code>
+        /// type. You must create a new, unique parameter.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.IncompatiblePolicyException">
         /// There is a conflict in the policies specified for this parameter. You can't, for example,
@@ -4369,7 +4365,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -4407,7 +4403,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -4423,7 +4419,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup">REST API Reference for RegisterPatchBaselineForPatchGroup Operation</seealso>
@@ -4451,7 +4447,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.IdempotentParameterMismatchException">
@@ -4468,7 +4464,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow">REST API Reference for RegisterTargetWithMaintenanceWindow Operation</seealso>
@@ -4496,7 +4492,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.FeatureNotAvailableException">
@@ -4517,7 +4513,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow">REST API Reference for RegisterTaskWithMaintenanceWindow Operation</seealso>
@@ -4632,7 +4628,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -4683,7 +4679,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Runs commands on one or more managed instances.
         /// </summary>
         /// <param name="documentName">Required. The name of the Systems Manager document to run. This can be a public document or a custom document.</param>
-        /// <param name="instanceIds">The instance IDs where the command should run. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags. For more information about how to use targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</param>
+        /// <param name="instanceIds">The instance IDs where the command should run. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags. For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -4736,7 +4732,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidRoleException">
         /// The role name can't contain invalid characters. Also verify that you specified an
         /// IAM role for notifications that includes the required trust policy. For information
-        /// about configuring the IAM role for Run Command notifications, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
+        /// about configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
         /// Amazon SNS Notifications for Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
@@ -4806,7 +4802,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidRoleException">
         /// The role name can't contain invalid characters. Also verify that you specified an
         /// IAM role for notifications that includes the required trust policy. For information
-        /// about configuring the IAM role for Run Command notifications, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
+        /// about configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
         /// Amazon SNS Notifications for Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
@@ -4882,7 +4878,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Automation document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
-        /// The target is not valid or does not exist. It might not be configured for EC2 Systems
+        /// The target is not valid or does not exist. It might not be configured for Systems
         /// Manager or you might not have permission to perform the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution">REST API Reference for StartAutomationExecution Operation</seealso>
@@ -4903,9 +4899,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <para>
         /// AWS CLI usage: <code>start-session</code> is an interactive command that requires
         /// the Session Manager plugin to be installed on the client machine making the call.
-        /// For information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">
-        /// Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems Manager
-        /// User Guide</i>.
+        /// For information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Install
+        /// the Session Manager plugin for the AWS CLI</a> in the <i>AWS Systems Manager User
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4928,8 +4924,8 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TargetNotConnectedException">
         /// The specified target instance for the session is not fully configured for use with
-        /// Session Manager. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting
-        /// Started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// Session Manager. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting
+        /// started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">REST API Reference for StartSession Operation</seealso>
         Task<StartSessionResponse> StartSessionAsync(StartSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -4985,7 +4981,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -5058,7 +5054,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
-        /// The target is not valid or does not exist. It might not be configured for EC2 Systems
+        /// The target is not valid or does not exist. It might not be configured for Systems
         /// Manager or you might not have permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidUpdateException">
@@ -5238,7 +5234,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -5300,7 +5296,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -5365,7 +5361,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -5381,8 +5377,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Assigns or changes an Amazon Identity and Access Management (IAM) role for the managed
-        /// instance.
+        /// Changes the Amazon Identity and Access Management (IAM) role that is assigned to the
+        /// on-premises instance or virtual machines (VM). IAM roles are first assigned to these
+        /// hybrid instances during the activation process. For more information, see <a>CreateActivation</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateManagedInstanceRole service method.</param>
         /// <param name="cancellationToken">
@@ -5425,14 +5422,14 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Edit or change an OpsItem. You must have permission in AWS Identity and Access Management
-        /// (IAM) to update an OpsItem. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-        /// Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// (IAM) to update an OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+        /// started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
         /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
         /// remediate operational issues impacting the performance and health of their AWS resources.
-        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
         /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
@@ -5454,7 +5451,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemLimitExceededException">
         /// The request caused OpsItems to exceed one or more quotas. For information about OpsItem
-        /// quotas, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What
+        /// quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What
         /// are the resource limits for OpsCenter?</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemNotFoundException">
@@ -5493,7 +5490,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For information about resource quotas in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager Service Quotas</a> in the <i>AWS General Reference</i>.
+        /// Manager service quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
@@ -5515,6 +5512,13 @@ namespace Amazon.SimpleSystemsManagement
         /// option, you can't edit that sync later and choose the Include all accounts from my
         /// AWS Organizations configuration option. Instead, you must delete the first resource
         /// data sync, and create a new one.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API action only supports a resource data sync that was created with a SyncFromSource
+        /// <code>SyncType</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResourceDataSync service method.</param>
         /// <param name="cancellationToken">

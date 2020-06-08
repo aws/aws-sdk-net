@@ -152,6 +152,16 @@
     <pattern>^r-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.DeleteRetentionPolicyRequest.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DeleteRetentionPolicyRequest.OrganizationId</property>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteUserRequest.OrganizationId</property>
     <pattern>^m-[0-9a-f]{32}$</pattern>
   </property-value-rule>
@@ -335,6 +345,26 @@
     <property>Amazon.WorkMail.Model.GetAccessControlEffectRequest.UserId</property>
     <min>12</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetDefaultRetentionPolicyRequest.OrganizationId</property>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetDefaultRetentionPolicyResponse.Description</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetDefaultRetentionPolicyResponse.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetDefaultRetentionPolicyResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetMailboxDetailsRequest.OrganizationId</property>
@@ -561,6 +591,27 @@
     <pattern>^m-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.PutRetentionPolicyRequest.Description</property>
+    <max>256</max>
+    <pattern>[\w\d\s\S\-!?=,.;:'_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.PutRetentionPolicyRequest.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.PutRetentionPolicyRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.PutRetentionPolicyRequest.OrganizationId</property>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.RegisterToWorkMailRequest.Email</property>
     <min>1</min>
     <max>254</max>
@@ -658,28 +709,9 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.WorkMail.Model.DirectoryServiceAuthenticationFailedException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.DirectoryUnavailableException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.EmailAddressInUseException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.EntityAlreadyRegisteredException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.EntityNotFoundException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.EntityStateException.Message</property>
-    <max>256</max>
+    <property>Amazon.WorkMail.Model.FolderConfiguration.Period</property>
+    <min>1</min>
+    <max>730</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.Group.Email</property>
@@ -699,47 +731,11 @@
     <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.WorkMail.Model.InvalidConfigurationException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.InvalidParameterException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.InvalidPasswordException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.LimitExceededException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.MailDomainNotFoundException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.MailDomainStateException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.WorkMail.Model.Member.Id</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.Member.Name</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.NameAvailabilityException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.OrganizationNotFoundException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.OrganizationStateException.Message</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -766,10 +762,6 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.WorkMail.Model.ReservedNameException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.WorkMail.Model.Resource.Email</property>
     <min>1</min>
     <max>254</max>
@@ -787,10 +779,6 @@
     <pattern>[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.WorkMail.Model.ResourceNotFoundException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.WorkMail.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
@@ -798,14 +786,6 @@
   <property-value-rule>
     <property>Amazon.WorkMail.Model.Tag.Value</property>
     <min>0</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.TooManyTagsException.Message</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.UnsupportedOperationException.Message</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>

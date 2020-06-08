@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -48,6 +49,7 @@ namespace Amazon.CodeDeploy.Model
         private DeploymentStyle _deploymentStyle;
         private string _description;
         private ErrorInformation _errorInformation;
+        private string _externalId;
         private FileExistsBehavior _fileExistsBehavior;
         private bool? _ignoreApplicationStopFailures;
         private bool? _instanceTerminationWaitTimeStarted;
@@ -196,15 +198,15 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// user: A user created the deployment.
+        ///  <code>user</code>: A user created the deployment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// autoscaling: Amazon EC2 Auto Scaling created the deployment.
+        ///  <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// codeDeployRollback: A rollback process created the deployment.
+        ///  <code>codeDeployRollback</code>: A rollback process created the deployment.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -368,6 +370,25 @@ namespace Amazon.CodeDeploy.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExternalId. 
+        /// <para>
+        /// The unique ID for an external resource (for example, a CloudFormation stack ID) that
+        /// is linked to this deployment.
+        /// </para>
+        /// </summary>
+        public string ExternalId
+        {
+            get { return this._externalId; }
+            set { this._externalId = value; }
+        }
+
+        // Check to see if ExternalId property is set
+        internal bool IsSetExternalId()
+        {
+            return this._externalId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FileExistsBehavior. 
         /// <para>
         /// Information about how AWS CodeDeploy handles files that already exist in a deployment
@@ -375,18 +396,18 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// DISALLOW: The deployment fails. This is also the default behavior if no option is
-        /// specified.
+        ///  <code>DISALLOW</code>: The deployment fails. This is also the default behavior if
+        /// no option is specified.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OVERWRITE: The version of the file from the application revision currently being deployed
-        /// replaces the version already on the instance.
+        ///  <code>OVERWRITE</code>: The version of the file from the application revision currently
+        /// being deployed replaces the version already on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RETAIN: The version of the file already on the instance is kept and used as part of
-        /// the new deployment.
+        ///  <code>RETAIN</code>: The version of the file already on the instance is kept and
+        /// used as part of the new deployment.
         /// </para>
         ///  </li> </ul>
         /// </summary>

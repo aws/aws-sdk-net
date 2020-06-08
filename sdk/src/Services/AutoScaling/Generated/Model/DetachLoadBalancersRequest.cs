@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -34,14 +35,15 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// This operation detaches only Classic Load Balancers. If you have Application Load
-    /// Balancers or Network Load Balancers, use <a>DetachLoadBalancerTargetGroups</a> instead.
+    /// Balancers or Network Load Balancers, use the <a>DetachLoadBalancerTargetGroups</a>
+    /// API instead.
     /// </para>
     ///  
     /// <para>
     /// When you detach a load balancer, it enters the <code>Removing</code> state while deregistering
     /// the instances in the group. When all instances are deregistered, then you can no longer
-    /// describe the load balancer using <a>DescribeLoadBalancers</a>. The instances remain
-    /// running.
+    /// describe the load balancer using the <a>DescribeLoadBalancers</a> API call. The instances
+    /// remain running.
     /// </para>
     /// </summary>
     public partial class DetachLoadBalancersRequest : AmazonAutoScalingRequest

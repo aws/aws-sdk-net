@@ -64,6 +64,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("HumanTaskUiArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HumanTaskUiArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UiTemplateS3Uri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -42,6 +43,7 @@ namespace Amazon.CostExplorer.Model
         /// A group of instance types that Savings Plans applies to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string InstanceFamily
         {
             get { return this._instanceFamily; }
@@ -60,6 +62,7 @@ namespace Amazon.CostExplorer.Model
         /// The unique ID used to distinguish Savings Plans from one another.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string OfferingId
         {
             get { return this._offeringId; }
@@ -79,6 +82,7 @@ namespace Amazon.CostExplorer.Model
         /// independent of the other Regions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Region
         {
             get { return this._region; }

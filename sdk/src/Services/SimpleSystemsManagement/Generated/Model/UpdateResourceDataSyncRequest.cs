@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -35,6 +36,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// option, you can't edit that sync later and choose the Include all accounts from my
     /// AWS Organizations configuration option. Instead, you must delete the first resource
     /// data sync, and create a new one.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This API action only supports a resource data sync that was created with a SyncFromSource
+    /// <code>SyncType</code>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateResourceDataSyncRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -83,10 +91,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SyncType. 
         /// <para>
-        /// The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>,
-        /// then the resource data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code>
-        /// is <code>SyncFromSource</code> then the resource data sync synchronizes data from
-        /// AWS Organizations or from multiple AWS Regions.
+        /// The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

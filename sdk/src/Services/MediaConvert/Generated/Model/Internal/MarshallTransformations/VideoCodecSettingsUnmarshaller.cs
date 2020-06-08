@@ -106,6 +106,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProresSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("vp8Settings", targetDepth))
+                {
+                    var unmarshaller = Vp8SettingsUnmarshaller.Instance;
+                    unmarshalledObject.Vp8Settings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("vp9Settings", targetDepth))
+                {
+                    var unmarshaller = Vp9SettingsUnmarshaller.Instance;
+                    unmarshalledObject.Vp9Settings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -1399,6 +1399,76 @@ namespace Amazon.WAF
 
 
     /// <summary>
+    /// Constants used for properties of type MigrationErrorType.
+    /// </summary>
+    public class MigrationErrorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENTITY_NOT_FOUND for MigrationErrorType
+        /// </summary>
+        public static readonly MigrationErrorType ENTITY_NOT_FOUND = new MigrationErrorType("ENTITY_NOT_FOUND");
+        /// <summary>
+        /// Constant ENTITY_NOT_SUPPORTED for MigrationErrorType
+        /// </summary>
+        public static readonly MigrationErrorType ENTITY_NOT_SUPPORTED = new MigrationErrorType("ENTITY_NOT_SUPPORTED");
+        /// <summary>
+        /// Constant S3_BUCKET_INVALID_REGION for MigrationErrorType
+        /// </summary>
+        public static readonly MigrationErrorType S3_BUCKET_INVALID_REGION = new MigrationErrorType("S3_BUCKET_INVALID_REGION");
+        /// <summary>
+        /// Constant S3_BUCKET_NO_PERMISSION for MigrationErrorType
+        /// </summary>
+        public static readonly MigrationErrorType S3_BUCKET_NO_PERMISSION = new MigrationErrorType("S3_BUCKET_NO_PERMISSION");
+        /// <summary>
+        /// Constant S3_BUCKET_NOT_ACCESSIBLE for MigrationErrorType
+        /// </summary>
+        public static readonly MigrationErrorType S3_BUCKET_NOT_ACCESSIBLE = new MigrationErrorType("S3_BUCKET_NOT_ACCESSIBLE");
+        /// <summary>
+        /// Constant S3_BUCKET_NOT_FOUND for MigrationErrorType
+        /// </summary>
+        public static readonly MigrationErrorType S3_BUCKET_NOT_FOUND = new MigrationErrorType("S3_BUCKET_NOT_FOUND");
+        /// <summary>
+        /// Constant S3_INTERNAL_ERROR for MigrationErrorType
+        /// </summary>
+        public static readonly MigrationErrorType S3_INTERNAL_ERROR = new MigrationErrorType("S3_INTERNAL_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MigrationErrorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MigrationErrorType FindValue(string value)
+        {
+            return FindValue<MigrationErrorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MigrationErrorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ParameterExceptionField.
     /// </summary>
     public class ParameterExceptionField : ConstantClass

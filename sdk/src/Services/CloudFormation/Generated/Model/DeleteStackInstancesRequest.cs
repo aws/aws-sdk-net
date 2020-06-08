@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteStackInstances operation.
-    /// Deletes stack instances for the specified accounts, in the specified regions.
+    /// Deletes stack instances for the specified accounts, in the specified Regions.
     /// </summary>
     public partial class DeleteStackInstancesRequest : AmazonCloudFormationRequest
     {
@@ -44,8 +45,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Accounts. 
         /// <para>
-        /// [Self-managed permissions] The names of the AWS accounts that you want to delete stack
-        /// instances for.
+        /// [<code>Self-managed</code> permissions] The names of the AWS accounts that you want
+        /// to delete stack instances for.
         /// </para>
         ///  
         /// <para>
@@ -143,7 +144,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// The regions where you want to delete stack set instances. 
+        /// The Regions where you want to delete stack set instances. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

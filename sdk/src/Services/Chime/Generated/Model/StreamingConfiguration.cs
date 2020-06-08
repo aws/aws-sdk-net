@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -36,6 +37,7 @@ namespace Amazon.Chime.Model
     {
         private int? _dataRetentionInHours;
         private bool? _disabled;
+        private List<StreamingNotificationTarget> _streamingNotificationTargets = new List<StreamingNotificationTarget>();
 
         /// <summary>
         /// Gets and sets the property DataRetentionInHours. 
@@ -72,6 +74,25 @@ namespace Amazon.Chime.Model
         internal bool IsSetDisabled()
         {
             return this._disabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamingNotificationTargets. 
+        /// <para>
+        /// The streaming notification targets.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=3)]
+        public List<StreamingNotificationTarget> StreamingNotificationTargets
+        {
+            get { return this._streamingNotificationTargets; }
+            set { this._streamingNotificationTargets = value; }
+        }
+
+        // Check to see if StreamingNotificationTargets property is set
+        internal bool IsSetStreamingNotificationTargets()
+        {
+            return this._streamingNotificationTargets != null && this._streamingNotificationTargets.Count > 0; 
         }
 
     }

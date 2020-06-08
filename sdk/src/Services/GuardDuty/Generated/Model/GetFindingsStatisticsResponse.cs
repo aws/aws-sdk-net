@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -37,7 +38,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property FindingStatistics. 
         /// <para>
-        /// Finding statistics object.
+        /// The finding statistics object.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

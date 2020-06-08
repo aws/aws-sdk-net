@@ -114,7 +114,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             foreach (var name in responseData.GetHeaderNames())
             {
                 if (name.StartsWith("x-amz-meta-", StringComparison.OrdinalIgnoreCase))
-                    response.Metadata[name] = responseData.GetHeaderValue(name);
+                {
+                    response.Metadata[name] = AWSConfigsS3.EnableUnicodeEncodingForObjectMetadata
+                        ? Uri.UnescapeDataString(responseData.GetHeaderValue(name)) : responseData.GetHeaderValue(name);
+                }
             }
 
             return;

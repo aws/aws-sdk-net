@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -49,9 +50,9 @@ namespace Amazon.Organizations.Model
     ///  </important> 
     /// <para>
     /// After you perform the <code>DisableAWSServiceAccess</code> operation, the specified
-    /// service can no longer perform operations in your organization's accounts. The only
-    /// exception is when the operations are explicitly permitted by IAM policies that are
-    /// attached to your roles. 
+    /// service can no longer perform operations in your organization's accounts unless the
+    /// operations are explicitly permitted by the IAM policies that are attached to your
+    /// roles.
     /// </para>
     ///  
     /// <para>

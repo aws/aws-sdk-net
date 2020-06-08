@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,8 +30,8 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListNodegroups operation.
-    /// Lists the Amazon EKS node groups associated with the specified cluster in your AWS
-    /// account in the specified Region.
+    /// Lists the Amazon EKS managed node groups associated with the specified cluster in
+    /// your AWS account in the specified Region. Self-managed node groups are not listed.
     /// </summary>
     public partial class ListNodegroupsRequest : AmazonEKSRequest
     {

@@ -222,8 +222,8 @@ namespace Amazon.FSx
         /// operation will fail if a data repository is not linked to the FSx file system. To
         /// learn more about data repository tasks, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Using
         /// Data Repository Tasks</a>. To learn more about linking a data repository to your file
-        /// system, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/getting-started-step1.html">Step
-        /// 1: Create Your Amazon FSx for Lustre File System</a>.
+        /// system, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/export-data-repository.html#export-prefix">Setting
+        /// the Export Prefix</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataRepositoryTask service method.</param>
         /// 
@@ -1113,7 +1113,38 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Updates a file system configuration.
+        /// Use this operation to update the configuration of an existing Amazon FSx file system.
+        /// For an Amazon FSx for Lustre file system, you can update only the WeeklyMaintenanceStartTime.
+        /// For an Amazon for Windows File Server file system, you can update the following properties:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// AutomaticBackupRetentionDays
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DailyAutomaticBackupStartTime
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SelfManagedActiveDirectoryConfiguration
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// StorageCapacity
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ThroughputCapacity
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// WeeklyMaintenanceStartTime
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can update multiple properties in a single request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFileSystem service method.</param>
         /// 
@@ -1134,6 +1165,10 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.MissingFileSystemConfigurationException">
         /// A file system configuration is required for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting AWS Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.

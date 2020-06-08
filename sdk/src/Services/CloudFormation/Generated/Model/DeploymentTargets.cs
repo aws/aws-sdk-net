@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,8 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// [<code>Service-managed</code> permissions] The AWS Organizations accounts to which
-    /// StackSets deploys.
+    /// StackSets deploys. StackSets does not deploy stack instances to the organization master
+    /// account, even if the master account is in your organization or in an OU in your organization.
     /// 
     ///  
     /// <para>
@@ -63,7 +65,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnitIds. 
         /// <para>
-        /// The organization root ID or organizational unit (OUs) IDs to which StackSets deploys.
+        /// The organization root ID or organizational unit (OU) IDs to which StackSets deploys.
         /// </para>
         /// </summary>
         public List<string> OrganizationalUnitIds

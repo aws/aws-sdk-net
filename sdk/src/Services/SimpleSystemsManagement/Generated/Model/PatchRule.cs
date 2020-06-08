@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -43,7 +44,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The number of days after the release date of each patch matched by the rule that the
         /// patch is marked as approved in the patch baseline. For example, a value of <code>7</code>
-        /// means that patches are approved seven days after they are released. 
+        /// means that patches are approved seven days after they are released. Not supported
+        /// on Ubuntu Server.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -62,7 +64,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ApproveUntilDate. 
         /// <para>
-        /// Example API
+        /// The cutoff date for auto approval of released patches. Any patches released on or
+        /// before this date are installed automatically. Not supported on Ubuntu Server.
+        /// </para>
+        ///  
+        /// <para>
+        /// Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -81,9 +88,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ComplianceLevel. 
         /// <para>
-        /// A compliance severity level for all approved patches in a patch baseline. Valid compliance
-        /// severity levels include the following: Unspecified, Critical, High, Medium, Low, and
-        /// Informational.
+        /// A compliance severity level for all approved patches in a patch baseline.
         /// </para>
         /// </summary>
         public PatchComplianceLevel ComplianceLevel

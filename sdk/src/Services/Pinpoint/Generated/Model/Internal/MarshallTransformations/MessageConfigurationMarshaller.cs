@@ -78,6 +78,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCustomMessage())
+            {
+                context.Writer.WritePropertyName("CustomMessage");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CampaignCustomMessageMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomMessage, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDefaultMessage())
             {
                 context.Writer.WritePropertyName("DefaultMessage");

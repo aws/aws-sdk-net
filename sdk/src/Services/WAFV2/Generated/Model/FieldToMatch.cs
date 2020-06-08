@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -37,9 +38,11 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// The part of a web request that you want AWS WAF to inspect. Include the <code>FieldToMatch</code>
-    /// types that you want to inspect, with additional specifications as needed, according
-    /// to the type. 
+    /// The part of a web request that you want AWS WAF to inspect. Include the single <code>FieldToMatch</code>
+    /// type that you want to inspect, with additional specifications as needed, according
+    /// to the type. You specify a single request component in <code>FieldToMatch</code> for
+    /// each rule statement that requires it. To inspect more than one component of a web
+    /// request, create a separate rule statement for each component.
     /// </para>
     /// </summary>
     public partial class FieldToMatch

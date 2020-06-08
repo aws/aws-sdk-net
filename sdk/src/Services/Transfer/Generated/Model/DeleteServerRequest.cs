@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,7 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteServer operation.
-    /// Deletes the Secure File Transfer Protocol (SFTP) server that you specify.
+    /// Deletes the file transfer protocol-enabled server that you specify.
     /// 
     ///  
     /// <para>
@@ -43,7 +44,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A unique system-assigned identifier for an SFTP server instance.
+        /// A unique system-assigned identifier for a file transfer protocol-enabled server instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

@@ -236,6 +236,77 @@ namespace Amazon.QLDB
         #endregion
 
 
+        #region  CancelJournalKinesisStream
+
+        /// <summary>
+        /// Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its current
+        /// status must be <code>ACTIVE</code>.
+        /// 
+        ///  
+        /// <para>
+        /// You can't restart a stream after you cancel it. Canceled QLDB stream resources are
+        /// subject to a 7-day retention period, so they are automatically deleted after this
+        /// limit expires.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelJournalKinesisStream service method.</param>
+        /// 
+        /// <returns>The response from the CancelJournalKinesisStream service method, as returned by QLDB.</returns>
+        /// <exception cref="Amazon.QLDB.Model.InvalidParameterException">
+        /// One or more parameters in the request aren't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+        /// The operation failed because a condition wasn't satisfied in advance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CancelJournalKinesisStream">REST API Reference for CancelJournalKinesisStream Operation</seealso>
+        public virtual CancelJournalKinesisStreamResponse CancelJournalKinesisStream(CancelJournalKinesisStreamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelJournalKinesisStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelJournalKinesisStreamResponseUnmarshaller.Instance;
+
+            return Invoke<CancelJournalKinesisStreamResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelJournalKinesisStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelJournalKinesisStream operation on AmazonQLDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelJournalKinesisStream
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CancelJournalKinesisStream">REST API Reference for CancelJournalKinesisStream Operation</seealso>
+        public virtual IAsyncResult BeginCancelJournalKinesisStream(CancelJournalKinesisStreamRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelJournalKinesisStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelJournalKinesisStreamResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelJournalKinesisStream operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelJournalKinesisStream.</param>
+        /// 
+        /// <returns>Returns a  CancelJournalKinesisStreamResult from QLDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CancelJournalKinesisStream">REST API Reference for CancelJournalKinesisStream Operation</seealso>
+        public virtual CancelJournalKinesisStreamResponse EndCancelJournalKinesisStream(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CancelJournalKinesisStreamResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateLedger
 
         /// <summary>
@@ -377,12 +448,83 @@ namespace Amazon.QLDB
 
         #endregion
         
+        #region  DescribeJournalKinesisStream
+
+        /// <summary>
+        /// Returns detailed information about a given Amazon QLDB journal stream. The output
+        /// includes the Amazon Resource Name (ARN), stream name, current status, creation time,
+        /// and the parameters of your original stream creation request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJournalKinesisStream service method.</param>
+        /// 
+        /// <returns>The response from the DescribeJournalKinesisStream service method, as returned by QLDB.</returns>
+        /// <exception cref="Amazon.QLDB.Model.InvalidParameterException">
+        /// One or more parameters in the request aren't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+        /// The operation failed because a condition wasn't satisfied in advance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalKinesisStream">REST API Reference for DescribeJournalKinesisStream Operation</seealso>
+        public virtual DescribeJournalKinesisStreamResponse DescribeJournalKinesisStream(DescribeJournalKinesisStreamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJournalKinesisStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJournalKinesisStreamResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeJournalKinesisStreamResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeJournalKinesisStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJournalKinesisStream operation on AmazonQLDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeJournalKinesisStream
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalKinesisStream">REST API Reference for DescribeJournalKinesisStream Operation</seealso>
+        public virtual IAsyncResult BeginDescribeJournalKinesisStream(DescribeJournalKinesisStreamRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJournalKinesisStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJournalKinesisStreamResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeJournalKinesisStream operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeJournalKinesisStream.</param>
+        /// 
+        /// <returns>Returns a  DescribeJournalKinesisStreamResult from QLDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalKinesisStream">REST API Reference for DescribeJournalKinesisStream Operation</seealso>
+        public virtual DescribeJournalKinesisStreamResponse EndDescribeJournalKinesisStream(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeJournalKinesisStreamResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeJournalS3Export
 
         /// <summary>
         /// Returns information about a journal export job, including the ledger name, export
         /// ID, when it was created, current status, and its start and end time export parameters.
         /// 
+        ///  
+        /// <para>
+        /// This action does not return any expired export jobs. For more information, see <a
+        /// href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
+        /// Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
+        /// </para>
         ///  
         /// <para>
         /// If the export job with the given <code>ExportId</code> doesn't exist, then throws
@@ -790,6 +932,78 @@ namespace Amazon.QLDB
 
         #endregion
         
+        #region  ListJournalKinesisStreamsForLedger
+
+        /// <summary>
+        /// Returns an array of all Amazon QLDB journal stream descriptors for a given ledger.
+        /// The output of each stream descriptor includes the same details that are returned by
+        /// <code>DescribeJournalKinesisStream</code>.
+        /// 
+        ///  
+        /// <para>
+        /// This action returns a maximum of <code>MaxResults</code> items. It is paginated so
+        /// that you can retrieve all the items by calling <code>ListJournalKinesisStreamsForLedger</code>
+        /// multiple times.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJournalKinesisStreamsForLedger service method.</param>
+        /// 
+        /// <returns>The response from the ListJournalKinesisStreamsForLedger service method, as returned by QLDB.</returns>
+        /// <exception cref="Amazon.QLDB.Model.InvalidParameterException">
+        /// One or more parameters in the request aren't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+        /// The operation failed because a condition wasn't satisfied in advance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalKinesisStreamsForLedger">REST API Reference for ListJournalKinesisStreamsForLedger Operation</seealso>
+        public virtual ListJournalKinesisStreamsForLedgerResponse ListJournalKinesisStreamsForLedger(ListJournalKinesisStreamsForLedgerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJournalKinesisStreamsForLedgerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJournalKinesisStreamsForLedgerResponseUnmarshaller.Instance;
+
+            return Invoke<ListJournalKinesisStreamsForLedgerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListJournalKinesisStreamsForLedger operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListJournalKinesisStreamsForLedger operation on AmazonQLDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJournalKinesisStreamsForLedger
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalKinesisStreamsForLedger">REST API Reference for ListJournalKinesisStreamsForLedger Operation</seealso>
+        public virtual IAsyncResult BeginListJournalKinesisStreamsForLedger(ListJournalKinesisStreamsForLedgerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJournalKinesisStreamsForLedgerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJournalKinesisStreamsForLedgerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListJournalKinesisStreamsForLedger operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJournalKinesisStreamsForLedger.</param>
+        /// 
+        /// <returns>Returns a  ListJournalKinesisStreamsForLedgerResult from QLDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalKinesisStreamsForLedger">REST API Reference for ListJournalKinesisStreamsForLedger Operation</seealso>
+        public virtual ListJournalKinesisStreamsForLedgerResponse EndListJournalKinesisStreamsForLedger(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListJournalKinesisStreamsForLedgerResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListJournalS3Exports
 
         /// <summary>
@@ -801,6 +1015,12 @@ namespace Amazon.QLDB
         /// This action returns a maximum of <code>MaxResults</code> items, and is paginated so
         /// that you can retrieve all the items by calling <code>ListJournalS3Exports</code> multiple
         /// times.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action does not return any expired export jobs. For more information, see <a
+        /// href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
+        /// Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJournalS3Exports service method.</param>
@@ -862,6 +1082,12 @@ namespace Amazon.QLDB
         /// This action returns a maximum of <code>MaxResults</code> items, and is paginated so
         /// that you can retrieve all the items by calling <code>ListJournalS3ExportsForLedger</code>
         /// multiple times.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action does not return any expired export jobs. For more information, see <a
+        /// href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
+        /// Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJournalS3ExportsForLedger service method.</param>
@@ -1030,6 +1256,71 @@ namespace Amazon.QLDB
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StreamJournalToKinesis
+
+        /// <summary>
+        /// Creates a stream for a given Amazon QLDB ledger that delivers the journal data to
+        /// a specified Amazon Kinesis Data Streams resource. The stream captures every document
+        /// revision that is committed to your journal and sends it to the Kinesis data stream.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StreamJournalToKinesis service method.</param>
+        /// 
+        /// <returns>The response from the StreamJournalToKinesis service method, as returned by QLDB.</returns>
+        /// <exception cref="Amazon.QLDB.Model.InvalidParameterException">
+        /// One or more parameters in the request aren't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+        /// The operation failed because a condition wasn't satisfied in advance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/StreamJournalToKinesis">REST API Reference for StreamJournalToKinesis Operation</seealso>
+        public virtual StreamJournalToKinesisResponse StreamJournalToKinesis(StreamJournalToKinesisRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StreamJournalToKinesisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StreamJournalToKinesisResponseUnmarshaller.Instance;
+
+            return Invoke<StreamJournalToKinesisResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StreamJournalToKinesis operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StreamJournalToKinesis operation on AmazonQLDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStreamJournalToKinesis
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/StreamJournalToKinesis">REST API Reference for StreamJournalToKinesis Operation</seealso>
+        public virtual IAsyncResult BeginStreamJournalToKinesis(StreamJournalToKinesisRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StreamJournalToKinesisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StreamJournalToKinesisResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StreamJournalToKinesis operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStreamJournalToKinesis.</param>
+        /// 
+        /// <returns>Returns a  StreamJournalToKinesisResult from QLDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/StreamJournalToKinesis">REST API Reference for StreamJournalToKinesis Operation</seealso>
+        public virtual StreamJournalToKinesisResponse EndStreamJournalToKinesis(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StreamJournalToKinesisResponse>(asyncResult);
         }
 
         #endregion

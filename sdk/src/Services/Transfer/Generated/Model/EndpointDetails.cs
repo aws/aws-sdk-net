@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,10 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// The virtual private cloud (VPC) endpoint settings that are configured for your SFTP
-    /// server. With a VPC endpoint, you can restrict access to your SFTP server and resources
-    /// only within your VPC. To control incoming internet traffic, invoke the <code>UpdateServer</code>
-    /// API and attach an Elastic IP to your server's endpoint.
+    /// The virtual private cloud (VPC) endpoint settings that are configured for your file
+    /// transfer protocol-enabled server. With a VPC endpoint, you can restrict access to
+    /// your server and resources only within your VPC. To control incoming internet traffic,
+    /// invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's
+    /// endpoint.
     /// </summary>
     public partial class EndpointDetails
     {
@@ -44,8 +46,8 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property AddressAllocationIds. 
         /// <para>
         /// A list of address allocation IDs that are required to attach an Elastic IP address
-        /// to your SFTP server's endpoint. This is only valid in the <code>UpdateServer</code>
-        /// API.
+        /// to your file transfer protocol-enabled server's endpoint. This is only valid in the
+        /// <code>UpdateServer</code> API.
         /// </para>
         ///  <note> 
         /// <para>
@@ -68,7 +70,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// A list of subnet IDs that are required to host your SFTP server endpoint in your VPC.
+        /// A list of subnet IDs that are required to host your file transfer protocol-enabled
+        /// server endpoint in your VPC.
         /// </para>
         /// </summary>
         public List<string> SubnetIds
@@ -105,8 +108,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The VPC ID of the virtual private cloud in which the SFTP server's endpoint will be
-        /// hosted.
+        /// The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint
+        /// will be hosted.
         /// </para>
         /// </summary>
         public string VpcId

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Specifies the AWS Lambda function to use as a code hook for a campaign.
+    /// Specifies settings for invoking an AWS Lambda function that customizes a segment for
+    /// a campaign.
     /// </summary>
     public partial class CampaignHook
     {
@@ -40,7 +42,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property LambdaFunctionName. 
         /// <para>
         /// The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint
-        /// invokes to send messages for a campaign.
+        /// invokes to customize a segment for a campaign.
         /// </para>
         /// </summary>
         public string LambdaFunctionName
@@ -58,8 +60,21 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// Specifies which Lambda mode to use when invoking the AWS Lambda function.
+        /// The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values
+        /// are:
         /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// FILTER - Invoke the function to customize the segment that's used by a campaign.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through
+        /// a custom channel. This functionality is not supported anymore. To send a campaign
+        /// through a custom channel, use the CustomDeliveryConfiguration and CampaignCustomMessage
+        /// objects of the campaign.
+        /// </para>
+        /// </li></ul>
         /// </summary>
         public Mode Mode
         {

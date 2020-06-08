@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -40,7 +41,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the filter. Filter names are case-sensitive. 
+        /// The name of the filter. Filter names are case-sensitive. 
         /// </para>
         /// </summary>
         public string Name
@@ -58,7 +59,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        ///  The filter values. Filter values are case-sensitive. 
+        /// The filter values. Filter values are case-sensitive. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of a BatchGetApplicationRevisions operation.
+    /// Represents the output of a <code>BatchGetApplicationRevisions</code> operation.
     /// </summary>
     public partial class BatchGetApplicationRevisionsResponse : AmazonWebServiceResponse
     {

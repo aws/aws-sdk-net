@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -45,8 +46,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server
-        /// instance that has the user assigned to it.
+        /// A system-assigned unique identifier for a file transfer protocol-enabled server instance
+        /// that has the user assigned to it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

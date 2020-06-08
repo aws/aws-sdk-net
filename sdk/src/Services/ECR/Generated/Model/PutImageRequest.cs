@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -34,20 +35,21 @@ namespace Amazon.ECR.Model
     ///  
     /// <para>
     /// When an image is pushed and all new image layers have been uploaded, the PutImage
-    /// API is called once to create or update the image manifest and tags associated with
-    /// the image.
+    /// API is called once to create or update the image manifest and the tags associated
+    /// with the image.
     /// </para>
     ///  <note> 
     /// <para>
-    /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-    /// use by customers for pulling and pushing images. In most cases, you should use the
-    /// <code>docker</code> CLI to pull, tag, and push images.
+    /// This operation is used by the Amazon ECR proxy and is not generally used by customers
+    /// for pulling and pushing images. In most cases, you should use the <code>docker</code>
+    /// CLI to pull, tag, and push images.
     /// </para>
     ///  </note>
     /// </summary>
     public partial class PutImageRequest : AmazonECRRequest
     {
         private string _imageManifest;
+        private string _imageManifestMediaType;
         private string _imageTag;
         private string _registryId;
         private string _repositoryName;
@@ -69,6 +71,26 @@ namespace Amazon.ECR.Model
         internal bool IsSetImageManifest()
         {
             return this._imageManifest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageManifestMediaType. 
+        /// <para>
+        /// The media type of the image manifest. If you push an image manifest that does not
+        /// contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code>
+        /// in the request.
+        /// </para>
+        /// </summary>
+        public string ImageManifestMediaType
+        {
+            get { return this._imageManifestMediaType; }
+            set { this._imageManifestMediaType = value; }
+        }
+
+        // Check to see if ImageManifestMediaType property is set
+        internal bool IsSetImageManifestMediaType()
+        {
+            return this._imageManifestMediaType != null;
         }
 
         /// <summary>

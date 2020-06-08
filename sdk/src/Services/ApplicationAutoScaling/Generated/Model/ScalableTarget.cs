@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -63,7 +64,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
-        /// The maximum value to scale to in response to a scale-out event.
+        /// The maximum value to scale to in response to a scale-out activity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +83,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinCapacity. 
         /// <para>
-        /// The minimum value to scale to in response to a scale-in event.
+        /// The minimum value to scale to in response to a scale-in activity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -163,6 +164,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// unique identifier is the function name with a function version or alias name suffix
         /// that is not <code>$LATEST</code>. Example: <code>function:my-function:prod</code>
         /// or <code>function:my-function:1</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier
+        /// is the table name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -270,6 +276,16 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency
         /// for a Lambda function.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for
+        /// an Amazon Keyspaces table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
+        /// for an Amazon Keyspaces table.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -288,10 +304,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ServiceNamespace. 
         /// <para>
-        /// The namespace of the AWS service that provides the resource or <code>custom-resource</code>
-        /// for a resource provided by your own application or service. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-        /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+        /// The namespace of the AWS service that provides the resource, or a <code>custom-resource</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

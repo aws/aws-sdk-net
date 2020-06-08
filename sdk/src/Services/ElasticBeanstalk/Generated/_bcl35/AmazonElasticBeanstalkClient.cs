@@ -44,7 +44,7 @@ namespace Amazon.ElasticBeanstalk
     /// <para>
     /// For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS
     /// Elastic Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk
-    /// WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
+    /// WSDL is <a href="https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
     /// To install the Software Development Kits (SDKs), Integrated Development Environment
     /// (IDE) Toolkits, and command line tools that enable you to access the API, go to <a
     /// href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
@@ -378,6 +378,67 @@ namespace Amazon.ElasticBeanstalk
 
         #endregion
         
+        #region  AssociateEnvironmentOperationsRole
+
+        /// <summary>
+        /// Add or change the operations role used by an environment. After this call is made,
+        /// Elastic Beanstalk uses the associated operations role for permissions to downstream
+        /// services during subsequent calls acting on this environment. For more information,
+        /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+        /// roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEnvironmentOperationsRole service method.</param>
+        /// 
+        /// <returns>The response from the AssociateEnvironmentOperationsRole service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole">REST API Reference for AssociateEnvironmentOperationsRole Operation</seealso>
+        public virtual AssociateEnvironmentOperationsRoleResponse AssociateEnvironmentOperationsRole(AssociateEnvironmentOperationsRoleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateEnvironmentOperationsRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateEnvironmentOperationsRoleResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateEnvironmentOperationsRoleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateEnvironmentOperationsRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEnvironmentOperationsRole operation on AmazonElasticBeanstalkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateEnvironmentOperationsRole
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole">REST API Reference for AssociateEnvironmentOperationsRole Operation</seealso>
+        public virtual IAsyncResult BeginAssociateEnvironmentOperationsRole(AssociateEnvironmentOperationsRoleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateEnvironmentOperationsRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateEnvironmentOperationsRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateEnvironmentOperationsRole operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateEnvironmentOperationsRole.</param>
+        /// 
+        /// <returns>Returns a  AssociateEnvironmentOperationsRoleResult from ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole">REST API Reference for AssociateEnvironmentOperationsRole Operation</seealso>
+        public virtual AssociateEnvironmentOperationsRoleResponse EndAssociateEnvironmentOperationsRole(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateEnvironmentOperationsRoleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CheckDNSAvailability
 
         /// <summary>
@@ -581,9 +642,9 @@ namespace Amazon.ElasticBeanstalk
         /// </para>
         ///  <note> 
         /// <para>
-        /// Once you create an application version with a specified Amazon S3 bucket and key location,
-        /// you cannot change that Amazon S3 location. If you change the Amazon S3 location, you
-        /// receive an exception when you attempt to launch an environment from the application
+        /// After you create an application version with a specified Amazon S3 bucket and key
+        /// location, you can't change that Amazon S3 location. If you change the Amazon S3 location,
+        /// you receive an exception when you attempt to launch an environment from the application
         /// version.
         /// </para>
         ///  </note>
@@ -670,9 +731,10 @@ namespace Amazon.ElasticBeanstalk
         #region  CreateConfigurationTemplate
 
         /// <summary>
-        /// Creates a configuration template. Templates are associated with a specific application
-        /// and are used to deploy different versions of the application with the same configuration
-        /// settings.
+        /// Creates an AWS Elastic Beanstalk configuration template, associated with a specific
+        /// Elastic Beanstalk application. You define application configuration settings in a
+        /// configuration template. You can then use the configuration template to deploy different
+        /// versions of the application with the same configuration settings.
         /// 
         ///  
         /// <para>
@@ -758,7 +820,8 @@ namespace Amazon.ElasticBeanstalk
         #region  CreateEnvironment
 
         /// <summary>
-        /// Launches an environment for the specified application using the specified configuration.
+        /// Launches an AWS Elastic Beanstalk environment for the specified application using
+        /// the specified configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
         /// 
@@ -2108,7 +2171,14 @@ namespace Amazon.ElasticBeanstalk
         #region  DescribePlatformVersion
 
         /// <summary>
-        /// Describes the version of the platform.
+        /// Describes a platform version. Provides full details. Compare to <a>ListPlatformVersions</a>,
+        /// which provides summary information about a list of platform versions.
+        /// 
+        ///  
+        /// <para>
+        /// For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
+        /// Elastic Beanstalk Platforms Glossary</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePlatformVersion service method.</param>
         /// 
@@ -2161,6 +2231,66 @@ namespace Amazon.ElasticBeanstalk
         public virtual DescribePlatformVersionResponse EndDescribePlatformVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribePlatformVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateEnvironmentOperationsRole
+
+        /// <summary>
+        /// Disassociate the operations role from an environment. After this call is made, Elastic
+        /// Beanstalk uses the caller's permissions for permissions to downstream services during
+        /// subsequent calls acting on this environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+        /// roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEnvironmentOperationsRole service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateEnvironmentOperationsRole service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole">REST API Reference for DisassociateEnvironmentOperationsRole Operation</seealso>
+        public virtual DisassociateEnvironmentOperationsRoleResponse DisassociateEnvironmentOperationsRole(DisassociateEnvironmentOperationsRoleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateEnvironmentOperationsRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateEnvironmentOperationsRoleResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateEnvironmentOperationsRoleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateEnvironmentOperationsRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEnvironmentOperationsRole operation on AmazonElasticBeanstalkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateEnvironmentOperationsRole
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole">REST API Reference for DisassociateEnvironmentOperationsRole Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateEnvironmentOperationsRole(DisassociateEnvironmentOperationsRoleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateEnvironmentOperationsRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateEnvironmentOperationsRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateEnvironmentOperationsRole operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateEnvironmentOperationsRole.</param>
+        /// 
+        /// <returns>Returns a  DisassociateEnvironmentOperationsRoleResult from ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole">REST API Reference for DisassociateEnvironmentOperationsRole Operation</seealso>
+        public virtual DisassociateEnvironmentOperationsRoleResponse EndDisassociateEnvironmentOperationsRole(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateEnvironmentOperationsRoleResponse>(asyncResult);
         }
 
         #endregion
@@ -2232,10 +2362,79 @@ namespace Amazon.ElasticBeanstalk
 
         #endregion
         
+        #region  ListPlatformBranches
+
+        /// <summary>
+        /// Lists the platform branches available for your account in an AWS Region. Provides
+        /// summary information about each platform branch.
+        /// 
+        ///  
+        /// <para>
+        /// For definitions of platform branch and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
+        /// Elastic Beanstalk Platforms Glossary</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPlatformBranches service method.</param>
+        /// 
+        /// <returns>The response from the ListPlatformBranches service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformBranches">REST API Reference for ListPlatformBranches Operation</seealso>
+        public virtual ListPlatformBranchesResponse ListPlatformBranches(ListPlatformBranchesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPlatformBranchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPlatformBranchesResponseUnmarshaller.Instance;
+
+            return Invoke<ListPlatformBranchesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPlatformBranches operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPlatformBranches operation on AmazonElasticBeanstalkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPlatformBranches
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformBranches">REST API Reference for ListPlatformBranches Operation</seealso>
+        public virtual IAsyncResult BeginListPlatformBranches(ListPlatformBranchesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPlatformBranchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPlatformBranchesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPlatformBranches operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPlatformBranches.</param>
+        /// 
+        /// <returns>Returns a  ListPlatformBranchesResult from ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformBranches">REST API Reference for ListPlatformBranches Operation</seealso>
+        public virtual ListPlatformBranchesResponse EndListPlatformBranches(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPlatformBranchesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListPlatformVersions
 
         /// <summary>
-        /// Lists the available platforms.
+        /// Lists the platform versions available for your account in an AWS Region. Provides
+        /// summary information about each platform version. Compare to <a>DescribePlatformVersion</a>,
+        /// which provides full details about a single platform version.
+        /// 
+        ///  
+        /// <para>
+        /// For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
+        /// Elastic Beanstalk Platforms Glossary</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPlatformVersions service method.</param>
         /// 
@@ -2295,14 +2494,14 @@ namespace Amazon.ElasticBeanstalk
         #region  ListTagsForResource
 
         /// <summary>
-        /// Returns the tags applied to an AWS Elastic Beanstalk resource. The response contains
+        /// Return the tags applied to an AWS Elastic Beanstalk resource. The response contains
         /// a list of tag key-value pairs.
         /// 
         ///  
         /// <para>
-        /// Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments.
-        /// For details about environment tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging
-        /// Resources in Your Elastic Beanstalk Environment</a>.
+        /// Elastic Beanstalk supports tagging of all of its resources. For details about resource
+        /// tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
+        /// Application Resources</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -3069,9 +3268,9 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  
         /// <para>
-        /// Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments.
-        /// For details about environment tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging
-        /// Resources in Your Elastic Beanstalk Environment</a>.
+        /// Elastic Beanstalk supports tagging of all of its resources. For details about resource
+        /// tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
+        /// Application Resources</a>.
         /// </para>
         ///  
         /// <para>

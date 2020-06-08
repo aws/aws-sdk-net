@@ -7,23 +7,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     [TestClass]
     public class AWSPublicIpAddressRangesTests
     {
+        private AWSPublicIpAddressRanges _addressRanges;
+
+        [TestInitialize]
+        public void Init()
+        {
+            _addressRanges = AWSPublicIpAddressRanges.Load();
+        }
+
         [TestMethod]
         [TestCategory("General")]
         public void TestLoadAndParse()
         {
-            var ranges = AWSPublicIpAddressRanges.Load();
-
-            Assert.IsNotNull(ranges);
-            Assert.IsTrue(ranges.AllAddressRanges.Any());
+            Assert.IsNotNull(_addressRanges);
+            Assert.IsTrue(_addressRanges.AllAddressRanges.Any());
         }
 
         [TestMethod]
         [TestCategory("General")]
         public void TestQueryByServiceKey()
         {
-            var ranges = AWSPublicIpAddressRanges.Load();
-
-            var ec2Ranges = ranges.AddressRangesByServiceKey(AWSPublicIpAddressRanges.EC2ServiceKey);
+            var ec2Ranges = _addressRanges.AddressRangesByServiceKey(AWSPublicIpAddressRanges.EC2ServiceKey);
             Assert.IsTrue(ec2Ranges.Any());
         }
 
@@ -31,13 +35,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("General")]
         public void TestQueryByRegion()
         {
-            var ranges = AWSPublicIpAddressRanges.Load();
-
-            var uswest1Ranges = ranges.AddressRangesByRegion("us-west-1");
+            var uswest1Ranges = _addressRanges.AddressRangesByRegion("us-west-1");
             Assert.IsTrue(uswest1Ranges.Any());
 
-            var globalRanges = ranges.AddressRangesByRegion(AWSPublicIpAddressRanges.GlobalRegionIdentifier);
+            var globalRanges = _addressRanges.AddressRangesByRegion(AWSPublicIpAddressRanges.GlobalRegionIdentifier);
             Assert.IsTrue(globalRanges.Any());
+        }
+
+        [TestMethod]
+        [TestCategory("General")]
+        public void TestQueryByNetworkBorderGroup()
+        {
+            var useast1Ranges = _addressRanges.AddressRangesByNetworkBorderGroup("us-east-1");
+            Assert.IsTrue(useast1Ranges.Any());
         }
     }
 }

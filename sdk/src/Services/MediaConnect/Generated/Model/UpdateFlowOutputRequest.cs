@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -45,6 +46,7 @@ namespace Amazon.MediaConnect.Model
         private string _remoteId;
         private int? _smoothingLatency;
         private string _streamId;
+        private VpcInterfaceAttachment _vpcInterfaceAttachment;
 
         /// <summary>
         /// Gets and sets the property CidrAllowList. The range of IP addresses that should be
@@ -237,6 +239,22 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetStreamId()
         {
             return this._streamId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcInterfaceAttachment. The name of the VPC interface attachment
+        /// to use for this output.
+        /// </summary>
+        public VpcInterfaceAttachment VpcInterfaceAttachment
+        {
+            get { return this._vpcInterfaceAttachment; }
+            set { this._vpcInterfaceAttachment = value; }
+        }
+
+        // Check to see if VpcInterfaceAttachment property is set
+        internal bool IsSetVpcInterfaceAttachment()
+        {
+            return this._vpcInterfaceAttachment != null;
         }
 
     }

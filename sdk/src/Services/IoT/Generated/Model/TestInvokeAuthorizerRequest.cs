@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -138,7 +139,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property TokenSignature. 
         /// <para>
         /// The signature made with the token and your custom authentication service's private
-        /// key.
+        /// key. This value must be Base-64-encoded.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2560)]

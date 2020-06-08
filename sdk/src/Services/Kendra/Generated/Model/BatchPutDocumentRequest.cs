@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -58,7 +59,23 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// Each document is limited to 5 Mb, the total size of the list is limited to 50 Mb.
+        /// Documents have the following file size limits.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// 5 MB total size for inline documents
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 50 MB total size for files from an S3 bucket
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 5 MB extracted text for any file
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about file size and transaction per second quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

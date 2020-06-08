@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// A URL for the Amazon S3 bucket where you want to store the results of this request.
+    /// A URL for the S3 bucket where you want to store the results of this request.
     /// </summary>
     public partial class S3OutputUrl
     {
@@ -37,7 +38,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OutputUrl. 
         /// <para>
-        /// A URL for an Amazon S3 bucket where you want to store the results of this request.
+        /// A URL for an S3 bucket where you want to store the results of this request.
         /// </para>
         /// </summary>
         public string OutputUrl

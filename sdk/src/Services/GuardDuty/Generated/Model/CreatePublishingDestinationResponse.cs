@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -37,7 +38,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DestinationId. 
         /// <para>
-        /// The ID of the publishing destination created.
+        /// The ID of the publishing destination that is created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,13 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// Describes information about the instance ports.
+    /// Describes information about ports for an Amazon Lightsail instance.
     /// </summary>
     public partial class InstancePortInfo
     {
         private AccessDirection _accessDirection;
         private string _accessFrom;
         private PortAccessType _accessType;
+        private List<string> _cidrListAliases = new List<string>();
+        private List<string> _cidrs = new List<string>();
         private string _commonName;
         private int? _fromPort;
         private NetworkProtocol _protocol;
@@ -45,6 +48,11 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// The access direction (<code>inbound</code> or <code>outbound</code>).
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Lightsail currently supports only <code>inbound</code> access direction.
+        /// </para>
+        ///  </note>
         /// </summary>
         public AccessDirection AccessDirection
         {
@@ -61,7 +69,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property AccessFrom. 
         /// <para>
-        /// The location from which access is allowed (e.g., <code>Anywhere (0.0.0.0/0)</code>).
+        /// The location from which access is allowed. For example, <code>Anywhere (0.0.0.0/0)</code>,
+        /// or <code>Custom</code> if a specific IP address or range of IP addresses is allowed.
         /// </para>
         /// </summary>
         public string AccessFrom
@@ -95,9 +104,57 @@ namespace Amazon.Lightsail.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CidrListAliases. 
+        /// <para>
+        /// An alias that defines access for a preconfigured range of IP addresses.
+        /// </para>
+        ///  
+        /// <para>
+        /// The only alias currently supported is <code>lightsail-connect</code>, which allows
+        /// IP addresses of the browser-based RDP/SSH client in the Lightsail console to connect
+        /// to your instance.
+        /// </para>
+        /// </summary>
+        public List<string> CidrListAliases
+        {
+            get { return this._cidrListAliases; }
+            set { this._cidrListAliases = value; }
+        }
+
+        // Check to see if CidrListAliases property is set
+        internal bool IsSetCidrListAliases()
+        {
+            return this._cidrListAliases != null && this._cidrListAliases.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Cidrs. 
+        /// <para>
+        /// The IP address, or range of IP addresses in CIDR notation, that are allowed to connect
+        /// to an instance through the ports, and the protocol. Lightsail supports IPv4 addresses.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+        /// Inter-Domain Routing</a> on <i>Wikipedia</i>.
+        /// </para>
+        /// </summary>
+        public List<string> Cidrs
+        {
+            get { return this._cidrs; }
+            set { this._cidrs = value; }
+        }
+
+        // Check to see if Cidrs property is set
+        internal bool IsSetCidrs()
+        {
+            return this._cidrs != null && this._cidrs.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property CommonName. 
         /// <para>
-        /// The common name.
+        /// The common name of the port information.
         /// </para>
         /// </summary>
         public string CommonName
@@ -115,10 +172,29 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property FromPort. 
         /// <para>
-        /// The first port in the range.
+        /// The first port in a range of open ports on an instance.
         /// </para>
+        ///  
+        /// <para>
+        /// Allowed ports:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// TCP and UDP - <code>0</code> to <code>65535</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ICMP - <code>8</code> (to configure Ping)
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Ping is the only communication supported through the ICMP protocol in Lightsail. To
+        /// configure ping, specify the <code>fromPort</code> parameter as <code>8</code>, and
+        /// the <code>toPort</code> parameter as <code>-1</code>.
+        /// </para>
+        ///  </note> </li> </ul>
         /// </summary>
-        [AWSProperty(Min=0, Max=65535)]
+        [AWSProperty(Min=-1, Max=65535)]
         public int FromPort
         {
             get { return this._fromPort.GetValueOrDefault(); }
@@ -134,7 +210,11 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol being used. Can be one of the following.
+        /// The IP protocol name.
+        /// </para>
+        ///  
+        /// <para>
+        /// The name can be one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -147,7 +227,7 @@ namespace Amazon.Lightsail.Model
         /// <para>
         ///  <code>all</code> - All transport layer protocol types. For more general information,
         /// see <a href="https://en.wikipedia.org/wiki/Transport_layer">Transport layer</a> on
-        /// Wikipedia.
+        /// <i>Wikipedia</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -158,7 +238,20 @@ namespace Amazon.Lightsail.Model
         /// datagram service that emphasizes reduced latency over reliability. If you do require
         /// reliable data stream service, use TCP instead.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error
+        /// messages and operational information indicating success or failure when communicating
+        /// with an instance. For example, an error is indicated when an instance could not be
+        /// reached.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Ping is the only communication supported through the ICMP protocol in Lightsail. To
+        /// configure ping, specify the <code>fromPort</code> parameter as <code>8</code>, and
+        /// the <code>toPort</code> parameter as <code>-1</code>.
+        /// </para>
+        ///  </note> </li> </ul>
         /// </summary>
         public NetworkProtocol Protocol
         {
@@ -175,10 +268,29 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ToPort. 
         /// <para>
-        /// The last port in the range.
+        /// The last port in a range of open ports on an instance.
         /// </para>
+        ///  
+        /// <para>
+        /// Allowed ports:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// TCP and UDP - <code>0</code> to <code>65535</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ICMP - <code>-1</code> (to configure Ping)
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Ping is the only communication supported through the ICMP protocol in Lightsail. To
+        /// configure ping, specify the <code>fromPort</code> parameter as <code>8</code>, and
+        /// the <code>toPort</code> parameter as <code>-1</code>.
+        /// </para>
+        ///  </note> </li> </ul>
         /// </summary>
-        [AWSProperty(Min=0, Max=65535)]
+        [AWSProperty(Min=-1, Max=65535)]
         public int ToPort
         {
             get { return this._toPort.GetValueOrDefault(); }

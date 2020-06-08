@@ -34,6 +34,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 // Load tables using provided conversion schema
                 LoadTables(conversion, out hashTable, out hashRangeTable, out numericHashRangeTable);
 
+                TestEmptyString(hashTable);
+
                 // Test saving and loading empty lists and maps
                 TestEmptyCollections(hashTable);
 
@@ -72,6 +74,38 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
         }
 
+        private void TestEmptyString(Table hashTable)
+        {
+            var companyInfo = new DynamoDBList();
+            companyInfo.Add(string.Empty);
+
+            var product = new Document
+            {
+                ["Id"] = 1,
+                ["Name"] = string.Empty,
+                ["Components"] = new List<string> // SS
+                {
+                    string.Empty
+                },
+                ["CompanyInfo"] = new DynamoDBList() // L
+                {
+                    Entries = { string.Empty }
+                },
+                ["Map"] = new Document() // M
+                {
+                    {"Position", string.Empty}
+                }
+            };
+            hashTable.PutItem(product);
+
+            var savedProduct = hashTable.GetItem(1);
+
+            Assert.AreEqual(1, savedProduct["Id"].AsInt());
+            Assert.AreEqual(string.Empty, savedProduct["Name"].AsString());
+            Assert.AreEqual(string.Empty, savedProduct["Components"].AsListOfString()[0]);
+            Assert.AreEqual(string.Empty, savedProduct["CompanyInfo"].AsListOfDynamoDBEntry()[0].AsString());
+            Assert.AreEqual(string.Empty, savedProduct["Map"].AsDocument()["Position"].AsString());
+        }
 
         private void TestPagination(Table hashRangeTable)
         {
@@ -900,9 +934,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 // Load table using TryLoadTable API
                 hashTable = null;
-                Assert.IsFalse(Table.TryLoadTable(Client, "FakeHashTableThatShouldNotExist", conversion, out hashTable));
+                Assert.IsFalse(Table.TryLoadTable(Client, "FakeHashTableThatShouldNotExist", conversion, true, out hashTable));
                 Assert.AreEqual(0, counter.ResponseCount);
-                Assert.IsTrue(Table.TryLoadTable(Client, hashTableName, conversion, out hashTable));
+                Assert.IsTrue(Table.TryLoadTable(Client, hashTableName, conversion, true, out hashTable));
                 Assert.AreEqual(1, counter.ResponseCount);
 
                 Assert.IsNotNull(hashTable);
@@ -918,9 +952,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(0, hashTable.LocalSecondaryIndexNames.Count);
 
                 // Load table using LoadTable API (may throw an exception)
-                AssertExtensions.ExpectException(() => Table.LoadTable(Client, "FakeHashRangeTableThatShouldNotExist", conversion));
+                AssertExtensions.ExpectException(() => Table.LoadTable(Client, "FakeHashRangeTableThatShouldNotExist", conversion, true));
                 Assert.AreEqual(1, counter.ResponseCount);
-                hashRangeTable = Table.LoadTable(Client, hashRangeTableName, conversion);
+                hashRangeTable = Table.LoadTable(Client, hashRangeTableName, conversion, true);
                 Assert.AreEqual(2, counter.ResponseCount);
                 Assert.IsNotNull(hashRangeTable);
                 Assert.AreEqual(hashRangeTableName, hashRangeTable.TableName);
@@ -935,7 +969,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(2, hashRangeTable.LocalSecondaryIndexes["LocalIndex"].KeySchema.Count);
                 Assert.AreEqual(1, hashRangeTable.LocalSecondaryIndexNames.Count);
 
-                numericHashRangeTable = Table.LoadTable(Client, numericHashRangeTableName, conversion);
+                numericHashRangeTable = Table.LoadTable(Client, numericHashRangeTableName, conversion, true);
                 Assert.AreEqual(1, numericHashRangeTable.HashKeys.Count);
                 Assert.AreEqual(1, numericHashRangeTable.RangeKeys.Count);
                 Assert.AreEqual(2, numericHashRangeTable.Keys.Count);

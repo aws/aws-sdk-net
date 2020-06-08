@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -43,11 +44,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ApplyImmediately. 
         /// <para>
-        /// If true, this parameter causes the modifications in this request and any pending modifications
-        /// to be applied, asynchronously and as soon as possible, regardless of the PreferredMaintenanceWindow
-        /// setting for the replication group. If false, changes to the nodes in the replication
-        /// group are applied on the next maintenance reboot, or the next failure reboot, whichever
-        /// occurs first. 
+        /// This parameter causes the modifications in this request and any pending modifications
+        /// to be applied, asynchronously and as soon as possible. Modifications to Global Replication
+        /// Groups cannot be requested to be applied in PreferredMaintenceWindow. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

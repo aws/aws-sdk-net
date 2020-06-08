@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,9 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes an adjustment based on the difference between the value of the aggregated
-    /// CloudWatch metric and the breach threshold that you've defined for the alarm. Used
-    /// in combination with <a>PutScalingPolicy</a>.
+    /// Describes information used to create a step adjustment for a step scaling policy.
     /// 
     ///  
     /// <para>
@@ -69,7 +68,11 @@ namespace Amazon.AutoScaling.Model
     /// <para>
     /// The upper and lower bound can't be null in the same step adjustment.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-steps">Step
+    /// Adjustments</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class StepAdjustment
     {

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -37,7 +38,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// The service-assigned ID of the SFTP server that is created.
+        /// The service-assigned ID of the file transfer protocol-enabled server that is created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

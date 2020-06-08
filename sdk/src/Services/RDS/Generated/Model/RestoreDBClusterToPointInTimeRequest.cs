@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -259,9 +260,8 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         ///  For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate
-        /// users that connect to the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using
-        /// Kerberos Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.
-        /// 
+        /// users that connect to the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+        /// Authentication</a> in the <i>Amazon Aurora User Guide</i>. 
         /// </para>
         /// </summary>
         public string Domain

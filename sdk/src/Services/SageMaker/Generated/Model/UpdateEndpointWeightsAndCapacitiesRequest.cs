@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,8 +34,7 @@ namespace Amazon.SageMaker.Model
     /// or capacity of one variant associated with an existing endpoint. When it receives
     /// the request, Amazon SageMaker sets the endpoint status to <code>Updating</code>. After
     /// updating the endpoint, it sets the status to <code>InService</code>. To check the
-    /// status of an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-    /// API.
+    /// status of an endpoint, use the <a>DescribeEndpoint</a> API.
     /// </summary>
     public partial class UpdateEndpointWeightsAndCapacitiesRequest : AmazonSageMakerRequest
     {

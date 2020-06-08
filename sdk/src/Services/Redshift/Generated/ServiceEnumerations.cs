@@ -791,4 +791,212 @@ namespace Amazon.Redshift
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type UsageLimitBreachAction.
+    /// </summary>
+    public class UsageLimitBreachAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disable for UsageLimitBreachAction
+        /// </summary>
+        public static readonly UsageLimitBreachAction Disable = new UsageLimitBreachAction("disable");
+        /// <summary>
+        /// Constant EmitMetric for UsageLimitBreachAction
+        /// </summary>
+        public static readonly UsageLimitBreachAction EmitMetric = new UsageLimitBreachAction("emit-metric");
+        /// <summary>
+        /// Constant Log for UsageLimitBreachAction
+        /// </summary>
+        public static readonly UsageLimitBreachAction Log = new UsageLimitBreachAction("log");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UsageLimitBreachAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UsageLimitBreachAction FindValue(string value)
+        {
+            return FindValue<UsageLimitBreachAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UsageLimitBreachAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UsageLimitFeatureType.
+    /// </summary>
+    public class UsageLimitFeatureType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ConcurrencyScaling for UsageLimitFeatureType
+        /// </summary>
+        public static readonly UsageLimitFeatureType ConcurrencyScaling = new UsageLimitFeatureType("concurrency-scaling");
+        /// <summary>
+        /// Constant Spectrum for UsageLimitFeatureType
+        /// </summary>
+        public static readonly UsageLimitFeatureType Spectrum = new UsageLimitFeatureType("spectrum");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UsageLimitFeatureType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UsageLimitFeatureType FindValue(string value)
+        {
+            return FindValue<UsageLimitFeatureType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UsageLimitFeatureType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UsageLimitLimitType.
+    /// </summary>
+    public class UsageLimitLimitType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DataScanned for UsageLimitLimitType
+        /// </summary>
+        public static readonly UsageLimitLimitType DataScanned = new UsageLimitLimitType("data-scanned");
+        /// <summary>
+        /// Constant Time for UsageLimitLimitType
+        /// </summary>
+        public static readonly UsageLimitLimitType Time = new UsageLimitLimitType("time");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UsageLimitLimitType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UsageLimitLimitType FindValue(string value)
+        {
+            return FindValue<UsageLimitLimitType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UsageLimitLimitType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UsageLimitPeriod.
+    /// </summary>
+    public class UsageLimitPeriod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Daily for UsageLimitPeriod
+        /// </summary>
+        public static readonly UsageLimitPeriod Daily = new UsageLimitPeriod("daily");
+        /// <summary>
+        /// Constant Monthly for UsageLimitPeriod
+        /// </summary>
+        public static readonly UsageLimitPeriod Monthly = new UsageLimitPeriod("monthly");
+        /// <summary>
+        /// Constant Weekly for UsageLimitPeriod
+        /// </summary>
+        public static readonly UsageLimitPeriod Weekly = new UsageLimitPeriod("weekly");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UsageLimitPeriod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UsageLimitPeriod FindValue(string value)
+        {
+            return FindValue<UsageLimitPeriod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UsageLimitPeriod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

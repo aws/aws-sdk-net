@@ -39,7 +39,7 @@ namespace ServiceClientGenerator.Generators
 	public ServiceConfiguration Config { get; set; }
 
     // Adds the Amazon Apache 2.0 license
-    public void AddLicenseHeader()
+    public void AddLicenseHeader(string copyrightDuration = "2010-2014")
     {
 
         
@@ -47,8 +47,21 @@ namespace ServiceClientGenerator.Generators
         #line hidden
         
         #line 16 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
-this.Write(@"/*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+this.Write("/*\r\n * Copyright ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 18 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(copyrightDuration));
+
+        
+        #line default
+        #line hidden
+        
+        #line 18 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(@" Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the ""License"").
  * You may not use this file except in compliance with the License.
@@ -968,9 +981,9 @@ this.Write("\t/// </summary>\r\n");
 	}
 
     // Generates documentation for an exception, added to operation documentation
-    public void FormatExceptionDocumentation(ExceptionModel exception)
+    public void FormatExceptionDocumentation(ExceptionShape exceptionShape)
     {
-        var documentation = CleanupDocumentation(exception.Documentation);
+        var documentation = CleanupDocumentation(exceptionShape.Documentation);
 
 
         
@@ -999,7 +1012,7 @@ this.Write(".Model.");
         #line hidden
         
         #line 281 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
+this.Write(this.ToStringHelper.ToStringWithCulture(exceptionShape.Name));
 
         
         #line default

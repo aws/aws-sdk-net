@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,13 +30,9 @@ namespace Amazon.Detective.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGraph operation.
-    /// Amazon Detective is currently in preview.
-    /// 
-    ///  
-    /// <para>
     /// Disables the specified behavior graph and queues it to be deleted. This operation
     /// removes the graph from each member account's list of behavior graphs.
-    /// </para>
+    /// 
     ///  
     /// <para>
     ///  <code>DeleteGraph</code> can only be called by the master account for a behavior

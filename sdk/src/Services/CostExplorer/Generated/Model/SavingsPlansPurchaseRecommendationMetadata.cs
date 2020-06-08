@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -41,6 +42,7 @@ namespace Amazon.CostExplorer.Model
         /// The timestamp showing when the recommendations were generated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string GenerationTimestamp
         {
             get { return this._generationTimestamp; }
@@ -59,6 +61,7 @@ namespace Amazon.CostExplorer.Model
         /// The unique identifier for the recommendation set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string RecommendationId
         {
             get { return this._recommendationId; }

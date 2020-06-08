@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -63,7 +64,9 @@ namespace Amazon.CodeBuild.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems
-        /// Manager Parameter Store.
+        /// Manager Parameter Store. To learn how to specify a parameter store environment variable,
+        /// see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#parameter-store-build-spec">
+        /// parameter store reference-key in the buildspec file</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -73,6 +76,8 @@ namespace Amazon.CodeBuild.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager.
+        /// To learn how to specify a secrets manager environment variable, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#secrets-manager-build-spec">
+        /// secrets manager reference-key in the buildspec file</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -100,6 +105,7 @@ namespace Amazon.CodeBuild.Model
         /// environment variables can be displayed in plain text using the AWS CodeBuild console
         /// and the AWS Command Line Interface (AWS CLI). For sensitive values, we recommend you
         /// use an environment variable of type <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>.
+        /// 
         /// </para>
         ///  </important>
         /// </summary>

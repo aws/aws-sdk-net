@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -152,14 +153,14 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  
         /// <para>
-        /// CodeDeployDefault.OneAtATime is the default deployment configuration. It is used if
-        /// a configuration isn't specified for the deployment or deployment group.
+        ///  <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration.
+        /// It is used if a configuration isn't specified for the deployment or deployment group.
         /// </para>
         ///  
         /// <para>
         /// For more information about the predefined deployment configurations in AWS CodeDeploy,
         /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
-        /// with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.
+        /// with Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -237,7 +238,7 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// Information about groups of tags applied to EC2 instances. The deployment group includes
         /// only EC2 instances identified by all the tag groups. Cannot be used in the same call
-        /// as ec2TagFilters.
+        /// as <code>ec2TagFilters</code>.
         /// </para>
         /// </summary>
         public EC2TagSet Ec2TagSet
@@ -295,7 +296,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property OnPremisesInstanceTagFilters. 
         /// <para>
         /// The on-premises instance tags on which to filter. The deployment group includes on-premises
-        /// instances with any of the specified tags. Cannot be used in the same call as OnPremisesTagSet.
+        /// instances with any of the specified tags. Cannot be used in the same call as <code>OnPremisesTagSet</code>.
         /// </para>
         /// </summary>
         public List<TagFilter> OnPremisesInstanceTagFilters
@@ -315,7 +316,7 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// Information about groups of tags applied to on-premises instances. The deployment
         /// group includes only on-premises instances identified by all of the tag groups. Cannot
-        /// be used in the same call as onPremisesInstanceTagFilters.
+        /// be used in the same call as <code>onPremisesInstanceTagFilters</code>.
         /// </para>
         /// </summary>
         public OnPremisesTagSet OnPremisesTagSet
@@ -333,8 +334,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// A service role ARN that allows AWS CodeDeploy to act on the user's behalf when interacting
-        /// with AWS services.
+        /// A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the
+        /// user's behalf when interacting with AWS services.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -375,7 +376,7 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// Information about triggers to create when the deployment group is created. For examples,
         /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
-        /// a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.
+        /// a Trigger for an AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.
         /// </para>
         /// </summary>
         public List<TriggerConfig> TriggerConfigurations

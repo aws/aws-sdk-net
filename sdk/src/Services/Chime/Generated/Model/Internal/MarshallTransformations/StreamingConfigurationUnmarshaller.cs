@@ -76,6 +76,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Disabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StreamingNotificationTargets", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StreamingNotificationTarget, StreamingNotificationTargetUnmarshaller>(StreamingNotificationTargetUnmarshaller.Instance);
+                    unmarshalledObject.StreamingNotificationTargets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

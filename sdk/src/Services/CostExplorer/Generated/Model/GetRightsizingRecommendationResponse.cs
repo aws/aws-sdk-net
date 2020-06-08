@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -32,10 +33,33 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class GetRightsizingRecommendationResponse : AmazonWebServiceResponse
     {
+        private RightsizingRecommendationConfiguration _configuration;
         private RightsizingRecommendationMetadata _metadata;
         private string _nextPageToken;
         private List<RightsizingRecommendation> _rightsizingRecommendations = new List<RightsizingRecommendation>();
         private RightsizingRecommendationSummary _summary;
+
+        /// <summary>
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// Enables you to customize recommendations across two attributes. You can choose to
+        /// view recommendations for instances within the same instance families or across different
+        /// instance families. You can also choose to view your estimated savings associated with
+        /// recommendations with consideration of existing Savings Plans or RI benefits, or niether.
+        /// 
+        /// </para>
+        /// </summary>
+        public RightsizingRecommendationConfiguration Configuration
+        {
+            get { return this._configuration; }
+            set { this._configuration = value; }
+        }
+
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
+        {
+            return this._configuration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Metadata. 
@@ -61,6 +85,7 @@ namespace Amazon.CostExplorer.Model
         /// The token to retrieve the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
         public string NextPageToken
         {
             get { return this._nextPageToken; }

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Returns properties of the server that was specified.
+    /// Returns properties of a file transfer protocol-enabled server that was specified.
     /// </summary>
     public partial class ListedServer
     {
@@ -43,7 +44,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The unique Amazon Resource Name (ARN) for the server to be listed.
+        /// The unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server
+        /// to be listed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1600)]
@@ -62,8 +64,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of VPC endpoint that your SFTP server is connected to. If your SFTP server
-        /// is connected to a VPC endpoint, your server isn't accessible over the public internet.
+        /// The type of VPC endpoint that your file transfer protocol-enabled server is connected
+        /// to. If your server is connected to a VPC endpoint, your server isn't accessible over
+        /// the public internet.
         /// </para>
         /// </summary>
         public EndpointType EndpointType
@@ -81,9 +84,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property IdentityProviderType. 
         /// <para>
-        /// The authentication method used to validate a user for the server that was specified.
-        /// This can include Secure Shell (SSH), user name and password combinations, or your
-        /// own custom authentication method. Valid values include <code>SERVICE_MANAGED</code>
+        /// The authentication method used to validate a user for a file transfer protocol-enabled
+        /// server that was specified. This can include Secure Shell (SSH), user name and password
+        /// combinations, or your own custom authentication method. Valid values include <code>SERVICE_MANAGED</code>
         /// or <code>API_GATEWAY</code>.
         /// </para>
         /// </summary>
@@ -102,8 +105,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property LoggingRole. 
         /// <para>
-        /// The AWS Identity and Access Management entity that allows the server to turn on Amazon
-        /// CloudWatch logging.
+        /// The AWS Identity and Access Management (IAM) entity that allows a file transfer protocol-enabled
+        /// server to turn on Amazon CloudWatch logging.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -122,8 +125,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// This value is the unique system assigned identifier for the SFTP servers that were
-        /// listed.
+        /// The unique system assigned identifier for a file transfer protocol-enabled servers
+        /// that were listed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=19)]
@@ -142,10 +145,10 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// This property describes the condition of the SFTP server for the server that was described.
-        /// A value of <code>ONLINE</code>&gt; indicates that the server can accept jobs and transfer
-        /// files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot
-        /// perform file transfer operations.
+        /// Describes the condition of a file transfer protocol-enabled server for the server
+        /// that was described. A value of <code>ONLINE</code> indicates that the server can accept
+        /// jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means
+        /// that the server cannot perform file transfer operations.
         /// </para>
         ///  
         /// <para>
@@ -170,8 +173,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserCount. 
         /// <para>
-        /// This property is a numeric value that indicates the number of users that are assigned
-        /// to the SFTP server you specified with the <code>ServerId</code>.
+        /// A numeric value that indicates the number of users that are assigned to a file transfer
+        /// protocol-enabled server you specified with the <code>ServerId</code>.
         /// </para>
         /// </summary>
         public int UserCount

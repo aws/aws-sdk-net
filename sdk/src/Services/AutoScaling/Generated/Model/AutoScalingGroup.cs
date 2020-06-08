@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -313,7 +314,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Range: Minimum value of 604800.
+        /// Valid Range: Minimum value of 0.
         /// </para>
         /// </summary>
         public int MaxInstanceLifetime
@@ -445,7 +446,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.
+        /// The current state of the group when the <a>DeleteAutoScalingGroup</a> operation is
+        /// in progress.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

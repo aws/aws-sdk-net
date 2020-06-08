@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,14 +30,18 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the PutInstancePublicPorts operation.
-    /// Sets the specified open ports for an Amazon Lightsail instance, and closes all ports
-    /// for every protocol not included in the current request.
+    /// Opens ports for a specific Amazon Lightsail instance, and specifies the IP addresses
+    /// allowed to connect to the instance through the ports, and the protocol. This action
+    /// also closes all currently open ports that are not included in the request. Include
+    /// all of the ports and the protocols you want to open in your <code>PutInstancePublicPorts</code>request.
+    /// Or use the <code>OpenInstancePublicPorts</code> action to open ports without closing
+    /// currently open ports.
     /// 
     ///  
     /// <para>
-    /// The <code>put instance public ports</code> operation supports tag-based access control
-    /// via resource tags applied to the resource identified by <code>instance name</code>.
-    /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// The <code>PutInstancePublicPorts</code> action supports tag-based access control via
+    /// resource tags applied to the resource identified by <code>instanceName</code>. For
+    /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
     /// Dev Guide</a>.
     /// </para>
     /// </summary>
@@ -48,7 +53,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property InstanceName. 
         /// <para>
-        /// The Lightsail instance name of the public port(s) you are setting.
+        /// The name of the instance for which to open ports.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -67,7 +72,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property PortInfos. 
         /// <para>
-        /// Specifies information about the public port(s).
+        /// An array of objects to describe the ports to open for the specified instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

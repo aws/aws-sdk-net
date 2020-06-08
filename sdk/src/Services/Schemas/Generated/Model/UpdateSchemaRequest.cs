@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -30,6 +31,12 @@ namespace Amazon.Schemas.Model
     /// <summary>
     /// Container for the parameters to the UpdateSchema operation.
     /// Updates the schema definition
+    /// 
+    ///  <note>
+    /// <para>
+    /// Inactive schemas will be deleted after two years.
+    /// </para>
+    /// </note>
     /// </summary>
     public partial class UpdateSchemaRequest : AmazonSchemasRequest
     {
@@ -98,7 +105,10 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RegistryName.
+        /// Gets and sets the property RegistryName. 
+        /// <para>
+        /// The name of the registry.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RegistryName
@@ -114,7 +124,10 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SchemaName.
+        /// Gets and sets the property SchemaName. 
+        /// <para>
+        /// The name of the schema.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SchemaName

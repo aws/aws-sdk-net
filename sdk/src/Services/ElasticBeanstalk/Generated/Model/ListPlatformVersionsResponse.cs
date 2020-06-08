@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,8 +39,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The starting index into the remaining list of platforms. if this value is not <code>null</code>,
-        /// you can use it in a subsequent <code>ListPlatformVersion</code> call. 
+        /// In a paginated request, if this value isn't <code>null</code>, it's the token that
+        /// you can pass in a subsequent request to get the next response page.
         /// </para>
         /// </summary>
         public string NextToken
@@ -57,7 +58,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property PlatformSummaryList. 
         /// <para>
-        /// Detailed information about the platforms.
+        /// Summary information about the platform versions.
         /// </para>
         /// </summary>
         public List<PlatformSummary> PlatformSummaryList

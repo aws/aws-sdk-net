@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -67,7 +68,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  <b>region</b> represents the Region identifier for an AWS Region supported by AWS
         /// Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For
         /// a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
-        /// Manager Service Endpoints</a> in the <i>AWS General Reference</i>.
+        /// Manager service endpoints</a> in the <i>AWS General Reference</i>.
         /// </para>
         ///  
         /// <para>

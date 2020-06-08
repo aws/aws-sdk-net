@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -36,6 +37,7 @@ namespace Amazon.IoT.Model
         private int? _credentialDurationSeconds;
         private string _roleAlias;
         private string _roleArn;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property CredentialDurationSeconds. 
@@ -93,6 +95,37 @@ namespace Amazon.IoT.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Metadata which can be used to manage the role alias.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For URI Request parameters use format: ...key1=value1&amp;key2=value2...
+        /// </para>
+        ///  
+        /// <para>
+        /// For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."
+        /// </para>
+        ///  
+        /// <para>
+        /// For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

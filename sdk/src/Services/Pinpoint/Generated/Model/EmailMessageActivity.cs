@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -41,7 +42,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property MessageConfig. 
         /// <para>
-        /// The "From" address to use for the message.
+        /// Specifies the sender address for an email message that's sent to participants in the
+        /// journey.
         /// </para>
         /// </summary>
         public JourneyEmailMessage MessageConfig
@@ -77,7 +79,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// The name of the email template to use for the message.
+        /// The name of the email message template to use for the message. If specified, this
+        /// value must match the name of an existing message template.
         /// </para>
         /// </summary>
         public string TemplateName

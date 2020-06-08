@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -43,6 +44,7 @@ namespace Amazon.ECS.Model
         private List<string> _dockerSecurityOptions = new List<string>();
         private List<string> _entryPoint = new List<string>();
         private List<KeyValuePair> _environment = new List<KeyValuePair>();
+        private List<EnvironmentFile> _environmentFiles = new List<EnvironmentFile>();
         private bool? _essential;
         private List<HostEntry> _extraHosts = new List<HostEntry>();
         private FirelensConfiguration _firelensConfiguration;
@@ -415,6 +417,48 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnvironmentFiles. 
+        /// <para>
+        /// A list of files containing the environment variables to pass to a container. This
+        /// parameter maps to the <code>--env-file</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// run</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify up to ten environment files. The file must have a <code>.env</code>
+        /// file extension. Each line in an environment file should contain an environment variable
+        /// in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated
+        /// as comments and are ignored. For more information on the environment variable file
+        /// syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default environment
+        /// variables in file</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If there are environment variables specified using the <code>environment</code> parameter
+        /// in a container definition, they take precedence over the variables contained within
+        /// an environment file. If multiple environment files are specified that contain the
+        /// same variable, they are processed from the top down. It is recommended to use unique
+        /// variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
+        /// Environment Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field is not valid for containers in tasks using the Fargate launch type.
+        /// </para>
+        /// </summary>
+        public List<EnvironmentFile> EnvironmentFiles
+        {
+            get { return this._environmentFiles; }
+            set { this._environmentFiles = value; }
+        }
+
+        // Check to see if EnvironmentFiles property is set
+        internal bool IsSetEnvironmentFiles()
+        {
+            return this._environmentFiles != null && this._environmentFiles.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Essential. 
         /// <para>
         /// If the <code>essential</code> parameter of a container is marked as <code>true</code>,
@@ -495,8 +539,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property HealthCheck. 
         /// <para>
-        /// The health check command and associated configuration parameters for the container.
-        /// This parameter maps to <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+        /// The container health check command and associated configuration parameters for the
+        /// container. This parameter maps to <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>HEALTHCHECK</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.

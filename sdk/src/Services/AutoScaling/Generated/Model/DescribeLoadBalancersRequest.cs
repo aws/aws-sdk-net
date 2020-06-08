@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -34,7 +35,8 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// This operation describes only Classic Load Balancers. If you have Application Load
-    /// Balancers or Network Load Balancers, use <a>DescribeLoadBalancerTargetGroups</a> instead.
+    /// Balancers or Network Load Balancers, use the <a>DescribeLoadBalancerTargetGroups</a>
+    /// API instead.
     /// </para>
     /// </summary>
     public partial class DescribeLoadBalancersRequest : AmazonAutoScalingRequest

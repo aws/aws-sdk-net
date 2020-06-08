@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,7 +40,7 @@ namespace Amazon.IoTEvents.Model
         /// Gets and sets the property Events. 
         /// <para>
         /// Specifies the actions that are performed when the state is entered and the <code>condition</code>
-        /// is TRUE.
+        /// is <code>TRUE</code>.
         /// </para>
         /// </summary>
         public List<Event> Events

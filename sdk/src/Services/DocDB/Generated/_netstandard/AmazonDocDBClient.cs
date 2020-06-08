@@ -2171,9 +2171,6 @@ namespace Amazon.DocDB
         /// <exception cref="Amazon.DocDB.Model.DBSubnetGroupNotFoundException">
         /// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
         /// </exception>
-        /// <exception cref="Amazon.DocDB.Model.DBSubnetGroupNotFoundException">
-        /// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
-        /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InsufficientDBClusterCapacityException">
         /// The cluster doesn't have enough capacity for the current operation.
         /// </exception>
@@ -2201,10 +2198,6 @@ namespace Amazon.DocDB
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.KMSKeyNotAccessibleException">
         /// An error occurred when accessing an AWS KMS key.
-        /// </exception>
-        /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
-        /// The request would cause you to exceed the allowed amount of storage available across
-        /// all instances.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
         /// The request would cause you to exceed the allowed amount of storage available across

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -30,7 +31,8 @@ namespace Amazon.Transfer.Model
     /// <summary>
     /// Container for the parameters to the ImportSshPublicKey operation.
     /// Adds a Secure Shell (SSH) public key to a user account identified by a <code>UserName</code>
-    /// value assigned to a specific server, identified by <code>ServerId</code>.
+    /// value assigned to the specific file transfer protocol-enabled server, identified by
+    /// <code>ServerId</code>.
     /// 
     ///  
     /// <para>
@@ -47,7 +49,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned unique identifier for an SFTP server.
+        /// A system-assigned unique identifier for a file transfer protocol-enabled server.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]
@@ -85,7 +87,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The name of the user account that is assigned to one or more servers.
+        /// The name of the user account that is assigned to one or more file transfer protocol-enabled
+        /// servers.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=32)]

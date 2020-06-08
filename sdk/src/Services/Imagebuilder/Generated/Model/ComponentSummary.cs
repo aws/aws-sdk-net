@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,6 +40,7 @@ namespace Amazon.Imagebuilder.Model
         private string _name;
         private string _owner;
         private Platform _platform;
+        private List<string> _supportedOsVersions = new List<string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private ComponentType _type;
         private string _version;
@@ -170,6 +172,27 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetPlatform()
         {
             return this._platform != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedOsVersions. 
+        /// <para>
+        /// The operating system (OS) version supported by the component. If the OS information
+        /// is available, a prefix match is performed against the parent image OS version during
+        /// image recipe creation. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25)]
+        public List<string> SupportedOsVersions
+        {
+            get { return this._supportedOsVersions; }
+            set { this._supportedOsVersions = value; }
+        }
+
+        // Check to see if SupportedOsVersions property is set
+        internal bool IsSetSupportedOsVersions()
+        {
+            return this._supportedOsVersions != null && this._supportedOsVersions.Count > 0; 
         }
 
         /// <summary>

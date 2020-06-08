@@ -121,6 +121,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.StreamId);
             }
 
+            if(requestObject.IsSetVpcInterfaceAttachment())
+            {
+                context.Writer.WritePropertyName("vpcInterfaceAttachment");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VpcInterfaceAttachmentMarshaller.Instance;
+                marshaller.Marshall(requestObject.VpcInterfaceAttachment, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

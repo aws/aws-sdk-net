@@ -46,6 +46,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessPoint service method.</param>
         /// 
         /// <returns>The response from the CreateAccessPoint service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPoint">REST API Reference for CreateAccessPoint Operation</seealso>
         CreateAccessPointResponse CreateAccessPoint(CreateAccessPointRequest request);
 
 
@@ -59,6 +60,7 @@ namespace Amazon.S3Control
         /// </param>
         /// 
         /// <returns>The response from the CreateAccessPoint service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPoint">REST API Reference for CreateAccessPoint Operation</seealso>
         Task<CreateAccessPointResponse> CreateAccessPointAsync(CreateAccessPointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -67,7 +69,32 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Creates an Amazon S3 batch operations job.
+        /// You can use Amazon S3 Batch Operations to perform large-scale Batch Operations on
+        /// Amazon S3 objects. Amazon S3 Batch Operations can execute a single operation or action
+        /// on lists of Amazon S3 objects that you specify. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+        /// S3 Batch Operations</a> in the Amazon Simple Storage Service Developer Guide.
+        /// 
+        ///  
+        /// <para>
+        /// Related actions include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListJobs</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateJobPriority</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateJobStatus</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// 
@@ -84,12 +111,38 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateJob">REST API Reference for CreateJob Operation</seealso>
         CreateJobResponse CreateJob(CreateJobRequest request);
 
 
 
         /// <summary>
-        /// Creates an Amazon S3 batch operations job.
+        /// You can use Amazon S3 Batch Operations to perform large-scale Batch Operations on
+        /// Amazon S3 objects. Amazon S3 Batch Operations can execute a single operation or action
+        /// on lists of Amazon S3 objects that you specify. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+        /// S3 Batch Operations</a> in the Amazon Simple Storage Service Developer Guide.
+        /// 
+        ///  
+        /// <para>
+        /// Related actions include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListJobs</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateJobPriority</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateJobStatus</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// <param name="cancellationToken">
@@ -109,6 +162,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateJob">REST API Reference for CreateJob Operation</seealso>
         Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -122,6 +176,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPoint service method.</param>
         /// 
         /// <returns>The response from the DeleteAccessPoint service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPoint">REST API Reference for DeleteAccessPoint Operation</seealso>
         DeleteAccessPointResponse DeleteAccessPoint(DeleteAccessPointRequest request);
 
 
@@ -135,6 +190,7 @@ namespace Amazon.S3Control
         /// </param>
         /// 
         /// <returns>The response from the DeleteAccessPoint service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPoint">REST API Reference for DeleteAccessPoint Operation</seealso>
         Task<DeleteAccessPointResponse> DeleteAccessPointAsync(DeleteAccessPointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -148,6 +204,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointPolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteAccessPointPolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicy">REST API Reference for DeleteAccessPointPolicy Operation</seealso>
         DeleteAccessPointPolicyResponse DeleteAccessPointPolicy(DeleteAccessPointPolicyRequest request);
 
 
@@ -161,6 +218,7 @@ namespace Amazon.S3Control
         /// </param>
         /// 
         /// <returns>The response from the DeleteAccessPointPolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicy">REST API Reference for DeleteAccessPointPolicy Operation</seealso>
         Task<DeleteAccessPointPolicyResponse> DeleteAccessPointPolicyAsync(DeleteAccessPointPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -169,7 +227,28 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Delete the tags on a Amazon S3 batch operations job, if any.
+        /// Removes the entire tag set from the specified Amazon S3 Batch Operations job. To use
+        /// this operation, you must have permission to perform the <code>s3:DeleteJobTagging</code>
+        /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
+        /// Job Tags</a> in the Amazon Simple Storage Service Developer Guide.
+        /// 
+        ///   
+        /// <para>
+        /// Related actions include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetJobTagging</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutJobTagging</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteJobTagging service method.</param>
         /// 
@@ -183,12 +262,34 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteJobTagging">REST API Reference for DeleteJobTagging Operation</seealso>
         DeleteJobTaggingResponse DeleteJobTagging(DeleteJobTaggingRequest request);
 
 
 
         /// <summary>
-        /// Delete the tags on a Amazon S3 batch operations job, if any.
+        /// Removes the entire tag set from the specified Amazon S3 Batch Operations job. To use
+        /// this operation, you must have permission to perform the <code>s3:DeleteJobTagging</code>
+        /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
+        /// Job Tags</a> in the Amazon Simple Storage Service Developer Guide.
+        /// 
+        ///   
+        /// <para>
+        /// Related actions include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetJobTagging</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutJobTagging</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteJobTagging service method.</param>
         /// <param name="cancellationToken">
@@ -205,6 +306,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteJobTagging">REST API Reference for DeleteJobTagging Operation</seealso>
         Task<DeleteJobTaggingResponse> DeleteJobTaggingAsync(DeleteJobTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -219,6 +321,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
         /// 
         /// <returns>The response from the DeletePublicAccessBlock service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         DeletePublicAccessBlockResponse DeletePublicAccessBlock(DeletePublicAccessBlockRequest request);
 
 
@@ -233,6 +336,7 @@ namespace Amazon.S3Control
         /// </param>
         /// 
         /// <returns>The response from the DeletePublicAccessBlock service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         Task<DeletePublicAccessBlockResponse> DeletePublicAccessBlockAsync(DeletePublicAccessBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -241,7 +345,31 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Retrieves the configuration parameters and status for a batch operations job.
+        /// Retrieves the configuration parameters and status for a Batch Operations job. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+        /// S3 Batch Operations</a> in the Amazon Simple Storage Service Developer Guide.
+        /// 
+        ///   
+        /// <para>
+        /// Related actions include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListJobs</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateJobPriority</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateJobStatus</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJob service method.</param>
         /// 
@@ -258,12 +386,37 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         DescribeJobResponse DescribeJob(DescribeJobRequest request);
 
 
 
         /// <summary>
-        /// Retrieves the configuration parameters and status for a batch operations job.
+        /// Retrieves the configuration parameters and status for a Batch Operations job. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+        /// S3 Batch Operations</a> in the Amazon Simple Storage Service Developer Guide.
+        /// 
+        ///   
+        /// <para>
+        /// Related actions include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListJobs</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateJobPriority</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateJobStatus</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJob service method.</param>
         /// <param name="cancellationToken">
@@ -283,6 +436,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         Task<DescribeJobResponse> DescribeJobAsync(DescribeJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -296,6 +450,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPoint service method.</param>
         /// 
         /// <returns>The response from the GetAccessPoint service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPoint">REST API Reference for GetAccessPoint Operation</seealso>
         GetAccessPointResponse GetAccessPoint(GetAccessPointRequest request);
 
 
@@ -309,6 +464,7 @@ namespace Amazon.S3Control
         /// </param>
         /// 
         /// <returns>The response from the GetAccessPoint service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPoint">REST API Reference for GetAccessPoint Operation</seealso>
         Task<GetAccessPointResponse> GetAccessPointAsync(GetAccessPointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -322,6 +478,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicy service method.</param>
         /// 
         /// <returns>The response from the GetAccessPointPolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicy">REST API Reference for GetAccessPointPolicy Operation</seealso>
         GetAccessPointPolicyResponse GetAccessPointPolicy(GetAccessPointPolicyRequest request);
 
 
@@ -335,6 +492,7 @@ namespace Amazon.S3Control
         /// </param>
         /// 
         /// <returns>The response from the GetAccessPointPolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicy">REST API Reference for GetAccessPointPolicy Operation</seealso>
         Task<GetAccessPointPolicyResponse> GetAccessPointPolicyAsync(GetAccessPointPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -351,6 +509,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicyStatus service method.</param>
         /// 
         /// <returns>The response from the GetAccessPointPolicyStatus service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatus">REST API Reference for GetAccessPointPolicyStatus Operation</seealso>
         GetAccessPointPolicyStatusResponse GetAccessPointPolicyStatus(GetAccessPointPolicyStatusRequest request);
 
 
@@ -367,6 +526,7 @@ namespace Amazon.S3Control
         /// </param>
         /// 
         /// <returns>The response from the GetAccessPointPolicyStatus service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatus">REST API Reference for GetAccessPointPolicyStatus Operation</seealso>
         Task<GetAccessPointPolicyStatusResponse> GetAccessPointPolicyStatusAsync(GetAccessPointPolicyStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -375,7 +535,28 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Retrieve the tags on a Amazon S3 batch operations job.
+        /// Returns the tags on an Amazon S3 Batch Operations job. To use this operation, you
+        /// must have permission to perform the <code>s3:GetJobTagging</code> action. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
+        /// Job Tags</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// 
+        ///   
+        /// <para>
+        /// Related actions include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutJobTagging</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteJobTagging</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobTagging service method.</param>
         /// 
@@ -389,12 +570,34 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetJobTagging">REST API Reference for GetJobTagging Operation</seealso>
         GetJobTaggingResponse GetJobTagging(GetJobTaggingRequest request);
 
 
 
         /// <summary>
-        /// Retrieve the tags on a Amazon S3 batch operations job.
+        /// Returns the tags on an Amazon S3 Batch Operations job. To use this operation, you
+        /// must have permission to perform the <code>s3:GetJobTagging</code> action. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
+        /// Job Tags</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// 
+        ///   
+        /// <para>
+        /// Related actions include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutJobTagging</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteJobTagging</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobTagging service method.</param>
         /// <param name="cancellationToken">
@@ -411,6 +614,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetJobTagging">REST API Reference for GetJobTagging Operation</seealso>
         Task<GetJobTaggingResponse> GetJobTaggingAsync(GetJobTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -430,6 +634,7 @@ namespace Amazon.S3Control
         /// against an account that doesn't have a <code>PublicAccessBlockConfiguration</code>
         /// set.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         GetPublicAccessBlockResponse GetPublicAccessBlock(GetPublicAccessBlockRequest request);
 
 
@@ -449,6 +654,7 @@ namespace Amazon.S3Control
         /// against an account that doesn't have a <code>PublicAccessBlockConfiguration</code>
         /// set.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         Task<GetPublicAccessBlockResponse> GetPublicAccessBlockAsync(GetPublicAccessBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -459,13 +665,14 @@ namespace Amazon.S3Control
         /// <summary>
         /// Returns a list of the access points currently associated with the specified bucket.
         /// You can retrieve up to 1000 access points per call. If the specified bucket has more
-        /// than 1000 access points (or the number specified in <code>maxResults</code>, whichever
-        /// is less), then the response will include a continuation token that you can use to
-        /// list the additional access points.
+        /// than 1,000 access points (or the number specified in <code>maxResults</code>, whichever
+        /// is less), the response will include a continuation token that you can use to list
+        /// the additional access points.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessPoints service method.</param>
         /// 
         /// <returns>The response from the ListAccessPoints service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPoints">REST API Reference for ListAccessPoints Operation</seealso>
         ListAccessPointsResponse ListAccessPoints(ListAccessPointsRequest request);
 
 
@@ -473,9 +680,9 @@ namespace Amazon.S3Control
         /// <summary>
         /// Returns a list of the access points currently associated with the specified bucket.
         /// You can retrieve up to 1000 access points per call. If the specified bucket has more
-        /// than 1000 access points (or the number specified in <code>maxResults</code>, whichever
-        /// is less), then the response will include a continuation token that you can use to
-        /// list the additional access points.
+        /// than 1,000 access points (or the number specified in <code>maxResults</code>, whichever
+        /// is less), the response will include a continuation token that you can use to list
+        /// the additional access points.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessPoints service method.</param>
         /// <param name="cancellationToken">
@@ -483,6 +690,7 @@ namespace Amazon.S3Control
         /// </param>
         /// 
         /// <returns>The response from the ListAccessPoints service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPoints">REST API Reference for ListAccessPoints Operation</seealso>
         Task<ListAccessPointsResponse> ListAccessPointsAsync(ListAccessPointsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -491,8 +699,32 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Lists current jobs and jobs that have ended within the last 30 days for the AWS account
-        /// making the request.
+        /// Lists current Amazon S3 Batch Operations jobs and jobs that have ended within the
+        /// last 30 days for the AWS account making the request. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+        /// S3 Batch Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// Related actions include:
+        /// </para>
+        ///   <ul> <li> 
+        /// <para>
+        ///  <a>CreateJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateJobPriority</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateJobStatus</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// 
@@ -506,13 +738,38 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.InvalidRequestException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListJobs">REST API Reference for ListJobs Operation</seealso>
         ListJobsResponse ListJobs(ListJobsRequest request);
 
 
 
         /// <summary>
-        /// Lists current jobs and jobs that have ended within the last 30 days for the AWS account
-        /// making the request.
+        /// Lists current Amazon S3 Batch Operations jobs and jobs that have ended within the
+        /// last 30 days for the AWS account making the request. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+        /// S3 Batch Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// Related actions include:
+        /// </para>
+        ///   <ul> <li> 
+        /// <para>
+        ///  <a>CreateJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateJobPriority</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateJobStatus</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// <param name="cancellationToken">
@@ -529,6 +786,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.InvalidRequestException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListJobs">REST API Reference for ListJobs Operation</seealso>
         Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -544,6 +802,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the PutAccessPointPolicy service method.</param>
         /// 
         /// <returns>The response from the PutAccessPointPolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicy">REST API Reference for PutAccessPointPolicy Operation</seealso>
         PutAccessPointPolicyResponse PutAccessPointPolicy(PutAccessPointPolicyRequest request);
 
 
@@ -559,6 +818,7 @@ namespace Amazon.S3Control
         /// </param>
         /// 
         /// <returns>The response from the PutAccessPointPolicy service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicy">REST API Reference for PutAccessPointPolicy Operation</seealso>
         Task<PutAccessPointPolicyResponse> PutAccessPointPolicyAsync(PutAccessPointPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -567,7 +827,79 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Replace the set of tags on a Amazon S3 batch operations job.
+        /// Set the supplied tag-set on an Amazon S3 Batch Operations job.
+        /// 
+        ///  
+        /// <para>
+        /// A tag is a key-value pair. You can associate Amazon S3 Batch Operations tags with
+        /// any job by sending a PUT request against the tagging subresource that is associated
+        /// with the job. To modify the existing tag set, you can either replace the existing
+        /// tag set entirely, or make changes within the existing tag set by retrieving the existing
+        /// tag set using <a>GetJobTagging</a>, modify that tag set, and use this API action to
+        /// replace the tag set with the one you have modified.. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
+        /// Job Tags</a> in the Amazon Simple Storage Service Developer Guide. 
+        /// </para>
+        ///   <note> <ul> <li> 
+        /// <para>
+        /// If you send this request with an empty tag set, Amazon S3 deletes the existing tag
+        /// set on the Batch Operations job. If you use this method, you will be charged for a
+        /// Tier 1 Request (PUT). For more information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon
+        /// S3 pricing</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For deleting existing tags for your batch operations job, <a>DeleteJobTagging</a>
+        /// request is preferred because it achieves the same result without incurring charges.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A few things to consider about using tags:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon S3 limits the maximum number of tags to 50 tags per job.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can associate up to 50 tags with a job as long as they have unique tag keys.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A tag key can be up to 128 Unicode characters in length, and tag values can be up
+        /// to 256 Unicode characters in length.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The key and values are case sensitive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For tagging-related restrictions related to characters and encodings, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+        /// Tag Restrictions</a>.
+        /// </para>
+        ///  </li> </ul> </li> </ul> </note>  
+        /// <para>
+        /// To use this operation, you must have permission to perform the <code>s3:PutJobTagging</code>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
+        /// Related actions include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetJobTagging</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteJobTagging</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutJobTagging service method.</param>
         /// 
@@ -584,12 +916,85 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyTagsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutJobTagging">REST API Reference for PutJobTagging Operation</seealso>
         PutJobTaggingResponse PutJobTagging(PutJobTaggingRequest request);
 
 
 
         /// <summary>
-        /// Replace the set of tags on a Amazon S3 batch operations job.
+        /// Set the supplied tag-set on an Amazon S3 Batch Operations job.
+        /// 
+        ///  
+        /// <para>
+        /// A tag is a key-value pair. You can associate Amazon S3 Batch Operations tags with
+        /// any job by sending a PUT request against the tagging subresource that is associated
+        /// with the job. To modify the existing tag set, you can either replace the existing
+        /// tag set entirely, or make changes within the existing tag set by retrieving the existing
+        /// tag set using <a>GetJobTagging</a>, modify that tag set, and use this API action to
+        /// replace the tag set with the one you have modified.. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
+        /// Job Tags</a> in the Amazon Simple Storage Service Developer Guide. 
+        /// </para>
+        ///   <note> <ul> <li> 
+        /// <para>
+        /// If you send this request with an empty tag set, Amazon S3 deletes the existing tag
+        /// set on the Batch Operations job. If you use this method, you will be charged for a
+        /// Tier 1 Request (PUT). For more information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon
+        /// S3 pricing</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For deleting existing tags for your batch operations job, <a>DeleteJobTagging</a>
+        /// request is preferred because it achieves the same result without incurring charges.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A few things to consider about using tags:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon S3 limits the maximum number of tags to 50 tags per job.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can associate up to 50 tags with a job as long as they have unique tag keys.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A tag key can be up to 128 Unicode characters in length, and tag values can be up
+        /// to 256 Unicode characters in length.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The key and values are case sensitive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For tagging-related restrictions related to characters and encodings, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+        /// Tag Restrictions</a>.
+        /// </para>
+        ///  </li> </ul> </li> </ul> </note>  
+        /// <para>
+        /// To use this operation, you must have permission to perform the <code>s3:PutJobTagging</code>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
+        /// Related actions include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetJobTagging</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteJobTagging</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutJobTagging service method.</param>
         /// <param name="cancellationToken">
@@ -609,6 +1014,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyTagsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutJobTagging">REST API Reference for PutJobTagging Operation</seealso>
         Task<PutJobTaggingResponse> PutJobTaggingAsync(PutJobTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -623,6 +1029,7 @@ namespace Amazon.S3Control
         /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
         /// 
         /// <returns>The response from the PutPublicAccessBlock service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         PutPublicAccessBlockResponse PutPublicAccessBlock(PutPublicAccessBlockRequest request);
 
 
@@ -637,6 +1044,7 @@ namespace Amazon.S3Control
         /// </param>
         /// 
         /// <returns>The response from the PutPublicAccessBlock service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         Task<PutPublicAccessBlockResponse> PutPublicAccessBlockAsync(PutPublicAccessBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -645,7 +1053,31 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Updates an existing job's priority.
+        /// Updates an existing Amazon S3 Batch Operations job's priority. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+        /// S3 Batch Operations</a> in the Amazon Simple Storage Service Developer Guide.
+        /// 
+        ///   
+        /// <para>
+        /// Related actions include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListJobs</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateJobStatus</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateJobPriority service method.</param>
         /// 
@@ -662,12 +1094,37 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobPriority">REST API Reference for UpdateJobPriority Operation</seealso>
         UpdateJobPriorityResponse UpdateJobPriority(UpdateJobPriorityRequest request);
 
 
 
         /// <summary>
-        /// Updates an existing job's priority.
+        /// Updates an existing Amazon S3 Batch Operations job's priority. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+        /// S3 Batch Operations</a> in the Amazon Simple Storage Service Developer Guide.
+        /// 
+        ///   
+        /// <para>
+        /// Related actions include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListJobs</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateJobStatus</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateJobPriority service method.</param>
         /// <param name="cancellationToken">
@@ -687,6 +1144,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobPriority">REST API Reference for UpdateJobPriority Operation</seealso>
         Task<UpdateJobPriorityResponse> UpdateJobPriorityAsync(UpdateJobPriorityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -696,7 +1154,30 @@ namespace Amazon.S3Control
 
         /// <summary>
         /// Updates the status for the specified job. Use this operation to confirm that you want
-        /// to run a job or to cancel an existing job.
+        /// to run a job or to cancel an existing job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+        /// S3 Batch Operations</a> in the Amazon Simple Storage Service Developer Guide.
+        /// 
+        ///   
+        /// <para>
+        /// Related actions include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListJobs</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateJobStatus</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateJobStatus service method.</param>
         /// 
@@ -716,13 +1197,37 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobStatus">REST API Reference for UpdateJobStatus Operation</seealso>
         UpdateJobStatusResponse UpdateJobStatus(UpdateJobStatusRequest request);
 
 
 
         /// <summary>
         /// Updates the status for the specified job. Use this operation to confirm that you want
-        /// to run a job or to cancel an existing job.
+        /// to run a job or to cancel an existing job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+        /// S3 Batch Operations</a> in the Amazon Simple Storage Service Developer Guide.
+        /// 
+        ///   
+        /// <para>
+        /// Related actions include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListJobs</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeJob</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateJobStatus</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateJobStatus service method.</param>
         /// <param name="cancellationToken">
@@ -745,6 +1250,7 @@ namespace Amazon.S3Control
         /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobStatus">REST API Reference for UpdateJobStatus Operation</seealso>
         Task<UpdateJobStatusResponse> UpdateJobStatusAsync(UpdateJobStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

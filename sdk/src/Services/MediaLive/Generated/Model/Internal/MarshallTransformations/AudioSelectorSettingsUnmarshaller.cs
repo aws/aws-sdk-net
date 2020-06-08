@@ -76,6 +76,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.AudioPidSelection = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("audioTrackSelection", targetDepth))
+                {
+                    var unmarshaller = AudioTrackSelectionUnmarshaller.Instance;
+                    unmarshalledObject.AudioTrackSelection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

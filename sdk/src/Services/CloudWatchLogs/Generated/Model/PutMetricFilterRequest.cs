@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -31,7 +32,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// Container for the parameters to the PutMetricFilter operation.
     /// Creates or updates a metric filter and associates it with the specified log group.
     /// Metric filters allow you to configure rules to extract metric data from log events
-    /// ingested through <a>PutLogEvents</a>.
+    /// ingested through <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.
     /// 
     ///  
     /// <para>

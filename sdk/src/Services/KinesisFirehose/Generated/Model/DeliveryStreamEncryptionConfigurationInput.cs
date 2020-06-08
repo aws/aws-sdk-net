@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Used to specify the type and Amazon Resource Name (ARN) of the CMK needed for Server-Side
+    /// Specifies the type and Amazon Resource Name (ARN) of the CMK to use for Server-Side
     /// Encryption (SSE).
     /// </summary>
     public partial class DeliveryStreamEncryptionConfigurationInput
@@ -72,9 +73,24 @@ namespace Amazon.KinesisFirehose.Model
         ///  
         /// <para>
         /// When you invoke <a>StartDeliveryStreamEncryption</a> to change the CMK for a delivery
-        /// stream that is already encrypted with a customer managed CMK, Kinesis Data Firehose
-        /// schedules the grant it had on the old CMK for retirement.
+        /// stream that is encrypted with a customer managed CMK, Kinesis Data Firehose schedules
+        /// the grant it had on the old CMK for retirement.
         /// </para>
+        ///  
+        /// <para>
+        /// You can use a CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams.
+        /// If a <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation
+        /// exceeds this limit, Kinesis Data Firehose throws a <code>LimitExceededException</code>.
+        /// 
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't
+        /// support asymmetric CMKs. For information about symmetric and asymmetric CMKs, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About
+        /// Symmetric and Asymmetric CMKs</a> in the AWS Key Management Service developer guide.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true)]
         public KeyType KeyType

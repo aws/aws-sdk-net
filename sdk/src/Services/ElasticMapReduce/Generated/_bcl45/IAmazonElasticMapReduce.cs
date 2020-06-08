@@ -837,6 +837,34 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  GetManagedScalingPolicy
+
+
+        /// <summary>
+        /// Fetches the attached managed scaling policy for an Amazon EMR cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedScalingPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetManagedScalingPolicy service method, as returned by ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetManagedScalingPolicy">REST API Reference for GetManagedScalingPolicy Operation</seealso>
+        GetManagedScalingPolicyResponse GetManagedScalingPolicy(GetManagedScalingPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Fetches the attached managed scaling policy for an Amazon EMR cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedScalingPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetManagedScalingPolicy service method, as returned by ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetManagedScalingPolicy">REST API Reference for GetManagedScalingPolicy Operation</seealso>
+        Task<GetManagedScalingPolicyResponse> GetManagedScalingPolicyAsync(GetManagedScalingPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListBootstrapActions
 
 
@@ -1554,6 +1582,40 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  PutManagedScalingPolicy
+
+
+        /// <summary>
+        /// Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed
+        /// scaling policy defines the limits for resources, such as EC2 instances that can be
+        /// added or terminated from a cluster. The policy only applies to the core and task nodes.
+        /// The master node cannot be scaled after initial configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutManagedScalingPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutManagedScalingPolicy service method, as returned by ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutManagedScalingPolicy">REST API Reference for PutManagedScalingPolicy Operation</seealso>
+        PutManagedScalingPolicyResponse PutManagedScalingPolicy(PutManagedScalingPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed
+        /// scaling policy defines the limits for resources, such as EC2 instances that can be
+        /// added or terminated from a cluster. The policy only applies to the core and task nodes.
+        /// The master node cannot be scaled after initial configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutManagedScalingPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutManagedScalingPolicy service method, as returned by ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutManagedScalingPolicy">REST API Reference for PutManagedScalingPolicy Operation</seealso>
+        Task<PutManagedScalingPolicyResponse> PutManagedScalingPolicyAsync(PutManagedScalingPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RemoveAutoScalingPolicy
 
 
@@ -1581,6 +1643,34 @@ namespace Amazon.ElasticMapReduce
         /// <returns>The response from the RemoveAutoScalingPolicy service method, as returned by ElasticMapReduce.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveAutoScalingPolicy">REST API Reference for RemoveAutoScalingPolicy Operation</seealso>
         Task<RemoveAutoScalingPolicyResponse> RemoveAutoScalingPolicyAsync(RemoveAutoScalingPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RemoveManagedScalingPolicy
+
+
+        /// <summary>
+        /// Removes a managed scaling policy from a specified EMR cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveManagedScalingPolicy service method.</param>
+        /// 
+        /// <returns>The response from the RemoveManagedScalingPolicy service method, as returned by ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveManagedScalingPolicy">REST API Reference for RemoveManagedScalingPolicy Operation</seealso>
+        RemoveManagedScalingPolicyResponse RemoveManagedScalingPolicy(RemoveManagedScalingPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Removes a managed scaling policy from a specified EMR cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveManagedScalingPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveManagedScalingPolicy service method, as returned by ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveManagedScalingPolicy">REST API Reference for RemoveManagedScalingPolicy Operation</seealso>
+        Task<RemoveManagedScalingPolicyResponse> RemoveManagedScalingPolicyAsync(RemoveManagedScalingPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

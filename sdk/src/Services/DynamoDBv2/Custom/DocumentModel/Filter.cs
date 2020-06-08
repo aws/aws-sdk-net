@@ -94,9 +94,34 @@ namespace Amazon.DynamoDBv2.DocumentModel
             /// </summary>
             /// <param name="conversion"></param>
             /// <param name="shouldConvertToEpochSeconds"></param>
+            /// <returns></returns>
+            public Condition ToCondition(DynamoDBEntryConversion conversion, bool shouldConvertToEpochSeconds)
+            {
+                return ToCondition(conversion, shouldConvertToEpochSeconds: false, attributeName: null, isEmptyStringValueEnabled: shouldConvertToEpochSeconds);
+            }
+
+            /// <summary>
+            /// Converts the FilterCondition to the Amazon.DynamoDBv2.Model.Condition object.
+            /// </summary>
+            /// <param name="conversion"></param>
+            /// <param name="shouldConvertToEpochSeconds"></param>
             /// <param name="attributeName"></param>
             /// <returns></returns>
             public Condition ToCondition(DynamoDBEntryConversion conversion, bool shouldConvertToEpochSeconds, string attributeName)
+            {
+                return ToCondition(conversion, shouldConvertToEpochSeconds, attributeName, false);
+            }
+
+            /// <summary>
+            /// Converts the FilterCondition to the Amazon.DynamoDBv2.Model.Condition object.
+            /// </summary>
+            /// <param name="conversion"></param>
+            /// <param name="shouldConvertToEpochSeconds"></param>
+            /// <param name="attributeName"></param>
+            /// <param name="isEmptyStringValueEnabled"></param>
+            /// <returns></returns>
+            public Condition ToCondition(DynamoDBEntryConversion conversion, bool shouldConvertToEpochSeconds,
+                string attributeName, bool isEmptyStringValueEnabled)
             {
                 var attributeValues = AttributeValues;
                 if (attributeValues == null)
@@ -107,7 +132,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         var entry = DynamoDBEntries[i];
                         if (shouldConvertToEpochSeconds)
                             entry = Document.DateTimeToEpochSeconds(entry, attributeName);
-                        var attributeValue = entry.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(conversion));
+                        
+                        var attributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(conversion, isEmptyStringValueEnabled);
+                        var attributeValue = entry.ConvertToAttributeValue(attributeConversionConfig);
                         attributeValues.Add(attributeValue);
                     }
                 }
@@ -159,7 +186,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Map from attribute name to condition</returns>
         public Dictionary<string, Condition> ToConditions(DynamoDBEntryConversion conversion)
         {
-            return ToConditions(conversion, epochAttributes: null);
+            return ToConditions(conversion, epochAttributes: null, isEmptyStringValueEnabled: false);
+        }
+
+        /// <summary>
+        /// Converts filter to a map of conditions
+        /// </summary>
+        /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
+        /// <param name="isEmptyStringValueEnabled"></param>
+        /// <returns>Map from attribute name to condition</returns>
+        public Dictionary<string, Condition> ToConditions(DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled)
+        {
+            return ToConditions(conversion, epochAttributes: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled);
         }
 
         /// <summary>
@@ -169,10 +207,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Map from attribute name to condition</returns>
         public Dictionary<string, Condition> ToConditions(Table table)
         {
-            return ToConditions(table.Conversion, table.StoreAsEpoch);
+            return ToConditions(table.Conversion, table.StoreAsEpoch, table.IsEmptyStringValueEnabled);
         }
 
-        private Dictionary<string, Condition> ToConditions(DynamoDBEntryConversion conversion, IEnumerable<string> epochAttributes)
+        private Dictionary<string, Condition> ToConditions(DynamoDBEntryConversion conversion,
+            IEnumerable<string> epochAttributes, bool isEmptyStringValueEnabled)
         {
             var dic = new Dictionary<string, Condition>();
             foreach (var kvp in Conditions)
@@ -180,7 +219,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 string name = kvp.Key;
                 FilterCondition fc = kvp.Value;
                 bool convertToEpochSeconds = epochAttributes != null && epochAttributes.Contains(name);
-                Condition condition = fc.ToCondition(conversion, convertToEpochSeconds, name);
+                Condition condition = fc.ToCondition(conversion, convertToEpochSeconds, name, isEmptyStringValueEnabled);
 
                 dic[name] = condition;
             }
@@ -206,17 +245,31 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         /// <summary>
-        /// Creates a list of AttributeValues from a list of DynamoDBEntry items 
+        /// Creates a list of AttributeValues from a list of DynamoDBEntry items
         /// </summary>
         /// <param name="conversion"></param>
         /// <param name="values"></param>
         /// <returns></returns>
         protected static List<AttributeValue> ConvertToAttributeValues(DynamoDBEntryConversion conversion, params DynamoDBEntry[] values)
         {
+            return ConvertToAttributeValues(conversion, false, values);
+        }
+
+        /// <summary>
+        /// Creates a list of AttributeValues from a list of DynamoDBEntry items
+        /// </summary>
+        /// <param name="conversion"></param>
+        /// <param name="isEmptyStringValueEnabled"></param>
+        /// <param name="values"></param>
+        /// <returns></returns>
+        protected static List<AttributeValue> ConvertToAttributeValues(DynamoDBEntryConversion conversion,
+            bool isEmptyStringValueEnabled, params DynamoDBEntry[] values)
+        {
             List<AttributeValue> attributes = new List<AttributeValue>();
             foreach (DynamoDBEntry value in values)
             {
-                AttributeValue nativeValue = value.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(conversion));
+                var attributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(conversion, isEmptyStringValueEnabled);
+                AttributeValue nativeValue = value.ConvertToAttributeValue(attributeConversionConfig);
                 if (nativeValue != null)
                 {
                     attributes.Add(nativeValue);

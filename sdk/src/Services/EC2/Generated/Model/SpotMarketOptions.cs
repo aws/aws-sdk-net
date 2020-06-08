@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -97,9 +98,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotInstanceType. 
         /// <para>
-        /// The Spot Instance request type. For <a>RunInstances</a>, persistent Spot Instance
-        /// requests are only supported when <b>InstanceInterruptionBehavior</b> is set to either
-        /// <code>hibernate</code> or <code>stop</code>.
+        /// The Spot Instance request type. For <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>,
+        /// persistent Spot Instance requests are only supported when <b>InstanceInterruptionBehavior</b>
+        /// is set to either <code>hibernate</code> or <code>stop</code>.
         /// </para>
         /// </summary>
         public SpotInstanceType SpotInstanceType

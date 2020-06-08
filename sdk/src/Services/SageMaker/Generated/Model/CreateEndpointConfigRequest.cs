@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -32,8 +33,7 @@ namespace Amazon.SageMaker.Model
     /// Creates an endpoint configuration that Amazon SageMaker hosting services uses to deploy
     /// models. In the configuration, you identify one or more models, created using the <code>CreateModel</code>
     /// API, to deploy and the resources that you want Amazon SageMaker to provision. Then
-    /// you call the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-    /// API.
+    /// you call the <a>CreateEndpoint</a> API.
     /// 
     ///  <note> 
     /// <para>
@@ -62,6 +62,20 @@ namespace Amazon.SageMaker.Model
     /// the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto 3)).</a>
     /// 
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// When you call <a>CreateEndpoint</a>, a load call is made to DynamoDB to verify that
+    /// your endpoint configuration exists. When you read data from a DynamoDB table supporting
+    /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+    /// <code>Eventually Consistent Reads</code> </a>, the response might not reflect the
+    /// results of a recently completed write operation. The response might include some stale
+    /// data. If the dependent entities are not yet in DynamoDB, this causes a validation
+    /// error. If you repeat your read request after a short time, the response should return
+    /// the latest data. So retry logic is recommended to handle these possible issues. We
+    /// also recommend that customers call <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a>
+    /// to minimize the potential impact of a DynamoDB eventually consistent read.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateEndpointConfigRequest : AmazonSageMakerRequest
     {
@@ -89,7 +103,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EndpointConfigName. 
         /// <para>
-        /// The name of the endpoint configuration. You specify this name in a <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+        /// The name of the endpoint configuration. You specify this name in a <a>CreateEndpoint</a>
         /// request. 
         /// </para>
         /// </summary>

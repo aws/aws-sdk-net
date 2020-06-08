@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -34,6 +35,7 @@ namespace Amazon.SecurityHub.Model
     {
         private SeverityLabel _label;
         private int? _normalized;
+        private string _original;
         private double? _product;
 
         /// <summary>
@@ -121,7 +123,30 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Original. 
+        /// <para>
+        /// The native severity from the finding product that generated the finding.
+        /// </para>
+        /// </summary>
+        public string Original
+        {
+            get { return this._original; }
+            set { this._original = value; }
+        }
+
+        // Check to see if Original property is set
+        internal bool IsSetOriginal()
+        {
+            return this._original != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Product. 
+        /// <para>
+        /// Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>,
+        /// provide <code>Original</code>.
+        /// </para>
+        ///  
         /// <para>
         /// The native severity as defined by the AWS service or integrated partner product that
         /// generated the finding.

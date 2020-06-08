@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded.
+        /// [Required] The ARN of a resource that can be tagged.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

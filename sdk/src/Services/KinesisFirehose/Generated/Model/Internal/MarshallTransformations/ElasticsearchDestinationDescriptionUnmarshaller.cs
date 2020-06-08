@@ -136,6 +136,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.TypeName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VpcConfigurationDescription", targetDepth))
+                {
+                    var unmarshaller = VpcConfigurationDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.VpcConfigurationDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

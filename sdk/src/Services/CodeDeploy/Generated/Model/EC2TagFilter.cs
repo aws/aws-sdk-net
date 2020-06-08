@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -61,15 +62,15 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// KEY_ONLY: Key only.
+        ///  <code>KEY_ONLY</code>: Key only.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// VALUE_ONLY: Value only.
+        ///  <code>VALUE_ONLY</code>: Value only.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// KEY_AND_VALUE: Key and value.
+        ///  <code>KEY_AND_VALUE</code>: Key and value.
         /// </para>
         ///  </li> </ul>
         /// </summary>

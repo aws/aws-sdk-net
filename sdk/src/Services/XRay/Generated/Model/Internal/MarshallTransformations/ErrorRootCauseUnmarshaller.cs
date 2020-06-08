@@ -64,6 +64,12 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ClientImpacting", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ClientImpacting = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Services", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ErrorRootCauseService, ErrorRootCauseServiceUnmarshaller>(ErrorRootCauseServiceUnmarshaller.Instance);

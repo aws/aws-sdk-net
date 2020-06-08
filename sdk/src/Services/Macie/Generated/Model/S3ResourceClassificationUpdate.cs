@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -60,7 +61,7 @@ namespace Amazon.Macie.Model
         /// Gets and sets the property ClassificationTypeUpdate. 
         /// <para>
         /// The classification type that you want to update for the resource associated with Amazon
-        /// Macie. 
+        /// Macie Classic. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

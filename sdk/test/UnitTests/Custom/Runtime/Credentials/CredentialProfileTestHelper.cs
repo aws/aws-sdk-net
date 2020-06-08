@@ -59,21 +59,23 @@ namespace AWSSDK.UnitTests
         
         public static CredentialProfile GetRandomProfile(string profileName, CredentialProfileType profileType)
         {
-            return GetCredentialProfile(Guid.NewGuid(), profileName, GetRandomOptions(profileType), GetRandomProperties(), GetRandomRegion(), null);
+            return GetCredentialProfile(Guid.NewGuid(), profileName, GetRandomOptions(profileType), GetRandomProperties(), GetRandomRegion(), null, null, null);
         }
 
         public static CredentialProfile GetCredentialProfile(Guid? uniqueKey, string profileName, CredentialProfileOptions options)
         {
-            return GetCredentialProfile(uniqueKey, profileName, options, null, null, null);
+            return GetCredentialProfile(uniqueKey, profileName, options, null, null, null, null, null);
         }                
 
         public static CredentialProfile GetCredentialProfile(Guid? uniqueKey, string profileName, CredentialProfileOptions options,
-            Dictionary<string, string> properties, RegionEndpoint region, bool? endpointDiscoveryEnabled)
+            Dictionary<string, string> properties, RegionEndpoint region, bool? endpointDiscoveryEnabled, RequestRetryMode? retryMode, int? maxAttempts)
         {
             var profile = new CredentialProfile(profileName, options)
             {
                 Region = region,
-                EndpointDiscoveryEnabled = endpointDiscoveryEnabled
+                EndpointDiscoveryEnabled = endpointDiscoveryEnabled,
+                RetryMode = retryMode,
+                MaxAttempts = maxAttempts
             };
             CredentialProfileUtils.SetUniqueKey(profile, uniqueKey);            
             ReflectionHelpers.Invoke(profile, "Properties", properties);

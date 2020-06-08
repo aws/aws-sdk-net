@@ -102,7 +102,8 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         // Retrieves a new instance of a table configured for the given storage and flat configs.
-        internal Table GetTargetTable(ItemStorageConfig storageConfig, DynamoDBFlatConfig flatConfig, Table.DynamoDBConsumer consumer = Table.DynamoDBConsumer.DataModel)
+        internal Table GetTargetTable(ItemStorageConfig storageConfig, DynamoDBFlatConfig flatConfig,
+            Table.DynamoDBConsumer consumer = Table.DynamoDBConsumer.DataModel)
         {
             if (flatConfig == null)
                 throw new ArgumentNullException("flatConfig");
@@ -111,7 +112,8 @@ namespace Amazon.DynamoDBv2.DataModel
             var unconfiguredTable = GetUnconfiguredTable(tableName);
             ValidateConfigAgainstTable(storageConfig, unconfiguredTable);
 
-            var tableConfig = new TableConfig(tableName, flatConfig.Conversion, consumer, storageConfig.AttributesToStoreAsEpoch);
+            var tableConfig = new TableConfig(tableName, flatConfig.Conversion, consumer,
+                storageConfig.AttributesToStoreAsEpoch, flatConfig.IsEmptyStringValueEnabled);
             var table = unconfiguredTable.Copy(tableConfig);
             return table;
         }
@@ -126,7 +128,8 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 if (!tablesMap.TryGetValue(tableName, out table))
                 {
-                    var emptyConfig = new TableConfig(tableName, conversion: null, consumer: Table.DynamoDBConsumer.DataModel, storeAsEpoch: null);
+                    var emptyConfig = new TableConfig(tableName, conversion: null, consumer: Table.DynamoDBConsumer.DataModel,
+                        storeAsEpoch: null, isEmptyStringValueEnabled: false);
                     table = Table.LoadTable(Client, emptyConfig);
                     tablesMap[tableName] = table;
                 }
@@ -361,6 +364,14 @@ namespace Amazon.DynamoDBv2.DataModel
         private bool TryFromList(Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
         {
             var targetTypeWrapper = TypeFactory.GetTypeInfo(targetType);
+            return targetTypeWrapper.IsArray ?
+                 TryFromListToArray(targetType, list, flatConfig, out output) : //targetType is Array
+                 TryFromListToIList(targetType, list, flatConfig, out output) ; //targetType is IList or has Add method.
+        }
+
+        private bool TryFromListToIList(Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
+        {
+            var targetTypeWrapper = TypeFactory.GetTypeInfo(targetType);
             if ((!Utils.ImplementsInterface(targetType, typeof(ICollection<>)) &&
                 !Utils.ImplementsInterface(targetType, typeof(IList))) ||
                 !Utils.CanInstantiate(targetType))
@@ -394,6 +405,31 @@ namespace Amazon.DynamoDBv2.DataModel
             output = collection;
             return true;
         }
+
+        private bool TryFromListToArray(Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
+        {
+            if (!Utils.CanInstantiateArray(targetType))
+            {
+                output = null;
+                return false;
+            }
+
+            var elementType = Utils.GetElementType(targetType);
+            var array = (Array)Utils.InstantiateArray(targetType,list.Entries.Count);
+            var propertyStorage = new SimplePropertyStorage(elementType);
+
+
+            for (int i = 0; i < list.Entries.Count; i++)
+            {
+                var entry = list.Entries[i];
+                var item = FromDynamoDBEntry(propertyStorage, entry, flatConfig);
+                array.SetValue(item,i);
+            }
+
+            output = array;
+            return true;
+        }
+
         private bool TryFromMap(Type targetType, Document map, DynamoDBFlatConfig flatConfig, out object output)
         {
             output = null;
@@ -500,7 +536,6 @@ namespace Amazon.DynamoDBv2.DataModel
         }
         private bool TryToList(object value, Type type, DynamoDBFlatConfig flatConfig, out DynamoDBList output)
         {
-            var typeWrapper = TypeFactory.GetTypeInfo(type);
             if (!Utils.ImplementsInterface(type, typeof(ICollection<>)))
             {
                 output = null;
@@ -516,7 +551,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 return false;
             }
 
-            Type elementType = typeWrapper.GetGenericArguments()[0];
+            Type elementType = Utils.GetElementType(type);
             SimplePropertyStorage propertyStorage = new SimplePropertyStorage(elementType);
             output = new DynamoDBList();
             foreach (var item in enumerable)
@@ -675,7 +710,8 @@ namespace Amazon.DynamoDBv2.DataModel
                             throw new InvalidOperationException(
                                 string.Format(CultureInfo.InvariantCulture, "Unable to convert value corresponding to property [{0}] to DynamoDB representation", condition.PropertyName));
 
-                        AttributeValue nativeValue = entry.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion));
+                        var attributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion, flatConfig.IsEmptyStringValueEnabled);
+                        AttributeValue nativeValue = entry.ConvertToAttributeValue(attributeConversionConfig);
                         if (nativeValue != null)
                         {
                             attributeValues.Add(nativeValue);
@@ -772,7 +808,8 @@ namespace Amazon.DynamoDBv2.DataModel
             foreach (var conditionValue in conditionValues)
             {
                 DynamoDBEntry entry = ToDynamoDBEntry(conditionProperty, conditionValue, flatConfig, canReturnScalarInsteadOfList);
-                AttributeValue attributeValue = entry.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion));
+                var attributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion, flatConfig.IsEmptyStringValueEnabled);
+                AttributeValue attributeValue = entry.ConvertToAttributeValue(attributeConversionConfig);
                 attributeValues.Add(attributeValue);
             }
             return attributeValues;
@@ -874,7 +911,8 @@ namespace Amazon.DynamoDBv2.DataModel
             if (hashKeyEntry == null) throw new InvalidOperationException("Unable to convert hash key value for property " + hashKeyPropertyName);
             if (storageConfig.AttributesToStoreAsEpoch.Contains(hashKeyProperty.AttributeName))
                 hashKeyEntry = Document.DateTimeToEpochSeconds(hashKeyEntry, hashKeyProperty.AttributeName);
-            key[hashKeyProperty.AttributeName] = hashKeyEntry.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion));
+            var hashKeyEntryAttributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion, flatConfig.IsEmptyStringValueEnabled);
+            key[hashKeyProperty.AttributeName] = hashKeyEntry.ConvertToAttributeValue(hashKeyEntryAttributeConversionConfig);
 
             if (storageConfig.RangeKeyPropertyNames.Count > 0)
             {
@@ -888,7 +926,9 @@ namespace Amazon.DynamoDBv2.DataModel
                 if (rangeKeyEntry == null) throw new InvalidOperationException("Unable to convert range key value for property " + rangeKeyPropertyName);
                 if (storageConfig.AttributesToStoreAsEpoch.Contains(rangeKeyProperty.AttributeName))
                     rangeKeyEntry = Document.DateTimeToEpochSeconds(rangeKeyEntry, rangeKeyProperty.AttributeName);
-                key[rangeKeyProperty.AttributeName] = rangeKeyEntry.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion));
+
+                var rangeKeyEntryAttributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion, flatConfig.IsEmptyStringValueEnabled);
+                key[rangeKeyProperty.AttributeName] = rangeKeyEntry.ConvertToAttributeValue(rangeKeyEntryAttributeConversionConfig);
             }
 
             ValidateKey(key, storageConfig);
@@ -899,7 +939,7 @@ namespace Amazon.DynamoDBv2.DataModel
             ItemStorage keyAsStorage = ObjectToItemStorageHelper(keyObject, storageConfig, flatConfig, keysOnly: true, ignoreNullValues: true);
             if (storageConfig.HasVersion) // if version field is defined, it would have been returned, so remove before making the key
                 keyAsStorage.Document[storageConfig.VersionPropertyStorage.AttributeName] = null;
-            Key key = new Key(keyAsStorage.Document.ToAttributeMap(flatConfig.Conversion, storageConfig.AttributesToStoreAsEpoch));
+            Key key = new Key(keyAsStorage.Document.ToAttributeMap(flatConfig.Conversion, storageConfig.AttributesToStoreAsEpoch, flatConfig.IsEmptyStringValueEnabled));
             ValidateKey(key, storageConfig);
             return key;
         }

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -37,6 +38,7 @@ namespace Amazon.FraudDetector.Model
         private string _detectorId;
         private List<string> _externalModelEndpoints = new List<string>();
         private List<ModelVersion> _modelVersions = new List<ModelVersion>();
+        private RuleExecutionMode _ruleExecutionMode;
         private List<Rule> _rules = new List<Rule>();
 
         /// <summary>
@@ -111,6 +113,44 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetModelVersions()
         {
             return this._modelVersions != null && this._modelVersions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleExecutionMode. 
+        /// <para>
+        /// The rule execution mode for the rules included in the detector version.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can define and edit the rule mode at the detector version level, when it is in
+        /// draft status.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially,
+        /// first to last, stopping at the first matched rule. Amazon Fraud dectector then provides
+        /// the outcomes for that single rule.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules
+        /// and returns the outcomes for all matched rules. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The default behavior is <code>FIRST_MATCHED</code>.
+        /// </para>
+        /// </summary>
+        public RuleExecutionMode RuleExecutionMode
+        {
+            get { return this._ruleExecutionMode; }
+            set { this._ruleExecutionMode = value; }
+        }
+
+        // Check to see if RuleExecutionMode property is set
+        internal bool IsSetRuleExecutionMode()
+        {
+            return this._ruleExecutionMode != null;
         }
 
         /// <summary>

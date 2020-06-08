@@ -117,7 +117,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
     {
         foreach (var member in this.Structure.Members)
         {
-            var testExpression= GeneratorHelpers.DetermineAWSQueryTestExpression(member);
+            var testExpression = GeneratorHelpers.DetermineAWSQueryTestExpression(member);
 
             
             #line default

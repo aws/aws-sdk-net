@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -66,7 +67,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property GroupByAttribute. 
         /// <para>
-        /// The attribute used as the aggregator to group related findings for the insight.
+        /// The attribute used to group the findings for the insight. The grouping attribute identifies
+        /// the type of item that the insight applies to. For example, if an insight is grouped
+        /// by resource identifier, then the insight produces a list of resource identifiers.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

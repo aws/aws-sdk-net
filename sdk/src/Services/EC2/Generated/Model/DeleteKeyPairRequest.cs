@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -34,6 +35,7 @@ namespace Amazon.EC2.Model
     public partial class DeleteKeyPairRequest : AmazonEC2Request
     {
         private string _keyName;
+        private string _keyPairId;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -55,7 +57,6 @@ namespace Amazon.EC2.Model
         /// The name of the key pair.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string KeyName
         {
             get { return this._keyName; }
@@ -66,6 +67,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetKeyName()
         {
             return this._keyName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyPairId. 
+        /// <para>
+        /// The ID of the key pair.
+        /// </para>
+        /// </summary>
+        public string KeyPairId
+        {
+            get { return this._keyPairId; }
+            set { this._keyPairId = value; }
+        }
+
+        // Check to see if KeyPairId property is set
+        internal bool IsSetKeyPairId()
+        {
+            return this._keyPairId != null;
         }
 
     }

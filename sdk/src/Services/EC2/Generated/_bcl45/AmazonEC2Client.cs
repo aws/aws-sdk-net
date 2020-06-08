@@ -251,7 +251,18 @@ namespace Amazon.EC2
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.EC2.Internal.AmazonEC2PreMarshallHandler(this.Credentials));
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.EC2.Internal.AmazonEC2PostMarshallHandler());
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.EC2.Internal.AmazonEC2ResponseHandler());
-            pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.EC2.Internal.EC2RetryPolicy(this.Config)));
+            if(this.Config.RetryMode == RequestRetryMode.Legacy)
+            {
+                pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.EC2.Internal.EC2RetryPolicy(this.Config)));
+            }
+            if(this.Config.RetryMode == RequestRetryMode.Standard)
+            {
+                pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.EC2.Internal.EC2StandardRetryPolicy(this.Config)));
+            }
+            if(this.Config.RetryMode == RequestRetryMode.Adaptive)
+            {
+                pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.EC2.Internal.EC2AdaptiveRetryPolicy(this.Config)));
+            }
         }    
         /// <summary>
         /// Capture metadata for the service.
@@ -4013,7 +4024,10 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a launch template. A launch template contains the parameters to launch an
         /// instance. When you launch an instance using <a>RunInstances</a>, you can specify a
-        /// launch template instead of providing the launch parameters in the request.
+        /// launch template instead of providing the launch parameters in the request. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launching
+        /// an instance from a launch template</a>in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLaunchTemplate service method.</param>
         /// 
@@ -4032,7 +4046,10 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a launch template. A launch template contains the parameters to launch an
         /// instance. When you launch an instance using <a>RunInstances</a>, you can specify a
-        /// launch template instead of providing the launch parameters in the request.
+        /// launch template instead of providing the launch parameters in the request. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launching
+        /// an instance from a launch template</a>in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLaunchTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -4064,6 +4081,11 @@ namespace Amazon.EC2
         /// Launch template versions are numbered in the order in which they are created. You
         /// cannot specify, change, or replace the numbering of launch template versions.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#manage-launch-template-versions">Managing
+        /// launch template versions</a>in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLaunchTemplateVersion service method.</param>
         /// 
@@ -4087,6 +4109,11 @@ namespace Amazon.EC2
         /// <para>
         /// Launch template versions are numbered in the order in which they are created. You
         /// cannot specify, change, or replace the numbering of launch template versions.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#manage-launch-template-versions">Managing
+        /// launch template versions</a>in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLaunchTemplateVersion service method.</param>
@@ -5267,9 +5294,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Adds or overwrites the specified tags for the specified Amazon EC2 resource or resources.
-        /// Each resource can have a maximum of 50 tags. Each tag consists of a key and optional
-        /// value. Tag keys must be unique per resource.
+        /// Adds or overwrites only the specified tags for the specified Amazon EC2 resource or
+        /// resources. When you specify an existing tag key, the value is overwritten with the
+        /// new value. Each resource can have a maximum of 50 tags. Each tag consists of a key
+        /// and optional value. Tag keys must be unique per resource.
         /// 
         ///  
         /// <para>
@@ -5296,9 +5324,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Adds or overwrites the specified tags for the specified Amazon EC2 resource or resources.
-        /// Each resource can have a maximum of 50 tags. Each tag consists of a key and optional
-        /// value. Tag keys must be unique per resource.
+        /// Adds or overwrites only the specified tags for the specified Amazon EC2 resource or
+        /// resources. When you specify an existing tag key, the value is overwritten with the
+        /// new value. Each resource can have a maximum of 50 tags. Each tag consists of a key
+        /// and optional value. Tag keys must be unique per resource.
         /// 
         ///  
         /// <para>
@@ -8688,8 +8717,14 @@ namespace Amazon.EC2
         /// connection. If you believe that the tunnel credentials for your VPN connection have
         /// been compromised, you can delete the VPN connection and create a new one that has
         /// new keys, without needing to delete the VPC or virtual private gateway. If you create
-        /// a new VPN connection, you must reconfigure the customer gateway using the new configuration
-        /// information returned with the new VPN connection ID.
+        /// a new VPN connection, you must reconfigure the customer gateway device using the new
+        /// configuration information returned with the new VPN connection ID.
+        /// </para>
+        ///  
+        /// <para>
+        /// For certificate-based authentication, delete all AWS Certificate Manager (ACM) private
+        /// certificates used for the AWS-side tunnel endpoints for the VPN connection before
+        /// deleting the VPN connection.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConnection service method.</param>
@@ -8716,8 +8751,14 @@ namespace Amazon.EC2
         /// connection. If you believe that the tunnel credentials for your VPN connection have
         /// been compromised, you can delete the VPN connection and create a new one that has
         /// new keys, without needing to delete the VPC or virtual private gateway. If you create
-        /// a new VPN connection, you must reconfigure the customer gateway using the new configuration
-        /// information returned with the new VPN connection ID.
+        /// a new VPN connection, you must reconfigure the customer gateway device using the new
+        /// configuration information returned with the new VPN connection ID.
+        /// </para>
+        ///  
+        /// <para>
+        /// For certificate-based authentication, delete all AWS Certificate Manager (ACM) private
+        /// certificates used for the AWS-side tunnel endpoints for the VPN connection before
+        /// deleting the VPN connection.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConnection service method.</param>
@@ -8944,6 +8985,49 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DeregisterImageResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeregisterImageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeregisterInstanceEventNotificationAttributes
+
+
+        /// <summary>
+        /// Deregisters tag keys to prevent tags that have the specified tag keys from being included
+        /// in scheduled event notifications for resources in the Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterInstanceEventNotificationAttributes service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterInstanceEventNotificationAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">REST API Reference for DeregisterInstanceEventNotificationAttributes Operation</seealso>
+        public virtual DeregisterInstanceEventNotificationAttributesResponse DeregisterInstanceEventNotificationAttributes(DeregisterInstanceEventNotificationAttributesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterInstanceEventNotificationAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterInstanceEventNotificationAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterInstanceEventNotificationAttributesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deregisters tag keys to prevent tags that have the specified tag keys from being included
+        /// in scheduled event notifications for resources in the Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterInstanceEventNotificationAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterInstanceEventNotificationAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">REST API Reference for DeregisterInstanceEventNotificationAttributes Operation</seealso>
+        public virtual Task<DeregisterInstanceEventNotificationAttributesResponse> DeregisterInstanceEventNotificationAttributesAsync(DeregisterInstanceEventNotificationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterInstanceEventNotificationAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterInstanceEventNotificationAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeregisterInstanceEventNotificationAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -11584,19 +11668,68 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeInstanceEventNotificationAttributes
+
+
+        /// <summary>
+        /// Describes the tag keys that are registered to appear in scheduled event notifications
+        /// for resources in the current Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceEventNotificationAttributes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceEventNotificationAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventNotificationAttributes">REST API Reference for DescribeInstanceEventNotificationAttributes Operation</seealso>
+        public virtual DescribeInstanceEventNotificationAttributesResponse DescribeInstanceEventNotificationAttributes(DescribeInstanceEventNotificationAttributesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceEventNotificationAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceEventNotificationAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstanceEventNotificationAttributesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the tag keys that are registered to appear in scheduled event notifications
+        /// for resources in the current Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceEventNotificationAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInstanceEventNotificationAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventNotificationAttributes">REST API Reference for DescribeInstanceEventNotificationAttributes Operation</seealso>
+        public virtual Task<DescribeInstanceEventNotificationAttributesResponse> DescribeInstanceEventNotificationAttributesAsync(DescribeInstanceEventNotificationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceEventNotificationAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceEventNotificationAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeInstanceEventNotificationAttributesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeInstances
 
 
         /// <summary>
-        /// Describes the specified instances or all of AWS account's instances.
+        /// Describes the specified instances or all instances.
         /// 
         ///  
         /// <para>
-        /// If you specify one or more instance IDs, Amazon EC2 returns information for those
-        /// instances. If you do not specify instance IDs, Amazon EC2 returns information for
-        /// all relevant instances. If you specify an instance ID that is not valid, an error
-        /// is returned. If you specify an instance that you do not own, it is not included in
-        /// the returned results.
+        /// If you specify instance IDs, the output includes information for only the specified
+        /// instances. If you specify filters, the output includes information for only those
+        /// instances that meet the filter criteria. If you do not specify instance IDs or filters,
+        /// the output includes information for all instances, which can affect performance. We
+        /// recommend that you use pagination to ensure that the operation returns quickly and
+        /// successfully.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an instance ID that is not valid, an error is returned. If you specify
+        /// an instance that you do not own, it is not included in the output.
         /// </para>
         ///  
         /// <para>
@@ -11621,15 +11754,21 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified instances or all of AWS account's instances.
+        /// Describes the specified instances or all instances.
         /// 
         ///  
         /// <para>
-        /// If you specify one or more instance IDs, Amazon EC2 returns information for those
-        /// instances. If you do not specify instance IDs, Amazon EC2 returns information for
-        /// all relevant instances. If you specify an instance ID that is not valid, an error
-        /// is returned. If you specify an instance that you do not own, it is not included in
-        /// the returned results.
+        /// If you specify instance IDs, the output includes information for only the specified
+        /// instances. If you specify filters, the output includes information for only those
+        /// instances that meet the filter criteria. If you do not specify instance IDs or filters,
+        /// the output includes information for all instances, which can affect performance. We
+        /// recommend that you use pagination to ensure that the operation returns quickly and
+        /// successfully.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an instance ID that is not valid, an error is returned. If you specify
+        /// an instance that you do not own, it is not included in the output.
         /// </para>
         ///  
         /// <para>
@@ -11659,15 +11798,21 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified instances or all of AWS account's instances.
+        /// Describes the specified instances or all instances.
         /// 
         ///  
         /// <para>
-        /// If you specify one or more instance IDs, Amazon EC2 returns information for those
-        /// instances. If you do not specify instance IDs, Amazon EC2 returns information for
-        /// all relevant instances. If you specify an instance ID that is not valid, an error
-        /// is returned. If you specify an instance that you do not own, it is not included in
-        /// the returned results.
+        /// If you specify instance IDs, the output includes information for only the specified
+        /// instances. If you specify filters, the output includes information for only those
+        /// instances that meet the filter criteria. If you do not specify instance IDs or filters,
+        /// the output includes information for all instances, which can affect performance. We
+        /// recommend that you use pagination to ensure that the operation returns quickly and
+        /// successfully.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an instance ID that is not valid, an error is returned. If you specify
+        /// an instance that you do not own, it is not included in the output.
         /// </para>
         ///  
         /// <para>
@@ -11694,15 +11839,21 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describes the specified instances or all of AWS account's instances.
+        /// Describes the specified instances or all instances.
         /// 
         ///  
         /// <para>
-        /// If you specify one or more instance IDs, Amazon EC2 returns information for those
-        /// instances. If you do not specify instance IDs, Amazon EC2 returns information for
-        /// all relevant instances. If you specify an instance ID that is not valid, an error
-        /// is returned. If you specify an instance that you do not own, it is not included in
-        /// the returned results.
+        /// If you specify instance IDs, the output includes information for only the specified
+        /// instances. If you specify filters, the output includes information for only those
+        /// instances that meet the filter criteria. If you do not specify instance IDs or filters,
+        /// the output includes information for all instances, which can affect performance. We
+        /// recommend that you use pagination to ensure that the operation returns quickly and
+        /// successfully.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an instance ID that is not valid, an error is returned. If you specify
+        /// an instance that you do not own, it is not included in the output.
         /// </para>
         ///  
         /// <para>
@@ -11967,7 +12118,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Returns a list of all instance types offered in your current AWS Region. The results
+        /// Describes the details of the instance types that are offered in a location. The results
         /// can be filtered by the attributes of the instance types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypes service method.</param>
@@ -11985,7 +12136,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Returns a list of all instance types offered in your current AWS Region. The results
+        /// Describes the details of the instance types that are offered in a location. The results
         /// can be filtered by the attributes of the instance types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypes service method.</param>
@@ -14738,8 +14889,8 @@ namespace Amazon.EC2
         /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance
         /// by examining the response. If the status of the Spot Instance is <code>fulfilled</code>,
         /// the instance ID appears in the response and contains the identifier of the instance.
-        /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
-        /// where the instance lifecycle is <code>spot</code>.
+        /// Alternatively, you can use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a>
+        /// with a filter to look for instances where the instance lifecycle is <code>spot</code>.
         /// </para>
         ///  
         /// <para>
@@ -14773,8 +14924,8 @@ namespace Amazon.EC2
         /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance
         /// by examining the response. If the status of the Spot Instance is <code>fulfilled</code>,
         /// the instance ID appears in the response and contains the identifier of the instance.
-        /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
-        /// where the instance lifecycle is <code>spot</code>.
+        /// Alternatively, you can use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a>
+        /// with a filter to look for instances where the instance lifecycle is <code>spot</code>.
         /// </para>
         ///  
         /// <para>
@@ -14813,8 +14964,8 @@ namespace Amazon.EC2
         /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance
         /// by examining the response. If the status of the Spot Instance is <code>fulfilled</code>,
         /// the instance ID appears in the response and contains the identifier of the instance.
-        /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
-        /// where the instance lifecycle is <code>spot</code>.
+        /// Alternatively, you can use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a>
+        /// with a filter to look for instances where the instance lifecycle is <code>spot</code>.
         /// </para>
         ///  
         /// <para>
@@ -14850,8 +15001,8 @@ namespace Amazon.EC2
         /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance
         /// by examining the response. If the status of the Spot Instance is <code>fulfilled</code>,
         /// the instance ID appears in the response and contains the identifier of the instance.
-        /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
-        /// where the instance lifecycle is <code>spot</code>.
+        /// Alternatively, you can use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a>
+        /// with a filter to look for instances where the instance lifecycle is <code>spot</code>.
         /// </para>
         ///  
         /// <para>
@@ -17318,6 +17469,11 @@ namespace Amazon.EC2
         /// public IP addresses when addressed between a linked EC2-Classic instance and instances
         /// in the VPC to which it's linked. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
         /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify a VPC ID in the request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLinkDnsSupport service method.</param>
         /// 
@@ -17338,6 +17494,11 @@ namespace Amazon.EC2
         /// public IP addresses when addressed between a linked EC2-Classic instance and instances
         /// in the VPC to which it's linked. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
         /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify a VPC ID in the request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLinkDnsSupport service method.</param>
         /// <param name="cancellationToken">
@@ -17558,7 +17719,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Disassociates a subnet from a route table.
+        /// Disassociates a subnet or gateway from a route table.
         /// 
         ///  
         /// <para>
@@ -17583,7 +17744,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Disassociates a subnet from a route table.
+        /// Disassociates a subnet or gateway from a route table.
         /// 
         ///  
         /// <para>
@@ -18145,6 +18306,11 @@ namespace Amazon.EC2
         /// of an instance in a VPC resolves to its private IP address when addressed from a linked
         /// EC2-Classic instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
         /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify a VPC ID in the request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLinkDnsSupport service method.</param>
         /// 
@@ -18167,6 +18333,11 @@ namespace Amazon.EC2
         /// of an instance in a VPC resolves to its private IP address when addressed from a linked
         /// EC2-Classic instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
         /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify a VPC ID in the request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLinkDnsSupport service method.</param>
         /// <param name="cancellationToken">
@@ -21916,8 +22087,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the target gateway of an AWS Site-to-Site VPN connection. The following migration
-        /// options are available:
+        /// Modifies the customer gateway or the target gateway of an AWS Site-to-Site VPN connection.
+        /// To modify the target gateway, the following migration options are available:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -21996,8 +22167,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the target gateway of an AWS Site-to-Site VPN connection. The following migration
-        /// options are available:
+        /// Modifies the customer gateway or the target gateway of an AWS Site-to-Site VPN connection.
+        /// To modify the target gateway, the following migration options are available:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -22773,6 +22944,59 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = RegisterImageResponseUnmarshaller.Instance;
             
             return InvokeAsync<RegisterImageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterInstanceEventNotificationAttributes
+
+
+        /// <summary>
+        /// Registers a set of tag keys to include in scheduled event notifications for your resources.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// To remove tags, use .
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterInstanceEventNotificationAttributes service method.</param>
+        /// 
+        /// <returns>The response from the RegisterInstanceEventNotificationAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes">REST API Reference for RegisterInstanceEventNotificationAttributes Operation</seealso>
+        public virtual RegisterInstanceEventNotificationAttributesResponse RegisterInstanceEventNotificationAttributes(RegisterInstanceEventNotificationAttributesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterInstanceEventNotificationAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterInstanceEventNotificationAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterInstanceEventNotificationAttributesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Registers a set of tag keys to include in scheduled event notifications for your resources.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// To remove tags, use .
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterInstanceEventNotificationAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterInstanceEventNotificationAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes">REST API Reference for RegisterInstanceEventNotificationAttributes Operation</seealso>
+        public virtual Task<RegisterInstanceEventNotificationAttributesResponse> RegisterInstanceEventNotificationAttributesAsync(RegisterInstanceEventNotificationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterInstanceEventNotificationAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterInstanceEventNotificationAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RegisterInstanceEventNotificationAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -24358,7 +24582,6 @@ namespace Amazon.EC2
         /// <summary>
         /// Launches the specified number of instances using an AMI for which you have permissions.
         /// 
-        /// 
         ///  
         /// <para>
         /// You can specify a number of options, or leave the default options. The following rules
@@ -24453,7 +24676,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Launches the specified number of instances using an AMI for which you have permissions.
-        /// 
         /// 
         ///  
         /// <para>

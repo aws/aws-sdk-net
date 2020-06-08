@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes a scheduled scaling action. Used in response to <a>DescribeScheduledActions</a>.
+    /// Describes a scheduled scaling action.
     /// </summary>
     public partial class ScheduledUpdateGroupAction
     {
@@ -65,7 +66,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        /// The number of instances you prefer to maintain in the group.
+        /// The desired capacity is the initial capacity of the Auto Scaling group after the scheduled
+        /// action runs and the capacity it attempts to maintain.
         /// </para>
         /// </summary>
         public int DesiredCapacity
@@ -102,7 +104,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxSize. 
         /// <para>
-        /// The maximum number of instances in the Auto Scaling group.
+        /// The maximum size of the Auto Scaling group.
         /// </para>
         /// </summary>
         public int MaxSize
@@ -120,7 +122,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinSize. 
         /// <para>
-        /// The minimum number of instances in the Auto Scaling group.
+        /// The minimum size of the Auto Scaling group.
         /// </para>
         /// </summary>
         public int MinSize

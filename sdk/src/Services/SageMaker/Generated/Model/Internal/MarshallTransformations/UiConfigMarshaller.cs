@@ -45,6 +45,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UiConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetHumanTaskUiArn())
+            {
+                context.Writer.WritePropertyName("HumanTaskUiArn");
+                context.Writer.Write(requestObject.HumanTaskUiArn);
+            }
+
             if(requestObject.IsSetUiTemplateS3Uri())
             {
                 context.Writer.WritePropertyName("UiTemplateS3Uri");

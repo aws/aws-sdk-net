@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -261,7 +262,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobRunState. 
         /// <para>
-        /// The current state of the job run.
+        /// The current state of the job run. For more information about the statuses of jobs
+        /// that have terminated abnormally, see <a href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS
+        /// Glue Job Run Statuses</a>.
         /// </para>
         /// </summary>
         public JobRunState JobRunState

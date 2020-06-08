@@ -111,6 +111,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
                 }
+                if(publicRequest.IsSetMultiAZEnabled())
+                {
+                    request.Parameters.Add("MultiAZEnabled", StringUtils.FromBool(publicRequest.MultiAZEnabled));
+                }
                 if(publicRequest.IsSetNodeGroupConfiguration())
                 {
                     int publicRequestlistValueIndex = 1;

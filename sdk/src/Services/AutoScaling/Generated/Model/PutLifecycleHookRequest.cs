@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -61,12 +62,12 @@ namespace Amazon.AutoScaling.Model
     ///  </li> <li> 
     /// <para>
     /// If you need more time, record the lifecycle action heartbeat to keep the instance
-    /// in a pending state using <a>RecordLifecycleActionHeartbeat</a>.
+    /// in a pending state using the <a>RecordLifecycleActionHeartbeat</a> API call.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// If you finish before the timeout period ends, complete the lifecycle action using
-    /// <a>CompleteLifecycleAction</a>.
+    /// the <a>CompleteLifecycleAction</a> API call.
     /// </para>
     ///  </li> </ol> 
     /// <para>
@@ -80,8 +81,9 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// You can view the lifecycle hooks for an Auto Scaling group using <a>DescribeLifecycleHooks</a>.
-    /// If you are no longer using a lifecycle hook, you can delete it using <a>DeleteLifecycleHook</a>.
+    /// You can view the lifecycle hooks for an Auto Scaling group using the <a>DescribeLifecycleHooks</a>
+    /// API call. If you are no longer using a lifecycle hook, you can delete it by calling
+    /// the <a>DeleteLifecycleHook</a> API.
     /// </para>
     /// </summary>
     public partial class PutLifecycleHookRequest : AmazonAutoScalingRequest
@@ -145,7 +147,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that
         /// you specified in the <code>DefaultResult</code> parameter. You can prevent the lifecycle
-        /// hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+        /// hook from timing out by calling the <a>RecordLifecycleActionHeartbeat</a> API.
         /// </para>
         /// </summary>
         public int HeartbeatTimeout

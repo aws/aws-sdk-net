@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -62,9 +63,10 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentWaitType. 
         /// <para>
-        ///  The status of the deployment's waiting period. READY_WAIT indicates the deployment
-        /// is ready to start shifting traffic. TERMINATION_WAIT indicates the traffic is shifted,
-        /// but the original target is not terminated. 
+        ///  The status of the deployment's waiting period. <code>READY_WAIT</code> indicates
+        /// that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code>
+        /// indicates that the traffic is shifted, but the original target is not terminated.
+        /// 
         /// </para>
         /// </summary>
         public DeploymentWaitType DeploymentWaitType

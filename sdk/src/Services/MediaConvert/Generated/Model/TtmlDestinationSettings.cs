@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -36,8 +37,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property StylePassthrough. Pass through style and position information
-        /// from a TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT output or TTML
-        /// output.
+        /// from a TTML-like input source (TTML, SMPTE-TT) to the TTML output.
         /// </summary>
         public TtmlStylePassthrough StylePassthrough
         {

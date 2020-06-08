@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -28,11 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// An Amazon EC2 Systems Manager parameter in Parameter Store.
+    /// An Systems Manager parameter in Parameter Store.
     /// </summary>
     public partial class Parameter
     {
         private string _arn;
+        private string _dataType;
         private DateTime? _lastModifiedDate;
         private string _name;
         private string _selector;
@@ -57,6 +59,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetARN()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataType. 
+        /// <para>
+        /// The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>.
+        /// The default is <code>text</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string DataType
+        {
+            get { return this._dataType; }
+            set { this._dataType = value; }
+        }
+
+        // Check to see if DataType property is set
+        internal bool IsSetDataType()
+        {
+            return this._dataType != null;
         }
 
         /// <summary>
@@ -146,8 +168,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of parameter. Valid values include the following: String, String list, Secure
-        /// string.
+        /// The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>,
+        /// and <code>SecureString</code>.
         /// </para>
         /// </summary>
         public ParameterType Type

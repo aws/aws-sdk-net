@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,7 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// The metadata that describes the column structure and data types of a table of query
-    /// results.
+    /// results. To return a <code>ResultSetMetadata</code> object, use <a>GetQueryResults</a>.
     /// </summary>
     public partial class ResultSetMetadata
     {

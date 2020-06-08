@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -236,7 +237,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property EnableManagedSpotTraining. 
         /// <para>
         /// When true, enables managed spot training using Amazon EC2 Spot instances to run training
-        /// jobs instead of on-demand instances. For more information, see <a>model-managed-spot-training</a>.
+        /// jobs instead of on-demand instances. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed
+        /// Spot Training</a>.
         /// </para>
         /// </summary>
         public bool EnableManagedSpotTraining

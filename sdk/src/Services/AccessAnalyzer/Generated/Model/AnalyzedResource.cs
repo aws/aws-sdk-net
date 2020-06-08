@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,6 +39,7 @@ namespace Amazon.AccessAnalyzer.Model
         private string _error;
         private bool? _isPublic;
         private string _resourceArn;
+        private string _resourceOwnerAccount;
         private ResourceType _resourceType;
         private List<string> _sharedVia = new List<string>();
         private FindingStatus _status;
@@ -158,6 +160,25 @@ namespace Amazon.AccessAnalyzer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResourceOwnerAccount. 
+        /// <para>
+        /// The AWS account ID that owns the resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string ResourceOwnerAccount
+        {
+            get { return this._resourceOwnerAccount; }
+            set { this._resourceOwnerAccount = value; }
+        }
+
+        // Check to see if ResourceOwnerAccount property is set
+        internal bool IsSetResourceOwnerAccount()
+        {
+            return this._resourceOwnerAccount != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The type of the resource that was analyzed.
@@ -179,7 +200,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property SharedVia. 
         /// <para>
-        /// Indicates how the access that generated the finding is granted.
+        /// Indicates how the access that generated the finding is granted. This is populated
+        /// for Amazon S3 bucket findings.
         /// </para>
         /// </summary>
         public List<string> SharedVia

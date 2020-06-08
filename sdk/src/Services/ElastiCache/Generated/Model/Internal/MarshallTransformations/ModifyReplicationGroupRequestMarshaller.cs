@@ -99,6 +99,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
                 }
+                if(publicRequest.IsSetMultiAZEnabled())
+                {
+                    request.Parameters.Add("MultiAZEnabled", StringUtils.FromBool(publicRequest.MultiAZEnabled));
+                }
                 if(publicRequest.IsSetNodeGroupId())
                 {
                     request.Parameters.Add("NodeGroupId", StringUtils.FromString(publicRequest.NodeGroupId));

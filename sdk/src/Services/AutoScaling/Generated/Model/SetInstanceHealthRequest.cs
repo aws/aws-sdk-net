@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -93,7 +94,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about the health check grace period, see <a>CreateAutoScalingGroup</a>.
+        /// For more information about the health check grace period, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </para>
         /// </summary>
         public bool ShouldRespectGracePeriod

@@ -68,6 +68,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetFilterArn())
+                {
+                    context.Writer.WritePropertyName("filterArn");
+                    context.Writer.Write(publicRequest.FilterArn);
+                }
+
                 if(publicRequest.IsSetJobInput())
                 {
                     context.Writer.WritePropertyName("jobInput");

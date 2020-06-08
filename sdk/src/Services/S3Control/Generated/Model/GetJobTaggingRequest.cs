@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,7 +30,28 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the GetJobTagging operation.
-    /// Retrieve the tags on a Amazon S3 batch operations job.
+    /// Returns the tags on an Amazon S3 Batch Operations job. To use this operation, you
+    /// must have permission to perform the <code>s3:GetJobTagging</code> action. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
+    /// Job Tags</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+    /// 
+    ///   
+    /// <para>
+    /// Related actions include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateJob</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PutJobTagging</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteJobTagging</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetJobTaggingRequest : AmazonS3ControlRequest
     {
@@ -39,8 +61,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID for the Amazon Web Services account associated with the Amazon S3 batch
-        /// operations job you want to retrieve tags for.
+        /// The AWS account ID associated with the Amazon S3 Batch Operations job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -59,7 +80,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The ID for the job whose tags you want to retrieve.
+        /// The ID for the Amazon S3 Batch Operations job whose tags you want to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=36)]

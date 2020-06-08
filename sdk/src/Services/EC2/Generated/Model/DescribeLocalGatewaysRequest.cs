@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -60,8 +61,35 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LocalGatewayIds. 
         /// <para>
-        /// The IDs of the local gateways.
+        /// One or more filters.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>local-gateway-id</code> - The ID of a local gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>local-gateway-route-table-id</code> - The ID of the local gateway route table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>local-gateway-route-table-virtual-interface-group-association-id</code> - The
+        /// ID of the association.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of the
+        /// virtual interface group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>state</code> - The state of the association.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> LocalGatewayIds
         {

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -64,7 +65,7 @@ namespace Amazon.IoTEvents.Model
         /// Gets and sets the property Seconds. 
         /// <para>
         /// The number of seconds until the timer expires. The minimum value is 60 seconds to
-        /// ensure accuracy.
+        /// ensure accuracy. The maximum value is 31622400 seconds. 
         /// </para>
         /// </summary>
         [Obsolete("seconds is deprecated. You can use durationExpression for SetTimerAction. The value of seconds can be used as a string expression for durationExpression.")]

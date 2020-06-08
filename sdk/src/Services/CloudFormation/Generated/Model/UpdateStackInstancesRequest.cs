@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -30,12 +31,12 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the UpdateStackInstances operation.
     /// Updates the parameter values for stack instances for the specified accounts, within
-    /// the specified regions. A stack instance refers to a stack in a specific account and
-    /// region. 
+    /// the specified Regions. A stack instance refers to a stack in a specific account and
+    /// Region. 
     /// 
     ///  
     /// <para>
-    /// You can only update stack instances in regions and accounts where they already exist;
+    /// You can only update stack instances in Regions and accounts where they already exist;
     /// to create additional stack instances, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>.
     /// 
     /// </para>
@@ -69,9 +70,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Accounts. 
         /// <para>
-        /// [Self-managed permissions] The names of one or more AWS accounts for which you want
-        /// to update parameter values for stack instances. The overridden parameter values will
-        /// be applied to all stack instances in the specified accounts and regions.
+        /// [<code>Self-managed</code> permissions] The names of one or more AWS accounts for
+        /// which you want to update parameter values for stack instances. The overridden parameter
+        /// values will be applied to all stack instances in the specified accounts and Regions.
         /// </para>
         ///  
         /// <para>
@@ -173,7 +174,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Any overridden parameter values will be applied to all stack instances in the specified
-        /// accounts and regions. When specifying parameters and their values, be aware of how
+        /// accounts and Regions. When specifying parameters and their values, be aware of how
         /// AWS CloudFormation sets parameter values during stack instance update operations:
         /// </para>
         ///  <ul> <li> 
@@ -235,9 +236,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// The names of one or more regions in which you want to update parameter values for
+        /// The names of one or more Regions in which you want to update parameter values for
         /// stack instances. The overridden parameter values will be applied to all stack instances
-        /// in the specified accounts and regions.
+        /// in the specified accounts and Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

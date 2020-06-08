@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -62,7 +63,6 @@ namespace Amazon.Kafka.Model
         /// The versions of Apache Kafka with which you can use this MSK configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> KafkaVersions
         {
             get { return this._kafkaVersions; }

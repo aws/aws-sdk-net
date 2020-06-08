@@ -250,43 +250,55 @@ namespace Amazon.Route53
         /// <summary>
         /// Associates an Amazon VPC with a private hosted zone. 
         /// 
-        ///  <important> 
+        ///  <note> 
         /// <para>
         /// To perform the association, the VPC and the private hosted zone must already exist.
-        /// You can't convert a public hosted zone into a private hosted zone.
+        /// Also, you can't convert a public hosted zone into a private hosted zone.
         /// </para>
-        ///  </important> <note> 
+        ///  </note> 
         /// <para>
-        /// If you want to associate a VPC that was created by using one AWS account with a private
-        /// hosted zone that was created by using a different account, the AWS account that created
-        /// the private hosted zone must first submit a <code>CreateVPCAssociationAuthorization</code>
-        /// request. Then the account that created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
+        /// If you want to associate a VPC that was created by one AWS account with a private
+        /// hosted zone that was created by a different account, do one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the AWS account that created the private hosted zone to submit a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateVPCAssociationAuthorization.html">CreateVPCAssociationAuthorization</a>
+        /// request. Then use the account that created the VPC to submit an <code>AssociateVPCWithHostedZone</code>
         /// request.
         /// </para>
-        ///  </note>
+        ///  </li> <li> 
+        /// <para>
+        /// If a subnet in the VPC was shared with another account, you can use the account that
+        /// the subnet was shared with to submit an <code>AssociateVPCWithHostedZone</code> request.
+        /// For more information about sharing subnets, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">Working
+        /// with Shared VPCs</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateVPCWithHostedZone service method.</param>
         /// 
         /// <returns>The response from the AssociateVPCWithHostedZone service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.ConflictingDomainExistsException">
-        /// The cause of this error depends on whether you're trying to create a public or a private
-        /// hosted zone:
+        /// The cause of this error depends on the operation that you're performing:
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Public hosted zone:</b> Two hosted zones that have the same name or that have
-        /// a parent/child relationship (example.com and test.example.com) can't have any common
-        /// name servers. You tried to create a hosted zone that has the same name as an existing
-        /// hosted zone or that's the parent or child of an existing hosted zone, and you specified
-        /// a delegation set that shares one or more name servers with the existing hosted zone.
-        /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.
+        ///  <b>Create a public hosted zone:</b> Two hosted zones that have the same name or that
+        /// have a parent/child relationship (example.com and test.example.com) can't have any
+        /// common name servers. You tried to create a hosted zone that has the same name as an
+        /// existing hosted zone or that's the parent or child of an existing hosted zone, and
+        /// you specified a delegation set that shares one or more name servers with the existing
+        /// hosted zone. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Private hosted zone:</b> You specified an Amazon VPC that you're already using
-        /// for another hosted zone, and the domain that you specified for one of the hosted zones
-        /// is a subdomain of the domain that you specified for the other hosted zone. For example,
-        /// you can't use the same Amazon VPC for the hosted zones for example.com and test.example.com.
+        ///  <b>Create a private hosted zone:</b> A hosted zone with the specified name already
+        /// exists and is already associated with the Amazon VPC that you specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Associate VPCs with a private hosted zone:</b> The VPC that you specified is already
+        /// associated with another hosted zone that has the same name.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -373,33 +385,42 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
+        ///  <b>Deleting Resource Record Sets</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a resource record set, you must specify all the same values that you specified
+        /// when you created it.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Change Batches and Transactional Changes</b> 
         /// </para>
         ///  
         /// <para>
         /// The request body must include a document with a <code>ChangeResourceRecordSetsRequest</code>
         /// element. The request body contains a list of change items, known as a change batch.
-        /// Change batches are considered transactional changes. When using the Amazon Route 53
-        /// API to change resource record sets, Route 53 either makes all or none of the changes
-        /// in a change batch request. This ensures that Route 53 never partially implements the
-        /// intended changes to the resource record sets in a hosted zone. 
+        /// Change batches are considered transactional changes. Route 53 validates the changes
+        /// in the request and then either makes all or none of the changes in the change batch
+        /// request. This ensures that DNS routing isn't adversely affected by partial changes
+        /// to the resource record sets in a hosted zone. 
         /// </para>
         ///  
         /// <para>
-        /// For example, a change batch request that deletes the <code>CNAME</code> record for
-        /// www.example.com and creates an alias resource record set for www.example.com. Route
-        /// 53 deletes the first resource record set and creates the second resource record set
-        /// in a single operation. If either the <code>DELETE</code> or the <code>CREATE</code>
-        /// action fails, then both changes (plus any other changes in the batch) fail, and the
-        /// original <code>CNAME</code> record continues to exist.
+        /// For example, suppose a change batch request contains two changes: it deletes the <code>CNAME</code>
+        /// resource record set for www.example.com and creates an alias resource record set for
+        /// www.example.com. If validation for both records succeeds, Route 53 deletes the first
+        /// resource record set and creates the second resource record set in a single operation.
+        /// If validation for either the <code>DELETE</code> or the <code>CREATE</code> action
+        /// fails, then the request is canceled, and the original <code>CNAME</code> record continues
+        /// to exist.
         /// </para>
-        ///  <important> 
+        ///  <note> 
         /// <para>
-        /// Due to the nature of transactional changes, you can't delete the same resource record
-        /// set more than once in a single change batch. If you attempt to delete the same change
-        /// batch more than once, Route 53 returns an <code>InvalidChangeBatch</code> error.
+        /// If you try to delete the same resource record set more than once in a single change
+        /// batch, Route 53 returns an <code>InvalidChangeBatch</code> error.
         /// </para>
-        ///  </important> 
+        ///  </note> 
         /// <para>
         ///  <b>Traffic Flow</b> 
         /// </para>
@@ -411,7 +432,7 @@ namespace Amazon.Route53
         /// then associate the traffic policy with one or more domain names (such as example.com)
         /// or subdomain names (such as www.example.com), in the same hosted zone or in multiple
         /// hosted zones. You can roll back the updates if the new configuration isn't performing
-        /// as expected. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html">Using
+        /// as expected. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html">Using
         /// Traffic Flow to Route DNS Traffic</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         ///  
@@ -677,7 +698,7 @@ namespace Amazon.Route53
         /// a CloudWatch metric that checks the status of the Amazon EC2 <code>StatusCheckFailed</code>
         /// metric, add an alarm to the metric, and then create a health check that is based on
         /// the state of the alarm. For information about creating CloudWatch metrics and alarms
-        /// by using the CloudWatch console, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
+        /// by using the CloudWatch console, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
         /// CloudWatch User Guide</a>.
         /// </para>
         ///  </li> </ul>
@@ -803,9 +824,8 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For public hosted zones, Amazon Route 53 automatically creates a default SOA record
-        /// and four NS records for the zone. For more information about SOA and NS records, see
-        /// <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
+        /// For public hosted zones, Route 53 automatically creates a default SOA record and four
+        /// NS records for the zone. For more information about SOA and NS records, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
         /// and SOA Records that Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route
         /// 53 Developer Guide</i>.
         /// </para>
@@ -819,7 +839,7 @@ namespace Amazon.Route53
         /// <para>
         /// If your domain is registered with a registrar other than Route 53, you must update
         /// the name servers with your registrar to make Route 53 the DNS service for the domain.
-        /// For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating
+        /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating
         /// DNS Service for an Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53
         /// Developer Guide</i>. 
         /// </para>
@@ -835,24 +855,26 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the CreateHostedZone service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.ConflictingDomainExistsException">
-        /// The cause of this error depends on whether you're trying to create a public or a private
-        /// hosted zone:
+        /// The cause of this error depends on the operation that you're performing:
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Public hosted zone:</b> Two hosted zones that have the same name or that have
-        /// a parent/child relationship (example.com and test.example.com) can't have any common
-        /// name servers. You tried to create a hosted zone that has the same name as an existing
-        /// hosted zone or that's the parent or child of an existing hosted zone, and you specified
-        /// a delegation set that shares one or more name servers with the existing hosted zone.
-        /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.
+        ///  <b>Create a public hosted zone:</b> Two hosted zones that have the same name or that
+        /// have a parent/child relationship (example.com and test.example.com) can't have any
+        /// common name servers. You tried to create a hosted zone that has the same name as an
+        /// existing hosted zone or that's the parent or child of an existing hosted zone, and
+        /// you specified a delegation set that shares one or more name servers with the existing
+        /// hosted zone. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Private hosted zone:</b> You specified an Amazon VPC that you're already using
-        /// for another hosted zone, and the domain that you specified for one of the hosted zones
-        /// is a subdomain of the domain that you specified for the other hosted zone. For example,
-        /// you can't use the same Amazon VPC for the hosted zones for example.com and test.example.com.
+        ///  <b>Create a private hosted zone:</b> A hosted zone with the specified name already
+        /// exists and is already associated with the Amazon VPC that you specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Associate VPCs with a private hosted zone:</b> The VPC that you specified is already
+        /// associated with another hosted zone that has the same name.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1190,9 +1212,14 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Creates a delegation set (a group of four name servers) that can be reused by multiple
-        /// hosted zones. If a hosted zoned ID is specified, <code>CreateReusableDelegationSet</code>
-        /// marks the delegation set associated with that zone as reusable.
+        /// hosted zones that were created by the same AWS account. 
         /// 
+        ///  
+        /// <para>
+        /// You can also create a reusable delegation set that uses the four name servers that
+        /// are associated with an existing hosted zone. Specify the hosted zone ID in the <code>CreateReusableDelegationSet</code>
+        /// request.
+        /// </para>
         ///  <note> 
         /// <para>
         /// You can't associate a reusable delegation set with a private hosted zone.
@@ -1200,7 +1227,7 @@ namespace Amazon.Route53
         ///  </note> 
         /// <para>
         /// For information about using a reusable delegation set to configure white label name
-        /// servers, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
+        /// servers, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
         /// White Label Name Servers</a>.
         /// </para>
         ///  
@@ -1700,10 +1727,17 @@ namespace Amazon.Route53
         /// check is associated with one or more resource record sets. If you delete a health
         /// check and you don't update the associated resource record sets, the future status
         /// of the health check can't be predicted and may change. This will affect the routing
-        /// of DNS queries for your DNS failover configuration. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
+        /// of DNS queries for your DNS failover configuration. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
         /// and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// If you're using AWS Cloud Map and you configured Cloud Map to create a Route 53 health
+        /// check when you register an instance, you can't use the Route 53 <code>DeleteHealthCheck</code>
+        /// command to delete the health check. The health check is deleted automatically when
+        /// you deregister the instance; there can be a delay of several hours before the health
+        /// check is deleted from Route 53. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHealthCheck service method.</param>
         /// 
@@ -2509,7 +2543,7 @@ namespace Amazon.Route53
         /// <para>
         ///  <code>GetCheckerIpRanges</code> still works, but we recommend that you download ip-ranges.json,
         /// which includes IP address ranges for all AWS services. For more information, see <a
-        /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
+        /// href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
         /// Address Ranges of Amazon Route 53 Servers</a> in the <i>Amazon Route 53 Developer
         /// Guide</i>.
         /// </para>
@@ -2606,7 +2640,9 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchGeoLocationException">
-        /// Amazon Route 53 doesn't support the specified geographic location.
+        /// Amazon Route 53 doesn't support the specified geographic location. For a list of supported
+        /// geolocation codes, see the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a>
+        /// data type.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation">REST API Reference for GetGeoLocation Operation</seealso>
         public virtual GetGeoLocationResponse GetGeoLocation(GetGeoLocationRequest request)
@@ -3493,6 +3529,11 @@ namespace Amazon.Route53
         /// that country are listed in alphabetical order immediately after the corresponding
         /// country.
         /// </para>
+        ///  
+        /// <para>
+        /// For a list of supported geolocation codes, see the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a>
+        /// data type.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the ListGeoLocations service method, as returned by Route53.</returns>
@@ -3514,6 +3555,11 @@ namespace Amazon.Route53
         /// subdivisions for a country (for example, states or provinces), the subdivisions for
         /// that country are listed in alphabetical order immediately after the corresponding
         /// country.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of supported geolocation codes, see the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a>
+        /// data type.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGeoLocations service method.</param>
@@ -3782,7 +3828,7 @@ namespace Amazon.Route53
         /// <para>
         /// The labels are reversed and alphabetized using the escaped value. For more information
         /// about valid domain name formats, including internationalized domain names, see <a
-        /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+        /// href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
         /// Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         ///  
@@ -4831,7 +4877,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// For more information about updating health checks, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
+        /// For more information about updating health checks, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
         /// Updating, and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         /// </summary>

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -119,7 +120,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name for the entity. This value is not unique. It is defined by the provider.
+        /// The name for the entity. This value is not unique. It is defined by the seller.
         /// </para>
         /// </summary>
         public string Name
@@ -137,10 +138,10 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property Visibility. 
         /// <para>
-        /// The visibility status of the entity to subscribers. This value can be <code>Public</code>
+        /// The visibility status of the entity to buyers. This value can be <code>Public</code>
         /// (everyone can view the entity), <code>Limited</code> (the entity is visible to limited
         /// accounts only), or <code>Restricted</code> (the entity was published and then unpublished
-        /// and only existing subscribers can view it). 
+        /// and only existing buyers can view it). 
         /// </para>
         /// </summary>
         public string Visibility

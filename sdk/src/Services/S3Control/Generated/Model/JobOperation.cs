@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,6 +39,8 @@ namespace Amazon.S3Control.Model
         private S3InitiateRestoreObjectOperation _s3InitiateRestoreObject;
         private S3SetObjectAclOperation _s3PutObjectAcl;
         private S3CopyObjectOperation _s3PutObjectCopy;
+        private S3SetObjectLegalHoldOperation _s3PutObjectLegalHold;
+        private S3SetObjectRetentionOperation _s3PutObjectRetention;
         private S3SetObjectTaggingOperation _s3PutObjectTagging;
 
         /// <summary>
@@ -112,6 +115,36 @@ namespace Amazon.S3Control.Model
         internal bool IsSetS3PutObjectCopy()
         {
             return this._s3PutObjectCopy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3PutObjectLegalHold.
+        /// </summary>
+        public S3SetObjectLegalHoldOperation S3PutObjectLegalHold
+        {
+            get { return this._s3PutObjectLegalHold; }
+            set { this._s3PutObjectLegalHold = value; }
+        }
+
+        // Check to see if S3PutObjectLegalHold property is set
+        internal bool IsSetS3PutObjectLegalHold()
+        {
+            return this._s3PutObjectLegalHold != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3PutObjectRetention.
+        /// </summary>
+        public S3SetObjectRetentionOperation S3PutObjectRetention
+        {
+            get { return this._s3PutObjectRetention; }
+            set { this._s3PutObjectRetention = value; }
+        }
+
+        // Check to see if S3PutObjectRetention property is set
+        internal bool IsSetS3PutObjectRetention()
+        {
+            return this._s3PutObjectRetention != null;
         }
 
         /// <summary>

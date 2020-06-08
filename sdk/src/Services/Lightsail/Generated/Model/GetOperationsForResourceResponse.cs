@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -93,7 +94,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property Operations. 
         /// <para>
         /// An array of objects that describe the result of the action, such as the status of
-        /// the request, the time stamp of the request, and the resources affected by the request.
+        /// the request, the timestamp of the request, and the resources affected by the request.
         /// </para>
         /// </summary>
         public List<Operation> Operations

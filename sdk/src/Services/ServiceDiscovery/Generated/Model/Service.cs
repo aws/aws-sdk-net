@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -147,9 +148,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property HealthCheckConfig. 
         /// <para>
-        ///  <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional
-        /// health check. If you specify settings for a health check, AWS Cloud Map associates
-        /// the health check with the records that you specify in <code>DnsConfig</code>.
+        ///  <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings
+        /// for an optional health check. If you specify settings for a health check, AWS Cloud
+        /// Map associates the health check with the records that you specify in <code>DnsConfig</code>.
         /// </para>
         ///  
         /// <para>
@@ -217,7 +218,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// The number of instances that are currently associated with the service. Instances
         /// that were previously associated with the service but that have been deleted are not
-        /// included in the count.
+        /// included in the count. The count might not reflect pending registrations and deregistrations.
         /// </para>
         /// </summary>
         public int InstanceCount

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -116,8 +117,10 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The condition state. Currently, the values supported are <code>SUCCEEDED</code>, <code>STOPPED</code>,
-        /// <code>TIMEOUT</code>, and <code>FAILED</code>.
+        /// The condition state. Currently, the only job states that a trigger can listen for
+        /// are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and <code>TIMEOUT</code>.
+        /// The only crawler states that a trigger can listen for are <code>SUCCEEDED</code>,
+        /// <code>FAILED</code>, and <code>CANCELLED</code>.
         /// </para>
         /// </summary>
         public JobRunState State

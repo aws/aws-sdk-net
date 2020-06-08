@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -34,9 +35,9 @@ namespace Amazon.ElasticBeanstalk.Model
     /// 
     ///  
     /// <para>
-    /// Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments.
-    /// For details about environment tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging
-    /// Resources in Your Elastic Beanstalk Environment</a>.
+    /// Elastic Beanstalk supports tagging of all of its resources. For details about resource
+    /// tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
+    /// Application Resources</a>.
     /// </para>
     ///  
     /// <para>
@@ -72,7 +73,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        /// Must be the ARN of an Elastic Beanstalk environment.
+        /// Must be the ARN of an Elastic Beanstalk resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -91,11 +92,12 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property TagsToAdd. 
         /// <para>
-        /// A list of tags to add or update.
+        /// A list of tags to add or update. If a key of an existing tag is added, the tag's value
+        /// is updated.
         /// </para>
         ///  
         /// <para>
-        /// If a key of an existing tag is added, the tag's value is updated.
+        /// Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.
         /// </para>
         /// </summary>
         public List<Tag> TagsToAdd
@@ -113,11 +115,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property TagsToRemove. 
         /// <para>
-        /// A list of tag keys to remove.
+        /// A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.
         /// </para>
         ///  
         /// <para>
-        /// If a tag key doesn't exist, it is silently ignored.
+        /// Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.
         /// </para>
         /// </summary>
         public List<string> TagsToRemove

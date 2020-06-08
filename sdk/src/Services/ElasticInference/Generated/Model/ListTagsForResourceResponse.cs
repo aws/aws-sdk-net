@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -35,7 +36,10 @@ namespace Amazon.ElasticInference.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Tags. The tags of the Elastic Inference Accelerator.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  The tags of the Elastic Inference Accelerator. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> Tags

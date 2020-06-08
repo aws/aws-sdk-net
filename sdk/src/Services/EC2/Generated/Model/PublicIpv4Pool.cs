@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class PublicIpv4Pool
     {
         private string _description;
+        private string _networkBorderGroup;
         private List<PublicIpv4PoolRange> _poolAddressRanges = new List<PublicIpv4PoolRange>();
         private string _poolId;
         private List<Tag> _tags = new List<Tag>();
@@ -55,6 +57,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkBorderGroup. 
+        /// <para>
+        /// The name of the location from which the address pool is advertised. A network border
+        /// group is a unique set of Availability Zones or Local Zones from where AWS advertises
+        /// public IP addresses.
+        /// </para>
+        /// </summary>
+        public string NetworkBorderGroup
+        {
+            get { return this._networkBorderGroup; }
+            set { this._networkBorderGroup = value; }
+        }
+
+        // Check to see if NetworkBorderGroup property is set
+        internal bool IsSetNetworkBorderGroup()
+        {
+            return this._networkBorderGroup != null;
         }
 
         /// <summary>

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -95,8 +96,8 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property RespondToAfd. Indicates how to respond to the AFD values
         /// in the input stream. RESPOND causes input video to be clipped, depending on the AFD
         /// value, input display aspect ratio, and output display aspect ratio, and (except for
-        /// FRAMECAPTURE codec) includes the values in the output. PASSTHROUGH (does not apply
-        /// to FRAMECAPTURE codec) ignores the AFD values and includes the values in the output,
+        /// FRAME_CAPTURE codec) includes the values in the output. PASSTHROUGH (does not apply
+        /// to FRAME_CAPTURE codec) ignores the AFD values and includes the values in the output,
         /// so input video is not clipped. NONE ignores the AFD values and does not include the
         /// values through to the output, so input video is not clipped.
         /// </summary>
@@ -113,7 +114,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScalingBehavior. STRETCHTOOUTPUT configures the output
+        /// Gets and sets the property ScalingBehavior. STRETCH_TO_OUTPUT configures the output
         /// position to stretch the video to the specified output resolution (height and width).
         /// This option will override any position value. DEFAULT may insert black boxes (pillar
         /// boxes or letter boxes) around the video to provide the specified output resolution.

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,7 +39,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DestinationArn. 
         /// <para>
-        /// The ARN of the CloudWatch Logs log group to receive access logs.
+        /// The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis Data Firehose
+        /// delivery stream to receive access logs. If you specify a Kinesis Data Firehose delivery
+        /// stream, the stream name must begin with <code>amazon-apigateway-</code>.
         /// </para>
         /// </summary>
         public string DestinationArn

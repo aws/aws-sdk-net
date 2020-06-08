@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -173,9 +174,10 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// The sequence token obtained from the response of the previous <code>PutLogEvents</code>
         /// call. An upload in a newly created log stream does not require a sequence token. You
-        /// can also get the sequence token using <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code>
-        /// twice within a narrow time period using the same value for <code>sequenceToken</code>,
-        /// both calls may be successful, or one may be rejected.
+        /// can also get the sequence token using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>.
+        /// If you call <code>PutLogEvents</code> twice within a narrow time period using the
+        /// same value for <code>sequenceToken</code>, both calls may be successful, or one may
+        /// be rejected.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

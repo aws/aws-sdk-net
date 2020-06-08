@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -29,18 +30,22 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstanceInformation operation.
-    /// Describes one or more of your instances. You can use this to get information about
-    /// instances like the operating system platform, the SSM Agent version (Linux), status
-    /// etc. If you specify one or more instance IDs, it returns information for those instances.
+    /// Describes one or more of your instances, including information about the operating
+    /// system platform, the version of SSM Agent installed on the instance, instance status,
+    /// and so on.
+    /// 
+    ///  
+    /// <para>
+    /// If you specify one or more instance IDs, it returns information for those instances.
     /// If you do not specify instance IDs, it returns information for all your instances.
     /// If you specify an instance ID that is not valid or an instance that you do not own,
-    /// you receive an error. 
-    /// 
+    /// you receive an error.
+    /// </para>
     ///  <note> 
     /// <para>
     /// The IamRole field for this API action is the Amazon Identity and Access Management
     /// (IAM) role assigned to on-premises instances. This call does not return the IAM role
-    /// for Amazon EC2 instances.
+    /// for EC2 instances.
     /// </para>
     ///  </note>
     /// </summary>
@@ -55,7 +60,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// One or more filters. Use a filter to return a more specific list of instances. You
-        /// can filter on Amazon EC2 tag. Specify tags by using a key-value mapping.
+        /// can filter based on tags applied to EC2 instances. Use this <code>Filters</code> data
+        /// type instead of <code>InstanceInformationFilterList</code>, which is deprecated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -75,16 +81,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property InstanceInformationFilterList. 
         /// <para>
         /// This is a legacy method. We recommend that you don't use this method. Instead, use
-        /// the <a>InstanceInformationFilter</a> action. The <code>InstanceInformationFilter</code>
-        /// action enables you to return instance information by using tags that are specified
-        /// as a key-value mapping. 
+        /// the <code>Filters</code> data type. <code>Filters</code> enables you to return instance
+        /// information by filtering based on tags applied to managed instances.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// If you do use this method, then you can't use the <code>InstanceInformationFilter</code>
-        /// action. Using this method and the <code>InstanceInformationFilter</code> action causes
-        /// an exception error. 
+        /// Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code>
+        /// leads to an exception error. 
         /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
         public List<InstanceInformationFilter> InstanceInformationFilterList

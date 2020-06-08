@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -43,9 +44,9 @@ namespace Amazon.SecurityHub.Model
     ///  
     /// <para>
     /// If the account owner accepts the invitation, the account becomes a member account
-    /// in Security Hub, and a permission policy is added that permits the master account
-    /// to view the findings generated in the member account. When Security Hub is enabled
-    /// in the invited account, findings start to be sent to both the member and master accounts.
+    /// in Security Hub. A permissions policy is added that permits the master account to
+    /// view the findings generated in the member account. When Security Hub is enabled in
+    /// the invited account, findings start to be sent to both the member and master accounts.
     /// </para>
     ///  
     /// <para>

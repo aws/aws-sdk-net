@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,7 +40,7 @@ namespace Amazon.WorkLink.Model
         /// <summary>
         /// Gets and sets the property FleetArn. 
         /// <para>
-        /// The ARN of the fleet.
+        /// The Amazon Resource Name (ARN) of the fleet.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

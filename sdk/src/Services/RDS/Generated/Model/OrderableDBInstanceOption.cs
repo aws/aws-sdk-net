@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -38,6 +39,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class OrderableDBInstanceOption
     {
+        private string _availabilityZoneGroup;
         private List<AvailabilityZone> _availabilityZones = new List<AvailabilityZone>();
         private List<AvailableProcessorFeature> _availableProcessorFeatures = new List<AvailableProcessorFeature>();
         private string _dbInstanceClass;
@@ -62,6 +64,24 @@ namespace Amazon.RDS.Model
         private bool? _supportsStorageAutoscaling;
         private bool? _supportsStorageEncryption;
         private bool? _vpc;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneGroup. 
+        /// <para>
+        /// The Availability Zone group for a DB instance.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneGroup
+        {
+            get { return this._availabilityZoneGroup; }
+            set { this._availabilityZoneGroup = value; }
+        }
+
+        // Check to see if AvailabilityZoneGroup property is set
+        internal bool IsSetAvailabilityZoneGroup()
+        {
+            return this._availabilityZoneGroup != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
@@ -300,7 +320,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReadReplicaCapable. 
         /// <para>
-        /// Indicates whether a DB instance can have a Read Replica.
+        /// Indicates whether a DB instance can have a read replica.
         /// </para>
         /// </summary>
         public bool ReadReplicaCapable
@@ -338,6 +358,13 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A list of the supported DB engine modes.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>global</code> engine mode only applies for global database clusters created
+        /// with Aurora MySQL version 5.6.10a. For higher Aurora MySQL versions, the clusters
+        /// in a global database use <code>provisioned</code> engine mode. 
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> SupportedEngineModes
         {
@@ -445,8 +472,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsStorageAutoscaling. 
         /// <para>
-        /// Whether or not Amazon RDS can automatically scale storage for DB instances that use
-        /// the specified instance class.
+        /// Whether Amazon RDS can automatically scale storage for DB instances that use the specified
+        /// DB instance class.
         /// </para>
         /// </summary>
         public bool SupportsStorageAutoscaling

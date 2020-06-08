@@ -57,6 +57,17 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InstanceType);
             }
 
+            if(requestObject.IsSetLogPublishingConfiguration())
+            {
+                context.Writer.WritePropertyName("LogPublishingConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NodeLogPublishingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LogPublishingConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

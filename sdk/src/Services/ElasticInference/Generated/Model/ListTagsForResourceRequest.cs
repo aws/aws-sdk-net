@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -36,8 +37,10 @@ namespace Amazon.ElasticInference.Model
         private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. The ARN of the Elastic Inference Accelerator
-        /// to list the tags for.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        ///  The ARN of the Elastic Inference Accelerator to list the tags for. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
         public string ResourceArn

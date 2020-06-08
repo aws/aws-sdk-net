@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,7 +40,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the resource that you want to untag. 
+        /// The Amazon Resource Name (ARN) of the resource that you want to untag. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +59,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        ///  The tag keys to remove from the resource. 
+        /// The tag keys to remove from the resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -127,7 +128,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsEc2NetworkInterface. 
         /// <para>
-        /// Details for an AWS EC2 network interface.
+        /// Details for an Amazon EC2 network interface.
         /// </para>
         /// </summary>
         public AwsEc2NetworkInterfaceDetails AwsEc2NetworkInterface
@@ -289,7 +290,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsRdsDbInstance. 
         /// <para>
-        /// Details for an RDS database instance.
+        /// Details for an Amazon RDS database instance.
         /// </para>
         /// </summary>
         public AwsRdsDbInstanceDetails AwsRdsDbInstance
@@ -307,7 +308,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsS3Bucket. 
         /// <para>
-        /// Details about an Amazon S3 Bucket related to a finding.
+        /// Details about an Amazon S3 bucket related to a finding.
         /// </para>
         /// </summary>
         public AwsS3BucketDetails AwsS3Bucket

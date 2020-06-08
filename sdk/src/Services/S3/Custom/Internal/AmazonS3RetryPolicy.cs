@@ -56,6 +56,12 @@ namespace Amazon.S3.Internal
         /// <returns>a value if it can be determined, or null if the IO-bound calculations need to be done</returns>
         public bool? RetryForExceptionSync(Runtime.IExecutionContext executionContext, Exception exception)
         {
+            return SharedRetryForExceptionSync(executionContext, exception, Logger, base.RetryForException);            
+        }
+        internal static bool? SharedRetryForExceptionSync(Runtime.IExecutionContext executionContext, Exception exception, 
+            Runtime.Internal.Util.ILogger logger,
+            Func<Runtime.IExecutionContext, Exception, bool> baseRetryForException)
+        {
             var serviceException = exception as AmazonServiceException;
             if (serviceException != null)
             {
@@ -85,7 +91,7 @@ namespace Amazon.S3.Internal
                         // Retry the request to the s3-external endpoint to yield a 307 redirect
                         // that we can then follow to the correct bucket location with the expected
                         // signing algorithm.
-                        Logger.InfoFormat("Request {0}: the bucket you are attempting to access should be addressed using a region-specific endpoint."
+                        logger.InfoFormat("Request {0}: the bucket you are attempting to access should be addressed using a region-specific endpoint."
                                             + " Additional calls will be made to attempt to determine the correct region to be used."
                                             + " For better performance configure your client to use the correct region.",
                                             executionContext.RequestContext.RequestName);
@@ -116,7 +122,58 @@ namespace Amazon.S3.Internal
                     }
                 }
             }
-            return base.RetryForException(executionContext, exception);
+
+            return baseRetryForException(executionContext, exception);
+        }
+    }
+
+
+    public partial class AmazonS3StandardRetryPolicy : StandardRetryPolicy
+    {
+        /// <summary>
+        /// Constructor for AmazonS3StandardRetryPolicy.
+        /// </summary>
+        /// <param name="config">The IClientConfig object</param>
+        public AmazonS3StandardRetryPolicy(IClientConfig config) :
+            base(config)
+        {
+        }
+
+        /// <summary>
+        /// Perform the processor-bound portion of the RetryForException logic.
+        /// This is shared by the sync, async, and APM versions of the RetryForException method.
+        /// </summary>
+        /// <param name="executionContext"></param>
+        /// <param name="exception"></param>
+        /// <returns>a value if it can be determined, or null if the IO-bound calculations need to be done</returns>
+        public bool? RetryForExceptionSync(Runtime.IExecutionContext executionContext, Exception exception)
+        {
+            return AmazonS3RetryPolicy.SharedRetryForExceptionSync(executionContext, exception, Logger, base.RetryForException);
+        }
+    }
+
+
+    public partial class AmazonS3AdaptiveRetryPolicy : AdaptiveRetryPolicy
+    {
+        /// <summary>
+        /// Constructor for AmazonS3AdaptiveRetryPolicy.
+        /// </summary>
+        /// <param name="config">The IClientConfig object</param>
+        public AmazonS3AdaptiveRetryPolicy(IClientConfig config) :
+            base(config)
+        {
+        }
+
+        /// <summary>
+        /// Perform the processor-bound portion of the RetryForException logic.
+        /// This is shared by the sync, async, and APM versions of the RetryForException method.
+        /// </summary>
+        /// <param name="executionContext"></param>
+        /// <param name="exception"></param>
+        /// <returns>a value if it can be determined, or null if the IO-bound calculations need to be done</returns>
+        public bool? RetryForExceptionSync(Runtime.IExecutionContext executionContext, Exception exception)
+        {
+            return AmazonS3RetryPolicy.SharedRetryForExceptionSync(executionContext, exception, Logger, base.RetryForException);
         }
     }
 }

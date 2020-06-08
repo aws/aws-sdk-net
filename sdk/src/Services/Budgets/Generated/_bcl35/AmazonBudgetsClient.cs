@@ -335,6 +335,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
         /// An error on the client occurred. Typically, the cause is an invalid input value.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudget">REST API Reference for CreateBudget Operation</seealso>
         public virtual CreateBudgetResponse CreateBudget(CreateBudgetRequest request)
         {
             var options = new InvokeOptions();
@@ -355,6 +356,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBudget
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudget">REST API Reference for CreateBudget Operation</seealso>
         public virtual IAsyncResult BeginCreateBudget(CreateBudgetRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -371,6 +373,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBudget.</param>
         /// 
         /// <returns>Returns a  CreateBudgetResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudget">REST API Reference for CreateBudget Operation</seealso>
         public virtual CreateBudgetResponse EndCreateBudget(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateBudgetResponse>(asyncResult);
@@ -405,6 +408,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateNotification">REST API Reference for CreateNotification Operation</seealso>
         public virtual CreateNotificationResponse CreateNotification(CreateNotificationRequest request)
         {
             var options = new InvokeOptions();
@@ -425,6 +429,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNotification
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateNotification">REST API Reference for CreateNotification Operation</seealso>
         public virtual IAsyncResult BeginCreateNotification(CreateNotificationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -441,6 +446,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNotification.</param>
         /// 
         /// <returns>Returns a  CreateNotificationResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateNotification">REST API Reference for CreateNotification Operation</seealso>
         public virtual CreateNotificationResponse EndCreateNotification(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateNotificationResponse>(asyncResult);
@@ -475,6 +481,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateSubscriber">REST API Reference for CreateSubscriber Operation</seealso>
         public virtual CreateSubscriberResponse CreateSubscriber(CreateSubscriberRequest request)
         {
             var options = new InvokeOptions();
@@ -495,6 +502,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSubscriber
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateSubscriber">REST API Reference for CreateSubscriber Operation</seealso>
         public virtual IAsyncResult BeginCreateSubscriber(CreateSubscriberRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -511,6 +519,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSubscriber.</param>
         /// 
         /// <returns>Returns a  CreateSubscriberResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateSubscriber">REST API Reference for CreateSubscriber Operation</seealso>
         public virtual CreateSubscriberResponse EndCreateSubscriber(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSubscriberResponse>(asyncResult);
@@ -545,6 +554,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudget">REST API Reference for DeleteBudget Operation</seealso>
         public virtual DeleteBudgetResponse DeleteBudget(DeleteBudgetRequest request)
         {
             var options = new InvokeOptions();
@@ -565,6 +575,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBudget
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudget">REST API Reference for DeleteBudget Operation</seealso>
         public virtual IAsyncResult BeginDeleteBudget(DeleteBudgetRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -581,6 +592,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBudget.</param>
         /// 
         /// <returns>Returns a  DeleteBudgetResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudget">REST API Reference for DeleteBudget Operation</seealso>
         public virtual DeleteBudgetResponse EndDeleteBudget(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBudgetResponse>(asyncResult);
@@ -615,6 +627,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteNotification">REST API Reference for DeleteNotification Operation</seealso>
         public virtual DeleteNotificationResponse DeleteNotification(DeleteNotificationRequest request)
         {
             var options = new InvokeOptions();
@@ -635,6 +648,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNotification
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteNotification">REST API Reference for DeleteNotification Operation</seealso>
         public virtual IAsyncResult BeginDeleteNotification(DeleteNotificationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -651,6 +665,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNotification.</param>
         /// 
         /// <returns>Returns a  DeleteNotificationResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteNotification">REST API Reference for DeleteNotification Operation</seealso>
         public virtual DeleteNotificationResponse EndDeleteNotification(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteNotificationResponse>(asyncResult);
@@ -684,6 +699,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteSubscriber">REST API Reference for DeleteSubscriber Operation</seealso>
         public virtual DeleteSubscriberResponse DeleteSubscriber(DeleteSubscriberRequest request)
         {
             var options = new InvokeOptions();
@@ -704,6 +720,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSubscriber
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteSubscriber">REST API Reference for DeleteSubscriber Operation</seealso>
         public virtual IAsyncResult BeginDeleteSubscriber(DeleteSubscriberRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -720,6 +737,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSubscriber.</param>
         /// 
         /// <returns>Returns a  DeleteSubscriberResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteSubscriber">REST API Reference for DeleteSubscriber Operation</seealso>
         public virtual DeleteSubscriberResponse EndDeleteSubscriber(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSubscriberResponse>(asyncResult);
@@ -755,6 +773,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudget">REST API Reference for DescribeBudget Operation</seealso>
         public virtual DescribeBudgetResponse DescribeBudget(DescribeBudgetRequest request)
         {
             var options = new InvokeOptions();
@@ -775,6 +794,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBudget
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudget">REST API Reference for DescribeBudget Operation</seealso>
         public virtual IAsyncResult BeginDescribeBudget(DescribeBudgetRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -791,6 +811,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBudget.</param>
         /// 
         /// <returns>Returns a  DescribeBudgetResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudget">REST API Reference for DescribeBudget Operation</seealso>
         public virtual DescribeBudgetResponse EndDescribeBudget(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeBudgetResponse>(asyncResult);
@@ -825,6 +846,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetPerformanceHistory">REST API Reference for DescribeBudgetPerformanceHistory Operation</seealso>
         public virtual DescribeBudgetPerformanceHistoryResponse DescribeBudgetPerformanceHistory(DescribeBudgetPerformanceHistoryRequest request)
         {
             var options = new InvokeOptions();
@@ -845,6 +867,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBudgetPerformanceHistory
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetPerformanceHistory">REST API Reference for DescribeBudgetPerformanceHistory Operation</seealso>
         public virtual IAsyncResult BeginDescribeBudgetPerformanceHistory(DescribeBudgetPerformanceHistoryRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -861,6 +884,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBudgetPerformanceHistory.</param>
         /// 
         /// <returns>Returns a  DescribeBudgetPerformanceHistoryResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetPerformanceHistory">REST API Reference for DescribeBudgetPerformanceHistory Operation</seealso>
         public virtual DescribeBudgetPerformanceHistoryResponse EndDescribeBudgetPerformanceHistory(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeBudgetPerformanceHistoryResponse>(asyncResult);
@@ -902,6 +926,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgets">REST API Reference for DescribeBudgets Operation</seealso>
         public virtual DescribeBudgetsResponse DescribeBudgets(DescribeBudgetsRequest request)
         {
             var options = new InvokeOptions();
@@ -922,6 +947,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBudgets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgets">REST API Reference for DescribeBudgets Operation</seealso>
         public virtual IAsyncResult BeginDescribeBudgets(DescribeBudgetsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -938,6 +964,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBudgets.</param>
         /// 
         /// <returns>Returns a  DescribeBudgetsResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgets">REST API Reference for DescribeBudgets Operation</seealso>
         public virtual DescribeBudgetsResponse EndDescribeBudgets(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeBudgetsResponse>(asyncResult);
@@ -971,6 +998,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeNotificationsForBudget">REST API Reference for DescribeNotificationsForBudget Operation</seealso>
         public virtual DescribeNotificationsForBudgetResponse DescribeNotificationsForBudget(DescribeNotificationsForBudgetRequest request)
         {
             var options = new InvokeOptions();
@@ -991,6 +1019,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNotificationsForBudget
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeNotificationsForBudget">REST API Reference for DescribeNotificationsForBudget Operation</seealso>
         public virtual IAsyncResult BeginDescribeNotificationsForBudget(DescribeNotificationsForBudgetRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1007,6 +1036,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNotificationsForBudget.</param>
         /// 
         /// <returns>Returns a  DescribeNotificationsForBudgetResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeNotificationsForBudget">REST API Reference for DescribeNotificationsForBudget Operation</seealso>
         public virtual DescribeNotificationsForBudgetResponse EndDescribeNotificationsForBudget(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeNotificationsForBudgetResponse>(asyncResult);
@@ -1040,6 +1070,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeSubscribersForNotification">REST API Reference for DescribeSubscribersForNotification Operation</seealso>
         public virtual DescribeSubscribersForNotificationResponse DescribeSubscribersForNotification(DescribeSubscribersForNotificationRequest request)
         {
             var options = new InvokeOptions();
@@ -1060,6 +1091,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSubscribersForNotification
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeSubscribersForNotification">REST API Reference for DescribeSubscribersForNotification Operation</seealso>
         public virtual IAsyncResult BeginDescribeSubscribersForNotification(DescribeSubscribersForNotificationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1076,6 +1108,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSubscribersForNotification.</param>
         /// 
         /// <returns>Returns a  DescribeSubscribersForNotificationResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeSubscribersForNotification">REST API Reference for DescribeSubscribersForNotification Operation</seealso>
         public virtual DescribeSubscribersForNotificationResponse EndDescribeSubscribersForNotification(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSubscribersForNotificationResponse>(asyncResult);
@@ -1115,6 +1148,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudget">REST API Reference for UpdateBudget Operation</seealso>
         public virtual UpdateBudgetResponse UpdateBudget(UpdateBudgetRequest request)
         {
             var options = new InvokeOptions();
@@ -1135,6 +1169,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBudget
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudget">REST API Reference for UpdateBudget Operation</seealso>
         public virtual IAsyncResult BeginUpdateBudget(UpdateBudgetRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1151,6 +1186,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBudget.</param>
         /// 
         /// <returns>Returns a  UpdateBudgetResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudget">REST API Reference for UpdateBudget Operation</seealso>
         public virtual UpdateBudgetResponse EndUpdateBudget(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateBudgetResponse>(asyncResult);
@@ -1181,6 +1217,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateNotification">REST API Reference for UpdateNotification Operation</seealso>
         public virtual UpdateNotificationResponse UpdateNotification(UpdateNotificationRequest request)
         {
             var options = new InvokeOptions();
@@ -1201,6 +1238,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNotification
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateNotification">REST API Reference for UpdateNotification Operation</seealso>
         public virtual IAsyncResult BeginUpdateNotification(UpdateNotificationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1217,6 +1255,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateNotification.</param>
         /// 
         /// <returns>Returns a  UpdateNotificationResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateNotification">REST API Reference for UpdateNotification Operation</seealso>
         public virtual UpdateNotificationResponse EndUpdateNotification(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateNotificationResponse>(asyncResult);
@@ -1247,6 +1286,7 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateSubscriber">REST API Reference for UpdateSubscriber Operation</seealso>
         public virtual UpdateSubscriberResponse UpdateSubscriber(UpdateSubscriberRequest request)
         {
             var options = new InvokeOptions();
@@ -1267,6 +1307,7 @@ namespace Amazon.Budgets
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSubscriber
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateSubscriber">REST API Reference for UpdateSubscriber Operation</seealso>
         public virtual IAsyncResult BeginUpdateSubscriber(UpdateSubscriberRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1283,6 +1324,7 @@ namespace Amazon.Budgets
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSubscriber.</param>
         /// 
         /// <returns>Returns a  UpdateSubscriberResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateSubscriber">REST API Reference for UpdateSubscriber Operation</seealso>
         public virtual UpdateSubscriberResponse EndUpdateSubscriber(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateSubscriberResponse>(asyncResult);

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -73,7 +74,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        /// The number of EC2 instances that should be running in the Auto Scaling group.
+        /// The desired capacity is the initial capacity of the Auto Scaling group after the scheduled
+        /// action runs and the capacity it attempts to maintain. It can scale beyond this capacity
+        /// if you add more scaling conditions. 
         /// </para>
         /// </summary>
         public int DesiredCapacity
@@ -110,7 +113,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxSize. 
         /// <para>
-        /// The maximum number of instances in the Auto Scaling group.
+        /// The maximum size of the Auto Scaling group.
         /// </para>
         /// </summary>
         public int MaxSize
@@ -128,7 +131,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinSize. 
         /// <para>
-        /// The minimum number of instances in the Auto Scaling group.
+        /// The minimum size of the Auto Scaling group.
         /// </para>
         /// </summary>
         public int MinSize

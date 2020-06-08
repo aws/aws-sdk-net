@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -66,9 +67,11 @@ namespace Amazon.ECS.Model
     /// <para>
     ///  <code>DAEMON</code> - The daemon scheduling strategy deploys exactly one task on
     /// each active container instance that meets all of the task placement constraints that
-    /// you specify in your cluster. When using this strategy, you don't need to specify a
-    /// desired number of tasks, a task placement strategy, or use Service Auto Scaling policies.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
+    /// you specify in your cluster. The service scheduler also evaluates the task placement
+    /// constraints for running tasks and will stop tasks that do not meet the placement constraints.
+    /// When using this strategy, you don't need to specify a desired number of tasks, a task
+    /// placement strategy, or use Service Auto Scaling policies. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
     /// Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  </li> </ul> 
@@ -651,9 +654,10 @@ namespace Amazon.ECS.Model
         /// <para>
         ///  <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each
         /// active container instance that meets all of the task placement constraints that you
-        /// specify in your cluster. When you're using this strategy, you don't need to specify
-        /// a desired number of tasks, a task placement strategy, or use Service Auto Scaling
-        /// policies.
+        /// specify in your cluster. The service scheduler also evaluates the task placement constraints
+        /// for running tasks and will stop tasks that do not meet the placement constraints.
+        /// When you're using this strategy, you don't need to specify a desired number of tasks,
+        /// a task placement strategy, or use Service Auto Scaling policies.
         /// </para>
         ///  <note> 
         /// <para>

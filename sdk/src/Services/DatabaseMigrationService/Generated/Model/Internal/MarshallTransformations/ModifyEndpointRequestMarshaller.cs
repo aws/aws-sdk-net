@@ -182,6 +182,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetNeptuneSettings())
+                {
+                    context.Writer.WritePropertyName("NeptuneSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NeptuneSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NeptuneSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPassword())
                 {
                     context.Writer.WritePropertyName("Password");
