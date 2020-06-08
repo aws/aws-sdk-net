@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateService Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateServiceRequestMarshaller : IMarshaller<IRequest, CreateServiceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateServiceRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateServiceRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ServiceDiscovery");
-            string target = "Route53AutoNaming_v20170314.CreateService";
+            string target = "Route53AutoNaming_v20170314.TagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-14";            
@@ -68,66 +68,10 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCreatorRequestId())
+                if(publicRequest.IsSetResourceARN())
                 {
-                    context.Writer.WritePropertyName("CreatorRequestId");
-                    context.Writer.Write(publicRequest.CreatorRequestId);
-                }
-
-                else if(!(publicRequest.IsSetCreatorRequestId()))
-                {
-                    context.Writer.WritePropertyName("CreatorRequestId");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDnsConfig())
-                {
-                    context.Writer.WritePropertyName("DnsConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DnsConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DnsConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetHealthCheckConfig())
-                {
-                    context.Writer.WritePropertyName("HealthCheckConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HealthCheckConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HealthCheckConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetHealthCheckCustomConfig())
-                {
-                    context.Writer.WritePropertyName("HealthCheckCustomConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HealthCheckCustomConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HealthCheckCustomConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNamespaceId())
-                {
-                    context.Writer.WritePropertyName("NamespaceId");
-                    context.Writer.Write(publicRequest.NamespaceId);
+                    context.Writer.WritePropertyName("ResourceARN");
+                    context.Writer.Write(publicRequest.ResourceARN);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -155,9 +99,9 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateServiceRequestMarshaller _instance = new CreateServiceRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateServiceRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -165,7 +109,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateServiceRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

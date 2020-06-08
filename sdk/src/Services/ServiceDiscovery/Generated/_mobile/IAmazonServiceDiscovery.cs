@@ -78,6 +78,10 @@ namespace Amazon.ServiceDiscovery
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceLimitExceededException">
         /// The resource can't be created because you've reached the limit on the number of resources.
         /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.TooManyTagsException">
+        /// The list of tags on the resource is over the limit. The maximum number of tags that
+        /// can be applied to a resource is 50.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateHttpNamespace">REST API Reference for CreateHttpNamespace Operation</seealso>
         Task<CreateHttpNamespaceResponse> CreateHttpNamespaceAsync(CreateHttpNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -116,6 +120,10 @@ namespace Amazon.ServiceDiscovery
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceLimitExceededException">
         /// The resource can't be created because you've reached the limit on the number of resources.
         /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.TooManyTagsException">
+        /// The list of tags on the resource is over the limit. The maximum number of tags that
+        /// can be applied to a resource is 50.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreatePrivateDnsNamespace">REST API Reference for CreatePrivateDnsNamespace Operation</seealso>
         Task<CreatePrivateDnsNamespaceResponse> CreatePrivateDnsNamespaceAsync(CreatePrivateDnsNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -153,6 +161,10 @@ namespace Amazon.ServiceDiscovery
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceLimitExceededException">
         /// The resource can't be created because you've reached the limit on the number of resources.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.TooManyTagsException">
+        /// The list of tags on the resource is over the limit. The maximum number of tags that
+        /// can be applied to a resource is 50.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreatePublicDnsNamespace">REST API Reference for CreatePublicDnsNamespace Operation</seealso>
         Task<CreatePublicDnsNamespaceResponse> CreatePublicDnsNamespaceAsync(CreatePublicDnsNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -227,6 +239,10 @@ namespace Amazon.ServiceDiscovery
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceAlreadyExistsException">
         /// The service can't be created because a service with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.TooManyTagsException">
+        /// The list of tags on the resource is over the limit. The maximum number of tags that
+        /// can be applied to a resource is 50.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateService">REST API Reference for CreateService Operation</seealso>
         Task<CreateServiceResponse> CreateServiceAsync(CreateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -358,6 +374,10 @@ namespace Amazon.ServiceDiscovery
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.NamespaceNotFoundException">
         /// No namespace exists with the specified ID.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
+        /// The operation can't be completed because you've reached the limit on the number of
+        /// requests.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
         /// No service exists with the specified ID.
@@ -618,6 +638,32 @@ namespace Amazon.ServiceDiscovery
 
         #endregion
                 
+        #region  ListTagsForResource
+
+
+
+        /// <summary>
+        /// Lists tags for the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by ServiceDiscovery.</returns>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.InvalidInputException">
+        /// One or more specified values aren't valid. For example, a required value might be
+        /// missing, a numeric value might be outside the allowed range, or a string value might
+        /// exceed length constraints.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceNotFoundException">
+        /// The operation can't be completed because the resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RegisterInstance
 
 
@@ -702,6 +748,62 @@ namespace Amazon.ServiceDiscovery
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/RegisterInstance">REST API Reference for RegisterInstance Operation</seealso>
         Task<RegisterInstanceResponse> RegisterInstanceAsync(RegisterInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+
+        /// <summary>
+        /// Adds one or more tags to the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by ServiceDiscovery.</returns>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.InvalidInputException">
+        /// One or more specified values aren't valid. For example, a required value might be
+        /// missing, a numeric value might be outside the allowed range, or a string value might
+        /// exceed length constraints.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceNotFoundException">
+        /// The operation can't be completed because the resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.TooManyTagsException">
+        /// The list of tags on the resource is over the limit. The maximum number of tags that
+        /// can be applied to a resource is 50.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+
+        /// <summary>
+        /// Removes one or more tags from the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by ServiceDiscovery.</returns>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.InvalidInputException">
+        /// One or more specified values aren't valid. For example, a required value might be
+        /// missing, a numeric value might be outside the allowed range, or a string value might
+        /// exceed length constraints.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceNotFoundException">
+        /// The operation can't be completed because the resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

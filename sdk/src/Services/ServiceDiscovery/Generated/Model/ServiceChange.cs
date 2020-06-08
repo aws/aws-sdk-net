@@ -63,7 +63,6 @@ namespace Amazon.ServiceDiscovery.Model
         /// AWS Cloud Map to create when you register an instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DnsConfigChange DnsConfig
         {
             get { return this._dnsConfig; }

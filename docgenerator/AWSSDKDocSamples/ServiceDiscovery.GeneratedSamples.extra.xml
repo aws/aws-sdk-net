@@ -2,6 +2,25 @@
 <docs>
     <doc>
         <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.CreateHttpNamespace(Amazon.ServiceDiscovery.Model.CreateHttpNamespaceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.CreateHttpNamespace(Amazon.ServiceDiscovery.Model.CreateHttpNamespaceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.CreateHttpNamespaceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.CreateHttpNamespaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates an HTTP namespace.
+                </para>
+                <code
+                    title="CreateHttpNamespace example"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="createhttpnamespace-example-1590114811304" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.CreatePrivateDnsNamespace(Amazon.ServiceDiscovery.Model.CreatePrivateDnsNamespaceRequest)" />
             <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.CreatePrivateDnsNamespace(Amazon.ServiceDiscovery.Model.CreatePrivateDnsNamespaceRequest)" />
             <member name="T:Amazon.ServiceDiscovery.Model.CreatePrivateDnsNamespaceRequest" />
@@ -16,6 +35,25 @@
                     title="Example: Create private DNS namespace"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
                     region="example-create-private-dns-namespace-1587058592930" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.CreatePublicDnsNamespace(Amazon.ServiceDiscovery.Model.CreatePublicDnsNamespaceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.CreatePublicDnsNamespace(Amazon.ServiceDiscovery.Model.CreatePublicDnsNamespaceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.CreatePublicDnsNamespaceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.CreatePublicDnsNamespaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a public namespace based on DNS.
+                </para>
+                <code
+                    title="CreatePublicDnsNamespace example"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="createpublicdnsnamespace-example-1590114940910" />
             </example>
         </value>
     </doc>
@@ -116,6 +154,63 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.GetInstance(Amazon.ServiceDiscovery.Model.GetInstanceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.GetInstance(Amazon.ServiceDiscovery.Model.GetInstanceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetInstanceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example gets information about a specified instance.
+                </para>
+                <code
+                    title="GetInstance example"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="getinstance-example-1590115065598" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.GetInstancesHealthStatus(Amazon.ServiceDiscovery.Model.GetInstancesHealthStatusRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.GetInstancesHealthStatus(Amazon.ServiceDiscovery.Model.GetInstancesHealthStatusRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetInstancesHealthStatusRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetInstancesHealthStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example gets the current health status of one or more instances that are associate with a specified service.
+                </para>
+                <code
+                    title="GetInstancesHealthStatus example"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="getinstanceshealthstatus-example-1590115176146" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.GetNamespace(Amazon.ServiceDiscovery.Model.GetNamespaceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.GetNamespace(Amazon.ServiceDiscovery.Model.GetNamespaceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetNamespaceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetNamespaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example gets information about a specified namespace.
+                </para>
+                <code
+                    title="GetNamespace example"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="getnamespace-example-1590115383708" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.GetOperation(Amazon.ServiceDiscovery.Model.GetOperationRequest)" />
             <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.GetOperation(Amazon.ServiceDiscovery.Model.GetOperationRequest)" />
             <member name="T:Amazon.ServiceDiscovery.Model.GetOperationRequest" />
@@ -130,6 +225,25 @@
                     title="Example: Get operation result"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
                     region="example-get-operation-result-1587073807124" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.GetService(Amazon.ServiceDiscovery.Model.GetServiceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.GetService(Amazon.ServiceDiscovery.Model.GetServiceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetServiceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetServiceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example gets the settings for a specified service.
+                </para>
+                <code
+                    title="GetService Example"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="getservice-example-1590117234294" />
             </example>
         </value>
     </doc>
@@ -173,6 +287,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.ListOperations(Amazon.ServiceDiscovery.Model.ListOperationsRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.ListOperations(Amazon.ServiceDiscovery.Model.ListOperationsRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.ListOperationsRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.ListOperationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example gets the operations that have a STATUS of either PENDING or SUCCESS.
+                </para>
+                <code
+                    title="ListOperations Example"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="listoperations-example-1590117354396" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.ListServices(Amazon.ServiceDiscovery.Model.ListServicesRequest)" />
             <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.ListServices(Amazon.ServiceDiscovery.Model.ListServicesRequest)" />
             <member name="T:Amazon.ServiceDiscovery.Model.ListServicesRequest" />
@@ -192,6 +325,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.ListTagsForResource(Amazon.ServiceDiscovery.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.ListTagsForResource(Amazon.ServiceDiscovery.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists the tags of a resource.
+                </para>
+                <code
+                    title="ListTagsForResource example"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="listtagsforresource-example-1590093928416" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.RegisterInstance(Amazon.ServiceDiscovery.Model.RegisterInstanceRequest)" />
             <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.RegisterInstance(Amazon.ServiceDiscovery.Model.RegisterInstanceRequest)" />
             <member name="T:Amazon.ServiceDiscovery.Model.RegisterInstanceRequest" />
@@ -206,6 +358,82 @@
                     title="Example: Register Instance"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
                     region="example-register-instance-1587236116314" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.TagResource(Amazon.ServiceDiscovery.Model.TagResourceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.TagResource(Amazon.ServiceDiscovery.Model.TagResourceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.TagResourceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds "Department" and "Project" tags to a resource.
+                </para>
+                <code
+                    title="TagResource example"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="tagresource-example-1590093532240" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.UntagResource(Amazon.ServiceDiscovery.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.UntagResource(Amazon.ServiceDiscovery.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UntagResourceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example removes the "Department" and "Project" tags from a resource.
+                </para>
+                <code
+                    title="UntagResource example"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="untagresource-example-1590094024672" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.UpdateInstanceCustomHealthStatus(Amazon.ServiceDiscovery.Model.UpdateInstanceCustomHealthStatusRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.UpdateInstanceCustomHealthStatus(Amazon.ServiceDiscovery.Model.UpdateInstanceCustomHealthStatusRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdateInstanceCustomHealthStatusRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdateInstanceCustomHealthStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example submits a request to change the health status of an instance associated with a service with a custom health check to HEALTHY.
+                </para>
+                <code
+                    title="UpdateInstanceCustomHealthStatus Example"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="updateinstancecustomhealthstatus-example-1590118408574" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.UpdateService(Amazon.ServiceDiscovery.Model.UpdateServiceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.UpdateService(Amazon.ServiceDiscovery.Model.UpdateServiceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdateServiceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdateServiceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example submits a request to replace the DnsConfig and HealthCheckConfig settings of a specified service.
+                </para>
+                <code
+                    title="UpdateService Example"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="updateservice-example-1590117830880" />
             </example>
         </value>
     </doc>
