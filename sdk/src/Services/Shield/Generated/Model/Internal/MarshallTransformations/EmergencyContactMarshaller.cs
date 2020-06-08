@@ -45,10 +45,22 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EmergencyContact requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetContactNotes())
+            {
+                context.Writer.WritePropertyName("ContactNotes");
+                context.Writer.Write(requestObject.ContactNotes);
+            }
+
             if(requestObject.IsSetEmailAddress())
             {
                 context.Writer.WritePropertyName("EmailAddress");
                 context.Writer.Write(requestObject.EmailAddress);
+            }
+
+            if(requestObject.IsSetPhoneNumber())
+            {
+                context.Writer.WritePropertyName("PhoneNumber");
+                context.Writer.Write(requestObject.PhoneNumber);
             }
 
         }

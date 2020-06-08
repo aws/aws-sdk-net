@@ -36,6 +36,7 @@ namespace Amazon.Shield.Model
         private AutoRenew _autoRenew;
         private DateTime? _endTime;
         private List<Limit> _limits = new List<Limit>();
+        private ProactiveEngagementStatus _proactiveEngagementStatus;
         private DateTime? _startTime;
         private long? _timeCommitmentInSeconds;
 
@@ -99,6 +100,35 @@ namespace Amazon.Shield.Model
         internal bool IsSetLimits()
         {
             return this._limits != null && this._limits.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProactiveEngagementStatus. 
+        /// <para>
+        /// If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to
+        /// notify contacts about escalations to the DRT and to initiate proactive customer support.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>PENDING</code>, you have requested proactive engagement and the request is
+        /// pending. The status changes to <code>ENABLED</code> when your request is fully processed.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations
+        /// or to initiate proactive customer support. 
+        /// </para>
+        /// </summary>
+        public ProactiveEngagementStatus ProactiveEngagementStatus
+        {
+            get { return this._proactiveEngagementStatus; }
+            set { this._proactiveEngagementStatus = value; }
+        }
+
+        // Check to see if ProactiveEngagementStatus property is set
+        internal bool IsSetProactiveEngagementStatus()
+        {
+            return this._proactiveEngagementStatus != null;
         }
 
         /// <summary>

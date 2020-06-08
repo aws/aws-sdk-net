@@ -29,20 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Shield.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisassociateDRTRole operation.
-    /// Removes the DDoS Response Team's (DRT) access to your AWS account.
-    /// 
-    ///  
-    /// <para>
-    /// To make a <code>DisassociateDRTRole</code> request, you must be subscribed to the
-    /// <a href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
-    /// plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
-    /// Support plan</a>. However, if you are not subscribed to one of these support plans,
-    /// but had been previously and had granted the DRT access to your account, you can submit
-    /// a <code>DisassociateDRTRole</code> request to remove this access.
-    /// </para>
+    /// This is the response object from the EnableProactiveEngagement operation.
     /// </summary>
-    public partial class DisassociateDRTRoleRequest : AmazonShieldRequest
+    public partial class EnableProactiveEngagementResponse : AmazonWebServiceResponse
     {
 
     }

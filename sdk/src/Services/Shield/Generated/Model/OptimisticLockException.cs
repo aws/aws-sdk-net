@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Shield.Model
 {
     /// <summary>
-    /// Exception that indicates that the protection state has been modified by another client.
-    /// You can retry the request.
+    /// Exception that indicates that the resource state has been modified by another client.
+    /// Retrieve the resource and then retry your request.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]
