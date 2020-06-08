@@ -22,9 +22,11 @@ labels: feature-request, needs-triage
 <!--- How has this issue affected you? What are you trying to accomplish? -->
 <!--- Providing context helps us come up with a solution that is most useful in the real world -->
 
+### Environment
+<!--- If feature is environment-specific (targeting specific version, Windows only, etc.) please indicate requirements here -->
 
 * [ ] :wave: I may be able to implement this feature request
-* [ ] :warning: This feature might incur a breaking change
+* [ ] :warning: This feature might incur a breaking change <!-- NOTE: Please do not submit a PR before recieving feedback. In order to maintain stability, breaking changes are only added in major versions, so this change may not be merged --> 
 
 ---
 
