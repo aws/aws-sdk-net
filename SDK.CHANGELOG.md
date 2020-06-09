@@ -1,3 +1,12 @@
+### 3.3.757.0 (2020-06-09 18:11 UTC)
+* Transfer (3.3.107.0)
+	* This release updates the API so customers can test use of Source IP to allow, deny or limit access to data in their S3 buckets after integrating their identity provider.
+* Core 3.3.107.9
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.756.0 (2020-06-08 18:10 UTC)
 * ServiceDiscovery (3.3.101.0)
 	* Added support for tagging Service and Namespace type resources  in Cloud Map
