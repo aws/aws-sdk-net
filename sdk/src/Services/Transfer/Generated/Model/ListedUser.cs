@@ -43,7 +43,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The unique Amazon Resource Name (ARN) for the user that you want to learn about.
+        /// Provides the unique Amazon Resource Name (ARN) for the user that you want to learn
+        /// about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1600)]
@@ -82,7 +83,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property HomeDirectoryType. 
         /// <para>
-        /// The type of landing directory (folder) you mapped for your users' home directory.
+        /// Specifies the type of landing directory (folder) you mapped for your users' home directory.
         /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket
         /// paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>,
         /// you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how
@@ -104,10 +105,10 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The role in use by this user. A <i>role</i> is an AWS Identity and Access Management
-        /// (IAM) entity that, in this case, allows a file transfer protocol-enabled server to
-        /// act on a user's behalf. It allows the server to inherit the trust relationship that
-        /// enables that user to perform file operations to their Amazon S3 bucket.
+        /// Specifies the role that is in use by this user. A <i>role</i> is an AWS Identity and
+        /// Access Management (IAM) entity that, in this case, allows a file transfer protocol-enabled
+        /// server to act on a user's behalf. It allows the server to inherit the trust relationship
+        /// that enables that user to perform file operations to their Amazon S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -126,7 +127,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property SshPublicKeyCount. 
         /// <para>
-        /// The number of SSH public keys stored for the user you specified.
+        /// Specifies the number of SSH public keys stored for the user you specified.
         /// </para>
         /// </summary>
         public int SshPublicKeyCount
@@ -144,7 +145,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The name of the user whose ARN was specified. User names are used for authentication
+        /// Specifies the name of the user whose ARN was specified. User names are used for authentication
         /// purposes.
         /// </para>
         /// </summary>

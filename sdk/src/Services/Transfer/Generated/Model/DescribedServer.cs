@@ -31,8 +31,9 @@ namespace Amazon.Transfer.Model
     /// <summary>
     /// Describes the properties of a file transfer protocol-enabled server that was specified.
     /// Information returned includes the following: the server Amazon Resource Name (ARN),
-    /// the authentication configuration and type, the logging role, the server ID and state,
-    /// and assigned tags or metadata.
+    /// the certificate ARN (if the FTPS protocol was selected), the endpoint type and details,
+    /// the authentication configuration and type, the logging role, the file transfer protocol
+    /// or protocols, the server ID and state, and assigned tags or metadata.
     /// </summary>
     public partial class DescribedServer
     {
@@ -73,8 +74,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Certificate. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required
-        /// when <code>Protocols</code> is set to <code>FTPS</code>.
+        /// Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required when
+        /// <code>Protocols</code> is set to <code>FTPS</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1600)]
@@ -93,8 +94,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property EndpointDetails. 
         /// <para>
-        /// The virtual private cloud (VPC) endpoint settings that you configured for your file
-        /// transfer protocol-enabled server.
+        /// Specifies the virtual private cloud (VPC) endpoint settings that you configured for
+        /// your file transfer protocol-enabled server.
         /// </para>
         /// </summary>
         public EndpointDetails EndpointDetails
@@ -112,7 +113,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of endpoint that your file transfer protocol-enabled server is connected
+        /// Defines the type of endpoint that your file transfer protocol-enabled server is connected
         /// to. If your server is connected to a VPC endpoint, your server isn't accessible over
         /// the public internet.
         /// </para>
@@ -132,9 +133,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property HostKeyFingerprint. 
         /// <para>
-        /// Contains the message-digest algorithm (MD5) hash of a file transfer protocol-enabled
-        /// server's host key. This value is equivalent to the output of the <code>ssh-keygen
-        /// -l -E md5 -f my-new-server-key</code> command.
+        /// Specifies the Base64-encoded SHA256 fingerprint of the server's host key. This value
+        /// is equivalent to the output of the <code>ssh-keygen -l -f my-new-server-key</code>
+        /// command.
         /// </para>
         /// </summary>
         public string HostKeyFingerprint
@@ -172,7 +173,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property IdentityProviderType. 
         /// <para>
-        /// Defines the mode of authentication method enabled for this service. A value of <code>SERVICE_MANAGED</code>
+        /// Specifies the mode of authentication method enabled for this service. A value of <code>SERVICE_MANAGED</code>
         /// means that you are using this file transfer protocol-enabled server to store and access
         /// user credentials within the service. A value of <code>API_GATEWAY</code> indicates
         /// that you have integrated an API Gateway endpoint that will be invoked for authenticating
@@ -194,9 +195,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property LoggingRole. 
         /// <para>
-        /// An AWS Identity and Access Management (IAM) entity that allows a file transfer protocol-enabled
-        /// server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user activity
-        /// can be viewed in your CloudWatch logs.
+        /// Specifies the AWS Identity and Access Management (IAM) role that allows a file transfer
+        /// protocol-enabled server to turn on Amazon CloudWatch logging for Amazon S3 events.
+        /// When set, user activity can be viewed in your CloudWatch logs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -220,15 +221,16 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+        ///  <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over
+        /// SSH
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+        ///  <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// File Transfer Protocol (FTP): Unencrypted file transfer
+        ///  <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -248,8 +250,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// Unique system-assigned identifier for a file transfer protocol-enabled server that
-        /// you instantiate.
+        /// Specifies the unique system-assigned identifier for a file transfer protocol-enabled
+        /// server that you instantiate.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=19)]
@@ -268,10 +270,10 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The condition of a file transfer protocol-enabled server for the server that was described.
-        /// A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer
-        /// files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot
-        /// perform file transfer operations.
+        /// Specifies the condition of a file transfer protocol-enabled server for the server
+        /// that was described. A value of <code>ONLINE</code> indicates that the server can accept
+        /// jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means
+        /// that the server cannot perform file transfer operations.
         /// </para>
         ///  
         /// <para>
@@ -296,7 +298,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Contains the key-value pairs that you can use to search for and group file transfer
+        /// Specifies the key-value pairs that you can use to search for and group file transfer
         /// protocol-enabled servers that were assigned to the server that was described.
         /// </para>
         /// </summary>
@@ -316,8 +318,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserCount. 
         /// <para>
-        /// The number of users that are assigned to a file transfer protocol-enabled server you
-        /// specified with the <code>ServerId</code>.
+        /// Specifies the number of users that are assigned to a file transfer protocol-enabled
+        /// server you specified with the <code>ServerId</code>.
         /// </para>
         /// </summary>
         public int UserCount

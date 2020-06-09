@@ -44,7 +44,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property DateImported. 
         /// <para>
-        /// The date that the public key was added to the user account.
+        /// Specifies the date that the public key was added to the user account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property SshPublicKeyBody. 
         /// <para>
-        /// The content of the SSH public key as specified by the <code>PublicKeyId</code>.
+        /// Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2048)]
@@ -82,7 +82,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property SshPublicKeyId. 
         /// <para>
-        /// The <code>SshPublicKeyId</code> parameter contains the identifier of the public key.
+        /// Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the
+        /// public key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=21, Max=21)]

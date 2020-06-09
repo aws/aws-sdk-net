@@ -44,8 +44,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server
-        /// to be listed.
+        /// Specifies the unique Amazon Resource Name (ARN) for a file transfer protocol-enabled
+        /// server to be listed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1600)]
@@ -64,9 +64,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of VPC endpoint that your file transfer protocol-enabled server is connected
-        /// to. If your server is connected to a VPC endpoint, your server isn't accessible over
-        /// the public internet.
+        /// Specifies the type of VPC endpoint that your file transfer protocol-enabled server
+        /// is connected to. If your server is connected to a VPC endpoint, your server isn't
+        /// accessible over the public internet.
         /// </para>
         /// </summary>
         public EndpointType EndpointType
@@ -84,7 +84,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property IdentityProviderType. 
         /// <para>
-        /// The authentication method used to validate a user for a file transfer protocol-enabled
+        /// Specifies the authentication method used to validate a user for a file transfer protocol-enabled
         /// server that was specified. This can include Secure Shell (SSH), user name and password
         /// combinations, or your own custom authentication method. Valid values include <code>SERVICE_MANAGED</code>
         /// or <code>API_GATEWAY</code>.
@@ -105,8 +105,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property LoggingRole. 
         /// <para>
-        /// The AWS Identity and Access Management (IAM) entity that allows a file transfer protocol-enabled
-        /// server to turn on Amazon CloudWatch logging.
+        /// Specifies the AWS Identity and Access Management (IAM) role that allows a file transfer
+        /// protocol-enabled server to turn on Amazon CloudWatch logging.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -125,8 +125,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// The unique system assigned identifier for a file transfer protocol-enabled servers
-        /// that were listed.
+        /// Specifies the unique system assigned identifier for a file transfer protocol-enabled
+        /// servers that were listed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=19)]
@@ -145,7 +145,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// Describes the condition of a file transfer protocol-enabled server for the server
+        /// Specifies the condition of a file transfer protocol-enabled server for the server
         /// that was described. A value of <code>ONLINE</code> indicates that the server can accept
         /// jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means
         /// that the server cannot perform file transfer operations.
@@ -173,8 +173,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserCount. 
         /// <para>
-        /// A numeric value that indicates the number of users that are assigned to a file transfer
-        /// protocol-enabled server you specified with the <code>ServerId</code>.
+        /// Specifies the number of users that are assigned to a file transfer protocol-enabled
+        /// server you specified with the <code>ServerId</code>.
         /// </para>
         /// </summary>
         public int UserCount

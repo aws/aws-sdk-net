@@ -81,8 +81,8 @@ namespace Amazon.Transfer.Model
         /// to your user and how you want to make them visible. You will need to specify the "<code>Entry</code>"
         /// and "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
         /// visible and <code>Target</code> is the actual Amazon S3 path. If you only specify
-        /// a target, it will be displayed as is. You will need to also make sure that your AWS
-        /// IAM Role provides access to paths in <code>Target</code>. The following is an example.
+        /// a target, it will be displayed as is. You will need to also make sure that your IAM
+        /// role provides access to paths in <code>Target</code>. The following is an example.
         /// </para>
         ///  
         /// <para>
@@ -145,11 +145,10 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// Allows you to supply a scope-down policy for your user so you can use the same AWS
-        /// Identity and Access Management (IAM) role across multiple users. The policy scopes
-        /// down user access to portions of your Amazon S3 bucket. Variables you can use inside
-        /// this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>,
-        /// and <code>${Transfer:HomeBucket}</code>.
+        /// Allows you to supply a scope-down policy for your user so you can use the same IAM
+        /// role across multiple users. The policy scopes down user access to portions of your
+        /// Amazon S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
+        /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -160,7 +159,7 @@ namespace Amazon.Transfer.Model
         ///  
         /// <para>
         /// For an example of a scope-down policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-        /// a Scope-Down Policy</a>.
+        /// a scope-down policy</a>.
         /// </para>
         ///  
         /// <para>
