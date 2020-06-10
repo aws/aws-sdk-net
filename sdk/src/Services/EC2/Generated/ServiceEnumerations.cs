@@ -5091,6 +5091,42 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C5Xlarge = new InstanceType("c5.xlarge");
         /// <summary>
+        /// Constant C6g12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6g12xlarge = new InstanceType("c6g.12xlarge");
+        /// <summary>
+        /// Constant C6g16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6g16xlarge = new InstanceType("c6g.16xlarge");
+        /// <summary>
+        /// Constant C6g2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6g2xlarge = new InstanceType("c6g.2xlarge");
+        /// <summary>
+        /// Constant C6g4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6g4xlarge = new InstanceType("c6g.4xlarge");
+        /// <summary>
+        /// Constant C6g8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6g8xlarge = new InstanceType("c6g.8xlarge");
+        /// <summary>
+        /// Constant C6gLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6gLarge = new InstanceType("c6g.large");
+        /// <summary>
+        /// Constant C6gMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6gMedium = new InstanceType("c6g.medium");
+        /// <summary>
+        /// Constant C6gMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6gMetal = new InstanceType("c6g.metal");
+        /// <summary>
+        /// Constant C6gXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6gXlarge = new InstanceType("c6g.xlarge");
+        /// <summary>
         /// Constant Cc14xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Cc14xlarge = new InstanceType("cc1.4xlarge");
@@ -5878,6 +5914,42 @@ namespace Amazon.EC2
         /// Constant R5Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R5Xlarge = new InstanceType("r5.xlarge");
+        /// <summary>
+        /// Constant R6g12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6g12xlarge = new InstanceType("r6g.12xlarge");
+        /// <summary>
+        /// Constant R6g16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6g16xlarge = new InstanceType("r6g.16xlarge");
+        /// <summary>
+        /// Constant R6g2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6g2xlarge = new InstanceType("r6g.2xlarge");
+        /// <summary>
+        /// Constant R6g4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6g4xlarge = new InstanceType("r6g.4xlarge");
+        /// <summary>
+        /// Constant R6g8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6g8xlarge = new InstanceType("r6g.8xlarge");
+        /// <summary>
+        /// Constant R6gLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6gLarge = new InstanceType("r6g.large");
+        /// <summary>
+        /// Constant R6gMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6gMedium = new InstanceType("r6g.medium");
+        /// <summary>
+        /// Constant R6gMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6gMetal = new InstanceType("r6g.metal");
+        /// <summary>
+        /// Constant R6gXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6gXlarge = new InstanceType("r6g.xlarge");
         /// <summary>
         /// Constant T1Micro for InstanceType
         /// </summary>
