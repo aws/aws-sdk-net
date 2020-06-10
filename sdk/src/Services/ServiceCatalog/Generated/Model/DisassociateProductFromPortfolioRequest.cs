@@ -30,7 +30,12 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateProductFromPortfolio operation.
-    /// Disassociates the specified product from the specified portfolio.
+    /// Disassociates the specified product from the specified portfolio. 
+    /// 
+    ///  
+    /// <para>
+    /// A delegated admin is authorized to invoke this command.
+    /// </para>
     /// </summary>
     public partial class DisassociateProductFromPortfolioRequest : AmazonServiceCatalogRequest
     {

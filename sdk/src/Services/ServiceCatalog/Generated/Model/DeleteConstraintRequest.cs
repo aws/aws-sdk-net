@@ -31,6 +31,11 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Container for the parameters to the DeleteConstraint operation.
     /// Deletes the specified constraint.
+    /// 
+    ///  
+    /// <para>
+    /// A delegated admin is authorized to invoke this command.
+    /// </para>
     /// </summary>
     public partial class DeleteConstraintRequest : AmazonServiceCatalogRequest
     {

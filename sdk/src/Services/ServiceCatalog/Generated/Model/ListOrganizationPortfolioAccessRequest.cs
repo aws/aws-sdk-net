@@ -31,7 +31,12 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Container for the parameters to the ListOrganizationPortfolioAccess operation.
     /// Lists the organization nodes that have access to the specified portfolio. This API
-    /// can only be called by the master account in the organization.
+    /// can only be called by the master account in the organization or by a delegated admin.
+    /// 
+    ///  
+    /// <para>
+    /// If a delegated admin is de-registered, they can no longer perform this operation.
+    /// </para>
     /// </summary>
     public partial class ListOrganizationPortfolioAccessRequest : AmazonServiceCatalogRequest
     {
