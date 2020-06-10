@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// The request processing has failed because of an unknown error, exception, or failure.
+    /// An internal error has occurred. Try your call again.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

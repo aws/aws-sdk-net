@@ -47,7 +47,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID of the instance recommendation.
+        /// The AWS account ID of the instance.
         /// </para>
         /// </summary>
         public string AccountId

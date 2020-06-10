@@ -29,60 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetEC2InstanceRecommendations operation.
-    /// Returns Amazon EC2 instance recommendations.
+    /// Container for the parameters to the DescribeRecommendationExportJobs operation.
+    /// Describes recommendation export jobs created in the last seven days.
     /// 
     ///  
     /// <para>
-    /// AWS Compute Optimizer currently generates recommendations for Amazon Elastic Compute
-    /// Cloud (Amazon EC2) and Amazon EC2 Auto Scaling. It generates recommendations for M,
-    /// C, R, T, and X instance families. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is.html">AWS
-    /// Compute Optimizer User Guide</a>.
+    /// Use the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code>
+    /// actions to request an export of your recommendations. Then use the <code>DescribeRecommendationExportJobs</code>
+    /// action to view your export jobs.
     /// </para>
     /// </summary>
-    public partial class GetEC2InstanceRecommendationsRequest : AmazonComputeOptimizerRequest
+    public partial class DescribeRecommendationExportJobsRequest : AmazonComputeOptimizerRequest
     {
-        private List<string> _accountIds = new List<string>();
-        private List<Filter> _filters = new List<Filter>();
-        private List<string> _instanceArns = new List<string>();
+        private List<JobFilter> _filters = new List<JobFilter>();
+        private List<string> _jobIds = new List<string>();
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property AccountIds. 
-        /// <para>
-        /// The IDs of the AWS accounts for which to return instance recommendations.
-        /// </para>
-        ///  
-        /// <para>
-        /// If your account is the master account of an organization, use this parameter to specify
-        /// the member accounts for which you want to return instance recommendations.
-        /// </para>
-        ///  
-        /// <para>
-        /// Only one account ID can be specified per request.
-        /// </para>
-        /// </summary>
-        public List<string> AccountIds
-        {
-            get { return this._accountIds; }
-            set { this._accountIds = value; }
-        }
-
-        // Check to see if AccountIds property is set
-        internal bool IsSetAccountIds()
-        {
-            return this._accountIds != null && this._accountIds.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// An array of objects that describe a filter that returns a more specific list of instance
-        /// recommendations.
+        /// An array of objects that describe a filter to return a more specific list of export
+        /// jobs.
         /// </para>
         /// </summary>
-        public List<Filter> Filters
+        public List<JobFilter> Filters
         {
             get { return this._filters; }
             set { this._filters = value; }
@@ -95,27 +66,36 @@ namespace Amazon.ComputeOptimizer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceArns. 
+        /// Gets and sets the property JobIds. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the instances for which to return recommendations.
+        /// The identification numbers of the export jobs to return.
+        /// </para>
+        ///  
+        /// <para>
+        /// An export job ID is returned when you create an export using the <code>ExportAutoScalingGroupRecommendations</code>
+        /// or <code>ExportEC2InstanceRecommendations</code> actions.
+        /// </para>
+        ///  
+        /// <para>
+        /// All export jobs created in the last seven days are returned if this parameter is omitted.
         /// </para>
         /// </summary>
-        public List<string> InstanceArns
+        public List<string> JobIds
         {
-            get { return this._instanceArns; }
-            set { this._instanceArns = value; }
+            get { return this._jobIds; }
+            set { this._jobIds = value; }
         }
 
-        // Check to see if InstanceArns property is set
-        internal bool IsSetInstanceArns()
+        // Check to see if JobIds property is set
+        internal bool IsSetJobIds()
         {
-            return this._instanceArns != null && this._instanceArns.Count > 0; 
+            return this._jobIds != null && this._jobIds.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of instance recommendations to return with a single request.
+        /// The maximum number of export jobs to return with a single request.
         /// </para>
         ///  
         /// <para>
@@ -138,7 +118,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to advance to the next page of instance recommendations.
+        /// The token to advance to the next page of export jobs.
         /// </para>
         /// </summary>
         public string NextToken

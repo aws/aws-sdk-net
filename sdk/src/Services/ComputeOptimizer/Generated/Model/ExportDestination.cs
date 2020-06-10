@@ -29,18 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetEnrollmentStatus operation.
-    /// Returns the enrollment (opt in) status of an account to the AWS Compute Optimizer
-    /// service.
-    /// 
-    ///  
-    /// <para>
-    /// If the account is the master account of an organization, this action also confirms
-    /// the enrollment status of member accounts within the organization.
-    /// </para>
+    /// Describes the destination of the recommendations export and metadata files.
     /// </summary>
-    public partial class GetEnrollmentStatusRequest : AmazonComputeOptimizerRequest
+    public partial class ExportDestination
     {
+        private S3Destination _s3;
+
+        /// <summary>
+        /// Gets and sets the property S3. 
+        /// <para>
+        /// An object that describes the destination Amazon Simple Storage Service (Amazon S3)
+        /// bucket name and object keys of a recommendations export file, and its associated metadata
+        /// file.
+        /// </para>
+        /// </summary>
+        public S3Destination S3
+        {
+            get { return this._s3; }
+            set { this._s3 = value; }
+        }
+
+        // Check to see if S3 property is set
+        internal bool IsSetS3()
+        {
+            return this._s3 != null;
+        }
 
     }
 }

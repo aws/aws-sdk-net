@@ -29,11 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes a filter that returns a more specific list of recommendations.
+    /// Describes a filter that returns a more specific list of recommendation export jobs.
+    /// 
+    ///  
+    /// <para>
+    /// This filter is used with the <code>DescribeRecommendationExportJobs</code> action.
+    /// </para>
     /// </summary>
-    public partial class Filter
+    public partial class JobFilter
     {
-        private FilterName _name;
+        private JobFilterName _name;
         private List<string> _values = new List<string>();
 
         /// <summary>
@@ -43,16 +48,16 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>Finding</code> to return recommendations with a specific findings classification
-        /// (e.g., <code>Overprovisioned</code>).
+        /// Specify <code>ResourceType</code> to return export jobs of a specific resource type
+        /// (e.g., <code>Ec2Instance</code>).
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>RecommendationSourceType</code> to return recommendations of a specific
-        /// resource type (e.g., <code>AutoScalingGroup</code>).
+        /// Specify <code>JobStatus</code> to return export jobs with a specific status (e.g,
+        /// <code>Complete</code>).
         /// </para>
         /// </summary>
-        public FilterName Name
+        public JobFilterName Name
         {
             get { return this._name; }
             set { this._name = value; }
@@ -71,20 +76,14 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify the <code>name</code> parameter as <code>Finding</code>, and you request
-        /// recommendations for an <i>instance</i>, then the valid values are <code>Underprovisioned</code>,
-        /// <code>Overprovisioned</code>, <code>NotOptimized</code>, or <code>Optimized</code>.
+        /// If you specify the <code>name</code> parameter as <code>ResourceType</code>, the valid
+        /// values are <code>Ec2Instance</code> or <code>AutoScalingGroup</code>.
         /// </para>
         ///  
         /// <para>
-        /// If you specify the <code>name</code> parameter as <code>Finding</code>, and you request
-        /// recommendations for an <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>,
-        /// or <code>NotOptimized</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>,
-        /// then the valid values are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
+        /// If you specify the <code>name</code> parameter as <code>JobStatus</code>, the valid
+        /// values are <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or
+        /// <code>Failed</code>.
         /// </para>
         /// </summary>
         public List<string> Values

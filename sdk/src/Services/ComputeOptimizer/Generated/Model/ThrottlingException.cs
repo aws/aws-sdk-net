@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// The limit on the number of requests per second was exceeded.
+    /// The request was denied due to request throttling.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

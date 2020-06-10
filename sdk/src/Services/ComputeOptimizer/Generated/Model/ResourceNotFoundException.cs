@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// The specified resource was not found.
+    /// A resource that is required for the action doesn't exist.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]
