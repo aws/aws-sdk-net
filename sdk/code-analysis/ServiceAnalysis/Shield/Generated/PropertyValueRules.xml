@@ -151,8 +151,8 @@
   <property-value-rule>
     <property>Amazon.Shield.Model.EmergencyContact.PhoneNumber</property>
     <min>1</min>
-    <max>40</max>
-    <pattern>^.*$</pattern>
+    <max>16</max>
+    <pattern>^\+[1-9]\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.Protection.Id</property>

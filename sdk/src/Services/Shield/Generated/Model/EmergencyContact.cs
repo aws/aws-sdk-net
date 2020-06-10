@@ -82,7 +82,7 @@ namespace Amazon.Shield.Model
         /// The phone number for the contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=40)]
+        [AWSProperty(Min=1, Max=16)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }
