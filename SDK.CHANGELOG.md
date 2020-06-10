@@ -1,3 +1,23 @@
+### 3.3.758.0 (2020-06-10 18:14 UTC)
+* AppConfig (3.3.103.0)
+	* This release allows customers to choose from a list of predefined deployment strategies while starting deployments.
+* CodeArtifact (3.3.100.0)
+	* Added support for AWS CodeArtifact.
+* ComputeOptimizer (3.3.101.0)
+	* Compute Optimizer supports exporting recommendations to Amazon S3.
+* DLM (3.3.108.0)
+	* Reducing the schedule name of DLM Lifecycle policy from 500 to 120 characters. 
+* EC2 (3.3.181.0)
+	* New C6g instances powered by AWS Graviton2 processors and ideal for running advanced, compute-intensive workloads; New R6g instances powered by AWS Graviton2 processors and ideal for running memory-intensive workloads.
+* Lightsail (3.3.105.3)
+	* Documentation updates for lightsail
+* Macie2 (3.3.101.0)
+	* This release of the Amazon Macie API removes support for the ArchiveFindings and UnarchiveFindings operations. This release also adds UNKNOWN as an encryption type for S3 bucket metadata.
+* ServiceCatalog (3.3.112.2)
+	* Service Catalog Documentation Update for Integration with AWS Organizations Delegated Administrator feature
+* Shield (3.3.104.0)
+	* Corrections to the supported format for contact phone numbers and to the description for the create subscription action.
+
 ### 3.3.757.0 (2020-06-09 18:11 UTC)
 * Transfer (3.3.107.0)
 	* This release updates the API so customers can test use of Source IP to allow, deny or limit access to data in their S3 buckets after integrating their identity provider.

@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.757.0",
+    "ProductVersion" : "3.3.758.0",
     "CoreVersion"    : "3.3.107.9",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.180.2",
+            "Version" : "3.3.181.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.9"
@@ -561,7 +561,7 @@
             "InPreview"               : false
         },
         "ServiceCatalog"                  : {
-            "Version" : "3.3.112.1",
+            "Version" : "3.3.112.2",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.9"
@@ -617,7 +617,7 @@
             "InPreview"               : false
         },
         "Lightsail"                       : {
-            "Version" : "3.3.105.2",
+            "Version" : "3.3.105.3",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.9"
@@ -673,7 +673,7 @@
             "InPreview"               : false
         },
         "Shield"                          : {
-            "Version" : "3.3.103.1",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.9"
@@ -1153,7 +1153,7 @@
             "InPreview"               : false
         },
         "DLM"                             : {
-            "Version" : "3.3.107.7",
+            "Version" : "3.3.108.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.9"
@@ -1617,7 +1617,7 @@
             "InPreview"               : false
         },
         "AppConfig"                       : {
-            "Version" : "3.3.102.39",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.9"
@@ -1665,7 +1665,7 @@
             "InPreview"               : false
         },
         "ComputeOptimizer"                : {
-            "Version" : "3.3.100.85",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.9"
@@ -1777,7 +1777,15 @@
             "InPreview"               : false
         },
         "Macie2"                          : {
-            "Version" : "3.3.100.15",
+            "Version" : "3.3.101.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.107.9"
+            },
+            "InPreview"               : false
+        },
+        "CodeArtifact"                    : {
+            "Version" : "3.3.100.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.9"
