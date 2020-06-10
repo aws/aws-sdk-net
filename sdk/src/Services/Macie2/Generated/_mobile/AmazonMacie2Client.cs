@@ -304,67 +304,6 @@ namespace Amazon.Macie2
 
         #endregion
         
-        #region  ArchiveFindings
-
-        internal virtual ArchiveFindingsResponse ArchiveFindings(ArchiveFindingsRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = ArchiveFindingsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ArchiveFindingsResponseUnmarshaller.Instance;
-
-            return Invoke<ArchiveFindingsResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// Archives one or more findings.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ArchiveFindings service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ArchiveFindings service method, as returned by Macie2.</returns>
-        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
-        /// Provides information about an error that occurred due to insufficient access to a
-        /// specified resource.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ConflictException">
-        /// Provides information about an error that occurred due to a versioning conflict for
-        /// a specified resource.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
-        /// Provides information about an error that occurred due to an unknown internal server
-        /// error, exception, or failure.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
-        /// Provides information about an error that occurred because a specified resource wasn't
-        /// found.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
-        /// Provides information about an error that occurred due to one or more service quotas
-        /// for an account.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
-        /// Provides information about an error that occurred because too many requests were sent
-        /// during a certain amount of time.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ValidationException">
-        /// Provides information about an error that occurred due to a syntax error in a request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings">REST API Reference for ArchiveFindings Operation</seealso>
-        public virtual Task<ArchiveFindingsResponse> ArchiveFindingsAsync(ArchiveFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = ArchiveFindingsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ArchiveFindingsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ArchiveFindingsResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  BatchGetCustomDataIdentifiers
 
         internal virtual BatchGetCustomDataIdentifiersResponse BatchGetCustomDataIdentifiers(BatchGetCustomDataIdentifiersRequest request)
@@ -3002,67 +2941,6 @@ namespace Amazon.Macie2
             options.ResponseUnmarshaller = TestCustomDataIdentifierResponseUnmarshaller.Instance;
 
             return InvokeAsync<TestCustomDataIdentifierResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  UnarchiveFindings
-
-        internal virtual UnarchiveFindingsResponse UnarchiveFindings(UnarchiveFindingsRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = UnarchiveFindingsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = UnarchiveFindingsResponseUnmarshaller.Instance;
-
-            return Invoke<UnarchiveFindingsResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// Reactivates (unarchives) one or more findings.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UnarchiveFindings service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the UnarchiveFindings service method, as returned by Macie2.</returns>
-        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
-        /// Provides information about an error that occurred due to insufficient access to a
-        /// specified resource.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ConflictException">
-        /// Provides information about an error that occurred due to a versioning conflict for
-        /// a specified resource.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
-        /// Provides information about an error that occurred due to an unknown internal server
-        /// error, exception, or failure.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
-        /// Provides information about an error that occurred because a specified resource wasn't
-        /// found.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
-        /// Provides information about an error that occurred due to one or more service quotas
-        /// for an account.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
-        /// Provides information about an error that occurred because too many requests were sent
-        /// during a certain amount of time.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ValidationException">
-        /// Provides information about an error that occurred due to a syntax error in a request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings">REST API Reference for UnarchiveFindings Operation</seealso>
-        public virtual Task<UnarchiveFindingsResponse> UnarchiveFindingsAsync(UnarchiveFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = UnarchiveFindingsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = UnarchiveFindingsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UnarchiveFindingsResponse>(request, options, cancellationToken);
         }
 
         #endregion

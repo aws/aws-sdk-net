@@ -258,6 +258,10 @@ namespace Amazon.Macie2
         /// Constant NONE for EncryptionType
         /// </summary>
         public static readonly EncryptionType NONE = new EncryptionType("NONE");
+        /// <summary>
+        /// Constant UNKNOWN for EncryptionType
+        /// </summary>
+        public static readonly EncryptionType UNKNOWN = new EncryptionType("UNKNOWN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
