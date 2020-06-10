@@ -101,7 +101,7 @@ namespace Amazon.Lightsail.Model
         ///  <ul> <li> 
         /// <para>
         ///  <b> <code>BurstCapacityPercentage</code> </b> - The percentage of CPU performance
-        /// available for your instance to burst above its baseline. Your instance continously
+        /// available for your instance to burst above its baseline. Your instance continuously
         /// accrues and consumes burst capacity. Burst capacity stops accruing when your instance's
         /// <code>BurstCapacityPercentage</code> reaches 100%. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing
         /// instance burst capacity in Amazon Lightsail</a>.
@@ -118,8 +118,8 @@ namespace Amazon.Lightsail.Model
         ///  </li> <li> 
         /// <para>
         ///  <b> <code>BurstCapacityTime</code> </b> - The available amount of time for your instance
-        /// to burst at 100% CPU utilization. Your instance continously accrues and consumes burst
-        /// capacity. Burst capacity time stops accruing when your instance's <code>BurstCapacityPercentage</code>
+        /// to burst at 100% CPU utilization. Your instance continuously accrues and consumes
+        /// burst capacity. Burst capacity time stops accruing when your instance's <code>BurstCapacityPercentage</code>
         /// metric reaches 100%.
         /// </para>
         ///  
