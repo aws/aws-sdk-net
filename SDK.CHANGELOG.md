@@ -1,3 +1,18 @@
+### 3.3.759.0 (2020-06-11 18:13 UTC)
+* ECS (3.3.118.0)
+	* This release adds support for deleting capacity providers.
+* Imagebuilder (3.3.105.0)
+	* EC2 Image Builder now supports specifying a custom working directory for your build and test workflows. In addition, Image Builder now supports defining tags that are applied to ephemeral resources created by EC2 Image Builder as part of the image creation workflow. 
+* IotData (3.3.101.0)
+	* As part of this release, we are introducing a new feature called named shadow, which extends the capability of AWS IoT Device Shadow to support multiple shadows for a single IoT device. With this release, customers can store different device state data into different shadows, and as a result access only the required state data when needed and reduce individual shadow size.
+* LexModelBuildingService (3.3.105.0)
+	* This change adds the built-in AMAZON.KendraSearchIntent that enables integration with Amazon Kendra.
+* Core 3.3.107.10
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.758.0 (2020-06-10 18:14 UTC)
 * AppConfig (3.3.103.0)
 	* This release allows customers to choose from a list of predefined deployment strategies while starting deployments.
