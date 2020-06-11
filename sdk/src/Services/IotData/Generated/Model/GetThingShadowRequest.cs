@@ -30,17 +30,37 @@ namespace Amazon.IotData.Model
 {
     /// <summary>
     /// Container for the parameters to the GetThingShadow operation.
-    /// Gets the thing shadow for the specified thing.
+    /// Gets the shadow for the specified thing.
     /// 
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html">GetThingShadow</a>
-    /// in the <i>AWS IoT Developer Guide</i>.
+    /// in the AWS IoT Developer Guide.
     /// </para>
     /// </summary>
     public partial class GetThingShadowRequest : AmazonIotDataRequest
     {
+        private string _shadowName;
         private string _thingName;
+
+        /// <summary>
+        /// Gets and sets the property ShadowName. 
+        /// <para>
+        /// The name of the shadow.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string ShadowName
+        {
+            get { return this._shadowName; }
+            set { this._shadowName = value; }
+        }
+
+        // Check to see if ShadowName property is set
+        internal bool IsSetShadowName()
+        {
+            return this._shadowName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ThingName. 

@@ -29,57 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IotData.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateThingShadow operation.
-    /// Updates the shadow for the specified thing.
-    /// 
-    ///  
-    /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html">UpdateThingShadow</a>
-    /// in the AWS IoT Developer Guide.
-    /// </para>
+    /// Container for the parameters to the ListNamedShadowsForThing operation.
+    /// Lists the shadows for the specified thing.
     /// </summary>
-    public partial class UpdateThingShadowRequest : AmazonIotDataRequest
+    public partial class ListNamedShadowsForThingRequest : AmazonIotDataRequest
     {
-        private MemoryStream _payload;
-        private string _shadowName;
+        private string _nextToken;
+        private int? _pageSize;
         private string _thingName;
 
         /// <summary>
-        /// Gets and sets the property Payload. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The state information, in JSON format.
+        /// The token to retrieve the next set of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public MemoryStream Payload
+        public string NextToken
         {
-            get { return this._payload; }
-            set { this._payload = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Payload property is set
-        internal bool IsSetPayload()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._payload != null;
+            return this._nextToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ShadowName. 
+        /// Gets and sets the property PageSize. 
         /// <para>
-        /// The name of the shadow.
+        /// The result page size.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public string ShadowName
+        [AWSProperty(Min=1, Max=100)]
+        public int PageSize
         {
-            get { return this._shadowName; }
-            set { this._shadowName = value; }
+            get { return this._pageSize.GetValueOrDefault(); }
+            set { this._pageSize = value; }
         }
 
-        // Check to see if ShadowName property is set
-        internal bool IsSetShadowName()
+        // Check to see if PageSize property is set
+        internal bool IsSetPageSize()
         {
-            return this._shadowName != null;
+            return this._pageSize.HasValue; 
         }
 
         /// <summary>

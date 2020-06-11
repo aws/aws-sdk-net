@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IotData.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeleteThingShadow Request Marshaller
+    /// ListNamedShadowsForThing Request Marshaller
     /// </summary>       
-    public class DeleteThingShadowRequestMarshaller : IMarshaller<IRequest, DeleteThingShadowRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListNamedShadowsForThingRequestMarshaller : IMarshaller<IRequest, ListNamedShadowsForThingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DeleteThingShadowRequest)input);
+            return this.Marshall((ListNamedShadowsForThingRequest)input);
         }
 
         /// <summary>
@@ -52,27 +52,30 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DeleteThingShadowRequest publicRequest)
+        public IRequest Marshall(ListNamedShadowsForThingRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IotData");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
-            request.HttpMethod = "DELETE";
+            request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetThingName())
                 throw new AmazonIotDataException("Request object does not have required field ThingName set");
             request.AddPathResource("{thingName}", StringUtils.FromString(publicRequest.ThingName));
             
-            if (publicRequest.IsSetShadowName())
-                request.Parameters.Add("name", StringUtils.FromString(publicRequest.ShadowName));
-            request.ResourcePath = "/things/{thingName}/shadow";
+            if (publicRequest.IsSetNextToken())
+                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetPageSize())
+                request.Parameters.Add("pageSize", StringUtils.FromInt(publicRequest.PageSize));
+            request.ResourcePath = "/api/things/shadow/ListNamedShadowsForThing/{thingName}";
             request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;
         }
-        private static DeleteThingShadowRequestMarshaller _instance = new DeleteThingShadowRequestMarshaller();        
+        private static ListNamedShadowsForThingRequestMarshaller _instance = new ListNamedShadowsForThingRequestMarshaller();        
 
-        internal static DeleteThingShadowRequestMarshaller GetInstance()
+        internal static ListNamedShadowsForThingRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -80,7 +83,7 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteThingShadowRequestMarshaller Instance
+        public static ListNamedShadowsForThingRequestMarshaller Instance
         {
             get
             {
