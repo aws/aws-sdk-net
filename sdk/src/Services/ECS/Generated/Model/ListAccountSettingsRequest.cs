@@ -89,7 +89,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The resource name you want to list the account settings for.
+        /// The name of the account setting you want to list the settings for.
         /// </para>
         /// </summary>
         public SettingName Name

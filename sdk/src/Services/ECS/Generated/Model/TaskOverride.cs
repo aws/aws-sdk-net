@@ -79,8 +79,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container
-        /// agent and the Docker daemon can assume.
+        /// The Amazon Resource Name (ARN) of the task execution IAM role override for the task.
         /// </para>
         /// </summary>
         public string ExecutionRoleArn

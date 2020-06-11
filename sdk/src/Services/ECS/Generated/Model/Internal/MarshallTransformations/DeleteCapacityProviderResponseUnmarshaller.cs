@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateCapacityProvider operation
+    /// Response Unmarshaller for DeleteCapacityProvider operation
     /// </summary>  
-    public class CreateCapacityProviderResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteCapacityProviderResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateCapacityProviderResponse response = new CreateCapacityProviderResponse();
+            DeleteCapacityProviderResponse response = new DeleteCapacityProviderResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -88,25 +88,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-                {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServerException"))
                 {
                     return ServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("UpdateInProgressException"))
-                {
-                    return UpdateInProgressExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonECSException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateCapacityProviderResponseUnmarshaller _instance = new CreateCapacityProviderResponseUnmarshaller();        
+        private static DeleteCapacityProviderResponseUnmarshaller _instance = new DeleteCapacityProviderResponseUnmarshaller();        
 
-        internal static CreateCapacityProviderResponseUnmarshaller GetInstance()
+        internal static DeleteCapacityProviderResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -114,7 +106,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateCapacityProviderResponseUnmarshaller Instance
+        public static DeleteCapacityProviderResponseUnmarshaller Instance
         {
             get
             {
