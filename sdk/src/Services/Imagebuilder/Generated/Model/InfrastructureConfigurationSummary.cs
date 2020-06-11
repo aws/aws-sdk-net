@@ -38,6 +38,7 @@ namespace Amazon.Imagebuilder.Model
         private string _dateUpdated;
         private string _description;
         private string _name;
+        private Dictionary<string, string> _resourceTags = new Dictionary<string, string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
@@ -129,6 +130,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceTags. 
+        /// <para>
+        /// The tags attached to the image created by Image Builder.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=30)]
+        public Dictionary<string, string> ResourceTags
+        {
+            get { return this._resourceTags; }
+            set { this._resourceTags = value; }
+        }
+
+        // Check to see if ResourceTags property is set
+        internal bool IsSetResourceTags()
+        {
+            return this._resourceTags != null && this._resourceTags.Count > 0; 
         }
 
         /// <summary>

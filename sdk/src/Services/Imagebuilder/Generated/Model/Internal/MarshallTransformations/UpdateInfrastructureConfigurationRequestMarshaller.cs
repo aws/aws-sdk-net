@@ -123,6 +123,20 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetResourceTags())
+                {
+                    context.Writer.WritePropertyName("resourceTags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestResourceTagsKvp in publicRequest.ResourceTags)
+                    {
+                        context.Writer.WritePropertyName(publicRequestResourceTagsKvp.Key);
+                        var publicRequestResourceTagsValue = publicRequestResourceTagsKvp.Value;
+
+                            context.Writer.Write(publicRequestResourceTagsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSecurityGroupIds())
                 {
                     context.Writer.WritePropertyName("securityGroupIds");

@@ -43,6 +43,7 @@ namespace Amazon.Imagebuilder.Model
         private string _parentImage;
         private string _semanticVersion;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private string _workingDirectory;
 
         /// <summary>
         /// Gets and sets the property BlockDeviceMappings. 
@@ -199,6 +200,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkingDirectory. 
+        /// <para>
+        /// The working directory to be used during build and test workflows.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string WorkingDirectory
+        {
+            get { return this._workingDirectory; }
+            set { this._workingDirectory = value; }
+        }
+
+        // Check to see if WorkingDirectory property is set
+        internal bool IsSetWorkingDirectory()
+        {
+            return this._workingDirectory != null;
         }
 
     }

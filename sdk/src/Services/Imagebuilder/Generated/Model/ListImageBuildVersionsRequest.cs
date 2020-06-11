@@ -30,7 +30,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListImageBuildVersions operation.
-    /// Returns a list of distribution configurations.
+    /// Returns a list of image build versions.
     /// </summary>
     public partial class ListImageBuildVersionsRequest : AmazonImagebuilderRequest
     {

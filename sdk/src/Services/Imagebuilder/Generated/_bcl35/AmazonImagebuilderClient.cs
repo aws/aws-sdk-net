@@ -363,6 +363,11 @@ namespace Amazon.Imagebuilder
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
         /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
+        /// You have exceeded the number of permitted resources or operations for this service.
+        /// For service quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2
+        /// Image Builder endpoints and quotas</a>.
+        /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
         /// </exception>
@@ -453,6 +458,11 @@ namespace Amazon.Imagebuilder
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
         /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
+        /// You have exceeded the number of permitted resources or operations for this service.
+        /// For service quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2
+        /// Image Builder endpoints and quotas</a>.
+        /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
         /// </exception>
@@ -535,6 +545,11 @@ namespace Amazon.Imagebuilder
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
+        /// You have exceeded the number of permitted resources or operations for this service.
+        /// For service quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2
+        /// Image Builder endpoints and quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -621,6 +636,11 @@ namespace Amazon.Imagebuilder
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
+        /// You have exceeded the number of permitted resources or operations for this service.
+        /// For service quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2
+        /// Image Builder endpoints and quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -711,6 +731,11 @@ namespace Amazon.Imagebuilder
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
         /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
+        /// You have exceeded the number of permitted resources or operations for this service.
+        /// For service quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2
+        /// Image Builder endpoints and quotas</a>.
+        /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
         /// </exception>
@@ -796,6 +821,11 @@ namespace Amazon.Imagebuilder
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
+        /// You have exceeded the number of permitted resources or operations for this service.
+        /// For service quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2
+        /// Image Builder endpoints and quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2297,7 +2327,7 @@ namespace Amazon.Imagebuilder
         #region  ListImageBuildVersions
 
         /// <summary>
-        /// Returns a list of distribution configurations.
+        /// Returns a list of image build versions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImageBuildVersions service method.</param>
         /// 
@@ -2608,7 +2638,7 @@ namespace Amazon.Imagebuilder
         #region  ListImages
 
         /// <summary>
-        /// Returns the list of image build versions for the specified semantic version.
+        /// Returns the list of images that you have access to.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImages service method.</param>
         /// 
