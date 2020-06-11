@@ -105,6 +105,12 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     response.FulfillmentActivity = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("kendraConfiguration", targetDepth))
+                {
+                    var unmarshaller = KendraConfigurationUnmarshaller.Instance;
+                    response.KendraConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdatedDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

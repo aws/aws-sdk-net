@@ -41,6 +41,7 @@ namespace Amazon.LexModelBuildingService.Model
         private CodeHook _dialogCodeHook;
         private FollowUpPrompt _followUpPrompt;
         private FulfillmentActivity _fulfillmentActivity;
+        private KendraConfiguration _kendraConfiguration;
         private DateTime? _lastUpdatedDate;
         private string _name;
         private string _parentIntentSignature;
@@ -197,6 +198,25 @@ namespace Amazon.LexModelBuildingService.Model
         internal bool IsSetFulfillmentActivity()
         {
             return this._fulfillmentActivity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KendraConfiguration. 
+        /// <para>
+        /// Configuration information, if any, to connect to an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code>
+        /// intent.
+        /// </para>
+        /// </summary>
+        public KendraConfiguration KendraConfiguration
+        {
+            get { return this._kendraConfiguration; }
+            set { this._kendraConfiguration = value; }
+        }
+
+        // Check to see if KendraConfiguration property is set
+        internal bool IsSetKendraConfiguration()
+        {
+            return this._kendraConfiguration != null;
         }
 
         /// <summary>
