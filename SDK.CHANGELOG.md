@@ -1,3 +1,13 @@
+### 3.3.760.0 (2020-06-12 18:15 UTC)
+* APIGateway (3.3.104.3)
+	* Documentation updates for Amazon API Gateway
+* CloudFormation (3.3.105.15)
+	* The following parameters now return the organization root ID or organizational unit (OU) IDs that you specified for DeploymentTargets: the OrganizationalUnitIds parameter on StackSet and the OrganizationalUnitId parameter on StackInstance, StackInstanceSummary, and StackSetOperationResultSummary
+* Glue (3.3.120.0)
+	* You can now choose to crawl the entire table or just a sample of records in DynamoDB when using AWS Glue crawlers. Additionally, you can also specify a scanning rate for crawling DynamoDB tables.
+* StorageGateway (3.3.115.0)
+	* Display EndpointType in DescribeGatewayInformation
+
 ### 3.3.759.0 (2020-06-11 18:13 UTC)
 * ECS (3.3.118.0)
 	* This release adds support for deleting capacity providers.

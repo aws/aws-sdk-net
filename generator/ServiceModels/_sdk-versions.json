@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.759.0",
+    "ProductVersion" : "3.3.760.0",
     "CoreVersion"    : "3.3.107.10",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -29,7 +29,7 @@
             "InPreview"               : false
         },
         "CloudFormation" : {
-            "Version" : "3.3.105.14",
+            "Version" : "3.3.105.15",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.10"
@@ -377,7 +377,7 @@
             "InPreview"               : false
         },
         "StorageGateway"            : {
-            "Version" : "3.3.114.23",
+            "Version" : "3.3.115.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.10"
@@ -481,7 +481,7 @@
             "InPreview"               : false
         },
         "APIGateway"                      : {
-            "Version" : "3.3.104.2",
+            "Version" : "3.3.104.3",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.10"
@@ -825,7 +825,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.3.119.5",
+            "Version" : "3.3.120.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.10"
