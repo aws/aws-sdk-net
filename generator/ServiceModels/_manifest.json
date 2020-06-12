@@ -81,7 +81,7 @@
             "name": "Net35",
             "targetFrameworks": [ "net45" ],
             "defineConstants": [ "TRACE", "BCL", "BCL35", "AWS_APM_API"],
-            "excludeFolders": ["_bcl45", "obj"],
+            "excludeFolders": ["_bcl45", "obj", "_bcl45+netstandard"],
             "visualStudioServices" : ["{82a7f48d-3b50-4b1e-b82e-3ada8210c358}"],
             "embeddedResources" : [
                 "Custom\\Runtime\\TestResponses\\*.txt",

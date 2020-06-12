@@ -88,7 +88,7 @@ namespace ServiceClientGenerator
         private string PaginatorsSubFolder = string.Format("Model{0}_bcl45+netstandard", Path.DirectorySeparatorChar);
         private string MarshallingTestsSubFolder = string.Format("UnitTests{0}Generated{0}Marshalling", Path.DirectorySeparatorChar);
         private string CustomizationTestsSubFolder = string.Format("UnitTests{0}Generated{0}Customizations", Path.DirectorySeparatorChar);
-        private string PaginatorTestsSubFolder = string.Format("UnitTests{0}Generated{0}Paginators", Path.DirectorySeparatorChar);
+        private string PaginatorTestsSubFolder = string.Format("UnitTests{0}Generated{0}_bcl45+netstandard{0}Paginators", Path.DirectorySeparatorChar);
 
         public const string SourceSubFoldername = "src";
         public const string TestsSubFoldername = "test";
