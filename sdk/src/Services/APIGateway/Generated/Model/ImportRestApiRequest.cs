@@ -44,7 +44,7 @@ namespace Amazon.APIGateway.Model
         /// <para>
         /// [Required] The POST request body containing external API definitions. Currently, only
         /// OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition
-        /// file is 2MB.
+        /// file is 6MB.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

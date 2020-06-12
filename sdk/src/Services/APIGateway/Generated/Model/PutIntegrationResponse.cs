@@ -76,8 +76,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CacheNamespace. 
         /// <para>
-        /// An API-specific tag group of related cached parameters. To be valid values for <code>cacheKeyParameters</code>,
-        /// these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.
+        /// Specifies a group of related cached parameters. By default, API Gateway uses the resource
+        /// ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code>
+        /// across resources to return the same cached data for requests to different resources.
         /// </para>
         /// </summary>
         public string CacheNamespace
