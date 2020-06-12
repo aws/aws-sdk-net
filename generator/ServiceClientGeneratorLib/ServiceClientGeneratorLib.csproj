@@ -110,6 +110,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Update="Generators\SourceFiles\BasePaginator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BasePaginator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\SourceFiles\BasePaginatorInterface.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BasePaginatorInterface.tt</DependentUpon>
+    </Compile>
     <Compile Update="Generators\SourceFiles\CoreAssemblyInfo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -129,6 +139,16 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ServiceMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\SourceFiles\ServicePaginatorFactory.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ServicePaginatorFactory.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\SourceFiles\ServicePaginatorFactoryInterface.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ServicePaginatorFactoryInterface.tt</DependentUpon>
     </Compile>
     <Compile Update="Generators\TestFiles\AWSQueryEC2MarshallingTests.cs">
       <DependentUpon>AWSQueryEC2MarshallingTests.tt</DependentUpon>
@@ -224,6 +244,11 @@
       <DependentUpon>LegacyResponseClass.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="Generators\TestFiles\PaginatorTests.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PaginatorTests.tt</DependentUpon>
     </Compile>
     <Compile Update="Generators\TestFiles\RestMarshallingTests.cs">
       <DependentUpon>RestMarshallingTests.tt</DependentUpon>
@@ -483,6 +508,10 @@
     <None Update="Generators\SourceFiles\LegacyResponseClass.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>LegacyResponseClass.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\TestFiles\PaginatorTests.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PaginatorTests.cs</LastGenOutput>
     </None>
     <None Update="Generators\TestFiles\RestMarshallingTests.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

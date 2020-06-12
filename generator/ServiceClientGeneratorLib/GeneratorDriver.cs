@@ -88,6 +88,7 @@ namespace ServiceClientGenerator
         private string PaginatorsSubFolder = string.Format("Model{0}_bcl45+netstandard", Path.DirectorySeparatorChar);
         private string MarshallingTestsSubFolder = string.Format("UnitTests{0}Generated{0}Marshalling", Path.DirectorySeparatorChar);
         private string CustomizationTestsSubFolder = string.Format("UnitTests{0}Generated{0}Customizations", Path.DirectorySeparatorChar);
+        private string PaginatorTestsSubFolder = string.Format("UnitTests{0}Generated{0}Paginators", Path.DirectorySeparatorChar);
 
         public const string SourceSubFoldername = "src";
         public const string TestsSubFoldername = "test";
@@ -193,7 +194,22 @@ namespace ServiceClientGenerator
 
             // Any enumerations for the service
             this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
-#if !BCL35
+
+            // Any paginators for the service
+            if (Configuration.ServiceModel.HasPaginators)
+            {
+                foreach (var operation in Configuration.ServiceModel.Operations)
+                {
+                    GeneratePaginator(operation);
+                }
+                ExecuteGenerator(new ServicePaginatorFactoryInterface(), "I" + Configuration.ServiceNameRoot + "PaginatorFactory.cs", PaginatorsSubFolder);
+                ExecuteGenerator(new ServicePaginatorFactory(), Configuration.ServiceNameRoot + "PaginatorFactory.cs", PaginatorsSubFolder);
+
+                GeneratePaginatorTests();
+            }
+            
+
+
             // Any paginators for the service
             if (Configuration.ServiceModel.HasPaginators)
             {
@@ -1096,6 +1112,24 @@ namespace ServiceClientGenerator
             var text = generator.TransformText();
             var outputSubFolder = subNamespace == null ? CustomizationTestsSubFolder : Path.Combine(CustomizationTestsSubFolder, subNamespace);
             WriteFile(ServiceUnitTestFilesRoot, outputSubFolder, fileName, text);
+        }
+
+        /// <summary>
+        /// Generates unit tests for all of the service's paginators
+        /// </summary>
+        void GeneratePaginatorTests()
+        {
+            if (this.Configuration.ServiceModel.HasPaginators)
+            {
+                var paginatorTests = new PaginatorTests()
+                {
+                    Config = this.Configuration
+                };
+
+                var text = paginatorTests.TransformText();
+                var outputSubFolder = PaginatorTestsSubFolder;
+                WriteFile(ServiceUnitTestFilesRoot, outputSubFolder, this.Configuration.ClassName + "PaginatorTests.cs", text);
+            }         
         }
 
         internal static bool WriteFile(string baseOutputDir,

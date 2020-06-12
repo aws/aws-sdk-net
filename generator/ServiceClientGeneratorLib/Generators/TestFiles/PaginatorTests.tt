@@ -1,0 +1,79 @@
+﻿<#@ template language="C#" inherits="Generators.BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+#if !NETSTANDARD13
+<#
+	AddLicenseHeader();
+#>
+
+using <#=this.Config.Namespace#>;
+using <#=this.Config.Namespace#>.Model;
+
+using Moq;
+using System;
+using System.Linq;
+using AWSSDK_DotNet35.UnitTests.TestTools;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
+{
+    [TestClass]
+    public class <#=this.Config.ClassName#>PaginatorTests
+    {
+    	<#
+		foreach(var operation in this.Config.ServiceModel.Operations)
+		{
+            if (operation.Paginators != null && !operation.UnsupportedPaginatorConfig)
+            {
+		#>
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("<#=this.Config.TestCategory#>")]
+        public void  <#=operation.Name#>Test_TwoPages()
+        {
+            var mockClient = new Mock<IAmazon<#=this.Config.ClassName#>>();
+            var request = InstantiateClassGenerator.Execute<<#=operation.Name#>Request>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<<#=operation.Name#>Response>();
+            var secondResponse = InstantiateClassGenerator.Execute<<#=operation.Name#>Response>();
+            secondResponse.NextToken = null;
+
+            mockClient.SetupSequence(x => x.<#=operation.Name#>(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = new <#=operation.Name#>Paginator(mockClient.Object, request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("<#=this.Config.TestCategory#>")]
+        [ExpectedException(typeof(Amazon.<#=this.Config.ClassName#>.Model.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void  <#=operation.Name#>Test__OnlyUsedOnce()
+        {
+            var mockClient = new Mock<IAmazon<#=this.Config.ClassName#>>();
+            var request = InstantiateClassGenerator.Execute<<#=operation.Name#>Request>();
+
+            var response = InstantiateClassGenerator.Execute<<#=operation.Name#>Response>();
+            response.NextToken = null;
+
+            mockClient.Setup(x => x.<#=operation.Name#>(request)).Returns(response);
+            var paginator = new <#=operation.Name#>Paginator(mockClient.Object, request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+        <#
+            }
+        }
+        #>
+    }
+}
+#endif

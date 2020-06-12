@@ -15,7 +15,10 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("AWSSDK.UnitTests.<#=this.Config.ClassName#>.Net45")]
+
 namespace <#=this.Config.Namespace#>.Model
 {
     /// <summary>
