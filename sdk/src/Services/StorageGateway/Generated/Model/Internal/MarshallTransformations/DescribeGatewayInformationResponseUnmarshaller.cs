@@ -69,6 +69,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     response.Ec2InstanceRegion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EndpointType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EndpointType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GatewayARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

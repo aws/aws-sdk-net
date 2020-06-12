@@ -38,7 +38,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property SMBFileShareInfoList. 
         /// <para>
-        /// An array containing a description for each requested file share. 
+        /// An array containing a description for each requested file share.
         /// </para>
         /// </summary>
         public List<SMBFileShareInfo> SMBFileShareInfoList

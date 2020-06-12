@@ -599,6 +599,11 @@
     <max>562</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DescribeGatewayInformationResponse.EndpointType</property>
+    <min>4</min>
+    <max>8</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeGatewayInformationResponse.GatewayARN</property>
     <min>50</min>
     <max>500</max>

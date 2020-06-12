@@ -65,7 +65,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
+        /// Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=30)]
@@ -94,7 +94,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
+        /// Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
         /// </para>
         /// </summary>
         [AWSProperty(Min=50, Max=500)]
@@ -113,7 +113,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property VolumeAttachmentStatus. 
         /// <para>
-        /// One of the VolumeStatus values that indicates the state of the storage volume. 
+        /// One of the VolumeStatus values that indicates the state of the storage volume.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=50)]
@@ -137,7 +137,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
+        /// Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=30)]

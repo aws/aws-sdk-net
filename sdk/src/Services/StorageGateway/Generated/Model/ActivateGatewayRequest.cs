@@ -34,7 +34,7 @@ namespace Amazon.StorageGateway.Model
     /// you specify information such as the AWS Region that you want to use for storing snapshots
     /// or tapes, the time zone for scheduled snapshots the gateway snapshot schedule window,
     /// an activation key, and a name for your gateway. The activation process also associates
-    /// your gateway with your account; for more information, see <a>UpdateGatewayInformation</a>.
+    /// your gateway with your account. For more information, see <a>UpdateGatewayInformation</a>.
     /// 
     ///  <note> 
     /// <para>
@@ -61,12 +61,12 @@ namespace Amazon.StorageGateway.Model
         /// URL returned in the response provides you the activation key for your gateway in the
         /// query string parameter <code>activationKey</code>. It may also include other activation-related
         /// parameters, however, these are merely defaults -- the arguments you pass to the <code>ActivateGateway</code>
-        /// API call determine the actual configuration of your gateway. 
+        /// API call determine the actual configuration of your gateway.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html
-        /// in the Storage Gateway User Guide.
+        /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting
+        /// activation key</a> in the <i>AWS Storage Gateway User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
@@ -107,13 +107,13 @@ namespace Amazon.StorageGateway.Model
         /// A value that indicates the AWS Region where you want to store your data. The gateway
         /// AWS Region specified must be the same AWS Region as the AWS Region in your <code>Host</code>
         /// header in the request. For more information about available AWS Regions and endpoints
-        /// for AWS Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
-        /// and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
+        /// for AWS Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS
+        /// Storage Gateway endpoints and quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS
-        /// Storage Gateway Regions and Endpoints</a> in the AWS General Reference. 
+        /// Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS
+        /// Storage Gateway endpoints and quotas</a> in the <i>AWS General Reference</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]
@@ -157,11 +157,12 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// A value that defines the type of gateway to activate. The type specified is critical
         /// to all later functions of the gateway and cannot be changed after activation. The
-        /// default value is <code>CACHED</code>. 
+        /// default value is <code>CACHED</code>.
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
+        /// Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=20)]
@@ -185,7 +186,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: "STK-L700", "AWS-Gateway-VTL"
+        /// Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=50)]
@@ -236,7 +237,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: "IBM-ULT3580-TD5" 
+        /// Valid Values: <code>IBM-ULT3580-TD5</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=50)]

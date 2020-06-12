@@ -93,7 +93,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: A valid IP address.
+        /// Valid Values: A valid IP address.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

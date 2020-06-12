@@ -35,7 +35,7 @@ namespace Amazon.StorageGateway.Model
     /// the bucket's contents and cached the results. This operation is only supported in
     /// the file gateway type. You can subscribe to be notified through an Amazon CloudWatch
     /// event when your RefreshCache operation completes. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-    /// Notified About File Operations</a>.
+    /// notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
     /// 
     ///  
     /// <para>
@@ -44,14 +44,14 @@ namespace Amazon.StorageGateway.Model
     /// has completed. You should use the refresh-complete notification to determine that
     /// the operation has completed before you check for new files on the gateway file share.
     /// You can subscribe to be notified through an CloudWatch event when your <code>RefreshCache</code>
-    /// operation completes. 
+    /// operation completes.
     /// </para>
     ///  
     /// <para>
     /// Throttle limit: This API is asynchronous so the gateway will accept no more than two
     /// refreshes at any time. We recommend using the refresh-complete CloudWatch event notification
     /// before issuing additional requests. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-    /// Notified About File Operations</a>.
+    /// notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -61,7 +61,8 @@ namespace Amazon.StorageGateway.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification".
+    /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
+    /// notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
     /// </para>
     /// </summary>
     public partial class RefreshCacheRequest : AmazonStorageGatewayRequest
@@ -94,8 +95,8 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// A comma-separated list of the paths of folders to refresh in the cache. The default
         /// is [<code>"/"</code>]. The default refreshes objects and folders at the root of the
-        /// Amazon S3 bucket. If <code>Recursive</code> is set to "true", the entire S3 bucket
-        /// that the file share has access to is refreshed.
+        /// Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire
+        /// S3 bucket that the file share has access to is refreshed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -116,10 +117,14 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// A value that specifies whether to recursively refresh folders in the cache. The refresh
         /// includes folders that were in the cache the last time the gateway listed the folder's
-        /// contents. If this value set to "true", each folder that is listed in <code>FolderList</code>
+        /// contents. If this value set to <code>true</code>, each folder that is listed in <code>FolderList</code>
         /// is recursively updated. Otherwise, subfolders listed in <code>FolderList</code> are
         /// not refreshed. Only objects that are in folders listed directly under <code>FolderList</code>
-        /// are found and used for the update. The default is "true".
+        /// are found and used for the update. The default is <code>true</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>true</code> | <code>false</code> 
         /// </para>
         /// </summary>
         public bool Recursive

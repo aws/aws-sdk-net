@@ -71,7 +71,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: "GLACIER", "DEEP_ARCHIVE"
+        /// Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

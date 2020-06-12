@@ -41,7 +41,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property FileShareARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the file share to be deleted. 
+        /// The Amazon Resource Name (ARN) of the file share to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=50, Max=500)]
@@ -60,10 +60,14 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property ForceDelete. 
         /// <para>
-        /// If this value is set to true, the operation deletes a file share immediately and aborts
-        /// all data uploads to AWS. Otherwise, the file share is not deleted until all data is
-        /// uploaded to AWS. This process aborts the data upload process, and the file share enters
-        /// the FORCE_DELETING status.
+        /// If this value is set to <code>true</code>, the operation deletes a file share immediately
+        /// and aborts all data uploads to AWS. Otherwise, the file share is not deleted until
+        /// all data is uploaded to AWS. This process aborts the data upload process, and the
+        /// file share enters the <code>FORCE_DELETING</code> status.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>true</code> | <code>false</code> 
         /// </para>
         /// </summary>
         public bool ForceDelete

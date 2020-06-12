@@ -51,7 +51,9 @@ namespace Amazon.StorageGateway.Model
     ///  <note> 
     /// <para>
     /// To list or delete a snapshot, you must use the Amazon EC2 API. For more information,
-    /// in <i>Amazon Elastic Compute Cloud API Reference</i>.
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
+    /// or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSnapshot.html">DeleteSnapshot</a>
+    /// in the <i>Amazon Elastic Compute Cloud API Reference</i>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -66,7 +68,7 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// Textual description of the snapshot that appears in the Amazon EC2 console, Elastic
         /// Block Store snapshots panel in the <b>Description</b> field, and in the AWS Storage
-        /// Gateway snapshot <b>Details</b> pane, <b>Description</b> field
+        /// Gateway snapshot <b>Details</b> pane, <b>Description</b> field.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

@@ -49,6 +49,10 @@ namespace Amazon.StorageGateway.Model
         /// <code>false</code>, you must manually disconnect the iSCSI connection from the target
         /// volume.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>true</code> | <code>false</code> 
+        /// </para>
         /// </summary>
         public bool ForceDetach
         {

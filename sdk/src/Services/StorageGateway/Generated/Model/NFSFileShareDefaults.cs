@@ -45,8 +45,9 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property DirectoryMode. 
         /// <para>
-        /// The Unix directory mode in the form "nnnn". For example, "0666" represents the default
-        /// access mode for all directories inside the file share. The default value is 0777.
+        /// The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents
+        /// the default access mode for all directories inside the file share. The default value
+        /// is <code>0777</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
@@ -65,8 +66,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property FileMode. 
         /// <para>
-        /// The Unix file mode in the form "nnnn". For example, "0666" represents the default
-        /// file mode inside the file share. The default value is 0666. 
+        /// The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the
+        /// default file mode inside the file share. The default value is <code>0666</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
@@ -86,7 +87,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property GroupId. 
         /// <para>
         /// The default group ID for the file share (unless the files have another group ID specified).
-        /// The default value is nfsnobody. 
+        /// The default value is <code>nfsnobody</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967294)]
@@ -106,7 +107,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property OwnerId. 
         /// <para>
         /// The default owner ID for files in the file share (unless the files have another owner
-        /// ID specified). The default value is nfsnobody. 
+        /// ID specified). The default value is <code>nfsnobody</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967294)]

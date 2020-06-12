@@ -35,12 +35,12 @@ namespace Amazon.StorageGateway.Model
     ///  
     /// <para>
     /// AWS Storage Gateway provides the ability to back up point-in-time snapshots of your
-    /// data to Amazon Simple Storage Service (Amazon S3) for durable off-site recovery, as
-    /// well as import the data to an Amazon Elastic Block Store (EBS) volume in Amazon Elastic
-    /// Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled
-    /// or ad hoc basis. This API enables you to take an ad hoc snapshot. For more information,
-    /// see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
-    /// a Snapshot Schedule</a>.
+    /// data to Amazon Simple Storage (Amazon S3) for durable off-site recovery, as well as
+    /// import the data to an Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute
+    /// Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc
+    /// basis. This API enables you to take ad-hoc snapshot. For more information, see <a
+    /// href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
+    /// a snapshot schedule</a>.
     /// </para>
     ///  
     /// <para>
@@ -55,8 +55,9 @@ namespace Amazon.StorageGateway.Model
     ///  <note> 
     /// <para>
     /// To list or delete a snapshot, you must use the Amazon EC2 API. For more information,
-    /// see DescribeSnapshots or DeleteSnapshot in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
-    /// API reference</a>.
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
+    /// or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSnapshot.html">DeleteSnapshot</a>
+    /// in the <i>Amazon Elastic Compute Cloud API Reference</i>.
     /// </para>
     ///  </note> <important> 
     /// <para>
@@ -77,7 +78,7 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// Textual description of the snapshot that appears in the Amazon EC2 console, Elastic
         /// Block Store snapshots panel in the <b>Description</b> field, and in the AWS Storage
-        /// Gateway snapshot <b>Details</b> pane, <b>Description</b> field
+        /// Gateway snapshot <b>Details</b> pane, <b>Description</b> field.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

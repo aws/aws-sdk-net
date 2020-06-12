@@ -36,7 +36,7 @@ namespace Amazon.StorageGateway.Model
     ///  <note> 
     /// <para>
     /// Cache storage must be allocated to the gateway before you can create a cached volume.
-    /// Use the <a>AddCache</a> operation to add cache storage to a gateway. 
+    /// Use the <a>AddCache</a> operation to add cache storage to a gateway.
     /// </para>
     ///  </note> 
     /// <para>
@@ -106,8 +106,12 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSEncrypted. 
         /// <para>
-        /// True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to
-        /// use a key managed by Amazon S3. Optional.
+        /// Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS
+        /// KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>true</code> | <code>false</code> 
         /// </para>
         /// </summary>
         public bool KMSEncrypted
@@ -125,8 +129,9 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSKey. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption.
-        /// This value can only be set when KMSEncrypted is true. Optional.
+        /// The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
+        /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This
+        /// value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=2048)]
@@ -151,7 +156,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: A valid IP address.
+        /// Valid Values: A valid IP address.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -171,8 +176,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property SnapshotId. 
         /// <para>
         /// The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached
-        /// volume. Specify this field if you want to create the iSCSI storage volume from a snapshot
-        /// otherwise do not include this field. To list snapshots for your account use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+        /// volume. Specify this field if you want to create the iSCSI storage volume from a snapshot;
+        /// otherwise, do not include this field. To list snapshots for your account use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
         /// in the <i>Amazon Elastic Compute Cloud API Reference</i>.
         /// </para>
         /// </summary>

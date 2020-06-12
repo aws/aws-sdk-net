@@ -36,6 +36,7 @@ namespace Amazon.StorageGateway.Model
         private string _cloudWatchLogGroupARN;
         private string _ec2InstanceId;
         private string _ec2InstanceRegion;
+        private string _endpointType;
         private string _gatewayARN;
         private string _gatewayId;
         private string _gatewayName;
@@ -103,6 +104,29 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetEc2InstanceRegion()
         {
             return this._ec2InstanceRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointType. 
+        /// <para>
+        /// The type of endpoint for your gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>STANDARD</code> | <code>FIPS</code> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=4, Max=8)]
+        public string EndpointType
+        {
+            get { return this._endpointType; }
+            set { this._endpointType = value; }
+        }
+
+        // Check to see if EndpointType property is set
+        internal bool IsSetEndpointType()
+        {
+            return this._endpointType != null;
         }
 
         /// <summary>
@@ -318,7 +342,6 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property VPCEndpoint. 
         /// <para>
         /// The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.
-        /// 
         /// </para>
         /// </summary>
         public string VPCEndpoint

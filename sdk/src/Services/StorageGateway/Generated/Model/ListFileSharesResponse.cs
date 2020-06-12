@@ -40,7 +40,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property FileShareInfoList. 
         /// <para>
-        /// An array of information about the file gateway's file shares. 
+        /// An array of information about the file gateway's file shares.
         /// </para>
         /// </summary>
         public List<FileShareInfo> FileShareInfoList
@@ -59,7 +59,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// If the request includes <code>Marker</code>, the response returns that value in this
-        /// field. 
+        /// field.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -80,7 +80,7 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// If a value is present, there are more file shares to return. In a subsequent request,
         /// use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next
-        /// set of file shares. 
+        /// set of file shares.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

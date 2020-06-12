@@ -152,7 +152,7 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// A value that indicates whether a storage volume is attached to or detached from a
         /// gateway. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-        /// Your Volumes to a Different Gateway</a>.
+        /// your volumes to a different gateway</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=50)]

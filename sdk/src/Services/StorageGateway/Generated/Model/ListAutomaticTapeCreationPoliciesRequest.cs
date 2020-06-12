@@ -31,7 +31,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the ListAutomaticTapeCreationPolicies operation.
     /// Lists the automatic tape creation policies for a gateway. If there are no automatic
-    /// tape creation policies for the gateway, it returns an empty list. 
+    /// tape creation policies for the gateway, it returns an empty list.
     /// 
     ///  
     /// <para>

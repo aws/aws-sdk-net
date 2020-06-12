@@ -61,7 +61,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// The password that you want to set for your SMB Server.
+        /// The password that you want to set for your SMB server.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=6, Max=512)]

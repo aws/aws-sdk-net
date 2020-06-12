@@ -40,8 +40,9 @@ namespace Amazon.StorageGateway.Model
     /// File gateway requires AWS Security Token Service (AWS STS) to be activated to enable
     /// you to create a file share. Make sure AWS STS is activated in the AWS Region you are
     /// creating your file gateway in. If AWS STS is not activated in the AWS Region, activate
-    /// it. For information about how to activate AWS STS, see Activating and Deactivating
-    /// AWS STS in an AWS Region in the AWS Identity and Access Management User Guide. 
+    /// it. For information about how to activate AWS STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+    /// and deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management
+    /// User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -71,7 +72,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property ClientList. 
         /// <para>
         /// The list of clients that are allowed to access the file gateway. The list must contain
-        /// either valid IP addresses or valid CIDR blocks. 
+        /// either valid IP addresses or valid CIDR blocks.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -111,9 +112,12 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property DefaultStorageClass. 
         /// <para>
         /// The default storage class for objects put into an Amazon S3 bucket by the file gateway.
-        /// Possible values are <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>.
-        /// If this field is not populated, the default value <code>S3_STANDARD</code> is used.
-        /// Optional.
+        /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code>
+        /// | <code>S3_ONEZONE_IA</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=50)]
@@ -153,8 +157,12 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property GuessMIMETypeEnabled. 
         /// <para>
         /// A value that enables guessing of the MIME type for uploaded objects based on file
-        /// extensions. Set this value to true to enable MIME type guessing, and otherwise to
-        /// false. The default value is true.
+        /// extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise
+        /// set to <code>false</code>. The default value is <code>true</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>true</code> | <code>false</code> 
         /// </para>
         /// </summary>
         public bool GuessMIMETypeEnabled
@@ -172,8 +180,12 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSEncrypted. 
         /// <para>
-        /// True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to
-        /// use a key managed by Amazon S3. Optional.
+        /// Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS
+        /// KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>true</code> | <code>false</code> 
         /// </para>
         /// </summary>
         public bool KMSEncrypted
@@ -191,8 +203,9 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSKey. 
         /// <para>
-        /// The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server-side encryption.
-        /// This value can only be set when KMSEncrypted is true. Optional.
+        /// The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
+        /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This
+        /// value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=2048)]
@@ -211,7 +224,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property LocationARN. 
         /// <para>
-        /// The ARN of the backed storage used for storing file data. 
+        /// The ARN of the backed storage used for storing file data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=16, Max=310)]
@@ -248,8 +261,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property ObjectACL. 
         /// <para>
-        /// A value that sets the access control list permission for objects in the S3 bucket
-        /// that a file gateway puts objects into. The default value is "private".
+        /// A value that sets the access control list (ACL) permission for objects in the S3 bucket
+        /// that a file gateway puts objects into. The default value is <code>private</code>.
         /// </para>
         /// </summary>
         public ObjectACL ObjectACL
@@ -267,8 +280,12 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property ReadOnly. 
         /// <para>
-        /// A value that sets the write status of a file share. This value is true if the write
-        /// status is read-only, and otherwise false.
+        /// A value that sets the write status of a file share. Set this value to <code>true</code>
+        /// to set the write status to read-only, otherwise set to <code>false</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>true</code> | <code>false</code> 
         /// </para>
         /// </summary>
         public bool ReadOnly
@@ -287,9 +304,9 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property RequesterPays. 
         /// <para>
         /// A value that sets who pays the cost of the request and the cost associated with data
-        /// download from the S3 bucket. If this value is set to true, the requester pays the
-        /// costs. Otherwise the S3 bucket owner pays. However, the S3 bucket owner always pays
-        /// the cost of storing data.
+        /// download from the S3 bucket. If this value is set to <code>true</code>, the requester
+        /// pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner
+        /// always pays the cost of storing data.
         /// </para>
         ///  <note> 
         /// <para>
@@ -297,7 +314,10 @@ namespace Amazon.StorageGateway.Model
         /// share, so make sure that the configuration on the file share is the same as the S3
         /// bucket configuration.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Valid Values: <code>true</code> | <code>false</code> 
+        /// </para>
         /// </summary>
         public bool RequesterPays
         {
@@ -315,7 +335,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property Role. 
         /// <para>
         /// The ARN of the AWS Identity and Access Management (IAM) role that a file gateway assumes
-        /// when it accesses the underlying storage. 
+        /// when it accesses the underlying storage.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -334,19 +354,23 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Squash. 
         /// <para>
-        /// A value that maps a user to anonymous user. Valid options are the following: 
+        /// A value that maps a user to anonymous user.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values are the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>RootSquash</code> - Only root is mapped to anonymous user.
+        ///  <code>RootSquash</code>: Only root is mapped to anonymous user.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NoSquash</code> - No one is mapped to anonymous user
+        ///  <code>NoSquash</code>: No one is mapped to anonymous user.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AllSquash</code> - Everyone is mapped to anonymous user.
+        ///  <code>AllSquash</code>: Everyone is mapped to anonymous user.
         /// </para>
         ///  </li> </ul>
         /// </summary>
