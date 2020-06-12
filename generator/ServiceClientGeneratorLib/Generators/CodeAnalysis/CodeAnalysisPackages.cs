@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisPackages.tt"
+    #line 1 "C:\Users\costleya\Work\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisPackages.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class CodeAnalysisPackages : CodeAnalysisPackagesBase
     {
@@ -36,7 +36,7 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
   <package id=""Microsoft.CodeAnalysis.CSharp.Workspaces"" version=""1.0.0"" targetFramework=""portable45-net45+win8"" />
   <package id=""Microsoft.CodeAnalysis.Workspaces.Common"" version=""1.0.0"" targetFramework=""portable45-net45+win8"" />
   <package id=""Microsoft.Composition"" version=""1.0.27"" targetFramework=""portable45-net45+win8"" />
-  <package id=""NuGet.CommandLine"" version=""2.8.5"" targetFramework=""portable45-net45+win8"" />
+  <package id=""NuGet.CommandLine"" version=""5.5.1"" targetFramework=""portable45-net45+win8"" />
   <package id=""System.Collections.Immutable"" version=""1.1.36"" targetFramework=""portable45-net45+win8"" />
   <package id=""System.Reflection.Metadata"" version=""1.0.21"" targetFramework=""portable45-net45+win8"" />
 </packages>");
