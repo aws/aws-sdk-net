@@ -238,6 +238,24 @@ namespace Amazon.CloudWatchLogs
         }
 
         #endregion
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ICloudWatchLogsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICloudWatchLogsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CloudWatchLogsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

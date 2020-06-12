@@ -197,6 +197,32 @@ namespace <#=this.Config.Namespace#>
 <#
     }
 #>
+<#
+    // Creates paginators for service if available
+    if (this.Config.ServiceModel.HasPaginators)
+    {
+#>
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private I<#=this.Config.ServiceNameRoot#>PaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public I<#=this.Config.ServiceNameRoot#>PaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new <#=this.Config.ServiceNameRoot#>PaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
+<#
+    }
+#>
 
         #region Overrides
 

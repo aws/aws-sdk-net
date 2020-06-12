@@ -30,6 +30,30 @@ namespace <#=this.Config.Namespace#>
     {
 		private static IServiceMetadata serviceMetadata = new Amazon<#=this.Config.ClassName#>Metadata();
 <#
+    // Creates paginators for service if available
+    if (this.Config.ServiceModel.HasPaginators)
+    {
+#>
+        private I<#=this.Config.ServiceNameRoot#>PaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public I<#=this.Config.ServiceNameRoot#>PaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new <#=this.Config.ServiceNameRoot#>PaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+<#
+    }
+#>
+<#
     // Generates basic constructors for the service if enabled in the model
     if(this.Config.GenerateConstructors)
     {

@@ -10,6 +10,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.CloudWatchLogs</AssemblyName>
     <PackageId>AWSSDK.CloudWatchLogs</PackageId>
+    <LangVersion>8.0</LangVersion>
 
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>

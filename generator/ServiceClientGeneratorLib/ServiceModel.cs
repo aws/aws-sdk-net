@@ -62,6 +62,14 @@ namespace ServiceClientGenerator
         public const string XmlNamespaceKey = "xmlNamespace";
         public const string EndpointDiscoveryIdKey = "endpointdiscoveryid";
 
+        // pagination
+        public const string PaginationKey = "pagination";
+        public const string ResultKeyKey = "result_key";
+        public const string InputTokenKey = "input_token";
+        public const string OutputTokenKey = "output_token";
+        public const string LimitKeyKey = "limit_key";
+        public const string MoreResultsKey = "more_results";
+
         // documentation
         public const string DocumentationKey = "documentation";
 
@@ -80,6 +88,11 @@ namespace ServiceClientGenerator
         /// This is the entire model document for the service processed as a json object
         /// </summary>
         internal JsonData DocumentRoot;
+
+        /// <summary>
+        /// This is the paginators for the service processed as a json object
+        /// </summary>
+        internal JsonData PaginatorsRoot;
 
         /// <summary>
         /// Used for unit testing, creates a service model from a TextReader so that the generation can be checked
@@ -106,14 +119,49 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Used by the generator to create a model for the service being generated
+        /// </summary>
+        /// <param name="serviceModelPath">Path to the file containing the model of the service</param>
+        /// <param name="customizationModelPath">Path to the customizations file for the service</param>
+        /// /// <param name="servicePaginatorsPath">Path to the customizations file for the service</param>
+        public ServiceModel(string serviceModelPath, string customizationModelPath, string servicePaginatorsPath)
+        {
+            using (var reader = new StreamReader(serviceModelPath))
+            {
+                InitializeServiceModel(reader);
+            }
+            if (File.Exists(servicePaginatorsPath))
+            {
+                using (var reader = new StreamReader(servicePaginatorsPath))
+                    InitializePaginators(reader);
+            }
+            this._customizationModel = new CustomizationsModel(customizationModelPath);
+        }
+
+        /// <summary>
         /// Sets the base json info no matter how the model was constructed
         /// </summary>
         /// <param name="reader">The reader to pull the model json from</param>
-        void InitializeServiceModel(TextReader reader)
+        private void InitializeServiceModel(TextReader reader)
         {
             this.DocumentRoot = JsonMapper.ToObject(reader);
             this._metadata = this.DocumentRoot[MetadataKey];
         }
+
+        /// <summary>
+        /// Sets the base json info no matter how the model was constructed
+        /// </summary>
+        /// <param name="reader">The reader to pull the model json from</param>
+        private void InitializePaginators(TextReader reader)
+        {
+            this.PaginatorsRoot = JsonMapper.ToObject(reader);
+        }
+
+        /// <summary>
+        /// Whether or not this service has paginators available
+        /// for any operation
+        /// </summary>
+        public bool HasPaginators { get; private set; } = false;
 
         /// <summary>
         /// The customization model for the service
@@ -303,7 +351,20 @@ namespace ServiceClientGenerator
                 var list = new List<Operation>();
                 foreach (KeyValuePair<string, JsonData> kvp in DocumentRoot[OperationsKey])
                 {
-                    var operation = new Operation(this, kvp.Key, kvp.Value);
+                    Operation operation;
+                    if (this.PaginatorsRoot != null && this.PaginatorsRoot[PaginationKey][kvp.Key] != null)
+                    {
+                        operation = new Operation(this, kvp.Key,
+                            kvp.Value, this.PaginatorsRoot[PaginationKey][kvp.Key]);
+                        if (operation.Paginators != null && !operation.UnsupportedPaginatorConfig)
+                        {
+                            this.HasPaginators = true;
+                        }
+                    } 
+                    else
+                    {
+                        operation = new Operation(this, kvp.Key, kvp.Value);
+                    }
                     if (operation.IsExcluded)
                     {
                         ExcludedOperations.Add(operation.Name);

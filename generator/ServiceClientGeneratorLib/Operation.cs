@@ -18,6 +18,8 @@ namespace ServiceClientGenerator
         /// </summary>
         readonly string name;
 
+        private OperationPaginatorConfig _operationPaginatorConfig;
+
         /// <summary>
         /// Constructs on operation from a service model, operation name, and the json model
         /// </summary>
@@ -30,6 +32,22 @@ namespace ServiceClientGenerator
             this.model = model;
             this.name = name;
             this.data = data;
+        }
+
+        /// <summary>
+        /// Constructs on operation from a service model, operation name, the json model, and the json paginators
+        /// </summary>
+        /// <param name="model">The model of the service the operation belongs to</param>
+        /// <param name="name">The name of the operation</param>
+        /// <param name="data">The json data from the model file</param>
+        /// <param name="paginatorData">The json data from the paginators file</param>
+        public Operation(ServiceModel model, string name, JsonData data, JsonData paginatorData)
+            : this(model, name, data)
+        {
+            if (paginatorData[ServiceModel.OutputTokenKey] != null && paginatorData[ServiceModel.InputTokenKey] != null)
+            {
+                _operationPaginatorConfig = new OperationPaginatorConfig(this, name, paginatorData);
+            }
         }
 
         /// <summary>
@@ -366,6 +384,17 @@ namespace ServiceClientGenerator
                                            ?? false;
         
         /// <summary>
+        /// Determines if the request structure will have members in the header
+        /// </summary>
+        public bool RequestHasHeaderMembers
+        {
+            get
+            {
+                return (this.RequestHeaderMembers.Count > 0);
+            }
+        }
+
+        /// <summary>
         /// Determines if the request structure will have members in the body
         /// </summary>
         public bool RequestHasBodyMembers
@@ -374,6 +403,30 @@ namespace ServiceClientGenerator
             {
                 // Has any members which are marshalled as part of the request body
                 return (this.RequestBodyMembers.Count > 0);
+            }
+        }
+
+        /// <summary>
+        /// Determines if the request structure has uri members
+        /// </summary>
+        public bool RequestHasUriMembers
+        {
+            get
+            {
+                return (this.RequestUriMembers.Count > 0);
+            }
+        }
+
+        /// <summary>
+        /// Determines if the request structure has query string members
+        /// </summary>
+        public bool RequestHasQueryStringMembers
+        {
+            get
+            {
+                // Has any members which are marshalled as part of the request body
+                return this.RequestStructure != null &&
+                    this.RequestStructure.Members.Any(m => m.MarshallLocation == MarshallLocation.QueryString);
             }
         }
 
@@ -390,18 +443,16 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Determines if the request structure has query string members
+        /// Determines if the response structure will have members in the header
         /// </summary>
-        public bool RequestHasQueryStringMembers
+        public bool ResponseHasHeaderMembers
         {
             get
             {
-                // Has any members which are marshalled as part of the request body
-                return this.RequestStructure != null &&
-                    this.RequestStructure.Members.Any(m => m.MarshallLocation == MarshallLocation.QueryString);
+                return (this.ResponseHeaderMembers.Count > 0);
             }
         }
-        
+
         /// <summary>
         /// Use query string if there are body members or a streamed member
         /// </summary>
@@ -797,6 +848,16 @@ namespace ServiceClientGenerator
                 }
             }
         }
+        /// <summary>
+        /// Paginators for an operation
+        /// </summary>
+        public OperationPaginatorConfig Paginators { get { return this._operationPaginatorConfig; } }
+
+        /// <summary>
+        /// Whether or not this operation has properly configured
+        /// paginators based on provided json configuration
+        /// </summary>
+        public bool UnsupportedPaginatorConfig { get; set; }
 
         private static ConcurrentDictionary<string, bool> _checkedService = new ConcurrentDictionary<string, bool>();
     }

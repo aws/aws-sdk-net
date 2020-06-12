@@ -43,8 +43,16 @@
 #>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyName><#=this.Project.AssemblyName #></AssemblyName>
-    <PackageId><#=this.Project.AssemblyName #></PackageId>
+    <AssemblyName><#=this.Project.AssemblyName#></AssemblyName>
+    <PackageId><#=this.Project.AssemblyName#></PackageId>
+<#
+if (this.Project.TargetFrameworks.Contains("netstandard2.0"))
+{
+#>
+    <LangVersion>8.0</LangVersion>
+<#
+}
+#>
 
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>

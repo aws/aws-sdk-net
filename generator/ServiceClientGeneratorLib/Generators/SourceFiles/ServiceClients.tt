@@ -26,6 +26,33 @@ namespace <#=this.Config.Namespace#>
 	public partial class Amazon<#=this.Config.ClassName#>Client : AmazonServiceClient, IAmazon<#=this.Config.ClassName#>
 	{
 		private static IServiceMetadata serviceMetadata = new Amazon<#=this.Config.ClassName#>Metadata();
+
+<#
+    // Creates paginators for service if available
+    if (this.Config.ServiceModel.HasPaginators)
+    {
+#>
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private I<#=this.Config.ServiceNameRoot#>PaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public I<#=this.Config.ServiceNameRoot#>PaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new <#=this.Config.ServiceNameRoot#>PaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
+<#
+    }
+#>
 <#
     // Creates constructors for the service if the model specifies to do so
 	if(this.Config.GenerateConstructors)

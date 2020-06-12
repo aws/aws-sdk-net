@@ -10,6 +10,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.Core</AssemblyName>
     <PackageId>AWSSDK.Core</PackageId>
+    <LangVersion>8.0</LangVersion>
     
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
@@ -84,6 +85,12 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="1.1.0" />
+=======
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces">
+      <Version>1.1.0</Version>
+    </PackageReference>
+>>>>>>> Paginators for all services except for S3
   </ItemGroup>
 </Project>

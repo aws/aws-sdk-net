@@ -21,6 +21,20 @@ namespace <#=this.Config.Namespace#>
 <#    this.FormatServiceInterfaceDocumentation(this.Config.ServiceModel.Documentation); #>
 	public partial interface IAmazon<#=this.Config.ClassName#> : IAmazonService, IDisposable
 	{
+<#
+	// Creates paginators for service if available
+	if (this.Config.ServiceModel.HasPaginators)
+	{
+#>
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        I<#=this.Config.ServiceNameRoot#>PaginatorFactory Paginators { get; }
+#endif
+<#
+    }
+#>
 		<#
     // Generates definitions for each operation in the service model
 		foreach(var operation in this.Config.ServiceModel.Operations)
