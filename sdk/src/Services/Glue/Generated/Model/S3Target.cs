@@ -40,7 +40,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property Exclusions. 
         /// <para>
         /// A list of glob patterns used to exclude from the crawl. For more information, see
-        /// <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables
+        /// <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables
         /// with a Crawler</a>.
         /// </para>
         /// </summary>
