@@ -97,7 +97,7 @@ namespace ServiceClientGenerator
         }
 
         //This should be the same version number as SdkVersioning.DefaultAssemblyVersion in BuildTasks
-        private const string DefaultAssemblyVersion = "3.3.100.0";
+        private const string DefaultAssemblyVersion = "3.3";
  
         /// <summary>
         /// Processes the control manifest to yield the set of services available to
