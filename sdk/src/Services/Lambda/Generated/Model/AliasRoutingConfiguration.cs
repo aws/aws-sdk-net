@@ -39,7 +39,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property AdditionalVersionWeights. 
         /// <para>
-        /// The name of the second alias, and the percentage of traffic that's routed to it.
+        /// The second version, and the percentage of traffic that's routed to it.
         /// </para>
         /// </summary>
         public Dictionary<string, double> AdditionalVersionWeights

@@ -1987,6 +1987,20 @@ namespace Amazon.Lambda
         /// AWS Lambda received an unexpected EC2 client exception while setting up for the Lambda
         /// function.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EFSIOException">
+        /// An error occured when reading from or writing to a connected file system.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EFSMountConnectivityException">
+        /// The function couldn't make a network connection to the configured file system.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EFSMountFailureException">
+        /// The function couldn't mount the configured file system due to a permission or configuration
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EFSMountTimeoutException">
+        /// The function was able to make a network connection to the configured file system,
+        /// but the mount operation timed out.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ENILimitReachedException">
         /// AWS Lambda was not able to create an elastic network interface in the VPC, specified
         /// as part of Lambda function configuration, because the limit for network interfaces
@@ -2128,6 +2142,20 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.EC2UnexpectedException">
         /// AWS Lambda received an unexpected EC2 client exception while setting up for the Lambda
         /// function.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EFSIOException">
+        /// An error occured when reading from or writing to a connected file system.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EFSMountConnectivityException">
+        /// The function couldn't make a network connection to the configured file system.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EFSMountFailureException">
+        /// The function couldn't mount the configured file system due to a permission or configuration
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EFSMountTimeoutException">
+        /// The function was able to make a network connection to the configured file system,
+        /// but the mount operation timed out.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ENILimitReachedException">
         /// AWS Lambda was not able to create an elastic network interface in the VPC, specified
@@ -3111,7 +3139,7 @@ namespace Amazon.Lambda
         /// invocation</a> on a function, version, or alias. If a configuration already exists
         /// for a function, version, or alias, this operation overwrites it. If you exclude any
         /// settings, they are removed. To set one option without affecting existing settings
-        /// for other options, use <a>PutFunctionEventInvokeConfig</a>.
+        /// for other options, use <a>UpdateFunctionEventInvokeConfig</a>.
         /// 
         ///  
         /// <para>
@@ -3154,7 +3182,7 @@ namespace Amazon.Lambda
         /// invocation</a> on a function, version, or alias. If a configuration already exists
         /// for a function, version, or alias, this operation overwrites it. If you exclude any
         /// settings, they are removed. To set one option without affecting existing settings
-        /// for other options, use <a>PutFunctionEventInvokeConfig</a>.
+        /// for other options, use <a>UpdateFunctionEventInvokeConfig</a>.
         /// 
         ///  
         /// <para>

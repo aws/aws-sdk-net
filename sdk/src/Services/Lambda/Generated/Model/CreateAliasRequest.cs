@@ -147,7 +147,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RoutingConfig. 
         /// <para>
-        /// The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+        /// The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing
         /// configuration</a> of the alias.
         /// </para>
         /// </summary>

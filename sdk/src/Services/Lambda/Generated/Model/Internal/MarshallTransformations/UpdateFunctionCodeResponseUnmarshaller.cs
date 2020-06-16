@@ -81,6 +81,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.Environment = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FileSystemConfigs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FileSystemConfig, FileSystemConfigUnmarshaller>(FileSystemConfigUnmarshaller.Instance);
+                    response.FileSystemConfigs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FunctionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

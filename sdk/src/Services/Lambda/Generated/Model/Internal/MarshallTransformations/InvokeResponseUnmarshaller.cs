@@ -92,6 +92,22 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     return EC2UnexpectedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("EFSIOException"))
+                {
+                    return EFSIOExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("EFSMountConnectivityException"))
+                {
+                    return EFSMountConnectivityExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("EFSMountFailureException"))
+                {
+                    return EFSMountFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("EFSMountTimeoutException"))
+                {
+                    return EFSMountTimeoutExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ENILimitReachedException"))
                 {
                     return ENILimitReachedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

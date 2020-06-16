@@ -4262,6 +4262,146 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Lambda")]
+        public void Invoke_EFSIOExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("Invoke");
+
+            var request = InstantiateClassGenerator.Execute<InvokeRequest>();
+            var marshaller = new InvokeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("Invoke", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("EFSIOException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"X-Amz-Function-Error","X-Amz-Function-Error_Value"},
+                    {"X-Amz-Log-Result","X-Amz-Log-Result_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","EFSIOException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void Invoke_EFSMountConnectivityExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("Invoke");
+
+            var request = InstantiateClassGenerator.Execute<InvokeRequest>();
+            var marshaller = new InvokeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("Invoke", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("EFSMountConnectivityException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"X-Amz-Function-Error","X-Amz-Function-Error_Value"},
+                    {"X-Amz-Log-Result","X-Amz-Log-Result_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","EFSMountConnectivityException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void Invoke_EFSMountFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("Invoke");
+
+            var request = InstantiateClassGenerator.Execute<InvokeRequest>();
+            var marshaller = new InvokeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("Invoke", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("EFSMountFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"X-Amz-Function-Error","X-Amz-Function-Error_Value"},
+                    {"X-Amz-Log-Result","X-Amz-Log-Result_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","EFSMountFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void Invoke_EFSMountTimeoutExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("Invoke");
+
+            var request = InstantiateClassGenerator.Execute<InvokeRequest>();
+            var marshaller = new InvokeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("Invoke", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("EFSMountTimeoutException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"X-Amz-Function-Error","X-Amz-Function-Error_Value"},
+                    {"X-Amz-Log-Result","X-Amz-Log-Result_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","EFSMountTimeoutException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
         public void Invoke_ENILimitReachedExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("Invoke");

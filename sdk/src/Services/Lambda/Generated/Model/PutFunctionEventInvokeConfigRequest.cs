@@ -34,7 +34,7 @@ namespace Amazon.Lambda.Model
     /// invocation</a> on a function, version, or alias. If a configuration already exists
     /// for a function, version, or alias, this operation overwrites it. If you exclude any
     /// settings, they are removed. To set one option without affecting existing settings
-    /// for other options, use <a>PutFunctionEventInvokeConfig</a>.
+    /// for other options, use <a>UpdateFunctionEventInvokeConfig</a>.
     /// 
     ///  
     /// <para>
