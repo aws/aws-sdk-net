@@ -94,6 +94,13 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
+        /// For a custom origin (including an Amazon S3 bucket that’s configured with static website
+        /// hosting), this value also specifies the number of times that CloudFront attempts to
+        /// get a response from the origin, in the case of an <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
+        /// Response Timeout</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts">Origin
         /// Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
@@ -211,8 +218,8 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// Use this value to specify the <code>TargetOriginId</code> in a <a>CacheBehavior</a>
-        /// or <a>DefaultCacheBehavior</a>.
+        /// Use this value to specify the <code>TargetOriginId</code> in a <code>CacheBehavior</code>
+        /// or <code>DefaultCacheBehavior</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
