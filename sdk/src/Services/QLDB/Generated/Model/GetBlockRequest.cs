@@ -30,10 +30,14 @@ namespace Amazon.QLDB.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBlock operation.
-    /// Returns a journal block object at a specified address in a ledger. Also returns a
-    /// proof of the specified block for verification if <code>DigestTipAddress</code> is
-    /// provided.
+    /// Returns a block object at a specified address in a journal. Also returns a proof of
+    /// the specified block for verification if <code>DigestTipAddress</code> is provided.
     /// 
+    ///  
+    /// <para>
+    /// For information about the data contents in a block, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/journal-contents.html">Journal
+    /// contents</a> in the <i>Amazon QLDB Developer Guide</i>.
+    /// </para>
     ///  
     /// <para>
     /// If the specified ledger doesn't exist or is in <code>DELETING</code> status, then
