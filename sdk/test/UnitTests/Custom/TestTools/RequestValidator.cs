@@ -291,8 +291,16 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                                 var value = ParseUsingFormat(this.MarshalledRequest.Headers[member.MarshallLocationName], member.TimestampFormat);
                                 Assert.AreEqual(((DateTime)property.GetValue(this.Request)).ToUniversalTime(), value.ToUniversalTime());
                             }
-                            else
+                            else if(member.Shape.IsString)
+                            {
                                 Assert.AreEqual(property.GetValue(this.Request), this.MarshalledRequest.Headers[member.MarshallLocationName]);
+                            }
+                            else
+                            {
+                                var value = this.MarshalledRequest.Headers[member.MarshallLocationName];
+                                var convertedValue = Convert.ChangeType(value, property.PropertyType);
+                                Assert.AreEqual(property.GetValue(this.Request), convertedValue);
+                            }
                         }
                     }
                 }
