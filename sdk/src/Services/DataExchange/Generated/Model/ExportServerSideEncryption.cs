@@ -45,7 +45,6 @@ namespace Amazon.DataExchange.Model
         /// type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string KmsKeyArn
         {
             get { return this._kmsKeyArn; }
