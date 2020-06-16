@@ -42,6 +42,7 @@ namespace Amazon.AlexaForBusiness.Model
         private string _s3BucketName;
         private string _s3KeyPrefix;
         private string _scheduleName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -175,6 +176,24 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetScheduleName()
         {
             return this._scheduleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags for the business report schedule.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

@@ -191,6 +191,10 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property Reviews. 
         /// <para>
+        ///  <i>This member has been deprecated.</i> 
+        /// </para>
+        ///  
+        /// <para>
         /// The list of reviews for the skill, including Key and Value pair.
         /// </para>
         /// </summary>

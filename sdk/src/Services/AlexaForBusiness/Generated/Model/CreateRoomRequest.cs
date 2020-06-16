@@ -82,7 +82,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property ProfileArn. 
         /// <para>
-        /// The profile ARN for the room.
+        /// The profile ARN for the room. This is required.
         /// </para>
         /// </summary>
         public string ProfileArn

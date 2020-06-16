@@ -41,6 +41,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The interval of the content range.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public BusinessReportInterval Interval
         {
             get { return this._interval; }
