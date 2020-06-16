@@ -1,3 +1,17 @@
+### 3.3.762.0 (2020-06-16 18:14 UTC)
+* AutoScaling (3.3.103.0)
+	* Introducing instance refresh, a feature that helps you update all instances in an Auto Scaling group in a rolling fashion (for example, to apply a new AMI or instance type). You can control the pace of the refresh by defining the percentage of the group that must remain running/healthy during the replacement process and the time for new instances to warm up between replacements.
+* CloudFront (3.3.102.3)
+	* Documentation updates for CloudFront
+* DataExchange (3.3.102.0)
+	* This release fixes a bug in the AWS Data Exchange Python and NodeJS SDKs. The 'KmsKeyArn' field in the create-job API was configured to be required instead of optional. We updated this field to be optional in this release.
+* Lambda (3.3.110.0)
+	* Adds support for using Amazon Elastic File System (persistent storage) with AWS Lambda. This enables customers to share data across function invocations, read large reference data files, and write function output to a persistent and shared store.
+* Polly (3.3.104.0)
+	* Amazon Polly adds new US English child voice - Kevin. Kevin is available as Neural voice only.
+* QLDB (3.3.101.14)
+	* Documentation updates for Amazon QLDB
+
 ### 3.3.761.0 (2020-06-16 01:15 UTC)
 * AlexaForBusiness (3.3.109.0)
 	* Adding support for optional tags in CreateBusinessReportSchedule, CreateProfile and CreateSkillGroup APIs

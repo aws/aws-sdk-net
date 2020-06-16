@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.761.0",
+    "ProductVersion" : "3.3.762.0",
     "CoreVersion"    : "3.3.107.10",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -13,7 +13,7 @@
             "InPreview"               : false
         },
         "AutoScaling" : {
-            "Version" : "3.3.102.60",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.10"
@@ -37,7 +37,7 @@
             "InPreview"               : false
         },
         "CloudFront"     : {
-            "Version" : "3.3.102.2",
+            "Version" : "3.3.102.3",
             "AssemblyVersionOverride" : "3.3.4.0",
             "Dependencies"            : {
                 "Core" : "3.3.107.10"
@@ -241,7 +241,7 @@
             "InPreview"               : false
         },
         "Lambda"               : {
-            "Version" : "3.3.109.40",
+            "Version" : "3.3.110.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.10"
@@ -625,7 +625,7 @@
             "InPreview"               : false
         },
         "Polly"                           : {
-            "Version" : "3.3.103.104",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.10"
@@ -1513,7 +1513,7 @@
             "InPreview"               : false
         },
         "QLDB"                            : {
-            "Version" : "3.3.101.13",
+            "Version" : "3.3.101.14",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.10"
@@ -1585,7 +1585,7 @@
             "InPreview"               : false
         },
         "DataExchange"                    : {
-            "Version" : "3.3.101.26",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.10"
