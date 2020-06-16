@@ -4,7 +4,7 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Globalization" #>
- 
+
 <#+
     // Adds the neccesary namespaces for the marshaller
 protected void AddCommonUsingStatements()
@@ -16,7 +16,7 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
- 
+
 using <#=this.Config.Namespace #>.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -25,7 +25,7 @@ using Amazon.Runtime.Internal.Util;
 <#+
     }
 #>
- 
+
 <#+
     protected int MarshallerVersion
     {
@@ -34,7 +34,7 @@ using Amazon.Runtime.Internal.Util;
             return 2;
         }
     }
- 
+
 	// Only applicable for rest-json and rest-xml
     // Generates code to add members to the header of the request
     // If it's a custom marshaller then it calls the custom marshaller first
@@ -63,7 +63,7 @@ using Amazon.Runtime.Internal.Util;
 				{
 					throw new NotImplementedException("Marshalling lists and maps as header value is not implemented");
 				}
- 
+
 				if(member.Shape.IsString)
 				{
 #>
@@ -79,7 +79,7 @@ using Amazon.Runtime.Internal.Util;
             }
         }
 	}
- 
+
 	// Only applicable for rest-json and rest-xml
     // Generates code to add the operation's requestURIMembers to the PathResources request dictionary
 	protected void ProcessUriMembers(string variableName, Operation operation)
@@ -88,7 +88,7 @@ using Amazon.Runtime.Internal.Util;
 		{
             bool isGreedy = false;
             var marshallLocationName = operation.GetUriResourcePathTarget(member, out isGreedy);
- 
+
             if (member.model.Customizations.SkipUriPropertyValidations.Contains(member.PropertyName))
             {
 				if(isGreedy)
@@ -103,7 +103,7 @@ using Amazon.Runtime.Internal.Util;
 			request.AddPathResource("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>) : string.Empty);
 <#+
 				}
- 
+
             }
             else
             {
@@ -126,7 +126,7 @@ using Amazon.Runtime.Internal.Util;
             }
 		}
 	}
- 
+
 	protected void ProcessRequestUri(Operation operation)
 	{
 		foreach(var staticQueryParam in operation.StaticQueryParameters)
@@ -145,7 +145,7 @@ using Amazon.Runtime.Internal.Util;
 			}
 		}
 	}
- 
+
 	// Only applicable for rest-json and rest-xml
     // Generates code to add any operation query members to the query string for the request
     // If the marshaller is customized, it marshalls the value before changing it to a string
@@ -202,7 +202,7 @@ using Amazon.Runtime.Internal.Util;
 			}
 		}
 	}
- 
+
     // Only applicable for rest-json and rest-xml
     // Generates code to add the operation's hostPrefixMembers to the request's HostPrefix
 	protected void ProcessEndpointHostPrefixMembers(string variableName, Operation operation)
@@ -210,7 +210,7 @@ using Amazon.Runtime.Internal.Util;
         if(operation.RequestHostPrefixMembers.Count() > 0)
         {
 #>
- 
+
             var hostPrefixLabels = new
             {
 <#+
@@ -222,7 +222,7 @@ using Amazon.Runtime.Internal.Util;
             }     
 #>
             };
- 
+
 <#+
             foreach(var member in operation.RequestHostPrefixMembers)
             {
