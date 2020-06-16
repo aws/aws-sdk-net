@@ -29,18 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
-    /// Container for the parameters to the StartDeployment operation.
-    /// Starts a deployment.
+    /// Container for the parameters to the CreateHostedConfigurationVersion operation.
+    /// Create a new configuration in the AppConfig configuration store.
     /// </summary>
-    public partial class StartDeploymentRequest : AmazonAppConfigRequest
+    public partial class CreateHostedConfigurationVersionRequest : AmazonAppConfigRequest
     {
         private string _applicationId;
         private string _configurationProfileId;
-        private string _configurationVersion;
-        private string _deploymentStrategyId;
+        private MemoryStream _content;
+        private string _contentType;
         private string _description;
-        private string _environmentId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private int? _latestVersionNumber;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -81,47 +80,48 @@ namespace Amazon.AppConfig.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConfigurationVersion. 
+        /// Gets and sets the property Content. 
         /// <para>
-        /// The configuration version to deploy.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
-        public string ConfigurationVersion
-        {
-            get { return this._configurationVersion; }
-            set { this._configurationVersion = value; }
-        }
-
-        // Check to see if ConfigurationVersion property is set
-        internal bool IsSetConfigurationVersion()
-        {
-            return this._configurationVersion != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DeploymentStrategyId. 
-        /// <para>
-        /// The deployment strategy ID.
+        /// The content of the configuration or the configuration data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string DeploymentStrategyId
+        public MemoryStream Content
         {
-            get { return this._deploymentStrategyId; }
-            set { this._deploymentStrategyId = value; }
+            get { return this._content; }
+            set { this._content = value; }
         }
 
-        // Check to see if DeploymentStrategyId property is set
-        internal bool IsSetDeploymentStrategyId()
+        // Check to see if Content property is set
+        internal bool IsSetContent()
         {
-            return this._deploymentStrategyId != null;
+            return this._content != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentType. 
+        /// <para>
+        /// A standard MIME type describing the format of the configuration content. For more
+        /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
+        public string ContentType
+        {
+            get { return this._contentType; }
+            set { this._contentType = value; }
+        }
+
+        // Check to see if ContentType property is set
+        internal bool IsSetContentType()
+        {
+            return this._contentType != null;
         }
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the deployment.
+        /// A description of the configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -138,42 +138,24 @@ namespace Amazon.AppConfig.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EnvironmentId. 
+        /// Gets and sets the property LatestVersionNumber. 
         /// <para>
-        /// The environment ID.
+        /// An optional locking token used to prevent race conditions from overwriting configuration
+        /// updates when creating a new version. To ensure your data is not overwritten when creating
+        /// multiple hosted configuration versions in rapid succession, specify the version of
+        /// the latest hosted configuration version.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string EnvironmentId
+        public int LatestVersionNumber
         {
-            get { return this._environmentId; }
-            set { this._environmentId = value; }
+            get { return this._latestVersionNumber.GetValueOrDefault(); }
+            set { this._latestVersionNumber = value; }
         }
 
-        // Check to see if EnvironmentId property is set
-        internal bool IsSetEnvironmentId()
+        // Check to see if LatestVersionNumber property is set
+        internal bool IsSetLatestVersionNumber()
         {
-            return this._environmentId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// Metadata to assign to the deployment. Tags help organize and categorize your AppConfig
-        /// resources. Each tag consists of a key and an optional value, both of which you define.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=50)]
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._latestVersionNumber.HasValue; 
         }
 
     }

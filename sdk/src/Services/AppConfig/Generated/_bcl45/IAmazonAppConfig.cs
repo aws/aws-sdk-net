@@ -74,8 +74,8 @@ namespace Amazon.AppConfig
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>User membership</b>: Use AppConfig to allow premium subscribers to access paid
-    /// content. 
+    ///  <b>Allow list</b>: Use AppConfig to allow premium subscribers to access paid content.
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -332,6 +332,74 @@ namespace Amazon.AppConfig
 
         #endregion
         
+        #region  CreateHostedConfigurationVersion
+
+
+        /// <summary>
+        /// Create a new configuration in the AppConfig configuration store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHostedConfigurationVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateHostedConfigurationVersion service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.PayloadTooLargeException">
+        /// The configuration size is too large.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ServiceQuotaExceededException">
+        /// The number of hosted configuration versions exceeds the limit for the AppConfig configuration
+        /// store. Delete one or more versions and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateHostedConfigurationVersion">REST API Reference for CreateHostedConfigurationVersion Operation</seealso>
+        CreateHostedConfigurationVersionResponse CreateHostedConfigurationVersion(CreateHostedConfigurationVersionRequest request);
+
+
+
+        /// <summary>
+        /// Create a new configuration in the AppConfig configuration store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHostedConfigurationVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateHostedConfigurationVersion service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.PayloadTooLargeException">
+        /// The configuration size is too large.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ServiceQuotaExceededException">
+        /// The number of hosted configuration versions exceeds the limit for the AppConfig configuration
+        /// store. Delete one or more versions and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateHostedConfigurationVersion">REST API Reference for CreateHostedConfigurationVersion Operation</seealso>
+        Task<CreateHostedConfigurationVersionResponse> CreateHostedConfigurationVersionAsync(CreateHostedConfigurationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteApplication
 
 
@@ -537,6 +605,52 @@ namespace Amazon.AppConfig
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
         Task<DeleteEnvironmentResponse> DeleteEnvironmentAsync(DeleteEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteHostedConfigurationVersion
+
+
+        /// <summary>
+        /// Delete a version of a configuration from the AppConfig configuration store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHostedConfigurationVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteHostedConfigurationVersion service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteHostedConfigurationVersion">REST API Reference for DeleteHostedConfigurationVersion Operation</seealso>
+        DeleteHostedConfigurationVersionResponse DeleteHostedConfigurationVersion(DeleteHostedConfigurationVersionRequest request);
+
+
+
+        /// <summary>
+        /// Delete a version of a configuration from the AppConfig configuration store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHostedConfigurationVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteHostedConfigurationVersion service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteHostedConfigurationVersion">REST API Reference for DeleteHostedConfigurationVersion Operation</seealso>
+        Task<DeleteHostedConfigurationVersionResponse> DeleteHostedConfigurationVersionAsync(DeleteHostedConfigurationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -866,6 +980,52 @@ namespace Amazon.AppConfig
 
         #endregion
         
+        #region  GetHostedConfigurationVersion
+
+
+        /// <summary>
+        /// Get information about a specific configuration version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHostedConfigurationVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetHostedConfigurationVersion service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetHostedConfigurationVersion">REST API Reference for GetHostedConfigurationVersion Operation</seealso>
+        GetHostedConfigurationVersionResponse GetHostedConfigurationVersion(GetHostedConfigurationVersionRequest request);
+
+
+
+        /// <summary>
+        /// Get information about a specific configuration version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHostedConfigurationVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetHostedConfigurationVersion service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetHostedConfigurationVersion">REST API Reference for GetHostedConfigurationVersion Operation</seealso>
+        Task<GetHostedConfigurationVersionResponse> GetHostedConfigurationVersionAsync(GetHostedConfigurationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListApplications
 
 
@@ -1081,6 +1241,52 @@ namespace Amazon.AppConfig
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
         Task<ListEnvironmentsResponse> ListEnvironmentsAsync(ListEnvironmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListHostedConfigurationVersions
+
+
+        /// <summary>
+        /// View a list of configurations stored in the AppConfig configuration store by version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHostedConfigurationVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListHostedConfigurationVersions service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListHostedConfigurationVersions">REST API Reference for ListHostedConfigurationVersions Operation</seealso>
+        ListHostedConfigurationVersionsResponse ListHostedConfigurationVersions(ListHostedConfigurationVersionsRequest request);
+
+
+
+        /// <summary>
+        /// View a list of configurations stored in the AppConfig configuration store by version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHostedConfigurationVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListHostedConfigurationVersions service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListHostedConfigurationVersions">REST API Reference for ListHostedConfigurationVersions Operation</seealso>
+        Task<ListHostedConfigurationVersionsResponse> ListHostedConfigurationVersionsAsync(ListHostedConfigurationVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

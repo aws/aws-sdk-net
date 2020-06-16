@@ -29,14 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
-    /// Container for the parameters to the ValidateConfiguration operation.
-    /// Uses the validators in a configuration profile to validate a configuration.
+    /// Container for the parameters to the DeleteHostedConfigurationVersion operation.
+    /// Delete a version of a configuration from the AppConfig configuration store.
     /// </summary>
-    public partial class ValidateConfigurationRequest : AmazonAppConfigRequest
+    public partial class DeleteHostedConfigurationVersionRequest : AmazonAppConfigRequest
     {
         private string _applicationId;
         private string _configurationProfileId;
-        private string _configurationVersion;
+        private int? _versionNumber;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -77,22 +77,22 @@ namespace Amazon.AppConfig.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConfigurationVersion. 
+        /// Gets and sets the property VersionNumber. 
         /// <para>
-        /// The version of the configuration to validate.
+        /// The versions number to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
-        public string ConfigurationVersion
+        [AWSProperty(Required=true)]
+        public int VersionNumber
         {
-            get { return this._configurationVersion; }
-            set { this._configurationVersion = value; }
+            get { return this._versionNumber.GetValueOrDefault(); }
+            set { this._versionNumber = value; }
         }
 
-        // Check to see if ConfigurationVersion property is set
-        internal bool IsSetConfigurationVersion()
+        // Check to see if VersionNumber property is set
+        internal bool IsSetVersionNumber()
         {
-            return this._configurationVersion != null;
+            return this._versionNumber.HasValue; 
         }
 
     }

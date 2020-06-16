@@ -29,14 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
-    /// Container for the parameters to the ValidateConfiguration operation.
-    /// Uses the validators in a configuration profile to validate a configuration.
+    /// Container for the parameters to the ListHostedConfigurationVersions operation.
+    /// View a list of configurations stored in the AppConfig configuration store by version.
     /// </summary>
-    public partial class ValidateConfigurationRequest : AmazonAppConfigRequest
+    public partial class ListHostedConfigurationVersionsRequest : AmazonAppConfigRequest
     {
         private string _applicationId;
         private string _configurationProfileId;
-        private string _configurationVersion;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -77,22 +78,42 @@ namespace Amazon.AppConfig.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConfigurationVersion. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The version of the configuration to validate.
+        /// The maximum number of items to return for this call. The call also returns a token
+        /// that you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
-        public string ConfigurationVersion
+        [AWSProperty(Min=1, Max=50)]
+        public int MaxResults
         {
-            get { return this._configurationVersion; }
-            set { this._configurationVersion = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if ConfigurationVersion property is set
-        internal bool IsSetConfigurationVersion()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._configurationVersion != null;
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A token to start the list. Use this token to get the next set of results. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }
