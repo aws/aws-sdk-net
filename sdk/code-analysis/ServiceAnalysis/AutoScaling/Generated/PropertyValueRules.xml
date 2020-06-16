@@ -26,6 +26,16 @@
     <max>1600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.CancelInstanceRefreshRequest.AutoScalingGroupName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.CancelInstanceRefreshResponse.InstanceRefreshId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.CompleteLifecycleActionRequest.AutoScalingGroupName</property>
     <min>1</min>
     <max>1600</max>
@@ -202,6 +212,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DescribeAutoScalingInstancesResponse.NextToken</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.DescribeInstanceRefreshesRequest.AutoScalingGroupName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.DescribeInstanceRefreshesRequest.NextToken</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.DescribeInstanceRefreshesResponse.NextToken</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DescribeLaunchConfigurationsRequest.NextToken</property>
@@ -459,6 +480,16 @@
     <max>1600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.StartInstanceRefreshRequest.AutoScalingGroupName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.StartInstanceRefreshResponse.InstanceRefreshId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.SuspendProcessesRequest.AutoScalingGroupName</property>
     <min>1</min>
     <max>1600</max>
@@ -704,6 +735,30 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.InstanceRefresh.AutoScalingGroupName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.InstanceRefresh.InstanceRefreshId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.InstanceRefresh.InstancesToUpdate</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.InstanceRefresh.PercentageComplete</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.InstanceRefresh.StatusReason</property>
+    <min>1</min>
+    <max>1023</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.InstancesDistribution.OnDemandAllocationStrategy</property>
   </property-value-rule>
   <property-value-rule>
@@ -900,6 +955,15 @@
     <property>Amazon.AutoScaling.Model.ProcessType.ProcessName</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.RefreshPreferences.InstanceWarmup</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.RefreshPreferences.MinHealthyPercentage</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.ScalingPolicy.AdjustmentType</property>

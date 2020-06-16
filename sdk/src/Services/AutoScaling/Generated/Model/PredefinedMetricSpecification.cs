@@ -86,7 +86,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// The format is <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>
+        /// Elastic Load Balancing sends data about your load balancers to Amazon CloudWatch.
+        /// CloudWatch collects the data and specifies the format to use to access the data. The
+        /// format is <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>
         /// </code>, where 
         /// </para>
         ///  <ul> <li> 
@@ -99,7 +101,12 @@ namespace Amazon.AutoScaling.Model
         ///  <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the
         /// final portion of the target group ARN.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
+        /// API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
+        /// API operation.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1023)]
         public string ResourceLabel

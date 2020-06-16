@@ -66,8 +66,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScalingProcesses. 
         /// <para>
-        /// One or more of the following processes. If you omit this parameter, all processes
-        /// are specified.
+        /// One or more of the following processes:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -79,15 +78,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HealthCheck</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ReplaceUnhealthy</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>AZRebalance</code> 
+        ///  <code>AddToLoadBalancer</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -95,13 +86,28 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ScheduledActions</code> 
+        ///  <code>AZRebalance</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AddToLoadBalancer</code> 
+        ///  <code>HealthCheck</code> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>InstanceRefresh</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ReplaceUnhealthy</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ScheduledActions</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you omit this parameter, all processes are specified.
+        /// </para>
         /// </summary>
         public List<string> ScalingProcesses
         {

@@ -342,6 +342,68 @@ namespace Amazon.AutoScaling
 
         #endregion
         
+        #region  CancelInstanceRefresh
+
+
+        /// <summary>
+        /// Cancels an instance refresh operation in progress. Cancellation does not roll back
+        /// any replacements that have already been completed, but it prevents new replacements
+        /// from being started. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
+        /// Auto Scaling Instances Based on an Instance Refresh</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelInstanceRefresh service method.</param>
+        /// 
+        /// <returns>The response from the CancelInstanceRefresh service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ActiveInstanceRefreshNotFoundException">
+        /// The request failed because an active instance refresh for the specified Auto Scaling
+        /// group was not found.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
+        /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
+        /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
+        /// an Auto Scaling group, instance, or load balancer).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CancelInstanceRefresh">REST API Reference for CancelInstanceRefresh Operation</seealso>
+        CancelInstanceRefreshResponse CancelInstanceRefresh(CancelInstanceRefreshRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelInstanceRefresh operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelInstanceRefresh operation on AmazonAutoScalingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelInstanceRefresh
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CancelInstanceRefresh">REST API Reference for CancelInstanceRefresh Operation</seealso>
+        IAsyncResult BeginCancelInstanceRefresh(CancelInstanceRefreshRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelInstanceRefresh operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelInstanceRefresh.</param>
+        /// 
+        /// <returns>Returns a  CancelInstanceRefreshResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CancelInstanceRefresh">REST API Reference for CancelInstanceRefresh Operation</seealso>
+        CancelInstanceRefreshResponse EndCancelInstanceRefresh(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CompleteLifecycleAction
 
 
@@ -1339,6 +1401,87 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  DescribeAutoScalingNotificationTypesResult from AutoScaling.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingNotificationTypes">REST API Reference for DescribeAutoScalingNotificationTypes Operation</seealso>
         DescribeAutoScalingNotificationTypesResponse EndDescribeAutoScalingNotificationTypes(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeInstanceRefreshes
+
+
+        /// <summary>
+        /// Describes one or more instance refreshes.
+        /// 
+        ///  
+        /// <para>
+        /// You can determine the status of a request by looking at the <code>Status</code> parameter.
+        /// The following are the possible statuses: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Pending</code> - The request was created, but the operation has not started.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>InProgress</code> - The operation is in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Successful</code> - The operation completed successfully.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Failed</code> - The operation failed to complete. You can troubleshoot using
+        /// the status reason and the scaling activities. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation does
+        /// not roll back any replacements that have already been completed, but it prevents new
+        /// replacements from being started. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Cancelled</code> - The operation is cancelled. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceRefreshes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceRefreshes service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
+        /// an Auto Scaling group, instance, or load balancer).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeInstanceRefreshes">REST API Reference for DescribeInstanceRefreshes Operation</seealso>
+        DescribeInstanceRefreshesResponse DescribeInstanceRefreshes(DescribeInstanceRefreshesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceRefreshes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceRefreshes operation on AmazonAutoScalingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceRefreshes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeInstanceRefreshes">REST API Reference for DescribeInstanceRefreshes Operation</seealso>
+        IAsyncResult BeginDescribeInstanceRefreshes(DescribeInstanceRefreshesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstanceRefreshes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceRefreshes.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstanceRefreshesResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeInstanceRefreshes">REST API Reference for DescribeInstanceRefreshes Operation</seealso>
+        DescribeInstanceRefreshesResponse EndDescribeInstanceRefreshes(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3169,6 +3312,75 @@ namespace Amazon.AutoScaling
         /// <returns>Returns a  SetInstanceProtectionResult from AutoScaling.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection">REST API Reference for SetInstanceProtection Operation</seealso>
         SetInstanceProtectionResponse EndSetInstanceProtection(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartInstanceRefresh
+
+
+        /// <summary>
+        /// Starts a new instance refresh operation, which triggers a rolling replacement of all
+        /// previously launched instances in the Auto Scaling group with a new group of instances.
+        /// 
+        ///  
+        /// <para>
+        /// If successful, this call creates a new instance refresh request with a unique ID that
+        /// you can use to track its progress. To query its status, call the <a>DescribeInstanceRefreshes</a>
+        /// API. To describe the instance refreshes that have already run, call the <a>DescribeInstanceRefreshes</a>
+        /// API. To cancel an active instance refresh operation, use the <a>CancelInstanceRefresh</a>
+        /// API.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
+        /// Auto Scaling Instances Based on an Instance Refresh</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartInstanceRefresh service method.</param>
+        /// 
+        /// <returns>The response from the StartInstanceRefresh service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InstanceRefreshInProgressException">
+        /// The request failed because an active instance refresh operation already exists for
+        /// the specified Auto Scaling group.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
+        /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
+        /// Auto Scaling groups, launch configurations, or lifecycle hooks). For more information,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
+        /// an Auto Scaling group, instance, or load balancer).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/StartInstanceRefresh">REST API Reference for StartInstanceRefresh Operation</seealso>
+        StartInstanceRefreshResponse StartInstanceRefresh(StartInstanceRefreshRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartInstanceRefresh operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartInstanceRefresh operation on AmazonAutoScalingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartInstanceRefresh
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/StartInstanceRefresh">REST API Reference for StartInstanceRefresh Operation</seealso>
+        IAsyncResult BeginStartInstanceRefresh(StartInstanceRefreshRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartInstanceRefresh operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartInstanceRefresh.</param>
+        /// 
+        /// <returns>Returns a  StartInstanceRefreshResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/StartInstanceRefresh">REST API Reference for StartInstanceRefresh Operation</seealso>
+        StartInstanceRefreshResponse EndStartInstanceRefresh(IAsyncResult asyncResult);
 
         #endregion
         
