@@ -1,3 +1,15 @@
+### 3.3.761.0 (2020-06-16 01:15 UTC)
+* AlexaForBusiness (3.3.109.0)
+	* Adding support for optional tags in CreateBusinessReportSchedule, CreateProfile and CreateSkillGroup APIs
+* AppConfig (3.3.104.0)
+	* This release adds a hosted configuration source provider. Customers can now store their application configurations directly in AppConfig, without the need for an external configuration source.
+* Chime (3.3.113.0)
+	* feature: Chime: This release introduces the ability to create an AWS Chime SDK meeting with attendees.
+* CognitoIdentityProvider (3.3.110.0)
+	* Updated all AuthParameters to be sensitive.
+* IoT (3.3.111.0)
+	* Added support for job executions rollout configuration, job abort configuration, and job executions timeout configuration for AWS IoT Over-the-Air (OTA) Update Feature.
+
 ### 3.3.760.0 (2020-06-12 18:15 UTC)
 * APIGateway (3.3.104.3)
 	* Documentation updates for Amazon API Gateway

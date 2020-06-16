@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.760.0",
+    "ProductVersion" : "3.3.761.0",
     "CoreVersion"    : "3.3.107.10",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -465,7 +465,7 @@
             "InPreview"               : false
         },
         "IoT"                             : {
-            "Version" : "3.3.110.23",
+            "Version" : "3.3.111.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.10"
@@ -537,7 +537,7 @@
             "InPreview"               : false
         },
         "CognitoIdentityProvider"         : {
-            "Version" : "3.3.109.50",
+            "Version" : "3.3.110.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.10"
@@ -1001,7 +1001,7 @@
             "InPreview"               : false
         },
         "AlexaForBusiness"                : {
-            "Version" : "3.3.108.68",
+            "Version" : "3.3.109.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.10"
@@ -1169,7 +1169,7 @@
             "InPreview"               : false
         },
         "Chime"                           : {
-            "Version" : "3.3.112.12",
+            "Version" : "3.3.113.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.10"
@@ -1617,7 +1617,7 @@
             "InPreview"               : false
         },
         "AppConfig"                       : {
-            "Version" : "3.3.103.1",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.10"
