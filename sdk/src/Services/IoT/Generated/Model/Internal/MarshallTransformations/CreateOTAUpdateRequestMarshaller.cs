@@ -83,6 +83,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetAwsJobAbortConfig())
+                {
+                    context.Writer.WritePropertyName("awsJobAbortConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AwsJobAbortConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AwsJobAbortConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetAwsJobExecutionsRolloutConfig())
                 {
                     context.Writer.WritePropertyName("awsJobExecutionsRolloutConfig");
@@ -101,6 +112,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
                     var marshaller = AwsJobPresignedUrlConfigMarshaller.Instance;
                     marshaller.Marshall(publicRequest.AwsJobPresignedUrlConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetAwsJobTimeoutConfig())
+                {
+                    context.Writer.WritePropertyName("awsJobTimeoutConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AwsJobTimeoutConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AwsJobTimeoutConfig, context);
 
                     context.Writer.WriteObjectEnd();
                 }

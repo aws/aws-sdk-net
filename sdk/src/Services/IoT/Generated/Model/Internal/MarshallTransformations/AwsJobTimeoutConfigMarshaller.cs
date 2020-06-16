@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AwsJobExecutionsRolloutConfig Marshaller
+    /// AwsJobTimeoutConfig Marshaller
     /// </summary>       
-    public class AwsJobExecutionsRolloutConfigMarshaller : IRequestMarshaller<AwsJobExecutionsRolloutConfig, JsonMarshallerContext> 
+    public class AwsJobTimeoutConfigMarshaller : IRequestMarshaller<AwsJobTimeoutConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AwsJobExecutionsRolloutConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(AwsJobTimeoutConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetExponentialRate())
+            if(requestObject.IsSetInProgressTimeoutInMinutes())
             {
-                context.Writer.WritePropertyName("exponentialRate");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AwsJobExponentialRolloutRateMarshaller.Instance;
-                marshaller.Marshall(requestObject.ExponentialRate, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetMaximumPerMinute())
-            {
-                context.Writer.WritePropertyName("maximumPerMinute");
-                context.Writer.Write(requestObject.MaximumPerMinute);
+                context.Writer.WritePropertyName("inProgressTimeoutInMinutes");
+                context.Writer.Write(requestObject.InProgressTimeoutInMinutes);
             }
 
         }
@@ -67,7 +56,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static AwsJobExecutionsRolloutConfigMarshaller Instance = new AwsJobExecutionsRolloutConfigMarshaller();
+        public readonly static AwsJobTimeoutConfigMarshaller Instance = new AwsJobTimeoutConfigMarshaller();
 
     }
 }

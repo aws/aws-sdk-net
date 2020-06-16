@@ -31,27 +31,27 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// The criteria that determine when and how a job abort takes place.
     /// </summary>
-    public partial class AbortConfig
+    public partial class AwsJobAbortConfig
     {
-        private List<AbortCriteria> _criteriaList = new List<AbortCriteria>();
+        private List<AwsJobAbortCriteria> _abortCriteriaList = new List<AwsJobAbortCriteria>();
 
         /// <summary>
-        /// Gets and sets the property CriteriaList. 
+        /// Gets and sets the property AbortCriteriaList. 
         /// <para>
         /// The list of criteria that determine when and how to abort the job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public List<AbortCriteria> CriteriaList
+        public List<AwsJobAbortCriteria> AbortCriteriaList
         {
-            get { return this._criteriaList; }
-            set { this._criteriaList = value; }
+            get { return this._abortCriteriaList; }
+            set { this._abortCriteriaList = value; }
         }
 
-        // Check to see if CriteriaList property is set
-        internal bool IsSetCriteriaList()
+        // Check to see if AbortCriteriaList property is set
+        internal bool IsSetAbortCriteriaList()
         {
-            return this._criteriaList != null && this._criteriaList.Count > 0; 
+            return this._abortCriteriaList != null && this._abortCriteriaList.Count > 0; 
         }
 
     }

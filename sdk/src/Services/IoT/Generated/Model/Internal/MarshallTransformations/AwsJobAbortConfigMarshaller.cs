@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AwsJobExecutionsRolloutConfig Marshaller
+    /// AwsJobAbortConfig Marshaller
     /// </summary>       
-    public class AwsJobExecutionsRolloutConfigMarshaller : IRequestMarshaller<AwsJobExecutionsRolloutConfig, JsonMarshallerContext> 
+    public class AwsJobAbortConfigMarshaller : IRequestMarshaller<AwsJobAbortConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AwsJobExecutionsRolloutConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(AwsJobAbortConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetExponentialRate())
+            if(requestObject.IsSetAbortCriteriaList())
             {
-                context.Writer.WritePropertyName("exponentialRate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("abortCriteriaList");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAbortCriteriaListListValue in requestObject.AbortCriteriaList)
+                {
+                    context.Writer.WriteObjectStart();
 
-                var marshaller = AwsJobExponentialRolloutRateMarshaller.Instance;
-                marshaller.Marshall(requestObject.ExponentialRate, context);
+                    var marshaller = AwsJobAbortCriteriaMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAbortCriteriaListListValue, context);
 
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetMaximumPerMinute())
-            {
-                context.Writer.WritePropertyName("maximumPerMinute");
-                context.Writer.Write(requestObject.MaximumPerMinute);
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -67,7 +66,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static AwsJobExecutionsRolloutConfigMarshaller Instance = new AwsJobExecutionsRolloutConfigMarshaller();
+        public readonly static AwsJobAbortConfigMarshaller Instance = new AwsJobAbortConfigMarshaller();
 
     }
 }

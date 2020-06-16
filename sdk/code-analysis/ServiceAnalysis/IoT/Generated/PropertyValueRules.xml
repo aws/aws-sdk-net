@@ -2266,9 +2266,30 @@
     <pattern>[\w=,@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.AwsJobAbortCriteria.MinNumberOfExecutedThings</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.AwsJobAbortCriteria.ThresholdPercentage</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.AwsJobExecutionsRolloutConfig.MaximumPerMinute</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.AwsJobExponentialRolloutRate.BaseRatePerMinute</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.AwsJobRateIncreaseCriteria.NumberOfNotifiedThings</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.AwsJobRateIncreaseCriteria.NumberOfSucceededThings</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.Behavior.Name</property>

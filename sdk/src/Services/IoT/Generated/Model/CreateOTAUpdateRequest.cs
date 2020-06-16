@@ -35,8 +35,10 @@ namespace Amazon.IoT.Model
     public partial class CreateOTAUpdateRequest : AmazonIoTRequest
     {
         private Dictionary<string, string> _additionalParameters = new Dictionary<string, string>();
+        private AwsJobAbortConfig _awsJobAbortConfig;
         private AwsJobExecutionsRolloutConfig _awsJobExecutionsRolloutConfig;
         private AwsJobPresignedUrlConfig _awsJobPresignedUrlConfig;
+        private AwsJobTimeoutConfig _awsJobTimeoutConfig;
         private string _description;
         private List<OTAUpdateFile> _files = new List<OTAUpdateFile>();
         private string _otaUpdateId;
@@ -62,6 +64,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetAdditionalParameters()
         {
             return this._additionalParameters != null && this._additionalParameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsJobAbortConfig. 
+        /// <para>
+        /// The criteria that determine when and how a job abort takes place.
+        /// </para>
+        /// </summary>
+        public AwsJobAbortConfig AwsJobAbortConfig
+        {
+            get { return this._awsJobAbortConfig; }
+            set { this._awsJobAbortConfig = value; }
+        }
+
+        // Check to see if AwsJobAbortConfig property is set
+        internal bool IsSetAwsJobAbortConfig()
+        {
+            return this._awsJobAbortConfig != null;
         }
 
         /// <summary>
@@ -98,6 +118,27 @@ namespace Amazon.IoT.Model
         internal bool IsSetAwsJobPresignedUrlConfig()
         {
             return this._awsJobPresignedUrlConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsJobTimeoutConfig. 
+        /// <para>
+        /// Specifies the amount of time each device has to finish its execution of the job. A
+        /// timer is started when the job execution status is set to <code>IN_PROGRESS</code>.
+        /// If the job execution status is not set to another terminal state before the timer
+        /// expires, it will be automatically set to <code>TIMED_OUT</code>.
+        /// </para>
+        /// </summary>
+        public AwsJobTimeoutConfig AwsJobTimeoutConfig
+        {
+            get { return this._awsJobTimeoutConfig; }
+            set { this._awsJobTimeoutConfig = value; }
+        }
+
+        // Check to see if AwsJobTimeoutConfig property is set
+        internal bool IsSetAwsJobTimeoutConfig()
+        {
+            return this._awsJobTimeoutConfig != null;
         }
 
         /// <summary>
@@ -181,7 +222,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The IAM role that allows access to the AWS IoT Jobs service.
+        /// The IAM role that grants AWS IoT access to the Amazon S3, AWS IoT jobs and AWS Code
+        /// Signing resources to create an OTA update job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -218,7 +260,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targeted devices to receive OTA updates.
+        /// The devices targeted to receive OTA updates.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AwsJobExecutionsRolloutConfig Object
+    /// Response Unmarshaller for AwsJobExponentialRolloutRate Object
     /// </summary>  
-    public class AwsJobExecutionsRolloutConfigUnmarshaller : IUnmarshaller<AwsJobExecutionsRolloutConfig, XmlUnmarshallerContext>, IUnmarshaller<AwsJobExecutionsRolloutConfig, JsonUnmarshallerContext>
+    public class AwsJobExponentialRolloutRateUnmarshaller : IUnmarshaller<AwsJobExponentialRolloutRate, XmlUnmarshallerContext>, IUnmarshaller<AwsJobExponentialRolloutRate, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AwsJobExecutionsRolloutConfig IUnmarshaller<AwsJobExecutionsRolloutConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AwsJobExponentialRolloutRate IUnmarshaller<AwsJobExponentialRolloutRate, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AwsJobExecutionsRolloutConfig Unmarshall(JsonUnmarshallerContext context)
+        public AwsJobExponentialRolloutRate Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AwsJobExecutionsRolloutConfig unmarshalledObject = new AwsJobExecutionsRolloutConfig();
+            AwsJobExponentialRolloutRate unmarshalledObject = new AwsJobExponentialRolloutRate();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("exponentialRate", targetDepth))
-                {
-                    var unmarshaller = AwsJobExponentialRolloutRateUnmarshaller.Instance;
-                    unmarshalledObject.ExponentialRate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("maximumPerMinute", targetDepth))
+                if (context.TestExpression("baseRatePerMinute", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaximumPerMinute = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BaseRatePerMinute = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("incrementFactor", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.IncrementFactor = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rateIncreaseCriteria", targetDepth))
+                {
+                    var unmarshaller = AwsJobRateIncreaseCriteriaUnmarshaller.Instance;
+                    unmarshalledObject.RateIncreaseCriteria = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +88,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static AwsJobExecutionsRolloutConfigUnmarshaller _instance = new AwsJobExecutionsRolloutConfigUnmarshaller();        
+        private static AwsJobExponentialRolloutRateUnmarshaller _instance = new AwsJobExponentialRolloutRateUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AwsJobExecutionsRolloutConfigUnmarshaller Instance
+        public static AwsJobExponentialRolloutRateUnmarshaller Instance
         {
             get
             {

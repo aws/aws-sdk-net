@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AwsJobExecutionsRolloutConfig Marshaller
+    /// AwsJobExponentialRolloutRate Marshaller
     /// </summary>       
-    public class AwsJobExecutionsRolloutConfigMarshaller : IRequestMarshaller<AwsJobExecutionsRolloutConfig, JsonMarshallerContext> 
+    public class AwsJobExponentialRolloutRateMarshaller : IRequestMarshaller<AwsJobExponentialRolloutRate, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,29 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AwsJobExecutionsRolloutConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(AwsJobExponentialRolloutRate requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetExponentialRate())
+            if(requestObject.IsSetBaseRatePerMinute())
             {
-                context.Writer.WritePropertyName("exponentialRate");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AwsJobExponentialRolloutRateMarshaller.Instance;
-                marshaller.Marshall(requestObject.ExponentialRate, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("baseRatePerMinute");
+                context.Writer.Write(requestObject.BaseRatePerMinute);
             }
 
-            if(requestObject.IsSetMaximumPerMinute())
+            if(requestObject.IsSetIncrementFactor())
             {
-                context.Writer.WritePropertyName("maximumPerMinute");
-                context.Writer.Write(requestObject.MaximumPerMinute);
+                context.Writer.WritePropertyName("incrementFactor");
+                context.Writer.Write(requestObject.IncrementFactor);
+            }
+
+            if(requestObject.IsSetRateIncreaseCriteria())
+            {
+                context.Writer.WritePropertyName("rateIncreaseCriteria");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsJobRateIncreaseCriteriaMarshaller.Instance;
+                marshaller.Marshall(requestObject.RateIncreaseCriteria, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -67,7 +73,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static AwsJobExecutionsRolloutConfigMarshaller Instance = new AwsJobExecutionsRolloutConfigMarshaller();
+        public readonly static AwsJobExponentialRolloutRateMarshaller Instance = new AwsJobExponentialRolloutRateMarshaller();
 
     }
 }

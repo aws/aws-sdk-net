@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AwsJobExecutionsRolloutConfig Object
+    /// Response Unmarshaller for AwsJobRateIncreaseCriteria Object
     /// </summary>  
-    public class AwsJobExecutionsRolloutConfigUnmarshaller : IUnmarshaller<AwsJobExecutionsRolloutConfig, XmlUnmarshallerContext>, IUnmarshaller<AwsJobExecutionsRolloutConfig, JsonUnmarshallerContext>
+    public class AwsJobRateIncreaseCriteriaUnmarshaller : IUnmarshaller<AwsJobRateIncreaseCriteria, XmlUnmarshallerContext>, IUnmarshaller<AwsJobRateIncreaseCriteria, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AwsJobExecutionsRolloutConfig IUnmarshaller<AwsJobExecutionsRolloutConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AwsJobRateIncreaseCriteria IUnmarshaller<AwsJobRateIncreaseCriteria, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AwsJobExecutionsRolloutConfig Unmarshall(JsonUnmarshallerContext context)
+        public AwsJobRateIncreaseCriteria Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AwsJobExecutionsRolloutConfig unmarshalledObject = new AwsJobExecutionsRolloutConfig();
+            AwsJobRateIncreaseCriteria unmarshalledObject = new AwsJobRateIncreaseCriteria();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("exponentialRate", targetDepth))
-                {
-                    var unmarshaller = AwsJobExponentialRolloutRateUnmarshaller.Instance;
-                    unmarshalledObject.ExponentialRate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("maximumPerMinute", targetDepth))
+                if (context.TestExpression("numberOfNotifiedThings", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaximumPerMinute = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfNotifiedThings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("numberOfSucceededThings", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfSucceededThings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static AwsJobExecutionsRolloutConfigUnmarshaller _instance = new AwsJobExecutionsRolloutConfigUnmarshaller();        
+        private static AwsJobRateIncreaseCriteriaUnmarshaller _instance = new AwsJobRateIncreaseCriteriaUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AwsJobExecutionsRolloutConfigUnmarshaller Instance
+        public static AwsJobRateIncreaseCriteriaUnmarshaller Instance
         {
             get
             {

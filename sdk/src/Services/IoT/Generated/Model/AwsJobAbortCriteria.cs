@@ -31,10 +31,10 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// The criteria that determine when and how a job abort takes place.
     /// </summary>
-    public partial class AbortCriteria
+    public partial class AwsJobAbortCriteria
     {
-        private AbortAction _action;
-        private JobExecutionFailureType _failureType;
+        private AwsJobAbortCriteriaAbortAction _action;
+        private AwsJobAbortCriteriaFailureType _failureType;
         private int? _minNumberOfExecutedThings;
         private double? _thresholdPercentage;
 
@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public AbortAction Action
+        public AwsJobAbortCriteriaAbortAction Action
         {
             get { return this._action; }
             set { this._action = value; }
@@ -64,7 +64,7 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public JobExecutionFailureType FailureType
+        public AwsJobAbortCriteriaFailureType FailureType
         {
             get { return this._failureType; }
             set { this._failureType = value; }

@@ -60,7 +60,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ForceDeleteAWSJob. 
         /// <para>
-        /// Specifies if the AWS Job associated with the OTA update should be deleted with the
+        /// Specifies if the AWS Job associated with the OTA update should be deleted when the
         /// OTA update is deleted.
         /// </para>
         /// </summary>
@@ -79,7 +79,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property OtaUpdateId. 
         /// <para>
-        /// The OTA update ID to delete.
+        /// The ID of the OTA update to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
