@@ -29,21 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateMeeting operation.
-    /// Creates a new Amazon Chime SDK meeting in the specified media Region with no initial
-    /// attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
+    /// Container for the parameters to the CreateMeetingWithAttendees operation.
+    /// Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees.
+    /// For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
     /// Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information
     /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
     /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
     /// </summary>
-    public partial class CreateMeetingRequest : AmazonChimeRequest
+    public partial class CreateMeetingWithAttendeesRequest : AmazonChimeRequest
     {
+        private List<CreateAttendeeRequestItem> _attendees = new List<CreateAttendeeRequestItem>();
         private string _clientRequestToken;
         private string _externalMeetingId;
         private string _mediaRegion;
         private string _meetingHostId;
         private MeetingNotificationConfiguration _notificationsConfiguration;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property Attendees. 
+        /// <para>
+        /// The request containing the attendees to create.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<CreateAttendeeRequestItem> Attendees
+        {
+            get { return this._attendees; }
+            set { this._attendees = value; }
+        }
+
+        // Check to see if Attendees property is set
+        internal bool IsSetAttendees()
+        {
+            return this._attendees != null && this._attendees.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -129,11 +149,7 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NotificationsConfiguration. 
-        /// <para>
-        /// The configuration for resource targets to receive notifications when meeting and attendee
-        /// events occur.
-        /// </para>
+        /// Gets and sets the property NotificationsConfiguration.
         /// </summary>
         public MeetingNotificationConfiguration NotificationsConfiguration
         {

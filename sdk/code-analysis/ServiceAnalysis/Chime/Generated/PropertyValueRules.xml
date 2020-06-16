@@ -80,6 +80,22 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.CreateMeetingWithAttendeesRequest.ClientRequestToken</property>
+    <min>2</min>
+    <max>64</max>
+    <pattern>[-_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateMeetingWithAttendeesRequest.ExternalMeetingId</property>
+    <min>2</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateMeetingWithAttendeesRequest.MeetingHostId</property>
+    <min>2</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.CreateProxySessionRequest.ExpiryMinutes</property>
     <min>1</min>
   </property-value-rule>
