@@ -1,3 +1,20 @@
+### 3.3.763.0 (2020-06-17 18:19 UTC)
+* AppMesh (3.3.110.0)
+	* Adds support for route and virtual node listener timeouts.
+* EC2 (3.3.182.0)
+	* nvmeSupport added to DescribeInstanceTypes API
+* Macie2 (3.3.101.2)
+	* This is a documentation-only update to the Amazon Macie API. This update contains miscellaneous editorial improvements to various API descriptions.
+* Route53 (3.3.105.0)
+	* Add PriorRequestNotComplete exception to AssociateVPCWithHostedZone API
+* Snowball (3.3.104.0)
+	* AWS Snowcone is a portable, rugged and secure device for edge computing and data transfer. You can use Snowcone to collect, process, and move data to AWS, either offline by shipping the device to AWS or online by using AWS DataSync. With 2 CPUs and 4 GB RAM of compute and 8 TB of storage, Snowcone can run edge computing workloads and store data securely. Snowcone's small size (8.94" x 5.85" x 3.25" / 227 mm x 148.6 mm x 82.65 mm) allows you to set it next to machinery in a factory. Snowcone weighs about 4.5 lbs. (2 kg), so you can carry one in a backpack, use it with battery-based operation, and use the Wi-Fi interface to gather sensor data. Snowcone supports a file interface with NFS support. 
+* Core 3.3.107.11
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.762.0 (2020-06-16 18:14 UTC)
 * AutoScaling (3.3.103.0)
 	* Introducing instance refresh, a feature that helps you update all instances in an Auto Scaling group in a rolling fashion (for example, to apply a new AMI or instance type). You can control the pace of the refresh by defining the percentage of the group that must remain running/healthy during the replacement process and the time for new instances to warm up between replacements.
