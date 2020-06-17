@@ -67,6 +67,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTimeout())
+            {
+                context.Writer.WritePropertyName("timeout");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ListenerTimeoutMarshaller.Instance;
+                marshaller.Marshall(requestObject.Timeout, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTls())
             {
                 context.Writer.WritePropertyName("tls");

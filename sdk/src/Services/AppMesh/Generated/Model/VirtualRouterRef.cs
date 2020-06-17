@@ -62,7 +62,10 @@ namespace Amazon.AppMesh.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatedAt.
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The Unix epoch timestamp in seconds for when the resource was created.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime CreatedAt
@@ -78,7 +81,10 @@ namespace Amazon.AppMesh.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastUpdatedAt.
+        /// Gets and sets the property LastUpdatedAt. 
+        /// <para>
+        /// The Unix epoch timestamp in seconds for when the resource was last updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime LastUpdatedAt
@@ -118,7 +124,7 @@ namespace Amazon.AppMesh.Model
         /// The AWS IAM account ID of the service mesh owner. If the account ID is not your own,
         /// then it's               the ID of the account that shared the mesh with your account.
         /// For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-        /// with Shared Meshes</a>.
+        /// with shared meshes</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -140,7 +146,7 @@ namespace Amazon.AppMesh.Model
         /// The AWS IAM account ID of the resource owner. If the account ID is not your own, then
         /// it's               the ID of the mesh owner or of another account that the mesh is
         /// shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-        /// with Shared Meshes</a>.
+        /// with shared meshes</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -157,7 +163,11 @@ namespace Amazon.AppMesh.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version.
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The version of the resource. Resources are created at version 1, and this version
+        /// is incremented each time that they're updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public long Version

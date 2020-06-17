@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GrpcRoute Marshaller
+    /// GrpcTimeout Marshaller
     /// </summary>       
-    public class GrpcRouteMarshaller : IRequestMarshaller<GrpcRoute, JsonMarshallerContext> 
+    public class GrpcTimeoutMarshaller : IRequestMarshaller<GrpcTimeout, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,48 +43,26 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(GrpcRoute requestObject, JsonMarshallerContext context)
+        public void Marshall(GrpcTimeout requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAction())
+            if(requestObject.IsSetIdle())
             {
-                context.Writer.WritePropertyName("action");
+                context.Writer.WritePropertyName("idle");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = GrpcRouteActionMarshaller.Instance;
-                marshaller.Marshall(requestObject.Action, context);
+                var marshaller = DurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Idle, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetMatch())
+            if(requestObject.IsSetPerRequest())
             {
-                context.Writer.WritePropertyName("match");
+                context.Writer.WritePropertyName("perRequest");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = GrpcRouteMatchMarshaller.Instance;
-                marshaller.Marshall(requestObject.Match, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetRetryPolicy())
-            {
-                context.Writer.WritePropertyName("retryPolicy");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = GrpcRetryPolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.RetryPolicy, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetTimeout())
-            {
-                context.Writer.WritePropertyName("timeout");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = GrpcTimeoutMarshaller.Instance;
-                marshaller.Marshall(requestObject.Timeout, context);
+                var marshaller = DurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.PerRequest, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -94,7 +72,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static GrpcRouteMarshaller Instance = new GrpcRouteMarshaller();
+        public readonly static GrpcTimeoutMarshaller Instance = new GrpcTimeoutMarshaller();
 
     }
 }

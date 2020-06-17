@@ -29,45 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object that represents a TCP route type.
+    /// 
     /// </summary>
-    public partial class TcpRoute
+    public partial class TcpTimeout
     {
-        private TcpRouteAction _action;
-        private TcpTimeout _timeout;
+        private Duration _idle;
 
         /// <summary>
-        /// Gets and sets the property Action. 
-        /// <para>
-        /// The action to take if a match is determined.
-        /// </para>
+        /// Gets and sets the property Idle.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public TcpRouteAction Action
+        public Duration Idle
         {
-            get { return this._action; }
-            set { this._action = value; }
+            get { return this._idle; }
+            set { this._idle = value; }
         }
 
-        // Check to see if Action property is set
-        internal bool IsSetAction()
+        // Check to see if Idle property is set
+        internal bool IsSetIdle()
         {
-            return this._action != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Timeout.
-        /// </summary>
-        public TcpTimeout Timeout
-        {
-            get { return this._timeout; }
-            set { this._timeout = value; }
-        }
-
-        // Check to see if Timeout property is set
-        internal bool IsSetTimeout()
-        {
-            return this._timeout != null;
+            return this._idle != null;
         }
 
     }

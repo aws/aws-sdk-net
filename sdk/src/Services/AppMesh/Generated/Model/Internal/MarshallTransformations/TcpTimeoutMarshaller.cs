@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TcpRoute Marshaller
+    /// TcpTimeout Marshaller
     /// </summary>       
-    public class TcpRouteMarshaller : IRequestMarshaller<TcpRoute, JsonMarshallerContext> 
+    public class TcpTimeoutMarshaller : IRequestMarshaller<TcpTimeout, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,26 +43,15 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TcpRoute requestObject, JsonMarshallerContext context)
+        public void Marshall(TcpTimeout requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAction())
+            if(requestObject.IsSetIdle())
             {
-                context.Writer.WritePropertyName("action");
+                context.Writer.WritePropertyName("idle");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = TcpRouteActionMarshaller.Instance;
-                marshaller.Marshall(requestObject.Action, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetTimeout())
-            {
-                context.Writer.WritePropertyName("timeout");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = TcpTimeoutMarshaller.Instance;
-                marshaller.Marshall(requestObject.Timeout, context);
+                var marshaller = DurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Idle, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -72,7 +61,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static TcpRouteMarshaller Instance = new TcpRouteMarshaller();
+        public readonly static TcpTimeoutMarshaller Instance = new TcpTimeoutMarshaller();
 
     }
 }

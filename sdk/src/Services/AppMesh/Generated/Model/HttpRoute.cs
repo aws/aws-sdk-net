@@ -36,6 +36,7 @@ namespace Amazon.AppMesh.Model
         private HttpRouteAction _action;
         private HttpRouteMatch _match;
         private HttpRetryPolicy _retryPolicy;
+        private HttpTimeout _timeout;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -91,6 +92,21 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetRetryPolicy()
         {
             return this._retryPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timeout.
+        /// </summary>
+        public HttpTimeout Timeout
+        {
+            get { return this._timeout; }
+            set { this._timeout = value; }
+        }
+
+        // Check to see if Timeout property is set
+        internal bool IsSetTimeout()
+        {
+            return this._timeout != null;
         }
 
     }

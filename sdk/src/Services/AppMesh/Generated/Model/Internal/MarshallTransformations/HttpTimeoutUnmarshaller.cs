@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for HttpRoute Object
+    /// Response Unmarshaller for HttpTimeout Object
     /// </summary>  
-    public class HttpRouteUnmarshaller : IUnmarshaller<HttpRoute, XmlUnmarshallerContext>, IUnmarshaller<HttpRoute, JsonUnmarshallerContext>
+    public class HttpTimeoutUnmarshaller : IUnmarshaller<HttpTimeout, XmlUnmarshallerContext>, IUnmarshaller<HttpTimeout, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        HttpRoute IUnmarshaller<HttpRoute, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        HttpTimeout IUnmarshaller<HttpTimeout, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public HttpRoute Unmarshall(JsonUnmarshallerContext context)
+        public HttpTimeout Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            HttpRoute unmarshalledObject = new HttpRoute();
+            HttpTimeout unmarshalledObject = new HttpTimeout();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("action", targetDepth))
+                if (context.TestExpression("idle", targetDepth))
                 {
-                    var unmarshaller = HttpRouteActionUnmarshaller.Instance;
-                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DurationUnmarshaller.Instance;
+                    unmarshalledObject.Idle = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("match", targetDepth))
+                if (context.TestExpression("perRequest", targetDepth))
                 {
-                    var unmarshaller = HttpRouteMatchUnmarshaller.Instance;
-                    unmarshalledObject.Match = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("retryPolicy", targetDepth))
-                {
-                    var unmarshaller = HttpRetryPolicyUnmarshaller.Instance;
-                    unmarshalledObject.RetryPolicy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("timeout", targetDepth))
-                {
-                    var unmarshaller = HttpTimeoutUnmarshaller.Instance;
-                    unmarshalledObject.Timeout = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DurationUnmarshaller.Instance;
+                    unmarshalledObject.PerRequest = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         }
 
 
-        private static HttpRouteUnmarshaller _instance = new HttpRouteUnmarshaller();        
+        private static HttpTimeoutUnmarshaller _instance = new HttpTimeoutUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static HttpRouteUnmarshaller Instance
+        public static HttpTimeoutUnmarshaller Instance
         {
             get
             {

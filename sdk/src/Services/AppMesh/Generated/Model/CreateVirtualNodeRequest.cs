@@ -122,7 +122,7 @@ namespace Amazon.AppMesh.Model
         /// then               the account that you specify must share the mesh with your account
         /// before you can create              the resource in the service mesh. For more information
         /// about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-        /// with Shared Meshes</a>.
+        /// with shared meshes</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
