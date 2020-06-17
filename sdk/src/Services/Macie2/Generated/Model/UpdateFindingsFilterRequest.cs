@@ -45,8 +45,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Action. 
         /// <para>
         /// The action to perform on findings that meet the filter criteria (findingCriteria).
-        /// Valid values are: ARCHIVE, automatically archive the findings; and, NOOP, don't perform
-        /// any action on the findings.
+        /// Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP,
+        /// don't perform any action on the findings.
         /// </para>
         /// </summary>
         public FindingsFilterAction Action

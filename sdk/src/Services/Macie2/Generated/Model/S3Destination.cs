@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies an S3 bucket to export data classification results to, and the encryption
+    /// Specifies an S3 bucket to store data classification results in, and the encryption
     /// settings to use when storing results in that bucket.
     /// </summary>
     public partial class S3Destination
@@ -41,8 +41,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the bucket. This must be the ARN of an existing
-        /// bucket.
+        /// The name of the bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,9 +79,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Key Management Service master key to use
-        /// for encryption of the exported results. This must be the ARN of an existing KMS key.
-        /// In addition, the key must be in the same AWS Region as the bucket.
+        /// The Amazon Resource Name (ARN) of the AWS Key Management Service customer master key
+        /// (CMK) to use for encryption of the results. This must be the ARN of an existing CMK
+        /// that's in the same AWS Region as the bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

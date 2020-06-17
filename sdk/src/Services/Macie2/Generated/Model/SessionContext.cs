@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about a session that was created for an entity who performed
+    /// Provides information about a session that was created for an entity that performed
     /// an action by using temporary security credentials.
     /// </summary>
     public partial class SessionContext

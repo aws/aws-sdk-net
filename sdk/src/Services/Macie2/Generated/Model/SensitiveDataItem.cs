@@ -41,9 +41,10 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        /// The category of sensitive data that was detected. For example, FINANCIAL_INFORMATION,
-        /// for financial information such as credit card numbers, or PERSONAL_INFORMATION, for
-        /// personally identifiable information such as names and addresses.
+        /// The category of sensitive data that was detected. For example: FINANCIAL_INFORMATION,
+        /// for financial information such as credit card numbers; PERSONAL_INFORMATION, for personally
+        /// identifiable information such as full names and mailing addresses; or, CUSTOM_IDENTIFIER,
+        /// for data that was detected by a custom data identifier.
         /// </para>
         /// </summary>
         public SensitiveDataItemCategory Category

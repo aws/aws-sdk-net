@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetClassificationExportConfiguration operation.
-    /// Retrieves the configuration settings for exporting data classification results.
+    /// Retrieves the configuration settings for storing data classification results.
     /// </summary>
     public partial class GetClassificationExportConfigurationRequest : AmazonMacie2Request
     {

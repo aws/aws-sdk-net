@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about an entity who performed an action that produced a policy
+    /// Provides information about an entity that performed an action that produced a policy
     /// finding for a resource.
     /// </summary>
     public partial class FindingActor
@@ -79,7 +79,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property UserIdentity. 
         /// <para>
-        /// The name and type of entity who performed the action on the affected resource.
+        /// The name and type of entity that performed the action on the affected resource.
         /// </para>
         /// </summary>
         public UserIdentity UserIdentity

@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies where to export data classification results to, and the encryption settings
-    /// to use when storing results in that location. Currently, you can export classification
-    /// results only to an S3 bucket.
+    /// Specifies where to store data classification results, and the encryption settings
+    /// to use when storing results in that location. Currently, you can store classification
+    /// results only in an S3 bucket.
     /// </summary>
     public partial class ClassificationExportConfiguration
     {
@@ -40,7 +40,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property S3Destination. 
         /// <para>
-        /// The S3 bucket to export data classification results to, and the encryption settings
+        /// The S3 bucket to store data classification results in, and the encryption settings
         /// to use when storing results in that bucket.
         /// </para>
         /// </summary>

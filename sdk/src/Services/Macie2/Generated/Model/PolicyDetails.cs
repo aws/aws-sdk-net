@@ -57,7 +57,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Actor. 
         /// <para>
-        /// The entity who performed the action that produced the finding.
+        /// The entity that performed the action that produced the finding.
         /// </para>
         /// </summary>
         public FindingActor Actor

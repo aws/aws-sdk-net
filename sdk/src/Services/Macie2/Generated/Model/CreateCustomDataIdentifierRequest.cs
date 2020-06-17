@@ -134,7 +134,7 @@ namespace Amazon.Macie2.Model
         /// The maximum number of characters that can exist between text that matches the regex
         /// pattern and the character sequences specified by the keywords array. Macie includes
         /// or excludes a result based on the proximity of a keyword to text that matches the
-        /// regex pattern. The distance can be 1 - 300 characters. The default value is 300.
+        /// regex pattern. The distance can be 1 - 300 characters. The default value is 50.
         /// </para>
         /// </summary>
         public int MaximumMatchDistance
