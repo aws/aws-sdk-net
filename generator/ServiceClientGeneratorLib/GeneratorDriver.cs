@@ -220,7 +220,7 @@ namespace ServiceClientGenerator
                 ExecuteGenerator(new ServicePaginatorFactoryInterface(), "I" + Configuration.ServiceNameRoot + "PaginatorFactory.cs", PaginatorsSubFolder);
                 ExecuteGenerator(new ServicePaginatorFactory(), Configuration.ServiceNameRoot + "PaginatorFactory.cs", PaginatorsSubFolder);
             }
-#endif
+
             // Do not generate base exception if this is a child model.
             // We use the base exceptions generated for the parent model.
             if (!this.Configuration.IsChildConfig)
