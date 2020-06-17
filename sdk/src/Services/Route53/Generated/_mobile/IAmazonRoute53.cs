@@ -121,6 +121,13 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NotAuthorizedException">
         /// Associating the specified VPC with the specified hosted zone has not been authorized.
         /// </exception>
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
+        /// (<code>Bad request</code>). If Route 53 returns this error repeatedly for the same
+        /// request, we recommend that you wait, in intervals of increasing duration, before you
+        /// try the request again.
+        /// </exception>
         /// <exception cref="Amazon.Route53.Model.PublicZoneVPCAssociationException">
         /// You're trying to associate a VPC with a public hosted zone. Amazon Route 53 doesn't
         /// support associating a VPC with a public hosted zone.
