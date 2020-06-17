@@ -71,6 +71,19 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Whether or not this option is a list or a 
+        /// dictionary. Mostly used for input/output token- checking
+        /// if it is null or if it is empty if list or dictionary
+        /// </summary>
+        public bool IsListOrDict
+        {
+            get
+            {
+                return this.Member.IsList || this.Member.IsMap;
+            }
+        }
+
+        /// <summary>
         /// Create a new OperationPaginatorConfigOption object
         /// and set whether or not it is a jmespath expression
         /// </summary>

@@ -35,15 +35,16 @@ namespace <#=this.Config.Namespace#>.Model
 foreach(var resultKey in this.Operation.Paginators.ResultKeys.Where(r => r.ListItemType != null))
 {
 #>
+
         /// <summary>
         /// Enumerable containing all of the <#=resultKey.Member.PropertyName#>
         /// </summary>
         public IPaginatedEnumerable<<#=resultKey.ListItemType#>> <#=resultKey.Member.PropertyName#> => 
             new PaginatedResultKeyResponse<<#=this.Operation.Name#>Response, <#=resultKey.ListItemType#>>(this, (i) => i.<#=resultKey.PropertyName#>);
-
 <#
 }
 #>
+
         internal <#=this.Operation.Name#>Paginator(IAmazon<#=this.Config.ClassName#> client, <#=this.Operation.Name#>Request request)
         {
             this.client = client;
@@ -54,7 +55,7 @@ foreach(var resultKey in this.Operation.Paginators.ResultKeys.Where(r => r.ListI
         {
             if (Interlocked.Exchange(ref isPaginatorInUse, 1) != 0)
             {
-                throw new InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
+                throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
 <#
 foreach(var inputToken in this.Operation.Paginators.InputTokens)
@@ -93,7 +94,13 @@ if (this.Operation.Paginators.MoreResults != null)
             while (response.<#=this.Operation.Paginators.MoreResults.PropertyName#>);
 <#
 } 
-else 
+else if (this.Operation.Paginators.InputTokens[0].IsListOrDict)
+{
+#>
+            while (<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#>.Count > 0);
+<#
+}
+else
 {
 #>
             while (<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#> != null);
@@ -107,7 +114,7 @@ else
         {
             if (Interlocked.Exchange(ref isPaginatorInUse, 1) != 0)
             {
-                throw new InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
+                throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
 <#
 foreach(var inputToken in this.Operation.Paginators.InputTokens)
@@ -128,7 +135,7 @@ foreach(var inputToken in this.Operation.Paginators.InputTokens)
 <#
 }
 #>
-                response = await client.<#=this.Operation.Name#>Async(request).ConfigureAwait(false);
+                response = await client.<#=this.Operation.Name#>Async(request, cancellationToken).ConfigureAwait(false);
 <#
 for(var i = 0; i < this.Operation.Paginators.InputTokens.Count; i++)
 {
@@ -147,7 +154,13 @@ if (this.Operation.Paginators.MoreResults != null)
             while (response.<#=this.Operation.Paginators.MoreResults.PropertyName#>);
 <#
 } 
-else 
+else if (this.Operation.Paginators.InputTokens[0].IsListOrDict)
+{
+#>
+            while (<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#>.Count > 0);
+<#
+}
+else
 {
 #>
             while (<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#> != null);

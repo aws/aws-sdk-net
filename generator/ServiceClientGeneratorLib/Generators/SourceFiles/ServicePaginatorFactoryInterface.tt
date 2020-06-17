@@ -21,6 +21,7 @@ foreach(var operation in this.Config.ServiceModel.Operations)
     if (operation.Paginators != null && !operation.UnsupportedPaginatorConfig)
     {
 #>
+
         /// <summary>
         /// Paginator for <#=operation.Name#> operation
         ///</summary>

@@ -245,6 +245,26 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Update="Generators\SourceFiles\BasePaginator.cs">
+      <DependentUpon>BasePaginator.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="Generators\SourceFiles\BasePaginatorInterface.cs">
+      <DependentUpon>BasePaginatorInterface.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="Generators\SourceFiles\ServicePaginatorFactory.cs">
+      <DependentUpon>ServicePaginatorFactory.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="Generators\SourceFiles\ServicePaginatorFactoryInterface.cs">
+      <DependentUpon>ServicePaginatorFactoryInterface.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Update="Generators\SourceFiles\ServiceClients.cs">
       <DependentUpon>ServiceClients.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -356,6 +376,14 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>UnitTestProjectFile.cs</LastGenOutput>
     </None>
+    <None Update="Generators\SourceFiles\BasePaginator.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>BasePaginator.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\SourceFiles\BasePaginatorInterface.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>BasePaginatorInterface.cs</LastGenOutput>
+    </None>
     <None Update="Generators\SourceFiles\CoreAssemblyInfo.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>CoreAssemblyInfo.cs</LastGenOutput>
@@ -371,6 +399,14 @@
     <None Update="Generators\SourceFiles\ServiceMetadata.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ServiceMetadata.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\SourceFiles\ServicePaginatorFactory.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ServicePaginatorFactory.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\SourceFiles\ServicePaginatorFactoryInterface.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ServicePaginatorFactoryInterface.cs</LastGenOutput>
     </None>
     <None Update="Generators\TestFiles\AWSQueryEC2MarshallingTests.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

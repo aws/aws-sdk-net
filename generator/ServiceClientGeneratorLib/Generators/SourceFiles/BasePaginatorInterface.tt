@@ -26,11 +26,11 @@ foreach(var resultKey in this.Operation.Paginators.ResultKeys)
     if (resultKey.ListItemType != null)
     {
 #>
+
         /// <summary>
         /// Enumerable containing all of the <#=resultKey.Member.PropertyName#>
         /// </summary>
         IPaginatedEnumerable<<#=resultKey.ListItemType#>> <#=resultKey.Member.PropertyName#> { get; }
-
 <#
     }
 }
