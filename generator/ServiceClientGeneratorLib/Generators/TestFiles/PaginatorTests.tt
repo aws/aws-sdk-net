@@ -46,6 +46,12 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 #>
             secondResponse.<#=operation.Paginators.MoreResults.PropertyName#> = false;
 <#
+            }
+            else if (operation.Paginators.InputTokens[0].IsListOrDict)
+            {
+#>
+            secondResponse.<#=operation.Paginators.OutputTokens[0].PropertyName#>.Clear();
+<#
             } 
             else 
             {
@@ -76,6 +82,12 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
             {
 #>
             response.<#=operation.Paginators.MoreResults.PropertyName#> = false;
+<#
+            }
+            else if (operation.Paginators.InputTokens[0].IsListOrDict)
+            {
+#>
+            response.<#=operation.Paginators.OutputTokens[0].PropertyName#>.Clear();
 <#
             } 
             else 
