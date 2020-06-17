@@ -2719,6 +2719,60 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type EbsNvmeSupport.
+    /// </summary>
+    public class EbsNvmeSupport : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Required for EbsNvmeSupport
+        /// </summary>
+        public static readonly EbsNvmeSupport Required = new EbsNvmeSupport("required");
+        /// <summary>
+        /// Constant Supported for EbsNvmeSupport
+        /// </summary>
+        public static readonly EbsNvmeSupport Supported = new EbsNvmeSupport("supported");
+        /// <summary>
+        /// Constant Unsupported for EbsNvmeSupport
+        /// </summary>
+        public static readonly EbsNvmeSupport Unsupported = new EbsNvmeSupport("unsupported");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EbsNvmeSupport(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EbsNvmeSupport FindValue(string value)
+        {
+            return FindValue<EbsNvmeSupport>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EbsNvmeSupport(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EbsOptimizedSupport.
     /// </summary>
     public class EbsOptimizedSupport : ConstantClass

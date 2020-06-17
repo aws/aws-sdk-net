@@ -72,6 +72,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.EncryptionSupport = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("nvmeSupport", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NvmeSupport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

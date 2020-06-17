@@ -10541,12 +10541,12 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// If you are describing a long list of snapshots, you can paginate the output to make
-        /// the list more manageable. The <code>MaxResults</code> parameter sets the maximum number
-        /// of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
-        /// value, then that number of results is returned along with a <code>NextToken</code>
-        /// value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
-        /// retrieve the remaining results.
+        /// If you are describing a long list of snapshots, we recommend that you paginate the
+        /// output to make the list more manageable. The <code>MaxResults</code> parameter sets
+        /// the maximum number of results returned in a single page. If the list of results exceeds
+        /// your <code>MaxResults</code> value, then that number of results is returned along
+        /// with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code>
+        /// request to retrieve the remaining results.
         /// </para>
         ///  
         /// <para>
@@ -10630,12 +10630,12 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// If you are describing a long list of snapshots, you can paginate the output to make
-        /// the list more manageable. The <code>MaxResults</code> parameter sets the maximum number
-        /// of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
-        /// value, then that number of results is returned along with a <code>NextToken</code>
-        /// value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
-        /// retrieve the remaining results.
+        /// If you are describing a long list of snapshots, we recommend that you paginate the
+        /// output to make the list more manageable. The <code>MaxResults</code> parameter sets
+        /// the maximum number of results returned in a single page. If the list of results exceeds
+        /// your <code>MaxResults</code> value, then that number of results is returned along
+        /// with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code>
+        /// request to retrieve the remaining results.
         /// </para>
         ///  
         /// <para>
@@ -11545,9 +11545,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// If you are describing a long list of volumes, you can paginate the output to make
-        /// the list more manageable. The <code>MaxResults</code> parameter sets the maximum number
-        /// of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
+        /// If you are describing a long list of volumes, we recommend that you paginate the output
+        /// to make the list more manageable. The <code>MaxResults</code> parameter sets the maximum
+        /// number of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
         /// value, then that number of results is returned along with a <code>NextToken</code>
         /// value that can be passed to a subsequent <code>DescribeVolumes</code> request to retrieve
         /// the remaining results.
@@ -11576,9 +11576,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// If you are describing a long list of volumes, you can paginate the output to make
-        /// the list more manageable. The <code>MaxResults</code> parameter sets the maximum number
-        /// of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
+        /// If you are describing a long list of volumes, we recommend that you paginate the output
+        /// to make the list more manageable. The <code>MaxResults</code> parameter sets the maximum
+        /// number of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
         /// value, then that number of results is returned along with a <code>NextToken</code>
         /// value that can be passed to a subsequent <code>DescribeVolumes</code> request to retrieve
         /// the remaining results.
@@ -11621,24 +11621,20 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Reports the current modification status of EBS volumes.
+        /// Describes the most recent volume modification request for the specified EBS volumes.
         /// 
         ///  
         /// <para>
-        /// Current-generation EBS volumes support modification of attributes including type,
-        /// size, and (for <code>io1</code> volumes) IOPS provisioning while either attached to
-        /// or detached from an instance. Following an action from the API or the console to modify
-        /// a volume, the status of the modification may be <code>modifying</code>, <code>optimizing</code>,
-        /// <code>completed</code>, or <code>failed</code>. If a volume has never been modified,
-        /// then certain elements of the returned <code>VolumeModification</code> objects are
-        /// null. 
+        /// If a volume has never been modified, some information in the output will be null.
+        /// If a volume has been modified more than once, the output includes only the most recent
+        /// modification request.
         /// </para>
         ///  
         /// <para>
-        ///  You can also use CloudWatch Events to check the status of a modification to an EBS
+        /// You can also use CloudWatch Events to check the status of a modification to an EBS
         /// volume. For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
         /// CloudWatch Events User Guide</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-        /// Volume Modifications"</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Volume Modifications</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumesModifications service method.</param>

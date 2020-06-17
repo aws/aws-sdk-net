@@ -108,7 +108,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OriginalSize. 
         /// <para>
-        /// The original size of the volume.
+        /// The original size of the volume, in GiB.
         /// </para>
         /// </summary>
         public int OriginalSize
