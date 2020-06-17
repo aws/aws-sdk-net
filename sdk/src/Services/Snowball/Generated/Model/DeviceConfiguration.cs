@@ -29,25 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// The tax documents required in your AWS Region.
+    /// The container for <code>SnowconeDeviceConfiguration</code>.
     /// </summary>
-    public partial class TaxDocuments
+    public partial class DeviceConfiguration
     {
-        private INDTaxDocuments _ind;
+        private SnowconeDeviceConfiguration _snowconeDeviceConfiguration;
 
         /// <summary>
-        /// Gets and sets the property IND.
+        /// Gets and sets the property SnowconeDeviceConfiguration. 
+        /// <para>
+        /// Returns information about the device configuration for an AWS Snowcone job.
+        /// </para>
         /// </summary>
-        public INDTaxDocuments IND
+        public SnowconeDeviceConfiguration SnowconeDeviceConfiguration
         {
-            get { return this._ind; }
-            set { this._ind = value; }
+            get { return this._snowconeDeviceConfiguration; }
+            set { this._snowconeDeviceConfiguration = value; }
         }
 
-        // Check to see if IND property is set
-        internal bool IsSetIND()
+        // Check to see if SnowconeDeviceConfiguration property is set
+        internal bool IsSetSnowconeDeviceConfiguration()
         {
-            return this._ind != null;
+            return this._snowconeDeviceConfiguration != null;
         }
 
     }

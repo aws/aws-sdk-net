@@ -41,6 +41,7 @@ namespace Amazon.Snowball.Model
         private string _addressId;
         private string _clusterId;
         private string _description;
+        private DeviceConfiguration _deviceConfiguration;
         private string _forwardingAddressId;
         private JobType _jobType;
         private string _kmsKeyARN;
@@ -110,6 +111,24 @@ namespace Amazon.Snowball.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceConfiguration. 
+        /// <para>
+        /// Defines the device configuration for an AWS Snowcone job.
+        /// </para>
+        /// </summary>
+        public DeviceConfiguration DeviceConfiguration
+        {
+            get { return this._deviceConfiguration; }
+            set { this._deviceConfiguration = value; }
+        }
+
+        // Check to see if DeviceConfiguration property is set
+        internal bool IsSetDeviceConfiguration()
+        {
+            return this._deviceConfiguration != null;
         }
 
         /// <summary>
@@ -303,6 +322,15 @@ namespace Amazon.Snowball.Model
 
         /// <summary>
         /// Gets and sets the property SnowballType. 
+        /// <para>
+        /// The type of AWS Snowball device to use for this job. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
+        /// type.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The type of AWS Snowball device to use for this job. Currently, the only supported
         /// device type for cluster jobs is <code>EDGE</code>.

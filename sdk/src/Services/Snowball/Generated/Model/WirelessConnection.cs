@@ -29,25 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// The tax documents required in your AWS Region.
+    /// Configures the wireless connection on an AWS Snowcone device.
     /// </summary>
-    public partial class TaxDocuments
+    public partial class WirelessConnection
     {
-        private INDTaxDocuments _ind;
+        private bool? _isWifiEnabled;
 
         /// <summary>
-        /// Gets and sets the property IND.
+        /// Gets and sets the property IsWifiEnabled. 
+        /// <para>
+        /// Enables the Wi-Fi adapter on an AWS Snowcone device.
+        /// </para>
         /// </summary>
-        public INDTaxDocuments IND
+        public bool IsWifiEnabled
         {
-            get { return this._ind; }
-            set { this._ind = value; }
+            get { return this._isWifiEnabled.GetValueOrDefault(); }
+            set { this._isWifiEnabled = value; }
         }
 
-        // Check to see if IND property is set
-        internal bool IsSetIND()
+        // Check to see if IsWifiEnabled property is set
+        internal bool IsSetIsWifiEnabled()
         {
-            return this._ind != null;
+            return this._isWifiEnabled.HasValue; 
         }
 
     }

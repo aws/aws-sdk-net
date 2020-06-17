@@ -315,6 +315,10 @@ namespace Amazon.Snowball
         /// </summary>
         public static readonly SnowballCapacity T50 = new SnowballCapacity("T50");
         /// <summary>
+        /// Constant T8 for SnowballCapacity
+        /// </summary>
+        public static readonly SnowballCapacity T8 = new SnowballCapacity("T8");
+        /// <summary>
         /// Constant T80 for SnowballCapacity
         /// </summary>
         public static readonly SnowballCapacity T80 = new SnowballCapacity("T80");
@@ -380,6 +384,10 @@ namespace Amazon.Snowball
         /// Constant EDGE_S for SnowballType
         /// </summary>
         public static readonly SnowballType EDGE_S = new SnowballType("EDGE_S");
+        /// <summary>
+        /// Constant SNC1_HDD for SnowballType
+        /// </summary>
+        public static readonly SnowballType SNC1_HDD = new SnowballType("SNC1_HDD");
         /// <summary>
         /// Constant STANDARD for SnowballType
         /// </summary>

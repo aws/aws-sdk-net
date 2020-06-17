@@ -86,6 +86,17 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetDeviceConfiguration())
+                {
+                    context.Writer.WritePropertyName("DeviceConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeviceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeviceConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetForwardingAddressId())
                 {
                     context.Writer.WritePropertyName("ForwardingAddressId");

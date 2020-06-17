@@ -29,25 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// The tax documents required in your AWS Region.
+    /// Specifies the device configuration for an AWS Snowcone job.
     /// </summary>
-    public partial class TaxDocuments
+    public partial class SnowconeDeviceConfiguration
     {
-        private INDTaxDocuments _ind;
+        private WirelessConnection _wirelessConnection;
 
         /// <summary>
-        /// Gets and sets the property IND.
+        /// Gets and sets the property WirelessConnection. 
+        /// <para>
+        /// Configures the wireless connection for the AWS Snowcone device.
+        /// </para>
         /// </summary>
-        public INDTaxDocuments IND
+        public WirelessConnection WirelessConnection
         {
-            get { return this._ind; }
-            set { this._ind = value; }
+            get { return this._wirelessConnection; }
+            set { this._wirelessConnection = value; }
         }
 
-        // Check to see if IND property is set
-        internal bool IsSetIND()
+        // Check to see if WirelessConnection property is set
+        internal bool IsSetWirelessConnection()
         {
-            return this._ind != null;
+            return this._wirelessConnection != null;
         }
 
     }
