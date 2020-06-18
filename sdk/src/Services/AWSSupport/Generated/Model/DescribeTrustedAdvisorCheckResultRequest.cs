@@ -30,8 +30,8 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTrustedAdvisorCheckResult operation.
-    /// Returns the results of the Trusted Advisor check that has the specified check ID.
-    /// Check IDs can be obtained by calling <a>DescribeTrustedAdvisorChecks</a>.
+    /// Returns the results of the AWS Trusted Advisor check that has the specified check
+    /// ID. You can get the check IDs by calling the <a>DescribeTrustedAdvisorChecks</a> operation.
     /// 
     ///  
     /// <para>
@@ -56,18 +56,29 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>status.</b> The alert status of the check: "ok" (green), "warning" (yellow), "error"
-    /// (red), or "not_available".
+    ///  <b>status</b> - The alert status of the check: "ok" (green), "warning" (yellow),
+    /// "error" (red), or "not_available".
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>timestamp.</b> The time of the last refresh of the check.
+    ///  <b>timestamp</b> - The time of the last refresh of the check.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>checkId.</b> The unique identifier for the check.
+    ///  <b>checkId</b> - The unique identifier for the check.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <note> <ul> <li> 
+    /// <para>
+    /// You must have a Business or Enterprise support plan to use the AWS Support API. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you call the AWS Support API from an account that does not have a Business or Enterprise
+    /// support plan, the <code>SubscriptionRequiredException</code> error message appears.
+    /// For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS
+    /// Support</a>.
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class DescribeTrustedAdvisorCheckResultRequest : AmazonAWSSupportRequest
     {

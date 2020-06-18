@@ -30,56 +30,30 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the RefreshTrustedAdvisorCheck operation.
-    /// Requests a refresh of the Trusted Advisor check that has the specified check ID. Check
-    /// IDs can be obtained by calling <a>DescribeTrustedAdvisorChecks</a>.
+    /// Refreshes the AWS Trusted Advisor check that you specify using the check ID. You can
+    /// get the check IDs by calling the <a>DescribeTrustedAdvisorChecks</a> operation.
     /// 
     ///  <note> 
     /// <para>
-    /// Some checks are refreshed automatically, and they cannot be refreshed by using this
-    /// operation. Use of the <code>RefreshTrustedAdvisorCheck</code> operation for these
-    /// checks causes an <code>InvalidParameterValue</code> error.
+    /// Some checks are refreshed automatically. If you call the <code>RefreshTrustedAdvisorCheck</code>
+    /// operation to refresh them, you might see the <code>InvalidParameterValue</code> error.
     /// </para>
     ///  </note> 
     /// <para>
-    /// The response contains a <a>TrustedAdvisorCheckRefreshStatus</a> object, which contains
-    /// these fields:
+    /// The response contains a <a>TrustedAdvisorCheckRefreshStatus</a> object.
     /// </para>
-    ///  <ul> <li> 
+    ///  <note> <ul> <li> 
     /// <para>
-    ///  <b>status.</b> The refresh status of the check: 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <code>none:</code> The check is not refreshed or the non-success status exceeds the
-    /// timeout
+    /// You must have a Business or Enterprise support plan to use the AWS Support API. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>enqueued:</code> The check refresh requests has entered the refresh queue
+    /// If you call the AWS Support API from an account that does not have a Business or Enterprise
+    /// support plan, the <code>SubscriptionRequiredException</code> error message appears.
+    /// For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS
+    /// Support</a>.
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>processing:</code> The check refresh request is picked up by the rule processing
-    /// engine
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>success:</code> The check is successfully refreshed
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>abandoned:</code> The check refresh has failed
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <b>millisUntilNextRefreshable.</b> The amount of time, in milliseconds, until the
-    /// check is eligible for refresh.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>checkId.</b> The unique identifier for the check.
-    /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class RefreshTrustedAdvisorCheckRequest : AmazonAWSSupportRequest
     {
