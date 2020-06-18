@@ -194,7 +194,7 @@ namespace ServiceClientGenerator
 
             // Any enumerations for the service
             this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
-
+#if !BCL35
             // Any paginators for the service
             if (Configuration.ServiceModel.HasPaginators)
             {
@@ -207,20 +207,7 @@ namespace ServiceClientGenerator
 
                 GeneratePaginatorTests();
             }
-            
-
-
-            // Any paginators for the service
-            if (Configuration.ServiceModel.HasPaginators)
-            {
-                foreach (var operation in Configuration.ServiceModel.Operations)
-                {
-                    GeneratePaginator(operation);
-                }
-                ExecuteGenerator(new ServicePaginatorFactoryInterface(), "I" + Configuration.ServiceNameRoot + "PaginatorFactory.cs", PaginatorsSubFolder);
-                ExecuteGenerator(new ServicePaginatorFactory(), Configuration.ServiceNameRoot + "PaginatorFactory.cs", PaginatorsSubFolder);
-            }
-
+#endif
             // Do not generate base exception if this is a child model.
             // We use the base exceptions generated for the parent model.
             if (!this.Configuration.IsChildConfig)
@@ -1119,7 +1106,7 @@ namespace ServiceClientGenerator
         /// </summary>
         void GeneratePaginatorTests()
         {
-            if (this.Configuration.ServiceModel.HasPaginators)
+            if (this.Configuration.ServiceModel.HasPaginators && this.Configuration.GenerateConstructors)
             {
                 var paginatorTests = new PaginatorTests()
                 {
