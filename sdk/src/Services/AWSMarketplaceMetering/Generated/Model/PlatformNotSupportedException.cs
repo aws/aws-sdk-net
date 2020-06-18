@@ -30,7 +30,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
     /// AWS Marketplace does not support metering usage from the underlying platform. Currently,
-    /// only Amazon ECS is supported.
+    /// Amazon ECS, Amazon EKS, and AWS Fargate are supported.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]
