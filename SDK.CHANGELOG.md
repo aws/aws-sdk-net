@@ -1,3 +1,24 @@
+### 3.3.764.0 (2020-06-18 18:16 UTC)
+* AWSMarketplaceMetering (3.3.101.96)
+	* Documentation updates for meteringmarketplace
+* AWSSupport (3.3.100.196)
+	* Documentation updates for support
+* MediaConvert (3.3.118.7)
+	* AWS Elemental MediaConvert SDK has added support for NexGuard FileMarker SDK, which allows NexGuard partners to watermark proprietary content in mezzanine and OTT streaming contexts.
+* RDS (3.3.122.0)
+	* Adding support for global write forwarding on secondary clusters in an Aurora global database.
+* Route53 (3.3.106.0)
+	* Added a new ListHostedZonesByVPC API for customers to list all the private hosted zones that a specified VPC is associated with.
+* SimpleEmailV2 (3.3.103.0)
+	* You can now configure Amazon SES to send event notifications when the delivery of an email is delayed because of a temporary issue. For example, you can receive a notification if the recipient's inbox is full, or if there's a temporary problem with the receiving email server.
+* SimpleSystemsManagement (3.3.126.0)
+	* Added offset support for specifying the number of days to wait after the date and time specified by a CRON expression before running the maintenance window.
+* Core 3.3.107.12
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.763.0 (2020-06-17 18:19 UTC)
 * AppMesh (3.3.110.0)
 	* Adds support for route and virtual node listener timeouts.
