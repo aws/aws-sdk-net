@@ -55,6 +55,7 @@ namespace Amazon.RDS.Model
         private bool? _deletionProtection;
         private string _domain;
         private string _domainIAMRoleName;
+        private bool? _enableGlobalWriteForwarding;
         private bool? _enableHttpEndpoint;
         private bool? _enableIAMDatabaseAuthentication;
         private string _engineVersion;
@@ -131,7 +132,11 @@ namespace Amazon.RDS.Model
         /// The target backtrack window, in seconds. To disable backtracking, set this value to
         /// 0.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Default: 0
         /// </para>
@@ -367,6 +372,28 @@ namespace Amazon.RDS.Model
         internal bool IsSetDomainIAMRoleName()
         {
             return this._domainIAMRoleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableGlobalWriteForwarding. 
+        /// <para>
+        /// A value that indicates whether to enable write operations to be forwarded from this
+        /// cluster to the primary cluster in an Aurora global database. The resulting changes
+        /// are replicated back to this cluster. This parameter only applies to DB clusters that
+        /// are secondary clusters in an Aurora global database. By default, Aurora disallows
+        /// write operations for secondary clusters.
+        /// </para>
+        /// </summary>
+        public bool EnableGlobalWriteForwarding
+        {
+            get { return this._enableGlobalWriteForwarding.GetValueOrDefault(); }
+            set { this._enableGlobalWriteForwarding = value; }
+        }
+
+        // Check to see if EnableGlobalWriteForwarding property is set
+        internal bool IsSetEnableGlobalWriteForwarding()
+        {
+            return this._enableGlobalWriteForwarding.HasValue; 
         }
 
         /// <summary>

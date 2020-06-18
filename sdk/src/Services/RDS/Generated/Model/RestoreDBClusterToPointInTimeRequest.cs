@@ -83,7 +83,11 @@ namespace Amazon.RDS.Model
         /// The target backtrack window, in seconds. To disable backtracking, set this value to
         /// 0.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Default: 0
         /// </para>

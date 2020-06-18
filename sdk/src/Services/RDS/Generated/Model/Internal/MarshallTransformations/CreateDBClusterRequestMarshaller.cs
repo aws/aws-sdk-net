@@ -120,6 +120,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetEnableGlobalWriteForwarding())
+                {
+                    request.Parameters.Add("EnableGlobalWriteForwarding", StringUtils.FromBool(publicRequest.EnableGlobalWriteForwarding));
+                }
                 if(publicRequest.IsSetEnableHttpEndpoint())
                 {
                     request.Parameters.Add("EnableHttpEndpoint", StringUtils.FromBool(publicRequest.EnableHttpEndpoint));

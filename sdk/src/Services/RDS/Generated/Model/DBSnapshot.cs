@@ -255,7 +255,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property InstanceCreateTime. 
         /// <para>
-        /// Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+        /// Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from
+        /// which the snapshot was taken, was created.
         /// </para>
         /// </summary>
         public DateTime InstanceCreateTime
@@ -420,7 +421,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SnapshotCreateTime. 
         /// <para>
-        /// Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+        /// Specifies when the snapshot was taken in Coodinated Universal Time (UTC).
         /// </para>
         /// </summary>
         public DateTime SnapshotCreateTime

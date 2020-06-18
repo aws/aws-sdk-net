@@ -60,6 +60,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.DBClusterArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("GlobalWriteForwardingStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GlobalWriteForwardingStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("IsWriter", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

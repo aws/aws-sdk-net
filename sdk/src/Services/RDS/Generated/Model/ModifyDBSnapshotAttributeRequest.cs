@@ -39,17 +39,24 @@ namespace Amazon.RDS.Model
     /// as the <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to
     /// add a list of IDs of the AWS accounts that are authorized to restore the manual DB
     /// snapshot. Uses the value <code>all</code> to make the manual DB snapshot public, which
-    /// means it can be copied or restored by all AWS accounts. Do not add the <code>all</code>
-    /// value for any manual DB snapshots that contain private information that you don't
-    /// want available to all AWS accounts. If the manual DB snapshot is encrypted, it can
-    /// be shared, but only by specifying a list of authorized AWS account IDs for the <code>ValuesToAdd</code>
-    /// parameter. You can't use <code>all</code> as a value for that parameter in this case.
+    /// means it can be copied or restored by all AWS accounts.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// Don't add the <code>all</code> value for any manual DB snapshots that contain private
+    /// information that you don't want available to all AWS accounts.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// If the manual DB snapshot is encrypted, it can be shared, but only by specifying a
+    /// list of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You
+    /// can't use <code>all</code> as a value for that parameter in this case.
     /// </para>
     ///  
     /// <para>
     /// To view which AWS accounts have access to copy or restore a manual DB snapshot, or
-    /// whether a manual DB snapshot public or private, use the <code>DescribeDBSnapshotAttributes</code>
-    /// API action.
+    /// whether a manual DB snapshot public or private, use the <a>DescribeDBSnapshotAttributes</a>
+    /// API action. The accounts are returned as values for the <code>restore</code> attribute.
     /// </para>
     /// </summary>
     public partial class ModifyDBSnapshotAttributeRequest : AmazonRDSRequest
@@ -69,6 +76,12 @@ namespace Amazon.RDS.Model
         /// To manage authorization for other AWS accounts to copy or restore a manual DB snapshot,
         /// set this value to <code>restore</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To view the list of attributes available to modify, use the <a>DescribeDBSnapshotAttributes</a>
+        /// API action.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AttributeName
