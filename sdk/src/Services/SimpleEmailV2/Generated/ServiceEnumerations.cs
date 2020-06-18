@@ -367,6 +367,10 @@ namespace Amazon.SimpleEmailV2
         /// </summary>
         public static readonly EventType DELIVERY = new EventType("DELIVERY");
         /// <summary>
+        /// Constant DELIVERY_DELAY for EventType
+        /// </summary>
+        public static readonly EventType DELIVERY_DELAY = new EventType("DELIVERY_DELAY");
+        /// <summary>
         /// Constant OPEN for EventType
         /// </summary>
         public static readonly EventType OPEN = new EventType("OPEN");
