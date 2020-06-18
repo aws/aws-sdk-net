@@ -121,6 +121,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Schedule);
                 }
 
+                if(publicRequest.IsSetScheduleOffset())
+                {
+                    context.Writer.WritePropertyName("ScheduleOffset");
+                    context.Writer.Write(publicRequest.ScheduleOffset);
+                }
+
                 if(publicRequest.IsSetScheduleTimezone())
                 {
                     context.Writer.WritePropertyName("ScheduleTimezone");

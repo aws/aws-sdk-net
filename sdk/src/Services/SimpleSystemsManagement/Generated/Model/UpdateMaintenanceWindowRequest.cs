@@ -54,6 +54,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _name;
         private bool? _replace;
         private string _schedule;
+        private int? _scheduleOffset;
         private string _scheduleTimezone;
         private string _startDate;
         private string _windowId;
@@ -229,6 +230,40 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetSchedule()
         {
             return this._schedule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleOffset. 
+        /// <para>
+        /// The number of days to wait after the date and time specified by a CRON expression
+        /// before running the maintenance window.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, the following cron expression schedules a maintenance window to run the
+        /// third Tuesday of every month at 11:30 PM.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>cron(0 30 23 ? * TUE#3 *)</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the schedule offset is <code>2</code>, the maintenance window won't run until two
+        /// days later.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=6)]
+        public int ScheduleOffset
+        {
+            get { return this._scheduleOffset.GetValueOrDefault(); }
+            set { this._scheduleOffset = value; }
+        }
+
+        // Check to see if ScheduleOffset property is set
+        internal bool IsSetScheduleOffset()
+        {
+            return this._scheduleOffset.HasValue; 
         }
 
         /// <summary>
