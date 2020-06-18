@@ -16,20 +16,21 @@ namespace SDKDocGenerator.Writers
     public class MethodWriter : MethodBaseWriter
     {
         readonly MethodInfoWrapper _methodInfo;
+        readonly bool _isFakeAsync;
+        readonly bool _hasAsyncVersion;
 
         public MethodWriter(GenerationManifest artifacts, FrameworkVersion version, MethodInfoWrapper methodInfo)
             : base(artifacts, version, methodInfo)
         {
             this._methodInfo = methodInfo;
-            // true when this is an Async method and the unity version is present
-            this._unityVersionOfAsyncExists = NDocUtilities.FindDocumentationUnityAsync(Artifacts.NDocForPlatform("unity"), methodInfo) != null;
-            // refer to asynchronous versions if the synchronous version doesn't exist but the async version does
-            this._referAsyncAlternativeUnity = (NDocUtilities.FindDocumentationUnityAsyncAlternative(Artifacts.NDocForPlatform("unity"), methodInfo) != null) &&
-                (Artifacts.NDocForPlatform("unity") != null) &&
-                (NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("unity"), methodInfo) == null);
-            this._referAsyncAlternativePCL = (NDocUtilities.FindDocumentationPCLAsyncAlternative(Artifacts.NDocForPlatform("pcl"), methodInfo) != null) &&
-                (Artifacts.NDocForPlatform("pcl") != null) &&
-                (NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("pcl"), methodInfo) == null);
+            
+            this._isFakeAsync = this._methodInfo.FullName == "Amazon.Lambda.Model.InvokeAsyncResponse InvokeAsync(Amazon.Lambda.Model.InvokeAsyncRequest)";
+
+            if (_isFakeAsync || !this._methodInfo.Name.EndsWith("Async", StringComparison.Ordinal))
+            {
+                //This is not an Async method. Lookup if an Async version exists for .NET Core.                
+                this._hasAsyncVersion = NDocUtilities.FindDocumentationAsync(Artifacts.NDocForPlatform("netcoreapp3.1"), methodInfo) != null;
+            }                
         }
 
         protected override string GenerateFilename()
@@ -108,41 +109,26 @@ namespace SDKDocGenerator.Writers
         {
 
 
-            if (this._methodInfo.Name.EndsWith("Async", StringComparison.Ordinal))
+            if (!this._isFakeAsync && this._methodInfo.Name.EndsWith("Async", StringComparison.Ordinal))
             {
                 const string net35PatternNote = " For .NET 3.5 the operation is implemented as a pair of methods using the standard naming convention of "
                                                 + "<b>Begin</b><i>{0}</i> and <b>End</b><i>{0}</i>.";
-                const string unityPatternNote = " For Unity the operation does not take <i>CancellationToken</i> as a parameter, and instead takes"
-                                              + " <i>AmazonServiceCallback&lt;{0}Request, {0}Response&gt;</i> and <i>AsyncOptions</i> as additional parameters.";
                 const string patternNote = "<div class=\"noteblock\"><div class=\"noteheader\">Note:</div>"
                                            + "<p>This is an asynchronous operation using the standard naming convention for .NET 4.5 or higher."
-                                           + "{0}{1}</p></div>";
+                                           + "{0}</p></div>";
 
                 var name = this._methodInfo.Name.Substring(0, this._methodInfo.Name.Length - 5);
-                writer.WriteLine(patternNote, string.Format(net35PatternNote, name), this._unityVersionOfAsyncExists ? string.Format(unityPatternNote, name) : string.Empty);
-            }
-
-            if (this._referAsyncAlternativeUnity || this._referAsyncAlternativePCL)
+                writer.WriteLine(patternNote, string.Format(net35PatternNote, name));
+            }                 
+            else if (this._hasAsyncVersion)
             {
-                string platforms = string.Empty;
-                if (this._referAsyncAlternativeUnity && this._referAsyncAlternativePCL)
-                {
-                    platforms = ".NET Core, PCL and Unity";
-                }
-                else if (this._referAsyncAlternativeUnity)
-                {
-                    platforms = "Unity";
-                }
-                else
-                {
-                    platforms = ".NET Core and PCL";
-                }
+                const string platforms = ".NET Core";
                 const string syncPatternNote =
                     "<div class=\"noteblock\"><div class=\"noteheader\">Note:</div>"
                     + "<p> For {0} this operation is only available in asynchronous form. Please refer to <i>{1}</i><b>Async</b>.</p></div>";
 
                 writer.WriteLine(syncPatternNote, platforms, _methodInfo.Name);
-            }
+            }       
         }
 
 
@@ -151,8 +137,8 @@ namespace SDKDocGenerator.Writers
             get
             {
                 // This check is mostly to keep the generator from emitting multiple rewrite rules for the same shape.
-                // i.e. we don't want a rewrite rule for pcl, bcl35, bcl45, and netstandard. We only emit rules for bcl45
-                //      we don't want to emit rules for both Async and Sync.  We only emit rules for Async.
+                // i.e. we don't want a rewrite rule for bcl35, bcl45, and netstandard. We only emit rules for bcl45
+                //      we don't want to emit rules for both Async and Sync. We only emit rules for Async.
                 return (this._version == FrameworkVersion.DotNet45 &&
                         !this._methodInfo.Name.EndsWith("Async", StringComparison.Ordinal) &&
                         this._methodInfo.DeclaringType.IsClass &&
