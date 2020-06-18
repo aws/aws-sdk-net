@@ -1971,11 +1971,12 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Disassociates a VPC from a Amazon Route 53 private hosted zone. Note the following:
+        /// Disassociates an Amazon Virtual Private Cloud (Amazon VPC) from an Amazon Route 53
+        /// private hosted zone. Note the following:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You can't disassociate the last VPC from a private hosted zone.
+        /// You can't disassociate the last Amazon VPC from a private hosted zone.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1984,7 +1985,20 @@ namespace Amazon.Route53
         ///  </li> <li> 
         /// <para>
         /// You can submit a <code>DisassociateVPCFromHostedZone</code> request using either the
-        /// account that created the hosted zone or the account that created the VPC.
+        /// account that created the hosted zone or the account that created the Amazon VPC.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Some services, such as AWS Cloud Map and Amazon Elastic File System (Amazon EFS) automatically
+        /// create hosted zones and associate VPCs with the hosted zones. A service can create
+        /// a hosted zone using your account or using its own account. You can disassociate a
+        /// VPC from a hosted zone only if the service created the hosted zone using your account.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you run <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHostedZonesByVPC.html">DisassociateVPCFromHostedZone</a>,
+        /// if the hosted zone has a value for <code>OwningAccount</code>, you can use <code>DisassociateVPCFromHostedZone</code>.
+        /// If the hosted zone has a value for <code>OwningService</code>, you can't use <code>DisassociateVPCFromHostedZone</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3169,6 +3183,63 @@ namespace Amazon.Route53
             options.ResponseUnmarshaller = ListHostedZonesByNameResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListHostedZonesByNameResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListHostedZonesByVPC
+
+        internal virtual ListHostedZonesByVPCResponse ListHostedZonesByVPC(ListHostedZonesByVPCRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHostedZonesByVPCRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHostedZonesByVPCResponseUnmarshaller.Instance;
+
+            return Invoke<ListHostedZonesByVPCResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all the private hosted zones that a specified VPC is associated with, regardless
+        /// of which AWS account or AWS service owns the hosted zones. The <code>HostedZoneOwner</code>
+        /// structure in the response contains one of the following values:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// An <code>OwningAccount</code> element, which contains the account number of either
+        /// the current AWS account or another AWS account. Some services, such as AWS Cloud Map,
+        /// create hosted zones using the current account. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An <code>OwningService</code> element, which identifies the AWS service that created
+        /// and owns the hosted zone. For example, if a hosted zone was created by Amazon Elastic
+        /// File System (Amazon EFS), the value of <code>Owner</code> is <code>efs.amazonaws.com</code>.
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHostedZonesByVPC service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListHostedZonesByVPC service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidPaginationTokenException">
+        /// The value that you specified to get the second or subsequent page of results is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByVPC">REST API Reference for ListHostedZonesByVPC Operation</seealso>
+        public virtual Task<ListHostedZonesByVPCResponse> ListHostedZonesByVPCAsync(ListHostedZonesByVPCRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHostedZonesByVPCRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHostedZonesByVPCResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListHostedZonesByVPCResponse>(request, options, cancellationToken);
         }
 
         #endregion

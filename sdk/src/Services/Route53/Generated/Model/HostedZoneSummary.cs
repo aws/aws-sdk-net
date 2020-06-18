@@ -29,18 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the response information for the request.
+    /// In the response to a <code>ListHostedZonesByVPC</code> request, the <code>HostedZoneSummaries</code>
+    /// element contains one <code>HostedZoneSummary</code> element for each hosted zone that
+    /// the specified Amazon VPC is associated with. Each <code>HostedZoneSummary</code> element
+    /// contains the hosted zone name and ID, and information about who owns the hosted zone.
     /// </summary>
-    public partial class ListVPCAssociationAuthorizationsResponse : AmazonWebServiceResponse
+    public partial class HostedZoneSummary
     {
         private string _hostedZoneId;
-        private string _nextToken;
-        private List<VPC> _vpCs = new List<VPC>();
+        private string _name;
+        private HostedZoneOwner _owner;
 
         /// <summary>
         /// Gets and sets the property HostedZoneId. 
         /// <para>
-        /// The ID of the hosted zone that you can associate the listed VPCs with.
+        /// The Route 53 hosted zone ID of a private hosted zone that the specified VPC is associated
+        /// with.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=32)]
@@ -57,45 +61,42 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// When the response includes a <code>NextToken</code> element, there are more VPCs that
-        /// can be associated with the specified hosted zone. To get the next page of VPCs, submit
-        /// another <code>ListVPCAssociationAuthorizations</code> request, and include the value
-        /// of the <code>NextToken</code> element from the response in the <code>nexttoken</code>
-        /// request parameter.
+        /// The name of the private hosted zone, such as <code>example.com</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
-        public string NextToken
+        [AWSProperty(Required=true, Max=1024)]
+        public string Name
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._nextToken != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property VPCs. 
+        /// Gets and sets the property Owner. 
         /// <para>
-        /// The list of VPCs that are authorized to be associated with the specified hosted zone.
+        /// The owner of a private hosted zone that the specified VPC is associated with. The
+        /// owner can be either an AWS account or an AWS service.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
-        public List<VPC> VPCs
+        [AWSProperty(Required=true)]
+        public HostedZoneOwner Owner
         {
-            get { return this._vpCs; }
-            set { this._vpCs = value; }
+            get { return this._owner; }
+            set { this._owner = value; }
         }
 
-        // Check to see if VPCs property is set
-        internal bool IsSetVPCs()
+        // Check to see if Owner property is set
+        internal bool IsSetOwner()
         {
-            return this._vpCs != null && this._vpCs.Count > 0; 
+            return this._owner != null;
         }
 
     }
