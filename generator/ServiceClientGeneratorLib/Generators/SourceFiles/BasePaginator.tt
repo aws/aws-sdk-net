@@ -15,7 +15,6 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
-using System.Runtime.CompilerServices;
 
 namespace <#=this.Config.Namespace#>.Model
 {
