@@ -94,6 +94,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.NoiseReducer = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("partnerWatermarking", targetDepth))
+                {
+                    var unmarshaller = PartnerWatermarkingUnmarshaller.Instance;
+                    unmarshalledObject.PartnerWatermarking = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("timecodeBurnin", targetDepth))
                 {
                     var unmarshaller = TimecodeBurninUnmarshaller.Instance;

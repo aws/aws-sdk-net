@@ -1200,6 +1200,21 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.NexGuardFileMarkerSettings.License</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.NexGuardFileMarkerSettings.Payload</property>
+    <min>0</min>
+    <max>4194303</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.NexGuardFileMarkerSettings.Preset</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.NielsenConfiguration.BreakoutCode</property>
     <min>0</min>
     <max>0</max>

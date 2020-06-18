@@ -39,6 +39,7 @@ namespace Amazon.MediaConvert.Model
         private DolbyVision _dolbyVision;
         private ImageInserter _imageInserter;
         private NoiseReducer _noiseReducer;
+        private PartnerWatermarking _partnerWatermarking;
         private TimecodeBurnin _timecodeBurnin;
 
         /// <summary>
@@ -122,6 +123,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetNoiseReducer()
         {
             return this._noiseReducer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PartnerWatermarking. If you work with a third party video
+        /// watermarking partner, use the group of settings that correspond with your watermarking
+        /// partner to include watermarks in your output.
+        /// </summary>
+        public PartnerWatermarking PartnerWatermarking
+        {
+            get { return this._partnerWatermarking; }
+            set { this._partnerWatermarking = value; }
+        }
+
+        // Check to see if PartnerWatermarking property is set
+        internal bool IsSetPartnerWatermarking()
+        {
+            return this._partnerWatermarking != null;
         }
 
         /// <summary>

@@ -88,8 +88,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FramerateConversionAlgorithm. When set to INTERPOLATE,
-        /// produces smoother motion during frame rate conversion.
+        /// Gets and sets the property FramerateConversionAlgorithm. Optional. Specify how the
+        /// transcoder performs framerate conversion. The default behavior is to use duplicate
+        /// drop conversion.
         /// </summary>
         public Av1FramerateConversionAlgorithm FramerateConversionAlgorithm
         {
