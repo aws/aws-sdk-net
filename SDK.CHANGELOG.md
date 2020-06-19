@@ -1,3 +1,18 @@
+### 3.3.765.0 (2020-06-19 18:20 UTC)
+* EC2 (3.3.183.0)
+	* Adds support to tag elastic-gpu on the RunInstances api
+* ElastiCache (3.3.111.8)
+	* Documentation updates for elasticache
+* MediaLive (3.3.112.0)
+	* AWS Elemental MediaLive now supports Input Prepare schedule actions. This feature improves existing input switching by allowing users to prepare an input prior to switching to it.
+* OpsWorksCM (3.3.106.0)
+	* Documentation updates for AWS OpsWorks CM.
+* Core 3.3.107.13
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.764.0 (2020-06-18 18:16 UTC)
 * AWSMarketplaceMetering (3.3.101.96)
 	* Documentation updates for meteringmarketplace
