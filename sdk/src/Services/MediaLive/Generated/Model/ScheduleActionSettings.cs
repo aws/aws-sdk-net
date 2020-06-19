@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
     {
         private HlsId3SegmentTaggingScheduleActionSettings _hlsId3SegmentTaggingSettings;
         private HlsTimedMetadataScheduleActionSettings _hlsTimedMetadataSettings;
+        private InputPrepareScheduleActionSettings _inputPrepareSettings;
         private InputSwitchScheduleActionSettings _inputSwitchSettings;
         private PauseStateScheduleActionSettings _pauseStateSettings;
         private Scte35ReturnToNetworkScheduleActionSettings _scte35ReturnToNetworkSettings;
@@ -72,6 +73,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetHlsTimedMetadataSettings()
         {
             return this._hlsTimedMetadataSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputPrepareSettings. Action to prepare an input for a
+        /// future immediate input switch
+        /// </summary>
+        public InputPrepareScheduleActionSettings InputPrepareSettings
+        {
+            get { return this._inputPrepareSettings; }
+            set { this._inputPrepareSettings = value; }
+        }
+
+        // Check to see if InputPrepareSettings property is set
+        internal bool IsSetInputPrepareSettings()
+        {
+            return this._inputPrepareSettings != null;
         }
 
         /// <summary>

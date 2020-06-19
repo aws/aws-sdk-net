@@ -67,6 +67,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetInputPrepareSettings())
+            {
+                context.Writer.WritePropertyName("inputPrepareSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InputPrepareScheduleActionSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.InputPrepareSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInputSwitchSettings())
             {
                 context.Writer.WritePropertyName("inputSwitchSettings");

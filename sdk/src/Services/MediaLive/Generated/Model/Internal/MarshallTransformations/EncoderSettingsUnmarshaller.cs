@@ -94,6 +94,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.CaptionDescriptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("featureActivations", targetDepth))
+                {
+                    var unmarshaller = FeatureActivationsUnmarshaller.Instance;
+                    unmarshalledObject.FeatureActivations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("globalConfiguration", targetDepth))
                 {
                     var unmarshaller = GlobalConfigurationUnmarshaller.Instance;

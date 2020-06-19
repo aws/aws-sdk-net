@@ -76,6 +76,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.HlsTimedMetadataSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inputPrepareSettings", targetDepth))
+                {
+                    var unmarshaller = InputPrepareScheduleActionSettingsUnmarshaller.Instance;
+                    unmarshalledObject.InputPrepareSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inputSwitchSettings", targetDepth))
                 {
                     var unmarshaller = InputSwitchScheduleActionSettingsUnmarshaller.Instance;
