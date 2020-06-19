@@ -287,7 +287,7 @@ namespace Amazon.OpsWorksCM.Model
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// The engine version of the server. For a Chef server, the valid value for EngineVersion
-        /// is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+        /// is currently <code>2</code>. For a Puppet server, the valid value is <code>2017</code>.
         /// 
         /// </para>
         /// </summary>
