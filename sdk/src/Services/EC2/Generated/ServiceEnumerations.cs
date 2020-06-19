@@ -8607,6 +8607,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType DhcpOptions = new ResourceType("dhcp-options");
         /// <summary>
+        /// Constant ElasticGpu for ResourceType
+        /// </summary>
+        public static readonly ResourceType ElasticGpu = new ResourceType("elastic-gpu");
+        /// <summary>
         /// Constant ElasticIp for ResourceType
         /// </summary>
         public static readonly ResourceType ElasticIp = new ResourceType("elastic-ip");
@@ -11738,6 +11742,10 @@ namespace Amazon.EC2
         /// Constant Io1 for VolumeType
         /// </summary>
         public static readonly VolumeType Io1 = new VolumeType("io1");
+        /// <summary>
+        /// Constant Io2 for VolumeType
+        /// </summary>
+        public static readonly VolumeType Io2 = new VolumeType("io2");
         /// <summary>
         /// Constant Sc1 for VolumeType
         /// </summary>
