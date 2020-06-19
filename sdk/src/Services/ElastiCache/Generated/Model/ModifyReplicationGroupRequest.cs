@@ -326,7 +326,12 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MultiAZEnabled.
+        /// Gets and sets the property MultiAZEnabled. 
+        /// <para>
+        /// A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+        /// Downtime: Multi-AZ</a>.
+        /// </para>
         /// </summary>
         public bool MultiAZEnabled
         {

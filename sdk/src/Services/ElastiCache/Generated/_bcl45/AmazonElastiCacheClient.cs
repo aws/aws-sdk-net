@@ -4288,7 +4288,7 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Used to failover the primary region to a selected secondary region. The selected secondary
-        /// region will be come primary, and all other clusters will become secondary.
+        /// region will become primary, and all other clusters will become secondary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FailoverGlobalReplicationGroup service method.</param>
         /// 
@@ -4318,7 +4318,7 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Used to failover the primary region to a selected secondary region. The selected secondary
-        /// region will be come primary, and all other clusters will become secondary.
+        /// region will become primary, and all other clusters will become secondary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FailoverGlobalReplicationGroup service method.</param>
         /// <param name="cancellationToken">

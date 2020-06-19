@@ -194,11 +194,6 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>,
-        /// Multi-AZ is disabled for this replication group.
-        /// </para>
-        ///  
-        /// <para>
         ///  <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled)
         /// replication groups.
         /// </para>
@@ -561,7 +556,12 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MultiAZEnabled.
+        /// Gets and sets the property MultiAZEnabled. 
+        /// <para>
+        /// A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+        /// Downtime: Multi-AZ</a>.
+        /// </para>
         /// </summary>
         public bool MultiAZEnabled
         {
@@ -631,7 +631,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NumCacheClusters. 
         /// <para>
-        /// The number of nodes in the cluster.
+        /// The number of clusters this replication group initially has.
         /// </para>
         ///  
         /// <para>

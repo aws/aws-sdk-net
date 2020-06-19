@@ -548,8 +548,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// All nodes belonging to this Memcached cluster are placed in the preferred Availability
-        /// Zone. If you want to create your nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.
+        /// All nodes belonging to this cluster are placed in the preferred Availability Zone.
+        /// If you want to create your nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.
         /// </para>
         ///  
         /// <para>
