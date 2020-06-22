@@ -329,7 +329,7 @@ namespace AWSSDK.UnitTests
                 Assert.IsNotNull(requestContext);
             }
 
-            public async Task WriteToRequestBodyAsync(Stream requestContent, byte[] content, IDictionary<string, string> contentHeaders, System.Threading.CancellationToken cancellationToken = default)
+            public async Task WriteToRequestBodyAsync(Stream requestContent, byte[] content, IDictionary<string, string> contentHeaders, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
             {
                 Assert.IsNotNull(requestContent);
                 Assert.IsNotNull(content);
