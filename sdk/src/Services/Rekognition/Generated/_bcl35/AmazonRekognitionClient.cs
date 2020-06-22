@@ -528,7 +528,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceInUseException">
-        /// 
+        /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -631,7 +631,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceInUseException">
-        /// 
+        /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
         /// The collection specified in the request cannot be found.
@@ -737,7 +737,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceInUseException">
-        /// 
+        /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -954,8 +954,7 @@ namespace Amazon.Rekognition
 
         /// <summary>
         /// Deletes an Amazon Rekognition Custom Labels project. To delete a project you must
-        /// first delete all versions of the model associated with the project. To delete a version
-        /// of a model, see <a>DeleteProjectVersion</a>.
+        /// first delete all models associated with the project. To delete a model, see <a>DeleteProjectVersion</a>.
         /// 
         ///  
         /// <para>
@@ -981,7 +980,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceInUseException">
-        /// 
+        /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
         /// The collection specified in the request cannot be found.
@@ -1038,13 +1037,14 @@ namespace Amazon.Rekognition
         #region  DeleteProjectVersion
 
         /// <summary>
-        /// Deletes a version of a model. 
+        /// Deletes an Amazon Rekognition Custom Labels model. 
         /// 
         ///  
         /// <para>
-        /// You must first stop the model before you can delete it. To check if a model is running,
-        /// use the <code>Status</code> field returned from <a>DescribeProjectVersions</a>. To
-        /// stop a running model call <a>StopProjectVersion</a>. 
+        /// You can't delete a model if it is running or if it is training. To check the status
+        /// of a model, use the <code>Status</code> field returned from <a>DescribeProjectVersions</a>.
+        /// To stop a running model call <a>StopProjectVersion</a>. If the model is training,
+        /// wait until it finishes.
         /// </para>
         ///  
         /// <para>
@@ -1070,7 +1070,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceInUseException">
-        /// 
+        /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
         /// The collection specified in the request cannot be found.
@@ -1150,7 +1150,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceInUseException">
-        /// 
+        /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
         /// The collection specified in the request cannot be found.
@@ -2994,6 +2994,124 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  GetSegmentDetection
+
+        /// <summary>
+        /// Gets the segment detection results of a Amazon Rekognition Video analysis started
+        /// by <a>StartSegmentDetection</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Segment detection with Amazon Rekognition Video is an asynchronous operation. You
+        /// start segment detection by calling <a>StartSegmentDetection</a> which returns a job
+        /// identifier (<code>JobId</code>). When the segment detection operation finishes, Amazon
+        /// Rekognition publishes a completion status to the Amazon Simple Notification Service
+        /// topic registered in the initial call to <code>StartSegmentDetection</code>. To get
+        /// the results of the segment detection operation, first check that the status value
+        /// published to the Amazon SNS topic is <code>SUCCEEDED</code>. if so, call <code>GetSegmentDetection</code>
+        /// and pass the job identifier (<code>JobId</code>) from the initial call of <code>StartSegmentDetection</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>GetSegmentDetection</code> returns detected segments in an array (<code>Segments</code>)
+        /// of <a>SegmentDetection</a> objects. <code>Segments</code> is sorted by the segment
+        /// types specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>.
+        /// Each element of the array includes the detected segment, the precentage confidence
+        /// in the acuracy of the detected segment, the type of the segment, and the frame in
+        /// which the segment was detected.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <code>SelectedSegmentTypes</code> to find out the type of segment detection requested
+        /// in the call to <code>StartSegmentDetection</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <code>MaxResults</code> parameter to limit the number of segment detections
+        /// returned. If there are more results than specified in <code>MaxResults</code>, the
+        /// value of <code>NextToken</code> in the operation response contains a pagination token
+        /// for getting the next set of results. To get the next page of results, call <code>GetSegmentDetection</code>
+        /// and populate the <code>NextToken</code> request parameter with the token value returned
+        /// from the previous call to <code>GetSegmentDetection</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition
+        /// Developer Guide.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSegmentDetection service method.</param>
+        /// 
+        /// <returns>The response from the GetSegmentDetection service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidPaginationTokenException">
+        /// Pagination token in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The collection specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetSegmentDetection">REST API Reference for GetSegmentDetection Operation</seealso>
+        public virtual GetSegmentDetectionResponse GetSegmentDetection(GetSegmentDetectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentDetectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentDetectionResponseUnmarshaller.Instance;
+
+            return Invoke<GetSegmentDetectionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSegmentDetection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSegmentDetection operation on AmazonRekognitionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSegmentDetection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetSegmentDetection">REST API Reference for GetSegmentDetection Operation</seealso>
+        public virtual IAsyncResult BeginGetSegmentDetection(GetSegmentDetectionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentDetectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentDetectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSegmentDetection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSegmentDetection.</param>
+        /// 
+        /// <returns>Returns a  GetSegmentDetectionResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetSegmentDetection">REST API Reference for GetSegmentDetection Operation</seealso>
+        public virtual GetSegmentDetectionResponse EndGetSegmentDetection(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSegmentDetectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetTextDetection
 
         /// <summary>
@@ -3149,7 +3267,7 @@ namespace Amazon.Rekognition
         /// </para>
         ///  
         /// <para>
-        /// If you provide the optional <code>ExternalImageID</code> for the input image you provided,
+        /// If you provide the optional <code>ExternalImageId</code> for the input image you provided,
         /// Amazon Rekognition associates this ID with all faces that it detects. When you call
         /// the <a>ListFaces</a> operation, the response returns the external ID. You can use
         /// this external image ID to create a client-side index to associate the faces with each
@@ -4644,7 +4762,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceInUseException">
-        /// 
+        /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
         /// The collection specified in the request cannot be found.
@@ -4698,6 +4816,126 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  StartSegmentDetection
+
+        /// <summary>
+        /// Starts asynchronous detection of segment detection in a stored video.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Rekognition Video can detect segments in a video stored in an Amazon S3 bucket.
+        /// Use <a>Video</a> to specify the bucket name and the filename of the video. <code>StartSegmentDetection</code>
+        /// returns a job identifier (<code>JobId</code>) which you use to get the results of
+        /// the operation. When segment detection is finished, Amazon Rekognition Video publishes
+        /// a completion status to the Amazon Simple Notification Service topic that you specify
+        /// in <code>NotificationChannel</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <code>Filters</code> (<a>StartSegmentDetectionFilters</a>) input parameter
+        /// to specify the minimum detection confidence returned in the response. Within <code>Filters</code>,
+        /// use <code>ShotFilter</code> (<a>StartShotDetectionFilter</a>) to filter detected shots.
+        /// Use <code>TechnicalCueFilter</code> (<a>StartTechnicalCueDetectionFilter</a>) to filter
+        /// technical cues. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To get the results of the segment detection operation, first check that the status
+        /// value published to the Amazon SNS topic is <code>SUCCEEDED</code>. if so, call <a>GetSegmentDetection</a>
+        /// and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartSegmentDetection</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition
+        /// Developer Guide.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSegmentDetection service method.</param>
+        /// 
+        /// <returns>The response from the StartSegmentDetection service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.IdempotentParameterMismatchException">
+        /// A <code>ClientRequestToken</code> input parameter was reused with an operation, but
+        /// at least one of the other input parameters is different from the previous call to
+        /// the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidS3ObjectException">
+        /// Amazon Rekognition is unable to access the S3 object specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.VideoTooLargeException">
+        /// The file size or duration of the supplied media is too large. The maximum file size
+        /// is 10GB. The maximum duration is 6 hours.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartSegmentDetection">REST API Reference for StartSegmentDetection Operation</seealso>
+        public virtual StartSegmentDetectionResponse StartSegmentDetection(StartSegmentDetectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSegmentDetectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSegmentDetectionResponseUnmarshaller.Instance;
+
+            return Invoke<StartSegmentDetectionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSegmentDetection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSegmentDetection operation on AmazonRekognitionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSegmentDetection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartSegmentDetection">REST API Reference for StartSegmentDetection Operation</seealso>
+        public virtual IAsyncResult BeginStartSegmentDetection(StartSegmentDetectionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSegmentDetectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSegmentDetectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartSegmentDetection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSegmentDetection.</param>
+        /// 
+        /// <returns>Returns a  StartSegmentDetectionResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartSegmentDetection">REST API Reference for StartSegmentDetection Operation</seealso>
+        public virtual StartSegmentDetectionResponse EndStartSegmentDetection(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartSegmentDetectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartStreamProcessor
 
         /// <summary>
@@ -4723,7 +4961,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceInUseException">
-        /// 
+        /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
         /// The collection specified in the request cannot be found.
@@ -4908,7 +5146,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceInUseException">
-        /// 
+        /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
         /// The collection specified in the request cannot be found.
@@ -4985,7 +5223,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceInUseException">
-        /// 
+        /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
         /// The collection specified in the request cannot be found.

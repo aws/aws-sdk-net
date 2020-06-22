@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// 
+    /// The specified resource is already being used.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

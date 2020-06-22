@@ -29,37 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteProject operation.
-    /// Deletes an Amazon Rekognition Custom Labels project. To delete a project you must
-    /// first delete all models associated with the project. To delete a model, see <a>DeleteProjectVersion</a>.
-    /// 
-    ///  
-    /// <para>
-    /// This operation requires permissions to perform the <code>rekognition:DeleteProject</code>
-    /// action. 
-    /// </para>
+    /// This is the response object from the StartSegmentDetection operation.
     /// </summary>
-    public partial class DeleteProjectRequest : AmazonRekognitionRequest
+    public partial class StartSegmentDetectionResponse : AmazonWebServiceResponse
     {
-        private string _projectArn;
+        private string _jobId;
 
         /// <summary>
-        /// Gets and sets the property ProjectArn. 
+        /// Gets and sets the property JobId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the project that you want to delete.
+        /// Unique identifier for the segment detection job. The <code>JobId</code> is returned
+        /// from <code>StartSegmentDetection</code>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=2048)]
-        public string ProjectArn
+        [AWSProperty(Min=1, Max=64)]
+        public string JobId
         {
-            get { return this._projectArn; }
-            set { this._projectArn = value; }
+            get { return this._jobId; }
+            set { this._jobId = value; }
         }
 
-        // Check to see if ProjectArn property is set
-        internal bool IsSetProjectArn()
+        // Check to see if JobId property is set
+        internal bool IsSetJobId()
         {
-            return this._projectArn != null;
+            return this._jobId != null;
         }
 
     }

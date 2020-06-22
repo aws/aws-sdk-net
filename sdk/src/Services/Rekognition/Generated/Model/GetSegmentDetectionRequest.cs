@@ -29,43 +29,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetTextDetection operation.
-    /// Gets the text detection results of a Amazon Rekognition Video analysis started by
-    /// <a>StartTextDetection</a>.
+    /// Container for the parameters to the GetSegmentDetection operation.
+    /// Gets the segment detection results of a Amazon Rekognition Video analysis started
+    /// by <a>StartSegmentDetection</a>.
     /// 
     ///  
     /// <para>
-    /// Text detection with Amazon Rekognition Video is an asynchronous operation. You start
-    /// text detection by calling <a>StartTextDetection</a> which returns a job identifier
-    /// (<code>JobId</code>) When the text detection operation finishes, Amazon Rekognition
-    /// publishes a completion status to the Amazon Simple Notification Service topic registered
-    /// in the initial call to <code>StartTextDetection</code>. To get the results of the
-    /// text detection operation, first check that the status value published to the Amazon
-    /// SNS topic is <code>SUCCEEDED</code>. if so, call <code>GetTextDetection</code> and
-    /// pass the job identifier (<code>JobId</code>) from the initial call of <code>StartLabelDetection</code>.
+    /// Segment detection with Amazon Rekognition Video is an asynchronous operation. You
+    /// start segment detection by calling <a>StartSegmentDetection</a> which returns a job
+    /// identifier (<code>JobId</code>). When the segment detection operation finishes, Amazon
+    /// Rekognition publishes a completion status to the Amazon Simple Notification Service
+    /// topic registered in the initial call to <code>StartSegmentDetection</code>. To get
+    /// the results of the segment detection operation, first check that the status value
+    /// published to the Amazon SNS topic is <code>SUCCEEDED</code>. if so, call <code>GetSegmentDetection</code>
+    /// and pass the job identifier (<code>JobId</code>) from the initial call of <code>StartSegmentDetection</code>.
     /// </para>
     ///  
     /// <para>
-    ///  <code>GetTextDetection</code> returns an array of detected text (<code>TextDetections</code>)
-    /// sorted by the time the text was detected, up to 50 words per frame of video.
+    ///  <code>GetSegmentDetection</code> returns detected segments in an array (<code>Segments</code>)
+    /// of <a>SegmentDetection</a> objects. <code>Segments</code> is sorted by the segment
+    /// types specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>.
+    /// Each element of the array includes the detected segment, the precentage confidence
+    /// in the acuracy of the detected segment, the type of the segment, and the frame in
+    /// which the segment was detected.
     /// </para>
     ///  
     /// <para>
-    /// Each element of the array includes the detected text, the precentage confidence in
-    /// the acuracy of the detected text, the time the text was detected, bounding box information
-    /// for where the text was located, and unique identifiers for words and their lines.
+    /// Use <code>SelectedSegmentTypes</code> to find out the type of segment detection requested
+    /// in the call to <code>StartSegmentDetection</code>.
     /// </para>
     ///  
     /// <para>
-    /// Use MaxResults parameter to limit the number of text detections returned. If there
-    /// are more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code>
-    /// in the operation response contains a pagination token for getting the next set of
-    /// results. To get the next page of results, call <code>GetTextDetection</code> and populate
-    /// the <code>NextToken</code> request parameter with the token value returned from the
-    /// previous call to <code>GetTextDetection</code>.
+    /// Use the <code>MaxResults</code> parameter to limit the number of segment detections
+    /// returned. If there are more results than specified in <code>MaxResults</code>, the
+    /// value of <code>NextToken</code> in the operation response contains a pagination token
+    /// for getting the next set of results. To get the next page of results, call <code>GetSegmentDetection</code>
+    /// and populate the <code>NextToken</code> request parameter with the token value returned
+    /// from the previous call to <code>GetSegmentDetection</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition
+    /// Developer Guide.
     /// </para>
     /// </summary>
-    public partial class GetTextDetectionRequest : AmazonRekognitionRequest
+    public partial class GetSegmentDetectionRequest : AmazonRekognitionRequest
     {
         private string _jobId;
         private int? _maxResults;
@@ -75,7 +83,7 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property JobId. 
         /// <para>
         /// Job identifier for the text detection operation for which you want results returned.
-        /// You get the job identifer from an initial call to <code>StartTextDetection</code>.
+        /// You get the job identifer from an initial call to <code>StartSegmentDetection</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -114,9 +122,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the previous response was incomplete (because there are more labels to retrieve),
-        /// Amazon Rekognition Video returns a pagination token in the response. You can use this
-        /// pagination token to retrieve the next set of text.
+        /// If the response is truncated, Amazon Rekognition Video returns this token that you
+        /// can use in the subsequent request to retrieve the next set of text.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
