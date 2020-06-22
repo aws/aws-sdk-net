@@ -58,6 +58,14 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetMaxResults())
+                {
+                    request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
+                }
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
                 if(publicRequest.IsSetQueueUrl())
                 {
                     request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));

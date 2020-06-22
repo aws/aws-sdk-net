@@ -49,7 +49,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates SendMessageBatchRequestEntry with the parameterized properties
         /// </summary>
-        /// <param name="id">An identifier for a message in this batch used to communicate the result. <note> The <code>Id</code>s of a batch request need to be unique within a request This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_). </note></param>
+        /// <param name="id">An identifier for a message in this batch used to communicate the result. <note> The <code>Id</code>s of a batch request need to be unique within a request. This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_). </note></param>
         /// <param name="messageBody">The body of the message.</param>
         public SendMessageBatchRequestEntry(string id, string messageBody)
         {
@@ -91,7 +91,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>Id</code>s of a batch request need to be unique within a request
+        /// The <code>Id</code>s of a batch request need to be unique within a request.
         /// </para>
         ///  
         /// <para>
@@ -308,7 +308,7 @@ namespace Amazon.SQS.Model
         /// <para>
         /// Currently, the only supported message system attribute is <code>AWSTraceHeader</code>.
         /// Its type must be <code>String</code> and its value must be a correctly formatted AWS
-        /// X-Ray trace string.
+        /// X-Ray trace header string.
         /// </para>
         ///  </li> <li> 
         /// <para>
