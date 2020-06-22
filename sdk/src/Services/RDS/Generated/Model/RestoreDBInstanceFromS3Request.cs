@@ -1010,11 +1010,15 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceEngineVersion. 
         /// <para>
-        /// The engine version of your source database. 
+        /// The version of the database that the backup files were created from.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>5.6</code> 
+        /// MySQL versions 5.6 and 5.7 are supported. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>5.6.40</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

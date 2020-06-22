@@ -236,7 +236,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// The name of the DB cluster to create from the source data in the Amazon S3 bucket.
-        /// This parameter is isn't case-sensitive.
+        /// This parameter isn't case-sensitive.
         /// </para>
         ///  
         /// <para>
@@ -838,11 +838,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// MySQL version 5.5 and 5.6 are supported. 
+        /// MySQL versions 5.5, 5.6, and 5.7 are supported. 
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>5.6.22</code> 
+        /// Example: <code>5.6.40</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
