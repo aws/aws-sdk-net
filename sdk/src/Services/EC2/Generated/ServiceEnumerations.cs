@@ -8615,6 +8615,14 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType ElasticIp = new ResourceType("elastic-ip");
         /// <summary>
+        /// Constant ExportImageTask for ResourceType
+        /// </summary>
+        public static readonly ResourceType ExportImageTask = new ResourceType("export-image-task");
+        /// <summary>
+        /// Constant ExportInstanceTask for ResourceType
+        /// </summary>
+        public static readonly ResourceType ExportInstanceTask = new ResourceType("export-instance-task");
+        /// <summary>
         /// Constant Fleet for ResourceType
         /// </summary>
         public static readonly ResourceType Fleet = new ResourceType("fleet");
@@ -8631,6 +8639,14 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType Image = new ResourceType("image");
         /// <summary>
+        /// Constant ImportImageTask for ResourceType
+        /// </summary>
+        public static readonly ResourceType ImportImageTask = new ResourceType("import-image-task");
+        /// <summary>
+        /// Constant ImportSnapshotTask for ResourceType
+        /// </summary>
+        public static readonly ResourceType ImportSnapshotTask = new ResourceType("import-snapshot-task");
+        /// <summary>
         /// Constant Instance for ResourceType
         /// </summary>
         public static readonly ResourceType Instance = new ResourceType("instance");
@@ -8646,6 +8662,10 @@ namespace Amazon.EC2
         /// Constant LaunchTemplate for ResourceType
         /// </summary>
         public static readonly ResourceType LaunchTemplate = new ResourceType("launch-template");
+        /// <summary>
+        /// Constant LocalGatewayRouteTableVpcAssociation for ResourceType
+        /// </summary>
+        public static readonly ResourceType LocalGatewayRouteTableVpcAssociation = new ResourceType("local-gateway-route-table-vpc-association");
         /// <summary>
         /// Constant Natgateway for ResourceType
         /// </summary>
@@ -11742,10 +11762,6 @@ namespace Amazon.EC2
         /// Constant Io1 for VolumeType
         /// </summary>
         public static readonly VolumeType Io1 = new VolumeType("io1");
-        /// <summary>
-        /// Constant Io2 for VolumeType
-        /// </summary>
-        public static readonly VolumeType Io2 = new VolumeType("io2");
         /// <summary>
         /// Constant Sc1 for VolumeType
         /// </summary>

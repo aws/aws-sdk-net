@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// The destination S3 bucket.
+        /// The destination Amazon S3 bucket.
         /// </para>
         /// </summary>
         public string S3Bucket

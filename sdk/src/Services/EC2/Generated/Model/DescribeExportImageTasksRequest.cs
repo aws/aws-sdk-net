@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeExportImageTasks operation.
-    /// Describes the specified export image tasks or all your export image tasks.
+    /// Describes the specified export image tasks or all of your export image tasks.
     /// </summary>
     public partial class DescribeExportImageTasksRequest : AmazonEC2Request
     {

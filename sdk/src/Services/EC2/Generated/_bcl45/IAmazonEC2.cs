@@ -2876,7 +2876,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Exports a running or stopped instance to an S3 bucket.
+        /// Exports a running or stopped instance to an Amazon S3 bucket.
         /// 
         ///  
         /// <para>
@@ -2894,7 +2894,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Exports a running or stopped instance to an S3 bucket.
+        /// Exports a running or stopped instance to an Amazon S3 bucket.
         /// 
         ///  
         /// <para>
@@ -8045,7 +8045,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified export image tasks or all your export image tasks.
+        /// Describes the specified export image tasks or all of your export image tasks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExportImageTasks service method.</param>
         /// 
@@ -8056,7 +8056,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified export image tasks or all your export image tasks.
+        /// Describes the specified export image tasks or all of your export image tasks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExportImageTasks service method.</param>
         /// <param name="cancellationToken">
@@ -8073,7 +8073,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified export instance tasks or all your export instance tasks.
+        /// Describes the specified export instance tasks or all of your export instance tasks.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeExportTasks service method, as returned by EC2.</returns>
@@ -8082,7 +8082,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified export instance tasks or all your export instance tasks.
+        /// Describes the specified export instance tasks or all of your export instance tasks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks service method.</param>
         /// 
@@ -8092,7 +8092,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified export instance tasks or all your export instance tasks.
+        /// Describes the specified export instance tasks or all of your export instance tasks.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -8105,7 +8105,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified export instance tasks or all your export instance tasks.
+        /// Describes the specified export instance tasks or all of your export instance tasks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks service method.</param>
         /// <param name="cancellationToken">
