@@ -1,3 +1,15 @@
+### 3.3.766.0 (2020-06-22 18:15 UTC)
+* EC2 (3.3.184.0)
+	* This release adds Tag On Create feature support for the ImportImage, ImportSnapshot, ExportImage and CreateInstanceExportTask APIs.
+* ElasticMapReduce (3.3.107.0)
+	* Adding support for MaximumCoreCapacityUnits parameter for EMR Managed Scaling. It allows users to control how many units/nodes are added to the CORE group/fleet. Remaining units/nodes are added to the TASK groups/fleet in the cluster.
+* RDS (3.3.123.0)
+	* Added paginators for various APIs.
+* Rekognition (3.3.106.0)
+	* This update adds the ability to detect black frames, end credits, shots, and color bars in stored videos
+* SQS (3.3.103.0)
+	* AWS SQS adds pagination support for ListQueues and ListDeadLetterSourceQueues APIs
+
 ### 3.3.765.0 (2020-06-19 18:20 UTC)
 * EC2 (3.3.183.0)
 	* Adds support to tag elastic-gpu on the RunInstances api
