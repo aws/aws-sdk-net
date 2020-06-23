@@ -59,6 +59,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var queryRequest = new QueryRequest()
             {
                 TableName = hashRangeTableName,
+                Limit = 1,
                 KeyConditionExpression = "#H = :name",
                 ExpressionAttributeNames = new Dictionary<string, string>
                 {
@@ -69,7 +70,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     { ":name", new AttributeValue { S = name } }
                 }
             };
-            queryRequest.Limit = 1;
 
             var queryPaginator = Client.Paginators.Query(queryRequest);
             // There'll be an extra, empty response at the end indicating we're done
