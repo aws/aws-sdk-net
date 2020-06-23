@@ -410,6 +410,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -456,18 +462,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -481,6 +502,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -534,14 +561,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -550,8 +577,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1033,6 +1070,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -1079,18 +1122,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1104,6 +1162,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1157,14 +1221,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1173,8 +1237,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1507,6 +1581,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -1553,18 +1633,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1578,6 +1673,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1631,14 +1732,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1647,8 +1748,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1865,6 +1976,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -1911,18 +2028,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1936,6 +2068,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1989,14 +2127,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2005,8 +2143,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -2205,6 +2353,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -2251,18 +2405,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2276,6 +2445,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2329,14 +2504,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2345,8 +2520,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -2548,6 +2733,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -2594,18 +2785,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2619,6 +2825,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2672,14 +2884,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2688,8 +2900,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3638,6 +3860,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -3684,18 +3912,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3709,6 +3952,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3762,14 +4011,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3778,8 +4027,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -4330,6 +4589,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -4376,18 +4641,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4401,6 +4681,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4454,14 +4740,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4470,8 +4756,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -5293,6 +5589,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -5339,18 +5641,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5364,6 +5681,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5417,14 +5740,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5433,8 +5756,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -5669,6 +6002,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -5715,18 +6054,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5740,6 +6094,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5793,14 +6153,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5809,8 +6169,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -5927,6 +6297,9 @@ namespace Amazon.Organizations
         /// of AWS Organizations</a> in the <i>AWS Organizations User Guide.</i> 
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.UnsupportedAPIEndpointException">
+        /// This action isn't available in the current Region.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisableAWSServiceAccess">REST API Reference for DisableAWSServiceAccess Operation</seealso>
         DisableAWSServiceAccessResponse DisableAWSServiceAccess(DisableAWSServiceAccessRequest request);
 
@@ -6016,6 +6389,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -6062,18 +6441,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6087,6 +6481,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6140,14 +6540,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6156,8 +6556,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -6652,6 +7062,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -6698,18 +7114,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6723,6 +7154,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6776,14 +7213,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6792,8 +7229,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -6910,6 +7357,9 @@ namespace Amazon.Organizations
         /// of AWS Organizations</a> in the <i>AWS Organizations User Guide.</i> 
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.UnsupportedAPIEndpointException">
+        /// This action isn't available in the current Region.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAWSServiceAccess">REST API Reference for EnableAWSServiceAccess Operation</seealso>
         EnableAWSServiceAccessResponse EnableAWSServiceAccess(EnableAWSServiceAccessRequest request);
 
@@ -6997,6 +7447,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -7043,18 +7499,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7068,6 +7539,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7121,14 +7598,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7137,8 +7614,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -7672,6 +8159,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -7718,18 +8211,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7743,6 +8251,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7796,14 +8310,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7812,8 +8326,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -8376,6 +8900,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -8422,18 +8952,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8447,6 +8992,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8500,14 +9051,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8516,8 +9067,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -8633,6 +9194,9 @@ namespace Amazon.Organizations
         /// For information on limits that affect AWS Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
         /// of AWS Organizations</a> in the <i>AWS Organizations User Guide.</i> 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.UnsupportedAPIEndpointException">
+        /// This action isn't available in the current Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAWSServiceAccessForOrganization">REST API Reference for ListAWSServiceAccessForOrganization Operation</seealso>
         ListAWSServiceAccessForOrganizationResponse ListAWSServiceAccessForOrganization(ListAWSServiceAccessForOrganizationRequest request);
@@ -9067,6 +9631,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -9113,18 +9683,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9138,6 +9723,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9191,14 +9782,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9207,8 +9798,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -9407,6 +10008,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -9453,18 +10060,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9478,6 +10100,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9531,14 +10159,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9547,8 +10175,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -11600,6 +12238,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -11646,18 +12290,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11671,6 +12330,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11724,14 +12389,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11740,8 +12405,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -11963,6 +12638,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -12009,18 +12690,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12034,6 +12730,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12087,14 +12789,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12103,8 +12805,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -12303,6 +13015,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -12349,18 +13067,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12374,6 +13107,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12427,14 +13166,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12443,8 +13182,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -12641,6 +13390,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -12687,18 +13442,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12712,6 +13482,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12765,14 +13541,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12781,8 +13557,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -13156,6 +13942,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
+        /// the organization. You can't remove the master account. Instead, after you remove all
+        /// member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
         /// that doesn't yet have enough information to exist as a standalone account. This account
         /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
@@ -13202,18 +13994,33 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member
-        /// account as a delegated administrator.
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must
-        /// first deregister this account as a delegated administrator. 
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must
-        /// first deregister all delegated administrators for this service.
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13227,6 +14034,12 @@ namespace Amazon.Organizations
         /// to the master account's address. For example, accounts with India addresses must be
         /// associated with the AISPL marketplace. All accounts in an organization must be associated
         /// with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13280,14 +14093,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
-        /// deep.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
         /// requires the organization to be configured to support all features. An organization
         /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13296,8 +14109,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
         /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
         /// </para>
         ///  </li> </ul>
         /// </exception>

@@ -333,6 +333,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly ConstraintViolationExceptionReason MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE = new ConstraintViolationExceptionReason("MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE");
         /// <summary>
+        /// Constant MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE = new ConstraintViolationExceptionReason("MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE");
+        /// <summary>
         /// Constant MASTER_ACCOUNT_MISSING_CONTACT_INFO for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason MASTER_ACCOUNT_MISSING_CONTACT_INFO = new ConstraintViolationExceptionReason("MASTER_ACCOUNT_MISSING_CONTACT_INFO");
