@@ -313,7 +313,10 @@ namespace Amazon.Internal
 
         private JsonData _root;
         private Dictionary<string, IRegionEndpoint> _regionEndpointMap = new Dictionary<string, IRegionEndpoint>();
+        private Dictionary<string, IRegionEndpoint> _nonStandardRegionNameToObjectMap = new Dictionary<string, IRegionEndpoint>();
+
         private object _regionEndpointMapLock = new object();
+        private object _nonStandardRegionNameToObjectLock = new object();
 
         public RegionEndpointProviderV3()
         {
@@ -500,30 +503,50 @@ namespace Amazon.Internal
         /// </summary>
         private IRegionEndpoint GetNonstandardRegionEndpoint(string regionName)
         {
-            // default to "aws" partition
-            JsonData partitionData = _root["partitions"][0];
-            string regionDescription = GetUnknownRegionDescription(regionName);
-            JsonData servicesData = _emptyDictionaryJsonData;
-            
-            foreach (JsonData partition in _root["partitions"])
+            lock(_nonStandardRegionNameToObjectLock)
             {
-                JsonData partitionServices = partition["services"];
-                foreach (string service in partitionServices.PropertyNames)
+                IRegionEndpoint regionEndpoint;
+                if (_nonStandardRegionNameToObjectMap.TryGetValue(regionName, out regionEndpoint))
                 {
-                    if(partitionServices[service]!=null&& partitionServices[service].Count>0)
+                    return regionEndpoint;
+                }
+                // default to "aws" partition
+                JsonData partitionData = _root["partitions"][0];
+                string regionDescription = GetUnknownRegionDescription(regionName);
+                JsonData servicesData = _emptyDictionaryJsonData;
+                var validRegionRegex = @"^[a-zA-Z0-9]([a-zA-Z0-9\-]*[a-zA-Z0-9])?$";
+                bool foundContainingPartition = false;
+#if BCL || NETSTANDARD
+                var match = Regex.Match(regionName, validRegionRegex, RegexOptions.Compiled);
+#else
+            var match = Regex.Match(regionName, validRegionRegex);
+#endif
+                foreach (JsonData partition in _root["partitions"])
+                {
+                    JsonData partitionServices = partition["services"];
+                    foreach (string service in partitionServices.PropertyNames)
                     {
-                        JsonData serviceData = partitionServices[service];
-                        if (serviceData != null && serviceData["endpoints"][regionName] != null)
+                        if (partitionServices[service] != null && partitionServices[service].Count > 0)
                         {
-                            partitionData = partition;
-                            servicesData = partitionServices;
-                            break;
+                            JsonData serviceData = partitionServices[service];
+                            if (serviceData != null && serviceData["endpoints"][regionName] != null)
+                            {
+                                partitionData = partition;
+                                servicesData = partitionServices;
+                                foundContainingPartition = true;
+                                break;
+                            }
                         }
                     }
                 }
+                if (!foundContainingPartition && !match.Success)
+                {
+                    throw new ArgumentException("Invalid region endpoint provided");
+                }
+                regionEndpoint = new RegionEndpointV3(regionName, regionDescription, partitionData, servicesData);
+                _nonStandardRegionNameToObjectMap.Add(regionName, regionEndpoint);
+                return regionEndpoint;
             }
-
-            return new RegionEndpointV3(regionName, regionDescription, partitionData, servicesData);
         }
         private static JsonData _emptyDictionaryJsonData = JsonMapper.ToObject("{}");
     }
