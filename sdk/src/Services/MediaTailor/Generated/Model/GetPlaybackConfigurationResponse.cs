@@ -35,6 +35,7 @@ namespace Amazon.MediaTailor.Model
     {
         private string _adDecisionServerUrl;
         private AvailSuppression _availSuppression;
+        private Bumper _bumper;
         private CdnConfiguration _cdnConfiguration;
         private DashConfiguration _dashConfiguration;
         private HlsConfiguration _hlsConfiguration;
@@ -87,6 +88,25 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetAvailSuppression()
         {
             return this._availSuppression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Bumper. 
+        /// <para>
+        /// The configuration for bumpers. Bumpers are short audio or video clips that play at
+        /// the start or before the end of an ad break. 
+        /// </para>
+        /// </summary>
+        public Bumper Bumper
+        {
+            get { return this._bumper; }
+            set { this._bumper = value; }
+        }
+
+        // Check to see if Bumper property is set
+        internal bool IsSetBumper()
+        {
+            return this._bumper != null;
         }
 
         /// <summary>

@@ -76,6 +76,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     unmarshalledObject.AvailSuppression = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Bumper", targetDepth))
+                {
+                    var unmarshaller = BumperUnmarshaller.Instance;
+                    unmarshalledObject.Bumper = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CdnConfiguration", targetDepth))
                 {
                     var unmarshaller = CdnConfigurationUnmarshaller.Instance;

@@ -83,6 +83,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetBumper())
+                {
+                    context.Writer.WritePropertyName("Bumper");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = BumperMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Bumper, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCdnConfiguration())
                 {
                     context.Writer.WritePropertyName("CdnConfiguration");
