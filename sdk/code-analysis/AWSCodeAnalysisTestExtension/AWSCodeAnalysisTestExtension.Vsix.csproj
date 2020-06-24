@@ -452,6 +452,10 @@
       <Project>{951ED9A4-88BD-43A6-BA7F-BCD77FD9D4DA}</Project>
       <Name>AWSSDK.GuardDuty.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Honeycode/AWSSDK.Honeycode.CodeAnalysis.csproj">
+      <Project>{7514CF83-2AF7-4EAC-9006-24E159F9D62A}</Project>
+      <Name>AWSSDK.Honeycode.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/IdentityManagement/AWSSDK.IdentityManagement.CodeAnalysis.csproj">
       <Project>{B20D0577-6579-4191-8C47-16AD07B1D34C}</Project>
       <Name>AWSSDK.IdentityManagement.CodeAnalysis</Name>
