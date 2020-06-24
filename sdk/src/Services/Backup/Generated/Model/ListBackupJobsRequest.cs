@@ -34,6 +34,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class ListBackupJobsRequest : AmazonBackupRequest
     {
+        private string _byAccountId;
         private string _byBackupVaultName;
         private DateTime? _byCreatedAfter;
         private DateTime? _byCreatedBefore;
@@ -42,6 +43,25 @@ namespace Amazon.Backup.Model
         private BackupJobState _byState;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property ByAccountId. 
+        /// <para>
+        /// The account ID to list the jobs from. Returns only backup jobs associated with the
+        /// specified account ID.
+        /// </para>
+        /// </summary>
+        public string ByAccountId
+        {
+            get { return this._byAccountId; }
+            set { this._byAccountId = value; }
+        }
+
+        // Check to see if ByAccountId property is set
+        internal bool IsSetByAccountId()
+        {
+            return this._byAccountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ByBackupVaultName. 
@@ -130,6 +150,10 @@ namespace Amazon.Backup.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>EBS</code> for Amazon Elastic Block Store
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>EC2</code> for Amazon Elastic Compute Cloud
         /// </para>
         ///  </li> <li> 
         /// <para>

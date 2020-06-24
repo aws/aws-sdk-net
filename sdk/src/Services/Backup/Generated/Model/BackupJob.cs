@@ -33,6 +33,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class BackupJob
     {
+        private string _accountId;
         private string _backupJobId;
         private long? _backupSizeInBytes;
         private string _backupVaultArn;
@@ -50,6 +51,24 @@ namespace Amazon.Backup.Model
         private DateTime? _startBy;
         private BackupJobState _state;
         private string _statusMessage;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The account ID that owns the backup job.
+        /// </para>
+        /// </summary>
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BackupJobId. 

@@ -59,6 +59,18 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetByAccountId())
+                request.Parameters.Add("accountId", StringUtils.FromString(publicRequest.ByAccountId));
+            
+            if (publicRequest.IsSetByCreatedAfter())
+                request.Parameters.Add("createdAfter", StringUtils.FromDateTimeToISO8601(publicRequest.ByCreatedAfter));
+            
+            if (publicRequest.IsSetByCreatedBefore())
+                request.Parameters.Add("createdBefore", StringUtils.FromDateTimeToISO8601(publicRequest.ByCreatedBefore));
+            
+            if (publicRequest.IsSetByStatus())
+                request.Parameters.Add("status", StringUtils.FromString(publicRequest.ByStatus));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

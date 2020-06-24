@@ -41,7 +41,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupPlanName. 
         /// <para>
-        /// The display name of a backup plan.
+        /// The optional display name of a backup plan.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
