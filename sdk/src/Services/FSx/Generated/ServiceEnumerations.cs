@@ -582,6 +582,10 @@ namespace Amazon.FSx
         /// Constant FileSystemId for FilterName
         /// </summary>
         public static readonly FilterName FileSystemId = new FilterName("file-system-id");
+        /// <summary>
+        /// Constant FileSystemType for FilterName
+        /// </summary>
+        public static readonly FilterName FileSystemType = new FilterName("file-system-type");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

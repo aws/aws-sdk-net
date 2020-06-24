@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateFileSystemLustreConfiguration Marshaller
+    /// DeleteFileSystemLustreConfiguration Marshaller
     /// </summary>       
-    public class UpdateFileSystemLustreConfigurationMarshaller : IRequestMarshaller<UpdateFileSystemLustreConfiguration, JsonMarshallerContext> 
+    public class DeleteFileSystemLustreConfigurationMarshaller : IRequestMarshaller<DeleteFileSystemLustreConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,24 +43,28 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UpdateFileSystemLustreConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(DeleteFileSystemLustreConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAutomaticBackupRetentionDays())
+            if(requestObject.IsSetFinalBackupTags())
             {
-                context.Writer.WritePropertyName("AutomaticBackupRetentionDays");
-                context.Writer.Write(requestObject.AutomaticBackupRetentionDays);
+                context.Writer.WritePropertyName("FinalBackupTags");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFinalBackupTagsListValue in requestObject.FinalBackupTags)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFinalBackupTagsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetDailyAutomaticBackupStartTime())
+            if(requestObject.IsSetSkipFinalBackup())
             {
-                context.Writer.WritePropertyName("DailyAutomaticBackupStartTime");
-                context.Writer.Write(requestObject.DailyAutomaticBackupStartTime);
-            }
-
-            if(requestObject.IsSetWeeklyMaintenanceStartTime())
-            {
-                context.Writer.WritePropertyName("WeeklyMaintenanceStartTime");
-                context.Writer.Write(requestObject.WeeklyMaintenanceStartTime);
+                context.Writer.WritePropertyName("SkipFinalBackup");
+                context.Writer.Write(requestObject.SkipFinalBackup);
             }
 
         }
@@ -68,7 +72,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static UpdateFileSystemLustreConfigurationMarshaller Instance = new UpdateFileSystemLustreConfigurationMarshaller();
+        public readonly static DeleteFileSystemLustreConfigurationMarshaller Instance = new DeleteFileSystemLustreConfigurationMarshaller();
 
     }
 }

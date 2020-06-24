@@ -63,6 +63,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     response.Lifecycle = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LustreResponse", targetDepth))
+                {
+                    var unmarshaller = DeleteFileSystemLustreResponseUnmarshaller.Instance;
+                    response.LustreResponse = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WindowsResponse", targetDepth))
                 {
                     var unmarshaller = DeleteFileSystemWindowsResponseUnmarshaller.Instance;

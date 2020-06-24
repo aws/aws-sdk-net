@@ -33,6 +33,9 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class CreateFileSystemLustreConfiguration
     {
+        private int? _automaticBackupRetentionDays;
+        private bool? _copyTagsToBackups;
+        private string _dailyAutomaticBackupStartTime;
         private LustreDeploymentType _deploymentType;
         private string _exportPath;
         private int? _importedFileChunkSize;
@@ -41,14 +44,73 @@ namespace Amazon.FSx.Model
         private string _weeklyMaintenanceStartTime;
 
         /// <summary>
+        /// Gets and sets the property AutomaticBackupRetentionDays.
+        /// </summary>
+        [AWSProperty(Min=0, Max=35)]
+        public int AutomaticBackupRetentionDays
+        {
+            get { return this._automaticBackupRetentionDays.GetValueOrDefault(); }
+            set { this._automaticBackupRetentionDays = value; }
+        }
+
+        // Check to see if AutomaticBackupRetentionDays property is set
+        internal bool IsSetAutomaticBackupRetentionDays()
+        {
+            return this._automaticBackupRetentionDays.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CopyTagsToBackups. 
+        /// <para>
+        /// A boolean flag indicating whether tags for the file system should be copied to backups.
+        /// This value defaults to false. If it's set to true, all tags for the file system are
+        /// copied to all automatic and user-initiated backups where the user doesn't specify
+        /// tags. If this value is true, and you specify one or more tags, only the specified
+        /// tags are copied to backups. If you specify one or more tags when creating a user-initiated
+        /// backup, no tags are copied from the file system, regardless of this value.
+        /// </para>
+        /// </summary>
+        public bool CopyTagsToBackups
+        {
+            get { return this._copyTagsToBackups.GetValueOrDefault(); }
+            set { this._copyTagsToBackups = value; }
+        }
+
+        // Check to see if CopyTagsToBackups property is set
+        internal bool IsSetCopyTagsToBackups()
+        {
+            return this._copyTagsToBackups.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DailyAutomaticBackupStartTime.
+        /// </summary>
+        [AWSProperty(Min=5, Max=5)]
+        public string DailyAutomaticBackupStartTime
+        {
+            get { return this._dailyAutomaticBackupStartTime; }
+            set { this._dailyAutomaticBackupStartTime = value; }
+        }
+
+        // Check to see if DailyAutomaticBackupStartTime property is set
+        internal bool IsSetDailyAutomaticBackupStartTime()
+        {
+            return this._dailyAutomaticBackupStartTime != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DeploymentType. 
         /// <para>
-        /// (Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
-        /// when you need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code>
+        ///  Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you
+        /// need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code>
         /// deployment type provides in-transit encryption of data and higher burst throughput
         /// capacity than <code>SCRATCH_1</code>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This option can only be set for for PERSISTENT_1 deployments types.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads
         /// and encryption of data in transit. To learn more about deployment types, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">

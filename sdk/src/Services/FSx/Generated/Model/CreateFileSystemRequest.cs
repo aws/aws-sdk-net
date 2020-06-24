@@ -87,9 +87,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent
-        /// creation. This string is automatically filled on your behalf when you use the AWS
-        /// Command Line Interface (AWS CLI) or an AWS SDK.
+        /// A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation.
+        /// This string is automatically filled on your behalf when you use the AWS Command Line
+        /// Interface (AWS CLI) or an AWS SDK.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]

@@ -85,6 +85,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FileSystemId);
                 }
 
+                if(publicRequest.IsSetLustreConfiguration())
+                {
+                    context.Writer.WritePropertyName("LustreConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeleteFileSystemLustreConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LustreConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetWindowsConfiguration())
                 {
                     context.Writer.WritePropertyName("WindowsConfiguration");

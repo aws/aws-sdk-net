@@ -64,6 +64,24 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AutomaticBackupRetentionDays", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.AutomaticBackupRetentionDays = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CopyTagsToBackups", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.CopyTagsToBackups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DailyAutomaticBackupStartTime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DailyAutomaticBackupStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DataRepositoryConfiguration", targetDepth))
                 {
                     var unmarshaller = DataRepositoryConfigurationUnmarshaller.Instance;

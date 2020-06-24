@@ -34,7 +34,41 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class UpdateFileSystemLustreConfiguration
     {
+        private int? _automaticBackupRetentionDays;
+        private string _dailyAutomaticBackupStartTime;
         private string _weeklyMaintenanceStartTime;
+
+        /// <summary>
+        /// Gets and sets the property AutomaticBackupRetentionDays.
+        /// </summary>
+        [AWSProperty(Min=0, Max=35)]
+        public int AutomaticBackupRetentionDays
+        {
+            get { return this._automaticBackupRetentionDays.GetValueOrDefault(); }
+            set { this._automaticBackupRetentionDays = value; }
+        }
+
+        // Check to see if AutomaticBackupRetentionDays property is set
+        internal bool IsSetAutomaticBackupRetentionDays()
+        {
+            return this._automaticBackupRetentionDays.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DailyAutomaticBackupStartTime.
+        /// </summary>
+        [AWSProperty(Min=5, Max=5)]
+        public string DailyAutomaticBackupStartTime
+        {
+            get { return this._dailyAutomaticBackupStartTime; }
+            set { this._dailyAutomaticBackupStartTime = value; }
+        }
+
+        // Check to see if DailyAutomaticBackupStartTime property is set
+        internal bool IsSetDailyAutomaticBackupStartTime()
+        {
+            return this._dailyAutomaticBackupStartTime != null;
+        }
 
         /// <summary>
         /// Gets and sets the property WeeklyMaintenanceStartTime. 

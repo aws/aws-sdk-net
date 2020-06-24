@@ -85,6 +85,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetLustreConfiguration())
+                {
+                    context.Writer.WritePropertyName("LustreConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CreateFileSystemLustreConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LustreConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSecurityGroupIds())
                 {
                     context.Writer.WritePropertyName("SecurityGroupIds");

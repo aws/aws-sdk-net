@@ -30,8 +30,7 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFileSystemFromBackup operation.
-    /// Creates a new Amazon FSx file system from an existing Amazon FSx for Windows File
-    /// Server backup.
+    /// Creates a new Amazon FSx file system from an existing Amazon FSx backup.
     /// 
     ///  
     /// <para>
@@ -78,6 +77,7 @@ namespace Amazon.FSx.Model
     {
         private string _backupId;
         private string _clientRequestToken;
+        private CreateFileSystemLustreConfiguration _lustreConfiguration;
         private List<string> _securityGroupIds = new List<string>();
         private StorageType _storageType;
         private List<string> _subnetIds = new List<string>();
@@ -103,9 +103,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent
-        /// creation. This string is automatically filled on your behalf when you use the AWS
-        /// Command Line Interface (AWS CLI) or an AWS SDK.
+        /// A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation.
+        /// This string is automatically filled on your behalf when you use the AWS Command Line
+        /// Interface (AWS CLI) or an AWS SDK.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -119,6 +119,21 @@ namespace Amazon.FSx.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LustreConfiguration.
+        /// </summary>
+        public CreateFileSystemLustreConfiguration LustreConfiguration
+        {
+            get { return this._lustreConfiguration; }
+            set { this._lustreConfiguration = value; }
+        }
+
+        // Check to see if LustreConfiguration property is set
+        internal bool IsSetLustreConfiguration()
+        {
+            return this._lustreConfiguration != null;
         }
 
         /// <summary>

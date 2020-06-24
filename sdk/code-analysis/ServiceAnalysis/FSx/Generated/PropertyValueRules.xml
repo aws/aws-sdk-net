@@ -214,7 +214,7 @@
     <property>Amazon.FSx.Model.ActiveDirectoryBackupAttributes.DomainName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^.{1,255}$</pattern>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.ActiveDirectoryErrorException.ActiveDirectoryId</property>
@@ -270,13 +270,24 @@
     <property>Amazon.FSx.Model.CompletionReport.Path</property>
     <min>3</min>
     <max>900</max>
-    <pattern>^.{3,900}$</pattern>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{3,4357}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateFileSystemLustreConfiguration.AutomaticBackupRetentionDays</property>
+    <min>0</min>
+    <max>35</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateFileSystemLustreConfiguration.DailyAutomaticBackupStartTime</property>
+    <min>5</min>
+    <max>5</max>
+    <pattern>^([01]\d|2[0-3]):?([0-5]\d)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemLustreConfiguration.ExportPath</property>
     <min>3</min>
     <max>900</max>
-    <pattern>^.{3,900}$</pattern>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{3,4357}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemLustreConfiguration.ImportedFileChunkSize</property>
@@ -287,7 +298,7 @@
     <property>Amazon.FSx.Model.CreateFileSystemLustreConfiguration.ImportPath</property>
     <min>3</min>
     <max>900</max>
-    <pattern>^.{3,900}$</pattern>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{3,4357}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemLustreConfiguration.PerUnitStorageThroughput</property>
@@ -338,7 +349,7 @@
     <property>Amazon.FSx.Model.DataRepositoryConfiguration.ExportPath</property>
     <min>3</min>
     <max>900</max>
-    <pattern>^.{3,900}$</pattern>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{3,4357}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.DataRepositoryConfiguration.ImportedFileChunkSize</property>
@@ -349,7 +360,7 @@
     <property>Amazon.FSx.Model.DataRepositoryConfiguration.ImportPath</property>
     <min>3</min>
     <max>900</max>
-    <pattern>^.{3,900}$</pattern>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{3,4357}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.DataRepositoryTask.FileSystemId</property>
@@ -373,6 +384,12 @@
     <property>Amazon.FSx.Model.DataRepositoryTaskFailureDetails.Message</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DeleteFileSystemLustreResponse.FinalBackupId</property>
+    <min>12</min>
+    <max>128</max>
+    <pattern>^(backup-[0-9a-f]{8,})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.DeleteFileSystemWindowsResponse.FinalBackupId</property>
@@ -443,6 +460,17 @@
     <pattern>^(subnet-[0-9a-f]{8,})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.LustreFileSystemConfiguration.AutomaticBackupRetentionDays</property>
+    <min>0</min>
+    <max>35</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.LustreFileSystemConfiguration.DailyAutomaticBackupStartTime</property>
+    <min>5</min>
+    <max>5</max>
+    <pattern>^([01]\d|2[0-3]):?([0-5]\d)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.LustreFileSystemConfiguration.MountName</property>
     <min>1</min>
     <max>8</max>
@@ -481,43 +509,43 @@
     <property>Amazon.FSx.Model.SelfManagedActiveDirectoryAttributes.DomainName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^.{1,255}$</pattern>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.SelfManagedActiveDirectoryAttributes.FileSystemAdministratorsGroup</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^.{1,256}$</pattern>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.SelfManagedActiveDirectoryAttributes.OrganizationalUnitDistinguishedName</property>
     <min>1</min>
     <max>2000</max>
-    <pattern>^.{1,2000}$</pattern>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,2000}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.SelfManagedActiveDirectoryAttributes.UserName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^.{1,256}$</pattern>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfiguration.DomainName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^.{1,255}$</pattern>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfiguration.FileSystemAdministratorsGroup</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^.{1,256}$</pattern>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfiguration.OrganizationalUnitDistinguishedName</property>
     <min>1</min>
     <max>2000</max>
-    <pattern>^.{1,2000}$</pattern>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,2000}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfiguration.Password</property>
@@ -529,7 +557,7 @@
     <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfiguration.UserName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^.{1,256}$</pattern>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfigurationUpdates.Password</property>
@@ -541,7 +569,7 @@
     <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfigurationUpdates.UserName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^.{1,256}$</pattern>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.Tag.Key</property>
@@ -554,6 +582,17 @@
     <min>0</min>
     <max>256</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateFileSystemLustreConfiguration.AutomaticBackupRetentionDays</property>
+    <min>0</min>
+    <max>35</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateFileSystemLustreConfiguration.DailyAutomaticBackupStartTime</property>
+    <min>5</min>
+    <max>5</max>
+    <pattern>^([01]\d|2[0-3]):?([0-5]\d)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateFileSystemLustreConfiguration.WeeklyMaintenanceStartTime</property>

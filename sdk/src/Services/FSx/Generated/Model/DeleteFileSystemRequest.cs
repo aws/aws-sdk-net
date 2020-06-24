@@ -62,13 +62,14 @@ namespace Amazon.FSx.Model
     {
         private string _clientRequestToken;
         private string _fileSystemId;
+        private DeleteFileSystemLustreConfiguration _lustreConfiguration;
         private DeleteFileSystemWindowsConfiguration _windowsConfiguration;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent
-        /// deletion. This is automatically filled on your behalf when using the AWS CLI or SDK.
+        /// A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion.
+        /// This is automatically filled on your behalf when using the AWS CLI or SDK.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -101,6 +102,21 @@ namespace Amazon.FSx.Model
         internal bool IsSetFileSystemId()
         {
             return this._fileSystemId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LustreConfiguration.
+        /// </summary>
+        public DeleteFileSystemLustreConfiguration LustreConfiguration
+        {
+            get { return this._lustreConfiguration; }
+            set { this._lustreConfiguration = value; }
+        }
+
+        // Check to see if LustreConfiguration property is set
+        internal bool IsSetLustreConfiguration()
+        {
+            return this._lustreConfiguration != null;
         }
 
         /// <summary>

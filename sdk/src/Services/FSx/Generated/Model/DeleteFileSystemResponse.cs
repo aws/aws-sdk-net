@@ -35,6 +35,7 @@ namespace Amazon.FSx.Model
     {
         private string _fileSystemId;
         private FileSystemLifecycle _lifecycle;
+        private DeleteFileSystemLustreResponse _lustreResponse;
         private DeleteFileSystemWindowsResponse _windowsResponse;
 
         /// <summary>
@@ -72,6 +73,21 @@ namespace Amazon.FSx.Model
         internal bool IsSetLifecycle()
         {
             return this._lifecycle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LustreResponse.
+        /// </summary>
+        public DeleteFileSystemLustreResponse LustreResponse
+        {
+            get { return this._lustreResponse; }
+            set { this._lustreResponse = value; }
+        }
+
+        // Check to see if LustreResponse property is set
+        internal bool IsSetLustreResponse()
+        {
+            return this._lustreResponse != null;
         }
 
         /// <summary>

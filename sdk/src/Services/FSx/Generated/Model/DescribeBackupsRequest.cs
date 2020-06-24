@@ -30,10 +30,9 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeBackups operation.
-    /// Returns the description of specific Amazon FSx for Windows File Server backups, if
-    /// a <code>BackupIds</code> value is provided for that backup. Otherwise, it returns
-    /// all backups owned by your AWS account in the AWS Region of the endpoint that you're
-    /// calling.
+    /// Returns the description of specific Amazon FSx backups, if a <code>BackupIds</code>
+    /// value is provided for that backup. Otherwise, it returns all backups owned by your
+    /// AWS account in the AWS Region of the endpoint that you're calling.
     /// 
     ///  
     /// <para>
@@ -77,8 +76,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property BackupIds. 
         /// <para>
-        /// (Optional) IDs of the backups you want to retrieve (String). This overrides any filters.
-        /// If any IDs are not found, BackupNotFound will be thrown.
+        /// IDs of the backups you want to retrieve (String). This overrides any filters. If any
+        /// IDs are not found, BackupNotFound will be thrown.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
@@ -97,7 +96,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// (Optional) Filters structure. Supported names are file-system-id and backup-type.
+        /// Filters structure. Supported names are file-system-id and backup-type.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]
@@ -116,8 +115,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// (Optional) Maximum number of backups to return in the response (integer). This parameter
-        /// value must be greater than 0. The number of items that Amazon FSx returns is the minimum
+        /// Maximum number of backups to return in the response (integer). This parameter value
+        /// must be greater than 0. The number of items that Amazon FSx returns is the minimum
         /// of the <code>MaxResults</code> parameter specified in the request and the service's
         /// internal maximum number of items per page.
         /// </para>
@@ -138,9 +137,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// (Optional) Opaque pagination token returned from a previous <code>DescribeBackups</code>
-        /// operation (String). If a token present, the action continues the list from where the
-        /// returning call left off.
+        /// Opaque pagination token returned from a previous <code>DescribeBackups</code> operation
+        /// (String). If a token present, the action continues the list from where the returning
+        /// call left off.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
