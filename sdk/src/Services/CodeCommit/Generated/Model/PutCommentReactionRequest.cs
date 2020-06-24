@@ -29,26 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetComment operation.
-    /// Returns the content of a comment made on a change, file, or commit in a repository.
-    /// 
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Reaction counts might include numbers from user identities who were deleted after
-    /// the reaction was made. For a count of reactions from active identities, use GetCommentReactions.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the PutCommentReaction operation.
+    /// Adds or updates a reaction to a specified comment for the user whose identity is used
+    /// to make the request. You can only add or update a reaction for yourself. You cannot
+    /// add, modify, or delete a reaction for another user.
     /// </summary>
-    public partial class GetCommentRequest : AmazonCodeCommitRequest
+    public partial class PutCommentReactionRequest : AmazonCodeCommitRequest
     {
         private string _commentId;
+        private string _reactionValue;
 
         /// <summary>
         /// Gets and sets the property CommentId. 
         /// <para>
-        /// The unique, system-generated ID of the comment. To get this ID, use <a>GetCommentsForComparedCommit</a>
-        /// or <a>GetCommentsForPullRequest</a>.
+        /// The ID of the comment to which you want to add or update a reaction.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,6 +56,28 @@ namespace Amazon.CodeCommit.Model
         internal bool IsSetCommentId()
         {
             return this._commentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReactionValue. 
+        /// <para>
+        /// The emoji reaction you want to add or update. To remove a reaction, provide a value
+        /// of blank or null. You can also provide the value of none. For information about emoji
+        /// reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS
+        /// CodeCommit User Guide</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string ReactionValue
+        {
+            get { return this._reactionValue; }
+            set { this._reactionValue = value; }
+        }
+
+        // Check to see if ReactionValue property is set
+        internal bool IsSetReactionValue()
+        {
+            return this._reactionValue != null;
         }
 
     }

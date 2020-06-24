@@ -29,42 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Cannot create the branch with the specified name because the commit conflicts with
-    /// an existing branch with the same name. Branch names must be unique.
+    /// The value of the reaction is not valid. For more information, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+    /// CodeCommit User Guide</a>.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]
     #endif
-    public partial class BranchNameExistsException : AmazonCodeCommitException
+    public partial class InvalidReactionValueException : AmazonCodeCommitException
     {
 
         /// <summary>
-        /// Constructs a new BranchNameExistsException with the specified error
+        /// Constructs a new InvalidReactionValueException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public BranchNameExistsException(string message) 
+        public InvalidReactionValueException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of BranchNameExistsException
+        /// Construct instance of InvalidReactionValueException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public BranchNameExistsException(string message, Exception innerException) 
+        public InvalidReactionValueException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of BranchNameExistsException
+        /// Construct instance of InvalidReactionValueException
         /// </summary>
         /// <param name="innerException"></param>
-        public BranchNameExistsException(Exception innerException) 
+        public InvalidReactionValueException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of BranchNameExistsException
+        /// Construct instance of InvalidReactionValueException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -72,30 +72,30 @@ namespace Amazon.CodeCommit.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public BranchNameExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public InvalidReactionValueException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of BranchNameExistsException
+        /// Construct instance of InvalidReactionValueException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public BranchNameExistsException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public InvalidReactionValueException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !PCL && !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the BranchNameExistsException class with serialized data.
+        /// Constructs a new instance of the InvalidReactionValueException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected BranchNameExistsException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected InvalidReactionValueException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }

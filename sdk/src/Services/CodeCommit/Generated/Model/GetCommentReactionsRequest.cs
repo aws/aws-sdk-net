@@ -29,68 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetCommentsForComparedCommit operation.
-    /// Returns information about comments made on the comparison between two commits.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Reaction counts might include numbers from user identities who were deleted after
-    /// the reaction was made. For a count of reactions from active identities, use GetCommentReactions.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the GetCommentReactions operation.
+    /// Returns information about reactions to a specified comment ID. Reactions from users
+    /// who have been deleted will not be included in the count.
     /// </summary>
-    public partial class GetCommentsForComparedCommitRequest : AmazonCodeCommitRequest
+    public partial class GetCommentReactionsRequest : AmazonCodeCommitRequest
     {
-        private string _afterCommitId;
-        private string _beforeCommitId;
+        private string _commentId;
         private int? _maxResults;
         private string _nextToken;
-        private string _repositoryName;
+        private string _reactionUserArn;
 
         /// <summary>
-        /// Gets and sets the property AfterCommitId. 
+        /// Gets and sets the property CommentId. 
         /// <para>
-        /// To establish the directionality of the comparison, the full commit ID of the after
-        /// commit.
+        /// The ID of the comment for which you want to get reactions information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string AfterCommitId
+        public string CommentId
         {
-            get { return this._afterCommitId; }
-            set { this._afterCommitId = value; }
+            get { return this._commentId; }
+            set { this._commentId = value; }
         }
 
-        // Check to see if AfterCommitId property is set
-        internal bool IsSetAfterCommitId()
+        // Check to see if CommentId property is set
+        internal bool IsSetCommentId()
         {
-            return this._afterCommitId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property BeforeCommitId. 
-        /// <para>
-        /// To establish the directionality of the comparison, the full commit ID of the before
-        /// commit.
-        /// </para>
-        /// </summary>
-        public string BeforeCommitId
-        {
-            get { return this._beforeCommitId; }
-            set { this._beforeCommitId = value; }
-        }
-
-        // Check to see if BeforeCommitId property is set
-        internal bool IsSetBeforeCommitId()
-        {
-            return this._beforeCommitId != null;
+            return this._commentId != null;
         }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// A non-zero, non-negative integer used to limit the number of returned results. The
-        /// default is 100 comments, but you can configure up to 500.
+        /// default is the same as the allowed maximum, 1,000.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -108,7 +81,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An enumeration token that when provided in a request, returns the next batch of the
+        /// An enumeration token that, when provided in a request, returns the next batch of the
         /// results. 
         /// </para>
         /// </summary>
@@ -125,22 +98,22 @@ namespace Amazon.CodeCommit.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RepositoryName. 
+        /// Gets and sets the property ReactionUserArn. 
         /// <para>
-        /// The name of the repository where you want to compare commits.
+        /// Optional. The Amazon Resource Name (ARN) of the user or identity for which you want
+        /// to get reaction information.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public string RepositoryName
+        public string ReactionUserArn
         {
-            get { return this._repositoryName; }
-            set { this._repositoryName = value; }
+            get { return this._reactionUserArn; }
+            set { this._reactionUserArn = value; }
         }
 
-        // Check to see if RepositoryName property is set
-        internal bool IsSetRepositoryName()
+        // Check to see if ReactionUserArn property is set
+        internal bool IsSetReactionUserArn()
         {
-            return this._repositoryName != null;
+            return this._reactionUserArn != null;
         }
 
     }

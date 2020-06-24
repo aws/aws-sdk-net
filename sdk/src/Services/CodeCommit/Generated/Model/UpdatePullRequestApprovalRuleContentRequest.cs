@@ -118,7 +118,7 @@ namespace Amazon.CodeCommit.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/iam/latest/UserGuide/reference_identifiers.html">IAM
+        /// For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
         /// Identifiers</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </note>

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetComment operation
+    /// Response Unmarshaller for GetCommentReactions operation
     /// </summary>  
-    public class GetCommentResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetCommentReactionsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetCommentResponse response = new GetCommentResponse();
+            GetCommentReactionsResponse response = new GetCommentReactionsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("comment", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth))
                 {
-                    var unmarshaller = CommentUnmarshaller.Instance;
-                    response.Comment = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("reactionsForComment", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ReactionForComment, ReactionForCommentUnmarshaller>(ReactionForCommentUnmarshaller.Instance);
+                    response.ReactionsForComment = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -92,37 +98,29 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                 {
                     return CommentIdRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("EncryptionIntegrityChecksFailedException"))
-                {
-                    return EncryptionIntegrityChecksFailedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("EncryptionKeyAccessDeniedException"))
-                {
-                    return EncryptionKeyAccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("EncryptionKeyDisabledException"))
-                {
-                    return EncryptionKeyDisabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("EncryptionKeyNotFoundException"))
-                {
-                    return EncryptionKeyNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("EncryptionKeyUnavailableException"))
-                {
-                    return EncryptionKeyUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidCommentIdException"))
                 {
                     return InvalidCommentIdExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidContinuationTokenException"))
+                {
+                    return InvalidContinuationTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidMaxResultsException"))
+                {
+                    return InvalidMaxResultsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidReactionUserArnException"))
+                {
+                    return InvalidReactionUserArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonCodeCommitException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetCommentResponseUnmarshaller _instance = new GetCommentResponseUnmarshaller();        
+        private static GetCommentReactionsResponseUnmarshaller _instance = new GetCommentReactionsResponseUnmarshaller();        
 
-        internal static GetCommentResponseUnmarshaller GetInstance()
+        internal static GetCommentReactionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -130,7 +128,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetCommentResponseUnmarshaller Instance
+        public static GetCommentReactionsResponseUnmarshaller Instance
         {
             get
             {
