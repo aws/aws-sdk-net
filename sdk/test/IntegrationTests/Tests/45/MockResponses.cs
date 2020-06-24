@@ -254,7 +254,7 @@ namespace AWSSDK_DotNet.IntegrationTests
                 }
             }
 
-            public async System.Threading.Tasks.Task WriteToRequestBodyAsync(Stream requestContent, byte[] content, IDictionary<string, string> contentHeaders, System.Threading.CancellationToken cancellationToken = default)
+            public async System.Threading.Tasks.Task WriteToRequestBodyAsync(Stream requestContent, byte[] content, IDictionary<string, string> contentHeaders, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
             {
                 cancellationToken.ThrowIfCancellationRequested();
                 using (requestContent)
