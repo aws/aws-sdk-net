@@ -1,3 +1,8 @@
+### 3.3.768.1 (2020-06-24 21:08 UTC)
+* Core 3.3.107.16
+	* Fixed async issue hanging the UI thread
+	* All services packages updated to require new Core
+
 ### 3.3.768.0 (2020-06-24 18:13 UTC)
 * Amplify (3.3.105.0)
 	* This release of AWS Amplify Console introduces support for automatically creating custom subdomains for branches based on user-defined glob patterns, as well as automatically cleaning up Amplify branches when their corresponding git branches are deleted.
