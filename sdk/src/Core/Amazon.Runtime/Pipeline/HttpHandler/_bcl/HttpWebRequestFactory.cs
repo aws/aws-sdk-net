@@ -352,7 +352,7 @@ namespace Amazon.Runtime.Internal
             {
                 try
                 {
-                    return await _request.GetRequestStreamAsync();
+                    return await _request.GetRequestStreamAsync().ConfigureAwait(false);
                 }
                 catch (WebException webException)
                 {
