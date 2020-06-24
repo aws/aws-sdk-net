@@ -101,6 +101,7 @@ namespace Amazon.Organizations.Model
         /// The account ID of the policy target. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string TargetId
         {
             get { return this._targetId; }

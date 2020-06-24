@@ -122,7 +122,7 @@ namespace Amazon.Organizations.Model
         /// the underscore character (_).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=130)]
         public string PolicyId
         {
             get { return this._policyId; }

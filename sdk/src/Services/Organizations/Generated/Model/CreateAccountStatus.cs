@@ -54,6 +54,7 @@ namespace Amazon.Organizations.Model
         /// string requires exactly 12 digits.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=12)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -159,6 +160,7 @@ namespace Amazon.Organizations.Model
         /// in the AWS GovCloud (US) Region.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=12)]
         public string GovCloudAccountId
         {
             get { return this._govCloudAccountId; }
@@ -183,6 +185,7 @@ namespace Amazon.Organizations.Model
         /// request ID string requires "car-" followed by from 8 to 32 lower-case letters or digits.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=36)]
         public string Id
         {
             get { return this._id; }

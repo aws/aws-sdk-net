@@ -103,6 +103,7 @@ namespace Amazon.Organizations.Model
         /// The unique identifier (ID) of the delegated administrator's account.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=12)]
         public string Id
         {
             get { return this._id; }

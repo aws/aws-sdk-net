@@ -56,6 +56,7 @@ namespace Amazon.Organizations.Model
         /// response to indicate where the output should continue from.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100000)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -74,7 +75,7 @@ namespace Amazon.Organizations.Model
         /// The ID of the resource that you want to retrieve tags for. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=12)]
         public string ResourceId
         {
             get { return this._resourceId; }

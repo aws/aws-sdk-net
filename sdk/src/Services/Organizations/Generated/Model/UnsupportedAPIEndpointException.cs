@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// This action isn't available in the current Region.
+    /// This action isn't available in the current AWS Region.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

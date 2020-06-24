@@ -193,6 +193,7 @@ namespace Amazon.Organizations.Model
         /// string requires exactly 12 digits.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=12)]
         public string MasterAccountId
         {
             get { return this._masterAccountId; }

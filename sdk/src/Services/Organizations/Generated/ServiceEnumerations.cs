@@ -563,6 +563,10 @@ namespace Amazon.Organizations
     {
 
         /// <summary>
+        /// Constant BACKUP_POLICY for EffectivePolicyType
+        /// </summary>
+        public static readonly EffectivePolicyType BACKUP_POLICY = new EffectivePolicyType("BACKUP_POLICY");
+        /// <summary>
         /// Constant TAG_POLICY for EffectivePolicyType
         /// </summary>
         public static readonly EffectivePolicyType TAG_POLICY = new EffectivePolicyType("TAG_POLICY");
@@ -1156,6 +1160,10 @@ namespace Amazon.Organizations
     public class PolicyType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant BACKUP_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType BACKUP_POLICY = new PolicyType("BACKUP_POLICY");
         /// <summary>
         /// Constant SERVICE_CONTROL_POLICY for PolicyType
         /// </summary>

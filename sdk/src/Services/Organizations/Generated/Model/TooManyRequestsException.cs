@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// You have sent too many requests in too short a period of time. The limit helps protect
+    /// You have sent too many requests in too short a period of time. The quota helps protect
     /// against denial-of-service attacks. Try again later.
     /// 
     ///  
     /// <para>
-    /// For information on limits that affect AWS Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
-    /// of AWS Organizations</a> in the <i>AWS Organizations User Guide.</i> 
+    /// For information about quotas that affect AWS Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas
+    /// for AWS Organizations</a>in the <i>AWS Organizations User Guide.</i> 
     /// </para>
     /// </summary>
     #if !PCL && !NETSTANDARD

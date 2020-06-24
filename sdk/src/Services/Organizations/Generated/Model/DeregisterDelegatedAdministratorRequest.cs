@@ -58,7 +58,7 @@ namespace Amazon.Organizations.Model
         /// as a delegated administrator.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }

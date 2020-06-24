@@ -45,6 +45,7 @@ namespace Amazon.Organizations.Model
         /// the <code>NextToken</code> response element comes back as <code>null</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100000)]
         public string NextToken
         {
             get { return this._nextToken; }

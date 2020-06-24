@@ -59,7 +59,7 @@ namespace Amazon.Organizations.Model
         /// administrator.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }

@@ -114,6 +114,7 @@ namespace Amazon.Organizations.Model
         /// requires "p-" followed by from 8 to 128 lower-case letters or digits.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=130)]
         public string Id
         {
             get { return this._id; }

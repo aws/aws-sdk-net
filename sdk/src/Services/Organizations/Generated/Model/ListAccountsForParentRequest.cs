@@ -91,6 +91,7 @@ namespace Amazon.Organizations.Model
         /// response to indicate where the output should continue from.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100000)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -110,7 +111,7 @@ namespace Amazon.Organizations.Model
         /// you want to list.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=100)]
         public string ParentId
         {
             get { return this._parentId; }

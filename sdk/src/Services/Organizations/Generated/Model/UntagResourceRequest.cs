@@ -52,7 +52,7 @@ namespace Amazon.Organizations.Model
         /// The ID of the resource to remove the tag from.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=12)]
         public string ResourceId
         {
             get { return this._resourceId; }

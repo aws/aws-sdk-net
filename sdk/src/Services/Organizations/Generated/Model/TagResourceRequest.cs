@@ -52,7 +52,7 @@ namespace Amazon.Organizations.Model
         /// The ID of the resource to add a tag to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=12)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -68,9 +68,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tag to add to the specified resource. Specifying the tag key is required. You
-        /// can set the value of a tag to an empty string, but you can't set the value of a tag
-        /// to null.
+        /// The tag to add to the specified resource. You must specify both a tag key and value.
+        /// You can set the value of a tag to an empty string, but you can't set it to null.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

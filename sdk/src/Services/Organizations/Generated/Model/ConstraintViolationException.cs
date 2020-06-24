@@ -33,14 +33,14 @@ namespace Amazon.Organizations.Model
     /// attempting to remove the last service control policy (SCP) from an OU or root, inviting
     /// or creating too many accounts to the organization, or attaching too many policies
     /// to an account, OU, or root. This exception includes a reason that contains additional
-    /// information about the violated limit.
+    /// information about the violated limit:
     /// 
-    ///  
+    ///  <note> 
     /// <para>
     /// Some of the reasons in the following list might not be applicable to this specific
-    /// API or operation:
+    /// API or operation.
     /// </para>
-    ///  <ul> <li> 
+    ///  </note> <ul> <li> 
     /// <para>
     /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
     /// the organization. You can't remove the master account. Instead, after you remove all
@@ -51,18 +51,18 @@ namespace Amazon.Organizations.Model
     /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
     /// that doesn't yet have enough information to exist as a standalone account. This account
     /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
-    /// href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
-    /// leave an organization when all required account information has not yet been provided</a>
-    /// in the <i>AWS Organizations User Guide.</i> 
+    /// href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master">Removing
+    /// a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
     /// from the organization that doesn't yet have enough information to exist as a standalone
     /// account. This account requires you to first complete phone verification. Follow the
-    /// steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
-    /// leave an organization when all required account information has not yet been provided</a>
-    /// in the <i>AWS Organizations User Guide.</i> 
+    /// steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master">Removing
+    /// a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -87,10 +87,9 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </note> <important> 
     /// <para>
-    /// If you get receive this exception when running a command immediately after creating
-    /// the organization, wait one hour and try again. If after an hour it continues to fail
-    /// with this error, contact <a href="https://console.aws.amazon.com/support/home#/">AWS
-    /// Support</a>.
+    /// If you get this exception when running a command immediately after creating the organization,
+    /// wait one hour and try again. After an hour, if the command continues to fail with
+    /// this error, contact <a href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
     /// </para>
     ///  </important> </li> <li> 
     /// <para>
@@ -144,7 +143,7 @@ namespace Amazon.Organizations.Model
     ///  </li> <li> 
     /// <para>
     /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-    /// contact a valid address and phone number for the master account. Then try the operation
+    /// a valid contact address and phone number for the master account. Then try the operation
     /// again.
     /// </para>
     ///  </li> <li> 

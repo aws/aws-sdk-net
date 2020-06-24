@@ -99,6 +99,7 @@ namespace Amazon.Organizations.Model
         /// string requires exactly 12 digits.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=12)]
         public string Id
         {
             get { return this._id; }

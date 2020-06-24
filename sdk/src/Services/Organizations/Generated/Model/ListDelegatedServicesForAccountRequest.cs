@@ -51,7 +51,7 @@ namespace Amazon.Organizations.Model
         /// The account ID number of a delegated administrator account in the organization.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -99,6 +99,7 @@ namespace Amazon.Organizations.Model
         /// response to indicate where the output should continue from.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100000)]
         public string NextToken
         {
             get { return this._nextToken; }

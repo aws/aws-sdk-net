@@ -95,7 +95,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=100)]
         public string ParentId
         {
             get { return this._parentId; }
