@@ -1295,6 +1295,52 @@ namespace Amazon.ElasticMapReduce
 
 
     /// <summary>
+    /// Constants used for properties of type OnDemandProvisioningAllocationStrategy.
+    /// </summary>
+    public class OnDemandProvisioningAllocationStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LowestPrice for OnDemandProvisioningAllocationStrategy
+        /// </summary>
+        public static readonly OnDemandProvisioningAllocationStrategy LowestPrice = new OnDemandProvisioningAllocationStrategy("lowest-price");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OnDemandProvisioningAllocationStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OnDemandProvisioningAllocationStrategy FindValue(string value)
+        {
+            return FindValue<OnDemandProvisioningAllocationStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OnDemandProvisioningAllocationStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RepoUpgradeOnBoot.
     /// </summary>
     public class RepoUpgradeOnBoot : ConstantClass
@@ -1388,6 +1434,52 @@ namespace Amazon.ElasticMapReduce
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ScaleDownBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SpotProvisioningAllocationStrategy.
+    /// </summary>
+    public class SpotProvisioningAllocationStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CapacityOptimized for SpotProvisioningAllocationStrategy
+        /// </summary>
+        public static readonly SpotProvisioningAllocationStrategy CapacityOptimized = new SpotProvisioningAllocationStrategy("capacity-optimized");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SpotProvisioningAllocationStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SpotProvisioningAllocationStrategy FindValue(string value)
+        {
+            return FindValue<SpotProvisioningAllocationStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SpotProvisioningAllocationStrategy(string value)
         {
             return FindValue(value);
         }

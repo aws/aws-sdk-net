@@ -30,20 +30,42 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// The launch specification for Spot instances in the instance fleet, which determines
-    /// the defined duration and provisioning timeout behavior.
+    /// the defined duration, provisioning timeout behavior, and allocation strategy.
     /// 
     ///  <note> 
     /// <para>
     /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
-    /// later, excluding 5.0.x versions.
+    /// later, excluding 5.0.x versions. Spot instance allocation strategy is available in
+    /// Amazon EMR version 5.12.1 and later.
     /// </para>
     ///  </note>
     /// </summary>
     public partial class SpotProvisioningSpecification
     {
+        private SpotProvisioningAllocationStrategy _allocationStrategy;
         private int? _blockDurationMinutes;
         private SpotProvisioningTimeoutAction _timeoutAction;
         private int? _timeoutDurationMinutes;
+
+        /// <summary>
+        /// Gets and sets the property AllocationStrategy. 
+        /// <para>
+        ///  Specifies the strategy to use in launching Spot instance fleets. Currently, the only
+        /// option is capacity-optimized (the default), which launches instances from Spot instance
+        /// pools with optimal capacity for the number of instances that are launching. 
+        /// </para>
+        /// </summary>
+        public SpotProvisioningAllocationStrategy AllocationStrategy
+        {
+            get { return this._allocationStrategy; }
+            set { this._allocationStrategy = value; }
+        }
+
+        // Check to see if AllocationStrategy property is set
+        internal bool IsSetAllocationStrategy()
+        {
+            return this._allocationStrategy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BlockDurationMinutes. 

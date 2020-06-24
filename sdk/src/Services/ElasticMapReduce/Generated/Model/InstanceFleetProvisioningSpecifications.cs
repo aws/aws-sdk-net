@@ -30,27 +30,54 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// The launch specification for Spot instances in the fleet, which determines the defined
-    /// duration and provisioning timeout behavior.
+    /// duration, provisioning timeout behavior, and allocation strategy.
     /// 
     ///  <note> 
     /// <para>
     /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
-    /// later, excluding 5.0.x versions.
+    /// later, excluding 5.0.x versions. On-Demand and Spot instance allocation strategies
+    /// are available in Amazon EMR version 5.12.1 and later.
     /// </para>
     ///  </note>
     /// </summary>
     public partial class InstanceFleetProvisioningSpecifications
     {
+        private OnDemandProvisioningSpecification _onDemandSpecification;
         private SpotProvisioningSpecification _spotSpecification;
+
+        /// <summary>
+        /// Gets and sets the property OnDemandSpecification. 
+        /// <para>
+        ///  The launch specification for On-Demand instances in the instance fleet, which determines
+        /// the allocation strategy. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+        /// later, excluding 5.0.x versions. On-Demand instances allocation strategy is available
+        /// in Amazon EMR version 5.12.1 and later.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public OnDemandProvisioningSpecification OnDemandSpecification
+        {
+            get { return this._onDemandSpecification; }
+            set { this._onDemandSpecification = value; }
+        }
+
+        // Check to see if OnDemandSpecification property is set
+        internal bool IsSetOnDemandSpecification()
+        {
+            return this._onDemandSpecification != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SpotSpecification. 
         /// <para>
         /// The launch specification for Spot instances in the fleet, which determines the defined
-        /// duration and provisioning timeout behavior.
+        /// duration, provisioning timeout behavior, and allocation strategy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public SpotProvisioningSpecification SpotSpecification
         {
             get { return this._spotSpecification; }

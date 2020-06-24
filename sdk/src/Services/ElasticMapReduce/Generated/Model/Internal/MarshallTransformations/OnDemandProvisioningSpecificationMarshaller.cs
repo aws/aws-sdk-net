@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SpotProvisioningSpecification Marshaller
+    /// OnDemandProvisioningSpecification Marshaller
     /// </summary>       
-    public class SpotProvisioningSpecificationMarshaller : IRequestMarshaller<SpotProvisioningSpecification, JsonMarshallerContext> 
+    public class OnDemandProvisioningSpecificationMarshaller : IRequestMarshaller<OnDemandProvisioningSpecification, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SpotProvisioningSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(OnDemandProvisioningSpecification requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetAllocationStrategy())
             {
@@ -51,30 +51,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AllocationStrategy);
             }
 
-            if(requestObject.IsSetBlockDurationMinutes())
-            {
-                context.Writer.WritePropertyName("BlockDurationMinutes");
-                context.Writer.Write(requestObject.BlockDurationMinutes);
-            }
-
-            if(requestObject.IsSetTimeoutAction())
-            {
-                context.Writer.WritePropertyName("TimeoutAction");
-                context.Writer.Write(requestObject.TimeoutAction);
-            }
-
-            if(requestObject.IsSetTimeoutDurationMinutes())
-            {
-                context.Writer.WritePropertyName("TimeoutDurationMinutes");
-                context.Writer.Write(requestObject.TimeoutDurationMinutes);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static SpotProvisioningSpecificationMarshaller Instance = new SpotProvisioningSpecificationMarshaller();
+        public readonly static OnDemandProvisioningSpecificationMarshaller Instance = new OnDemandProvisioningSpecificationMarshaller();
 
     }
 }

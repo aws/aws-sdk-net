@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InstanceFleetProvisioningSpecifications Object
+    /// Response Unmarshaller for OnDemandProvisioningSpecification Object
     /// </summary>  
-    public class InstanceFleetProvisioningSpecificationsUnmarshaller : IUnmarshaller<InstanceFleetProvisioningSpecifications, XmlUnmarshallerContext>, IUnmarshaller<InstanceFleetProvisioningSpecifications, JsonUnmarshallerContext>
+    public class OnDemandProvisioningSpecificationUnmarshaller : IUnmarshaller<OnDemandProvisioningSpecification, XmlUnmarshallerContext>, IUnmarshaller<OnDemandProvisioningSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        InstanceFleetProvisioningSpecifications IUnmarshaller<InstanceFleetProvisioningSpecifications, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OnDemandProvisioningSpecification IUnmarshaller<OnDemandProvisioningSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InstanceFleetProvisioningSpecifications Unmarshall(JsonUnmarshallerContext context)
+        public OnDemandProvisioningSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            InstanceFleetProvisioningSpecifications unmarshalledObject = new InstanceFleetProvisioningSpecifications();
+            OnDemandProvisioningSpecification unmarshalledObject = new OnDemandProvisioningSpecification();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("OnDemandSpecification", targetDepth))
+                if (context.TestExpression("AllocationStrategy", targetDepth))
                 {
-                    var unmarshaller = OnDemandProvisioningSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.OnDemandSpecification = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SpotSpecification", targetDepth))
-                {
-                    var unmarshaller = SpotProvisioningSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.SpotSpecification = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AllocationStrategy = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         }
 
 
-        private static InstanceFleetProvisioningSpecificationsUnmarshaller _instance = new InstanceFleetProvisioningSpecificationsUnmarshaller();        
+        private static OnDemandProvisioningSpecificationUnmarshaller _instance = new OnDemandProvisioningSpecificationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InstanceFleetProvisioningSpecificationsUnmarshaller Instance
+        public static OnDemandProvisioningSpecificationUnmarshaller Instance
         {
             get
             {
