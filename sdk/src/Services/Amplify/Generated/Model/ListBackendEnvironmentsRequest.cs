@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the ListBackendEnvironments operation.
-    /// Lists backend environments for an Amplify App.
+    /// Lists the backend environments for an Amplify app.
     /// </summary>
     public partial class ListBackendEnvironmentsRequest : AmazonAmplifyRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  Unique Id for an amplify App. 
+        ///  The unique ID for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -61,7 +61,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        ///  Name of the backend environment 
+        ///  The name of the backend environment 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -80,7 +80,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  Maximum number of records to list in a single response. 
+        ///  The maximum number of records to list in a single response. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -99,8 +99,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  Pagination token. Set to null to start listing backen environments from start. If
-        /// a non-null pagination token is returned in a result, then pass its value in here to
+        ///  A pagination token. Set to null to start listing backend environments from the start.
+        /// If a non-null pagination token is returned in a result, pass its value in here to
         /// list more backend environments. 
         /// </para>
         /// </summary>

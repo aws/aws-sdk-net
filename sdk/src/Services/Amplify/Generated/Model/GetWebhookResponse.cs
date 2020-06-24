@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Result structure for the get webhook request.
+    /// The result structure for the get webhook request.
     /// </summary>
     public partial class GetWebhookResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Webhook. 
         /// <para>
-        ///  Webhook structure. 
+        ///  Describes the structure of a webhook. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Structure for artifact.
+    /// Describes an artifact.
     /// </summary>
     public partial class Artifact
     {
@@ -39,7 +39,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ArtifactFileName. 
         /// <para>
-        ///  File name for the artifact. 
+        ///  The file name for the artifact. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]
@@ -58,7 +58,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ArtifactId. 
         /// <para>
-        ///  Unique Id for a artifact. 
+        ///  The unique ID for the artifact. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

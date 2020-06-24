@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Result structure for an Amplify App delete request.
+    /// The result structure for the delete app request.
     /// </summary>
     public partial class DeleteAppResponse : AmazonWebServiceResponse
     {

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Exception thrown when an operation fails due to non-existent resource.
+    /// An operation failed due to a non-existent resource.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Exception thrown when an entity has not been found during an operation.
+    /// An entity was not found during an operation.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

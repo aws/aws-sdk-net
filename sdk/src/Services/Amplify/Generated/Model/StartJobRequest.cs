@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the StartJob operation.
-    /// Starts a new job for a branch, part of an Amplify App.
+    /// Starts a new job for a branch of an Amplify app.
     /// </summary>
     public partial class StartJobRequest : AmazonAmplifyRequest
     {
@@ -46,7 +46,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  Unique Id for an Amplify App. 
+        ///  The unique ID for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -65,7 +65,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        ///  Name for the branch, for the Job. 
+        ///  The branch name for the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -84,7 +84,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property CommitId. 
         /// <para>
-        ///  Commit Id from 3rd party repository provider for the Job. 
+        ///  The commit ID from a third-party repository provider for the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -103,7 +103,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property CommitMessage. 
         /// <para>
-        ///  Commit message from 3rd party repository provider for the Job. 
+        ///  The commit message from a third-party repository provider for the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=10000)]
@@ -122,7 +122,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property CommitTime. 
         /// <para>
-        ///  Commit date / time for the Job. 
+        ///  The commit date and time for the job. 
         /// </para>
         /// </summary>
         public DateTime CommitTime
@@ -140,7 +140,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        ///  Unique Id for an existing job. Required for "RETRY" JobType. 
+        ///  The unique ID for an existing job. This is required if the value of <code>jobType</code>
+        /// is <code>RETRY</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -159,7 +160,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobReason. 
         /// <para>
-        ///  Descriptive reason for starting this job. 
+        ///  A descriptive reason for starting this job. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -178,10 +179,11 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobType. 
         /// <para>
-        ///  Type for the Job. Available JobTypes are: \n "RELEASE": Start a new job with the
-        /// latest change from the specified branch. Only available for apps that have connected
-        /// to a repository. "RETRY": Retry an existing job. JobId is required for this type of
-        /// job. 
+        ///  Describes the type for the job. The job type <code>RELEASE</code> starts a new job
+        /// with the latest change from the specified branch. This value is available only for
+        /// apps that are connected to a repository. The job type <code>RETRY</code> retries an
+        /// existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code>
+        /// is also required. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=10)]

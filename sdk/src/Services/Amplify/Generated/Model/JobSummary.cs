@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Structure for the summary of a Job.
+    /// Describes the summary for an execution job for an Amplify app.
     /// </summary>
     public partial class JobSummary
     {
@@ -46,7 +46,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property CommitId. 
         /// <para>
-        ///  Commit Id from 3rd party repository provider for the Job. 
+        ///  The commit ID from a third-party repository provider for the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -65,7 +65,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property CommitMessage. 
         /// <para>
-        ///  Commit message from 3rd party repository provider for the Job. 
+        ///  The commit message from a third-party repository provider for the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=10000)]
@@ -84,7 +84,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property CommitTime. 
         /// <para>
-        ///  Commit date / time for the Job. 
+        ///  The commit date and time for the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -103,7 +103,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        ///  End date / time for the Job. 
+        ///  The end date and time for the job. 
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -121,7 +121,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
-        ///  Arn for the Job. 
+        ///  The Amazon Resource Name (ARN) for the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]
@@ -140,7 +140,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        ///  Unique Id for the Job. 
+        ///  The unique ID for the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -159,9 +159,10 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobType. 
         /// <para>
-        ///  Type for the Job. \n "RELEASE": Manually released from source by using StartJob API.
-        /// "RETRY": Manually retried by using StartJob API. "WEB_HOOK": Automatically triggered
-        /// by WebHooks. 
+        ///  The type for the job. If the value is <code>RELEASE</code>, the job was manually
+        /// released from its source by using the <code>StartJob</code> API. If the value is <code>RETRY</code>,
+        /// the job was manually retried using the <code>StartJob</code> API. If the value is
+        /// <code>WEB_HOOK</code>, the job was automatically triggered by webhooks. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=10)]
@@ -180,7 +181,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        ///  Start date / time for the Job. 
+        ///  The start date and time for the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -199,7 +200,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  Status for the Job. 
+        ///  The current status for the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

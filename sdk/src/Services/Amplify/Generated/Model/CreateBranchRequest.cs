@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateBranch operation.
-    /// Creates a new Branch for an Amplify App.
+    /// Creates a new branch for an Amplify app.
     /// </summary>
     public partial class CreateBranchRequest : AmazonAmplifyRequest
     {
@@ -55,7 +55,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  Unique Id for an Amplify App. 
+        ///  The unique ID for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -74,7 +74,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BackendEnvironmentArn. 
         /// <para>
-        ///  ARN for a Backend Environment, part of an Amplify App. 
+        ///  The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
+        /// app. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -93,7 +94,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BasicAuthCredentials. 
         /// <para>
-        ///  Basic Authorization credentials for the branch. 
+        ///  The basic authorization credentials for the branch. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2000)]
@@ -112,7 +113,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        ///  Name for the branch. 
+        ///  The name for the branch. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -131,7 +132,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BuildSpec. 
         /// <para>
-        ///  BuildSpec for the branch. 
+        ///  The build specification (build spec) for the branch. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25000)]
@@ -150,7 +151,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  Description for the branch. 
+        ///  The description for the branch. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -169,7 +170,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        ///  Display name for a branch, will use as the default domain prefix. 
+        ///  The display name for a branch. This is used as the default domain prefix. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -206,7 +207,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnableBasicAuth. 
         /// <para>
-        ///  Enables Basic Auth for the branch. 
+        ///  Enables basic authorization for the branch. 
         /// </para>
         /// </summary>
         public bool EnableBasicAuth
@@ -242,7 +243,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnablePullRequestPreview. 
         /// <para>
-        ///  Enables Pull Request Preview for this branch. 
+        ///  Enables pull request preview for this branch. 
         /// </para>
         /// </summary>
         public bool EnablePullRequestPreview
@@ -260,7 +261,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnvironmentVariables. 
         /// <para>
-        ///  Environment Variables for the branch. 
+        ///  The environment variables for the branch. 
         /// </para>
         /// </summary>
         public Dictionary<string, string> EnvironmentVariables
@@ -278,7 +279,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Framework. 
         /// <para>
-        ///  Framework for the branch. 
+        ///  The framework for the branch. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -297,7 +298,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property PullRequestEnvironmentName. 
         /// <para>
-        ///  The Amplify Environment name for the pull request. 
+        ///  The Amplify environment name for the pull request. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=20)]
@@ -316,7 +317,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Stage. 
         /// <para>
-        ///  Stage for the branch. 
+        ///  Describes the current stage for the branch. 
         /// </para>
         /// </summary>
         public Stage Stage
@@ -334,7 +335,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  Tag for the branch. 
+        ///  The tag for the branch. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -353,7 +354,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Ttl. 
         /// <para>
-        ///  The content TTL for the website in seconds. 
+        ///  The content Time To Live (TTL) for the website in seconds. 
         /// </para>
         /// </summary>
         public string Ttl

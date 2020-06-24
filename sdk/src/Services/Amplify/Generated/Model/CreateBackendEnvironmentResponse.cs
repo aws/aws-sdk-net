@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Result structure for create backend environment.
+    /// The result structure for the create backend environment request.
     /// </summary>
     public partial class CreateBackendEnvironmentResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BackendEnvironment. 
         /// <para>
-        ///  Backend environment structure for an amplify App. 
+        ///  Describes the backend environment for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

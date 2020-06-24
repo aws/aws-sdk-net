@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Structure for an execution job for an Amplify App.
+    /// Describes an execution job for an Amplify app.
     /// </summary>
     public partial class Job
     {
@@ -39,7 +39,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Steps. 
         /// <para>
-        ///  Execution steps for an execution job, for an Amplify App. 
+        ///  The execution steps for an execution job, for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Summary. 
         /// <para>
-        ///  Summary for an execution job for an Amplify App. 
+        ///  Describes the summary for an execution job for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

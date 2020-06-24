@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// List tags for resource.
+    /// Returns a list of tags for a specified Amazon Resource Name (ARN).
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonAmplifyRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  Resource arn used to list tags. 
+        ///  The Amazon Resource Name (ARN) to use to list tags. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

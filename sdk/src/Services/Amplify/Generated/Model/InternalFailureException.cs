@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Exception thrown when the service fails to perform an operation due to an internal
-    /// issue.
+    /// The service failed to perform an operation due to an internal issue.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

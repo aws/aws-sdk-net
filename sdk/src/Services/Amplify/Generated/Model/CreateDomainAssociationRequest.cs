@@ -30,11 +30,14 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDomainAssociation operation.
-    /// Create a new DomainAssociation on an App
+    /// Creates a new domain association for an Amplify app. This action associates a custom
+    /// domain with the Amplify app
     /// </summary>
     public partial class CreateDomainAssociationRequest : AmazonAmplifyRequest
     {
         private string _appId;
+        private List<string> _autoSubDomainCreationPatterns = new List<string>();
+        private string _autoSubDomainIAMRole;
         private string _domainName;
         private bool? _enableAutoSubDomain;
         private List<SubDomainSetting> _subDomainSettings = new List<SubDomainSetting>();
@@ -42,7 +45,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  Unique Id for an Amplify App. 
+        ///  The unique ID for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -59,9 +62,47 @@ namespace Amazon.Amplify.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AutoSubDomainCreationPatterns. 
+        /// <para>
+        ///  Sets the branch patterns for automatic subdomain creation. 
+        /// </para>
+        /// </summary>
+        public List<string> AutoSubDomainCreationPatterns
+        {
+            get { return this._autoSubDomainCreationPatterns; }
+            set { this._autoSubDomainCreationPatterns = value; }
+        }
+
+        // Check to see if AutoSubDomainCreationPatterns property is set
+        internal bool IsSetAutoSubDomainCreationPatterns()
+        {
+            return this._autoSubDomainCreationPatterns != null && this._autoSubDomainCreationPatterns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoSubDomainIAMRole. 
+        /// <para>
+        ///  The required AWS Identity and Access Management (IAM) service role for the Amazon
+        /// Resource Name (ARN) for automatically creating subdomains. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1000)]
+        public string AutoSubDomainIAMRole
+        {
+            get { return this._autoSubDomainIAMRole; }
+            set { this._autoSubDomainIAMRole = value; }
+        }
+
+        // Check to see if AutoSubDomainIAMRole property is set
+        internal bool IsSetAutoSubDomainIAMRole()
+        {
+            return this._autoSubDomainIAMRole != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        ///  Domain name for the Domain Association. 
+        ///  The domain name for the domain association. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -80,8 +121,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnableAutoSubDomain. 
         /// <para>
-        ///  Enables automated creation of Subdomains for branches. (Currently not supported)
-        /// 
+        ///  Enables the automated creation of subdomains for branches. 
         /// </para>
         /// </summary>
         public bool EnableAutoSubDomain
@@ -99,7 +139,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property SubDomainSettings. 
         /// <para>
-        ///  Setting structure for the Subdomain. 
+        ///  The setting for the subdomain. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

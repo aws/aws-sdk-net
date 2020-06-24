@@ -120,6 +120,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Amplify.Model.CreateDomainAssociationRequest.AutoSubDomainIAMRole</property>
+    <max>1000</max>
+    <pattern>^$|^arn:aws:iam::\d{12}:role.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Amplify.Model.CreateDomainAssociationRequest.DomainName</property>
     <max>255</max>
   </property-value-rule>
@@ -567,6 +572,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Amplify.Model.UpdateDomainAssociationRequest.AutoSubDomainIAMRole</property>
+    <max>1000</max>
+    <pattern>^$|^arn:aws:iam::\d{12}:role.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateDomainAssociationRequest.DomainName</property>
     <max>255</max>
   </property-value-rule>
@@ -750,6 +760,11 @@
     <property>Amazon.Amplify.Model.CustomRule.Target</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.DomainAssociation.AutoSubDomainIAMRole</property>
+    <max>1000</max>
+    <pattern>^$|^arn:aws:iam::\d{12}:role.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.DomainAssociation.CertificateVerificationDNSRecord</property>

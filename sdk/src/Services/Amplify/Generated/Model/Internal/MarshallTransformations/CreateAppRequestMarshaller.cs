@@ -146,6 +146,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EnableBranchAutoBuild);
                 }
 
+                if(publicRequest.IsSetEnableBranchAutoDeletion())
+                {
+                    context.Writer.WritePropertyName("enableBranchAutoDeletion");
+                    context.Writer.Write(publicRequest.EnableBranchAutoDeletion);
+                }
+
                 if(publicRequest.IsSetEnvironmentVariables())
                 {
                     context.Writer.WritePropertyName("environmentVariables");

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Structure for webhook, which associates a webhook with an Amplify App.
+    /// Describes a webhook that connects repository events to an Amplify app.
     /// </summary>
     public partial class Webhook
     {
@@ -44,7 +44,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        ///  Name for a branch, part of an Amplify App. 
+        ///  The name for a branch that is part of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -63,7 +63,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        ///  Create date / time for a webhook. 
+        ///  The create date and time for a webhook. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +82,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  Description for a webhook. 
+        ///  The description for a webhook. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]
@@ -101,7 +101,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property UpdateTime. 
         /// <para>
-        ///  Update date / time for a webhook. 
+        ///  Updates the date and time for a webhook. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -120,7 +120,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property WebhookArn. 
         /// <para>
-        ///  ARN for the webhook. 
+        ///  The Amazon Resource Name (ARN) for the webhook. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]
@@ -139,7 +139,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property WebhookId. 
         /// <para>
-        ///  Id of the webhook. 
+        ///  The ID of the webhook. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -158,7 +158,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property WebhookUrl. 
         /// <para>
-        ///  Url of the webhook. 
+        ///  The URL of the webhook. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]

@@ -62,6 +62,9 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyException("Request object does not have required field AppId set");
             request.AddPathResource("{appId}", StringUtils.FromString(publicRequest.AppId));
             
+            if (publicRequest.IsSetEnvironmentName())
+                request.Parameters.Add("environmentName", StringUtils.FromString(publicRequest.EnvironmentName));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
@@ -69,23 +72,6 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/apps/{appId}/backendenvironments";
             request.MarshallerVersion = 2;
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnvironmentName())
-                {
-                    context.Writer.WritePropertyName("environmentName");
-                    context.Writer.Write(publicRequest.EnvironmentName);
-                }
-
-        
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
             request.UseQueryString = true;
 
             return request;

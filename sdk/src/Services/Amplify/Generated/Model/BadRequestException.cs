@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Exception thrown when a request contains unexpected data.
+    /// A request contains unexpected data.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

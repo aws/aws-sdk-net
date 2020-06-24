@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Custom rewrite / redirect rule.
+    /// Describes a custom rewrite or redirect rule.
     /// </summary>
     public partial class CustomRule
     {
@@ -41,7 +41,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Condition. 
         /// <para>
-        ///  The condition for a URL rewrite or redirect rule, e.g. country code. 
+        ///  The condition for a URL rewrite or redirect rule, such as a country code. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

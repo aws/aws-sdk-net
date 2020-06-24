@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Branch for an Amplify App, which maps to a 3rd party repository branch.
+    /// The branch for an Amplify app, which maps to a third-party repository branch.
     /// </summary>
     public partial class Branch
     {
@@ -63,7 +63,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ActiveJobId. 
         /// <para>
-        ///  Id of the active job for a branch, part of an Amplify App. 
+        ///  The ID of the active job for a branch of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]
@@ -82,7 +82,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AssociatedResources. 
         /// <para>
-        ///  List of custom resources that are linked to this branch. 
+        ///  A list of custom resources that are linked to this branch. 
         /// </para>
         /// </summary>
         public List<string> AssociatedResources
@@ -100,7 +100,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BackendEnvironmentArn. 
         /// <para>
-        ///  ARN for a Backend Environment, part of an Amplify App. 
+        ///  The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
+        /// app. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -119,7 +120,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BasicAuthCredentials. 
         /// <para>
-        ///  Basic Authorization credentials for a branch, part of an Amplify App. 
+        ///  The basic authorization credentials for a branch of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2000)]
@@ -138,7 +139,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BranchArn. 
         /// <para>
-        ///  ARN for a branch, part of an Amplify App. 
+        ///  The Amazon Resource Name (ARN) for a branch that is part of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]
@@ -157,7 +158,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        ///  Name for a branch, part of an Amplify App. 
+        ///  The name for the branch that is part of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -176,7 +177,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BuildSpec. 
         /// <para>
-        ///  BuildSpec content for branch for Amplify App. 
+        ///  The build specification (build spec) content for the branch of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25000)]
@@ -195,7 +196,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        ///  Creation date and time for a branch, part of an Amplify App. 
+        ///  The creation date and time for a branch that is part of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -214,7 +215,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property CustomDomains. 
         /// <para>
-        ///  Custom domains for a branch, part of an Amplify App. 
+        ///  The custom domains for a branch of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -233,7 +234,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  Description for a branch, part of an Amplify App. 
+        ///  The description for the branch that is part of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]
@@ -271,7 +272,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        ///  Display name for a branch, will use as the default domain prefix. 
+        ///  The display name for the branch. This is used as the default domain prefix. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -290,7 +291,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnableAutoBuild. 
         /// <para>
-        ///  Enables auto-building on push for a branch, part of an Amplify App. 
+        ///  Enables auto-building on push for a branch of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -309,7 +310,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnableBasicAuth. 
         /// <para>
-        ///  Enables Basic Authorization for a branch, part of an Amplify App. 
+        ///  Enables basic authorization for a branch of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -328,7 +329,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnableNotification. 
         /// <para>
-        ///  Enables notifications for a branch, part of an Amplify App. 
+        ///  Enables notifications for a branch that is part of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -347,7 +348,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnablePullRequestPreview. 
         /// <para>
-        ///  Enables Pull Request Preview for this branch. 
+        ///  Enables pull request preview for the branch. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -366,7 +367,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnvironmentVariables. 
         /// <para>
-        ///  Environment Variables specific to a branch, part of an Amplify App. 
+        ///  The environment variables specific to a branch of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -385,7 +386,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Framework. 
         /// <para>
-        ///  Framework for a branch, part of an Amplify App. 
+        ///  The framework for a branch of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -404,7 +405,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property PullRequestEnvironmentName. 
         /// <para>
-        ///  The Amplify Environment name for the pull request. 
+        ///  The Amplify environment name for the pull request. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=20)]
@@ -442,7 +443,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Stage. 
         /// <para>
-        ///  Stage for a branch, part of an Amplify App. 
+        ///  The current stage for the branch that is part of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -461,7 +462,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  Tag for branch for Amplify App. 
+        ///  The tag for the branch of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -480,7 +481,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ThumbnailUrl. 
         /// <para>
-        ///  Thumbnail URL for the branch. 
+        ///  The thumbnail URL for the branch of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
@@ -499,7 +500,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property TotalNumberOfJobs. 
         /// <para>
-        ///  Total number of Jobs part of an Amplify App. 
+        ///  The total number of jobs that are part of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]
@@ -518,7 +519,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Ttl. 
         /// <para>
-        ///  The content TTL for the website in seconds. 
+        ///  The content Time to Live (TTL) for the website in seconds. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -537,7 +538,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property UpdateTime. 
         /// <para>
-        ///  Last updated date and time for a branch, part of an Amplify App. 
+        ///  The last updated date and time for a branch that is part of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

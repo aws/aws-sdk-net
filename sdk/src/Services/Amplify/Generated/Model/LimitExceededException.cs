@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Exception thrown when a resource could not be created because of service limits.
+    /// A resource could not be created because service quotas were exceeded.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

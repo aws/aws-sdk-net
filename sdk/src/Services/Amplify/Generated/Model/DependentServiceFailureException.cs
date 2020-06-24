@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+    /// An operation failed because a dependent service threw an exception.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

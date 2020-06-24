@@ -142,6 +142,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnableBranchAutoBuild = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("enableBranchAutoDeletion", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableBranchAutoDeletion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("environmentVariables", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

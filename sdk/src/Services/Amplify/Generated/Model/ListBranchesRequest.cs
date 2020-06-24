@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the ListBranches operation.
-    /// Lists branches for an Amplify App.
+    /// Lists the branches of an Amplify app.
     /// </summary>
     public partial class ListBranchesRequest : AmazonAmplifyRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  Unique Id for an Amplify App. 
+        ///  The unique ID for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -60,7 +60,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  Maximum number of records to list in a single response. 
+        ///  The maximum number of records to list in a single response. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -79,9 +79,9 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  Pagination token. Set to null to start listing branches from start. If a non-null
-        /// pagination token is returned in a result, then pass its value in here to list more
-        /// branches. 
+        ///  A pagination token. Set to null to start listing branches from the start. If a non-null
+        /// pagination token is returned in a result, pass its value in here to list more branches.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2000)]

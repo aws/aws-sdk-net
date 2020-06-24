@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Result structure for the list artifacts request.
+    /// The result structure for the list artifacts request.
     /// </summary>
     public partial class ListArtifactsResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Artifacts. 
         /// <para>
-        ///  List of artifacts. 
+        ///  A list of artifacts. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,8 +58,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  Pagination token. If non-null pagination token is returned in a result, then pass
-        /// its value in another request to fetch more entries. 
+        ///  A pagination token. If a non-null pagination token is returned in a result, pass
+        /// its value in another request to retrieve more entries. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2000)]

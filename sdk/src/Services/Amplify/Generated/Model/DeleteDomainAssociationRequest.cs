@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDomainAssociation operation.
-    /// Deletes a DomainAssociation.
+    /// Deletes a domain association for an Amplify app.
     /// </summary>
     public partial class DeleteDomainAssociationRequest : AmazonAmplifyRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  Unique Id for an Amplify App. 
+        ///  The unique id for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -59,7 +59,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        ///  Name of the domain. 
+        ///  The name of the domain. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

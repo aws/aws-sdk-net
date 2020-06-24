@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteBackendEnvironment operation.
-    /// Delete backend environment for an Amplify App.
+    /// Deletes a backend environment for an Amplify app.
     /// </summary>
     public partial class DeleteBackendEnvironmentRequest : AmazonAmplifyRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  Unique Id of an Amplify App. 
+        ///  The unique ID of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -59,7 +59,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        ///  Name of a backend environment of an Amplify App. 
+        ///  The name of a backend environment of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

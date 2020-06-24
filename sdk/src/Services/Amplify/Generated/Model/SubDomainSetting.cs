@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Setting for the Subdomain.
+    /// Describes the settings for the subdomain.
     /// </summary>
     public partial class SubDomainSetting
     {
@@ -39,7 +39,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        ///  Branch name setting for the Subdomain. 
+        ///  The branch name setting for the subdomain. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -58,7 +58,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        ///  Prefix setting for the Subdomain. 
+        ///  The prefix setting for the subdomain. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

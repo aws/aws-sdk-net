@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Maximum number of records to list in a single response.
+    /// The maximum number of records to list in a single response.
     /// </summary>
     public partial class ListJobsResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobSummaries. 
         /// <para>
-        ///  Result structure for list job result request. 
+        ///  The result structure for the list job result request. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,8 +58,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  Pagination token. If non-null pagination token is returned in a result, then pass
-        /// its value in another request to fetch more entries. 
+        ///  A pagination token. If non-null the pagination token is returned in a result. Pass
+        /// its value in another request to retrieve more entries. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2000)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Exception thrown when an operation fails due to a lack of access.
+    /// An operation failed due to a lack of access.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

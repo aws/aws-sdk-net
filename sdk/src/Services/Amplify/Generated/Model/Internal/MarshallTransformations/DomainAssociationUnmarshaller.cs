@@ -64,6 +64,18 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("autoSubDomainCreationPatterns", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AutoSubDomainCreationPatterns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("autoSubDomainIAMRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AutoSubDomainIAMRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("certificateVerificationDNSRecord", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

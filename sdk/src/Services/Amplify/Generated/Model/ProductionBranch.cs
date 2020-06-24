@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Structure with Production Branch information.
+    /// Describes the information about a production branch for an Amplify app.
     /// </summary>
     public partial class ProductionBranch
     {
@@ -41,7 +41,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        ///  Branch Name for Production Branch. 
+        ///  The branch name for the production branch. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -60,7 +60,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property LastDeployTime. 
         /// <para>
-        ///  Last Deploy Time of Production Branch. 
+        ///  The last deploy time of the production branch. 
         /// </para>
         /// </summary>
         public DateTime LastDeployTime
@@ -78,7 +78,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  Status of Production Branch. 
+        ///  The status of the production branch. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=7)]
@@ -97,7 +97,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ThumbnailUrl. 
         /// <para>
-        ///  Thumbnail URL for Production Branch. 
+        ///  The thumbnail URL for the production branch. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]

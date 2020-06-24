@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBackendEnvironment operation.
-    /// Retrieves a backend environment for an Amplify App.
+    /// Returns a backend environment for an Amplify app.
     /// </summary>
     public partial class GetBackendEnvironmentRequest : AmazonAmplifyRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  Unique Id for an Amplify App. 
+        ///  The unique id for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -59,7 +59,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        ///  Name for the backend environment. 
+        ///  The name for the backend environment. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the GetJob operation.
-    /// Get a job for a branch, part of an Amplify App.
+    /// Returns a job for a branch of an Amplify app.
     /// </summary>
     public partial class GetJobRequest : AmazonAmplifyRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  Unique Id for an Amplify App. 
+        ///  The unique ID for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -60,7 +60,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        ///  Name for the branch, for the Job. 
+        ///  The branch name for the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -79,7 +79,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        ///  Unique Id for the Job. 
+        ///  The unique ID for the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
