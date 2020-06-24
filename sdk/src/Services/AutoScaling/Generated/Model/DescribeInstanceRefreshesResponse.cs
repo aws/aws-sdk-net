@@ -41,11 +41,6 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The instance refreshes for the specified group.
         /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-        /// Auto Scaling Instances Based on an Instance Refresh</a>.
-        /// </para>
         /// </summary>
         public List<InstanceRefresh> InstanceRefreshes
         {

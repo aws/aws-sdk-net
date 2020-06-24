@@ -30,7 +30,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAutoScalingGroup operation.
-    /// Creates an Auto Scaling group with the specified name and attributes.
+    /// Creates an Auto Scaling group with the specified name and attributes. 
     /// 
     ///  
     /// <para>
@@ -125,8 +125,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-        /// Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// This setting applies when using simple scaling policies, but not when using other
+        /// scaling policies or scheduled scaling. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+        /// Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public int DefaultCooldown
@@ -181,8 +182,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: This parameter is required if you are adding an <code>ELB</code> health
-        /// check.
+        /// Required if you are adding an <code>ELB</code> health check.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriod

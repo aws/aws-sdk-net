@@ -38,8 +38,8 @@ namespace Amazon.AutoScaling.Model
     /// If successful, this call creates a new instance refresh request with a unique ID that
     /// you can use to track its progress. To query its status, call the <a>DescribeInstanceRefreshes</a>
     /// API. To describe the instance refreshes that have already run, call the <a>DescribeInstanceRefreshes</a>
-    /// API. To cancel an active instance refresh operation, use the <a>CancelInstanceRefresh</a>
-    /// API.
+    /// API. To cancel an instance refresh operation in progress, use the <a>CancelInstanceRefresh</a>
+    /// API. 
     /// </para>
     ///  
     /// <para>
@@ -77,6 +77,18 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Set of preferences associated with the instance refresh request.
         /// </para>
+        ///  
+        /// <para>
+        /// If not provided, the default values are used. For <code>MinHealthyPercentage</code>,
+        /// the default value is <code>90</code>. For <code>InstanceWarmup</code>, the default
+        /// is to use the value specified for the health check grace period for the Auto Scaling
+        /// group.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html">RefreshPreferences</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+        /// </para>
         /// </summary>
         public RefreshPreferences Preferences
         {
@@ -99,7 +111,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// A rolling update is an update that is applied to all instances in an Auto Scaling
         /// group until all instances have been updated. A rolling update can fail due to failed
-        /// health checks or if instances are on standby or are protected from scale-in. If the
+        /// health checks or if instances are on standby or are protected from scale in. If the
         /// rolling update process fails, any instances that were already replaced are not rolled
         /// back to their previous configuration. 
         /// </para>

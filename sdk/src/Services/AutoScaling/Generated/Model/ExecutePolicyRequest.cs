@@ -66,8 +66,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: This parameter is required if the policy type is <code>StepScaling</code>
-        /// and not supported otherwise.
+        /// Required if the policy type is <code>StepScaling</code> and not supported otherwise.
         /// </para>
         /// </summary>
         public double BreachThreshold
@@ -96,7 +95,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-        /// Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public bool HonorCooldown
@@ -126,8 +125,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: This parameter is required if the policy type is <code>StepScaling</code>
-        /// and not supported otherwise.
+        /// Required if the policy type is <code>StepScaling</code> and not supported otherwise.
         /// </para>
         /// </summary>
         public double MetricValue

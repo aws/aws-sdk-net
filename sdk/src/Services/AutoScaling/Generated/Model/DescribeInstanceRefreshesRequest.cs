@@ -64,7 +64,11 @@ namespace Amazon.AutoScaling.Model
     /// <para>
     ///  <code>Cancelled</code> - The operation is cancelled. 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
+    /// Auto Scaling Instances Based on an Instance Refresh</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeInstanceRefreshesRequest : AmazonAutoScalingRequest
     {

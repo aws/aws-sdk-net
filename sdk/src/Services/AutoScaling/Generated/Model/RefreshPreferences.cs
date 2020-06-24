@@ -41,13 +41,8 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The number of seconds until a newly launched instance is configured and ready to use.
         /// During this time, Amazon EC2 Auto Scaling does not immediately move on to the next
-        /// replacement. The default is to use the value specified for the health check grace
-        /// period for the group.
-        /// </para>
-        ///  
-        /// <para>
-        /// Note: While warming up, a newly launched instance is not counted toward the aggregated
-        /// metrics of the Auto Scaling group. 
+        /// replacement. The default is to use the value for the health check grace period defined
+        /// for the group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
