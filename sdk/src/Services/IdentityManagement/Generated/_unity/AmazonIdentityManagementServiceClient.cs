@@ -405,8 +405,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        ///  For information about limits on the number of keys you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>IAM User Guide</i>.
+        /// The number and size of IAM resources in an AWS account are limited. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS Quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -427,7 +428,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the CreateAccessKey service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -949,7 +950,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the DeleteAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1705,7 +1706,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the GenerateCredentialReport service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1923,8 +1924,9 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  For information about limitations on IAM entities, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>IAM User Guide</i>.
+        /// The number and size of IAM resources in an AWS account are limited. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS Quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -4568,7 +4570,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the UpdateAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message

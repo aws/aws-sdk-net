@@ -70,7 +70,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -90,9 +90,11 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Adds the specified IAM role to the specified instance profile. An instance profile
-        /// can contain only one role, and this limit cannot be increased. You can remove the
-        /// existing role and then add a different role to an instance profile. You must then
-        /// wait for the change to appear across all of AWS because of <a href="https://en.wikipedia.org/wiki/Eventual_consistency">eventual
+        /// can contain only one role. (The number and size of IAM resources in an AWS account
+        /// are limited. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS Quotas</a> in the <i>IAM User Guide</i>.) You can remove the existing role
+        /// and then add a different role to an instance profile. You must then wait for the change
+        /// to appear across all of AWS because of <a href="https://en.wikipedia.org/wiki/Eventual_consistency">eventual
         /// consistency</a>. To force the change, you must <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html">disassociate
         /// the instance profile</a> and then <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html">associate
         /// the instance profile</a>, or you can stop your instance and then restart it.
@@ -120,7 +122,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -155,7 +157,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the AddUserToGroup service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -199,7 +201,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -251,7 +253,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -305,7 +307,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -355,7 +357,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -389,8 +391,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        ///  For information about limits on the number of keys you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>IAM User Guide</i>.
+        /// The number and size of IAM resources in an AWS account are limited. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS Quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -408,7 +411,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the CreateAccessKey service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -435,8 +438,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        ///  For information about limits on the number of keys you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>IAM User Guide</i>.
+        /// The number and size of IAM resources in an AWS account are limited. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS Quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -455,7 +459,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the CreateAccessKey service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -489,7 +493,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -508,8 +512,9 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  For information about the number of groups you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>IAM User Guide</i>.
+        /// The number and size of IAM resources in an AWS account are limited. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS Quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
@@ -523,7 +528,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -548,8 +553,9 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  For information about the number of instance profiles you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>IAM User Guide</i>.
+        /// The number and size of IAM resources in an AWS account are limited. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS Quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInstanceProfile service method.</param>
@@ -563,7 +569,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -594,7 +600,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -670,7 +676,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -715,7 +721,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
@@ -763,7 +769,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
@@ -788,9 +794,9 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Creates a new role for your AWS account. For more information about roles, go to <a
         /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM
-        /// Roles</a>. For information about limitations on role names and the number of roles
-        /// you can create, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>IAM User Guide</i>.
+        /// Roles</a>. The number and size of IAM resources in an AWS account are limited. For
+        /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS Quotas</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRole service method.</param>
         /// <param name="cancellationToken">
@@ -811,7 +817,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
@@ -876,7 +882,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -917,7 +923,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -968,7 +974,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the CreateServiceSpecificCredential service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -991,9 +997,9 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  For information about limitations on the number of IAM users you can create, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>IAM User Guide</i>.
+        /// The number and size of IAM resources in an AWS account are limited. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS Quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
@@ -1015,7 +1021,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1041,8 +1047,9 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// For information about limits on the number of MFA devices you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on Entities</a> in the <i>IAM User Guide</i>.
+        /// The number and size of IAM resources in an AWS account are limited. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS Quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1064,7 +1071,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1103,7 +1110,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1140,7 +1147,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the DeleteAccessKey service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1171,7 +1178,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the DeleteAccountAlias service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1198,7 +1205,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the DeleteAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1223,7 +1230,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the DeleteAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1257,7 +1264,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1294,7 +1301,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the DeleteGroupPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1340,7 +1347,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1386,7 +1393,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1496,7 +1503,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1545,7 +1552,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1592,7 +1599,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1674,7 +1681,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the DeleteRolePolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1726,7 +1733,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1777,7 +1784,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1828,7 +1835,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the DeleteServiceLinkedRole service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1887,7 +1894,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the DeleteSigningCertificate service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1995,7 +2002,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -2064,7 +2071,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the DeleteUserPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -2104,7 +2111,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -2144,7 +2151,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -2184,7 +2191,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -2230,7 +2237,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -2274,7 +2281,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -2303,7 +2310,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the GenerateCredentialReport service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2326,7 +2333,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the GenerateCredentialReport service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2705,8 +2712,9 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  For information about limitations on IAM entities, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>IAM User Guide</i>.
+        /// The number and size of IAM resources in an AWS account are limited. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS Quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -2727,8 +2735,9 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  For information about limitations on IAM entities, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>IAM User Guide</i>.
+        /// The number and size of IAM resources in an AWS account are limited. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS Quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountSummary service method.</param>
@@ -5142,7 +5151,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the PutGroupPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
@@ -5261,7 +5270,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the PutRolePolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
@@ -5368,7 +5377,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the PutUserPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
@@ -5451,7 +5460,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the RemoveRoleFromInstanceProfile service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -5486,7 +5495,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the RemoveUserFromGroup service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -5550,7 +5559,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -5596,7 +5605,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -5847,7 +5856,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -5929,7 +5938,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -6034,7 +6043,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the UpdateAccessKey service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -6076,7 +6085,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the UpdateAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
@@ -6120,7 +6129,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the UpdateAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
@@ -6156,7 +6165,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the UpdateAssumeRolePolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
@@ -6216,7 +6225,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -6258,7 +6267,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -6420,7 +6429,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -6477,7 +6486,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -6541,7 +6550,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the UpdateSigningCertificate service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -6632,7 +6641,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -6702,7 +6711,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedCertificateException">
         /// The request was rejected because the certificate was malformed or expired. The error
@@ -6762,7 +6771,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedCertificateException">
         /// The request was rejected because the certificate was malformed or expired. The error
@@ -6810,7 +6819,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
+        /// AWS account limitations. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
