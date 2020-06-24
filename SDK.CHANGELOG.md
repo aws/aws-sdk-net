@@ -1,3 +1,28 @@
+### 3.3.768.0 (2020-06-24 18:13 UTC)
+* Amplify (3.3.105.0)
+	* This release of AWS Amplify Console introduces support for automatically creating custom subdomains for branches based on user-defined glob patterns, as well as automatically cleaning up Amplify branches when their corresponding git branches are deleted.
+* AutoScaling (3.3.103.5)
+	* Documentation updates for Amazon EC2 Auto Scaling.
+* Backup (3.3.103.0)
+	* Customers can now manage and monitor their backups in a policied manner across their AWS accounts, via an integration between AWS Backup and AWS Organizations
+* CodeCommit (3.3.107.0)
+	* This release introduces support for reactions to CodeCommit comments. Users will be able to select from a pre-defined list of emojis to express their reaction to any comments.
+* ElasticMapReduce (3.3.108.0)
+	* Amazon EMR customers can now set allocation strategies for On-Demand and Spot instances in their EMR clusters with instance fleets. These allocation strategies use real-time capacity insights to provision clusters faster and make the most efficient use of available spare capacity to allocate Spot instances to reduce interruptions. 
+* FSx (3.3.107.0)
+	* This release adds the capability to take highly-durable, incremental backups of your FSx for Lustre persistent file systems. This capability makes it easy to further protect your file system data and to meet business and regulatory compliance requirements.
+* Honeycode (3.3.100.0)
+	* Introducing Amazon Honeycode - a fully managed service that allows you to quickly build mobile and web apps for teams without programming.
+* IdentityManagement (3.3.106.10)
+	* Documentation updates for iam
+* Organizations (3.3.107.0)
+	* This release adds support for a new backup policy type for AWS Organizations.
+* Core 3.3.107.15
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.767.0 (2020-06-23 18:44 UTC)
 * MediaTailor (3.3.105.0)
 	* AWS Elemental MediaTailor SDK now allows configuration of Bumper.
