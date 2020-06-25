@@ -296,6 +296,46 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteColumnStatisticsForPartitionRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteColumnStatisticsForPartitionRequest.ColumnName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteColumnStatisticsForPartitionRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteColumnStatisticsForPartitionRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteColumnStatisticsForTableRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteColumnStatisticsForTableRequest.ColumnName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteColumnStatisticsForTableRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteColumnStatisticsForTableRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.DeleteConnectionRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -449,6 +489,36 @@
     <property>Amazon.Glue.Model.GetClassifiersRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetColumnStatisticsForPartitionRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetColumnStatisticsForPartitionRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetColumnStatisticsForPartitionRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetColumnStatisticsForTableRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetColumnStatisticsForTableRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetColumnStatisticsForTableRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetConnectionRequest.CatalogId</property>
@@ -1057,6 +1127,36 @@
     <pattern>arn:aws:glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateColumnStatisticsForPartitionRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateColumnStatisticsForPartitionRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateColumnStatisticsForPartitionRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateColumnStatisticsForTableRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateColumnStatisticsForTableRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateColumnStatisticsForTableRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.UpdateConnectionRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -1236,6 +1336,30 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.BinaryColumnStatisticsData.AverageLength</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.BinaryColumnStatisticsData.MaximumLength</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.BinaryColumnStatisticsData.NumberOfNulls</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.BooleanColumnStatisticsData.NumberOfFalses</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.BooleanColumnStatisticsData.NumberOfNulls</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.BooleanColumnStatisticsData.NumberOfTrues</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CatalogEntry.DatabaseName</property>
     <min>1</min>
     <max>255</max>
@@ -1291,6 +1415,21 @@
     <property>Amazon.Glue.Model.Column.Type</property>
     <min>0</min>
     <max>131072</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ColumnError.ColumnName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ColumnStatistics.ColumnName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ColumnStatistics.ColumnType</property>
+    <min>0</min>
+    <max>20000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Condition.CrawlerName</property>
@@ -1493,6 +1632,22 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DateColumnStatisticsData.NumberOfDistinctValues</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DateColumnStatisticsData.NumberOfNulls</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DecimalColumnStatisticsData.NumberOfDistinctValues</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DecimalColumnStatisticsData.NumberOfNulls</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.DevEndpoint.GlueVersion</property>
     <min>1</min>
     <max>255</max>
@@ -1506,6 +1661,14 @@
     <property>Amazon.Glue.Model.DevEndpoint.SecurityConfiguration</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DoubleColumnStatisticsData.NumberOfDistinctValues</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DoubleColumnStatisticsData.NumberOfNulls</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Edge.DestinationId</property>
@@ -1733,6 +1896,14 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.LongColumnStatisticsData.NumberOfDistinctValues</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.LongColumnStatisticsData.NumberOfNulls</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.MLTransform.Description</property>
     <min>0</min>
     <max>2048</max>
@@ -1877,6 +2048,22 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.StorageDescriptor.OutputFormat</property>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StringColumnStatisticsData.AverageLength</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StringColumnStatisticsData.MaximumLength</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StringColumnStatisticsData.NumberOfDistinctValues</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StringColumnStatisticsData.NumberOfNulls</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Table.CreatedBy</property>

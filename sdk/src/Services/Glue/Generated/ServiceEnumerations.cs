@@ -125,6 +125,76 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type ColumnStatisticsType.
+    /// </summary>
+    public class ColumnStatisticsType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BINARY for ColumnStatisticsType
+        /// </summary>
+        public static readonly ColumnStatisticsType BINARY = new ColumnStatisticsType("BINARY");
+        /// <summary>
+        /// Constant BOOLEAN for ColumnStatisticsType
+        /// </summary>
+        public static readonly ColumnStatisticsType BOOLEAN = new ColumnStatisticsType("BOOLEAN");
+        /// <summary>
+        /// Constant DATE for ColumnStatisticsType
+        /// </summary>
+        public static readonly ColumnStatisticsType DATE = new ColumnStatisticsType("DATE");
+        /// <summary>
+        /// Constant DECIMAL for ColumnStatisticsType
+        /// </summary>
+        public static readonly ColumnStatisticsType DECIMAL = new ColumnStatisticsType("DECIMAL");
+        /// <summary>
+        /// Constant DOUBLE for ColumnStatisticsType
+        /// </summary>
+        public static readonly ColumnStatisticsType DOUBLE = new ColumnStatisticsType("DOUBLE");
+        /// <summary>
+        /// Constant LONG for ColumnStatisticsType
+        /// </summary>
+        public static readonly ColumnStatisticsType LONG = new ColumnStatisticsType("LONG");
+        /// <summary>
+        /// Constant STRING for ColumnStatisticsType
+        /// </summary>
+        public static readonly ColumnStatisticsType STRING = new ColumnStatisticsType("STRING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ColumnStatisticsType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ColumnStatisticsType FindValue(string value)
+        {
+            return FindValue<ColumnStatisticsType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ColumnStatisticsType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Comparator.
     /// </summary>
     public class Comparator : ConstantClass
