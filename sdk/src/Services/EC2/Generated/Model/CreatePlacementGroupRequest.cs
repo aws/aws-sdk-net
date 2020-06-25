@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-    /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreatePlacementGroupRequest : AmazonEC2Request

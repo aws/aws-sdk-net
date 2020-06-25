@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
     /// Some instance types must be launched into a VPC. If you do not have a default VPC,
     /// or if you do not specify a subnet ID, the request fails. For more information, see
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
-    /// Types Available Only in a VPC</a>.
+    /// types available only in a VPC</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -62,13 +62,13 @@ namespace Amazon.EC2.Model
     ///  </li> <li> 
     /// <para>
     /// Not all instance types support IPv6 addresses. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-    /// Types</a>.
+    /// types</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// If you don't specify a security group ID, we use the default security group. For more
     /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
-    /// Groups</a>.
+    /// groups</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -94,20 +94,20 @@ namespace Amazon.EC2.Model
     /// can check the state of your instance using <a>DescribeInstances</a>. You can tag instances
     /// and EBS volumes during launch, after launch, or both. For more information, see <a>CreateTags</a>
     /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-    /// Your Amazon EC2 Resources</a>.
+    /// your Amazon EC2 resources</a>.
     /// </para>
     ///  
     /// <para>
     /// Linux instances have access to the public key of the key pair at boot. You can use
     /// this key to provide secure access to the instance. Amazon EC2 public images use this
     /// feature to provide secure access without passwords. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-    /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
-    /// To Do If An Instance Immediately Terminates</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
-    /// Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// to do if an instance immediately terminates</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
+    /// connecting to your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class RunInstancesRequest : AmazonEC2Request
@@ -256,7 +256,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property CpuOptions. 
         /// <para>
         /// The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-        /// CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public CpuOptionsRequest CpuOptions
@@ -278,7 +278,7 @@ namespace Amazon.EC2.Model
         /// are <code>standard</code> and <code>unlimited</code>. To change this attribute after
         /// launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
         /// ModifyInstanceCreditSpecification</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-        /// Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -398,7 +398,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Indicates whether an instance is enabled for hibernation. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-        /// Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public HibernationOptionsRequest HibernationOptions
@@ -500,7 +500,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -689,7 +689,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MetadataOptions. 
         /// <para>
         /// The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-        /// Metadata and User Data</a>.
+        /// metadata and user data</a>.
         /// </para>
         /// </summary>
         public InstanceMetadataOptionsRequest MetadataOptions
@@ -943,7 +943,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property UserData. 
         /// <para>
         /// The user data to make available to the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-        /// Commands on Your Linux Instance at Launch</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
+        /// commands on your Linux instance at launch</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
         /// User Data</a> (Windows). If you are using a command line tool, base64-encoding is
         /// performed for you, and you can load the text from a file. Otherwise, you must provide
         /// base64-encoded text. User data is limited to 16 KB.

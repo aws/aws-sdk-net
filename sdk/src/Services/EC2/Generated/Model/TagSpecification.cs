@@ -41,14 +41,14 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The type of resource to tag. Currently, the resource types that support tagging on
         /// creation are: <code>capacity-reservation</code> | <code>client-vpn-endpoint</code>
-        /// | <code>dedicated-host</code> | <code>fleet</code> | <code>fpga-image</code> | <code>instance</code>
-        /// | <code>ipv4pool-ec2</code> | <code>ipv6pool-ec2</code> | <code>key-pair</code> |
-        /// <code>launch-template</code> | <code>natgateway</code> | <code>spot-fleet-request</code>
+        /// | <code>dedicated-host</code> | <code>fleet</code> | <code>fpga-image</code> | <code>host-reservation</code>
+        /// | <code>instance</code> | <code>ipv4pool-ec2</code> | <code>ipv6pool-ec2</code> |
+        /// <code>key-pair</code> | <code>launch-template</code> | <code>natgateway</code> | <code>spot-fleet-request</code>
         /// | <code>placement-group</code> | <code>snapshot</code> | <code>traffic-mirror-filter</code>
         /// | <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> | <code>transit-gateway</code>
         /// | <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code>
-        /// | <code>vpc-endpoint</code> (for interface VPC endpoints)| <code>vpc-endpoint-service</code>
-        /// (for gateway VPC endpoints) | <code>volume</code> | <code>vpc-flow-log</code>.
+        /// | <code>vpc-endpoint</code> (for interface and gateway endpoints) | <code>vpc-endpoint-service</code>
+        /// (for AWS PrivateLink) | <code>volume</code> | <code>vpc-flow-log</code>.
         /// </para>
         ///  
         /// <para>

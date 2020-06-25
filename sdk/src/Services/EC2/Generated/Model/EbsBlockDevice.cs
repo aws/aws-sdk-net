@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Indicates whether the EBS volume is deleted on instance termination. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving
-        /// Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute Cloud
+        /// Amazon EBS volumes on instance termination</a> in the Amazon Elastic Compute Cloud
         /// User Guide.
         /// </para>
         /// </summary>
@@ -80,7 +80,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Encrypted volumes can only be attached to instances that support Amazon EBS encryption.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-        /// Instance Types</a>.
+        /// instance types</a>.
         /// </para>
         ///  
         /// <para>
@@ -107,7 +107,7 @@ namespace Amazon.EC2.Model
         /// <code>gp2</code> volumes, this represents the baseline performance of the volume and
         /// the rate at which the volume accumulates I/O credits for bursting. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-        /// EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
