@@ -32,7 +32,7 @@ namespace Amazon.Mobile
     public partial class AmazonMobileConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.100.199");
+            InternalSDKUtils.BuildUserAgentString("3.3.100.200");
 
         private string _userAgent = UserAgentString;
 

@@ -1,3 +1,14 @@
+### 3.3.769.0 (2020-06-25 18:44 UTC)
+* EC2 (3.3.185.0)
+	* Added support for tag-on-create for Host Reservations in Dedicated Hosts. You can now specify tags when you create a Host Reservation for a Dedicated Host. For more information about tagging, see AWS Tagging Strategies.
+* Glue (3.3.121.0)
+	* This release adds new APIs to support column level statistics in AWS Glue Data Catalog
+* Core 3.3.107.17
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.768.1 (2020-06-24 21:08 UTC)
 * Core 3.3.107.16
 	* Fixed async issue hanging the UI thread
