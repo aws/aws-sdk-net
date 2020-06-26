@@ -143,6 +143,14 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The value of <code>Name</code> doesn't equal <code>Value</code>.
         /// </para>
+        ///  </dd> <dt>Exists</dt> <dd> 
+        /// <para>
+        /// The <code>Name</code> property exists.
+        /// </para>
+        ///  </dd> <dt>NotExists</dt> <dd> 
+        /// <para>
+        /// The <code>Name</code> property does not exist.
+        /// </para>
         ///  </dd> <dt>GreaterThan</dt> <dd> 
         /// <para>
         /// The value of <code>Name</code> is greater than <code>Value</code>. Not supported for
@@ -163,23 +171,71 @@ namespace Amazon.SageMaker.Model
         /// The value of <code>Name</code> is less than or equal to <code>Value</code>. Not supported
         /// for text properties.
         /// </para>
-        ///  </dd> <dt>Contains</dt> <dd> 
-        /// <para>
-        /// The value of <code>Name</code> contains the string <code>Value</code>. A <code>SearchExpression</code>
-        /// can include only one <code>Contains</code> operator. Only supported for text properties.
-        /// </para>
-        ///  </dd> <dt>Exists</dt> <dd> 
-        /// <para>
-        /// The <code>Name</code> property exists.
-        /// </para>
-        ///  </dd> <dt>NotExists</dt> <dd> 
-        /// <para>
-        /// The <code>Name</code> property does not exist.
-        /// </para>
         ///  </dd> <dt>In</dt> <dd> 
         /// <para>
         /// The value of <code>Name</code> is one of the comma delimited strings in <code>Value</code>.
         /// Only supported for text properties.
+        /// </para>
+        ///  </dd> <dt>Contains</dt> <dd> 
+        /// <para>
+        /// The value of <code>Name</code> contains the string <code>Value</code>. Only supported
+        /// for text properties.
+        /// </para>
+        ///  
+        /// <para>
+        /// A <code>SearchExpression</code> can include the <code>Contains</code> operator multiple
+        /// times when the value of <code>Name</code> is one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Experiment.DisplayName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Experiment.ExperimentName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Experiment.Tags</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Trial.DisplayName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Trial.TrialName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Trial.Tags</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TrialComponent.DisplayName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TrialComponent.TrialComponentName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TrialComponent.Tags</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TrialComponent.InputArtifacts</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TrialComponent.OutputArtifacts</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// A <code>SearchExpression</code> can include only one <code>Contains</code> operator
+        /// for all other values of <code>Name</code>. In these cases, if you include multiple
+        /// <code>Contains</code> operators in the <code>SearchExpression</code>, the result is
+        /// the following error message: "<code>'CONTAINS' operator usage limit of 1 exceeded.</code>"
         /// </para>
         ///  </dd> </dl>
         /// </summary>

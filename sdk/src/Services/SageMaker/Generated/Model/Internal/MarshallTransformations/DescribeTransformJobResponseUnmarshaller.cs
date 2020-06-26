@@ -111,6 +111,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.MaxPayloadInMB = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelClientConfig", targetDepth))
+                {
+                    var unmarshaller = ModelClientConfigUnmarshaller.Instance;
+                    response.ModelClientConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

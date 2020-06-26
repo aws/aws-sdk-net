@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
         private string _labelingJobArn;
         private int? _maxConcurrentTransforms;
         private int? _maxPayloadInMB;
+        private ModelClientConfig _modelClientConfig;
         private string _modelName;
         private DateTime? _transformEndTime;
         private TransformInput _transformInput;
@@ -54,7 +55,10 @@ namespace Amazon.SageMaker.Model
         private DateTime? _transformStartTime;
 
         /// <summary>
-        /// Gets and sets the property AutoMLJobArn.
+        /// Gets and sets the property AutoMLJobArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the AutoML transform job.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string AutoMLJobArn
@@ -242,6 +246,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMaxPayloadInMB()
         {
             return this._maxPayloadInMB.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelClientConfig. 
+        /// <para>
+        /// The timeout and maximum number of retries for processing a transform job invocation.
+        /// </para>
+        /// </summary>
+        public ModelClientConfig ModelClientConfig
+        {
+            get { return this._modelClientConfig; }
+            set { this._modelClientConfig = value; }
+        }
+
+        // Check to see if ModelClientConfig property is set
+        internal bool IsSetModelClientConfig()
+        {
+            return this._modelClientConfig != null;
         }
 
         /// <summary>
