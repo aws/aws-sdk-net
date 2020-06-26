@@ -1491,6 +1491,118 @@ namespace Amazon.CloudFormation
 
 
     /// <summary>
+    /// Constants used for properties of type StackInstanceDetailedStatus.
+    /// </summary>
+    public class StackInstanceDetailedStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for StackInstanceDetailedStatus
+        /// </summary>
+        public static readonly StackInstanceDetailedStatus CANCELLED = new StackInstanceDetailedStatus("CANCELLED");
+        /// <summary>
+        /// Constant FAILED for StackInstanceDetailedStatus
+        /// </summary>
+        public static readonly StackInstanceDetailedStatus FAILED = new StackInstanceDetailedStatus("FAILED");
+        /// <summary>
+        /// Constant INOPERABLE for StackInstanceDetailedStatus
+        /// </summary>
+        public static readonly StackInstanceDetailedStatus INOPERABLE = new StackInstanceDetailedStatus("INOPERABLE");
+        /// <summary>
+        /// Constant PENDING for StackInstanceDetailedStatus
+        /// </summary>
+        public static readonly StackInstanceDetailedStatus PENDING = new StackInstanceDetailedStatus("PENDING");
+        /// <summary>
+        /// Constant RUNNING for StackInstanceDetailedStatus
+        /// </summary>
+        public static readonly StackInstanceDetailedStatus RUNNING = new StackInstanceDetailedStatus("RUNNING");
+        /// <summary>
+        /// Constant SUCCEEDED for StackInstanceDetailedStatus
+        /// </summary>
+        public static readonly StackInstanceDetailedStatus SUCCEEDED = new StackInstanceDetailedStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StackInstanceDetailedStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StackInstanceDetailedStatus FindValue(string value)
+        {
+            return FindValue<StackInstanceDetailedStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StackInstanceDetailedStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StackInstanceFilterName.
+    /// </summary>
+    public class StackInstanceFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DETAILED_STATUS for StackInstanceFilterName
+        /// </summary>
+        public static readonly StackInstanceFilterName DETAILED_STATUS = new StackInstanceFilterName("DETAILED_STATUS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StackInstanceFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StackInstanceFilterName FindValue(string value)
+        {
+            return FindValue<StackInstanceFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StackInstanceFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StackInstanceStatus.
     /// </summary>
     public class StackInstanceStatus : ConstantClass

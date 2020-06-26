@@ -2152,7 +2152,7 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns summary information about stack instances that are associated with the specified
         /// stack set. You can filter for stack instances that are associated with a specific
-        /// AWS account name or Region.
+        /// AWS account name or Region, or that have a specific status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStackInstances service method.</param>
         /// 
@@ -2168,7 +2168,7 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns summary information about stack instances that are associated with the specified
         /// stack set. You can filter for stack instances that are associated with a specific
-        /// AWS account name or Region.
+        /// AWS account name or Region, or that have a specific status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStackInstances service method.</param>
         /// <param name="cancellationToken">

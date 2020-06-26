@@ -39,6 +39,7 @@ namespace Amazon.CloudFormation.Model
         private string _organizationalUnitId;
         private string _region;
         private string _stackId;
+        private StackInstanceComprehensiveStatus _stackInstanceStatus;
         private string _stackSetId;
         private StackInstanceStatus _status;
         private string _statusReason;
@@ -175,6 +176,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetStackId()
         {
             return this._stackId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StackInstanceStatus. 
+        /// <para>
+        /// The detailed status of the stack instance.
+        /// </para>
+        /// </summary>
+        public StackInstanceComprehensiveStatus StackInstanceStatus
+        {
+            get { return this._stackInstanceStatus; }
+            set { this._stackInstanceStatus = value; }
+        }
+
+        // Check to see if StackInstanceStatus property is set
+        internal bool IsSetStackInstanceStatus()
+        {
+            return this._stackInstanceStatus != null;
         }
 
         /// <summary>
