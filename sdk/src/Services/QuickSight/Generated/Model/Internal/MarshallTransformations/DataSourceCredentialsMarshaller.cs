@@ -45,6 +45,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataSourceCredentials requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCopySourceArn())
+            {
+                context.Writer.WritePropertyName("CopySourceArn");
+                context.Writer.Write(requestObject.CopySourceArn);
+            }
+
             if(requestObject.IsSetCredentialPair())
             {
                 context.Writer.WritePropertyName("CredentialPair");

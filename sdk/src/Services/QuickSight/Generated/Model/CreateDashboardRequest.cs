@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDashboard operation.
-    /// Creates a dashboard from a template. To first create a template, see the CreateTemplate
+    /// Creates a dashboard from a template. To first create a template, see the <a>CreateTemplate</a>
     /// API operation.
     /// 
     ///  
@@ -116,9 +116,8 @@ namespace Amazon.QuickSight.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility
-        /// state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls
-        /// pane is collapsed by default when set to true. This option is <code>COLLAPSED</code>
-        /// by default. 
+        /// state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is
+        /// <code>COLLAPSED</code> by default.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -158,8 +157,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// A structure that contains the parameters of the dashboard. These are parameter overrides
         /// for a dashboard. A dashboard can have any type of parameters, and some parameters
-        /// might accept multiple values. You can use the dashboard permissions structure described
-        /// following to override two string parameters that accept multiple values. 
+        /// might accept multiple values. 
         /// </para>
         /// </summary>
         public Parameters Parameters
@@ -197,16 +195,19 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SourceEntity. 
         /// <para>
-        /// The source entity from which the dashboard is created. The source entity accepts the
-        /// Amazon Resource Name (ARN) of the source template or analysis and also references
-        /// the replacement datasets for the placeholders set when creating the template. The
-        /// replacement datasets need to follow the same schema as the datasets for which placeholders
-        /// were created when creating the template. 
+        /// The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>,
+        /// you specify the type of object you're using as source. You can only create a dashboard
+        /// from a template, so you use a <code>SourceTemplate</code> entity. If you need to create
+        /// a dashboard from an analysis, first convert the analysis to a template by using the
+        /// <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify the
+        /// Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN
+        /// can contain any AWS Account and any QuickSight-supported AWS Region. 
         /// </para>
         ///  
         /// <para>
-        /// If you are creating a dashboard from a source entity in a different AWS account, use
-        /// the ARN of the source template.
+        /// Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
+        /// list the replacement datasets for the placeholders listed in the original. The schema
+        /// in each dataset must match its placeholder. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

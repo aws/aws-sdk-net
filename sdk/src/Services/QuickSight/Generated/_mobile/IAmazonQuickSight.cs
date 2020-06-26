@@ -86,7 +86,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates a dashboard from a template. To first create a template, see the CreateTemplate
+        /// Creates a dashboard from a template. To first create a template, see the <a>CreateTemplate</a>
         /// API operation.
         /// 
         ///  
@@ -1433,17 +1433,38 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Generates a server-side embeddable URL and authorization code. For this process to
-        /// work properly, first configure the dashboards and user permissions. For more information,
-        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
-        /// Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or <a
-        /// href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
-        /// Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API Reference</i>.
+        /// Generates a URL and authorization code that you can embed in your web server code.
+        /// Before you use this command, make sure that you have configured the dashboards and
+        /// permissions. 
         /// 
         ///  
         /// <para>
         /// Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not
-        /// from the user’s browser.
+        /// from the user's browser. The following rules apply to the combination of URL and authorization
+        /// code:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// They must be used together.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// They can be used one time only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// They are valid for 5 minutes after you run this command.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The resulting user session is valid for 10 hours.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
+        /// Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or <a
+        /// href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
+        /// Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API Reference</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDashboardEmbedUrl service method.</param>

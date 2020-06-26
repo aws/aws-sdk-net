@@ -421,9 +421,17 @@ namespace Amazon.QuickSight
     {
 
         /// <summary>
+        /// Constant ACCESS_DENIED for DataSourceErrorInfoType
+        /// </summary>
+        public static readonly DataSourceErrorInfoType ACCESS_DENIED = new DataSourceErrorInfoType("ACCESS_DENIED");
+        /// <summary>
         /// Constant CONFLICT for DataSourceErrorInfoType
         /// </summary>
         public static readonly DataSourceErrorInfoType CONFLICT = new DataSourceErrorInfoType("CONFLICT");
+        /// <summary>
+        /// Constant COPY_SOURCE_NOT_FOUND for DataSourceErrorInfoType
+        /// </summary>
+        public static readonly DataSourceErrorInfoType COPY_SOURCE_NOT_FOUND = new DataSourceErrorInfoType("COPY_SOURCE_NOT_FOUND");
         /// <summary>
         /// Constant ENGINE_VERSION_NOT_SUPPORTED for DataSourceErrorInfoType
         /// </summary>

@@ -40,10 +40,10 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property EmbedUrl. 
         /// <para>
-        /// An URL that you can put into your server-side webpage to embed your dashboard. This
-        /// URL is valid for 5 minutes, and the resulting session is valid for 10 hours. The API
-        /// provides the URL with an <code>auth_code</code> value that enables a single sign-on
-        /// session. 
+        /// A single-use URL that you can put into your server-side webpage to embed your dashboard.
+        /// This URL is valid for 5 minutes. The API provides the URL with an <code>auth_code</code>
+        /// value that enables one (and only one) sign-on to a user session that is valid for
+        /// 10 hours. 
         /// </para>
         /// </summary>
         public string EmbedUrl
