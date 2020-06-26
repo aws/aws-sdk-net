@@ -1,3 +1,20 @@
+### 3.3.770.0 (2020-06-26 18:21 UTC)
+* CloudFormation (3.3.106.0)
+	* ListStackInstances and DescribeStackInstance now return a new `StackInstanceStatus` object that contains `DetailedStatus` values: a disambiguation of the more generic `Status` value. ListStackInstances output can now be filtered on `DetailedStatus` using the new `Filters` parameter.
+* CognitoIdentityProvider (3.3.111.0)
+	* Don't require Authorization for InitiateAuth and RespondToAuthChallenge.
+* DatabaseMigrationService (3.3.105.34)
+	* This release contains miscellaneous API documentation updates for AWS DMS in response to several customer reported issues.
+* QuickSight (3.3.105.0)
+	* Added support for cross-region DataSource credentials copying.
+* SageMaker (3.3.117.0)
+	* The new 'ModelClientConfig' parameter being added for CreateTransformJob and DescribeTransformJob api actions enable customers to configure model invocation related parameters such as timeout and retry.
+* Core 3.3.107.18
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.769.0 (2020-06-25 18:44 UTC)
 * EC2 (3.3.185.0)
 	* Added support for tag-on-create for Host Reservations in Dedicated Hosts. You can now specify tags when you create a Host Reservation for a Dedicated Host. For more information about tagging, see AWS Tagging Strategies.
