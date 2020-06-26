@@ -237,7 +237,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 255 alphanumeric characters or hyphens.
+        /// Must contain 1-255 alphanumeric characters or hyphens.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -354,8 +354,29 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property StopReason. 
         /// <para>
-        /// The reason the replication task was stopped.
+        /// The reason the replication task was stopped. This response parameter can return one
+        /// of the following values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration completed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code> – Change data capture (CDC) load
+        /// completed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC migration,
+        /// the full-load stopped as specified before starting the CDC migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"STOP_REASON_SERVER_TIME"</code> – The migration stopped at the specified server
+        /// time.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string StopReason
         {
@@ -410,8 +431,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Supplemental information that the task requires to migrate the data for certain source
         /// and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-        /// Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
-        /// 
+        /// Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service User
+        /// Guide.</i> 
         /// </para>
         /// </summary>
         public string TaskData

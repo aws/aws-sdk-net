@@ -168,7 +168,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Settings in JSON format for the target Elasticsearch endpoint. For more information
         /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
         /// Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in the
-        /// <i>AWS Database Migration User Guide.</i> 
+        /// <i>AWS Database Migration Service User Guide.</i> 
         /// </para>
         /// </summary>
         public ElasticsearchSettings ElasticsearchSettings
@@ -248,7 +248,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>,
         /// <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
         /// <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-        /// <code>"elasticsearch"</code>, <code>"documentdb"</code>, and <code>"sqlserver"</code>.
+        /// <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>,
+        /// and <code>"neptune"</code>.
         /// </para>
         /// </summary>
         public string EngineName
@@ -306,7 +307,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Settings in JSON format for the target Apache Kafka endpoint. For more information
         /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
         /// Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS Database
-        /// Migration User Guide.</i> 
+        /// Migration Service User Guide.</i> 
         /// </para>
         /// </summary>
         public KafkaSettings KafkaSettings
@@ -327,7 +328,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
         /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
         /// Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a> in
-        /// the <i>AWS Database Migration User Guide.</i> 
+        /// the <i>AWS Database Migration Service User Guide.</i> 
         /// </para>
         /// </summary>
         public KinesisSettings KinesisSettings
@@ -367,8 +368,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property NeptuneSettings. 
         /// <para>
         /// Settings in JSON format for the target Amazon Neptune endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings</a>
-        /// in the <i>AWS Database Migration Service User Guide.</i> 
+        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying
+        /// Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database Migration
+        /// Service User Guide.</i> 
         /// </para>
         /// </summary>
         public NeptuneSettings NeptuneSettings

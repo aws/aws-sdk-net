@@ -283,7 +283,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
         /// <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
         /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-        /// and <code>"sqlserver"</code>.
+        /// <code>"sqlserver"</code>, and <code>"neptune"</code>.
         /// </para>
         /// </summary>
         public string EngineName
@@ -443,8 +443,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property NeptuneSettings. 
         /// <para>
-        /// The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
-        /// structure.
+        /// The settings for the Amazon Neptune target endpoint. For more information, see the
+        /// <code>NeptuneSettings</code> structure.
         /// </para>
         /// </summary>
         public NeptuneSettings NeptuneSettings

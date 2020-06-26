@@ -210,7 +210,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SubscriptionCreationTime. 
         /// <para>
-        /// The time the RDS event notification subscription was created.
+        /// The time the AWS DMS event notification subscription was created.
         /// </para>
         /// </summary>
         public string SubscriptionCreationTime

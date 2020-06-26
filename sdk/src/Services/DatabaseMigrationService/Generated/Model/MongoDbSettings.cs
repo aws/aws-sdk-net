@@ -53,12 +53,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1 
-        /// </para>
-        ///  
-        /// <para>
-        /// DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1.
-        /// This setting isn't used when authType=No.
+        /// For the default value, in MongoDB version 2.x, <code>"default"</code> is <code>"mongodb_cr"</code>.
+        /// For MongoDB version 3.x or later, <code>"default"</code> is <code>"scram_sha_1"</code>.
+        /// This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.
         /// </para>
         /// </summary>
         public AuthMechanismValue AuthMechanism
@@ -76,12 +73,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AuthSource. 
         /// <para>
-        ///  The MongoDB database name. This setting isn't used when <code>authType=NO</code>.
-        /// 
+        ///  The MongoDB database name. This setting isn't used when <code>AuthType</code> is
+        /// set to <code>"no"</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The default is admin.
+        /// The default is <code>"admin"</code>.
         /// </para>
         /// </summary>
         public string AuthSource
@@ -103,12 +100,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: NO, PASSWORD 
-        /// </para>
-        ///  
-        /// <para>
-        /// When NO is selected, user name and password parameters are not used and can be empty.
-        /// 
+        /// When when set to <code>"no"</code>, user name and password parameters are not used
+        /// and can be empty. 
         /// </para>
         /// </summary>
         public AuthTypeValue AuthType
@@ -145,11 +138,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property DocsToInvestigate. 
         /// <para>
         ///  Indicates the number of documents to preview to determine the document organization.
-        /// Use this setting when <code>NestingLevel</code> is set to ONE. 
+        /// Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>. 
         /// </para>
         ///  
         /// <para>
-        /// Must be a positive value greater than 0. Default value is 1000.
+        /// Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.
         /// </para>
         /// </summary>
         public string DocsToInvestigate
@@ -168,11 +161,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property ExtractDocId. 
         /// <para>
         ///  Specifies the document ID. Use this setting when <code>NestingLevel</code> is set
-        /// to NONE. 
+        /// to <code>"none"</code>. 
         /// </para>
         ///  
         /// <para>
-        /// Default value is false. 
+        /// Default value is <code>"false"</code>. 
         /// </para>
         /// </summary>
         public string ExtractDocId
@@ -216,12 +209,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: NONE, ONE
-        /// </para>
-        ///  
-        /// <para>
-        /// Default value is NONE. Specify NONE to use document mode. Specify ONE to use table
-        /// mode.
+        /// Default value is <code>"none"</code>. Specify <code>"none"</code> to use document
+        /// mode. Specify <code>"one"</code> to use table mode.
         /// </para>
         /// </summary>
         public NestingLevelValue NestingLevel
