@@ -15,39 +15,44 @@ namespace AWSSDK_NetStandard.UnitTests
 {
     public class CloudWatchLogsPaginatorTests
     {
+        private static Mock<AmazonCloudWatchLogsClient> _mockClient;
+
+        public CloudWatchLogsPaginatorTests()
+        {
+            _mockClient = new Mock<AmazonCloudWatchLogsClient>("access key", "secret", Amazon.RegionEndpoint.USEast1);
+        }
+
         [Fact]
         [Trait("Category", "CloudWatchLogs")]
         public async Task DescribeDestinationsTest_TwoResponses()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);            
             var request = new DescribeDestinationsRequest();
-            var firstResponse = new DescribeDestinationsResponse() { NextToken = "foo" };  
+            var firstResponse = new DescribeDestinationsResponse() { NextToken = "foo" };
             var secondResponse = new DescribeDestinationsResponse() { NextToken = null };
             var token = new CancellationToken();
 
-            mockClient.SetupSequence(x => x.DescribeDestinationsAsync(It.IsAny<DescribeDestinationsRequest>(), It.IsAny<CancellationToken>()))
+            _mockClient.SetupSequence(x => x.DescribeDestinationsAsync(It.IsAny<DescribeDestinationsRequest>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(firstResponse)
                 .ReturnsAsync(secondResponse);
 
             var numResponses = 0;
-            await foreach (var desination in mockClient.Object.Paginators.DescribeDestinations(request).Responses.WithCancellation(token))
+            await foreach (var desination in _mockClient.Object.Paginators.DescribeDestinations(request).Responses.WithCancellation(token))
             {
                 numResponses += 1;
             }
             Assert.Equal(2, numResponses);
         }
-        
+
         [Fact]
         [Trait("Category", "CloudWatchLogs")]
         public async Task DescribeDestinationsTest__OnlyUsedOnce()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);
             var request = new DescribeDestinationsRequest();
             var response = new DescribeDestinationsResponse();
             var token = new CancellationToken();
-            var paginator = mockClient.Object.Paginators.DescribeDestinations(request);
+            var paginator = _mockClient.Object.Paginators.DescribeDestinations(request);
 
-            mockClient.Setup(x => x.DescribeDestinationsAsync(It.IsAny<DescribeDestinationsRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(response);            
+            _mockClient.Setup(x => x.DescribeDestinationsAsync(It.IsAny<DescribeDestinationsRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(response);
 
             // Should work the first time
             await LoopOverDestinations(paginator, token);
@@ -68,20 +73,19 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "CloudWatchLogs")]
         public async Task DescribeDestinationsTest__CancellationToken()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);
             var request = new DescribeDestinationsRequest();
             var firstResponse = new DescribeDestinationsResponse() { NextToken = "foo" };
             var secondResponse = new DescribeDestinationsResponse() { NextToken = null };
-            var paginator = mockClient.Object.Paginators.DescribeDestinations(request);
+            var paginator = _mockClient.Object.Paginators.DescribeDestinations(request);
 
             var tokenSource = new CancellationTokenSource();
             var token = tokenSource.Token;
-            tokenSource.Cancel(); 
+            tokenSource.Cancel();
 
-            mockClient.SetupSequence(x => x.DescribeDestinationsAsync(It.IsAny<DescribeDestinationsRequest>(), It.IsAny<CancellationToken>()))
+            _mockClient.SetupSequence(x => x.DescribeDestinationsAsync(It.IsAny<DescribeDestinationsRequest>(), It.IsAny<CancellationToken>()))
                  .ReturnsAsync(firstResponse)
                  .ReturnsAsync(secondResponse);
-         
+
             await Assert.ThrowsAsync<OperationCanceledException>(async () => await LoopOverDestinations(paginator, token));
         }
 
@@ -89,18 +93,17 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "CloudWatchLogs")]
         public async Task DescribeLogGroupsTest_TwoResponses()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);
             var request = new DescribeLogGroupsRequest();
             var firstResponse = new DescribeLogGroupsResponse() { NextToken = "foo" };
             var secondResponse = new DescribeLogGroupsResponse() { NextToken = null };
             var token = new CancellationToken();
 
-            mockClient.SetupSequence(x => x.DescribeLogGroupsAsync(It.IsAny<DescribeLogGroupsRequest>(), It.IsAny<CancellationToken>()))
+            _mockClient.SetupSequence(x => x.DescribeLogGroupsAsync(It.IsAny<DescribeLogGroupsRequest>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(firstResponse)
                 .ReturnsAsync(secondResponse);
 
             var numResponses = 0;
-            await foreach (var desination in mockClient.Object.Paginators.DescribeLogGroups(request).Responses.WithCancellation(token))
+            await foreach (var desination in _mockClient.Object.Paginators.DescribeLogGroups(request).Responses.WithCancellation(token))
             {
                 numResponses += 1;
             }
@@ -111,13 +114,12 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "CloudWatchLogs")]
         public async Task DescribeLogGroupsTest__OnlyUsedOnce()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);
             var request = new DescribeLogGroupsRequest();
             var response = new DescribeLogGroupsResponse();
             var token = new CancellationToken();
-            var paginator = mockClient.Object.Paginators.DescribeLogGroups(request);
+            var paginator = _mockClient.Object.Paginators.DescribeLogGroups(request);
 
-            mockClient.Setup(x => x.DescribeLogGroupsAsync(It.IsAny<DescribeLogGroupsRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(response);
+            _mockClient.Setup(x => x.DescribeLogGroupsAsync(It.IsAny<DescribeLogGroupsRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(response);
 
             // Should work the first time
             await LoopOverLogGroups(paginator, token);
@@ -138,39 +140,37 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "CloudWatchLogs")]
         public async Task DescribeLogGroupsTest__CancellationToken()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);
             var request = new DescribeLogGroupsRequest();
             var firstResponse = new DescribeLogGroupsResponse() { NextToken = "foo" };
             var secondResponse = new DescribeLogGroupsResponse() { NextToken = null };
-            var paginator = mockClient.Object.Paginators.DescribeLogGroups(request);
+            var paginator = _mockClient.Object.Paginators.DescribeLogGroups(request);
 
             var tokenSource = new CancellationTokenSource();
             var token = tokenSource.Token;
             tokenSource.Cancel();
 
-            mockClient.SetupSequence(x => x.DescribeLogGroupsAsync(It.IsAny<DescribeLogGroupsRequest>(), It.IsAny<CancellationToken>()))
+            _mockClient.SetupSequence(x => x.DescribeLogGroupsAsync(It.IsAny<DescribeLogGroupsRequest>(), It.IsAny<CancellationToken>()))
                  .ReturnsAsync(firstResponse)
                  .ReturnsAsync(secondResponse);
 
             await Assert.ThrowsAsync<OperationCanceledException>(async () => await LoopOverLogGroups(paginator, token));
         }
-        
+
         [Fact]
         [Trait("Category", "CloudWatchLogs")]
         public async Task DescribeLogStreamsTest_TwoResponses()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);
             var request = new DescribeLogStreamsRequest();
             var firstResponse = new DescribeLogStreamsResponse() { NextToken = "foo" };
             var secondResponse = new DescribeLogStreamsResponse() { NextToken = null };
             var token = new CancellationToken();
 
-            mockClient.SetupSequence(x => x.DescribeLogStreamsAsync(It.IsAny<DescribeLogStreamsRequest>(), It.IsAny<CancellationToken>()))
+            _mockClient.SetupSequence(x => x.DescribeLogStreamsAsync(It.IsAny<DescribeLogStreamsRequest>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(firstResponse)
                 .ReturnsAsync(secondResponse);
 
             var numResponses = 0;
-            await foreach (var desination in mockClient.Object.Paginators.DescribeLogStreams(request).Responses.WithCancellation(token))
+            await foreach (var desination in _mockClient.Object.Paginators.DescribeLogStreams(request).Responses.WithCancellation(token))
             {
                 numResponses += 1;
             }
@@ -181,13 +181,12 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "CloudWatchLogs")]
         public async Task DescribeLogStreamsTest__OnlyUsedOnce()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);
             var request = new DescribeLogStreamsRequest();
             var response = new DescribeLogStreamsResponse();
             var token = new CancellationToken();
-            var paginator = mockClient.Object.Paginators.DescribeLogStreams(request);
+            var paginator = _mockClient.Object.Paginators.DescribeLogStreams(request);
 
-            mockClient.Setup(x => x.DescribeLogStreamsAsync(It.IsAny<DescribeLogStreamsRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(response);
+            _mockClient.Setup(x => x.DescribeLogStreamsAsync(It.IsAny<DescribeLogStreamsRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(response);
 
             // Should work the first time
             await LoopOverLogStreams(paginator, token);
@@ -208,17 +207,16 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "CloudWatchLogs")]
         public async Task DescribeLogStreamsTest__CancellationToken()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);
             var request = new DescribeLogStreamsRequest();
             var firstResponse = new DescribeLogStreamsResponse() { NextToken = "foo" };
             var secondResponse = new DescribeLogStreamsResponse() { NextToken = null };
-            var paginator = mockClient.Object.Paginators.DescribeLogStreams(request);
+            var paginator = _mockClient.Object.Paginators.DescribeLogStreams(request);
 
             var tokenSource = new CancellationTokenSource();
             var token = tokenSource.Token;
             tokenSource.Cancel();
 
-            mockClient.SetupSequence(x => x.DescribeLogStreamsAsync(It.IsAny<DescribeLogStreamsRequest>(), It.IsAny<CancellationToken>()))
+            _mockClient.SetupSequence(x => x.DescribeLogStreamsAsync(It.IsAny<DescribeLogStreamsRequest>(), It.IsAny<CancellationToken>()))
                  .ReturnsAsync(firstResponse)
                  .ReturnsAsync(secondResponse);
 
@@ -229,18 +227,17 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "CloudWatchLogs")]
         public async Task DescribeMetricFiltersTest_TwoResponses()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);
             var request = new DescribeMetricFiltersRequest();
             var firstResponse = new DescribeMetricFiltersResponse() { NextToken = "foo" };
             var secondResponse = new DescribeMetricFiltersResponse() { NextToken = null };
             var token = new CancellationToken();
 
-            mockClient.SetupSequence(x => x.DescribeMetricFiltersAsync(It.IsAny<DescribeMetricFiltersRequest>(), It.IsAny<CancellationToken>()))
+            _mockClient.SetupSequence(x => x.DescribeMetricFiltersAsync(It.IsAny<DescribeMetricFiltersRequest>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(firstResponse)
                 .ReturnsAsync(secondResponse);
 
             var numResponses = 0;
-            await foreach (var desination in mockClient.Object.Paginators.DescribeMetricFilters(request).Responses.WithCancellation(token))
+            await foreach (var desination in _mockClient.Object.Paginators.DescribeMetricFilters(request).Responses.WithCancellation(token))
             {
                 numResponses += 1;
             }
@@ -251,13 +248,12 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "CloudWatchLogs")]
         public async Task DescribeMetricFiltersTest__OnlyUsedOnce()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);
             var request = new DescribeMetricFiltersRequest();
             var response = new DescribeMetricFiltersResponse();
             var token = new CancellationToken();
-            var paginator = mockClient.Object.Paginators.DescribeMetricFilters(request);
+            var paginator = _mockClient.Object.Paginators.DescribeMetricFilters(request);
 
-            mockClient.Setup(x => x.DescribeMetricFiltersAsync(It.IsAny<DescribeMetricFiltersRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(response);
+            _mockClient.Setup(x => x.DescribeMetricFiltersAsync(It.IsAny<DescribeMetricFiltersRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(response);
 
             // Should work the first time
             await LoopOverMetricFilters(paginator, token);
@@ -278,17 +274,16 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "CloudWatchLogs")]
         public async Task DescribeMetricFiltersTest__CancellationToken()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);
             var request = new DescribeMetricFiltersRequest();
             var firstResponse = new DescribeMetricFiltersResponse() { NextToken = "foo" };
             var secondResponse = new DescribeMetricFiltersResponse() { NextToken = null };
-            var paginator = mockClient.Object.Paginators.DescribeMetricFilters(request);
+            var paginator = _mockClient.Object.Paginators.DescribeMetricFilters(request);
 
             var tokenSource = new CancellationTokenSource();
             var token = tokenSource.Token;
             tokenSource.Cancel();
 
-            mockClient.SetupSequence(x => x.DescribeMetricFiltersAsync(It.IsAny<DescribeMetricFiltersRequest>(), It.IsAny<CancellationToken>()))
+            _mockClient.SetupSequence(x => x.DescribeMetricFiltersAsync(It.IsAny<DescribeMetricFiltersRequest>(), It.IsAny<CancellationToken>()))
                  .ReturnsAsync(firstResponse)
                  .ReturnsAsync(secondResponse);
 
@@ -299,18 +294,17 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "CloudWatchLogs")]
         public async Task DescribeSubscriptionFiltersTest_TwoResponses()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);
             var request = new DescribeSubscriptionFiltersRequest();
             var firstResponse = new DescribeSubscriptionFiltersResponse() { NextToken = "foo" };
             var secondResponse = new DescribeSubscriptionFiltersResponse() { NextToken = null };
             var token = new CancellationToken();
 
-            mockClient.SetupSequence(x => x.DescribeSubscriptionFiltersAsync(It.IsAny<DescribeSubscriptionFiltersRequest>(), It.IsAny<CancellationToken>()))
+            _mockClient.SetupSequence(x => x.DescribeSubscriptionFiltersAsync(It.IsAny<DescribeSubscriptionFiltersRequest>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(firstResponse)
                 .ReturnsAsync(secondResponse);
 
             var numResponses = 0;
-            await foreach (var desination in mockClient.Object.Paginators.DescribeSubscriptionFilters(request).Responses.WithCancellation(token))
+            await foreach (var desination in _mockClient.Object.Paginators.DescribeSubscriptionFilters(request).Responses.WithCancellation(token))
             {
                 numResponses += 1;
             }
@@ -321,13 +315,12 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "CloudWatchLogs")]
         public async Task DescribeSubscriptionFiltersTest__OnlyUsedOnce()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);
             var request = new DescribeSubscriptionFiltersRequest();
             var response = new DescribeSubscriptionFiltersResponse();
             var token = new CancellationToken();
-            var paginator = mockClient.Object.Paginators.DescribeSubscriptionFilters(request);
+            var paginator = _mockClient.Object.Paginators.DescribeSubscriptionFilters(request);
 
-            mockClient.Setup(x => x.DescribeSubscriptionFiltersAsync(It.IsAny<DescribeSubscriptionFiltersRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(response);
+            _mockClient.Setup(x => x.DescribeSubscriptionFiltersAsync(It.IsAny<DescribeSubscriptionFiltersRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(response);
 
             // Should work the first time
             await LoopOverSubscriptionFilters(paginator, token);
@@ -348,17 +341,16 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "CloudWatchLogs")]
         public async Task DescribeSubscriptionFiltersTest__CancellationToken()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);
             var request = new DescribeSubscriptionFiltersRequest();
             var firstResponse = new DescribeSubscriptionFiltersResponse() { NextToken = "foo" };
             var secondResponse = new DescribeSubscriptionFiltersResponse() { NextToken = null };
-            var paginator = mockClient.Object.Paginators.DescribeSubscriptionFilters(request);
+            var paginator = _mockClient.Object.Paginators.DescribeSubscriptionFilters(request);
 
             var tokenSource = new CancellationTokenSource();
             var token = tokenSource.Token;
             tokenSource.Cancel();
 
-            mockClient.SetupSequence(x => x.DescribeSubscriptionFiltersAsync(It.IsAny<DescribeSubscriptionFiltersRequest>(), It.IsAny<CancellationToken>()))
+            _mockClient.SetupSequence(x => x.DescribeSubscriptionFiltersAsync(It.IsAny<DescribeSubscriptionFiltersRequest>(), It.IsAny<CancellationToken>()))
                  .ReturnsAsync(firstResponse)
                  .ReturnsAsync(secondResponse);
 
@@ -369,18 +361,17 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "CloudWatchLogs")]
         public async Task FilterLogEventsTest_TwoResponses()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);
             var request = new FilterLogEventsRequest();
             var firstResponse = new FilterLogEventsResponse() { NextToken = "foo" };
             var secondResponse = new FilterLogEventsResponse() { NextToken = null };
             var token = new CancellationToken();
 
-            mockClient.SetupSequence(x => x.FilterLogEventsAsync(It.IsAny<FilterLogEventsRequest>(), It.IsAny<CancellationToken>()))
+            _mockClient.SetupSequence(x => x.FilterLogEventsAsync(It.IsAny<FilterLogEventsRequest>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(firstResponse)
                 .ReturnsAsync(secondResponse);
 
             var numResponses = 0;
-            await foreach (var desination in mockClient.Object.Paginators.FilterLogEvents(request).Responses.WithCancellation(token))
+            await foreach (var desination in _mockClient.Object.Paginators.FilterLogEvents(request).Responses.WithCancellation(token))
             {
                 numResponses += 1;
             }
@@ -391,13 +382,12 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "CloudWatchLogs")]
         public async Task FilterLogEventsTest__OnlyUsedOnce()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);
             var request = new FilterLogEventsRequest();
             var response = new FilterLogEventsResponse();
             var token = new CancellationToken();
-            var paginator = mockClient.Object.Paginators.FilterLogEvents(request);
+            var paginator = _mockClient.Object.Paginators.FilterLogEvents(request);
 
-            mockClient.Setup(x => x.FilterLogEventsAsync(It.IsAny<FilterLogEventsRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(response);
+            _mockClient.Setup(x => x.FilterLogEventsAsync(It.IsAny<FilterLogEventsRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(response);
 
             // Should work the first time
             await LoopOverFilterLogEvents(paginator, token);
@@ -418,17 +408,16 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "CloudWatchLogs")]
         public async Task FilterLogEventsTest__CancellationToken()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);
             var request = new FilterLogEventsRequest();
             var firstResponse = new FilterLogEventsResponse() { NextToken = "foo" };
             var secondResponse = new FilterLogEventsResponse() { NextToken = null };
-            var paginator = mockClient.Object.Paginators.FilterLogEvents(request);
+            var paginator = _mockClient.Object.Paginators.FilterLogEvents(request);
 
             var tokenSource = new CancellationTokenSource();
             var token = tokenSource.Token;
             tokenSource.Cancel();
 
-            mockClient.SetupSequence(x => x.FilterLogEventsAsync(It.IsAny<FilterLogEventsRequest>(), It.IsAny<CancellationToken>()))
+            _mockClient.SetupSequence(x => x.FilterLogEventsAsync(It.IsAny<FilterLogEventsRequest>(), It.IsAny<CancellationToken>()))
                  .ReturnsAsync(firstResponse)
                  .ReturnsAsync(secondResponse);
 
@@ -439,18 +428,17 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "CloudWatchLogs")]
         public async Task GetLogEventsTest_TwoResponses()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);
             var request = new GetLogEventsRequest();
             var firstResponse = new GetLogEventsResponse() { NextForwardToken = "foo" };
             var secondResponse = new GetLogEventsResponse() { NextForwardToken = null };
             var token = new CancellationToken();
 
-            mockClient.SetupSequence(x => x.GetLogEventsAsync(It.IsAny<GetLogEventsRequest>(), It.IsAny<CancellationToken>()))
+            _mockClient.SetupSequence(x => x.GetLogEventsAsync(It.IsAny<GetLogEventsRequest>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(firstResponse)
                 .ReturnsAsync(secondResponse);
 
             var numResponses = 0;
-            await foreach (var desination in mockClient.Object.Paginators.GetLogEvents(request).Responses.WithCancellation(token))
+            await foreach (var desination in _mockClient.Object.Paginators.GetLogEvents(request).Responses.WithCancellation(token))
             {
                 numResponses += 1;
             }
@@ -461,13 +449,12 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "CloudWatchLogs")]
         public async Task GetLogEventsTest__OnlyUsedOnce()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);
             var request = new GetLogEventsRequest();
             var response = new GetLogEventsResponse();
             var token = new CancellationToken();
-            var paginator = mockClient.Object.Paginators.GetLogEvents(request);
+            var paginator = _mockClient.Object.Paginators.GetLogEvents(request);
 
-            mockClient.Setup(x => x.GetLogEventsAsync(It.IsAny<GetLogEventsRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(response);
+            _mockClient.Setup(x => x.GetLogEventsAsync(It.IsAny<GetLogEventsRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(response);
 
             // Should work the first time
             await LoopOverGetLogEvents(paginator, token);
@@ -488,17 +475,16 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "CloudWatchLogs")]
         public async Task GetLogEventsTest__CancellationToken()
         {
-            var mockClient = new Mock<AmazonCloudWatchLogsClient>("access_key", "secret", Amazon.RegionEndpoint.USEast1);
             var request = new GetLogEventsRequest();
             var firstResponse = new GetLogEventsResponse() { NextForwardToken = "foo" };
             var secondResponse = new GetLogEventsResponse() { NextForwardToken = null };
-            var paginator = mockClient.Object.Paginators.GetLogEvents(request);
+            var paginator = _mockClient.Object.Paginators.GetLogEvents(request);
 
             var tokenSource = new CancellationTokenSource();
             var token = tokenSource.Token;
             tokenSource.Cancel();
 
-            mockClient.SetupSequence(x => x.GetLogEventsAsync(It.IsAny<GetLogEventsRequest>(), It.IsAny<CancellationToken>()))
+            _mockClient.SetupSequence(x => x.GetLogEventsAsync(It.IsAny<GetLogEventsRequest>(), It.IsAny<CancellationToken>()))
                  .ReturnsAsync(firstResponse)
                  .ReturnsAsync(secondResponse);
 
