@@ -62,9 +62,25 @@ namespace ServiceClientGenerator.Generators.TestFiles
             
             #line default
             #line hidden
-            this.Write("PaginatorTests\r\n    {\r\n");
+            this.Write("PaginatorTests\r\n    {\r\n        private static Mock<Amazon");
             
             #line 26 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
+            
+            #line default
+            #line hidden
+            this.Write("Client> _mockClient;\r\n\r\n        [ClassInitialize()]\r\n        public static void C" +
+                    "lassInitialize(TestContext a)\r\n        {\r\n            _mockClient = new Mock<Ama" +
+                    "zon");
+            
+            #line 31 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
+            
+            #line default
+            #line hidden
+            this.Write("Client>(\"access key\", \"secret\", Amazon.RegionEndpoint.USEast1);\r\n        }\r\n");
+            
+            #line 33 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
 
         foreach(var operation in this.Config.ServiceModel.Operations)
         {
@@ -77,29 +93,22 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("\r\n        [TestMethod]\r\n        [TestCategory(\"UnitTest\")]\r\n        [TestCategory" +
                     "(\"");
             
-            #line 35 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 42 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.TestCategory));
             
             #line default
             #line hidden
             this.Write("\")]\r\n        public void ");
             
-            #line 36 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 43 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write("Test_TwoPages()\r\n        {\r\n            var mockClient = new Mock<Amazon");
+            this.Write("Test_TwoPages()\r\n        {\r\n            var request = InstantiateClassGenerator.E" +
+                    "xecute<");
             
-            #line 38 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
-            
-            #line default
-            #line hidden
-            this.Write("Client>(\"access_key\", \"secret\", Amazon.RegionEndpoint.USEast1);\r\n            var " +
-                    "request = InstantiateClassGenerator.Execute<");
-            
-            #line 39 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 45 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -107,7 +116,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("Request>();\r\n\r\n            var firstResponse = InstantiateClassGenerator.Execute<" +
                     "");
             
-            #line 41 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 47 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -115,14 +124,14 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("Response>();\r\n            var secondResponse = InstantiateClassGenerator.Execute<" +
                     "");
             
-            #line 42 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 48 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response>();\r\n");
             
-            #line 43 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 49 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
 
             if (operation.Paginators.MoreResults != null)
             {
@@ -132,35 +141,17 @@ namespace ServiceClientGenerator.Generators.TestFiles
             #line hidden
             this.Write("            secondResponse.");
             
-            #line 47 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 53 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Paginators.MoreResults.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = false;\r\n");
             
-            #line 48 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 54 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
 
             }
             else if (operation.Paginators.InputTokens[0].IsListOrDict)
-            {
-
-            
-            #line default
-            #line hidden
-            this.Write("            secondResponse.");
-            
-            #line 53 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(operation.Paginators.OutputTokens[0].PropertyName));
-            
-            #line default
-            #line hidden
-            this.Write(".Clear();\r\n");
-            
-            #line 54 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
-
-            } 
-            else 
             {
 
             
@@ -173,26 +164,44 @@ namespace ServiceClientGenerator.Generators.TestFiles
             
             #line default
             #line hidden
-            this.Write(" = null;\r\n");
+            this.Write(".Clear();\r\n");
             
             #line 60 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+
+            } 
+            else 
+            {
+
+            
+            #line default
+            #line hidden
+            this.Write("            secondResponse.");
+            
+            #line 65 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(operation.Paginators.OutputTokens[0].PropertyName));
+            
+            #line default
+            #line hidden
+            this.Write(" = null;\r\n");
+            
+            #line 66 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
 
             }
 
             
             #line default
             #line hidden
-            this.Write("\r\n            mockClient.SetupSequence(x => x.");
+            this.Write("\r\n            _mockClient.SetupSequence(x => x.");
             
-            #line 64 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 70 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(request)).Returns(firstResponse).Returns(secondResponse);\r\n            var pagin" +
-                    "ator = mockClient.Object.Paginators.");
+                    "ator = _mockClient.Object.Paginators.");
             
-            #line 65 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 71 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -201,7 +210,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
                     "st().Count);\r\n        }\r\n\r\n        [TestMethod]\r\n        [TestCategory(\"UnitTest" +
                     "\")]\r\n        [TestCategory(\"");
             
-            #line 72 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 78 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.TestCategory));
             
             #line default
@@ -210,36 +219,29 @@ namespace ServiceClientGenerator.Generators.TestFiles
                     "tor has already been consumed and cannot be reused. Please create a new instance" +
                     ".\")]\r\n        public void ");
             
-            #line 74 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 80 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write("Test__OnlyUsedOnce()\r\n        {\r\n            var mockClient = new Mock<Amazon");
+            this.Write("Test__OnlyUsedOnce()\r\n        {\r\n            var request = InstantiateClassGenera" +
+                    "tor.Execute<");
             
-            #line 76 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
-            
-            #line default
-            #line hidden
-            this.Write("Client>(\"access_key\", \"secret\", Amazon.RegionEndpoint.USEast1);\r\n            var " +
-                    "request = InstantiateClassGenerator.Execute<");
-            
-            #line 77 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 82 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request>();\r\n\r\n            var response = InstantiateClassGenerator.Execute<");
             
-            #line 79 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 84 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response>();\r\n");
             
-            #line 80 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 85 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
 
             if (operation.Paginators.MoreResults != null)
             {
@@ -249,14 +251,14 @@ namespace ServiceClientGenerator.Generators.TestFiles
             #line hidden
             this.Write("            response.");
             
-            #line 84 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 89 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Paginators.MoreResults.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = false;\r\n");
             
-            #line 85 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 90 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
 
             }
             else if (operation.Paginators.InputTokens[0].IsListOrDict)
@@ -267,14 +269,14 @@ namespace ServiceClientGenerator.Generators.TestFiles
             #line hidden
             this.Write("            response.");
             
-            #line 90 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 95 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Paginators.OutputTokens[0].PropertyName));
             
             #line default
             #line hidden
             this.Write(".Clear();\r\n");
             
-            #line 91 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 96 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
 
             } 
             else 
@@ -285,31 +287,31 @@ namespace ServiceClientGenerator.Generators.TestFiles
             #line hidden
             this.Write("            response.");
             
-            #line 96 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 101 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Paginators.OutputTokens[0].PropertyName));
             
             #line default
             #line hidden
             this.Write(" = null;\r\n");
             
-            #line 97 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 102 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
 
             }
 
             
             #line default
             #line hidden
-            this.Write("\r\n            mockClient.Setup(x => x.");
+            this.Write("\r\n            _mockClient.Setup(x => x.");
             
-            #line 101 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 106 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write("(request)).Returns(response);\r\n            var paginator = mockClient.Object.Pagi" +
-                    "nators.");
+            this.Write("(request)).Returns(response);\r\n            var paginator = _mockClient.Object.Pag" +
+                    "inators.");
             
-            #line 102 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 107 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -318,7 +320,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
                     "sponses.ToList();\r\n\r\n            // Second time should throw an exception\r\n     " +
                     "       paginator.Responses.ToList();\r\n        }\r\n\r\n");
             
-            #line 111 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 116 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
 
             }
         }
