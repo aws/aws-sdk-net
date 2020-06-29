@@ -31,13 +31,13 @@
     if (this.Project.TargetFrameworks.Contains("netstandard2.0"))
     {
 #>
-    <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.0'">$(DefineConstants);NETSTANDARD20</DefineConstants>
+    <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.0'">$(DefineConstants);NETSTANDARD20;AWS_ASYNC_ENUMERABLES_API</DefineConstants>
 <#
     }
     if (this.Project.TargetFrameworks.Contains("netcoreapp3.1"))
     {
 #>
-    <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants);NETCOREAPP31</DefineConstants>
+    <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
 <#
     }
 #>
@@ -86,6 +86,17 @@
     }
 #>
   </PropertyGroup>
+<#
+    if (this.Project.TargetFrameworks.Contains("netstandard2.0"))
+    {
+#>
+  <!-- Async Enumerable Compatibility -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+<#
+    }
+#>
 <#
 	if (!this.Project.AssemblyName.Contains("UnitTests"))
 	{

@@ -15,7 +15,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3) - Amazon Kinesis. Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Kinesis. Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.")]
-#elif NETCOREAPP31
+#elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Kinesis. Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription

@@ -15,7 +15,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3) - AWS Resource Groups. AWS Resource Groups lets you search and group AWS resources from multiple services based on their tags.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Resource Groups. AWS Resource Groups lets you search and group AWS resources from multiple services based on their tags.")]
-#elif NETCOREAPP31
+#elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Resource Groups. AWS Resource Groups lets you search and group AWS resources from multiple services based on their tags.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription

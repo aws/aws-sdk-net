@@ -15,7 +15,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3) - AWS AppSync. AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS AppSync. AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.")]
-#elif NETCOREAPP31
+#elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS AppSync. AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription

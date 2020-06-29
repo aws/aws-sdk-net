@@ -2,7 +2,8 @@
 {
     "ProductVersion" : "3.5.0.0",
     "CoreVersion"    : "3.5.0.0",
-    "OverrideCoreVersion" : "3.3",
+    "OverrideCoreVersion": "3.3",
+    "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
             "Version" : "3.5.0.0",

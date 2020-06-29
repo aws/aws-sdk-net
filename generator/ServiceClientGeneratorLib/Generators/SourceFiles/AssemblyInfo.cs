@@ -101,8 +101,8 @@ using System.Runtime.CompilerServices;
             
             #line default
             #line hidden
-            this.Write("\")]\r\n#elif NETCOREAPP31\r\n[assembly: AssemblyDescription(\"The Amazon Web Services " +
-                    "SDK for .NET (.NET Core 3.1) - ");
+            this.Write("\")]\r\n#elif NETCOREAPP3_1\r\n[assembly: AssemblyDescription(\"The Amazon Web Services" +
+                    " SDK for .NET (.NET Core 3.1) - ");
             
             #line 22 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.ServiceFullName));

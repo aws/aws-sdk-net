@@ -15,7 +15,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3) - Amazon Personalize Runtime. Amazon Personalize is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Personalize Runtime. Amazon Personalize is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.")]
-#elif NETCOREAPP31
+#elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Personalize Runtime. Amazon Personalize is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription

@@ -15,7 +15,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3) - AWS SSO OIDC. This is an initial release of AWS Single Sign-On OAuth device code authorization service.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS SSO OIDC. This is an initial release of AWS Single Sign-On OAuth device code authorization service.")]
-#elif NETCOREAPP31
+#elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS SSO OIDC. This is an initial release of AWS Single Sign-On OAuth device code authorization service.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
