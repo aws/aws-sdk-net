@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Connection Object
+    /// Response Unmarshaller for VpcConfiguration Object
     /// </summary>  
-    public class ConnectionUnmarshaller : IUnmarshaller<Connection, XmlUnmarshallerContext>, IUnmarshaller<Connection, JsonUnmarshallerContext>
+    public class VpcConfigurationUnmarshaller : IUnmarshaller<VpcConfiguration, XmlUnmarshallerContext>, IUnmarshaller<VpcConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Connection IUnmarshaller<Connection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        VpcConfiguration IUnmarshaller<VpcConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,39 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Connection Unmarshall(JsonUnmarshallerContext context)
+        public VpcConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Connection unmarshalledObject = new Connection();
+            VpcConfiguration unmarshalledObject = new VpcConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ConnectionArn", targetDepth))
+                if (context.TestExpression("SecurityGroupIds", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ConnectionName", targetDepth))
+                if (context.TestExpression("SubnetIds", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ConnectionStatus", targetDepth))
+                if (context.TestExpression("TlsCertificate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TlsCertificate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("HostArn", targetDepth))
+                if (context.TestExpression("VpcId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HostArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OwnerAccountId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OwnerAccountId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ProviderType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProviderType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +94,12 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
         }
 
 
-        private static ConnectionUnmarshaller _instance = new ConnectionUnmarshaller();        
+        private static VpcConfigurationUnmarshaller _instance = new VpcConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConnectionUnmarshaller Instance
+        public static VpcConfigurationUnmarshaller Instance
         {
             get
             {

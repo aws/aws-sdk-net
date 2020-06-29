@@ -29,14 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeStarconnections.Model
 {
     /// <summary>
-    /// The AWS::CodeStarConnections::Connection resource can be used to connect external
-    /// source providers with services like AWS CodePipeline.
+    /// A resource that is used to connect third-party source providers with services like
+    /// AWS CodePipeline.
     /// 
     ///  
     /// <para>
-    /// Note: A connection created through CloudFormation is in `PENDING` status by default.
-    /// You can make its status `AVAILABLE` by editing the connection in the CodePipeline
-    /// console.
+    /// Note: A connection created through CloudFormation, the CLI, or the SDK is in `PENDING`
+    /// status by default. You can make its status `AVAILABLE` by updating the connection
+    /// in the console.
     /// </para>
     /// </summary>
     public partial class Connection
@@ -44,6 +44,7 @@ namespace Amazon.CodeStarconnections.Model
         private string _connectionArn;
         private string _connectionName;
         private ConnectionStatus _connectionStatus;
+        private string _hostArn;
         private string _ownerAccountId;
         private ProviderType _providerType;
 
@@ -110,6 +111,25 @@ namespace Amazon.CodeStarconnections.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HostArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the host associated with the connection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string HostArn
+        {
+            get { return this._hostArn; }
+            set { this._hostArn = value; }
+        }
+
+        // Check to see if HostArn property is set
+        internal bool IsSetHostArn()
+        {
+            return this._hostArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OwnerAccountId. 
         /// <para>
         /// The identifier of the external provider where your third-party code repository is
@@ -133,7 +153,7 @@ namespace Amazon.CodeStarconnections.Model
         /// Gets and sets the property ProviderType. 
         /// <para>
         /// The name of the external provider where your third-party code repository is configured.
-        /// Currently, the valid provider type is Bitbucket.
+        /// The valid provider type is Bitbucket.
         /// </para>
         /// </summary>
         public ProviderType ProviderType

@@ -88,6 +88,10 @@ namespace Amazon.CodeStarconnections
         /// Constant Bitbucket for ProviderType
         /// </summary>
         public static readonly ProviderType Bitbucket = new ProviderType("Bitbucket");
+        /// <summary>
+        /// Constant GitHubEnterpriseServer for ProviderType
+        /// </summary>
+        public static readonly ProviderType GitHubEnterpriseServer = new ProviderType("GitHubEnterpriseServer");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

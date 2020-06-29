@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateConnection operation
+    /// Response Unmarshaller for CreateHost operation
     /// </summary>  
-    public class CreateConnectionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateHostResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,16 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateConnectionResponse response = new CreateConnectionResponse();
+            CreateHostResponse response = new CreateHostResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ConnectionArn", targetDepth))
+                if (context.TestExpression("HostArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConnectionArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    response.HostArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -90,21 +84,13 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
                 {
                     return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceUnavailableException"))
-                {
-                    return ResourceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
             }
             return new AmazonCodeStarconnectionsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateConnectionResponseUnmarshaller _instance = new CreateConnectionResponseUnmarshaller();        
+        private static CreateHostResponseUnmarshaller _instance = new CreateHostResponseUnmarshaller();        
 
-        internal static CreateConnectionResponseUnmarshaller GetInstance()
+        internal static CreateHostResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -112,7 +98,7 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateConnectionResponseUnmarshaller Instance
+        public static CreateHostResponseUnmarshaller Instance
         {
             get
             {

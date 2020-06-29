@@ -35,10 +35,16 @@ namespace Amazon.CodeStarconnections
     /// <summary>
     /// Implementation for accessing CodeStarconnections
     ///
+    /// AWS CodeStar Connections <important> 
+    /// <para>
+    /// The CodeStar Connections feature is in preview release and is subject to change.
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// This AWS CodeStar Connections API Reference provides descriptions and usage examples
     /// of the operations and data types for the AWS CodeStar Connections API. You can use
-    /// the Connections API to work with connections and installations.
-    /// 
+    /// the connections API to work with connections and installations.
+    /// </para>
     ///  
     /// <para>
     ///  <i>Connections</i> are configurations that you use to connect AWS resources to external
@@ -54,6 +60,11 @@ namespace Amazon.CodeStarconnections
     /// <i>Installations</i> are the apps that are used to conduct this handshake. For example,
     /// the installation for the Bitbucket provider type is the Bitbucket Cloud app. When
     /// you create a connection, you can choose an existing installation or create one.
+    /// </para>
+    ///  
+    /// <para>
+    /// When you want to create a connection to an installed provider type such as GitHub
+    /// Enterprise Server, you create a <i>host</i> for your connections.
     /// </para>
     ///  
     /// <para>
@@ -79,8 +90,46 @@ namespace Amazon.CodeStarconnections
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For information about how to use AWS CodeStar Connections, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS
-    /// CodePipeline User Guide</a>.
+    /// You can work with hosts by calling:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateHost</a>, which creates a host that represents the infrastructure where
+    /// your provider is installed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteHost</a>, which deletes the specified host.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetHost</a>, which returns information about the host, including the setup status.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListHosts</a>, which lists the hosts associated with your account.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You can work with tags in AWS CodeStar Connections by calling the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>ListTagsForResource</a>, which gets information about AWS tags for a specified
+    /// Amazon Resource Name (ARN) in AWS CodeStar Connections.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>TagResource</a>, which adds or updates tags for a resource in AWS CodeStar Connections.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UntagResource</a>, which removes tags for a resource in AWS CodeStar Connections.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For information about how to use AWS CodeStar Connections, see the <a href="https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html">Developer
+    /// Tools User Guide</a>.
     /// </para>
     /// </summary>
     public partial class AmazonCodeStarconnectionsClient : AmazonServiceClient, IAmazonCodeStarconnections
@@ -295,6 +344,12 @@ namespace Amazon.CodeStarconnections
         /// <exception cref="Amazon.CodeStarconnections.Model.LimitExceededException">
         /// Exceeded the maximum limit for connections.
         /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceUnavailableException">
+        /// Resource not found. Verify the ARN for the host resource and try again.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
         {
@@ -337,6 +392,73 @@ namespace Amazon.CodeStarconnections
         public virtual CreateConnectionResponse EndCreateConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateConnectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateHost
+
+        /// <summary>
+        /// Creates a resource that represents the infrastructure where a third-party provider
+        /// is installed. The host is used when you create connections to an installed third-party
+        /// provider type, such as GitHub Enterprise Server. You create one host for all connections
+        /// to that provider.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// A host created through the CLI or the SDK is in `PENDING` status by default. You can
+        /// make its status `AVAILABLE` by setting up the host in the console.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHost service method.</param>
+        /// 
+        /// <returns>The response from the CreateHost service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.LimitExceededException">
+        /// Exceeded the maximum limit for connections.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateHost">REST API Reference for CreateHost Operation</seealso>
+        public virtual CreateHostResponse CreateHost(CreateHostRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHostRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHostResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHostResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateHost operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateHost operation on AmazonCodeStarconnectionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHost
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateHost">REST API Reference for CreateHost Operation</seealso>
+        public virtual IAsyncResult BeginCreateHost(CreateHostRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHostRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHostResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateHost operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHost.</param>
+        /// 
+        /// <returns>Returns a  CreateHostResult from CodeStarconnections.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateHost">REST API Reference for CreateHost Operation</seealso>
+        public virtual CreateHostResponse EndCreateHost(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateHostResponse>(asyncResult);
         }
 
         #endregion
@@ -398,6 +520,74 @@ namespace Amazon.CodeStarconnections
 
         #endregion
         
+        #region  DeleteHost
+
+        /// <summary>
+        /// The host to be deleted. Before you delete a host, all connections associated to the
+        /// host must be deleted.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// A host cannot be deleted if it is in the VPC_CONFIG_INITIALIZING or VPC_CONFIG_DELETING
+        /// state.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHost service method.</param>
+        /// 
+        /// <returns>The response from the DeleteHost service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceUnavailableException">
+        /// Resource not found. Verify the ARN for the host resource and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteHost">REST API Reference for DeleteHost Operation</seealso>
+        public virtual DeleteHostResponse DeleteHost(DeleteHostRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHostRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHostResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteHostResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteHost operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHost operation on AmazonCodeStarconnectionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHost
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteHost">REST API Reference for DeleteHost Operation</seealso>
+        public virtual IAsyncResult BeginDeleteHost(DeleteHostRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHostRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHostResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteHost operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteHost.</param>
+        /// 
+        /// <returns>Returns a  DeleteHostResult from CodeStarconnections.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteHost">REST API Reference for DeleteHost Operation</seealso>
+        public virtual DeleteHostResponse EndDeleteHost(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteHostResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetConnection
 
         /// <summary>
@@ -408,6 +598,9 @@ namespace Amazon.CodeStarconnections
         /// <returns>The response from the GetConnection service method, as returned by CodeStarconnections.</returns>
         /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
         /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceUnavailableException">
+        /// Resource not found. Verify the ARN for the host resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetConnection">REST API Reference for GetConnection Operation</seealso>
         public virtual GetConnectionResponse GetConnection(GetConnectionRequest request)
@@ -451,6 +644,64 @@ namespace Amazon.CodeStarconnections
         public virtual GetConnectionResponse EndGetConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<GetConnectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetHost
+
+        /// <summary>
+        /// Returns the host ARN and details such as status, provider type, endpoint, and, if
+        /// applicable, the VPC configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHost service method.</param>
+        /// 
+        /// <returns>The response from the GetHost service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetHost">REST API Reference for GetHost Operation</seealso>
+        public virtual GetHostResponse GetHost(GetHostRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetHostRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHostResponseUnmarshaller.Instance;
+
+            return Invoke<GetHostResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHost operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHost operation on AmazonCodeStarconnectionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetHost
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetHost">REST API Reference for GetHost Operation</seealso>
+        public virtual IAsyncResult BeginGetHost(GetHostRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetHostRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHostResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetHost operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetHost.</param>
+        /// 
+        /// <returns>Returns a  GetHostResult from CodeStarconnections.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetHost">REST API Reference for GetHost Operation</seealso>
+        public virtual GetHostResponse EndGetHost(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetHostResponse>(asyncResult);
         }
 
         #endregion
@@ -505,6 +756,60 @@ namespace Amazon.CodeStarconnections
         public virtual ListConnectionsResponse EndListConnections(IAsyncResult asyncResult)
         {
             return EndInvoke<ListConnectionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListHosts
+
+        /// <summary>
+        /// Lists the hosts associated with your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHosts service method.</param>
+        /// 
+        /// <returns>The response from the ListHosts service method, as returned by CodeStarconnections.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListHosts">REST API Reference for ListHosts Operation</seealso>
+        public virtual ListHostsResponse ListHosts(ListHostsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHostsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHostsResponseUnmarshaller.Instance;
+
+            return Invoke<ListHostsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListHosts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListHosts operation on AmazonCodeStarconnectionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHosts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListHosts">REST API Reference for ListHosts Operation</seealso>
+        public virtual IAsyncResult BeginListHosts(ListHostsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHostsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHostsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListHosts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListHosts.</param>
+        /// 
+        /// <returns>Returns a  ListHostsResult from CodeStarconnections.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListHosts">REST API Reference for ListHosts Operation</seealso>
+        public virtual ListHostsResponse EndListHosts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListHostsResponse>(asyncResult);
         }
 
         #endregion

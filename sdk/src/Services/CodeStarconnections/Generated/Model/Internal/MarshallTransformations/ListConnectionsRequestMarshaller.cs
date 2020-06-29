@@ -68,6 +68,12 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetHostArnFilter())
+                {
+                    context.Writer.WritePropertyName("HostArnFilter");
+                    context.Writer.Write(publicRequest.HostArnFilter);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");

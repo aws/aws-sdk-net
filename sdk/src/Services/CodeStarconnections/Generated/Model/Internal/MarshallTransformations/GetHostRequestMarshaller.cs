@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateConnection Request Marshaller
+    /// GetHost Request Marshaller
     /// </summary>       
-    public class CreateConnectionRequestMarshaller : IMarshaller<IRequest, CreateConnectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetHostRequestMarshaller : IMarshaller<IRequest, GetHostRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateConnectionRequest)input);
+            return this.Marshall((GetHostRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateConnectionRequest publicRequest)
+        public IRequest Marshall(GetHostRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeStarconnections");
-            string target = "com.amazonaws.codestar.connections.CodeStar_connections_20191201.CreateConnection";
+            string target = "com.amazonaws.codestar.connections.CodeStar_connections_20191201.GetHost";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-01";            
@@ -68,38 +68,10 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConnectionName())
-                {
-                    context.Writer.WritePropertyName("ConnectionName");
-                    context.Writer.Write(publicRequest.ConnectionName);
-                }
-
                 if(publicRequest.IsSetHostArn())
                 {
                     context.Writer.WritePropertyName("HostArn");
                     context.Writer.Write(publicRequest.HostArn);
-                }
-
-                if(publicRequest.IsSetProviderType())
-                {
-                    context.Writer.WritePropertyName("ProviderType");
-                    context.Writer.Write(publicRequest.ProviderType);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
                 }
 
         
@@ -111,9 +83,9 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateConnectionRequestMarshaller _instance = new CreateConnectionRequestMarshaller();        
+        private static GetHostRequestMarshaller _instance = new GetHostRequestMarshaller();        
 
-        internal static CreateConnectionRequestMarshaller GetInstance()
+        internal static GetHostRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -121,7 +93,7 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateConnectionRequestMarshaller Instance
+        public static GetHostRequestMarshaller Instance
         {
             get
             {

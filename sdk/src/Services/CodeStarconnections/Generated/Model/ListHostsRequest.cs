@@ -29,34 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeStarconnections.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListConnections operation.
-    /// Lists the connections associated with your account.
+    /// Container for the parameters to the ListHosts operation.
+    /// Lists the hosts associated with your account.
     /// </summary>
-    public partial class ListConnectionsRequest : AmazonCodeStarconnectionsRequest
+    public partial class ListHostsRequest : AmazonCodeStarconnectionsRequest
     {
-        private string _hostArnFilter;
         private int? _maxResults;
         private string _nextToken;
-        private ProviderType _providerTypeFilter;
-
-        /// <summary>
-        /// Gets and sets the property HostArnFilter. 
-        /// <para>
-        /// Filters the list of connections to those associated with a specified host.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=256)]
-        public string HostArnFilter
-        {
-            get { return this._hostArnFilter; }
-            set { this._hostArnFilter = value; }
-        }
-
-        // Check to see if HostArnFilter property is set
-        internal bool IsSetHostArnFilter()
-        {
-            return this._hostArnFilter != null;
-        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -81,8 +60,8 @@ namespace Amazon.CodeStarconnections.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token that was returned from the previous <code>ListConnections</code> call, which
-        /// can be used to return the next set of connections in the list.
+        /// The token that was returned from the previous <code>ListHosts</code> call, which can
+        /// be used to return the next set of hosts in the list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -96,25 +75,6 @@ namespace Amazon.CodeStarconnections.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ProviderTypeFilter. 
-        /// <para>
-        /// Filters the list of connections to those associated with a specified provider, such
-        /// as Bitbucket.
-        /// </para>
-        /// </summary>
-        public ProviderType ProviderTypeFilter
-        {
-            get { return this._providerTypeFilter; }
-            set { this._providerTypeFilter = value; }
-        }
-
-        // Check to see if ProviderTypeFilter property is set
-        internal bool IsSetProviderTypeFilter()
-        {
-            return this._providerTypeFilter != null;
         }
 
     }

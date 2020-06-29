@@ -37,6 +37,7 @@ namespace Amazon.CodeStarconnections.Model
     public partial class CreateConnectionRequest : AmazonCodeStarconnectionsRequest
     {
         private string _connectionName;
+        private string _hostArn;
         private ProviderType _providerType;
         private List<Tag> _tags = new List<Tag>();
 
@@ -61,13 +62,31 @@ namespace Amazon.CodeStarconnections.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HostArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the host associated with the connection to be created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string HostArn
+        {
+            get { return this._hostArn; }
+            set { this._hostArn = value; }
+        }
+
+        // Check to see if HostArn property is set
+        internal bool IsSetHostArn()
+        {
+            return this._hostArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ProviderType. 
         /// <para>
         /// The name of the external provider where your third-party code repository is configured.
-        /// Currently, the valid provider type is Bitbucket.
+        /// The valid provider type is Bitbucket.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ProviderType ProviderType
         {
             get { return this._providerType; }
