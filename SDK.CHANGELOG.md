@@ -1,3 +1,18 @@
+### 3.3.771.0 (2020-06-29 18:15 UTC)
+* AutoScaling (3.3.103.9)
+	* Documentation updates for Amazon EC2 Auto Scaling.
+* CodeGuruProfiler (3.3.102.0)
+	* Amazon CodeGuru Profiler is now generally available. The Profiler helps developers to optimize their software, troubleshoot issues in production, and identify their most expensive lines of code. As part of general availability, we are launching: Profiling of AWS Lambda functions, Anomaly detection in CPU profiles, Color My Code on flame graphs, Expanding presence to 10 AWS regions.
+* CodeStarconnections (3.3.102.0)
+	* Updated and new APIs in support of hosts for connections to installed provider types. New integration with the GitHub Enterprise Server provider type.
+* EC2 (3.3.186.0)
+	* Virtual Private Cloud (VPC) customers can now create and manage their own Prefix Lists to simplify VPC configurations.
+* Core 3.3.107.19
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.770.0 (2020-06-26 18:21 UTC)
 * CloudFormation (3.3.106.0)
 	* ListStackInstances and DescribeStackInstance now return a new `StackInstanceStatus` object that contains `DetailedStatus` values: a disambiguation of the more generic `Status` value. ListStackInstances output can now be filtered on `DetailedStatus` using the new `Filters` parameter.

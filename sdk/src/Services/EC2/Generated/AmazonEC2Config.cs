@@ -32,7 +32,7 @@ namespace Amazon.EC2
     public partial class AmazonEC2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.185.1");
+            InternalSDKUtils.BuildUserAgentString("3.3.186.0");
 
         private string _userAgent = UserAgentString;
 
