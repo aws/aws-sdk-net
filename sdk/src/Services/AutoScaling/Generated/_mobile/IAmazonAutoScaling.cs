@@ -1761,7 +1761,8 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Executes the specified policy.
+        /// Executes the specified policy. This can be useful for testing the design of your scaling
+        /// policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExecutePolicy service method.</param>
         /// <param name="cancellationToken">

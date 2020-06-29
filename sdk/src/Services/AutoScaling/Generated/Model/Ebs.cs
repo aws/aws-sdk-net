@@ -140,9 +140,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>SnapshotId</code> is optional if you specify a volume size. If you specify
-        /// both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
-        /// equal or greater than the size of the snapshot.
+        /// You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -175,11 +173,12 @@ namespace Amazon.AutoScaling.Model
         /// Default: If you create a volume from a snapshot and you don't specify a volume size,
         /// the default is the snapshot size.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// At least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.
+        /// You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>. If
+        /// you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size
+        /// must be equal or greater than the size of the snapshot.
         /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=16384)]
         public int VolumeSize
