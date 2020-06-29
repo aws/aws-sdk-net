@@ -80,6 +80,12 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetComputePlatform())
+                {
+                    context.Writer.WritePropertyName("computePlatform");
+                    context.Writer.Write(publicRequest.ComputePlatform);
+                }
+
                 if(publicRequest.IsSetProfilingGroupName())
                 {
                     context.Writer.WritePropertyName("profilingGroupName");

@@ -39,7 +39,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property ProfilingGroupName. 
         /// <para>
-        /// The profiling group name to delete.
+        /// The name of the profiling group to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

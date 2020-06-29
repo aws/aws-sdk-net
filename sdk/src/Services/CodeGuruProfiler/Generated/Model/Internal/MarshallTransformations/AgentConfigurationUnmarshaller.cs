@@ -64,6 +64,12 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("agentParameters", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.AgentParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("periodInSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

@@ -36,7 +36,12 @@ namespace Amazon.CodeGuruProfiler.Model
         private AgentConfiguration _configuration;
 
         /// <summary>
-        /// Gets and sets the property Configuration.
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        ///  An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html">
+        /// <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or
+        /// not and for how long to return profiling data. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AgentConfiguration Configuration

@@ -30,7 +30,7 @@ namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProfileTimes operation.
-    /// List the start times of the available aggregated profiles of a profiling group for
+    /// Lists the start times of the available aggregated profiles of a profiling group for
     /// an aggregation period within the specified time range.
     /// </summary>
     public partial class ListProfileTimesRequest : AmazonCodeGuruProfilerRequest
@@ -136,8 +136,22 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property Period. 
         /// <para>
-        /// The aggregation period.
+        ///  The aggregation period. This specifies the period during which an aggregation profile
+        /// collects posted agent profiles for a profiling group. There are 3 valid values. 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>P1D</code> — 1 day 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PT1H</code> — 1 hour 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PT5M</code> — 5 minutes 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public AggregationPeriod Period

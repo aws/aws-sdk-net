@@ -62,7 +62,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property ProfilingGroupNames. 
         /// <para>
-        /// Information about profiling group names.
+        ///  A returned list of profiling group names. A list of the names is returned only if
+        /// <code>includeDescription</code> is <code>false</code>, otherwise a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+        /// <code>ProfilingGroupDescription</code> </a> objects is returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,7 +83,10 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property ProfilingGroups. 
         /// <para>
-        /// Information about profiling groups.
+        ///  A returned list <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+        /// <code>ProfilingGroupDescription</code> </a> objects. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+        /// <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code>
+        /// is <code>true</code>, otherwise a list of profiling group names is returned. 
         /// </para>
         /// </summary>
         public List<ProfilingGroupDescription> ProfilingGroups

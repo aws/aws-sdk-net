@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
-    /// The structure representing the removePermissionResponse.
+    /// The structure representing the <code>removePermissionResponse</code>.
     /// </summary>
     public partial class RemovePermissionResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,8 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The resource-based policy.
+        ///  The JSON-formatted resource-based policy on the profiling group after the specified
+        /// permissions were removed. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +59,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property RevisionId. 
         /// <para>
-        /// A unique identifier for the current revision of the policy.
+        ///  A universally unique identifier (UUID) for the revision of the resource-based policy
+        /// after the specified permissions were removed. The updated JSON-formatted policy is
+        /// in the <code>policy</code> element of the response. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

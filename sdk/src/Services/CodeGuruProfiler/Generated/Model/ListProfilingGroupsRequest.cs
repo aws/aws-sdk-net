@@ -30,7 +30,8 @@ namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProfilingGroups operation.
-    /// Lists profiling groups.
+    /// Returns a list of profiling groups. The profiling groups are returned as <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+    /// <code>ProfilingGroupDescription</code> </a> objects.
     /// </summary>
     public partial class ListProfilingGroupsRequest : AmazonCodeGuruProfilerRequest
     {
@@ -41,7 +42,11 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property IncludeDescription. 
         /// <para>
-        /// A Boolean value indicating whether to include a description.
+        /// A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>,
+        /// then a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+        /// <code>ProfilingGroupDescription</code> </a> objects that contain detailed information
+        /// about profiling groups is returned. If <code>false</code>, then a list of profiling
+        /// group names is returned.
         /// </para>
         /// </summary>
         public bool IncludeDescription

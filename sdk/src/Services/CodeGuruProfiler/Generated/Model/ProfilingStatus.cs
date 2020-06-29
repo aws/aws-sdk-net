@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
-    /// Information about the profiling status.
+    /// Profiling status includes information about the last time a profile agent pinged
+    /// back, the last time a profile was received, and the aggregation period and start time
+    /// for the most recent aggregated profile.
     /// </summary>
     public partial class ProfilingStatus
     {
@@ -40,7 +42,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property LatestAgentOrchestratedAt. 
         /// <para>
-        /// The time, in milliseconds since the epoch, when the latest agent was orchestrated.
+        /// The date and time when the profiling agent most recently pinged back. Specify using
+        /// the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond
+        /// past June 1, 2020 1:15:02 PM UTC.
         /// </para>
         /// </summary>
         public DateTime LatestAgentOrchestratedAt
@@ -58,7 +62,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property LatestAgentProfileReportedAt. 
         /// <para>
-        /// The time, in milliseconds since the epoch, when the latest agent was reported..
+        /// The date and time when the most recent profile was received. Specify using the ISO
+        /// 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June
+        /// 1, 2020 1:15:02 PM UTC.
         /// </para>
         /// </summary>
         public DateTime LatestAgentProfileReportedAt
@@ -76,7 +82,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property LatestAggregatedProfile. 
         /// <para>
-        /// The latest aggregated profile
+        ///  An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AggregatedProfileTime.html">
+        /// <code>AggregatedProfileTime</code> </a> object that contains the aggregation period
+        /// and start time for an aggregated profile. 
         /// </para>
         /// </summary>
         public AggregatedProfileTime LatestAggregatedProfile

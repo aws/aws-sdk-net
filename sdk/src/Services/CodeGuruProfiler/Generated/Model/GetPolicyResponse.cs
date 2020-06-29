@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
-    /// The structure representing the getPolicyResponse.
+    /// The structure representing the <code>getPolicyResponse</code>.
     /// </summary>
     public partial class GetPolicyResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The resource-based policy attached to the <code>ProfilingGroup</code>.
+        /// The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property RevisionId. 
         /// <para>
-        /// A unique identifier for the current revision of the policy.
+        /// A unique identifier for the current revision of the returned policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

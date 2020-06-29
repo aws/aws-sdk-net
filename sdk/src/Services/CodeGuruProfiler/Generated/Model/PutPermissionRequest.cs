@@ -30,8 +30,24 @@ namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
     /// Container for the parameters to the PutPermission operation.
-    /// Provides permission to the principals. This overwrites the existing permissions, and
-    /// is not additive.
+    /// Adds permissions to a profiling group's resource-based policy that are provided using
+    /// an action group. If a profiling group doesn't have a resource-based policy, one is
+    /// created for it using the permissions in the action group and the roles and users in
+    /// the <code>principals</code> parameter. 
+    /// 
+    ///  <pre><code> &lt;p&gt; The one supported action group that can be added is &lt;code&gt;agentPermission&lt;/code&gt;
+    /// which grants &lt;code&gt;ConfigureAgent&lt;/code&gt; and &lt;code&gt;PostAgent&lt;/code&gt;
+    /// permissions. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/codeguru/latest/profiler-ug/resource-based-policies.html&quot;&gt;Resource-based
+    /// policies in CodeGuru Profiler&lt;/a&gt; in the &lt;i&gt;Amazon CodeGuru Profiler User
+    /// Guide&lt;/i&gt;, &lt;a href=&quot;https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html&quot;&gt;
+    /// &lt;code&gt;ConfigureAgent&lt;/code&gt; &lt;/a&gt;, and &lt;a href=&quot;https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PostAgentProfile.html&quot;&gt;
+    /// &lt;code&gt;PostAgentProfile&lt;/code&gt; &lt;/a&gt;. &lt;/p&gt; &lt;p&gt; The first
+    /// time you call &lt;code&gt;PutPermission&lt;/code&gt; on a profiling group, do not
+    /// specify a &lt;code&gt;revisionId&lt;/code&gt; because it doesn't have a resource-based
+    /// policy. Subsequent calls must provide a &lt;code&gt;revisionId&lt;/code&gt; to specify
+    /// which revision of the resource-based policy to add the permissions to. &lt;/p&gt;
+    /// &lt;p&gt; The response contains the profiling group's JSON-formatted resource policy.
+    /// &lt;/p&gt; </code></pre>
     /// </summary>
     public partial class PutPermissionRequest : AmazonCodeGuruProfilerRequest
     {
@@ -43,7 +59,10 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property ActionGroup. 
         /// <para>
-        /// The list of actions that the users and roles can perform on the profiling group.
+        ///  Specifies an action group that contains permissions to add to a profiling group resource.
+        /// One action group is supported, <code>agentPermissions</code>, which grants permission
+        /// to perform actions required by the profiling agent, <code>ConfigureAgent</code> and
+        /// <code>PostAgentProfile</code> permissions. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,8 +81,8 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property Principals. 
         /// <para>
-        /// The list of role and user ARNs or the accountId that needs access (wildcards are not
-        /// allowed).
+        ///  A list ARNs for the roles and users you want to grant access to the profiling group.
+        /// Wildcards are not are supported in the ARNs. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
@@ -82,7 +101,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property ProfilingGroupName. 
         /// <para>
-        /// The name of the profiling group.
+        /// The name of the profiling group to grant access to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -101,9 +120,10 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property RevisionId. 
         /// <para>
-        /// A unique identifier for the current revision of the policy. This is required, if a
-        /// policy exists for the profiling group. This is not required when creating the policy
-        /// for the first time.
+        ///  A universally unique identifier (UUID) for the revision of the policy you are adding
+        /// to the profiling group. Do not specify this when you add permissions to a profiling
+        /// group for the first time. If a policy already exists on the profiling group, you must
+        /// specify the <code>revisionId</code>. 
         /// </para>
         /// </summary>
         public string RevisionId
