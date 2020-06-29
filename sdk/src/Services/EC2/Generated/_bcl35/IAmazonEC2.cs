@@ -3188,6 +3188,53 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateManagedPrefixList
+
+
+        /// <summary>
+        /// Creates a managed prefix list. You can specify one or more entries for the prefix
+        /// list. Each entry consists of a CIDR block and an optional description.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify the maximum number of entries for the prefix list. The maximum number
+        /// of entries cannot be changed later.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateManagedPrefixList service method.</param>
+        /// 
+        /// <returns>The response from the CreateManagedPrefixList service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateManagedPrefixList">REST API Reference for CreateManagedPrefixList Operation</seealso>
+        CreateManagedPrefixListResponse CreateManagedPrefixList(CreateManagedPrefixListRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateManagedPrefixList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateManagedPrefixList operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateManagedPrefixList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateManagedPrefixList">REST API Reference for CreateManagedPrefixList Operation</seealso>
+        IAsyncResult BeginCreateManagedPrefixList(CreateManagedPrefixListRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateManagedPrefixList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateManagedPrefixList.</param>
+        /// 
+        /// <returns>Returns a  CreateManagedPrefixListResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateManagedPrefixList">REST API Reference for CreateManagedPrefixList Operation</seealso>
+        CreateManagedPrefixListResponse EndCreateManagedPrefixList(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateNatGateway
 
 
@@ -3924,16 +3971,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a subnet in an existing VPC.
+        /// Creates a subnet in a specified VPC.
         /// 
         ///  
         /// <para>
-        /// When you create each subnet, you provide the VPC ID and IPv4 CIDR block for the subnet.
-        /// After you create a subnet, you can't change its CIDR block. The size of the subnet's
-        /// IPv4 CIDR block can be the same as a VPC's IPv4 CIDR block, or a subset of a VPC's
-        /// IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR blocks
-        /// must not overlap. The smallest IPv4 subnet (and VPC) you can create uses a /28 netmask
-        /// (16 IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4 addresses).
+        /// You must specify an IPv4 CIDR block for the subnet. After you create a subnet, you
+        /// can't change its CIDR block. The allowed block size is between a /16 netmask (65,536
+        /// IP addresses) and /28 netmask (16 IP addresses). The CIDR block must not overlap with
+        /// the CIDR block of an existing subnet in the VPC.
         /// </para>
         ///  
         /// <para>
@@ -3952,11 +3997,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// If you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
-        /// doesn't change if you stop and restart the instance (unlike a similar instance launched
-        /// outside a VPC, which gets a new IP address when restarted). It's therefore possible
-        /// to have a subnet with no running instances (they're all stopped), but no remaining
-        /// IP addresses available.
+        /// When you stop an instance in a subnet, it retains its private IPv4 address. It's therefore
+        /// possible to have a subnet with no running instances (they're all stopped), but no
+        /// remaining IP addresses available.
         /// </para>
         ///  
         /// <para>
@@ -5659,6 +5702,47 @@ namespace Amazon.EC2
         /// <returns>Returns a  DeleteLocalGatewayRouteTableVpcAssociationResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVpcAssociation">REST API Reference for DeleteLocalGatewayRouteTableVpcAssociation Operation</seealso>
         DeleteLocalGatewayRouteTableVpcAssociationResponse EndDeleteLocalGatewayRouteTableVpcAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteManagedPrefixList
+
+
+        /// <summary>
+        /// Deletes the specified managed prefix list. You must first remove all references to
+        /// the prefix list in your resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteManagedPrefixList service method.</param>
+        /// 
+        /// <returns>The response from the DeleteManagedPrefixList service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteManagedPrefixList">REST API Reference for DeleteManagedPrefixList Operation</seealso>
+        DeleteManagedPrefixListResponse DeleteManagedPrefixList(DeleteManagedPrefixListRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteManagedPrefixList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteManagedPrefixList operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteManagedPrefixList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteManagedPrefixList">REST API Reference for DeleteManagedPrefixList Operation</seealso>
+        IAsyncResult BeginDeleteManagedPrefixList(DeleteManagedPrefixListRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteManagedPrefixList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteManagedPrefixList.</param>
+        /// 
+        /// <returns>Returns a  DeleteManagedPrefixListResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteManagedPrefixList">REST API Reference for DeleteManagedPrefixList Operation</seealso>
+        DeleteManagedPrefixListResponse EndDeleteManagedPrefixList(IAsyncResult asyncResult);
 
         #endregion
         
@@ -10125,6 +10209,51 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeManagedPrefixLists
+
+
+        /// <summary>
+        /// Describes your managed prefix lists and any AWS-managed prefix lists.
+        /// 
+        ///  
+        /// <para>
+        /// To view the entries for your prefix list, use <a>GetManagedPrefixListEntries</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeManagedPrefixLists service method.</param>
+        /// 
+        /// <returns>The response from the DescribeManagedPrefixLists service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeManagedPrefixLists">REST API Reference for DescribeManagedPrefixLists Operation</seealso>
+        DescribeManagedPrefixListsResponse DescribeManagedPrefixLists(DescribeManagedPrefixListsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeManagedPrefixLists operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeManagedPrefixLists operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeManagedPrefixLists
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeManagedPrefixLists">REST API Reference for DescribeManagedPrefixLists Operation</seealso>
+        IAsyncResult BeginDescribeManagedPrefixLists(DescribeManagedPrefixListsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeManagedPrefixLists operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeManagedPrefixLists.</param>
+        /// 
+        /// <returns>Returns a  DescribeManagedPrefixListsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeManagedPrefixLists">REST API Reference for DescribeManagedPrefixLists Operation</seealso>
+        DescribeManagedPrefixListsResponse EndDescribeManagedPrefixLists(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeMovingAddresses
 
 
@@ -10453,9 +10582,11 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes available AWS services in a prefix list format, which includes the prefix
         /// list name and prefix list ID of the service and the IP address range for the service.
-        /// A prefix list ID is required for creating an outbound security group rule that allows
-        /// traffic from a VPC to access an AWS service through a gateway VPC endpoint. Currently,
-        /// the services that support this action are Amazon S3 and Amazon DynamoDB.
+        /// 
+        ///  
+        /// <para>
+        /// We recommend that you use <a>DescribeManagedPrefixLists</a> instead.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePrefixLists service method.</param>
         /// 
@@ -15097,6 +15228,87 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetManagedPrefixListAssociations
+
+
+        /// <summary>
+        /// Gets information about the resources that are associated with the specified managed
+        /// prefix list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedPrefixListAssociations service method.</param>
+        /// 
+        /// <returns>The response from the GetManagedPrefixListAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListAssociations">REST API Reference for GetManagedPrefixListAssociations Operation</seealso>
+        GetManagedPrefixListAssociationsResponse GetManagedPrefixListAssociations(GetManagedPrefixListAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetManagedPrefixListAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedPrefixListAssociations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetManagedPrefixListAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListAssociations">REST API Reference for GetManagedPrefixListAssociations Operation</seealso>
+        IAsyncResult BeginGetManagedPrefixListAssociations(GetManagedPrefixListAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetManagedPrefixListAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetManagedPrefixListAssociations.</param>
+        /// 
+        /// <returns>Returns a  GetManagedPrefixListAssociationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListAssociations">REST API Reference for GetManagedPrefixListAssociations Operation</seealso>
+        GetManagedPrefixListAssociationsResponse EndGetManagedPrefixListAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetManagedPrefixListEntries
+
+
+        /// <summary>
+        /// Gets information about the entries for a specified managed prefix list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedPrefixListEntries service method.</param>
+        /// 
+        /// <returns>The response from the GetManagedPrefixListEntries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListEntries">REST API Reference for GetManagedPrefixListEntries Operation</seealso>
+        GetManagedPrefixListEntriesResponse GetManagedPrefixListEntries(GetManagedPrefixListEntriesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetManagedPrefixListEntries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedPrefixListEntries operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetManagedPrefixListEntries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListEntries">REST API Reference for GetManagedPrefixListEntries Operation</seealso>
+        IAsyncResult BeginGetManagedPrefixListEntries(GetManagedPrefixListEntriesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetManagedPrefixListEntries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetManagedPrefixListEntries.</param>
+        /// 
+        /// <returns>Returns a  GetManagedPrefixListEntriesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListEntries">REST API Reference for GetManagedPrefixListEntries Operation</seealso>
+        GetManagedPrefixListEntriesResponse EndGetManagedPrefixListEntries(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetPasswordData
 
 
@@ -16603,6 +16815,57 @@ namespace Amazon.EC2
         /// <returns>Returns a  ModifyLaunchTemplateResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLaunchTemplate">REST API Reference for ModifyLaunchTemplate Operation</seealso>
         ModifyLaunchTemplateResponse EndModifyLaunchTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyManagedPrefixList
+
+
+        /// <summary>
+        /// Modifies the specified managed prefix list.
+        /// 
+        ///  
+        /// <para>
+        /// Adding or removing entries in a prefix list creates a new version of the prefix list.
+        /// Changing the name of the prefix list does not affect the version.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a current version number that does not match the true current version
+        /// number, the request fails.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyManagedPrefixList service method.</param>
+        /// 
+        /// <returns>The response from the ModifyManagedPrefixList service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyManagedPrefixList">REST API Reference for ModifyManagedPrefixList Operation</seealso>
+        ModifyManagedPrefixListResponse ModifyManagedPrefixList(ModifyManagedPrefixListRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyManagedPrefixList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyManagedPrefixList operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyManagedPrefixList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyManagedPrefixList">REST API Reference for ModifyManagedPrefixList Operation</seealso>
+        IAsyncResult BeginModifyManagedPrefixList(ModifyManagedPrefixListRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyManagedPrefixList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyManagedPrefixList.</param>
+        /// 
+        /// <returns>Returns a  ModifyManagedPrefixListResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyManagedPrefixList">REST API Reference for ModifyManagedPrefixList Operation</seealso>
+        ModifyManagedPrefixListResponse EndModifyManagedPrefixList(IAsyncResult asyncResult);
 
         #endregion
         
@@ -19380,6 +19643,47 @@ namespace Amazon.EC2
         /// <returns>Returns a  RestoreAddressToClassicResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreAddressToClassic">REST API Reference for RestoreAddressToClassic Operation</seealso>
         RestoreAddressToClassicResponse EndRestoreAddressToClassic(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RestoreManagedPrefixListVersion
+
+
+        /// <summary>
+        /// Restores the entries from a previous version of a managed prefix list to a new version
+        /// of the prefix list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreManagedPrefixListVersion service method.</param>
+        /// 
+        /// <returns>The response from the RestoreManagedPrefixListVersion service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreManagedPrefixListVersion">REST API Reference for RestoreManagedPrefixListVersion Operation</seealso>
+        RestoreManagedPrefixListVersionResponse RestoreManagedPrefixListVersion(RestoreManagedPrefixListVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreManagedPrefixListVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreManagedPrefixListVersion operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreManagedPrefixListVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreManagedPrefixListVersion">REST API Reference for RestoreManagedPrefixListVersion Operation</seealso>
+        IAsyncResult BeginRestoreManagedPrefixListVersion(RestoreManagedPrefixListVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RestoreManagedPrefixListVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreManagedPrefixListVersion.</param>
+        /// 
+        /// <returns>Returns a  RestoreManagedPrefixListVersionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreManagedPrefixListVersion">REST API Reference for RestoreManagedPrefixListVersion Operation</seealso>
+        RestoreManagedPrefixListVersionResponse EndRestoreManagedPrefixListVersion(IAsyncResult asyncResult);
 
         #endregion
         

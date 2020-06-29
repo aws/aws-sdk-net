@@ -8079,6 +8079,96 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type PrefixListState.
+    /// </summary>
+    public class PrefixListState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreateComplete for PrefixListState
+        /// </summary>
+        public static readonly PrefixListState CreateComplete = new PrefixListState("create-complete");
+        /// <summary>
+        /// Constant CreateFailed for PrefixListState
+        /// </summary>
+        public static readonly PrefixListState CreateFailed = new PrefixListState("create-failed");
+        /// <summary>
+        /// Constant CreateInProgress for PrefixListState
+        /// </summary>
+        public static readonly PrefixListState CreateInProgress = new PrefixListState("create-in-progress");
+        /// <summary>
+        /// Constant DeleteComplete for PrefixListState
+        /// </summary>
+        public static readonly PrefixListState DeleteComplete = new PrefixListState("delete-complete");
+        /// <summary>
+        /// Constant DeleteFailed for PrefixListState
+        /// </summary>
+        public static readonly PrefixListState DeleteFailed = new PrefixListState("delete-failed");
+        /// <summary>
+        /// Constant DeleteInProgress for PrefixListState
+        /// </summary>
+        public static readonly PrefixListState DeleteInProgress = new PrefixListState("delete-in-progress");
+        /// <summary>
+        /// Constant ModifyComplete for PrefixListState
+        /// </summary>
+        public static readonly PrefixListState ModifyComplete = new PrefixListState("modify-complete");
+        /// <summary>
+        /// Constant ModifyFailed for PrefixListState
+        /// </summary>
+        public static readonly PrefixListState ModifyFailed = new PrefixListState("modify-failed");
+        /// <summary>
+        /// Constant ModifyInProgress for PrefixListState
+        /// </summary>
+        public static readonly PrefixListState ModifyInProgress = new PrefixListState("modify-in-progress");
+        /// <summary>
+        /// Constant RestoreComplete for PrefixListState
+        /// </summary>
+        public static readonly PrefixListState RestoreComplete = new PrefixListState("restore-complete");
+        /// <summary>
+        /// Constant RestoreFailed for PrefixListState
+        /// </summary>
+        public static readonly PrefixListState RestoreFailed = new PrefixListState("restore-failed");
+        /// <summary>
+        /// Constant RestoreInProgress for PrefixListState
+        /// </summary>
+        public static readonly PrefixListState RestoreInProgress = new PrefixListState("restore-in-progress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PrefixListState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PrefixListState FindValue(string value)
+        {
+            return FindValue<PrefixListState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PrefixListState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PrincipalType.
     /// </summary>
     public class PrincipalType : ConstantClass

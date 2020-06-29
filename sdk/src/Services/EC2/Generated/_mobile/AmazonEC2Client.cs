@@ -3080,6 +3080,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateManagedPrefixList
+
+        internal virtual CreateManagedPrefixListResponse CreateManagedPrefixList(CreateManagedPrefixListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateManagedPrefixListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateManagedPrefixListResponseUnmarshaller.Instance;
+
+            return Invoke<CreateManagedPrefixListResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a managed prefix list. You can specify one or more entries for the prefix
+        /// list. Each entry consists of a CIDR block and an optional description.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify the maximum number of entries for the prefix list. The maximum number
+        /// of entries cannot be changed later.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateManagedPrefixList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateManagedPrefixList service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateManagedPrefixList">REST API Reference for CreateManagedPrefixList Operation</seealso>
+        public virtual Task<CreateManagedPrefixListResponse> CreateManagedPrefixListAsync(CreateManagedPrefixListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateManagedPrefixListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateManagedPrefixListResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateManagedPrefixListResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateNatGateway
 
         internal virtual CreateNatGatewayResponse CreateNatGateway(CreateNatGatewayRequest request)
@@ -3748,16 +3789,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a subnet in an existing VPC.
+        /// Creates a subnet in a specified VPC.
         /// 
         ///  
         /// <para>
-        /// When you create each subnet, you provide the VPC ID and IPv4 CIDR block for the subnet.
-        /// After you create a subnet, you can't change its CIDR block. The size of the subnet's
-        /// IPv4 CIDR block can be the same as a VPC's IPv4 CIDR block, or a subset of a VPC's
-        /// IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR blocks
-        /// must not overlap. The smallest IPv4 subnet (and VPC) you can create uses a /28 netmask
-        /// (16 IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4 addresses).
+        /// You must specify an IPv4 CIDR block for the subnet. After you create a subnet, you
+        /// can't change its CIDR block. The allowed block size is between a /16 netmask (65,536
+        /// IP addresses) and /28 netmask (16 IP addresses). The CIDR block must not overlap with
+        /// the CIDR block of an existing subnet in the VPC.
         /// </para>
         ///  
         /// <para>
@@ -3776,11 +3815,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// If you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
-        /// doesn't change if you stop and restart the instance (unlike a similar instance launched
-        /// outside a VPC, which gets a new IP address when restarted). It's therefore possible
-        /// to have a subnet with no running instances (they're all stopped), but no remaining
-        /// IP addresses available.
+        /// When you stop an instance in a subnet, it retains its private IPv4 address. It's therefore
+        /// possible to have a subnet with no running instances (they're all stopped), but no
+        /// remaining IP addresses available.
         /// </para>
         ///  
         /// <para>
@@ -5262,6 +5299,41 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableVpcAssociationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteLocalGatewayRouteTableVpcAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteManagedPrefixList
+
+        internal virtual DeleteManagedPrefixListResponse DeleteManagedPrefixList(DeleteManagedPrefixListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteManagedPrefixListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteManagedPrefixListResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteManagedPrefixListResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified managed prefix list. You must first remove all references to
+        /// the prefix list in your resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteManagedPrefixList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteManagedPrefixList service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteManagedPrefixList">REST API Reference for DeleteManagedPrefixList Operation</seealso>
+        public virtual Task<DeleteManagedPrefixListResponse> DeleteManagedPrefixListAsync(DeleteManagedPrefixListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteManagedPrefixListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteManagedPrefixListResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteManagedPrefixListResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -9319,6 +9391,45 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeManagedPrefixLists
+
+        internal virtual DescribeManagedPrefixListsResponse DescribeManagedPrefixLists(DescribeManagedPrefixListsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeManagedPrefixListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeManagedPrefixListsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeManagedPrefixListsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes your managed prefix lists and any AWS-managed prefix lists.
+        /// 
+        ///  
+        /// <para>
+        /// To view the entries for your prefix list, use <a>GetManagedPrefixListEntries</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeManagedPrefixLists service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeManagedPrefixLists service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeManagedPrefixLists">REST API Reference for DescribeManagedPrefixLists Operation</seealso>
+        public virtual Task<DescribeManagedPrefixListsResponse> DescribeManagedPrefixListsAsync(DescribeManagedPrefixListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeManagedPrefixListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeManagedPrefixListsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeManagedPrefixListsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeMovingAddresses
 
         internal virtual DescribeMovingAddressesResponse DescribeMovingAddresses(DescribeMovingAddressesRequest request)
@@ -9648,9 +9759,11 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes available AWS services in a prefix list format, which includes the prefix
         /// list name and prefix list ID of the service and the IP address range for the service.
-        /// A prefix list ID is required for creating an outbound security group rule that allows
-        /// traffic from a VPC to access an AWS service through a gateway VPC endpoint. Currently,
-        /// the services that support this action are Amazon S3 and Amazon DynamoDB.
+        /// 
+        ///  
+        /// <para>
+        /// We recommend that you use <a>DescribeManagedPrefixLists</a> instead.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePrefixLists service method.</param>
         /// <param name="cancellationToken">
@@ -13951,6 +14064,75 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetManagedPrefixListAssociations
+
+        internal virtual GetManagedPrefixListAssociationsResponse GetManagedPrefixListAssociations(GetManagedPrefixListAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedPrefixListAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedPrefixListAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetManagedPrefixListAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets information about the resources that are associated with the specified managed
+        /// prefix list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedPrefixListAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetManagedPrefixListAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListAssociations">REST API Reference for GetManagedPrefixListAssociations Operation</seealso>
+        public virtual Task<GetManagedPrefixListAssociationsResponse> GetManagedPrefixListAssociationsAsync(GetManagedPrefixListAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedPrefixListAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedPrefixListAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetManagedPrefixListAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetManagedPrefixListEntries
+
+        internal virtual GetManagedPrefixListEntriesResponse GetManagedPrefixListEntries(GetManagedPrefixListEntriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedPrefixListEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedPrefixListEntriesResponseUnmarshaller.Instance;
+
+            return Invoke<GetManagedPrefixListEntriesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets information about the entries for a specified managed prefix list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedPrefixListEntries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetManagedPrefixListEntries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListEntries">REST API Reference for GetManagedPrefixListEntries Operation</seealso>
+        public virtual Task<GetManagedPrefixListEntriesResponse> GetManagedPrefixListEntriesAsync(GetManagedPrefixListEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedPrefixListEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedPrefixListEntriesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetManagedPrefixListEntriesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetPasswordData
 
         internal virtual GetPasswordDataResponse GetPasswordData(GetPasswordDataRequest request)
@@ -15276,6 +15458,51 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ModifyLaunchTemplateResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyLaunchTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyManagedPrefixList
+
+        internal virtual ModifyManagedPrefixListResponse ModifyManagedPrefixList(ModifyManagedPrefixListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyManagedPrefixListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyManagedPrefixListResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyManagedPrefixListResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies the specified managed prefix list.
+        /// 
+        ///  
+        /// <para>
+        /// Adding or removing entries in a prefix list creates a new version of the prefix list.
+        /// Changing the name of the prefix list does not affect the version.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a current version number that does not match the true current version
+        /// number, the request fails.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyManagedPrefixList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyManagedPrefixList service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyManagedPrefixList">REST API Reference for ModifyManagedPrefixList Operation</seealso>
+        public virtual Task<ModifyManagedPrefixListResponse> ModifyManagedPrefixListAsync(ModifyManagedPrefixListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyManagedPrefixListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyManagedPrefixListResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyManagedPrefixListResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -17729,6 +17956,41 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = RestoreAddressToClassicResponseUnmarshaller.Instance;
 
             return InvokeAsync<RestoreAddressToClassicResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RestoreManagedPrefixListVersion
+
+        internal virtual RestoreManagedPrefixListVersionResponse RestoreManagedPrefixListVersion(RestoreManagedPrefixListVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreManagedPrefixListVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreManagedPrefixListVersionResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreManagedPrefixListVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Restores the entries from a previous version of a managed prefix list to a new version
+        /// of the prefix list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreManagedPrefixListVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestoreManagedPrefixListVersion service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreManagedPrefixListVersion">REST API Reference for RestoreManagedPrefixListVersion Operation</seealso>
+        public virtual Task<RestoreManagedPrefixListVersionResponse> RestoreManagedPrefixListVersionAsync(RestoreManagedPrefixListVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreManagedPrefixListVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreManagedPrefixListVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestoreManagedPrefixListVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion

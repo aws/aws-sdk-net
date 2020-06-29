@@ -1877,6 +1877,31 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  CreateManagedPrefixList
+
+
+
+        /// <summary>
+        /// Creates a managed prefix list. You can specify one or more entries for the prefix
+        /// list. Each entry consists of a CIDR block and an optional description.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify the maximum number of entries for the prefix list. The maximum number
+        /// of entries cannot be changed later.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateManagedPrefixList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateManagedPrefixList service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateManagedPrefixList">REST API Reference for CreateManagedPrefixList Operation</seealso>
+        Task<CreateManagedPrefixListResponse> CreateManagedPrefixListAsync(CreateManagedPrefixListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateNatGateway
 
 
@@ -2328,16 +2353,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a subnet in an existing VPC.
+        /// Creates a subnet in a specified VPC.
         /// 
         ///  
         /// <para>
-        /// When you create each subnet, you provide the VPC ID and IPv4 CIDR block for the subnet.
-        /// After you create a subnet, you can't change its CIDR block. The size of the subnet's
-        /// IPv4 CIDR block can be the same as a VPC's IPv4 CIDR block, or a subset of a VPC's
-        /// IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR blocks
-        /// must not overlap. The smallest IPv4 subnet (and VPC) you can create uses a /28 netmask
-        /// (16 IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4 addresses).
+        /// You must specify an IPv4 CIDR block for the subnet. After you create a subnet, you
+        /// can't change its CIDR block. The allowed block size is between a /16 netmask (65,536
+        /// IP addresses) and /28 netmask (16 IP addresses). The CIDR block must not overlap with
+        /// the CIDR block of an existing subnet in the VPC.
         /// </para>
         ///  
         /// <para>
@@ -2356,11 +2379,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// If you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
-        /// doesn't change if you stop and restart the instance (unlike a similar instance launched
-        /// outside a VPC, which gets a new IP address when restarted). It's therefore possible
-        /// to have a subnet with no running instances (they're all stopped), but no remaining
-        /// IP addresses available.
+        /// When you stop an instance in a subnet, it retains its private IPv4 address. It's therefore
+        /// possible to have a subnet with no running instances (they're all stopped), but no
+        /// remaining IP addresses available.
         /// </para>
         ///  
         /// <para>
@@ -3292,6 +3313,25 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteLocalGatewayRouteTableVpcAssociation service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVpcAssociation">REST API Reference for DeleteLocalGatewayRouteTableVpcAssociation Operation</seealso>
         Task<DeleteLocalGatewayRouteTableVpcAssociationResponse> DeleteLocalGatewayRouteTableVpcAssociationAsync(DeleteLocalGatewayRouteTableVpcAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteManagedPrefixList
+
+
+
+        /// <summary>
+        /// Deletes the specified managed prefix list. You must first remove all references to
+        /// the prefix list in your resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteManagedPrefixList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteManagedPrefixList service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteManagedPrefixList">REST API Reference for DeleteManagedPrefixList Operation</seealso>
+        Task<DeleteManagedPrefixListResponse> DeleteManagedPrefixListAsync(DeleteManagedPrefixListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -5746,6 +5786,29 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DescribeManagedPrefixLists
+
+
+
+        /// <summary>
+        /// Describes your managed prefix lists and any AWS-managed prefix lists.
+        /// 
+        ///  
+        /// <para>
+        /// To view the entries for your prefix list, use <a>GetManagedPrefixListEntries</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeManagedPrefixLists service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeManagedPrefixLists service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeManagedPrefixLists">REST API Reference for DescribeManagedPrefixLists Operation</seealso>
+        Task<DescribeManagedPrefixListsResponse> DescribeManagedPrefixListsAsync(DescribeManagedPrefixListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeMovingAddresses
 
 
@@ -5933,9 +5996,11 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes available AWS services in a prefix list format, which includes the prefix
         /// list name and prefix list ID of the service and the IP address range for the service.
-        /// A prefix list ID is required for creating an outbound security group rule that allows
-        /// traffic from a VPC to access an AWS service through a gateway VPC endpoint. Currently,
-        /// the services that support this action are Amazon S3 and Amazon DynamoDB.
+        /// 
+        ///  
+        /// <para>
+        /// We recommend that you use <a>DescribeManagedPrefixLists</a> instead.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePrefixLists service method.</param>
         /// <param name="cancellationToken">
@@ -8672,6 +8737,43 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  GetManagedPrefixListAssociations
+
+
+
+        /// <summary>
+        /// Gets information about the resources that are associated with the specified managed
+        /// prefix list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedPrefixListAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetManagedPrefixListAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListAssociations">REST API Reference for GetManagedPrefixListAssociations Operation</seealso>
+        Task<GetManagedPrefixListAssociationsResponse> GetManagedPrefixListAssociationsAsync(GetManagedPrefixListAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetManagedPrefixListEntries
+
+
+
+        /// <summary>
+        /// Gets information about the entries for a specified managed prefix list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedPrefixListEntries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetManagedPrefixListEntries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListEntries">REST API Reference for GetManagedPrefixListEntries Operation</seealso>
+        Task<GetManagedPrefixListEntriesResponse> GetManagedPrefixListEntriesAsync(GetManagedPrefixListEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetPasswordData
 
 
@@ -9518,6 +9620,35 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyLaunchTemplate service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLaunchTemplate">REST API Reference for ModifyLaunchTemplate Operation</seealso>
         Task<ModifyLaunchTemplateResponse> ModifyLaunchTemplateAsync(ModifyLaunchTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyManagedPrefixList
+
+
+
+        /// <summary>
+        /// Modifies the specified managed prefix list.
+        /// 
+        ///  
+        /// <para>
+        /// Adding or removing entries in a prefix list creates a new version of the prefix list.
+        /// Changing the name of the prefix list does not affect the version.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a current version number that does not match the true current version
+        /// number, the request fails.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyManagedPrefixList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyManagedPrefixList service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyManagedPrefixList">REST API Reference for ModifyManagedPrefixList Operation</seealso>
+        Task<ModifyManagedPrefixListResponse> ModifyManagedPrefixListAsync(ModifyManagedPrefixListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -11107,6 +11238,25 @@ namespace Amazon.EC2
         /// <returns>The response from the RestoreAddressToClassic service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreAddressToClassic">REST API Reference for RestoreAddressToClassic Operation</seealso>
         Task<RestoreAddressToClassicResponse> RestoreAddressToClassicAsync(RestoreAddressToClassicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RestoreManagedPrefixListVersion
+
+
+
+        /// <summary>
+        /// Restores the entries from a previous version of a managed prefix list to a new version
+        /// of the prefix list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreManagedPrefixListVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestoreManagedPrefixListVersion service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreManagedPrefixListVersion">REST API Reference for RestoreManagedPrefixListVersion Operation</seealso>
+        Task<RestoreManagedPrefixListVersionResponse> RestoreManagedPrefixListVersionAsync(RestoreManagedPrefixListVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

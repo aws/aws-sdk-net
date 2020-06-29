@@ -72,7 +72,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreateVpcRequest with the parameterized properties
         /// </summary>
-        /// <param name="cidrBlock">The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>.</param>
+        /// <param name="cidrBlock">The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</param>
         public CreateVpcRequest(string cidrBlock)
         {
             _cidrBlock = cidrBlock;
@@ -101,6 +101,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property CidrBlock. 
         /// <para>
         /// The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>.
+        /// We modify the specified CIDR block to its canonical form; for example, if you specify
+        /// <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

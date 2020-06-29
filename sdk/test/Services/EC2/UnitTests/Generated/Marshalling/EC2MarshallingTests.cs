@@ -1455,6 +1455,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void CreateManagedPrefixListMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateManagedPrefixList");
+
+            var request = InstantiateClassGenerator.Execute<CreateManagedPrefixListRequest>();
+            var marshaller = new CreateManagedPrefixListRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateManagedPrefixListResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateManagedPrefixListResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void CreateNatGatewayMarshallTest()
         {
             var operation = service_model.FindOperation("CreateNatGateway");
@@ -2563,6 +2587,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DeleteLocalGatewayRouteTableVpcAssociationResponseUnmarshaller.Instance.Unmarshall(context)
                 as DeleteLocalGatewayRouteTableVpcAssociationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DeleteManagedPrefixListMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteManagedPrefixList");
+
+            var request = InstantiateClassGenerator.Execute<DeleteManagedPrefixListRequest>();
+            var marshaller = new DeleteManagedPrefixListRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteManagedPrefixListResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteManagedPrefixListResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -4734,6 +4782,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DescribeLocalGatewayVirtualInterfacesResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeLocalGatewayVirtualInterfacesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeManagedPrefixListsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeManagedPrefixLists");
+
+            var request = InstantiateClassGenerator.Execute<DescribeManagedPrefixListsRequest>();
+            var marshaller = new DescribeManagedPrefixListsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeManagedPrefixListsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeManagedPrefixListsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -7031,6 +7103,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void GetManagedPrefixListAssociationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetManagedPrefixListAssociations");
+
+            var request = InstantiateClassGenerator.Execute<GetManagedPrefixListAssociationsRequest>();
+            var marshaller = new GetManagedPrefixListAssociationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetManagedPrefixListAssociationsResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetManagedPrefixListAssociationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void GetManagedPrefixListEntriesMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetManagedPrefixListEntries");
+
+            var request = InstantiateClassGenerator.Execute<GetManagedPrefixListEntriesRequest>();
+            var marshaller = new GetManagedPrefixListEntriesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetManagedPrefixListEntriesResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetManagedPrefixListEntriesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void GetPasswordDataMarshallTest()
         {
             var operation = service_model.FindOperation("GetPasswordData");
@@ -7722,6 +7842,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = ModifyLaunchTemplateResponseUnmarshaller.Instance.Unmarshall(context)
                 as ModifyLaunchTemplateResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ModifyManagedPrefixListMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyManagedPrefixList");
+
+            var request = InstantiateClassGenerator.Execute<ModifyManagedPrefixListRequest>();
+            var marshaller = new ModifyManagedPrefixListRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyManagedPrefixListResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyManagedPrefixListResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -8948,6 +9092,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = RestoreAddressToClassicResponseUnmarshaller.Instance.Unmarshall(context)
                 as RestoreAddressToClassicResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void RestoreManagedPrefixListVersionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreManagedPrefixListVersion");
+
+            var request = InstantiateClassGenerator.Execute<RestoreManagedPrefixListVersionRequest>();
+            var marshaller = new RestoreManagedPrefixListVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = RestoreManagedPrefixListVersionResponseUnmarshaller.Instance.Unmarshall(context)
+                as RestoreManagedPrefixListVersionResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
