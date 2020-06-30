@@ -30,16 +30,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterDBProxyTargets operation.
-    /// <note> 
-    /// <para>
-    /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-    /// It is subject to change.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Remove the association between one or more <code>DBProxyTarget</code> data structures
     /// and a <code>DBProxyTargetGroup</code>.
-    /// </para>
     /// </summary>
     public partial class DeregisterDBProxyTargetsRequest : AmazonRDSRequest
     {

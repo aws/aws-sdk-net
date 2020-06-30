@@ -29,15 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-    /// It is subject to change.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// The data structure representing a proxy managed by the RDS Proxy.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// This data type is used as a response element in the <code>DescribeDBProxies</code>

@@ -30,16 +30,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBProxyTargetGroups operation.
-    /// <note> 
-    /// <para>
-    /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-    /// It is subject to change.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Returns information about DB proxy target groups, represented by <code>DBProxyTargetGroup</code>
     /// data structures.
-    /// </para>
     /// </summary>
     public partial class DescribeDBProxyTargetGroupsRequest : AmazonRDSRequest
     {

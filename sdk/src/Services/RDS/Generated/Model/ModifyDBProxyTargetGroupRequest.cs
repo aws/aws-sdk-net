@@ -30,15 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyDBProxyTargetGroup operation.
-    /// <note> 
-    /// <para>
-    /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-    /// It is subject to change.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Modifies the properties of a <code>DBProxyTargetGroup</code>.
-    /// </para>
     /// </summary>
     public partial class ModifyDBProxyTargetGroupRequest : AmazonRDSRequest
     {

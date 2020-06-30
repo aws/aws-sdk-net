@@ -29,16 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-    /// It is subject to change.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Displays the settings that control the size and behavior of the connection pool associated
     /// with a <code>DBProxyTarget</code>.
-    /// </para>
     /// </summary>
     public partial class ConnectionPoolConfigurationInfo
     {
@@ -77,10 +69,6 @@ namespace Amazon.RDS.Model
         /// by default. For multiple statements, use semicolons as the separator. You can also
         /// include multiple variables in a single <code>SET</code> statement, such as <code>SET
         /// x=1, y=2</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>InitQuery</code> is not currently supported for PostgreSQL.
         /// </para>
         /// </summary>
         public string InitQuery

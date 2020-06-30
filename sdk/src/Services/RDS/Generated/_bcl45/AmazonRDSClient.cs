@@ -2572,15 +2572,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Creates a new DB proxy.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBProxy service method.</param>
         /// 
@@ -2608,15 +2600,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Creates a new DB proxy.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBProxy service method.</param>
         /// <param name="cancellationToken">
@@ -3843,15 +3827,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Deletes an existing proxy.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBProxy service method.</param>
         /// 
@@ -3875,15 +3851,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Deletes an existing proxy.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBProxy service method.</param>
         /// <param name="cancellationToken">
@@ -4339,16 +4307,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Remove the association between one or more <code>DBProxyTarget</code> data structures
         /// and a <code>DBProxyTargetGroup</code>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterDBProxyTargets service method.</param>
         /// 
@@ -4380,16 +4340,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Remove the association between one or more <code>DBProxyTarget</code> data structures
         /// and a <code>DBProxyTargetGroup</code>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterDBProxyTargets service method.</param>
         /// <param name="cancellationToken">
@@ -5570,15 +5522,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns information about DB proxies.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxies service method.</param>
         /// 
@@ -5599,15 +5543,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns information about DB proxies.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxies service method.</param>
         /// <param name="cancellationToken">
@@ -5635,16 +5571,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns information about DB proxy target groups, represented by <code>DBProxyTargetGroup</code>
         /// data structures.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxyTargetGroups service method.</param>
         /// 
@@ -5672,16 +5600,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns information about DB proxy target groups, represented by <code>DBProxyTargetGroup</code>
         /// data structures.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxyTargetGroups service method.</param>
         /// <param name="cancellationToken">
@@ -5716,15 +5636,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns information about <code>DBProxyTarget</code> objects. This API supports pagination.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxyTargets service method.</param>
         /// 
@@ -5756,15 +5668,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns information about <code>DBProxyTarget</code> objects. This API supports pagination.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxyTargets service method.</param>
         /// <param name="cancellationToken">
@@ -8461,15 +8365,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Changes the settings for an existing DB proxy.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBProxy service method.</param>
         /// 
@@ -8497,15 +8393,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Changes the settings for an existing DB proxy.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBProxy service method.</param>
         /// <param name="cancellationToken">
@@ -8540,15 +8428,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Modifies the properties of a <code>DBProxyTargetGroup</code>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBProxyTargetGroup service method.</param>
         /// 
@@ -8576,15 +8456,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Modifies the properties of a <code>DBProxyTargetGroup</code>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBProxyTargetGroup service method.</param>
         /// <param name="cancellationToken">
@@ -9383,15 +9255,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterDBProxyTargets service method.</param>
         /// 
@@ -9434,15 +9298,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterDBProxyTargets service method.</param>
         /// <param name="cancellationToken">

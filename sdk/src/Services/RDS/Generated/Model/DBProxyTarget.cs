@@ -29,17 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-    /// It is subject to change.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Contains the details for an RDS Proxy target. It represents an RDS DB instance or
     /// Aurora DB cluster that the proxy can connect to. One or more targets are associated
     /// with an RDS Proxy target group.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// This data type is used as a response element in the <code>DescribeDBProxyTargets</code>

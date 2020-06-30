@@ -29,15 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-    /// It is subject to change.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Information about the connection health of an RDS Proxy target.
-    /// </para>
     /// </summary>
     public partial class TargetHealth
     {
