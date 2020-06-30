@@ -60,6 +60,7 @@ namespace Amazon.Lightsail
     public partial class AmazonLightsailClient : AmazonServiceClient, IAmazonLightsail
     {
         private static IServiceMetadata serviceMetadata = new AmazonLightsailMetadata();
+
         #region Constructors
 
         /// <summary>

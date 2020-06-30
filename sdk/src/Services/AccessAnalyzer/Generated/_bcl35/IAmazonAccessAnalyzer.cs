@@ -46,6 +46,15 @@ namespace Amazon.AccessAnalyzer
     public partial interface IAmazonAccessAnalyzer : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IAccessAnalyzerPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CreateAnalyzer
 

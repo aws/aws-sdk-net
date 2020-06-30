@@ -54,6 +54,11 @@ namespace Amazon.Batch
     public partial interface IAmazonBatch : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IBatchPaginatorFactory Paginators { get; }
+
         
         #region  CancelJob
 

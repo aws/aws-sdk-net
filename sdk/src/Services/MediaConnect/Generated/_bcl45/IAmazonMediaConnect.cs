@@ -36,6 +36,11 @@ namespace Amazon.MediaConnect
     public partial interface IAmazonMediaConnect : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMediaConnectPaginatorFactory Paginators { get; }
+
         
         #region  AddFlowOutputs
 

@@ -51,6 +51,22 @@ namespace Amazon.ElasticFileSystem
     public partial class AmazonElasticFileSystemClient : AmazonServiceClient, IAmazonElasticFileSystem
     {
         private static IServiceMetadata serviceMetadata = new AmazonElasticFileSystemMetadata();
+        private IElasticFileSystemPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IElasticFileSystemPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ElasticFileSystemPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

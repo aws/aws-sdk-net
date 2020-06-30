@@ -57,6 +57,7 @@ namespace Amazon.SimpleDB
     public partial class AmazonSimpleDBClient : AmazonServiceClient, IAmazonSimpleDB
     {
         private static IServiceMetadata serviceMetadata = new AmazonSimpleDBMetadata();
+
         #region Constructors
 
         /// <summary>

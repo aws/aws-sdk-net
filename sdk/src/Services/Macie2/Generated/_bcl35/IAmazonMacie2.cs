@@ -40,6 +40,9 @@ namespace Amazon.Macie2
     public partial interface IAmazonMacie2 : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  AcceptInvitation
 

@@ -87,6 +87,22 @@ namespace Amazon.AugmentedAIRuntime
     public partial class AmazonAugmentedAIRuntimeClient : AmazonServiceClient, IAmazonAugmentedAIRuntime
     {
         private static IServiceMetadata serviceMetadata = new AmazonAugmentedAIRuntimeMetadata();
+        private IAugmentedAIRuntimePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAugmentedAIRuntimePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AugmentedAIRuntimePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

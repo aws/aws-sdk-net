@@ -37,6 +37,7 @@ namespace Amazon.Textract
     public partial interface IAmazonTextract : IAmazonService, IDisposable
     {
 
+
         
         #region  AnalyzeDocument
 

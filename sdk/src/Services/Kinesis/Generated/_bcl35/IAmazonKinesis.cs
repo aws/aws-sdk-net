@@ -38,6 +38,15 @@ namespace Amazon.Kinesis
     public partial interface IAmazonKinesis : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IKinesisPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AddTagsToStream
 

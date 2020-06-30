@@ -37,6 +37,9 @@ namespace Amazon.MQ
     public partial interface IAmazonMQ : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  CreateBroker
 

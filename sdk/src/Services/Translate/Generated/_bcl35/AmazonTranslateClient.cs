@@ -40,6 +40,7 @@ namespace Amazon.Translate
     public partial class AmazonTranslateClient : AmazonServiceClient, IAmazonTranslate
     {
         private static IServiceMetadata serviceMetadata = new AmazonTranslateMetadata();
+
         #region Constructors
 
         /// <summary>

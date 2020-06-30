@@ -36,6 +36,11 @@ namespace Amazon.MediaConvert
     public partial interface IAmazonMediaConvert : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMediaConvertPaginatorFactory Paginators { get; }
+
         
         #region  AssociateCertificate
 

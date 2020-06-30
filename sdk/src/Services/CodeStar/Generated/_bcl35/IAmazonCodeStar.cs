@@ -127,6 +127,9 @@ namespace Amazon.CodeStar
     public partial interface IAmazonCodeStar : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  AssociateTeamMember
 

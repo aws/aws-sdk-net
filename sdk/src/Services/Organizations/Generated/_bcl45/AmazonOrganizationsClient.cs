@@ -43,6 +43,22 @@ namespace Amazon.Organizations
     public partial class AmazonOrganizationsClient : AmazonServiceClient, IAmazonOrganizations
     {
         private static IServiceMetadata serviceMetadata = new AmazonOrganizationsMetadata();
+        private IOrganizationsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IOrganizationsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new OrganizationsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>
@@ -18796,6 +18812,18 @@ namespace Amazon.Organizations
         /// this error, contact <a href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
         /// </para>
         ///  </important> </li> <li> 
+        /// <para>
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you get this exception when running a command immediately after creating the organization,
+        /// wait one hour and try again. After an hour, if the command continues to fail with
+        /// this error, contact <a href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
         /// account of the organization as a delegated administrator for an AWS service integrated

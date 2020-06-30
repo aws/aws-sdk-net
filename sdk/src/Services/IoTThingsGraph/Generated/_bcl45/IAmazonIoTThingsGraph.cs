@@ -48,6 +48,11 @@ namespace Amazon.IoTThingsGraph
     public partial interface IAmazonIoTThingsGraph : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IIoTThingsGraphPaginatorFactory Paginators { get; }
+
         
         #region  AssociateEntityToThing
 

@@ -54,6 +54,22 @@ namespace Amazon.ConnectParticipant
     public partial class AmazonConnectParticipantClient : AmazonServiceClient, IAmazonConnectParticipant
     {
         private static IServiceMetadata serviceMetadata = new AmazonConnectParticipantMetadata();
+        private IConnectParticipantPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IConnectParticipantPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ConnectParticipantPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

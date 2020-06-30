@@ -34,6 +34,15 @@ namespace Amazon.Schemas
     public partial interface IAmazonSchemas : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISchemasPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CreateDiscoverer
 

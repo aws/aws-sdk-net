@@ -53,6 +53,11 @@ namespace Amazon.ElastiCache
     public partial interface IAmazonElastiCache : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IElastiCachePaginatorFactory Paginators { get; }
+
         
         #region  AddTagsToResource
 

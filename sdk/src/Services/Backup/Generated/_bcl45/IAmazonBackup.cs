@@ -41,6 +41,11 @@ namespace Amazon.Backup
     public partial interface IAmazonBackup : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IBackupPaginatorFactory Paginators { get; }
+
         
         #region  CreateBackupPlan
 

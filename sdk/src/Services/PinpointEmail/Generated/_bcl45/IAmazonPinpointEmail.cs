@@ -79,6 +79,11 @@ namespace Amazon.PinpointEmail
     public partial interface IAmazonPinpointEmail : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IPinpointEmailPaginatorFactory Paginators { get; }
+
         
         #region  CreateConfigurationSet
 

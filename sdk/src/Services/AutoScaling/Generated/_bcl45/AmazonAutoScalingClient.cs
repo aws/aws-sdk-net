@@ -54,6 +54,22 @@ namespace Amazon.AutoScaling
     public partial class AmazonAutoScalingClient : AmazonServiceClient, IAmazonAutoScaling
     {
         private static IServiceMetadata serviceMetadata = new AmazonAutoScalingMetadata();
+        private IAutoScalingPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAutoScalingPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AutoScalingPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

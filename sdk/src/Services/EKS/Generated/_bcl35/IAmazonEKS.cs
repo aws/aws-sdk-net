@@ -47,6 +47,15 @@ namespace Amazon.EKS
     public partial interface IAmazonEKS : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IEKSPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CreateCluster
 

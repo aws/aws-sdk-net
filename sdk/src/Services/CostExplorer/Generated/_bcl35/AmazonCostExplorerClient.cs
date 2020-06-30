@@ -61,6 +61,7 @@ namespace Amazon.CostExplorer
     public partial class AmazonCostExplorerClient : AmazonServiceClient, IAmazonCostExplorer
     {
         private static IServiceMetadata serviceMetadata = new AmazonCostExplorerMetadata();
+
         #region Constructors
 
         /// <summary>

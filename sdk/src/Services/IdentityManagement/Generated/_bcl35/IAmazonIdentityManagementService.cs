@@ -42,6 +42,15 @@ namespace Amazon.IdentityManagement
     public partial interface IAmazonIdentityManagementService : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IIdentityManagementPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AddClientIDToOpenIDConnectProvider
 

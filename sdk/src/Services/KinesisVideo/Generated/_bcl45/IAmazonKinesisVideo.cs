@@ -36,6 +36,11 @@ namespace Amazon.KinesisVideo
     public partial interface IAmazonKinesisVideo : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IKinesisVideoPaginatorFactory Paginators { get; }
+
         
         #region  CreateSignalingChannel
 

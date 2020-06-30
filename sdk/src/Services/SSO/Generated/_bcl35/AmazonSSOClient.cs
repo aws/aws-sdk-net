@@ -62,6 +62,7 @@ namespace Amazon.SSO
     public partial class AmazonSSOClient : AmazonServiceClient, IAmazonSSO
     {
         private static IServiceMetadata serviceMetadata = new AmazonSSOMetadata();
+
         #region Constructors
 
         /// <summary>

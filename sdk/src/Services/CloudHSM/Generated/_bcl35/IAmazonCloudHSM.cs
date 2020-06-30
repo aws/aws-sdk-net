@@ -48,6 +48,9 @@ namespace Amazon.CloudHSM
     public partial interface IAmazonCloudHSM : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  AddTagsToResource
 

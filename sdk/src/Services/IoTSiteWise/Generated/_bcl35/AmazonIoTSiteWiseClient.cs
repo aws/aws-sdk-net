@@ -45,6 +45,7 @@ namespace Amazon.IoTSiteWise
     public partial class AmazonIoTSiteWiseClient : AmazonServiceClient, IAmazonIoTSiteWise
     {
         private static IServiceMetadata serviceMetadata = new AmazonIoTSiteWiseMetadata();
+
         #region Constructors
 
         /// <summary>

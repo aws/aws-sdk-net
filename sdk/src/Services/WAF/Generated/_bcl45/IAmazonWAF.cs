@@ -57,6 +57,7 @@ namespace Amazon.WAF
     public partial interface IAmazonWAF : IAmazonService, IDisposable
     {
 
+
         
         #region  CreateByteMatchSet
 

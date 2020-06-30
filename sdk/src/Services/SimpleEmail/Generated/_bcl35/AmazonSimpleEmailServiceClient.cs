@@ -53,6 +53,7 @@ namespace Amazon.SimpleEmail
     public partial class AmazonSimpleEmailServiceClient : AmazonServiceClient, IAmazonSimpleEmailService
     {
         private static IServiceMetadata serviceMetadata = new AmazonSimpleEmailServiceMetadata();
+
         #region Constructors
 
         /// <summary>

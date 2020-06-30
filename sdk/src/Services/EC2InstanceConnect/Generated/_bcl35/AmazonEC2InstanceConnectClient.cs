@@ -42,6 +42,7 @@ namespace Amazon.EC2InstanceConnect
     public partial class AmazonEC2InstanceConnectClient : AmazonServiceClient, IAmazonEC2InstanceConnect
     {
         private static IServiceMetadata serviceMetadata = new AmazonEC2InstanceConnectMetadata();
+
         #region Constructors
 
         /// <summary>

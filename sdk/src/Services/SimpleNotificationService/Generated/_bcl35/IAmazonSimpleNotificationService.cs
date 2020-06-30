@@ -51,6 +51,15 @@ namespace Amazon.SimpleNotificationService
     public partial interface IAmazonSimpleNotificationService : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISimpleNotificationServicePaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AddPermission
 

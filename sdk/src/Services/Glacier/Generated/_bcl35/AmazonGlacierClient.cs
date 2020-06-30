@@ -82,6 +82,7 @@ namespace Amazon.Glacier
     public partial class AmazonGlacierClient : AmazonServiceClient, IAmazonGlacier
     {
         private static IServiceMetadata serviceMetadata = new AmazonGlacierMetadata();
+
         #region Constructors
 
         /// <summary>

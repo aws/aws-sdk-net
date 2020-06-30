@@ -47,6 +47,7 @@ namespace Amazon.Snowball
     public partial class AmazonSnowballClient : AmazonServiceClient, IAmazonSnowball
     {
         private static IServiceMetadata serviceMetadata = new AmazonSnowballMetadata();
+
         #region Constructors
 
         /// <summary>

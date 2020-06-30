@@ -47,6 +47,7 @@ namespace Amazon.DirectConnect
     public partial class AmazonDirectConnectClient : AmazonServiceClient, IAmazonDirectConnect
     {
         private static IServiceMetadata serviceMetadata = new AmazonDirectConnectMetadata();
+
         #region Constructors
 
         /// <summary>

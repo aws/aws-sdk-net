@@ -30,11 +30,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<DescribeMetricFiltersResponse> Responses { get; }
+
         /// <summary>
         /// Enumerable containing all of the MetricFilters
         /// </summary>
         IPaginatedEnumerable<MetricFilter> MetricFilters { get; }
-
     }
 }
 #endif

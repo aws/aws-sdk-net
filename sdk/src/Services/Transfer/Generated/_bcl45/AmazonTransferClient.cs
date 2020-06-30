@@ -51,6 +51,22 @@ namespace Amazon.Transfer
     public partial class AmazonTransferClient : AmazonServiceClient, IAmazonTransfer
     {
         private static IServiceMetadata serviceMetadata = new AmazonTransferMetadata();
+        private ITransferPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ITransferPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new TransferPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

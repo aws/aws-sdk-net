@@ -60,6 +60,7 @@ namespace Amazon.CognitoSync
     public partial interface IAmazonCognitoSync : IAmazonService, IDisposable
     {
 
+
         
         #region  BulkPublish
 

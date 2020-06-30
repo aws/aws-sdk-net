@@ -50,6 +50,15 @@ namespace Amazon.Connect
     public partial interface IAmazonConnect : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IConnectPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CreateUser
 

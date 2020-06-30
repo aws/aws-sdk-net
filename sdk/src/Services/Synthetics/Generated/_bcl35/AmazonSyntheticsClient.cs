@@ -58,6 +58,7 @@ namespace Amazon.Synthetics
     public partial class AmazonSyntheticsClient : AmazonServiceClient, IAmazonSynthetics
     {
         private static IServiceMetadata serviceMetadata = new AmazonSyntheticsMetadata();
+
         #region Constructors
 
         /// <summary>

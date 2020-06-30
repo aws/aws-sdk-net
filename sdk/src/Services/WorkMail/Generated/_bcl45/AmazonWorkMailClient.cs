@@ -81,6 +81,22 @@ namespace Amazon.WorkMail
     public partial class AmazonWorkMailClient : AmazonServiceClient, IAmazonWorkMail
     {
         private static IServiceMetadata serviceMetadata = new AmazonWorkMailMetadata();
+        private IWorkMailPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IWorkMailPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new WorkMailPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

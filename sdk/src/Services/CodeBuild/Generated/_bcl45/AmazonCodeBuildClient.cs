@@ -224,6 +224,22 @@ namespace Amazon.CodeBuild
     public partial class AmazonCodeBuildClient : AmazonServiceClient, IAmazonCodeBuild
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeBuildMetadata();
+        private ICodeBuildPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICodeBuildPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CodeBuildPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

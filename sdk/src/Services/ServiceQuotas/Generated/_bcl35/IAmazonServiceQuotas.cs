@@ -49,6 +49,15 @@ namespace Amazon.ServiceQuotas
     public partial interface IAmazonServiceQuotas : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IServiceQuotasPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AssociateServiceQuotaTemplate
 

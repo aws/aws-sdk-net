@@ -47,6 +47,22 @@ namespace Amazon.Outposts
     public partial class AmazonOutpostsClient : AmazonServiceClient, IAmazonOutposts
     {
         private static IServiceMetadata serviceMetadata = new AmazonOutpostsMetadata();
+        private IOutpostsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IOutpostsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new OutpostsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

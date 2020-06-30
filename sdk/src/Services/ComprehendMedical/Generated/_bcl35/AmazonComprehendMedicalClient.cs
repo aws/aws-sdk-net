@@ -41,6 +41,7 @@ namespace Amazon.ComprehendMedical
     public partial class AmazonComprehendMedicalClient : AmazonServiceClient, IAmazonComprehendMedical
     {
         private static IServiceMetadata serviceMetadata = new AmazonComprehendMedicalMetadata();
+
         #region Constructors
 
         /// <summary>

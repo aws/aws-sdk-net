@@ -61,6 +61,7 @@ namespace Amazon.Neptune
     public partial class AmazonNeptuneClient : AmazonServiceClient, IAmazonNeptune
     {
         private static IServiceMetadata serviceMetadata = new AmazonNeptuneMetadata();
+
         #region Constructors
 
         /// <summary>

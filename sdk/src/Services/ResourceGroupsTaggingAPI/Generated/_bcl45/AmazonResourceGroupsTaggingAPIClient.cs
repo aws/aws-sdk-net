@@ -618,6 +618,22 @@ namespace Amazon.ResourceGroupsTaggingAPI
     public partial class AmazonResourceGroupsTaggingAPIClient : AmazonServiceClient, IAmazonResourceGroupsTaggingAPI
     {
         private static IServiceMetadata serviceMetadata = new AmazonResourceGroupsTaggingAPIMetadata();
+        private IResourceGroupsTaggingAPIPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IResourceGroupsTaggingAPIPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ResourceGroupsTaggingAPIPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

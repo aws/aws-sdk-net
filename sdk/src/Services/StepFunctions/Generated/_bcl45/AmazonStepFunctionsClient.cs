@@ -66,6 +66,22 @@ namespace Amazon.StepFunctions
     public partial class AmazonStepFunctionsClient : AmazonServiceClient, IAmazonStepFunctions
     {
         private static IServiceMetadata serviceMetadata = new AmazonStepFunctionsMetadata();
+        private IStepFunctionsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IStepFunctionsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new StepFunctionsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

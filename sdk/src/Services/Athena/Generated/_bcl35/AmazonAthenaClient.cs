@@ -59,6 +59,7 @@ namespace Amazon.Athena
     public partial class AmazonAthenaClient : AmazonServiceClient, IAmazonAthena
     {
         private static IServiceMetadata serviceMetadata = new AmazonAthenaMetadata();
+
         #region Constructors
 
         /// <summary>

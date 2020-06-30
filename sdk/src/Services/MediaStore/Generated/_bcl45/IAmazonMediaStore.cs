@@ -37,6 +37,11 @@ namespace Amazon.MediaStore
     public partial interface IAmazonMediaStore : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMediaStorePaginatorFactory Paginators { get; }
+
         
         #region  CreateContainer
 

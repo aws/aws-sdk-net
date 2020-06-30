@@ -51,6 +51,22 @@ namespace Amazon.IdentityManagement
     public partial class AmazonIdentityManagementServiceClient : AmazonServiceClient, IAmazonIdentityManagementService
     {
         private static IServiceMetadata serviceMetadata = new AmazonIdentityManagementServiceMetadata();
+        private IIdentityManagementPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IIdentityManagementPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new IdentityManagementPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

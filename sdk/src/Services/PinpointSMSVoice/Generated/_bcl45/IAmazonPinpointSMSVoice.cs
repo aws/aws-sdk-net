@@ -36,6 +36,7 @@ namespace Amazon.PinpointSMSVoice
     public partial interface IAmazonPinpointSMSVoice : IAmazonService, IDisposable
     {
 
+
         
         #region  CreateConfigurationSet
 

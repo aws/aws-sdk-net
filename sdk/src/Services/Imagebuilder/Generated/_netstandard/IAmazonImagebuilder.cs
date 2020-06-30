@@ -38,6 +38,12 @@ namespace Amazon.Imagebuilder
     /// </summary>
     public partial interface IAmazonImagebuilder : IAmazonService, IDisposable
     {
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IImagebuilderPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CancelImageCreation
 

@@ -43,6 +43,22 @@ namespace Amazon.ElasticInference
     public partial class AmazonElasticInferenceClient : AmazonServiceClient, IAmazonElasticInference
     {
         private static IServiceMetadata serviceMetadata = new AmazonElasticInferenceMetadata();
+        private IElasticInferencePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IElasticInferencePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ElasticInferencePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

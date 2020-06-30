@@ -30,11 +30,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<DescribeLogGroupsResponse> Responses { get; }
+
         /// <summary>
         /// Enumerable containing all of the LogGroups
         /// </summary>
         IPaginatedEnumerable<LogGroup> LogGroups { get; }
-
     }
 }
 #endif

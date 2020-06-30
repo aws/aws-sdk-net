@@ -43,6 +43,22 @@ namespace Amazon.QLDB
     public partial class AmazonQLDBClient : AmazonServiceClient, IAmazonQLDB
     {
         private static IServiceMetadata serviceMetadata = new AmazonQLDBMetadata();
+        private IQLDBPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IQLDBPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new QLDBPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

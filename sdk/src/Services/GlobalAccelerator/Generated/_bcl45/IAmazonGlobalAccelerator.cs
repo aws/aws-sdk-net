@@ -149,6 +149,7 @@ namespace Amazon.GlobalAccelerator
     public partial interface IAmazonGlobalAccelerator : IAmazonService, IDisposable
     {
 
+
         
         #region  AdvertiseByoipCidr
 

@@ -52,6 +52,22 @@ namespace Amazon.IoTSecureTunneling
     public partial class AmazonIoTSecureTunnelingClient : AmazonServiceClient, IAmazonIoTSecureTunneling
     {
         private static IServiceMetadata serviceMetadata = new AmazonIoTSecureTunnelingMetadata();
+        private IIoTSecureTunnelingPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IIoTSecureTunnelingPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new IoTSecureTunnelingPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

@@ -64,6 +64,12 @@ namespace Amazon.MigrationHubConfig
     /// </summary>
     public partial interface IAmazonMigrationHubConfig : IAmazonService, IDisposable
     {
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMigrationHubConfigPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateHomeRegionControl
 

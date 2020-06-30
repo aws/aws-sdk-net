@@ -37,6 +37,15 @@ namespace Amazon.LakeFormation
     public partial interface IAmazonLakeFormation : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ILakeFormationPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  BatchGrantPermissions
 

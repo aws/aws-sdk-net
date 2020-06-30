@@ -31,7 +31,7 @@
     if (this.Project.TargetFrameworks.Contains("netstandard2.0"))
     {
 #>
-    <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.0'">$(DefineConstants);NETSTANDARD20;AWS_ASYNC_ENUMERABLES_API</DefineConstants>
+    <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.0'">$(DefineConstants);NETSTANDARD20</DefineConstants>
 <#
     }
     if (this.Project.TargetFrameworks.Contains("netcoreapp3.1"))
@@ -45,14 +45,6 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName><#=this.Project.AssemblyName#></AssemblyName>
     <PackageId><#=this.Project.AssemblyName#></PackageId>
-<#
-if (this.Project.TargetFrameworks.Contains("netstandard2.0"))
-{
-#>
-    <LangVersion>8.0</LangVersion>
-<#
-}
-#>
 
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>

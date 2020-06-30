@@ -36,6 +36,7 @@ namespace Amazon.SageMakerRuntime
     public partial interface IAmazonSageMakerRuntime : IAmazonService, IDisposable
     {
 
+
         
         #region  InvokeEndpoint
 

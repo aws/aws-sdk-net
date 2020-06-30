@@ -40,6 +40,7 @@ namespace Amazon.Route53
     public partial class AmazonRoute53Client : AmazonServiceClient, IAmazonRoute53
     {
         private static IServiceMetadata serviceMetadata = new AmazonRoute53Metadata();
+
         #region Constructors
 
         /// <summary>

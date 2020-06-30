@@ -57,6 +57,11 @@ namespace Amazon.AppMesh
     public partial interface IAmazonAppMesh : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IAppMeshPaginatorFactory Paginators { get; }
+
         
         #region  CreateGatewayRoute
 

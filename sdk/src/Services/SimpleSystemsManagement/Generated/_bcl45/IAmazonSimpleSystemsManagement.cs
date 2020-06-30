@@ -64,6 +64,11 @@ namespace Amazon.SimpleSystemsManagement
     public partial interface IAmazonSimpleSystemsManagement : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISimpleSystemsManagementPaginatorFactory Paginators { get; }
+
         
         #region  AddTagsToResource
 

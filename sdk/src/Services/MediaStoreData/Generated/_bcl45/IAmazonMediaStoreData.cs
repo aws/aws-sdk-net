@@ -38,6 +38,11 @@ namespace Amazon.MediaStoreData
     public partial interface IAmazonMediaStoreData : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMediaStoreDataPaginatorFactory Paginators { get; }
+
         
         #region  DeleteObject
 

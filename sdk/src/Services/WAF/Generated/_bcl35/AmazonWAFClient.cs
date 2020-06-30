@@ -61,6 +61,7 @@ namespace Amazon.WAF
     public partial class AmazonWAFClient : AmazonServiceClient, IAmazonWAF
     {
         private static IServiceMetadata serviceMetadata = new AmazonWAFMetadata();
+
         #region Constructors
 
         /// <summary>

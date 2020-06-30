@@ -46,6 +46,22 @@ namespace Amazon.ElasticMapReduce
     public partial class AmazonElasticMapReduceClient : AmazonServiceClient, IAmazonElasticMapReduce
     {
         private static IServiceMetadata serviceMetadata = new AmazonElasticMapReduceMetadata();
+        private IElasticMapReducePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IElasticMapReducePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ElasticMapReducePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

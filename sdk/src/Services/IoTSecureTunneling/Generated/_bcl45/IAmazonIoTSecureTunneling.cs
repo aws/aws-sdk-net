@@ -45,6 +45,11 @@ namespace Amazon.IoTSecureTunneling
     public partial interface IAmazonIoTSecureTunneling : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IIoTSecureTunnelingPaginatorFactory Paginators { get; }
+
         
         #region  CloseTunnel
 

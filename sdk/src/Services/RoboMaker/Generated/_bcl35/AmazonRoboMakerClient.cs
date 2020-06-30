@@ -40,6 +40,7 @@ namespace Amazon.RoboMaker
     public partial class AmazonRoboMakerClient : AmazonServiceClient, IAmazonRoboMaker
     {
         private static IServiceMetadata serviceMetadata = new AmazonRoboMakerMetadata();
+
         #region Constructors
 
         /// <summary>

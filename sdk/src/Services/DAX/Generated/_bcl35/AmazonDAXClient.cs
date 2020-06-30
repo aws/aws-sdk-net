@@ -45,6 +45,7 @@ namespace Amazon.DAX
     public partial class AmazonDAXClient : AmazonServiceClient, IAmazonDAX
     {
         private static IServiceMetadata serviceMetadata = new AmazonDAXMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -45,6 +45,12 @@ namespace Amazon.RAM
     /// </summary>
     public partial interface IAmazonRAM : IAmazonService, IDisposable
     {
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IRAMPaginatorFactory Paginators { get; }
+#endif
                 
         #region  AcceptResourceShareInvitation
 

@@ -63,6 +63,7 @@ namespace Amazon.DataPipeline
     public partial class AmazonDataPipelineClient : AmazonServiceClient, IAmazonDataPipeline
     {
         private static IServiceMetadata serviceMetadata = new AmazonDataPipelineMetadata();
+
         #region Constructors
 
         /// <summary>

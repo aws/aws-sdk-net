@@ -43,6 +43,22 @@ namespace Amazon.TranscribeService
     public partial class AmazonTranscribeServiceClient : AmazonServiceClient, IAmazonTranscribeService
     {
         private static IServiceMetadata serviceMetadata = new AmazonTranscribeServiceMetadata();
+        private ITranscribeServicePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ITranscribeServicePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new TranscribeServicePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

@@ -63,6 +63,7 @@ namespace Amazon.ECS
     public partial class AmazonECSClient : AmazonServiceClient, IAmazonECS
     {
         private static IServiceMetadata serviceMetadata = new AmazonECSMetadata();
+
         #region Constructors
 
         /// <summary>

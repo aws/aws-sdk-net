@@ -36,6 +36,9 @@ namespace Amazon.PersonalizeEvents
     public partial interface IAmazonPersonalizeEvents : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  PutEvents
 

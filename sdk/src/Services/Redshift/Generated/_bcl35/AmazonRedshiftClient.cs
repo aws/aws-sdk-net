@@ -74,6 +74,7 @@ namespace Amazon.Redshift
     public partial class AmazonRedshiftClient : AmazonServiceClient, IAmazonRedshift
     {
         private static IServiceMetadata serviceMetadata = new AmazonRedshiftMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -122,6 +122,11 @@ namespace Amazon.CodeStarNotifications
     public partial interface IAmazonCodeStarNotifications : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICodeStarNotificationsPaginatorFactory Paginators { get; }
+
         
         #region  CreateNotificationRule
 

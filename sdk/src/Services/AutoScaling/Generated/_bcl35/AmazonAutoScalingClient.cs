@@ -51,6 +51,7 @@ namespace Amazon.AutoScaling
     public partial class AmazonAutoScalingClient : AmazonServiceClient, IAmazonAutoScaling
     {
         private static IServiceMetadata serviceMetadata = new AmazonAutoScalingMetadata();
+
         #region Constructors
 
         /// <summary>

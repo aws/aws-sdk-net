@@ -40,6 +40,12 @@ namespace Amazon.IoTSiteWise
     /// </summary>
     public partial interface IAmazonIoTSiteWise : IAmazonService, IDisposable
     {
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IIoTSiteWisePaginatorFactory Paginators { get; }
+#endif
                 
         #region  AssociateAssets
 

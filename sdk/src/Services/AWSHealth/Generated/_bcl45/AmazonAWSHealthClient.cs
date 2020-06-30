@@ -95,6 +95,22 @@ namespace Amazon.AWSHealth
     public partial class AmazonAWSHealthClient : AmazonServiceClient, IAmazonAWSHealth
     {
         private static IServiceMetadata serviceMetadata = new AmazonAWSHealthMetadata();
+        private IAWSHealthPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAWSHealthPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AWSHealthPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

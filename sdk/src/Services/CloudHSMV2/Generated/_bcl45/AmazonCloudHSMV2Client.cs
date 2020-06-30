@@ -45,6 +45,22 @@ namespace Amazon.CloudHSMV2
     public partial class AmazonCloudHSMV2Client : AmazonServiceClient, IAmazonCloudHSMV2
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloudHSMV2Metadata();
+        private ICloudHSMV2PaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICloudHSMV2PaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CloudHSMV2PaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

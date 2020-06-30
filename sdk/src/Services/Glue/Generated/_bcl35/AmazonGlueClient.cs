@@ -43,6 +43,7 @@ namespace Amazon.Glue
     public partial class AmazonGlueClient : AmazonServiceClient, IAmazonGlue
     {
         private static IServiceMetadata serviceMetadata = new AmazonGlueMetadata();
+
         #region Constructors
 
         /// <summary>

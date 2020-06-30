@@ -42,6 +42,11 @@ namespace Amazon.APIGateway
     public partial interface IAmazonAPIGateway : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IAPIGatewayPaginatorFactory Paginators { get; }
+
         
         #region  CreateApiKey
 

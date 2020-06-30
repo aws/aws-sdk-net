@@ -277,6 +277,26 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             
             #line 111 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
+if (this.Project.TargetFrameworks.Contains("netstandard2.0"))
+{
+
+            
+            #line default
+            #line hidden
+            this.Write("  <PropertyGroup Condition=\"\'$(TargetFramework)\' == \'netstandard2.0\'\">\r\n    <Lang" +
+                    "Version>8.0</LangVersion>\r\n  </PropertyGroup>\r\n");
+            
+            #line 102 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+
+}
+
+            
+            #line default
+            #line hidden
+            this.Write("\r\n");
+            
+            #line 106 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+
 	}
     if (this.Project.SignBinaries)
     {

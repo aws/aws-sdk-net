@@ -61,6 +61,22 @@ namespace Amazon.Batch
     public partial class AmazonBatchClient : AmazonServiceClient, IAmazonBatch
     {
         private static IServiceMetadata serviceMetadata = new AmazonBatchMetadata();
+        private IBatchPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IBatchPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new BatchPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

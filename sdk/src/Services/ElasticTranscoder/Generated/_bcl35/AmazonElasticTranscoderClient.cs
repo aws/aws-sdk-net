@@ -43,6 +43,7 @@ namespace Amazon.ElasticTranscoder
     public partial class AmazonElasticTranscoderClient : AmazonServiceClient, IAmazonElasticTranscoder
     {
         private static IServiceMetadata serviceMetadata = new AmazonElasticTranscoderMetadata();
+
         #region Constructors
 
         /// <summary>

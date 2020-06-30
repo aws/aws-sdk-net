@@ -40,6 +40,7 @@ namespace Amazon.MediaPackageVod
     public partial class AmazonMediaPackageVodClient : AmazonServiceClient, IAmazonMediaPackageVod
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaPackageVodMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -95,6 +95,9 @@ namespace Amazon.AWSMarketplaceMetering
     public partial interface IAmazonAWSMarketplaceMetering : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  BatchMeterUsage
 

@@ -39,6 +39,9 @@ namespace Amazon.Amplify
     public partial interface IAmazonAmplify : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  CreateApp
 

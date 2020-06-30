@@ -43,6 +43,7 @@ namespace Amazon.GroundStation
     public partial class AmazonGroundStationClient : AmazonServiceClient, IAmazonGroundStation
     {
         private static IServiceMetadata serviceMetadata = new AmazonGroundStationMetadata();
+
         #region Constructors
 
         /// <summary>

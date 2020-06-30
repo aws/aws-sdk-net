@@ -124,6 +124,7 @@ namespace Amazon.WAFV2
     public partial class AmazonWAFV2Client : AmazonServiceClient, IAmazonWAFV2
     {
         private static IServiceMetadata serviceMetadata = new AmazonWAFV2Metadata();
+
         #region Constructors
 
         /// <summary>

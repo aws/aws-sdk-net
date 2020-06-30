@@ -38,6 +38,9 @@ namespace Amazon.LicenseManager
     public partial interface IAmazonLicenseManager : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  CreateLicenseConfiguration
 

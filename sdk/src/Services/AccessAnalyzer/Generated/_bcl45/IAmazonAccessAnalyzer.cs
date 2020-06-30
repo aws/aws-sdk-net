@@ -48,6 +48,11 @@ namespace Amazon.AccessAnalyzer
     public partial interface IAmazonAccessAnalyzer : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IAccessAnalyzerPaginatorFactory Paginators { get; }
+
         
         #region  CreateAnalyzer
 

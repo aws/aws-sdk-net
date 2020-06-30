@@ -65,6 +65,22 @@ namespace Amazon.SSO
     public partial class AmazonSSOClient : AmazonServiceClient, IAmazonSSO
     {
         private static IServiceMetadata serviceMetadata = new AmazonSSOMetadata();
+        private ISSOPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISSOPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SSOPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

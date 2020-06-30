@@ -44,6 +44,7 @@ namespace Amazon.ManagedBlockchain
     public partial class AmazonManagedBlockchainClient : AmazonServiceClient, IAmazonManagedBlockchain
     {
         private static IServiceMetadata serviceMetadata = new AmazonManagedBlockchainMetadata();
+
         #region Constructors
 
         /// <summary>

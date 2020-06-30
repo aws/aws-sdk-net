@@ -62,6 +62,15 @@ namespace Amazon.SimpleSystemsManagement
     public partial interface IAmazonSimpleSystemsManagement : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISimpleSystemsManagementPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AddTagsToResource
 

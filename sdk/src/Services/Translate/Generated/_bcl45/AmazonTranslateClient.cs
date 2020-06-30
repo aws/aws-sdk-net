@@ -43,6 +43,22 @@ namespace Amazon.Translate
     public partial class AmazonTranslateClient : AmazonServiceClient, IAmazonTranslate
     {
         private static IServiceMetadata serviceMetadata = new AmazonTranslateMetadata();
+        private ITranslatePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ITranslatePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new TranslatePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

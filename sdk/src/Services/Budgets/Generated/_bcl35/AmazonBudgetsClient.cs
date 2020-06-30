@@ -106,6 +106,7 @@ namespace Amazon.Budgets
     public partial class AmazonBudgetsClient : AmazonServiceClient, IAmazonBudgets
     {
         private static IServiceMetadata serviceMetadata = new AmazonBudgetsMetadata();
+
         #region Constructors
 
         /// <summary>

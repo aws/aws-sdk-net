@@ -60,6 +60,22 @@ namespace Amazon.Elasticsearch
     public partial class AmazonElasticsearchClient : AmazonServiceClient, IAmazonElasticsearch
     {
         private static IServiceMetadata serviceMetadata = new AmazonElasticsearchMetadata();
+        private IElasticsearchPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IElasticsearchPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ElasticsearchPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

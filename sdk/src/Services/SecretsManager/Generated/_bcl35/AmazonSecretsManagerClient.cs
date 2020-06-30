@@ -125,6 +125,7 @@ namespace Amazon.SecretsManager
     public partial class AmazonSecretsManagerClient : AmazonServiceClient, IAmazonSecretsManager
     {
         private static IServiceMetadata serviceMetadata = new AmazonSecretsManagerMetadata();
+
         #region Constructors
 
         /// <summary>

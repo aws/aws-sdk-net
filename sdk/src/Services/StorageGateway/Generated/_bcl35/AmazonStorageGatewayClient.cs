@@ -119,6 +119,7 @@ namespace Amazon.StorageGateway
     public partial class AmazonStorageGatewayClient : AmazonServiceClient, IAmazonStorageGateway
     {
         private static IServiceMetadata serviceMetadata = new AmazonStorageGatewayMetadata();
+
         #region Constructors
 
         /// <summary>

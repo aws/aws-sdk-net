@@ -48,6 +48,7 @@ namespace Amazon.ECR
     public partial class AmazonECRClient : AmazonServiceClient, IAmazonECR
     {
         private static IServiceMetadata serviceMetadata = new AmazonECRMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -42,6 +42,7 @@ namespace Amazon.Mobile
     public partial class AmazonMobileClient : AmazonServiceClient, IAmazonMobile
     {
         private static IServiceMetadata serviceMetadata = new AmazonMobileMetadata();
+
         #region Constructors
 
         /// <summary>

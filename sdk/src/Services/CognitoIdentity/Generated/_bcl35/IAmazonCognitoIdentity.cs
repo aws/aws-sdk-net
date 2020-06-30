@@ -60,6 +60,9 @@ namespace Amazon.CognitoIdentity
     public partial interface IAmazonCognitoIdentity : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  CreateIdentityPool
 

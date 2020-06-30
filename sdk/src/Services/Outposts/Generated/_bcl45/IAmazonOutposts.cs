@@ -40,6 +40,11 @@ namespace Amazon.Outposts
     public partial interface IAmazonOutposts : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IOutpostsPaginatorFactory Paginators { get; }
+
         
         #region  CreateOutpost
 

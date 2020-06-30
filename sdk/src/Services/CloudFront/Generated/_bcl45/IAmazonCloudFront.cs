@@ -42,6 +42,11 @@ namespace Amazon.CloudFront
     public partial interface IAmazonCloudFront : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICloudFrontPaginatorFactory Paginators { get; }
+
         
         #region  CreateCachePolicy
 

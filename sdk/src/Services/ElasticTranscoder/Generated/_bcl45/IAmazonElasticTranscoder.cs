@@ -39,6 +39,11 @@ namespace Amazon.ElasticTranscoder
     public partial interface IAmazonElasticTranscoder : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IElasticTranscoderPaginatorFactory Paginators { get; }
+
         
         #region  CancelJob
 

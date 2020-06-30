@@ -43,6 +43,7 @@ namespace Amazon.Comprehend
     public partial class AmazonComprehendClient : AmazonServiceClient, IAmazonComprehend
     {
         private static IServiceMetadata serviceMetadata = new AmazonComprehendMetadata();
+
         #region Constructors
 
         /// <summary>

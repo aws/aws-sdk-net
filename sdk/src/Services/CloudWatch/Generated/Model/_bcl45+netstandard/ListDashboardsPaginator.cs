@@ -33,9 +33,9 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     internal sealed partial class ListDashboardsPaginator : IPaginator<ListDashboardsResponse>, IListDashboardsPaginator
     {
-        private readonly IAmazonCloudWatch client;
-        private readonly ListDashboardsRequest request;
-        private int isPaginatorInUse = 0;
+        private readonly IAmazonCloudWatch _client;
+        private readonly ListDashboardsRequest _request;
+        private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
@@ -50,22 +50,22 @@ namespace Amazon.CloudWatch.Model
 
         internal ListDashboardsPaginator(IAmazonCloudWatch client, ListDashboardsRequest request)
         {
-            this.client = client;
-            this.request = request;
+            this._client = client;
+            this._request = request;
         }
 #if BCL
         IEnumerable<ListDashboardsResponse> IPaginator<ListDashboardsResponse>.Paginate()
         {
-            if (Interlocked.Exchange(ref isPaginatorInUse, 1) != 0)
+            if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
-            var nextToken = request.NextToken;
+            var nextToken = _request.NextToken;
             ListDashboardsResponse response;
             do
             {
-                request.NextToken = nextToken;
-                response = client.ListDashboards(request);
+                _request.NextToken = nextToken;
+                response = _client.ListDashboards(_request);
                 nextToken = response.NextToken;
                 yield return response;
             }
@@ -75,16 +75,16 @@ namespace Amazon.CloudWatch.Model
 #if AWS_ASYNC_ENUMERABLES_API
         async IAsyncEnumerable<ListDashboardsResponse> IPaginator<ListDashboardsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
         {
-            if (Interlocked.Exchange(ref isPaginatorInUse, 1) != 0)
+            if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
-            var nextToken = request.NextToken;
+            var nextToken = _request.NextToken;
             ListDashboardsResponse response;
             do
             {
-                request.NextToken = nextToken;
-                response = await client.ListDashboardsAsync(request, cancellationToken).ConfigureAwait(false);
+                _request.NextToken = nextToken;
+                response = await _client.ListDashboardsAsync(_request, cancellationToken).ConfigureAwait(false);
                 nextToken = response.NextToken;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;

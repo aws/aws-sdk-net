@@ -36,6 +36,11 @@ namespace Amazon.S3
     public partial interface IAmazonS3 : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IS3PaginatorFactory Paginators { get; }
+
         
         #region  AbortMultipartUpload
 

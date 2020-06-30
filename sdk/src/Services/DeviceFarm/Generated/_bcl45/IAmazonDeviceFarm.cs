@@ -59,6 +59,11 @@ namespace Amazon.DeviceFarm
     public partial interface IAmazonDeviceFarm : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IDeviceFarmPaginatorFactory Paginators { get; }
+
         
         #region  CreateDevicePool
 

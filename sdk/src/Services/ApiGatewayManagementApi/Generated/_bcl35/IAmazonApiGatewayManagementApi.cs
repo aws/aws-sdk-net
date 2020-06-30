@@ -38,6 +38,9 @@ namespace Amazon.ApiGatewayManagementApi
     public partial interface IAmazonApiGatewayManagementApi : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  DeleteConnection
 

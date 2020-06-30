@@ -49,6 +49,22 @@ namespace Amazon.WorkLink
     public partial class AmazonWorkLinkClient : AmazonServiceClient, IAmazonWorkLink
     {
         private static IServiceMetadata serviceMetadata = new AmazonWorkLinkMetadata();
+        private IWorkLinkPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IWorkLinkPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new WorkLinkPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

@@ -153,6 +153,7 @@ namespace Amazon.GlobalAccelerator
     public partial class AmazonGlobalAcceleratorClient : AmazonServiceClient, IAmazonGlobalAccelerator
     {
         private static IServiceMetadata serviceMetadata = new AmazonGlobalAcceleratorMetadata();
+
         #region Constructors
 
         /// <summary>

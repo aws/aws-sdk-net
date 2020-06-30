@@ -51,6 +51,22 @@ namespace Amazon.Shield
     public partial class AmazonShieldClient : AmazonServiceClient, IAmazonShield
     {
         private static IServiceMetadata serviceMetadata = new AmazonShieldMetadata();
+        private IShieldPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IShieldPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ShieldPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

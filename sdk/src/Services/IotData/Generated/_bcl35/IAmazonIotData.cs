@@ -55,6 +55,9 @@ namespace Amazon.IotData
     public partial interface IAmazonIotData : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  DeleteThingShadow
 

@@ -57,6 +57,7 @@ namespace Amazon.SimpleNotificationService
     public partial class AmazonSimpleNotificationServiceClient : AmazonServiceClient, IAmazonSimpleNotificationService
     {
         private static IServiceMetadata serviceMetadata = new AmazonSimpleNotificationServiceMetadata();
+
         #region Constructors
 
         /// <summary>

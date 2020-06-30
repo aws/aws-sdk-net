@@ -49,6 +49,22 @@ namespace Amazon.QuickSight
     public partial class AmazonQuickSightClient : AmazonServiceClient, IAmazonQuickSight
     {
         private static IServiceMetadata serviceMetadata = new AmazonQuickSightMetadata();
+        private IQuickSightPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IQuickSightPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new QuickSightPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

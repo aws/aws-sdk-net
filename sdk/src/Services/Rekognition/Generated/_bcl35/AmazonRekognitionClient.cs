@@ -40,6 +40,7 @@ namespace Amazon.Rekognition
     public partial class AmazonRekognitionClient : AmazonServiceClient, IAmazonRekognition
     {
         private static IServiceMetadata serviceMetadata = new AmazonRekognitionMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -33,9 +33,9 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     internal sealed partial class ListMetricsPaginator : IPaginator<ListMetricsResponse>, IListMetricsPaginator
     {
-        private readonly IAmazonCloudWatch client;
-        private readonly ListMetricsRequest request;
-        private int isPaginatorInUse = 0;
+        private readonly IAmazonCloudWatch _client;
+        private readonly ListMetricsRequest _request;
+        private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
@@ -50,22 +50,22 @@ namespace Amazon.CloudWatch.Model
 
         internal ListMetricsPaginator(IAmazonCloudWatch client, ListMetricsRequest request)
         {
-            this.client = client;
-            this.request = request;
+            this._client = client;
+            this._request = request;
         }
 #if BCL
         IEnumerable<ListMetricsResponse> IPaginator<ListMetricsResponse>.Paginate()
         {
-            if (Interlocked.Exchange(ref isPaginatorInUse, 1) != 0)
+            if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
-            var nextToken = request.NextToken;
+            var nextToken = _request.NextToken;
             ListMetricsResponse response;
             do
             {
-                request.NextToken = nextToken;
-                response = client.ListMetrics(request);
+                _request.NextToken = nextToken;
+                response = _client.ListMetrics(_request);
                 nextToken = response.NextToken;
                 yield return response;
             }
@@ -75,16 +75,16 @@ namespace Amazon.CloudWatch.Model
 #if AWS_ASYNC_ENUMERABLES_API
         async IAsyncEnumerable<ListMetricsResponse> IPaginator<ListMetricsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
         {
-            if (Interlocked.Exchange(ref isPaginatorInUse, 1) != 0)
+            if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
-            var nextToken = request.NextToken;
+            var nextToken = _request.NextToken;
             ListMetricsResponse response;
             do
             {
-                request.NextToken = nextToken;
-                response = await client.ListMetricsAsync(request, cancellationToken).ConfigureAwait(false);
+                _request.NextToken = nextToken;
+                response = await _client.ListMetricsAsync(_request, cancellationToken).ConfigureAwait(false);
                 nextToken = response.NextToken;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;

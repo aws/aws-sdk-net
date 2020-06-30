@@ -55,6 +55,7 @@ namespace Amazon.ServiceQuotas
     public partial class AmazonServiceQuotasClient : AmazonServiceClient, IAmazonServiceQuotas
     {
         private static IServiceMetadata serviceMetadata = new AmazonServiceQuotasMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -65,6 +65,7 @@ namespace Amazon.IoT
     public partial interface IAmazonIoT : IAmazonService, IDisposable
     {
 
+
         
         #region  AcceptCertificateTransfer
 

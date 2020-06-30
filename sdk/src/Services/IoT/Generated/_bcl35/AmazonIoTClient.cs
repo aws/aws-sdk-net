@@ -69,6 +69,7 @@ namespace Amazon.IoT
     public partial class AmazonIoTClient : AmazonServiceClient, IAmazonIoT
     {
         private static IServiceMetadata serviceMetadata = new AmazonIoTMetadata();
+
         #region Constructors
 
         /// <summary>

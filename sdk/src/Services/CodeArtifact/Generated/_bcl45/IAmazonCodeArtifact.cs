@@ -303,6 +303,11 @@ namespace Amazon.CodeArtifact
     public partial interface IAmazonCodeArtifact : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICodeArtifactPaginatorFactory Paginators { get; }
+
         
         #region  AssociateExternalConnection
 

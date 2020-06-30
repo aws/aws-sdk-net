@@ -41,6 +41,7 @@ namespace Amazon.Greengrass
     public partial interface IAmazonGreengrass : IAmazonService, IDisposable
     {
 
+
         
         #region  AssociateRoleToGroup
 

@@ -75,6 +75,7 @@ namespace Amazon.Pricing
     public partial class AmazonPricingClient : AmazonServiceClient, IAmazonPricing
     {
         private static IServiceMetadata serviceMetadata = new AmazonPricingMetadata();
+
         #region Constructors
 
         /// <summary>

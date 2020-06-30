@@ -53,6 +53,7 @@ namespace Amazon.CloudSearch
     public partial class AmazonCloudSearchClient : AmazonServiceClient, IAmazonCloudSearch
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloudSearchMetadata();
+
         #region Constructors
 
         /// <summary>

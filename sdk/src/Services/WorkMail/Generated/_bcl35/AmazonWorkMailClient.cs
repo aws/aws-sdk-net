@@ -78,6 +78,7 @@ namespace Amazon.WorkMail
     public partial class AmazonWorkMailClient : AmazonServiceClient, IAmazonWorkMail
     {
         private static IServiceMetadata serviceMetadata = new AmazonWorkMailMetadata();
+
         #region Constructors
 
         /// <summary>

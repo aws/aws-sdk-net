@@ -47,6 +47,22 @@ namespace Amazon.WorkSpaces
     public partial class AmazonWorkSpacesClient : AmazonServiceClient, IAmazonWorkSpaces
     {
         private static IServiceMetadata serviceMetadata = new AmazonWorkSpacesMetadata();
+        private IWorkSpacesPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IWorkSpacesPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new WorkSpacesPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

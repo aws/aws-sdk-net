@@ -64,6 +64,15 @@ namespace Amazon.ElasticLoadBalancingV2
     public partial interface IAmazonElasticLoadBalancingV2 : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IElasticLoadBalancingV2PaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AddListenerCertificates
 

@@ -58,6 +58,7 @@ namespace Amazon.Batch
     public partial class AmazonBatchClient : AmazonServiceClient, IAmazonBatch
     {
         private static IServiceMetadata serviceMetadata = new AmazonBatchMetadata();
+
         #region Constructors
 
         /// <summary>

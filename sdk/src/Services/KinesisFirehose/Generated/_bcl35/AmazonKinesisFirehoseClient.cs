@@ -45,6 +45,7 @@ namespace Amazon.KinesisFirehose
     public partial class AmazonKinesisFirehoseClient : AmazonServiceClient, IAmazonKinesisFirehose
     {
         private static IServiceMetadata serviceMetadata = new AmazonKinesisFirehoseMetadata();
+
         #region Constructors
 
         /// <summary>

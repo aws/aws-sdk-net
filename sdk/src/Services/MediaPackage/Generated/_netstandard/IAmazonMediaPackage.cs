@@ -35,6 +35,12 @@ namespace Amazon.MediaPackage
     /// </summary>
     public partial interface IAmazonMediaPackage : IAmazonService, IDisposable
     {
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMediaPackagePaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateChannel
 

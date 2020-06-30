@@ -34,6 +34,9 @@ namespace Amazon.KinesisVideoMedia
     public partial interface IAmazonKinesisVideoMedia : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  GetMedia
 

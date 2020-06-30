@@ -49,6 +49,7 @@ namespace Amazon.Lex
     public partial class AmazonLexClient : AmazonServiceClient, IAmazonLex
     {
         private static IServiceMetadata serviceMetadata = new AmazonLexMetadata();
+
         #region Constructors
 
         /// <summary>

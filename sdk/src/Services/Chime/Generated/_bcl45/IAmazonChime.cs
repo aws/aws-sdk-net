@@ -83,6 +83,11 @@ namespace Amazon.Chime
     public partial interface IAmazonChime : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IChimePaginatorFactory Paginators { get; }
+
         
         #region  AssociatePhoneNumbersWithVoiceConnector
 

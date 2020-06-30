@@ -43,6 +43,22 @@ namespace Amazon.RoboMaker
     public partial class AmazonRoboMakerClient : AmazonServiceClient, IAmazonRoboMaker
     {
         private static IServiceMetadata serviceMetadata = new AmazonRoboMakerMetadata();
+        private IRoboMakerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IRoboMakerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new RoboMakerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

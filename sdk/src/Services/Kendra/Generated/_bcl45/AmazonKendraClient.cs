@@ -43,6 +43,22 @@ namespace Amazon.Kendra
     public partial class AmazonKendraClient : AmazonServiceClient, IAmazonKendra
     {
         private static IServiceMetadata serviceMetadata = new AmazonKendraMetadata();
+        private IKendraPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IKendraPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new KendraPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

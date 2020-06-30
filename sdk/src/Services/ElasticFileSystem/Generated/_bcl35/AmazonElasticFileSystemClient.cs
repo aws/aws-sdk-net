@@ -48,6 +48,7 @@ namespace Amazon.ElasticFileSystem
     public partial class AmazonElasticFileSystemClient : AmazonServiceClient, IAmazonElasticFileSystem
     {
         private static IServiceMetadata serviceMetadata = new AmazonElasticFileSystemMetadata();
+
         #region Constructors
 
         /// <summary>

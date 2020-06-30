@@ -34,6 +34,9 @@ namespace Amazon.PersonalizeRuntime
     public partial interface IAmazonPersonalizeRuntime : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  GetPersonalizedRanking
 

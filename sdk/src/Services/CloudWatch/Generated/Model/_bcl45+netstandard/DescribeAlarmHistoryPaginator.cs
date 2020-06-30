@@ -33,9 +33,9 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     internal sealed partial class DescribeAlarmHistoryPaginator : IPaginator<DescribeAlarmHistoryResponse>, IDescribeAlarmHistoryPaginator
     {
-        private readonly IAmazonCloudWatch client;
-        private readonly DescribeAlarmHistoryRequest request;
-        private int isPaginatorInUse = 0;
+        private readonly IAmazonCloudWatch _client;
+        private readonly DescribeAlarmHistoryRequest _request;
+        private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
@@ -50,22 +50,22 @@ namespace Amazon.CloudWatch.Model
 
         internal DescribeAlarmHistoryPaginator(IAmazonCloudWatch client, DescribeAlarmHistoryRequest request)
         {
-            this.client = client;
-            this.request = request;
+            this._client = client;
+            this._request = request;
         }
 #if BCL
         IEnumerable<DescribeAlarmHistoryResponse> IPaginator<DescribeAlarmHistoryResponse>.Paginate()
         {
-            if (Interlocked.Exchange(ref isPaginatorInUse, 1) != 0)
+            if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
-            var nextToken = request.NextToken;
+            var nextToken = _request.NextToken;
             DescribeAlarmHistoryResponse response;
             do
             {
-                request.NextToken = nextToken;
-                response = client.DescribeAlarmHistory(request);
+                _request.NextToken = nextToken;
+                response = _client.DescribeAlarmHistory(_request);
                 nextToken = response.NextToken;
                 yield return response;
             }
@@ -75,16 +75,16 @@ namespace Amazon.CloudWatch.Model
 #if AWS_ASYNC_ENUMERABLES_API
         async IAsyncEnumerable<DescribeAlarmHistoryResponse> IPaginator<DescribeAlarmHistoryResponse>.PaginateAsync(CancellationToken cancellationToken = default)
         {
-            if (Interlocked.Exchange(ref isPaginatorInUse, 1) != 0)
+            if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
-            var nextToken = request.NextToken;
+            var nextToken = _request.NextToken;
             DescribeAlarmHistoryResponse response;
             do
             {
-                request.NextToken = nextToken;
-                response = await client.DescribeAlarmHistoryAsync(request, cancellationToken).ConfigureAwait(false);
+                _request.NextToken = nextToken;
+                response = await _client.DescribeAlarmHistoryAsync(_request, cancellationToken).ConfigureAwait(false);
                 nextToken = response.NextToken;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;

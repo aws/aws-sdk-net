@@ -52,6 +52,11 @@ namespace Amazon.SageMaker
     public partial interface IAmazonSageMaker : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISageMakerPaginatorFactory Paginators { get; }
+
         
         #region  AddTags
 

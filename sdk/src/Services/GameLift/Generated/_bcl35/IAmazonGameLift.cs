@@ -108,6 +108,9 @@ namespace Amazon.GameLift
     public partial interface IAmazonGameLift : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  AcceptMatch
 

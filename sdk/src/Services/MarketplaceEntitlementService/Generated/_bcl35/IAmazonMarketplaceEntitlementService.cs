@@ -53,6 +53,9 @@ namespace Amazon.MarketplaceEntitlementService
     public partial interface IAmazonMarketplaceEntitlementService : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  GetEntitlements
 

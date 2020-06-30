@@ -71,6 +71,12 @@ namespace Amazon.WorkDocs
     /// </summary>
     public partial interface IAmazonWorkDocs : IAmazonService, IDisposable
     {
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IWorkDocsPaginatorFactory Paginators { get; }
+#endif
                 
         #region  AbortDocumentVersionUpload
 

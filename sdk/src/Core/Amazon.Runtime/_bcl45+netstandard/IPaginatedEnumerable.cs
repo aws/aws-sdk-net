@@ -12,9 +12,7 @@ namespace Amazon.Runtime
     /// </summary>
     /// <typeparam name="TResult"></typeparam>
     public interface IPaginatedEnumerable<TResult>
-#if BCL && NETSTANDARD20
-         : IEnumerable<TResult>, IAsyncEnumerable<TResult>
-#elif BCL
+#if BCL
          : IEnumerable<TResult>
 #elif AWS_ASYNC_ENUMERABLES_API
          : IAsyncEnumerable<TResult>

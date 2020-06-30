@@ -53,6 +53,11 @@ namespace Amazon.CloudWatch
     public partial interface IAmazonCloudWatch : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICloudWatchPaginatorFactory Paginators { get; }
+
         
         #region  DeleteAlarms
 

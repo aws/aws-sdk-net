@@ -61,6 +61,12 @@ namespace Amazon.IoTAnalytics
     /// </summary>
     public partial interface IAmazonIoTAnalytics : IAmazonService, IDisposable
     {
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IIoTAnalyticsPaginatorFactory Paginators { get; }
+#endif
                 
         #region  BatchPutMessage
 

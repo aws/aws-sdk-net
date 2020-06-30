@@ -117,6 +117,11 @@ namespace Amazon.ApplicationAutoScaling
     public partial interface IAmazonApplicationAutoScaling : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IApplicationAutoScalingPaginatorFactory Paginators { get; }
+
         
         #region  DeleteScalingPolicy
 

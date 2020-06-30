@@ -34,6 +34,15 @@ namespace Amazon.Route53Domains
     public partial interface IAmazonRoute53Domains : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IRoute53DomainsPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AcceptDomainTransferFromAnotherAwsAccount
 

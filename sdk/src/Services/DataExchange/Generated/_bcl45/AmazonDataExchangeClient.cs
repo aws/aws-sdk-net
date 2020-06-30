@@ -69,6 +69,22 @@ namespace Amazon.DataExchange
     public partial class AmazonDataExchangeClient : AmazonServiceClient, IAmazonDataExchange
     {
         private static IServiceMetadata serviceMetadata = new AmazonDataExchangeMetadata();
+        private IDataExchangePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IDataExchangePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new DataExchangePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

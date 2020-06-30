@@ -61,6 +61,22 @@ namespace Amazon.EBS
     public partial class AmazonEBSClient : AmazonServiceClient, IAmazonEBS
     {
         private static IServiceMetadata serviceMetadata = new AmazonEBSMetadata();
+        private IEBSPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IEBSPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new EBSPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

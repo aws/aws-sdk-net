@@ -87,6 +87,7 @@ namespace Amazon.Chime
     public partial class AmazonChimeClient : AmazonServiceClient, IAmazonChime
     {
         private static IServiceMetadata serviceMetadata = new AmazonChimeMetadata();
+
         #region Constructors
 
         /// <summary>

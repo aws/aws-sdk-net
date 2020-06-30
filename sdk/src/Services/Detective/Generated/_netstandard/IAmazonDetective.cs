@@ -96,6 +96,12 @@ namespace Amazon.Detective
     /// </summary>
     public partial interface IAmazonDetective : IAmazonService, IDisposable
     {
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IDetectivePaginatorFactory Paginators { get; }
+#endif
                 
         #region  AcceptInvitation
 

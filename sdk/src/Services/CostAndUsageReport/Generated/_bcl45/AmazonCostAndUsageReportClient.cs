@@ -66,6 +66,22 @@ namespace Amazon.CostAndUsageReport
     public partial class AmazonCostAndUsageReportClient : AmazonServiceClient, IAmazonCostAndUsageReport
     {
         private static IServiceMetadata serviceMetadata = new AmazonCostAndUsageReportMetadata();
+        private ICostAndUsageReportPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICostAndUsageReportPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CostAndUsageReportPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

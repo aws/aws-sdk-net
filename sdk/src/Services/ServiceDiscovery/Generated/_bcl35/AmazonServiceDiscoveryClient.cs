@@ -46,6 +46,7 @@ namespace Amazon.ServiceDiscovery
     public partial class AmazonServiceDiscoveryClient : AmazonServiceClient, IAmazonServiceDiscovery
     {
         private static IServiceMetadata serviceMetadata = new AmazonServiceDiscoveryMetadata();
+
         #region Constructors
 
         /// <summary>

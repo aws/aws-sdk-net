@@ -147,6 +147,11 @@ namespace Amazon.KeyManagementService
     public partial interface IAmazonKeyManagementService : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IKeyManagementServicePaginatorFactory Paginators { get; }
+
         
         #region  CancelKeyDeletion
 

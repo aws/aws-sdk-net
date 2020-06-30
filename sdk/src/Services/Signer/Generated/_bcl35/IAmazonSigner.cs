@@ -42,6 +42,15 @@ namespace Amazon.Signer
     public partial interface IAmazonSigner : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISignerPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CancelSigningProfile
 

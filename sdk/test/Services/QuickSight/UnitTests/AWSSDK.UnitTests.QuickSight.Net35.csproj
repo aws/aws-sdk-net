@@ -25,6 +25,7 @@
     <Compile Remove="**/_bcl45/**"/>
     <Compile Remove="**/obj/**"/>
     <None Remove="**/obj/**" />
+    <Compile Remove="**/_bcl45+netstandard/**"/>
   </ItemGroup>
 
   <ItemGroup>

@@ -39,6 +39,7 @@ namespace Amazon.IoTEvents
     public partial interface IAmazonIoTEvents : IAmazonService, IDisposable
     {
 
+
         
         #region  CreateDetectorModel
 

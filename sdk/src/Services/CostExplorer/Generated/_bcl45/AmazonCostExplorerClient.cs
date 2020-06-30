@@ -64,6 +64,22 @@ namespace Amazon.CostExplorer
     public partial class AmazonCostExplorerClient : AmazonServiceClient, IAmazonCostExplorer
     {
         private static IServiceMetadata serviceMetadata = new AmazonCostExplorerMetadata();
+        private ICostExplorerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICostExplorerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CostExplorerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

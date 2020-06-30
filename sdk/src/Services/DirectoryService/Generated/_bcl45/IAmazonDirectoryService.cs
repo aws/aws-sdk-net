@@ -54,6 +54,11 @@ namespace Amazon.DirectoryService
     public partial interface IAmazonDirectoryService : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IDirectoryServicePaginatorFactory Paginators { get; }
+
         
         #region  AcceptSharedDirectory
 

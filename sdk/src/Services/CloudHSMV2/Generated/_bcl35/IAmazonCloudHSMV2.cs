@@ -36,6 +36,15 @@ namespace Amazon.CloudHSMV2
     public partial interface IAmazonCloudHSMV2 : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICloudHSMV2PaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CopyBackupToRegion
 

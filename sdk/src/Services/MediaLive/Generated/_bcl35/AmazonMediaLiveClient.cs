@@ -40,6 +40,7 @@ namespace Amazon.MediaLive
     public partial class AmazonMediaLiveClient : AmazonServiceClient, IAmazonMediaLive
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaLiveMetadata();
+
         #region Constructors
 
         /// <summary>

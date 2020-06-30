@@ -68,6 +68,7 @@ namespace Amazon.SimpleSystemsManagement
     public partial class AmazonSimpleSystemsManagementClient : AmazonServiceClient, IAmazonSimpleSystemsManagement
     {
         private static IServiceMetadata serviceMetadata = new AmazonSimpleSystemsManagementMetadata();
+
         #region Constructors
 
         /// <summary>

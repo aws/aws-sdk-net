@@ -38,6 +38,7 @@ namespace Amazon.IoT1ClickDevicesService
     public partial interface IAmazonIoT1ClickDevicesService : IAmazonService, IDisposable
     {
 
+
         
         #region  ClaimDevicesByClaimCode
 

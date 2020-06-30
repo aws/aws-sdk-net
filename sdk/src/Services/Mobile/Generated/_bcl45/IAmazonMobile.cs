@@ -38,6 +38,7 @@ namespace Amazon.Mobile
     public partial interface IAmazonMobile : IAmazonService, IDisposable
     {
 
+
         
         #region  CreateProject
 

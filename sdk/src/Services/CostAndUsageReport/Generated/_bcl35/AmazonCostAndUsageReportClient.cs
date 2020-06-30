@@ -63,6 +63,7 @@ namespace Amazon.CostAndUsageReport
     public partial class AmazonCostAndUsageReportClient : AmazonServiceClient, IAmazonCostAndUsageReport
     {
         private static IServiceMetadata serviceMetadata = new AmazonCostAndUsageReportMetadata();
+
         #region Constructors
 
         /// <summary>

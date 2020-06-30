@@ -30,11 +30,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<DescribeSubscriptionFiltersResponse> Responses { get; }
+
         /// <summary>
         /// Enumerable containing all of the SubscriptionFilters
         /// </summary>
         IPaginatedEnumerable<SubscriptionFilter> SubscriptionFilters { get; }
-
     }
 }
 #endif

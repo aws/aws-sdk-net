@@ -40,6 +40,7 @@ namespace Amazon.DocDB
     public partial class AmazonDocDBClient : AmazonServiceClient, IAmazonDocDB
     {
         private static IServiceMetadata serviceMetadata = new AmazonDocDBMetadata();
+
         #region Constructors
 
         /// <summary>

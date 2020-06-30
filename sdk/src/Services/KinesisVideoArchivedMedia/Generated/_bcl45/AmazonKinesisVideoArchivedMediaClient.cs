@@ -43,6 +43,22 @@ namespace Amazon.KinesisVideoArchivedMedia
     public partial class AmazonKinesisVideoArchivedMediaClient : AmazonServiceClient, IAmazonKinesisVideoArchivedMedia
     {
         private static IServiceMetadata serviceMetadata = new AmazonKinesisVideoArchivedMediaMetadata();
+        private IKinesisVideoArchivedMediaPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IKinesisVideoArchivedMediaPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new KinesisVideoArchivedMediaPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
 
         #region Overrides
 

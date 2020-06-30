@@ -62,6 +62,11 @@ namespace Amazon.CloudFormation
     public partial interface IAmazonCloudFormation : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICloudFormationPaginatorFactory Paginators { get; }
+
         
         #region  CancelUpdateStack
 

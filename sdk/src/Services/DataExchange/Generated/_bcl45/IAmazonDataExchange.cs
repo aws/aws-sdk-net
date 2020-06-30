@@ -62,6 +62,11 @@ namespace Amazon.DataExchange
     public partial interface IAmazonDataExchange : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IDataExchangePaginatorFactory Paginators { get; }
+
         
         #region  CancelJob
 

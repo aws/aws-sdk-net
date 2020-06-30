@@ -57,6 +57,7 @@ namespace Amazon.ElastiCache
     public partial class AmazonElastiCacheClient : AmazonServiceClient, IAmazonElastiCache
     {
         private static IServiceMetadata serviceMetadata = new AmazonElastiCacheMetadata();
+
         #region Constructors
 
         /// <summary>

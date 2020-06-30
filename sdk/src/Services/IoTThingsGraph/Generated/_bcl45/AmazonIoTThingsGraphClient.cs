@@ -55,6 +55,22 @@ namespace Amazon.IoTThingsGraph
     public partial class AmazonIoTThingsGraphClient : AmazonServiceClient, IAmazonIoTThingsGraph
     {
         private static IServiceMetadata serviceMetadata = new AmazonIoTThingsGraphMetadata();
+        private IIoTThingsGraphPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IIoTThingsGraphPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new IoTThingsGraphPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

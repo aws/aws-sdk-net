@@ -110,6 +110,7 @@ namespace Amazon.Cloud9
     public partial class AmazonCloud9Client : AmazonServiceClient, IAmazonCloud9
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloud9Metadata();
+
         #region Constructors
 
         /// <summary>

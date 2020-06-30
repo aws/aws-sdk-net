@@ -44,6 +44,7 @@ namespace Amazon.SavingsPlans
     public partial class AmazonSavingsPlansClient : AmazonServiceClient, IAmazonSavingsPlans
     {
         private static IServiceMetadata serviceMetadata = new AmazonSavingsPlansMetadata();
+
         #region Constructors
 
         /// <summary>

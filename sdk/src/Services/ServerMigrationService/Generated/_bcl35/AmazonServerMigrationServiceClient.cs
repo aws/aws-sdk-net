@@ -56,6 +56,7 @@ namespace Amazon.ServerMigrationService
     public partial class AmazonServerMigrationServiceClient : AmazonServiceClient, IAmazonServerMigrationService
     {
         private static IServiceMetadata serviceMetadata = new AmazonServerMigrationServiceMetadata();
+
         #region Constructors
 
         /// <summary>

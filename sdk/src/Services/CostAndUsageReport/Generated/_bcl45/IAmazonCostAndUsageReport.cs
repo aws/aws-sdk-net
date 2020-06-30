@@ -59,6 +59,11 @@ namespace Amazon.CostAndUsageReport
     public partial interface IAmazonCostAndUsageReport : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICostAndUsageReportPaginatorFactory Paginators { get; }
+
         
         #region  DeleteReportDefinition
 

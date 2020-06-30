@@ -77,6 +77,22 @@ namespace Amazon.Redshift
     public partial class AmazonRedshiftClient : AmazonServiceClient, IAmazonRedshift
     {
         private static IServiceMetadata serviceMetadata = new AmazonRedshiftMetadata();
+        private IRedshiftPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IRedshiftPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new RedshiftPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

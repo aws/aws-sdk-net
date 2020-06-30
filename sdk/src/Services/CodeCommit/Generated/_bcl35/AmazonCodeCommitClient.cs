@@ -468,6 +468,7 @@ namespace Amazon.CodeCommit
     public partial class AmazonCodeCommitClient : AmazonServiceClient, IAmazonCodeCommit
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeCommitMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -40,6 +40,7 @@ namespace Amazon.MediaConnect
     public partial class AmazonMediaConnectClient : AmazonServiceClient, IAmazonMediaConnect
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaConnectMetadata();
+
         #region Constructors
 
         /// <summary>

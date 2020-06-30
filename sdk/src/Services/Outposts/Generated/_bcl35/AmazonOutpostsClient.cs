@@ -44,6 +44,7 @@ namespace Amazon.Outposts
     public partial class AmazonOutpostsClient : AmazonServiceClient, IAmazonOutposts
     {
         private static IServiceMetadata serviceMetadata = new AmazonOutpostsMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -125,7 +125,8 @@ namespace ServiceClientGenerator
             }
             if (IsJmesPath(node, out var jmesPathChar))
             {
-                return HandleJmesPath(node, (Char) jmesPathChar);
+                return HandleJmesPath(node, (char) jmesPathChar, operation.model.Shapes);
+
             }
             if (checkRequest)
             {
@@ -206,7 +207,7 @@ namespace ServiceClientGenerator
         /// <param name="jmesPathChar"> The character which is contained in the jmespath expression 
         /// (currently only supports '.') </param>
         /// <returns></returns>
-        internal bool IsJmesPath(JsonData node, out char? jmesPathChar)
+        internal static bool IsJmesPath(JsonData node, out char? jmesPathChar)
         {
             var stringNode = node.ToString();
             string jPattern = "^[a-zA-Z0-9]+\\.[a-zA-Z0-9]+$";
@@ -227,12 +228,12 @@ namespace ServiceClientGenerator
         /// <param name="jmesPathChar"> The character which is contained in the jmespath expression 
         /// (currently only supports '.') </param>
         /// <returns></returns>
-        internal OperationPaginatorConfigOption HandleJmesPath(JsonData node, Char jmesPathChar)
+        internal static OperationPaginatorConfigOption HandleJmesPath(JsonData node, char jmesPathChar, IEnumerable<Shape> shapes)
         {
             if (jmesPathChar == '.')
             {
                 var nestedMembers = node.ToString().Split('.');
-                var parentShape = operation.model.Shapes.Single(s => s.Name.Equals(nestedMembers[0], StringComparison.OrdinalIgnoreCase));
+                var parentShape = shapes.Single(s => s.Name.Equals(nestedMembers[0], StringComparison.OrdinalIgnoreCase));
                 var childMember = parentShape.Members.SingleOrDefault(m => m.ModeledName.Equals(nestedMembers[1]));
                 if (childMember == null)
                 {

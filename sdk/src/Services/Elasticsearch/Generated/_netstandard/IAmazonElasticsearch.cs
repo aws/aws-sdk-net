@@ -52,6 +52,12 @@ namespace Amazon.Elasticsearch
     /// </summary>
     public partial interface IAmazonElasticsearch : IAmazonService, IDisposable
     {
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IElasticsearchPaginatorFactory Paginators { get; }
+#endif
                 
         #region  AcceptInboundCrossClusterSearchConnection
 

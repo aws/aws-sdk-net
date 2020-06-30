@@ -121,6 +121,11 @@ namespace Amazon.SecretsManager
     public partial interface IAmazonSecretsManager : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISecretsManagerPaginatorFactory Paginators { get; }
+
         
         #region  CancelRotateSecret
 

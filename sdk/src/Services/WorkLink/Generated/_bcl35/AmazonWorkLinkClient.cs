@@ -46,6 +46,7 @@ namespace Amazon.WorkLink
     public partial class AmazonWorkLinkClient : AmazonServiceClient, IAmazonWorkLink
     {
         private static IServiceMetadata serviceMetadata = new AmazonWorkLinkMetadata();
+
         #region Constructors
 
         /// <summary>

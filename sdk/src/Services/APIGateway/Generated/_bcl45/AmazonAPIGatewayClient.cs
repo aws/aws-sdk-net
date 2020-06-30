@@ -49,6 +49,22 @@ namespace Amazon.APIGateway
     public partial class AmazonAPIGatewayClient : AmazonServiceClient, IAmazonAPIGateway
     {
         private static IServiceMetadata serviceMetadata = new AmazonAPIGatewayMetadata();
+        private IAPIGatewayPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAPIGatewayPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new APIGatewayPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

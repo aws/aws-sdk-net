@@ -61,6 +61,22 @@ namespace Amazon.Synthetics
     public partial class AmazonSyntheticsClient : AmazonServiceClient, IAmazonSynthetics
     {
         private static IServiceMetadata serviceMetadata = new AmazonSyntheticsMetadata();
+        private ISyntheticsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISyntheticsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SyntheticsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

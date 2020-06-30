@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert
     public partial class AmazonMediaConvertClient : AmazonServiceClient, IAmazonMediaConvert
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaConvertMetadata();
+
         #region Constructors
 
         /// <summary>

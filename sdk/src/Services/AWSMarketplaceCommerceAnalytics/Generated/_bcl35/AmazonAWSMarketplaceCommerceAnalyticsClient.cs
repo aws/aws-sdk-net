@@ -40,6 +40,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
     public partial class AmazonAWSMarketplaceCommerceAnalyticsClient : AmazonServiceClient, IAmazonAWSMarketplaceCommerceAnalytics
     {
         private static IServiceMetadata serviceMetadata = new AmazonAWSMarketplaceCommerceAnalyticsMetadata();
+
         #region Constructors
 
         /// <summary>

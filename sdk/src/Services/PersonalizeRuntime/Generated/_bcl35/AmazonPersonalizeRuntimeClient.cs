@@ -40,6 +40,7 @@ namespace Amazon.PersonalizeRuntime
     public partial class AmazonPersonalizeRuntimeClient : AmazonServiceClient, IAmazonPersonalizeRuntime
     {
         private static IServiceMetadata serviceMetadata = new AmazonPersonalizeRuntimeMetadata();
+
         #region Constructors
 
         /// <summary>

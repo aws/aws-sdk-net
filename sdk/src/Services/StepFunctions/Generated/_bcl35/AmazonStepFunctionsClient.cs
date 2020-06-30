@@ -63,6 +63,7 @@ namespace Amazon.StepFunctions
     public partial class AmazonStepFunctionsClient : AmazonServiceClient, IAmazonStepFunctions
     {
         private static IServiceMetadata serviceMetadata = new AmazonStepFunctionsMetadata();
+
         #region Constructors
 
         /// <summary>

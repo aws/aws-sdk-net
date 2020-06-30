@@ -63,6 +63,7 @@ namespace Amazon.ConfigService
     public partial class AmazonConfigServiceClient : AmazonServiceClient, IAmazonConfigService
     {
         private static IServiceMetadata serviceMetadata = new AmazonConfigServiceMetadata();
+
         #region Constructors
 
         /// <summary>

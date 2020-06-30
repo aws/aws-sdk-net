@@ -39,6 +39,9 @@ namespace Amazon.DynamoDBv2
     public partial interface IAmazonDynamoDBStreams : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  DescribeStream
 

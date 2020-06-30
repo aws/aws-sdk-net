@@ -301,6 +301,15 @@ namespace Amazon.CodeArtifact
     public partial interface IAmazonCodeArtifact : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICodeArtifactPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AssociateExternalConnection
 

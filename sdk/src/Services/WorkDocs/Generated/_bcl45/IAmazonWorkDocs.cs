@@ -72,6 +72,11 @@ namespace Amazon.WorkDocs
     public partial interface IAmazonWorkDocs : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IWorkDocsPaginatorFactory Paginators { get; }
+
         
         #region  AbortDocumentVersionUpload
 

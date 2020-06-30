@@ -53,6 +53,11 @@ namespace Amazon.ApplicationInsights
     public partial interface IAmazonApplicationInsights : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IApplicationInsightsPaginatorFactory Paginators { get; }
+
         
         #region  CreateApplication
 

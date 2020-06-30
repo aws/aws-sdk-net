@@ -464,6 +464,11 @@ namespace Amazon.CodeCommit
     public partial interface IAmazonCodeCommit : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICodeCommitPaginatorFactory Paginators { get; }
+
         
         #region  AssociateApprovalRuleTemplateWithRepository
 

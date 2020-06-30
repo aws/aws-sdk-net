@@ -58,6 +58,9 @@ namespace Amazon.EventBridge
     public partial interface IAmazonEventBridge : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  ActivateEventSource
 

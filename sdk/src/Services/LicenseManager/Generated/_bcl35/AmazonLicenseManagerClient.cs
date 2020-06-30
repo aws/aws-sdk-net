@@ -44,6 +44,7 @@ namespace Amazon.LicenseManager
     public partial class AmazonLicenseManagerClient : AmazonServiceClient, IAmazonLicenseManager
     {
         private static IServiceMetadata serviceMetadata = new AmazonLicenseManagerMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -56,6 +56,7 @@ namespace Amazon.CodeGuruProfiler
     public partial class AmazonCodeGuruProfilerClient : AmazonServiceClient, IAmazonCodeGuruProfiler
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeGuruProfilerMetadata();
+
         #region Constructors
 
         /// <summary>

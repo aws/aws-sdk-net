@@ -128,6 +128,22 @@ namespace Amazon.SecretsManager
     public partial class AmazonSecretsManagerClient : AmazonServiceClient, IAmazonSecretsManager
     {
         private static IServiceMetadata serviceMetadata = new AmazonSecretsManagerMetadata();
+        private ISecretsManagerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISecretsManagerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SecretsManagerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

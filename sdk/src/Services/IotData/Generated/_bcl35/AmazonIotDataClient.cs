@@ -62,6 +62,7 @@ namespace Amazon.IotData
     {
         private static IServiceMetadata serviceMetadata = new AmazonIotDataMetadata();
 
+
         #region Overrides
 
         

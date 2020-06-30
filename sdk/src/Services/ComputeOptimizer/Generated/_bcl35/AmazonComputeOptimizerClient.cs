@@ -50,6 +50,7 @@ namespace Amazon.ComputeOptimizer
     public partial class AmazonComputeOptimizerClient : AmazonServiceClient, IAmazonComputeOptimizer
     {
         private static IServiceMetadata serviceMetadata = new AmazonComputeOptimizerMetadata();
+
         #region Constructors
 
         /// <summary>

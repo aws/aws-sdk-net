@@ -59,6 +59,11 @@ namespace Amazon.ConfigService
     public partial interface IAmazonConfigService : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IConfigServicePaginatorFactory Paginators { get; }
+
         
         #region  BatchGetAggregateResourceConfig
 

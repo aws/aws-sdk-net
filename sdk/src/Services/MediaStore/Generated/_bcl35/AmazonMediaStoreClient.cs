@@ -41,6 +41,7 @@ namespace Amazon.MediaStore
     public partial class AmazonMediaStoreClient : AmazonServiceClient, IAmazonMediaStore
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaStoreMetadata();
+
         #region Constructors
 
         /// <summary>

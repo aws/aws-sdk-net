@@ -56,6 +56,22 @@ namespace Amazon.EKS
     public partial class AmazonEKSClient : AmazonServiceClient, IAmazonEKS
     {
         private static IServiceMetadata serviceMetadata = new AmazonEKSMetadata();
+        private IEKSPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IEKSPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new EKSPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

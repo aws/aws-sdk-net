@@ -48,6 +48,7 @@ namespace Amazon.Shield
     public partial class AmazonShieldClient : AmazonServiceClient, IAmazonShield
     {
         private static IServiceMetadata serviceMetadata = new AmazonShieldMetadata();
+
         #region Constructors
 
         /// <summary>

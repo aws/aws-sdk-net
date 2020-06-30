@@ -45,6 +45,7 @@ namespace Amazon.Amplify
     public partial class AmazonAmplifyClient : AmazonServiceClient, IAmazonAmplify
     {
         private static IServiceMetadata serviceMetadata = new AmazonAmplifyMetadata();
+
         #region Constructors
 
         /// <summary>

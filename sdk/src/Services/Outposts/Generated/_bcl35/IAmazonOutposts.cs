@@ -38,6 +38,15 @@ namespace Amazon.Outposts
     public partial interface IAmazonOutposts : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IOutpostsPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CreateOutpost
 

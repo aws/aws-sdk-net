@@ -33,9 +33,9 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     internal sealed partial class DescribeAlarmsPaginator : IPaginator<DescribeAlarmsResponse>, IDescribeAlarmsPaginator
     {
-        private readonly IAmazonCloudWatch client;
-        private readonly DescribeAlarmsRequest request;
-        private int isPaginatorInUse = 0;
+        private readonly IAmazonCloudWatch _client;
+        private readonly DescribeAlarmsRequest _request;
+        private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
@@ -56,22 +56,22 @@ namespace Amazon.CloudWatch.Model
 
         internal DescribeAlarmsPaginator(IAmazonCloudWatch client, DescribeAlarmsRequest request)
         {
-            this.client = client;
-            this.request = request;
+            this._client = client;
+            this._request = request;
         }
 #if BCL
         IEnumerable<DescribeAlarmsResponse> IPaginator<DescribeAlarmsResponse>.Paginate()
         {
-            if (Interlocked.Exchange(ref isPaginatorInUse, 1) != 0)
+            if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
-            var nextToken = request.NextToken;
+            var nextToken = _request.NextToken;
             DescribeAlarmsResponse response;
             do
             {
-                request.NextToken = nextToken;
-                response = client.DescribeAlarms(request);
+                _request.NextToken = nextToken;
+                response = _client.DescribeAlarms(_request);
                 nextToken = response.NextToken;
                 yield return response;
             }
@@ -81,16 +81,16 @@ namespace Amazon.CloudWatch.Model
 #if AWS_ASYNC_ENUMERABLES_API
         async IAsyncEnumerable<DescribeAlarmsResponse> IPaginator<DescribeAlarmsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
         {
-            if (Interlocked.Exchange(ref isPaginatorInUse, 1) != 0)
+            if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
-            var nextToken = request.NextToken;
+            var nextToken = _request.NextToken;
             DescribeAlarmsResponse response;
             do
             {
-                request.NextToken = nextToken;
-                response = await client.DescribeAlarmsAsync(request, cancellationToken).ConfigureAwait(false);
+                _request.NextToken = nextToken;
+                response = await _client.DescribeAlarmsAsync(_request, cancellationToken).ConfigureAwait(false);
                 nextToken = response.NextToken;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;

@@ -58,6 +58,12 @@ namespace Amazon.CostAndUsageReport
     /// </summary>
     public partial interface IAmazonCostAndUsageReport : IAmazonService, IDisposable
     {
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICostAndUsageReportPaginatorFactory Paginators { get; }
+#endif
                 
         #region  DeleteReportDefinition
 

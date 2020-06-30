@@ -44,6 +44,11 @@ namespace Amazon.Signer
     public partial interface IAmazonSigner : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISignerPaginatorFactory Paginators { get; }
+
         
         #region  CancelSigningProfile
 

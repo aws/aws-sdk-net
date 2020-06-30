@@ -92,6 +92,7 @@ namespace Amazon.AWSHealth
     public partial class AmazonAWSHealthClient : AmazonServiceClient, IAmazonAWSHealth
     {
         private static IServiceMetadata serviceMetadata = new AmazonAWSHealthMetadata();
+
         #region Constructors
 
         /// <summary>

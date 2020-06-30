@@ -45,6 +45,7 @@ namespace Amazon.DynamoDBv2
     public partial class AmazonDynamoDBStreamsClient : AmazonServiceClient, IAmazonDynamoDBStreams
     {
         private static IServiceMetadata serviceMetadata = new AmazonDynamoDBStreamsMetadata();
+
         #region Constructors
 
         /// <summary>

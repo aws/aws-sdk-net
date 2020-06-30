@@ -42,6 +42,7 @@ namespace Amazon.NetworkManager
     public partial class AmazonNetworkManagerClient : AmazonServiceClient, IAmazonNetworkManager
     {
         private static IServiceMetadata serviceMetadata = new AmazonNetworkManagerMetadata();
+
         #region Constructors
 
         /// <summary>

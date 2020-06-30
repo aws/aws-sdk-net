@@ -46,6 +46,22 @@ namespace Amazon.Imagebuilder
     public partial class AmazonImagebuilderClient : AmazonServiceClient, IAmazonImagebuilder
     {
         private static IServiceMetadata serviceMetadata = new AmazonImagebuilderMetadata();
+        private IImagebuilderPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IImagebuilderPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ImagebuilderPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

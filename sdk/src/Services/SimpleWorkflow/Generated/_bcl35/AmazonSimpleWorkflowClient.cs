@@ -59,6 +59,7 @@ namespace Amazon.SimpleWorkflow
     public partial class AmazonSimpleWorkflowClient : AmazonServiceClient, IAmazonSimpleWorkflow
     {
         private static IServiceMetadata serviceMetadata = new AmazonSimpleWorkflowMetadata();
+
         #region Constructors
 
         /// <summary>

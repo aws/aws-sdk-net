@@ -81,6 +81,15 @@ namespace Amazon.Chime
     public partial interface IAmazonChime : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IChimePaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AssociatePhoneNumbersWithVoiceConnector
 

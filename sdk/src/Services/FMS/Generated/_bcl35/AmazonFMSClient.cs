@@ -47,6 +47,7 @@ namespace Amazon.FMS
     public partial class AmazonFMSClient : AmazonServiceClient, IAmazonFMS
     {
         private static IServiceMetadata serviceMetadata = new AmazonFMSMetadata();
+
         #region Constructors
 
         /// <summary>

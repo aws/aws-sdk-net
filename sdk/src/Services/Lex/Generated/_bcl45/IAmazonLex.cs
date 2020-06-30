@@ -45,6 +45,7 @@ namespace Amazon.Lex
     public partial interface IAmazonLex : IAmazonService, IDisposable
     {
 
+
         
         #region  DeleteSession
 

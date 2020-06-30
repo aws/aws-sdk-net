@@ -50,6 +50,22 @@ namespace Amazon.Snowball
     public partial class AmazonSnowballClient : AmazonServiceClient, IAmazonSnowball
     {
         private static IServiceMetadata serviceMetadata = new AmazonSnowballMetadata();
+        private ISnowballPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISnowballPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SnowballPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

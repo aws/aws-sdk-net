@@ -57,6 +57,7 @@ namespace Amazon.PI
     public partial class AmazonPIClient : AmazonServiceClient, IAmazonPI
     {
         private static IServiceMetadata serviceMetadata = new AmazonPIMetadata();
+
         #region Constructors
 
         /// <summary>

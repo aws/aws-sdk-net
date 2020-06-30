@@ -56,6 +56,15 @@ namespace Amazon.DynamoDBv2
     public partial interface IAmazonDynamoDB : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IDynamoDBv2PaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  BatchGetItem
 

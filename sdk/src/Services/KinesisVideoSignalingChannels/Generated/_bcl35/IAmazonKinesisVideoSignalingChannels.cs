@@ -36,6 +36,9 @@ namespace Amazon.KinesisVideoSignalingChannels
     public partial interface IAmazonKinesisVideoSignalingChannels : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  GetIceServerConfig
 

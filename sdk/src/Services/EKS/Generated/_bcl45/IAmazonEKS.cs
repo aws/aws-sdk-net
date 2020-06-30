@@ -49,6 +49,11 @@ namespace Amazon.EKS
     public partial interface IAmazonEKS : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IEKSPaginatorFactory Paginators { get; }
+
         
         #region  CreateCluster
 

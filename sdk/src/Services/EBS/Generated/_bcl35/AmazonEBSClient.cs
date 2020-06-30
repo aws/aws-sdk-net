@@ -58,6 +58,7 @@ namespace Amazon.EBS
     public partial class AmazonEBSClient : AmazonServiceClient, IAmazonEBS
     {
         private static IServiceMetadata serviceMetadata = new AmazonEBSMetadata();
+
         #region Constructors
 
         /// <summary>

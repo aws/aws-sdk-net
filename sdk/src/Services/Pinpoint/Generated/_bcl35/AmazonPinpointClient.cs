@@ -40,6 +40,7 @@ namespace Amazon.Pinpoint
     public partial class AmazonPinpointClient : AmazonServiceClient, IAmazonPinpoint
     {
         private static IServiceMetadata serviceMetadata = new AmazonPinpointMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -41,6 +41,7 @@ namespace Amazon.MobileAnalytics
     public partial class AmazonMobileAnalyticsClient : AmazonServiceClient, IAmazonMobileAnalytics
     {
         private static IServiceMetadata serviceMetadata = new AmazonMobileAnalyticsMetadata();
+
         #region Constructors
 
         /// <summary>

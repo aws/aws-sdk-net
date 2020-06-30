@@ -55,6 +55,22 @@ namespace Amazon.AccessAnalyzer
     public partial class AmazonAccessAnalyzerClient : AmazonServiceClient, IAmazonAccessAnalyzer
     {
         private static IServiceMetadata serviceMetadata = new AmazonAccessAnalyzerMetadata();
+        private IAccessAnalyzerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAccessAnalyzerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AccessAnalyzerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

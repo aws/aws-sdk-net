@@ -43,6 +43,22 @@ namespace Amazon.MediaConnect
     public partial class AmazonMediaConnectClient : AmazonServiceClient, IAmazonMediaConnect
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaConnectMetadata();
+        private IMediaConnectPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMediaConnectPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MediaConnectPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

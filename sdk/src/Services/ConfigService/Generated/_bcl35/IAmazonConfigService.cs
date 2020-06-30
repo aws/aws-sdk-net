@@ -57,6 +57,15 @@ namespace Amazon.ConfigService
     public partial interface IAmazonConfigService : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IConfigServicePaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  BatchGetAggregateResourceConfig
 

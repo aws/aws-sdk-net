@@ -47,6 +47,22 @@ namespace Amazon.Kinesis
     public partial class AmazonKinesisClient : AmazonServiceClient, IAmazonKinesis
     {
         private static IServiceMetadata serviceMetadata = new AmazonKinesisMetadata();
+        private IKinesisPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IKinesisPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new KinesisPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

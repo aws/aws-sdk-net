@@ -49,6 +49,7 @@ namespace Amazon.CloudDirectory
     public partial class AmazonCloudDirectoryClient : AmazonServiceClient, IAmazonCloudDirectory
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloudDirectoryMetadata();
+
         #region Constructors
 
         /// <summary>

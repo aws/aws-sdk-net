@@ -129,6 +129,22 @@ namespace Amazon.CodeStarNotifications
     public partial class AmazonCodeStarNotificationsClient : AmazonServiceClient, IAmazonCodeStarNotifications
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeStarNotificationsMetadata();
+        private ICodeStarNotificationsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICodeStarNotificationsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CodeStarNotificationsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

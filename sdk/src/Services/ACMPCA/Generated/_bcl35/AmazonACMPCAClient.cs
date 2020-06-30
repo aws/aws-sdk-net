@@ -59,6 +59,7 @@ namespace Amazon.ACMPCA
     public partial class AmazonACMPCAClient : AmazonServiceClient, IAmazonACMPCA
     {
         private static IServiceMetadata serviceMetadata = new AmazonACMPCAMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -45,6 +45,7 @@ namespace Amazon.Backup
     public partial class AmazonBackupClient : AmazonServiceClient, IAmazonBackup
     {
         private static IServiceMetadata serviceMetadata = new AmazonBackupMetadata();
+
         #region Constructors
 
         /// <summary>

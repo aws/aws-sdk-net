@@ -50,6 +50,7 @@ namespace Amazon.DataSync
     public partial class AmazonDataSyncClient : AmazonServiceClient, IAmazonDataSync
     {
         private static IServiceMetadata serviceMetadata = new AmazonDataSyncMetadata();
+
         #region Constructors
 
         /// <summary>

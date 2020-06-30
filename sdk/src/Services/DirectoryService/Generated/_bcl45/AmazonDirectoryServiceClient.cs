@@ -61,6 +61,22 @@ namespace Amazon.DirectoryService
     public partial class AmazonDirectoryServiceClient : AmazonServiceClient, IAmazonDirectoryService
     {
         private static IServiceMetadata serviceMetadata = new AmazonDirectoryServiceMetadata();
+        private IDirectoryServicePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IDirectoryServicePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new DirectoryServicePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

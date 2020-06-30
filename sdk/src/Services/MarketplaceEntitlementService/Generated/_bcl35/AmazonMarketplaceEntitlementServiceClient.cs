@@ -59,6 +59,7 @@ namespace Amazon.MarketplaceEntitlementService
     public partial class AmazonMarketplaceEntitlementServiceClient : AmazonServiceClient, IAmazonMarketplaceEntitlementService
     {
         private static IServiceMetadata serviceMetadata = new AmazonMarketplaceEntitlementServiceMetadata();
+
         #region Constructors
 
         /// <summary>

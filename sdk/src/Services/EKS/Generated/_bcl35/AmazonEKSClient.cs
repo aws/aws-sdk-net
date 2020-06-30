@@ -53,6 +53,7 @@ namespace Amazon.EKS
     public partial class AmazonEKSClient : AmazonServiceClient, IAmazonEKS
     {
         private static IServiceMetadata serviceMetadata = new AmazonEKSMetadata();
+
         #region Constructors
 
         /// <summary>

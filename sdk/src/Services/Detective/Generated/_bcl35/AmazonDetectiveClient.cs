@@ -101,6 +101,7 @@ namespace Amazon.Detective
     public partial class AmazonDetectiveClient : AmazonServiceClient, IAmazonDetective
     {
         private static IServiceMetadata serviceMetadata = new AmazonDetectiveMetadata();
+
         #region Constructors
 
         /// <summary>

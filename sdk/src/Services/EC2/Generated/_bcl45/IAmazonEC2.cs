@@ -66,6 +66,11 @@ namespace Amazon.EC2
     public partial interface IAmazonEC2 : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IEC2PaginatorFactory Paginators { get; }
+
         
         #region  AcceptReservedInstancesExchangeQuote
 

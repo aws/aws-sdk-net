@@ -58,6 +58,11 @@ namespace Amazon.DynamoDBv2
     public partial interface IAmazonDynamoDB : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IDynamoDBv2PaginatorFactory Paginators { get; }
+
         
         #region  BatchGetItem
 

@@ -41,6 +41,7 @@ namespace Amazon.WorkMailMessageFlow
     public partial class AmazonWorkMailMessageFlowClient : AmazonServiceClient, IAmazonWorkMailMessageFlow
     {
         private static IServiceMetadata serviceMetadata = new AmazonWorkMailMessageFlowMetadata();
+
         #region Constructors
 
         /// <summary>

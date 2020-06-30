@@ -55,6 +55,11 @@ namespace Amazon.ACMPCA
     public partial interface IAmazonACMPCA : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IACMPCAPaginatorFactory Paginators { get; }
+
         
         #region  CreateCertificateAuthority
 

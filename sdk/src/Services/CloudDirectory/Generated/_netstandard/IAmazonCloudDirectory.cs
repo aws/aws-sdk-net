@@ -44,6 +44,12 @@ namespace Amazon.CloudDirectory
     /// </summary>
     public partial interface IAmazonCloudDirectory : IAmazonService, IDisposable
     {
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICloudDirectoryPaginatorFactory Paginators { get; }
+#endif
                 
         #region  AddFacetToObject
 

@@ -39,6 +39,11 @@ namespace Amazon.FraudDetector
     public partial interface IAmazonFraudDetector : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IFraudDetectorPaginatorFactory Paginators { get; }
+
         
         #region  BatchCreateVariable
 

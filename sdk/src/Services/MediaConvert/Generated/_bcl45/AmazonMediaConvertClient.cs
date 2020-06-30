@@ -43,6 +43,22 @@ namespace Amazon.MediaConvert
     public partial class AmazonMediaConvertClient : AmazonServiceClient, IAmazonMediaConvert
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaConvertMetadata();
+        private IMediaConvertPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMediaConvertPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MediaConvertPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

@@ -50,6 +50,7 @@ namespace Amazon.Lambda
     public partial class AmazonLambdaClient : AmazonServiceClient, IAmazonLambda
     {
         private static IServiceMetadata serviceMetadata = new AmazonLambdaMetadata();
+
         #region Constructors
 
         /// <summary>

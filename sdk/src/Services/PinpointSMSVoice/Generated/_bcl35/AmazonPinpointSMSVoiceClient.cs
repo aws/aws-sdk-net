@@ -40,6 +40,7 @@ namespace Amazon.PinpointSMSVoice
     public partial class AmazonPinpointSMSVoiceClient : AmazonServiceClient, IAmazonPinpointSMSVoice
     {
         private static IServiceMetadata serviceMetadata = new AmazonPinpointSMSVoiceMetadata();
+
         #region Constructors
 
         /// <summary>

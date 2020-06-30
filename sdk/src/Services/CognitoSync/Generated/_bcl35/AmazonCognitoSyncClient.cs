@@ -64,6 +64,7 @@ namespace Amazon.CognitoSync
     public partial class AmazonCognitoSyncClient : AmazonServiceClient, IAmazonCognitoSync
     {
         private static IServiceMetadata serviceMetadata = new AmazonCognitoSyncMetadata();
+
         #region Constructors
 
         /// <summary>

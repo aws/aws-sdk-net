@@ -43,6 +43,22 @@ namespace Amazon.DocDB
     public partial class AmazonDocDBClient : AmazonServiceClient, IAmazonDocDB
     {
         private static IServiceMetadata serviceMetadata = new AmazonDocDBMetadata();
+        private IDocDBPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IDocDBPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new DocDBPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

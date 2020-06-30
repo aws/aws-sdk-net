@@ -66,6 +66,7 @@ namespace Amazon.IoTAnalytics
     public partial class AmazonIoTAnalyticsClient : AmazonServiceClient, IAmazonIoTAnalytics
     {
         private static IServiceMetadata serviceMetadata = new AmazonIoTAnalyticsMetadata();
+
         #region Constructors
 
         /// <summary>

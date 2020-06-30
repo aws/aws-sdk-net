@@ -40,6 +40,7 @@ namespace Amazon.SageMakerRuntime
     public partial class AmazonSageMakerRuntimeClient : AmazonServiceClient, IAmazonSageMakerRuntime
     {
         private static IServiceMetadata serviceMetadata = new AmazonSageMakerRuntimeMetadata();
+
         #region Constructors
 
         /// <summary>

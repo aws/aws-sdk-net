@@ -50,6 +50,15 @@ namespace Amazon.ServerMigrationService
     public partial interface IAmazonServerMigrationService : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IServerMigrationServicePaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CreateApp
 

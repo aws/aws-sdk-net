@@ -43,6 +43,7 @@ namespace Amazon.MediaStoreData
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaStoreDataMetadata();
 
+
         #region Overrides
 
         

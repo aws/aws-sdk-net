@@ -46,6 +46,22 @@ namespace Amazon.FraudDetector
     public partial class AmazonFraudDetectorClient : AmazonServiceClient, IAmazonFraudDetector
     {
         private static IServiceMetadata serviceMetadata = new AmazonFraudDetectorMetadata();
+        private IFraudDetectorPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IFraudDetectorPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new FraudDetectorPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

@@ -30,6 +30,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<FilterLogEventsResponse> Responses { get; }
+
         /// <summary>
         /// Enumerable containing all of the Events
         /// </summary>
@@ -39,7 +40,6 @@ namespace Amazon.CloudWatchLogs.Model
         /// Enumerable containing all of the SearchedLogStreams
         /// </summary>
         IPaginatedEnumerable<SearchedLogStream> SearchedLogStreams { get; }
-
     }
 }
 #endif

@@ -66,6 +66,22 @@ namespace Amazon.ElasticBeanstalk
     public partial class AmazonElasticBeanstalkClient : AmazonServiceClient, IAmazonElasticBeanstalk
     {
         private static IServiceMetadata serviceMetadata = new AmazonElasticBeanstalkMetadata();
+        private IElasticBeanstalkPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IElasticBeanstalkPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ElasticBeanstalkPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

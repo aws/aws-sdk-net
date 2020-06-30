@@ -33,14 +33,15 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     internal sealed partial class GetLogEventsPaginator : IPaginator<GetLogEventsResponse>, IGetLogEventsPaginator
     {
-        private readonly IAmazonCloudWatchLogs client;
-        private readonly GetLogEventsRequest request;
-        private int isPaginatorInUse = 0;
+        private readonly IAmazonCloudWatchLogs _client;
+        private readonly GetLogEventsRequest _request;
+        private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
         public IPaginatedEnumerable<GetLogEventsResponse> Responses => new PaginatedResponse<GetLogEventsResponse>(this);
+
         /// <summary>
         /// Enumerable containing all of the Events
         /// </summary>
@@ -49,22 +50,22 @@ namespace Amazon.CloudWatchLogs.Model
 
         internal GetLogEventsPaginator(IAmazonCloudWatchLogs client, GetLogEventsRequest request)
         {
-            this.client = client;
-            this.request = request;
+            this._client = client;
+            this._request = request;
         }
 #if BCL
         IEnumerable<GetLogEventsResponse> IPaginator<GetLogEventsResponse>.Paginate()
         {
-            if (Interlocked.Exchange(ref isPaginatorInUse, 1) != 0)
+            if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
-                throw new InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
+                throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
-            var nextToken = request.NextToken;
+            var nextToken = _request.NextToken;
             GetLogEventsResponse response;
             do
             {
-                request.NextToken = nextToken;
-                response = client.GetLogEvents(request);
+                _request.NextToken = nextToken;
+                response = _client.GetLogEvents(_request);
                 nextToken = response.NextForwardToken;
                 yield return response;
             }
@@ -74,16 +75,16 @@ namespace Amazon.CloudWatchLogs.Model
 #if AWS_ASYNC_ENUMERABLES_API
         async IAsyncEnumerable<GetLogEventsResponse> IPaginator<GetLogEventsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
         {
-            if (Interlocked.Exchange(ref isPaginatorInUse, 1) != 0)
+            if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
-                throw new InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
+                throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
-            var nextToken = request.NextToken;
+            var nextToken = _request.NextToken;
             GetLogEventsResponse response;
             do
             {
-                request.NextToken = nextToken;
-                response = await client.GetLogEventsAsync(request).ConfigureAwait(false);
+                _request.NextToken = nextToken;
+                response = await _client.GetLogEventsAsync(_request, cancellationToken).ConfigureAwait(false);
                 nextToken = response.NextForwardToken;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;

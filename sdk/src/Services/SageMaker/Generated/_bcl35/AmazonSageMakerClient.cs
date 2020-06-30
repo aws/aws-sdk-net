@@ -56,6 +56,7 @@ namespace Amazon.SageMaker
     public partial class AmazonSageMakerClient : AmazonServiceClient, IAmazonSageMaker
     {
         private static IServiceMetadata serviceMetadata = new AmazonSageMakerMetadata();
+
         #region Constructors
 
         /// <summary>

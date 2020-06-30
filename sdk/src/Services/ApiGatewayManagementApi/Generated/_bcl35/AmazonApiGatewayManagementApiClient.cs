@@ -44,6 +44,7 @@ namespace Amazon.ApiGatewayManagementApi
     public partial class AmazonApiGatewayManagementApiClient : AmazonServiceClient, IAmazonApiGatewayManagementApi
     {
         private static IServiceMetadata serviceMetadata = new AmazonApiGatewayManagementApiMetadata();
+
         #region Constructors
 
         /// <summary>

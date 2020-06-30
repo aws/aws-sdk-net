@@ -37,6 +37,7 @@ namespace Amazon.MobileAnalytics
     public partial interface IAmazonMobileAnalytics : IAmazonService, IDisposable
     {
 
+
         
         #region  PutEvents
 

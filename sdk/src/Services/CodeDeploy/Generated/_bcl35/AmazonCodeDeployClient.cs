@@ -143,6 +143,7 @@ namespace Amazon.CodeDeploy
     public partial class AmazonCodeDeployClient : AmazonServiceClient, IAmazonCodeDeploy
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeDeployMetadata();
+
         #region Constructors
 
         /// <summary>

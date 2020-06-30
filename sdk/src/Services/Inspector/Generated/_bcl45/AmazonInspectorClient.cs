@@ -48,6 +48,22 @@ namespace Amazon.Inspector
     public partial class AmazonInspectorClient : AmazonServiceClient, IAmazonInspector
     {
         private static IServiceMetadata serviceMetadata = new AmazonInspectorMetadata();
+        private IInspectorPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IInspectorPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new InspectorPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

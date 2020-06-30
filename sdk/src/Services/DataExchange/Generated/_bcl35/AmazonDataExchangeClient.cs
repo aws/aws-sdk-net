@@ -66,6 +66,7 @@ namespace Amazon.DataExchange
     public partial class AmazonDataExchangeClient : AmazonServiceClient, IAmazonDataExchange
     {
         private static IServiceMetadata serviceMetadata = new AmazonDataExchangeMetadata();
+
         #region Constructors
 
         /// <summary>

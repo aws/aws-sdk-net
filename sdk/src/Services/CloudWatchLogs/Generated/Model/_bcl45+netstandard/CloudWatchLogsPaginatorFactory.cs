@@ -35,6 +35,7 @@ namespace Amazon.CloudWatchLogs.Model
         {
             this.client = client;
         }
+
         /// <summary>
         /// Paginator for DescribeDestinations operation
         ///</summary>
@@ -42,6 +43,7 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return new DescribeDestinationsPaginator(this.client, request);
         }
+
         /// <summary>
         /// Paginator for DescribeLogGroups operation
         ///</summary>
@@ -49,6 +51,7 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return new DescribeLogGroupsPaginator(this.client, request);
         }
+
         /// <summary>
         /// Paginator for DescribeLogStreams operation
         ///</summary>
@@ -56,6 +59,7 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return new DescribeLogStreamsPaginator(this.client, request);
         }
+
         /// <summary>
         /// Paginator for DescribeMetricFilters operation
         ///</summary>
@@ -63,6 +67,7 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return new DescribeMetricFiltersPaginator(this.client, request);
         }
+
         /// <summary>
         /// Paginator for DescribeSubscriptionFilters operation
         ///</summary>
@@ -70,6 +75,7 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return new DescribeSubscriptionFiltersPaginator(this.client, request);
         }
+
         /// <summary>
         /// Paginator for FilterLogEvents operation
         ///</summary>
@@ -77,6 +83,7 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return new FilterLogEventsPaginator(this.client, request);
         }
+
         /// <summary>
         /// Paginator for GetLogEvents operation
         ///</summary>

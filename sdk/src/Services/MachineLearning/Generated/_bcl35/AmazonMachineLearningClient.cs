@@ -40,6 +40,7 @@ namespace Amazon.MachineLearning
     public partial class AmazonMachineLearningClient : AmazonServiceClient, IAmazonMachineLearning
     {
         private static IServiceMetadata serviceMetadata = new AmazonMachineLearningMetadata();
+
         #region Constructors
 
         /// <summary>

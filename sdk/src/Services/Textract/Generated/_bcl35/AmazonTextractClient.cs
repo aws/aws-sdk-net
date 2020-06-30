@@ -41,6 +41,7 @@ namespace Amazon.Textract
     public partial class AmazonTextractClient : AmazonServiceClient, IAmazonTextract
     {
         private static IServiceMetadata serviceMetadata = new AmazonTextractMetadata();
+
         #region Constructors
 
         /// <summary>

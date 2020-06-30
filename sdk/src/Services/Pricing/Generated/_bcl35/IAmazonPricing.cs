@@ -69,6 +69,9 @@ namespace Amazon.Pricing
     public partial interface IAmazonPricing : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  DescribeServices
 

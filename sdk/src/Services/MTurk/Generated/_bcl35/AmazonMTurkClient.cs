@@ -40,6 +40,7 @@ namespace Amazon.MTurk
     public partial class AmazonMTurkClient : AmazonServiceClient, IAmazonMTurk
     {
         private static IServiceMetadata serviceMetadata = new AmazonMTurkMetadata();
+
         #region Constructors
 
         /// <summary>

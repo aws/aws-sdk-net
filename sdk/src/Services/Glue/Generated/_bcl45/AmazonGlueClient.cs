@@ -46,6 +46,22 @@ namespace Amazon.Glue
     public partial class AmazonGlueClient : AmazonServiceClient, IAmazonGlue
     {
         private static IServiceMetadata serviceMetadata = new AmazonGlueMetadata();
+        private IGluePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IGluePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new GluePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

@@ -41,6 +41,7 @@ namespace Amazon.AppSync
     public partial class AmazonAppSyncClient : AmazonServiceClient, IAmazonAppSync
     {
         private static IServiceMetadata serviceMetadata = new AmazonAppSyncMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -310,6 +310,22 @@ namespace Amazon.CodeArtifact
     public partial class AmazonCodeArtifactClient : AmazonServiceClient, IAmazonCodeArtifact
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeArtifactMetadata();
+        private ICodeArtifactPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICodeArtifactPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CodeArtifactPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

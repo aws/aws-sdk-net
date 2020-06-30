@@ -34,6 +34,9 @@ namespace Amazon.ApiGatewayV2
     public partial interface IAmazonApiGatewayV2 : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  CreateApi
 

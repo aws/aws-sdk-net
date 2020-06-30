@@ -46,6 +46,12 @@ namespace Amazon.ConnectParticipant
     /// </summary>
     public partial interface IAmazonConnectParticipant : IAmazonService, IDisposable
     {
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IConnectParticipantPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateParticipantConnection
 

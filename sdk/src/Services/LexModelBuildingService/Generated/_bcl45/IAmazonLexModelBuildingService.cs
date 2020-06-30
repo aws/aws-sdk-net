@@ -41,6 +41,11 @@ namespace Amazon.LexModelBuildingService
     public partial interface IAmazonLexModelBuildingService : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ILexModelBuildingServicePaginatorFactory Paginators { get; }
+
         
         #region  CreateBotVersion
 

@@ -108,6 +108,7 @@ namespace Amazon.SQS
     public partial class AmazonSQSClient : AmazonServiceClient, IAmazonSQS
     {
         private static IServiceMetadata serviceMetadata = new AmazonSQSMetadata();
+
         #region Constructors
 
         /// <summary>

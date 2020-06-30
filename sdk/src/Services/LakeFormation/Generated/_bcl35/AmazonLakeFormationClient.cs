@@ -43,6 +43,7 @@ namespace Amazon.LakeFormation
     public partial class AmazonLakeFormationClient : AmazonServiceClient, IAmazonLakeFormation
     {
         private static IServiceMetadata serviceMetadata = new AmazonLakeFormationMetadata();
+
         #region Constructors
 
         /// <summary>

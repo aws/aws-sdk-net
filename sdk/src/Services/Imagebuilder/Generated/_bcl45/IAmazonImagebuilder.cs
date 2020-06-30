@@ -39,6 +39,11 @@ namespace Amazon.Imagebuilder
     public partial interface IAmazonImagebuilder : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IImagebuilderPaginatorFactory Paginators { get; }
+
         
         #region  CancelImageCreation
 

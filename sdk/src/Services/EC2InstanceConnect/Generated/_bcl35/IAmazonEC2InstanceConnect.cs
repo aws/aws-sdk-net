@@ -36,6 +36,9 @@ namespace Amazon.EC2InstanceConnect
     public partial interface IAmazonEC2InstanceConnect : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  SendSSHPublicKey
 

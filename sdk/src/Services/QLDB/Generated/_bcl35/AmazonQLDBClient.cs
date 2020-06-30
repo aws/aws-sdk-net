@@ -40,6 +40,7 @@ namespace Amazon.QLDB
     public partial class AmazonQLDBClient : AmazonServiceClient, IAmazonQLDB
     {
         private static IServiceMetadata serviceMetadata = new AmazonQLDBMetadata();
+
         #region Constructors
 
         /// <summary>

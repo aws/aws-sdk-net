@@ -64,6 +64,7 @@ namespace Amazon.CloudWatchEvents
     public partial class AmazonCloudWatchEventsClient : AmazonServiceClient, IAmazonCloudWatchEvents
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloudWatchEventsMetadata();
+
         #region Constructors
 
         /// <summary>

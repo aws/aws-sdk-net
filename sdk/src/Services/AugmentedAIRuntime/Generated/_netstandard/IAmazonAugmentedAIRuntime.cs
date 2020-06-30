@@ -79,6 +79,12 @@ namespace Amazon.AugmentedAIRuntime
     /// </summary>
     public partial interface IAmazonAugmentedAIRuntime : IAmazonService, IDisposable
     {
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IAugmentedAIRuntimePaginatorFactory Paginators { get; }
+#endif
                 
         #region  DeleteHumanLoop
 

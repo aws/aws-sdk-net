@@ -139,6 +139,11 @@ namespace Amazon.CodeDeploy
     public partial interface IAmazonCodeDeploy : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICodeDeployPaginatorFactory Paginators { get; }
+
         
         #region  AddTagsToOnPremisesInstances
 

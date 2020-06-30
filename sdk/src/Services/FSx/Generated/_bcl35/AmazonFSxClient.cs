@@ -41,6 +41,7 @@ namespace Amazon.FSx
     public partial class AmazonFSxClient : AmazonServiceClient, IAmazonFSx
     {
         private static IServiceMetadata serviceMetadata = new AmazonFSxMetadata();
+
         #region Constructors
 
         /// <summary>

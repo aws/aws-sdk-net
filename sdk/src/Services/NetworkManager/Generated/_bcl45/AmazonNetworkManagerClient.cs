@@ -45,6 +45,22 @@ namespace Amazon.NetworkManager
     public partial class AmazonNetworkManagerClient : AmazonServiceClient, IAmazonNetworkManager
     {
         private static IServiceMetadata serviceMetadata = new AmazonNetworkManagerMetadata();
+        private INetworkManagerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public INetworkManagerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new NetworkManagerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

@@ -37,6 +37,15 @@ namespace Amazon.ElasticMapReduce
     public partial interface IAmazonElasticMapReduce : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IElasticMapReducePaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AddInstanceFleet
 

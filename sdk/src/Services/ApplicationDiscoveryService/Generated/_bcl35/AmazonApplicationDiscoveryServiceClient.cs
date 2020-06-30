@@ -159,6 +159,7 @@ namespace Amazon.ApplicationDiscoveryService
     public partial class AmazonApplicationDiscoveryServiceClient : AmazonServiceClient, IAmazonApplicationDiscoveryService
     {
         private static IServiceMetadata serviceMetadata = new AmazonApplicationDiscoveryServiceMetadata();
+
         #region Constructors
 
         /// <summary>

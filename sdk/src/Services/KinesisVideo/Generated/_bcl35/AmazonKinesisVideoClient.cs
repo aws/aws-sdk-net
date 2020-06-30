@@ -40,6 +40,7 @@ namespace Amazon.KinesisVideo
     public partial class AmazonKinesisVideoClient : AmazonServiceClient, IAmazonKinesisVideo
     {
         private static IServiceMetadata serviceMetadata = new AmazonKinesisVideoMetadata();
+
         #region Constructors
 
         /// <summary>

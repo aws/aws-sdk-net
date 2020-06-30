@@ -40,6 +40,7 @@ namespace Amazon.Kafka
     public partial class AmazonKafkaClient : AmazonServiceClient, IAmazonKafka
     {
         private static IServiceMetadata serviceMetadata = new AmazonKafkaMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -52,6 +52,22 @@ namespace Amazon.MigrationHub
     public partial class AmazonMigrationHubClient : AmazonServiceClient, IAmazonMigrationHub
     {
         private static IServiceMetadata serviceMetadata = new AmazonMigrationHubMetadata();
+        private IMigrationHubPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMigrationHubPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MigrationHubPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

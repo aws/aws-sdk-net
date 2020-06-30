@@ -43,6 +43,11 @@ namespace Amazon.Polly
     public partial interface IAmazonPolly : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IPollyPaginatorFactory Paginators { get; }
+
         
         #region  DeleteLexicon
 

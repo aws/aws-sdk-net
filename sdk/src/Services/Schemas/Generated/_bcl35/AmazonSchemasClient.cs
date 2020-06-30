@@ -40,6 +40,7 @@ namespace Amazon.Schemas
     public partial class AmazonSchemasClient : AmazonServiceClient, IAmazonSchemas
     {
         private static IServiceMetadata serviceMetadata = new AmazonSchemasMetadata();
+
         #region Constructors
 
         /// <summary>

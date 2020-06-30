@@ -34,6 +34,9 @@ namespace Amazon.MachineLearning
     public partial interface IAmazonMachineLearning : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  AddTags
 

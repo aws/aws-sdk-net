@@ -43,6 +43,11 @@ namespace Amazon.Snowball
     public partial interface IAmazonSnowball : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISnowballPaginatorFactory Paginators { get; }
+
         
         #region  CancelCluster
 

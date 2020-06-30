@@ -63,6 +63,7 @@ namespace Amazon.ElasticBeanstalk
     public partial class AmazonElasticBeanstalkClient : AmazonServiceClient, IAmazonElasticBeanstalk
     {
         private static IServiceMetadata serviceMetadata = new AmazonElasticBeanstalkMetadata();
+
         #region Constructors
 
         /// <summary>

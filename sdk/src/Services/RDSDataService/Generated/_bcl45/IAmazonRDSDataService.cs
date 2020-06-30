@@ -51,6 +51,7 @@ namespace Amazon.RDSDataService
     public partial interface IAmazonRDSDataService : IAmazonService, IDisposable
     {
 
+
         
         #region  BatchExecuteStatement
 

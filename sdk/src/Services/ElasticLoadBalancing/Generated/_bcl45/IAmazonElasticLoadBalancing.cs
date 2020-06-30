@@ -68,6 +68,11 @@ namespace Amazon.ElasticLoadBalancing
     public partial interface IAmazonElasticLoadBalancing : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IElasticLoadBalancingPaginatorFactory Paginators { get; }
+
         
         #region  AddTags
 

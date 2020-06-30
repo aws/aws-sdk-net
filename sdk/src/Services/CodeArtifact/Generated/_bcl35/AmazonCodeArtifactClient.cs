@@ -307,6 +307,7 @@ namespace Amazon.CodeArtifact
     public partial class AmazonCodeArtifactClient : AmazonServiceClient, IAmazonCodeArtifact
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeArtifactMetadata();
+
         #region Constructors
 
         /// <summary>

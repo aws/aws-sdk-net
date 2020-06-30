@@ -52,6 +52,11 @@ namespace Amazon.Connect
     public partial interface IAmazonConnect : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IConnectPaginatorFactory Paginators { get; }
+
         
         #region  CreateUser
 

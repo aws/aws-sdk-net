@@ -34,6 +34,15 @@ namespace Amazon.S3Control
     public partial interface IAmazonS3Control : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IS3ControlPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CreateAccessPoint
 

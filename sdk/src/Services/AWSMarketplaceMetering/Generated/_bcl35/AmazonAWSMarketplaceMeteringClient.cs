@@ -101,6 +101,7 @@ namespace Amazon.AWSMarketplaceMetering
     public partial class AmazonAWSMarketplaceMeteringClient : AmazonServiceClient, IAmazonAWSMarketplaceMetering
     {
         private static IServiceMetadata serviceMetadata = new AmazonAWSMarketplaceMeteringMetadata();
+
         #region Constructors
 
         /// <summary>

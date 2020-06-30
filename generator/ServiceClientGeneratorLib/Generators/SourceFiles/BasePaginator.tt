@@ -15,6 +15,7 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
+ 
 namespace <#=this.Config.Namespace#>.Model
 {
     /// <summary>
@@ -22,9 +23,9 @@ namespace <#=this.Config.Namespace#>.Model
     /// </summary>
     internal sealed partial class <#=this.Operation.Name#>Paginator : IPaginator<<#=this.Operation.Name#>Response>, I<#=this.Operation.Name#>Paginator
     {
-        private readonly IAmazon<#=this.Config.ClassName#> client;
-        private readonly <#=this.Operation.Name#>Request request;
-        private int isPaginatorInUse = 0;
+        private readonly IAmazon<#=this.Config.ClassName#> _client;
+        private readonly <#=this.Operation.Name#>Request _request;
+        private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
@@ -46,13 +47,13 @@ foreach(var resultKey in this.Operation.Paginators.ResultKeys.Where(r => r.ListI
 
         internal <#=this.Operation.Name#>Paginator(IAmazon<#=this.Config.ClassName#> client, <#=this.Operation.Name#>Request request)
         {
-            this.client = client;
-            this.request = request;
+            this._client = client;
+            this._request = request;
         }
 #if BCL
         IEnumerable<<#=this.Operation.Name#>Response> IPaginator<<#=this.Operation.Name#>Response>.Paginate()
         {
-            if (Interlocked.Exchange(ref isPaginatorInUse, 1) != 0)
+            if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
@@ -60,7 +61,7 @@ foreach(var resultKey in this.Operation.Paginators.ResultKeys.Where(r => r.ListI
 foreach(var inputToken in this.Operation.Paginators.InputTokens)
 {
 #>
-            var <#=inputToken.Member.ArgumentName#> = request.<#=inputToken.PropertyName#>;
+            var <#=inputToken.Member.ArgumentName#> = _request.<#=inputToken.PropertyName#>;
 <#
 }
 #>
@@ -71,11 +72,11 @@ foreach(var inputToken in this.Operation.Paginators.InputTokens)
 foreach(var inputToken in this.Operation.Paginators.InputTokens)
 {
 #>
-                request.<#=inputToken.PropertyName#> = <#=inputToken.Member.ArgumentName#>;
+                _request.<#=inputToken.PropertyName#> = <#=inputToken.Member.ArgumentName#>;
 <#
 }
 #>
-                response = client.<#=this.Operation.Name#>(request);
+                response = _client.<#=this.Operation.Name#>(_request);
 <#
 for(var i = 0; i < this.Operation.Paginators.InputTokens.Count; i++)
 {
@@ -111,7 +112,7 @@ else
 #if AWS_ASYNC_ENUMERABLES_API
         async IAsyncEnumerable<<#=this.Operation.Name#>Response> IPaginator<<#=this.Operation.Name#>Response>.PaginateAsync(CancellationToken cancellationToken = default)
         {
-            if (Interlocked.Exchange(ref isPaginatorInUse, 1) != 0)
+            if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
@@ -119,7 +120,7 @@ else
 foreach(var inputToken in this.Operation.Paginators.InputTokens)
 {
 #>
-            var <#=inputToken.Member.ArgumentName#> = request.<#=inputToken.PropertyName#>;
+            var <#=inputToken.Member.ArgumentName#> = _request.<#=inputToken.PropertyName#>;
 <#
 }
 #>
@@ -130,11 +131,11 @@ foreach(var inputToken in this.Operation.Paginators.InputTokens)
 foreach(var inputToken in this.Operation.Paginators.InputTokens)
 {
 #>
-                request.<#=inputToken.PropertyName#> = <#=inputToken.Member.ArgumentName#>;
+                _request.<#=inputToken.PropertyName#> = <#=inputToken.Member.ArgumentName#>;
 <#
 }
 #>
-                response = await client.<#=this.Operation.Name#>Async(request, cancellationToken).ConfigureAwait(false);
+                response = await _client.<#=this.Operation.Name#>Async(_request, cancellationToken).ConfigureAwait(false);
 <#
 for(var i = 0; i < this.Operation.Paginators.InputTokens.Count; i++)
 {

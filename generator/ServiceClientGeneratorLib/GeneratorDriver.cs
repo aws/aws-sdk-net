@@ -202,8 +202,8 @@ namespace ServiceClientGenerator
                 {
                     GeneratePaginator(operation);
                 }
-                ExecuteGenerator(new ServicePaginatorFactoryInterface(), "I" + Configuration.ServiceNameRoot + "PaginatorFactory.cs", PaginatorsSubFolder);
-                ExecuteGenerator(new ServicePaginatorFactory(), Configuration.ServiceNameRoot + "PaginatorFactory.cs", PaginatorsSubFolder);
+                ExecuteGenerator(new ServicePaginatorFactoryInterface(), $"I{Configuration.ServiceNameRoot}PaginatorFactory.cs", PaginatorsSubFolder);
+                ExecuteGenerator(new ServicePaginatorFactory(), $"{Configuration.ServiceNameRoot}PaginatorFactory.cs", PaginatorsSubFolder);
 
                 GeneratePaginatorTests();
             }
@@ -518,12 +518,14 @@ namespace ServiceClientGenerator
                 // Generate operation paginator
                 BasePaginator paginatorGenerator = new BasePaginator();
                 paginatorGenerator.Operation = operation;
-                this.ExecuteGenerator(paginatorGenerator, operation.Name + "Paginator.cs", PaginatorsSubFolder);
+                this.ExecuteGenerator(paginatorGenerator, $"{operation.Name}Paginator.cs", PaginatorsSubFolder);
+
 
                 // Generate operation paginator interface
                 BasePaginatorInterface paginatorInterfaceGenerator = new BasePaginatorInterface();
                 paginatorInterfaceGenerator.Operation = operation;
-                this.ExecuteGenerator(paginatorInterfaceGenerator, "I" + operation.Name + "Paginator.cs", PaginatorsSubFolder);
+                this.ExecuteGenerator(paginatorInterfaceGenerator, $"I{operation.Name}Paginator.cs", PaginatorsSubFolder);
+
             }
             
         }

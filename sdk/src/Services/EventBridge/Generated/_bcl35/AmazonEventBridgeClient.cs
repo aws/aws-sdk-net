@@ -64,6 +64,7 @@ namespace Amazon.EventBridge
     public partial class AmazonEventBridgeClient : AmazonServiceClient, IAmazonEventBridge
     {
         private static IServiceMetadata serviceMetadata = new AmazonEventBridgeMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -60,6 +60,7 @@ namespace Amazon.SSOOIDC
     public partial interface IAmazonSSOOIDC : IAmazonService, IDisposable
     {
 
+
         
         #region  CreateToken
 

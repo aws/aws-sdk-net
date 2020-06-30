@@ -36,6 +36,11 @@ namespace Amazon.Route53
     public partial interface IAmazonRoute53 : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IRoute53PaginatorFactory Paginators { get; }
+
         
         #region  AssociateVPCWithHostedZone
 

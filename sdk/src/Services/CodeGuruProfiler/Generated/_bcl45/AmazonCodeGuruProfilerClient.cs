@@ -59,6 +59,22 @@ namespace Amazon.CodeGuruProfiler
     public partial class AmazonCodeGuruProfilerClient : AmazonServiceClient, IAmazonCodeGuruProfiler
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeGuruProfilerMetadata();
+        private ICodeGuruProfilerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICodeGuruProfilerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CodeGuruProfilerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

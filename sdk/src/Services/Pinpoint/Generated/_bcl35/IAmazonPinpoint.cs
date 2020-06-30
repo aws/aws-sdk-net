@@ -34,6 +34,9 @@ namespace Amazon.Pinpoint
     public partial interface IAmazonPinpoint : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  CreateApp
 

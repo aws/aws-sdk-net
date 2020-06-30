@@ -72,6 +72,7 @@ namespace Amazon.ElasticLoadBalancing
     public partial class AmazonElasticLoadBalancingClient : AmazonServiceClient, IAmazonElasticLoadBalancing
     {
         private static IServiceMetadata serviceMetadata = new AmazonElasticLoadBalancingMetadata();
+
         #region Constructors
 
         /// <summary>

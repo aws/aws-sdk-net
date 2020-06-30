@@ -39,6 +39,11 @@ namespace Amazon.Glue
     public partial interface IAmazonGlue : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IGluePaginatorFactory Paginators { get; }
+
         
         #region  BatchCreatePartition
 

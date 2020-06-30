@@ -56,6 +56,22 @@ namespace Amazon.SimpleEmail
     public partial class AmazonSimpleEmailServiceClient : AmazonServiceClient, IAmazonSimpleEmailService
     {
         private static IServiceMetadata serviceMetadata = new AmazonSimpleEmailServiceMetadata();
+        private ISimpleEmailPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISimpleEmailPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SimpleEmailPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

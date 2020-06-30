@@ -35,6 +35,9 @@ namespace Amazon.ComprehendMedical
     public partial interface IAmazonComprehendMedical : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  DescribeEntitiesDetectionV2Job
 

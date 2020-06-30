@@ -43,6 +43,7 @@ namespace Amazon.ElasticMapReduce
     public partial class AmazonElasticMapReduceClient : AmazonServiceClient, IAmazonElasticMapReduce
     {
         private static IServiceMetadata serviceMetadata = new AmazonElasticMapReduceMetadata();
+
         #region Constructors
 
         /// <summary>

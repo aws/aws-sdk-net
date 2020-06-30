@@ -25,30 +25,37 @@ namespace Amazon.CloudWatchLogs.Model
     ///</summary>
     public interface ICloudWatchLogsPaginatorFactory
     {
+
         /// <summary>
         /// Paginator for DescribeDestinations operation
         ///</summary>
         IDescribeDestinationsPaginator DescribeDestinations(DescribeDestinationsRequest request);
+
         /// <summary>
         /// Paginator for DescribeLogGroups operation
         ///</summary>
         IDescribeLogGroupsPaginator DescribeLogGroups(DescribeLogGroupsRequest request);
+
         /// <summary>
         /// Paginator for DescribeLogStreams operation
         ///</summary>
         IDescribeLogStreamsPaginator DescribeLogStreams(DescribeLogStreamsRequest request);
+
         /// <summary>
         /// Paginator for DescribeMetricFilters operation
         ///</summary>
         IDescribeMetricFiltersPaginator DescribeMetricFilters(DescribeMetricFiltersRequest request);
+
         /// <summary>
         /// Paginator for DescribeSubscriptionFilters operation
         ///</summary>
         IDescribeSubscriptionFiltersPaginator DescribeSubscriptionFilters(DescribeSubscriptionFiltersRequest request);
+
         /// <summary>
         /// Paginator for FilterLogEvents operation
         ///</summary>
         IFilterLogEventsPaginator FilterLogEvents(FilterLogEventsRequest request);
+
         /// <summary>
         /// Paginator for GetLogEvents operation
         ///</summary>

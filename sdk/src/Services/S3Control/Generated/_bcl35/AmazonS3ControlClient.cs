@@ -40,6 +40,7 @@ namespace Amazon.S3Control
     public partial class AmazonS3ControlClient : AmazonServiceClient, IAmazonS3Control
     {
         private static IServiceMetadata serviceMetadata = new AmazonS3ControlMetadata();
+
         #region Constructors
 
         /// <summary>

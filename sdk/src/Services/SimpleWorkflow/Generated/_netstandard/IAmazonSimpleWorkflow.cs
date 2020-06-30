@@ -54,6 +54,12 @@ namespace Amazon.SimpleWorkflow
     /// </summary>
     public partial interface IAmazonSimpleWorkflow : IAmazonService, IDisposable
     {
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISimpleWorkflowPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CountClosedWorkflowExecutions
 

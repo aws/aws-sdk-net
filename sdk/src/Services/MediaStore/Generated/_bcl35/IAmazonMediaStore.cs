@@ -35,6 +35,15 @@ namespace Amazon.MediaStore
     public partial interface IAmazonMediaStore : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMediaStorePaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CreateContainer
 

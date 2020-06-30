@@ -69,6 +69,7 @@ namespace Amazon.MigrationHubConfig
     public partial class AmazonMigrationHubConfigClient : AmazonServiceClient, IAmazonMigrationHubConfig
     {
         private static IServiceMetadata serviceMetadata = new AmazonMigrationHubConfigMetadata();
+
         #region Constructors
 
         /// <summary>

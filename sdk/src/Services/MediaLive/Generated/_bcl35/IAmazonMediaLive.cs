@@ -34,6 +34,15 @@ namespace Amazon.MediaLive
     public partial interface IAmazonMediaLive : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMediaLivePaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  BatchUpdateSchedule
 

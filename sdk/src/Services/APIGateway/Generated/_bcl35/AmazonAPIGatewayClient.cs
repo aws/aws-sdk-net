@@ -46,6 +46,7 @@ namespace Amazon.APIGateway
     public partial class AmazonAPIGatewayClient : AmazonServiceClient, IAmazonAPIGateway
     {
         private static IServiceMetadata serviceMetadata = new AmazonAPIGatewayMetadata();
+
         #region Constructors
 
         /// <summary>

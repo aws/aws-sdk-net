@@ -86,6 +86,15 @@ namespace Amazon.AWSHealth
     public partial interface IAmazonAWSHealth : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IAWSHealthPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  DescribeAffectedAccountsForOrganization
 

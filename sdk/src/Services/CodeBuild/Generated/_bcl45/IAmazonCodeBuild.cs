@@ -217,6 +217,11 @@ namespace Amazon.CodeBuild
     public partial interface IAmazonCodeBuild : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICodeBuildPaginatorFactory Paginators { get; }
+
         
         #region  BatchDeleteBuilds
 

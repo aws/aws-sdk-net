@@ -63,6 +63,7 @@ namespace Amazon.DeviceFarm
     public partial class AmazonDeviceFarmClient : AmazonServiceClient, IAmazonDeviceFarm
     {
         private static IServiceMetadata serviceMetadata = new AmazonDeviceFarmMetadata();
+
         #region Constructors
 
         /// <summary>
