@@ -50,12 +50,12 @@ namespace Amazon.EC2.Model
     ///  <code>domain-name</code> - If you're using AmazonProvidedDNS in <code>us-east-1</code>,
     /// specify <code>ec2.internal</code>. If you're using AmazonProvidedDNS in another Region,
     /// specify <code>region.compute.internal</code> (for example, <code>ap-northeast-1.compute.internal</code>).
-    /// Otherwise, specify a domain name (for example, <code>MyCompany.com</code>). This value
-    /// is used to complete unqualified DNS hostnames. <b>Important</b>: Some Linux operating
-    /// systems accept multiple domain names separated by spaces. However, Windows and other
-    /// Linux operating systems treat the value as a single domain, which results in unexpected
-    /// behavior. If your DHCP options set is associated with a VPC that has instances with
-    /// multiple operating systems, specify only one domain name.
+    /// Otherwise, specify a domain name (for example, <code>ExampleCompany.com</code>). This
+    /// value is used to complete unqualified DNS hostnames. <b>Important</b>: Some Linux
+    /// operating systems accept multiple domain names separated by spaces. However, Windows
+    /// and other Linux operating systems treat the value as a single domain, which results
+    /// in unexpected behavior. If your DHCP options set is associated with a VPC that has
+    /// instances with multiple operating systems, specify only one domain name.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -86,6 +86,7 @@ namespace Amazon.EC2.Model
     public partial class CreateDhcpOptionsRequest : AmazonEC2Request
     {
         private List<DhcpConfiguration> _dhcpConfigurations = new List<DhcpConfiguration>();
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -118,6 +119,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDhcpConfigurations()
         {
             return this._dhcpConfigurations != null && this._dhcpConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to assign to the DHCP option.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
     }

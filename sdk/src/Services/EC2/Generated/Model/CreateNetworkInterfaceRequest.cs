@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         private List<PrivateIpAddressSpecification> _privateIpAddresses = new List<PrivateIpAddressSpecification>();
         private int? _secondaryPrivateIpAddressCount;
         private string _subnetId;
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -231,6 +232,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetSubnetId()
         {
             return this._subnetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to apply to the new network interface.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
     }
