@@ -30,9 +30,9 @@ namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRecommendationFeedback operation.
-    /// Lists the customer feedback for a CodeGuru Reviewer recommendation for all users.
-    /// This API will be used from the console to extract the previously given feedback by
-    /// the user to pre-populate the feedback emojis for all recommendations.
+    /// Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RecommendationFeedbackSummary.html">
+    /// <code>RecommendationFeedbackSummary</code> </a> objects that contain customer recommendation
+    /// feedback for all CodeGuru Reviewer users.
     /// </summary>
     public partial class ListRecommendationFeedbackRequest : AmazonCodeGuruReviewerRequest
     {
@@ -45,7 +45,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property CodeReviewArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) that identifies the code review. 
+        /// The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+        /// <code>CodeReview</code> </a> object. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]
@@ -83,9 +84,10 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  If nextToken is returned, there are more results available. The value of nextToken
-        /// is a unique pagination token for each page. Make the call again using the returned
-        /// token to retrieve the next page. Keep all other arguments unchanged. 
+        ///  If <code>nextToken</code> is returned, there are more results available. The value
+        /// of nextToken is a unique pagination token for each page. Make the call again using
+        /// the returned token to retrieve the next page. Keep all other arguments unchanged.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -104,9 +106,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property RecommendationIds. 
         /// <para>
-        ///  Filter on recommendationIds that need to be applied before displaying the result.
-        /// This can be used to query all the recommendation feedback for a given recommendation.
-        /// 
+        ///  Used to query the recommendation feedback for a given recommendation. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -125,8 +125,14 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property UserIds. 
         /// <para>
-        ///  Filter on userIds that need to be applied before displaying the result. This can
-        /// be used to query all the recommendation feedback for a code review from a given user.
+        ///  An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query the
+        /// recommendation feedback for a code review from that user. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  The <code>UserId</code> is an IAM principal that can be specified as an AWS account
+        /// ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
+        /// Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
         /// 
         /// </para>
         /// </summary>

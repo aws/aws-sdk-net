@@ -60,7 +60,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property RecommendationFeedbackSummaries. 
         /// <para>
-        ///  Recommendation feedback summaries corresponding to the code reivew ARN. 
+        ///  Recommendation feedback summaries corresponding to the code review ARN. 
         /// </para>
         /// </summary>
         public List<RecommendationFeedbackSummary> RecommendationFeedbackSummaries

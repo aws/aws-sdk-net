@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// Information about a third party source repository connected through CodeStar Connections.
+    /// Information about a third-party source repository connected to CodeGuru Reviewer.
     /// </summary>
     public partial class ThirdPartySourceRepository
     {
@@ -40,7 +40,10 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property ConnectionArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) identifying the repository connection. 
+        ///  The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format
+        /// is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a>
+        /// in the <i>AWS CodeStar Connections API Reference</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
@@ -78,7 +81,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        ///  The username of the owner of the repository. 
+        ///  The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository,
+        /// this is the username for the account that owns the repository. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

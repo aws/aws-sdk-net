@@ -30,7 +30,7 @@ namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
     /// Container for the parameters to the PutRecommendationFeedback operation.
-    /// Stores customer feedback for a CodeGuru-Reviewer recommendation. When this API is
+    /// Stores customer feedback for a CodeGuru Reviewer recommendation. When this API is
     /// called again with different reactions the previous feedback is overwritten.
     /// </summary>
     public partial class PutRecommendationFeedbackRequest : AmazonCodeGuruReviewerRequest
@@ -42,7 +42,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property CodeReviewArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) that identifies the code review. 
+        /// The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+        /// <code>CodeReview</code> </a> object. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]

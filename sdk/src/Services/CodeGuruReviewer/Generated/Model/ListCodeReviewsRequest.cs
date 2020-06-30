@@ -85,7 +85,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Gets and sets the property ProviderTypes. 
         /// <para>
         ///  List of provider types for filtering that needs to be applied before displaying the
-        /// result. For example, "providerTypes=[GitHub]" will list code reviews from GitHub.
+        /// result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.
         /// 
         /// </para>
         /// </summary>
@@ -126,8 +126,30 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Gets and sets the property States. 
         /// <para>
         ///  List of states for filtering that needs to be applied before displaying the result.
-        /// For example, "states=[Pending]" will list code reviews in the Pending state. 
+        /// For example, <code>states=[Pending]</code> lists code reviews in the Pending state.
+        /// 
         /// </para>
+        ///  
+        /// <para>
+        /// The valid code review states are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Completed</code>: The code review is complete. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Pending</code>: The code review started and has not completed or failed. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Failed</code>: The code review failed. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Deleting</code>: The code review is being deleted. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]
         public List<string> States

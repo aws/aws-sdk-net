@@ -67,6 +67,17 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetGitHubEnterpriseServer())
+            {
+                context.Writer.WritePropertyName("GitHubEnterpriseServer");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ThirdPartySourceRepositoryMarshaller.Instance;
+                marshaller.Marshall(requestObject.GitHubEnterpriseServer, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

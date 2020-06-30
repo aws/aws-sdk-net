@@ -39,7 +39,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property DestinationCommit. 
         /// <para>
-        ///  Destination Commit SHA 
+        ///  The SHA of the destination commit. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=64)]
@@ -58,7 +58,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property SourceCommit. 
         /// <para>
-        ///  Source Commit SHA. 
+        ///  The SHA of the source commit. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=64)]
