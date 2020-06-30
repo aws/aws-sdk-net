@@ -1190,6 +1190,10 @@ namespace Amazon.ECR
         /// The specified image has already been pushed, and there were no changes to the manifest
         /// or image tag after the last push.
         /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ImageDigestDoesNotMatchException">
+        /// The specified image digest does not match the digest that Amazon ECR calculated for
+        /// the image.
+        /// </exception>
         /// <exception cref="Amazon.ECR.Model.ImageTagAlreadyExistsException">
         /// The specified image is tagged with a tag that already exists. The repository is configured
         /// for tag immutability.

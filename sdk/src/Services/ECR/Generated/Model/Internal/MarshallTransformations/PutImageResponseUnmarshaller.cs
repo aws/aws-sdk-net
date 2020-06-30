@@ -84,6 +84,10 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 {
                     return ImageAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ImageDigestDoesNotMatchException"))
+                {
+                    return ImageDigestDoesNotMatchExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ImageTagAlreadyExistsException"))
                 {
                     return ImageTagAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
