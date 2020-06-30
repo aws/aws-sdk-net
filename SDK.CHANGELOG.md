@@ -1,3 +1,15 @@
+### 3.3.772.0 (2020-06-30 18:14 UTC)
+* CodeGuruReviewer (3.3.104.0)
+	* Release GitHub Enterprise Server source provider integration
+* ComprehendMedical (3.3.105.0)
+	* This release adds the relationships between MedicalCondition and Anatomy in DetectEntitiesV2 API.
+* EC2 (3.3.187.0)
+	* Added support for tag-on-create for CreateVpc, CreateEgressOnlyInternetGateway, CreateSecurityGroup, CreateSubnet, CreateNetworkInterface, CreateNetworkAcl, CreateDhcpOptions and CreateInternetGateway. You can now specify tags when creating any of these resources. For more information about tagging, see AWS Tagging Strategies.
+* ECR (3.3.106.0)
+	* Add a new parameter (ImageDigest) and a new exception (ImageDigestDoesNotMatchException) to PutImage API to support pushing image by digest.
+* RDS (3.3.123.7)
+	* Documentation updates for rds
+
 ### 3.3.771.0 (2020-06-29 18:15 UTC)
 * AutoScaling (3.3.103.9)
 	* Documentation updates for Amazon EC2 Auto Scaling.

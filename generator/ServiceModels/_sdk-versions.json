@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.771.0",
+    "ProductVersion" : "3.3.772.0",
     "CoreVersion"    : "3.3.107.19",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.186.0",
+            "Version" : "3.3.187.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.19"
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.123.6",
+            "Version" : "3.3.123.7",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.19"
@@ -489,7 +489,7 @@
             "InPreview"               : false
         },
         "ECR"                             : {
-            "Version" : "3.3.105.23",
+            "Version" : "3.3.106.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.19"
@@ -1273,7 +1273,7 @@
             "InPreview"               : false
         },
         "ComprehendMedical"               : {
-            "Version" : "3.3.104.29",
+            "Version" : "3.3.105.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.19"
@@ -1697,7 +1697,7 @@
             "InPreview"               : false
         },
         "CodeGuruReviewer"                : {
-            "Version" : "3.3.103.25",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.19"
