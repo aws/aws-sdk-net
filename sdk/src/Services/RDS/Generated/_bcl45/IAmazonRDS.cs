@@ -6643,6 +6643,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
         /// </exception>
@@ -6652,6 +6655,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// The DB subnet group doesn't cover all Availability Zones after it's created because
         /// of users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an AWS KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
@@ -6720,6 +6726,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
         /// </exception>
@@ -6729,6 +6738,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// The DB subnet group doesn't cover all Availability Zones after it's created because
         /// of users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an AWS KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
