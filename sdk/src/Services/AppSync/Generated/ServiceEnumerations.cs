@@ -93,6 +93,30 @@ namespace Amazon.AppSync
     {
 
         /// <summary>
+        /// Constant LARGE for ApiCacheType
+        /// </summary>
+        public static readonly ApiCacheType LARGE = new ApiCacheType("LARGE");
+        /// <summary>
+        /// Constant LARGE_12X for ApiCacheType
+        /// </summary>
+        public static readonly ApiCacheType LARGE_12X = new ApiCacheType("LARGE_12X");
+        /// <summary>
+        /// Constant LARGE_2X for ApiCacheType
+        /// </summary>
+        public static readonly ApiCacheType LARGE_2X = new ApiCacheType("LARGE_2X");
+        /// <summary>
+        /// Constant LARGE_4X for ApiCacheType
+        /// </summary>
+        public static readonly ApiCacheType LARGE_4X = new ApiCacheType("LARGE_4X");
+        /// <summary>
+        /// Constant LARGE_8X for ApiCacheType
+        /// </summary>
+        public static readonly ApiCacheType LARGE_8X = new ApiCacheType("LARGE_8X");
+        /// <summary>
+        /// Constant MEDIUM for ApiCacheType
+        /// </summary>
+        public static readonly ApiCacheType MEDIUM = new ApiCacheType("MEDIUM");
+        /// <summary>
         /// Constant R4_2XLARGE for ApiCacheType
         /// </summary>
         public static readonly ApiCacheType R4_2XLARGE = new ApiCacheType("R4_2XLARGE");
@@ -113,6 +137,10 @@ namespace Amazon.AppSync
         /// </summary>
         public static readonly ApiCacheType R4_XLARGE = new ApiCacheType("R4_XLARGE");
         /// <summary>
+        /// Constant SMALL for ApiCacheType
+        /// </summary>
+        public static readonly ApiCacheType SMALL = new ApiCacheType("SMALL");
+        /// <summary>
         /// Constant T2_MEDIUM for ApiCacheType
         /// </summary>
         public static readonly ApiCacheType T2_MEDIUM = new ApiCacheType("T2_MEDIUM");
@@ -120,6 +148,10 @@ namespace Amazon.AppSync
         /// Constant T2_SMALL for ApiCacheType
         /// </summary>
         public static readonly ApiCacheType T2_SMALL = new ApiCacheType("T2_SMALL");
+        /// <summary>
+        /// Constant XLARGE for ApiCacheType
+        /// </summary>
+        public static readonly ApiCacheType XLARGE = new ApiCacheType("XLARGE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

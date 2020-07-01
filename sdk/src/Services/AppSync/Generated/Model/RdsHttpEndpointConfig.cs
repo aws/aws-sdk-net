@@ -96,7 +96,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property DbClusterIdentifier. 
         /// <para>
-        /// Amazon RDS cluster identifier.
+        /// Amazon RDS cluster ARN.
         /// </para>
         /// </summary>
         public string DbClusterIdentifier
