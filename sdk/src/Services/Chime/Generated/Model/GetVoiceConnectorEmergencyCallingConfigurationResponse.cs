@@ -29,37 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteVoiceConnectorOrigination operation.
-    /// Deletes the origination settings for the specified Amazon Chime Voice Connector.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// If emergency calling is configured for the Amazon Chime Voice Connector, it must be
-    /// deleted prior to deleting the origination settings.
-    /// </para>
-    ///  </note>
+    /// This is the response object from the GetVoiceConnectorEmergencyCallingConfiguration operation.
     /// </summary>
-    public partial class DeleteVoiceConnectorOriginationRequest : AmazonChimeRequest
+    public partial class GetVoiceConnectorEmergencyCallingConfigurationResponse : AmazonWebServiceResponse
     {
-        private string _voiceConnectorId;
+        private EmergencyCallingConfiguration _emergencyCallingConfiguration;
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId. 
+        /// Gets and sets the property EmergencyCallingConfiguration. 
         /// <para>
-        /// The Amazon Chime Voice Connector ID.
+        /// The emergency calling configuration details.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string VoiceConnectorId
+        public EmergencyCallingConfiguration EmergencyCallingConfiguration
         {
-            get { return this._voiceConnectorId; }
-            set { this._voiceConnectorId = value; }
+            get { return this._emergencyCallingConfiguration; }
+            set { this._emergencyCallingConfiguration = value; }
         }
 
-        // Check to see if VoiceConnectorId property is set
-        internal bool IsSetVoiceConnectorId()
+        // Check to see if EmergencyCallingConfiguration property is set
+        internal bool IsSetEmergencyCallingConfiguration()
         {
-            return this._voiceConnectorId != null;
+            return this._emergencyCallingConfiguration != null;
         }
 
     }

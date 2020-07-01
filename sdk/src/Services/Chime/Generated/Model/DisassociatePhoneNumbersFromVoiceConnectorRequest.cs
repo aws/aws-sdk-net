@@ -43,6 +43,7 @@ namespace Amazon.Chime.Model
         /// List of phone numbers, in E.164 format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> E164PhoneNumbers
         {
             get { return this._e164PhoneNumbers; }

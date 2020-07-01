@@ -44,6 +44,7 @@ namespace Amazon.Chime.Model
         /// The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Usernames
         {
             get { return this._usernames; }

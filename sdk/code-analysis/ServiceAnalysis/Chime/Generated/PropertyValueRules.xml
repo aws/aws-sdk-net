@@ -210,6 +210,10 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.DeleteVoiceConnectorEmergencyCallingConfigurationRequest.VoiceConnectorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.DeleteVoiceConnectorGroupRequest.VoiceConnectorGroupId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -325,6 +329,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.GetVoiceConnectorRequest.VoiceConnectorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.GetVoiceConnectorEmergencyCallingConfigurationRequest.VoiceConnectorId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -512,6 +520,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.PutRetentionSettingsRequest.AccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.PutVoiceConnectorEmergencyCallingConfigurationRequest.VoiceConnectorId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -753,6 +765,18 @@
     <property>Amazon.Chime.Model.CreateAttendeeRequestItem.ExternalUserId</property>
     <min>2</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DNISEmergencyCallingConfiguration.CallingCountry</property>
+    <pattern>[A-Z]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DNISEmergencyCallingConfiguration.EmergencyPhoneNumber</property>
+    <pattern>^\+?[1-9]\d{1,14}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DNISEmergencyCallingConfiguration.TestPhoneNumber</property>
+    <pattern>^\+?[1-9]\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.GeoMatchParams.AreaCode</property>

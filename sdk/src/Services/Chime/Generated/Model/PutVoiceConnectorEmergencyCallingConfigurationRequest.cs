@@ -29,38 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutVoiceConnectorOrigination operation.
-    /// Adds origination settings for the specified Amazon Chime Voice Connector.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// If emergency calling is configured for the Amazon Chime Voice Connector, it must be
-    /// deleted prior to turning off origination settings.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the PutVoiceConnectorEmergencyCallingConfiguration operation.
+    /// Puts emergency calling configuration details to the specified Amazon Chime Voice Connector,
+    /// such as emergency phone numbers and calling countries. Origination and termination
+    /// settings must be enabled for the Amazon Chime Voice Connector before emergency calling
+    /// can be configured.
     /// </summary>
-    public partial class PutVoiceConnectorOriginationRequest : AmazonChimeRequest
+    public partial class PutVoiceConnectorEmergencyCallingConfigurationRequest : AmazonChimeRequest
     {
-        private Origination _origination;
+        private EmergencyCallingConfiguration _emergencyCallingConfiguration;
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property Origination. 
+        /// Gets and sets the property EmergencyCallingConfiguration. 
         /// <para>
-        /// The origination setting details to add.
+        /// The emergency calling configuration details.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public Origination Origination
+        public EmergencyCallingConfiguration EmergencyCallingConfiguration
         {
-            get { return this._origination; }
-            set { this._origination = value; }
+            get { return this._emergencyCallingConfiguration; }
+            set { this._emergencyCallingConfiguration = value; }
         }
 
-        // Check to see if Origination property is set
-        internal bool IsSetOrigination()
+        // Check to see if EmergencyCallingConfiguration property is set
+        internal bool IsSetEmergencyCallingConfiguration()
         {
-            return this._origination != null;
+            return this._emergencyCallingConfiguration != null;
         }
 
         /// <summary>

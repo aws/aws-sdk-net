@@ -29,39 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutVoiceConnectorOrigination operation.
-    /// Adds origination settings for the specified Amazon Chime Voice Connector.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// If emergency calling is configured for the Amazon Chime Voice Connector, it must be
-    /// deleted prior to turning off origination settings.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the GetVoiceConnectorEmergencyCallingConfiguration operation.
+    /// Gets the emergency calling configuration details for the specified Amazon Chime Voice
+    /// Connector.
     /// </summary>
-    public partial class PutVoiceConnectorOriginationRequest : AmazonChimeRequest
+    public partial class GetVoiceConnectorEmergencyCallingConfigurationRequest : AmazonChimeRequest
     {
-        private Origination _origination;
         private string _voiceConnectorId;
-
-        /// <summary>
-        /// Gets and sets the property Origination. 
-        /// <para>
-        /// The origination setting details to add.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public Origination Origination
-        {
-            get { return this._origination; }
-            set { this._origination = value; }
-        }
-
-        // Check to see if Origination property is set
-        internal bool IsSetOrigination()
-        {
-            return this._origination != null;
-        }
 
         /// <summary>
         /// Gets and sets the property VoiceConnectorId. 

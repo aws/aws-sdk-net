@@ -29,37 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteVoiceConnectorOrigination operation.
-    /// Deletes the origination settings for the specified Amazon Chime Voice Connector.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// If emergency calling is configured for the Amazon Chime Voice Connector, it must be
-    /// deleted prior to deleting the origination settings.
-    /// </para>
-    ///  </note>
+    /// The emergency calling configuration details associated with an Amazon Chime Voice
+    /// Connector.
     /// </summary>
-    public partial class DeleteVoiceConnectorOriginationRequest : AmazonChimeRequest
+    public partial class EmergencyCallingConfiguration
     {
-        private string _voiceConnectorId;
+        private List<DNISEmergencyCallingConfiguration> _dnis = new List<DNISEmergencyCallingConfiguration>();
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId. 
+        /// Gets and sets the property DNIS. 
         /// <para>
-        /// The Amazon Chime Voice Connector ID.
+        /// The Dialed Number Identification Service (DNIS) emergency calling configuration details.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string VoiceConnectorId
+        public List<DNISEmergencyCallingConfiguration> DNIS
         {
-            get { return this._voiceConnectorId; }
-            set { this._voiceConnectorId = value; }
+            get { return this._dnis; }
+            set { this._dnis = value; }
         }
 
-        // Check to see if VoiceConnectorId property is set
-        internal bool IsSetVoiceConnectorId()
+        // Check to see if DNIS property is set
+        internal bool IsSetDNIS()
         {
-            return this._voiceConnectorId != null;
+            return this._dnis != null && this._dnis.Count > 0; 
         }
 
     }
