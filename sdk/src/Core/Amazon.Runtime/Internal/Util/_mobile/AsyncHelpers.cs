@@ -26,7 +26,7 @@ namespace Amazon.Runtime.Internal.Util
                 {
                     try
                     {
-                        await workItem();
+                        await workItem().ConfigureAwait(false);
                     }
                     catch (Exception e)
                     {
@@ -58,7 +58,7 @@ namespace Amazon.Runtime.Internal.Util
                 {
                     try
                     {
-                        ret = await workItem();
+                        ret = await workItem().ConfigureAwait(false);
                     }
                     catch (Exception e)
                     {

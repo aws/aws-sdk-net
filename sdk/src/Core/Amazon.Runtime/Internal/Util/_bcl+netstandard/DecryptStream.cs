@@ -116,7 +116,7 @@ namespace Amazon.Runtime.Internal.Util
         /// </returns>
         public override async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
         {
-            int result = await this.CryptoStream.ReadAsync(buffer, offset, count, cancellationToken);
+            int result = await this.CryptoStream.ReadAsync(buffer, offset, count, cancellationToken).ConfigureAwait(false);
             return result;
         }
 #endif

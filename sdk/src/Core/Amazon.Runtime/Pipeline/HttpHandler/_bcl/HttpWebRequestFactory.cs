@@ -284,10 +284,10 @@ namespace Amazon.Runtime.Internal
                 int bytesRead = 0;
                 int bytesToRead = buffer.Length;
 
-                while ((bytesRead = await contentStream.ReadAsync(buffer, 0, bytesToRead, requestContext.CancellationToken)) > 0)
+                while ((bytesRead = await contentStream.ReadAsync(buffer, 0, bytesToRead, requestContext.CancellationToken).ConfigureAwait(false)) > 0)
                 {
                     requestContext.CancellationToken.ThrowIfCancellationRequested();
-                    await requestContent.WriteAsync(buffer, 0, bytesRead, requestContext.CancellationToken);
+                    await requestContent.WriteAsync(buffer, 0, bytesRead, requestContext.CancellationToken).ConfigureAwait(false);
                 }
             }
             catch
@@ -327,7 +327,7 @@ namespace Amazon.Runtime.Internal
             cancellationToken.ThrowIfCancellationRequested();
             using (requestContent)
             {
-                await requestContent.WriteAsync(content, 0, content.Length, cancellationToken);
+                await requestContent.WriteAsync(content, 0, content.Length, cancellationToken).ConfigureAwait(false);
             }
         }
 
@@ -337,7 +337,7 @@ namespace Amazon.Runtime.Internal
         /// <returns></returns>
         public async Task<Stream> GetRequestContentAsync()
         {
-            return await GetRequestContentAsync(CancellationToken.None);
+            return await GetRequestContentAsync(CancellationToken.None).ConfigureAwait(false);
         }
 
         /// <summary>

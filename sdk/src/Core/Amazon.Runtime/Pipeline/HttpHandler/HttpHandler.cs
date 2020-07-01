@@ -161,7 +161,7 @@ namespace Amazon.Runtime.Internal
                             // where the stream is a property of the request.
 #if BCL45
                             var requestContent = await httpRequest.GetRequestContentAsync(executionContext.RequestContext.CancellationToken).ConfigureAwait(false);
-                            await WriteContentToRequestBodyAsync(requestContent, httpRequest, executionContext.RequestContext);
+                            await WriteContentToRequestBodyAsync(requestContent, httpRequest, executionContext.RequestContext).ConfigureAwait(false);
 #else
                             var requestContent = await httpRequest.GetRequestContentAsync().ConfigureAwait(false);
                             WriteContentToRequestBody(requestContent, httpRequest, executionContext.RequestContext);
@@ -181,8 +181,8 @@ namespace Amazon.Runtime.Internal
                     }
                 
                     var response = await httpRequest.GetResponseAsync(executionContext.RequestContext.CancellationToken).
-                        ConfigureAwait(false);     
-                    executionContext.ResponseContext.HttpResponse = response;     
+                        ConfigureAwait(false);
+                    executionContext.ResponseContext.HttpResponse = response;
                 }
                 // The response is not unmarshalled yet.
                 return null;
@@ -439,7 +439,7 @@ namespace Amazon.Runtime.Internal
             {
                 byte[] requestData = wrappedRequest.Content;
                 requestContext.Metrics.AddProperty(Metric.RequestSize, requestData.Length);
-                await httpRequest.WriteToRequestBodyAsync(requestContent, requestData, requestContext.Request.Headers, requestContext.CancellationToken);
+                await httpRequest.WriteToRequestBodyAsync(requestContent, requestData, requestContext.Request.Headers, requestContext.CancellationToken).ConfigureAwait(false);
             }
             else
             {
@@ -447,7 +447,7 @@ namespace Amazon.Runtime.Internal
                 if (wrappedRequest.ContentStream == null)
                 {
                     originalStream = new System.IO.MemoryStream();
-                    await originalStream.WriteAsync(wrappedRequest.Content, 0, wrappedRequest.Content.Length, requestContext.CancellationToken);
+                    await originalStream.WriteAsync(wrappedRequest.Content, 0, wrappedRequest.Content.Length, requestContext.CancellationToken).ConfigureAwait(false);
                     originalStream.Position = 0;
                 }
                 else
@@ -460,7 +460,7 @@ namespace Amazon.Runtime.Internal
                     originalStream = httpRequest.SetupProgressListeners(originalStream, requestContext.ClientConfig.ProgressUpdateInterval, this.CallbackSender, callback);
                 var inputStream = GetInputStream(requestContext, originalStream, wrappedRequest);
                 await httpRequest.WriteToRequestBodyAsync(requestContent, inputStream,
-                    requestContext.Request.Headers, requestContext);
+                    requestContext.Request.Headers, requestContext).ConfigureAwait(false);
 
             }
         }
