@@ -137,6 +137,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetNetworkPath())
+            {
+                context.Writer.WritePropertyName("NetworkPath");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectNetworkPathListValue in requestObject.NetworkPath)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NetworkPathComponentMarshaller.Instance;
+                    marshaller.Marshall(requestObjectNetworkPathListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetNote())
             {
                 context.Writer.WritePropertyName("Note");
@@ -308,6 +324,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("VerificationState");
                 context.Writer.Write(requestObject.VerificationState);
+            }
+
+            if(requestObject.IsSetVulnerabilities())
+            {
+                context.Writer.WritePropertyName("Vulnerabilities");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectVulnerabilitiesListValue in requestObject.Vulnerabilities)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VulnerabilityMarshaller.Instance;
+                    marshaller.Marshall(requestObjectVulnerabilitiesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetWorkflow())

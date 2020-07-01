@@ -59,7 +59,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DisabledReason. 
         /// <para>
-        /// A description of the reason why you are disabling a security standard control.
+        /// A description of the reason why you are disabling a security standard control. If
+        /// you are disabling a control, then this is required.
         /// </para>
         /// </summary>
         public string DisabledReason

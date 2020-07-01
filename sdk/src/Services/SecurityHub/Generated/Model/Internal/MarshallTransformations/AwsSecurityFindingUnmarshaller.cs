@@ -136,6 +136,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Network = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NetworkPath", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<NetworkPathComponent, NetworkPathComponentUnmarshaller>(NetworkPathComponentUnmarshaller.Instance);
+                    unmarshalledObject.NetworkPath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Note", targetDepth))
                 {
                     var unmarshaller = NoteUnmarshaller.Instance;
@@ -236,6 +242,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VerificationState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Vulnerabilities", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Vulnerability, VulnerabilityUnmarshaller>(VulnerabilityUnmarshaller.Instance);
+                    unmarshalledObject.Vulnerabilities = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Workflow", targetDepth))

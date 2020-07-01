@@ -64,6 +64,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AwsAutoScalingAutoScalingGroup", targetDepth))
+                {
+                    var unmarshaller = AwsAutoScalingAutoScalingGroupDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsAutoScalingAutoScalingGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsCloudFrontDistribution", targetDepth))
                 {
                     var unmarshaller = AwsCloudFrontDistributionDetailsUnmarshaller.Instance;
@@ -92,6 +98,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AwsEc2SecurityGroupDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsEc2SecurityGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsEc2Volume", targetDepth))
+                {
+                    var unmarshaller = AwsEc2VolumeDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsEc2Volume = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsEc2Vpc", targetDepth))
+                {
+                    var unmarshaller = AwsEc2VpcDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsEc2Vpc = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AwsElasticsearchDomain", targetDepth))

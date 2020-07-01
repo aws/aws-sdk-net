@@ -55,6 +55,7 @@ namespace Amazon.SecurityHub.Model
         private string _lastObservedAt;
         private List<Malware> _malware = new List<Malware>();
         private Network _network;
+        private List<NetworkPathComponent> _networkPath = new List<NetworkPathComponent>();
         private Note _note;
         private ProcessDetails _process;
         private string _productArn;
@@ -72,6 +73,7 @@ namespace Amazon.SecurityHub.Model
         private string _updatedAt;
         private Dictionary<string, string> _userDefinedFields = new Dictionary<string, string>();
         private VerificationState _verificationState;
+        private List<Vulnerability> _vulnerabilities = new List<Vulnerability>();
         private Workflow _workflow;
         private WorkflowState _workflowState;
 
@@ -317,6 +319,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetNetwork()
         {
             return this._network != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkPath. 
+        /// <para>
+        /// Provides information about a network path that is relevant to a finding. Each entry
+        /// under <code>NetworkPath</code> represents a component of that path.
+        /// </para>
+        /// </summary>
+        public List<NetworkPathComponent> NetworkPath
+        {
+            get { return this._networkPath; }
+            set { this._networkPath = value; }
+        }
+
+        // Check to see if NetworkPath property is set
+        internal bool IsSetNetworkPath()
+        {
+            return this._networkPath != null && this._networkPath.Count > 0; 
         }
 
         /// <summary>
@@ -647,6 +668,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetVerificationState()
         {
             return this._verificationState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Vulnerabilities. 
+        /// <para>
+        /// Provides a list of vulnerabilities associated with the findings.
+        /// </para>
+        /// </summary>
+        public List<Vulnerability> Vulnerabilities
+        {
+            get { return this._vulnerabilities; }
+            set { this._vulnerabilities = value; }
+        }
+
+        // Check to see if Vulnerabilities property is set
+        internal bool IsSetVulnerabilities()
+        {
+            return this._vulnerabilities != null && this._vulnerabilities.Count > 0; 
         }
 
         /// <summary>
