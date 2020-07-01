@@ -1,3 +1,17 @@
+### 3.3.773.0 (2020-07-01 18:18 UTC)
+* AppSync (3.3.105.0)
+	* AWS AppSync supports new 12xlarge instance for server-side API caching
+* Chime (3.3.114.0)
+	* This release supports third party emergency call routing configuration for Amazon Chime Voice Connectors.
+* CodeBuild (3.3.112.0)
+	* Support build status config in project source
+* Imagebuilder (3.3.106.0)
+	* EC2 Image Builder adds support for encrypted AMI distribution.
+* RDS (3.3.124.0)
+	* This release adds the exceptions KMSKeyNotAccessibleFault and InvalidDBClusterStateFault to the Amazon RDS ModifyDBInstance API.
+* SecurityHub (3.3.114.0)
+	* This release adds additional details for findings. There are now finding details for auto scaling groups, EC2 volumes, and EC2 VPCs. You can identify detected vulnerabilities and provide related network paths.
+
 ### 3.3.772.0 (2020-06-30 18:14 UTC)
 * CodeGuruReviewer (3.3.104.0)
 	* Release GitHub Enterprise Server source provider integration

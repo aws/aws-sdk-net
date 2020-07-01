@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.772.0",
+    "ProductVersion" : "3.3.773.0",
     "CoreVersion"    : "3.3.107.19",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.123.7",
+            "Version" : "3.3.124.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.19"
@@ -657,7 +657,7 @@
             "InPreview"               : false
         },
         "CodeBuild"                       : {
-            "Version" : "3.3.111.20",
+            "Version" : "3.3.112.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.19"
@@ -921,7 +921,7 @@
             "InPreview"               : false
         },
         "AppSync"                         : {
-            "Version" : "3.3.104.73",
+            "Version" : "3.3.105.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.19"
@@ -1169,7 +1169,7 @@
             "InPreview"               : false
         },
         "Chime"                           : {
-            "Version" : "3.3.113.9",
+            "Version" : "3.3.114.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.19"
@@ -1305,7 +1305,7 @@
             "InPreview"               : false
         },
         "SecurityHub"                     : {
-            "Version" : "3.3.113.21",
+            "Version" : "3.3.114.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.19"
@@ -1641,7 +1641,7 @@
             "InPreview"               : false
         },
         "Imagebuilder"                    : {
-            "Version" : "3.3.105.9",
+            "Version" : "3.3.106.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.19"
