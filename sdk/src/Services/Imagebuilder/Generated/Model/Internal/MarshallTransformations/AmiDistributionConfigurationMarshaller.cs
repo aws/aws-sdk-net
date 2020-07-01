@@ -65,6 +65,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Description);
             }
 
+            if(requestObject.IsSetKmsKeyId())
+            {
+                context.Writer.WritePropertyName("kmsKeyId");
+                context.Writer.Write(requestObject.KmsKeyId);
+            }
+
             if(requestObject.IsSetLaunchPermission())
             {
                 context.Writer.WritePropertyName("launchPermission");

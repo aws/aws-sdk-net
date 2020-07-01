@@ -901,6 +901,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.AmiDistributionConfiguration.KmsKeyId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Imagebuilder.Model.AmiDistributionConfiguration.Name</property>
     <min>1</min>
     <max>127</max>
