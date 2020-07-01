@@ -91,9 +91,9 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of webhook filter. There are five webhook filter types: <code>EVENT</code>,
-        /// <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, and <code>FILE_PATH</code>.
-        /// 
+        ///  The type of webhook filter. There are six webhook filter types: <code>EVENT</code>,
+        /// <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>,
+        /// and <code>COMMIT_MESSAGE</code>. 
         /// </para>
         ///  <dl> <dt> EVENT </dt> <dd> 
         /// <para>
@@ -141,7 +141,20 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  Works with GitHub and GitHub Enterprise push events only. 
+        ///  Works with GitHub and Bitbucket events push and pull requests events. Also works
+        /// with GitHub Enterprise push events, but does not work with GitHub Enterprise pull
+        /// request events. 
+        /// </para>
+        ///  </note> </dd> <dt>COMMIT_MESSAGE</dt> <dd> 
+        /// <para>
+        /// A webhook triggers a build when the head commit message matches the regular expression
+        /// <code>pattern</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  Works with GitHub and Bitbucket events push and pull requests events. Also works
+        /// with GitHub Enterprise push events, but does not work with GitHub Enterprise pull
+        /// request events. 
         /// </para>
         ///  </note> </dd> </dl>
         /// </summary>

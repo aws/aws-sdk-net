@@ -62,6 +62,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Buildspec);
             }
 
+            if(requestObject.IsSetBuildStatusConfig())
+            {
+                context.Writer.WritePropertyName("buildStatusConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BuildStatusConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.BuildStatusConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetGitCloneDepth())
             {
                 context.Writer.WritePropertyName("gitCloneDepth");

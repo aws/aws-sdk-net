@@ -35,6 +35,7 @@ namespace Amazon.CodeBuild.Model
     {
         private SourceAuth _auth;
         private string _buildspec;
+        private BuildStatusConfig _buildStatusConfig;
         private int? _gitCloneDepth;
         private GitSubmodulesConfig _gitSubmodulesConfig;
         private bool? _insecureSsl;
@@ -94,6 +95,26 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetBuildspec()
         {
             return this._buildspec != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BuildStatusConfig. 
+        /// <para>
+        /// Contains information that defines how the build project reports the build status to
+        /// the source provider. This option is only used when the source provider is <code>GITHUB</code>,
+        /// <code>GITHUB_ENTERPRISE</code>, or <code>BITBUCKET</code>.
+        /// </para>
+        /// </summary>
+        public BuildStatusConfig BuildStatusConfig
+        {
+            get { return this._buildStatusConfig; }
+            set { this._buildStatusConfig = value; }
+        }
+
+        // Check to see if BuildStatusConfig property is set
+        internal bool IsSetBuildStatusConfig()
+        {
+            return this._buildStatusConfig != null;
         }
 
         /// <summary>
@@ -288,11 +309,12 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GITHUB</code>: The source code is in a GitHub repository.
+        ///  <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+        ///  <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server
+        /// repository.
         /// </para>
         ///  </li> <li> 
         /// <para>
