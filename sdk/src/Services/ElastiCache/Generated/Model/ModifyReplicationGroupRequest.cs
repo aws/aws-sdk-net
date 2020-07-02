@@ -184,23 +184,6 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Valid values: <code>true</code> | <code>false</code> 
         /// </para>
-        ///  
-        /// <para>
-        /// Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Redis versions earlier than 2.8.6.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Redis (cluster mode disabled): T1 node types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Redis (cluster mode enabled): T1 node types.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public bool AutomaticFailoverEnabled
         {

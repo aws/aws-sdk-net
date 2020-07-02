@@ -81,11 +81,11 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If Multi-AZ with Automatic Failover is enabled: 1
+        /// If Multi-AZ is enabled: 1
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If Multi-AZ with Automatic Failover is not enabled: 0
+        /// If Multi-AZ is not enabled: 0
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
