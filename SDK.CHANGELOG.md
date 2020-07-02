@@ -1,3 +1,14 @@
+### 3.3.773.1 (2020-07-02 18:09 UTC)
+* Connect (3.3.103.101)
+	* Documentation updates for Amazon Connect.
+* ElastiCache (3.3.111.15)
+	* Documentation updates for elasticache
+* Core 3.3.107.20
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.773.0 (2020-07-01 18:18 UTC)
 * AppSync (3.3.105.0)
 	* AWS AppSync supports new 12xlarge instance for server-side API caching
