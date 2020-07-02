@@ -32,6 +32,12 @@ namespace Amazon.Connect.Model
     /// Container for the parameters to the ListUserHierarchyGroups operation.
     /// Provides summary information about the hierarchy groups for the specified Amazon Connect
     /// instance.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about agent hierarchies, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html">Set
+    /// Up Agent Hierarchies</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ListUserHierarchyGroupsRequest : AmazonConnectRequest
     {

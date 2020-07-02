@@ -31,6 +31,14 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the DeleteUser operation.
     /// Deletes a user account from the specified Amazon Connect instance.
+    /// 
+    ///  
+    /// <para>
+    /// For information about what happens to a user's data when their account is deleted,
+    /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-users.html">Delete
+    /// Users from Your Amazon Connect Instance</a> in the <i>Amazon Connect Administrator
+    /// Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DeleteUserRequest : AmazonConnectRequest
     {

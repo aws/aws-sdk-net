@@ -36,6 +36,12 @@ namespace Amazon.Connect.Model
     /// <para>
     /// The supported resource type is users.
     /// </para>
+    ///  
+    /// <para>
+    /// For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
+    /// Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect Administrator
+    /// Guide</i>.
+    /// </para>
     /// </summary>
     public partial class TagResourceRequest : AmazonConnectRequest
     {

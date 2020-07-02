@@ -34,8 +34,8 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics.html">Historical
-    /// Metrics Reports</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// For a description of each historical metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+    /// Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetMetricDataRequest : AmazonConnectRequest
@@ -129,7 +129,9 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property HistoricalMetrics. 
         /// <para>
         /// The metrics to retrieve. Specify the name, unit, and statistic for each metric. The
-        /// following historical metrics are available:
+        /// following historical metrics are available. For a description of each metric, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+        /// Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         ///  <dl> <dt>ABANDON_TIME</dt> <dd> 
         /// <para>

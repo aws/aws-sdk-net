@@ -31,6 +31,12 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the ListQueues operation.
     /// Provides information about the queues for the specified Amazon Connect instance.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about queues, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues:
+    /// Standard and Agent</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ListQueuesRequest : AmazonConnectRequest
     {

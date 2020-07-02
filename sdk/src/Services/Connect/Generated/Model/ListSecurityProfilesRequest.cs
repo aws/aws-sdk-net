@@ -32,6 +32,12 @@ namespace Amazon.Connect.Model
     /// Container for the parameters to the ListSecurityProfiles operation.
     /// Provides summary information about the security profiles for the specified Amazon
     /// Connect instance.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
+    /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ListSecurityProfilesRequest : AmazonConnectRequest
     {
