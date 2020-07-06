@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
         private double? _minIopsPerGib;
         private int? _minStorageSize;
         private bool? _multiAZCapable;
+        private bool? _outpostCapable;
         private bool? _readReplicaCapable;
         private string _storageType;
         private List<string> _supportedEngineModes = new List<string>();
@@ -315,6 +316,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetMultiAZCapable()
         {
             return this._multiAZCapable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostCapable. 
+        /// <para>
+        /// Whether a DB instance supports RDS on Outposts.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
+        /// RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public bool OutpostCapable
+        {
+            get { return this._outpostCapable.GetValueOrDefault(); }
+            set { this._outpostCapable = value; }
+        }
+
+        // Check to see if OutpostCapable property is set
+        internal bool IsSetOutpostCapable()
+        {
+            return this._outpostCapable.HasValue; 
         }
 
         /// <summary>

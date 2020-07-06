@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Subnet Object
+    /// Response Unmarshaller for Outpost Object
     /// </summary>  
-    public class SubnetUnmarshaller : IUnmarshaller<Subnet, XmlUnmarshallerContext>, IUnmarshaller<Subnet, JsonUnmarshallerContext>
+    public class OutpostUnmarshaller : IUnmarshaller<Outpost, XmlUnmarshallerContext>, IUnmarshaller<Outpost, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Subnet Unmarshall(XmlUnmarshallerContext context)
+        public Outpost Unmarshall(XmlUnmarshallerContext context)
         {
-            Subnet unmarshalledObject = new Subnet();
+            Outpost unmarshalledObject = new Outpost();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,28 +54,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("SubnetAvailabilityZone", targetDepth))
-                    {
-                        var unmarshaller = AvailabilityZoneUnmarshaller.Instance;
-                        unmarshalledObject.SubnetAvailabilityZone = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("SubnetIdentifier", targetDepth))
+                    if (context.TestExpression("Arn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SubnetIdentifier = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("SubnetOutpost", targetDepth))
-                    {
-                        var unmarshaller = OutpostUnmarshaller.Instance;
-                        unmarshalledObject.SubnetOutpost = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("SubnetStatus", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SubnetStatus = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -93,18 +75,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Subnet Unmarshall(JsonUnmarshallerContext context)
+        public Outpost Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static SubnetUnmarshaller _instance = new SubnetUnmarshaller();        
+        private static OutpostUnmarshaller _instance = new OutpostUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SubnetUnmarshaller Instance
+        public static OutpostUnmarshaller Instance
         {
             get
             {

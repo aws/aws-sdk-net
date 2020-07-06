@@ -29,13 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the <code>DescribeDBSubnetGroups</code>
-    /// action.
+    /// This data type is used as a response element for the <code>DescribeDBSubnetGroups</code>
+    /// operation.
     /// </summary>
     public partial class Subnet
     {
         private AvailabilityZone _subnetAvailabilityZone;
         private string _subnetIdentifier;
+        private Outpost _subnetOutpost;
         private string _subnetStatus;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SubnetIdentifier. 
         /// <para>
-        /// Specifies the identifier of the subnet.
+        /// The identifier of the subnet.
         /// </para>
         /// </summary>
         public string SubnetIdentifier
@@ -72,9 +73,32 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SubnetOutpost. 
+        /// <para>
+        /// If the subnet is associated with an Outpost, this value specifies the Outpost.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
+        /// RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public Outpost SubnetOutpost
+        {
+            get { return this._subnetOutpost; }
+            set { this._subnetOutpost = value; }
+        }
+
+        // Check to see if SubnetOutpost property is set
+        internal bool IsSetSubnetOutpost()
+        {
+            return this._subnetOutpost != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SubnetStatus. 
         /// <para>
-        /// Specifies the status of the subnet.
+        /// The status of the subnet.
         /// </para>
         /// </summary>
         public string SubnetStatus
