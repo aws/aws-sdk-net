@@ -86,7 +86,6 @@ namespace Amazon.IoTSiteWise.Model
         /// in Unix epoch time.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DateTime EndDate
         {
             get { return this._endDate.GetValueOrDefault(); }
@@ -204,7 +203,6 @@ namespace Amazon.IoTSiteWise.Model
         /// seconds in Unix epoch time.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DateTime StartDate
         {
             get { return this._startDate.GetValueOrDefault(); }
