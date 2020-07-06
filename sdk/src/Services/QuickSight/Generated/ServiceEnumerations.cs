@@ -1695,6 +1695,106 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type ThemeErrorType.
+    /// </summary>
+    public class ThemeErrorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERNAL_FAILURE for ThemeErrorType
+        /// </summary>
+        public static readonly ThemeErrorType INTERNAL_FAILURE = new ThemeErrorType("INTERNAL_FAILURE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThemeErrorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThemeErrorType FindValue(string value)
+        {
+            return FindValue<ThemeErrorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThemeErrorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ThemeType.
+    /// </summary>
+    public class ThemeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ThemeType
+        /// </summary>
+        public static readonly ThemeType ALL = new ThemeType("ALL");
+        /// <summary>
+        /// Constant CUSTOM for ThemeType
+        /// </summary>
+        public static readonly ThemeType CUSTOM = new ThemeType("CUSTOM");
+        /// <summary>
+        /// Constant QUICKSIGHT for ThemeType
+        /// </summary>
+        public static readonly ThemeType QUICKSIGHT = new ThemeType("QUICKSIGHT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThemeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThemeType FindValue(string value)
+        {
+            return FindValue<ThemeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThemeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type UserRole.
     /// </summary>
     public class UserRole : ConstantClass

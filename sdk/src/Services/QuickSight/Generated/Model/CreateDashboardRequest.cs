@@ -53,6 +53,7 @@ namespace Amazon.QuickSight.Model
         private List<ResourcePermission> _permissions = new List<ResourcePermission>();
         private DashboardSourceEntity _sourceEntity;
         private List<Tag> _tags = new List<Tag>();
+        private string _themeArn;
         private string _versionDescription;
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         ///  <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility
         /// state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is
-        /// <code>COLLAPSED</code> by default.
+        /// <code>COLLAPSED</code> by default. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -155,8 +156,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A structure that contains the parameters of the dashboard. These are parameter overrides
-        /// for a dashboard. A dashboard can have any type of parameters, and some parameters
+        /// The parameters for the creation of the dashboard, which you want to use to override
+        /// the default settings. A dashboard can have any type of parameters, and some parameters
         /// might accept multiple values. 
         /// </para>
         /// </summary>
@@ -241,6 +242,26 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThemeArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the theme that is being used for this dashboard.
+        /// If you add a value for this field, it overrides the value that is used in the source
+        /// entity. The theme ARN must exist in the same AWS account where you create the dashboard.
+        /// </para>
+        /// </summary>
+        public string ThemeArn
+        {
+            get { return this._themeArn; }
+            set { this._themeArn = value; }
+        }
+
+        // Check to see if ThemeArn property is set
+        internal bool IsSetThemeArn()
+        {
+            return this._themeArn != null;
         }
 
         /// <summary>

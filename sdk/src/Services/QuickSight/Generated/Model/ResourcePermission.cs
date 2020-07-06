@@ -58,10 +58,19 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an IAM ARN.
-        /// If you are using cross-account resource sharing, this is the IAM ARN of an account
-        /// root. Otherwise, it is the ARN of a QuickSight user or group. .
+        /// The Amazon Resource Name (ARN) of the principal. This can be one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The ARN of an Amazon QuickSight user, group, or namespace. (This is most common.)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The ARN of an AWS account root: This is an IAM ARN rather than a QuickSight ARN. Use
+        /// this option only to share resources (templates) across AWS accounts. (This is less
+        /// common.) 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string Principal

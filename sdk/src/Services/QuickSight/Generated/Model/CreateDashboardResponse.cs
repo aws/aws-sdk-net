@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the dashboard.
+        /// The ARN of the dashboard.
         /// </para>
         /// </summary>
         public string Arn

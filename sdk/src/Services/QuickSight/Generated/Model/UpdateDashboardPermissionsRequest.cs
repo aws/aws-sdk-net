@@ -83,7 +83,7 @@ namespace Amazon.QuickSight.Model
         /// The permissions that you want to grant on this resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Max=100)]
         public List<ResourcePermission> GrantPermissions
         {
             get { return this._grantPermissions; }
@@ -102,7 +102,7 @@ namespace Amazon.QuickSight.Model
         /// The permissions that you want to revoke from this resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Max=100)]
         public List<ResourcePermission> RevokePermissions
         {
             get { return this._revokePermissions; }

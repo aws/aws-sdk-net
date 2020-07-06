@@ -40,6 +40,7 @@ namespace Amazon.QuickSight.Model
         private string _name;
         private Parameters _parameters;
         private DashboardSourceEntity _sourceEntity;
+        private string _themeArn;
         private string _versionDescription;
 
         /// <summary>
@@ -144,7 +145,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// A structure that contains the parameters of the dashboard. These are parameter overrides
         /// for a dashboard. A dashboard can have any type of parameters, and some parameters
-        /// might accept multiple values. 
+        /// might accept multiple values.
         /// </para>
         /// </summary>
         public Parameters Parameters
@@ -188,6 +189,27 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSourceEntity()
         {
             return this._sourceEntity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThemeArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the theme that is being used for this dashboard.
+        /// If you add a value for this field, it overrides the value that was originally associated
+        /// with the entity. The theme ARN must exist in the same AWS account where you create
+        /// the dashboard.
+        /// </para>
+        /// </summary>
+        public string ThemeArn
+        {
+            get { return this._themeArn; }
+            set { this._themeArn = value; }
+        }
+
+        // Check to see if ThemeArn property is set
+        internal bool IsSetThemeArn()
+        {
+            return this._themeArn != null;
         }
 
         /// <summary>

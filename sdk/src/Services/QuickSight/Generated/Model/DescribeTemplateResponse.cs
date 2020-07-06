@@ -33,8 +33,24 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class DescribeTemplateResponse : AmazonWebServiceResponse
     {
+        private string _requestId;
         private int? _status;
         private Template _template;
+
+        /// <summary>
+        /// Gets and sets the property RequestId.
+        /// </summary>
+        public string RequestId
+        {
+            get { return this._requestId; }
+            set { this._requestId = value; }
+        }
+
+        // Check to see if RequestId property is set
+        internal bool IsSetRequestId()
+        {
+            return this._requestId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Status. 

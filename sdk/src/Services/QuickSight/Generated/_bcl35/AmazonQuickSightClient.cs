@@ -939,6 +939,9 @@ namespace Amazon.QuickSight
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
         /// permissions, and that you are using the correct access keys.
         /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
@@ -1083,6 +1086,178 @@ namespace Amazon.QuickSight
         public virtual CreateTemplateAliasResponse EndCreateTemplateAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateTemplateAliasResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateTheme
+
+        /// <summary>
+        /// Creates a theme.
+        /// 
+        ///  
+        /// <para>
+        /// A <i>theme</i> is set of configuration options for color and layout. Themes apply
+        /// to analyses and dashboards. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using
+        /// Themes in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTheme service method.</param>
+        /// 
+        /// <returns>The response from the CreateTheme service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTheme">REST API Reference for CreateTheme Operation</seealso>
+        public virtual CreateThemeResponse CreateTheme(CreateThemeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThemeResponseUnmarshaller.Instance;
+
+            return Invoke<CreateThemeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTheme operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTheme operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTheme
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTheme">REST API Reference for CreateTheme Operation</seealso>
+        public virtual IAsyncResult BeginCreateTheme(CreateThemeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThemeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTheme operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTheme.</param>
+        /// 
+        /// <returns>Returns a  CreateThemeResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTheme">REST API Reference for CreateTheme Operation</seealso>
+        public virtual CreateThemeResponse EndCreateTheme(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateThemeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateThemeAlias
+
+        /// <summary>
+        /// Creates a theme alias for a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateThemeAlias service method.</param>
+        /// 
+        /// <returns>The response from the CreateThemeAlias service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateThemeAlias">REST API Reference for CreateThemeAlias Operation</seealso>
+        public virtual CreateThemeAliasResponse CreateThemeAlias(CreateThemeAliasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThemeAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThemeAliasResponseUnmarshaller.Instance;
+
+            return Invoke<CreateThemeAliasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateThemeAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateThemeAlias operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateThemeAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateThemeAlias">REST API Reference for CreateThemeAlias Operation</seealso>
+        public virtual IAsyncResult BeginCreateThemeAlias(CreateThemeAliasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThemeAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThemeAliasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateThemeAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateThemeAlias.</param>
+        /// 
+        /// <returns>Returns a  CreateThemeAliasResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateThemeAlias">REST API Reference for CreateThemeAlias Operation</seealso>
+        public virtual CreateThemeAliasResponse EndCreateThemeAlias(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateThemeAliasResponse>(asyncResult);
         }
 
         #endregion
@@ -1629,6 +1804,9 @@ namespace Amazon.QuickSight
         /// <param name="request">Container for the necessary parameters to execute the DeleteTemplateAlias service method.</param>
         /// 
         /// <returns>The response from the DeleteTemplateAlias service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
@@ -1686,6 +1864,164 @@ namespace Amazon.QuickSight
         public virtual DeleteTemplateAliasResponse EndDeleteTemplateAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTemplateAliasResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTheme
+
+        /// <summary>
+        /// Deletes a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTheme service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTheme service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTheme">REST API Reference for DeleteTheme Operation</seealso>
+        public virtual DeleteThemeResponse DeleteTheme(DeleteThemeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThemeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteThemeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTheme operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTheme operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTheme
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTheme">REST API Reference for DeleteTheme Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTheme(DeleteThemeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThemeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTheme operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTheme.</param>
+        /// 
+        /// <returns>Returns a  DeleteThemeResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTheme">REST API Reference for DeleteTheme Operation</seealso>
+        public virtual DeleteThemeResponse EndDeleteTheme(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteThemeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteThemeAlias
+
+        /// <summary>
+        /// Deletes the version of the theme that the specified theme alias points to. If you
+        /// provide a specific alias, you delete the version of the theme that the alias points
+        /// to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThemeAlias service method.</param>
+        /// 
+        /// <returns>The response from the DeleteThemeAlias service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteThemeAlias">REST API Reference for DeleteThemeAlias Operation</seealso>
+        public virtual DeleteThemeAliasResponse DeleteThemeAlias(DeleteThemeAliasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThemeAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThemeAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteThemeAliasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteThemeAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThemeAlias operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteThemeAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteThemeAlias">REST API Reference for DeleteThemeAlias Operation</seealso>
+        public virtual IAsyncResult BeginDeleteThemeAlias(DeleteThemeAliasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThemeAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThemeAliasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteThemeAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteThemeAlias.</param>
+        /// 
+        /// <returns>Returns a  DeleteThemeAliasResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteThemeAlias">REST API Reference for DeleteThemeAlias Operation</seealso>
+        public virtual DeleteThemeAliasResponse EndDeleteThemeAlias(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteThemeAliasResponse>(asyncResult);
         }
 
         #endregion
@@ -2741,6 +3077,240 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  DescribeTheme
+
+        /// <summary>
+        /// Describes a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTheme service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTheme service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTheme">REST API Reference for DescribeTheme Operation</seealso>
+        public virtual DescribeThemeResponse DescribeTheme(DescribeThemeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThemeResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeThemeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTheme operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTheme operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTheme
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTheme">REST API Reference for DescribeTheme Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTheme(DescribeThemeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThemeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTheme operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTheme.</param>
+        /// 
+        /// <returns>Returns a  DescribeThemeResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTheme">REST API Reference for DescribeTheme Operation</seealso>
+        public virtual DescribeThemeResponse EndDescribeTheme(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeThemeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeThemeAlias
+
+        /// <summary>
+        /// Describes the alias for a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThemeAlias service method.</param>
+        /// 
+        /// <returns>The response from the DescribeThemeAlias service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemeAlias">REST API Reference for DescribeThemeAlias Operation</seealso>
+        public virtual DescribeThemeAliasResponse DescribeThemeAlias(DescribeThemeAliasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThemeAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThemeAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeThemeAliasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeThemeAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThemeAlias operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeThemeAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemeAlias">REST API Reference for DescribeThemeAlias Operation</seealso>
+        public virtual IAsyncResult BeginDescribeThemeAlias(DescribeThemeAliasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThemeAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThemeAliasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeThemeAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeThemeAlias.</param>
+        /// 
+        /// <returns>Returns a  DescribeThemeAliasResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemeAlias">REST API Reference for DescribeThemeAlias Operation</seealso>
+        public virtual DescribeThemeAliasResponse EndDescribeThemeAlias(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeThemeAliasResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeThemePermissions
+
+        /// <summary>
+        /// Describes the read and write permissions for a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThemePermissions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeThemePermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemePermissions">REST API Reference for DescribeThemePermissions Operation</seealso>
+        public virtual DescribeThemePermissionsResponse DescribeThemePermissions(DescribeThemePermissionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThemePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThemePermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeThemePermissionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeThemePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThemePermissions operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeThemePermissions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemePermissions">REST API Reference for DescribeThemePermissions Operation</seealso>
+        public virtual IAsyncResult BeginDescribeThemePermissions(DescribeThemePermissionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThemePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThemePermissionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeThemePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeThemePermissions.</param>
+        /// 
+        /// <returns>Returns a  DescribeThemePermissionsResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemePermissions">REST API Reference for DescribeThemePermissions Operation</seealso>
+        public virtual DescribeThemePermissionsResponse EndDescribeThemePermissions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeThemePermissionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeUser
 
         /// <summary>
@@ -3718,6 +4288,9 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
         /// </exception>
@@ -3922,6 +4495,246 @@ namespace Amazon.QuickSight
         public virtual ListTemplateVersionsResponse EndListTemplateVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTemplateVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListThemeAliases
+
+        /// <summary>
+        /// Lists all the aliases of a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThemeAliases service method.</param>
+        /// 
+        /// <returns>The response from the ListThemeAliases service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeAliases">REST API Reference for ListThemeAliases Operation</seealso>
+        public virtual ListThemeAliasesResponse ListThemeAliases(ListThemeAliasesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThemeAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThemeAliasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListThemeAliasesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListThemeAliases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListThemeAliases operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListThemeAliases
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeAliases">REST API Reference for ListThemeAliases Operation</seealso>
+        public virtual IAsyncResult BeginListThemeAliases(ListThemeAliasesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThemeAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThemeAliasesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListThemeAliases operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListThemeAliases.</param>
+        /// 
+        /// <returns>Returns a  ListThemeAliasesResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeAliases">REST API Reference for ListThemeAliases Operation</seealso>
+        public virtual ListThemeAliasesResponse EndListThemeAliases(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListThemeAliasesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListThemes
+
+        /// <summary>
+        /// Lists all the themes in the current AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThemes service method.</param>
+        /// 
+        /// <returns>The response from the ListThemes service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes">REST API Reference for ListThemes Operation</seealso>
+        public virtual ListThemesResponse ListThemes(ListThemesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThemesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThemesResponseUnmarshaller.Instance;
+
+            return Invoke<ListThemesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListThemes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListThemes operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListThemes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes">REST API Reference for ListThemes Operation</seealso>
+        public virtual IAsyncResult BeginListThemes(ListThemesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThemesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThemesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListThemes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListThemes.</param>
+        /// 
+        /// <returns>Returns a  ListThemesResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes">REST API Reference for ListThemes Operation</seealso>
+        public virtual ListThemesResponse EndListThemes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListThemesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListThemeVersions
+
+        /// <summary>
+        /// Lists all the versions of the themes in the current AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThemeVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListThemeVersions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions">REST API Reference for ListThemeVersions Operation</seealso>
+        public virtual ListThemeVersionsResponse ListThemeVersions(ListThemeVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThemeVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThemeVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListThemeVersionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListThemeVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListThemeVersions operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListThemeVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions">REST API Reference for ListThemeVersions Operation</seealso>
+        public virtual IAsyncResult BeginListThemeVersions(ListThemeVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThemeVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThemeVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListThemeVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListThemeVersions.</param>
+        /// 
+        /// <returns>Returns a  ListThemeVersionsResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions">REST API Reference for ListThemeVersions Operation</seealso>
+        public virtual ListThemeVersionsResponse EndListThemeVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListThemeVersionsResponse>(asyncResult);
         }
 
         #endregion
@@ -5341,6 +6154,326 @@ namespace Amazon.QuickSight
         public virtual UpdateTemplatePermissionsResponse EndUpdateTemplatePermissions(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateTemplatePermissionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateTheme
+
+        /// <summary>
+        /// Updates a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTheme service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTheme service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTheme">REST API Reference for UpdateTheme Operation</seealso>
+        public virtual UpdateThemeResponse UpdateTheme(UpdateThemeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThemeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateThemeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTheme operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTheme operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTheme
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTheme">REST API Reference for UpdateTheme Operation</seealso>
+        public virtual IAsyncResult BeginUpdateTheme(UpdateThemeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThemeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTheme operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTheme.</param>
+        /// 
+        /// <returns>Returns a  UpdateThemeResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTheme">REST API Reference for UpdateTheme Operation</seealso>
+        public virtual UpdateThemeResponse EndUpdateTheme(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateThemeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateThemeAlias
+
+        /// <summary>
+        /// Updates an alias of a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThemeAlias service method.</param>
+        /// 
+        /// <returns>The response from the UpdateThemeAlias service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemeAlias">REST API Reference for UpdateThemeAlias Operation</seealso>
+        public virtual UpdateThemeAliasResponse UpdateThemeAlias(UpdateThemeAliasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThemeAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThemeAliasResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateThemeAliasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateThemeAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThemeAlias operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateThemeAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemeAlias">REST API Reference for UpdateThemeAlias Operation</seealso>
+        public virtual IAsyncResult BeginUpdateThemeAlias(UpdateThemeAliasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThemeAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThemeAliasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateThemeAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateThemeAlias.</param>
+        /// 
+        /// <returns>Returns a  UpdateThemeAliasResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemeAlias">REST API Reference for UpdateThemeAlias Operation</seealso>
+        public virtual UpdateThemeAliasResponse EndUpdateThemeAlias(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateThemeAliasResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateThemePermissions
+
+        /// <summary>
+        /// Updates the resource permissions for a theme. Permissions apply to the action to grant
+        /// or revoke permissions on, for example <code>"quicksight:DescribeTheme"</code>.
+        /// 
+        ///  
+        /// <para>
+        /// Theme permissions apply in groupings. Valid groupings include the following for the
+        /// three levels of permissions, which are user, owner, or no permissions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// User
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>"quicksight:DescribeTheme"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:DescribeThemeAlias"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:ListThemeAliases"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:ListThemeVersions"</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Owner
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>"quicksight:DescribeTheme"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:DescribeThemeAlias"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:ListThemeAliases"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:ListThemeVersions"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:DeleteTheme"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:UpdateTheme"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:CreateThemeAlias"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:DeleteThemeAlias"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:UpdateThemeAlias"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:UpdateThemePermissions"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:DescribeThemePermissions"</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// To specify no permissions, omit the permissions list.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThemePermissions service method.</param>
+        /// 
+        /// <returns>The response from the UpdateThemePermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemePermissions">REST API Reference for UpdateThemePermissions Operation</seealso>
+        public virtual UpdateThemePermissionsResponse UpdateThemePermissions(UpdateThemePermissionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThemePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThemePermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateThemePermissionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateThemePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThemePermissions operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateThemePermissions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemePermissions">REST API Reference for UpdateThemePermissions Operation</seealso>
+        public virtual IAsyncResult BeginUpdateThemePermissions(UpdateThemePermissionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThemePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThemePermissionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateThemePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateThemePermissions.</param>
+        /// 
+        /// <returns>Returns a  UpdateThemePermissionsResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemePermissions">REST API Reference for UpdateThemePermissions Operation</seealso>
+        public virtual UpdateThemePermissionsResponse EndUpdateThemePermissions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateThemePermissionsResponse>(asyncResult);
         }
 
         #endregion

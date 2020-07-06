@@ -64,7 +64,7 @@ namespace Amazon.QuickSight.Model
         /// A list of resource permissions to be granted on the template. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Max=100)]
         public List<ResourcePermission> GrantPermissions
         {
             get { return this._grantPermissions; }
@@ -83,7 +83,7 @@ namespace Amazon.QuickSight.Model
         /// A list of resource permissions to be revoked from the template. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Max=100)]
         public List<ResourcePermission> RevokePermissions
         {
             get { return this._revokePermissions; }
