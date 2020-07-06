@@ -1,3 +1,11 @@
+### 3.3.774.0 (2020-07-06 18:11 UTC)
+* IoTSiteWise (3.3.102.0)
+	* This release supports optional start date and end date parameters for the GetAssetPropertyValueHistory API.
+* QuickSight (3.3.106.0)
+	* Add Theme APIs and update Dashboard APIs to support theme overrides.
+* RDS (3.3.125.0)
+	* Adds support for Amazon RDS on AWS Outposts.
+
 ### 3.3.773.1 (2020-07-02 18:09 UTC)
 * Connect (3.3.103.101)
 	* Documentation updates for Amazon Connect.

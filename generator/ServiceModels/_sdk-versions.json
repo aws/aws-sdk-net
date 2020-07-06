@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.773.1",
+    "ProductVersion" : "3.3.774.0",
     "CoreVersion"    : "3.3.107.20",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.124.1",
+            "Version" : "3.3.125.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.20"
@@ -1225,7 +1225,7 @@
             "InPreview"               : false
         },
         "QuickSight"                      : {
-            "Version" : "3.3.105.2",
+            "Version" : "3.3.106.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.20"
@@ -1769,7 +1769,7 @@
             "InPreview"               : false
         },
         "IoTSiteWise"                     : {
-            "Version" : "3.3.101.19",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.20"
