@@ -34,6 +34,28 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetResourcePolicyRequest : AmazonGlueRequest
     {
+        private string _resourceArn;
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The ARN of the AWS Glue resource for the resource policy to be retrieved. For more
+        /// information about AWS Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
+        /// Glue ARN string pattern</a> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10240)]
+        public string ResourceArn
+        {
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
+        }
+
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
+        {
+            return this._resourceArn != null;
+        }
 
     }
 }

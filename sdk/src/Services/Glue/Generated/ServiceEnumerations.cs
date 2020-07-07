@@ -653,6 +653,56 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type EnableHybridValues.
+    /// </summary>
+    public class EnableHybridValues : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FALSE for EnableHybridValues
+        /// </summary>
+        public static readonly EnableHybridValues FALSE = new EnableHybridValues("FALSE");
+        /// <summary>
+        /// Constant TRUE for EnableHybridValues
+        /// </summary>
+        public static readonly EnableHybridValues TRUE = new EnableHybridValues("TRUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EnableHybridValues(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnableHybridValues FindValue(string value)
+        {
+            return FindValue<EnableHybridValues>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnableHybridValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExistCondition.
     /// </summary>
     public class ExistCondition : ConstantClass
@@ -1206,6 +1256,56 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PrincipalType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceShareType.
+    /// </summary>
+    public class ResourceShareType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ResourceShareType
+        /// </summary>
+        public static readonly ResourceShareType ALL = new ResourceShareType("ALL");
+        /// <summary>
+        /// Constant FOREIGN for ResourceShareType
+        /// </summary>
+        public static readonly ResourceShareType FOREIGN = new ResourceShareType("FOREIGN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceShareType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceShareType FindValue(string value)
+        {
+            return FindValue<ResourceShareType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceShareType(string value)
         {
             return FindValue(value);
         }

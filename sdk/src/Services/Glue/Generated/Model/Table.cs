@@ -33,6 +33,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class Table
     {
+        private string _catalogId;
         private string _createdBy;
         private DateTime? _createTime;
         private string _databaseName;
@@ -47,9 +48,29 @@ namespace Amazon.Glue.Model
         private int? _retention;
         private StorageDescriptor _storageDescriptor;
         private string _tableType;
+        private TableIdentifier _targetTable;
         private DateTime? _updateTime;
         private string _viewExpandedText;
         private string _viewOriginalText;
+
+        /// <summary>
+        /// Gets and sets the property CatalogId. 
+        /// <para>
+        /// The ID of the Data Catalog in which the table resides.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string CatalogId
+        {
+            get { return this._catalogId; }
+            set { this._catalogId = value; }
+        }
+
+        // Check to see if CatalogId property is set
+        internal bool IsSetCatalogId()
+        {
+            return this._catalogId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedBy. 
@@ -321,6 +342,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetTableType()
         {
             return this._tableType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetTable. 
+        /// <para>
+        /// A <code>TableIdentifier</code> structure that describes a target table for resource
+        /// linking.
+        /// </para>
+        /// </summary>
+        public TableIdentifier TargetTable
+        {
+            get { return this._targetTable; }
+            set { this._targetTable = value; }
+        }
+
+        // Check to see if TargetTable property is set
+        internal bool IsSetTargetTable()
+        {
+            return this._targetTable != null;
         }
 
         /// <summary>

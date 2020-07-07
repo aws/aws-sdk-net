@@ -160,7 +160,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ConnectionType. 
         /// <para>
-        /// The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+        /// The type of the connection. Currently, SFTP is not supported.
         /// </para>
         /// </summary>
         public ConnectionType ConnectionType

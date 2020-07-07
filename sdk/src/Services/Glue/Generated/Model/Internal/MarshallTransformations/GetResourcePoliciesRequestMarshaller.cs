@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PutResourcePolicy Request Marshaller
+    /// GetResourcePolicies Request Marshaller
     /// </summary>       
-    public class PutResourcePolicyRequestMarshaller : IMarshaller<IRequest, PutResourcePolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetResourcePoliciesRequestMarshaller : IMarshaller<IRequest, GetResourcePoliciesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PutResourcePolicyRequest)input);
+            return this.Marshall((GetResourcePoliciesRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PutResourcePolicyRequest publicRequest)
+        public IRequest Marshall(GetResourcePoliciesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Glue");
-            string target = "AWSGlue.PutResourcePolicy";
+            string target = "AWSGlue.GetResourcePolicies";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";            
@@ -68,34 +68,16 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnableHybrid())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("EnableHybrid");
-                    context.Writer.Write(publicRequest.EnableHybrid);
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetPolicyExistsCondition())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("PolicyExistsCondition");
-                    context.Writer.Write(publicRequest.PolicyExistsCondition);
-                }
-
-                if(publicRequest.IsSetPolicyHashCondition())
-                {
-                    context.Writer.WritePropertyName("PolicyHashCondition");
-                    context.Writer.Write(publicRequest.PolicyHashCondition);
-                }
-
-                if(publicRequest.IsSetPolicyInJson())
-                {
-                    context.Writer.WritePropertyName("PolicyInJson");
-                    context.Writer.Write(publicRequest.PolicyInJson);
-                }
-
-                if(publicRequest.IsSetResourceArn())
-                {
-                    context.Writer.WritePropertyName("ResourceArn");
-                    context.Writer.Write(publicRequest.ResourceArn);
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
         
@@ -107,9 +89,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static PutResourcePolicyRequestMarshaller _instance = new PutResourcePolicyRequestMarshaller();        
+        private static GetResourcePoliciesRequestMarshaller _instance = new GetResourcePoliciesRequestMarshaller();        
 
-        internal static PutResourcePolicyRequestMarshaller GetInstance()
+        internal static GetResourcePoliciesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -117,7 +99,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutResourcePolicyRequestMarshaller Instance
+        public static GetResourcePoliciesRequestMarshaller Instance
         {
             get
             {

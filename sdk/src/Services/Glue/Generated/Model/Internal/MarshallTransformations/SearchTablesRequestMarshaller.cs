@@ -102,6 +102,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetResourceShareType())
+                {
+                    context.Writer.WritePropertyName("ResourceShareType");
+                    context.Writer.Write(publicRequest.ResourceShareType);
+                }
+
                 if(publicRequest.IsSetSearchText())
                 {
                     context.Writer.WritePropertyName("SearchText");

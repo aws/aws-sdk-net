@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Partition Object
+    /// Response Unmarshaller for TableIdentifier Object
     /// </summary>  
-    public class PartitionUnmarshaller : IUnmarshaller<Partition, XmlUnmarshallerContext>, IUnmarshaller<Partition, JsonUnmarshallerContext>
+    public class TableIdentifierUnmarshaller : IUnmarshaller<TableIdentifier, XmlUnmarshallerContext>, IUnmarshaller<TableIdentifier, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Partition IUnmarshaller<Partition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TableIdentifier IUnmarshaller<TableIdentifier, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Partition Unmarshall(JsonUnmarshallerContext context)
+        public TableIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Partition unmarshalledObject = new Partition();
+            TableIdentifier unmarshalledObject = new TableIdentifier();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,52 +70,16 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.CatalogId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("DatabaseName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LastAccessTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastAccessTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastAnalyzedTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastAnalyzedTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Parameters", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StorageDescriptor", targetDepth))
-                {
-                    var unmarshaller = StorageDescriptorUnmarshaller.Instance;
-                    unmarshalledObject.StorageDescriptor = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TableName", targetDepth))
+                if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TableName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Values", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Values = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -124,12 +88,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static PartitionUnmarshaller _instance = new PartitionUnmarshaller();        
+        private static TableIdentifierUnmarshaller _instance = new TableIdentifierUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PartitionUnmarshaller Instance
+        public static TableIdentifierUnmarshaller Instance
         {
             get
             {

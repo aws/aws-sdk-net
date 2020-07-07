@@ -49,6 +49,7 @@ namespace Amazon.Glue.Model
         private List<PropertyPredicate> _filters = new List<PropertyPredicate>();
         private int? _maxResults;
         private string _nextToken;
+        private ResourceShareType _resourceShareType;
         private string _searchText;
         private List<SortCriterion> _sortCriteria = new List<SortCriterion>();
 
@@ -125,6 +126,35 @@ namespace Amazon.Glue.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceShareType. 
+        /// <para>
+        /// Allows you to specify that you want to search the tables shared with your account.
+        /// The allowable values are <code>FOREIGN</code> or <code>ALL</code>. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If set to <code>FOREIGN</code>, will search the tables shared with your account. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If set to <code>ALL</code>, will search the tables shared with your account, as well
+        /// as the tables in yor local account. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ResourceShareType ResourceShareType
+        {
+            get { return this._resourceShareType; }
+            set { this._resourceShareType = value; }
+        }
+
+        // Check to see if ResourceShareType property is set
+        internal bool IsSetResourceShareType()
+        {
+            return this._resourceShareType != null;
         }
 
         /// <summary>

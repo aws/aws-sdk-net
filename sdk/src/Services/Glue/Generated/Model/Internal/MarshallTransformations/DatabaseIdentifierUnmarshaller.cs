@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UserDefinedFunction Object
+    /// Response Unmarshaller for DatabaseIdentifier Object
     /// </summary>  
-    public class UserDefinedFunctionUnmarshaller : IUnmarshaller<UserDefinedFunction, XmlUnmarshallerContext>, IUnmarshaller<UserDefinedFunction, JsonUnmarshallerContext>
+    public class DatabaseIdentifierUnmarshaller : IUnmarshaller<DatabaseIdentifier, XmlUnmarshallerContext>, IUnmarshaller<DatabaseIdentifier, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        UserDefinedFunction IUnmarshaller<UserDefinedFunction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DatabaseIdentifier IUnmarshaller<DatabaseIdentifier, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public UserDefinedFunction Unmarshall(JsonUnmarshallerContext context)
+        public DatabaseIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            UserDefinedFunction unmarshalledObject = new UserDefinedFunction();
+            DatabaseIdentifier unmarshalledObject = new DatabaseIdentifier();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,46 +70,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.CatalogId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ClassName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClassName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CreateTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("DatabaseName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FunctionName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FunctionName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OwnerName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OwnerName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OwnerType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OwnerType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResourceUris", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ResourceUri, ResourceUriUnmarshaller>(ResourceUriUnmarshaller.Instance);
-                    unmarshalledObject.ResourceUris = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -118,12 +82,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static UserDefinedFunctionUnmarshaller _instance = new UserDefinedFunctionUnmarshaller();        
+        private static DatabaseIdentifierUnmarshaller _instance = new DatabaseIdentifierUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UserDefinedFunctionUnmarshaller Instance
+        public static DatabaseIdentifierUnmarshaller Instance
         {
             get
             {

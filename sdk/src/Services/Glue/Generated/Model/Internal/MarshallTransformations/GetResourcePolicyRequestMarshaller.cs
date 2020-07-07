@@ -63,7 +63,23 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
             request.ResourcePath = "/";
             request.MarshallerVersion = 2;
-            request.Content = System.Text.Encoding.UTF8.GetBytes("{}");
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetResourceArn())
+                {
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
+                }
+
+        
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+            }
+
 
             return request;
         }

@@ -86,6 +86,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetResourceShareType())
+                {
+                    context.Writer.WritePropertyName("ResourceShareType");
+                    context.Writer.Write(publicRequest.ResourceShareType);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

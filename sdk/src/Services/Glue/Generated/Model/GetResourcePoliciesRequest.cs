@@ -29,50 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteResourcePolicy operation.
-    /// Deletes a specified policy.
+    /// Container for the parameters to the GetResourcePolicies operation.
+    /// Retrieves the security configurations for the resource policies set on individual
+    /// resources, and also the account-level policy.
     /// </summary>
-    public partial class DeleteResourcePolicyRequest : AmazonGlueRequest
+    public partial class GetResourcePoliciesRequest : AmazonGlueRequest
     {
-        private string _policyHashCondition;
-        private string _resourceArn;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property PolicyHashCondition. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The hash value returned when this policy was set.
+        /// The maximum size of a list to return.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string PolicyHashCondition
+        [AWSProperty(Min=1, Max=1000)]
+        public int MaxResults
         {
-            get { return this._policyHashCondition; }
-            set { this._policyHashCondition = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if PolicyHashCondition property is set
-        internal bool IsSetPolicyHashCondition()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._policyHashCondition != null;
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The ARN of the AWS Glue resource for the resource policy to be deleted.
+        /// A continuation token, if this is a continuation request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10240)]
-        public string ResourceArn
+        public string NextToken
         {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._resourceArn != null;
+            return this._nextToken != null;
         }
 
     }

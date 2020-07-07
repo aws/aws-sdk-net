@@ -29,50 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteResourcePolicy operation.
-    /// Deletes a specified policy.
+    /// A structure that describes a target database for resource linking.
     /// </summary>
-    public partial class DeleteResourcePolicyRequest : AmazonGlueRequest
+    public partial class DatabaseIdentifier
     {
-        private string _policyHashCondition;
-        private string _resourceArn;
+        private string _catalogId;
+        private string _databaseName;
 
         /// <summary>
-        /// Gets and sets the property PolicyHashCondition. 
+        /// Gets and sets the property CatalogId. 
         /// <para>
-        /// The hash value returned when this policy was set.
+        /// The ID of the Data Catalog in which the database resides.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
-        public string PolicyHashCondition
+        public string CatalogId
         {
-            get { return this._policyHashCondition; }
-            set { this._policyHashCondition = value; }
+            get { return this._catalogId; }
+            set { this._catalogId = value; }
         }
 
-        // Check to see if PolicyHashCondition property is set
-        internal bool IsSetPolicyHashCondition()
+        // Check to see if CatalogId property is set
+        internal bool IsSetCatalogId()
         {
-            return this._policyHashCondition != null;
+            return this._catalogId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
+        /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The ARN of the AWS Glue resource for the resource policy to be deleted.
+        /// The name of the catalog database.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10240)]
-        public string ResourceArn
+        [AWSProperty(Min=1, Max=255)]
+        public string DatabaseName
         {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
+            get { return this._databaseName; }
+            set { this._databaseName = value; }
         }
 
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
+        // Check to see if DatabaseName property is set
+        internal bool IsSetDatabaseName()
         {
-            return this._resourceArn != null;
+            return this._databaseName != null;
         }
 
     }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Database Object
+    /// Response Unmarshaller for GluePolicy Object
     /// </summary>  
-    public class DatabaseUnmarshaller : IUnmarshaller<Database, XmlUnmarshallerContext>, IUnmarshaller<Database, JsonUnmarshallerContext>
+    public class GluePolicyUnmarshaller : IUnmarshaller<GluePolicy, XmlUnmarshallerContext>, IUnmarshaller<GluePolicy, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Database IUnmarshaller<Database, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GluePolicy IUnmarshaller<GluePolicy, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,63 +53,39 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Database Unmarshall(JsonUnmarshallerContext context)
+        public GluePolicy Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Database unmarshalledObject = new Database();
+            GluePolicy unmarshalledObject = new GluePolicy();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CatalogId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CatalogId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CreateTableDefaultPermissions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<PrincipalPermissions, PrincipalPermissionsUnmarshaller>(PrincipalPermissionsUnmarshaller.Instance);
-                    unmarshalledObject.CreateTableDefaultPermissions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("CreateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("PolicyHash", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PolicyHash = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LocationUri", targetDepth))
+                if (context.TestExpression("PolicyInJson", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocationUri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PolicyInJson = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("UpdateTime", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Parameters", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TargetDatabase", targetDepth))
-                {
-                    var unmarshaller = DatabaseIdentifierUnmarshaller.Instance;
-                    unmarshalledObject.TargetDatabase = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.UpdateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -118,12 +94,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static DatabaseUnmarshaller _instance = new DatabaseUnmarshaller();        
+        private static GluePolicyUnmarshaller _instance = new GluePolicyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DatabaseUnmarshaller Instance
+        public static GluePolicyUnmarshaller Instance
         {
             get
             {
