@@ -58,8 +58,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The fully qualified URI of the new public key resource just created. For example:
-        /// <code>https://cloudfront.amazonaws.com/2010-11-01/cloudfront-public-key/EDFDVBD632BHDS5</code>.
+        /// The fully qualified URI of the new public key resource just created.
         /// </para>
         /// </summary>
         public string Location
