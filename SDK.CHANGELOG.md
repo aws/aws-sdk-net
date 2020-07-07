@@ -1,3 +1,22 @@
+### 3.3.775.0 (2020-07-07 18:32 UTC)
+* CloudFront (3.3.103.0)
+	* Amazon CloudFront adds support for a new security policy, TLSv1.2_2019.
+* EC2 (3.3.188.0)
+	* DescribeAvailabilityZones now returns additional data about Availability Zones and Local Zones.
+* ElasticFileSystem (3.3.106.0)
+	* This release adds support for automatic backups of Amazon EFS file systems to further simplify backup management. 
+* Glue (3.3.122.0)
+	* AWS Glue Data Catalog supports cross account sharing of tables through AWS Lake Formation
+* LakeFormation (3.3.101.0)
+	*  AWS Lake Formation supports sharing tables with other AWS accounts and organizations
+* StorageGateway (3.3.116.0)
+	* Adding support for file-system driven directory refresh, Case Sensitivity toggle for SMB File Shares, and S3 Prefixes and custom File Share names
+* Core 3.3.107.21
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.774.0 (2020-07-06 18:11 UTC)
 * IoTSiteWise (3.3.102.0)
 	* This release supports optional start date and end date parameters for the GetAssetPropertyValueHistory API.
