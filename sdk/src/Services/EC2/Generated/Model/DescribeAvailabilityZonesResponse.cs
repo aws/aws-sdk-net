@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// Information about the Availability Zones and Local Zones.
+        /// Information about the Zones.
         /// </para>
         /// </summary>
         public List<AvailabilityZone> AvailabilityZones

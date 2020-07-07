@@ -15413,8 +15413,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// Use <a href="https://docs.aws.amazon.com/AWSEC2ApiDocReef/build/server-root/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">describe-availability-zones</a>
-        /// to view the value for <code>GroupName</code>.
+        /// Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
+        /// DescribeAvailabilityZones</a> to view the value for <code>GroupName</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyAvailabilityZoneGroup service method.</param>
@@ -15430,8 +15430,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// Use <a href="https://docs.aws.amazon.com/AWSEC2ApiDocReef/build/server-root/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">describe-availability-zones</a>
-        /// to view the value for <code>GroupName</code>.
+        /// Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
+        /// DescribeAvailabilityZones</a> to view the value for <code>GroupName</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyAvailabilityZoneGroup service method.</param>
