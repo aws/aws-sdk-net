@@ -82,6 +82,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataLakeAdmins = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TrustedResourceOwners", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.TrustedResourceOwners = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

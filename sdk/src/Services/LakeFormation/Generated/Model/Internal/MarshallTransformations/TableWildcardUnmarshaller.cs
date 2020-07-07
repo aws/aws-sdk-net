@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DatabaseResource Object
+    /// Response Unmarshaller for TableWildcard Object
     /// </summary>  
-    public class DatabaseResourceUnmarshaller : IUnmarshaller<DatabaseResource, XmlUnmarshallerContext>, IUnmarshaller<DatabaseResource, JsonUnmarshallerContext>
+    public class TableWildcardUnmarshaller : IUnmarshaller<TableWildcard, XmlUnmarshallerContext>, IUnmarshaller<TableWildcard, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DatabaseResource IUnmarshaller<DatabaseResource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TableWildcard IUnmarshaller<TableWildcard, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,41 +53,29 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DatabaseResource Unmarshall(JsonUnmarshallerContext context)
+        public TableWildcard Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DatabaseResource unmarshalledObject = new DatabaseResource();
+            TableWildcard unmarshalledObject = new TableWildcard();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CatalogId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CatalogId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static DatabaseResourceUnmarshaller _instance = new DatabaseResourceUnmarshaller();        
+        private static TableWildcardUnmarshaller _instance = new TableWildcardUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DatabaseResourceUnmarshaller Instance
+        public static TableWildcardUnmarshaller Instance
         {
             get
             {

@@ -29,30 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
-    /// This is the response object from the GetDataLakeSettings operation.
+    /// A wildcard object representing every table under a database.
     /// </summary>
-    public partial class GetDataLakeSettingsResponse : AmazonWebServiceResponse
+    public partial class TableWildcard
     {
-        private DataLakeSettings _dataLakeSettings;
-
-        /// <summary>
-        /// Gets and sets the property DataLakeSettings. 
-        /// <para>
-        /// A structure representing a list of AWS Lake Formation principals designated as data
-        /// lake administrators.
-        /// </para>
-        /// </summary>
-        public DataLakeSettings DataLakeSettings
-        {
-            get { return this._dataLakeSettings; }
-            set { this._dataLakeSettings = value; }
-        }
-
-        // Check to see if DataLakeSettings property is set
-        internal bool IsSetDataLakeSettings()
-        {
-            return this._dataLakeSettings != null;
-        }
 
     }
 }

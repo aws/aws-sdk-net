@@ -30,8 +30,9 @@ namespace Amazon.LakeFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEffectivePermissionsForPath operation.
-    /// Returns the permissions for a specified table or database resource located at a path
-    /// in Amazon S3.
+    /// Returns the Lake Formation permissions for a specified table or database resource
+    /// located at a path in Amazon S3. <code>GetEffectivePermissionsForPath</code> will not
+    /// return databases and tables if the catalog is encrypted.
     /// </summary>
     public partial class GetEffectivePermissionsForPathRequest : AmazonLakeFormationRequest
     {

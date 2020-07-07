@@ -30,7 +30,8 @@ namespace Amazon.LakeFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDataLakeSettings operation.
-    /// The AWS Lake Formation principal.
+    /// Retrieves the list of the data lake administrators of a Lake Formation-managed data
+    /// lake.
     /// </summary>
     public partial class GetDataLakeSettingsRequest : AmazonLakeFormationRequest
     {

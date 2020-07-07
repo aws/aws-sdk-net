@@ -34,8 +34,29 @@ namespace Amazon.LakeFormation.Model
     /// </summary>
     public partial class TableResource
     {
+        private string _catalogId;
         private string _databaseName;
         private string _name;
+        private TableWildcard _tableWildcard;
+
+        /// <summary>
+        /// Gets and sets the property CatalogId. 
+        /// <para>
+        /// The identifier for the Data Catalog. By default, it is the account ID of the caller.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string CatalogId
+        {
+            get { return this._catalogId; }
+            set { this._catalogId = value; }
+        }
+
+        // Check to see if CatalogId property is set
+        internal bool IsSetCatalogId()
+        {
+            return this._catalogId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DatabaseName. 
@@ -64,7 +85,7 @@ namespace Amazon.LakeFormation.Model
         /// The name of the table.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -75,6 +96,29 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TableWildcard. 
+        /// <para>
+        /// A wildcard object representing every table under a database.
+        /// </para>
+        ///  
+        /// <para>
+        /// At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code>
+        /// is required.
+        /// </para>
+        /// </summary>
+        public TableWildcard TableWildcard
+        {
+            get { return this._tableWildcard; }
+            set { this._tableWildcard = value; }
+        }
+
+        // Check to see if TableWildcard property is set
+        internal bool IsSetTableWildcard()
+        {
+            return this._tableWildcard != null;
         }
 
     }

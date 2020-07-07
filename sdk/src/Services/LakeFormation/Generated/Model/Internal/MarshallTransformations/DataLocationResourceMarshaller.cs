@@ -45,6 +45,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataLocationResource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCatalogId())
+            {
+                context.Writer.WritePropertyName("CatalogId");
+                context.Writer.Write(requestObject.CatalogId);
+            }
+
             if(requestObject.IsSetResourceArn())
             {
                 context.Writer.WritePropertyName("ResourceArn");

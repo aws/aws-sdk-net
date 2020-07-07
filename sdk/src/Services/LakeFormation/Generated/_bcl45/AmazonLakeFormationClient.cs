@@ -495,7 +495,8 @@ namespace Amazon.LakeFormation
 
 
         /// <summary>
-        /// The AWS Lake Formation principal.
+        /// Retrieves the list of the data lake administrators of a Lake Formation-managed data
+        /// lake.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDataLakeSettings service method.</param>
         /// 
@@ -521,7 +522,8 @@ namespace Amazon.LakeFormation
 
 
         /// <summary>
-        /// The AWS Lake Formation principal.
+        /// Retrieves the list of the data lake administrators of a Lake Formation-managed data
+        /// lake.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDataLakeSettings service method.</param>
         /// <param name="cancellationToken">
@@ -554,8 +556,9 @@ namespace Amazon.LakeFormation
 
 
         /// <summary>
-        /// Returns the permissions for a specified table or database resource located at a path
-        /// in Amazon S3.
+        /// Returns the Lake Formation permissions for a specified table or database resource
+        /// located at a path in Amazon S3. <code>GetEffectivePermissionsForPath</code> will not
+        /// return databases and tables if the catalog is encrypted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEffectivePermissionsForPath service method.</param>
         /// 
@@ -584,8 +587,9 @@ namespace Amazon.LakeFormation
 
 
         /// <summary>
-        /// Returns the permissions for a specified table or database resource located at a path
-        /// in Amazon S3.
+        /// Returns the Lake Formation permissions for a specified table or database resource
+        /// located at a path in Amazon S3. <code>GetEffectivePermissionsForPath</code> will not
+        /// return databases and tables if the catalog is encrypted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEffectivePermissionsForPath service method.</param>
         /// <param name="cancellationToken">
@@ -626,7 +630,7 @@ namespace Amazon.LakeFormation
         /// 
         ///  
         /// <para>
-        /// For information about permissions, see <a href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+        /// For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
         /// and Access Control to Metadata and Data</a>.
         /// </para>
         /// </summary>
@@ -659,7 +663,7 @@ namespace Amazon.LakeFormation
         /// 
         ///  
         /// <para>
-        /// For information about permissions, see <a href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+        /// For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
         /// and Access Control to Metadata and Data</a>.
         /// </para>
         /// </summary>
@@ -704,7 +708,7 @@ namespace Amazon.LakeFormation
         /// </para>
         ///  
         /// <para>
-        /// For information about permissions, see <a href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+        /// For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
         /// and Access Control to Metadata and Data</a>.
         /// </para>
         /// </summary>
@@ -742,7 +746,7 @@ namespace Amazon.LakeFormation
         /// </para>
         ///  
         /// <para>
-        /// For information about permissions, see <a href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+        /// For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
         /// and Access Control to Metadata and Data</a>.
         /// </para>
         /// </summary>
@@ -836,7 +840,16 @@ namespace Amazon.LakeFormation
 
 
         /// <summary>
-        /// The AWS Lake Formation principal.
+        /// Sets the list of data lake administrators who have admin privileges on all resources
+        /// managed by Lake Formation. For more information on admin privileges, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/lake-formation-permissions.html">Granting
+        /// Lake Formation Permissions</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This API replaces the current list of data lake admins with the new list being passed.
+        /// To add an admin, fetch the current list and add the new admin to that list and pass
+        /// that list in this API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDataLakeSettings service method.</param>
         /// 
@@ -859,7 +872,16 @@ namespace Amazon.LakeFormation
 
 
         /// <summary>
-        /// The AWS Lake Formation principal.
+        /// Sets the list of data lake administrators who have admin privileges on all resources
+        /// managed by Lake Formation. For more information on admin privileges, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/lake-formation-permissions.html">Granting
+        /// Lake Formation Permissions</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This API replaces the current list of data lake admins with the new list being passed.
+        /// To add an admin, fetch the current list and add the new admin to that list and pass
+        /// that list in this API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDataLakeSettings service method.</param>
         /// <param name="cancellationToken">
@@ -900,6 +922,24 @@ namespace Amazon.LakeFormation
         /// path to the inline policy and attaches it to the service-linked role. When you register
         /// subsequent paths, Lake Formation adds the path to the existing policy.
         /// </para>
+        ///  
+        /// <para>
+        /// The following request registers a new location and gives AWS Lake Formation permission
+        /// to use the service-linked role to access that location.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ResourceArn = arn:aws:s3:::my-bucket UseServiceLinkedRole = true</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>UseServiceLinkedRole</code> is not set to true, you must provide or set the
+        /// <code>RoleArn</code>:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:iam::12345:role/my-data-access-role</code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterResource service method.</param>
         /// 
@@ -938,6 +978,24 @@ namespace Amazon.LakeFormation
         /// role and a new inline policy are created on your behalf. Lake Formation adds the first
         /// path to the inline policy and attaches it to the service-linked role. When you register
         /// subsequent paths, Lake Formation adds the path to the existing policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following request registers a new location and gives AWS Lake Formation permission
+        /// to use the service-linked role to access that location.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ResourceArn = arn:aws:s3:::my-bucket UseServiceLinkedRole = true</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>UseServiceLinkedRole</code> is not set to true, you must provide or set the
+        /// <code>RoleArn</code>:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:iam::12345:role/my-data-access-role</code> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterResource service method.</param>

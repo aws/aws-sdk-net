@@ -30,7 +30,16 @@ namespace Amazon.LakeFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the PutDataLakeSettings operation.
-    /// The AWS Lake Formation principal.
+    /// Sets the list of data lake administrators who have admin privileges on all resources
+    /// managed by Lake Formation. For more information on admin privileges, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/lake-formation-permissions.html">Granting
+    /// Lake Formation Permissions</a>.
+    /// 
+    ///  
+    /// <para>
+    /// This API replaces the current list of data lake admins with the new list being passed.
+    /// To add an admin, fetch the current list and add the new admin to that list and pass
+    /// that list in this API.
+    /// </para>
     /// </summary>
     public partial class PutDataLakeSettingsRequest : AmazonLakeFormationRequest
     {
@@ -61,7 +70,8 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property DataLakeSettings. 
         /// <para>
-        /// A list of AWS Lake Formation principals.
+        /// A structure representing a list of AWS Lake Formation principals designated as data
+        /// lake administrators.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

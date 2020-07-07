@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TableResource Marshaller
+    /// TableWildcard Marshaller
     /// </summary>       
-    public class TableResourceMarshaller : IRequestMarshaller<TableResource, JsonMarshallerContext> 
+    public class TableWildcardMarshaller : IRequestMarshaller<TableWildcard, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,43 +43,14 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TableResource requestObject, JsonMarshallerContext context)
+        public void Marshall(TableWildcard requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCatalogId())
-            {
-                context.Writer.WritePropertyName("CatalogId");
-                context.Writer.Write(requestObject.CatalogId);
-            }
-
-            if(requestObject.IsSetDatabaseName())
-            {
-                context.Writer.WritePropertyName("DatabaseName");
-                context.Writer.Write(requestObject.DatabaseName);
-            }
-
-            if(requestObject.IsSetName())
-            {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
-            }
-
-            if(requestObject.IsSetTableWildcard())
-            {
-                context.Writer.WritePropertyName("TableWildcard");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = TableWildcardMarshaller.Instance;
-                marshaller.Marshall(requestObject.TableWildcard, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static TableResourceMarshaller Instance = new TableResourceMarshaller();
+        public readonly static TableWildcardMarshaller Instance = new TableWildcardMarshaller();
 
     }
 }

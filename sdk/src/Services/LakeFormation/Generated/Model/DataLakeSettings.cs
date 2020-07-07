@@ -29,18 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
-    /// The AWS Lake Formation principal.
+    /// A structure representing a list of AWS Lake Formation principals designated as data
+    /// lake administrators and lists of principal permission entries for default create database
+    /// and default create table permissions.
     /// </summary>
     public partial class DataLakeSettings
     {
         private List<PrincipalPermissions> _createDatabaseDefaultPermissions = new List<PrincipalPermissions>();
         private List<PrincipalPermissions> _createTableDefaultPermissions = new List<PrincipalPermissions>();
         private List<DataLakePrincipal> _dataLakeAdmins = new List<DataLakePrincipal>();
+        private List<string> _trustedResourceOwners = new List<string>();
 
         /// <summary>
         /// Gets and sets the property CreateDatabaseDefaultPermissions. 
         /// <para>
-        /// A list of up to three principal permissions entries for default create database permissions.
+        /// A structure representing a list of up to three principal permissions entries for default
+        /// create database permissions.
         /// </para>
         /// </summary>
         public List<PrincipalPermissions> CreateDatabaseDefaultPermissions
@@ -58,7 +62,8 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property CreateTableDefaultPermissions. 
         /// <para>
-        /// A list of up to three principal permissions entries for default create table permissions.
+        /// A structure representing a list of up to three principal permissions entries for default
+        /// create table permissions.
         /// </para>
         /// </summary>
         public List<PrincipalPermissions> CreateTableDefaultPermissions
@@ -76,7 +81,8 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property DataLakeAdmins. 
         /// <para>
-        /// A list of AWS Lake Formation principals.
+        /// A list of AWS Lake Formation principals. Supported principals are IAM users or IAM
+        /// roles.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -90,6 +96,31 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetDataLakeAdmins()
         {
             return this._dataLakeAdmins != null && this._dataLakeAdmins.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrustedResourceOwners. 
+        /// <para>
+        /// A list of the resource-owning account IDs that the caller's account can use to share
+        /// their user access details (user ARNs). The user ARNs can be logged in the resource
+        /// owner's AWS CloudTrail log.
+        /// </para>
+        ///  
+        /// <para>
+        /// You may want to specify this property when you are in a high-trust boundary, such
+        /// as the same team or company. 
+        /// </para>
+        /// </summary>
+        public List<string> TrustedResourceOwners
+        {
+            get { return this._trustedResourceOwners; }
+            set { this._trustedResourceOwners = value; }
+        }
+
+        // Check to see if TrustedResourceOwners property is set
+        internal bool IsSetTrustedResourceOwners()
+        {
+            return this._trustedResourceOwners != null && this._trustedResourceOwners.Count > 0; 
         }
 
     }

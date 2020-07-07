@@ -253,6 +253,10 @@ namespace Amazon.LakeFormation
         /// </summary>
         public static readonly Permission DELETE = new Permission("DELETE");
         /// <summary>
+        /// Constant DESCRIBE for Permission
+        /// </summary>
+        public static readonly Permission DESCRIBE = new Permission("DESCRIBE");
+        /// <summary>
         /// Constant DROP for Permission
         /// </summary>
         public static readonly Permission DROP = new Permission("DROP");

@@ -40,10 +40,30 @@ namespace Amazon.LakeFormation.Model
     /// </summary>
     public partial class TableWithColumnsResource
     {
+        private string _catalogId;
         private List<string> _columnNames = new List<string>();
         private ColumnWildcard _columnWildcard;
         private string _databaseName;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property CatalogId. 
+        /// <para>
+        /// The identifier for the Data Catalog. By default, it is the account ID of the caller.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string CatalogId
+        {
+            get { return this._catalogId; }
+            set { this._catalogId = value; }
+        }
+
+        // Check to see if CatalogId property is set
+        internal bool IsSetCatalogId()
+        {
+            return this._catalogId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ColumnNames. 
@@ -91,7 +111,7 @@ namespace Amazon.LakeFormation.Model
         /// You can Grant and Revoke database privileges to a principal. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string DatabaseName
         {
             get { return this._databaseName; }
@@ -111,7 +131,7 @@ namespace Amazon.LakeFormation.Model
         /// data. You can Grant and Revoke table privileges to a principal. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

@@ -69,12 +69,22 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DatabaseResource.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.DatabaseResource.Name</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.DataLakePrincipal.DataLakePrincipalIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DataLocationResource.CatalogId</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -93,12 +103,22 @@
     <pattern>arn:aws:iam::[0-9]*:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.TableResource.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.TableResource.DatabaseName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.TableResource.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.TableWithColumnsResource.CatalogId</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
