@@ -38,9 +38,12 @@ namespace Amazon.StorageGateway.Model
         private List<string> _adminUserList = new List<string>();
         private string _auditDestinationARN;
         private string _authentication;
+        private CacheAttributes _cacheAttributes;
+        private CaseSensitivity _caseSensitivity;
         private string _defaultStorageClass;
         private string _fileShareARN;
         private string _fileShareId;
+        private string _fileShareName;
         private string _fileShareStatus;
         private string _gatewayARN;
         private bool? _guessMIMETypeEnabled;
@@ -61,8 +64,9 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property AdminUserList. 
         /// <para>
         /// A list of users or groups in the Active Directory that have administrator rights to
-        /// the file share. A group must be prefixed with the @ character. For example <code>@group1</code>.
-        /// Can only be set if Authentication is set to <code>ActiveDirectory</code>.
+        /// the file share. A group must be prefixed with the @ character. Acceptable formats
+        /// include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and
+        /// <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -111,6 +115,44 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetAuthentication()
         {
             return this._authentication != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CacheAttributes. 
+        /// <para>
+        /// Refresh cache information.
+        /// </para>
+        /// </summary>
+        public CacheAttributes CacheAttributes
+        {
+            get { return this._cacheAttributes; }
+            set { this._cacheAttributes = value; }
+        }
+
+        // Check to see if CacheAttributes property is set
+        internal bool IsSetCacheAttributes()
+        {
+            return this._cacheAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CaseSensitivity. 
+        /// <para>
+        /// The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>,
+        /// the client determines the case sensitivity. For <code>CaseSensitive</code>, the gateway
+        /// determines the case sensitivity. The default value is <code>ClientSpecified</code>.
+        /// </para>
+        /// </summary>
+        public CaseSensitivity CaseSensitivity
+        {
+            get { return this._caseSensitivity; }
+            set { this._caseSensitivity = value; }
+        }
+
+        // Check to see if CaseSensitivity property is set
+        internal bool IsSetCaseSensitivity()
+        {
+            return this._caseSensitivity != null;
         }
 
         /// <summary>
@@ -168,6 +210,30 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetFileShareId()
         {
             return this._fileShareId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileShareName. 
+        /// <para>
+        /// The name of the file share. Optional.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string FileShareName
+        {
+            get { return this._fileShareName; }
+            set { this._fileShareName = value; }
+        }
+
+        // Check to see if FileShareName property is set
+        internal bool IsSetFileShareName()
+        {
+            return this._fileShareName != null;
         }
 
         /// <summary>
@@ -230,7 +296,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property InvalidUserList. 
         /// <para>
         /// A list of users or groups in the Active Directory that are not allowed to access the
-        /// file share. A group must be prefixed with the @ character. For example <code>@group1</code>.
+        /// file share. A group must be prefixed with the @ character. Acceptable formats include:
+        /// <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>.
         /// Can only be set if Authentication is set to <code>ActiveDirectory</code>.
         /// </para>
         /// </summary>
@@ -289,7 +356,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property LocationARN.
         /// </summary>
-        [AWSProperty(Min=16, Max=310)]
+        [AWSProperty(Min=16, Max=1400)]
         public string LocationARN
         {
             get { return this._locationARN; }
@@ -455,7 +522,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property ValidUserList. 
         /// <para>
         /// A list of users or groups in the Active Directory that are allowed to access the file
-        /// share. A group must be prefixed with the @ character. For example, <code>@group1</code>.
+        /// share. A group must be prefixed with the @ character. Acceptable formats include:
+        /// <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>.
         /// Can only be set if Authentication is set to <code>ActiveDirectory</code>.
         /// </para>
         /// </summary>

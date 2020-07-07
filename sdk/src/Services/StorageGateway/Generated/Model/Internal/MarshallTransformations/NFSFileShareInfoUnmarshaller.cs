@@ -64,6 +64,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CacheAttributes", targetDepth))
+                {
+                    var unmarshaller = CacheAttributesUnmarshaller.Instance;
+                    unmarshalledObject.CacheAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ClientList", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -86,6 +92,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FileShareId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FileShareName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FileShareName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FileShareStatus", targetDepth))

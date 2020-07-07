@@ -3407,9 +3407,9 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Refreshes the cache for the specified file share. This operation finds objects in
-        /// the Amazon S3 bucket that were added, removed or replaced since the gateway last listed
-        /// the bucket's contents and cached the results. This operation is only supported in
-        /// the file gateway type. You can subscribe to be notified through an Amazon CloudWatch
+        /// the Amazon S3 bucket that were added, removed, or replaced since the gateway last
+        /// listed the bucket's contents and cached the results. This operation is only supported
+        /// in the file gateway type. You can subscribe to be notified through an Amazon CloudWatch
         /// event when your RefreshCache operation completes. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
         /// notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
         /// 

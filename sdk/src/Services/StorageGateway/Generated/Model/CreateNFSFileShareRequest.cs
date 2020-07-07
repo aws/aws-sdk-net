@@ -52,9 +52,11 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class CreateNFSFileShareRequest : AmazonStorageGatewayRequest
     {
+        private CacheAttributes _cacheAttributes;
         private List<string> _clientList = new List<string>();
         private string _clientToken;
         private string _defaultStorageClass;
+        private string _fileShareName;
         private string _gatewayARN;
         private bool? _guessMIMETypeEnabled;
         private bool? _kmsEncrypted;
@@ -67,6 +69,24 @@ namespace Amazon.StorageGateway.Model
         private string _role;
         private string _squash;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property CacheAttributes. 
+        /// <para>
+        /// Refresh cache information.
+        /// </para>
+        /// </summary>
+        public CacheAttributes CacheAttributes
+        {
+            get { return this._cacheAttributes; }
+            set { this._cacheAttributes = value; }
+        }
+
+        // Check to see if CacheAttributes property is set
+        internal bool IsSetCacheAttributes()
+        {
+            return this._cacheAttributes != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientList. 
@@ -131,6 +151,30 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetDefaultStorageClass()
         {
             return this._defaultStorageClass != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileShareName. 
+        /// <para>
+        /// The name of the file share. Optional.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string FileShareName
+        {
+            get { return this._fileShareName; }
+            set { this._fileShareName = value; }
+        }
+
+        // Check to see if FileShareName property is set
+        internal bool IsSetFileShareName()
+        {
+            return this._fileShareName != null;
         }
 
         /// <summary>
@@ -224,10 +268,11 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property LocationARN. 
         /// <para>
-        /// The ARN of the backed storage used for storing file data.
+        /// The ARN of the backend storage used for storing file data. A prefix name can be added
+        /// to the S3 bucket name. It must end with a "/".
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=16, Max=310)]
+        [AWSProperty(Required=true, Min=16, Max=1400)]
         public string LocationARN
         {
             get { return this._locationARN; }

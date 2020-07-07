@@ -70,9 +70,11 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class UpdateNFSFileShareRequest : AmazonStorageGatewayRequest
     {
+        private CacheAttributes _cacheAttributes;
         private List<string> _clientList = new List<string>();
         private string _defaultStorageClass;
         private string _fileShareARN;
+        private string _fileShareName;
         private bool? _guessMIMETypeEnabled;
         private bool? _kmsEncrypted;
         private string _kmsKey;
@@ -81,6 +83,24 @@ namespace Amazon.StorageGateway.Model
         private bool? _readOnly;
         private bool? _requesterPays;
         private string _squash;
+
+        /// <summary>
+        /// Gets and sets the property CacheAttributes. 
+        /// <para>
+        /// Refresh cache information.
+        /// </para>
+        /// </summary>
+        public CacheAttributes CacheAttributes
+        {
+            get { return this._cacheAttributes; }
+            set { this._cacheAttributes = value; }
+        }
+
+        // Check to see if CacheAttributes property is set
+        internal bool IsSetCacheAttributes()
+        {
+            return this._cacheAttributes != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientList. 
@@ -144,6 +164,30 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetFileShareARN()
         {
             return this._fileShareARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileShareName. 
+        /// <para>
+        /// The name of the file share. Optional.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string FileShareName
+        {
+            get { return this._fileShareName; }
+            set { this._fileShareName = value; }
+        }
+
+        // Check to see if FileShareName property is set
+        internal bool IsSetFileShareName()
+        {
+            return this._fileShareName != null;
         }
 
         /// <summary>

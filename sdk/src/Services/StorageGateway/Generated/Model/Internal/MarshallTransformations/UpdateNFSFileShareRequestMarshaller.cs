@@ -68,6 +68,17 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCacheAttributes())
+                {
+                    context.Writer.WritePropertyName("CacheAttributes");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CacheAttributesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CacheAttributes, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetClientList())
                 {
                     context.Writer.WritePropertyName("ClientList");
@@ -89,6 +100,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("FileShareARN");
                     context.Writer.Write(publicRequest.FileShareARN);
+                }
+
+                if(publicRequest.IsSetFileShareName())
+                {
+                    context.Writer.WritePropertyName("FileShareName");
+                    context.Writer.Write(publicRequest.FileShareName);
                 }
 
                 if(publicRequest.IsSetGuessMIMETypeEnabled())

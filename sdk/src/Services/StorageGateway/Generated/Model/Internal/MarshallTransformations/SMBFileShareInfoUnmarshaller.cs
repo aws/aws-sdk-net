@@ -82,6 +82,18 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.Authentication = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CacheAttributes", targetDepth))
+                {
+                    var unmarshaller = CacheAttributesUnmarshaller.Instance;
+                    unmarshalledObject.CacheAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CaseSensitivity", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CaseSensitivity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DefaultStorageClass", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -98,6 +110,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FileShareId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FileShareName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FileShareName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FileShareStatus", targetDepth))
