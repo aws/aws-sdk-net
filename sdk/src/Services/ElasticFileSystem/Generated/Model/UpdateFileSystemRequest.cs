@@ -45,7 +45,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the file system that you want to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=128)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }

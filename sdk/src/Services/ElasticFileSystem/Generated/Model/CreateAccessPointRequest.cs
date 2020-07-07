@@ -78,7 +78,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the EFS file system that the access point provides access to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=128)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }

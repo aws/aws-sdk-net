@@ -61,6 +61,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Present if provided by caller in the request (String).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Marker
         {
             get { return this._marker; }
@@ -80,6 +81,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// can use the <code>NextMarker</code> in the subsequent request to fetch the descriptions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string NextMarker
         {
             get { return this._nextMarker; }

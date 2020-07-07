@@ -29,44 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Returned if the file system you are trying to create already exists, with the creation
-    /// token you provided.
+    /// Returned if the AWS Backup service is not available in the region that the request
+    /// was made.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]
     #endif
-    public partial class FileSystemAlreadyExistsException : AmazonElasticFileSystemException
+    public partial class ValidationException : AmazonElasticFileSystemException
     {
         private string _errorCode;
-        private string _fileSystemId;
 
         /// <summary>
-        /// Constructs a new FileSystemAlreadyExistsException with the specified error
+        /// Constructs a new ValidationException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public FileSystemAlreadyExistsException(string message) 
+        public ValidationException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of FileSystemAlreadyExistsException
+        /// Construct instance of ValidationException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public FileSystemAlreadyExistsException(string message, Exception innerException) 
+        public ValidationException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of FileSystemAlreadyExistsException
+        /// Construct instance of ValidationException
         /// </summary>
         /// <param name="innerException"></param>
-        public FileSystemAlreadyExistsException(Exception innerException) 
+        public ValidationException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of FileSystemAlreadyExistsException
+        /// Construct instance of ValidationException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -74,34 +73,33 @@ namespace Amazon.ElasticFileSystem.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public FileSystemAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ValidationException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of FileSystemAlreadyExistsException
+        /// Construct instance of ValidationException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public FileSystemAlreadyExistsException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ValidationException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !PCL && !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the FileSystemAlreadyExistsException class with serialized data.
+        /// Constructs a new instance of the ValidationException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected FileSystemAlreadyExistsException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected ValidationException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
             this.ErrorCode = (string)info.GetValue("ErrorCode", typeof(string));
-            this.FileSystemId = (string)info.GetValue("FileSystemId", typeof(string));
         }
 
         /// <summary>
@@ -123,7 +121,6 @@ namespace Amazon.ElasticFileSystem.Model
         {
             base.GetObjectData(info, context);
             info.AddValue("ErrorCode", this.ErrorCode);
-            info.AddValue("FileSystemId", this.FileSystemId);
         }
 #endif
 
@@ -141,22 +138,6 @@ namespace Amazon.ElasticFileSystem.Model
         internal bool IsSetErrorCode()
         {
             return this._errorCode != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property FileSystemId.
-        /// </summary>
-        [AWSProperty(Required=true, Max=128)]
-        public string FileSystemId
-        {
-            get { return this._fileSystemId; }
-            set { this._fileSystemId = value; }
-        }
-
-        // Check to see if FileSystemId property is set
-        internal bool IsSetFileSystemId()
-        {
-            return this._fileSystemId != null;
         }
 
     }

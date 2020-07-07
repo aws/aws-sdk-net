@@ -68,7 +68,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the mount target whose security groups you want to modify.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=13, Max=45)]
         public string MountTargetId
         {
             get { return this._mountTargetId; }

@@ -105,6 +105,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the EFS file system that the access point applies to.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }
@@ -159,6 +160,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Identified the AWS account that owns the access point resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=14)]
         public string OwnerId
         {
             get { return this._ownerId; }

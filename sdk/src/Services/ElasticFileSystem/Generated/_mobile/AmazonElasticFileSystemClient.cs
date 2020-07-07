@@ -310,6 +310,9 @@ namespace Amazon.ElasticFileSystem
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
         /// AWS account.
         /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
+        /// Returned if the file system's lifecycle state is not "available".
+        /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
@@ -1339,6 +1342,58 @@ namespace Amazon.ElasticFileSystem
 
         #endregion
         
+        #region  DescribeBackupPolicy
+
+        internal virtual DescribeBackupPolicyResponse DescribeBackupPolicy(DescribeBackupPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBackupPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBackupPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBackupPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the backup policy for the specified EFS file system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBackupPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeBackupPolicy service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.PolicyNotFoundException">
+        /// Returned if the default file system policy is in effect for the EFS file system specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.ValidationException">
+        /// Returned if the AWS Backup service is not available in the region that the request
+        /// was made.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeBackupPolicy">REST API Reference for DescribeBackupPolicy Operation</seealso>
+        public virtual Task<DescribeBackupPolicyResponse> DescribeBackupPolicyAsync(DescribeBackupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBackupPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBackupPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeBackupPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeFileSystemPolicy
 
         internal virtual DescribeFileSystemPolicyResponse DescribeFileSystemPolicy(DescribeFileSystemPolicyRequest request)
@@ -1967,6 +2022,59 @@ namespace Amazon.ElasticFileSystem
             options.ResponseUnmarshaller = ModifyMountTargetSecurityGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyMountTargetSecurityGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutBackupPolicy
+
+        internal virtual PutBackupPolicyResponse PutBackupPolicy(PutBackupPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBackupPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBackupPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutBackupPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the file system's backup policy. Use this action to start or stop automatic
+        /// backups of the file system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBackupPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutBackupPolicy service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
+        /// Returned if the file system's lifecycle state is not "available".
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.ValidationException">
+        /// Returned if the AWS Backup service is not available in the region that the request
+        /// was made.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutBackupPolicy">REST API Reference for PutBackupPolicy Operation</seealso>
+        public virtual Task<PutBackupPolicyResponse> PutBackupPolicyAsync(PutBackupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBackupPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBackupPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutBackupPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion

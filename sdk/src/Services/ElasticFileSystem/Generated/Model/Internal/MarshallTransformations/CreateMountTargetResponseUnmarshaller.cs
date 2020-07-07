@@ -105,6 +105,12 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                     response.SubnetId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VpcId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VpcId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

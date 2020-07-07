@@ -29,36 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeFileSystemPolicy operation.
-    /// Returns the <code>FileSystemPolicy</code> for the specified EFS file system.
-    /// 
-    ///  
-    /// <para>
-    /// This operation requires permissions for the <code>elasticfilesystem:DescribeFileSystemPolicy</code>
-    /// action.
-    /// </para>
+    /// This is the response object from the PutBackupPolicy operation.
     /// </summary>
-    public partial class DescribeFileSystemPolicyRequest : AmazonElasticFileSystemRequest
+    public partial class PutBackupPolicyResponse : AmazonWebServiceResponse
     {
-        private string _fileSystemId;
+        private BackupPolicy _backupPolicy;
 
         /// <summary>
-        /// Gets and sets the property FileSystemId. 
+        /// Gets and sets the property BackupPolicy. 
         /// <para>
-        /// Specifies which EFS file system to retrieve the <code>FileSystemPolicy</code> for.
+        /// Describes the file system's backup policy, indicating whether automatic backups are
+        /// turned on or off..
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=128)]
-        public string FileSystemId
+        public BackupPolicy BackupPolicy
         {
-            get { return this._fileSystemId; }
-            set { this._fileSystemId = value; }
+            get { return this._backupPolicy; }
+            set { this._backupPolicy = value; }
         }
 
-        // Check to see if FileSystemId property is set
-        internal bool IsSetFileSystemId()
+        // Check to see if BackupPolicy property is set
+        internal bool IsSetBackupPolicy()
         {
-            return this._fileSystemId != null;
+            return this._backupPolicy != null;
         }
 
     }

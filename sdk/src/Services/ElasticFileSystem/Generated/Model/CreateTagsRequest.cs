@@ -54,7 +54,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// the tags only, not the file system.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=128)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }

@@ -29,26 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteFileSystemPolicy operation.
-    /// Deletes the <code>FileSystemPolicy</code> for the specified file system. The default
-    /// <code>FileSystemPolicy</code> goes into effect once the existing policy is deleted.
-    /// For more information about the default file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using
-    /// Resource-based Policies with EFS</a>.
-    /// 
-    ///  
-    /// <para>
-    /// This operation requires permissions for the <code>elasticfilesystem:DeleteFileSystemPolicy</code>
-    /// action.
-    /// </para>
+    /// Container for the parameters to the PutBackupPolicy operation.
+    /// Updates the file system's backup policy. Use this action to start or stop automatic
+    /// backups of the file system.
     /// </summary>
-    public partial class DeleteFileSystemPolicyRequest : AmazonElasticFileSystemRequest
+    public partial class PutBackupPolicyRequest : AmazonElasticFileSystemRequest
     {
+        private BackupPolicy _backupPolicy;
         private string _fileSystemId;
+
+        /// <summary>
+        /// Gets and sets the property BackupPolicy. 
+        /// <para>
+        /// The backup policy included in the <code>PutBackupPolicy</code> request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public BackupPolicy BackupPolicy
+        {
+            get { return this._backupPolicy; }
+            set { this._backupPolicy = value; }
+        }
+
+        // Check to see if BackupPolicy property is set
+        internal bool IsSetBackupPolicy()
+        {
+            return this._backupPolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// Specifies the EFS file system for which to delete the <code>FileSystemPolicy</code>.
+        /// Specifies which EFS file system to update the backup policy for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

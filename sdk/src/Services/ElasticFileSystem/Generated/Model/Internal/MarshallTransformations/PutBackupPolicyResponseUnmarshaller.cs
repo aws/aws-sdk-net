@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateAccessPoint operation
+    /// Response Unmarshaller for PutBackupPolicy operation
     /// </summary>  
-    public class CreateAccessPointResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutBackupPolicyResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,70 +45,16 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateAccessPointResponse response = new CreateAccessPointResponse();
+            PutBackupPolicyResponse response = new PutBackupPolicyResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AccessPointArn", targetDepth))
+                if (context.TestExpression("BackupPolicy", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AccessPointArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("AccessPointId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AccessPointId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ClientToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ClientToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FileSystemId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FileSystemId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LifeCycleState", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.LifeCycleState = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OwnerId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.OwnerId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PosixUser", targetDepth))
-                {
-                    var unmarshaller = PosixUserUnmarshaller.Instance;
-                    response.PosixUser = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RootDirectory", targetDepth))
-                {
-                    var unmarshaller = RootDirectoryUnmarshaller.Instance;
-                    response.RootDirectory = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BackupPolicyUnmarshaller.Instance;
+                    response.BackupPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -134,14 +80,6 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessPointAlreadyExists"))
-                {
-                    return AccessPointAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessPointLimitExceeded"))
-                {
-                    return AccessPointLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequest"))
                 {
                     return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -158,13 +96,17 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 {
                     return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                {
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonElasticFileSystemException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateAccessPointResponseUnmarshaller _instance = new CreateAccessPointResponseUnmarshaller();        
+        private static PutBackupPolicyResponseUnmarshaller _instance = new PutBackupPolicyResponseUnmarshaller();        
 
-        internal static CreateAccessPointResponseUnmarshaller GetInstance()
+        internal static PutBackupPolicyResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -172,7 +114,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateAccessPointResponseUnmarshaller Instance
+        public static PutBackupPolicyResponseUnmarshaller Instance
         {
             get
             {

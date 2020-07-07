@@ -53,7 +53,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// to retrieve (String).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=128)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }

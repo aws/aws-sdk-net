@@ -81,6 +81,9 @@ namespace Amazon.ElasticFileSystem
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
         /// AWS account.
         /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
+        /// Returned if the file system's lifecycle state is not "available".
+        /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
@@ -1158,6 +1161,64 @@ namespace Amazon.ElasticFileSystem
 
         #endregion
         
+        #region  DescribeBackupPolicy
+
+
+        /// <summary>
+        /// Returns the backup policy for the specified EFS file system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBackupPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBackupPolicy service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.PolicyNotFoundException">
+        /// Returned if the default file system policy is in effect for the EFS file system specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.ValidationException">
+        /// Returned if the AWS Backup service is not available in the region that the request
+        /// was made.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeBackupPolicy">REST API Reference for DescribeBackupPolicy Operation</seealso>
+        DescribeBackupPolicyResponse DescribeBackupPolicy(DescribeBackupPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBackupPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBackupPolicy operation on AmazonElasticFileSystemClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBackupPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeBackupPolicy">REST API Reference for DescribeBackupPolicy Operation</seealso>
+        IAsyncResult BeginDescribeBackupPolicy(DescribeBackupPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeBackupPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBackupPolicy.</param>
+        /// 
+        /// <returns>Returns a  DescribeBackupPolicyResult from ElasticFileSystem.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeBackupPolicy">REST API Reference for DescribeBackupPolicy Operation</seealso>
+        DescribeBackupPolicyResponse EndDescribeBackupPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeFileSystemPolicy
 
 
@@ -1809,6 +1870,65 @@ namespace Amazon.ElasticFileSystem
         /// <returns>Returns a  ModifyMountTargetSecurityGroupsResult from ElasticFileSystem.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups">REST API Reference for ModifyMountTargetSecurityGroups Operation</seealso>
         ModifyMountTargetSecurityGroupsResponse EndModifyMountTargetSecurityGroups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutBackupPolicy
+
+
+        /// <summary>
+        /// Updates the file system's backup policy. Use this action to start or stop automatic
+        /// backups of the file system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBackupPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutBackupPolicy service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
+        /// Returned if the file system's lifecycle state is not "available".
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.ValidationException">
+        /// Returned if the AWS Backup service is not available in the region that the request
+        /// was made.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutBackupPolicy">REST API Reference for PutBackupPolicy Operation</seealso>
+        PutBackupPolicyResponse PutBackupPolicy(PutBackupPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBackupPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBackupPolicy operation on AmazonElasticFileSystemClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBackupPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutBackupPolicy">REST API Reference for PutBackupPolicy Operation</seealso>
+        IAsyncResult BeginPutBackupPolicy(PutBackupPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBackupPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBackupPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutBackupPolicyResult from ElasticFileSystem.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutBackupPolicy">REST API Reference for PutBackupPolicy Operation</seealso>
+        PutBackupPolicyResponse EndPutBackupPolicy(IAsyncResult asyncResult);
 
         #endregion
         

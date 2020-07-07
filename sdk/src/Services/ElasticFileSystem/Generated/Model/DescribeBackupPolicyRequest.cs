@@ -29,26 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteFileSystemPolicy operation.
-    /// Deletes the <code>FileSystemPolicy</code> for the specified file system. The default
-    /// <code>FileSystemPolicy</code> goes into effect once the existing policy is deleted.
-    /// For more information about the default file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using
-    /// Resource-based Policies with EFS</a>.
-    /// 
-    ///  
-    /// <para>
-    /// This operation requires permissions for the <code>elasticfilesystem:DeleteFileSystemPolicy</code>
-    /// action.
-    /// </para>
+    /// Container for the parameters to the DescribeBackupPolicy operation.
+    /// Returns the backup policy for the specified EFS file system.
     /// </summary>
-    public partial class DeleteFileSystemPolicyRequest : AmazonElasticFileSystemRequest
+    public partial class DescribeBackupPolicyRequest : AmazonElasticFileSystemRequest
     {
         private string _fileSystemId;
 
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// Specifies the EFS file system for which to delete the <code>FileSystemPolicy</code>.
+        /// Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

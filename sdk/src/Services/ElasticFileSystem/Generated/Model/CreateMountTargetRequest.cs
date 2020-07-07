@@ -192,7 +192,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the file system for which to create the mount target.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=128)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }
@@ -211,6 +211,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Valid IPv4 address within the address range of the specified subnet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=15)]
         public string IpAddress
         {
             get { return this._ipAddress; }
@@ -249,7 +250,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the subnet to add the mount target in.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=15, Max=47)]
         public string SubnetId
         {
             get { return this._subnetId; }

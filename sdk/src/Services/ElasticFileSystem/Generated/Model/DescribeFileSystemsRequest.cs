@@ -97,6 +97,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// (Optional) ID of the file system whose description you want to retrieve (String).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }
@@ -117,6 +118,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// call had left off. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Marker
         {
             get { return this._marker; }

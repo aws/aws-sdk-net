@@ -91,6 +91,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// is not included. Accepts either a file system ID or ARN as input.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }
@@ -111,6 +112,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// returning call left off.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Marker
         {
             get { return this._marker; }
@@ -152,6 +154,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// either a mount target ID or ARN as input.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=13, Max=45)]
         public string MountTargetId
         {
             get { return this._mountTargetId; }

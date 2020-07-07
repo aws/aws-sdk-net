@@ -52,7 +52,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the file system whose tags you want to delete (String).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=128)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }
