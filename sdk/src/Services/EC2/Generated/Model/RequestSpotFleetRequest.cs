@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
-    /// Fleet Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+    /// Fleet requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
     /// </para>
     /// </summary>
     public partial class RequestSpotFleetRequest : AmazonEC2Request

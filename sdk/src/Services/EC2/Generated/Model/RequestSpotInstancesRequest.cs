@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-    /// Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+    /// Instance requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
     /// </para>
     /// </summary>
     public partial class RequestSpotInstancesRequest : AmazonEC2Request
@@ -48,6 +48,7 @@ namespace Amazon.EC2.Model
         private string _launchGroup;
         private LaunchSpecification _launchSpecification;
         private string _spotPrice;
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private SpotInstanceType _type;
         private DateTime? _validFromUtc;
         private DateTime? _validUntilUtc;
@@ -255,6 +256,28 @@ namespace Amazon.EC2.Model
         internal bool IsSetSpotPrice()
         {
             return this._spotPrice != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The key-value pair for tagging the Spot Instance request on creation. The value for
+        /// <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the
+        /// Spot Instance request fails. To tag the Spot Instance request after it has been created,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+        /// 
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
         /// <summary>

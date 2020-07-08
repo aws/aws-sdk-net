@@ -62,7 +62,10 @@ namespace Amazon.EC2.Model
         ///  <code>none</code> - The instance avoids running in a Capacity Reservation even if
         /// one is available. The instance runs as an On-Demand Instance.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>CapacityReservationPreference</code> is not specified, it defaults to <code>open</code>.
+        /// </para>
         /// </summary>
         public CapacityReservationPreference CapacityReservationPreference
         {
