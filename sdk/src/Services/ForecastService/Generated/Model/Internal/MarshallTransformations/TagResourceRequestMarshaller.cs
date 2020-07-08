@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateForecast Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateForecastRequestMarshaller : IMarshaller<IRequest, CreateForecastRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateForecastRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateForecastRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ForecastService");
-            string target = "AmazonForecast.CreateForecast";
+            string target = "AmazonForecast.TagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-06-26";            
@@ -68,27 +68,10 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetForecastName())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WritePropertyName("ForecastName");
-                    context.Writer.Write(publicRequest.ForecastName);
-                }
-
-                if(publicRequest.IsSetForecastTypes())
-                {
-                    context.Writer.WritePropertyName("ForecastTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestForecastTypesListValue in publicRequest.ForecastTypes)
-                    {
-                            context.Writer.Write(publicRequestForecastTypesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetPredictorArn())
-                {
-                    context.Writer.WritePropertyName("PredictorArn");
-                    context.Writer.Write(publicRequest.PredictorArn);
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -116,9 +99,9 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateForecastRequestMarshaller _instance = new CreateForecastRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateForecastRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -126,7 +109,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateForecastRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

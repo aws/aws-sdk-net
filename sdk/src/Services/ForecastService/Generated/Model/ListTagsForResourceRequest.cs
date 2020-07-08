@@ -29,40 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDataset operation.
-    /// Deletes an Amazon Forecast dataset that was created using the <a>CreateDataset</a>
-    /// operation. You can only delete datasets that have a status of <code>ACTIVE</code>
-    /// or <code>CREATE_FAILED</code>. To get the status use the <a>DescribeDataset</a> operation.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Forecast does not automatically update any dataset groups that contain the deleted
-    /// dataset. In order to update the dataset group, use the operation, omitting the deleted
-    /// dataset's ARN.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Lists the tags for an Amazon Forecast resource.
     /// </summary>
-    public partial class DeleteDatasetRequest : AmazonForecastServiceRequest
+    public partial class ListTagsForResourceRequest : AmazonForecastServiceRequest
     {
-        private string _datasetArn;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property DatasetArn. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the dataset to delete.
+        /// The Amazon Resource Name (ARN) that identifies the resource for which to list the
+        /// tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset
+        /// import jobs, predictors, forecasts, and forecast export jobs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
-        public string DatasetArn
+        public string ResourceArn
         {
-            get { return this._datasetArn; }
-            set { this._datasetArn = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if DatasetArn property is set
-        internal bool IsSetDatasetArn()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._datasetArn != null;
+            return this._resourceArn != null;
         }
 
     }

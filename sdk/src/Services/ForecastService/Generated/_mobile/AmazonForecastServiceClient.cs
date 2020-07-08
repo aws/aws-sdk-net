@@ -291,7 +291,7 @@ namespace Amazon.ForecastService
         /// </para>
         ///  
         /// <para>
-        /// For example Forecast datasets, see the <a href="https://github.com/aws-samples/amazon-forecast-samples/tree/master/data">Amazon
+        /// For example Forecast datasets, see the <a href="https://github.com/aws-samples/amazon-forecast-samples">Amazon
         /// Forecast Sample GitHub repository</a>.
         /// </para>
         ///  <note> 
@@ -420,8 +420,9 @@ namespace Amazon.ForecastService
         ///  
         /// <para>
         /// You must specify a <a>DataSource</a> object that includes an AWS Identity and Access
-        /// Management (IAM) role that Amazon Forecast can assume to access the data. For more
-        /// information, see <a>aws-forecast-iam-roles</a>.
+        /// Management (IAM) role that Amazon Forecast can assume to access the data, as Amazon
+        /// Forecast makes a copy of your data and processes it in an internal AWS system. For
+        /// more information, see <a>aws-forecast-iam-roles</a>.
         /// </para>
         ///  
         /// <para>
@@ -432,6 +433,13 @@ namespace Amazon.ForecastService
         /// You can specify the path to a specific CSV file, the S3 bucket, or to a folder in
         /// the S3 bucket. For the latter two cases, Amazon Forecast imports all files up to the
         /// limit of 10,000 files.
+        /// </para>
+        ///  
+        /// <para>
+        /// Because dataset imports are not aggregated, your most recent dataset import is the
+        /// one that is used when training a predictor or generating a forecast. Make sure that
+        /// your most recent dataset import contains all of the data you want to model off of,
+        /// and not just the new data collected since the previous import.
         /// </para>
         ///  
         /// <para>
@@ -497,8 +505,7 @@ namespace Amazon.ForecastService
         ///  
         /// <para>
         /// The range of the forecast is determined by the <code>ForecastHorizon</code> value,
-        /// which you specify in the <a>CreatePredictor</a> request, multiplied by the <code>DataFrequency</code>
-        /// value, which you specify in the <a>CreateDataset</a> request. When you query a forecast,
+        /// which you specify in the <a>CreatePredictor</a> request. When you query a forecast,
         /// you can request a specific date range within the forecast.
         /// </para>
         ///  
@@ -577,7 +584,7 @@ namespace Amazon.ForecastService
         /// 
         ///  
         /// <para>
-        /// &lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PageNumber&gt;
+        /// &lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;
         /// </para>
         ///  
         /// <para>
@@ -783,6 +790,14 @@ namespace Amazon.ForecastService
         /// Deletes an Amazon Forecast dataset that was created using the <a>CreateDataset</a>
         /// operation. You can only delete datasets that have a status of <code>ACTIVE</code>
         /// or <code>CREATE_FAILED</code>. To get the status use the <a>DescribeDataset</a> operation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Forecast does not automatically update any dataset groups that contain the deleted
+        /// dataset. In order to update the dataset group, use the operation, omitting the deleted
+        /// dataset's ARN.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
         /// <param name="cancellationToken">
@@ -1795,6 +1810,138 @@ namespace Amazon.ForecastService
             options.ResponseUnmarshaller = ListPredictorsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListPredictorsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the tags for an Amazon Forecast resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
+        /// If existing tags on a resource are not specified in the request parameters, they are
+        /// not changed. When a resource is deleted, the tags associated with that resource are
+        /// also deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified tags from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

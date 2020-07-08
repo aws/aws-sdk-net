@@ -29,31 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
-    /// Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a>
-    /// request.
+    /// This is the response object from the TagResource operation.
     /// </summary>
-    public partial class Schema
+    public partial class TagResourceResponse : AmazonWebServiceResponse
     {
-        private List<SchemaAttribute> _attributes = new List<SchemaAttribute>();
-
-        /// <summary>
-        /// Gets and sets the property Attributes. 
-        /// <para>
-        /// An array of attributes specifying the name and type of each field in a dataset.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public List<SchemaAttribute> Attributes
-        {
-            get { return this._attributes; }
-            set { this._attributes = value; }
-        }
-
-        // Check to see if Attributes property is set
-        internal bool IsSetAttributes()
-        {
-            return this._attributes != null && this._attributes.Count > 0; 
-        }
 
     }
 }

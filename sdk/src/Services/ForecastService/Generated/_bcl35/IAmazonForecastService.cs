@@ -73,7 +73,7 @@ namespace Amazon.ForecastService
         /// </para>
         ///  
         /// <para>
-        /// For example Forecast datasets, see the <a href="https://github.com/aws-samples/amazon-forecast-samples/tree/master/data">Amazon
+        /// For example Forecast datasets, see the <a href="https://github.com/aws-samples/amazon-forecast-samples">Amazon
         /// Forecast Sample GitHub repository</a>.
         /// </para>
         ///  <note> 
@@ -214,8 +214,9 @@ namespace Amazon.ForecastService
         ///  
         /// <para>
         /// You must specify a <a>DataSource</a> object that includes an AWS Identity and Access
-        /// Management (IAM) role that Amazon Forecast can assume to access the data. For more
-        /// information, see <a>aws-forecast-iam-roles</a>.
+        /// Management (IAM) role that Amazon Forecast can assume to access the data, as Amazon
+        /// Forecast makes a copy of your data and processes it in an internal AWS system. For
+        /// more information, see <a>aws-forecast-iam-roles</a>.
         /// </para>
         ///  
         /// <para>
@@ -226,6 +227,13 @@ namespace Amazon.ForecastService
         /// You can specify the path to a specific CSV file, the S3 bucket, or to a folder in
         /// the S3 bucket. For the latter two cases, Amazon Forecast imports all files up to the
         /// limit of 10,000 files.
+        /// </para>
+        ///  
+        /// <para>
+        /// Because dataset imports are not aggregated, your most recent dataset import is the
+        /// one that is used when training a predictor or generating a forecast. Make sure that
+        /// your most recent dataset import contains all of the data you want to model off of,
+        /// and not just the new data collected since the previous import.
         /// </para>
         ///  
         /// <para>
@@ -297,8 +305,7 @@ namespace Amazon.ForecastService
         ///  
         /// <para>
         /// The range of the forecast is determined by the <code>ForecastHorizon</code> value,
-        /// which you specify in the <a>CreatePredictor</a> request, multiplied by the <code>DataFrequency</code>
-        /// value, which you specify in the <a>CreateDataset</a> request. When you query a forecast,
+        /// which you specify in the <a>CreatePredictor</a> request. When you query a forecast,
         /// you can request a specific date range within the forecast.
         /// </para>
         ///  
@@ -383,7 +390,7 @@ namespace Amazon.ForecastService
         /// 
         ///  
         /// <para>
-        /// &lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PageNumber&gt;
+        /// &lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;
         /// </para>
         ///  
         /// <para>
@@ -601,6 +608,14 @@ namespace Amazon.ForecastService
         /// Deletes an Amazon Forecast dataset that was created using the <a>CreateDataset</a>
         /// operation. You can only delete datasets that have a status of <code>ACTIVE</code>
         /// or <code>CREATE_FAILED</code>. To get the status use the <a>DescribeDataset</a> operation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Forecast does not automatically update any dataset groups that contain the deleted
+        /// dataset. In order to update the dataset group, use the operation, omitting the deleted
+        /// dataset's ARN.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
         /// 
@@ -1738,6 +1753,156 @@ namespace Amazon.ForecastService
         /// <returns>Returns a  ListPredictorsResult from ForecastService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListPredictors">REST API Reference for ListPredictors Operation</seealso>
         ListPredictorsResponse EndListPredictors(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Lists the tags for an Amazon Forecast resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
+        /// If existing tags on a resource are not specified in the request parameters, they are
+        /// not changed. When a resource is deleted, the tags associated with that resource are
+        /// also deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TagResource">REST API Reference for TagResource Operation</seealso>
+        IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Deletes the specified tags from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
 
         #endregion
         
