@@ -40,7 +40,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property GenerationTimestamp. 
         /// <para>
-        ///  The time stamp for when Amazon Web Services made this recommendation.
+        ///  The timestamp for when Amazon Web Services made this recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
