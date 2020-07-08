@@ -779,6 +779,11 @@ namespace Amazon.Organizations
         /// 
         ///  <ul> <li> 
         /// <para>
+        ///  <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
         /// 
         /// </para>
@@ -1161,6 +1166,11 @@ namespace Amazon.Organizations
         /// Organizations User Guide</i> for information about each policy type:
         /// 
         ///  <ul> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
         /// 

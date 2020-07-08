@@ -563,6 +563,10 @@ namespace Amazon.Organizations
     {
 
         /// <summary>
+        /// Constant AISERVICES_OPT_OUT_POLICY for EffectivePolicyType
+        /// </summary>
+        public static readonly EffectivePolicyType AISERVICES_OPT_OUT_POLICY = new EffectivePolicyType("AISERVICES_OPT_OUT_POLICY");
+        /// <summary>
         /// Constant BACKUP_POLICY for EffectivePolicyType
         /// </summary>
         public static readonly EffectivePolicyType BACKUP_POLICY = new EffectivePolicyType("BACKUP_POLICY");
@@ -1160,6 +1164,10 @@ namespace Amazon.Organizations
     public class PolicyType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AISERVICES_OPT_OUT_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType AISERVICES_OPT_OUT_POLICY = new PolicyType("AISERVICES_OPT_OUT_POLICY");
         /// <summary>
         /// Constant BACKUP_POLICY for PolicyType
         /// </summary>
