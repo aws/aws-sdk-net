@@ -34,6 +34,7 @@ namespace Amazon.CostExplorer.Model
     public partial class CurrentInstance
     {
         private string _currencyCode;
+        private string _instanceName;
         private string _monthlyCost;
         private string _onDemandHoursInLookbackPeriod;
         private string _reservationCoveredHoursInLookbackPeriod;
@@ -61,6 +62,26 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetCurrencyCode()
         {
             return this._currencyCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceName. 
+        /// <para>
+        /// The name you've given an instance. This field will show as blank if you haven't given
+        /// the instance a name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string InstanceName
+        {
+            get { return this._instanceName; }
+            set { this._instanceName = value; }
+        }
+
+        // Check to see if InstanceName property is set
+        internal bool IsSetInstanceName()
+        {
+            return this._instanceName != null;
         }
 
         /// <summary>

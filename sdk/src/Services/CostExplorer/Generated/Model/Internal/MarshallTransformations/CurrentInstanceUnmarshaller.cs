@@ -70,6 +70,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InstanceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MonthlyCost", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

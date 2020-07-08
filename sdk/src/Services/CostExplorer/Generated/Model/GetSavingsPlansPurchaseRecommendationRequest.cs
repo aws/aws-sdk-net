@@ -193,7 +193,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TermInYears. 
         /// <para>
-        /// The savings plan recommendation term used to generated these recommendations.
+        /// The savings plan recommendation term used to generate these recommendations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
