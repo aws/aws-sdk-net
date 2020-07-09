@@ -76,7 +76,10 @@ namespace Amazon.AppMesh.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Timeout.
+        /// Gets and sets the property Timeout. 
+        /// <para>
+        /// An object that represents timeouts for different protocols.
+        /// </para>
         /// </summary>
         public ListenerTimeout Timeout
         {

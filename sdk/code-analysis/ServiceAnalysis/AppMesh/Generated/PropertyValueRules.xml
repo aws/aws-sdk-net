@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.AppMesh.Model.CreateGatewayRouteRequest.GatewayRouteName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.CreateGatewayRouteRequest.MeshName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.CreateGatewayRouteRequest.MeshOwner</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.CreateGatewayRouteRequest.VirtualGatewayName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppMesh.Model.CreateMeshRequest.MeshName</property>
     <min>1</min>
     <max>255</max>
@@ -22,6 +42,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.CreateRouteRequest.VirtualRouterName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.CreateVirtualGatewayRequest.MeshName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.CreateVirtualGatewayRequest.MeshOwner</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.CreateVirtualGatewayRequest.VirtualGatewayName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -66,6 +101,26 @@
     <max>12</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppMesh.Model.DeleteGatewayRouteRequest.GatewayRouteName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.DeleteGatewayRouteRequest.MeshName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.DeleteGatewayRouteRequest.MeshOwner</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.DeleteGatewayRouteRequest.VirtualGatewayName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppMesh.Model.DeleteMeshRequest.MeshName</property>
     <min>1</min>
     <max>255</max>
@@ -87,6 +142,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.DeleteRouteRequest.VirtualRouterName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.DeleteVirtualGatewayRequest.MeshName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.DeleteVirtualGatewayRequest.MeshOwner</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.DeleteVirtualGatewayRequest.VirtualGatewayName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -131,6 +201,26 @@
     <max>12</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppMesh.Model.DescribeGatewayRouteRequest.GatewayRouteName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.DescribeGatewayRouteRequest.MeshName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.DescribeGatewayRouteRequest.MeshOwner</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.DescribeGatewayRouteRequest.VirtualGatewayName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppMesh.Model.DescribeMeshRequest.MeshName</property>
     <min>1</min>
     <max>255</max>
@@ -157,6 +247,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.DescribeRouteRequest.VirtualRouterName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.DescribeVirtualGatewayRequest.MeshName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.DescribeVirtualGatewayRequest.MeshOwner</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.DescribeVirtualGatewayRequest.VirtualGatewayName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -201,6 +306,26 @@
     <max>12</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppMesh.Model.ListGatewayRoutesRequest.Limit</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.ListGatewayRoutesRequest.MeshName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.ListGatewayRoutesRequest.MeshOwner</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.ListGatewayRoutesRequest.VirtualGatewayName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppMesh.Model.ListMeshesRequest.Limit</property>
     <min>1</min>
     <max>100</max>
@@ -229,6 +354,21 @@
     <property>Amazon.AppMesh.Model.ListTagsForResourceRequest.Limit</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.ListVirtualGatewaysRequest.Limit</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.ListVirtualGatewaysRequest.MeshName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.ListVirtualGatewaysRequest.MeshOwner</property>
+    <min>12</min>
+    <max>12</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.ListVirtualNodesRequest.Limit</property>
@@ -276,6 +416,26 @@
     <max>12</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppMesh.Model.UpdateGatewayRouteRequest.GatewayRouteName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.UpdateGatewayRouteRequest.MeshName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.UpdateGatewayRouteRequest.MeshOwner</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.UpdateGatewayRouteRequest.VirtualGatewayName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppMesh.Model.UpdateMeshRequest.MeshName</property>
     <min>1</min>
     <max>255</max>
@@ -297,6 +457,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.UpdateRouteRequest.VirtualRouterName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.UpdateVirtualGatewayRequest.MeshName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.UpdateVirtualGatewayRequest.MeshOwner</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.UpdateVirtualGatewayRequest.VirtualGatewayName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -370,6 +545,51 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.FileAccessLog.Path</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GatewayRouteData.GatewayRouteName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GatewayRouteData.MeshName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GatewayRouteData.VirtualGatewayName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GatewayRouteRef.GatewayRouteName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GatewayRouteRef.MeshName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GatewayRouteRef.MeshOwner</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GatewayRouteRef.ResourceOwner</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GatewayRouteRef.VirtualGatewayName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GatewayRouteVirtualService.VirtualServiceName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -563,6 +783,86 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.TlsValidationContextFileTrust.CertificateChain</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualGatewayData.MeshName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualGatewayData.VirtualGatewayName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualGatewayFileAccessLog.Path</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualGatewayHealthCheckPolicy.HealthyThreshold</property>
+    <min>2</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualGatewayHealthCheckPolicy.IntervalMillis</property>
+    <min>5000</min>
+    <max>300000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualGatewayHealthCheckPolicy.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualGatewayHealthCheckPolicy.TimeoutMillis</property>
+    <min>2000</min>
+    <max>60000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualGatewayHealthCheckPolicy.UnhealthyThreshold</property>
+    <min>2</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualGatewayListenerTlsFileCertificate.CertificateChain</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualGatewayListenerTlsFileCertificate.PrivateKey</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualGatewayPortMapping.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualGatewayRef.MeshName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualGatewayRef.MeshOwner</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualGatewayRef.ResourceOwner</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualGatewayRef.VirtualGatewayName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualGatewayTlsValidationContextFileTrust.CertificateChain</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>

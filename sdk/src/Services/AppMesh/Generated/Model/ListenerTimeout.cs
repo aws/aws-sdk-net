@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// 
+    /// An object that represents timeouts for different protocols.
     /// </summary>
     public partial class ListenerTimeout
     {
@@ -54,7 +54,10 @@ namespace Amazon.AppMesh.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Http.
+        /// Gets and sets the property Http. 
+        /// <para>
+        /// An object that represents types of timeouts. 
+        /// </para>
         /// </summary>
         public HttpTimeout Http
         {
@@ -69,7 +72,10 @@ namespace Amazon.AppMesh.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Http2.
+        /// Gets and sets the property Http2. 
+        /// <para>
+        /// An object that represents types of timeouts. 
+        /// </para>
         /// </summary>
         public HttpTimeout Http2
         {
@@ -84,7 +90,10 @@ namespace Amazon.AppMesh.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tcp.
+        /// Gets and sets the property Tcp. 
+        /// <para>
+        /// An object that represents types of timeouts. 
+        /// </para>
         /// </summary>
         public TcpTimeout Tcp
         {

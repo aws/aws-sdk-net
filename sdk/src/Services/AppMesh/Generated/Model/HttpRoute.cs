@@ -95,7 +95,10 @@ namespace Amazon.AppMesh.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Timeout.
+        /// Gets and sets the property Timeout. 
+        /// <para>
+        /// An object that represents types of timeouts. 
+        /// </para>
         /// </summary>
         public HttpTimeout Timeout
         {

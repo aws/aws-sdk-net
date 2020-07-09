@@ -264,6 +264,81 @@ namespace Amazon.AppMesh
         #endregion
 
 
+        #region  CreateGatewayRoute
+
+        internal virtual CreateGatewayRouteResponse CreateGatewayRoute(CreateGatewayRouteRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGatewayRouteResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGatewayRouteResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a gateway route.
+        /// 
+        ///          
+        /// <para>
+        /// A gateway route is attached to a virtual gateway and routes traffic to an existing
+        ///         virtual service. If a route matches a request, it can distribute traffic to
+        /// a target virtual service.
+        /// </para>
+        ///          
+        /// <para>
+        /// For more information about gateway routes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/gateway-routes.html">Gateway
+        /// routes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGatewayRoute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateGatewayRoute service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ConflictException">
+        /// The request contains a client token that was used for a previous update resource call
+        ///         with different specifications. Try the request again with a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
+        /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
+        ///            Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateGatewayRoute">REST API Reference for CreateGatewayRoute Operation</seealso>
+        public virtual Task<CreateGatewayRouteResponse> CreateGatewayRouteAsync(CreateGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGatewayRouteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateGatewayRouteResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateMesh
 
         internal virtual CreateMeshResponse CreateMesh(CreateMeshRequest request)
@@ -409,6 +484,83 @@ namespace Amazon.AppMesh
             options.ResponseUnmarshaller = CreateRouteResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateRouteResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateVirtualGateway
+
+        internal virtual CreateVirtualGatewayResponse CreateVirtualGateway(CreateVirtualGatewayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVirtualGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVirtualGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVirtualGatewayResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a virtual gateway.
+        /// 
+        ///          
+        /// <para>
+        /// A virtual gateway allows resources outside your mesh to communicate to resources that
+        ///         are inside your mesh. The virtual gateway represents an Envoy proxy running
+        /// in an Amazon ECS         task, in a Kubernetes service, or on an Amazon EC2 instance.
+        /// Unlike a virtual node, which         represents an Envoy running with an application,
+        /// a virtual gateway represents Envoy deployed by itself.
+        /// </para>
+        ///          
+        /// <para>
+        /// For more information about virtual gateways, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html">Virtual
+        /// gateways</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVirtualGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVirtualGateway service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ConflictException">
+        /// The request contains a client token that was used for a previous update resource call
+        ///         with different specifications. Try the request again with a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
+        /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
+        ///            Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualGateway">REST API Reference for CreateVirtualGateway Operation</seealso>
+        public virtual Task<CreateVirtualGatewayResponse> CreateVirtualGatewayAsync(CreateVirtualGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVirtualGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVirtualGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVirtualGatewayResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -667,6 +819,65 @@ namespace Amazon.AppMesh
 
         #endregion
         
+        #region  DeleteGatewayRoute
+
+        internal virtual DeleteGatewayRouteResponse DeleteGatewayRoute(DeleteGatewayRouteRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGatewayRouteResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGatewayRouteResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an existing gateway route.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayRoute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteGatewayRoute service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ResourceInUseException">
+        /// You can't delete the specified resource because it's in use or required by another
+        ///         resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteGatewayRoute">REST API Reference for DeleteGatewayRoute Operation</seealso>
+        public virtual Task<DeleteGatewayRouteResponse> DeleteGatewayRouteAsync(DeleteGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGatewayRouteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteGatewayRouteResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteMesh
 
         internal virtual DeleteMeshResponse DeleteMesh(DeleteMeshRequest request)
@@ -787,6 +998,66 @@ namespace Amazon.AppMesh
             options.ResponseUnmarshaller = DeleteRouteResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRouteResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVirtualGateway
+
+        internal virtual DeleteVirtualGatewayResponse DeleteVirtualGateway(DeleteVirtualGatewayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVirtualGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVirtualGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVirtualGatewayResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an existing virtual gateway. You cannot delete a virtual gateway if any gateway
+        ///         routes are associated to it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVirtualGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVirtualGateway service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ResourceInUseException">
+        /// You can't delete the specified resource because it's in use or required by another
+        ///         resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualGateway">REST API Reference for DeleteVirtualGateway Operation</seealso>
+        public virtual Task<DeleteVirtualGatewayResponse> DeleteVirtualGatewayAsync(DeleteVirtualGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVirtualGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVirtualGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVirtualGatewayResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -980,6 +1251,61 @@ namespace Amazon.AppMesh
 
         #endregion
         
+        #region  DescribeGatewayRoute
+
+        internal virtual DescribeGatewayRouteResponse DescribeGatewayRoute(DescribeGatewayRouteRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGatewayRouteResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGatewayRouteResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes an existing gateway route.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGatewayRoute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeGatewayRoute service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeGatewayRoute">REST API Reference for DescribeGatewayRoute Operation</seealso>
+        public virtual Task<DescribeGatewayRouteResponse> DescribeGatewayRouteAsync(DescribeGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGatewayRouteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeGatewayRouteResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeMesh
 
         internal virtual DescribeMeshResponse DescribeMesh(DescribeMeshRequest request)
@@ -1086,6 +1412,61 @@ namespace Amazon.AppMesh
             options.ResponseUnmarshaller = DescribeRouteResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeRouteResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeVirtualGateway
+
+        internal virtual DescribeVirtualGatewayResponse DescribeVirtualGateway(DescribeVirtualGatewayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVirtualGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVirtualGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVirtualGatewayResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes an existing virtual gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVirtualGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVirtualGateway service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualGateway">REST API Reference for DescribeVirtualGateway Operation</seealso>
+        public virtual Task<DescribeVirtualGatewayResponse> DescribeVirtualGatewayAsync(DescribeVirtualGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVirtualGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVirtualGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVirtualGatewayResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1255,6 +1636,62 @@ namespace Amazon.AppMesh
 
         #endregion
         
+        #region  ListGatewayRoutes
+
+        internal virtual ListGatewayRoutesResponse ListGatewayRoutes(ListGatewayRoutesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGatewayRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGatewayRoutesResponseUnmarshaller.Instance;
+
+            return Invoke<ListGatewayRoutesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of existing gateway routes that are associated to a virtual       
+        ///  gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGatewayRoutes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGatewayRoutes service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListGatewayRoutes">REST API Reference for ListGatewayRoutes Operation</seealso>
+        public virtual Task<ListGatewayRoutesResponse> ListGatewayRoutesAsync(ListGatewayRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGatewayRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGatewayRoutesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListGatewayRoutesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListMeshes
 
         internal virtual ListMeshesResponse ListMeshes(ListMeshesRequest request)
@@ -1416,6 +1853,61 @@ namespace Amazon.AppMesh
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListVirtualGateways
+
+        internal virtual ListVirtualGatewaysResponse ListVirtualGateways(ListVirtualGatewaysRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVirtualGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVirtualGatewaysResponseUnmarshaller.Instance;
+
+            return Invoke<ListVirtualGatewaysResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of existing virtual gateways in a service mesh.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVirtualGateways service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVirtualGateways service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualGateways">REST API Reference for ListVirtualGateways Operation</seealso>
+        public virtual Task<ListVirtualGatewaysResponse> ListVirtualGatewaysAsync(ListVirtualGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVirtualGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVirtualGatewaysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListVirtualGatewaysResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1703,6 +2195,70 @@ namespace Amazon.AppMesh
 
         #endregion
         
+        #region  UpdateGatewayRoute
+
+        internal virtual UpdateGatewayRouteResponse UpdateGatewayRoute(UpdateGatewayRouteRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGatewayRouteResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGatewayRouteResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing gateway route that is associated to a specified virtual gateway
+        /// in a         service mesh.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayRoute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateGatewayRoute service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ConflictException">
+        /// The request contains a client token that was used for a previous update resource call
+        ///         with different specifications. Try the request again with a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
+        /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
+        ///            Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateGatewayRoute">REST API Reference for UpdateGatewayRoute Operation</seealso>
+        public virtual Task<UpdateGatewayRouteResponse> UpdateGatewayRouteAsync(UpdateGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGatewayRouteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateGatewayRouteResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateMesh
 
         internal virtual UpdateMeshResponse UpdateMesh(UpdateMeshRequest request)
@@ -1821,6 +2377,69 @@ namespace Amazon.AppMesh
             options.ResponseUnmarshaller = UpdateRouteResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateRouteResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateVirtualGateway
+
+        internal virtual UpdateVirtualGatewayResponse UpdateVirtualGateway(UpdateVirtualGatewayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVirtualGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVirtualGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVirtualGatewayResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing virtual gateway in a specified service mesh.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVirtualGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateVirtualGateway service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ConflictException">
+        /// The request contains a client token that was used for a previous update resource call
+        ///         with different specifications. Try the request again with a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
+        /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
+        ///            Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualGateway">REST API Reference for UpdateVirtualGateway Operation</seealso>
+        public virtual Task<UpdateVirtualGatewayResponse> UpdateVirtualGatewayAsync(UpdateVirtualGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVirtualGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVirtualGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateVirtualGatewayResponse>(request, options, cancellationToken);
         }
 
         #endregion

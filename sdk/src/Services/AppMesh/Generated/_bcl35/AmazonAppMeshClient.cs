@@ -257,6 +257,101 @@ namespace Amazon.AppMesh
         #endregion
 
 
+        #region  CreateGatewayRoute
+
+        /// <summary>
+        /// Creates a gateway route.
+        /// 
+        ///          
+        /// <para>
+        /// A gateway route is attached to a virtual gateway and routes traffic to an existing
+        ///         virtual service. If a route matches a request, it can distribute traffic to
+        /// a target virtual service.
+        /// </para>
+        ///          
+        /// <para>
+        /// For more information about gateway routes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/gateway-routes.html">Gateway
+        /// routes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGatewayRoute service method.</param>
+        /// 
+        /// <returns>The response from the CreateGatewayRoute service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ConflictException">
+        /// The request contains a client token that was used for a previous update resource call
+        ///         with different specifications. Try the request again with a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
+        /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
+        ///            Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateGatewayRoute">REST API Reference for CreateGatewayRoute Operation</seealso>
+        public virtual CreateGatewayRouteResponse CreateGatewayRoute(CreateGatewayRouteRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGatewayRouteResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGatewayRouteResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGatewayRoute operation on AmazonAppMeshClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGatewayRoute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateGatewayRoute">REST API Reference for CreateGatewayRoute Operation</seealso>
+        public virtual IAsyncResult BeginCreateGatewayRoute(CreateGatewayRouteRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGatewayRouteResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateGatewayRoute.</param>
+        /// 
+        /// <returns>Returns a  CreateGatewayRouteResult from AppMesh.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateGatewayRoute">REST API Reference for CreateGatewayRoute Operation</seealso>
+        public virtual CreateGatewayRouteResponse EndCreateGatewayRoute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateGatewayRouteResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateMesh
 
         /// <summary>
@@ -442,6 +537,103 @@ namespace Amazon.AppMesh
         public virtual CreateRouteResponse EndCreateRoute(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateRouteResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateVirtualGateway
+
+        /// <summary>
+        /// Creates a virtual gateway.
+        /// 
+        ///          
+        /// <para>
+        /// A virtual gateway allows resources outside your mesh to communicate to resources that
+        ///         are inside your mesh. The virtual gateway represents an Envoy proxy running
+        /// in an Amazon ECS         task, in a Kubernetes service, or on an Amazon EC2 instance.
+        /// Unlike a virtual node, which         represents an Envoy running with an application,
+        /// a virtual gateway represents Envoy deployed by itself.
+        /// </para>
+        ///          
+        /// <para>
+        /// For more information about virtual gateways, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html">Virtual
+        /// gateways</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVirtualGateway service method.</param>
+        /// 
+        /// <returns>The response from the CreateVirtualGateway service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ConflictException">
+        /// The request contains a client token that was used for a previous update resource call
+        ///         with different specifications. Try the request again with a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
+        /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
+        ///            Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualGateway">REST API Reference for CreateVirtualGateway Operation</seealso>
+        public virtual CreateVirtualGatewayResponse CreateVirtualGateway(CreateVirtualGatewayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVirtualGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVirtualGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVirtualGatewayResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVirtualGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVirtualGateway operation on AmazonAppMeshClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVirtualGateway
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualGateway">REST API Reference for CreateVirtualGateway Operation</seealso>
+        public virtual IAsyncResult BeginCreateVirtualGateway(CreateVirtualGatewayRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVirtualGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVirtualGatewayResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVirtualGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVirtualGateway.</param>
+        /// 
+        /// <returns>Returns a  CreateVirtualGatewayResult from AppMesh.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualGateway">REST API Reference for CreateVirtualGateway Operation</seealso>
+        public virtual CreateVirtualGatewayResponse EndCreateVirtualGateway(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateVirtualGatewayResponse>(asyncResult);
         }
 
         #endregion
@@ -760,6 +952,85 @@ namespace Amazon.AppMesh
 
         #endregion
         
+        #region  DeleteGatewayRoute
+
+        /// <summary>
+        /// Deletes an existing gateway route.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayRoute service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGatewayRoute service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ResourceInUseException">
+        /// You can't delete the specified resource because it's in use or required by another
+        ///         resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteGatewayRoute">REST API Reference for DeleteGatewayRoute Operation</seealso>
+        public virtual DeleteGatewayRouteResponse DeleteGatewayRoute(DeleteGatewayRouteRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGatewayRouteResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGatewayRouteResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayRoute operation on AmazonAppMeshClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGatewayRoute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteGatewayRoute">REST API Reference for DeleteGatewayRoute Operation</seealso>
+        public virtual IAsyncResult BeginDeleteGatewayRoute(DeleteGatewayRouteRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGatewayRouteResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGatewayRoute.</param>
+        /// 
+        /// <returns>Returns a  DeleteGatewayRouteResult from AppMesh.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteGatewayRoute">REST API Reference for DeleteGatewayRoute Operation</seealso>
+        public virtual DeleteGatewayRouteResponse EndDeleteGatewayRoute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteGatewayRouteResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteMesh
 
         /// <summary>
@@ -920,6 +1191,86 @@ namespace Amazon.AppMesh
         public virtual DeleteRouteResponse EndDeleteRoute(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRouteResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteVirtualGateway
+
+        /// <summary>
+        /// Deletes an existing virtual gateway. You cannot delete a virtual gateway if any gateway
+        ///         routes are associated to it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVirtualGateway service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVirtualGateway service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ResourceInUseException">
+        /// You can't delete the specified resource because it's in use or required by another
+        ///         resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualGateway">REST API Reference for DeleteVirtualGateway Operation</seealso>
+        public virtual DeleteVirtualGatewayResponse DeleteVirtualGateway(DeleteVirtualGatewayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVirtualGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVirtualGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVirtualGatewayResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVirtualGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVirtualGateway operation on AmazonAppMeshClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVirtualGateway
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualGateway">REST API Reference for DeleteVirtualGateway Operation</seealso>
+        public virtual IAsyncResult BeginDeleteVirtualGateway(DeleteVirtualGatewayRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVirtualGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVirtualGatewayResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVirtualGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVirtualGateway.</param>
+        /// 
+        /// <returns>Returns a  DeleteVirtualGatewayResult from AppMesh.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualGateway">REST API Reference for DeleteVirtualGateway Operation</seealso>
+        public virtual DeleteVirtualGatewayResponse EndDeleteVirtualGateway(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVirtualGatewayResponse>(asyncResult);
         }
 
         #endregion
@@ -1173,6 +1524,81 @@ namespace Amazon.AppMesh
 
         #endregion
         
+        #region  DescribeGatewayRoute
+
+        /// <summary>
+        /// Describes an existing gateway route.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGatewayRoute service method.</param>
+        /// 
+        /// <returns>The response from the DescribeGatewayRoute service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeGatewayRoute">REST API Reference for DescribeGatewayRoute Operation</seealso>
+        public virtual DescribeGatewayRouteResponse DescribeGatewayRoute(DescribeGatewayRouteRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGatewayRouteResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGatewayRouteResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGatewayRoute operation on AmazonAppMeshClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeGatewayRoute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeGatewayRoute">REST API Reference for DescribeGatewayRoute Operation</seealso>
+        public virtual IAsyncResult BeginDescribeGatewayRoute(DescribeGatewayRouteRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGatewayRouteResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeGatewayRoute.</param>
+        /// 
+        /// <returns>Returns a  DescribeGatewayRouteResult from AppMesh.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeGatewayRoute">REST API Reference for DescribeGatewayRoute Operation</seealso>
+        public virtual DescribeGatewayRouteResponse EndDescribeGatewayRoute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeGatewayRouteResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeMesh
 
         /// <summary>
@@ -1319,6 +1745,81 @@ namespace Amazon.AppMesh
         public virtual DescribeRouteResponse EndDescribeRoute(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeRouteResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeVirtualGateway
+
+        /// <summary>
+        /// Describes an existing virtual gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVirtualGateway service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVirtualGateway service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualGateway">REST API Reference for DescribeVirtualGateway Operation</seealso>
+        public virtual DescribeVirtualGatewayResponse DescribeVirtualGateway(DescribeVirtualGatewayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVirtualGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVirtualGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVirtualGatewayResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVirtualGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVirtualGateway operation on AmazonAppMeshClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVirtualGateway
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualGateway">REST API Reference for DescribeVirtualGateway Operation</seealso>
+        public virtual IAsyncResult BeginDescribeVirtualGateway(DescribeVirtualGatewayRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVirtualGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVirtualGatewayResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVirtualGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVirtualGateway.</param>
+        /// 
+        /// <returns>Returns a  DescribeVirtualGatewayResult from AppMesh.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualGateway">REST API Reference for DescribeVirtualGateway Operation</seealso>
+        public virtual DescribeVirtualGatewayResponse EndDescribeVirtualGateway(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeVirtualGatewayResponse>(asyncResult);
         }
 
         #endregion
@@ -1548,6 +2049,82 @@ namespace Amazon.AppMesh
 
         #endregion
         
+        #region  ListGatewayRoutes
+
+        /// <summary>
+        /// Returns a list of existing gateway routes that are associated to a virtual       
+        ///  gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGatewayRoutes service method.</param>
+        /// 
+        /// <returns>The response from the ListGatewayRoutes service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListGatewayRoutes">REST API Reference for ListGatewayRoutes Operation</seealso>
+        public virtual ListGatewayRoutesResponse ListGatewayRoutes(ListGatewayRoutesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGatewayRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGatewayRoutesResponseUnmarshaller.Instance;
+
+            return Invoke<ListGatewayRoutesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGatewayRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGatewayRoutes operation on AmazonAppMeshClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGatewayRoutes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListGatewayRoutes">REST API Reference for ListGatewayRoutes Operation</seealso>
+        public virtual IAsyncResult BeginListGatewayRoutes(ListGatewayRoutesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGatewayRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGatewayRoutesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListGatewayRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGatewayRoutes.</param>
+        /// 
+        /// <returns>Returns a  ListGatewayRoutesResult from AppMesh.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListGatewayRoutes">REST API Reference for ListGatewayRoutes Operation</seealso>
+        public virtual ListGatewayRoutesResponse EndListGatewayRoutes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListGatewayRoutesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListMeshes
 
         /// <summary>
@@ -1769,6 +2346,81 @@ namespace Amazon.AppMesh
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListVirtualGateways
+
+        /// <summary>
+        /// Returns a list of existing virtual gateways in a service mesh.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVirtualGateways service method.</param>
+        /// 
+        /// <returns>The response from the ListVirtualGateways service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualGateways">REST API Reference for ListVirtualGateways Operation</seealso>
+        public virtual ListVirtualGatewaysResponse ListVirtualGateways(ListVirtualGatewaysRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVirtualGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVirtualGatewaysResponseUnmarshaller.Instance;
+
+            return Invoke<ListVirtualGatewaysResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVirtualGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVirtualGateways operation on AmazonAppMeshClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVirtualGateways
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualGateways">REST API Reference for ListVirtualGateways Operation</seealso>
+        public virtual IAsyncResult BeginListVirtualGateways(ListVirtualGatewaysRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVirtualGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVirtualGatewaysResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListVirtualGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVirtualGateways.</param>
+        /// 
+        /// <returns>Returns a  ListVirtualGatewaysResult from AppMesh.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualGateways">REST API Reference for ListVirtualGateways Operation</seealso>
+        public virtual ListVirtualGatewaysResponse EndListVirtualGateways(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListVirtualGatewaysResponse>(asyncResult);
         }
 
         #endregion
@@ -2156,6 +2808,90 @@ namespace Amazon.AppMesh
 
         #endregion
         
+        #region  UpdateGatewayRoute
+
+        /// <summary>
+        /// Updates an existing gateway route that is associated to a specified virtual gateway
+        /// in a         service mesh.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayRoute service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGatewayRoute service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ConflictException">
+        /// The request contains a client token that was used for a previous update resource call
+        ///         with different specifications. Try the request again with a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
+        /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
+        ///            Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateGatewayRoute">REST API Reference for UpdateGatewayRoute Operation</seealso>
+        public virtual UpdateGatewayRouteResponse UpdateGatewayRoute(UpdateGatewayRouteRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGatewayRouteResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGatewayRouteResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayRoute operation on AmazonAppMeshClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGatewayRoute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateGatewayRoute">REST API Reference for UpdateGatewayRoute Operation</seealso>
+        public virtual IAsyncResult BeginUpdateGatewayRoute(UpdateGatewayRouteRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGatewayRouteResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGatewayRoute.</param>
+        /// 
+        /// <returns>Returns a  UpdateGatewayRouteResult from AppMesh.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateGatewayRoute">REST API Reference for UpdateGatewayRoute Operation</seealso>
+        public virtual UpdateGatewayRouteResponse EndUpdateGatewayRoute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateGatewayRouteResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateMesh
 
         /// <summary>
@@ -2314,6 +3050,89 @@ namespace Amazon.AppMesh
         public virtual UpdateRouteResponse EndUpdateRoute(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateRouteResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateVirtualGateway
+
+        /// <summary>
+        /// Updates an existing virtual gateway in a specified service mesh.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVirtualGateway service method.</param>
+        /// 
+        /// <returns>The response from the UpdateVirtualGateway service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ConflictException">
+        /// The request contains a client token that was used for a previous update resource call
+        ///         with different specifications. Try the request again with a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
+        /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
+        ///            Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualGateway">REST API Reference for UpdateVirtualGateway Operation</seealso>
+        public virtual UpdateVirtualGatewayResponse UpdateVirtualGateway(UpdateVirtualGatewayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVirtualGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVirtualGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVirtualGatewayResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVirtualGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVirtualGateway operation on AmazonAppMeshClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVirtualGateway
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualGateway">REST API Reference for UpdateVirtualGateway Operation</seealso>
+        public virtual IAsyncResult BeginUpdateVirtualGateway(UpdateVirtualGatewayRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVirtualGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVirtualGatewayResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateVirtualGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVirtualGateway.</param>
+        /// 
+        /// <returns>Returns a  UpdateVirtualGatewayResult from AppMesh.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualGateway">REST API Reference for UpdateVirtualGateway Operation</seealso>
+        public virtual UpdateVirtualGatewayResponse EndUpdateVirtualGateway(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateVirtualGatewayResponse>(asyncResult);
         }
 
         #endregion

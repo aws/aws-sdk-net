@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// 
+    /// An object that represents types of timeouts.
     /// </summary>
     public partial class TcpTimeout
     {

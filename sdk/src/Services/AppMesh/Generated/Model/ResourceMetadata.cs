@@ -165,7 +165,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Version. 
         /// <para>
         /// The version of the resource. Resources are created at version 1, and this version
-        /// is         incremented each time that they're updated.
+        /// is incremented each time that they're updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
