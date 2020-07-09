@@ -1,3 +1,8 @@
+### 3.3.777.1 (2020-07-09 21:59 UTC)
+* Core 3.3.107.24
+	* Consistently apply ConfigureAwait(false)
+	* All services packages updated to require new Core
+
 ### 3.3.777.0 (2020-07-09 18:16 UTC)
 * AlexaForBusiness (3.3.110.0)
 	* Added support for registering an AVS device directly to a room using RegisterAVSDevice with a room ARN
