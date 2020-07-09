@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HyperParameterTuningJobName. 
         /// <para>
-        /// The name of the tuning job to describe.
+        /// The name of the tuning job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

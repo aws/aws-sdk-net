@@ -65,7 +65,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SourceIpConfig. 
         /// <para>
-        /// A list of one to four IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
+        /// A list of one to ten IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
         /// to be added to the workforce allow list.
         /// </para>
         /// </summary>

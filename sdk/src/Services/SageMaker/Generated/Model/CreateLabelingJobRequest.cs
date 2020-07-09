@@ -158,7 +158,16 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// The file is a JSON structure in the following format:
+        /// For 3D point cloud task types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
+        /// a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For all other <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+        /// task types</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom
+        /// tasks</a>, your label category configuration file must be a JSON file in the following
+        /// format. Identify the labels you want to use by replacing <code>label_1</code>, <code>label_2</code>,<code>...</code>,<code>label_n</code>
+        /// with your label categories.
         /// </para>
         ///  
         /// <para>
@@ -178,7 +187,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code> "label": "<i>label 1</i>"</code> 
+        ///  <code> "label": "<i>label_1</i>"</code> 
         /// </para>
         ///  
         /// <para>
@@ -190,7 +199,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code> "label": "<i>label 2</i>"</code> 
+        ///  <code> "label": "<i>label_2</i>"</code> 
         /// </para>
         ///  
         /// <para>
@@ -206,7 +215,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code> "label": "<i>label n</i>"</code> 
+        ///  <code> "label": "<i>label_n</i>"</code> 
         /// </para>
         ///  
         /// <para>

@@ -29,18 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeHumanTaskUi operation.
-    /// Returns information about the requested human task user interface (worker task template).
+    /// Container for the parameters to the DeleteHumanTaskUi operation.
+    /// Use this operation to delete a worker task template (<code>HumanTaskUi</code>).
+    /// 
+    ///  
+    /// <para>
+    ///  To see a list of human task user interfaces (work task templates) in your account,
+    /// use . When you delete a worker task template, it no longer appears when you call <code>ListHumanTaskUis</code>.
+    /// </para>
     /// </summary>
-    public partial class DescribeHumanTaskUiRequest : AmazonSageMakerRequest
+    public partial class DeleteHumanTaskUiRequest : AmazonSageMakerRequest
     {
         private string _humanTaskUiName;
 
         /// <summary>
         /// Gets and sets the property HumanTaskUiName. 
         /// <para>
-        /// The name of the human task user interface (worker task template) you want information
-        /// about.
+        /// The name of the human task user interface (work task template) you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

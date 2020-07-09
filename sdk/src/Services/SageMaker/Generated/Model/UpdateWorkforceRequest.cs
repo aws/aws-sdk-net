@@ -32,7 +32,7 @@ namespace Amazon.SageMaker.Model
     /// Container for the parameters to the UpdateWorkforce operation.
     /// Restricts access to tasks assigned to workers in the specified workforce to those
     /// within specific ranges of IP addresses. You specify allowed IP addresses by creating
-    /// a list of up to four <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
+    /// a list of up to ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
     /// 
     ///  
     /// <para>
@@ -56,12 +56,12 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SourceIpConfig. 
         /// <para>
-        /// A list of one to four worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
+        /// A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
         /// that can be used to access tasks assigned to this workforce.
         /// </para>
         ///  
         /// <para>
-        /// Maximum: Four CIDR values
+        /// Maximum: Ten CIDR values
         /// </para>
         /// </summary>
         public SourceIpConfig SourceIpConfig

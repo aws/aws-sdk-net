@@ -441,11 +441,10 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a running App for the specified UserProfile. Supported Apps are JupyterServer,
-        /// KernelGateway, and TensorBoard. This operation is automatically invoked by Amazon
-        /// SageMaker Studio upon access to the associated Domain, and when new kernel configurations
-        /// are selected by the user. A user may have multiple Apps active simultaneously. UserProfiles
-        /// are limited to 5 concurrently running Apps at a time.
+        /// Creates a running App for the specified UserProfile. Supported Apps are JupyterServer
+        /// and KernelGateway. This operation is automatically invoked by Amazon SageMaker Studio
+        /// upon access to the associated Domain, and when new kernel configurations are selected
+        /// by the user. A user may have multiple Apps active simultaneously.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApp service method.</param>
         /// 
@@ -469,11 +468,10 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a running App for the specified UserProfile. Supported Apps are JupyterServer,
-        /// KernelGateway, and TensorBoard. This operation is automatically invoked by Amazon
-        /// SageMaker Studio upon access to the associated Domain, and when new kernel configurations
-        /// are selected by the user. A user may have multiple Apps active simultaneously. UserProfiles
-        /// are limited to 5 concurrently running Apps at a time.
+        /// Creates a running App for the specified UserProfile. Supported Apps are JupyterServer
+        /// and KernelGateway. This operation is automatically invoked by Amazon SageMaker Studio
+        /// upon access to the associated Domain, and when new kernel configurations are selected
+        /// by the user. A user may have multiple Apps active simultaneously.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApp service method.</param>
         /// <param name="cancellationToken">
@@ -3439,6 +3437,65 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteHumanTaskUi
+
+
+        /// <summary>
+        /// Use this operation to delete a worker task template (<code>HumanTaskUi</code>).
+        /// 
+        ///  
+        /// <para>
+        ///  To see a list of human task user interfaces (work task templates) in your account,
+        /// use . When you delete a worker task template, it no longer appears when you call <code>ListHumanTaskUis</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHumanTaskUi service method.</param>
+        /// 
+        /// <returns>The response from the DeleteHumanTaskUi service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHumanTaskUi">REST API Reference for DeleteHumanTaskUi Operation</seealso>
+        public virtual DeleteHumanTaskUiResponse DeleteHumanTaskUi(DeleteHumanTaskUiRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHumanTaskUiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHumanTaskUiResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteHumanTaskUiResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Use this operation to delete a worker task template (<code>HumanTaskUi</code>).
+        /// 
+        ///  
+        /// <para>
+        ///  To see a list of human task user interfaces (work task templates) in your account,
+        /// use . When you delete a worker task template, it no longer appears when you call <code>ListHumanTaskUis</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHumanTaskUi service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteHumanTaskUi service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHumanTaskUi">REST API Reference for DeleteHumanTaskUi Operation</seealso>
+        public virtual Task<DeleteHumanTaskUiResponse> DeleteHumanTaskUiAsync(DeleteHumanTaskUiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHumanTaskUiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHumanTaskUiResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteHumanTaskUiResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteModel
 
 
@@ -4423,7 +4480,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Returns information about the requested human task user interface.
+        /// Returns information about the requested human task user interface (worker task template).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHumanTaskUi service method.</param>
         /// 
@@ -4443,7 +4500,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Returns information about the requested human task user interface.
+        /// Returns information about the requested human task user interface (worker task template).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHumanTaskUi service method.</param>
         /// <param name="cancellationToken">
@@ -8081,7 +8138,7 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Restricts access to tasks assigned to workers in the specified workforce to those
         /// within specific ranges of IP addresses. You specify allowed IP addresses by creating
-        /// a list of up to four <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
+        /// a list of up to ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
         /// 
         ///  
         /// <para>
@@ -8114,7 +8171,7 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Restricts access to tasks assigned to workers in the specified workforce to those
         /// within specific ranges of IP addresses. You specify allowed IP addresses by creating
-        /// a list of up to four <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
+        /// a list of up to ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
         /// 
         ///  
         /// <para>

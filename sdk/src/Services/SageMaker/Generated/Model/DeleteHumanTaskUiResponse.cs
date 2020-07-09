@@ -29,32 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeHumanTaskUi operation.
-    /// Returns information about the requested human task user interface (worker task template).
+    /// This is the response object from the DeleteHumanTaskUi operation.
     /// </summary>
-    public partial class DescribeHumanTaskUiRequest : AmazonSageMakerRequest
+    public partial class DeleteHumanTaskUiResponse : AmazonWebServiceResponse
     {
-        private string _humanTaskUiName;
-
-        /// <summary>
-        /// Gets and sets the property HumanTaskUiName. 
-        /// <para>
-        /// The name of the human task user interface (worker task template) you want information
-        /// about.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=63)]
-        public string HumanTaskUiName
-        {
-            get { return this._humanTaskUiName; }
-            set { this._humanTaskUiName = value; }
-        }
-
-        // Check to see if HumanTaskUiName property is set
-        internal bool IsSetHumanTaskUiName()
-        {
-            return this._humanTaskUiName != null;
-        }
 
     }
 }

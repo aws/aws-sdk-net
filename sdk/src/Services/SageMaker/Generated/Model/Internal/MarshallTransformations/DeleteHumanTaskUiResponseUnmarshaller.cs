@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeHumanTaskUi operation
+    /// Response Unmarshaller for DeleteHumanTaskUi operation
     /// </summary>  
-    public class DescribeHumanTaskUiResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteHumanTaskUiResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,43 +45,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeHumanTaskUiResponse response = new DescribeHumanTaskUiResponse();
+            DeleteHumanTaskUiResponse response = new DeleteHumanTaskUiResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("CreationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("HumanTaskUiArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.HumanTaskUiArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("HumanTaskUiName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.HumanTaskUiName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("HumanTaskUiStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.HumanTaskUiStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UiTemplate", targetDepth))
-                {
-                    var unmarshaller = UiTemplateInfoUnmarshaller.Instance;
-                    response.UiTemplate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -112,9 +77,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             return new AmazonSageMakerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeHumanTaskUiResponseUnmarshaller _instance = new DescribeHumanTaskUiResponseUnmarshaller();        
+        private static DeleteHumanTaskUiResponseUnmarshaller _instance = new DeleteHumanTaskUiResponseUnmarshaller();        
 
-        internal static DescribeHumanTaskUiResponseUnmarshaller GetInstance()
+        internal static DeleteHumanTaskUiResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -122,7 +87,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeHumanTaskUiResponseUnmarshaller Instance
+        public static DeleteHumanTaskUiResponseUnmarshaller Instance
         {
             get
             {
