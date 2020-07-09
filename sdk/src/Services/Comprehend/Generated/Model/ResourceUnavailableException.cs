@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-    /// state and try your request again.
+    /// The specified resource is not available. Check the resource and try your request again.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

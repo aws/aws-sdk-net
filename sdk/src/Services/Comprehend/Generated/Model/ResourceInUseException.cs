@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// The specified name is already in use. Use a different name and try your request again.
+    /// The specified resource name is already in use. Use a different name and try your request
+    /// again.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

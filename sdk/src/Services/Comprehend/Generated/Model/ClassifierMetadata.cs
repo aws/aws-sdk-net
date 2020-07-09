@@ -78,7 +78,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property NumberOfTestDocuments. 
         /// <para>
         /// The number of documents in the input data that were used to test the classifier. Typically
-        /// this is 10 to 20 percent of the input documents.
+        /// this is 10 to 20 percent of the input documents, up to 10,000 documents.
         /// </para>
         /// </summary>
         public int NumberOfTestDocuments

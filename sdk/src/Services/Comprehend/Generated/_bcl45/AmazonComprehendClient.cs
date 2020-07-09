@@ -655,8 +655,7 @@ namespace Amazon.Comprehend
         /// The request is invalid.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
-        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-        /// state and try your request again.
+        /// The specified resource is not available. Check the resource and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TextSizeLimitExceededException">
         /// The size of the input text exceeds the limit. Use a smaller document.
@@ -689,8 +688,7 @@ namespace Amazon.Comprehend
         /// The request is invalid.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
-        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-        /// state and try your request again.
+        /// The specified resource is not available. Check the resource and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TextSizeLimitExceededException">
         /// The size of the input text exceeds the limit. Use a smaller document.
@@ -712,7 +710,7 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Creates a new document classifier that you can use to categorize documents. To create
-        /// a classifier you provide a set of training documents that labeled with the categories
+        /// a classifier, you provide a set of training documents that labeled with the categories
         /// that you want to use. After the classifier is trained you can use it to categorize
         /// a set of labeled documents into the categories. For more information, see <a>how-document-classification</a>.
         /// </summary>
@@ -730,11 +728,12 @@ namespace Amazon.Comprehend
         /// re-enter it.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
-        /// The specified name is already in use. Use a different name and try your request again.
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceLimitExceededException">
-        /// The maximum number of recognizers per account has been exceeded. Review the recognizers,
-        /// perform cleanup, and then try your request again.
+        /// The maximum number of resources per account has been exceeded. Review the resources,
+        /// and then try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -763,7 +762,7 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Creates a new document classifier that you can use to categorize documents. To create
-        /// a classifier you provide a set of training documents that labeled with the categories
+        /// a classifier, you provide a set of training documents that labeled with the categories
         /// that you want to use. After the classifier is trained you can use it to categorize
         /// a set of labeled documents into the categories. For more information, see <a>how-document-classification</a>.
         /// </summary>
@@ -784,11 +783,12 @@ namespace Amazon.Comprehend
         /// re-enter it.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
-        /// The specified name is already in use. Use a different name and try your request again.
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceLimitExceededException">
-        /// The maximum number of recognizers per account has been exceeded. Review the recognizers,
-        /// perform cleanup, and then try your request again.
+        /// The maximum number of resources per account has been exceeded. Review the resources,
+        /// and then try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -833,18 +833,18 @@ namespace Amazon.Comprehend
         /// The request is invalid.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
-        /// The specified name is already in use. Use a different name and try your request again.
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceLimitExceededException">
-        /// The maximum number of recognizers per account has been exceeded. Review the recognizers,
-        /// perform cleanup, and then try your request again.
+        /// The maximum number of resources per account has been exceeded. Review the resources,
+        /// and then try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
         /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
-        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-        /// state and try your request again.
+        /// The specified resource is not available. Check the resource and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -882,18 +882,18 @@ namespace Amazon.Comprehend
         /// The request is invalid.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
-        /// The specified name is already in use. Use a different name and try your request again.
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceLimitExceededException">
-        /// The maximum number of recognizers per account has been exceeded. Review the recognizers,
-        /// perform cleanup, and then try your request again.
+        /// The maximum number of resources per account has been exceeded. Review the resources,
+        /// and then try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
         /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
-        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-        /// state and try your request again.
+        /// The specified resource is not available. Check the resource and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -936,11 +936,12 @@ namespace Amazon.Comprehend
         /// re-enter it.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
-        /// The specified name is already in use. Use a different name and try your request again.
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceLimitExceededException">
-        /// The maximum number of recognizers per account has been exceeded. Review the recognizers,
-        /// perform cleanup, and then try your request again.
+        /// The maximum number of resources per account has been exceeded. Review the resources,
+        /// and then try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -988,11 +989,12 @@ namespace Amazon.Comprehend
         /// re-enter it.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
-        /// The specified name is already in use. Use a different name and try your request again.
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceLimitExceededException">
-        /// The maximum number of recognizers per account has been exceeded. Review the recognizers,
-        /// perform cleanup, and then try your request again.
+        /// The maximum number of resources per account has been exceeded. Review the resources,
+        /// and then try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1049,14 +1051,14 @@ namespace Amazon.Comprehend
         /// The request is invalid.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
-        /// The specified name is already in use. Use a different name and try your request again.
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
         /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
-        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-        /// state and try your request again.
+        /// The specified resource is not available. Check the resource and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1101,14 +1103,14 @@ namespace Amazon.Comprehend
         /// The request is invalid.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
-        /// The specified name is already in use. Use a different name and try your request again.
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
         /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
-        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-        /// state and try your request again.
+        /// The specified resource is not available. Check the resource and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1142,7 +1144,8 @@ namespace Amazon.Comprehend
         /// The request is invalid.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
-        /// The specified name is already in use. Use a different name and try your request again.
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
         /// The specified resource ARN was not found. Check the ARN and try your request again.
@@ -1178,7 +1181,8 @@ namespace Amazon.Comprehend
         /// The request is invalid.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
-        /// The specified name is already in use. Use a different name and try your request again.
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
         /// The specified resource ARN was not found. Check the ARN and try your request again.
@@ -1227,14 +1231,14 @@ namespace Amazon.Comprehend
         /// The request is invalid.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
-        /// The specified name is already in use. Use a different name and try your request again.
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
         /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
-        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-        /// state and try your request again.
+        /// The specified resource is not available. Check the resource and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1279,14 +1283,14 @@ namespace Amazon.Comprehend
         /// The request is invalid.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
-        /// The specified name is already in use. Use a different name and try your request again.
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
         /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
-        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-        /// state and try your request again.
+        /// The specified resource is not available. Check the resource and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1983,6 +1987,9 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
+        /// The specified resource is not available. Check the resource and try your request again.
+        /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TextSizeLimitExceededException">
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
@@ -2018,6 +2025,9 @@ namespace Amazon.Comprehend
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
+        /// The specified resource is not available. Check the resource and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TextSizeLimitExceededException">
         /// The size of the input text exceeds the limit. Use a smaller document.
@@ -2937,8 +2947,7 @@ namespace Amazon.Comprehend
         /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
-        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-        /// state and try your request again.
+        /// The specified resource is not available. Check the resource and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -2978,8 +2987,7 @@ namespace Amazon.Comprehend
         /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
-        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-        /// state and try your request again.
+        /// The specified resource is not available. Check the resource and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -3097,8 +3105,7 @@ namespace Amazon.Comprehend
         /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
-        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-        /// state and try your request again.
+        /// The specified resource is not available. Check the resource and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -3146,8 +3153,7 @@ namespace Amazon.Comprehend
         /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
-        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-        /// state and try your request again.
+        /// The specified resource is not available. Check the resource and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -4091,18 +4097,18 @@ namespace Amazon.Comprehend
         /// The request is invalid.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
-        /// The specified name is already in use. Use a different name and try your request again.
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceLimitExceededException">
-        /// The maximum number of recognizers per account has been exceeded. Review the recognizers,
-        /// perform cleanup, and then try your request again.
+        /// The maximum number of resources per account has been exceeded. Review the resources,
+        /// and then try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
         /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
-        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-        /// state and try your request again.
+        /// The specified resource is not available. Check the resource and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -4134,18 +4140,18 @@ namespace Amazon.Comprehend
         /// The request is invalid.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
-        /// The specified name is already in use. Use a different name and try your request again.
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceLimitExceededException">
-        /// The maximum number of recognizers per account has been exceeded. Review the recognizers,
-        /// perform cleanup, and then try your request again.
+        /// The maximum number of resources per account has been exceeded. Review the resources,
+        /// and then try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
         /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
-        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-        /// state and try your request again.
+        /// The specified resource is not available. Check the resource and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
