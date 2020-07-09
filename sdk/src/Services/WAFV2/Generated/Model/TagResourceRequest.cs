@@ -40,9 +40,16 @@ namespace Amazon.WAFV2.Model
     ///  </note> 
     /// <para>
     /// Associates tags with the specified AWS resource. Tags are key:value pairs that you
-    /// can associate with AWS resources. For example, the tag key might be "customer" and
-    /// the tag value might be "companyA." You can specify one or more tags to add to each
-    /// container. You can add up to 50 tags to each AWS resource.
+    /// can use to categorize and manage your resources, for purposes like billing. For example,
+    /// you might set the tag key to "customer" and the value to the customer name or ID.
+    /// You can specify one or more tags to add to each AWS resource, up to 50 tags for a
+    /// resource.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups,
+    /// IP sets, and regex pattern sets. You can't manage or view tags through the AWS WAF
+    /// console. 
     /// </para>
     /// </summary>
     public partial class TagResourceRequest : AmazonWAFV2Request

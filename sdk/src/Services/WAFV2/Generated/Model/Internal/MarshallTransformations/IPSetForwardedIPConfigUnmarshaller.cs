@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RateBasedStatement Object
+    /// Response Unmarshaller for IPSetForwardedIPConfig Object
     /// </summary>  
-    public class RateBasedStatementUnmarshaller : IUnmarshaller<RateBasedStatement, XmlUnmarshallerContext>, IUnmarshaller<RateBasedStatement, JsonUnmarshallerContext>
+    public class IPSetForwardedIPConfigUnmarshaller : IUnmarshaller<IPSetForwardedIPConfig, XmlUnmarshallerContext>, IUnmarshaller<IPSetForwardedIPConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RateBasedStatement IUnmarshaller<RateBasedStatement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        IPSetForwardedIPConfig IUnmarshaller<IPSetForwardedIPConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RateBasedStatement Unmarshall(JsonUnmarshallerContext context)
+        public IPSetForwardedIPConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RateBasedStatement unmarshalledObject = new RateBasedStatement();
+            IPSetForwardedIPConfig unmarshalledObject = new IPSetForwardedIPConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AggregateKeyType", targetDepth))
+                if (context.TestExpression("FallbackBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AggregateKeyType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FallbackBehavior = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ForwardedIPConfig", targetDepth))
+                if (context.TestExpression("HeaderName", targetDepth))
                 {
-                    var unmarshaller = ForwardedIPConfigUnmarshaller.Instance;
-                    unmarshalledObject.ForwardedIPConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HeaderName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Limit", targetDepth))
+                if (context.TestExpression("Position", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.Limit = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ScopeDownStatement", targetDepth))
-                {
-                    var unmarshaller = StatementUnmarshaller.Instance;
-                    unmarshalledObject.ScopeDownStatement = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Position = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static RateBasedStatementUnmarshaller _instance = new RateBasedStatementUnmarshaller();        
+        private static IPSetForwardedIPConfigUnmarshaller _instance = new IPSetForwardedIPConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RateBasedStatementUnmarshaller Instance
+        public static IPSetForwardedIPConfigUnmarshaller Instance
         {
             get
             {

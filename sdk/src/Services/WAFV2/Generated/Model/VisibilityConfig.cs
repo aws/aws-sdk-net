@@ -71,10 +71,11 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// A name of the CloudWatch metric. The name can contain only alphanumeric characters
-        /// (A-Z, a-z, 0-9), with length from one to 128 characters. It can't contain whitespace
-        /// or metric names reserved for AWS WAF, for example "All" and "Default_Action." You
-        /// can't change a <code>MetricName</code> after you create a <code>VisibilityConfig</code>.
+        /// A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z,
+        /// 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long.
+        /// It can't contain whitespace or metric names reserved for AWS WAF, for example "All"
+        /// and "Default_Action." You can't change a <code>MetricName</code> after you create
+        /// a <code>VisibilityConfig</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

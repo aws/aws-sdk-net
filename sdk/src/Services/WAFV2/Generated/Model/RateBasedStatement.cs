@@ -82,15 +82,26 @@ namespace Amazon.WAFV2.Model
     public partial class RateBasedStatement
     {
         private RateBasedStatementAggregateKeyType _aggregateKeyType;
+        private ForwardedIPConfig _forwardedIPConfig;
         private long? _limit;
         private Statement _scopeDownStatement;
 
         /// <summary>
         /// Gets and sets the property AggregateKeyType. 
         /// <para>
-        /// Setting that indicates how to aggregate the request counts. Currently, you must set
-        /// this to <code>IP</code>. The request counts are aggregated on IP addresses. 
+        /// Setting that indicates how to aggregate the request counts. The options are the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// IP - Aggregate the request counts on the IP address from the web request origin.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FORWARDED_IP - Aggregate the request counts on the first IP address in an HTTP header.
+        /// If you use this, configure the <code>ForwardedIPConfig</code>, to specify the header
+        /// to use. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public RateBasedStatementAggregateKeyType AggregateKeyType
@@ -106,10 +117,39 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ForwardedIPConfig. 
+        /// <para>
+        /// The configuration for inspecting IP addresses in an HTTP header that you specify,
+        /// instead of using the IP address that's reported by the web request origin. Commonly,
+        /// this is the X-Forwarded-For (XFF) header, but you can specify any header name. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the specified header isn't present in the request, AWS WAF doesn't apply the rule
+        /// to the web request at all.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This is required if <code>AggregateKeyType</code> is set to <code>FORWARDED_IP</code>.
+        /// </para>
+        /// </summary>
+        public ForwardedIPConfig ForwardedIPConfig
+        {
+            get { return this._forwardedIPConfig; }
+            set { this._forwardedIPConfig = value; }
+        }
+
+        // Check to see if ForwardedIPConfig property is set
+        internal bool IsSetForwardedIPConfig()
+        {
+            return this._forwardedIPConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
         /// The limit on requests per 5-minute period for a single originating IP address. If
-        /// the statement includes a <code>ScopDownStatement</code>, this limit is applied only
+        /// the statement includes a <code>ScopeDownStatement</code>, this limit is applied only
         /// to the requests that match the statement.
         /// </para>
         /// </summary>

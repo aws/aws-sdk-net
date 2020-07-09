@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RateBasedStatement Object
+    /// Response Unmarshaller for ForwardedIPConfig Object
     /// </summary>  
-    public class RateBasedStatementUnmarshaller : IUnmarshaller<RateBasedStatement, XmlUnmarshallerContext>, IUnmarshaller<RateBasedStatement, JsonUnmarshallerContext>
+    public class ForwardedIPConfigUnmarshaller : IUnmarshaller<ForwardedIPConfig, XmlUnmarshallerContext>, IUnmarshaller<ForwardedIPConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RateBasedStatement IUnmarshaller<RateBasedStatement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ForwardedIPConfig IUnmarshaller<ForwardedIPConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RateBasedStatement Unmarshall(JsonUnmarshallerContext context)
+        public ForwardedIPConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RateBasedStatement unmarshalledObject = new RateBasedStatement();
+            ForwardedIPConfig unmarshalledObject = new ForwardedIPConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AggregateKeyType", targetDepth))
+                if (context.TestExpression("FallbackBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AggregateKeyType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FallbackBehavior = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ForwardedIPConfig", targetDepth))
+                if (context.TestExpression("HeaderName", targetDepth))
                 {
-                    var unmarshaller = ForwardedIPConfigUnmarshaller.Instance;
-                    unmarshalledObject.ForwardedIPConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Limit", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.Limit = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ScopeDownStatement", targetDepth))
-                {
-                    var unmarshaller = StatementUnmarshaller.Instance;
-                    unmarshalledObject.ScopeDownStatement = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HeaderName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static RateBasedStatementUnmarshaller _instance = new RateBasedStatementUnmarshaller();        
+        private static ForwardedIPConfigUnmarshaller _instance = new ForwardedIPConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RateBasedStatementUnmarshaller Instance
+        public static ForwardedIPConfigUnmarshaller Instance
         {
             get
             {

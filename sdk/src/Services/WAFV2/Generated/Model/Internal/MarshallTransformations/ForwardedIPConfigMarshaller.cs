@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// IPSetReferenceStatement Marshaller
+    /// ForwardedIPConfig Marshaller
     /// </summary>       
-    public class IPSetReferenceStatementMarshaller : IRequestMarshaller<IPSetReferenceStatement, JsonMarshallerContext> 
+    public class ForwardedIPConfigMarshaller : IRequestMarshaller<ForwardedIPConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,18 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(IPSetReferenceStatement requestObject, JsonMarshallerContext context)
+        public void Marshall(ForwardedIPConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetARN())
+            if(requestObject.IsSetFallbackBehavior())
             {
-                context.Writer.WritePropertyName("ARN");
-                context.Writer.Write(requestObject.ARN);
+                context.Writer.WritePropertyName("FallbackBehavior");
+                context.Writer.Write(requestObject.FallbackBehavior);
             }
 
-            if(requestObject.IsSetIPSetForwardedIPConfig())
+            if(requestObject.IsSetHeaderName())
             {
-                context.Writer.WritePropertyName("IPSetForwardedIPConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = IPSetForwardedIPConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.IPSetForwardedIPConfig, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("HeaderName");
+                context.Writer.Write(requestObject.HeaderName);
             }
 
         }
@@ -67,7 +62,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static IPSetReferenceStatementMarshaller Instance = new IPSetReferenceStatementMarshaller();
+        public readonly static ForwardedIPConfigMarshaller Instance = new ForwardedIPConfigMarshaller();
 
     }
 }

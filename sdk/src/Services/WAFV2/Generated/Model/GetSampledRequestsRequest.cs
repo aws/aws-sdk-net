@@ -143,9 +143,10 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property TimeWindow. 
         /// <para>
         /// The start date and time and the end date and time of the range for which you want
-        /// <code>GetSampledRequests</code> to return a sample of requests. Specify the date and
-        /// time in the following format: <code>"2016-09-27T14:50Z"</code>. You can specify any
-        /// time range in the previous three hours.
+        /// <code>GetSampledRequests</code> to return a sample of requests. You must specify the
+        /// times in Coordinated Universal Time (UTC) format. UTC format includes the special
+        /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can
+        /// specify any time range in the previous three hours.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

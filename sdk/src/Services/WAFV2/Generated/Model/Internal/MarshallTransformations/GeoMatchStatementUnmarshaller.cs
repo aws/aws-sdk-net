@@ -70,6 +70,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.CountryCodes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ForwardedIPConfig", targetDepth))
+                {
+                    var unmarshaller = ForwardedIPConfigUnmarshaller.Instance;
+                    unmarshalledObject.ForwardedIPConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
