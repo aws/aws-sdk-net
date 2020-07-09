@@ -304,7 +304,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnableBranchAutoDeletion. 
         /// <para>
-        ///  Automatically disconnects a branch in the Amplify Console when you delete a branch
+        ///  Automatically disconnect a branch in the Amplify Console when you delete a branch
         /// from your Git repository. 
         /// </para>
         /// </summary>
