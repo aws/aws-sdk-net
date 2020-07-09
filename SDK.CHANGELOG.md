@@ -1,3 +1,34 @@
+### 3.3.777.0 (2020-07-09 18:16 UTC)
+* AlexaForBusiness (3.3.110.0)
+	* Added support for registering an AVS device directly to a room using RegisterAVSDevice with a room ARN
+* Amplify (3.3.105.8)
+	* Documentation update to the introduction text to specify that this is the Amplify Console API.
+* AppMesh (3.3.111.0)
+	* AppMesh now supports Ingress which allows resources outside a mesh to communicate to resources that are inside the mesh. See https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html
+* CloudHSMV2 (3.3.101.81)
+	* Documentation updates for cloudhsmv2
+* CloudWatchEvents (3.3.103.0)
+	* Amazon CloudWatch Events/EventBridge adds support for API Gateway as a target.
+* Comprehend (3.3.109.0)
+	* AWS Comprehend now supports Real-time Analysis with Custom Entity Recognition. 
+* EBS (3.3.101.0)
+	* This release introduces the following set of actions for the EBS direct APIs: 1. StartSnapshot, which creates a new Amazon EBS snapshot. 2. PutSnapshotBlock, which writes a block of data to a snapshot. 3. CompleteSnapshot, which seals and completes a snapshot after blocks of data have been written to it.
+* EventBridge (3.3.102.0)
+	* Amazon EventBridge adds support for API Gateway as a target.
+* SageMaker (3.3.118.0)
+	* This release adds the DeleteHumanTaskUi API to Amazon Augmented AI
+* SecretsManager (3.3.103.0)
+	* Adds support for filters on the ListSecrets API to allow filtering results by name, tag key, tag value, or description.  Adds support for the BlockPublicPolicy option on the PutResourcePolicy API to block resource policies which grant a wide range of IAM principals access to secrets. Adds support for the ValidateResourcePolicy API to validate resource policies for syntax and prevent lockout error scenarios and wide access to secrets. 
+* SimpleNotificationService (3.3.102.0)
+	* This release adds support for SMS origination number as an attribute in the MessageAttributes parameter for the SNS Publish API.
+* WAFV2 (3.3.102.0)
+	* Added the option to use IP addresses from an HTTP header that you specify, instead of using the web request origin. Available for IP set matching, geo matching, and rate-based rule count aggregation.
+* Core 3.3.107.23
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.776.0 (2020-07-08 18:11 UTC)
 * CostExplorer (3.3.110.0)
 	* Customers can now see Instance Name alongside each rightsizing recommendation.
