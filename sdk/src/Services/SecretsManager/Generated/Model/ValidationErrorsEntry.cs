@@ -29,49 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
-    /// This is the response object from the PutResourcePolicy operation.
+    /// Displays errors that occurred during validation of the resource policy.
     /// </summary>
-    public partial class PutResourcePolicyResponse : AmazonWebServiceResponse
+    public partial class ValidationErrorsEntry
     {
-        private string _arn;
-        private string _name;
+        private string _checkName;
+        private string _errorMessage;
 
         /// <summary>
-        /// Gets and sets the property ARN. 
+        /// Gets and sets the property CheckName. 
         /// <para>
-        /// The ARN of the secret retrieved by the resource-based policy.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
-        public string ARN
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if ARN property is set
-        internal bool IsSetARN()
-        {
-            return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The friendly name of the secret that the retrieved by the resource-based policy.
+        /// Checks the name of the policy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
-        public string Name
+        public string CheckName
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._checkName; }
+            set { this._checkName = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if CheckName property is set
+        internal bool IsSetCheckName()
         {
-            return this._name != null;
+            return this._checkName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorMessage. 
+        /// <para>
+        /// Displays error messages if validation encounters problems during validation of the
+        /// resource policy.
+        /// </para>
+        /// </summary>
+        public string ErrorMessage
+        {
+            get { return this._errorMessage; }
+            set { this._errorMessage = value; }
+        }
+
+        // Check to see if ErrorMessage property is set
+        internal bool IsSetErrorMessage()
+        {
+            return this._errorMessage != null;
         }
 
     }

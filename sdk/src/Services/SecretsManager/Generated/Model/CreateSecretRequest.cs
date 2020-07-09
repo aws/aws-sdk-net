@@ -40,8 +40,8 @@ namespace Amazon.SecretsManager.Model
     /// Each version is associated with one or more "staging labels" that identify where the
     /// version is in the rotation cycle. The <code>SecretVersionsToStages</code> field of
     /// the secret contains the mapping of staging labels to the active versions of the secret.
-    /// Versions without a staging label are considered deprecated and are not included in
-    /// the list.
+    /// Versions without a staging label are considered deprecated and not included in the
+    /// list.
     /// </para>
     ///  
     /// <para>
@@ -53,23 +53,22 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
-    /// If you call an operation that needs to encrypt or decrypt the <code>SecretString</code>
-    /// or <code>SecretBinary</code> for a secret in the same account as the calling user
-    /// and that secret doesn't specify a AWS KMS encryption key, Secrets Manager uses the
-    /// account's default AWS managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
-    /// If this key doesn't already exist in your account then Secrets Manager creates it
-    /// for you automatically. All users and roles in the same AWS account automatically have
-    /// access to use the default CMK. Note that if an Secrets Manager API call results in
-    /// AWS having to create the account's AWS-managed CMK, it can result in a one-time significant
-    /// delay in returning the result.
+    /// If you call an operation to encrypt or decrypt the <code>SecretString</code> or <code>SecretBinary</code>
+    /// for a secret in the same account as the calling user and that secret doesn't specify
+    /// a AWS KMS encryption key, Secrets Manager uses the account's default AWS managed customer
+    /// master key (CMK) with the alias <code>aws/secretsmanager</code>. If this key doesn't
+    /// already exist in your account then Secrets Manager creates it for you automatically.
+    /// All users and roles in the same AWS account automatically have access to use the default
+    /// CMK. Note that if an Secrets Manager API call results in AWS creating the account's
+    /// AWS-managed CMK, it can result in a one-time significant delay in returning the result.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If the secret is in a different AWS account from the credentials calling an API that
-    /// requires encryption or decryption of the secret value then you must create and use
-    /// a custom AWS KMS CMK because you can't access the default CMK for the account using
-    /// credentials from a different AWS account. Store the ARN of the CMK in the secret when
-    /// you create the secret or when you update it by including it in the <code>KMSKeyId</code>.
+    /// If the secret resides in a different AWS account from the credentials calling an API
+    /// that requires encryption or decryption of the secret value then you must create and
+    /// use a custom AWS KMS CMK because you can't access the default CMK for the account
+    /// using credentials from a different AWS account. Store the ARN of the CMK in the secret
+    /// when you create the secret or when you update it by including it in the <code>KMSKeyId</code>.
     /// If you call an API that must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code>
     /// using credentials from a different account then the AWS KMS key policy must grant
     /// cross-account access to that other account's user or role for both the kms:GenerateDataKey
@@ -94,13 +93,13 @@ namespace Amazon.SecretsManager.Model
     ///  </li> <li> 
     /// <para>
     /// kms:GenerateDataKey - needed only if you use a customer-managed AWS KMS key to encrypt
-    /// the secret. You do not need this permission to use the account's default AWS managed
+    /// the secret. You do not need this permission to use the account default AWS managed
     /// CMK for Secrets Manager.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// kms:Decrypt - needed only if you use a customer-managed AWS KMS key to encrypt the
-    /// secret. You do not need this permission to use the account's default AWS managed CMK
+    /// secret. You do not need this permission to use the account default AWS managed CMK
     /// for Secrets Manager.
     /// </para>
     ///  </li> <li> 
@@ -164,7 +163,7 @@ namespace Amazon.SecretsManager.Model
         /// it as the value for this parameter in the request. If you don't use the SDK and instead
         /// generate a raw HTTP request to the Secrets Manager service endpoint, then you must
         /// generate a <code>ClientRequestToken</code> yourself for the new version and include
-        /// that value in the request.
+        /// the value in the request.
         /// </para>
         ///  </note> 
         /// <para>
@@ -180,9 +179,9 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If a version with this value already exists and that version's <code>SecretString</code>
+        /// If a version with this value already exists and the version <code>SecretString</code>
         /// and <code>SecretBinary</code> values are the same as those in the request, then the
-        /// request is ignored (the operation is idempotent).
+        /// request is ignored.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -251,10 +250,10 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// You can use the account's default CMK to encrypt and decrypt only if you call this
-        /// operation using credentials from the same account that owns the secret. If the secret
-        /// is in a different account, then you must create a custom CMK and specify the ARN in
-        /// this field. 
+        /// You can use the account default CMK to encrypt and decrypt only if you call this operation
+        /// using credentials from the same account that owns the secret. If the secret resides
+        /// in a different account, then you must create a custom CMK and specify the ARN in this
+        /// field. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -282,10 +281,10 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Don't end your secret name with a hyphen followed by six characters. If you do so,
+        /// Do not end your secret name with a hyphen followed by six characters. If you do so,
         /// you risk confusion and unexpected results when searching for a secret by partial ARN.
-        /// This is because Secrets Manager automatically adds a hyphen and six random characters
-        /// at the end of the ARN.
+        /// Secrets Manager automatically adds a hyphen and six random characters at the end of
+        /// the ARN.
         /// </para>
         ///  </note>
         /// </summary>
@@ -361,7 +360,7 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> 
+        ///  <code>{"username":"bob","password":"abc123xyz456"}</code> 
         /// </para>
         ///  
         /// <para>
@@ -441,16 +440,16 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Do not use the <code>aws:</code> prefix in your tag names or values because it is
-        /// reserved for AWS use. You can't edit or delete tag names or values with this prefix.
-        /// Tags with this prefix do not count against your tags per secret limit.
+        /// Do not use the <code>aws:</code> prefix in your tag names or values because AWS reserves
+        /// it for AWS use. You can't edit or delete tag names or values with this prefix. Tags
+        /// with this prefix do not count against your tags per secret limit.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If your tagging schema will be used across multiple services and resources, remember
-        /// that other services might have restrictions on allowed characters. Generally allowed
-        /// characters are: letters, spaces, and numbers representable in UTF-8, plus the following
-        /// special characters: + - = . _ : / @.
+        /// If you use your tagging schema across multiple services and resources, remember other
+        /// services might have restrictions on allowed characters. Generally allowed characters:
+        /// letters, spaces, and numbers representable in UTF-8, plus the following special characters:
+        /// + - = . _ : / @.
         /// </para>
         ///  </li> </ul>
         /// </summary>

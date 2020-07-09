@@ -93,8 +93,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property MoveToVersionId. 
         /// <para>
-        /// (Optional) The secret version ID that you want to add the staging label to. If you
-        /// want to remove a label from a version, then do not specify this parameter.
+        /// (Optional) The secret version ID that you want to add the staging label. If you want
+        /// to remove a label from a version, then do not specify this parameter.
         /// </para>
         ///  
         /// <para>
@@ -141,9 +141,9 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// Specifies the secret with the version whose list of staging labels you want to modify.
-        /// You can specify either the Amazon Resource Name (ARN) or the friendly name of the
-        /// secret.
+        /// Specifies the secret with the version with the list of staging labels you want to
+        /// modify. You can specify either the Amazon Resource Name (ARN) or the friendly name
+        /// of the secret.
         /// </para>
         ///  <note> 
         /// <para>
@@ -155,8 +155,15 @@ namespace Amazon.SecretsManager.Model
         /// (before Secrets Manager adds the hyphen and six characters to the ARN) and you try
         /// to use that as a partial ARN, then those characters cause Secrets Manager to assume
         /// that you’re specifying a complete ARN. This confusion can cause unexpected results.
-        /// To avoid this situation, we recommend that you don’t create secret names that end
-        /// with a hyphen followed by six characters.
+        /// To avoid this situation, we recommend that you don’t create secret names ending with
+        /// a hyphen followed by six characters.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an incomplete ARN without the random suffix, and instead provide the
+        /// 'friendly name', you <i>must</i> not include the random suffix. If you do include
+        /// the random suffix added by Secrets Manager, you receive either a <i>ResourceNotFoundException</i>
+        /// or an <i>AccessDeniedException</i> error, depending on your permissions.
         /// </para>
         ///  </note>
         /// </summary>

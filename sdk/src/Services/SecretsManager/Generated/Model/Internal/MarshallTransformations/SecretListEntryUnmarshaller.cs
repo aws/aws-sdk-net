@@ -70,6 +70,12 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.ARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CreatedDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeletedDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

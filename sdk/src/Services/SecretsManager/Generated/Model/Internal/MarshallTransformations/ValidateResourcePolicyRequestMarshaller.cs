@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListSecrets Request Marshaller
+    /// ValidateResourcePolicy Request Marshaller
     /// </summary>       
-    public class ListSecretsRequestMarshaller : IMarshaller<IRequest, ListSecretsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ValidateResourcePolicyRequestMarshaller : IMarshaller<IRequest, ValidateResourcePolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListSecretsRequest)input);
+            return this.Marshall((ValidateResourcePolicyRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListSecretsRequest publicRequest)
+        public IRequest Marshall(ValidateResourcePolicyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SecretsManager");
-            string target = "secretsmanager.ListSecrets";
+            string target = "secretsmanager.ValidateResourcePolicy";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-17";            
@@ -68,38 +68,16 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilters())
+                if(publicRequest.IsSetResourcePolicy())
                 {
-                    context.Writer.WritePropertyName("Filters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = FilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFiltersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("ResourcePolicy");
+                    context.Writer.Write(publicRequest.ResourcePolicy);
                 }
 
-                if(publicRequest.IsSetMaxResults())
+                if(publicRequest.IsSetSecretId())
                 {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSortOrder())
-                {
-                    context.Writer.WritePropertyName("SortOrder");
-                    context.Writer.Write(publicRequest.SortOrder);
+                    context.Writer.WritePropertyName("SecretId");
+                    context.Writer.Write(publicRequest.SecretId);
                 }
 
         
@@ -111,9 +89,9 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListSecretsRequestMarshaller _instance = new ListSecretsRequestMarshaller();        
+        private static ValidateResourcePolicyRequestMarshaller _instance = new ValidateResourcePolicyRequestMarshaller();        
 
-        internal static ListSecretsRequestMarshaller GetInstance()
+        internal static ValidateResourcePolicyRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -121,7 +99,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListSecretsRequestMarshaller Instance
+        public static ValidateResourcePolicyRequestMarshaller Instance
         {
             get
             {

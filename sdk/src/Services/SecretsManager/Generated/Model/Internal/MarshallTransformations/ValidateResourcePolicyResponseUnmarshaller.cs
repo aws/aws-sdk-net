@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PutResourcePolicy operation
+    /// Response Unmarshaller for ValidateResourcePolicy operation
     /// </summary>  
-    public class PutResourcePolicyResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ValidateResourcePolicyResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,22 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            PutResourcePolicyResponse response = new PutResourcePolicyResponse();
+            ValidateResourcePolicyResponse response = new ValidateResourcePolicyResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ARN", targetDepth))
+                if (context.TestExpression("PolicyValidationPassed", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ARN = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.PolicyValidationPassed = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("ValidationErrors", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ValidationErrorsEntry, ValidationErrorsEntryUnmarshaller>(ValidationErrorsEntryUnmarshaller.Instance);
+                    response.ValidationErrors = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -102,10 +102,6 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 {
                     return MalformedPolicyDocumentExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("PublicPolicyException"))
-                {
-                    return PublicPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -114,9 +110,9 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             return new AmazonSecretsManagerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static PutResourcePolicyResponseUnmarshaller _instance = new PutResourcePolicyResponseUnmarshaller();        
+        private static ValidateResourcePolicyResponseUnmarshaller _instance = new ValidateResourcePolicyResponseUnmarshaller();        
 
-        internal static PutResourcePolicyResponseUnmarshaller GetInstance()
+        internal static ValidateResourcePolicyResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -124,7 +120,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutResourcePolicyResponseUnmarshaller Instance
+        public static ValidateResourcePolicyResponseUnmarshaller Instance
         {
             get
             {

@@ -36,6 +36,7 @@ namespace Amazon.SecretsManager.Model
     public partial class SecretListEntry
     {
         private string _arn;
+        private DateTime? _createdDate;
         private DateTime? _deletedDate;
         private string _description;
         private string _kmsKeyId;
@@ -75,9 +76,27 @@ namespace Amazon.SecretsManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreatedDate. 
+        /// <para>
+        /// The date and time when a secret was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreatedDate
+        {
+            get { return this._createdDate.GetValueOrDefault(); }
+            set { this._createdDate = value; }
+        }
+
+        // Check to see if CreatedDate property is set
+        internal bool IsSetCreatedDate()
+        {
+            return this._createdDate.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DeletedDate. 
         /// <para>
-        /// The date and time on which this secret was deleted. Not present on active secrets.
+        /// The date and time the deletion of the secret occurred. Not present on active secrets.
         /// The secret can be recovered until the number of days in the recovery window has passed,
         /// as specified in the <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a>
         /// operation.
@@ -117,11 +136,10 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ARN or alias of the AWS KMS customer master key (CMK) that's used to encrypt the
-        /// <code>SecretString</code> and <code>SecretBinary</code> fields in each version of
-        /// the secret. If you don't provide a key, then Secrets Manager defaults to encrypting
-        /// the secret fields with the default KMS CMK (the one named <code>awssecretsmanager</code>)
-        /// for this account.
+        /// The ARN or alias of the AWS KMS customer master key (CMK) used to encrypt the <code>SecretString</code>
+        /// and <code>SecretBinary</code> fields in each version of the secret. If you don't provide
+        /// a key, then Secrets Manager defaults to encrypting the secret fields with the default
+        /// KMS CMK, the key named <code>awssecretsmanager</code>, for this account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -254,8 +272,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property RotationLambdaARN. 
         /// <para>
-        /// The ARN of an AWS Lambda function that's invoked by Secrets Manager to rotate and
-        /// expire the secret either automatically per the schedule or manually by a call to <a>RotateSecret</a>.
+        /// The ARN of an AWS Lambda function invoked by Secrets Manager to rotate and expire
+        /// the secret either automatically per the schedule or manually by a call to <a>RotateSecret</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -293,8 +311,8 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property SecretVersionsToStages. 
         /// <para>
         /// A list of all of the currently assigned <code>SecretVersionStage</code> staging labels
-        /// and the <code>SecretVersionId</code> that each is attached to. Staging labels are
-        /// used to keep track of the different versions during the rotation process.
+        /// and the <code>SecretVersionId</code> attached to each one. Staging labels are used
+        /// to keep track of the different versions during the rotation process.
         /// </para>
         ///  <note> 
         /// <para>
@@ -318,8 +336,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The list of user-defined tags that are associated with the secret. To add tags to
-        /// a secret, use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.
+        /// The list of user-defined tags associated with the secret. To add tags to a secret,
+        /// use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.
         /// </para>
         /// </summary>
         public List<Tag> Tags

@@ -29,49 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
-    /// This is the response object from the PutResourcePolicy operation.
+    /// Allows you to filter your list of secrets.
     /// </summary>
-    public partial class PutResourcePolicyResponse : AmazonWebServiceResponse
+    public partial class Filter
     {
-        private string _arn;
-        private string _name;
+        private FilterNameStringType _key;
+        private List<string> _values = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ARN. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// The ARN of the secret retrieved by the resource-based policy.
+        /// Filters your list of secrets by a specific key.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
-        public string ARN
+        public FilterNameStringType Key
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if ARN property is set
-        internal bool IsSetARN()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._arn != null;
+            return this._key != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Values. 
         /// <para>
-        /// The friendly name of the secret that the retrieved by the resource-based policy.
+        /// Filters your list of secrets by a specific value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=512)]
-        public string Name
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> Values
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._values; }
+            set { this._values = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if Values property is set
+        internal bool IsSetValues()
         {
-            return this._name != null;
+            return this._values != null && this._values.Count > 0; 
         }
 
     }

@@ -78,9 +78,9 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// The unique identifier of the version of the secret that was created during the rotation.
-        /// This version might not be complete, and should be evaluated for possible deletion.
-        /// At the very least, you should remove the <code>VersionStage</code> value <code>AWSPENDING</code>
+        /// The unique identifier of the version of the secret created during the rotation. This
+        /// version might not be complete, and should be evaluated for possible deletion. At the
+        /// very least, you should remove the <code>VersionStage</code> value <code>AWSPENDING</code>
         /// to enable this version to be deleted. Failing to clean up a cancelled rotation can
         /// block you from successfully starting future rotations.
         /// </para>

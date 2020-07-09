@@ -433,6 +433,16 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecretsManager.Model.ValidateResourcePolicyRequest.ResourcePolicy</property>
+    <min>1</min>
+    <max>20480</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.ValidateResourcePolicyRequest.SecretId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecretsManager.Model.RotationRulesType.AutomaticallyAfterDays</property>
     <min>1</min>
     <max>1000</max>
@@ -480,5 +490,10 @@
     <property>Amazon.SecretsManager.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.ValidationErrorsEntry.CheckName</property>
+    <min>1</min>
+    <max>512</max>
   </property-value-rule>
 </property-value-rules>

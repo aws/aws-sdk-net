@@ -68,6 +68,12 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBlockPublicPolicy())
+                {
+                    context.Writer.WritePropertyName("BlockPublicPolicy");
+                    context.Writer.Write(publicRequest.BlockPublicPolicy);
+                }
+
                 if(publicRequest.IsSetResourcePolicy())
                 {
                     context.Writer.WritePropertyName("ResourcePolicy");

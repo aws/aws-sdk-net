@@ -34,6 +34,7 @@ namespace Amazon.SecretsManager.Model
     public partial class DescribeSecretResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private DateTime? _createdDate;
         private DateTime? _deletedDate;
         private string _description;
         private string _kmsKeyId;
@@ -65,6 +66,24 @@ namespace Amazon.SecretsManager.Model
         internal bool IsSetARN()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedDate. 
+        /// <para>
+        /// The date that the secret was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreatedDate
+        {
+            get { return this._createdDate.GetValueOrDefault(); }
+            set { this._createdDate = value; }
+        }
+
+        // Check to see if CreatedDate property is set
+        internal bool IsSetCreatedDate()
+        {
+            return this._createdDate.HasValue; 
         }
 
         /// <summary>
