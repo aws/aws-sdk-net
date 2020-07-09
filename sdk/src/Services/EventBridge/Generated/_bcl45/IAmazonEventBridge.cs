@@ -80,6 +80,9 @@ namespace Amazon.EventBridge
         /// <exception cref="Amazon.EventBridge.Model.InvalidStateException">
         /// The specified state is not a valid state for an event source.
         /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
+        /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
         /// </exception>
@@ -106,6 +109,9 @@ namespace Amazon.EventBridge
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InvalidStateException">
         /// The specified state is not a valid state for an event source.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -137,6 +143,9 @@ namespace Amazon.EventBridge
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
         /// You tried to create more rules or add more targets to a rule than is allowed.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ResourceAlreadyExistsException">
         /// The resource you are trying to create already exists.
@@ -171,6 +180,9 @@ namespace Amazon.EventBridge
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
         /// You tried to create more rules or add more targets to a rule than is allowed.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ResourceAlreadyExistsException">
         /// The resource you are trying to create already exists.
@@ -237,6 +249,9 @@ namespace Amazon.EventBridge
         /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
         /// You tried to create more rules or add more targets to a rule than is allowed.
         /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
+        /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ResourceAlreadyExistsException">
         /// The resource you are trying to create already exists.
         /// </exception>
@@ -299,6 +314,9 @@ namespace Amazon.EventBridge
         /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
         /// You tried to create more rules or add more targets to a rule than is allowed.
         /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
+        /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ResourceAlreadyExistsException">
         /// The resource you are trying to create already exists.
         /// </exception>
@@ -336,6 +354,9 @@ namespace Amazon.EventBridge
         /// <exception cref="Amazon.EventBridge.Model.InvalidStateException">
         /// The specified state is not a valid state for an event source.
         /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
+        /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
         /// </exception>
@@ -372,6 +393,9 @@ namespace Amazon.EventBridge
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InvalidStateException">
         /// The specified state is not a valid state for an event source.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -447,6 +471,9 @@ namespace Amazon.EventBridge
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
         /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeletePartnerEventSource">REST API Reference for DeletePartnerEventSource Operation</seealso>
         DeletePartnerEventSourceResponse DeletePartnerEventSource(DeletePartnerEventSourceRequest request);
 
@@ -473,6 +500,9 @@ namespace Amazon.EventBridge
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeletePartnerEventSource">REST API Reference for DeletePartnerEventSource Operation</seealso>
         Task<DeletePartnerEventSourceResponse> DeletePartnerEventSourceAsync(DeletePartnerEventSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -654,6 +684,9 @@ namespace Amazon.EventBridge
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
         /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
+        /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
         /// </exception>
@@ -674,6 +707,9 @@ namespace Amazon.EventBridge
         /// <returns>The response from the DescribeEventSource service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -698,6 +734,9 @@ namespace Amazon.EventBridge
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
         /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
+        /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
         /// </exception>
@@ -720,6 +759,9 @@ namespace Amazon.EventBridge
         /// <returns>The response from the DescribePartnerEventSource service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -980,6 +1022,9 @@ namespace Amazon.EventBridge
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
         /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEventSources">REST API Reference for ListEventSources Operation</seealso>
         ListEventSourcesResponse ListEventSources(ListEventSourcesRequest request);
 
@@ -998,6 +1043,9 @@ namespace Amazon.EventBridge
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
         /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEventSources">REST API Reference for ListEventSources Operation</seealso>
         Task<ListEventSourcesResponse> ListEventSourcesAsync(ListEventSourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1015,6 +1063,9 @@ namespace Amazon.EventBridge
         /// <returns>The response from the ListPartnerEventSourceAccounts service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -1037,6 +1088,9 @@ namespace Amazon.EventBridge
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
         /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
+        /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
         /// </exception>
@@ -1058,6 +1112,9 @@ namespace Amazon.EventBridge
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
         /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListPartnerEventSources">REST API Reference for ListPartnerEventSources Operation</seealso>
         ListPartnerEventSourcesResponse ListPartnerEventSources(ListPartnerEventSourcesRequest request);
 
@@ -1075,6 +1132,9 @@ namespace Amazon.EventBridge
         /// <returns>The response from the ListPartnerEventSources service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListPartnerEventSources">REST API Reference for ListPartnerEventSources Operation</seealso>
         Task<ListPartnerEventSourcesResponse> ListPartnerEventSourcesAsync(ListPartnerEventSourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1306,6 +1366,9 @@ namespace Amazon.EventBridge
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
         /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutPartnerEvents">REST API Reference for PutPartnerEvents Operation</seealso>
         PutPartnerEventsResponse PutPartnerEvents(PutPartnerEventsRequest request);
 
@@ -1324,6 +1387,9 @@ namespace Amazon.EventBridge
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
         /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutPartnerEvents">REST API Reference for PutPartnerEvents Operation</seealso>
         Task<PutPartnerEventsResponse> PutPartnerEventsAsync(PutPartnerEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1334,8 +1400,9 @@ namespace Amazon.EventBridge
 
         /// <summary>
         /// Running <code>PutPermission</code> permits the specified AWS account or AWS organization
-        /// to put events to the specified <i>event bus</i>. CloudWatch Events rules in your account
-        /// are triggered by these events arriving to an event bus in your account. 
+        /// to put events to the specified <i>event bus</i>. Amazon EventBridge (CloudWatch Events)
+        /// rules in your account are triggered by these events arriving to an event bus in your
+        /// account. 
         /// 
         ///  
         /// <para>
@@ -1384,8 +1451,9 @@ namespace Amazon.EventBridge
 
         /// <summary>
         /// Running <code>PutPermission</code> permits the specified AWS account or AWS organization
-        /// to put events to the specified <i>event bus</i>. CloudWatch Events rules in your account
-        /// are triggered by these events arriving to an event bus in your account. 
+        /// to put events to the specified <i>event bus</i>. Amazon EventBridge (CloudWatch Events)
+        /// rules in your account are triggered by these events arriving to an event bus in your
+        /// account. 
         /// 
         ///  
         /// <para>
@@ -1728,6 +1796,10 @@ namespace Amazon.EventBridge
         /// <para>
         /// The default event bus of another AWS account
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon API Gateway REST APIs
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Creating rules with built-in targets is supported only in the AWS Management Console.
@@ -1745,12 +1817,12 @@ namespace Amazon.EventBridge
         /// </para>
         ///  
         /// <para>
-        /// To be able to make API calls against the resources that you own, Amazon CloudWatch
-        /// Events needs the appropriate permissions. For AWS Lambda and Amazon SNS resources,
-        /// EventBridge relies on resource-based policies. For EC2 instances, Kinesis data streams,
-        /// and AWS Step Functions state machines, EventBridge relies on IAM roles that you specify
-        /// in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
+        /// To be able to make API calls against the resources that you own, Amazon EventBridge
+        /// (CloudWatch Events) needs the appropriate permissions. For AWS Lambda and Amazon SNS
+        /// resources, EventBridge relies on resource-based policies. For EC2 instances, Kinesis
+        /// data streams, AWS Step Functions state machines and API Gateway REST APIs, EventBridge
+        /// relies on IAM roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
         /// and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         ///  
@@ -1762,8 +1834,8 @@ namespace Amazon.EventBridge
         /// when you run <code>PutTargets</code>. If your account sends events to another account,
         /// your account is charged for each sent event. Each event sent to another account is
         /// charged as a custom event. The account receiving the event is not charged. For more
-        /// information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-        /// Pricing</a>.
+        /// information, see <a href="https://aws.amazon.com/eventbridge/pricing/">Amazon EventBridge
+        /// (CloudWatch Events) Pricing</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1929,6 +2001,10 @@ namespace Amazon.EventBridge
         /// <para>
         /// The default event bus of another AWS account
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon API Gateway REST APIs
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Creating rules with built-in targets is supported only in the AWS Management Console.
@@ -1946,12 +2022,12 @@ namespace Amazon.EventBridge
         /// </para>
         ///  
         /// <para>
-        /// To be able to make API calls against the resources that you own, Amazon CloudWatch
-        /// Events needs the appropriate permissions. For AWS Lambda and Amazon SNS resources,
-        /// EventBridge relies on resource-based policies. For EC2 instances, Kinesis data streams,
-        /// and AWS Step Functions state machines, EventBridge relies on IAM roles that you specify
-        /// in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
+        /// To be able to make API calls against the resources that you own, Amazon EventBridge
+        /// (CloudWatch Events) needs the appropriate permissions. For AWS Lambda and Amazon SNS
+        /// resources, EventBridge relies on resource-based policies. For EC2 instances, Kinesis
+        /// data streams, AWS Step Functions state machines and API Gateway REST APIs, EventBridge
+        /// relies on IAM roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
         /// and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         ///  
@@ -1963,8 +2039,8 @@ namespace Amazon.EventBridge
         /// when you run <code>PutTargets</code>. If your account sends events to another account,
         /// your account is charged for each sent event. Each event sent to another account is
         /// charged as a custom event. The account receiving the event is not charged. For more
-        /// information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-        /// Pricing</a>.
+        /// information, see <a href="https://aws.amazon.com/eventbridge/pricing/">Amazon EventBridge
+        /// (CloudWatch Events) Pricing</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2363,8 +2439,8 @@ namespace Amazon.EventBridge
 
 
         /// <summary>
-        /// Removes one or more tags from the specified EventBridge resource. In CloudWatch Events,
-        /// rules and event buses can be tagged.
+        /// Removes one or more tags from the specified EventBridge resource. In Amazon EventBridge
+        /// (CloudWatch Events, rules and event buses can be tagged.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -2392,8 +2468,8 @@ namespace Amazon.EventBridge
 
 
         /// <summary>
-        /// Removes one or more tags from the specified EventBridge resource. In CloudWatch Events,
-        /// rules and event buses can be tagged.
+        /// Removes one or more tags from the specified EventBridge resource. In Amazon EventBridge
+        /// (CloudWatch Events, rules and event buses can be tagged.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
