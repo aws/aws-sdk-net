@@ -30,8 +30,8 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes one or more tags from the specified EventBridge resource. In CloudWatch Events,
-    /// rules and event buses can be tagged.
+    /// Removes one or more tags from the specified EventBridge resource. In Amazon EventBridge
+    /// (CloudWatch Events, rules and event buses can be tagged.
     /// </summary>
     public partial class UntagResourceRequest : AmazonCloudWatchEventsRequest
     {

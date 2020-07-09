@@ -101,6 +101,10 @@ namespace Amazon.CloudWatchEvents.Model
     /// <para>
     /// The default event bus of another AWS account
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon API Gateway REST APIs
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// Creating rules with built-in targets is supported only in the AWS Management Console.
@@ -118,12 +122,12 @@ namespace Amazon.CloudWatchEvents.Model
     /// </para>
     ///  
     /// <para>
-    /// To be able to make API calls against the resources that you own, Amazon CloudWatch
-    /// Events needs the appropriate permissions. For AWS Lambda and Amazon SNS resources,
-    /// EventBridge relies on resource-based policies. For EC2 instances, Kinesis data streams,
-    /// and AWS Step Functions state machines, EventBridge relies on IAM roles that you specify
-    /// in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information,
-    /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
+    /// To be able to make API calls against the resources that you own, Amazon EventBridge
+    /// (CloudWatch Events) needs the appropriate permissions. For AWS Lambda and Amazon SNS
+    /// resources, EventBridge relies on resource-based policies. For EC2 instances, Kinesis
+    /// data streams, AWS Step Functions state machines and API Gateway REST APIs, EventBridge
+    /// relies on IAM roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
     /// and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
     /// </para>
     ///  
@@ -135,8 +139,8 @@ namespace Amazon.CloudWatchEvents.Model
     /// when you run <code>PutTargets</code>. If your account sends events to another account,
     /// your account is charged for each sent event. Each event sent to another account is
     /// charged as a custom event. The account receiving the event is not charged. For more
-    /// information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-    /// Pricing</a>.
+    /// information, see <a href="https://aws.amazon.com/eventbridge/pricing/">Amazon EventBridge
+    /// (CloudWatch Events) Pricing</a>.
     /// </para>
     ///  <note> 
     /// <para>

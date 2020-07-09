@@ -46,6 +46,7 @@ namespace Amazon.CloudWatchEvents.Model
         private string _arn;
         private BatchParameters _batchParameters;
         private EcsParameters _ecsParameters;
+        private HttpParameters _httpParameters;
         private string _id;
         private string _input;
         private string _inputPath;
@@ -112,6 +113,30 @@ namespace Amazon.CloudWatchEvents.Model
         internal bool IsSetEcsParameters()
         {
             return this._ecsParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HttpParameters. 
+        /// <para>
+        /// Contains the HTTP parameters to use when the target is a API Gateway REST endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an API Gateway REST API as a target, you can use this parameter to
+        /// specify headers, path parameter, query string keys/values as part of your target invoking
+        /// request.
+        /// </para>
+        /// </summary>
+        public HttpParameters HttpParameters
+        {
+            get { return this._httpParameters; }
+            set { this._httpParameters = value; }
+        }
+
+        // Check to see if HttpParameters property is set
+        internal bool IsSetHttpParameters()
+        {
+            return this._httpParameters != null;
         }
 
         /// <summary>

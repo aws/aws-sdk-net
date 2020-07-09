@@ -82,6 +82,12 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                     unmarshalledObject.EcsParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HttpParameters", targetDepth))
+                {
+                    var unmarshaller = HttpParametersUnmarshaller.Instance;
+                    unmarshalledObject.HttpParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
