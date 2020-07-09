@@ -559,22 +559,50 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Creates a platform application object for one of the supported push notification services,
-        /// such as APNS and FCM, to which devices and mobile apps may register. You must specify
-        /// PlatformPrincipal and PlatformCredential attributes when using the <code>CreatePlatformApplication</code>
-        /// action. The PlatformPrincipal is received from the notification service. For APNS/APNS_SANDBOX,
-        /// PlatformPrincipal is "SSL certificate". For FCM, PlatformPrincipal is not applicable.
-        /// For ADM, PlatformPrincipal is "client id". The PlatformCredential is also received
-        /// from the notification service. For WNS, PlatformPrincipal is "Package Security Identifier".
-        /// For MPNS, PlatformPrincipal is "TLS certificate". For Baidu, PlatformPrincipal is
-        /// "API key".
+        /// such as APNS and GCM (Firebase Cloud Messaging), to which devices and mobile apps
+        /// may register. You must specify <code>PlatformPrincipal</code> and <code>PlatformCredential</code>
+        /// attributes when using the <code>CreatePlatformApplication</code> action.
         /// 
         ///  
         /// <para>
-        /// For APNS/APNS_SANDBOX, PlatformCredential is "private key". For FCM, PlatformCredential
-        /// is "API key". For ADM, PlatformCredential is "client secret". For WNS, PlatformCredential
-        /// is "secret key". For MPNS, PlatformCredential is "private key". For Baidu, PlatformCredential
-        /// is "secret key". The PlatformApplicationArn that is returned when using <code>CreatePlatformApplication</code>
-        /// is then used as an attribute for the <code>CreatePlatformEndpoint</code> action.
+        ///  <code>PlatformPrincipal</code> and <code>PlatformCredential</code> are received from
+        /// the notification service.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <code>ADM</code>, <code>PlatformPrincipal</code> is <code>client id</code> and
+        /// <code>PlatformCredential</code> is <code>client secret</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>Baidu</code>, <code>PlatformPrincipal</code> is <code>API key</code> and
+        /// <code>PlatformCredential</code> is <code>secret key</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>APNS</code> and <code>APNS_SANDBOX</code>, <code>PlatformPrincipal</code>
+        /// is <code>SSL certificate</code> and <code>PlatformCredential</code> is <code>private
+        /// key</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>GCM</code> (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>
+        /// and the <code>PlatformCredential</code> is <code>API key</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>MPNS</code>, <code>PlatformPrincipal</code> is <code>TLS certificate</code>
+        /// and <code>PlatformCredential</code> is <code>private key</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>WNS</code>, <code>PlatformPrincipal</code> is <code>Package Security Identifier</code>
+        /// and <code>PlatformCredential</code> is <code>secret key</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can use the returned <code>PlatformApplicationArn</code> as an attribute for the
+        /// <code>CreatePlatformEndpoint</code> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePlatformApplication service method.</param>
@@ -619,14 +647,13 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Creates an endpoint for a device and mobile app on one of the supported push notification
-        /// services, such as FCM and APNS. <code>CreatePlatformEndpoint</code> requires the PlatformApplicationArn
-        /// that is returned from <code>CreatePlatformApplication</code>. The EndpointArn that
-        /// is returned when using <code>CreatePlatformEndpoint</code> can then be used by the
-        /// <code>Publish</code> action to send a message to a mobile app or by the <code>Subscribe</code>
-        /// action for subscription to a topic. The <code>CreatePlatformEndpoint</code> action
-        /// is idempotent, so if the requester already owns an endpoint with the same device token
-        /// and attributes, that endpoint's ARN is returned without creating a new endpoint. For
-        /// more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+        /// services, such as GCM (Firebase Cloud Messaging) and APNS. <code>CreatePlatformEndpoint</code>
+        /// requires the <code>PlatformApplicationArn</code> that is returned from <code>CreatePlatformApplication</code>.
+        /// You can use the returned <code>EndpointArn</code> to send a message to a mobile app
+        /// or by the <code>Subscribe</code> action for subscription to a topic. The <code>CreatePlatformEndpoint</code>
+        /// action is idempotent, so if the requester already owns an endpoint with the same device
+        /// token and attributes, that endpoint's ARN is returned without creating a new endpoint.
+        /// For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
         /// Amazon SNS Mobile Push Notifications</a>. 
         /// 
         ///  
@@ -681,11 +708,12 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Creates a topic to which notifications can be published. Users can create at most
-        /// 100,000 topics. For more information, see <a href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>.
-        /// This action is idempotent, so if the requester already owns a topic with the specified
-        /// name, that topic's ARN is returned without creating a new topic.
+        /// 100,000 standard topics (at most 1,000 FIFO topics). For more information, see <a
+        /// href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is idempotent,
+        /// so if the requester already owns a topic with the specified name, that topic's ARN
+        /// is returned without creating a new topic.
         /// </summary>
-        /// <param name="name">The name of the topic you want to create. Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long.</param>
+        /// <param name="name">The name of the topic you want to create. Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long. For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code> suffix. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -734,9 +762,10 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Creates a topic to which notifications can be published. Users can create at most
-        /// 100,000 topics. For more information, see <a href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>.
-        /// This action is idempotent, so if the requester already owns a topic with the specified
-        /// name, that topic's ARN is returned without creating a new topic.
+        /// 100,000 standard topics (at most 1,000 FIFO topics). For more information, see <a
+        /// href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is idempotent,
+        /// so if the requester already owns a topic with the specified name, that topic's ARN
+        /// is returned without creating a new topic.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTopic service method.</param>
         /// <param name="cancellationToken">
@@ -853,7 +882,7 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Deletes a platform application object for one of the supported push notification services,
-        /// such as APNS and FCM. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+        /// such as APNS and GCM (Firebase Cloud Messaging). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
         /// Amazon SNS Mobile Push Notifications</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePlatformApplication service method.</param>
@@ -1002,8 +1031,9 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Retrieves the endpoint attributes for a device on one of the supported push notification
-        /// services, such as FCM and APNS. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-        /// Amazon SNS Mobile Push Notifications</a>.
+        /// services, such as GCM (Firebase Cloud Messaging) and APNS. For more information, see
+        /// <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+        /// SNS Mobile Push Notifications</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEndpointAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -1050,8 +1080,9 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Retrieves the attributes of the platform application object for the supported push
-        /// notification services, such as APNS and FCM. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-        /// Amazon SNS Mobile Push Notifications</a>.
+        /// notification services, such as APNS and GCM (Firebase Cloud Messaging). For more information,
+        /// see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+        /// SNS Mobile Push Notifications</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPlatformApplicationAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -1312,7 +1343,7 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Lists the endpoints and endpoint attributes for devices in a supported push notification
-        /// service, such as FCM and APNS. The results for <code>ListEndpointsByPlatformApplication</code>
+        /// service, such as GCM (Firebase Cloud Messaging) and APNS. The results for <code>ListEndpointsByPlatformApplication</code>
         /// are paginated and return a limited list of endpoints, up to 100. If additional records
         /// are available after the first page results, then a NextToken string will be returned.
         /// To receive the next page, you call <code>ListEndpointsByPlatformApplication</code>
@@ -1431,13 +1462,14 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Lists the platform application objects for the supported push notification services,
-        /// such as APNS and FCM. The results for <code>ListPlatformApplications</code> are paginated
-        /// and return a limited list of applications, up to 100. If additional records are available
-        /// after the first page results, then a NextToken string will be returned. To receive
-        /// the next page, you call <code>ListPlatformApplications</code> using the NextToken
-        /// string received from the previous call. When there are no more records to return,
-        /// NextToken will be null. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-        /// Amazon SNS Mobile Push Notifications</a>. 
+        /// such as APNS and GCM (Firebase Cloud Messaging). The results for <code>ListPlatformApplications</code>
+        /// are paginated and return a limited list of applications, up to 100. If additional
+        /// records are available after the first page results, then a NextToken string will be
+        /// returned. To receive the next page, you call <code>ListPlatformApplications</code>
+        /// using the NextToken string received from the previous call. When there are no more
+        /// records to return, <code>NextToken</code> will be null. For more information, see
+        /// <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+        /// SNS Mobile Push Notifications</a>. 
         /// 
         ///  
         /// <para>
@@ -1468,13 +1500,14 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Lists the platform application objects for the supported push notification services,
-        /// such as APNS and FCM. The results for <code>ListPlatformApplications</code> are paginated
-        /// and return a limited list of applications, up to 100. If additional records are available
-        /// after the first page results, then a NextToken string will be returned. To receive
-        /// the next page, you call <code>ListPlatformApplications</code> using the NextToken
-        /// string received from the previous call. When there are no more records to return,
-        /// NextToken will be null. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-        /// Amazon SNS Mobile Push Notifications</a>. 
+        /// such as APNS and GCM (Firebase Cloud Messaging). The results for <code>ListPlatformApplications</code>
+        /// are paginated and return a limited list of applications, up to 100. If additional
+        /// records are available after the first page results, then a NextToken string will be
+        /// returned. To receive the next page, you call <code>ListPlatformApplications</code>
+        /// using the NextToken string received from the previous call. When there are no more
+        /// records to return, <code>NextToken</code> will be null. For more information, see
+        /// <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+        /// SNS Mobile Push Notifications</a>. 
         /// 
         ///  
         /// <para>
@@ -2002,8 +2035,8 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Sends a message to an Amazon SNS topic or sends a text message (SMS message) directly
-        /// to a phone number. 
+        /// Sends a message to an Amazon SNS topic, a text message (SMS message) directly to a
+        /// phone number, or a message to a mobile platform endpoint (when you specify the <code>TargetArn</code>).
         /// 
         ///  
         /// <para>
@@ -2028,6 +2061,11 @@ namespace Amazon.SimpleNotificationService
         /// For more information about formatting messages, see <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
         /// Custom Platform-Specific Payloads in Messages to Mobile Devices</a>. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You can publish messages only to topics and endpoints in the same AWS Region.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="topicArn">The topic you want to publish to. If you don't specify a value for the <code>TopicArn</code> parameter, you must specify a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</param>
         /// <param name="message">The message you want to send. If you are publishing to a topic and you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter.  <p/> Constraints: <ul> <li> With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262,144 bytes, not 262,144 characters). </li> <li> For SMS, each message can contain up to 140 characters. This character limit depends on the encoding schema. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters. If you publish a message that exceeds this size limit, Amazon SNS sends the message as multiple messages, each fitting within the size limit. Messages aren't truncated mid-word but are cut off at whole-word boundaries. The total size limit for a single SMS <code>Publish</code> action is 1,600 characters. </li> </ul> JSON-specific constraints: <ul> <li> Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li> The values will be parsed (unescaped) before they are used in outgoing messages. </li> <li> Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending). </li> <li> Values have a minimum length of 0 (the empty string, "", is allowed). </li> <li> Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). </li> <li> Non-string values will cause the key to be ignored. </li> <li> Keys that do not correspond to supported transport protocols are ignored. </li> <li> Duplicate keys are not allowed. </li> <li> Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery). </li> </ul></param>
@@ -2095,8 +2133,8 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Sends a message to an Amazon SNS topic or sends a text message (SMS message) directly
-        /// to a phone number. 
+        /// Sends a message to an Amazon SNS topic, a text message (SMS message) directly to a
+        /// phone number, or a message to a mobile platform endpoint (when you specify the <code>TargetArn</code>).
         /// 
         ///  
         /// <para>
@@ -2121,6 +2159,11 @@ namespace Amazon.SimpleNotificationService
         /// For more information about formatting messages, see <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
         /// Custom Platform-Specific Payloads in Messages to Mobile Devices</a>. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You can publish messages only to topics and endpoints in the same AWS Region.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="topicArn">The topic you want to publish to. If you don't specify a value for the <code>TopicArn</code> parameter, you must specify a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</param>
         /// <param name="message">The message you want to send. If you are publishing to a topic and you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter.  <p/> Constraints: <ul> <li> With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262,144 bytes, not 262,144 characters). </li> <li> For SMS, each message can contain up to 140 characters. This character limit depends on the encoding schema. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters. If you publish a message that exceeds this size limit, Amazon SNS sends the message as multiple messages, each fitting within the size limit. Messages aren't truncated mid-word but are cut off at whole-word boundaries. The total size limit for a single SMS <code>Publish</code> action is 1,600 characters. </li> </ul> JSON-specific constraints: <ul> <li> Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li> The values will be parsed (unescaped) before they are used in outgoing messages. </li> <li> Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending). </li> <li> Values have a minimum length of 0 (the empty string, "", is allowed). </li> <li> Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). </li> <li> Non-string values will cause the key to be ignored. </li> <li> Keys that do not correspond to supported transport protocols are ignored. </li> <li> Duplicate keys are not allowed. </li> <li> Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery). </li> </ul></param>
@@ -2191,8 +2234,8 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Sends a message to an Amazon SNS topic or sends a text message (SMS message) directly
-        /// to a phone number. 
+        /// Sends a message to an Amazon SNS topic, a text message (SMS message) directly to a
+        /// phone number, or a message to a mobile platform endpoint (when you specify the <code>TargetArn</code>).
         /// 
         ///  
         /// <para>
@@ -2217,6 +2260,11 @@ namespace Amazon.SimpleNotificationService
         /// For more information about formatting messages, see <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
         /// Custom Platform-Specific Payloads in Messages to Mobile Devices</a>. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You can publish messages only to topics and endpoints in the same AWS Region.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Publish service method.</param>
         /// <param name="cancellationToken">
@@ -2377,8 +2425,9 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Sets the attributes for an endpoint for a device on one of the supported push notification
-        /// services, such as FCM and APNS. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-        /// Amazon SNS Mobile Push Notifications</a>.
+        /// services, such as GCM (Firebase Cloud Messaging) and APNS. For more information, see
+        /// <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+        /// SNS Mobile Push Notifications</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetEndpointAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -2425,9 +2474,10 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Sets the attributes of the platform application object for the supported push notification
-        /// services, such as APNS and FCM. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-        /// Amazon SNS Mobile Push Notifications</a>. For information on configuring attributes
-        /// for message delivery status, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using
+        /// services, such as APNS and GCM (Firebase Cloud Messaging). For more information, see
+        /// <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+        /// SNS Mobile Push Notifications</a>. For information on configuring attributes for message
+        /// delivery status, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using
         /// Amazon SNS Application Attributes for Message Delivery Status</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetPlatformApplicationAttributes service method.</param>
@@ -2620,7 +2670,7 @@ namespace Amazon.SimpleNotificationService
         /// Allows a topic owner to set an attribute of the topic to a new value.
         /// </summary>
         /// <param name="topicArn">The ARN of the topic to modify.</param>
-        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that the <code>SetTopicAttributes</code> action uses: <ul> <li>  <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions. </li> <li>  <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic. </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>AWS Key Management Service API Reference</i>.  </li> </ul></param>
+        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that the <code>SetTopicAttributes</code> action uses: <ul> <li>  <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions. </li> <li>  <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic. </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>AWS Key Management Service API Reference</i>.  </li> </ul> The following attribute applies only to FIFO topics: <ul> <li>  <code>ContentBasedDeduplication</code> – Enables content-based deduplication. Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).  </li> <li>  When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.  </li> <li>  If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.  </li> </ul></param>
         /// <param name="attributeValue">The new value for the attribute.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2705,11 +2755,15 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Prepares to subscribe an endpoint by sending the endpoint a confirmation message.
-        /// To actually create a subscription, the endpoint owner must call the <code>ConfirmSubscription</code>
-        /// action with the token from the confirmation message. Confirmation tokens are valid
-        /// for three days.
+        /// Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email,
+        /// or if the endpoint and the topic are not in the same AWS account, the endpoint owner
+        /// must the <code>ConfirmSubscription</code> action to confirm the subscription.
         /// 
+        ///  
+        /// <para>
+        /// You call the <code>ConfirmSubscription</code> action with the token from the subscription
+        /// response. Confirmation tokens are valid for three days.
+        /// </para>
         ///  
         /// <para>
         /// This action is throttled at 100 transactions per second (TPS).
@@ -2717,7 +2771,7 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="topicArn">The ARN of the topic you want to subscribe to.</param>
         /// <param name="protocol">The protocol you want to use. Supported protocols include: <ul> <li>  <code>http</code> – delivery of JSON-encoded message via HTTP POST </li> <li>  <code>https</code> – delivery of JSON-encoded message via HTTPS POST </li> <li>  <code>email</code> – delivery of message via SMTP </li> <li>  <code>email-json</code> – delivery of JSON-encoded message via SMTP </li> <li>  <code>sms</code> – delivery of message via SMS </li> <li>  <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue </li> <li>  <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device. </li> <li>  <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function. </li> </ul></param>
-        /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul> <li> For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>  </li> <li> For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>  </li> <li> For the <code>email</code> protocol, the endpoint is an email address </li> <li> For the <code>email-json</code> protocol, the endpoint is an email address </li> <li> For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device </li> <li> For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue </li> <li> For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device. </li> <li> For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function. </li> </ul></param>
+        /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul> <li> For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>  </li> <li> For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>  </li> <li> For the <code>email</code> protocol, the endpoint is an email address </li> <li> For the <code>email-json</code> protocol, the endpoint is an email address </li> <li> For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device </li> <li> For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue </li> <li> For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device. </li> <li> For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function. </li> </ul></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2759,11 +2813,15 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Prepares to subscribe an endpoint by sending the endpoint a confirmation message.
-        /// To actually create a subscription, the endpoint owner must call the <code>ConfirmSubscription</code>
-        /// action with the token from the confirmation message. Confirmation tokens are valid
-        /// for three days.
+        /// Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email,
+        /// or if the endpoint and the topic are not in the same AWS account, the endpoint owner
+        /// must the <code>ConfirmSubscription</code> action to confirm the subscription.
         /// 
+        ///  
+        /// <para>
+        /// You call the <code>ConfirmSubscription</code> action with the token from the subscription
+        /// response. Confirmation tokens are valid for three days.
+        /// </para>
         ///  
         /// <para>
         /// This action is throttled at 100 transactions per second (TPS).

@@ -77,7 +77,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EffectiveDeliveryPolicy</code> – Yhe JSON serialization of the effective delivery
+        ///  <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery
         /// policy, taking system defaults into account.
         /// </para>
         ///  </li> </ul> 

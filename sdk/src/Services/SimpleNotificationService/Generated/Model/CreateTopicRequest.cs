@@ -31,9 +31,10 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Container for the parameters to the CreateTopic operation.
     /// Creates a topic to which notifications can be published. Users can create at most
-    /// 100,000 topics. For more information, see <a href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>.
-    /// This action is idempotent, so if the requester already owns a topic with the specified
-    /// name, that topic's ARN is returned without creating a new topic.
+    /// 100,000 standard topics (at most 1,000 FIFO topics). For more information, see <a
+    /// href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is idempotent,
+    /// so if the requester already owns a topic with the specified name, that topic's ARN
+    /// is returned without creating a new topic.
     /// </summary>
     public partial class CreateTopicRequest : AmazonSimpleNotificationServiceRequest
     {
@@ -49,7 +50,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Instantiates CreateTopicRequest with the parameterized properties
         /// </summary>
-        /// <param name="name">The name of the topic you want to create. Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long.</param>
+        /// <param name="name">The name of the topic you want to create. Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long. For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code> suffix. </param>
         public CreateTopicRequest(string name)
         {
             _name = name;
@@ -76,6 +77,10 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>FifoTopic</code> – Set to true to create a FIFO topic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>Policy</code> – The policy that defines who can access your topic. By default,
         /// only the topic owner can publish or subscribe to the topic.
         /// </para>
@@ -85,10 +90,31 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK)
+        ///  <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer master key (CMK)
         /// for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
         /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
         /// in the <i>AWS Key Management Service API Reference</i>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following attribute applies only to FIFO topics:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ContentBasedDeduplication</code> – Enables content-based deduplication. Amazon
+        /// SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
+        /// the body of the message (but not the attributes of the message). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  When <code>ContentBasedDeduplication</code> is in effect, messages with identical
+        /// content sent within the deduplication interval are treated as duplicates and only
+        /// one copy of the message is delivered. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code>
+        /// overrides the generated one. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -113,6 +139,11 @@ namespace Amazon.SimpleNotificationService.Model
         /// <para>
         /// Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters,
         /// numbers, underscores, and hyphens, and must be between 1 and 256 characters long.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code>
+        /// suffix. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

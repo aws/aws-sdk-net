@@ -30,11 +30,15 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the Subscribe operation.
-    /// Prepares to subscribe an endpoint by sending the endpoint a confirmation message.
-    /// To actually create a subscription, the endpoint owner must call the <code>ConfirmSubscription</code>
-    /// action with the token from the confirmation message. Confirmation tokens are valid
-    /// for three days.
+    /// Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email,
+    /// or if the endpoint and the topic are not in the same AWS account, the endpoint owner
+    /// must the <code>ConfirmSubscription</code> action to confirm the subscription.
     /// 
+    ///  
+    /// <para>
+    /// You call the <code>ConfirmSubscription</code> action with the token from the subscription
+    /// response. Confirmation tokens are valid for three days.
+    /// </para>
     ///  
     /// <para>
     /// This action is throttled at 100 transactions per second (TPS).
@@ -58,7 +62,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="topicArn">The ARN of the topic you want to subscribe to.</param>
         /// <param name="protocol">The protocol you want to use. Supported protocols include: <ul> <li>  <code>http</code> – delivery of JSON-encoded message via HTTP POST </li> <li>  <code>https</code> – delivery of JSON-encoded message via HTTPS POST </li> <li>  <code>email</code> – delivery of message via SMTP </li> <li>  <code>email-json</code> – delivery of JSON-encoded message via SMTP </li> <li>  <code>sms</code> – delivery of message via SMS </li> <li>  <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue </li> <li>  <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device. </li> <li>  <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function. </li> </ul></param>
-        /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul> <li> For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>  </li> <li> For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>  </li> <li> For the <code>email</code> protocol, the endpoint is an email address </li> <li> For the <code>email-json</code> protocol, the endpoint is an email address </li> <li> For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device </li> <li> For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue </li> <li> For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device. </li> <li> For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function. </li> </ul></param>
+        /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul> <li> For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>  </li> <li> For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>  </li> <li> For the <code>email</code> protocol, the endpoint is an email address </li> <li> For the <code>email-json</code> protocol, the endpoint is an email address </li> <li> For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device </li> <li> For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue </li> <li> For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device. </li> <li> For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function. </li> </ul></param>
         public SubscribeRequest(string topicArn, string protocol, string endpoint)
         {
             _topicArn = topicArn;
@@ -121,13 +125,13 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>
-        /// 
+        /// For the <code>http</code> protocol, the (public) endpoint is a URL beginning with
+        /// <code>http://</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>
-        /// 
+        /// For the <code>https</code> protocol, the (public) endpoint is a URL beginning with
+        /// <code>https://</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -231,22 +235,14 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you have the subscription ARN returned, the response includes the ARN in all cases,
-        /// even if the subscription is not yet confirmed.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you don't have the subscription ARN returned, in addition to the ARN for confirmed
+        /// If you set this parameter to <code>true</code>, the response includes the ARN in all
+        /// cases, even if the subscription is not yet confirmed. In addition to the ARN for confirmed
         /// subscriptions, the response also includes the <code>pending subscription</code> ARN
         /// value for subscriptions that aren't yet confirmed. A subscription becomes confirmed
         /// when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation
         /// token.
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If you set this parameter to <code>true</code>, .
-        /// </para>
-        ///  
+        ///  </li> </ul>  
         /// <para>
         /// The default value is <code>false</code>.
         /// </para>
