@@ -49,7 +49,7 @@ namespace Amazon.EBS.Model
         /// <code>ListSnapshotBlocks</code> operations.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0)]
         public int BlockIndex
         {
             get { return this._blockIndex.GetValueOrDefault(); }

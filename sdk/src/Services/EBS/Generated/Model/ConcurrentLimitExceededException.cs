@@ -29,42 +29,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EBS.Model
 {
     /// <summary>
-    /// The specified resource does not exist.
+    /// You have reached the limit for concurrent API requests. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapi-performance">Optimizing
+    /// performance of the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User
+    /// Guide</i>.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]
     #endif
-    public partial class ResourceNotFoundException : AmazonEBSException
+    public partial class ConcurrentLimitExceededException : AmazonEBSException
     {
-        private ResourceNotFoundExceptionReason _reason;
 
         /// <summary>
-        /// Constructs a new ResourceNotFoundException with the specified error
+        /// Constructs a new ConcurrentLimitExceededException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public ResourceNotFoundException(string message) 
+        public ConcurrentLimitExceededException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of ResourceNotFoundException
+        /// Construct instance of ConcurrentLimitExceededException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public ResourceNotFoundException(string message, Exception innerException) 
+        public ConcurrentLimitExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of ResourceNotFoundException
+        /// Construct instance of ConcurrentLimitExceededException
         /// </summary>
         /// <param name="innerException"></param>
-        public ResourceNotFoundException(Exception innerException) 
+        public ConcurrentLimitExceededException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of ResourceNotFoundException
+        /// Construct instance of ConcurrentLimitExceededException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -72,33 +74,32 @@ namespace Amazon.EBS.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ResourceNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ConcurrentLimitExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of ResourceNotFoundException
+        /// Construct instance of ConcurrentLimitExceededException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ResourceNotFoundException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ConcurrentLimitExceededException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !PCL && !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the ResourceNotFoundException class with serialized data.
+        /// Constructs a new instance of the ConcurrentLimitExceededException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected ResourceNotFoundException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected ConcurrentLimitExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
-            this.Reason = (ResourceNotFoundExceptionReason)info.GetValue("Reason", typeof(ResourceNotFoundExceptionReason));
         }
 
         /// <summary>
@@ -119,27 +120,8 @@ namespace Amazon.EBS.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
-            info.AddValue("Reason", this.Reason);
         }
 #endif
-
-        /// <summary>
-        /// Gets and sets the property Reason. 
-        /// <para>
-        /// The reason for the exception.
-        /// </para>
-        /// </summary>
-        public ResourceNotFoundExceptionReason Reason
-        {
-            get { return this._reason; }
-            set { this._reason = value; }
-        }
-
-        // Check to see if Reason property is set
-        internal bool IsSetReason()
-        {
-            return this._reason != null;
-        }
 
     }
 }

@@ -38,7 +38,7 @@ namespace Amazon.EBS
     /// You can use the Amazon Elastic Block Store (EBS) direct APIs to directly read the
     /// data on your EBS snapshots, and identify the difference between two snapshots. You
     /// can view the details of blocks in an EBS snapshot, compare the block difference between
-    /// two snapshots, and directly access the data in a snapshot. If you’re an independent
+    /// two snapshots, and directly access the data in a snapshot. If you're an independent
     /// software vendor (ISV) who offers backup services for EBS, the EBS direct APIs make
     /// it easier and more cost-effective to track incremental changes on your EBS volumes
     /// via EBS snapshots. This can be done without having to create new volumes from EBS
@@ -254,6 +254,80 @@ namespace Amazon.EBS
         #endregion
 
 
+        #region  CompleteSnapshot
+
+        /// <summary>
+        /// Seals and completes the snapshot after all of the required blocks of data have been
+        /// written to it. Completing the snapshot changes the status to <code>completed</code>.
+        /// You cannot write new blocks to a snapshot after it has been completed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the CompleteSnapshot service method, as returned by EBS.</returns>
+        /// <exception cref="Amazon.EBS.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.RequestThrottledException">
+        /// The number of API requests has exceed the maximum allowed API request throttling limit.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.ServiceQuotaExceededException">
+        /// Your current service quotas do not allow you to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.ValidationException">
+        /// The input fails to satisfy the constraints of the EBS direct APIs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/CompleteSnapshot">REST API Reference for CompleteSnapshot Operation</seealso>
+        public virtual CompleteSnapshotResponse CompleteSnapshot(CompleteSnapshotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<CompleteSnapshotResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CompleteSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CompleteSnapshot operation on AmazonEBSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCompleteSnapshot
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/CompleteSnapshot">REST API Reference for CompleteSnapshot Operation</seealso>
+        public virtual IAsyncResult BeginCompleteSnapshot(CompleteSnapshotRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteSnapshotResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CompleteSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCompleteSnapshot.</param>
+        /// 
+        /// <returns>Returns a  CompleteSnapshotResult from EBS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/CompleteSnapshot">REST API Reference for CompleteSnapshot Operation</seealso>
+        public virtual CompleteSnapshotResponse EndCompleteSnapshot(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CompleteSnapshotResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetSnapshotBlock
 
         /// <summary>
@@ -262,8 +336,20 @@ namespace Amazon.EBS
         /// <param name="request">Container for the necessary parameters to execute the GetSnapshotBlock service method.</param>
         /// 
         /// <returns>The response from the GetSnapshotBlock service method, as returned by EBS.</returns>
+        /// <exception cref="Amazon.EBS.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.RequestThrottledException">
+        /// The number of API requests has exceed the maximum allowed API request throttling limit.
+        /// </exception>
         /// <exception cref="Amazon.EBS.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.ServiceQuotaExceededException">
+        /// Your current service quotas do not allow you to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.ValidationException">
         /// The input fails to satisfy the constraints of the EBS direct APIs.
@@ -323,8 +409,20 @@ namespace Amazon.EBS
         /// <param name="request">Container for the necessary parameters to execute the ListChangedBlocks service method.</param>
         /// 
         /// <returns>The response from the ListChangedBlocks service method, as returned by EBS.</returns>
+        /// <exception cref="Amazon.EBS.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.RequestThrottledException">
+        /// The number of API requests has exceed the maximum allowed API request throttling limit.
+        /// </exception>
         /// <exception cref="Amazon.EBS.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.ServiceQuotaExceededException">
+        /// Your current service quotas do not allow you to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.ValidationException">
         /// The input fails to satisfy the constraints of the EBS direct APIs.
@@ -384,8 +482,20 @@ namespace Amazon.EBS
         /// <param name="request">Container for the necessary parameters to execute the ListSnapshotBlocks service method.</param>
         /// 
         /// <returns>The response from the ListSnapshotBlocks service method, as returned by EBS.</returns>
+        /// <exception cref="Amazon.EBS.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.RequestThrottledException">
+        /// The number of API requests has exceed the maximum allowed API request throttling limit.
+        /// </exception>
         /// <exception cref="Amazon.EBS.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.ServiceQuotaExceededException">
+        /// Your current service quotas do not allow you to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.ValidationException">
         /// The input fails to satisfy the constraints of the EBS direct APIs.
@@ -432,6 +542,173 @@ namespace Amazon.EBS
         public virtual ListSnapshotBlocksResponse EndListSnapshotBlocks(IAsyncResult asyncResult)
         {
             return EndInvoke<ListSnapshotBlocksResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutSnapshotBlock
+
+        /// <summary>
+        /// Writes a block of data to a block in the snapshot. If the specified block contains
+        /// data, the existing data is overwritten. The target snapshot must be in the <code>pending</code>
+        /// state.
+        /// 
+        ///  
+        /// <para>
+        /// Data written to a snapshot must be aligned with 512-byte sectors.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSnapshotBlock service method.</param>
+        /// 
+        /// <returns>The response from the PutSnapshotBlock service method, as returned by EBS.</returns>
+        /// <exception cref="Amazon.EBS.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.RequestThrottledException">
+        /// The number of API requests has exceed the maximum allowed API request throttling limit.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.ServiceQuotaExceededException">
+        /// Your current service quotas do not allow you to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.ValidationException">
+        /// The input fails to satisfy the constraints of the EBS direct APIs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/PutSnapshotBlock">REST API Reference for PutSnapshotBlock Operation</seealso>
+        public virtual PutSnapshotBlockResponse PutSnapshotBlock(PutSnapshotBlockRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutSnapshotBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSnapshotBlockResponseUnmarshaller.Instance;
+
+            return Invoke<PutSnapshotBlockResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutSnapshotBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutSnapshotBlock operation on AmazonEBSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutSnapshotBlock
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/PutSnapshotBlock">REST API Reference for PutSnapshotBlock Operation</seealso>
+        public virtual IAsyncResult BeginPutSnapshotBlock(PutSnapshotBlockRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutSnapshotBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSnapshotBlockResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutSnapshotBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutSnapshotBlock.</param>
+        /// 
+        /// <returns>Returns a  PutSnapshotBlockResult from EBS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/PutSnapshotBlock">REST API Reference for PutSnapshotBlock Operation</seealso>
+        public virtual PutSnapshotBlockResponse EndPutSnapshotBlock(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutSnapshotBlockResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartSnapshot
+
+        /// <summary>
+        /// Creates a new Amazon EBS snapshot. The new snapshot enters the <code>pending</code>
+        /// state after the request completes. 
+        /// 
+        ///  
+        /// <para>
+        /// After creating the snapshot, use <a href="https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html">
+        /// PutSnapshotBlock</a> to write blocks of data to the snapshot.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the StartSnapshot service method, as returned by EBS.</returns>
+        /// <exception cref="Amazon.EBS.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.ConcurrentLimitExceededException">
+        /// You have reached the limit for concurrent API requests. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapi-performance">Optimizing
+        /// performance of the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.ConflictException">
+        /// The request uses the same client token as a previous, but non-identical request.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.RequestThrottledException">
+        /// The number of API requests has exceed the maximum allowed API request throttling limit.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.ServiceQuotaExceededException">
+        /// Your current service quotas do not allow you to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.EBS.Model.ValidationException">
+        /// The input fails to satisfy the constraints of the EBS direct APIs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/StartSnapshot">REST API Reference for StartSnapshot Operation</seealso>
+        public virtual StartSnapshotResponse StartSnapshot(StartSnapshotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<StartSnapshotResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSnapshot operation on AmazonEBSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSnapshot
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/StartSnapshot">REST API Reference for StartSnapshot Operation</seealso>
+        public virtual IAsyncResult BeginStartSnapshot(StartSnapshotRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSnapshotResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSnapshot.</param>
+        /// 
+        /// <returns>Returns a  StartSnapshotResult from EBS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/StartSnapshot">REST API Reference for StartSnapshot Operation</seealso>
+        public virtual StartSnapshotResponse EndStartSnapshot(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartSnapshotResponse>(asyncResult);
         }
 
         #endregion

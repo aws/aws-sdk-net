@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EBS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResourceNotFoundException Object
+    /// Response Unmarshaller for ConflictException Object
     /// </summary>  
-    public class ResourceNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<ResourceNotFoundException, JsonUnmarshallerContext>
+    public class ConflictExceptionUnmarshaller : IErrorResponseUnmarshaller<ConflictException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ResourceNotFoundException Unmarshall(JsonUnmarshallerContext context)
+        public ConflictException Unmarshall(JsonUnmarshallerContext context)
         {
             return this.Unmarshall(context, new ErrorResponse());
         }
@@ -54,33 +54,27 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ResourceNotFoundException Unmarshall(JsonUnmarshallerContext context, ErrorResponse errorResponse)
+        public ConflictException Unmarshall(JsonUnmarshallerContext context, ErrorResponse errorResponse)
         {
             context.Read();
 
-            ResourceNotFoundException unmarshalledObject = new ResourceNotFoundException(errorResponse.Message, errorResponse.InnerException,
+            ConflictException unmarshalledObject = new ConflictException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Reason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
-        private static ResourceNotFoundExceptionUnmarshaller _instance = new ResourceNotFoundExceptionUnmarshaller();        
+        private static ConflictExceptionUnmarshaller _instance = new ConflictExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceNotFoundExceptionUnmarshaller Instance
+        public static ConflictExceptionUnmarshaller Instance
         {
             get
             {

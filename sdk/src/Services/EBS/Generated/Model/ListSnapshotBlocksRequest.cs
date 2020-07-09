@@ -104,6 +104,7 @@ namespace Amazon.EBS.Model
         /// from this block index or the next valid block index in the snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int StartingBlockIndex
         {
             get { return this._startingBlockIndex.GetValueOrDefault(); }

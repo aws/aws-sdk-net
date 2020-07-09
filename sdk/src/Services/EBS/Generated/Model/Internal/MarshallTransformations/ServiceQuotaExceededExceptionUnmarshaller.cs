@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EBS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResourceNotFoundException Object
+    /// Response Unmarshaller for ServiceQuotaExceededException Object
     /// </summary>  
-    public class ResourceNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<ResourceNotFoundException, JsonUnmarshallerContext>
+    public class ServiceQuotaExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<ServiceQuotaExceededException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ResourceNotFoundException Unmarshall(JsonUnmarshallerContext context)
+        public ServiceQuotaExceededException Unmarshall(JsonUnmarshallerContext context)
         {
             return this.Unmarshall(context, new ErrorResponse());
         }
@@ -54,11 +54,11 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ResourceNotFoundException Unmarshall(JsonUnmarshallerContext context, ErrorResponse errorResponse)
+        public ServiceQuotaExceededException Unmarshall(JsonUnmarshallerContext context, ErrorResponse errorResponse)
         {
             context.Read();
 
-            ResourceNotFoundException unmarshalledObject = new ResourceNotFoundException(errorResponse.Message, errorResponse.InnerException,
+            ServiceQuotaExceededException unmarshalledObject = new ServiceQuotaExceededException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
@@ -75,12 +75,12 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ResourceNotFoundExceptionUnmarshaller _instance = new ResourceNotFoundExceptionUnmarshaller();        
+        private static ServiceQuotaExceededExceptionUnmarshaller _instance = new ServiceQuotaExceededExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceNotFoundExceptionUnmarshaller Instance
+        public static ServiceQuotaExceededExceptionUnmarshaller Instance
         {
             get
             {

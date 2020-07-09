@@ -44,6 +44,7 @@ namespace Amazon.EBS.Model
         /// The block index.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int BlockIndex
         {
             get { return this._blockIndex.GetValueOrDefault(); }

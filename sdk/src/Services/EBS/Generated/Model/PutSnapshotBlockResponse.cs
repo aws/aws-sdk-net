@@ -29,49 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EBS.Model
 {
     /// <summary>
-    /// A block of data in an Amazon Elastic Block Store snapshot.
+    /// This is the response object from the PutSnapshotBlock operation.
     /// </summary>
-    public partial class Block
+    public partial class PutSnapshotBlockResponse : AmazonWebServiceResponse
     {
-        private int? _blockIndex;
-        private string _blockToken;
+        private string _checksum;
+        private ChecksumAlgorithm _checksumAlgorithm;
 
         /// <summary>
-        /// Gets and sets the property BlockIndex. 
+        /// Gets and sets the property Checksum. 
         /// <para>
-        /// The block index.
+        /// The SHA256 checksum generated for the block data by Amazon EBS.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
-        public int BlockIndex
+        [AWSProperty(Max=64)]
+        public string Checksum
         {
-            get { return this._blockIndex.GetValueOrDefault(); }
-            set { this._blockIndex = value; }
+            get { return this._checksum; }
+            set { this._checksum = value; }
         }
 
-        // Check to see if BlockIndex property is set
-        internal bool IsSetBlockIndex()
+        // Check to see if Checksum property is set
+        internal bool IsSetChecksum()
         {
-            return this._blockIndex.HasValue; 
+            return this._checksum != null;
         }
 
         /// <summary>
-        /// Gets and sets the property BlockToken. 
+        /// Gets and sets the property ChecksumAlgorithm. 
         /// <para>
-        /// The block token for the block index.
+        /// The algorithm used by Amazon EBS to generate the checksum.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
-        public string BlockToken
+        [AWSProperty(Max=32)]
+        public ChecksumAlgorithm ChecksumAlgorithm
         {
-            get { return this._blockToken; }
-            set { this._blockToken = value; }
+            get { return this._checksumAlgorithm; }
+            set { this._checksumAlgorithm = value; }
         }
 
-        // Check to see if BlockToken property is set
-        internal bool IsSetBlockToken()
+        // Check to see if ChecksumAlgorithm property is set
+        internal bool IsSetChecksumAlgorithm()
         {
-            return this._blockToken != null;
+            return this._checksumAlgorithm != null;
         }
 
     }

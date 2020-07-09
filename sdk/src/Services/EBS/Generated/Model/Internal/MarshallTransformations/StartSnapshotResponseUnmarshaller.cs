@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EBS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListChangedBlocks operation
+    /// Response Unmarshaller for StartSnapshot operation
     /// </summary>  
-    public class ListChangedBlocksResponseUnmarshaller : JsonResponseUnmarshaller
+    public class StartSnapshotResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListChangedBlocksResponse response = new ListChangedBlocksResponse();
+            StartSnapshotResponse response = new StartSnapshotResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -57,22 +57,52 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
                     response.BlockSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ChangedBlocks", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ChangedBlock, ChangedBlockUnmarshaller>(ChangedBlockUnmarshaller.Instance);
-                    response.ChangedBlocks = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExpiryTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.ExpiryTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
+                    response.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KmsKeyArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KmsKeyArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OwnerId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OwnerId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ParentSnapshotId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ParentSnapshotId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SnapshotId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SnapshotId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.StartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Tags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VolumeSize", targetDepth))
@@ -108,6 +138,14 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentLimitExceededException"))
+                {
+                    return ConcurrentLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -132,9 +170,9 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
             return new AmazonEBSException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static ListChangedBlocksResponseUnmarshaller _instance = new ListChangedBlocksResponseUnmarshaller();        
+        private static StartSnapshotResponseUnmarshaller _instance = new StartSnapshotResponseUnmarshaller();        
 
-        internal static ListChangedBlocksResponseUnmarshaller GetInstance()
+        internal static StartSnapshotResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -142,7 +180,7 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListChangedBlocksResponseUnmarshaller Instance
+        public static StartSnapshotResponseUnmarshaller Instance
         {
             get
             {

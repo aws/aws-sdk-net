@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EBS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListChangedBlocks operation
+    /// Response Unmarshaller for PutSnapshotBlock operation
     /// </summary>  
-    public class ListChangedBlocksResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutSnapshotBlockResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,43 +45,12 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListChangedBlocksResponse response = new ListChangedBlocksResponse();
+            PutSnapshotBlockResponse response = new PutSnapshotBlockResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("BlockSize", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.BlockSize = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ChangedBlocks", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ChangedBlock, ChangedBlockUnmarshaller>(ChangedBlockUnmarshaller.Instance);
-                    response.ChangedBlocks = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExpiryTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.ExpiryTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NextToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VolumeSize", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    response.VolumeSize = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
+            if (context.ResponseData.IsHeaderPresent("x-amz-Checksum"))
+                response.Checksum = context.ResponseData.GetHeaderValue("x-amz-Checksum");
+            if (context.ResponseData.IsHeaderPresent("x-amz-Checksum-Algorithm"))
+                response.ChecksumAlgorithm = context.ResponseData.GetHeaderValue("x-amz-Checksum-Algorithm");
 
             return response;
         }
@@ -132,9 +101,9 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
             return new AmazonEBSException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static ListChangedBlocksResponseUnmarshaller _instance = new ListChangedBlocksResponseUnmarshaller();        
+        private static PutSnapshotBlockResponseUnmarshaller _instance = new PutSnapshotBlockResponseUnmarshaller();        
 
-        internal static ListChangedBlocksResponseUnmarshaller GetInstance()
+        internal static PutSnapshotBlockResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -142,7 +111,7 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListChangedBlocksResponseUnmarshaller Instance
+        public static PutSnapshotBlockResponseUnmarshaller Instance
         {
             get
             {

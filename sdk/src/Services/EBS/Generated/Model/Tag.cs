@@ -29,49 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EBS.Model
 {
     /// <summary>
-    /// A block of data in an Amazon Elastic Block Store snapshot.
+    /// Describes a tag.
     /// </summary>
-    public partial class Block
+    public partial class Tag
     {
-        private int? _blockIndex;
-        private string _blockToken;
+        private string _key;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property BlockIndex. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// The block index.
+        /// The key of the tag.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
-        public int BlockIndex
+        [AWSProperty(Max=127)]
+        public string Key
         {
-            get { return this._blockIndex.GetValueOrDefault(); }
-            set { this._blockIndex = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if BlockIndex property is set
-        internal bool IsSetBlockIndex()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._blockIndex.HasValue; 
+            return this._key != null;
         }
 
         /// <summary>
-        /// Gets and sets the property BlockToken. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// The block token for the block index.
+        /// The value of the tag.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
-        public string BlockToken
+        [AWSProperty(Max=255)]
+        public string Value
         {
-            get { return this._blockToken; }
-            set { this._blockToken = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if BlockToken property is set
-        internal bool IsSetBlockToken()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._blockToken != null;
+            return this._value != null;
         }
 
     }
