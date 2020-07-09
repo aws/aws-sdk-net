@@ -179,7 +179,7 @@ namespace Amazon.CloudHSMV2.Model
         /// Gets and sets the property SourceCluster. 
         /// <para>
         /// The identifier (ID) of the cluster containing the source backup from which the new
-        /// backup was copied. .
+        /// backup was copied.
         /// </para>
         /// </summary>
         public string SourceCluster
@@ -197,7 +197,7 @@ namespace Amazon.CloudHSMV2.Model
         /// <summary>
         /// Gets and sets the property SourceRegion. 
         /// <para>
-        /// The AWS region that contains the source backup from which the new backup was copied.
+        /// The AWS Region that contains the source backup from which the new backup was copied.
         /// </para>
         /// </summary>
         public string SourceRegion
@@ -213,7 +213,10 @@ namespace Amazon.CloudHSMV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagList.
+        /// Gets and sets the property TagList. 
+        /// <para>
+        /// The list of tags for the backup.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<Tag> TagList

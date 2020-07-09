@@ -285,7 +285,8 @@ namespace Amazon.CloudHSMV2
         /// The request was rejected because an error occurred.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
-        /// 
+        /// The request was rejected because of a tagging failure. Verify the tag conditions in
+        /// all applicable policies, and then retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CopyBackupToRegion">REST API Reference for CopyBackupToRegion Operation</seealso>
         public virtual Task<CopyBackupToRegionResponse> CopyBackupToRegionAsync(CopyBackupToRegionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -339,7 +340,8 @@ namespace Amazon.CloudHSMV2
         /// The request was rejected because an error occurred.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
-        /// 
+        /// The request was rejected because of a tagging failure. Verify the tag conditions in
+        /// all applicable policies, and then retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -499,7 +501,8 @@ namespace Amazon.CloudHSMV2
         /// The request was rejected because an error occurred.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
-        /// 
+        /// The request was rejected because of a tagging failure. Verify the tag conditions in
+        /// all applicable policies, and then retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -615,7 +618,8 @@ namespace Amazon.CloudHSMV2
         /// The request was rejected because an error occurred.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
-        /// 
+        /// The request was rejected because of a tagging failure. Verify the tag conditions in
+        /// all applicable policies, and then retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
         public virtual Task<DescribeBackupsResponse> DescribeBackupsAsync(DescribeBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -675,7 +679,8 @@ namespace Amazon.CloudHSMV2
         /// The request was rejected because an error occurred.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
-        /// 
+        /// The request was rejected because of a tagging failure. Verify the tag conditions in
+        /// all applicable policies, and then retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         public virtual Task<DescribeClustersResponse> DescribeClustersAsync(DescribeClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -792,7 +797,8 @@ namespace Amazon.CloudHSMV2
         /// The request was rejected because an error occurred.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
-        /// 
+        /// The request was rejected because of a tagging failure. Verify the tag conditions in
+        /// all applicable policies, and then retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -898,7 +904,8 @@ namespace Amazon.CloudHSMV2
         /// The request was rejected because an error occurred.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
-        /// 
+        /// The request was rejected because of a tagging failure. Verify the tag conditions in
+        /// all applicable policies, and then retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -952,7 +959,8 @@ namespace Amazon.CloudHSMV2
         /// The request was rejected because an error occurred.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
-        /// 
+        /// The request was rejected because of a tagging failure. Verify the tag conditions in
+        /// all applicable policies, and then retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

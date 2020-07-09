@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
-    /// 
+    /// The request was rejected because of a tagging failure. Verify the tag conditions in
+    /// all applicable policies, and then retry the request.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]
