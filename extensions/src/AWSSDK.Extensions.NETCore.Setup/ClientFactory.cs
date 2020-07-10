@@ -13,17 +13,11 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Reflection;
-
-
-using Microsoft.Extensions.DependencyInjection;
-
 using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace Amazon.Extensions.NETCore.Setup
@@ -36,8 +30,8 @@ namespace Amazon.Extensions.NETCore.Setup
         private static readonly Type[] EMPTY_TYPES = Array.Empty<Type>();
         private static readonly object[] EMPTY_PARAMETERS = Array.Empty<object>();
 
-        Type _serviceInterfaceType;
-        AWSOptions _awsOptions;
+        private Type _serviceInterfaceType;
+        private AWSOptions _awsOptions;
 
         /// <summary>
         /// Constructs an instance of the ClientFactory
@@ -72,9 +66,7 @@ namespace Amazon.Extensions.NETCore.Setup
                 }
             }
 
-            var client = CreateServiceClient(logger, _serviceInterfaceType, options);
-
-            return client;
+            return CreateServiceClient(logger, _serviceInterfaceType, options);
         }
 
         /// <summary>
@@ -112,8 +104,7 @@ namespace Amazon.Extensions.NETCore.Setup
                 throw new AmazonClientException($"Service client {clientTypeName} misisng a constructor with parameters AWSCredentials and {config.GetType().FullName}.");
             }
 
-            var client = constructor.Invoke(new object[] { credentials, config }) as AmazonServiceClient;
-            return client;
+            return constructor.Invoke(new object[] { credentials, config }) as AmazonServiceClient;
         }
 
         /// <summary>
@@ -173,6 +164,11 @@ namespace Amazon.Extensions.NETCore.Setup
 
             var constructor = configType.GetConstructor(EMPTY_TYPES);
             ClientConfig config = constructor.Invoke(EMPTY_PARAMETERS) as ClientConfig;
+
+            if(options == null)
+            {
+                options = new AWSOptions();
+            }
 
             var defaultConfig = options.DefaultClientConfig;
             if (options.IsDefaultClientConfigSet)
