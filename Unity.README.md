@@ -32,14 +32,14 @@ There are only a few fundamentals that are helpful to know when developing again
 * To enable logging you need to create a config file called awsconfig.xml in a `Resources` directory add add the following
 
 		<?xml version="1.0" encoding="utf-8"?>
-		<aws 
+		<aws region="ap-northeast-1" correctForClockSkew="true"> 
 			<logging
 	    		logTo="UnityLogger"
 	    		logResponses="Always"
 	    		logMetrics="true"
 	    		logMetricsFormat="JSON" />
 			/>
-		/>
+		</aws>
 	
 You can also do this configuration in a script
 
@@ -77,7 +77,11 @@ You can also do this configuration in a script
 		<assembly fullname="AWSSDK.Core" preserve="all">
 			<namespace fullname="Amazon.Util.Internal.PlatformServices" preserve="all"/>
 		</assembly>
-   		<assembly fullname="AWSSDK.CognitoIdentity" preserve="all"/>
-   		<assembly fullname="AWSSDK.SecurityToken" preserve="all"/>
+		<assembly fullname="AWSSDK.CognitoIdentity" preserve="all">
+			<namespace fullname="Amazon.Util.Internal.PlatformServices" preserve="all"/>
+		</assembly>
+		<assembly fullname="AWSSDK.SecurityToken" preserve="all">
+			<namespace fullname="Amazon.Util.Internal.PlatformServices" preserve="all"/>
+		</assembly>
 		add more services that you need here... 
 		</linker>
