@@ -45,7 +45,7 @@ namespace Amazon.S3.Util
         internal static async Task<string> DetectMismatchWithHeadBucketFallbackAsync(AmazonS3Uri requestedBucketUri, AmazonServiceException serviceException, ImmutableCredentials credentials)
         {
             return GetCorrectRegion(requestedBucketUri, serviceException) ??
-                CheckRegionAndUpdateCache(requestedBucketUri, await GetBucketRegionNoPipelineAsync(requestedBucketUri.Bucket, credentials));
+                CheckRegionAndUpdateCache(requestedBucketUri, await GetBucketRegionNoPipelineAsync(requestedBucketUri.Bucket, credentials).ConfigureAwait(false));
         }
 
         /// <summary>

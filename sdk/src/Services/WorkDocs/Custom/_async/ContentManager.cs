@@ -120,7 +120,7 @@ namespace Amazon.WorkDocs.Utils
                 content.RemoveHttpContentHeader("Content-Type");
                 content.AddHttpContentHeader("Content-Type", uploadDocumentStreamRequest.ContentType);
 
-                await httpClient.PutRequestUriAsync(uploadUrl, content, requestHeaders);
+                await httpClient.PutRequestUriAsync(uploadUrl, content, requestHeaders).ConfigureAwait(false);
                 var task = CompleteUpload(documentId, versionId);
 
                 UploadDocumentStreamResponse uploadDocumentStreamResponse = new UploadDocumentStreamResponse(uploadDocumentStreamRequest)
