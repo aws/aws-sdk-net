@@ -1,3 +1,12 @@
+### 3.3.778.0 (2020-07-15 18:16 UTC)
+* IVS (3.3.100.0)
+	* Introducing Amazon Interactive Video Service - a managed live streaming solution that is quick and easy to set up, and ideal for creating interactive video experiences.
+* Core 3.3.107.25
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.777.1 (2020-07-09 21:59 UTC)
 * Core 3.3.107.24
 	* Consistently apply ConfigureAwait(false)
