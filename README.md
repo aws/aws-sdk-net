@@ -307,6 +307,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS IoT SiteWise is a managed service that makes it easy to collect, store, organize and monitor data from industrial equipment at scale. You can use AWS IoT SiteWise to model your physical assets, processes and facilities, quickly compute common industrial performance metrics, and create fully managed web applications to help analyze industrial equipment data, prevent costly equipment issues, and reduce production inefficiencies.
 * [AWSSDK.IoTThingsGraph](https://www.nuget.org/packages/AWSSDK.IoTThingsGraph/)
 	* Initial Release.
+* [AWSSDK.IVS](https://www.nuget.org/packages/AWSSDK.IVS/)
+	* Introducing Amazon Interactive Video Service - a managed live streaming solution that is quick and easy to set up, and ideal for creating interactive video experiences.
 * [AWSSDK.Kafka](https://www.nuget.org/packages/AWSSDK.Kafka/)
 	* Amazon Managed Streaming for Kafka (Amazon MSK). Amazon MSK is a service that you can use to easily build, monitor, and manage Apache Kafka clusters in the cloud.
 * [AWSSDK.Kendra](https://www.nuget.org/packages/AWSSDK.Kendra/)

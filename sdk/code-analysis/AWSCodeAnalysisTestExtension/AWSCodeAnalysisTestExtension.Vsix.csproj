@@ -516,6 +516,10 @@
       <Project>{C9C5C240-E67B-4569-A4A1-ECA292B6650D}</Project>
       <Name>AWSSDK.IoTThingsGraph.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/IVS/AWSSDK.IVS.CodeAnalysis.csproj">
+      <Project>{F432AF25-9775-41B8-A42E-7890CD7189BB}</Project>
+      <Name>AWSSDK.IVS.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Kafka/AWSSDK.Kafka.CodeAnalysis.csproj">
       <Project>{DCF594AB-B311-4FFD-B089-CD4DCCD5E236}</Project>
       <Name>AWSSDK.Kafka.CodeAnalysis</Name>
