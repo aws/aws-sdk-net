@@ -15,10 +15,12 @@
 
 namespace Amazon.S3.Internal
 {
+#pragma warning disable CA1040 // Avoid empty interfaces
     /// <summary>
     /// Marker interface to identify AmazonS3EncryptionClient.
     /// </summary>
-    internal interface IAmazonS3Encryption
+    public interface IAmazonS3Encryption
     {
     }
+#pragma warning restore CA1040 // Avoid empty interfaces
 }
