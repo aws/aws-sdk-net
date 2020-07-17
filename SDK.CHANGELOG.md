@@ -1,3 +1,22 @@
+### 3.3.779.0 (2020-07-17 18:14 UTC)
+* ApplicationAutoScaling (3.3.105.45)
+	* Documentation updates for Application Auto Scaling
+* AppSync (3.3.105.7)
+	* Documentation update to Cachingconfig.cachingKeys to include $context.source as a valid value.
+* Connect (3.3.104.0)
+	* This release adds a set of Amazon Connect APIs to programmatically control call recording with start, stop, pause and resume functions.
+* EC2 (3.3.190.0)
+	* Documentation updates for EC2
+* ElasticBeanstalk (3.3.103.0)
+	* Add waiters for `EnvironmentExists`, `EnvironmentUpdated`, and `EnvironmentTerminated`. Add paginators for `DescribeEnvironmentManagedActionHistory` and `ListPlatformVersions`.
+* Macie2 (3.3.102.0)
+	* This release of the Amazon Macie API includes miscellaneous updates and improvements to the documentation.
+* Core 3.3.107.26
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.778.0 (2020-07-15 18:16 UTC)
 * IVS (3.3.100.0)
 	* Introducing Amazon Interactive Video Service - a managed live streaming solution that is quick and easy to set up, and ideal for creating interactive video experiences.

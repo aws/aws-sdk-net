@@ -32,7 +32,7 @@ namespace Amazon.MQ
     public partial class AmazonMQConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.105.95");
+            InternalSDKUtils.BuildUserAgentString("3.3.105.96");
 
         private string _userAgent = UserAgentString;
 
