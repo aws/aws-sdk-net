@@ -34,8 +34,8 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    /// For a description of each historical metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
-    /// Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics.html">Historical
+    /// Metrics Reports</a> in the <i>Amazon Connect Administrator Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetMetricDataRequest : AmazonConnectRequest

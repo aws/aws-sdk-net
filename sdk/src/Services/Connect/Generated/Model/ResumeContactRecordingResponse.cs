@@ -29,31 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists the tags for the specified resource.
+    /// This is the response object from the ResumeContactRecording operation.
     /// </summary>
-    public partial class ListTagsForResourceRequest : AmazonConnectRequest
+    public partial class ResumeContactRecordingResponse : AmazonWebServiceResponse
     {
-        private string _resourceArn;
-
-        /// <summary>
-        /// Gets and sets the property ResourceArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the resource.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string ResourceArn
-        {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
-        }
-
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
-        {
-            return this._resourceArn != null;
-        }
 
     }
 }

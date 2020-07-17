@@ -29,30 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists the tags for the specified resource.
+    /// Contains information about the recording configuration settings.
     /// </summary>
-    public partial class ListTagsForResourceRequest : AmazonConnectRequest
+    public partial class VoiceRecordingConfiguration
     {
-        private string _resourceArn;
+        private VoiceRecordingTrack _voiceRecordingTrack;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
+        /// Gets and sets the property VoiceRecordingTrack. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource.
+        /// Identifies which track is being recorded.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string ResourceArn
+        public VoiceRecordingTrack VoiceRecordingTrack
         {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
+            get { return this._voiceRecordingTrack; }
+            set { this._voiceRecordingTrack = value; }
         }
 
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
+        // Check to see if VoiceRecordingTrack property is set
+        internal bool IsSetVoiceRecordingTrack()
         {
-            return this._resourceArn != null;
+            return this._voiceRecordingTrack != null;
         }
 
     }

@@ -44,13 +44,7 @@ namespace Amazon.Connect
     /// There are limits to the number of Amazon Connect resources that you can create and
     /// limits to the number of requests that you can make per second. For more information,
     /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-    /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    /// To connect programmatically to an AWS service, you use an endpoint. For a list of
-    /// Amazon Connect endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-    /// Connect Endpoints</a>.
+    /// Connect Service Limits</a> in the <i>Amazon Connect Administrator Guide</i>.
     /// </para>
     /// </summary>
     public partial interface IAmazonConnect : IAmazonService, IDisposable
@@ -62,13 +56,6 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Creates a user account for the specified Amazon Connect instance.
-        /// 
-        ///  
-        /// <para>
-        /// For information about how to create user accounts using the Amazon Connect console,
-        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
-        /// Users</a> in the <i>Amazon Connect Administrator Guide</i>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
         /// 
@@ -130,14 +117,6 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Deletes a user account from the specified Amazon Connect instance.
-        /// 
-        ///  
-        /// <para>
-        /// For information about what happens to a user's data when their account is deleted,
-        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-users.html">Delete
-        /// Users from Your Amazon Connect Instance</a> in the <i>Amazon Connect Administrator
-        /// Guide</i>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// 
@@ -412,8 +391,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time
-        /// Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-reports.html">Real-time
+        /// Metrics Reports</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCurrentMetricData service method.</param>
@@ -531,8 +510,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// For a description of each historical metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
-        /// Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics.html">Historical
+        /// Metrics Reports</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetricData service method.</param>
@@ -589,12 +568,6 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Provides information about the contact flows for the specified Amazon Connect instance.
-        /// 
-        ///  
-        /// <para>
-        /// For more information about contact flows, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact
-        /// Flows</a> in the <i>Amazon Connect Administrator Guide</i>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContactFlows service method.</param>
         /// 
@@ -651,12 +624,6 @@ namespace Amazon.Connect
         /// <summary>
         /// Provides information about the hours of operation for the specified Amazon Connect
         /// instance.
-        /// 
-        ///  
-        /// <para>
-        /// For more information about hours of operation, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html">Set
-        /// the Hours of Operation for a Queue</a> in the <i>Amazon Connect Administrator Guide</i>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHoursOfOperations service method.</param>
         /// 
@@ -712,14 +679,6 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Provides information about the phone numbers for the specified Amazon Connect instance.
-        /// 
-        /// 
-        ///  
-        /// <para>
-        /// For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
-        /// Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator
-        /// Guide</i>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPhoneNumbers service method.</param>
         /// 
@@ -775,12 +734,6 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Provides information about the queues for the specified Amazon Connect instance.
-        /// 
-        ///  
-        /// <para>
-        /// For more information about queues, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues:
-        /// Standard and Agent</a> in the <i>Amazon Connect Administrator Guide</i>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListQueues service method.</param>
         /// 
@@ -837,13 +790,6 @@ namespace Amazon.Connect
         /// <summary>
         /// Provides summary information about the routing profiles for the specified Amazon Connect
         /// instance.
-        /// 
-        ///  
-        /// <para>
-        /// For more information about routing profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing.html">Routing
-        /// Profiles</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/routing-profiles.html">Create
-        /// a Routing Profile</a> in the <i>Amazon Connect Administrator Guide</i>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRoutingProfiles service method.</param>
         /// 
@@ -900,12 +846,6 @@ namespace Amazon.Connect
         /// <summary>
         /// Provides summary information about the security profiles for the specified Amazon
         /// Connect instance.
-        /// 
-        ///  
-        /// <para>
-        /// For more information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfiles service method.</param>
         /// 
@@ -961,13 +901,6 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Lists the tags for the specified resource.
-        /// 
-        ///  
-        /// <para>
-        /// For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
-        /// Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect Administrator
-        /// Guide</i>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -1024,12 +957,6 @@ namespace Amazon.Connect
         /// <summary>
         /// Provides summary information about the hierarchy groups for the specified Amazon Connect
         /// instance.
-        /// 
-        ///  
-        /// <para>
-        /// For more information about agent hierarchies, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html">Set
-        /// Up Agent Hierarchies</a> in the <i>Amazon Connect Administrator Guide</i>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUserHierarchyGroups service method.</param>
         /// 
@@ -1135,6 +1062,61 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ResumeContactRecording
+
+
+        /// <summary>
+        /// When a contact is being recorded, and the recording has been suspended using SuspendContactRecording,
+        /// this API resumes recording the call.
+        /// 
+        ///  
+        /// <para>
+        /// Only voice recordings are supported at this time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeContactRecording service method.</param>
+        /// 
+        /// <returns>The response from the ResumeContactRecording service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContactRecording">REST API Reference for ResumeContactRecording Operation</seealso>
+        ResumeContactRecordingResponse ResumeContactRecording(ResumeContactRecordingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResumeContactRecording operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResumeContactRecording operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResumeContactRecording
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContactRecording">REST API Reference for ResumeContactRecording Operation</seealso>
+        IAsyncResult BeginResumeContactRecording(ResumeContactRecordingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResumeContactRecording operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResumeContactRecording.</param>
+        /// 
+        /// <returns>Returns a  ResumeContactRecordingResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContactRecording">REST API Reference for ResumeContactRecording Operation</seealso>
+        ResumeContactRecordingResponse EndResumeContactRecording(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartChatContact
 
 
@@ -1149,25 +1131,6 @@ namespace Amazon.Connect
         /// participant’s connection for the created chat within 5 minutes. This is achieved by
         /// invoking <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
         /// with WEBSOCKET and CONNECTION_CREDENTIALS. 
-        /// </para>
-        ///  
-        /// <para>
-        /// A 429 error occurs in two situations:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// API rate limit is exceeded. API TPS throttling returns a <code>TooManyRequests</code>
-        /// exception from the API Gateway.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota
-        /// for concurrent active chats</a> is exceeded. Active chat throttling returns a <code>LimitExceededException</code>.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information about how chat works, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
-        /// in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartChatContact service method.</param>
@@ -1219,6 +1182,73 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  StartContactRecording
+
+
+        /// <summary>
+        /// This API starts recording the contact when the agent joins the call. StartContactRecording
+        /// is a one-time action. For example, if you use StopContactRecording to stop recording
+        /// an ongoing call, you can't use StartContactRecording to restart it. For scenarios
+        /// where the recording has started and you want to suspend and resume it, such as when
+        /// collecting sensitive information (for example, a credit card number), use SuspendContactRecording
+        /// and ResumeContactRecording.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this API to override the recording behavior configured in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-recording-behavior.html">Set
+        /// recording behavior</a> block.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only voice recordings are supported at this time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartContactRecording service method.</param>
+        /// 
+        /// <returns>The response from the StartContactRecording service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactRecording">REST API Reference for StartContactRecording Operation</seealso>
+        StartContactRecordingResponse StartContactRecording(StartContactRecordingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartContactRecording operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartContactRecording operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartContactRecording
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactRecording">REST API Reference for StartContactRecording Operation</seealso>
+        IAsyncResult BeginStartContactRecording(StartContactRecordingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartContactRecording operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartContactRecording.</param>
+        /// 
+        /// <returns>Returns a  StartContactRecordingResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactRecording">REST API Reference for StartContactRecording Operation</seealso>
+        StartContactRecordingResponse EndStartContactRecording(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartOutboundVoiceContact
 
 
@@ -1237,14 +1267,6 @@ namespace Amazon.Connect
         /// There is a 60 second dialing timeout for this operation. If the call is not connected
         /// after 60 seconds, it fails.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// UK numbers with a 447 prefix are not allowed by default. Before you can dial these
-        /// UK mobile numbers, you must submit a service quota increase request. For more information,
-        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. 
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartOutboundVoiceContact service method.</param>
         /// 
@@ -1356,6 +1378,126 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  StopContactRecording
+
+
+        /// <summary>
+        /// When a contact is being recorded, this API stops recording the call. StopContactRecording
+        /// is a one-time action. If you use StopContactRecording to stop recording an ongoing
+        /// call, you can't use StartContactRecording to restart it. For scenarios where the recording
+        /// has started and you want to suspend it for sensitive information (for example, to
+        /// collect a credit card number), and then restart it, use SuspendContactRecording and
+        /// ResumeContactRecording.
+        /// 
+        ///  
+        /// <para>
+        /// Only voice recordings are supported at this time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopContactRecording service method.</param>
+        /// 
+        /// <returns>The response from the StopContactRecording service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactRecording">REST API Reference for StopContactRecording Operation</seealso>
+        StopContactRecordingResponse StopContactRecording(StopContactRecordingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopContactRecording operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopContactRecording operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopContactRecording
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactRecording">REST API Reference for StopContactRecording Operation</seealso>
+        IAsyncResult BeginStopContactRecording(StopContactRecordingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopContactRecording operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopContactRecording.</param>
+        /// 
+        /// <returns>Returns a  StopContactRecordingResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactRecording">REST API Reference for StopContactRecording Operation</seealso>
+        StopContactRecordingResponse EndStopContactRecording(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SuspendContactRecording
+
+
+        /// <summary>
+        /// When a contact is being recorded, this API suspends recording the call. For example,
+        /// you might suspend the call recording while collecting sensitive information, such
+        /// as a credit card number. Then use ResumeContactRecording to restart recording. 
+        /// 
+        ///  
+        /// <para>
+        /// The period of time that the recording is suspended is filled with silence in the final
+        /// recording. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Only voice recordings are supported at this time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SuspendContactRecording service method.</param>
+        /// 
+        /// <returns>The response from the SuspendContactRecording service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SuspendContactRecording">REST API Reference for SuspendContactRecording Operation</seealso>
+        SuspendContactRecordingResponse SuspendContactRecording(SuspendContactRecordingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SuspendContactRecording operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SuspendContactRecording operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSuspendContactRecording
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SuspendContactRecording">REST API Reference for SuspendContactRecording Operation</seealso>
+        IAsyncResult BeginSuspendContactRecording(SuspendContactRecordingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SuspendContactRecording operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSuspendContactRecording.</param>
+        /// 
+        /// <returns>Returns a  SuspendContactRecordingResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SuspendContactRecording">REST API Reference for SuspendContactRecording Operation</seealso>
+        SuspendContactRecordingResponse EndSuspendContactRecording(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  TagResource
 
 
@@ -1365,12 +1507,6 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// The supported resource type is users.
-        /// </para>
-        ///  
-        /// <para>
-        /// For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
-        /// Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect Administrator
-        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -1613,18 +1749,6 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Updates the identity information for the specified user.
-        /// 
-        ///  <important> 
-        /// <para>
-        /// Someone with the ability to invoke <code>UpdateUserIndentityInfo</code> can change
-        /// the login credentials of other users by changing their email address. This poses a
-        /// security risk to your organization. They can change the email address of a user to
-        /// the attacker's email address, and then reset the password through email. We strongly
-        /// recommend limiting who has the ability to invoke <code>UpdateUserIndentityInfo</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
-        /// Practices for Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.
-        /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserIdentityInfo service method.</param>
         /// 
