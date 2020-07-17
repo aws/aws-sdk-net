@@ -99,8 +99,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// Indicates whether this Elastic IP address is for use with instances in EC2-Classic
-        /// (<code>standard</code>) or instances in a VPC (<code>vpc</code>).
+        /// Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>)
+        /// or instances in EC2-Classic (<code>standard</code>).
         /// </para>
         /// </summary>
         public DomainType Domain

@@ -31,7 +31,16 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the GetLaunchTemplateData operation.
     /// Retrieves the configuration data of the specified instance. You can use this data
-    /// to create a launch template.
+    /// to create a launch template. 
+    /// 
+    ///  
+    /// <para>
+    /// This action calls on other describe actions to get instance information. Depending
+    /// on your instance configuration, you may need to allow the following actions in your
+    /// IAM policy: DescribeSpotInstanceRequests, DescribeInstanceCreditSpecifications, DescribeVolumes,
+    /// DescribeInstanceAttribute, and DescribeElasticGpus. Or, you can allow <code>describe*</code>
+    /// depending on your instance requirements.
+    /// </para>
     /// </summary>
     public partial class GetLaunchTemplateDataRequest : AmazonEC2Request
     {

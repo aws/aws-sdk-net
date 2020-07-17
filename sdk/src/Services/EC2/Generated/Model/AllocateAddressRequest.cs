@@ -111,11 +111,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// Set to <code>vpc</code> to allocate the address for use with instances in a VPC.
+        /// Indicates whether the Elastic IP address is for use with instances in a VPC or instances
+        /// in EC2-Classic.
         /// </para>
         ///  
         /// <para>
-        /// Default: The address is for use with instances in EC2-Classic.
+        /// Default: If the Region supports EC2-Classic, the default is <code>standard</code>.
+        /// Otherwise, the default is <code>vpc</code>.
         /// </para>
         /// </summary>
         public DomainType Domain

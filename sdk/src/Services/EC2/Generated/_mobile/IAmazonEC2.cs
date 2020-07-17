@@ -5662,7 +5662,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes one or more versions of a specified launch template. You can describe all
-        /// versions, individual versions, or a range of versions.
+        /// versions, individual versions, or a range of versions. You can also describe all the
+        /// latest versions or all the default versions of all the launch templates in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLaunchTemplateVersions service method.</param>
         /// <param name="cancellationToken">
@@ -8724,7 +8725,16 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Retrieves the configuration data of the specified instance. You can use this data
-        /// to create a launch template.
+        /// to create a launch template. 
+        /// 
+        ///  
+        /// <para>
+        /// This action calls on other describe actions to get instance information. Depending
+        /// on your instance configuration, you may need to allow the following actions in your
+        /// IAM policy: DescribeSpotInstanceRequests, DescribeInstanceCreditSpecifications, DescribeVolumes,
+        /// DescribeInstanceAttribute, and DescribeElasticGpus. Or, you can allow <code>describe*</code>
+        /// depending on your instance requirements.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLaunchTemplateData service method.</param>
         /// <param name="cancellationToken">
@@ -10522,7 +10532,7 @@ namespace Amazon.EC2
         /// Registers an AMI. When you're creating an AMI, this is the final step you must complete
         /// before you can launch an instance from the AMI. For more information about creating
         /// AMIs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
-        /// Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// your own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -10534,12 +10544,11 @@ namespace Amazon.EC2
         /// You can also use <code>RegisterImage</code> to create an Amazon EBS-backed Linux AMI
         /// from a snapshot of a root device volume. You specify the snapshot using the block
         /// device mapping. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html">Launching
-        /// a Linux Instance from a Backup</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// a Linux instance from a backup</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// You can't register an image where a secondary (non-root) snapshot has AWS Marketplace
-        /// product codes.
+        /// If any snapshots have AWS Marketplace product codes, they are copied to the new AMI.
         /// </para>
         ///  
         /// <para>
@@ -10569,7 +10578,7 @@ namespace Amazon.EC2
         /// matching billing product code, the Reserved Instance will not be applied to the On-Demand
         /// Instance. For information about how to obtain the platform details and billing information
         /// of an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
-        /// Billing Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// billing information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>

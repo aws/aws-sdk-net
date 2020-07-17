@@ -31,7 +31,8 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeLaunchTemplateVersions operation.
     /// Describes one or more versions of a specified launch template. You can describe all
-    /// versions, individual versions, or a range of versions.
+    /// versions, individual versions, or a range of versions. You can also describe all the
+    /// latest versions or all the default versions of all the launch templates in your account.
     /// </summary>
     public partial class DescribeLaunchTemplateVersionsRequest : AmazonEC2Request
     {
@@ -100,8 +101,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateId. 
         /// <para>
-        /// The ID of the launch template. You must specify either the launch template ID or launch
-        /// template name in the request.
+        /// The ID of the launch template. To describe one or more versions of a specified launch
+        /// template, you must specify either the launch template ID or the launch template name
+        /// in the request. To describe all the latest or default launch template versions in
+        /// your account, you must omit this parameter.
         /// </para>
         /// </summary>
         public string LaunchTemplateId
@@ -119,8 +122,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateName. 
         /// <para>
-        /// The name of the launch template. You must specify either the launch template ID or
-        /// launch template name in the request.
+        /// The name of the launch template. To describe one or more versions of a specified launch
+        /// template, you must specify either the launch template ID or the launch template name
+        /// in the request. To describe all the latest or default launch template versions in
+        /// your account, you must omit this parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]
@@ -213,7 +218,22 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Versions. 
         /// <para>
-        /// One or more versions of the launch template.
+        /// One or more versions of the launch template. Valid values depend on whether you are
+        /// describing a specified launch template (by ID or name) or all launch templates in
+        /// your account.
+        /// </para>
+        ///  
+        /// <para>
+        /// To describe one or more versions of a specified launch template, valid values are
+        /// <code>$Latest</code>, <code>$Default</code>, and numbers.
+        /// </para>
+        ///  
+        /// <para>
+        /// To describe all launch templates in your account that are defined as the latest version,
+        /// the valid value is <code>$Latest</code>. To describe all launch templates in your
+        /// account that are defined as the default version, the valid value is <code>$Default</code>.
+        /// You can specify <code>$Latest</code> and <code>$Default</code> in the same call. You
+        /// cannot specify numbers.
         /// </para>
         /// </summary>
         public List<string> Versions

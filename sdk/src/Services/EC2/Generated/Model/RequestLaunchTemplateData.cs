@@ -121,7 +121,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CreditSpecification. 
         /// <para>
-        /// The credit option for CPU usage of the instance. Valid for T2 or T3 instances only.
+        /// The credit option for CPU usage of the instance. Valid for T2, T3, or T3a instances
+        /// only.
         /// </para>
         /// </summary>
         public CreditSpecificationRequest CreditSpecification
