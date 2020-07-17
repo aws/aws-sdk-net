@@ -64,8 +64,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A custom description of the custom data identifier. The description can contain up
-        /// to 120 characters.
+        /// A custom description of the custom data identifier. The description can contain as
+        /// many as 512 characters.
         /// </para>
         ///  
         /// <para>
@@ -152,7 +152,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A custom name for the custom data identifier. The name can contain as many as 120
+        /// A custom name for the custom data identifier. The name can contain as many as 128
         /// characters.
         /// </para>
         ///  
@@ -177,8 +177,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Regex. 
         /// <para>
-        /// The regular expression (regex) that defines the pattern to match. The expression can
-        /// contain as many as 500 characters.
+        /// The regular expression (<i>regex</i>) that defines the pattern to match. The expression
+        /// can contain as many as 512 characters.
         /// </para>
         /// </summary>
         public string Regex

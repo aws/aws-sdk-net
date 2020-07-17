@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Reserved for future use.
+    /// Provides information about an AWS service that performed an action on an affected
+    /// resource.
     /// </summary>
     public partial class AwsService
     {
@@ -38,7 +39,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property InvokedBy. 
         /// <para>
-        /// Reserved for future use.
+        /// The name of the AWS service that performed the action.
         /// </para>
         /// </summary>
         public string InvokedBy

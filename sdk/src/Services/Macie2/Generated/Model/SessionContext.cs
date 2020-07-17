@@ -59,7 +59,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property SessionIssuer. 
         /// <para>
-        /// The source and type of credentials that the entity obtained.
+        /// The source and type of credentials that were issued to the entity.
         /// </para>
         /// </summary>
         public SessionIssuer SessionIssuer

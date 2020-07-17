@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// The IP address of the device that the entity used to perform the action on the affected
-    /// resource. This object also provides information such as the owner and geographical
-    /// location for the IP address.
+    /// Provides information about the IP address of the device that an entity used to perform
+    /// an action on an affected resource.
     /// </summary>
     public partial class IpAddressDetails
     {
@@ -44,7 +43,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property IpAddressV4. 
         /// <para>
-        /// Reserved for future use.
+        /// The Internet Protocol version 4 (IPv4) address of the device.
         /// </para>
         /// </summary>
         public string IpAddressV4
@@ -62,7 +61,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property IpCity. 
         /// <para>
-        /// Reserved for future use.
+        /// The city that the IP address originated from.
         /// </para>
         /// </summary>
         public IpCity IpCity
@@ -80,7 +79,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property IpCountry. 
         /// <para>
-        /// Reserved for future use.
+        /// The country that the IP address originated from.
         /// </para>
         /// </summary>
         public IpCountry IpCountry
@@ -98,7 +97,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property IpGeoLocation. 
         /// <para>
-        /// Reserved for future use.
+        /// The geographic coordinates of the location that the IP address originated from.
         /// </para>
         /// </summary>
         public IpGeoLocation IpGeoLocation
@@ -116,7 +115,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property IpOwner. 
         /// <para>
-        /// Reserved for future use.
+        /// The registered owner of the IP address.
         /// </para>
         /// </summary>
         public IpOwner IpOwner

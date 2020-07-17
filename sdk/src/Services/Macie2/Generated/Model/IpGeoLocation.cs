@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Reserved for future use.
+    /// Provides geographic coordinates that indicate where a specified IP address originated
+    /// from.
     /// </summary>
     public partial class IpGeoLocation
     {
@@ -39,7 +40,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Lat. 
         /// <para>
-        /// Reserved for future use.
+        /// The latitude coordinate of the location, rounded to four decimal places.
         /// </para>
         /// </summary>
         public double Lat
@@ -57,7 +58,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Lon. 
         /// <para>
-        /// Reserved for future use.
+        /// The longitude coordinate of the location, rounded to four decimal places.
         /// </para>
         /// </summary>
         public double Lon

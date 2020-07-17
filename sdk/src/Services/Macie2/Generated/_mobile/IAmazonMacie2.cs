@@ -452,7 +452,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Deletes a custom data identifier.
+        /// Soft deletes a custom data identifier.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCustomDataIdentifier service method.</param>
         /// <param name="cancellationToken">
@@ -1582,8 +1582,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves information about the status and settings for one or more classification
-        /// jobs.
+        /// Retrieves a subset of information about one or more classification jobs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListClassificationJobs service method.</param>
         /// <param name="cancellationToken">

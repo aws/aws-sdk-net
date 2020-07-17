@@ -1143,6 +1143,10 @@ namespace Amazon.Macie2
     {
 
         /// <summary>
+        /// Constant AccountSuspended for RelationshipStatus
+        /// </summary>
+        public static readonly RelationshipStatus AccountSuspended = new RelationshipStatus("AccountSuspended");
+        /// <summary>
         /// Constant Created for RelationshipStatus
         /// </summary>
         public static readonly RelationshipStatus Created = new RelationshipStatus("Created");
@@ -1166,6 +1170,10 @@ namespace Amazon.Macie2
         /// Constant Paused for RelationshipStatus
         /// </summary>
         public static readonly RelationshipStatus Paused = new RelationshipStatus("Paused");
+        /// <summary>
+        /// Constant RegionDisabled for RelationshipStatus
+        /// </summary>
+        public static readonly RelationshipStatus RegionDisabled = new RelationshipStatus("RegionDisabled");
         /// <summary>
         /// Constant Removed for RelationshipStatus
         /// </summary>

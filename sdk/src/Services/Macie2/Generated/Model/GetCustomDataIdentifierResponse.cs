@@ -219,7 +219,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Regex. 
         /// <para>
-        /// The regular expression (regex) that defines the pattern to match.
+        /// The regular expression (<i>regex</i>) that defines the pattern to match.
         /// </para>
         /// </summary>
         public string Regex

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Reserved for future use.
+    /// Provides information about an AWS Identity and Access Management (IAM) user who performed
+    /// an action on an affected resource.
     /// </summary>
     public partial class IamUser
     {
@@ -41,7 +42,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// Reserved for future use.
+        /// The unique identifier for the AWS account that's associated with the IAM user who
+        /// performed the action.
         /// </para>
         /// </summary>
         public string AccountId
@@ -59,7 +61,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// Reserved for future use.
+        /// The Amazon Resource Name (ARN) of the principal that performed the action. The last
+        /// section of the ARN contains the name of the user who performed the action.
         /// </para>
         /// </summary>
         public string Arn
@@ -77,7 +80,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property PrincipalId. 
         /// <para>
-        /// Reserved for future use.
+        /// The unique identifier for the IAM user who performed the action.
         /// </para>
         /// </summary>
         public string PrincipalId
@@ -95,7 +98,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Reserved for future use.
+        /// The user name of the IAM user who performed the action.
         /// </para>
         /// </summary>
         public string UserName

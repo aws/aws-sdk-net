@@ -105,8 +105,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Regex. 
         /// <para>
-        /// The regular expression (regex) that defines the pattern to match. The expression can
-        /// contain as many as 500 characters.
+        /// The regular expression (<i>regex</i>) that defines the pattern to match. The expression
+        /// can contain as many as 512 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

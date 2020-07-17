@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Reserved for future use.
+    /// Provides information about an identity that performed an action on an affected resource
+    /// by using temporary security credentials. The credentials were obtained using the AssumeRole
+    /// operation of the AWS Security Token Service (AWS STS) API.
     /// </summary>
     public partial class AssumedRole
     {
@@ -42,7 +44,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccessKeyId. 
         /// <para>
-        /// Reserved for future use.
+        /// The AWS access key ID that identifies the credentials.
         /// </para>
         /// </summary>
         public string AccessKeyId
@@ -60,7 +62,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// Reserved for future use.
+        /// The unique identifier for the AWS account that owns the entity that was used to get
+        /// the credentials.
         /// </para>
         /// </summary>
         public string AccountId
@@ -78,7 +81,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// Reserved for future use.
+        /// The Amazon Resource Name (ARN) of the entity that was used to get the credentials.
         /// </para>
         /// </summary>
         public string Arn
@@ -96,7 +99,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property PrincipalId. 
         /// <para>
-        /// Reserved for future use.
+        /// The unique identifier for the entity that was used to get the credentials.
         /// </para>
         /// </summary>
         public string PrincipalId
@@ -114,7 +117,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property SessionContext. 
         /// <para>
-        /// Reserved for future use.
+        /// The details of the session that was created for the credentials, including the entity
+        /// that issued the session.
         /// </para>
         /// </summary>
         public SessionContext SessionContext

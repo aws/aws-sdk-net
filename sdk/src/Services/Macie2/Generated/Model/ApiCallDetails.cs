@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Reserved for future use.
+    /// Provides information about an API operation that an entity invoked for an affected
+    /// resource.
     /// </summary>
     public partial class ApiCallDetails
     {
@@ -41,7 +42,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Api. 
         /// <para>
-        /// Reserved for future use.
+        /// The name of the operation that was invoked most recently and produced the finding.
         /// </para>
         /// </summary>
         public string Api
@@ -59,7 +60,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ApiServiceName. 
         /// <para>
-        /// Reserved for future use.
+        /// The URL of the AWS service that provides the operation, for example: s3.amazonaws.com.
         /// </para>
         /// </summary>
         public string ApiServiceName
@@ -77,7 +78,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property FirstSeen. 
         /// <para>
-        /// Reserved for future use.
+        /// The first date and time, in UTC and extended ISO 8601 format, when any operation was
+        /// invoked and produced the finding.
         /// </para>
         /// </summary>
         public DateTime FirstSeen
@@ -95,7 +97,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property LastSeen. 
         /// <para>
-        /// Reserved for future use.
+        /// The most recent date and time, in UTC and extended ISO 8601 format, when the specified
+        /// operation (api) was invoked and produced the finding.
         /// </para>
         /// </summary>
         public DateTime LastSeen

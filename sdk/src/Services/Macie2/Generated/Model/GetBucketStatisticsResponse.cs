@@ -64,7 +64,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property BucketCountByEffectivePermission. 
         /// <para>
-        /// The total number of buckets that are publicly accessible, based on a combination of
+        /// The total number of buckets that are publicly accessible based on a combination of
         /// permissions settings for each bucket.
         /// </para>
         /// </summary>
@@ -102,8 +102,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property BucketCountBySharedAccessType. 
         /// <para>
-        /// The total number of buckets that are shared with another AWS account or configured
-        /// to support cross-origin resource sharing (CORS).
+        /// The total number of buckets that are shared with another AWS account.
         /// </para>
         /// </summary>
         public BucketCountBySharedAccessType BucketCountBySharedAccessType
@@ -121,9 +120,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ClassifiableObjectCount. 
         /// <para>
-        /// The total number of objects that Amazon Macie can monitor and analyze in all the buckets.
-        /// These objects use a file format, file extension, or content type that Amazon Macie
-        /// supports.
+        /// The total number of objects that Amazon Macie can analyze in all the buckets. These
+        /// objects use a file format, file extension, or content type that Amazon Macie supports.
         /// </para>
         /// </summary>
         public long ClassifiableObjectCount

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies criteria for sorting the results of a query for information about findings.
+    /// Specifies criteria for sorting the results of a query that retrieves aggregated statistical
+    /// data about findings.
     /// </summary>
     public partial class FindingStatisticsSortCriteria
     {

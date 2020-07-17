@@ -180,7 +180,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// The current status of the job. Possible value are:
+        /// The current status of the job. Possible values are:
         /// </para>
         ///  <ul><li>
         /// <para>
@@ -223,7 +223,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property JobType. 
         /// <para>
-        /// The schedule for running the job. Possible value are:
+        /// The schedule for running the job. Possible values are:
         /// </para>
         ///  <ul><li>
         /// <para>
@@ -323,9 +323,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ScheduleFrequency. 
         /// <para>
-        /// The recurrence pattern for running the job. If the job is configured to run every
-        /// day, this value is an empty dailySchedule object. If the job is configured to run
-        /// only once, this value is null.
+        /// The recurrence pattern for running the job. If the job is configured to run only once,
+        /// this value is null.
         /// </para>
         /// </summary>
         public JobScheduleFrequency ScheduleFrequency

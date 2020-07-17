@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides detailed information about a policy finding.
+    /// Provides the details of a policy finding.
     /// </summary>
     public partial class PolicyDetails
     {
@@ -39,7 +39,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action that occurred and produced the finding.
+        /// The action that produced the finding.
         /// </para>
         /// </summary>
         public FindingAction Action

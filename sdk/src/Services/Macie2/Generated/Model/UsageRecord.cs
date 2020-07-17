@@ -40,7 +40,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID for the account that the data applies to.
+        /// The unique identifier for the AWS account that the data applies to.
         /// </para>
         /// </summary>
         public string AccountId

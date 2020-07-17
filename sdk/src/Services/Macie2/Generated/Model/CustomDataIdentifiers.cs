@@ -40,8 +40,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Detections. 
         /// <para>
-        /// The names of the custom data identifiers that detected the data, and the number of
-        /// occurrences of the data that each identifier detected.
+        /// The custom data identifiers that detected the data, and the number of occurrences
+        /// of the data that each identifier detected.
         /// </para>
         /// </summary>
         public List<CustomDetection> Detections

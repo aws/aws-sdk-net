@@ -43,7 +43,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account that owns the entity that was used to get the credentials.
+        /// The unique identifier for the AWS account that owns the entity that was used to get
+        /// the credentials.
         /// </para>
         /// </summary>
         public string AccountId
@@ -80,7 +81,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property PrincipalId. 
         /// <para>
-        /// The internal identifier for the entity that was used to get the credentials.
+        /// The unique identifier for the entity that was used to get the credentials.
         /// </para>
         /// </summary>
         public string PrincipalId

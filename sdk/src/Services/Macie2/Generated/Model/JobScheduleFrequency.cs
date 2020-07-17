@@ -40,7 +40,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property DailySchedule. 
         /// <para>
-        /// Run the job once a day, every day. If specified, this is an empty object.
+        /// Specifies a daily recurrence pattern for running the job.
         /// </para>
         /// </summary>
         public DailySchedule DailySchedule
@@ -58,8 +58,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property MonthlySchedule. 
         /// <para>
-        /// Run the job once a month, on a specific day of the month. This value can be an integer
-        /// from 1 through 30.
+        /// Specifies a monthly recurrence pattern for running the job.
         /// </para>
         /// </summary>
         public MonthlySchedule MonthlySchedule
@@ -77,8 +76,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property WeeklySchedule. 
         /// <para>
-        /// Run the job once a week, on a specific day of the week. Valid values are: MONDAY,
-        /// TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, and SUNDAY.
+        /// Specifies a weekly recurrence pattern for running the job.
         /// </para>
         /// </summary>
         public WeeklySchedule WeeklySchedule

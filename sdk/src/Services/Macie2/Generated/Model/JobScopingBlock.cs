@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Reserved for future use.
+    /// Specifies one or more property- and tag-based conditions that define criteria for
+    /// including or excluding objects from a classification job.
     /// </summary>
     public partial class JobScopingBlock
     {
@@ -38,7 +39,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property And. 
         /// <para>
-        /// Reserved for future use.
+        /// An array of conditions, one for each condition that determines which objects to include
+        /// or exclude from the job.
         /// </para>
         /// </summary>
         public List<JobScopeTerm> And

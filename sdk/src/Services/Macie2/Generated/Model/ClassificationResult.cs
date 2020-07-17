@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Provides detailed information about a sensitive data finding, including the types
-    /// and number of occurrences of the data that was found.
+    /// and number of occurrences of the sensitive data that was found.
     /// </summary>
     public partial class ClassificationResult
     {

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Reserved for future use.
+    /// Provides information about the registered owner of an IP address.
     /// </summary>
     public partial class IpOwner
     {
@@ -41,7 +41,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Asn. 
         /// <para>
-        /// Reserved for future use.
+        /// The autonomous system number (ASN) for the autonomous system that included the IP
+        /// address.
         /// </para>
         /// </summary>
         public string Asn
@@ -59,7 +60,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AsnOrg. 
         /// <para>
-        /// Reserved for future use.
+        /// The organization identifier that's associated with the autonomous system number (ASN)
+        /// for the autonomous system that included the IP address.
         /// </para>
         /// </summary>
         public string AsnOrg
@@ -77,7 +79,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Isp. 
         /// <para>
-        /// Reserved for future use.
+        /// The name of the internet service provider (ISP) that owned the IP address.
         /// </para>
         /// </summary>
         public string Isp
@@ -95,7 +97,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Org. 
         /// <para>
-        /// Reserved for future use.
+        /// The name of the organization that owned the IP address.
         /// </para>
         /// </summary>
         public string Org

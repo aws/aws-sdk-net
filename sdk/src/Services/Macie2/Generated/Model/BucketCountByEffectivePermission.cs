@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// The total number of buckets that are publicly accessible, based on a combination of
-    /// permissions settings for each bucket.
+    /// Provides information about the number of S3 buckets that are publicly accessible based
+    /// on a combination of permissions settings for each bucket.
     /// </summary>
     public partial class BucketCountByEffectivePermission
     {
@@ -41,7 +41,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// Reserved for future use.
+        /// The total number of buckets that allow the general public to have read or write access
+        /// to the bucket.
         /// </para>
         /// </summary>
         public long PubliclyAccessible
@@ -59,7 +60,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property PubliclyReadable. 
         /// <para>
-        /// Reserved for future use.
+        /// The total number of buckets that allow the general public to have read access to the
+        /// bucket.
         /// </para>
         /// </summary>
         public long PubliclyReadable
@@ -77,7 +79,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property PubliclyWritable. 
         /// <para>
-        /// Reserved for future use.
+        /// The total number of buckets that allow the general public to have write access to
+        /// the bucket.
         /// </para>
         /// </summary>
         public long PubliclyWritable

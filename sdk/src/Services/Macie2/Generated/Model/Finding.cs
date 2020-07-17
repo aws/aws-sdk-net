@@ -55,7 +55,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The identifier for the AWS account that the finding applies to. This is typically
+        /// The unique identifier for the AWS account that the finding applies to. This is typically
         /// the account that owns the affected resource.
         /// </para>
         /// </summary>

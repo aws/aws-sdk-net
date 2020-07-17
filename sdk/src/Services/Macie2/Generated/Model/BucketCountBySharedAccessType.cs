@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// The total number of buckets that are shared with another AWS account or configured
-    /// to support cross-origin resource sharing (CORS).
+    /// Provides information about the number of S3 buckets that are shared with other AWS
+    /// accounts.
     /// </summary>
     public partial class BucketCountBySharedAccessType
     {
@@ -41,7 +41,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property External. 
         /// <para>
-        /// Reserved for future use.
+        /// The total number of buckets that are shared with an AWS account that isn't part of
+        /// the same Amazon Macie organization.
         /// </para>
         /// </summary>
         public long External
@@ -59,7 +60,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Internal. 
         /// <para>
-        /// Reserved for future use.
+        /// The total number of buckets that are shared with an AWS account that's part of the
+        /// same Amazon Macie organization.
         /// </para>
         /// </summary>
         public long Internal
@@ -77,7 +79,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property NotShared. 
         /// <para>
-        /// Reserved for future use.
+        /// The total number of buckets that aren't shared with any other AWS accounts.
         /// </para>
         /// </summary>
         public long NotShared

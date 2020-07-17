@@ -84,7 +84,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A custom description of the job. The description can contain as many as 512 characters.
+        /// A custom description of the job. The description can contain as many as 200 characters.
         /// </para>
         /// </summary>
         public string Description
@@ -151,8 +151,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A custom name for the job. The name must contain at least 3 characters and can contain
-        /// as many as 64 characters.
+        /// A custom name for the job. The name can contain as many as 500 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

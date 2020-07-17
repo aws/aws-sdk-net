@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides a group of results for a query that retrieved information about findings.
+    /// Provides a group of results for a query that retrieved aggregated statistical data
+    /// about findings.
     /// </summary>
     public partial class GroupCount
     {

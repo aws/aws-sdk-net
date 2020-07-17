@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// An object that specifies conditions for including or excluding objects from the job.
+    /// Specifies one or more property- and tag-based conditions that refine the scope of
+    /// a classification job. These conditions define criteria that determine which objects
+    /// a job analyzes.
     /// </summary>
     public partial class Scoping
     {
@@ -39,7 +41,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Excludes. 
         /// <para>
-        /// Reserved for future use.
+        /// The property- or tag-based conditions that determine which objects to exclude from
+        /// the analysis.
         /// </para>
         /// </summary>
         public JobScopingBlock Excludes
@@ -57,7 +60,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Includes. 
         /// <para>
-        /// Reserved for future use.
+        /// The property- or tag-based conditions that determine which objects to include in the
+        /// analysis.
         /// </para>
         /// </summary>
         public JobScopingBlock Includes
