@@ -395,6 +395,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.CoipPool.PoolArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.ElasticInferenceAccelerator.Count</property>
     <min>1</min>
   </property-value-rule>
