@@ -56,6 +56,7 @@ namespace Amazon.S3.Util
 
         /// <summary>
         /// Constructs a parser for the S3 URI specified as a string.
+        /// An encoded URI is expected.
         /// </summary>
         /// <param name="uri">The S3 URI to be parsed.</param>
         public AmazonS3Uri(string uri)
@@ -65,6 +66,7 @@ namespace Amazon.S3.Util
 
         /// <summary>
         /// Constructs a parser for the S3 URI specified as a Uri instance.
+        /// An encoded URI is expected.
         /// </summary>
         /// <param name="uri">The S3 URI to be parsed.</param>
         public AmazonS3Uri(Uri uri)
@@ -130,7 +132,7 @@ namespace Amazon.S3.Util
 
                 // remove any trailing '.' from the prefix to get the bucket name
                 this.Bucket = bucketNameGroup.Value.TrimEnd('.');
-                this.Key = uri.AbsolutePath.Equals("/") ? null : uri.AbsolutePath.Substring(1);
+                this.Key = uri.AbsolutePath.Equals("/") ? null : Decode(uri.AbsolutePath.Substring(1));
             }
 
             if (match.Groups.Count > 2)
