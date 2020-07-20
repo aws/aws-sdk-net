@@ -40,6 +40,7 @@ namespace Amazon.CodeBuild.Model
         private ProjectCache _cacheOverride;
         private string _certificateOverride;
         private ComputeType _computeTypeOverride;
+        private bool? _debugSessionEnabled;
         private string _encryptionKeyOverride;
         private EnvironmentType _environmentTypeOverride;
         private List<EnvironmentVariable> _environmentVariablesOverride = new List<EnvironmentVariable>();
@@ -189,6 +190,26 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetComputeTypeOverride()
         {
             return this._computeTypeOverride != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DebugSessionEnabled. 
+        /// <para>
+        /// Specifies if session debugging is enabled for this build. For more information, see
+        /// <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+        /// a running build in Session Manager</a>.
+        /// </para>
+        /// </summary>
+        public bool DebugSessionEnabled
+        {
+            get { return this._debugSessionEnabled.GetValueOrDefault(); }
+            set { this._debugSessionEnabled = value; }
+        }
+
+        // Check to see if DebugSessionEnabled property is set
+        internal bool IsSetDebugSessionEnabled()
+        {
+            return this._debugSessionEnabled.HasValue; 
         }
 
         /// <summary>

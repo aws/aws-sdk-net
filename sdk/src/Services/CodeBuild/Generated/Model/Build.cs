@@ -40,6 +40,7 @@ namespace Amazon.CodeBuild.Model
         private StatusType _buildStatus;
         private ProjectCache _cache;
         private string _currentPhase;
+        private DebugSession _debugSession;
         private string _encryptionKey;
         private DateTime? _endTime;
         private ProjectEnvironment _environment;
@@ -217,6 +218,24 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetCurrentPhase()
         {
             return this._currentPhase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DebugSession. 
+        /// <para>
+        /// Contains information about the debug session for this build.
+        /// </para>
+        /// </summary>
+        public DebugSession DebugSession
+        {
+            get { return this._debugSession; }
+            set { this._debugSession = value; }
+        }
+
+        // Check to see if DebugSession property is set
+        internal bool IsSetDebugSession()
+        {
+            return this._debugSession != null;
         }
 
         /// <summary>

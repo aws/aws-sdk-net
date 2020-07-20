@@ -119,6 +119,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ComputeTypeOverride);
                 }
 
+                if(publicRequest.IsSetDebugSessionEnabled())
+                {
+                    context.Writer.WritePropertyName("debugSessionEnabled");
+                    context.Writer.Write(publicRequest.DebugSessionEnabled);
+                }
+
                 if(publicRequest.IsSetEncryptionKeyOverride())
                 {
                     context.Writer.WritePropertyName("encryptionKeyOverride");
