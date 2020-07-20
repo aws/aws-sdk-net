@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2020-05-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,8 +29,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
+    /// This field is deprecated. We recommend that you use a cache policy or an origin request
+    /// policy instead of this field.
+    /// 
+    ///  
+    /// <para>
+    /// If you want to include query strings in the cache key, use <code>QueryStringsConfig</code>
+    /// in a cache policy. See <code>CreateCachePolicy</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you want to send query strings to the origin but not include them in the cache
+    /// key, use <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+    /// </para>
+    ///  
+    /// <para>
     /// A complex type that contains information about the query string parameters that you
-    /// want CloudFront to use for caching for a cache behavior.
+    /// want CloudFront to use for caching for a cache behavior. 
+    /// </para>
     /// </summary>
     public partial class QueryStringCacheKeys
     {

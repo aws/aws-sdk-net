@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2020-05-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -62,7 +62,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetMaxItems())
                 request.Parameters.Add("MaxItems", StringUtils.FromString(publicRequest.MaxItems));
-            request.ResourcePath = "/2019-03-26/origin-access-identity/cloudfront";
+            request.ResourcePath = "/2020-05-31/origin-access-identity/cloudfront";
             request.MarshallerVersion = 2;
 
 

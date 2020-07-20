@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2020-05-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -61,6 +61,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.AllowedMethods = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CachePolicyId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CachePolicyId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Compress", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
@@ -101,6 +107,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = LongUnmarshaller.Instance;
                         unmarshalledObject.MinTTL = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("OriginRequestPolicyId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OriginRequestPolicyId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SmoothStreaming", targetDepth))

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2020-05-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -51,9 +51,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>origin-request</code>: The function executes only when CloudFront forwards
-        /// a request to your origin. When the requested object is in the edge cache, the function
-        /// doesn't execute.
+        ///  <code>origin-request</code>: The function executes only when CloudFront sends a request
+        /// to your origin. When the requested object is in the edge cache, the function doesn't
+        /// execute.
         /// </para>
         ///  </li> <li> 
         /// <para>

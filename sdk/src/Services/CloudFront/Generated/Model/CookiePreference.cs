@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2020-05-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,10 +29,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
+    /// This field is deprecated. We recommend that you use a cache policy or an origin request
+    /// policy instead of this field.
+    /// 
+    ///  
+    /// <para>
+    /// If you want to include cookies in the cache key, use <code>CookiesConfig</code> in
+    /// a cache policy. See <code>CreateCachePolicy</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you want to send cookies to the origin but not include them in the cache key, use
+    /// <code>CookiesConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+    /// </para>
+    ///  
+    /// <para>
     /// A complex type that specifies whether you want CloudFront to forward cookies to the
     /// origin and, if so, which ones. For more information about forwarding cookies to the
     /// origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">Caching
     /// Content Based on Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CookiePreference
     {
@@ -41,6 +57,21 @@ namespace Amazon.CloudFront.Model
 
         /// <summary>
         /// Gets and sets the property Forward. 
+        /// <para>
+        /// This field is deprecated. We recommend that you use a cache policy or an origin request
+        /// policy instead of this field.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to include cookies in the cache key, use <code>CookiesConfig</code> in
+        /// a cache policy. See <code>CreateCachePolicy</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to send cookies to the origin but not include them in the cache key, use
+        /// <code>CookiesConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+        /// </para>
+        ///  
         /// <para>
         /// Specifies which cookies to forward to the origin for this cache behavior: all, none,
         /// or the list of cookies specified in the <code>WhitelistedNames</code> complex type.
@@ -66,6 +97,21 @@ namespace Amazon.CloudFront.Model
 
         /// <summary>
         /// Gets and sets the property WhitelistedNames. 
+        /// <para>
+        /// This field is deprecated. We recommend that you use a cache policy or an origin request
+        /// policy instead of this field.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to include cookies in the cache key, use <code>CookiesConfig</code> in
+        /// a cache policy. See <code>CreateCachePolicy</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to send cookies to the origin but not include them in the cache key, use
+        /// <code>CookiesConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+        /// </para>
+        ///  
         /// <para>
         /// Required if you specify <code>whitelist</code> for the value of <code>Forward</code>.
         /// A complex type that specifies how many different cookies you want CloudFront to forward

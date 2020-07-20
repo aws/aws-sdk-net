@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2020-05-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -37,6 +37,7 @@ namespace Amazon.CloudFront.Model
     public partial class DefaultCacheBehavior
     {
         private AllowedMethods _allowedMethods;
+        private string _cachePolicyId;
         private bool? _compress;
         private long? _defaultTTL;
         private string _fieldLevelEncryptionId;
@@ -44,6 +45,7 @@ namespace Amazon.CloudFront.Model
         private LambdaFunctionAssociations _lambdaFunctionAssociations;
         private long? _maxTTL;
         private long? _minTTL;
+        private string _originRequestPolicyId;
         private bool? _smoothStreaming;
         private string _targetOriginId;
         private TrustedSigners _trustedSigners;
@@ -62,6 +64,25 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetAllowedMethods()
         {
             return this._allowedMethods != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CachePolicyId. 
+        /// <para>
+        /// The unique identifier of the cache policy that is attached to the default cache behavior.
+        /// For more information, see <a>CachePolicy</a>.
+        /// </para>
+        /// </summary>
+        public string CachePolicyId
+        {
+            get { return this._cachePolicyId; }
+            set { this._cachePolicyId = value; }
+        }
+
+        // Check to see if CachePolicyId property is set
+        internal bool IsSetCachePolicyId()
+        {
+            return this._cachePolicyId != null;
         }
 
         /// <summary>
@@ -88,6 +109,11 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DefaultTTL. 
         /// <para>
+        /// This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field
+        /// in <code>CachePolicyConfig</code> instead of this field.
+        /// </para>
+        ///  
+        /// <para>
         /// The default amount of time that you want objects to stay in CloudFront caches before
         /// CloudFront forwards another request to your origin to determine whether the object
         /// has been updated. The value that you specify applies only when your origin does not
@@ -97,6 +123,7 @@ namespace Amazon.CloudFront.Model
         /// Developer Guide</i>.
         /// </para>
         /// </summary>
+        [Obsolete("This field is deprecated. Use CachePolicy instead.")]
         public long DefaultTTL
         {
             get { return this._defaultTTL.GetValueOrDefault(); }
@@ -132,11 +159,26 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ForwardedValues. 
         /// <para>
+        /// This field is deprecated. We recommend that you use a cache policy or an origin request
+        /// policy instead of this field.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to include values in the cache key, use a <code>CachePolicy</code>. See
+        /// <code>CreateCachePolicy</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to send values to the origin but not include them in the cache key, use
+        /// an <code>OriginRequestPolicy</code>. See <code>CreateOriginRequestPolicy</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// A complex type that specifies how CloudFront handles query strings, cookies, and HTTP
         /// headers.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("This field is deprecated. Use CachePolicy instead.")]
         public ForwardedValues ForwardedValues
         {
             get { return this._forwardedValues; }
@@ -171,6 +213,11 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property MaxTTL. 
         /// <para>
+        /// This field is deprecated. We recommend that you use the <code>MaxTTL</code> field
+        /// in <code>CachePolicyConfig</code> instead of this field.
+        /// </para>
+        ///  
+        /// <para>
         /// The maximum amount of time that you want objects to stay in CloudFront caches before
         /// CloudFront forwards another request to your origin to determine whether the object
         /// has been updated. The value that you specify applies only when your origin adds HTTP
@@ -180,6 +227,7 @@ namespace Amazon.CloudFront.Model
         /// Developer Guide</i>.
         /// </para>
         /// </summary>
+        [Obsolete("This field is deprecated. Use CachePolicy instead.")]
         public long MaxTTL
         {
             get { return this._maxTTL.GetValueOrDefault(); }
@@ -195,6 +243,11 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property MinTTL. 
         /// <para>
+        /// This field is deprecated. We recommend that you use the <code>MinTTL</code> field
+        /// in <code>CachePolicyConfig</code> instead of this field.
+        /// </para>
+        ///  
+        /// <para>
         /// The minimum amount of time that you want objects to stay in CloudFront caches before
         /// CloudFront forwards another request to your origin to determine whether the object
         /// has been updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
@@ -208,7 +261,7 @@ namespace Amazon.CloudFront.Model
         /// <code>1</code> for <code>Quantity</code> and <code>*</code> for <code>Name</code>).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("This field is deprecated. Use CachePolicy instead.")]
         public long MinTTL
         {
             get { return this._minTTL.GetValueOrDefault(); }
@@ -219,6 +272,25 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetMinTTL()
         {
             return this._minTTL.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginRequestPolicyId. 
+        /// <para>
+        /// The unique identifier of the origin request policy that is attached to the default
+        /// cache behavior. For more information, see <a>OriginRequestPolicy</a>.
+        /// </para>
+        /// </summary>
+        public string OriginRequestPolicyId
+        {
+            get { return this._originRequestPolicyId; }
+            set { this._originRequestPolicyId = value; }
+        }
+
+        // Check to see if OriginRequestPolicyId property is set
+        internal bool IsSetOriginRequestPolicyId()
+        {
+            return this._originRequestPolicyId != null;
         }
 
         /// <summary>

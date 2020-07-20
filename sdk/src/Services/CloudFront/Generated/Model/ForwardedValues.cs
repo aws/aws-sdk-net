@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2020-05-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,8 +29,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
+    /// This field is deprecated. We recommend that you use a cache policy or an origin request
+    /// policy instead of this field.
+    /// 
+    ///  
+    /// <para>
+    /// If you want to include values in the cache key, use a <code>CachePolicy</code>. See
+    /// <code>CreateCachePolicy</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you want to send values to the origin but not include them in the cache key, use
+    /// an <code>OriginRequestPolicy</code>. See <code>CreateOriginRequestPolicy</code>.
+    /// </para>
+    ///  
+    /// <para>
     /// A complex type that specifies how CloudFront handles query strings, cookies, and HTTP
     /// headers.
+    /// </para>
     /// </summary>
     public partial class ForwardedValues
     {
@@ -41,6 +57,21 @@ namespace Amazon.CloudFront.Model
 
         /// <summary>
         /// Gets and sets the property Cookies. 
+        /// <para>
+        /// This field is deprecated. We recommend that you use a cache policy or an origin request
+        /// policy instead of this field.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to include cookies in the cache key, use <code>CookiesConfig</code> in
+        /// a cache policy. See <code>CreateCachePolicy</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to send cookies to the origin but not include them in the cache key, use
+        /// <code>CookiesConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+        /// </para>
+        ///  
         /// <para>
         /// A complex type that specifies whether you want CloudFront to forward cookies to the
         /// origin and, if so, which ones. For more information about forwarding cookies to the
@@ -64,6 +95,21 @@ namespace Amazon.CloudFront.Model
 
         /// <summary>
         /// Gets and sets the property Headers. 
+        /// <para>
+        /// This field is deprecated. We recommend that you use a cache policy or an origin request
+        /// policy instead of this field.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to include headers in the cache key, use <code>HeadersConfig</code> in
+        /// a cache policy. See <code>CreateCachePolicy</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to send headers to the origin but not include them in the cache key, use
+        /// <code>HeadersConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+        /// </para>
+        ///  
         /// <para>
         /// A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront
         /// to forward to the origin for this cache behavior (whitelisted headers). For the headers
@@ -91,6 +137,21 @@ namespace Amazon.CloudFront.Model
 
         /// <summary>
         /// Gets and sets the property QueryString. 
+        /// <para>
+        /// This field is deprecated. We recommend that you use a cache policy or an origin request
+        /// policy instead of this field.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to include query strings in the cache key, use <code>QueryStringsConfig</code>
+        /// in a cache policy. See <code>CreateCachePolicy</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to send query strings to the origin but not include them in the cache
+        /// key, use <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+        /// </para>
+        ///  
         /// <para>
         /// Indicates whether you want CloudFront to forward query strings to the origin that
         /// is associated with this cache behavior and cache based on the query string parameters.
@@ -138,6 +199,21 @@ namespace Amazon.CloudFront.Model
 
         /// <summary>
         /// Gets and sets the property QueryStringCacheKeys. 
+        /// <para>
+        /// This field is deprecated. We recommend that you use a cache policy or an origin request
+        /// policy instead of this field.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to include query strings in the cache key, use <code>QueryStringsConfig</code>
+        /// in a cache policy. See <code>CreateCachePolicy</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to send query strings to the origin but not include them in the cache
+        /// key, use an <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+        /// </para>
+        ///  
         /// <para>
         /// A complex type that contains information about the query string parameters that you
         /// want CloudFront to use for caching for this cache behavior.
