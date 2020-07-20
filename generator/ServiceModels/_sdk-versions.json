@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.779.0",
+    "ProductVersion" : "3.3.780.0",
     "CoreVersion"    : "3.3.107.26",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -37,7 +37,7 @@
             "InPreview"               : false
         },
         "CloudFront"     : {
-            "Version" : "3.3.103.5",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : "3.3.4.0",
             "Dependencies"            : {
                 "Core" : "3.3.107.26"
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.190.0",
+            "Version" : "3.3.191.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.26"
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.125.6",
+            "Version" : "3.3.126.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.26"
@@ -657,7 +657,7 @@
             "InPreview"               : false
         },
         "CodeBuild"                       : {
-            "Version" : "3.3.112.7",
+            "Version" : "3.3.113.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.26"
@@ -1065,7 +1065,7 @@
             "InPreview"               : false
         },
         "FMS"                             : {
-            "Version" : "3.3.105.45",
+            "Version" : "3.3.106.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.26"
@@ -1401,7 +1401,7 @@
             "InPreview"               : false
         },
         "GroundStation"                   : {
-            "Version" : "3.3.101.80",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.26"
@@ -1689,7 +1689,7 @@
             "InPreview"               : false
         },
         "FraudDetector"                   : {
-            "Version" : "3.3.101.48",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.26"
