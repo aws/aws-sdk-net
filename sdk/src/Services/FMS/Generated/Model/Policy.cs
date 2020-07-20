@@ -188,7 +188,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// The friendly name of the AWS Firewall Manager policy.
+        /// The name of the AWS Firewall Manager policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

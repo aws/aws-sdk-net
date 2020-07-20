@@ -30,9 +30,8 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListComplianceStatus operation.
-    /// Returns an array of <code>PolicyComplianceStatus</code> objects in the response. Use
-    /// <code>PolicyComplianceStatus</code> to get a summary of which member accounts are
-    /// protected by the specified policy.
+    /// Returns an array of <code>PolicyComplianceStatus</code> objects. Use <code>PolicyComplianceStatus</code>
+    /// to get a summary of which member accounts are protected by the specified policy.
     /// </summary>
     public partial class ListComplianceStatusRequest : AmazonFMSRequest
     {

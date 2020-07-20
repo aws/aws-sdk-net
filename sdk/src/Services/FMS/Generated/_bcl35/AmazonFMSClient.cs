@@ -269,9 +269,12 @@ namespace Amazon.FMS
         /// The parameters of the request were invalid.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
-        /// The operation failed because there was nothing to do. For example, you might have
-        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
-        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -322,6 +325,75 @@ namespace Amazon.FMS
 
         #endregion
         
+        #region  DeleteAppsList
+
+        /// <summary>
+        /// Permanently deletes an AWS Firewall Manager applications list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppsList service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAppsList service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteAppsList">REST API Reference for DeleteAppsList Operation</seealso>
+        public virtual DeleteAppsListResponse DeleteAppsList(DeleteAppsListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppsListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppsListResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAppsListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAppsList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppsList operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAppsList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteAppsList">REST API Reference for DeleteAppsList Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAppsList(DeleteAppsListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppsListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppsListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAppsList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAppsList.</param>
+        /// 
+        /// <returns>Returns a  DeleteAppsListResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteAppsList">REST API Reference for DeleteAppsList Operation</seealso>
+        public virtual DeleteAppsListResponse EndDeleteAppsList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAppsListResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteNotificationChannel
 
         /// <summary>
@@ -336,9 +408,12 @@ namespace Amazon.FMS
         /// Retry your request.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
-        /// The operation failed because there was nothing to do. For example, you might have
-        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
-        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -402,9 +477,12 @@ namespace Amazon.FMS
         /// Retry your request.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
-        /// The operation failed because there was nothing to do. For example, you might have
-        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
-        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -455,6 +533,75 @@ namespace Amazon.FMS
 
         #endregion
         
+        #region  DeleteProtocolsList
+
+        /// <summary>
+        /// Permanently deletes an AWS Firewall Manager protocols list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProtocolsList service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProtocolsList service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteProtocolsList">REST API Reference for DeleteProtocolsList Operation</seealso>
+        public virtual DeleteProtocolsListResponse DeleteProtocolsList(DeleteProtocolsListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProtocolsListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProtocolsListResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProtocolsListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProtocolsList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProtocolsList operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProtocolsList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteProtocolsList">REST API Reference for DeleteProtocolsList Operation</seealso>
+        public virtual IAsyncResult BeginDeleteProtocolsList(DeleteProtocolsListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProtocolsListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProtocolsListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteProtocolsList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteProtocolsList.</param>
+        /// 
+        /// <returns>Returns a  DeleteProtocolsListResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteProtocolsList">REST API Reference for DeleteProtocolsList Operation</seealso>
+        public virtual DeleteProtocolsListResponse EndDeleteProtocolsList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteProtocolsListResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateAdminAccount
 
         /// <summary>
@@ -470,9 +617,12 @@ namespace Amazon.FMS
         /// Retry your request.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
-        /// The operation failed because there was nothing to do. For example, you might have
-        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
-        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -537,9 +687,12 @@ namespace Amazon.FMS
         /// Retry your request.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
-        /// The operation failed because there was nothing to do. For example, you might have
-        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
-        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -590,6 +743,75 @@ namespace Amazon.FMS
 
         #endregion
         
+        #region  GetAppsList
+
+        /// <summary>
+        /// Returns information about the specified AWS Firewall Manager applications list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAppsList service method.</param>
+        /// 
+        /// <returns>The response from the GetAppsList service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAppsList">REST API Reference for GetAppsList Operation</seealso>
+        public virtual GetAppsListResponse GetAppsList(GetAppsListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppsListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppsListResponseUnmarshaller.Instance;
+
+            return Invoke<GetAppsListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAppsList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAppsList operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAppsList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAppsList">REST API Reference for GetAppsList Operation</seealso>
+        public virtual IAsyncResult BeginGetAppsList(GetAppsListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppsListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppsListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAppsList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAppsList.</param>
+        /// 
+        /// <returns>Returns a  GetAppsListResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAppsList">REST API Reference for GetAppsList Operation</seealso>
+        public virtual GetAppsListResponse EndGetAppsList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAppsListResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetComplianceDetail
 
         /// <summary>
@@ -606,6 +828,17 @@ namespace Amazon.FMS
         /// <exception cref="Amazon.FMS.Model.InternalErrorException">
         /// The operation failed because of a system problem, even though the request was valid.
         /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -670,9 +903,12 @@ namespace Amazon.FMS
         /// Retry your request.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
-        /// The operation failed because there was nothing to do. For example, you might have
-        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
-        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -736,9 +972,12 @@ namespace Amazon.FMS
         /// Retry your request.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
-        /// The operation failed because there was nothing to do. For example, you might have
-        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
-        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.InvalidTypeException">
         /// The value of the <code>Type</code> parameter is invalid.
@@ -857,12 +1096,219 @@ namespace Amazon.FMS
 
         #endregion
         
+        #region  GetProtocolsList
+
+        /// <summary>
+        /// Returns information about the specified AWS Firewall Manager protocols list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProtocolsList service method.</param>
+        /// 
+        /// <returns>The response from the GetProtocolsList service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtocolsList">REST API Reference for GetProtocolsList Operation</seealso>
+        public virtual GetProtocolsListResponse GetProtocolsList(GetProtocolsListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProtocolsListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProtocolsListResponseUnmarshaller.Instance;
+
+            return Invoke<GetProtocolsListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetProtocolsList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetProtocolsList operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetProtocolsList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtocolsList">REST API Reference for GetProtocolsList Operation</seealso>
+        public virtual IAsyncResult BeginGetProtocolsList(GetProtocolsListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProtocolsListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProtocolsListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetProtocolsList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetProtocolsList.</param>
+        /// 
+        /// <returns>Returns a  GetProtocolsListResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtocolsList">REST API Reference for GetProtocolsList Operation</seealso>
+        public virtual GetProtocolsListResponse EndGetProtocolsList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetProtocolsListResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetViolationDetails
+
+        /// <summary>
+        /// Retrieves violations for a resource based on the specified AWS Firewall Manager policy
+        /// and AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetViolationDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetViolationDetails service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetViolationDetails">REST API Reference for GetViolationDetails Operation</seealso>
+        public virtual GetViolationDetailsResponse GetViolationDetails(GetViolationDetailsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetViolationDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetViolationDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetViolationDetailsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetViolationDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetViolationDetails operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetViolationDetails
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetViolationDetails">REST API Reference for GetViolationDetails Operation</seealso>
+        public virtual IAsyncResult BeginGetViolationDetails(GetViolationDetailsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetViolationDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetViolationDetailsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetViolationDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetViolationDetails.</param>
+        /// 
+        /// <returns>Returns a  GetViolationDetailsResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetViolationDetails">REST API Reference for GetViolationDetails Operation</seealso>
+        public virtual GetViolationDetailsResponse EndGetViolationDetails(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetViolationDetailsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAppsLists
+
+        /// <summary>
+        /// Returns an array of <code>AppsListDataSummary</code> objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAppsLists service method.</param>
+        /// 
+        /// <returns>The response from the ListAppsLists service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>AWS WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAppsLists">REST API Reference for ListAppsLists Operation</seealso>
+        public virtual ListAppsListsResponse ListAppsLists(ListAppsListsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAppsListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAppsListsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAppsListsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAppsLists operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAppsLists operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAppsLists
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAppsLists">REST API Reference for ListAppsLists Operation</seealso>
+        public virtual IAsyncResult BeginListAppsLists(ListAppsListsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAppsListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAppsListsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAppsLists operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAppsLists.</param>
+        /// 
+        /// <returns>Returns a  ListAppsListsResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAppsLists">REST API Reference for ListAppsLists Operation</seealso>
+        public virtual ListAppsListsResponse EndListAppsLists(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAppsListsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListComplianceStatus
 
         /// <summary>
-        /// Returns an array of <code>PolicyComplianceStatus</code> objects in the response. Use
-        /// <code>PolicyComplianceStatus</code> to get a summary of which member accounts are
-        /// protected by the specified policy.
+        /// Returns an array of <code>PolicyComplianceStatus</code> objects. Use <code>PolicyComplianceStatus</code>
+        /// to get a summary of which member accounts are protected by the specified policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListComplianceStatus service method.</param>
         /// 
@@ -991,7 +1437,7 @@ namespace Amazon.FMS
         #region  ListPolicies
 
         /// <summary>
-        /// Returns an array of <code>PolicySummary</code> objects in the response.
+        /// Returns an array of <code>PolicySummary</code> objects.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPolicies service method.</param>
         /// 
@@ -1001,9 +1447,12 @@ namespace Amazon.FMS
         /// Retry your request.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
-        /// The operation failed because there was nothing to do. For example, you might have
-        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
-        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.LimitExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
@@ -1059,6 +1508,75 @@ namespace Amazon.FMS
 
         #endregion
         
+        #region  ListProtocolsLists
+
+        /// <summary>
+        /// Returns an array of <code>ProtocolsListDataSummary</code> objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProtocolsLists service method.</param>
+        /// 
+        /// <returns>The response from the ListProtocolsLists service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListProtocolsLists">REST API Reference for ListProtocolsLists Operation</seealso>
+        public virtual ListProtocolsListsResponse ListProtocolsLists(ListProtocolsListsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProtocolsListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProtocolsListsResponseUnmarshaller.Instance;
+
+            return Invoke<ListProtocolsListsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProtocolsLists operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProtocolsLists operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProtocolsLists
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListProtocolsLists">REST API Reference for ListProtocolsLists Operation</seealso>
+        public virtual IAsyncResult BeginListProtocolsLists(ListProtocolsListsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProtocolsListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProtocolsListsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProtocolsLists operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProtocolsLists.</param>
+        /// 
+        /// <returns>Returns a  ListProtocolsListsResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListProtocolsLists">REST API Reference for ListProtocolsLists Operation</seealso>
+        public virtual ListProtocolsListsResponse EndListProtocolsLists(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListProtocolsListsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
@@ -1075,9 +1593,12 @@ namespace Amazon.FMS
         /// The parameters of the request were invalid.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
-        /// The operation failed because there was nothing to do. For example, you might have
-        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
-        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -1128,6 +1649,83 @@ namespace Amazon.FMS
 
         #endregion
         
+        #region  PutAppsList
+
+        /// <summary>
+        /// Creates an AWS Firewall Manager applications list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAppsList service method.</param>
+        /// 
+        /// <returns>The response from the PutAppsList service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>AWS WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAppsList">REST API Reference for PutAppsList Operation</seealso>
+        public virtual PutAppsListResponse PutAppsList(PutAppsListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAppsListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAppsListResponseUnmarshaller.Instance;
+
+            return Invoke<PutAppsListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAppsList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAppsList operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAppsList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAppsList">REST API Reference for PutAppsList Operation</seealso>
+        public virtual IAsyncResult BeginPutAppsList(PutAppsListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAppsListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAppsListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAppsList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAppsList.</param>
+        /// 
+        /// <returns>Returns a  PutAppsListResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAppsList">REST API Reference for PutAppsList Operation</seealso>
+        public virtual PutAppsListResponse EndPutAppsList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutAppsListResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutNotificationChannel
 
         /// <summary>
@@ -1142,9 +1740,12 @@ namespace Amazon.FMS
         /// Retry your request.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
-        /// The operation failed because there was nothing to do. For example, you might have
-        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
-        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -1246,9 +1847,12 @@ namespace Amazon.FMS
         /// The parameters of the request were invalid.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
-        /// The operation failed because there was nothing to do. For example, you might have
-        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
-        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.InvalidTypeException">
         /// The value of the <code>Type</code> parameter is invalid.
@@ -1307,6 +1911,83 @@ namespace Amazon.FMS
 
         #endregion
         
+        #region  PutProtocolsList
+
+        /// <summary>
+        /// Creates an AWS Firewall Manager protocols list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutProtocolsList service method.</param>
+        /// 
+        /// <returns>The response from the PutProtocolsList service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>AWS WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutProtocolsList">REST API Reference for PutProtocolsList Operation</seealso>
+        public virtual PutProtocolsListResponse PutProtocolsList(PutProtocolsListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutProtocolsListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutProtocolsListResponseUnmarshaller.Instance;
+
+            return Invoke<PutProtocolsListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutProtocolsList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutProtocolsList operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutProtocolsList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutProtocolsList">REST API Reference for PutProtocolsList Operation</seealso>
+        public virtual IAsyncResult BeginPutProtocolsList(PutProtocolsListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutProtocolsListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutProtocolsListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutProtocolsList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutProtocolsList.</param>
+        /// 
+        /// <returns>Returns a  PutProtocolsListResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutProtocolsList">REST API Reference for PutProtocolsList Operation</seealso>
+        public virtual PutProtocolsListResponse EndPutProtocolsList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutProtocolsListResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         /// <summary>
@@ -1323,9 +2004,12 @@ namespace Amazon.FMS
         /// The parameters of the request were invalid.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
-        /// The operation failed because there was nothing to do. For example, you might have
-        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
-        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.LimitExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
@@ -1397,9 +2081,12 @@ namespace Amazon.FMS
         /// The parameters of the request were invalid.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
-        /// The operation failed because there was nothing to do. For example, you might have
-        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
-        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the AWS Firewall Manager administrator.
+        /// Or you might have tried to access a Region that's disabled by default, and that you
+        /// need to enable for the Firewall Manager administrator account and for AWS Organizations
+        /// before you can access it.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
         /// The specified resource was not found.

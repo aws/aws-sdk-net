@@ -81,7 +81,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// The friendly name of the specified policy.
+        /// The name of the specified policy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
