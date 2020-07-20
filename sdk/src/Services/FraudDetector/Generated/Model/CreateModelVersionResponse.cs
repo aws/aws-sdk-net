@@ -41,7 +41,7 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
-        /// The model ID. 
+        /// The model ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -78,7 +78,7 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property ModelVersionNumber. 
         /// <para>
-        /// The version of the model. 
+        /// The model version number of the model version created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

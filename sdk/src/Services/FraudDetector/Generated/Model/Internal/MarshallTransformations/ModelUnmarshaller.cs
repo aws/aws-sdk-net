@@ -64,6 +64,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("arn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -76,10 +82,10 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("labelSchema", targetDepth))
+                if (context.TestExpression("eventTypeName", targetDepth))
                 {
-                    var unmarshaller = LabelSchemaUnmarshaller.Instance;
-                    unmarshalledObject.LabelSchema = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EventTypeName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastUpdatedTime", targetDepth))
@@ -98,18 +104,6 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("modelVariables", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ModelVariable, ModelVariableUnmarshaller>(ModelVariableUnmarshaller.Instance);
-                    unmarshalledObject.ModelVariables = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("trainingDataSource", targetDepth))
-                {
-                    var unmarshaller = TrainingDataSourceUnmarshaller.Instance;
-                    unmarshalledObject.TrainingDataSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -30,7 +30,7 @@ namespace Amazon.FraudDetector.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRuleMetadata operation.
-    /// Updates a rule's metadata.
+    /// Updates a rule's metadata. The description attribute can be updated.
     /// </summary>
     public partial class UpdateRuleMetadataRequest : AmazonFraudDetectorRequest
     {

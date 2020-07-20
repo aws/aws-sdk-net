@@ -33,7 +33,9 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class ExternalModel
     {
+        private string _arn;
         private string _createdTime;
+        private string _eventTypeName;
         private ModelInputConfiguration _inputConfiguration;
         private string _lastUpdatedTime;
         private string _modelEndpoint;
@@ -41,6 +43,25 @@ namespace Amazon.FraudDetector.Model
         private ModelSource _modelSource;
         private ModelOutputConfiguration _outputConfiguration;
         private Role _role;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The model ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedTime. 
@@ -58,6 +79,25 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetCreatedTime()
         {
             return this._createdTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventTypeName. 
+        /// <para>
+        /// The event type names.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string EventTypeName
+        {
+            get { return this._eventTypeName; }
+            set { this._eventTypeName = value; }
+        }
+
+        // Check to see if EventTypeName property is set
+        internal bool IsSetEventTypeName()
+        {
+            return this._eventTypeName != null;
         }
 
         /// <summary>

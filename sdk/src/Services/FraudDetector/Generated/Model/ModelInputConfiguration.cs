@@ -29,14 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
-    /// The model input configuration.
+    /// The Amazon SageMaker model input configuration.
     /// </summary>
     public partial class ModelInputConfiguration
     {
         private string _csvInputTemplate;
         private ModelInputDataFormat _format;
-        private bool? _isOpaque;
         private string _jsonInputTemplate;
+        private bool? _useEventVariables;
 
         /// <summary>
         /// Gets and sets the property CsvInputTemplate. 
@@ -78,28 +78,6 @@ namespace Amazon.FraudDetector.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsOpaque. 
-        /// <para>
-        ///  For an opaque-model, the input to the model will be a ByteBuffer blob provided in
-        /// the getPrediction request, and will be passed to SageMaker as-is. For non-opaque models,
-        /// the input will be constructed by Amazon Fraud Detector based on the model-configuration.
-        /// 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public bool IsOpaque
-        {
-            get { return this._isOpaque.GetValueOrDefault(); }
-            set { this._isOpaque = value; }
-        }
-
-        // Check to see if IsOpaque property is set
-        internal bool IsSetIsOpaque()
-        {
-            return this._isOpaque.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property JsonInputTemplate. 
         /// <para>
         ///  Template for constructing the JSON input-data sent to SageMaker. At event-evaluation,
@@ -117,6 +95,25 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetJsonInputTemplate()
         {
             return this._jsonInputTemplate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseEventVariables. 
+        /// <para>
+        /// The event variables.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public bool UseEventVariables
+        {
+            get { return this._useEventVariables.GetValueOrDefault(); }
+            set { this._useEventVariables = value; }
+        }
+
+        // Check to see if UseEventVariables property is set
+        internal bool IsSetUseEventVariables()
+        {
+            return this._useEventVariables.HasValue; 
         }
 
     }

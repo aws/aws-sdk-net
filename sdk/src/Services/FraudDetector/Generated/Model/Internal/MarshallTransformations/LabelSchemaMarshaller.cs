@@ -45,12 +45,6 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LabelSchema requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetLabelKey())
-            {
-                context.Writer.WritePropertyName("labelKey");
-                context.Writer.Write(requestObject.LabelKey);
-            }
-
             if(requestObject.IsSetLabelMapper())
             {
                 context.Writer.WritePropertyName("labelMapper");

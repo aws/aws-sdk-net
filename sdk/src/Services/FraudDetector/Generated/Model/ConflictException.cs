@@ -45,8 +45,8 @@ namespace Amazon.FraudDetector.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// DeleteRuleVersion: A conflict exception will occur if the <code>RuleVersion</code>
-    /// is in use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+    /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+    /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
     /// </para>
     ///  </li> </ul>
     /// </summary>

@@ -33,38 +33,20 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class LabelSchema
     {
-        private string _labelKey;
         private Dictionary<string, List<string>> _labelMapper = new Dictionary<string, List<string>>();
-
-        /// <summary>
-        /// Gets and sets the property LabelKey. 
-        /// <para>
-        /// The label key.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string LabelKey
-        {
-            get { return this._labelKey; }
-            set { this._labelKey = value; }
-        }
-
-        // Check to see if LabelKey property is set
-        internal bool IsSetLabelKey()
-        {
-            return this._labelKey != null;
-        }
 
         /// <summary>
         /// Gets and sets the property LabelMapper. 
         /// <para>
-        /// The label mapper maps the Amazon Fraud Detector supported label to the appropriate
-        /// source labels. For example, if <code>"FRAUD"</code> and <code>"LEGIT"</code> are Amazon
-        /// Fraud Detector supported labels, this mapper could be: <code>{"FRAUD" =&gt; ["0"]</code>,
-        /// "LEGIT" =&gt; ["1"]} or <code>{"FRAUD" =&gt; ["false"], "LEGIT" =&gt; ["true"]}</code>
-        /// or <code>{"FRAUD" =&gt; ["fraud", "abuse"], "LEGIT" =&gt; ["legit", "safe"]}</code>.
-        /// The value part of the mapper is a list, because you may have multiple variants for
-        /// a single Amazon Fraud Detector label. 
+        /// The label mapper maps the Amazon Fraud Detector supported model classification labels
+        /// (<code>FRAUD</code>, <code>LEGIT</code>) to the appropriate event type labels. For
+        /// example, if "<code>FRAUD</code>" and "<code>LEGIT</code>" are Amazon Fraud Detector
+        /// supported labels, this mapper could be: <code>{"FRAUD" =&gt; ["0"]</code>, <code>"LEGIT"
+        /// =&gt; ["1"]}</code> or <code>{"FRAUD" =&gt; ["false"]</code>, <code>"LEGIT" =&gt;
+        /// ["true"]}</code> or <code>{"FRAUD" =&gt; ["fraud", "abuse"]</code>, <code>"LEGIT"
+        /// =&gt; ["legit", "safe"]}</code>. The value part of the mapper is a list, because you
+        /// may have multiple label variants from your event type for a single Amazon Fraud Detector
+        /// label. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

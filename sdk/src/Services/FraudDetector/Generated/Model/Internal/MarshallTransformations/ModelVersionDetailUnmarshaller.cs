@@ -64,22 +64,22 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("arn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("externalEventsDetail", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("labelSchema", targetDepth))
-                {
-                    var unmarshaller = LabelSchemaUnmarshaller.Instance;
-                    unmarshalledObject.LabelSchema = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ExternalEventsDetailUnmarshaller.Instance;
+                    unmarshalledObject.ExternalEventsDetail = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastUpdatedTime", targetDepth))
@@ -100,12 +100,6 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModelType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("modelVariables", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ModelVariable, ModelVariableUnmarshaller>(ModelVariableUnmarshaller.Instance);
-                    unmarshalledObject.ModelVariables = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("modelVersionNumber", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -118,22 +112,22 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("trainingDataSchema", targetDepth))
+                {
+                    var unmarshaller = TrainingDataSchemaUnmarshaller.Instance;
+                    unmarshalledObject.TrainingDataSchema = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("trainingDataSource", targetDepth))
                 {
-                    var unmarshaller = TrainingDataSourceUnmarshaller.Instance;
+                    var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TrainingDataSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("trainingMetrics", targetDepth))
+                if (context.TestExpression("trainingResult", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.TrainingMetrics = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("validationMetrics", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.ValidationMetrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = TrainingResultUnmarshaller.Instance;
+                    unmarshalledObject.TrainingResult = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

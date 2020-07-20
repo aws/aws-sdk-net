@@ -36,12 +36,33 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class PutExternalModelRequest : AmazonFraudDetectorRequest
     {
+        private string _eventTypeName;
         private ModelInputConfiguration _inputConfiguration;
         private string _modelEndpoint;
         private ModelEndpointStatus _modelEndpointStatus;
         private ModelSource _modelSource;
         private ModelOutputConfiguration _outputConfiguration;
         private Role _role;
+        private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property EventTypeName. 
+        /// <para>
+        /// The event type name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string EventTypeName
+        {
+            get { return this._eventTypeName; }
+            set { this._eventTypeName = value; }
+        }
+
+        // Check to see if EventTypeName property is set
+        internal bool IsSetEventTypeName()
+        {
+            return this._eventTypeName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InputConfiguration. 
@@ -68,7 +89,7 @@ namespace Amazon.FraudDetector.Model
         /// The model endpoints name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string ModelEndpoint
         {
             get { return this._modelEndpoint; }
@@ -155,6 +176,25 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetRole()
         {
             return this._role != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A collection of key and value pairs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

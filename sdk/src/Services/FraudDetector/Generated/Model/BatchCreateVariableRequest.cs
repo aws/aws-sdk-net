@@ -34,7 +34,27 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class BatchCreateVariableRequest : AmazonFraudDetectorRequest
     {
+        private List<Tag> _tags = new List<Tag>();
         private List<VariableEntry> _variableEntries = new List<VariableEntry>();
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A collection of key and value pairs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property VariableEntries. 

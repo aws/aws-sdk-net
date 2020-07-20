@@ -33,14 +33,32 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class Model
     {
+        private string _arn;
         private string _createdTime;
         private string _description;
-        private LabelSchema _labelSchema;
+        private string _eventTypeName;
         private string _lastUpdatedTime;
         private string _modelId;
         private ModelTypeEnum _modelType;
-        private List<ModelVariable> _modelVariables = new List<ModelVariable>();
-        private TrainingDataSource _trainingDataSource;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The ARN of the model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedTime. 
@@ -80,21 +98,21 @@ namespace Amazon.FraudDetector.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LabelSchema. 
+        /// Gets and sets the property EventTypeName. 
         /// <para>
-        /// The model label schema.
+        /// The name of the event type.
         /// </para>
         /// </summary>
-        public LabelSchema LabelSchema
+        public string EventTypeName
         {
-            get { return this._labelSchema; }
-            set { this._labelSchema = value; }
+            get { return this._eventTypeName; }
+            set { this._eventTypeName = value; }
         }
 
-        // Check to see if LabelSchema property is set
-        internal bool IsSetLabelSchema()
+        // Check to see if EventTypeName property is set
+        internal bool IsSetEventTypeName()
         {
-            return this._labelSchema != null;
+            return this._eventTypeName != null;
         }
 
         /// <summary>
@@ -150,42 +168,6 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetModelType()
         {
             return this._modelType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ModelVariables. 
-        /// <para>
-        /// The model input variables.
-        /// </para>
-        /// </summary>
-        public List<ModelVariable> ModelVariables
-        {
-            get { return this._modelVariables; }
-            set { this._modelVariables = value; }
-        }
-
-        // Check to see if ModelVariables property is set
-        internal bool IsSetModelVariables()
-        {
-            return this._modelVariables != null && this._modelVariables.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property TrainingDataSource. 
-        /// <para>
-        /// The model training data source in Amazon S3.
-        /// </para>
-        /// </summary>
-        public TrainingDataSource TrainingDataSource
-        {
-            get { return this._trainingDataSource; }
-            set { this._trainingDataSource = value; }
-        }
-
-        // Check to see if TrainingDataSource property is set
-        internal bool IsSetTrainingDataSource()
-        {
-            return this._trainingDataSource != null;
         }
 
     }

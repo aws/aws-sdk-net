@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
-    /// Provides the model output configuration.
+    /// Provides the Amazon Sagemaker model output configuration.
     /// </summary>
     public partial class ModelOutputConfiguration
     {

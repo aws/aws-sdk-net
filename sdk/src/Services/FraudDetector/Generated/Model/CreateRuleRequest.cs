@@ -40,6 +40,7 @@ namespace Amazon.FraudDetector.Model
         private Language _language;
         private List<string> _outcomes = new List<string>();
         private string _ruleId;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -153,6 +154,25 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetRuleId()
         {
             return this._ruleId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A collection of key and value pairs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

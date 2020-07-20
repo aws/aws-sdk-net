@@ -68,10 +68,21 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                if(publicRequest.IsSetExternalEventsDetail())
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
+                    context.Writer.WritePropertyName("externalEventsDetail");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExternalEventsDetailMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExternalEventsDetail, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMajorVersionNumber())
+                {
+                    context.Writer.WritePropertyName("majorVersionNumber");
+                    context.Writer.Write(publicRequest.MajorVersionNumber);
                 }
 
                 if(publicRequest.IsSetModelId())
@@ -86,16 +97,20 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ModelType);
                 }
 
-                if(publicRequest.IsSetModelVersionNumber())
+                if(publicRequest.IsSetTags())
                 {
-                    context.Writer.WritePropertyName("modelVersionNumber");
-                    context.Writer.Write(publicRequest.ModelVersionNumber);
-                }
+                    context.Writer.WritePropertyName("tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteObjectStart();
 
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.Write(publicRequest.Status);
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         

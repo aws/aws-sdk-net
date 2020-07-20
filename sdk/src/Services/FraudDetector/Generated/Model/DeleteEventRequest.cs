@@ -35,6 +35,7 @@ namespace Amazon.FraudDetector.Model
     public partial class DeleteEventRequest : AmazonFraudDetectorRequest
     {
         private string _eventId;
+        private string _eventTypeName;
 
         /// <summary>
         /// Gets and sets the property EventId. 
@@ -53,6 +54,25 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetEventId()
         {
             return this._eventId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventTypeName. 
+        /// <para>
+        /// The name of the event type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string EventTypeName
+        {
+            get { return this._eventTypeName; }
+            set { this._eventTypeName = value; }
+        }
+
+        // Check to see if EventTypeName property is set
+        internal bool IsSetEventTypeName()
+        {
+            return this._eventTypeName != null;
         }
 
     }
