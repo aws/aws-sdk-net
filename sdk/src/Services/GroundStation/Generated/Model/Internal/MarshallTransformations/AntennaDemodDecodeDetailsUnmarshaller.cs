@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AntennaUplinkConfig Object
+    /// Response Unmarshaller for AntennaDemodDecodeDetails Object
     /// </summary>  
-    public class AntennaUplinkConfigUnmarshaller : IUnmarshaller<AntennaUplinkConfig, XmlUnmarshallerContext>, IUnmarshaller<AntennaUplinkConfig, JsonUnmarshallerContext>
+    public class AntennaDemodDecodeDetailsUnmarshaller : IUnmarshaller<AntennaDemodDecodeDetails, XmlUnmarshallerContext>, IUnmarshaller<AntennaDemodDecodeDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AntennaUplinkConfig IUnmarshaller<AntennaUplinkConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AntennaDemodDecodeDetails IUnmarshaller<AntennaDemodDecodeDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AntennaUplinkConfig Unmarshall(JsonUnmarshallerContext context)
+        public AntennaDemodDecodeDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AntennaUplinkConfig unmarshalledObject = new AntennaUplinkConfig();
+            AntennaDemodDecodeDetails unmarshalledObject = new AntennaDemodDecodeDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("spectrumConfig", targetDepth))
+                if (context.TestExpression("outputNode", targetDepth))
                 {
-                    var unmarshaller = UplinkSpectrumConfigUnmarshaller.Instance;
-                    unmarshalledObject.SpectrumConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("targetEirp", targetDepth))
-                {
-                    var unmarshaller = EirpUnmarshaller.Instance;
-                    unmarshalledObject.TargetEirp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("transmitDisabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.TransmitDisabled = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OutputNode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         }
 
 
-        private static AntennaUplinkConfigUnmarshaller _instance = new AntennaUplinkConfigUnmarshaller();        
+        private static AntennaDemodDecodeDetailsUnmarshaller _instance = new AntennaDemodDecodeDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AntennaUplinkConfigUnmarshaller Instance
+        public static AntennaDemodDecodeDetailsUnmarshaller Instance
         {
             get
             {

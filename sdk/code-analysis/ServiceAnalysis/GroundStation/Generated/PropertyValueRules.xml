@@ -81,6 +81,11 @@
     <pattern>^[ a-zA-Z0-9_:-]{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.DataflowEndpoint.Mtu</property>
+    <min>1400</min>
+    <max>1500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.DataflowEndpoint.Name</property>
     <min>1</min>
     <max>256</max>

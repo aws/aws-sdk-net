@@ -29,49 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// Object that represents EIRP.
+    /// Information about a dataflow edge used in a contact.
     /// </summary>
-    public partial class Eirp
+    public partial class DataflowDetail
     {
-        private EirpUnits _units;
-        private double? _value;
+        private Destination _destination;
+        private Source _source;
 
         /// <summary>
-        /// Gets and sets the property Units. 
-        /// <para>
-        /// Units of an EIRP.
-        /// </para>
+        /// Gets and sets the property Destination.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public EirpUnits Units
+        public Destination Destination
         {
-            get { return this._units; }
-            set { this._units = value; }
+            get { return this._destination; }
+            set { this._destination = value; }
         }
 
-        // Check to see if Units property is set
-        internal bool IsSetUnits()
+        // Check to see if Destination property is set
+        internal bool IsSetDestination()
         {
-            return this._units != null;
+            return this._destination != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.
-        /// </para>
+        /// Gets and sets the property Source.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public double Value
+        public Source Source
         {
-            get { return this._value.GetValueOrDefault(); }
-            set { this._value = value; }
+            get { return this._source; }
+            set { this._source = value; }
         }
 
-        // Check to see if Value property is set
-        internal bool IsSetValue()
+        // Check to see if Source property is set
+        internal bool IsSetSource()
         {
-            return this._value.HasValue; 
+            return this._source != null;
         }
 
     }

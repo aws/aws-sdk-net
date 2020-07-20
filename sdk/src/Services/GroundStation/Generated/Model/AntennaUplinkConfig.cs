@@ -35,6 +35,7 @@ namespace Amazon.GroundStation.Model
     {
         private UplinkSpectrumConfig _spectrumConfig;
         private Eirp _targetEirp;
+        private bool? _transmitDisabled;
 
         /// <summary>
         /// Gets and sets the property SpectrumConfig. 
@@ -72,6 +73,24 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetTargetEirp()
         {
             return this._targetEirp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransmitDisabled. 
+        /// <para>
+        /// Whether or not uplink transmit is disabled.
+        /// </para>
+        /// </summary>
+        public bool TransmitDisabled
+        {
+            get { return this._transmitDisabled.GetValueOrDefault(); }
+            set { this._transmitDisabled = value; }
+        }
+
+        // Check to see if TransmitDisabled property is set
+        internal bool IsSetTransmitDisabled()
+        {
+            return this._transmitDisabled.HasValue; 
         }
 
     }

@@ -29,49 +29,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// Object that represents EIRP.
+    /// Details for certain <code>Config</code> object types in a contact.
     /// </summary>
-    public partial class Eirp
+    public partial class ConfigDetails
     {
-        private EirpUnits _units;
-        private double? _value;
+        private AntennaDemodDecodeDetails _antennaDemodDecodeDetails;
+        private EndpointDetails _endpointDetails;
 
         /// <summary>
-        /// Gets and sets the property Units. 
+        /// Gets and sets the property AntennaDemodDecodeDetails. 
         /// <para>
-        /// Units of an EIRP.
+        /// Details for antenna demod decode <code>Config</code> in a contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public EirpUnits Units
+        public AntennaDemodDecodeDetails AntennaDemodDecodeDetails
         {
-            get { return this._units; }
-            set { this._units = value; }
+            get { return this._antennaDemodDecodeDetails; }
+            set { this._antennaDemodDecodeDetails = value; }
         }
 
-        // Check to see if Units property is set
-        internal bool IsSetUnits()
+        // Check to see if AntennaDemodDecodeDetails property is set
+        internal bool IsSetAntennaDemodDecodeDetails()
         {
-            return this._units != null;
+            return this._antennaDemodDecodeDetails != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.
-        /// </para>
+        /// Gets and sets the property EndpointDetails.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public double Value
+        public EndpointDetails EndpointDetails
         {
-            get { return this._value.GetValueOrDefault(); }
-            set { this._value = value; }
+            get { return this._endpointDetails; }
+            set { this._endpointDetails = value; }
         }
 
-        // Check to see if Value property is set
-        internal bool IsSetValue()
+        // Check to see if EndpointDetails property is set
+        internal bool IsSetEndpointDetails()
         {
-            return this._value.HasValue; 
+            return this._endpointDetails != null;
         }
 
     }

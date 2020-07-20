@@ -58,8 +58,23 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Frequency bandwidth value.
+        /// Frequency bandwidth value. AWS Ground Station currently has the following bandwidth
+        /// limitations:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz
+        /// to 650 MHz.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public double Value

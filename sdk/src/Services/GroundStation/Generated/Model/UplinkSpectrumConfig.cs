@@ -39,7 +39,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property CenterFrequency. 
         /// <para>
-        /// Center frequency of an uplink spectral <code>Config</code>.
+        /// Center frequency of an uplink spectral <code>Config</code>. Valid values are between
+        /// 2025 to 2120 MHz.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +59,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Polarization. 
         /// <para>
-        /// Polarization of an uplink spectral <code>Config</code>.
+        /// Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code>
+        /// and <code>"LEFT_HAND"</code> polarization requires two separate configs.
         /// </para>
         /// </summary>
         public Polarization Polarization

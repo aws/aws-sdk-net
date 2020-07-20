@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AntennaUplinkConfig Object
+    /// Response Unmarshaller for Source Object
     /// </summary>  
-    public class AntennaUplinkConfigUnmarshaller : IUnmarshaller<AntennaUplinkConfig, XmlUnmarshallerContext>, IUnmarshaller<AntennaUplinkConfig, JsonUnmarshallerContext>
+    public class SourceUnmarshaller : IUnmarshaller<Source, XmlUnmarshallerContext>, IUnmarshaller<Source, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AntennaUplinkConfig IUnmarshaller<AntennaUplinkConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Source IUnmarshaller<Source, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,39 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AntennaUplinkConfig Unmarshall(JsonUnmarshallerContext context)
+        public Source Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AntennaUplinkConfig unmarshalledObject = new AntennaUplinkConfig();
+            Source unmarshalledObject = new Source();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("spectrumConfig", targetDepth))
+                if (context.TestExpression("configDetails", targetDepth))
                 {
-                    var unmarshaller = UplinkSpectrumConfigUnmarshaller.Instance;
-                    unmarshalledObject.SpectrumConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ConfigDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ConfigDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("targetEirp", targetDepth))
+                if (context.TestExpression("configId", targetDepth))
                 {
-                    var unmarshaller = EirpUnmarshaller.Instance;
-                    unmarshalledObject.TargetEirp = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConfigId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("transmitDisabled", targetDepth))
+                if (context.TestExpression("configType", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.TransmitDisabled = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConfigType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dataflowSourceRegion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataflowSourceRegion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +94,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         }
 
 
-        private static AntennaUplinkConfigUnmarshaller _instance = new AntennaUplinkConfigUnmarshaller();        
+        private static SourceUnmarshaller _instance = new SourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AntennaUplinkConfigUnmarshaller Instance
+        public static SourceUnmarshaller Instance
         {
             get
             {

@@ -29,49 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// Object that represents EIRP.
+    /// Details about an antenna demod decode <code>Config</code> used in a contact.
     /// </summary>
-    public partial class Eirp
+    public partial class AntennaDemodDecodeDetails
     {
-        private EirpUnits _units;
-        private double? _value;
+        private string _outputNode;
 
         /// <summary>
-        /// Gets and sets the property Units. 
+        /// Gets and sets the property OutputNode. 
         /// <para>
-        /// Units of an EIRP.
+        /// Name of an antenna demod decode output node used in a contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public EirpUnits Units
+        public string OutputNode
         {
-            get { return this._units; }
-            set { this._units = value; }
+            get { return this._outputNode; }
+            set { this._outputNode = value; }
         }
 
-        // Check to see if Units property is set
-        internal bool IsSetUnits()
+        // Check to see if OutputNode property is set
+        internal bool IsSetOutputNode()
         {
-            return this._units != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public double Value
-        {
-            get { return this._value.GetValueOrDefault(); }
-            set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value.HasValue; 
+            return this._outputNode != null;
         }
 
     }
