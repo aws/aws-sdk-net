@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.780.0",
+    "ProductVersion" : "3.3.781.0",
     "CoreVersion"    : "3.3.107.26",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -1705,7 +1705,7 @@
             "InPreview"               : false
         },
         "CodeGuruProfiler"                : {
-            "Version" : "3.3.102.7",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.26"
