@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateProfilingGroup Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateProfilingGroupRequestMarshaller : IMarshaller<IRequest, CreateProfilingGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateProfilingGroupRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,46 +52,23 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateProfilingGroupRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeGuruProfiler");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-18";            
             request.HttpMethod = "POST";
 
-            
-            if (publicRequest.IsSetClientToken())
-                request.Parameters.Add("clientToken", StringUtils.FromString(publicRequest.ClientToken));
-            request.ResourcePath = "/profilingGroups";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonCodeGuruProfilerException("Request object does not have required field ResourceArn set");
+            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/tags/{resourceArn}";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAgentOrchestrationConfig())
-                {
-                    context.Writer.WritePropertyName("agentOrchestrationConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AgentOrchestrationConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AgentOrchestrationConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetComputePlatform())
-                {
-                    context.Writer.WritePropertyName("computePlatform");
-                    context.Writer.Write(publicRequest.ComputePlatform);
-                }
-
-                if(publicRequest.IsSetProfilingGroupName())
-                {
-                    context.Writer.WritePropertyName("profilingGroupName");
-                    context.Writer.Write(publicRequest.ProfilingGroupName);
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -112,13 +89,12 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
-            request.UseQueryString = true;
 
             return request;
         }
-        private static CreateProfilingGroupRequestMarshaller _instance = new CreateProfilingGroupRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateProfilingGroupRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -126,7 +102,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateProfilingGroupRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

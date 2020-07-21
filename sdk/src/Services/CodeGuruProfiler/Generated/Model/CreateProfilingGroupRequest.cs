@@ -38,6 +38,7 @@ namespace Amazon.CodeGuruProfiler.Model
         private string _clientToken;
         private ComputePlatform _computePlatform;
         private string _profilingGroupName;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property AgentOrchestrationConfig. 
@@ -117,6 +118,24 @@ namespace Amazon.CodeGuruProfiler.Model
         internal bool IsSetProfilingGroupName()
         {
             return this._profilingGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  A list of tags to add to the created profiling group. 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

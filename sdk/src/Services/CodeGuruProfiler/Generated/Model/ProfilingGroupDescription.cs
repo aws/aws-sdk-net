@@ -39,6 +39,7 @@ namespace Amazon.CodeGuruProfiler.Model
         private DateTime? _createdAt;
         private string _name;
         private ProfilingStatus _profilingStatus;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private DateTime? _updatedAt;
 
         /// <summary>
@@ -159,6 +160,24 @@ namespace Amazon.CodeGuruProfiler.Model
         internal bool IsSetProfilingStatus()
         {
             return this._profilingStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  A list of the tags that belong to this profiling group. 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
