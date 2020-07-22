@@ -65,8 +65,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.AudioDescription.LanguageCode</property>
-    <min>3</min>
-    <max>3</max>
+    <min>1</min>
+    <max>35</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.AudioPidSelection.Pid</property>
@@ -290,6 +290,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.H264Settings.ParDenominator</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.H264Settings.ParNumerator</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>

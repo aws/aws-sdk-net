@@ -540,6 +540,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ParNumerator. Pixel Aspect Ratio numerator.
         /// </summary>
+        [AWSProperty(Min=1)]
         public int ParNumerator
         {
             get { return this._parNumerator.GetValueOrDefault(); }

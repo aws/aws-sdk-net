@@ -440,7 +440,10 @@ namespace Amazon.MediaLive.Model
         /// the specified quality level except when it is constrained by themaximum bitrate. 
         /// Recommended if you or your viewers pay for bandwidth.CBR: Quality varies, depending
         /// on the video complexity. Recommended only if you distributeyour assets to devices
-        /// that cannot handle variable bitrates.
+        /// that cannot handle variable bitrates.Multiplex: This rate control mode is only supported
+        /// (and is required) when the video is beingdelivered to a MediaLive Multiplex in which
+        /// case the rate control configuration is controlledby the properties within the Multiplex
+        /// Program.
         /// </summary>
         public H265RateControlMode RateControlMode
         {

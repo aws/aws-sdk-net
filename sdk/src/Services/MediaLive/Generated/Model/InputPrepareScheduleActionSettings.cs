@@ -42,7 +42,6 @@ namespace Amazon.MediaLive.Model
         /// that should be prepared by this action. If no name is provided, the action will stop
         /// the most recent prepare (if any) when activated.
         /// </summary>
-        [AWSProperty(Required=true)]
         public string InputAttachmentNameReference
         {
             get { return this._inputAttachmentNameReference; }
