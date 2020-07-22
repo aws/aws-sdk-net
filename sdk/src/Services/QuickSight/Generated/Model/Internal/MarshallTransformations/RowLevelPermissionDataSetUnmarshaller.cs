@@ -70,6 +70,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Namespace", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PermissionPolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

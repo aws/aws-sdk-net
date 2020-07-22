@@ -34,6 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class RowLevelPermissionDataSet
     {
         private string _arn;
+        private string _awsNamespace;
         private RowLevelPermissionPolicy _permissionPolicy;
 
         /// <summary>
@@ -53,6 +54,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Namespace. 
+        /// <para>
+        /// The namespace associated with the row-level permissions dataset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=64)]
+        public string Namespace
+        {
+            get { return this._awsNamespace; }
+            set { this._awsNamespace = value; }
+        }
+
+        // Check to see if Namespace property is set
+        internal bool IsSetNamespace()
+        {
+            return this._awsNamespace != null;
         }
 
         /// <summary>

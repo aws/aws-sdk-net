@@ -38,7 +38,10 @@ namespace Amazon.QuickSight.Model
         private Template _template;
 
         /// <summary>
-        /// Gets and sets the property RequestId.
+        /// Gets and sets the property RequestId. 
+        /// <para>
+        /// The AWS request ID for this operation.
+        /// </para>
         /// </summary>
         public string RequestId
         {

@@ -35,9 +35,11 @@ namespace Amazon.QuickSight.Model
     public partial class UpdateUserRequest : AmazonQuickSightRequest
     {
         private string _awsAccountId;
+        private string _customPermissionsName;
         private string _email;
         private string _awsNamespace;
         private UserRole _role;
+        private bool? _unapplyCustomPermissions;
         private string _userName;
 
         /// <summary>
@@ -58,6 +60,28 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAwsAccountId()
         {
             return this._awsAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomPermissionsName. 
+        /// <para>
+        /// The name of the custom permissions profile that you want to assign to this user. Currently,
+        /// custom permissions profile names are assigned to permissions profiles in the QuickSight
+        /// console. You use this API to assign the named set of permissions to a QuickSight user.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string CustomPermissionsName
+        {
+            get { return this._customPermissionsName; }
+            set { this._customPermissionsName = value; }
+        }
+
+        // Check to see if CustomPermissionsName property is set
+        internal bool IsSetCustomPermissionsName()
+        {
+            return this._customPermissionsName != null;
         }
 
         /// <summary>
@@ -130,6 +154,27 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetRole()
         {
             return this._role != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnapplyCustomPermissions. 
+        /// <para>
+        /// A flag that you use to indicate that you want to remove all custom permissions from
+        /// this user. Using this parameter resets the user to the state it was in before a custom
+        /// permissions profile was applied. This parameter defaults to NULL and it doesn't accept
+        /// any other value.
+        /// </para>
+        /// </summary>
+        public bool UnapplyCustomPermissions
+        {
+            get { return this._unapplyCustomPermissions.GetValueOrDefault(); }
+            set { this._unapplyCustomPermissions = value; }
+        }
+
+        // Check to see if UnapplyCustomPermissions property is set
+        internal bool IsSetUnapplyCustomPermissions()
+        {
+            return this._unapplyCustomPermissions.HasValue; 
         }
 
         /// <summary>

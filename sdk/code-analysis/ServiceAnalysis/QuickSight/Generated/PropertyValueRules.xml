@@ -19,6 +19,28 @@
     <pattern>^[a-zA-Z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateAccountCustomizationRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateAccountCustomizationRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateAccountCustomizationResponse.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateAccountCustomizationResponse.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.CreateDashboardRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -152,6 +174,22 @@
     <pattern>^[a-zA-Z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateNamespaceRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateNamespaceRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateNamespaceResponse.Name</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.CreateTemplateRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -259,6 +297,17 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteAccountCustomizationRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteAccountCustomizationRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DeleteDashboardRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -350,6 +399,17 @@
     <property>Amazon.QuickSight.Model.DeleteIAMPolicyAssignmentResponse.AssignmentName</property>
     <min>1</min>
     <pattern>(?=^.{2,256}$)(?!.*\s)[0-9a-zA-Z-_.:=+@]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteNamespaceRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteNamespaceRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.DeleteTemplateRequest.AwsAccountId</property>
@@ -483,6 +543,34 @@
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeAccountCustomizationRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeAccountCustomizationRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeAccountCustomizationResponse.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeAccountCustomizationResponse.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeAccountSettingsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DescribeDashboardRequest.AliasName</property>
     <min>1</min>
     <max>2048</max>
@@ -589,6 +677,17 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeNamespaceRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeNamespaceRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.DescribeTemplateRequest.AliasName</property>
@@ -738,6 +837,22 @@
     <max>600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.GetSessionEmbedUrlRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GetSessionEmbedUrlRequest.EntryPoint</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GetSessionEmbedUrlRequest.SessionLifetimeInMinutes</property>
+    <min>15</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.ListDashboardsRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -869,6 +984,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ListIngestionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListNamespacesRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListNamespacesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -1006,6 +1132,12 @@
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.RegisterUserRequest.CustomPermissionsName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9+=,.@_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.RegisterUserRequest.Namespace</property>
     <max>64</max>
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
@@ -1031,6 +1163,39 @@
     <property>Amazon.QuickSight.Model.SearchDashboardsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateAccountCustomizationRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateAccountCustomizationRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateAccountCustomizationResponse.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateAccountCustomizationResponse.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateAccountSettingsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateAccountSettingsRequest.DefaultNamespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.UpdateDashboardRequest.AwsAccountId</property>
@@ -1327,6 +1492,12 @@
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateUserRequest.CustomPermissionsName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9+=,.@_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.UpdateUserRequest.Namespace</property>
     <max>64</max>
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
@@ -1335,6 +1506,11 @@
     <property>Amazon.QuickSight.Model.UpdateUserRequest.UserName</property>
     <min>1</min>
     <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.AccountSettings.DefaultNamespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ActiveIAMPolicyAssignment.AssignmentName</property>
@@ -1646,6 +1822,11 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.NamespaceInfoV2.Name</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.OutputColumn.Name</property>
     <min>1</min>
     <max>128</max>
@@ -1732,6 +1913,11 @@
     <property>Amazon.QuickSight.Model.ResourcePermission.Principal</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.RowLevelPermissionDataSet.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ServiceNowParameters.SiteBaseUrl</property>
@@ -2016,6 +2202,12 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.UploadSettings.StartFromRow</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.User.CustomPermissionsName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9+=,.@_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.User.UserName</property>

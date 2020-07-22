@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     public partial class RegisterUserRequest : AmazonQuickSightRequest
     {
         private string _awsAccountId;
+        private string _customPermissionsName;
         private string _email;
         private string _iamArn;
         private IdentityType _identityType;
@@ -62,6 +63,44 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAwsAccountId()
         {
             return this._awsAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomPermissionsName. 
+        /// <para>
+        /// (Enterprise edition only) The name of the custom permissions profile that you want
+        /// to assign to this user. Currently, custom permissions profile names are assigned to
+        /// permissions profiles in the QuickSight console. You use this API to assign the named
+        /// set of permissions to a QuickSight user. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Customizing permissions in the QuickSight UI allows you to control a user's access
+        /// to the following operations:
+        /// </para>
+        ///  <ul> <li>  </li> <li>  </li> <li>  </li> <li>  </li> </ul> 
+        /// <para>
+        /// QuickSight custom permissions are applied through IAM policies. Therefore, they override
+        /// the permissions typically granted by assigning QuickSight users to one of the default
+        /// security cohorts (admin, author, reader) in QuickSight.
+        /// </para>
+        ///  
+        /// <para>
+        /// This feature is available only to QuickSight Enterprise edition subscriptions that
+        /// use SAML 2.0-Based Federation for Single Sign-On (SSO).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string CustomPermissionsName
+        {
+            get { return this._customPermissionsName; }
+            set { this._customPermissionsName = value; }
+        }
+
+        // Check to see if CustomPermissionsName property is set
+        internal bool IsSetCustomPermissionsName()
+        {
+            return this._customPermissionsName != null;
         }
 
         /// <summary>
