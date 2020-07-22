@@ -1,3 +1,14 @@
+### 3.3.782.0 (2020-07-22 18:15 UTC)
+* MediaLive (3.3.113.0)
+	* The AWS Elemental MediaLive APIs and SDKs now support the ability to get thumbnails for MediaLive devices that are attached or not attached to a channel. Previously, this thumbnail feature was available only on the console.
+* QuickSight (3.3.107.0)
+	* New API operations - GetSessionEmbedUrl, CreateNamespace, DescribeNamespace, ListNamespaces, DeleteNamespace, DescribeAccountSettings, UpdateAccountSettings, CreateAccountCustomization, DescribeAccountCustomization, UpdateAccountCustomization, DeleteAccountCustomization. Modified API operations to support custom permissions restrictions - RegisterUser, UpdateUser, UpdateDashboardPermissions
+* Core 3.3.107.27
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.781.1 (2020-07-21 22:26 UTC)
 * S3 (3.3.111.28)
 	* Make IAmazonS3Encryption publicly accessible
