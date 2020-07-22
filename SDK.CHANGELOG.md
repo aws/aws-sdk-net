@@ -1,3 +1,7 @@
+### 3.3.781.1 (2020-07-21 22:26 UTC)
+* S3 (3.3.111.28)
+	* Make IAmazonS3Encryption publicly accessible
+
 ### 3.3.781.0 (2020-07-21 18:10 UTC)
 * CodeGuruProfiler (3.3.103.0)
 	* Amazon CodeGuru Profiler now supports resource tagging APIs, tags-on-create and tag-based access control features. You can now tag profiling groups for better resource and access control management.
