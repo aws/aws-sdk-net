@@ -29,52 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeWorkspaceImages operation.
-    /// Retrieves a list that describes one or more specified images, if the image identifiers
-    /// are provided. Otherwise, all images in the account are described.
+    /// Container for the parameters to the DescribeWorkspaceImagePermissions operation.
+    /// Describes the permissions that the owner of an image has granted to other AWS accounts
+    /// for an image.
     /// </summary>
-    public partial class DescribeWorkspaceImagesRequest : AmazonWorkSpacesRequest
+    public partial class DescribeWorkspaceImagePermissionsRequest : AmazonWorkSpacesRequest
     {
-        private List<string> _imageIds = new List<string>();
-        private ImageType _imageType;
+        private string _imageId;
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ImageIds. 
+        /// Gets and sets the property ImageId. 
         /// <para>
         /// The identifier of the image.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25)]
-        public List<string> ImageIds
+        [AWSProperty(Required=true)]
+        public string ImageId
         {
-            get { return this._imageIds; }
-            set { this._imageIds = value; }
+            get { return this._imageId; }
+            set { this._imageId = value; }
         }
 
-        // Check to see if ImageIds property is set
-        internal bool IsSetImageIds()
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
         {
-            return this._imageIds != null && this._imageIds.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ImageType. 
-        /// <para>
-        /// The type (owned or shared) of the image.
-        /// </para>
-        /// </summary>
-        public ImageType ImageType
-        {
-            get { return this._imageType; }
-            set { this._imageType = value; }
-        }
-
-        // Check to see if ImageType property is set
-        internal bool IsSetImageType()
-        {
-            return this._imageType != null;
+            return this._imageId != null;
         }
 
         /// <summary>

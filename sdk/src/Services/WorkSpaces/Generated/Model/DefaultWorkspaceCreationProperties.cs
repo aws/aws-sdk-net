@@ -45,7 +45,9 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property CustomSecurityGroupId. 
         /// <para>
-        /// The identifier of any security groups to apply to WorkSpaces when they are created.
+        /// The identifier of the default security group to apply to WorkSpaces when they are
+        /// created. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
+        /// Security Groups for Your WorkSpaces</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=11, Max=20)]

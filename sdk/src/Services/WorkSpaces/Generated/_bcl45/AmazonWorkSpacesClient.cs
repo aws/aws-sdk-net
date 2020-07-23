@@ -843,7 +843,7 @@ namespace Amazon.WorkSpaces
 
         /// <summary>
         /// Deletes the specified image from your account. To delete an image, you must first
-        /// delete any bundles that are associated with the image and un-share the image if it
+        /// delete any bundles that are associated with the image and unshare the image if it
         /// is shared with other accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceImage service method.</param>
@@ -871,7 +871,7 @@ namespace Amazon.WorkSpaces
 
         /// <summary>
         /// Deletes the specified image from your account. To delete an image, you must first
-        /// delete any bundles that are associated with the image and un-share the image if it
+        /// delete any bundles that are associated with the image and unshare the image if it
         /// is shared with other accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceImage service method.</param>
@@ -1413,6 +1413,67 @@ namespace Amazon.WorkSpaces
             options.ResponseUnmarshaller = DescribeWorkspaceDirectoriesResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeWorkspaceDirectoriesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeWorkspaceImagePermissions
+
+
+        /// <summary>
+        /// Describes the permissions that the owner of an image has granted to other AWS accounts
+        /// for an image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceImagePermissions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWorkspaceImagePermissions service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImagePermissions">REST API Reference for DescribeWorkspaceImagePermissions Operation</seealso>
+        public virtual DescribeWorkspaceImagePermissionsResponse DescribeWorkspaceImagePermissions(DescribeWorkspaceImagePermissionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceImagePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceImagePermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWorkspaceImagePermissionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the permissions that the owner of an image has granted to other AWS accounts
+        /// for an image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceImagePermissions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWorkspaceImagePermissions service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImagePermissions">REST API Reference for DescribeWorkspaceImagePermissions Operation</seealso>
+        public virtual Task<DescribeWorkspaceImagePermissionsResponse> DescribeWorkspaceImagePermissionsAsync(DescribeWorkspaceImagePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceImagePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceImagePermissionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeWorkspaceImagePermissionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2331,7 +2392,9 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Modifies the specified WorkSpace properties.
+        /// Modifies the specified WorkSpace properties. For important information about how to
+        /// modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">
+        /// Modify a WorkSpace</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceProperties service method.</param>
         /// 
@@ -2371,7 +2434,9 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Modifies the specified WorkSpace properties.
+        /// Modifies the specified WorkSpace properties. For important information about how to
+        /// modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">
+        /// Modify a WorkSpace</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceProperties service method.</param>
         /// <param name="cancellationToken">
@@ -2557,7 +2622,7 @@ namespace Amazon.WorkSpaces
         ///  
         /// <para>
         /// You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>,
-        /// <code>UNHEALTHY</code>, or <code>STOPPED</code>.
+        /// <code>UNHEALTHY</code>, <code>STOPPED</code>, or <code>REBOOTING</code>.
         /// </para>
         ///  
         /// <para>
@@ -2591,7 +2656,7 @@ namespace Amazon.WorkSpaces
         ///  
         /// <para>
         /// You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>,
-        /// <code>UNHEALTHY</code>, or <code>STOPPED</code>.
+        /// <code>UNHEALTHY</code>, <code>STOPPED</code>, or <code>REBOOTING</code>.
         /// </para>
         ///  
         /// <para>
@@ -3138,6 +3203,109 @@ namespace Amazon.WorkSpaces
             options.ResponseUnmarshaller = UpdateRulesOfIpGroupResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateRulesOfIpGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateWorkspaceImagePermission
+
+
+        /// <summary>
+        /// Shares or unshares an image with one account by specifying whether that account has
+        /// permission to copy the image. If the copy image permission is granted, the image is
+        /// shared with that account. If the copy image permission is revoked, the image is unshared
+        /// with the account.
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// To delete an image that has been shared, you must unshare the image before you delete
+        /// it.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Sharing Bring Your Own License (BYOL) images across AWS accounts isn't supported at
+        /// this time in the AWS GovCloud (US-West) Region. To share BYOL images across accounts
+        /// in the AWS GovCloud (US-West) Region, contact AWS Support.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceImagePermission service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWorkspaceImagePermission service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceUnavailableException">
+        /// The specified resource is not available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceImagePermission">REST API Reference for UpdateWorkspaceImagePermission Operation</seealso>
+        public virtual UpdateWorkspaceImagePermissionResponse UpdateWorkspaceImagePermission(UpdateWorkspaceImagePermissionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceImagePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceImagePermissionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkspaceImagePermissionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Shares or unshares an image with one account by specifying whether that account has
+        /// permission to copy the image. If the copy image permission is granted, the image is
+        /// shared with that account. If the copy image permission is revoked, the image is unshared
+        /// with the account.
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// To delete an image that has been shared, you must unshare the image before you delete
+        /// it.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Sharing Bring Your Own License (BYOL) images across AWS accounts isn't supported at
+        /// this time in the AWS GovCloud (US-West) Region. To share BYOL images across accounts
+        /// in the AWS GovCloud (US-West) Region, contact AWS Support.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceImagePermission service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWorkspaceImagePermission service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceUnavailableException">
+        /// The specified resource is not available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceImagePermission">REST API Reference for UpdateWorkspaceImagePermission Operation</seealso>
+        public virtual Task<UpdateWorkspaceImagePermissionResponse> UpdateWorkspaceImagePermissionAsync(UpdateWorkspaceImagePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceImagePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceImagePermissionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateWorkspaceImagePermissionResponse>(request, options, cancellationToken);
         }
 
         #endregion

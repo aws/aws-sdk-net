@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeWorkspaceImages Request Marshaller
+    /// DescribeWorkspaceImagePermissions Request Marshaller
     /// </summary>       
-    public class DescribeWorkspaceImagesRequestMarshaller : IMarshaller<IRequest, DescribeWorkspaceImagesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeWorkspaceImagePermissionsRequestMarshaller : IMarshaller<IRequest, DescribeWorkspaceImagePermissionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeWorkspaceImagesRequest)input);
+            return this.Marshall((DescribeWorkspaceImagePermissionsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeWorkspaceImagesRequest publicRequest)
+        public IRequest Marshall(DescribeWorkspaceImagePermissionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkSpaces");
-            string target = "WorkspacesService.DescribeWorkspaceImages";
+            string target = "WorkspacesService.DescribeWorkspaceImagePermissions";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-04-08";            
@@ -68,21 +68,10 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetImageIds())
+                if(publicRequest.IsSetImageId())
                 {
-                    context.Writer.WritePropertyName("ImageIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestImageIdsListValue in publicRequest.ImageIds)
-                    {
-                            context.Writer.Write(publicRequestImageIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetImageType())
-                {
-                    context.Writer.WritePropertyName("ImageType");
-                    context.Writer.Write(publicRequest.ImageType);
+                    context.Writer.WritePropertyName("ImageId");
+                    context.Writer.Write(publicRequest.ImageId);
                 }
 
                 if(publicRequest.IsSetMaxResults())
@@ -106,9 +95,9 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DescribeWorkspaceImagesRequestMarshaller _instance = new DescribeWorkspaceImagesRequestMarshaller();        
+        private static DescribeWorkspaceImagePermissionsRequestMarshaller _instance = new DescribeWorkspaceImagePermissionsRequestMarshaller();        
 
-        internal static DescribeWorkspaceImagesRequestMarshaller GetInstance()
+        internal static DescribeWorkspaceImagePermissionsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -116,7 +105,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeWorkspaceImagesRequestMarshaller Instance
+        public static DescribeWorkspaceImagePermissionsRequestMarshaller Instance
         {
             get
             {

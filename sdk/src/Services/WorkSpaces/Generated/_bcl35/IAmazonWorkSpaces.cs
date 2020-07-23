@@ -498,7 +498,7 @@ namespace Amazon.WorkSpaces
 
         /// <summary>
         /// Deletes the specified image from your account. To delete an image, you must first
-        /// delete any bundles that are associated with the image and un-share the image if it
+        /// delete any bundles that are associated with the image and unshare the image if it
         /// is shared with other accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceImage service method.</param>
@@ -942,6 +942,56 @@ namespace Amazon.WorkSpaces
         /// <returns>Returns a  DescribeWorkspaceDirectoriesResult from WorkSpaces.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">REST API Reference for DescribeWorkspaceDirectories Operation</seealso>
         DescribeWorkspaceDirectoriesResponse EndDescribeWorkspaceDirectories(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeWorkspaceImagePermissions
+
+
+        /// <summary>
+        /// Describes the permissions that the owner of an image has granted to other AWS accounts
+        /// for an image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceImagePermissions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWorkspaceImagePermissions service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImagePermissions">REST API Reference for DescribeWorkspaceImagePermissions Operation</seealso>
+        DescribeWorkspaceImagePermissionsResponse DescribeWorkspaceImagePermissions(DescribeWorkspaceImagePermissionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeWorkspaceImagePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceImagePermissions operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorkspaceImagePermissions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImagePermissions">REST API Reference for DescribeWorkspaceImagePermissions Operation</seealso>
+        IAsyncResult BeginDescribeWorkspaceImagePermissions(DescribeWorkspaceImagePermissionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeWorkspaceImagePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWorkspaceImagePermissions.</param>
+        /// 
+        /// <returns>Returns a  DescribeWorkspaceImagePermissionsResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImagePermissions">REST API Reference for DescribeWorkspaceImagePermissions Operation</seealso>
+        DescribeWorkspaceImagePermissionsResponse EndDescribeWorkspaceImagePermissions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1651,7 +1701,9 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Modifies the specified WorkSpace properties.
+        /// Modifies the specified WorkSpace properties. For important information about how to
+        /// modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">
+        /// Modify a WorkSpace</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceProperties service method.</param>
         /// 
@@ -1825,7 +1877,7 @@ namespace Amazon.WorkSpaces
         ///  
         /// <para>
         /// You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>,
-        /// <code>UNHEALTHY</code>, or <code>STOPPED</code>.
+        /// <code>UNHEALTHY</code>, <code>STOPPED</code>, or <code>REBOOTING</code>.
         /// </para>
         ///  
         /// <para>
@@ -2266,6 +2318,77 @@ namespace Amazon.WorkSpaces
         /// <returns>Returns a  UpdateRulesOfIpGroupResult from WorkSpaces.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateRulesOfIpGroup">REST API Reference for UpdateRulesOfIpGroup Operation</seealso>
         UpdateRulesOfIpGroupResponse EndUpdateRulesOfIpGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateWorkspaceImagePermission
+
+
+        /// <summary>
+        /// Shares or unshares an image with one account by specifying whether that account has
+        /// permission to copy the image. If the copy image permission is granted, the image is
+        /// shared with that account. If the copy image permission is revoked, the image is unshared
+        /// with the account.
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// To delete an image that has been shared, you must unshare the image before you delete
+        /// it.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Sharing Bring Your Own License (BYOL) images across AWS accounts isn't supported at
+        /// this time in the AWS GovCloud (US-West) Region. To share BYOL images across accounts
+        /// in the AWS GovCloud (US-West) Region, contact AWS Support.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceImagePermission service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWorkspaceImagePermission service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceUnavailableException">
+        /// The specified resource is not available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceImagePermission">REST API Reference for UpdateWorkspaceImagePermission Operation</seealso>
+        UpdateWorkspaceImagePermissionResponse UpdateWorkspaceImagePermission(UpdateWorkspaceImagePermissionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWorkspaceImagePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceImagePermission operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateWorkspaceImagePermission
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceImagePermission">REST API Reference for UpdateWorkspaceImagePermission Operation</seealso>
+        IAsyncResult BeginUpdateWorkspaceImagePermission(UpdateWorkspaceImagePermissionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateWorkspaceImagePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateWorkspaceImagePermission.</param>
+        /// 
+        /// <returns>Returns a  UpdateWorkspaceImagePermissionResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceImagePermission">REST API Reference for UpdateWorkspaceImagePermission Operation</seealso>
+        UpdateWorkspaceImagePermissionResponse EndUpdateWorkspaceImagePermission(IAsyncResult asyncResult);
 
         #endregion
         

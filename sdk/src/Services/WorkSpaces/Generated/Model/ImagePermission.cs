@@ -29,32 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteWorkspaceImage operation.
-    /// Deletes the specified image from your account. To delete an image, you must first
-    /// delete any bundles that are associated with the image and unshare the image if it
-    /// is shared with other accounts.
+    /// Describes the AWS accounts that have been granted permission to use a shared image.
     /// </summary>
-    public partial class DeleteWorkspaceImageRequest : AmazonWorkSpacesRequest
+    public partial class ImagePermission
     {
-        private string _imageId;
+        private string _sharedAccountId;
 
         /// <summary>
-        /// Gets and sets the property ImageId. 
+        /// Gets and sets the property SharedAccountId. 
         /// <para>
-        /// The identifier of the image.
+        /// The identifier of the AWS account that an image has been shared with.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string ImageId
+        public string SharedAccountId
         {
-            get { return this._imageId; }
-            set { this._imageId = value; }
+            get { return this._sharedAccountId; }
+            set { this._sharedAccountId = value; }
         }
 
-        // Check to see if ImageId property is set
-        internal bool IsSetImageId()
+        // Check to see if SharedAccountId property is set
+        internal bool IsSetSharedAccountId()
         {
-            return this._imageId != null;
+            return this._sharedAccountId != null;
         }
 
     }
