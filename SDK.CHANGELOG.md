@@ -1,3 +1,22 @@
+### 3.3.783.0 (2020-07-23 18:16 UTC)
+* ConfigService (3.3.109.0)
+	* Adding service linked configuration aggregation support along with new enums for config resource coverage
+* DirectConnect (3.3.105.23)
+	* Documentation updates for AWS Direct Connect
+* FSx (3.3.108.0)
+	* Adds support for AutoImport, a new FSx for Lustre feature that allows customers to configure their FSx file system to automatically update its contents when new objects are added to S3 or existing objects are overwritten.
+* Glue (3.3.123.0)
+	* Added new ConnectionProperties: "KAFKA_SSL_ENABLED" (to toggle SSL connections) and "KAFKA_CUSTOM_CERT" (import CA certificate file)
+* Lightsail (3.3.106.0)
+	* This release adds support for Amazon Lightsail content delivery network (CDN) distributions and SSL/TLS certificates.
+* WorkSpaces (3.3.109.0)
+	* Added UpdateWorkspaceImagePermission API to share Amazon WorkSpaces images across AWS accounts.
+* Core 3.3.107.28
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.782.0 (2020-07-22 18:15 UTC)
 * MediaLive (3.3.113.0)
 	* The AWS Elemental MediaLive APIs and SDKs now support the ability to get thumbnails for MediaLive devices that are attached or not attached to a channel. Previously, this thumbnail feature was available only on the console.
