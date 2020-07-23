@@ -34,9 +34,55 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class UpdateFileSystemLustreConfiguration
     {
+        private AutoImportPolicyType _autoImportPolicy;
         private int? _automaticBackupRetentionDays;
         private string _dailyAutomaticBackupStartTime;
         private string _weeklyMaintenanceStartTime;
+
+        /// <summary>
+        /// Gets and sets the property AutoImportPolicy. 
+        /// <para>
+        /// Use this property to turn the Autoimport feature on and off. AutoImport enables your
+        /// FSx for Lustre file system to automatically update its contents with changes that
+        /// have been made to its linked Amazon S3 data repository. You can set the policy to
+        /// have one the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>NONE</code> - (Default) Autoimport is turned off. Changes to your S3 repository
+        /// will not be reflected on the FSx file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository
+        /// will be imported to the FSx file system. Updates to existing files and deleted files
+        /// will not be imported to the FSx file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing
+        /// files in the linked S3 repository will be imported to the FSx file system. Files deleted
+        /// in S3 are not deleted in the FSx file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to
+        /// existing files, and deleted files in the linked S3 repository will be imported to
+        /// the FSx file system. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public AutoImportPolicyType AutoImportPolicy
+        {
+            get { return this._autoImportPolicy; }
+            set { this._autoImportPolicy = value; }
+        }
+
+        // Check to see if AutoImportPolicy property is set
+        internal bool IsSetAutoImportPolicy()
+        {
+            return this._autoImportPolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AutomaticBackupRetentionDays.

@@ -34,9 +34,57 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class DataRepositoryConfiguration
     {
+        private AutoImportPolicyType _autoImportPolicy;
         private string _exportPath;
+        private DataRepositoryFailureDetails _failureDetails;
         private int? _importedFileChunkSize;
         private string _importPath;
+        private DataRepositoryLifecycle _lifecycle;
+
+        /// <summary>
+        /// Gets and sets the property AutoImportPolicy. 
+        /// <para>
+        /// Describes the data repository's <code>AutoImportPolicy</code>. AutoImport enables
+        /// your FSx for Lustre file system to automatically update its contents with changes
+        /// that have been made to its linked Amazon S3 data repository. The policy can have the
+        /// following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>NONE</code> - (Default) Autoimport is turned off, Changes to your S3 repository
+        /// will not be reflected on the FSx file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository
+        /// will be imported to the FSx file system. Updates to existing files and deleted files
+        /// will not be imported to the FSx file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing
+        /// files in the linked S3 repository will be imported to the FSx file system. Files deleted
+        /// in S3 are not deleted in the FSx file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to
+        /// existing files, and deleted files in the linked S3 repository will be imported to
+        /// the FSx file system. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public AutoImportPolicyType AutoImportPolicy
+        {
+            get { return this._autoImportPolicy; }
+            set { this._autoImportPolicy = value; }
+        }
+
+        // Check to see if AutoImportPolicy property is set
+        internal bool IsSetAutoImportPolicy()
+        {
+            return this._autoImportPolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExportPath. 
@@ -56,6 +104,21 @@ namespace Amazon.FSx.Model
         internal bool IsSetExportPath()
         {
             return this._exportPath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureDetails.
+        /// </summary>
+        public DataRepositoryFailureDetails FailureDetails
+        {
+            get { return this._failureDetails; }
+            set { this._failureDetails = value; }
+        }
+
+        // Check to see if FailureDetails property is set
+        internal bool IsSetFailureDetails()
+        {
+            return this._failureDetails != null;
         }
 
         /// <summary>
@@ -105,6 +168,42 @@ namespace Amazon.FSx.Model
         internal bool IsSetImportPath()
         {
             return this._importPath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Lifecycle. 
+        /// <para>
+        /// Describes the state of the file system's S3 durable data repository, if it is configured
+        /// with an S3 repository. The lifecycle can have the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CREATING</code> - Amazon FSx is creating the new data repository.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AVAILABLE</code> - The data repository is available for use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MISCONFIGURED</code> - The data repository is in a failed but recoverable state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATING</code> - The data repository is undergoing a customer initiated update.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public DataRepositoryLifecycle Lifecycle
+        {
+            get { return this._lifecycle; }
+            set { this._lifecycle = value; }
+        }
+
+        // Check to see if Lifecycle property is set
+        internal bool IsSetLifecycle()
+        {
+            return this._lifecycle != null;
         }
 
     }

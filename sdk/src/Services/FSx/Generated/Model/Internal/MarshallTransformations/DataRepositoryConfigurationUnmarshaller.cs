@@ -64,10 +64,22 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AutoImportPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AutoImportPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ExportPath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExportPath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FailureDetails", targetDepth))
+                {
+                    var unmarshaller = DataRepositoryFailureDetailsUnmarshaller.Instance;
+                    unmarshalledObject.FailureDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ImportedFileChunkSize", targetDepth))
@@ -80,6 +92,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImportPath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Lifecycle", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Lifecycle = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
