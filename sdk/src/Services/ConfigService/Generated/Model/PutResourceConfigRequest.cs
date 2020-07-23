@@ -46,6 +46,11 @@ namespace Amazon.ConfigService.Model
     /// provided in the request. This API does not change or remediate the configuration of
     /// the resource. 
     /// </para>
+    ///  
+    /// <para>
+    /// Write-only schema properites are not recorded as part of the published configuration
+    /// item.
+    /// </para>
     ///  </note>
     /// </summary>
     public partial class PutResourceConfigRequest : AmazonConfigServiceRequest

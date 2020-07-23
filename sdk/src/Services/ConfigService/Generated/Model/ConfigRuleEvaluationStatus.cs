@@ -157,7 +157,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastDeactivatedTime.
+        /// Gets and sets the property LastDeactivatedTime. 
+        /// <para>
+        /// The time that you last turned off the AWS Config rule.
+        /// </para>
         /// </summary>
         public DateTime LastDeactivatedTime
         {

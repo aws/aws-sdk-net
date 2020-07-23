@@ -37,6 +37,12 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  <note> 
     /// <para>
+    /// AWS Config generates a remediation exception when a problem occurs executing a remediation
+    /// action to a specific resource. Remediation exceptions blocks auto-remediation until
+    /// the exception is cleared.
+    /// </para>
+    ///  
+    /// <para>
     /// When you specify the limit and the next token, you receive a paginated response. 
     /// </para>
     ///  

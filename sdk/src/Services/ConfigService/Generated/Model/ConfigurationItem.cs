@@ -187,8 +187,35 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigurationItemStatus. 
         /// <para>
-        /// The configuration item status.
+        /// The configuration item status. The valid values are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// OK – The resource configuration has been updated
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ResourceDiscovered – The resource was newly discovered
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ResourceNotRecorded – The resource was discovered but its configuration was not recorded
+        /// since the recorder excludes the recording of resources of this type
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ResourceDeleted – The resource was deleted
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ResourceDeletedNotRecorded – The resource was deleted but its configuration was not
+        /// recorded since the recorder excludes the recording of resources of this type
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The CIs do not incur any cost.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ConfigurationItemStatus ConfigurationItemStatus
         {

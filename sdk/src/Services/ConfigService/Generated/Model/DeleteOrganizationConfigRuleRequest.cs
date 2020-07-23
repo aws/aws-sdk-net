@@ -31,9 +31,14 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Container for the parameters to the DeleteOrganizationConfigRule operation.
     /// Deletes the specified organization config rule and all of its evaluation results from
-    /// all member accounts in that organization. Only a master account can delete an organization
-    /// config rule.
+    /// all member accounts in that organization. 
     /// 
+    ///  
+    /// <para>
+    /// Only a master account and a delegated administrator account can delete an organization
+    /// config rule. When calling this API with a delegated administrator, you must ensure
+    /// AWS Organizations <code>ListDelegatedAdministrator</code> permissions are added.
+    /// </para>
     ///  
     /// <para>
     /// AWS Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete.

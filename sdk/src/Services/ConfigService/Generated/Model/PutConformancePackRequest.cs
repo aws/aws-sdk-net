@@ -37,8 +37,7 @@ namespace Amazon.ConfigService.Model
     /// <para>
     /// This API creates a service linked role <code>AWSServiceRoleForConfigConforms</code>
     /// in your account. The service linked role is created only when the role does not exist
-    /// in your account. AWS Config verifies the existence of role with <code>GetRole</code>
-    /// action.
+    /// in your account. 
     /// </para>
     ///  <note> 
     /// <para>

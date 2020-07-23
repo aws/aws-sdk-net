@@ -37,6 +37,7 @@ namespace Amazon.ConfigService.Model
         private List<AccountAggregationSource> _accountAggregationSources = new List<AccountAggregationSource>();
         private string _configurationAggregatorArn;
         private string _configurationAggregatorName;
+        private string _createdBy;
         private DateTime? _creationTime;
         private DateTime? _lastUpdatedTime;
         private OrganizationAggregationSource _organizationAggregationSource;
@@ -95,6 +96,25 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetConfigurationAggregatorName()
         {
             return this._configurationAggregatorName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedBy. 
+        /// <para>
+        /// AWS service that created the configuration aggregator.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string CreatedBy
+        {
+            get { return this._createdBy; }
+            set { this._createdBy = value; }
+        }
+
+        // Check to see if CreatedBy property is set
+        internal bool IsSetCreatedBy()
+        {
+            return this._createdBy != null;
         }
 
         /// <summary>

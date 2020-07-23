@@ -30,8 +30,14 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeOrganizationConformancePackStatuses operation.
-    /// Provides organization conformance pack deployment status for an organization.
+    /// Provides organization conformance pack deployment status for an organization. 
     /// 
+    ///  
+    /// <para>
+    ///  Only a master account and a delegated administrator account can call this API. When
+    /// calling this API with a delegated administrator, you must ensure AWS Organizations
+    /// <code>ListDelegatedAdministrator</code> permissions are added.
+    /// </para>
     ///  <note> 
     /// <para>
     /// The status is not considered successful until organization conformance pack is successfully
@@ -42,10 +48,6 @@ namespace Amazon.ConfigService.Model
     /// When you specify the limit and the next token, you receive a paginated response. Limit
     /// and next token are not applicable if you specify organization conformance pack names.
     /// They are only applicable, when you request all the organization conformance packs.
-    /// </para>
-    ///  
-    /// <para>
-    /// Only a master account can call this API.
     /// </para>
     ///  </note>
     /// </summary>
