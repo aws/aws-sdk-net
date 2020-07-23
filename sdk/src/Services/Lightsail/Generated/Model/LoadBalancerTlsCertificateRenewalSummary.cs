@@ -30,6 +30,40 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Contains information about the status of Lightsail's managed renewal for the certificate.
+    /// 
+    ///  
+    /// <para>
+    /// The renewal status of the certificate.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following renewal status are possible:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically
+    /// validate the domain names in the certificate. No further action is required. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate
+    /// one or more domain names in the certificate. You must take action to validate these
+    /// domain names or the certificate won't be renewed. If you used DNS validation, check
+    /// to make sure your certificate's domain validation records exist in your domain's DNS,
+    /// and that your certificate remains in use.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b> <code>Success</code> </b> - All domain names in the certificate are validated,
+    /// and Lightsail renewed the certificate. No further action is required. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b> <code>Failed</code> </b> - One or more domain names were not validated before
+    /// the certificate expired, and Lightsail did not renew the certificate. You can request
+    /// a new certificate using the <code>CreateCertificate</code> action.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class LoadBalancerTlsCertificateRenewalSummary
     {
@@ -59,9 +93,37 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property RenewalStatus. 
         /// <para>
-        /// The status of Lightsail's managed renewal of the certificate. Valid values are listed
-        /// below.
+        /// The renewal status of the certificate.
         /// </para>
+        ///  
+        /// <para>
+        /// The following renewal status are possible:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically
+        /// validate the domain names of the certificate. No further action is required. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate
+        /// one or more domain names of the certificate. You must take action to validate these
+        /// domain names or the certificate won't be renewed. Check to make sure your certificate's
+        /// domain validation records exist in your domain's DNS, and that your certificate remains
+        /// in use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>Success</code> </b> - All domain names in the certificate are validated,
+        /// and Lightsail renewed the certificate. No further action is required. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>Failed</code> </b> - One or more domain names were not validated before
+        /// the certificate expired, and Lightsail did not renew the certificate. You can request
+        /// a new certificate using the <code>CreateCertificate</code> action.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public LoadBalancerTlsCertificateRenewalStatus RenewalStatus
         {

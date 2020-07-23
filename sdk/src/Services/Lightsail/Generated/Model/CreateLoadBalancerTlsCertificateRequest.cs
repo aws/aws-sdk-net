@@ -143,7 +143,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// To tag a resource after it has been created, see the <code>tag resource</code> operation.
+        /// Use the <code>TagResource</code> action to tag a resource after it's created.
         /// </para>
         /// </summary>
         public List<Tag> Tags

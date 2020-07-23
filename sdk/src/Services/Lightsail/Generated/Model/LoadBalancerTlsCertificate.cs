@@ -140,8 +140,69 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// The reason for the SSL/TLS certificate validation failure.
+        /// The validation failure reason, if any, of the certificate.
         /// </para>
+        ///  
+        /// <para>
+        /// The following failure reasons are possible:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation,
+        /// which is not available for Lightsail certificates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional
+        /// information to process this certificate request. This can happen as a fraud-protection
+        /// measure, such as when the domain ranks within the Alexa top 1000 websites. To provide
+        /// the required information, use the <a href="https://console.aws.amazon.com/support/home">AWS
+        /// Support Center</a> to contact AWS Support.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You cannot request a certificate for Amazon-owned domain names such as those ending
+        /// in amazonaws.com, cloudfront.net, or elasticbeanstalk.com.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        ///  <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the
+        /// certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>.
+        /// To correct the problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>
+        /// website. If your domain is reported as suspicious, see <a href="https://www.google.com/webmasters/hacked/?hl=en">Google
+        /// Help for Hacked Websites</a> to learn what you can do.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you believe that the result is a false positive, notify the organization that is
+        /// reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners
+        /// and cannot remove your domain from a block list itself. After you correct the problem
+        /// and the VirusTotal registry has been updated, request a new certificate.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you see this error and your domain is not included in the VirusTotal list, visit
+        /// the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and
+        /// create a case.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in
+        /// the certificate request is not valid. Typically, this is because a domain name in
+        /// the request is not a valid top-level domain. Try to request a certificate again, correcting
+        /// any spelling errors or typos that were in the failed request, and ensure that all
+        /// domain names in the request are for valid top-level domains. For example, you cannot
+        /// request a certificate for <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code>
+        /// is not a valid top-level domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical
+        /// error in one or more of the domain names in the certificate request. Try to request
+        /// a certificate again, correcting any spelling errors or typos that were in the failed
+        /// request. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public LoadBalancerTlsCertificateFailureReason FailureReason
         {
@@ -213,7 +274,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property KeyAlgorithm. 
         /// <para>
-        /// The algorithm that was used to generate the key pair (the public and private key).
+        /// The algorithm used to generate the key pair (the public and private key).
         /// </para>
         /// </summary>
         public string KeyAlgorithm
@@ -321,8 +382,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property RenewalSummary. 
         /// <para>
-        /// An object containing information about the status of Lightsail's managed renewal for
-        /// the certificate.
+        /// An object that describes the status of the certificate renewal managed by Lightsail.
         /// </para>
         /// </summary>
         public LoadBalancerTlsCertificateRenewalSummary RenewalSummary
@@ -400,7 +460,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property RevocationReason. 
         /// <para>
-        /// The reason the certificate was revoked. Valid values are below.
+        /// The reason the certificate was revoked. This value is present only when the certificate
+        /// status is <code>REVOKED</code>.
         /// </para>
         /// </summary>
         public LoadBalancerTlsCertificateRevocationReason RevocationReason
@@ -418,7 +479,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property RevokedAt. 
         /// <para>
-        /// The timestamp when the SSL/TLS certificate was revoked.
+        /// The timestamp when the certificate was revoked. This value is present only when the
+        /// certificate status is <code>REVOKED</code>.
         /// </para>
         /// </summary>
         public DateTime RevokedAt
@@ -508,11 +570,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property SubjectAlternativeNames. 
         /// <para>
-        /// One or more domains or subdomains included in the certificate. This list contains
-        /// the domain names that are bound to the public key that is contained in the certificate.
-        /// The subject alternative names include the canonical domain name (CNAME) of the certificate
-        /// and additional domain names that can be used to connect to the website, such as <code>example.com</code>,
-        /// <code>www.example.com</code>, or <code>m.example.com</code>.
+        /// An array of strings that specify the alternate domains (e.g., <code>example2.com</code>)
+        /// and subdomains (e.g., <code>blog.example.com</code>) for the certificate.
         /// </para>
         /// </summary>
         public List<string> SubjectAlternativeNames
