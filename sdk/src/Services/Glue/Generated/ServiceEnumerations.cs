@@ -319,6 +319,18 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionPropertyKey KAFKA_BOOTSTRAP_SERVERS = new ConnectionPropertyKey("KAFKA_BOOTSTRAP_SERVERS");
         /// <summary>
+        /// Constant KAFKA_CUSTOM_CERT for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_CUSTOM_CERT = new ConnectionPropertyKey("KAFKA_CUSTOM_CERT");
+        /// <summary>
+        /// Constant KAFKA_SKIP_CUSTOM_CERT_VALIDATION for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SKIP_CUSTOM_CERT_VALIDATION = new ConnectionPropertyKey("KAFKA_SKIP_CUSTOM_CERT_VALIDATION");
+        /// <summary>
+        /// Constant KAFKA_SSL_ENABLED for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SSL_ENABLED = new ConnectionPropertyKey("KAFKA_SSL_ENABLED");
+        /// <summary>
         /// Constant PASSWORD for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey PASSWORD = new ConnectionPropertyKey("PASSWORD");

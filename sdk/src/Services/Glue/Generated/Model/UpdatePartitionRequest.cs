@@ -84,6 +84,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// The new partition object to update the partition to.
         /// </para>
+        ///  
+        /// <para>
+        /// The <code>Values</code> property can't be changed. If you want to change the partition
+        /// key values for a partition, delete and recreate the partition.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public PartitionInput PartitionInput
@@ -101,7 +106,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PartitionValueList. 
         /// <para>
-        /// A list of the values defining the partition.
+        /// List of partition key values that define the partition to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
