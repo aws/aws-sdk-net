@@ -151,6 +151,10 @@ namespace Amazon.MediaPackage
     {
 
         /// <summary>
+        /// Constant DATERANGE for AdMarkers
+        /// </summary>
+        public static readonly AdMarkers DATERANGE = new AdMarkers("DATERANGE");
+        /// <summary>
         /// Constant NONE for AdMarkers
         /// </summary>
         public static readonly AdMarkers NONE = new AdMarkers("NONE");
