@@ -37,12 +37,12 @@ namespace Amazon.FraudDetector.Model
         private string _createdTime;
         private string _eventTypeName;
         private ModelInputConfiguration _inputConfiguration;
+        private string _invokeModelEndpointRoleArn;
         private string _lastUpdatedTime;
         private string _modelEndpoint;
         private ModelEndpointStatus _modelEndpointStatus;
         private ModelSource _modelSource;
         private ModelOutputConfiguration _outputConfiguration;
-        private Role _role;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -116,6 +116,24 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetInputConfiguration()
         {
             return this._inputConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvokeModelEndpointRoleArn. 
+        /// <para>
+        /// The role used to invoke the model. 
+        /// </para>
+        /// </summary>
+        public string InvokeModelEndpointRoleArn
+        {
+            get { return this._invokeModelEndpointRoleArn; }
+            set { this._invokeModelEndpointRoleArn = value; }
+        }
+
+        // Check to see if InvokeModelEndpointRoleArn property is set
+        internal bool IsSetInvokeModelEndpointRoleArn()
+        {
+            return this._invokeModelEndpointRoleArn != null;
         }
 
         /// <summary>
@@ -206,24 +224,6 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetOutputConfiguration()
         {
             return this._outputConfiguration != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Role. 
-        /// <para>
-        /// The role used to invoke the model. 
-        /// </para>
-        /// </summary>
-        public Role Role
-        {
-            get { return this._role; }
-            set { this._role = value; }
-        }
-
-        // Check to see if Role property is set
-        internal bool IsSetRole()
-        {
-            return this._role != null;
         }
 
     }

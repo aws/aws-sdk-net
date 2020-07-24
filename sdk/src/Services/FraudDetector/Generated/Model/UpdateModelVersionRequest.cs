@@ -68,7 +68,7 @@ namespace Amazon.FraudDetector.Model
         /// The major version number.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public string MajorVersionNumber
         {
             get { return this._majorVersionNumber; }

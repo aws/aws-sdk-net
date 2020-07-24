@@ -38,11 +38,11 @@ namespace Amazon.FraudDetector.Model
     {
         private string _eventTypeName;
         private ModelInputConfiguration _inputConfiguration;
+        private string _invokeModelEndpointRoleArn;
         private string _modelEndpoint;
         private ModelEndpointStatus _modelEndpointStatus;
         private ModelSource _modelSource;
         private ModelOutputConfiguration _outputConfiguration;
-        private Role _role;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -81,6 +81,25 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetInputConfiguration()
         {
             return this._inputConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvokeModelEndpointRoleArn. 
+        /// <para>
+        /// The IAM role used to invoke the model endpoint.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string InvokeModelEndpointRoleArn
+        {
+            get { return this._invokeModelEndpointRoleArn; }
+            set { this._invokeModelEndpointRoleArn = value; }
+        }
+
+        // Check to see if InvokeModelEndpointRoleArn property is set
+        internal bool IsSetInvokeModelEndpointRoleArn()
+        {
+            return this._invokeModelEndpointRoleArn != null;
         }
 
         /// <summary>
@@ -157,25 +176,6 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetOutputConfiguration()
         {
             return this._outputConfiguration != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Role. 
-        /// <para>
-        /// The IAM role used to invoke the model endpoint.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public Role Role
-        {
-            get { return this._role; }
-            set { this._role = value; }
-        }
-
-        // Check to see if Role property is set
-        internal bool IsSetRole()
-        {
-            return this._role != null;
         }
 
         /// <summary>

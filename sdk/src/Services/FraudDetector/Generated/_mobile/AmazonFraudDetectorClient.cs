@@ -1525,58 +1525,6 @@ namespace Amazon.FraudDetector
 
         #endregion
         
-        #region  GetPrediction
-
-        internal virtual GetPredictionResponse GetPrediction(GetPredictionRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = GetPredictionRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = GetPredictionResponseUnmarshaller.Instance;
-
-            return Invoke<GetPredictionResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// Evaluates an event against a detector version. If a version ID is not provided, the
-        /// detector’s (<code>ACTIVE</code>) version is used.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetPrediction service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the GetPrediction service method, as returned by FraudDetector.</returns>
-        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
-        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
-        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
-        /// specifies a role that is not in your account.
-        /// </exception>
-        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
-        /// An exception indicating an internal server error.
-        /// </exception>
-        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found.
-        /// </exception>
-        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
-        /// An exception indicating a throttling error.
-        /// </exception>
-        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
-        /// An exception indicating a specified value is not allowed.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetPrediction">REST API Reference for GetPrediction Operation</seealso>
-        public virtual Task<GetPredictionResponse> GetPredictionAsync(GetPredictionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = GetPredictionRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = GetPredictionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetPredictionResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  GetRules
 
         internal virtual GetRulesResponse GetRules(GetRulesRequest request)

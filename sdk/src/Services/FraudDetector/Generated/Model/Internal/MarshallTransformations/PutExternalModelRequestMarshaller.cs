@@ -85,6 +85,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetInvokeModelEndpointRoleArn())
+                {
+                    context.Writer.WritePropertyName("invokeModelEndpointRoleArn");
+                    context.Writer.Write(publicRequest.InvokeModelEndpointRoleArn);
+                }
+
                 if(publicRequest.IsSetModelEndpoint())
                 {
                     context.Writer.WritePropertyName("modelEndpoint");
@@ -110,17 +116,6 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 
                     var marshaller = ModelOutputConfigurationMarshaller.Instance;
                     marshaller.Marshall(publicRequest.OutputConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRole())
-                {
-                    context.Writer.WritePropertyName("role");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RoleMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Role, context);
 
                     context.Writer.WriteObjectEnd();
                 }

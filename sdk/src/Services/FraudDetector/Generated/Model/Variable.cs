@@ -101,7 +101,8 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property DataType. 
         /// <para>
-        /// The data type of the variable.
+        /// The data type of the variable. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+        /// types</a>.
         /// </para>
         /// </summary>
         public DataType DataType

@@ -133,7 +133,8 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property VariableType. 
         /// <para>
-        /// The type of the variable.
+        /// The type of the variable. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+        /// types</a>.
         /// </para>
         ///  
         /// <para>

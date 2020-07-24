@@ -88,6 +88,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     unmarshalledObject.InputConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("invokeModelEndpointRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InvokeModelEndpointRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdatedTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -116,12 +122,6 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ModelOutputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OutputConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("role", targetDepth))
-                {
-                    var unmarshaller = RoleUnmarshaller.Instance;
-                    unmarshalledObject.Role = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

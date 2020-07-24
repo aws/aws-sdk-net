@@ -485,45 +485,13 @@ namespace Amazon.FraudDetector
     {
 
         /// <summary>
-        /// Constant ACTIVATE_IN_PROGRESS for ModelVersionStatus
-        /// </summary>
-        public static readonly ModelVersionStatus ACTIVATE_IN_PROGRESS = new ModelVersionStatus("ACTIVATE_IN_PROGRESS");
-        /// <summary>
-        /// Constant ACTIVATE_REQUESTED for ModelVersionStatus
-        /// </summary>
-        public static readonly ModelVersionStatus ACTIVATE_REQUESTED = new ModelVersionStatus("ACTIVATE_REQUESTED");
-        /// <summary>
         /// Constant ACTIVE for ModelVersionStatus
         /// </summary>
         public static readonly ModelVersionStatus ACTIVE = new ModelVersionStatus("ACTIVE");
         /// <summary>
-        /// Constant DELETE_IN_PROGRESS for ModelVersionStatus
-        /// </summary>
-        public static readonly ModelVersionStatus DELETE_IN_PROGRESS = new ModelVersionStatus("DELETE_IN_PROGRESS");
-        /// <summary>
-        /// Constant DELETE_REQUESTED for ModelVersionStatus
-        /// </summary>
-        public static readonly ModelVersionStatus DELETE_REQUESTED = new ModelVersionStatus("DELETE_REQUESTED");
-        /// <summary>
-        /// Constant ERROR for ModelVersionStatus
-        /// </summary>
-        public static readonly ModelVersionStatus ERROR = new ModelVersionStatus("ERROR");
-        /// <summary>
-        /// Constant INACTIVATE_IN_PROGRESS for ModelVersionStatus
-        /// </summary>
-        public static readonly ModelVersionStatus INACTIVATE_IN_PROGRESS = new ModelVersionStatus("INACTIVATE_IN_PROGRESS");
-        /// <summary>
         /// Constant INACTIVE for ModelVersionStatus
         /// </summary>
         public static readonly ModelVersionStatus INACTIVE = new ModelVersionStatus("INACTIVE");
-        /// <summary>
-        /// Constant TRAINING_COMPLETE for ModelVersionStatus
-        /// </summary>
-        public static readonly ModelVersionStatus TRAINING_COMPLETE = new ModelVersionStatus("TRAINING_COMPLETE");
-        /// <summary>
-        /// Constant TRAINING_IN_PROGRESS for ModelVersionStatus
-        /// </summary>
-        public static readonly ModelVersionStatus TRAINING_IN_PROGRESS = new ModelVersionStatus("TRAINING_IN_PROGRESS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
