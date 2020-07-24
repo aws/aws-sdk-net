@@ -36,6 +36,7 @@ namespace Amazon.MediaConnect.Model
         private int? _dataTransferSubscriberFeePercent;
         private string _description;
         private Encryption _encryption;
+        private EntitlementStatus _entitlementStatus;
         private string _name;
         private List<string> _subscribers = new List<string>();
 
@@ -86,6 +87,23 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetEncryption()
         {
             return this._encryption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EntitlementStatus. An indication of whether the new entitlement
+        /// should be enabled or disabled as soon as it is created. If you don’t specify the entitlementStatus
+        /// field in your request, MediaConnect sets it to ENABLED.
+        /// </summary>
+        public EntitlementStatus EntitlementStatus
+        {
+            get { return this._entitlementStatus; }
+            set { this._entitlementStatus = value; }
+        }
+
+        // Check to see if EntitlementStatus property is set
+        internal bool IsSetEntitlementStatus()
+        {
+            return this._entitlementStatus != null;
         }
 
         /// <summary>

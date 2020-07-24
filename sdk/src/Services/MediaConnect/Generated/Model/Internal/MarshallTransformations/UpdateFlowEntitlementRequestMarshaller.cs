@@ -89,6 +89,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetEntitlementStatus())
+                {
+                    context.Writer.WritePropertyName("entitlementStatus");
+                    context.Writer.Write(publicRequest.EntitlementStatus);
+                }
+
                 if(publicRequest.IsSetSubscribers())
                 {
                     context.Writer.WritePropertyName("subscribers");
