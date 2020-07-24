@@ -48,7 +48,7 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// This parameter is not currently used. Reserved for future use. If it is used in the
-        /// future, the maximum value may be different.
+        /// future, the maximum value might be different.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]

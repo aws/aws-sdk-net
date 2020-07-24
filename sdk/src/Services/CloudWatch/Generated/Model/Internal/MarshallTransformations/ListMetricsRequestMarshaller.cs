@@ -86,6 +86,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
+                if(publicRequest.IsSetRecentlyActive())
+                {
+                    request.Parameters.Add("RecentlyActive", StringUtils.FromString(publicRequest.RecentlyActive));
+                }
             }
             return request;
         }

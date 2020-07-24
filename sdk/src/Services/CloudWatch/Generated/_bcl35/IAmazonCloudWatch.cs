@@ -180,7 +180,7 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Deletes all dashboards that you specify. You may specify up to 100 dashboards to delete.
+        /// Deletes all dashboards that you specify. You can specify up to 100 dashboards to delete.
         /// If there is an error during this call, no dashboards are deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDashboards service method.</param>
@@ -235,7 +235,7 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// If you create a rule, delete it, and then re-create it with the same name, historical
-        /// data from the first time the rule was created may or may not be available.
+        /// data from the first time the rule was created might not be available.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInsightRules service method.</param>
@@ -798,7 +798,7 @@ namespace Amazon.CloudWatch
         ///  </li> <li> 
         /// <para>
         ///  <code>MaxContributorValue</code> -- the value of the top contributor for each data
-        /// point. The identity of the contributor may change for each data point in the graph.
+        /// point. The identity of the contributor might change for each data point in the graph.
         /// </para>
         ///  
         /// <para>
@@ -932,9 +932,9 @@ namespace Amazon.CloudWatch
         /// If you omit <code>Unit</code> in your request, all data that was collected with any
         /// unit is returned, along with the corresponding units that were specified when the
         /// data was reported to CloudWatch. If you specify a unit, the operation returns only
-        /// data data that was collected with that unit specified. If you specify a unit that
-        /// does not match the data collected, the results of the operation are null. CloudWatch
-        /// does not perform unit conversions.
+        /// data that was collected with that unit specified. If you specify a unit that does
+        /// not match the data collected, the results of the operation are null. CloudWatch does
+        /// not perform unit conversions.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetricData service method.</param>
@@ -1239,8 +1239,14 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// After you create a metric, allow up to fifteen minutes before the metric appears.
-        /// Statistics about the metric, however, are available sooner using <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+        /// After you create a metric, allow up to 15 minutes before the metric appears. You can
+        /// see statistics about the metric sooner by using <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ListMetrics</code> doesn't return information about metrics if those metrics
+        /// haven't reported data in the past two weeks. To retrieve those metrics, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
         /// </para>
         /// </summary>
@@ -1267,8 +1273,14 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// After you create a metric, allow up to fifteen minutes before the metric appears.
-        /// Statistics about the metric, however, are available sooner using <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+        /// After you create a metric, allow up to 15 minutes before the metric appears. You can
+        /// see statistics about the metric sooner by using <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ListMetrics</code> doesn't return information about metrics if those metrics
+        /// haven't reported data in the past two weeks. To retrieve those metrics, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
         /// </para>
         /// </summary>
@@ -1600,7 +1612,7 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// If you create a rule, delete it, and then re-create it with the same name, historical
-        /// data from the first time the rule was created may or may not be available.
+        /// data from the first time the rule was created might not be available.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutInsightRule service method.</param>
@@ -1888,8 +1900,8 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// If you use <code>SetAlarmState</code> on a composite alarm, the composite alarm is
-        /// not guaranteed to return to its actual state. It will return to its actual state only
-        /// once any of its children alarms change state. It is also re-evaluated if you update
+        /// not guaranteed to return to its actual state. It returns to its actual state only
+        /// once any of its children alarms change state. It is also reevaluated if you update
         /// its configuration.
         /// </para>
         ///  
@@ -1950,7 +1962,7 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// Tags can help you organize and categorize your resources. You can also use them to
-        /// scope user permissions, by granting a user permission to access or change only resources
+        /// scope user permissions by granting a user permission to access or change only resources
         /// with certain tag values.
         /// </para>
         ///  

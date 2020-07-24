@@ -202,7 +202,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmName. 
         /// <para>
-        /// The name for the alarm. This name must be unique within your AWS account.
+        /// The name for the alarm. This name must be unique within the Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -537,8 +537,8 @@ namespace Amazon.CloudWatch.Model
         /// 30 for a metric that does not have sub-minute resolution, the alarm still attempts
         /// to gather data at the period rate that you specify. In this case, it does not receive
         /// data for the attempts that do not correspond to a one-minute data resolution, and
-        /// the alarm may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets
-        /// this alarm as a high-resolution alarm, which has a higher charge than other alarms.
+        /// the alarm might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also
+        /// sets this alarm as a high-resolution alarm, which has a higher charge than other alarms.
         /// For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
         /// CloudWatch Pricing</a>.
         /// </para>
@@ -591,7 +591,7 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// Tags can help you organize and categorize your resources. You can also use them to
-        /// scope user permissions, by granting a user permission to access or change only resources
+        /// scope user permissions by granting a user permission to access or change only resources
         /// with certain tag values.
         /// </para>
         /// </summary>
@@ -697,13 +697,13 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have
-        /// been published for the metric and attempts to evaluate the alarm. Usually metrics
-        /// are published with only one unit, so the alarm will work as intended.
+        /// been published for the metric and attempts to evaluate the alarm. Usually, metrics
+        /// are published with only one unit, so the alarm works as intended.
         /// </para>
         ///  
         /// <para>
         /// However, if the metric is published with multiple types of units and you don't specify
-        /// a unit, the alarm's behavior is not defined and will behave un-predictably.
+        /// a unit, the alarm's behavior is not defined and it behaves predictably.
         /// </para>
         ///  
         /// <para>

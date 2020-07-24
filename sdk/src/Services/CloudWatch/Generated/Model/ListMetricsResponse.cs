@@ -39,7 +39,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        /// The metrics.
+        /// The metrics that match your request. 
         /// </para>
         /// </summary>
         public List<Metric> Metrics
@@ -57,7 +57,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token that marks the start of the next batch of returned results.
+        /// The token that marks the start of the next batch of returned results. 
         /// </para>
         /// </summary>
         public string NextToken

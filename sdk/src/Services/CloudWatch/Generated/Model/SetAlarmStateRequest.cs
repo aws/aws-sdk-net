@@ -45,8 +45,8 @@ namespace Amazon.CloudWatch.Model
     ///  
     /// <para>
     /// If you use <code>SetAlarmState</code> on a composite alarm, the composite alarm is
-    /// not guaranteed to return to its actual state. It will return to its actual state only
-    /// once any of its children alarms change state. It is also re-evaluated if you update
+    /// not guaranteed to return to its actual state. It returns to its actual state only
+    /// once any of its children alarms change state. It is also reevaluated if you update
     /// its configuration.
     /// </para>
     ///  
@@ -66,8 +66,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmName. 
         /// <para>
-        /// The name for the alarm. This name must be unique within the AWS account. The maximum
-        /// length is 255 characters.
+        /// The name of the alarm.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

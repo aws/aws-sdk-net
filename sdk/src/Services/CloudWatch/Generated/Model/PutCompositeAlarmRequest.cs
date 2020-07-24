@@ -163,7 +163,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmName. 
         /// <para>
-        /// The name for the composite alarm. This name must be unique within your AWS account.
+        /// The name for the composite alarm. This name must be unique within the Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

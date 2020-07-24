@@ -41,7 +41,7 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property Messages. 
         /// <para>
         /// Contains a message about this <code>GetMetricData</code> operation, if the operation
-        /// results in such a message. An example of a message that may be returned is <code>Maximum
+        /// results in such a message. An example of a message that might be returned is <code>Maximum
         /// number of allowed metrics exceeded</code>. If there is a message, as much of the operation
         /// as possible is still executed.
         /// </para>
