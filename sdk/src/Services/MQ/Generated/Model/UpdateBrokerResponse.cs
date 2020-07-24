@@ -33,13 +33,31 @@ namespace Amazon.MQ.Model
     /// </summary>
     public partial class UpdateBrokerResponse : AmazonWebServiceResponse
     {
+        private AuthenticationStrategy _authenticationStrategy;
         private bool? _autoMinorVersionUpgrade;
         private string _brokerId;
         private ConfigurationId _configuration;
         private string _engineVersion;
         private string _hostInstanceType;
+        private LdapServerMetadataOutput _ldapServerMetadata;
         private Logs _logs;
         private List<string> _securityGroups = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationStrategy. The authentication strategy used
+        /// to secure the broker.
+        /// </summary>
+        public AuthenticationStrategy AuthenticationStrategy
+        {
+            get { return this._authenticationStrategy; }
+            set { this._authenticationStrategy = value; }
+        }
+
+        // Check to see if AuthenticationStrategy property is set
+        internal bool IsSetAuthenticationStrategy()
+        {
+            return this._authenticationStrategy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. The new value of automatic upgrades
@@ -118,6 +136,22 @@ namespace Amazon.MQ.Model
         internal bool IsSetHostInstanceType()
         {
             return this._hostInstanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LdapServerMetadata. The metadata of the LDAP server used
+        /// to authenticate and authorize connections to the broker.
+        /// </summary>
+        public LdapServerMetadataOutput LdapServerMetadata
+        {
+            get { return this._ldapServerMetadata; }
+            set { this._ldapServerMetadata = value; }
+        }
+
+        // Check to see if LdapServerMetadata property is set
+        internal bool IsSetLdapServerMetadata()
+        {
+            return this._ldapServerMetadata != null;
         }
 
         /// <summary>

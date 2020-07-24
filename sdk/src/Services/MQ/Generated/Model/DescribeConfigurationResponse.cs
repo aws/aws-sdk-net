@@ -34,6 +34,7 @@ namespace Amazon.MQ.Model
     public partial class DescribeConfigurationResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private AuthenticationStrategy _authenticationStrategy;
         private DateTime? _created;
         private string _description;
         private EngineType _engineType;
@@ -56,6 +57,22 @@ namespace Amazon.MQ.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationStrategy. The authentication strategy associated
+        /// with the configuration.
+        /// </summary>
+        public AuthenticationStrategy AuthenticationStrategy
+        {
+            get { return this._authenticationStrategy; }
+            set { this._authenticationStrategy = value; }
+        }
+
+        // Check to see if AuthenticationStrategy property is set
+        internal bool IsSetAuthenticationStrategy()
+        {
+            return this._authenticationStrategy != null;
         }
 
         /// <summary>

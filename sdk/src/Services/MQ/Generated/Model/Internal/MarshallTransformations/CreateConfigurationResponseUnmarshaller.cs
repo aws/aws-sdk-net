@@ -57,6 +57,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("authenticationStrategy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AuthenticationStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("created", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

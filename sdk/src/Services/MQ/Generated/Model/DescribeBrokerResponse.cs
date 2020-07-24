@@ -33,6 +33,7 @@ namespace Amazon.MQ.Model
     /// </summary>
     public partial class DescribeBrokerResponse : AmazonWebServiceResponse
     {
+        private AuthenticationStrategy _authenticationStrategy;
         private bool? _autoMinorVersionUpgrade;
         private string _brokerArn;
         private string _brokerId;
@@ -46,10 +47,13 @@ namespace Amazon.MQ.Model
         private EngineType _engineType;
         private string _engineVersion;
         private string _hostInstanceType;
+        private LdapServerMetadataOutput _ldapServerMetadata;
         private LogsSummary _logs;
         private WeeklyStartTime _maintenanceWindowStartTime;
+        private AuthenticationStrategy _pendingAuthenticationStrategy;
         private string _pendingEngineVersion;
         private string _pendingHostInstanceType;
+        private LdapServerMetadataOutput _pendingLdapServerMetadata;
         private List<string> _pendingSecurityGroups = new List<string>();
         private bool? _publiclyAccessible;
         private List<string> _securityGroups = new List<string>();
@@ -57,6 +61,22 @@ namespace Amazon.MQ.Model
         private List<string> _subnetIds = new List<string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private List<UserSummary> _users = new List<UserSummary>();
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationStrategy. The authentication strategy used
+        /// to secure the broker.
+        /// </summary>
+        public AuthenticationStrategy AuthenticationStrategy
+        {
+            get { return this._authenticationStrategy; }
+            set { this._authenticationStrategy = value; }
+        }
+
+        // Check to see if AuthenticationStrategy property is set
+        internal bool IsSetAuthenticationStrategy()
+        {
+            return this._authenticationStrategy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. Required. Enables automatic upgrades
@@ -265,6 +285,22 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LdapServerMetadata. The metadata of the LDAP server used
+        /// to authenticate and authorize connections to the broker.
+        /// </summary>
+        public LdapServerMetadataOutput LdapServerMetadata
+        {
+            get { return this._ldapServerMetadata; }
+            set { this._ldapServerMetadata = value; }
+        }
+
+        // Check to see if LdapServerMetadata property is set
+        internal bool IsSetLdapServerMetadata()
+        {
+            return this._ldapServerMetadata != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Logs. The list of information about logs currently enabled
         /// and pending to be deployed for the specified broker.
         /// </summary>
@@ -297,6 +333,22 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PendingAuthenticationStrategy. The authentication strategy
+        /// that will be applied when the broker is rebooted.
+        /// </summary>
+        public AuthenticationStrategy PendingAuthenticationStrategy
+        {
+            get { return this._pendingAuthenticationStrategy; }
+            set { this._pendingAuthenticationStrategy = value; }
+        }
+
+        // Check to see if PendingAuthenticationStrategy property is set
+        internal bool IsSetPendingAuthenticationStrategy()
+        {
+            return this._pendingAuthenticationStrategy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PendingEngineVersion. The version of the broker engine
         /// to upgrade to. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
         /// </summary>
@@ -326,6 +378,23 @@ namespace Amazon.MQ.Model
         internal bool IsSetPendingHostInstanceType()
         {
             return this._pendingHostInstanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingLdapServerMetadata. The metadata of the LDAP server
+        /// that will be used to authenticate and authorize connections to the broker once it
+        /// is rebooted.
+        /// </summary>
+        public LdapServerMetadataOutput PendingLdapServerMetadata
+        {
+            get { return this._pendingLdapServerMetadata; }
+            set { this._pendingLdapServerMetadata = value; }
+        }
+
+        // Check to see if PendingLdapServerMetadata property is set
+        internal bool IsSetPendingLdapServerMetadata()
+        {
+            return this._pendingLdapServerMetadata != null;
         }
 
         /// <summary>

@@ -35,10 +35,27 @@ namespace Amazon.MQ.Model
     /// </summary>
     public partial class CreateConfigurationRequest : AmazonMQRequest
     {
+        private AuthenticationStrategy _authenticationStrategy;
         private EngineType _engineType;
         private string _engineVersion;
         private string _name;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationStrategy. The authentication strategy associated
+        /// with the configuration.
+        /// </summary>
+        public AuthenticationStrategy AuthenticationStrategy
+        {
+            get { return this._authenticationStrategy; }
+            set { this._authenticationStrategy = value; }
+        }
+
+        // Check to see if AuthenticationStrategy property is set
+        internal bool IsSetAuthenticationStrategy()
+        {
+            return this._authenticationStrategy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EngineType. Required. The type of broker engine. Note:

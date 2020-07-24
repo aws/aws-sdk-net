@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MQ.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Configuration Object
+    /// Response Unmarshaller for LdapServerMetadataOutput Object
     /// </summary>  
-    public class ConfigurationUnmarshaller : IUnmarshaller<Configuration, XmlUnmarshallerContext>, IUnmarshaller<Configuration, JsonUnmarshallerContext>
+    public class LdapServerMetadataOutputUnmarshaller : IUnmarshaller<LdapServerMetadataOutput, XmlUnmarshallerContext>, IUnmarshaller<LdapServerMetadataOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Configuration IUnmarshaller<Configuration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LdapServerMetadataOutput IUnmarshaller<LdapServerMetadataOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,75 +53,75 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Configuration Unmarshall(JsonUnmarshallerContext context)
+        public LdapServerMetadataOutput Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Configuration unmarshalledObject = new Configuration();
+            LdapServerMetadataOutput unmarshalledObject = new LdapServerMetadataOutput();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("hosts", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Hosts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("roleBase", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoleBase = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("authenticationStrategy", targetDepth))
+                if (context.TestExpression("roleName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthenticationStrategy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoleName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("created", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Created = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("roleSearchMatching", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoleSearchMatching = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("engineType", targetDepth))
+                if (context.TestExpression("roleSearchSubtree", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.RoleSearchSubtree = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("serviceAccountUsername", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EngineType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceAccountUsername = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("engineVersion", targetDepth))
+                if (context.TestExpression("userBase", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UserBase = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("userRoleName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UserRoleName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("latestRevision", targetDepth))
-                {
-                    var unmarshaller = ConfigurationRevisionUnmarshaller.Instance;
-                    unmarshalledObject.LatestRevision = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("userSearchMatching", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UserSearchMatching = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("userSearchSubtree", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UserSearchSubtree = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -130,12 +130,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         }
 
 
-        private static ConfigurationUnmarshaller _instance = new ConfigurationUnmarshaller();        
+        private static LdapServerMetadataOutputUnmarshaller _instance = new LdapServerMetadataOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConfigurationUnmarshaller Instance
+        public static LdapServerMetadataOutputUnmarshaller Instance
         {
             get
             {

@@ -69,6 +69,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAuthenticationStrategy())
+                {
+                    context.Writer.WritePropertyName("authenticationStrategy");
+                    context.Writer.Write(publicRequest.AuthenticationStrategy);
+                }
+
                 if(publicRequest.IsSetAutoMinorVersionUpgrade())
                 {
                     context.Writer.WritePropertyName("autoMinorVersionUpgrade");
@@ -96,6 +102,17 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("hostInstanceType");
                     context.Writer.Write(publicRequest.HostInstanceType);
+                }
+
+                if(publicRequest.IsSetLdapServerMetadata())
+                {
+                    context.Writer.WritePropertyName("ldapServerMetadata");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LdapServerMetadataInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LdapServerMetadata, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetLogs())

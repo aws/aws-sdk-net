@@ -51,6 +51,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("authenticationStrategy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AuthenticationStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("autoMinorVersionUpgrade", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -129,6 +135,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     response.HostInstanceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ldapServerMetadata", targetDepth))
+                {
+                    var unmarshaller = LdapServerMetadataOutputUnmarshaller.Instance;
+                    response.LdapServerMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("logs", targetDepth))
                 {
                     var unmarshaller = LogsSummaryUnmarshaller.Instance;
@@ -141,6 +153,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     response.MaintenanceWindowStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pendingAuthenticationStrategy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PendingAuthenticationStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("pendingEngineVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -151,6 +169,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PendingHostInstanceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("pendingLdapServerMetadata", targetDepth))
+                {
+                    var unmarshaller = LdapServerMetadataOutputUnmarshaller.Instance;
+                    response.PendingLdapServerMetadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("pendingSecurityGroups", targetDepth))
