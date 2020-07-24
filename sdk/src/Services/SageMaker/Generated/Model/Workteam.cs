@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private NotificationConfiguration _notificationConfiguration;
         private List<string> _productListingIds = new List<string>();
         private string _subDomain;
+        private string _workforceArn;
         private string _workteamArn;
         private string _workteamName;
 
@@ -170,6 +171,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSubDomain()
         {
             return this._subDomain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkforceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the workforce.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string WorkforceArn
+        {
+            get { return this._workforceArn; }
+            set { this._workforceArn = value; }
+        }
+
+        // Check to see if WorkforceArn property is set
+        internal bool IsSetWorkforceArn()
+        {
+            return this._workforceArn != null;
         }
 
         /// <summary>

@@ -64,6 +64,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CompilerOptions", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CompilerOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("S3OutputLocation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -74,6 +80,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TargetDevice = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TargetPlatform", targetDepth))
+                {
+                    var unmarshaller = TargetPlatformUnmarshaller.Instance;
+                    unmarshalledObject.TargetPlatform = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

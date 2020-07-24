@@ -45,6 +45,7 @@ namespace Amazon.SageMaker.Model
         private List<MemberDefinition> _memberDefinitions = new List<MemberDefinition>();
         private NotificationConfiguration _notificationConfiguration;
         private List<Tag> _tags = new List<Tag>();
+        private string _workforceName;
         private string _workteamName;
 
         /// <summary>
@@ -134,6 +135,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkforceName. 
+        /// <para>
+        /// The name of the workforce.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string WorkforceName
+        {
+            get { return this._workforceName; }
+            set { this._workforceName = value; }
+        }
+
+        // Check to see if WorkforceName property is set
+        internal bool IsSetWorkforceName()
+        {
+            return this._workforceName != null;
         }
 
         /// <summary>

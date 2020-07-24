@@ -44,10 +44,14 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// Use this parameter when you are creating a labeling job for 3D point cloud labeling
-        /// modalities. Use your labeling job task type to select one of the following ARN's and
-        /// use it with this parameter when you create a labeling job. Replace <code>aws-region</code>
+        /// Use this parameter when you are creating a labeling job for 3D point cloud and video
+        /// fram labeling jobs. Use your labeling job task type to select one of the following
+        /// ARN's and use it with this parameter when you create a labeling job. Replace <code>aws-region</code>
         /// with the AWS region you are creating your labeling job in.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>3D Point Cloud HumanTaskUiArns</b> 
         /// </para>
         ///  
         /// <para>
@@ -77,6 +81,30 @@ namespace Amazon.SageMaker.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Video Frame HumanTaskUiArns</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use this <code>HumanTaskUiArn</code> for video frame object detection and video frame
+        /// object detection adjustment labeling jobs. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:aws:sagemaker:region:394669845002:human-task-ui/VideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  Use this <code>HumanTaskUiArn</code> for video frame object tracking and video frame
+        /// object tracking adjustment labeling jobs. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code>
         /// 
         /// </para>
         ///  </li> </ul>

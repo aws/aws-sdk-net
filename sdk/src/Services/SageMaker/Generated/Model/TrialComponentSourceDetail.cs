@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private ProcessingJob _processingJob;
         private string _sourceArn;
         private TrainingJob _trainingJob;
+        private TransformJob _transformJob;
 
         /// <summary>
         /// Gets and sets the property ProcessingJob. 
@@ -91,6 +92,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTrainingJob()
         {
             return this._trainingJob != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransformJob. 
+        /// <para>
+        /// Information about a transform job that's the source of the trial component.
+        /// </para>
+        /// </summary>
+        public TransformJob TransformJob
+        {
+            get { return this._transformJob; }
+            set { this._transformJob = value; }
+        }
+
+        // Check to see if TransformJob property is set
+        internal bool IsSetTransformJob()
+        {
+            return this._transformJob != null;
         }
 
     }

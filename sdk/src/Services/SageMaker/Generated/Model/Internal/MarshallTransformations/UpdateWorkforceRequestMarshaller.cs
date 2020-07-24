@@ -68,6 +68,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetOidcConfig())
+                {
+                    context.Writer.WritePropertyName("OidcConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OidcConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OidcConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSourceIpConfig())
                 {
                     context.Writer.WritePropertyName("SourceIpConfig");

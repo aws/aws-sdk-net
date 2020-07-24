@@ -50,8 +50,28 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UpdateWorkforceRequest : AmazonSageMakerRequest
     {
+        private OidcConfig _oidcConfig;
         private SourceIpConfig _sourceIpConfig;
         private string _workforceName;
+
+        /// <summary>
+        /// Gets and sets the property OidcConfig. 
+        /// <para>
+        /// Use this parameter to update your OIDC Identity Provider (IdP) configuration for a
+        /// workforce made using your own IdP.
+        /// </para>
+        /// </summary>
+        public OidcConfig OidcConfig
+        {
+            get { return this._oidcConfig; }
+            set { this._oidcConfig = value; }
+        }
+
+        // Check to see if OidcConfig property is set
+        internal bool IsSetOidcConfig()
+        {
+            return this._oidcConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SourceIpConfig. 

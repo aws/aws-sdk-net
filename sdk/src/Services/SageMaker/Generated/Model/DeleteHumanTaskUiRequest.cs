@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteHumanTaskUi operation.
-    /// Use this operation to delete a worker task template (<code>HumanTaskUi</code>).
+    /// Use this operation to delete a human task user interface (worker task template).
     /// 
     ///  
     /// <para>

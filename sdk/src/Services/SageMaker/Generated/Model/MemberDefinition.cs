@@ -34,6 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class MemberDefinition
     {
         private CognitoMemberDefinition _cognitoMemberDefinition;
+        private OidcMemberDefinition _oidcMemberDefinition;
 
         /// <summary>
         /// Gets and sets the property CognitoMemberDefinition. 
@@ -51,6 +52,28 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCognitoMemberDefinition()
         {
             return this._cognitoMemberDefinition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OidcMemberDefinition. 
+        /// <para>
+        /// A list user groups that exist in your OIDC Identity Provider (IdP). One to ten groups
+        /// can be used to create a single private work team. When you add a user group to the
+        /// list of <code>Groups</code>, you can add that user group to one or more private work
+        /// teams. If you add a user group to a private work team, all workers in that user group
+        /// are added to the work team.
+        /// </para>
+        /// </summary>
+        public OidcMemberDefinition OidcMemberDefinition
+        {
+            get { return this._oidcMemberDefinition; }
+            set { this._oidcMemberDefinition = value; }
+        }
+
+        // Check to see if OidcMemberDefinition property is set
+        internal bool IsSetOidcMemberDefinition()
+        {
+            return this._oidcMemberDefinition != null;
         }
 
     }

@@ -560,6 +560,201 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>Video Classification</b> - Use this task type when you need workers to classify
+        /// videos using predefined labels that you specify. Workers are shown videos and are
+        /// asked to choose one label for each video.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VideoMultiClass</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VideoMultiClass</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VideoMultiClass</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VideoMultiClass</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VideoMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VideoMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VideoMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VideoMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VideoMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VideoMultiClass</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VideoMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VideoMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Video Frame Object Detection</b> - Use this task type to have workers identify
+        /// and locate objects in a sequence of video frames (images extracted from a video) using
+        /// bounding boxes. For example, you can use this task to ask workers to identify and
+        /// localize various objects in a series of video frames, such as cars, bikes, and pedestrians.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Video Frame Object Tracking</b> - Use this task type to have workers track the
+        /// movement of objects in a sequence of video frames (images extracted from a video)
+        /// using bounding boxes. For example, you can use this task to ask workers to track the
+        /// movement of objects, such as cars, bikes, and pedestrians. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>3D Point Cloud Modalities</b> 
         /// </para>
         ///  
@@ -1040,6 +1235,138 @@ namespace Amazon.SageMaker.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-AdjustmentSemanticSegmentation</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Video Frame Object Detection Adjustment</b> - Use this task type when you want
+        /// workers to adjust bounding boxes that workers have added to video frames to classify
+        /// and localize objects in a sequence of video frames.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-AdjustmentVideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-AdjustmentVideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-AdjustmentVideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-AdjustmentVideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-AdjustmentVideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-AdjustmentVideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-AdjustmentVideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-AdjustmentVideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-AdjustmentVideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-AdjustmentVideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-AdjustmentVideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-AdjustmentVideoObjectDetection</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Video Frame Object Tracking Adjustment</b> - Use this task type when you want
+        /// workers to adjust bounding boxes that workers have added to video frames to track
+        /// object movement across a sequence of video frames.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-AdjustmentVideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-AdjustmentVideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-AdjustmentVideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-AdjustmentVideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-AdjustmentVideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-AdjustmentVideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-AdjustmentVideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-AdjustmentVideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-AdjustmentVideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-AdjustmentVideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-AdjustmentVideoObjectTracking</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-AdjustmentVideoObjectTracking</code>
         /// 
         /// </para>
         ///  </li> </ul> 

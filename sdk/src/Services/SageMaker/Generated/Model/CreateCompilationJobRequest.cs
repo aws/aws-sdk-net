@@ -59,8 +59,8 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker assumes
-    /// to perform the model compilation job</code> 
+    /// The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker assumes to perform
+    /// the model compilation job. 
     /// </para>
     ///  </li> </ul> 
     /// <para>

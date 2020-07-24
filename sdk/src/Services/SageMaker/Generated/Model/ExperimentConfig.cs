@@ -29,7 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Configuration for the experiment.
+    /// Associates a SageMaker job as a trial component with an experiment and trial. Specified
+    /// when you call the following APIs:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateProcessingJob</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateTrainingJob</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateTransformJob</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ExperimentConfig
     {
@@ -40,7 +55,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ExperimentName. 
         /// <para>
-        /// The name of the experiment.
+        /// The name of an existing experiment to associate the trial component with.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=82)]
@@ -59,7 +74,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TrialComponentDisplayName. 
         /// <para>
-        /// Display name for the trial component.
+        /// The display name for the trial component. If this key isn't specified, the display
+        /// name is the trial component name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=82)]
@@ -78,7 +94,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TrialName. 
         /// <para>
-        /// The name of the trial.
+        /// The name of an existing trial to associate the trial component with. If not specified,
+        /// a new trial is created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=82)]

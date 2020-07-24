@@ -56,6 +56,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetOidcMemberDefinition())
+            {
+                context.Writer.WritePropertyName("OidcMemberDefinition");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OidcMemberDefinitionMarshaller.Instance;
+                marshaller.Marshall(requestObject.OidcMemberDefinition, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

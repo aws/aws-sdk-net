@@ -39,6 +39,9 @@ namespace Amazon.SageMaker.Model
         private CompilationJobStatus _compilationJobStatus;
         private DateTime? _compilationStartTime;
         private TargetDevice _compilationTargetDevice;
+        private TargetPlatformAccelerator _compilationTargetPlatformAccelerator;
+        private TargetPlatformArch _compilationTargetPlatformArch;
+        private TargetPlatformOs _compilationTargetPlatformOs;
         private DateTime? _creationTime;
         private DateTime? _lastModifiedTime;
 
@@ -138,10 +141,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CompilationTargetDevice. 
         /// <para>
-        /// The type of device that the model will run on after compilation has completed.
+        /// The type of device that the model will run on after the compilation job has completed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public TargetDevice CompilationTargetDevice
         {
             get { return this._compilationTargetDevice; }
@@ -152,6 +154,61 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCompilationTargetDevice()
         {
             return this._compilationTargetDevice != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompilationTargetPlatformAccelerator. 
+        /// <para>
+        /// The type of accelerator that the model will run on after the compilation job has completed.
+        /// </para>
+        /// </summary>
+        public TargetPlatformAccelerator CompilationTargetPlatformAccelerator
+        {
+            get { return this._compilationTargetPlatformAccelerator; }
+            set { this._compilationTargetPlatformAccelerator = value; }
+        }
+
+        // Check to see if CompilationTargetPlatformAccelerator property is set
+        internal bool IsSetCompilationTargetPlatformAccelerator()
+        {
+            return this._compilationTargetPlatformAccelerator != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompilationTargetPlatformArch. 
+        /// <para>
+        /// The type of architecture that the model will run on after the compilation job has
+        /// completed.
+        /// </para>
+        /// </summary>
+        public TargetPlatformArch CompilationTargetPlatformArch
+        {
+            get { return this._compilationTargetPlatformArch; }
+            set { this._compilationTargetPlatformArch = value; }
+        }
+
+        // Check to see if CompilationTargetPlatformArch property is set
+        internal bool IsSetCompilationTargetPlatformArch()
+        {
+            return this._compilationTargetPlatformArch != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompilationTargetPlatformOs. 
+        /// <para>
+        /// The type of OS that the model will run on after the compilation job has completed.
+        /// </para>
+        /// </summary>
+        public TargetPlatformOs CompilationTargetPlatformOs
+        {
+            get { return this._compilationTargetPlatformOs; }
+            set { this._compilationTargetPlatformOs = value; }
+        }
+
+        // Check to see if CompilationTargetPlatformOs property is set
+        internal bool IsSetCompilationTargetPlatformOs()
+        {
+            return this._compilationTargetPlatformOs != null;
         }
 
         /// <summary>
