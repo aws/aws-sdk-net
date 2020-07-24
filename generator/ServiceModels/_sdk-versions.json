@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.783.0",
+    "ProductVersion" : "3.3.784.0",
     "CoreVersion"    : "3.3.107.28",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -77,7 +77,7 @@
             "InPreview"               : false
         },
         "CloudWatch"        : {
-            "Version" : "3.3.107.56",
+            "Version" : "3.3.108.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.28"
@@ -865,7 +865,7 @@
             "InPreview"               : false
         },
         "MediaPackage"                    : {
-            "Version" : "3.3.104.91",
+            "Version" : "3.3.105.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.28"
@@ -905,7 +905,7 @@
             "InPreview"               : false
         },
         "MQ"                              : {
-            "Version" : "3.3.105.98",
+            "Version" : "3.3.106.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.28"
@@ -945,7 +945,7 @@
             "InPreview"               : false
         },
         "SageMaker"                       : {
-            "Version" : "3.3.118.5",
+            "Version" : "3.3.119.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.28"
@@ -1289,7 +1289,7 @@
             "InPreview"               : false
         },
         "MediaConnect"                    : {
-            "Version" : "3.3.108.53",
+            "Version" : "3.3.109.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.28"
@@ -1297,7 +1297,7 @@
             "InPreview"               : false
         },
         "FSx"                             : {
-            "Version" : "3.3.108.0",
+            "Version" : "3.3.108.1",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.28"
@@ -1681,7 +1681,7 @@
             "InPreview"               : false
         },
         "Kendra"                          : {
-            "Version" : "3.3.103.34",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.28"
@@ -1689,7 +1689,7 @@
             "InPreview"               : false
         },
         "FraudDetector"                   : {
-            "Version" : "3.3.102.2",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.28"
@@ -1777,7 +1777,7 @@
             "InPreview"               : false
         },
         "Macie2"                          : {
-            "Version" : "3.3.102.2",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.28"

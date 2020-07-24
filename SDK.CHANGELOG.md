@@ -1,3 +1,23 @@
+### 3.3.784.0 (2020-07-24 18:14 UTC)
+* CloudWatch (3.3.108.0)
+	* AWS CloudWatch ListMetrics now supports an optional parameter (RecentlyActive) to filter results by only metrics that have received new datapoints in the past 3 hours. This enables more targeted metric data retrieval through the Get APIs
+* FraudDetector (3.3.103.0)
+	* GetPrediction has been replaced with GetEventPrediction. PutExternalModel has been simplified to accept a role ARN.
+* FSx (3.3.108.1)
+	* Documentation update for FSx for Lustre
+* Kendra (3.3.104.0)
+	* Amazon Kendra now supports sorting query results based on document attributes. Amazon Kendra also introduced an option to enclose table and column names with double quotes for database data sources. 
+* Macie2 (3.3.103.0)
+	* This release of the Amazon Macie API introduces additional criteria for sorting and filtering query results for account quotas and usage statistics.
+* MediaConnect (3.3.109.0)
+	* You can now disable an entitlement to stop streaming content to the subscriber's flow temporarily. When you are ready to allow content to start streaming to the subscriber's flow again, you can enable the entitlement.
+* MediaPackage (3.3.105.0)
+	* The release adds daterange as a new ad marker option. This option enables MediaPackage to insert EXT-X-DATERANGE tags in HLS and CMAF manifests. The EXT-X-DATERANGE tag is used to signal ad and program transition events.
+* MQ (3.3.106.0)
+	* Amazon MQ now supports LDAP (Lightweight Directory Access Protocol), providing authentication and authorization of Amazon MQ users via a customer designated LDAP server.
+* SageMaker (3.3.119.0)
+	* Sagemaker Ground Truth:Added support for OIDC (OpenID Connect) to authenticate workers via their own identity provider instead of through Amazon Cognito. This release adds new APIs (CreateWorkforce, DeleteWorkforce, and ListWorkforces) to SageMaker Ground Truth service.  Sagemaker Neo: Added support for detailed target device description by using TargetPlatform fields - OS, architecture, and accelerator. Added support for additional compilation parameters by using JSON field CompilerOptions.  Sagemaker Search: SageMaker Search supports transform job details in trial components.
+
 ### 3.3.783.0 (2020-07-23 18:16 UTC)
 * ConfigService (3.3.109.0)
 	* Adding service linked configuration aggregation support along with new enums for config resource coverage
