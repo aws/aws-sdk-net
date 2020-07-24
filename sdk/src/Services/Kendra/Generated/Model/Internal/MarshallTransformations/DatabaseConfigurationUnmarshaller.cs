@@ -88,6 +88,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.DatabaseEngineType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SqlConfiguration", targetDepth))
+                {
+                    var unmarshaller = SqlConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SqlConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VpcConfiguration", targetDepth))
                 {
                     var unmarshaller = DataSourceVpcConfigurationUnmarshaller.Instance;

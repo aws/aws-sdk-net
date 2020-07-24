@@ -71,6 +71,7 @@ namespace Amazon.Kendra.Model
         private QueryResultType _queryResultTypeFilter;
         private string _queryText;
         private List<string> _requestedDocumentAttributes = new List<string>();
+        private SortingConfiguration _sortingConfiguration;
 
         /// <summary>
         /// Gets and sets the property AttributeFilter. 
@@ -232,6 +233,32 @@ namespace Amazon.Kendra.Model
         internal bool IsSetRequestedDocumentAttributes()
         {
             return this._requestedDocumentAttributes != null && this._requestedDocumentAttributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortingConfiguration. 
+        /// <para>
+        /// Provides information that determines how the results of the query are sorted. You
+        /// can set the field that Amazon Kendra should sort the results on, and specify whether
+        /// the results should be sorted in ascending or descending order. In the case of ties
+        /// in sorting the results, the results are sorted by relevance.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't provide sorting configuration, the results are sorted by the relevance
+        /// that Amazon Kendra determines for the result.
+        /// </para>
+        /// </summary>
+        public SortingConfiguration SortingConfiguration
+        {
+            get { return this._sortingConfiguration; }
+            set { this._sortingConfiguration = value; }
+        }
+
+        // Check to see if SortingConfiguration property is set
+        internal bool IsSetSortingConfiguration()
+        {
+            return this._sortingConfiguration != null;
         }
 
     }

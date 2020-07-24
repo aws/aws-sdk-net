@@ -36,6 +36,7 @@ namespace Amazon.Kendra.Model
         private bool? _displayable;
         private bool? _facetable;
         private bool? _searchable;
+        private bool? _sortable;
 
         /// <summary>
         /// Gets and sets the property Displayable. 
@@ -93,6 +94,26 @@ namespace Amazon.Kendra.Model
         internal bool IsSetSearchable()
         {
             return this._searchable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sortable. 
+        /// <para>
+        /// Determines whether the field can be used to sort the results of a query. If you specify
+        /// sorting on a field that does not have <code>Sortable</code> set to <code>true</code>,
+        /// Amazon Kendra returns an exception. The default is <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool Sortable
+        {
+            get { return this._sortable.GetValueOrDefault(); }
+            set { this._sortable = value; }
+        }
+
+        // Check to see if Sortable property is set
+        internal bool IsSetSortable()
+        {
+            return this._sortable.HasValue; 
         }
 
     }

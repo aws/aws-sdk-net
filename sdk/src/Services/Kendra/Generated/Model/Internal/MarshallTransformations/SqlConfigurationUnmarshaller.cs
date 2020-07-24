@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Search Object
+    /// Response Unmarshaller for SqlConfiguration Object
     /// </summary>  
-    public class SearchUnmarshaller : IUnmarshaller<Search, XmlUnmarshallerContext>, IUnmarshaller<Search, JsonUnmarshallerContext>
+    public class SqlConfigurationUnmarshaller : IUnmarshaller<SqlConfiguration, XmlUnmarshallerContext>, IUnmarshaller<SqlConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Search IUnmarshaller<Search, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SqlConfiguration IUnmarshaller<SqlConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Search Unmarshall(JsonUnmarshallerContext context)
+        public SqlConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Search unmarshalledObject = new Search();
+            SqlConfiguration unmarshalledObject = new SqlConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Displayable", targetDepth))
+                if (context.TestExpression("QueryIdentifiersEnclosingOption", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Displayable = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Facetable", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Facetable = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Searchable", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Searchable = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Sortable", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Sortable = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.QueryIdentifiersEnclosingOption = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         }
 
 
-        private static SearchUnmarshaller _instance = new SearchUnmarshaller();        
+        private static SqlConfigurationUnmarshaller _instance = new SqlConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SearchUnmarshaller Instance
+        public static SqlConfigurationUnmarshaller Instance
         {
             get
             {

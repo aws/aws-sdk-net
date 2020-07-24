@@ -42,7 +42,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DateValue. 
         /// <para>
-        /// A date value expressed as seconds from the Unix epoch.
+        /// A date expressed as an ISO 8601 string.
         /// </para>
         /// </summary>
         public DateTime DateValue

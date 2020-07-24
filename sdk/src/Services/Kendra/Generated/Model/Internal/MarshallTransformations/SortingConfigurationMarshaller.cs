@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Search Marshaller
+    /// SortingConfiguration Marshaller
     /// </summary>       
-    public class SearchMarshaller : IRequestMarshaller<Search, JsonMarshallerContext> 
+    public class SortingConfigurationMarshaller : IRequestMarshaller<SortingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,30 +43,18 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Search requestObject, JsonMarshallerContext context)
+        public void Marshall(SortingConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDisplayable())
+            if(requestObject.IsSetDocumentAttributeKey())
             {
-                context.Writer.WritePropertyName("Displayable");
-                context.Writer.Write(requestObject.Displayable);
+                context.Writer.WritePropertyName("DocumentAttributeKey");
+                context.Writer.Write(requestObject.DocumentAttributeKey);
             }
 
-            if(requestObject.IsSetFacetable())
+            if(requestObject.IsSetSortOrder())
             {
-                context.Writer.WritePropertyName("Facetable");
-                context.Writer.Write(requestObject.Facetable);
-            }
-
-            if(requestObject.IsSetSearchable())
-            {
-                context.Writer.WritePropertyName("Searchable");
-                context.Writer.Write(requestObject.Searchable);
-            }
-
-            if(requestObject.IsSetSortable())
-            {
-                context.Writer.WritePropertyName("Sortable");
-                context.Writer.Write(requestObject.Sortable);
+                context.Writer.WritePropertyName("SortOrder");
+                context.Writer.Write(requestObject.SortOrder);
             }
 
         }
@@ -74,7 +62,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static SearchMarshaller Instance = new SearchMarshaller();
+        public readonly static SortingConfigurationMarshaller Instance = new SortingConfigurationMarshaller();
 
     }
 }

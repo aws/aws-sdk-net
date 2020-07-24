@@ -775,6 +775,56 @@ namespace Amazon.Kendra
 
 
     /// <summary>
+    /// Constants used for properties of type QueryIdentifiersEnclosingOption.
+    /// </summary>
+    public class QueryIdentifiersEnclosingOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOUBLE_QUOTES for QueryIdentifiersEnclosingOption
+        /// </summary>
+        public static readonly QueryIdentifiersEnclosingOption DOUBLE_QUOTES = new QueryIdentifiersEnclosingOption("DOUBLE_QUOTES");
+        /// <summary>
+        /// Constant NONE for QueryIdentifiersEnclosingOption
+        /// </summary>
+        public static readonly QueryIdentifiersEnclosingOption NONE = new QueryIdentifiersEnclosingOption("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QueryIdentifiersEnclosingOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueryIdentifiersEnclosingOption FindValue(string value)
+        {
+            return FindValue<QueryIdentifiersEnclosingOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueryIdentifiersEnclosingOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type QueryResultType.
     /// </summary>
     public class QueryResultType : ConstantClass
@@ -1232,6 +1282,56 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SharePointVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASC for SortOrder
+        /// </summary>
+        public static readonly SortOrder ASC = new SortOrder("ASC");
+        /// <summary>
+        /// Constant DESC for SortOrder
+        /// </summary>
+        public static readonly SortOrder DESC = new SortOrder("DESC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortOrder(string value)
         {
             return FindValue(value);
         }

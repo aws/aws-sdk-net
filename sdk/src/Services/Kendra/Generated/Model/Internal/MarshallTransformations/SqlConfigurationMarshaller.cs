@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Search Marshaller
+    /// SqlConfiguration Marshaller
     /// </summary>       
-    public class SearchMarshaller : IRequestMarshaller<Search, JsonMarshallerContext> 
+    public class SqlConfigurationMarshaller : IRequestMarshaller<SqlConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,30 +43,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Search requestObject, JsonMarshallerContext context)
+        public void Marshall(SqlConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDisplayable())
+            if(requestObject.IsSetQueryIdentifiersEnclosingOption())
             {
-                context.Writer.WritePropertyName("Displayable");
-                context.Writer.Write(requestObject.Displayable);
-            }
-
-            if(requestObject.IsSetFacetable())
-            {
-                context.Writer.WritePropertyName("Facetable");
-                context.Writer.Write(requestObject.Facetable);
-            }
-
-            if(requestObject.IsSetSearchable())
-            {
-                context.Writer.WritePropertyName("Searchable");
-                context.Writer.Write(requestObject.Searchable);
-            }
-
-            if(requestObject.IsSetSortable())
-            {
-                context.Writer.WritePropertyName("Sortable");
-                context.Writer.Write(requestObject.Sortable);
+                context.Writer.WritePropertyName("QueryIdentifiersEnclosingOption");
+                context.Writer.Write(requestObject.QueryIdentifiersEnclosingOption);
             }
 
         }
@@ -74,7 +56,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static SearchMarshaller Instance = new SearchMarshaller();
+        public readonly static SqlConfigurationMarshaller Instance = new SqlConfigurationMarshaller();
 
     }
 }
