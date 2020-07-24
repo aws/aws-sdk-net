@@ -237,7 +237,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the backup.
+        /// The type of the file system backup.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

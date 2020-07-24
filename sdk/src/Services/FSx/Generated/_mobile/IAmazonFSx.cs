@@ -111,7 +111,13 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-backups.html">https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-backups.html</a>.
+        /// For more information about backing up Amazon FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
+        /// with FSx for Lustre backups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about backing up Amazon FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
+        /// with FSx for Windows backups</a>.
         /// </para>
         ///  
         /// <para>
@@ -847,9 +853,13 @@ namespace Amazon.FSx
 
         /// <summary>
         /// Use this operation to update the configuration of an existing Amazon FSx file system.
-        /// For an Amazon FSx for Lustre file system, you can update only the WeeklyMaintenanceStartTime.
-        /// For an Amazon for Windows File Server file system, you can update the following properties:
+        /// You can update multiple properties in a single request.
         /// 
+        ///  
+        /// <para>
+        /// For Amazon FSx for Windows File Server file systems, you can update the following
+        /// properties:
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         /// AutomaticBackupRetentionDays
@@ -876,8 +886,25 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You can update multiple properties in a single request.
+        /// For Amazon FSx for Lustre file systems, you can update the following properties:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// AutoImportPolicy
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AutomaticBackupRetentionDays
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DailyAutomaticBackupStartTime
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// WeeklyMaintenanceStartTime
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFileSystem service method.</param>
         /// <param name="cancellationToken">

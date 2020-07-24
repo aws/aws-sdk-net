@@ -47,35 +47,36 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property AutoImportPolicy. 
         /// <para>
-        /// Use this property to turn the Autoimport feature on and off. AutoImport enables your
-        /// FSx for Lustre file system to automatically update its contents with changes that
-        /// have been made to its linked Amazon S3 data repository. You can set the policy to
-        /// have one the following values:
+        ///  (Optional) Use this property to configure the AutoImport feature on the file system's
+        /// linked Amazon S3 data repository. You use AutoImport to update the contents of your
+        /// FSx for Lustre file system automatically with changes that occur in the linked S3
+        /// data repository. <code>AutoImportPolicy</code> can have the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code> - (Default) Autoimport is turned off. Changes to your S3 repository
-        /// will not be reflected on the FSx file system.
+        ///  <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository
+        /// are not reflected on the FSx file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository
-        /// will be imported to the FSx file system. Updates to existing files and deleted files
-        /// will not be imported to the FSx file system.
+        ///  <code>NEW</code> - AutoImport is on. New files in the linked data repository that
+        /// do not currently exist in the FSx file system are automatically imported. Updates
+        /// to existing FSx files are not imported to the FSx file system. Files deleted from
+        /// the linked data repository are not deleted from the FSx file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing
-        /// files in the linked S3 repository will be imported to the FSx file system. Files deleted
-        /// in S3 are not deleted in the FSx file system.
+        ///  <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository
+        /// that do not currently exist in the FSx file system are automatically imported. Changes
+        /// to existing FSx files in the linked repository are also automatically imported to
+        /// the FSx file system. Files deleted from the linked data repository are not deleted
+        /// from the FSx file system. 
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> 
         /// <para>
-        ///  <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to
-        /// existing files, and deleted files in the linked S3 repository will be imported to
-        /// the FSx file system. 
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
+        /// import updates from your S3 bucket</a>.
         /// </para>
-        ///  </li> </ul>
         /// </summary>
         public AutoImportPolicyType AutoImportPolicy
         {
@@ -115,6 +116,11 @@ namespace Amazon.FSx.Model
         /// tags are copied to backups. If you specify one or more tags when creating a user-initiated
         /// backup, no tags are copied from the file system, regardless of this value.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
+        /// with backups</a>.
+        /// </para>
         /// </summary>
         public bool CopyTagsToBackups
         {
@@ -152,11 +158,7 @@ namespace Amazon.FSx.Model
         /// deployment type provides in-transit encryption of data and higher burst throughput
         /// capacity than <code>SCRATCH_1</code>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This option can only be set for for PERSISTENT_1 deployments types.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads
         /// and encryption of data in transit. To learn more about deployment types, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
