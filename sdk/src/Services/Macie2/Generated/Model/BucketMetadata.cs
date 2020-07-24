@@ -183,7 +183,7 @@ namespace Amazon.Macie2.Model
         /// <para>
         /// The total number of objects that are in the bucket, grouped by server-side encryption
         /// type. This includes a grouping that reports the total number of objects that aren't
-        /// encrypted.
+        /// encrypted or use client-side encryption.
         /// </para>
         /// </summary>
         public ObjectCountByEncryptionType ObjectCountByEncryptionType

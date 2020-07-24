@@ -42,7 +42,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property FilterBy. 
         /// <para>
-        /// The criteria to use to filter the query results.
+        /// An array of objects, one for each condition to use to filter the query results. If
+        /// the array contains more than one object, Amazon Macie uses an AND operator to join
+        /// the conditions specified by the objects.
         /// </para>
         /// </summary>
         public List<UsageStatisticsFilter> FilterBy

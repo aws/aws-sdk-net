@@ -45,6 +45,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UsageStatisticsFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetComparator())
+            {
+                context.Writer.WritePropertyName("comparator");
+                context.Writer.Write(requestObject.Comparator);
+            }
+
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("key");

@@ -29,18 +29,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies criteria for filtering the results of a query for account quotas and usage
-    /// data.
+    /// Specifies a condition for filtering the results of a query for account quotas and
+    /// usage data.
     /// </summary>
     public partial class UsageStatisticsFilter
     {
+        private UsageStatisticsFilterComparator _comparator;
         private UsageStatisticsFilterKey _key;
         private List<string> _values = new List<string>();
 
         /// <summary>
+        /// Gets and sets the property Comparator. 
+        /// <para>
+        /// The operator to use in the condition. If the value for the key property is accountId,
+        /// this value must be CONTAINS. If the value for the key property is any other supported
+        /// field, this value can be EQ, GT, GTE, LT, LTE, or NE.
+        /// </para>
+        /// </summary>
+        public UsageStatisticsFilterComparator Comparator
+        {
+            get { return this._comparator; }
+            set { this._comparator = value; }
+        }
+
+        // Check to see if Comparator property is set
+        internal bool IsSetComparator()
+        {
+            return this._comparator != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The field to use to filter the results. The only supported value is accountId.
+        /// The field to use in the condition.
         /// </para>
         /// </summary>
         public UsageStatisticsFilterKey Key
@@ -58,8 +79,34 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// An array that lists the AWS account ID for each account to include in the results.
+        /// An array that lists values to use in the condition, based on the value for the field
+        /// specified by the key property. If the value for the key property is accountId, this
+        /// array can specify multiple values. Otherwise, this array can specify only one value.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values for each supported field are:
+        /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// accountId - The unique identifier for an AWS account.
+        /// </para>
+        /// </li></ul> <ul><li>
+        /// <para>
+        /// freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when
+        /// the free trial started for an account.
+        /// </para>
+        /// </li></ul> <ul><li>
+        /// <para>
+        /// serviceLimit - A Boolean (true or false) value that indicates whether an account has
+        /// reached its monthly quota.
+        /// </para>
+        /// </li></ul> <ul><li>
+        /// <para>
+        /// total - A string that represents the current, estimated month-to-date cost for an
+        /// account.
+        /// </para>
+        /// </li></ul>
         /// </summary>
         public List<string> Values
         {
