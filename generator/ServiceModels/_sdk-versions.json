@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.784.0",
+    "ProductVersion" : "3.3.785.0",
     "CoreVersion"    : "3.3.107.28",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.191.2",
+            "Version" : "3.3.192.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.28"
@@ -369,7 +369,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.3.126.16",
+            "Version" : "3.3.126.17",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.28"
@@ -521,7 +521,7 @@
             "InPreview"               : false
         },
         "DatabaseMigrationService"        : {
-            "Version" : "3.3.105.44",
+            "Version" : "3.3.106.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.28"
@@ -825,7 +825,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.3.123.0",
+            "Version" : "3.3.124.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.28"
@@ -1249,7 +1249,7 @@
             "InPreview"               : false
         },
         "DataSync"                        : {
-            "Version" : "3.3.108.83",
+            "Version" : "3.3.109.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.28"
@@ -1689,7 +1689,7 @@
             "InPreview"               : false
         },
         "FraudDetector"                   : {
-            "Version" : "3.3.103.0",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.28"

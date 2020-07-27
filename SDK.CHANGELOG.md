@@ -1,3 +1,17 @@
+### 3.3.785.0 (2020-07-27 18:13 UTC)
+* DatabaseMigrationService (3.3.106.0)
+	* Basic endpoint settings for relational databases, Preflight validation API.
+* DataSync (3.3.109.0)
+	* Today AWS DataSync releases support for self-managed object storage Locations and the new TransferMode Option.
+* EC2 (3.3.192.0)
+	* m6gd, c6gd, r6gd instances are powered by AWS Graviton2 processors and support local NVMe instance storage
+* FraudDetector (3.3.104.0)
+	* Moved the eventTypeName attribute for PutExternalModel API to inputConfiguration. Model ID's no longer allow hyphens.
+* Glue (3.3.124.0)
+	* Add ability to manually resume workflows in AWS Glue providing customers further control over the orchestration of ETL workloads.
+* SimpleSystemsManagement (3.3.126.17)
+	* Assorted doc ticket-fix updates for Systems Manager.
+
 ### 3.3.784.0 (2020-07-24 18:14 UTC)
 * CloudWatch (3.3.108.0)
 	* AWS CloudWatch ListMetrics now supports an optional parameter (RecentlyActive) to filter results by only metrics that have received new datapoints in the past 3 hours. This enables more targeted metric data retrieval through the Get APIs
