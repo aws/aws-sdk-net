@@ -29,30 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// A list of Amazon Resource Names (ARNs) of agents to use for a Network File System
-    /// (NFS) location.
+    /// Container for the parameters to the DescribeLocationObjectStorage operation.
+    /// Returns metadata about a self-managed object storage server location.
     /// </summary>
-    public partial class OnPremConfig
+    public partial class DescribeLocationObjectStorageRequest : AmazonDataSyncRequest
     {
-        private List<string> _agentArns = new List<string>();
+        private string _locationArn;
 
         /// <summary>
-        /// Gets and sets the property AgentArns. 
+        /// Gets and sets the property LocationArn. 
         /// <para>
-        /// ARNs)of the agents to use for an NFS location.
+        /// The Amazon Resource Name (ARN) of the self-managed object storage server location
+        /// that was described.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4)]
-        public List<string> AgentArns
+        [AWSProperty(Required=true, Max=128)]
+        public string LocationArn
         {
-            get { return this._agentArns; }
-            set { this._agentArns = value; }
+            get { return this._locationArn; }
+            set { this._locationArn = value; }
         }
 
-        // Check to see if AgentArns property is set
-        internal bool IsSetAgentArns()
+        // Check to see if LocationArn property is set
+        internal bool IsSetLocationArn()
         {
-            return this._agentArns != null && this._agentArns.Count > 0; 
+            return this._locationArn != null;
         }
 
     }

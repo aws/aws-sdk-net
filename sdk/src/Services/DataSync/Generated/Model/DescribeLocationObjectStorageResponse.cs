@@ -29,22 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// DescribeLocationSmbResponse
+    /// DescribeLocationObjectStorageResponse
     /// </summary>
-    public partial class DescribeLocationSmbResponse : AmazonWebServiceResponse
+    public partial class DescribeLocationObjectStorageResponse : AmazonWebServiceResponse
     {
+        private string _accessKey;
         private List<string> _agentArns = new List<string>();
         private DateTime? _creationTime;
-        private string _domain;
         private string _locationArn;
         private string _locationUri;
-        private SmbMountOptions _mountOptions;
-        private string _user;
+        private int? _serverPort;
+        private ObjectStorageServerProtocol _serverProtocol;
+
+        /// <summary>
+        /// Gets and sets the property AccessKey. 
+        /// <para>
+        /// Optional. The access key is used if credentials are required to access the self-managed
+        /// object storage server.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=8, Max=200)]
+        public string AccessKey
+        {
+            get { return this._accessKey; }
+            set { this._accessKey = value; }
+        }
+
+        // Check to see if AccessKey property is set
+        internal bool IsSetAccessKey()
+        {
+            return this._accessKey != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AgentArns. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the source SMB file system location that is created.
+        /// The Amazon Resource Name (ARN) of the agents associated with the self-managed object
+        /// storage server location.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
@@ -63,7 +84,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time that the SMB location was created.
+        /// The time that the self-managed object storage server agent was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -79,28 +100,10 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Domain. 
-        /// <para>
-        /// The name of the Windows domain that the SMB server belongs to.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=253)]
-        public string Domain
-        {
-            get { return this._domain; }
-            set { this._domain = value; }
-        }
-
-        // Check to see if Domain property is set
-        internal bool IsSetDomain()
-        {
-            return this._domain != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the SMB location that was described.
+        /// The Amazon Resource Name (ARN) of the self-managed object storage server location
+        /// to describe.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -119,7 +122,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationUri. 
         /// <para>
-        /// The URL of the source SBM location that was described.
+        /// The URL of the source self-managed object storage server location that was described.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4356)]
@@ -136,41 +139,42 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MountOptions. 
+        /// Gets and sets the property ServerPort. 
         /// <para>
-        /// The mount options that are available for DataSync to use to access an SMB location.
+        /// The port that your self-managed object storage server accepts inbound network traffic
+        /// on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS).
         /// </para>
         /// </summary>
-        public SmbMountOptions MountOptions
+        [AWSProperty(Min=1, Max=65536)]
+        public int ServerPort
         {
-            get { return this._mountOptions; }
-            set { this._mountOptions = value; }
+            get { return this._serverPort.GetValueOrDefault(); }
+            set { this._serverPort = value; }
         }
 
-        // Check to see if MountOptions property is set
-        internal bool IsSetMountOptions()
+        // Check to see if ServerPort property is set
+        internal bool IsSetServerPort()
         {
-            return this._mountOptions != null;
+            return this._serverPort.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property User. 
+        /// Gets and sets the property ServerProtocol. 
         /// <para>
-        /// The user who can mount the share, has the permissions to access files and folders
-        /// in the SMB share.
+        /// The protocol that the object storage server uses to communicate. Valid values are
+        /// HTTP or HTTPS.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=104)]
-        public string User
+        public ObjectStorageServerProtocol ServerProtocol
         {
-            get { return this._user; }
-            set { this._user = value; }
+            get { return this._serverProtocol; }
+            set { this._serverProtocol = value; }
         }
 
-        // Check to see if User property is set
-        internal bool IsSetUser()
+        // Check to see if ServerProtocol property is set
+        internal bool IsSetServerProtocol()
         {
-            return this._user != null;
+            return this._serverProtocol != null;
         }
 
     }

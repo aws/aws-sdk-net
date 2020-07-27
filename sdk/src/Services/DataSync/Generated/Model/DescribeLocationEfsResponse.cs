@@ -74,7 +74,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon resource Name (ARN) of the EFS location that was described.
+        /// The Amazon Resource Name (ARN) of the EFS location that was described.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

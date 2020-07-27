@@ -105,6 +105,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TaskQueueing);
             }
 
+            if(requestObject.IsSetTransferMode())
+            {
+                context.Writer.WritePropertyName("TransferMode");
+                context.Writer.Write(requestObject.TransferMode);
+            }
+
             if(requestObject.IsSetUid())
             {
                 context.Writer.WritePropertyName("Uid");

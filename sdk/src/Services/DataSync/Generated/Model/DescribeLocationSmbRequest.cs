@@ -30,7 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLocationSmb operation.
-    /// Returns metadata, such as the path and user information about a SMB location.
+    /// Returns metadata, such as the path and user information about an SMB location.
     /// </summary>
     public partial class DescribeLocationSmbRequest : AmazonDataSyncRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon resource Name (ARN) of the SMB location to describe.
+        /// The Amazon Resource Name (ARN) of the SMB location to describe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

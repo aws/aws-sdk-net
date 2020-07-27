@@ -149,7 +149,7 @@ namespace Amazon.DataSync.Model
         /// your resources. We recommend that you create a name tag for your location.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=55)]
+        [AWSProperty(Min=0, Max=50)]
         public List<TagListEntry> Tags
         {
             get { return this._tags; }

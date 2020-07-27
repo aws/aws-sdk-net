@@ -30,7 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLocationSmb operation.
-    /// Defines a file system on an Server Message Block (SMB) server that can be read from
+    /// Defines a file system on a Server Message Block (SMB) server that can be read from
     /// or written to.
     /// </summary>
     public partial class CreateLocationSmbRequest : AmazonDataSyncRequest
@@ -51,7 +51,7 @@ namespace Amazon.DataSync.Model
         /// location. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=4)]
         public List<string> AgentArns
         {
             get { return this._agentArns; }
@@ -157,7 +157,7 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+        ///  <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -190,7 +190,7 @@ namespace Amazon.DataSync.Model
         /// value can be an empty string. We recommend using tags to name your resources.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=55)]
+        [AWSProperty(Min=0, Max=50)]
         public List<TagListEntry> Tags
         {
             get { return this._tags; }
