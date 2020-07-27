@@ -36,7 +36,6 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class PutExternalModelRequest : AmazonFraudDetectorRequest
     {
-        private string _eventTypeName;
         private ModelInputConfiguration _inputConfiguration;
         private string _invokeModelEndpointRoleArn;
         private string _modelEndpoint;
@@ -44,25 +43,6 @@ namespace Amazon.FraudDetector.Model
         private ModelSource _modelSource;
         private ModelOutputConfiguration _outputConfiguration;
         private List<Tag> _tags = new List<Tag>();
-
-        /// <summary>
-        /// Gets and sets the property EventTypeName. 
-        /// <para>
-        /// The event type name.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public string EventTypeName
-        {
-            get { return this._eventTypeName; }
-            set { this._eventTypeName = value; }
-        }
-
-        // Check to see if EventTypeName property is set
-        internal bool IsSetEventTypeName()
-        {
-            return this._eventTypeName != null;
-        }
 
         /// <summary>
         /// Gets and sets the property InputConfiguration. 

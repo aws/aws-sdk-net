@@ -76,12 +76,6 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("eventTypeName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventTypeName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("inputConfiguration", targetDepth))
                 {
                     var unmarshaller = ModelInputConfigurationUnmarshaller.Instance;

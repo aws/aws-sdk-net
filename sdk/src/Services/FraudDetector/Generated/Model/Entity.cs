@@ -43,7 +43,7 @@ namespace Amazon.FraudDetector.Model
         /// which is areserved string literal.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string EntityId
         {
             get { return this._entityId; }
@@ -62,6 +62,7 @@ namespace Amazon.FraudDetector.Model
         /// The entity type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EntityType
         {
             get { return this._entityType; }

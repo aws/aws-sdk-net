@@ -34,6 +34,7 @@ namespace Amazon.FraudDetector.Model
     public partial class ModelInputConfiguration
     {
         private string _csvInputTemplate;
+        private string _eventTypeName;
         private ModelInputDataFormat _format;
         private string _jsonInputTemplate;
         private bool? _useEventVariables;
@@ -56,6 +57,25 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetCsvInputTemplate()
         {
             return this._csvInputTemplate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventTypeName. 
+        /// <para>
+        /// The event type name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string EventTypeName
+        {
+            get { return this._eventTypeName; }
+            set { this._eventTypeName = value; }
+        }
+
+        // Check to see if EventTypeName property is set
+        internal bool IsSetEventTypeName()
+        {
+            return this._eventTypeName != null;
         }
 
         /// <summary>

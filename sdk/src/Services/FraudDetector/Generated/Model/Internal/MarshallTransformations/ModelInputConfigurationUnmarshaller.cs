@@ -70,6 +70,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     unmarshalledObject.CsvInputTemplate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("eventTypeName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EventTypeName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("format", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

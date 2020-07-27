@@ -35,7 +35,6 @@ namespace Amazon.FraudDetector.Model
     {
         private string _arn;
         private string _createdTime;
-        private string _eventTypeName;
         private ModelInputConfiguration _inputConfiguration;
         private string _invokeModelEndpointRoleArn;
         private string _lastUpdatedTime;
@@ -79,25 +78,6 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetCreatedTime()
         {
             return this._createdTime != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property EventTypeName. 
-        /// <para>
-        /// The event type names.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public string EventTypeName
-        {
-            get { return this._eventTypeName; }
-            set { this._eventTypeName = value; }
-        }
-
-        // Check to see if EventTypeName property is set
-        internal bool IsSetEventTypeName()
-        {
-            return this._eventTypeName != null;
         }
 
         /// <summary>

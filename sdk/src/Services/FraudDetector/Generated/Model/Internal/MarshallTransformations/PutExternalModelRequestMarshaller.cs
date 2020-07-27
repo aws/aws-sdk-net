@@ -68,12 +68,6 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEventTypeName())
-                {
-                    context.Writer.WritePropertyName("eventTypeName");
-                    context.Writer.Write(publicRequest.EventTypeName);
-                }
-
                 if(publicRequest.IsSetInputConfiguration())
                 {
                     context.Writer.WritePropertyName("inputConfiguration");

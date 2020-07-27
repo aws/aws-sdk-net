@@ -51,6 +51,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CsvInputTemplate);
             }
 
+            if(requestObject.IsSetEventTypeName())
+            {
+                context.Writer.WritePropertyName("eventTypeName");
+                context.Writer.Write(requestObject.EventTypeName);
+            }
+
             if(requestObject.IsSetFormat())
             {
                 context.Writer.WritePropertyName("format");
