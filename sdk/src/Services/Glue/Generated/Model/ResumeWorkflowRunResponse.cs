@@ -29,50 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// An edge represents a directed connection between two AWS Glue components that are
-    /// part of the workflow the edge belongs to.
+    /// This is the response object from the ResumeWorkflowRun operation.
     /// </summary>
-    public partial class Edge
+    public partial class ResumeWorkflowRunResponse : AmazonWebServiceResponse
     {
-        private string _destinationId;
-        private string _sourceId;
+        private List<string> _nodeIds = new List<string>();
+        private string _runId;
 
         /// <summary>
-        /// Gets and sets the property DestinationId. 
+        /// Gets and sets the property NodeIds. 
         /// <para>
-        /// The unique of the node within the workflow where the edge ends.
+        /// A list of the node IDs for the nodes that were actually restarted.
+        /// </para>
+        /// </summary>
+        public List<string> NodeIds
+        {
+            get { return this._nodeIds; }
+            set { this._nodeIds = value; }
+        }
+
+        // Check to see if NodeIds property is set
+        internal bool IsSetNodeIds()
+        {
+            return this._nodeIds != null && this._nodeIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RunId. 
+        /// <para>
+        /// The new ID assigned to the resumed workflow run. Each resume of a workflow run will
+        /// have a new run ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
-        public string DestinationId
+        public string RunId
         {
-            get { return this._destinationId; }
-            set { this._destinationId = value; }
+            get { return this._runId; }
+            set { this._runId = value; }
         }
 
-        // Check to see if DestinationId property is set
-        internal bool IsSetDestinationId()
+        // Check to see if RunId property is set
+        internal bool IsSetRunId()
         {
-            return this._destinationId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SourceId. 
-        /// <para>
-        /// The unique of the node within the workflow where the edge starts.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string SourceId
-        {
-            get { return this._sourceId; }
-            set { this._sourceId = value; }
-        }
-
-        // Check to see if SourceId property is set
-        internal bool IsSetSourceId()
-        {
-            return this._sourceId != null;
+            return this._runId != null;
         }
 
     }

@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
         private DateTime? _completedOn;
         private WorkflowGraph _graph;
         private string _name;
+        private string _previousRunId;
         private DateTime? _startedOn;
         private WorkflowRunStatistics _statistics;
         private WorkflowRunStatus _status;
@@ -82,7 +83,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the workflow which was executed.
+        /// Name of the workflow that was executed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -96,6 +97,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreviousRunId. 
+        /// <para>
+        /// The ID of the previous workflow run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string PreviousRunId
+        {
+            get { return this._previousRunId; }
+            set { this._previousRunId = value; }
+        }
+
+        // Check to see if PreviousRunId property is set
+        internal bool IsSetPreviousRunId()
+        {
+            return this._previousRunId != null;
         }
 
         /// <summary>

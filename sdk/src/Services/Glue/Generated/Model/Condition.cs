@@ -117,10 +117,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The condition state. Currently, the only job states that a trigger can listen for
-        /// are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and <code>TIMEOUT</code>.
-        /// The only crawler states that a trigger can listen for are <code>SUCCEEDED</code>,
-        /// <code>FAILED</code>, and <code>CANCELLED</code>.
+        /// The condition state. Currently, the values supported are <code>SUCCEEDED</code>, <code>STOPPED</code>,
+        /// <code>TIMEOUT</code>, and <code>FAILED</code>.
         /// </para>
         /// </summary>
         public JobRunState State

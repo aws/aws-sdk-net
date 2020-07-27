@@ -82,6 +82,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PreviousRunId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreviousRunId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StartedOn", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

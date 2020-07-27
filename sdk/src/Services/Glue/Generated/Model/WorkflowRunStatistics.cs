@@ -43,7 +43,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property FailedActions. 
         /// <para>
-        /// Total number of Actions which have failed.
+        /// Total number of Actions that have failed.
         /// </para>
         /// </summary>
         public int FailedActions
@@ -79,7 +79,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property StoppedActions. 
         /// <para>
-        /// Total number of Actions which have stopped.
+        /// Total number of Actions that have stopped.
         /// </para>
         /// </summary>
         public int StoppedActions
@@ -97,7 +97,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SucceededActions. 
         /// <para>
-        /// Total number of Actions which have succeeded.
+        /// Total number of Actions that have succeeded.
         /// </para>
         /// </summary>
         public int SucceededActions
@@ -115,7 +115,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TimeoutActions. 
         /// <para>
-        /// Total number of Actions which timed out.
+        /// Total number of Actions that timed out.
         /// </para>
         /// </summary>
         public int TimeoutActions

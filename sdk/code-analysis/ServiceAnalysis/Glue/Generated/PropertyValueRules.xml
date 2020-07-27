@@ -1000,6 +1000,21 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.ResumeWorkflowRunRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ResumeWorkflowRunRequest.RunId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ResumeWorkflowRunResponse.RunId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.SearchTablesRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -2370,6 +2385,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.WorkflowRun.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.WorkflowRun.PreviousRunId</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>

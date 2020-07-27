@@ -29,22 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies code executed when a job is run.
+    /// Container for the parameters to the ResumeWorkflowRun operation.
+    /// Restarts any completed nodes in a workflow run and resumes the run execution.
     /// </summary>
-    public partial class JobCommand
+    public partial class ResumeWorkflowRunRequest : AmazonGlueRequest
     {
         private string _name;
-        private string _pythonVersion;
-        private string _scriptLocation;
+        private List<string> _nodeIds = new List<string>();
+        private string _runId;
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>.
-        /// For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming
-        /// ETL job, this must be <code>gluestreaming</code>.
+        /// The name of the workflow to resume.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -58,41 +58,42 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PythonVersion. 
+        /// Gets and sets the property NodeIds. 
         /// <para>
-        /// The Python version being used to execute a Python shell job. Allowed values are 2
-        /// or 3.
+        /// A list of the node IDs for the nodes you want to restart. The nodes that are to be
+        /// restarted must have an execution attempt in the original run.
         /// </para>
         /// </summary>
-        public string PythonVersion
+        [AWSProperty(Required=true)]
+        public List<string> NodeIds
         {
-            get { return this._pythonVersion; }
-            set { this._pythonVersion = value; }
+            get { return this._nodeIds; }
+            set { this._nodeIds = value; }
         }
 
-        // Check to see if PythonVersion property is set
-        internal bool IsSetPythonVersion()
+        // Check to see if NodeIds property is set
+        internal bool IsSetNodeIds()
         {
-            return this._pythonVersion != null;
+            return this._nodeIds != null && this._nodeIds.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property ScriptLocation. 
+        /// Gets and sets the property RunId. 
         /// <para>
-        /// Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes
-        /// a job.
+        /// The ID of the workflow run to resume.
         /// </para>
         /// </summary>
-        public string ScriptLocation
+        [AWSProperty(Required=true, Min=1, Max=255)]
+        public string RunId
         {
-            get { return this._scriptLocation; }
-            set { this._scriptLocation = value; }
+            get { return this._runId; }
+            set { this._runId = value; }
         }
 
-        // Check to see if ScriptLocation property is set
-        internal bool IsSetScriptLocation()
+        // Check to see if RunId property is set
+        internal bool IsSetRunId()
         {
-            return this._scriptLocation != null;
+            return this._runId != null;
         }
 
     }

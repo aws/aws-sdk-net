@@ -5111,6 +5111,58 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ResumeWorkflowRun
+
+        internal virtual ResumeWorkflowRunResponse ResumeWorkflowRun(ResumeWorkflowRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeWorkflowRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeWorkflowRunResponseUnmarshaller.Instance;
+
+            return Invoke<ResumeWorkflowRunResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Restarts any completed nodes in a workflow run and resumes the run execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeWorkflowRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResumeWorkflowRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentRunsExceededException">
+        /// Too many jobs are being run concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalWorkflowStateException">
+        /// The workflow is in an invalid state to perform a requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ResumeWorkflowRun">REST API Reference for ResumeWorkflowRun Operation</seealso>
+        public virtual Task<ResumeWorkflowRunResponse> ResumeWorkflowRunAsync(ResumeWorkflowRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeWorkflowRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeWorkflowRunResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ResumeWorkflowRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SearchTables
 
         internal virtual SearchTablesResponse SearchTables(SearchTablesRequest request)
