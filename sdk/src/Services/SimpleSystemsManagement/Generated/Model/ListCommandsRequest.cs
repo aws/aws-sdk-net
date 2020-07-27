@@ -98,6 +98,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// (Optional) Lists commands issued against this instance ID.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't specify an instance ID in the same command that you specify <code>Status</code>
+        /// = <code>Pending</code>. This is because the command has not reached the instance yet.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string InstanceId
         {

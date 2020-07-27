@@ -30,6 +30,13 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Describes a command filter.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// An instance ID can't be specified when a command status is <code>Pending</code> because
+    /// the command hasn't run on the instance yet.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CommandFilter
     {
