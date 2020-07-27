@@ -142,6 +142,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExtraConnectionAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IBMDb2Settings", targetDepth))
+                {
+                    var unmarshaller = IBMDb2SettingsUnmarshaller.Instance;
+                    unmarshalledObject.IBMDb2Settings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KafkaSettings", targetDepth))
                 {
                     var unmarshaller = KafkaSettingsUnmarshaller.Instance;
@@ -160,10 +166,22 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MicrosoftSQLServerSettings", targetDepth))
+                {
+                    var unmarshaller = MicrosoftSQLServerSettingsUnmarshaller.Instance;
+                    unmarshalledObject.MicrosoftSQLServerSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MongoDbSettings", targetDepth))
                 {
                     var unmarshaller = MongoDbSettingsUnmarshaller.Instance;
                     unmarshalledObject.MongoDbSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MySQLSettings", targetDepth))
+                {
+                    var unmarshaller = MySQLSettingsUnmarshaller.Instance;
+                    unmarshalledObject.MySQLSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NeptuneSettings", targetDepth))
@@ -172,10 +190,22 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.NeptuneSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OracleSettings", targetDepth))
+                {
+                    var unmarshaller = OracleSettingsUnmarshaller.Instance;
+                    unmarshalledObject.OracleSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Port", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PostgreSQLSettings", targetDepth))
+                {
+                    var unmarshaller = PostgreSQLSettingsUnmarshaller.Instance;
+                    unmarshalledObject.PostgreSQLSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RedshiftSettings", targetDepth))
@@ -212,6 +242,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SybaseSettings", targetDepth))
+                {
+                    var unmarshaller = SybaseSettingsUnmarshaller.Instance;
+                    unmarshalledObject.SybaseSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Username", targetDepth))

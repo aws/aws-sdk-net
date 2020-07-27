@@ -45,17 +45,23 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _engineName;
         private string _externalTableDefinition;
         private string _extraConnectionAttributes;
+        private IBMDb2Settings _ibmDb2Settings;
         private KafkaSettings _kafkaSettings;
         private KinesisSettings _kinesisSettings;
+        private MicrosoftSQLServerSettings _microsoftSQLServerSettings;
         private MongoDbSettings _mongoDbSettings;
+        private MySQLSettings _mySQLSettings;
         private NeptuneSettings _neptuneSettings;
+        private OracleSettings _oracleSettings;
         private string _password;
         private int? _port;
+        private PostgreSQLSettings _postgreSQLSettings;
         private RedshiftSettings _redshiftSettings;
         private S3Settings _s3Settings;
         private string _serverName;
         private string _serviceAccessRoleArn;
         private DmsSslModeValue _sslMode;
+        private SybaseSettings _sybaseSettings;
         private string _username;
 
         /// <summary>
@@ -302,6 +308,27 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IBMDb2Settings. 
+        /// <para>
+        /// Settings in JSON format for the source IBM Db2 LUW endpoint. For information about
+        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra
+        /// connection attributes when using Db2 LUW as a source for AWS DMS</a> in the <i>AWS
+        /// Database Migration Service User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public IBMDb2Settings IBMDb2Settings
+        {
+            get { return this._ibmDb2Settings; }
+            set { this._ibmDb2Settings = value; }
+        }
+
+        // Check to see if IBMDb2Settings property is set
+        internal bool IsSetIBMDb2Settings()
+        {
+            return this._ibmDb2Settings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KafkaSettings. 
         /// <para>
         /// Settings in JSON format for the target Apache Kafka endpoint. For more information
@@ -344,6 +371,28 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MicrosoftSQLServerSettings. 
+        /// <para>
+        /// Settings in JSON format for the source and target Microsoft SQL Server endpoint. For
+        /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra
+        /// connection attributes when using SQL Server as a source for AWS DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib">
+        /// Extra connection attributes when using SQL Server as a target for AWS DMS</a> in the
+        /// <i>AWS Database Migration Service User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public MicrosoftSQLServerSettings MicrosoftSQLServerSettings
+        {
+            get { return this._microsoftSQLServerSettings; }
+            set { this._microsoftSQLServerSettings = value; }
+        }
+
+        // Check to see if MicrosoftSQLServerSettings property is set
+        internal bool IsSetMicrosoftSQLServerSettings()
+        {
+            return this._microsoftSQLServerSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MongoDbSettings. 
         /// <para>
         /// Settings in JSON format for the source MongoDB endpoint. For more information about
@@ -365,6 +414,28 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MySQLSettings. 
+        /// <para>
+        /// Settings in JSON format for the source and target MySQL endpoint. For information
+        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
+        /// connection attributes when using MySQL as a source for AWS DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra
+        /// connection attributes when using a MySQL-compatible database as a target for AWS DMS</a>
+        /// in the <i>AWS Database Migration Service User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public MySQLSettings MySQLSettings
+        {
+            get { return this._mySQLSettings; }
+            set { this._mySQLSettings = value; }
+        }
+
+        // Check to see if MySQLSettings property is set
+        internal bool IsSetMySQLSettings()
+        {
+            return this._mySQLSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NeptuneSettings. 
         /// <para>
         /// Settings in JSON format for the target Amazon Neptune endpoint. For more information
@@ -383,6 +454,28 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetNeptuneSettings()
         {
             return this._neptuneSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OracleSettings. 
+        /// <para>
+        /// Settings in JSON format for the source and target Oracle endpoint. For information
+        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra
+        /// connection attributes when using Oracle as a source for AWS DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib">
+        /// Extra connection attributes when using Oracle as a target for AWS DMS</a> in the <i>AWS
+        /// Database Migration Service User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public OracleSettings OracleSettings
+        {
+            get { return this._oracleSettings; }
+            set { this._oracleSettings = value; }
+        }
+
+        // Check to see if OracleSettings property is set
+        internal bool IsSetOracleSettings()
+        {
+            return this._oracleSettings != null;
         }
 
         /// <summary>
@@ -419,6 +512,28 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PostgreSQLSettings. 
+        /// <para>
+        /// Settings in JSON format for the source and target PostgreSQL endpoint. For information
+        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+        /// connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib">
+        /// Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in the
+        /// <i>AWS Database Migration Service User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public PostgreSQLSettings PostgreSQLSettings
+        {
+            get { return this._postgreSQLSettings; }
+            set { this._postgreSQLSettings = value; }
+        }
+
+        // Check to see if PostgreSQLSettings property is set
+        internal bool IsSetPostgreSQLSettings()
+        {
+            return this._postgreSQLSettings != null;
         }
 
         /// <summary>
@@ -510,6 +625,28 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetSslMode()
         {
             return this._sslMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SybaseSettings. 
+        /// <para>
+        /// Settings in JSON format for the source and target SAP ASE endpoint. For information
+        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra
+        /// connection attributes when using SAP ASE as a source for AWS DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra
+        /// connection attributes when using SAP ASE as a target for AWS DMS</a> in the <i>AWS
+        /// Database Migration Service User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public SybaseSettings SybaseSettings
+        {
+            get { return this._sybaseSettings; }
+            set { this._sybaseSettings = value; }
+        }
+
+        // Check to see if SybaseSettings property is set
+        internal bool IsSetSybaseSettings()
+        {
+            return this._sybaseSettings != null;
         }
 
         /// <summary>

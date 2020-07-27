@@ -51,7 +51,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters applied to the action.
+        /// Filters applied to event subscriptions.
         /// </para>
         /// </summary>
         public List<Filter> Filters

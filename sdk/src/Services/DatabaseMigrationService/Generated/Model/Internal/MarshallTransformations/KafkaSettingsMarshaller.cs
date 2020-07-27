@@ -51,6 +51,42 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Broker);
             }
 
+            if(requestObject.IsSetIncludeControlDetails())
+            {
+                context.Writer.WritePropertyName("IncludeControlDetails");
+                context.Writer.Write(requestObject.IncludeControlDetails);
+            }
+
+            if(requestObject.IsSetIncludePartitionValue())
+            {
+                context.Writer.WritePropertyName("IncludePartitionValue");
+                context.Writer.Write(requestObject.IncludePartitionValue);
+            }
+
+            if(requestObject.IsSetIncludeTableAlterOperations())
+            {
+                context.Writer.WritePropertyName("IncludeTableAlterOperations");
+                context.Writer.Write(requestObject.IncludeTableAlterOperations);
+            }
+
+            if(requestObject.IsSetIncludeTransactionDetails())
+            {
+                context.Writer.WritePropertyName("IncludeTransactionDetails");
+                context.Writer.Write(requestObject.IncludeTransactionDetails);
+            }
+
+            if(requestObject.IsSetMessageFormat())
+            {
+                context.Writer.WritePropertyName("MessageFormat");
+                context.Writer.Write(requestObject.MessageFormat);
+            }
+
+            if(requestObject.IsSetPartitionIncludeSchemaTable())
+            {
+                context.Writer.WritePropertyName("PartitionIncludeSchemaTable");
+                context.Writer.Write(requestObject.PartitionIncludeSchemaTable);
+            }
+
             if(requestObject.IsSetTopic())
             {
                 context.Writer.WritePropertyName("Topic");
