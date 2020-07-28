@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
     {
         private long? _amazonSideAsn;
         private string _availabilityZone;
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private GatewayType _type;
 
         /// <summary>
@@ -100,6 +101,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to apply to the virtual private gateway.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
         /// <summary>
