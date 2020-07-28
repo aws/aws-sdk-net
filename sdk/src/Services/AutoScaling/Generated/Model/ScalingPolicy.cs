@@ -52,8 +52,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AdjustmentType. 
         /// <para>
-        /// Specifies how the scaling adjustment is interpreted (either an absolute number or
-        /// a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>,
+        /// Specifies how the scaling adjustment is interpreted (for example, an absolute number
+        /// or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>,
         /// and <code>PercentChangeInCapacity</code>.
         /// </para>
         /// </summary>

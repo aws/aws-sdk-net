@@ -25,6 +25,106 @@ namespace Amazon.AutoScaling
 {
 
     /// <summary>
+    /// Constants used for properties of type InstanceMetadataEndpointState.
+    /// </summary>
+    public class InstanceMetadataEndpointState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for InstanceMetadataEndpointState
+        /// </summary>
+        public static readonly InstanceMetadataEndpointState Disabled = new InstanceMetadataEndpointState("disabled");
+        /// <summary>
+        /// Constant Enabled for InstanceMetadataEndpointState
+        /// </summary>
+        public static readonly InstanceMetadataEndpointState Enabled = new InstanceMetadataEndpointState("enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceMetadataEndpointState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceMetadataEndpointState FindValue(string value)
+        {
+            return FindValue<InstanceMetadataEndpointState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceMetadataEndpointState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceMetadataHttpTokensState.
+    /// </summary>
+    public class InstanceMetadataHttpTokensState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Optional for InstanceMetadataHttpTokensState
+        /// </summary>
+        public static readonly InstanceMetadataHttpTokensState Optional = new InstanceMetadataHttpTokensState("optional");
+        /// <summary>
+        /// Constant Required for InstanceMetadataHttpTokensState
+        /// </summary>
+        public static readonly InstanceMetadataHttpTokensState Required = new InstanceMetadataHttpTokensState("required");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceMetadataHttpTokensState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceMetadataHttpTokensState FindValue(string value)
+        {
+            return FindValue<InstanceMetadataHttpTokensState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceMetadataHttpTokensState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceRefreshStatus.
     /// </summary>
     public class InstanceRefreshStatus : ConstantClass

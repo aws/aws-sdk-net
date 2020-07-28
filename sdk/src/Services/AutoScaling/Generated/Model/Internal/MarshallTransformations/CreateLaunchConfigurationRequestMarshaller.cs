@@ -161,6 +161,21 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("LaunchConfigurationName", StringUtils.FromString(publicRequest.LaunchConfigurationName));
                 }
+                if(publicRequest.IsSetMetadataOptions())
+                {
+                    if(publicRequest.MetadataOptions.IsSetHttpEndpoint())
+                    {
+                        request.Parameters.Add("MetadataOptions" + "." + "HttpEndpoint", StringUtils.FromString(publicRequest.MetadataOptions.HttpEndpoint));
+                    }
+                    if(publicRequest.MetadataOptions.IsSetHttpPutResponseHopLimit())
+                    {
+                        request.Parameters.Add("MetadataOptions" + "." + "HttpPutResponseHopLimit", StringUtils.FromInt(publicRequest.MetadataOptions.HttpPutResponseHopLimit));
+                    }
+                    if(publicRequest.MetadataOptions.IsSetHttpTokens())
+                    {
+                        request.Parameters.Add("MetadataOptions" + "." + "HttpTokens", StringUtils.FromString(publicRequest.MetadataOptions.HttpTokens));
+                    }
+                }
                 if(publicRequest.IsSetPlacementTenancy())
                 {
                     request.Parameters.Add("PlacementTenancy", StringUtils.FromString(publicRequest.PlacementTenancy));

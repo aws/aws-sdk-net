@@ -334,8 +334,8 @@ namespace Amazon.AutoScaling.Model
         /// With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling
         /// may need to go above <code>MaxSize</code> to meet your capacity requirements. In this
         /// event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more than
-        /// your maximum instance weight (weights that define how many capacity units each instance
-        /// contributes to the capacity of the group).
+        /// your largest instance weight (weights that define how many units each instance contributes
+        /// to the desired capacity of the group).
         /// </para>
         ///  </note>
         /// </summary>

@@ -47,6 +47,14 @@ namespace Amazon.AutoScaling.Model
     /// User Guide</i>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html">Auto
     /// Scaling Groups</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    /// Every Auto Scaling group has three size parameters (<code>DesiredCapacity</code>,
+    /// <code>MaxSize</code>, and <code>MinSize</code>). Usually, you set these sizes based
+    /// on a specific number of instances. However, if you configure a mixed instances policy
+    /// that defines weights for the instance types, you must specify these sizes with the
+    /// same units that you use for weighting instances.
+    /// </para>
     /// </summary>
     public partial class CreateAutoScalingGroupRequest : AmazonAutoScalingRequest
     {
@@ -406,8 +414,8 @@ namespace Amazon.AutoScaling.Model
         /// With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling
         /// may need to go above <code>MaxSize</code> to meet your capacity requirements. In this
         /// event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more than
-        /// your maximum instance weight (weights that define how many capacity units each instance
-        /// contributes to the capacity of the group).
+        /// your largest instance weight (weights that define how many units each instance contributes
+        /// to the desired capacity of the group).
         /// </para>
         ///  </note>
         /// </summary>
