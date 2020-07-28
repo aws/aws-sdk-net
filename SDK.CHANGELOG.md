@@ -1,3 +1,24 @@
+### 3.3.786.0 (2020-07-28 20:33 UTC)
+* AutoScaling (3.3.104.0)
+	* Now you can enable Instance Metadata Service Version 2 (IMDSv2) or disable the instance metadata endpoint with Launch Configurations.
+* EC2 (3.3.193.0)
+	* Introduces support for tag-on-create capability for the following APIs: CreateVpnConnection, CreateVpnGateway, and CreateCustomerGateway. A user can now add tags while creating these resources. For further detail, please see AWS Tagging Strategies.
+* Imagebuilder (3.3.107.0)
+	* This release updates distribution configurations to allow periods in AMI names.
+* IVS (3.3.101.0)
+	* Added a new error code, PendingVerification, to differentiate between errors caused by insufficient IAM permissions and errors caused by account verification.
+* MediaLive (3.3.114.0)
+	* AWS Elemental MediaLive now supports several new features: EBU-TT-D captions in Microsoft Smooth outputs; interlaced video in HEVC outputs; video noise reduction (using temporal filtering) in HEVC outputs.
+* RDS (3.3.127.0)
+	* Adds reporting of manual cluster snapshot quota to DescribeAccountAttributes API
+* SecurityHub (3.3.115.0)
+	* Added UpdateSecurityHubConfiguration API. Security Hub now allows customers to choose whether to automatically enable new controls that are added to an existing standard that the customer enabled. For example, if you enabled Foundational Security Best Practices for an account, you can automatically enable new controls as we add them to that standard. By default, new controls are enabled.
+* Core 3.3.107.29
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.785.0 (2020-07-27 18:13 UTC)
 * DatabaseMigrationService (3.3.106.0)
 	* Basic endpoint settings for relational databases, Preflight validation API.
