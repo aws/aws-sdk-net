@@ -113,8 +113,13 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ManualSnapshots</code> - The number of manual DB snapshots per account. The
-    /// used value is the count of the manual DB snapshots in the account.
+    ///  <code>ManualClusterSnapshots</code> - The number of manual DB cluster snapshots per
+    /// account. The used value is the count of the manual DB cluster snapshots in the account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ManualSnapshots</code> - The number of manual DB instance snapshots per account.
+    /// The used value is the count of the manual DB instance snapshots in the account.
     /// </para>
     ///  </li> <li> 
     /// <para>
