@@ -106,6 +106,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.ColorSpaceSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("filterSettings", targetDepth))
+                {
+                    var unmarshaller = H265FilterSettingsUnmarshaller.Instance;
+                    unmarshalledObject.FilterSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fixedAfd", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

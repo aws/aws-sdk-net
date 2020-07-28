@@ -36,6 +36,7 @@ namespace Amazon.MediaLive.Model
         private AribDestinationSettings _aribDestinationSettings;
         private BurnInDestinationSettings _burnInDestinationSettings;
         private DvbSubDestinationSettings _dvbSubDestinationSettings;
+        private EbuTtDDestinationSettings _ebuTtDDestinationSettings;
         private EmbeddedDestinationSettings _embeddedDestinationSettings;
         private EmbeddedPlusScte20DestinationSettings _embeddedPlusScte20DestinationSettings;
         private RtmpCaptionInfoDestinationSettings _rtmpCaptionInfoDestinationSettings;
@@ -89,6 +90,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetDvbSubDestinationSettings()
         {
             return this._dvbSubDestinationSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EbuTtDDestinationSettings.
+        /// </summary>
+        public EbuTtDDestinationSettings EbuTtDDestinationSettings
+        {
+            get { return this._ebuTtDDestinationSettings; }
+            set { this._ebuTtDDestinationSettings = value; }
+        }
+
+        // Check to see if EbuTtDDestinationSettings property is set
+        internal bool IsSetEbuTtDDestinationSettings()
+        {
+            return this._ebuTtDDestinationSettings != null;
         }
 
         /// <summary>

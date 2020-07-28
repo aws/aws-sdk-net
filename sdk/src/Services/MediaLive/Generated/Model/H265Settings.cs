@@ -40,6 +40,7 @@ namespace Amazon.MediaLive.Model
         private int? _bufSize;
         private H265ColorMetadata _colorMetadata;
         private H265ColorSpaceSettings _colorSpaceSettings;
+        private H265FilterSettings _filterSettings;
         private FixedAfd _fixedAfd;
         private H265FlickerAq _flickerAq;
         private int? _framerateDenominator;
@@ -176,6 +177,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetColorSpaceSettings()
         {
             return this._colorSpaceSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterSettings. Optional filters that you can apply to
+        /// an encode.
+        /// </summary>
+        public H265FilterSettings FilterSettings
+        {
+            get { return this._filterSettings; }
+            set { this._filterSettings = value; }
+        }
+
+        // Check to see if FilterSettings property is set
+        internal bool IsSetFilterSettings()
+        {
+            return this._filterSettings != null;
         }
 
         /// <summary>
