@@ -99,11 +99,25 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Channel type, which determines the allowable resolution and bitrate. <code>STANDARD</code>:
-        /// The stream is transcoded; resolution (width, in landscape orientation) can be up to
-        /// 1080p or the input source resolution, whichever is lower; and bitrate can be up to
-        /// 8.5 Mbps. <code>BASIC</code>: The stream is transfixed; resolution can be up to 480p;
-        /// and bitrate can be up to 1.5 Mbps. Default <code>STANDARD</code>.
+        /// Channel type, which determines the allowable resolution and bitrate. <i>If you exceed
+        /// the allowable resolution or bitrate, the stream probably will disconnect immediately.</i>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>STANDARD</code>: Multiple qualities are generated from the original input,
+        /// to automatically give viewers the best experience for their devices and network conditions.
+        /// Vertical resolution can be up to 1080 and bitrate can be up to 8.5 Mbps.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
+        /// video-quality choice is limited to the original input. Vertical resolution can be
+        /// up to 480 and bitrate can be up to 1.5 Mbps.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: <code>STANDARD</code>.
         /// </para>
         /// </summary>
         public ChannelType Type

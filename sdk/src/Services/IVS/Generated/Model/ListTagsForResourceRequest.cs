@@ -30,7 +30,7 @@ namespace Amazon.IVS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Gets information about the tags for a specified ARN.
+    /// Gets information about AWS tags for the specified ARN.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonIVSRequest
     {

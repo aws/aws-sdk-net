@@ -30,7 +30,7 @@ namespace Amazon.IVS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteStreamKey operation.
-    /// Deletes the stream key for a specified ARN, so it can no longer be used to stream.
+    /// Deletes the stream key for the specified ARN, so it can no longer be used to stream.
     /// </summary>
     public partial class DeleteStreamKeyRequest : AmazonIVSRequest
     {

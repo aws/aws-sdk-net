@@ -30,13 +30,12 @@ namespace Amazon.IVS.Model
 {
     /// <summary>
     /// Container for the parameters to the StopStream operation.
-    /// Disconnects the stream for the specified channel. This disconnects the incoming RTMP
-    /// stream from the client. Can be used in conjunction with <a>DeleteStreamKey</a> to
-    /// prevent further streaming to a channel.
+    /// Disconnects the incoming RTMPS stream for the specified channel. Can be used in conjunction
+    /// with <a>DeleteStreamKey</a> to prevent further streaming to a channel.
     /// 
     ///  <note> 
     /// <para>
-    /// Many streaming client-software libraries automatically reconnect a dropped RTMP session,
+    /// Many streaming client-software libraries automatically reconnect a dropped RTMPS session,
     /// so to stop the stream permanently, you may want to first revoke the <code>streamKey</code>
     /// attached to the channel.
     /// </para>

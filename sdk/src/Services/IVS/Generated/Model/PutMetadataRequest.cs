@@ -30,7 +30,7 @@ namespace Amazon.IVS.Model
 {
     /// <summary>
     /// Container for the parameters to the PutMetadata operation.
-    /// Inserts metadata into an RTMP stream for a specified channel. A maximum of 5 requests
+    /// Inserts metadata into an RTMPS stream for the specified channel. A maximum of 5 requests
     /// per second per channel is allowed, each with a maximum 1KB payload.
     /// </summary>
     public partial class PutMetadataRequest : AmazonIVSRequest

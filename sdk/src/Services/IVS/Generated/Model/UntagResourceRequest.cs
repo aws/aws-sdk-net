@@ -30,7 +30,7 @@ namespace Amazon.IVS.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes tags for a resource with a specified ARN.
+    /// Removes tags from the resource with the specified ARN.
     /// </summary>
     public partial class UntagResourceRequest : AmazonIVSRequest
     {

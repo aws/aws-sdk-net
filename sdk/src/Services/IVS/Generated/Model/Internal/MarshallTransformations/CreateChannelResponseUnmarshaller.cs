@@ -90,6 +90,10 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("PendingVerification"))
+                {
+                    return PendingVerificationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
                 {
                     return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

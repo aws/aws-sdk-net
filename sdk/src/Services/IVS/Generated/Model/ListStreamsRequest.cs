@@ -30,7 +30,8 @@ namespace Amazon.IVS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStreams operation.
-    /// Gets summary information about live streams.
+    /// Gets summary information about live streams in your account, in the AWS region where
+    /// the API request is processed.
     /// </summary>
     public partial class ListStreamsRequest : AmazonIVSRequest
     {

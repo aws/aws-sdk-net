@@ -38,7 +38,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property StreamKey. 
         /// <para>
-        /// Stream key used to authenticate an RTMP stream for ingestion.
+        /// Stream key used to authenticate an RTMPS stream for ingestion.
         /// </para>
         /// </summary>
         public StreamKey StreamKey

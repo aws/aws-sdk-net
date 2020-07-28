@@ -30,7 +30,7 @@ namespace Amazon.IVS.Model
 {
     /// <summary>
     /// Container for the parameters to the GetChannel operation.
-    /// Gets the channel configuration for a specified channel ARN. See also <a>BatchGetChannel</a>.
+    /// Gets the channel configuration for the specified channel ARN. See also <a>BatchGetChannel</a>.
     /// </summary>
     public partial class GetChannelRequest : AmazonIVSRequest
     {

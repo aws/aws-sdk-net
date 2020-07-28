@@ -30,8 +30,7 @@ namespace Amazon.IVS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStreamKeys operation.
-    /// Gets summary information about stream keys. The list can be filtered to a particular
-    /// channel.
+    /// Gets summary information about stream keys for the specified channel.
     /// </summary>
     public partial class ListStreamKeysRequest : AmazonIVSRequest
     {

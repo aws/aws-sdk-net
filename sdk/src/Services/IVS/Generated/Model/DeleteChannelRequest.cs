@@ -30,7 +30,7 @@ namespace Amazon.IVS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteChannel operation.
-    /// Deletes a specified channel and its associated stream keys.
+    /// Deletes the specified channel and its associated stream keys.
     /// </summary>
     public partial class DeleteChannelRequest : AmazonIVSRequest
     {

@@ -30,8 +30,8 @@ namespace Amazon.IVS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListChannels operation.
-    /// Gets summary information about channels. This list can be filtered to match a specified
-    /// string.
+    /// Gets summary information about all channels in your account, in the AWS region where
+    /// the API request is processed. This list can be filtered to match a specified string.
     /// </summary>
     public partial class ListChannelsRequest : AmazonIVSRequest
     {

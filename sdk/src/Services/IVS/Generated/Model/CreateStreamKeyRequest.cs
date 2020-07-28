@@ -30,7 +30,7 @@ namespace Amazon.IVS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStreamKey operation.
-    /// Creates a stream key, used to initiate a stream, for a specified channel ARN.
+    /// Creates a stream key, used to initiate a stream, for the specified channel ARN.
     /// 
     ///  
     /// <para>

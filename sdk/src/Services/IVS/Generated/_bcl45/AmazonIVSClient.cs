@@ -48,7 +48,7 @@ namespace Amazon.IVS
     /// </para>
     ///  
     /// <para>
-    /// The API is an AWS regional service, currently in these regions: us-west-2, us-east-2,
+    /// The API is an AWS regional service, currently in these regions: us-west-2, us-east-1,
     /// and eu-west-1.
     /// </para>
     ///  
@@ -61,6 +61,50 @@ namespace Amazon.IVS
     /// Document History</a>.
     /// </para>
     ///  
+    /// <para>
+    ///  <b>Service Endpoints</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The following are the Amazon IVS service endpoints (all HTTPS): 
+    /// </para>
+    ///  
+    /// <para>
+    /// Region name: US West (Oregon)
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Region: <code>us-west-2</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Endpoint: <code>ivs.us-west-2.amazonaws.com</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Region name: US East (Virginia)
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Region: <code>us-east-1</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Endpoint: <code>ivs.us-east-1.amazonaws.com</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Region name: EU West (Dublin)
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Region: <code>eu-west-1</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Endpoint: <code>ivs.eu-west-1.amazonaws.com</code> 
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     ///  <b>Allowed Header Values</b> 
     /// </para>
@@ -137,8 +181,8 @@ namespace Amazon.IVS
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetChannel</a> — Gets the channel configuration for a specified channel ARN (Amazon
-    /// Resource Name).
+    ///  <a>GetChannel</a> — Gets the channel configuration for the specified channel ARN
+    /// (Amazon Resource Name).
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -146,8 +190,9 @@ namespace Amazon.IVS
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListChannels</a> — Gets summary information about channels. This list can be filtered
-    /// to match a specified string.
+    ///  <a>ListChannels</a> — Gets summary information about all channels in your account,
+    /// in the AWS region where the API request is processed. This list can be filtered to
+    /// match a specified string.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -157,7 +202,7 @@ namespace Amazon.IVS
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteChannel</a> — Deletes a specified channel.
+    ///  <a>DeleteChannel</a> — Deletes the specified channel.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -165,8 +210,8 @@ namespace Amazon.IVS
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateStreamKey</a> — Creates a stream key, used to initiate a stream, for a specified
-    /// channel ARN.
+    ///  <a>CreateStreamKey</a> — Creates a stream key, used to initiate a stream, for the
+    /// specified channel ARN.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -178,13 +223,13 @@ namespace Amazon.IVS
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListStreamKeys</a> — Gets a list of stream keys. The list can be filtered to a
-    /// particular channel.
+    ///  <a>ListStreamKeys</a> — Gets summary information about stream keys for the specified
+    /// channel.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteStreamKey</a> — Deletes the stream key for a specified ARN, so it can no
-    /// longer be used to stream.
+    ///  <a>DeleteStreamKey</a> — Deletes the stream key for the specified ARN, so it can
+    /// no longer be used to stream.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -197,17 +242,18 @@ namespace Amazon.IVS
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListStreams</a> — Gets summary information about live streams.
+    ///  <a>ListStreams</a> — Gets summary information about live streams in your account,
+    /// in the AWS region where the API request is processed.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>StopStream</a> — Disconnects a streamer on a specified channel. This disconnects
-    /// the incoming RTMP stream from the client. Can be used in conjunction with <a>DeleteStreamKey</a>
-    /// to prevent further streaming to a channel.
+    ///  <a>StopStream</a> — Disconnects the incoming RTMPS stream for the specified channel.
+    /// Can be used in conjunction with <a>DeleteStreamKey</a> to prevent further streaming
+    /// to a channel.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>PutMetadata</a> Inserts metadata into an RTMP stream for a specified channel.
+    ///  <a>PutMetadata</a> — Inserts metadata into an RTMPS stream for the specified channel.
     /// A maximum of 5 requests per second per channel is allowed, each with a maximum 1KB
     /// payload.
     /// </para>
@@ -217,15 +263,16 @@ namespace Amazon.IVS
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>TagResource</a> — Adds or updates tags for an AWS resource with a specified ARN.
+    ///  <a>TagResource</a> — Adds or updates tags for the AWS resource with the specified
+    /// ARN.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UntagResource</a> — Removes tags from a resource with a specified ARN.
+    ///  <a>UntagResource</a> — Removes tags from the resource with the specified ARN.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListTagsForResource</a> — Gets information about AWS tags for a specified ARN.
+    ///  <a>ListTagsForResource</a> — Gets information about AWS tags for the specified ARN.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -521,6 +568,9 @@ namespace Amazon.IVS
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
         /// 
         /// </exception>
@@ -550,6 +600,9 @@ namespace Amazon.IVS
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
         /// 
         /// </exception>
@@ -572,7 +625,7 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Creates a stream key, used to initiate a stream, for a specified channel ARN.
+        /// Creates a stream key, used to initiate a stream, for the specified channel ARN.
         /// 
         ///  
         /// <para>
@@ -586,6 +639,9 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the CreateStreamKey service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
@@ -609,7 +665,7 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Creates a stream key, used to initiate a stream, for a specified channel ARN.
+        /// Creates a stream key, used to initiate a stream, for the specified channel ARN.
         /// 
         ///  
         /// <para>
@@ -626,6 +682,9 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the CreateStreamKey service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
@@ -653,7 +712,7 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Deletes a specified channel and its associated stream keys.
+        /// Deletes the specified channel and its associated stream keys.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteChannel service method.</param>
         /// 
@@ -662,6 +721,9 @@ namespace Amazon.IVS
         /// 
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
@@ -682,7 +744,7 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Deletes a specified channel and its associated stream keys.
+        /// Deletes the specified channel and its associated stream keys.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteChannel service method.</param>
         /// <param name="cancellationToken">
@@ -694,6 +756,9 @@ namespace Amazon.IVS
         /// 
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
@@ -718,12 +783,15 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Deletes the stream key for a specified ARN, so it can no longer be used to stream.
+        /// Deletes the stream key for the specified ARN, so it can no longer be used to stream.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStreamKey service method.</param>
         /// 
         /// <returns>The response from the DeleteStreamKey service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
@@ -744,7 +812,7 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Deletes the stream key for a specified ARN, so it can no longer be used to stream.
+        /// Deletes the stream key for the specified ARN, so it can no longer be used to stream.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStreamKey service method.</param>
         /// <param name="cancellationToken">
@@ -753,6 +821,9 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the DeleteStreamKey service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
@@ -777,7 +848,7 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Gets the channel configuration for a specified channel ARN. See also <a>BatchGetChannel</a>.
+        /// Gets the channel configuration for the specified channel ARN. See also <a>BatchGetChannel</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChannel service method.</param>
         /// 
@@ -803,7 +874,7 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Gets the channel configuration for a specified channel ARN. See also <a>BatchGetChannel</a>.
+        /// Gets the channel configuration for the specified channel ARN. See also <a>BatchGetChannel</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChannel service method.</param>
         /// <param name="cancellationToken">
@@ -960,8 +1031,8 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Gets summary information about channels. This list can be filtered to match a specified
-        /// string.
+        /// Gets summary information about all channels in your account, in the AWS region where
+        /// the API request is processed. This list can be filtered to match a specified string.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
         /// 
@@ -984,8 +1055,8 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Gets summary information about channels. This list can be filtered to match a specified
-        /// string.
+        /// Gets summary information about all channels in your account, in the AWS region where
+        /// the API request is processed. This list can be filtered to match a specified string.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
         /// <param name="cancellationToken">
@@ -1015,8 +1086,7 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Gets summary information about stream keys. The list can be filtered to a particular
-        /// channel.
+        /// Gets summary information about stream keys for the specified channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStreamKeys service method.</param>
         /// 
@@ -1042,8 +1112,7 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Gets summary information about stream keys. The list can be filtered to a particular
-        /// channel.
+        /// Gets summary information about stream keys for the specified channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStreamKeys service method.</param>
         /// <param name="cancellationToken">
@@ -1076,7 +1145,8 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Gets summary information about live streams.
+        /// Gets summary information about live streams in your account, in the AWS region where
+        /// the API request is processed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStreams service method.</param>
         /// 
@@ -1096,7 +1166,8 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Gets summary information about live streams.
+        /// Gets summary information about live streams in your account, in the AWS region where
+        /// the API request is processed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStreams service method.</param>
         /// <param name="cancellationToken">
@@ -1123,7 +1194,7 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Gets information about the tags for a specified ARN.
+        /// Gets information about AWS tags for the specified ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -1149,7 +1220,7 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Gets information about the tags for a specified ARN.
+        /// Gets information about AWS tags for the specified ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1182,7 +1253,7 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Inserts metadata into an RTMP stream for a specified channel. A maximum of 5 requests
+        /// Inserts metadata into an RTMPS stream for the specified channel. A maximum of 5 requests
         /// per second per channel is allowed, each with a maximum 1KB payload.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMetadata service method.</param>
@@ -1215,7 +1286,7 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Inserts metadata into an RTMP stream for a specified channel. A maximum of 5 requests
+        /// Inserts metadata into an RTMPS stream for the specified channel. A maximum of 5 requests
         /// per second per channel is allowed, each with a maximum 1KB payload.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMetadata service method.</param>
@@ -1255,13 +1326,12 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Disconnects the stream for the specified channel. This disconnects the incoming RTMP
-        /// stream from the client. Can be used in conjunction with <a>DeleteStreamKey</a> to
-        /// prevent further streaming to a channel.
+        /// Disconnects the incoming RTMPS stream for the specified channel. Can be used in conjunction
+        /// with <a>DeleteStreamKey</a> to prevent further streaming to a channel.
         /// 
         ///  <note> 
         /// <para>
-        /// Many streaming client-software libraries automatically reconnect a dropped RTMP session,
+        /// Many streaming client-software libraries automatically reconnect a dropped RTMPS session,
         /// so to stop the stream permanently, you may want to first revoke the <code>streamKey</code>
         /// attached to the channel.
         /// </para>
@@ -1297,13 +1367,12 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Disconnects the stream for the specified channel. This disconnects the incoming RTMP
-        /// stream from the client. Can be used in conjunction with <a>DeleteStreamKey</a> to
-        /// prevent further streaming to a channel.
+        /// Disconnects the incoming RTMPS stream for the specified channel. Can be used in conjunction
+        /// with <a>DeleteStreamKey</a> to prevent further streaming to a channel.
         /// 
         ///  <note> 
         /// <para>
-        /// Many streaming client-software libraries automatically reconnect a dropped RTMP session,
+        /// Many streaming client-software libraries automatically reconnect a dropped RTMPS session,
         /// so to stop the stream permanently, you may want to first revoke the <code>streamKey</code>
         /// attached to the channel.
         /// </para>
@@ -1346,7 +1415,7 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Adds or updates tags for a resource with a specified ARN.
+        /// Adds or updates tags for the AWS resource with the specified ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1372,7 +1441,7 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Adds or updates tags for a resource with a specified ARN.
+        /// Adds or updates tags for the AWS resource with the specified ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1405,7 +1474,7 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Removes tags for a resource with a specified ARN.
+        /// Removes tags from the resource with the specified ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -1431,7 +1500,7 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Removes tags for a resource with a specified ARN.
+        /// Removes tags from the resource with the specified ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1476,6 +1545,9 @@ namespace Amazon.IVS
         /// <exception cref="Amazon.IVS.Model.ConflictException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
         /// 
         /// </exception>
@@ -1507,6 +1579,9 @@ namespace Amazon.IVS
         /// 
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
