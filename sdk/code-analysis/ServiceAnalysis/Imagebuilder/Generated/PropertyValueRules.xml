@@ -909,7 +909,7 @@
     <property>Amazon.Imagebuilder.Model.AmiDistributionConfiguration.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[-_A-Za-z0-9{][-_A-Za-z0-9\s:{}]+[-_A-Za-z0-9}]$</pattern>
+    <pattern>^[-_A-Za-z0-9{][-_A-Za-z0-9\s:{}\.]+[-_A-Za-z0-9}]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.Component.Arn</property>

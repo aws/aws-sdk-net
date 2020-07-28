@@ -43,6 +43,11 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         /// The filters. 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>name</code> - The name of this distribution configuration.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<Filter> Filters
