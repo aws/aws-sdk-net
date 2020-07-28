@@ -134,7 +134,7 @@
 
     <Target Name="full-build-nodocs-all" DependsOnTargets="test-sdk;package-extensions;keyscan;copy-assemblies;copy-service-models;unity-pack;save-build" Condition="'$(ServiceList)'==''"/>
 
-    <Target Name="full-build-nodocs-service" DependsOnTargets="test-sdk-service;package-extensions;keyscan;copy-assemblies;copy-service-models;unity-pack;save-build" Condition="'$(ServiceList)'!=''"/>
+    <Target Name="full-build-nodocs-service" DependsOnTargets="test-sdk-service;package-extensions;keyscan;copy-assemblies;copy-service-models;save-build" Condition="'$(ServiceList)'!=''"/>
 
     <Target Name="restore-nuget">
         <Message Text="Restore nuget packages"/>
@@ -175,7 +175,7 @@
             DestinationFolder="$(Deployment)" />
     </Target>
 
-    <Target Name="build-sdk-service" DependsOnTargets="populate-deployment;build-sdk-desktop-service;build-code-analysis;build-sdk-pcl;build-sdk-unity;build-sdk-netstandard;copy-last-released-unity-bits;copy-assemblies">
+    <Target Name="build-sdk-service" DependsOnTargets="populate-deployment;build-sdk-desktop-service;build-code-analysis;copy-assemblies">
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
             DestinationFolder="$(Deployment)" />
@@ -198,6 +198,17 @@
         <Exec Command="dotnet restore -f  %(ServiceName.Filename).sln" WorkingDirectory="..\sdk\src\Services\%(ServiceName.Filename)"/>
         <Exec Command="dotnet clean -c $(Configuration) %(ServiceName.FileName).sln" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)"/>
         <Exec Command="dotnet build -c $(Configuration) --no-incremental %(ServiceName.FileName).sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)"/>
+        
+        <!--PCL files for nuspec pack until PCL is removed-->
+        <Copy
+            SourceFiles="..\sdk\src\Services\%(ServiceName.Filename)\bin\$(Configuration)\netstandard2.0\AWSSDK.%(ServiceName.Filename).dll"
+            DestinationFolder="..\sdk\src\Services\%(ServiceName.Filename)\bin\$(Configuration)\pcl\" />        
+        <Copy
+            SourceFiles="..\sdk\src\Services\%(ServiceName.Filename)\bin\$(Configuration)\netstandard2.0\AWSSDK.%(ServiceName.Filename).xml"
+            DestinationFolder="..\sdk\src\Services\%(ServiceName.Filename)\bin\$(Configuration)\pcl\" />        
+        <Copy
+            SourceFiles="..\sdk\src\Services\%(ServiceName.Filename)\bin\$(Configuration)\netstandard2.0\AWSSDK.%(ServiceName.Filename).pdb"
+            DestinationFolder="..\sdk\src\Services\%(ServiceName.Filename)\bin\$(Configuration)\pcl\" />        
     </Target>
 
 
@@ -257,7 +268,7 @@
         <Exec Command="dotnet restore -f  $(Net45UnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
         <Exec Command="dotnet clean -c $(Configuration) $(Net45UnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
         <Exec Command="dotnet build -c $(Configuration) $(Net45UnitTestProject) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="..\sdk\test\UnitTests"/>
-
+        
         <Exec Command="dotnet restore -f  $(NetStandardUnitTests)" WorkingDirectory="..\sdk\test\NetStandard\UnitTests"/>
         <Exec Command="dotnet clean -c $(Configuration) $(NetStandardUnitTests)" WorkingDirectory="..\sdk\test\NetStandard\UnitTests"/>
         <Exec Command="dotnet build -c $(Configuration) $(NetStandardUnitTests) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="..\sdk\test\NetStandard\UnitTests"/>
@@ -313,12 +324,14 @@
             Condition="Exists('..\sdk\test\Services\%(ServiceName.FileName)\UnitTests\Generated') Or Exists('..\sdk\test\Services\%(ServiceName.FileName)\UnitTests\Custom')"
             TestExecutionProfile="test-runner"/>
 
+        <!--
         <XUnitWrapperTask
             TestSuiteRunner="dotnet"
             TestContainer="..\sdk\test\NetStandard\UnitTests\UnitTests.NetStandard.csproj"
             Configuration="$(Configuration)"
             Categories="$(NetStandardTestCategories)"
             TestExecutionProfile="test-runner"/>
+        -->
     </Target>
 
     <Target Name="build-integ-tests-service">
