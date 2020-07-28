@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeHub operation
+    /// Response Unmarshaller for UpdateSecurityHubConfiguration operation
     /// </summary>  
-    public class DescribeHubResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateSecurityHubConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,31 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeHubResponse response = new DescribeHubResponse();
+            UpdateSecurityHubConfigurationResponse response = new UpdateSecurityHubConfigurationResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("AutoEnableControls", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.AutoEnableControls = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("HubArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.HubArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SubscribedAt", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SubscribedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -116,9 +93,9 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             return new AmazonSecurityHubException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeHubResponseUnmarshaller _instance = new DescribeHubResponseUnmarshaller();        
+        private static UpdateSecurityHubConfigurationResponseUnmarshaller _instance = new UpdateSecurityHubConfigurationResponseUnmarshaller();        
 
-        internal static DescribeHubResponseUnmarshaller GetInstance()
+        internal static UpdateSecurityHubConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -126,7 +103,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeHubResponseUnmarshaller Instance
+        public static UpdateSecurityHubConfigurationResponseUnmarshaller Instance
         {
             get
             {

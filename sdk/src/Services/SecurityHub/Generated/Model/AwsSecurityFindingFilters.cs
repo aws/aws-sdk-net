@@ -1629,6 +1629,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The workflow state of a finding.
         /// </para>
+        ///  
+        /// <para>
+        /// Note that this field is deprecated. To search for a finding based on its workflow
+        /// status, use <code>WorkflowStatus</code>.
+        /// </para>
         /// </summary>
         public List<StringFilter> WorkflowState
         {

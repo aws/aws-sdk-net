@@ -29,13 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeHub operation.
+    /// Container for the parameters to the UpdateSecurityHubConfiguration operation.
+    /// Updates configuration options for Security Hub.
     /// </summary>
-    public partial class DescribeHubResponse : AmazonWebServiceResponse
+    public partial class UpdateSecurityHubConfigurationRequest : AmazonSecurityHubRequest
     {
         private bool? _autoEnableControls;
-        private string _hubArn;
-        private string _subscribedAt;
 
         /// <summary>
         /// Gets and sets the property AutoEnableControls. 
@@ -45,8 +44,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// If set to <code>true</code>, then new controls for enabled standards are enabled automatically.
-        /// If set to <code>false</code>, then new controls are not enabled.
+        /// By default, this is set to <code>true</code>, and new controls are enabled automatically.
+        /// To not automatically enable new controls, set this to <code>false</code>. 
         /// </para>
         /// </summary>
         public bool AutoEnableControls
@@ -59,42 +58,6 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAutoEnableControls()
         {
             return this._autoEnableControls.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property HubArn. 
-        /// <para>
-        /// The ARN of the Hub resource that was retrieved.
-        /// </para>
-        /// </summary>
-        public string HubArn
-        {
-            get { return this._hubArn; }
-            set { this._hubArn = value; }
-        }
-
-        // Check to see if HubArn property is set
-        internal bool IsSetHubArn()
-        {
-            return this._hubArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SubscribedAt. 
-        /// <para>
-        /// The date and time when Security Hub was enabled in the account.
-        /// </para>
-        /// </summary>
-        public string SubscribedAt
-        {
-            get { return this._subscribedAt; }
-            set { this._subscribedAt = value; }
-        }
-
-        // Check to see if SubscribedAt property is set
-        internal bool IsSetSubscribedAt()
-        {
-            return this._subscribedAt != null;
         }
 
     }
