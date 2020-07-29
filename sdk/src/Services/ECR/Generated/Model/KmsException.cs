@@ -29,41 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// The upload could not be found, or the specified upload ID is not valid for this repository.
+    /// The operation failed due to a KMS exception.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]
     #endif
-    public partial class UploadNotFoundException : AmazonECRException
+    public partial class KmsException : AmazonECRException
     {
+        private string _kmsError;
 
         /// <summary>
-        /// Constructs a new UploadNotFoundException with the specified error
+        /// Constructs a new KmsException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public UploadNotFoundException(string message) 
+        public KmsException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of UploadNotFoundException
+        /// Construct instance of KmsException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public UploadNotFoundException(string message, Exception innerException) 
+        public KmsException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of UploadNotFoundException
+        /// Construct instance of KmsException
         /// </summary>
         /// <param name="innerException"></param>
-        public UploadNotFoundException(Exception innerException) 
+        public KmsException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of UploadNotFoundException
+        /// Construct instance of KmsException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -71,32 +72,33 @@ namespace Amazon.ECR.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public UploadNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public KmsException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of UploadNotFoundException
+        /// Construct instance of KmsException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public UploadNotFoundException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public KmsException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !PCL && !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the UploadNotFoundException class with serialized data.
+        /// Constructs a new instance of the KmsException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected UploadNotFoundException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected KmsException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.KmsError = (string)info.GetValue("KmsError", typeof(string));
         }
 
         /// <summary>
@@ -117,8 +119,27 @@ namespace Amazon.ECR.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("KmsError", this.KmsError);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property KmsError. 
+        /// <para>
+        /// The error code returned by AWS KMS.
+        /// </para>
+        /// </summary>
+        public string KmsError
+        {
+            get { return this._kmsError; }
+            set { this._kmsError = value; }
+        }
+
+        // Check to see if KmsError property is set
+        internal bool IsSetKmsError()
+        {
+            return this._kmsError != null;
+        }
 
     }
 }

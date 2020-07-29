@@ -40,12 +40,12 @@ namespace Amazon.ECR
     ///
     /// Amazon Elastic Container Registry 
     /// <para>
-    /// Amazon Elastic Container Registry (Amazon ECR) is a managed Docker registry service.
-    /// Customers can use the familiar Docker CLI to push, pull, and manage images. Amazon
-    /// ECR provides a secure, scalable, and reliable registry. Amazon ECR supports private
-    /// Docker repositories with resource-based permissions using IAM so that specific users
-    /// or Amazon EC2 instances can access repositories and images. Developers can use the
-    /// Docker CLI to author and manage images.
+    /// Amazon Elastic Container Registry (Amazon ECR) is a managed container image registry
+    /// service. Customers can use the familiar Docker CLI, or their preferred client, to
+    /// push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable
+    /// registry for your Docker or Open Container Initiative (OCI) images. Amazon ECR supports
+    /// private repositories with resource-based permissions using IAM so that specific users
+    /// or Amazon EC2 instances can access repositories and images.
     /// </para>
     /// </summary>
     public partial class AmazonECRClient : AmazonServiceClient, IAmazonECR
@@ -462,6 +462,9 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
+        /// <exception cref="Amazon.ECR.Model.KmsException">
+        /// The operation failed due to a KMS exception.
+        /// </exception>
         /// <exception cref="Amazon.ECR.Model.LayerAlreadyExistsException">
         /// The image layer already exists in the associated repository.
         /// </exception>
@@ -476,7 +479,7 @@ namespace Amazon.ECR
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.UploadNotFoundException">
-        /// The upload could not be found, or the specified upload id is not valid for this repository.
+        /// The upload could not be found, or the specified upload ID is not valid for this repository.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">REST API Reference for CompleteLayerUpload Operation</seealso>
         public virtual Task<CompleteLayerUploadResponse> CompleteLayerUploadAsync(CompleteLayerUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -519,6 +522,9 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.InvalidTagParameterException">
         /// An invalid parameter has been specified. Tag keys can have a maximum character length
         /// of 128 characters, and tag values can have a maximum length of 256 characters.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.KmsException">
+        /// The operation failed due to a KMS exception.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.LimitExceededException">
         /// The operation did not succeed because it would have exceeded a service limit for your
@@ -619,6 +625,9 @@ namespace Amazon.ECR
         /// <returns>The response from the DeleteRepository service method, as returned by ECR.</returns>
         /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.KmsException">
+        /// The operation failed due to a KMS exception.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.RepositoryNotEmptyException">
         /// The specified repository contains images. To delete a repository that contains images,
@@ -1140,6 +1149,9 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
+        /// <exception cref="Amazon.ECR.Model.KmsException">
+        /// The operation failed due to a KMS exception.
+        /// </exception>
         /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
         /// The specified repository could not be found. Check the spelling of the specified repository
         /// and ensure that you are performing operations on the correct registry.
@@ -1307,6 +1319,9 @@ namespace Amazon.ECR
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.KmsException">
+        /// The operation failed due to a KMS exception.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.LayersNotFoundException">
         /// The specified layers could not be found, or the specified layer is not valid for this
@@ -1609,8 +1624,7 @@ namespace Amazon.ECR
         /// The lifecycle policy could not be found, and no policy is set to the repository.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.LifecyclePolicyPreviewInProgressException">
-        /// The previous lifecycle policy preview request has not completed. Please try again
-        /// later.
+        /// The previous lifecycle policy preview request has not completed. Wait and try again.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
         /// The specified repository could not be found. Check the spelling of the specified repository
@@ -1779,6 +1793,9 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
+        /// <exception cref="Amazon.ECR.Model.KmsException">
+        /// The operation failed due to a KMS exception.
+        /// </exception>
         /// <exception cref="Amazon.ECR.Model.LimitExceededException">
         /// The operation did not succeed because it would have exceeded a service limit for your
         /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
@@ -1792,7 +1809,7 @@ namespace Amazon.ECR
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.UploadNotFoundException">
-        /// The upload could not be found, or the specified upload id is not valid for this repository.
+        /// The upload could not be found, or the specified upload ID is not valid for this repository.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">REST API Reference for UploadLayerPart Operation</seealso>
         public virtual Task<UploadLayerPartResponse> UploadLayerPartAsync(UploadLayerPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

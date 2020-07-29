@@ -25,6 +25,56 @@ namespace Amazon.ECR
 {
 
     /// <summary>
+    /// Constants used for properties of type EncryptionType.
+    /// </summary>
+    public class EncryptionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AES256 for EncryptionType
+        /// </summary>
+        public static readonly EncryptionType AES256 = new EncryptionType("AES256");
+        /// <summary>
+        /// Constant KMS for EncryptionType
+        /// </summary>
+        public static readonly EncryptionType KMS = new EncryptionType("KMS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncryptionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptionType FindValue(string value)
+        {
+            return FindValue<EncryptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncryptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FindingSeverity.
     /// </summary>
     public class FindingSeverity : ConstantClass
@@ -162,6 +212,10 @@ namespace Amazon.ECR
         /// Constant InvalidImageTag for ImageFailureCode
         /// </summary>
         public static readonly ImageFailureCode InvalidImageTag = new ImageFailureCode("InvalidImageTag");
+        /// <summary>
+        /// Constant KmsError for ImageFailureCode
+        /// </summary>
+        public static readonly ImageFailureCode KmsError = new ImageFailureCode("KmsError");
         /// <summary>
         /// Constant MissingDigestAndTag for ImageFailureCode
         /// </summary>

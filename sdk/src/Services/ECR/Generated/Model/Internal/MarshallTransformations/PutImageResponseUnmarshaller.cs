@@ -96,6 +96,10 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("KmsException"))
+                {
+                    return KmsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("LayersNotFoundException"))
                 {
                     return LayersNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

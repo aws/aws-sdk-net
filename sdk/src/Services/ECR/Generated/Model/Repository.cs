@@ -34,6 +34,7 @@ namespace Amazon.ECR.Model
     public partial class Repository
     {
         private DateTime? _createdAt;
+        private EncryptionConfiguration _encryptionConfiguration;
         private ImageScanningConfiguration _imageScanningConfiguration;
         private ImageTagMutability _imageTagMutability;
         private string _registryId;
@@ -57,6 +58,25 @@ namespace Amazon.ECR.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// The encryption configuration for the repository. This determines how the contents
+        /// of your repository are encrypted at rest.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>
@@ -153,8 +173,8 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RepositoryUri. 
         /// <para>
-        /// The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code>
-        /// operations.
+        /// The URI for the repository. You can use this URI for container image <code>push</code>
+        /// and <code>pull</code> operations.
         /// </para>
         /// </summary>
         public string RepositoryUri
