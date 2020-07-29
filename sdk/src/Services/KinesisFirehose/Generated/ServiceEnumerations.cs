@@ -87,6 +87,56 @@ namespace Amazon.KinesisFirehose
 
 
     /// <summary>
+    /// Constants used for properties of type ContentEncoding.
+    /// </summary>
+    public class ContentEncoding : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GZIP for ContentEncoding
+        /// </summary>
+        public static readonly ContentEncoding GZIP = new ContentEncoding("GZIP");
+        /// <summary>
+        /// Constant NONE for ContentEncoding
+        /// </summary>
+        public static readonly ContentEncoding NONE = new ContentEncoding("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentEncoding(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentEncoding FindValue(string value)
+        {
+            return FindValue<ContentEncoding>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentEncoding(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeliveryStreamEncryptionStatus.
     /// </summary>
     public class DeliveryStreamEncryptionStatus : ConstantClass
@@ -522,6 +572,56 @@ namespace Amazon.KinesisFirehose
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HECEndpointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HttpEndpointS3BackupMode.
+    /// </summary>
+    public class HttpEndpointS3BackupMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AllData for HttpEndpointS3BackupMode
+        /// </summary>
+        public static readonly HttpEndpointS3BackupMode AllData = new HttpEndpointS3BackupMode("AllData");
+        /// <summary>
+        /// Constant FailedDataOnly for HttpEndpointS3BackupMode
+        /// </summary>
+        public static readonly HttpEndpointS3BackupMode FailedDataOnly = new HttpEndpointS3BackupMode("FailedDataOnly");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HttpEndpointS3BackupMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HttpEndpointS3BackupMode FindValue(string value)
+        {
+            return FindValue<HttpEndpointS3BackupMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HttpEndpointS3BackupMode(string value)
         {
             return FindValue(value);
         }
