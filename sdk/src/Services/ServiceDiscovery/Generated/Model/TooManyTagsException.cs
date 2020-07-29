@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
-    /// The list of tags on the resource is over the limit. The maximum number of tags that
+    /// The list of tags on the resource is over the quota. The maximum number of tags that
     /// can be applied to a resource is 50.
     /// </summary>
     #if !PCL && !NETSTANDARD

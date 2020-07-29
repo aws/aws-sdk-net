@@ -59,7 +59,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DnsConfig. 
         /// <para>
-        /// A complex type that contains information about the Route 53 DNS records that you want
+        /// A complex type that contains information about the Route 53 DNS records that you want
         /// AWS Cloud Map to create when you register an instance.
         /// </para>
         /// </summary>
