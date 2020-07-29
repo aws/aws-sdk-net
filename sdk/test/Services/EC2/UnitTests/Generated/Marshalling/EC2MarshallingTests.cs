@@ -7055,6 +7055,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void GetGroupsForCapacityReservationMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetGroupsForCapacityReservation");
+
+            var request = InstantiateClassGenerator.Execute<GetGroupsForCapacityReservationRequest>();
+            var marshaller = new GetGroupsForCapacityReservationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetGroupsForCapacityReservationResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetGroupsForCapacityReservationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void GetHostReservationPurchasePreviewMarshallTest()
         {
             var operation = service_model.FindOperation("GetHostReservationPurchasePreview");

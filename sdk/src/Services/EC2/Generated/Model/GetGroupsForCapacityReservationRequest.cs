@@ -29,19 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a target Capacity Reservation or Capacity Reservation group.
+    /// Container for the parameters to the GetGroupsForCapacityReservation operation.
+    /// Lists the resource groups to which a Capacity Reservation has been added.
     /// </summary>
-    public partial class CapacityReservationTargetResponse
+    public partial class GetGroupsForCapacityReservationRequest : AmazonEC2Request
     {
         private string _capacityReservationId;
-        private string _capacityReservationResourceGroupArn;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property CapacityReservationId. 
         /// <para>
-        /// The ID of the targeted Capacity Reservation.
+        /// The ID of the Capacity Reservation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CapacityReservationId
         {
             get { return this._capacityReservationId; }
@@ -55,21 +58,43 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CapacityReservationResourceGroupArn. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The ARN of the targeted Capacity Reservation group.
+        /// The maximum number of results to return for the request in a single page. The remaining
+        /// results can be seen by sending another request with the returned <code>nextToken</code>
+        /// value. This value can be between 5 and 500. If <code>maxResults</code> is given a
+        /// larger value than 500, you receive an error.
         /// </para>
         /// </summary>
-        public string CapacityReservationResourceGroupArn
+        [AWSProperty(Min=1, Max=1000)]
+        public int MaxResults
         {
-            get { return this._capacityReservationResourceGroupArn; }
-            set { this._capacityReservationResourceGroupArn = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if CapacityReservationResourceGroupArn property is set
-        internal bool IsSetCapacityReservationResourceGroupArn()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._capacityReservationResourceGroupArn != null;
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to use to retrieve the next page of results.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CapacityReservationTarget. 
         /// <para>
-        /// Information about the target Capacity Reservation.
+        /// Information about the target Capacity Reservation or Capacity Reservation group.
         /// </para>
         /// </summary>
         public CapacityReservationTargetResponse CapacityReservationTarget

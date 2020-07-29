@@ -19122,6 +19122,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetGroupsForCapacityReservation
+
+
+        /// <summary>
+        /// Lists the resource groups to which a Capacity Reservation has been added.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGroupsForCapacityReservation service method.</param>
+        /// 
+        /// <returns>The response from the GetGroupsForCapacityReservation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetGroupsForCapacityReservation">REST API Reference for GetGroupsForCapacityReservation Operation</seealso>
+        public virtual GetGroupsForCapacityReservationResponse GetGroupsForCapacityReservation(GetGroupsForCapacityReservationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGroupsForCapacityReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGroupsForCapacityReservationResponseUnmarshaller.Instance;
+
+            return Invoke<GetGroupsForCapacityReservationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the resource groups to which a Capacity Reservation has been added.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGroupsForCapacityReservation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGroupsForCapacityReservation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetGroupsForCapacityReservation">REST API Reference for GetGroupsForCapacityReservation Operation</seealso>
+        public virtual Task<GetGroupsForCapacityReservationResponse> GetGroupsForCapacityReservationAsync(GetGroupsForCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGroupsForCapacityReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGroupsForCapacityReservationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetGroupsForCapacityReservationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetHostReservationPurchasePreview
 
 

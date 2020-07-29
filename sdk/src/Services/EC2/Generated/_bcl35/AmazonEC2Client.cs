@@ -19678,6 +19678,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetGroupsForCapacityReservation
+
+        /// <summary>
+        /// Lists the resource groups to which a Capacity Reservation has been added.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGroupsForCapacityReservation service method.</param>
+        /// 
+        /// <returns>The response from the GetGroupsForCapacityReservation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetGroupsForCapacityReservation">REST API Reference for GetGroupsForCapacityReservation Operation</seealso>
+        public virtual GetGroupsForCapacityReservationResponse GetGroupsForCapacityReservation(GetGroupsForCapacityReservationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGroupsForCapacityReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGroupsForCapacityReservationResponseUnmarshaller.Instance;
+
+            return Invoke<GetGroupsForCapacityReservationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGroupsForCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGroupsForCapacityReservation operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGroupsForCapacityReservation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetGroupsForCapacityReservation">REST API Reference for GetGroupsForCapacityReservation Operation</seealso>
+        public virtual IAsyncResult BeginGetGroupsForCapacityReservation(GetGroupsForCapacityReservationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGroupsForCapacityReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGroupsForCapacityReservationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetGroupsForCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGroupsForCapacityReservation.</param>
+        /// 
+        /// <returns>Returns a  GetGroupsForCapacityReservationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetGroupsForCapacityReservation">REST API Reference for GetGroupsForCapacityReservation Operation</seealso>
+        public virtual GetGroupsForCapacityReservationResponse EndGetGroupsForCapacityReservation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetGroupsForCapacityReservationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetHostReservationPurchasePreview
 
         /// <summary>

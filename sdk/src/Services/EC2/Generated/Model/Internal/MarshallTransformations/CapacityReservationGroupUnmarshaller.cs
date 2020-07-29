@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CapacityReservationTargetResponse Object
+    /// Response Unmarshaller for CapacityReservationGroup Object
     /// </summary>  
-    public class CapacityReservationTargetResponseUnmarshaller : IUnmarshaller<CapacityReservationTargetResponse, XmlUnmarshallerContext>, IUnmarshaller<CapacityReservationTargetResponse, JsonUnmarshallerContext>
+    public class CapacityReservationGroupUnmarshaller : IUnmarshaller<CapacityReservationGroup, XmlUnmarshallerContext>, IUnmarshaller<CapacityReservationGroup, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CapacityReservationTargetResponse Unmarshall(XmlUnmarshallerContext context)
+        public CapacityReservationGroup Unmarshall(XmlUnmarshallerContext context)
         {
-            CapacityReservationTargetResponse unmarshalledObject = new CapacityReservationTargetResponse();
+            CapacityReservationGroup unmarshalledObject = new CapacityReservationGroup();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,16 +54,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("capacityReservationId", targetDepth))
+                    if (context.TestExpression("groupArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CapacityReservationId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.GroupArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("capacityReservationResourceGroupArn", targetDepth))
+                    if (context.TestExpression("ownerId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CapacityReservationResourceGroupArn = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -81,18 +81,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CapacityReservationTargetResponse Unmarshall(JsonUnmarshallerContext context)
+        public CapacityReservationGroup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static CapacityReservationTargetResponseUnmarshaller _instance = new CapacityReservationTargetResponseUnmarshaller();        
+        private static CapacityReservationGroupUnmarshaller _instance = new CapacityReservationGroupUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CapacityReservationTargetResponseUnmarshaller Instance
+        public static CapacityReservationGroupUnmarshaller Instance
         {
             get
             {

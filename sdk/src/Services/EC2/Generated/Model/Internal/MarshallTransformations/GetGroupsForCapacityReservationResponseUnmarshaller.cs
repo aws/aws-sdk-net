@@ -32,72 +32,77 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CapacityReservationTargetResponse Object
+    /// Response Unmarshaller for GetGroupsForCapacityReservation operation
     /// </summary>  
-    public class CapacityReservationTargetResponseUnmarshaller : IUnmarshaller<CapacityReservationTargetResponse, XmlUnmarshallerContext>, IUnmarshaller<CapacityReservationTargetResponse, JsonUnmarshallerContext>
+    public class GetGroupsForCapacityReservationResponseUnmarshaller : EC2ResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
+        /// </summary>
         /// <param name="context"></param>
         /// <returns></returns>
-        public CapacityReservationTargetResponse Unmarshall(XmlUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            CapacityReservationTargetResponse unmarshalledObject = new CapacityReservationTargetResponse();
+            GetGroupsForCapacityReservationResponse response = new GetGroupsForCapacityReservationResponse();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
+               targetDepth = 2;
+
             while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("capacityReservationId", targetDepth))
+
+                    if (context.TestExpression("capacityReservationGroupSet/item", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CapacityReservationId = unmarshaller.Unmarshall(context);
+                        var unmarshaller = CapacityReservationGroupUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.CapacityReservationGroups.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("capacityReservationResourceGroupArn", targetDepth))
+                    if (context.TestExpression("nextToken", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CapacityReservationResourceGroupArn = unmarshaller.Unmarshall(context);
+                        response.NextToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
+                } 
             }
 
-            return unmarshalledObject;
+            return response;
         }
 
         /// <summary>
         /// Unmarshaller error response to exception.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
         /// <returns></returns>
-        public CapacityReservationTargetResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            return null;
+            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+        private static GetGroupsForCapacityReservationResponseUnmarshaller _instance = new GetGroupsForCapacityReservationResponseUnmarshaller();        
 
-
-        private static CapacityReservationTargetResponseUnmarshaller _instance = new CapacityReservationTargetResponseUnmarshaller();        
+        internal static GetGroupsForCapacityReservationResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CapacityReservationTargetResponseUnmarshaller Instance
+        public static GetGroupsForCapacityReservationResponseUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
+
     }
 }
