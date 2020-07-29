@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
-    /// The request uses an HTTP method which is not allowed for the specified resource.
+    /// The request uses an HTTP method that isn't allowed for the specified resource.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

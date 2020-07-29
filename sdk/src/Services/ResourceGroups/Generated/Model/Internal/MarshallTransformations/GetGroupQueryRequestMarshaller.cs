@@ -55,14 +55,35 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetGroupQueryRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ResourceGroups");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
-            request.HttpMethod = "GET";
+            request.HttpMethod = "POST";
 
-            if (!publicRequest.IsSetGroupName())
-                throw new AmazonResourceGroupsException("Request object does not have required field GroupName set");
-            request.AddPathResource("{GroupName}", StringUtils.FromString(publicRequest.GroupName));
-            request.ResourcePath = "/groups/{GroupName}/query";
+            request.ResourcePath = "/get-group-query";
             request.MarshallerVersion = 2;
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetGroup())
+                {
+                    context.Writer.WritePropertyName("Group");
+                    context.Writer.Write(publicRequest.Group);
+                }
+
+                if(publicRequest.IsSetGroupName())
+                {
+                    context.Writer.WritePropertyName("GroupName");
+                    context.Writer.Write(publicRequest.GroupName);
+                }
+
+        
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+            }
+
 
             return request;
         }

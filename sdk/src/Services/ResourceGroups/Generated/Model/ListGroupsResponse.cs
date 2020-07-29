@@ -40,8 +40,8 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property GroupIdentifiers. 
         /// <para>
-        /// A list of GroupIdentifier objects. Each identifier is an object that contains both
-        /// the GroupName and the GroupArn.
+        /// A list of <a>GroupIdentifier</a> objects. Each identifier is an object that contains
+        /// both the <code>Name</code> and the <code>GroupArn</code>.
         /// </para>
         /// </summary>
         public List<GroupIdentifier> GroupIdentifiers
@@ -59,7 +59,8 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
-        /// A list of resource groups.
+        /// This output element is deprecated and shouldn't be used. Refer to <code>GroupIdentifiers</code>
+        /// instead.
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated, use GroupIdentifiers instead.")]
@@ -78,8 +79,10 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The NextToken value to include in a subsequent <code>ListGroups</code> request, to
-        /// get more results.
+        /// If present, indicates that more output is available than is included in the current
+        /// response. Use this value in the <code>NextToken</code> request parameter in a subsequent
+        /// call to the operation to get the next part of the output. You should repeat this until
+        /// the <code>NextToken</code> response element comes back as <code>null</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
-    /// The ARN and group name of a group.
+    /// The unique identifiers for a resource group.
     /// </summary>
     public partial class GroupIdentifier
     {
@@ -39,7 +39,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property GroupArn. 
         /// <para>
-        /// The ARN of a resource group.
+        /// The ARN of the resource group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=1600)]
@@ -58,7 +58,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The name of a resource group.
+        /// The name of the resource group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

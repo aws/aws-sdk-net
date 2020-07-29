@@ -30,20 +30,41 @@ namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGroup operation.
-    /// Deletes a specified resource group. Deleting a resource group does not delete resources
-    /// that are members of the group; it only deletes the group structure.
+    /// Deletes the specified resource group. Deleting a resource group does not delete any
+    /// resources that are members of the group; it only deletes the group structure.
     /// </summary>
     public partial class DeleteGroupRequest : AmazonResourceGroupsRequest
     {
+        private string _group;
         private string _groupName;
+
+        /// <summary>
+        /// Gets and sets the property Group. 
+        /// <para>
+        /// The name or the ARN of the resource group to delete.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
+        public string Group
+        {
+            get { return this._group; }
+            set { this._group = value; }
+        }
+
+        // Check to see if Group property is set
+        internal bool IsSetGroup()
+        {
+            return this._group != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The name of the resource group to delete.
+        /// Don't use this parameter. Use <code>Group</code> instead.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [Obsolete("This field is deprecated, use Group instead.")]
+        [AWSProperty(Min=1, Max=128)]
         public string GroupName
         {
             get { return this._groupName; }

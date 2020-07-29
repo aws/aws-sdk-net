@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
-    /// An internal error occurred while processing the request.
+    /// An internal error occurred while processing the request. Try again later.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

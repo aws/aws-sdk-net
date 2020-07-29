@@ -38,7 +38,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
-        /// The full description of the resource group after it has been updated.
+        /// The update description of the resource group.
         /// </para>
         /// </summary>
         public Group Group

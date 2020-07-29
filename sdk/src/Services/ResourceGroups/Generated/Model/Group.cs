@@ -29,7 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
-    /// A resource group.
+    /// A resource group that contains AWS resources. You can assign resources to the group
+    /// by associating either of the following elements with the group:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>ResourceQuery</a> - Use a resource query to specify a set of tag keys and values.
+    /// All resources in the same AWS Region and AWS account that have those keys with the
+    /// same values are included in the group. You can add a resource query when you create
+    /// the group.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GroupConfiguration</a> - Use a service configuration to associate the group with
+    /// an AWS service. The configuration specifies which resource types can be included in
+    /// the group.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class Group
     {
@@ -59,7 +75,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property GroupArn. 
         /// <para>
-        /// The ARN of a resource group.
+        /// The ARN of the resource group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=1600)]
@@ -78,7 +94,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of a resource group.
+        /// The name of the resource group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

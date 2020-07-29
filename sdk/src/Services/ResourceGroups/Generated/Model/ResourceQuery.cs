@@ -58,10 +58,9 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the query. The valid values in this release are <code>TAG_FILTERS_1_0</code>
-        /// and <code>CLOUDFORMATION_STACK_1_0</code>.
+        /// The type of the query. The valid values in this release are the following:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
         ///  <i> <code>TAG_FILTERS_1_0:</code> </i> A JSON syntax that lets you specify a collection
         /// of simple tag filters for resource types and tags, as supported by the AWS Tagging
@@ -84,8 +83,8 @@ namespace Amazon.ResourceGroups.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An S3 bucket that has the following two tags: {"Key":"Stage","Value":"Test"}, and
-        /// {"Key":"Version","Value":"1"}
+        /// An S3 bucket that has the following two tags: <code>{"Key":"Stage","Value":"Test"}</code>,
+        /// and <code>{"Key":"Version","Value":"1"}</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -103,11 +102,12 @@ namespace Amazon.ResourceGroups.Model
         /// An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>,
         /// and <code>{"Key":"Version","Value":"4"}</code> 
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify
         /// a CloudFormation stack ARN.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public QueryType Type

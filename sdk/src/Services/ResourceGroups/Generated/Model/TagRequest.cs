@@ -32,6 +32,14 @@ namespace Amazon.ResourceGroups.Model
     /// Container for the parameters to the Tag operation.
     /// Adds tags to a resource group with the specified ARN. Existing tags on a resource
     /// group are not changed if they are not specified in the request parameters.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Do not store personally identifiable information (PII) or other confidential or sensitive
+    /// information in tags. We use tags to provide you with billing and administration services.
+    /// Tags are not intended to be used for private or sensitive data.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class TagRequest : AmazonResourceGroupsRequest
     {
@@ -41,7 +49,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the resource to which to add tags.
+        /// The ARN of the resource group to which to add tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=1600)]
@@ -60,9 +68,8 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to add to the specified resource. A tag is a string-to-string map of key-value
-        /// pairs. Tag keys can have a maximum character length of 128 characters, and tag values
-        /// can have a maximum length of 256 characters.
+        /// The tags to add to the specified resource group. A tag is a string-to-string map of
+        /// key-value pairs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

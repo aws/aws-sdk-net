@@ -59,16 +59,7 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "POST";
 
-            if (!publicRequest.IsSetGroupName())
-                throw new AmazonResourceGroupsException("Request object does not have required field GroupName set");
-            request.AddPathResource("{GroupName}", StringUtils.FromString(publicRequest.GroupName));
-            
-            if (publicRequest.IsSetMaxResults())
-                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
-            
-            if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = "/groups/{GroupName}/resource-identifiers-list";
+            request.ResourcePath = "/list-group-resources";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
@@ -91,13 +82,36 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetGroup())
+                {
+                    context.Writer.WritePropertyName("Group");
+                    context.Writer.Write(publicRequest.Group);
+                }
+
+                if(publicRequest.IsSetGroupName())
+                {
+                    context.Writer.WritePropertyName("GroupName");
+                    context.Writer.Write(publicRequest.GroupName);
+                }
+
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
-            request.UseQueryString = true;
 
             return request;
         }

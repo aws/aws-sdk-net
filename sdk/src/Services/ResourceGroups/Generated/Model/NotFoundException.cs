@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
-    /// One or more resources specified in the request do not exist.
+    /// One or more of the specified resources don't exist.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

@@ -40,8 +40,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the resource group for which you want a list of tags. The resource must
-        /// exist within the account you are using.
+        /// The ARN of the resource group whose tags you want to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=1600)]

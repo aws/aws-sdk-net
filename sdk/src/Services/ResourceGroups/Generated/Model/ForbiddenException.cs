@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
-    /// The caller is not authorized to make the request.
+    /// The caller isn't authorized to make the request. Check permissions.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

@@ -57,6 +57,12 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                     response.Group = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GroupConfiguration", targetDepth))
+                {
+                    var unmarshaller = GroupConfigurationUnmarshaller.Instance;
+                    response.GroupConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceQuery", targetDepth))
                 {
                     var unmarshaller = ResourceQueryUnmarshaller.Instance;

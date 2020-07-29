@@ -38,7 +38,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property GroupQuery. 
         /// <para>
-        /// The resource query associated with the resource group after the update.
+        /// The updated resource query associated with the resource group after the update.
         /// </para>
         /// </summary>
         public GroupQuery GroupQuery

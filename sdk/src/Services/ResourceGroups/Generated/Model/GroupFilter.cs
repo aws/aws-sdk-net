@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
-    /// A filter name and value pair that is used to obtain more specific results from a list
-    /// of groups.
+    /// A filter collection that you can use to restrict the results from a <code>List</code>
+    /// operation to only those you want to include.
     /// </summary>
     public partial class GroupFilter
     {

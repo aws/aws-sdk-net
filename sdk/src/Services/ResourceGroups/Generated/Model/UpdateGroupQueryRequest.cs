@@ -34,16 +34,37 @@ namespace Amazon.ResourceGroups.Model
     /// </summary>
     public partial class UpdateGroupQueryRequest : AmazonResourceGroupsRequest
     {
+        private string _group;
         private string _groupName;
         private ResourceQuery _resourceQuery;
 
         /// <summary>
-        /// Gets and sets the property GroupName. 
+        /// Gets and sets the property Group. 
         /// <para>
-        /// The name of the resource group for which you want to edit the query.
+        /// The name or the ARN of the resource group to query.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=1600)]
+        public string Group
+        {
+            get { return this._group; }
+            set { this._group = value; }
+        }
+
+        // Check to see if Group property is set
+        internal bool IsSetGroup()
+        {
+            return this._group != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupName. 
+        /// <para>
+        /// Don't use this parameter. Use <code>Group</code> instead.
+        /// </para>
+        /// </summary>
+        [Obsolete("This field is deprecated, use Group instead.")]
+        [AWSProperty(Min=1, Max=128)]
         public string GroupName
         {
             get { return this._groupName; }
@@ -59,8 +80,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property ResourceQuery. 
         /// <para>
-        /// The resource query that determines which AWS resources are members of the resource
-        /// group.
+        /// The resource query to determine which AWS resources are members of this resource group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
