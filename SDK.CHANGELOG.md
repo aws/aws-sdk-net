@@ -1,3 +1,22 @@
+### 3.3.787.0 (2020-07-29 18:16 UTC)
+* EC2 (3.3.194.0)
+	* Adding support to target EC2 On-Demand Capacity Reservations within an AWS Resource Group to launch EC2 instances.
+* ECR (3.3.107.0)
+	* This release adds support for encrypting the contents of your Amazon ECR repository with customer master keys (CMKs) stored in AWS Key Management Service.
+* GuardDuty (3.3.109.0)
+	* GuardDuty now supports S3 Data Events as a configurable data source type. This feature expands GuardDuty's monitoring scope to include S3 data plane operations, such as GetObject and PutObject. This data source is optional and can be enabled or disabled at anytime. Accounts already using GuardDuty must first enable the new feature to use it; new accounts will be enabled by default. GuardDuty masters can configure this data source for individual member accounts and GuardDuty masters associated through AWS Organizations can automatically enable the data source in member accounts.
+* KinesisFirehose (3.3.105.0)
+	* This release includes a new Kinesis Data Firehose feature that supports data delivery to Https endpoint and to partners. You can now use Kinesis Data Firehose to ingest real-time data and deliver to Https endpoint and partners in a serverless, reliable, and salable manner.
+* ResourceGroups (3.3.102.0)
+	* Resource Groups released a new feature that enables you to create a group with an associated configuration that specifies how other AWS services interact with the group. There are two new operations `GroupResources` and `UngroupResources` to work on a group with a configuration. In this release, you can associate EC2 Capacity Reservations with a resource group. Resource Groups also added a new request parameter `Group` to replace `GroupName` for all existing operations.
+* ServiceDiscovery (3.3.102.0)
+	* Added new attribute AWS_EC2_INSTANCE_ID for RegisterInstance API 
+* Core 3.3.107.30
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.786.0 (2020-07-28 20:33 UTC)
 * AutoScaling (3.3.104.0)
 	* Now you can enable Instance Metadata Service Version 2 (IMDSv2) or disable the instance metadata endpoint with Launch Configurations.

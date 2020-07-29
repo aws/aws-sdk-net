@@ -32,7 +32,7 @@ namespace Amazon.MediaConvert
     public partial class AmazonMediaConvertConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.118.24");
+            InternalSDKUtils.BuildUserAgentString("3.3.118.25");
 
         private string _userAgent = UserAgentString;
 
