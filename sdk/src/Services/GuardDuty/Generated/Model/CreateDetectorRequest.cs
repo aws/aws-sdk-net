@@ -38,6 +38,7 @@ namespace Amazon.GuardDuty.Model
     public partial class CreateDetectorRequest : AmazonGuardDutyRequest
     {
         private string _clientToken;
+        private DataSourceConfigurations _dataSources;
         private bool? _enable;
         private FindingPublishingFrequency _findingPublishingFrequency;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -59,6 +60,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSources. 
+        /// <para>
+        /// An object that describes which data sources will be enabled for the detector.
+        /// </para>
+        /// </summary>
+        public DataSourceConfigurations DataSources
+        {
+            get { return this._dataSources; }
+            set { this._dataSources = value; }
+        }
+
+        // Check to see if DataSources property is set
+        internal bool IsSetDataSources()
+        {
+            return this._dataSources != null;
         }
 
         /// <summary>

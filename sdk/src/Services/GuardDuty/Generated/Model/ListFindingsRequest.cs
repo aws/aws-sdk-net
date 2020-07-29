@@ -115,6 +115,10 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// resource.instanceDetails.outpostArn
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// resource.instanceDetails.networkInterfaces.ipv6Addresses
         /// </para>
         ///  </li> <li> 
@@ -212,6 +216,10 @@ namespace Amazon.GuardDuty.Model
         ///  </li> <li> 
         /// <para>
         /// service.action.networkConnectionAction.protocol
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// service.action.networkConnectionAction.localIpDetails.ipAddressV4
         /// </para>
         ///  </li> <li> 
         /// <para>

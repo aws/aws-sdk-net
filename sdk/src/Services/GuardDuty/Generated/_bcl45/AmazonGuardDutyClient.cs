@@ -1906,6 +1906,59 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  GetMemberDetectors
+
+
+        /// <summary>
+        /// Describes which data sources are enabled for the member account's detector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMemberDetectors service method.</param>
+        /// 
+        /// <returns>The response from the GetMemberDetectors service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMemberDetectors">REST API Reference for GetMemberDetectors Operation</seealso>
+        public virtual GetMemberDetectorsResponse GetMemberDetectors(GetMemberDetectorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMemberDetectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMemberDetectorsResponseUnmarshaller.Instance;
+
+            return Invoke<GetMemberDetectorsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes which data sources are enabled for the member account's detector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMemberDetectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMemberDetectors service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMemberDetectors">REST API Reference for GetMemberDetectors Operation</seealso>
+        public virtual Task<GetMemberDetectorsResponse> GetMemberDetectorsAsync(GetMemberDetectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMemberDetectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMemberDetectorsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMemberDetectorsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetMembers
 
 
@@ -2344,7 +2397,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Lists details about all member accounts for the current GuardDuty master account.
+        /// Lists details about associated member accounts for the current GuardDuty master account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMembers service method.</param>
         /// 
@@ -2367,7 +2420,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Lists details about all member accounts for the current GuardDuty master account.
+        /// Lists details about associated member accounts for the current GuardDuty master account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMembers service method.</param>
         /// <param name="cancellationToken">
@@ -3092,6 +3145,59 @@ namespace Amazon.GuardDuty
             options.ResponseUnmarshaller = UpdateIPSetResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateIPSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateMemberDetectors
+
+
+        /// <summary>
+        /// Contains information on member accounts to be updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMemberDetectors service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMemberDetectors service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMemberDetectors">REST API Reference for UpdateMemberDetectors Operation</seealso>
+        public virtual UpdateMemberDetectorsResponse UpdateMemberDetectors(UpdateMemberDetectorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMemberDetectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMemberDetectorsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMemberDetectorsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Contains information on member accounts to be updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMemberDetectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMemberDetectors service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMemberDetectors">REST API Reference for UpdateMemberDetectors Operation</seealso>
+        public virtual Task<UpdateMemberDetectorsResponse> UpdateMemberDetectorsAsync(UpdateMemberDetectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMemberDetectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMemberDetectorsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateMemberDetectorsResponse>(request, options, cancellationToken);
         }
 
         #endregion

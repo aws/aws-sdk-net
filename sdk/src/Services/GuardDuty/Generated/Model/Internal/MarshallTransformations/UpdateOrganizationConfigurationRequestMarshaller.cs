@@ -75,6 +75,17 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AutoEnable);
                 }
 
+                if(publicRequest.IsSetDataSources())
+                {
+                    context.Writer.WritePropertyName("dataSources");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OrganizationDataSourceConfigurationsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DataSources, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

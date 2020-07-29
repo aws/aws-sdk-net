@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateDetector Request Marshaller
+    /// UpdateMemberDetectors Request Marshaller
     /// </summary>       
-    public class CreateDetectorRequestMarshaller : IMarshaller<IRequest, CreateDetectorRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateMemberDetectorsRequestMarshaller : IMarshaller<IRequest, UpdateMemberDetectorsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateDetectorRequest)input);
+            return this.Marshall((UpdateMemberDetectorsRequest)input);
         }
 
         /// <summary>
@@ -52,31 +52,34 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateDetectorRequest publicRequest)
+        public IRequest Marshall(UpdateMemberDetectorsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GuardDuty");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-28";            
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/detector";
+            if (!publicRequest.IsSetDetectorId())
+                throw new AmazonGuardDutyException("Request object does not have required field DetectorId set");
+            request.AddPathResource("{detectorId}", StringUtils.FromString(publicRequest.DetectorId));
+            request.ResourcePath = "/detector/{detectorId}/member/detector/update";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                if(publicRequest.IsSetAccountIds())
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    context.Writer.WritePropertyName("accountIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAccountIdsListValue in publicRequest.AccountIds)
+                    {
+                            context.Writer.Write(publicRequestAccountIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
-                }
                 if(publicRequest.IsSetDataSources())
                 {
                     context.Writer.WritePropertyName("dataSources");
@@ -85,32 +88,6 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     var marshaller = DataSourceConfigurationsMarshaller.Instance;
                     marshaller.Marshall(publicRequest.DataSources, context);
 
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEnable())
-                {
-                    context.Writer.WritePropertyName("enable");
-                    context.Writer.Write(publicRequest.Enable);
-                }
-
-                if(publicRequest.IsSetFindingPublishingFrequency())
-                {
-                    context.Writer.WritePropertyName("findingPublishingFrequency");
-                    context.Writer.Write(publicRequest.FindingPublishingFrequency);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
                     context.Writer.WriteObjectEnd();
                 }
 
@@ -123,9 +100,9 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateDetectorRequestMarshaller _instance = new CreateDetectorRequestMarshaller();        
+        private static UpdateMemberDetectorsRequestMarshaller _instance = new UpdateMemberDetectorsRequestMarshaller();        
 
-        internal static CreateDetectorRequestMarshaller GetInstance()
+        internal static UpdateMemberDetectorsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -133,7 +110,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateDetectorRequestMarshaller Instance
+        public static UpdateMemberDetectorsRequestMarshaller Instance
         {
             get
             {

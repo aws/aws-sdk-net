@@ -29,56 +29,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateOrganizationConfiguration operation.
-    /// Updates the delegated administrator account with the values provided.
+    /// Container for the parameters to the GetMemberDetectors operation.
+    /// Describes which data sources are enabled for the member account's detector.
     /// </summary>
-    public partial class UpdateOrganizationConfigurationRequest : AmazonGuardDutyRequest
+    public partial class GetMemberDetectorsRequest : AmazonGuardDutyRequest
     {
-        private bool? _autoEnable;
-        private OrganizationDataSourceConfigurations _dataSources;
+        private List<string> _accountIds = new List<string>();
         private string _detectorId;
 
         /// <summary>
-        /// Gets and sets the property AutoEnable. 
+        /// Gets and sets the property AccountIds. 
         /// <para>
-        /// Indicates whether to automatically enable member accounts in the organization.
+        /// The account ID of the member account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public bool AutoEnable
+        [AWSProperty(Required=true, Min=1, Max=50)]
+        public List<string> AccountIds
         {
-            get { return this._autoEnable.GetValueOrDefault(); }
-            set { this._autoEnable = value; }
+            get { return this._accountIds; }
+            set { this._accountIds = value; }
         }
 
-        // Check to see if AutoEnable property is set
-        internal bool IsSetAutoEnable()
+        // Check to see if AccountIds property is set
+        internal bool IsSetAccountIds()
         {
-            return this._autoEnable.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property DataSources. 
-        /// <para>
-        /// An object describes which data sources will be updated.
-        /// </para>
-        /// </summary>
-        public OrganizationDataSourceConfigurations DataSources
-        {
-            get { return this._dataSources; }
-            set { this._dataSources = value; }
-        }
-
-        // Check to see if DataSources property is set
-        internal bool IsSetDataSources()
-        {
-            return this._dataSources != null;
+            return this._accountIds != null && this._accountIds.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The ID of the detector to update the delegated administrator for.
+        /// The detector ID for the master account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

@@ -34,6 +34,7 @@ namespace Amazon.GuardDuty.Model
     public partial class DescribeOrganizationConfigurationResponse : AmazonWebServiceResponse
     {
         private bool? _autoEnable;
+        private OrganizationDataSourceConfigurationsResult _dataSources;
         private bool? _memberAccountLimitReached;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetAutoEnable()
         {
             return this._autoEnable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSources. 
+        /// <para>
+        /// An object that describes which data sources are enabled automatically for member accounts.
+        /// </para>
+        /// </summary>
+        public OrganizationDataSourceConfigurationsResult DataSources
+        {
+            get { return this._dataSources; }
+            set { this._dataSources = value; }
+        }
+
+        // Check to see if DataSources property is set
+        internal bool IsSetDataSources()
+        {
+            return this._dataSources != null;
         }
 
         /// <summary>

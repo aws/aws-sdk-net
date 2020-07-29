@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeOrganizationConfiguration operation
+    /// Response Unmarshaller for UpdateMemberDetectors operation
     /// </summary>  
-    public class DescribeOrganizationConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateMemberDetectorsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,28 +45,16 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeOrganizationConfigurationResponse response = new DescribeOrganizationConfigurationResponse();
+            UpdateMemberDetectorsResponse response = new UpdateMemberDetectorsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("autoEnable", targetDepth))
+                if (context.TestExpression("unprocessedAccounts", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.AutoEnable = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("dataSources", targetDepth))
-                {
-                    var unmarshaller = OrganizationDataSourceConfigurationsResultUnmarshaller.Instance;
-                    response.DataSources = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("memberAccountLimitReached", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.MemberAccountLimitReached = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<UnprocessedAccount, UnprocessedAccountUnmarshaller>(UnprocessedAccountUnmarshaller.Instance);
+                    response.UnprocessedAccounts = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -104,9 +92,9 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             return new AmazonGuardDutyException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeOrganizationConfigurationResponseUnmarshaller _instance = new DescribeOrganizationConfigurationResponseUnmarshaller();        
+        private static UpdateMemberDetectorsResponseUnmarshaller _instance = new UpdateMemberDetectorsResponseUnmarshaller();        
 
-        internal static DescribeOrganizationConfigurationResponseUnmarshaller GetInstance()
+        internal static UpdateMemberDetectorsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -114,7 +102,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeOrganizationConfigurationResponseUnmarshaller Instance
+        public static UpdateMemberDetectorsResponseUnmarshaller Instance
         {
             get
             {

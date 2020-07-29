@@ -29,32 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateOrganizationConfiguration operation.
-    /// Updates the delegated administrator account with the values provided.
+    /// Container for the parameters to the UpdateMemberDetectors operation.
+    /// Contains information on member accounts to be updated.
     /// </summary>
-    public partial class UpdateOrganizationConfigurationRequest : AmazonGuardDutyRequest
+    public partial class UpdateMemberDetectorsRequest : AmazonGuardDutyRequest
     {
-        private bool? _autoEnable;
-        private OrganizationDataSourceConfigurations _dataSources;
+        private List<string> _accountIds = new List<string>();
+        private DataSourceConfigurations _dataSources;
         private string _detectorId;
 
         /// <summary>
-        /// Gets and sets the property AutoEnable. 
+        /// Gets and sets the property AccountIds. 
         /// <para>
-        /// Indicates whether to automatically enable member accounts in the organization.
+        /// A list of member account IDs to be updated.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public bool AutoEnable
+        [AWSProperty(Required=true, Min=1, Max=50)]
+        public List<string> AccountIds
         {
-            get { return this._autoEnable.GetValueOrDefault(); }
-            set { this._autoEnable = value; }
+            get { return this._accountIds; }
+            set { this._accountIds = value; }
         }
 
-        // Check to see if AutoEnable property is set
-        internal bool IsSetAutoEnable()
+        // Check to see if AccountIds property is set
+        internal bool IsSetAccountIds()
         {
-            return this._autoEnable.HasValue; 
+            return this._accountIds != null && this._accountIds.Count > 0; 
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.GuardDuty.Model
         /// An object describes which data sources will be updated.
         /// </para>
         /// </summary>
-        public OrganizationDataSourceConfigurations DataSources
+        public DataSourceConfigurations DataSources
         {
             get { return this._dataSources; }
             set { this._dataSources = value; }
@@ -78,7 +78,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The ID of the detector to update the delegated administrator for.
+        /// The detector ID of the master account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
