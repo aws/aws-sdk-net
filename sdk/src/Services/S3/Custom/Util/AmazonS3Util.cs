@@ -560,7 +560,8 @@ namespace Amazon.S3.Util
 
         internal static bool IsInstructionFile(string key)
         {
-            return key.EndsWith(S3Constants.EncryptionInstructionfileSuffix, StringComparison.Ordinal);
+            return key.EndsWith(S3Constants.EncryptionInstructionfileSuffix, StringComparison.Ordinal) ||
+                key.EndsWith(S3Constants.EncryptionInstructionfileSuffixV2, StringComparison.Ordinal);
         }
 
 
