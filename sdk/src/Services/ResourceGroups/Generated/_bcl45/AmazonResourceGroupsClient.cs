@@ -848,7 +848,7 @@ namespace Amazon.ResourceGroups
 
 
         /// <summary>
-        /// Returns a list of ARNs of resources that are members of a specified resource group.
+        /// Returns a list of ARNs of the resources that are members of a specified resource group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroupResources service method.</param>
         /// 
@@ -887,7 +887,7 @@ namespace Amazon.ResourceGroups
 
 
         /// <summary>
-        /// Returns a list of ARNs of resources that are members of a specified resource group.
+        /// Returns a list of ARNs of the resources that are members of a specified resource group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroupResources service method.</param>
         /// <param name="cancellationToken">
@@ -1004,7 +1004,7 @@ namespace Amazon.ResourceGroups
 
 
         /// <summary>
-        /// Returns a list of AWS resource identifiers that matches a specified query. The query
+        /// Returns a list of AWS resource identifiers that matches tne specified query. The query
         /// uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchResources service method.</param>
@@ -1041,7 +1041,7 @@ namespace Amazon.ResourceGroups
 
 
         /// <summary>
-        /// Returns a list of AWS resource identifiers that matches a specified query. The query
+        /// Returns a list of AWS resource identifiers that matches tne specified query. The query
         /// uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchResources service method.</param>

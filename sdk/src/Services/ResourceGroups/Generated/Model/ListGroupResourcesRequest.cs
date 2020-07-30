@@ -30,7 +30,7 @@ namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGroupResources operation.
-    /// Returns a list of ARNs of resources that are members of a specified resource group.
+    /// Returns a list of ARNs of the resources that are members of a specified resource group.
     /// </summary>
     public partial class ListGroupResourcesRequest : AmazonResourceGroupsRequest
     {
