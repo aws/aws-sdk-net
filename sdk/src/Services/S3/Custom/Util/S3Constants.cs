@@ -85,7 +85,6 @@ namespace Amazon.S3.Util
             AmzHeaderRestoreOutputPath      = "x-amz-restore-output-path";
 
         // Commonly used static strings
-        //internal const string RequestParam = "request";
         internal const string EncryptionInstructionfileSuffix = "INSTRUCTION_SUFFIX";
         internal const string EncryptionInstructionfileSuffixV2 = ".instruction";
 
