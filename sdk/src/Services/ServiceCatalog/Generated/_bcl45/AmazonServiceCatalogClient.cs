@@ -991,6 +991,11 @@ namespace Amazon.ServiceCatalog
         ///  <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio
         /// share to an organization node.
         /// </para>
+        ///  
+        /// <para>
+        /// You can't share a shared resource. This includes portfolios that contain a shared
+        /// product.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePortfolioShare service method.</param>
         /// 
@@ -1038,6 +1043,11 @@ namespace Amazon.ServiceCatalog
         /// <para>
         ///  <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio
         /// share to an organization node.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't share a shared resource. This includes portfolios that contain a shared
+        /// product.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePortfolioShare service method.</param>

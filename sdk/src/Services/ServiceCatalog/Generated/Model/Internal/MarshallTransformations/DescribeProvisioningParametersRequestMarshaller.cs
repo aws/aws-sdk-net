@@ -80,16 +80,34 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PathId);
                 }
 
+                if(publicRequest.IsSetPathName())
+                {
+                    context.Writer.WritePropertyName("PathName");
+                    context.Writer.Write(publicRequest.PathName);
+                }
+
                 if(publicRequest.IsSetProductId())
                 {
                     context.Writer.WritePropertyName("ProductId");
                     context.Writer.Write(publicRequest.ProductId);
                 }
 
+                if(publicRequest.IsSetProductName())
+                {
+                    context.Writer.WritePropertyName("ProductName");
+                    context.Writer.Write(publicRequest.ProductName);
+                }
+
                 if(publicRequest.IsSetProvisioningArtifactId())
                 {
                     context.Writer.WritePropertyName("ProvisioningArtifactId");
                     context.Writer.Write(publicRequest.ProvisioningArtifactId);
+                }
+
+                if(publicRequest.IsSetProvisioningArtifactName())
+                {
+                    context.Writer.WritePropertyName("ProvisioningArtifactName");
+                    context.Writer.Write(publicRequest.ProvisioningArtifactName);
                 }
 
         

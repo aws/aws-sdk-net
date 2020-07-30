@@ -34,6 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class DescribeProvisioningParametersResponse : AmazonWebServiceResponse
     {
         private List<ConstraintSummary> _constraintSummaries = new List<ConstraintSummary>();
+        private List<ProvisioningArtifactOutput> _provisioningArtifactOutputs = new List<ProvisioningArtifactOutput>();
         private List<ProvisioningArtifactParameter> _provisioningArtifactParameters = new List<ProvisioningArtifactParameter>();
         private ProvisioningArtifactPreferences _provisioningArtifactPreferences;
         private List<TagOptionSummary> _tagOptions = new List<TagOptionSummary>();
@@ -55,6 +56,25 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetConstraintSummaries()
         {
             return this._constraintSummaries != null && this._constraintSummaries.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisioningArtifactOutputs. 
+        /// <para>
+        /// The output of the provisioning artifact.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=60)]
+        public List<ProvisioningArtifactOutput> ProvisioningArtifactOutputs
+        {
+            get { return this._provisioningArtifactOutputs; }
+            set { this._provisioningArtifactOutputs = value; }
+        }
+
+        // Check to see if ProvisioningArtifactOutputs property is set
+        internal bool IsSetProvisioningArtifactOutputs()
+        {
+            return this._provisioningArtifactOutputs != null && this._provisioningArtifactOutputs.Count > 0; 
         }
 
         /// <summary>

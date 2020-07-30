@@ -47,8 +47,11 @@ namespace Amazon.ServiceCatalog.Model
     {
         private string _acceptLanguage;
         private string _pathId;
+        private string _pathName;
         private string _productId;
+        private string _productName;
         private string _provisioningArtifactId;
+        private string _provisioningArtifactName;
 
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
@@ -87,7 +90,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <para>
         /// The path identifier of the product. This value is optional if the product has a default
         /// path, and required if the product has more than one path. To list the paths for a
-        /// product, use <a>ListLaunchPaths</a>.
+        /// product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -104,12 +107,31 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProductId. 
+        /// Gets and sets the property PathName. 
         /// <para>
-        /// The product identifier.
+        /// The name of the path. You must provide the name or ID, but not both.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
+        public string PathName
+        {
+            get { return this._pathName; }
+            set { this._pathName = value; }
+        }
+
+        // Check to see if PathName property is set
+        internal bool IsSetPathName()
+        {
+            return this._pathName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProductId. 
+        /// <para>
+        /// The product identifier. You must provide the product name or ID, but not both.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ProductId
         {
             get { return this._productId; }
@@ -123,12 +145,32 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProvisioningArtifactId. 
+        /// Gets and sets the property ProductName. 
         /// <para>
-        /// The identifier of the provisioning artifact.
+        /// The name of the product. You must provide the name or ID, but not both.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Max=8191)]
+        public string ProductName
+        {
+            get { return this._productName; }
+            set { this._productName = value; }
+        }
+
+        // Check to see if ProductName property is set
+        internal bool IsSetProductName()
+        {
+            return this._productName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisioningArtifactId. 
+        /// <para>
+        /// The identifier of the provisioning artifact. You must provide the name or ID, but
+        /// not both.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ProvisioningArtifactId
         {
             get { return this._provisioningArtifactId; }
@@ -139,6 +181,25 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetProvisioningArtifactId()
         {
             return this._provisioningArtifactId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisioningArtifactName. 
+        /// <para>
+        /// The name of the provisioning artifact. You must provide the name or ID, but not both.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=8192)]
+        public string ProvisioningArtifactName
+        {
+            get { return this._provisioningArtifactName; }
+            set { this._provisioningArtifactName = value; }
+        }
+
+        // Check to see if ProvisioningArtifactName property is set
+        internal bool IsSetProvisioningArtifactName()
+        {
+            return this._provisioningArtifactName != null;
         }
 
     }
