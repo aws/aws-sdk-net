@@ -34,13 +34,15 @@ namespace Amazon.CloudFront.Model
     /// 
     ///  
     /// <para>
-    /// If you want to include values in the cache key, use a <code>CachePolicy</code>. See
-    /// <code>CreateCachePolicy</code>.
+    /// If you want to include values in the cache key, use a cache policy. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+    /// cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// If you want to send values to the origin but not include them in the cache key, use
-    /// an <code>OriginRequestPolicy</code>. See <code>CreateOriginRequestPolicy</code>.
+    /// an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+    /// origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -63,13 +65,15 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// If you want to include cookies in the cache key, use <code>CookiesConfig</code> in
-        /// a cache policy. See <code>CreateCachePolicy</code>.
+        /// If you want to include cookies in the cache key, use a cache policy. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+        /// cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// If you want to send cookies to the origin but not include them in the cache key, use
-        /// <code>CookiesConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+        /// an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+        /// origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -101,13 +105,15 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// If you want to include headers in the cache key, use <code>HeadersConfig</code> in
-        /// a cache policy. See <code>CreateCachePolicy</code>.
+        /// If you want to include headers in the cache key, use a cache policy. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+        /// cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// If you want to send headers to the origin but not include them in the cache key, use
-        /// <code>HeadersConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+        /// an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+        /// origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -143,13 +149,15 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// If you want to include query strings in the cache key, use <code>QueryStringsConfig</code>
-        /// in a cache policy. See <code>CreateCachePolicy</code>.
+        /// If you want to include query strings in the cache key, use a cache policy. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+        /// cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// If you want to send query strings to the origin but not include them in the cache
-        /// key, use <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+        /// key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+        /// origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -205,13 +213,15 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// If you want to include query strings in the cache key, use <code>QueryStringsConfig</code>
-        /// in a cache policy. See <code>CreateCachePolicy</code>.
+        /// If you want to include query strings in the cache key, use a cache policy. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+        /// cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// If you want to send query strings to the origin but not include them in the cache
-        /// key, use an <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+        /// key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+        /// origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  
         /// <para>

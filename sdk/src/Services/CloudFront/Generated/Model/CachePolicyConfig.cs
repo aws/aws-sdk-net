@@ -115,9 +115,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property MaxTTL. 
         /// <para>
-        /// The maximum amount of time, in seconds, that you want objects to stay in the CloudFront
-        /// cache before CloudFront sends another request to the origin to see if the object has
-        /// been updated. CloudFront uses this value only when the origin sends <code>Cache-Control</code>
+        /// The maximum amount of time, in seconds, that objects stay in the CloudFront cache
+        /// before CloudFront sends another request to the origin to see if the object has been
+        /// updated. CloudFront uses this value only when the origin sends <code>Cache-Control</code>
         /// or <code>Expires</code> headers with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
         /// How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront
         /// Developer Guide</i>.

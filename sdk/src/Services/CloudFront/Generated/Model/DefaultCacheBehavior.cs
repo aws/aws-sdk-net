@@ -70,7 +70,9 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property CachePolicyId. 
         /// <para>
         /// The unique identifier of the cache policy that is attached to the default cache behavior.
-        /// For more information, see <a>CachePolicy</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+        /// cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+        /// the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
         public string CachePolicyId
@@ -110,7 +112,9 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property DefaultTTL. 
         /// <para>
         /// This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field
-        /// in <code>CachePolicyConfig</code> instead of this field.
+        /// in a cache policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+        /// cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+        /// the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -160,17 +164,22 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property ForwardedValues. 
         /// <para>
         /// This field is deprecated. We recommend that you use a cache policy or an origin request
-        /// policy instead of this field.
+        /// policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html">Working
+        /// with policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If you want to include values in the cache key, use a <code>CachePolicy</code>. See
-        /// <code>CreateCachePolicy</code>.
+        /// If you want to include values in the cache key, use a cache policy. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+        /// cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+        /// the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// If you want to send values to the origin but not include them in the cache key, use
-        /// an <code>OriginRequestPolicy</code>. See <code>CreateOriginRequestPolicy</code>.
+        /// an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+        /// origin request policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using
+        /// the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -214,7 +223,9 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property MaxTTL. 
         /// <para>
         /// This field is deprecated. We recommend that you use the <code>MaxTTL</code> field
-        /// in <code>CachePolicyConfig</code> instead of this field.
+        /// in a cache policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+        /// cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+        /// the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -244,7 +255,9 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property MinTTL. 
         /// <para>
         /// This field is deprecated. We recommend that you use the <code>MinTTL</code> field
-        /// in <code>CachePolicyConfig</code> instead of this field.
+        /// in a cache policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+        /// cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+        /// the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -278,7 +291,9 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property OriginRequestPolicyId. 
         /// <para>
         /// The unique identifier of the origin request policy that is attached to the default
-        /// cache behavior. For more information, see <a>OriginRequestPolicy</a>.
+        /// cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+        /// origin request policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using
+        /// the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
         public string OriginRequestPolicyId
