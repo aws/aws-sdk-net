@@ -163,7 +163,7 @@ namespace Amazon.GuardDuty
         /// Creates a single Amazon GuardDuty detector. A detector is a resource that represents
         /// the GuardDuty service. To start using GuardDuty, you must create a detector in each
         /// Region where you enable the service. You can have only one detector per account per
-        /// Region.
+        /// Region. All data sources are enabled in a new detector by default.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDetector service method.</param>
         /// 
@@ -305,8 +305,22 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Creates member accounts of the current AWS account by specifying a list of AWS account
-        /// IDs. The current AWS account can then invite these members to manage GuardDuty in
-        /// their accounts.
+        /// IDs. This step is a prerequisite for managing the associated member accounts either
+        /// by invitation or through an organization.
+        /// 
+        ///  
+        /// <para>
+        /// When using <code>Create Members</code> as an organizations delegated administrator
+        /// this action will enable GuardDuty in the added member accounts, with the exception
+        /// of the organization master account, which must enable GuardDuty prior to being added
+        /// as a member.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are adding accounts by invitation use this action after GuardDuty has been
+        /// enabled in potential member accounts and before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
+        /// <code>Invite Members</code> </a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembers service method.</param>
         /// 
@@ -1604,6 +1618,57 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  GetUsageStatistics
+
+
+        /// <summary>
+        /// Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector
+        /// ID. For newly enabled detectors or data sources the cost returned will include only
+        /// the usage so far under 30 days, this may differ from the cost metrics in the console,
+        /// which projects usage over 30 days to provide a monthly cost estimate. For more information
+        /// see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding
+        /// How Usage Costs are Calculated</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsageStatistics service method.</param>
+        /// 
+        /// <returns>The response from the GetUsageStatistics service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetUsageStatistics">REST API Reference for GetUsageStatistics Operation</seealso>
+        GetUsageStatisticsResponse GetUsageStatistics(GetUsageStatisticsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsageStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsageStatistics operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsageStatistics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetUsageStatistics">REST API Reference for GetUsageStatistics Operation</seealso>
+        IAsyncResult BeginGetUsageStatistics(GetUsageStatisticsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetUsageStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsageStatistics.</param>
+        /// 
+        /// <returns>Returns a  GetUsageStatisticsResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetUsageStatistics">REST API Reference for GetUsageStatistics Operation</seealso>
+        GetUsageStatisticsResponse EndGetUsageStatistics(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  InviteMembers
 
 
@@ -1888,7 +1953,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Lists details about associated member accounts for the current GuardDuty master account.
+        /// Lists details about all member accounts for the current GuardDuty master account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMembers service method.</param>
         /// 

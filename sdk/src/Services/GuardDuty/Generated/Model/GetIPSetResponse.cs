@@ -61,7 +61,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The URI of the file that contains the IPSet.
+        /// The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

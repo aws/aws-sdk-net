@@ -301,6 +301,16 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetUsageStatisticsRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetUsageStatisticsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.InviteMembersRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
@@ -574,6 +584,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.UnprocessedAccount.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.UsageAccountResult.AccountId</property>
     <min>12</min>
     <max>12</max>
   </property-value-rule>
