@@ -1207,6 +1207,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly CapacityReservationInstancePlatform Windows = new CapacityReservationInstancePlatform("Windows");
         /// <summary>
+        /// Constant WindowsBYOL for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform WindowsBYOL = new CapacityReservationInstancePlatform("Windows BYOL");
+        /// <summary>
         /// Constant WindowsWithSQLServer for CapacityReservationInstancePlatform
         /// </summary>
         public static readonly CapacityReservationInstancePlatform WindowsWithSQLServer = new CapacityReservationInstancePlatform("Windows with SQL Server");
