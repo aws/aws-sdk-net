@@ -43,7 +43,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// The email identity that you want to change the DKIM settings for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public string EmailIdentity
         {
             get { return this._emailIdentity; }

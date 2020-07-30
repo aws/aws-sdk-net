@@ -91,7 +91,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public string EmailIdentity
         {
             get { return this._emailIdentity; }

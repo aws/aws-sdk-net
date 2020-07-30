@@ -37,6 +37,7 @@ namespace Amazon.SimpleEmailV2.Model
         private bool? _feedbackForwardingStatus;
         private IdentityType _identityType;
         private MailFromAttributes _mailFromAttributes;
+        private Dictionary<string, string> _policies = new Dictionary<string, string>();
         private List<Tag> _tags = new List<Tag>();
         private bool? _verifiedForSendingStatus;
 
@@ -123,6 +124,24 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetMailFromAttributes()
         {
             return this._mailFromAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Policies. 
+        /// <para>
+        /// A map of policy names to policies.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Policies
+        {
+            get { return this._policies; }
+            set { this._policies = value; }
+        }
+
+        // Check to see if Policies property is set
+        internal bool IsSetPolicies()
+        {
+            return this._policies != null && this._policies.Count > 0; 
         }
 
         /// <summary>

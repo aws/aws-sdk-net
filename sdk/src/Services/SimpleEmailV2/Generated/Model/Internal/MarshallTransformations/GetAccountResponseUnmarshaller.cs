@@ -57,6 +57,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     response.DedicatedIpAutoWarmupEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Details", targetDepth))
+                {
+                    var unmarshaller = AccountDetailsUnmarshaller.Instance;
+                    response.Details = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EnforcementStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

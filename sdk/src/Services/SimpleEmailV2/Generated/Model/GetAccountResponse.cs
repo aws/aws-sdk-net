@@ -35,6 +35,7 @@ namespace Amazon.SimpleEmailV2.Model
     public partial class GetAccountResponse : AmazonWebServiceResponse
     {
         private bool? _dedicatedIpAutoWarmupEnabled;
+        private AccountDetails _details;
         private string _enforcementStatus;
         private bool? _productionAccessEnabled;
         private bool? _sendingEnabled;
@@ -58,6 +59,24 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetDedicatedIpAutoWarmupEnabled()
         {
             return this._dedicatedIpAutoWarmupEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Details. 
+        /// <para>
+        /// An object that defines your account details.
+        /// </para>
+        /// </summary>
+        public AccountDetails Details
+        {
+            get { return this._details; }
+            set { this._details = value; }
+        }
+
+        // Check to see if Details property is set
+        internal bool IsSetDetails()
+        {
+            return this._details != null;
         }
 
         /// <summary>

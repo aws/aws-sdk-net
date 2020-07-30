@@ -38,6 +38,7 @@ namespace Amazon.SimpleEmailV2.Model
     {
         private string _templateArn;
         private string _templateData;
+        private string _templateName;
 
         /// <summary>
         /// Gets and sets the property TemplateArn. 
@@ -76,6 +77,27 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetTemplateData()
         {
             return this._templateData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateName. 
+        /// <para>
+        /// The name of the template. You will refer to this name when you send email using the
+        /// <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string TemplateName
+        {
+            get { return this._templateName; }
+            set { this._templateName = value; }
+        }
+
+        // Check to see if TemplateName property is set
+        internal bool IsSetTemplateName()
+        {
+            return this._templateName != null;
         }
 
     }

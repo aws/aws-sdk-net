@@ -45,6 +45,12 @@ namespace Amazon.SimpleEmailV2.Model
     /// use this message type to send messages that contain attachments. The message that
     /// you specify has to be a valid MIME message.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Templated</b> – A message that contains personalization tags. When you send this
+    /// type of email, Amazon SES API v2 automatically replaces the tags with values that
+    /// you specify.
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class SendEmailRequest : AmazonSimpleEmailServiceV2Request
@@ -54,7 +60,9 @@ namespace Amazon.SimpleEmailV2.Model
         private Destination _destination;
         private List<MessageTag> _emailTags = new List<MessageTag>();
         private string _feedbackForwardingEmailAddress;
+        private string _feedbackForwardingEmailAddressIdentityArn;
         private string _fromEmailAddress;
+        private string _fromEmailAddressIdentityArn;
         private List<string> _replyToAddresses = new List<string>();
 
         /// <summary>
@@ -79,7 +87,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property Content. 
         /// <para>
         /// An object that contains the body of the message. You can send either a Simple message
-        /// or a Raw message.
+        /// Raw message or a template Message.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,7 +109,6 @@ namespace Amazon.SimpleEmailV2.Model
         /// An object that contains the recipients of the email message.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public Destination Destination
         {
             get { return this._destination; }
@@ -153,6 +160,38 @@ namespace Amazon.SimpleEmailV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FeedbackForwardingEmailAddressIdentityArn. 
+        /// <para>
+        /// This parameter is used only for sending authorization. It is the ARN of the identity
+        /// that is associated with the sending authorization policy that permits you to use the
+        /// email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com)
+        /// attaches a policy to it that authorizes you to use feedback@example.com, then you
+        /// would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com,
+        /// and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        /// </summary>
+        public string FeedbackForwardingEmailAddressIdentityArn
+        {
+            get { return this._feedbackForwardingEmailAddressIdentityArn; }
+            set { this._feedbackForwardingEmailAddressIdentityArn = value; }
+        }
+
+        // Check to see if FeedbackForwardingEmailAddressIdentityArn property is set
+        internal bool IsSetFeedbackForwardingEmailAddressIdentityArn()
+        {
+            return this._feedbackForwardingEmailAddressIdentityArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FromEmailAddress. 
         /// <para>
         /// The email address that you want to use as the "From" address for the email. The address
@@ -169,6 +208,43 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetFromEmailAddress()
         {
             return this._fromEmailAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FromEmailAddressIdentityArn. 
+        /// <para>
+        /// This parameter is used only for sending authorization. It is the ARN of the identity
+        /// that is associated with the sending authorization policy that permits you to use the
+        /// email address specified in the <code>FromEmailAddress</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com)
+        /// attaches a policy to it that authorizes you to use sender@example.com, then you would
+        /// specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com,
+        /// and the <code>FromEmailAddress</code> to be sender@example.com.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN
+        /// and X-SES-FROM-ARN headers specified in raw email message content.
+        /// </para>
+        /// </summary>
+        public string FromEmailAddressIdentityArn
+        {
+            get { return this._fromEmailAddressIdentityArn; }
+            set { this._fromEmailAddressIdentityArn = value; }
+        }
+
+        // Check to see if FromEmailAddressIdentityArn property is set
+        internal bool IsSetFromEmailAddressIdentityArn()
+        {
+            return this._fromEmailAddressIdentityArn != null;
         }
 
         /// <summary>
