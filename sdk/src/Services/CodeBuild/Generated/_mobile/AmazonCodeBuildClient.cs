@@ -461,6 +461,43 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  BatchGetBuildBatches
+
+        internal virtual BatchGetBuildBatchesResponse BatchGetBuildBatches(BatchGetBuildBatchesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetBuildBatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetBuildBatchesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetBuildBatchesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about one or more batch builds.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetBuildBatches service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetBuildBatches service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuildBatches">REST API Reference for BatchGetBuildBatches Operation</seealso>
+        public virtual Task<BatchGetBuildBatchesResponse> BatchGetBuildBatchesAsync(BatchGetBuildBatchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetBuildBatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetBuildBatchesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetBuildBatchesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetBuilds
 
         internal virtual BatchGetBuildsResponse BatchGetBuilds(BatchGetBuildsRequest request)
@@ -759,6 +796,43 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  DeleteBuildBatch
+
+        internal virtual DeleteBuildBatchResponse DeleteBuildBatch(DeleteBuildBatchRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBuildBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBuildBatchResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBuildBatchResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a batch build.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBuildBatch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteBuildBatch service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteBuildBatch">REST API Reference for DeleteBuildBatch Operation</seealso>
+        public virtual Task<DeleteBuildBatchResponse> DeleteBuildBatchAsync(DeleteBuildBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBuildBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBuildBatchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBuildBatchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteProject
 
         internal virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
@@ -996,6 +1070,43 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  DescribeCodeCoverages
+
+        internal virtual DescribeCodeCoveragesResponse DescribeCodeCoverages(DescribeCodeCoveragesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCodeCoveragesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCodeCoveragesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCodeCoveragesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves one or more code coverage reports.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCodeCoverages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCodeCoverages service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DescribeCodeCoverages">REST API Reference for DescribeCodeCoverages Operation</seealso>
+        public virtual Task<DescribeCodeCoveragesResponse> DescribeCodeCoveragesAsync(DescribeCodeCoveragesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCodeCoveragesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCodeCoveragesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCodeCoveragesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeTestCases
 
         internal virtual DescribeTestCasesResponse DescribeTestCases(DescribeTestCasesRequest request)
@@ -1157,6 +1268,83 @@ namespace Amazon.CodeBuild
             options.ResponseUnmarshaller = InvalidateProjectCacheResponseUnmarshaller.Instance;
 
             return InvokeAsync<InvalidateProjectCacheResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListBuildBatches
+
+        internal virtual ListBuildBatchesResponse ListBuildBatches(ListBuildBatchesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBuildBatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBuildBatchesResponseUnmarshaller.Instance;
+
+            return Invoke<ListBuildBatchesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the identifiers of your build batches in the current region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBuildBatches service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBuildBatches service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildBatches">REST API Reference for ListBuildBatches Operation</seealso>
+        public virtual Task<ListBuildBatchesResponse> ListBuildBatchesAsync(ListBuildBatchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBuildBatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBuildBatchesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBuildBatchesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListBuildBatchesForProject
+
+        internal virtual ListBuildBatchesForProjectResponse ListBuildBatchesForProject(ListBuildBatchesForProjectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBuildBatchesForProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBuildBatchesForProjectResponseUnmarshaller.Instance;
+
+            return Invoke<ListBuildBatchesForProjectResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the identifiers of the build batches for a specific project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBuildBatchesForProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBuildBatchesForProject service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildBatchesForProject">REST API Reference for ListBuildBatchesForProject Operation</seealso>
+        public virtual Task<ListBuildBatchesForProjectResponse> ListBuildBatchesForProjectAsync(ListBuildBatchesForProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBuildBatchesForProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBuildBatchesForProjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBuildBatchesForProjectResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1521,6 +1709,9 @@ namespace Amazon.CodeBuild
         /// </param>
         /// 
         /// <returns>The response from the ListSourceCredentials service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSourceCredentials">REST API Reference for ListSourceCredentials Operation</seealso>
         public virtual Task<ListSourceCredentialsResponse> ListSourceCredentialsAsync(ListSourceCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1574,6 +1765,89 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  RetryBuild
+
+        internal virtual RetryBuildResponse RetryBuild(RetryBuildRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RetryBuildRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RetryBuildResponseUnmarshaller.Instance;
+
+            return Invoke<RetryBuildResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Restarts a build.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RetryBuild service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RetryBuild service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.AccountLimitExceededException">
+        /// An AWS service limit was exceeded for the calling AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuild">REST API Reference for RetryBuild Operation</seealso>
+        public virtual Task<RetryBuildResponse> RetryBuildAsync(RetryBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RetryBuildRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RetryBuildResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RetryBuildResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RetryBuildBatch
+
+        internal virtual RetryBuildBatchResponse RetryBuildBatch(RetryBuildBatchRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RetryBuildBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RetryBuildBatchResponseUnmarshaller.Instance;
+
+            return Invoke<RetryBuildBatchResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Restarts a batch build.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RetryBuildBatch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RetryBuildBatch service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuildBatch">REST API Reference for RetryBuildBatch Operation</seealso>
+        public virtual Task<RetryBuildBatchResponse> RetryBuildBatchAsync(RetryBuildBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RetryBuildBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RetryBuildBatchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RetryBuildBatchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartBuild
 
         internal virtual StartBuildResponse StartBuild(StartBuildRequest request)
@@ -1617,6 +1891,46 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  StartBuildBatch
+
+        internal virtual StartBuildBatchResponse StartBuildBatch(StartBuildBatchRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBuildBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBuildBatchResponseUnmarshaller.Instance;
+
+            return Invoke<StartBuildBatchResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a batch build for a project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBuildBatch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartBuildBatch service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuildBatch">REST API Reference for StartBuildBatch Operation</seealso>
+        public virtual Task<StartBuildBatchResponse> StartBuildBatchAsync(StartBuildBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBuildBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBuildBatchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartBuildBatchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StopBuild
 
         internal virtual StopBuildResponse StopBuild(StopBuildRequest request)
@@ -1653,6 +1967,46 @@ namespace Amazon.CodeBuild
             options.ResponseUnmarshaller = StopBuildResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopBuildResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopBuildBatch
+
+        internal virtual StopBuildBatchResponse StopBuildBatch(StopBuildBatchRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopBuildBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopBuildBatchResponseUnmarshaller.Instance;
+
+            return Invoke<StopBuildBatchResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops a running batch build.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopBuildBatch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopBuildBatch service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuildBatch">REST API Reference for StopBuildBatch Operation</seealso>
+        public virtual Task<StopBuildBatchResponse> StopBuildBatchAsync(StopBuildBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopBuildBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopBuildBatchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopBuildBatchResponse>(request, options, cancellationToken);
         }
 
         #endregion

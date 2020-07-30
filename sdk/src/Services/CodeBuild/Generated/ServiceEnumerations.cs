@@ -233,6 +233,76 @@ namespace Amazon.CodeBuild
 
 
     /// <summary>
+    /// Constants used for properties of type BuildBatchPhaseType.
+    /// </summary>
+    public class BuildBatchPhaseType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMBINE_ARTIFACTS for BuildBatchPhaseType
+        /// </summary>
+        public static readonly BuildBatchPhaseType COMBINE_ARTIFACTS = new BuildBatchPhaseType("COMBINE_ARTIFACTS");
+        /// <summary>
+        /// Constant DOWNLOAD_BATCHSPEC for BuildBatchPhaseType
+        /// </summary>
+        public static readonly BuildBatchPhaseType DOWNLOAD_BATCHSPEC = new BuildBatchPhaseType("DOWNLOAD_BATCHSPEC");
+        /// <summary>
+        /// Constant FAILED for BuildBatchPhaseType
+        /// </summary>
+        public static readonly BuildBatchPhaseType FAILED = new BuildBatchPhaseType("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for BuildBatchPhaseType
+        /// </summary>
+        public static readonly BuildBatchPhaseType IN_PROGRESS = new BuildBatchPhaseType("IN_PROGRESS");
+        /// <summary>
+        /// Constant STOPPED for BuildBatchPhaseType
+        /// </summary>
+        public static readonly BuildBatchPhaseType STOPPED = new BuildBatchPhaseType("STOPPED");
+        /// <summary>
+        /// Constant SUBMITTED for BuildBatchPhaseType
+        /// </summary>
+        public static readonly BuildBatchPhaseType SUBMITTED = new BuildBatchPhaseType("SUBMITTED");
+        /// <summary>
+        /// Constant SUCCEEDED for BuildBatchPhaseType
+        /// </summary>
+        public static readonly BuildBatchPhaseType SUCCEEDED = new BuildBatchPhaseType("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BuildBatchPhaseType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BuildBatchPhaseType FindValue(string value)
+        {
+            return FindValue<BuildBatchPhaseType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BuildBatchPhaseType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BuildPhaseType.
     /// </summary>
     public class BuildPhaseType : ConstantClass
@@ -987,6 +1057,56 @@ namespace Amazon.CodeBuild
 
 
     /// <summary>
+    /// Constants used for properties of type ReportCodeCoverageSortByType.
+    /// </summary>
+    public class ReportCodeCoverageSortByType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILE_PATH for ReportCodeCoverageSortByType
+        /// </summary>
+        public static readonly ReportCodeCoverageSortByType FILE_PATH = new ReportCodeCoverageSortByType("FILE_PATH");
+        /// <summary>
+        /// Constant LINE_COVERAGE_PERCENTAGE for ReportCodeCoverageSortByType
+        /// </summary>
+        public static readonly ReportCodeCoverageSortByType LINE_COVERAGE_PERCENTAGE = new ReportCodeCoverageSortByType("LINE_COVERAGE_PERCENTAGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReportCodeCoverageSortByType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReportCodeCoverageSortByType FindValue(string value)
+        {
+            return FindValue<ReportCodeCoverageSortByType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReportCodeCoverageSortByType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReportExportConfigType.
     /// </summary>
     public class ReportExportConfigType : ConstantClass
@@ -1209,6 +1329,10 @@ namespace Amazon.CodeBuild
     {
 
         /// <summary>
+        /// Constant CODE_COVERAGE for ReportType
+        /// </summary>
+        public static readonly ReportType CODE_COVERAGE = new ReportType("CODE_COVERAGE");
+        /// <summary>
         /// Constant TEST for ReportType
         /// </summary>
         public static readonly ReportType TEST = new ReportType("TEST");
@@ -1242,6 +1366,56 @@ namespace Amazon.CodeBuild
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReportType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RetryBuildBatchType.
+    /// </summary>
+    public class RetryBuildBatchType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RETRY_ALL_BUILDS for RetryBuildBatchType
+        /// </summary>
+        public static readonly RetryBuildBatchType RETRY_ALL_BUILDS = new RetryBuildBatchType("RETRY_ALL_BUILDS");
+        /// <summary>
+        /// Constant RETRY_FAILED_BUILDS for RetryBuildBatchType
+        /// </summary>
+        public static readonly RetryBuildBatchType RETRY_FAILED_BUILDS = new RetryBuildBatchType("RETRY_FAILED_BUILDS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RetryBuildBatchType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RetryBuildBatchType FindValue(string value)
+        {
+            return FindValue<RetryBuildBatchType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RetryBuildBatchType(string value)
         {
             return FindValue(value);
         }
@@ -1578,6 +1752,56 @@ namespace Amazon.CodeBuild
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WebhookBuildType.
+    /// </summary>
+    public class WebhookBuildType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BUILD for WebhookBuildType
+        /// </summary>
+        public static readonly WebhookBuildType BUILD = new WebhookBuildType("BUILD");
+        /// <summary>
+        /// Constant BUILD_BATCH for WebhookBuildType
+        /// </summary>
+        public static readonly WebhookBuildType BUILD_BATCH = new WebhookBuildType("BUILD_BATCH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WebhookBuildType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WebhookBuildType FindValue(string value)
+        {
+            return FindValue<WebhookBuildType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WebhookBuildType(string value)
         {
             return FindValue(value);
         }

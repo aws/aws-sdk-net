@@ -41,6 +41,10 @@
     <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,254}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.DeleteBuildBatchRequest.Id</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.DeleteProjectRequest.Name</property>
     <min>1</min>
   </property-value-rule>
@@ -71,6 +75,25 @@
     <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,254}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.DescribeCodeCoveragesRequest.MaxLineCoveragePercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.DescribeCodeCoveragesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.DescribeCodeCoveragesRequest.MinLineCoveragePercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.DescribeCodeCoveragesRequest.ReportArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.DescribeTestCasesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -97,6 +120,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.InvalidateProjectCacheRequest.ProjectName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ListBuildBatchesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ListBuildBatchesForProjectRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ListBuildBatchesForProjectRequest.ProjectName</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -149,6 +186,14 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.RetryBuildRequest.Id</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.RetryBuildBatchRequest.Id</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.StartBuildRequest.EncryptionKeyOverride</property>
     <min>1</min>
   </property-value-rule>
@@ -179,7 +224,41 @@
     <max>480</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.StartBuildBatchRequest.BuildTimeoutInMinutesOverride</property>
+    <min>5</min>
+    <max>480</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.StartBuildBatchRequest.EncryptionKeyOverride</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.StartBuildBatchRequest.GitCloneDepthOverride</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.StartBuildBatchRequest.ImageOverride</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.StartBuildBatchRequest.ProjectName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.StartBuildBatchRequest.QueuedTimeoutInMinutesOverride</property>
+    <min>5</min>
+    <max>480</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.StartBuildBatchRequest.ServiceRoleOverride</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.StopBuildRequest.Id</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.StopBuildBatchRequest.Id</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -248,8 +327,100 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.BuildBatch.Arn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.BuildBatch.EncryptionKey</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.BuildBatch.Id</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.BuildBatch.ProjectName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.BuildBatch.ResolvedSourceVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.BuildBatch.ServiceRole</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.BuildBatch.SourceVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.BuildNotDeleted.Id</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CodeCoverage.BranchCoveragePercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CodeCoverage.BranchesCovered</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CodeCoverage.BranchesMissed</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CodeCoverage.FilePath</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CodeCoverage.Id</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CodeCoverage.LineCoveragePercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CodeCoverage.LinesCovered</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CodeCoverage.LinesMissed</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CodeCoverage.ReportARN</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CodeCoverageReportSummary.BranchCoveragePercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CodeCoverageReportSummary.BranchesCovered</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CodeCoverageReportSummary.BranchesMissed</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CodeCoverageReportSummary.LineCoveragePercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CodeCoverageReportSummary.LinesCovered</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CodeCoverageReportSummary.LinesMissed</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.DebugSession.SessionTarget</property>
@@ -299,6 +470,10 @@
     <property>Amazon.CodeBuild.Model.Project.TimeoutInMinutes</property>
     <min>5</min>
     <max>480</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ProjectBuildBatchConfig.ServiceRole</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.ProjectEnvironment.Image</property>

@@ -70,6 +70,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.BranchFilter = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("buildType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BuildType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("filterGroups", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<List<WebhookFilter>, ListUnmarshaller<WebhookFilter, WebhookFilterUnmarshaller>>(new ListUnmarshaller<WebhookFilter, WebhookFilterUnmarshaller>(WebhookFilterUnmarshaller.Instance));

@@ -29,14 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// Information about the results from running a series of test cases during the run
-    /// of a build project. The test cases are specified in the buildspec for the build project
+    /// Information about the results from running a series of test cases during the run of
+    /// a build project. The test cases are specified in the buildspec for the build project
     /// using one or more paths to the test case files. You can specify any type of tests
     /// you want, such as unit tests, integration tests, and functional tests.
     /// </summary>
     public partial class Report
     {
         private string _arn;
+        private CodeCoverageReportSummary _codeCoverageSummary;
         private DateTime? _created;
         private string _executionId;
         private DateTime? _expired;
@@ -65,6 +66,25 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeCoverageSummary. 
+        /// <para>
+        /// A <code>CodeCoverageReportSummary</code> object that contains a code coverage summary
+        /// for this report.
+        /// </para>
+        /// </summary>
+        public CodeCoverageReportSummary CodeCoverageSummary
+        {
+            get { return this._codeCoverageSummary; }
+            set { this._codeCoverageSummary = value; }
+        }
+
+        // Check to see if CodeCoverageSummary property is set
+        internal bool IsSetCodeCoverageSummary()
+        {
+            return this._codeCoverageSummary != null;
         }
 
         /// <summary>
@@ -236,8 +256,17 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of the report that was run. 
+        /// The type of the report that was run.
         /// </para>
+        ///  <dl> <dt>CODE_COVERAGE</dt> <dd> 
+        /// <para>
+        /// A code coverage report.
+        /// </para>
+        ///  </dd> <dt>TEST</dt> <dd> 
+        /// <para>
+        /// A test report.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         public ReportType Type
         {

@@ -41,6 +41,7 @@ namespace Amazon.CodeBuild.Model
     public partial class UpdateWebhookRequest : AmazonCodeBuildRequest
     {
         private string _branchFilter;
+        private WebhookBuildType _buildType;
         private List<List<WebhookFilter>> _filterGroups = new List<List<WebhookFilter>>();
         private string _projectName;
         private bool? _rotateSecret;
@@ -69,6 +70,24 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetBranchFilter()
         {
             return this._branchFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BuildType. 
+        /// <para>
+        /// Specifies the type of build this webhook will trigger.
+        /// </para>
+        /// </summary>
+        public WebhookBuildType BuildType
+        {
+            get { return this._buildType; }
+            set { this._buildType = value; }
+        }
+
+        // Check to see if BuildType property is set
+        internal bool IsSetBuildType()
+        {
+            return this._buildType != null;
         }
 
         /// <summary>

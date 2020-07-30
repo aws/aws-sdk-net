@@ -76,6 +76,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.Artifacts = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("buildBatchArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BuildBatchArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("buildComplete", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

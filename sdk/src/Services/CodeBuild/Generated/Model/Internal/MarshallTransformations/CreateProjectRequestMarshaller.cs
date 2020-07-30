@@ -85,6 +85,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BadgeEnabled);
                 }
 
+                if(publicRequest.IsSetBuildBatchConfig())
+                {
+                    context.Writer.WritePropertyName("buildBatchConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ProjectBuildBatchConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.BuildBatchConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCache())
                 {
                     context.Writer.WritePropertyName("cache");

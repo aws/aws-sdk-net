@@ -74,6 +74,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BranchFilter);
                 }
 
+                if(publicRequest.IsSetBuildType())
+                {
+                    context.Writer.WritePropertyName("buildType");
+                    context.Writer.Write(publicRequest.BuildType);
+                }
+
                 if(publicRequest.IsSetFilterGroups())
                 {
                     context.Writer.WritePropertyName("filterGroups");

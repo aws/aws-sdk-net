@@ -36,6 +36,7 @@ namespace Amazon.CodeBuild.Model
     {
         private ProjectArtifacts _artifacts;
         private bool? _badgeEnabled;
+        private ProjectBuildBatchConfig _buildBatchConfig;
         private ProjectCache _cache;
         private string _description;
         private string _encryptionKey;
@@ -88,6 +89,21 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetBadgeEnabled()
         {
             return this._badgeEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BuildBatchConfig.
+        /// </summary>
+        public ProjectBuildBatchConfig BuildBatchConfig
+        {
+            get { return this._buildBatchConfig; }
+            set { this._buildBatchConfig = value; }
+        }
+
+        // Check to see if BuildBatchConfig property is set
+        internal bool IsSetBuildBatchConfig()
+        {
+            return this._buildBatchConfig != null;
         }
 
         /// <summary>

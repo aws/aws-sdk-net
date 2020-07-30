@@ -35,6 +35,7 @@ namespace Amazon.CodeBuild.Model
     {
         private string _arn;
         private BuildArtifacts _artifacts;
+        private string _buildBatchArn;
         private bool? _buildComplete;
         private long? _buildNumber;
         private StatusType _buildStatus;
@@ -100,6 +101,24 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetArtifacts()
         {
             return this._artifacts != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BuildBatchArn. 
+        /// <para>
+        /// The ARN of the batch build that this build is a member of, if applicable.
+        /// </para>
+        /// </summary>
+        public string BuildBatchArn
+        {
+            get { return this._buildBatchArn; }
+            set { this._buildBatchArn = value; }
+        }
+
+        // Check to see if BuildBatchArn property is set
+        internal bool IsSetBuildBatchArn()
+        {
+            return this._buildBatchArn != null;
         }
 
         /// <summary>

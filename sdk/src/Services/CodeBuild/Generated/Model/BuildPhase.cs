@@ -100,36 +100,35 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// The current status of the build phase. Valid values include:
         /// </para>
-        ///  <ul> <li> 
+        ///  <dl> <dt>FAILED</dt> <dd> 
         /// <para>
-        ///  <code>FAILED</code>: The build phase failed.
+        /// The build phase failed.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>FAULT</dt> <dd> 
         /// <para>
-        ///  <code>FAULT</code>: The build phase faulted.
+        /// The build phase faulted.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>IN_PROGRESS</dt> <dd> 
         /// <para>
-        ///  <code>IN_PROGRESS</code>: The build phase is still in progress.
+        /// The build phase is still in progress.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>QUEUED</dt> <dd> 
         /// <para>
-        ///  <code>QUEUED</code>: The build has been submitted and is queued behind other submitted
-        /// builds.
+        /// The build has been submitted and is queued behind other submitted builds.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>STOPPED</dt> <dd> 
         /// <para>
-        ///  <code>STOPPED</code>: The build phase stopped.
+        /// The build phase stopped.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>SUCCEEDED</dt> <dd> 
         /// <para>
-        ///  <code>SUCCEEDED</code>: The build phase succeeded.
+        /// The build phase succeeded.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>TIMED_OUT</dt> <dd> 
         /// <para>
-        ///  <code>TIMED_OUT</code>: The build phase timed out.
+        /// The build phase timed out.
         /// </para>
-        ///  </li> </ul>
+        ///  </dd> </dl>
         /// </summary>
         public StatusType PhaseStatus
         {

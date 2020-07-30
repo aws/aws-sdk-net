@@ -82,6 +82,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.Badge = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("buildBatchConfig", targetDepth))
+                {
+                    var unmarshaller = ProjectBuildBatchConfigUnmarshaller.Instance;
+                    unmarshalledObject.BuildBatchConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("cache", targetDepth))
                 {
                     var unmarshaller = ProjectCacheUnmarshaller.Instance;
