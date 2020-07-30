@@ -33,7 +33,13 @@ namespace Amazon.Organizations.Model
     /// Removes the specified member AWS account as a delegated administrator for the specified
     /// AWS service.
     /// 
-    ///  
+    ///  <important> 
+    /// <para>
+    /// Deregistering a delegated administrator can have unintended impacts on the functionality
+    /// of the enabled AWS service. See the documentation for the enabled service before you
+    /// deregister a delegated administrator so that you understand any potential impacts.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// You can run this action only for AWS services that support this feature. For a current
     /// list of services that support it, see the column <i>Supports Delegated Administrator</i>
