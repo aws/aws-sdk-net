@@ -43,6 +43,7 @@ namespace Amazon.PersonalizeRuntime.Model
     {
         private string _campaignArn;
         private Dictionary<string, string> _context = new Dictionary<string, string>();
+        private string _filterArn;
         private List<string> _inputList = new List<string>();
         private string _userId;
 
@@ -88,10 +89,31 @@ namespace Amazon.PersonalizeRuntime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FilterArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of a filter you created to include or exclude items
+        /// from recommendations for a given user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string FilterArn
+        {
+            get { return this._filterArn; }
+            set { this._filterArn = value; }
+        }
+
+        // Check to see if FilterArn property is set
+        internal bool IsSetFilterArn()
+        {
+            return this._filterArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InputList. 
         /// <para>
-        /// A list of items (itemId's) to rank. If an item was not included in the training dataset,
-        /// the item is appended to the end of the reranked list. The maximum is 500.
+        /// A list of items (by <code>itemId</code>) to rank. If an item was not included in the
+        /// training dataset, the item is appended to the end of the reranked list. The maximum
+        /// is 500.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
