@@ -63,7 +63,7 @@
     <property>Amazon.ResourceGroupsTaggingAPI.Model.StartReportCreationRequest.S3Bucket</property>
     <min>3</min>
     <max>63</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>[a-z0-9.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.ResourceTagMapping.ResourceARN</property>
@@ -87,7 +87,7 @@
     <property>Amazon.ResourceGroupsTaggingAPI.Model.Summary.TargetId</property>
     <min>6</min>
     <max>68</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>[a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.Tag.Key</property>
