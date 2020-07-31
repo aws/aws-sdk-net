@@ -52,7 +52,7 @@ namespace Amazon.Chime.Model
         /// The request containing the attendees to create.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
+        [AWSProperty(Min=1, Max=10)]
         public List<CreateAttendeeRequestItem> Attendees
         {
             get { return this._attendees; }

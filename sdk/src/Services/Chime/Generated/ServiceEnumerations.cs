@@ -341,6 +341,10 @@ namespace Amazon.Chime
         /// </summary>
         public static readonly ErrorCode Throttled = new ErrorCode("Throttled");
         /// <summary>
+        /// Constant Throttling for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode Throttling = new ErrorCode("Throttling");
+        /// <summary>
         /// Constant Unauthorized for ErrorCode
         /// </summary>
         public static readonly ErrorCode Unauthorized = new ErrorCode("Unauthorized");
