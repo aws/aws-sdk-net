@@ -617,6 +617,11 @@
     <max>562</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DescribeGatewayInformationResponse.DeprecationDate</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeGatewayInformationResponse.EndpointType</property>
     <min>4</min>
     <max>8</max>
@@ -653,6 +658,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeGatewayInformationResponse.NextUpdateAvailabilityDate</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DescribeGatewayInformationResponse.SoftwareUpdatesEndDate</property>
     <min>1</min>
     <max>25</max>
   </property-value-rule>

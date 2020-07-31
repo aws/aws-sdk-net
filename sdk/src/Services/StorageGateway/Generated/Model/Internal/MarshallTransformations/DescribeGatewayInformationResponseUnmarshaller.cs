@@ -57,6 +57,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     response.CloudWatchLogGroupARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeprecationDate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DeprecationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Ec2InstanceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -133,6 +139,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextUpdateAvailabilityDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SoftwareUpdatesEndDate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SoftwareUpdatesEndDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Tags", targetDepth))

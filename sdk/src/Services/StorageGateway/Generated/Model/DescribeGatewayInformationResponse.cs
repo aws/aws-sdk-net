@@ -34,6 +34,7 @@ namespace Amazon.StorageGateway.Model
     public partial class DescribeGatewayInformationResponse : AmazonWebServiceResponse
     {
         private string _cloudWatchLogGroupARN;
+        private string _deprecationDate;
         private string _ec2InstanceId;
         private string _ec2InstanceRegion;
         private string _endpointType;
@@ -47,6 +48,7 @@ namespace Amazon.StorageGateway.Model
         private HostEnvironment _hostEnvironment;
         private string _lastSoftwareUpdate;
         private string _nextUpdateAvailabilityDate;
+        private string _softwareUpdatesEndDate;
         private List<Tag> _tags = new List<Tag>();
         private string _vpcEndpoint;
 
@@ -68,6 +70,26 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetCloudWatchLogGroupARN()
         {
             return this._cloudWatchLogGroupARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeprecationDate. 
+        /// <para>
+        /// Date after which this gateway will not receive software updates for new features and
+        /// bug fixes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25)]
+        public string DeprecationDate
+        {
+            get { return this._deprecationDate; }
+            set { this._deprecationDate = value; }
+        }
+
+        // Check to see if DeprecationDate property is set
+        internal bool IsSetDeprecationDate()
+        {
+            return this._deprecationDate != null;
         }
 
         /// <summary>
@@ -316,6 +338,25 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetNextUpdateAvailabilityDate()
         {
             return this._nextUpdateAvailabilityDate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SoftwareUpdatesEndDate. 
+        /// <para>
+        /// Date after which this gateway will not receive software updates for new features.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25)]
+        public string SoftwareUpdatesEndDate
+        {
+            get { return this._softwareUpdatesEndDate; }
+            set { this._softwareUpdatesEndDate = value; }
+        }
+
+        // Check to see if SoftwareUpdatesEndDate property is set
+        internal bool IsSetSoftwareUpdatesEndDate()
+        {
+            return this._softwareUpdatesEndDate != null;
         }
 
         /// <summary>
