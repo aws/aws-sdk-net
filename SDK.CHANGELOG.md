@@ -1,3 +1,20 @@
+### 3.3.789.0 (2020-07-31 18:32 UTC)
+* Chime (3.3.115.0)
+	* This release increases the CreateMeetingWithAttendee max attendee limit to 10.
+* PersonalizeRuntime (3.3.105.0)
+	* Adds support to use filters with Personalized Ranking recipe
+* ResourceGroupsTaggingAPI (3.3.103.111)
+	* Updates to the list of services supported by this API.
+* StorageGateway (3.3.117.0)
+	* Add support for gateway VM deprecation dates
+* WAFV2 (3.3.103.0)
+	* Add ManagedByFirewallManager flag to the logging configuration, which indicates whether AWS Firewall Manager controls the configuration.
+* Core 3.3.107.32
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.788.0 (2020-07-30 18:14 UTC)
 * CloudFront (3.3.104.5)
 	* Documentation updates for CloudFront
