@@ -96,8 +96,8 @@ namespace Amazon.WAFV2.Model
         /// The name of the <code>Rule</code> that the request matched. For managed rule groups,
         /// the format for this name is <code>&lt;vendor name&gt;#&lt;managed rule group name&gt;#&lt;rule
         /// name&gt;</code>. For your own rule groups, the format for this name is <code>&lt;rule
-        /// group name&gt;#&lt;rule name&gt;</code>. If the rule is not in a rule group, the format
-        /// is <code>&lt;rule name&gt;</code>. 
+        /// group name&gt;#&lt;rule name&gt;</code>. If the rule is not in a rule group, this
+        /// field is absent. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

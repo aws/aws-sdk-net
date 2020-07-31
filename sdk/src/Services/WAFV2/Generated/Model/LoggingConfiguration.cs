@@ -46,6 +46,7 @@ namespace Amazon.WAFV2.Model
     public partial class LoggingConfiguration
     {
         private List<string> _logDestinationConfigs = new List<string>();
+        private bool? _managedByFirewallManager;
         private List<FieldToMatch> _redactedFields = new List<FieldToMatch>();
         private string _resourceArn;
 
@@ -70,12 +71,38 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManagedByFirewallManager. 
+        /// <para>
+        /// Indicates whether the logging configuration was created by AWS Firewall Manager, as
+        /// part of an AWS WAF policy configuration. If true, only Firewall Manager can modify
+        /// or delete the configuration. 
+        /// </para>
+        /// </summary>
+        public bool ManagedByFirewallManager
+        {
+            get { return this._managedByFirewallManager.GetValueOrDefault(); }
+            set { this._managedByFirewallManager = value; }
+        }
+
+        // Check to see if ManagedByFirewallManager property is set
+        internal bool IsSetManagedByFirewallManager()
+        {
+            return this._managedByFirewallManager.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RedactedFields. 
         /// <para>
         /// The parts of the request that you want to keep out of the logs. For example, if you
-        /// redact the cookie field, the cookie field in the firehose will be <code>xxx</code>.
-        /// 
+        /// redact the <code>HEADER</code> field, the <code>HEADER</code> field in the firehose
+        /// will be <code>xxx</code>. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>,
+        /// <code>HEADER</code>, or <code>METHOD</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=100)]
         public List<FieldToMatch> RedactedFields
