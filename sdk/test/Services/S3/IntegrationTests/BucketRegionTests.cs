@@ -179,6 +179,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             AssertExtensions.ExpectException(() => { s3Client.ListBuckets(); }, typeof(AmazonSecurityTokenServiceException), new Regex("3 validation errors detected"));
         }
 
+        [TestMethod]
+        [TestCategory("S3")]
+        public void DeleteBucketUsingS3RegionUSEast1Enum()
+        {
+            using (var runner = new BucketRegionTestRunner(true, true))
+            {
+                var bucketName = S3TestUtils.CreateBucketWithWait(runner.USEast1Client);
+
+                runner.USWest1Client.DeleteBucket(new DeleteBucketRequest
+                {
+                    BucketName = bucketName,
+                    BucketRegion = S3Region.US
+                });
+            }
+        }
+
+
         private HttpStatusCode GetHttpStatusCode(string url)
         {
             var httpRequest = WebRequest.Create(url) as HttpWebRequest;
