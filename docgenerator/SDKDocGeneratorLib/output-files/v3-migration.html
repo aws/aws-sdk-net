@@ -7,17 +7,17 @@
 <link rel="stylesheet" type="text/css" href="./resources/sdkstyle.css"/>
 <meta name="description" content="AWSConfigs.GenerateConfigTemplate Method">
 <title>Migration Guide from V2 to V3 | AWS SDK for .NET V3</title>
-<script src="https://a0.awsstatic.com/s_code/js/1.0/awshome_s_code.js"></script>
+<script type="text/javascript" src="/assets/js/awsdocs-boot.js" defer></script>
 <link rel="canonical" href="http://docs.aws.amazon.com/sdkfornet/v3/apidocs/index.html?page=Amazon/TAWSConfigs.html&tocid=Amazon_AWSConfigs"/>
 </head>
 <body>
 
-	<h2>Version 3 Migration Guide</h2>
-	<p>
-	Version 3 is the AWS SDK for .NET has a high level of compatibility with version 2. For most applications you will just need to remove the old reference to version 2 and add the 
-	reference to the services they are using. For instance, if you are using <code>S3</code> and <code>DynamoDB</code>, you'll need to add references to <code>AWSSDK.S3</code> and <code>AWSSDK.DynamoDBv2</code>. If you are using NuGet to get the SDK, the reference to our core runtime package - <code>AWSSDK.Core</code> will be added automatically. If you 
-	are getting the SDK from the installer on our website, then you will need to add a reference to <code>AWSSDK.Core</code> as well as to the service-specific assemblies.
-	</p>
+    <h2>Version 3 Migration Guide</h2>
+    <p>
+        Version 3 is the AWS SDK for .NET has a high level of compatibility with version 2. For most applications you will just need to remove the old reference to version 2 and add the
+        reference to the services they are using. For instance, if you are using <code>S3</code> and <code>DynamoDB</code>, you'll need to add references to <code>AWSSDK.S3</code> and <code>AWSSDK.DynamoDBv2</code>. If you are using NuGet to get the SDK, the reference to our core runtime package - <code>AWSSDK.Core</code> will be added automatically. If you
+        are getting the SDK from the installer on our website, then you will need to add a reference to <code>AWSSDK.Core</code> as well as to the service-specific assemblies.
+    </p>
 
     <table border="0" cellspacing="0" cellpadding="0">
         <tbody>
@@ -27,43 +27,43 @@
             </tr>
             <tr>
                 <td valign="top">
-                <code>AWSClientFactory</code> is removed
+                    <code>AWSClientFactory</code> is removed
                 </td>
                 <td valign="top">
-				<p>Use service client constructors instead of the AWSClientFactory</p>
-                </td>
-            </tr>
-            <tr>
-                <td valign="top">
-                <code>Amazon.Runtime.AssumeRoleAWSCredentials</code> is removed
-                </td>
-                <td valign="top">
-				<p>Use <code>Amazon.SecurityToken.STSAssumeRoleAWSCredentials</code> instead</p>
-                </td>
-            </tr>
-			<tr>
-                <td valign="top">
-                <code>Amazon.DynamoDBv2.DataModel.S3Link.SetACL</code> is removed
-                </td>
-                <td valign="top">
-				<p>Use <code>Amazon.DynamoDBv2.DataModel.S3Link.MakeS3ObjectPublic</code> instead</p>
+                    <p>Use service client constructors instead of the AWSClientFactory</p>
                 </td>
             </tr>
             <tr>
                 <td valign="top">
-                <code>IStorageFile</code> use is removed
+                    <code>Amazon.Runtime.AssumeRoleAWSCredentials</code> is removed
                 </td>
                 <td valign="top">
-				<p>The below properties and methods that utilize <code>IStorageFile</code> in mobile versions are being deprecated. String alternatives like FilePath should be used instead.</p>
-				<ul>
-				<li><code>GetObjectResponse.WriteResponseStreamToFileAsync(IStorageFile, bool, CancellationToken)</code></li>
-				<li><code>PutObjectRequest.StorageFile</code></li>
-				<li><code>UploadPartRequest.StorageFile</code></li>
-				<li><code>TransferUtilityDownloadRequest.StorageFile</code></li>
-				<li><code>TransferUtilityUploadRequest.StorageFile</code></li>
-				<li><code>S3Link.UploadFromAsync(IStorageFile)</code></li>
-				<li><code>S3Link.DownloadToAsync(IStorageFile)</code></li>
-				</ul>
+                    <p>Use <code>Amazon.SecurityToken.STSAssumeRoleAWSCredentials</code> instead</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <code>Amazon.DynamoDBv2.DataModel.S3Link.SetACL</code> is removed
+                </td>
+                <td valign="top">
+                    <p>Use <code>Amazon.DynamoDBv2.DataModel.S3Link.MakeS3ObjectPublic</code> instead</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <code>IStorageFile</code> use is removed
+                </td>
+                <td valign="top">
+                    <p>The below properties and methods that utilize <code>IStorageFile</code> in mobile versions are being deprecated. String alternatives like FilePath should be used instead.</p>
+                    <ul>
+                        <li><code>GetObjectResponse.WriteResponseStreamToFileAsync(IStorageFile, bool, CancellationToken)</code></li>
+                        <li><code>PutObjectRequest.StorageFile</code></li>
+                        <li><code>UploadPartRequest.StorageFile</code></li>
+                        <li><code>TransferUtilityDownloadRequest.StorageFile</code></li>
+                        <li><code>TransferUtilityUploadRequest.StorageFile</code></li>
+                        <li><code>S3Link.UploadFromAsync(IStorageFile)</code></li>
+                        <li><code>S3Link.DownloadToAsync(IStorageFile)</code></li>
+                    </ul>
                 </td>
             </tr>
         </tbody>
@@ -72,20 +72,27 @@
     <div><b>Note</b></div>
     <p>If you are migrating code that currently uses version 1 of the AWS SDK for .NET you can find an additional list of the changes made in the version 2 SDK that may affect your code migration <a href="http://docs.aws.amazon.com/sdk-for-net/v2/developer-guide/migration-v2-net-sdk.html">here</a>.</p>
 
-<!-- SiteCatalyst code version: H.25.1. Copyright 1996-2012 Adobe, Inc. All Rights Reserved -->
-<script>
-    <!--
-    /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
-    var s_code = s.t(); if (s_code) document.write(s_code)//--></script>
-<script language="JavaScript" type="text/javascript">
-<!--
-    if (navigator.appVersion.indexOf('MSIE') >= 0) document.write(unescape('%3C') + '\!-' + '-')
-//--></script>
-<noscript>
-    <img src="//amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazonalldev2/1/H.25.1--NS/0" height="1" width="1" border="0" alt="" />
-</noscript>
-<!--/DO NOT REMOVE/-->
-<!-- End SiteCatalyst code version: H.25.1. -->
-<script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    <!-- SiteCatalyst code version: H.25.2.
+          Copyright 1996-2012 Adobe, Inc. All Rights Reserved
+          More info available at http://www.omniture.com -->
+    <script language="JavaScript" type="text/javascript" src="https://a0.awsstatic.com/s_code/js/2.0/awshome_s_code.js"></script>
+    <script language="JavaScript" type="text/javascript">
+    <!--    // Documentation Service Name
+        s.prop66 = 'AWS SDK for .NET Version 3';
+        s.eVar66 = 'D=c66';
+        // Documentation Guide Name
+        s.prop65 = 'API Reference';
+        s.eVar65 = 'D=c65';
+        var s_code = s.t(); if (s_code) document.write(s_code)
+        //-->
+    </script>
+    <script language="JavaScript" type="text/javascript">
+    <!--    if (navigator.appVersion.indexOf('MSIE') >= 0) document.write(unescape('%3C') + '\!-' + '-') //-->
+    </script>
+    <noscript>
+        <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+    </noscript>
+    <!--/DO NOT REMOVE/-->
+    <!-- End SiteCatalyst code version: H.25.2. -->
 </body>
 </html>
