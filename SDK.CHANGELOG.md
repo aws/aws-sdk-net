@@ -1,3 +1,12 @@
+### 3.3.790.0 (2020-08-03 21:11 UTC)
+* SimpleSystemsManagement (3.3.127.0)
+	* Adds a waiter for CommandExecuted and paginators for various other APIs.
+* Core 3.3.107.33
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.789.0 (2020-07-31 18:32 UTC)
 * Chime (3.3.115.0)
 	* This release increases the CreateMeetingWithAttendee max attendee limit to 10.
