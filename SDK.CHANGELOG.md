@@ -1,3 +1,7 @@
+### 3.3.790.1 (2020-08-03 23:56 UTC)
+* Core 3.3.107.34
+	* Updated docs scripts for GDPR Cookie Consent
+
 ### 3.3.790.0 (2020-08-03 21:11 UTC)
 * SimpleSystemsManagement (3.3.127.0)
 	* Adds a waiter for CommandExecuted and paginators for various other APIs.
