@@ -1,3 +1,12 @@
+### 3.3.790.2 (2020-08-04 18:10 UTC)
+* AWSHealth (3.3.103.36)
+	* Documentation updates for health
+* Core 3.3.107.35
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.790.1 (2020-08-03 23:56 UTC)
 * Core 3.3.107.34
 	* Updated docs scripts for GDPR Cookie Consent
