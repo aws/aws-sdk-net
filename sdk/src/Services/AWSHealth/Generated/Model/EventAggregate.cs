@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// The number of events of each issue type. Returned by the <a>DescribeEventAggregates</a>
+    /// The number of events of each issue type. Returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventAggregates.html">DescribeEventAggregates</a>
     /// operation.
     /// </summary>
     public partial class EventAggregate

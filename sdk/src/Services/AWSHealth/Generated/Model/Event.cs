@@ -30,6 +30,29 @@ namespace Amazon.AWSHealth.Model
 {
     /// <summary>
     /// Summary information about an AWS Health event.
+    /// 
+    ///  
+    /// <para>
+    /// AWS Health events can be public or account-specific:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i>Public events</i> might be service events that are not specific to an AWS account.
+    /// For example, if there is an issue with an AWS Region, AWS Health provides information
+    /// about the event, even if you don't use services or resources in that Region.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>Account-specific</i> events are specific to either your AWS account or an account
+    /// in your organization. For example, if there's an issue with Amazon Elastic Compute
+    /// Cloud in a Region that you use, AWS Health provides information about the event and
+    /// the affected resources in the account.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You can determine if an event is public or account-specific by using the <code>eventScopeCode</code>
+    /// parameter. For more information, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode">eventScopeCode</a>.
+    /// </para>
     /// </summary>
     public partial class Event
     {
@@ -104,7 +127,29 @@ namespace Amazon.AWSHealth.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EventScopeCode.
+        /// Gets and sets the property EventScopeCode. 
+        /// <para>
+        /// This parameter specifies if the AWS Health event is a public AWS service event or
+        /// an account-specific event.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code>
+        /// value is always empty.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+        /// <code>affectedAccounts</code> value lists the affected AWS accounts in your organization.
+        /// For example, if an event affects a service such as Amazon Elastic Compute Cloud and
+        /// you have AWS accounts that use that service, those account IDs appear in the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code>
+        /// that you specified in the request is invalid or doesn't exist.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public EventScopeCode EventScopeCode
         {

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// The values to use to filter results from the <a>DescribeAffectedEntities</a> operation.
+    /// The values to use to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a>
+    /// operation.
     /// </summary>
     public partial class EntityFilter
     {
@@ -143,6 +144,11 @@ namespace Amazon.AWSHealth.Model
         /// <para>
         /// A map of entity tags attached to the affected entity.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, the <code>tags</code> property isn't supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=50)]
         public List<Dictionary<string, string>> Tags

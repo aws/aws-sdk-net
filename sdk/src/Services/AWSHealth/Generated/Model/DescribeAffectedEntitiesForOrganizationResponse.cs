@@ -42,7 +42,7 @@ namespace Amazon.AWSHealth.Model
         /// <para>
         /// A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>,
         /// <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>,
-        /// <code>statusCode</code>, and <code>tags</code>.
+        /// and <code>statusCode</code>.
         /// </para>
         /// </summary>
         public List<AffectedEntity> Entities

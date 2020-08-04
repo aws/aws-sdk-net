@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// The number of entities that are affected by one or more events. Returned by the <a>DescribeEntityAggregates</a>
+    /// The number of entities that are affected by one or more events. Returned by the <a
+    /// href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregates.html">DescribeEntityAggregates</a>
     /// operation.
     /// </summary>
     public partial class EntityAggregate
@@ -40,7 +41,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The number entities that match the criteria for the specified events.
+        /// The number of entities that match the criteria for the specified events.
         /// </para>
         /// </summary>
         public int Count

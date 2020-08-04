@@ -32,6 +32,13 @@ namespace Amazon.AWSHealth.Model
     /// Container for the parameters to the DescribeEventTypes operation.
     /// Returns the event types that meet the specified filter criteria. If no filter criteria
     /// are specified, all event types are returned, in no particular order.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
+    /// the next request to return more results.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeEventTypesRequest : AmazonAWSHealthRequest
     {

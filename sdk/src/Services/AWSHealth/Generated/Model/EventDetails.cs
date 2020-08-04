@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// Detailed information about an event. A combination of an <a>Event</a> object, an <a>EventDescription</a>
-    /// object, and additional metadata about the event. Returned by the <a>DescribeEventDetails</a>
+    /// Detailed information about an event. A combination of an <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>
+    /// object, an <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventDescription.html">EventDescription</a>
+    /// object, and additional metadata about the event. Returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a>
     /// operation.
     /// </summary>
     public partial class EventDetails
