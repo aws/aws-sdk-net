@@ -1,3 +1,15 @@
+### 3.3.791.0 (2020-08-05 18:55 UTC)
+* AppSync (3.3.106.0)
+	* AWS AppSync releases support for Direct Lambda Resolvers.
+* FSx (3.3.108.8)
+	* Documentation updates for StorageCapacity input value format.
+* ResourceGroupsTaggingAPI (3.3.103.114)
+	* Documentation updates for the Resource Group Tagging API namespace.
+* SimpleNotificationService (3.3.102.12)
+	* Documentation updates for SNS.
+* TranscribeService (3.3.117.0)
+	* Amazon Transcribe now supports custom language models, which can improve transcription accuracy for your specific use case.
+
 ### 3.3.790.3 (2020-08-04 23:20 UTC)
 * S3 (3.3.111.37)
 	* AmazonS3Uri expects an encoded string or URI, AmazonS3Uri Key is now decoded; Fixes for S3Region

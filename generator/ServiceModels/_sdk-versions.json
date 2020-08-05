@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.790.3",
+    "ProductVersion" : "3.3.791.0",
     "CoreVersion"    : "3.3.107.35",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -345,7 +345,7 @@
             "InPreview"               : false
         },
         "SimpleNotificationService" : {
-            "Version" : "3.3.102.11",
+            "Version" : "3.3.102.12",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.35"
@@ -761,7 +761,7 @@
             "InPreview"               : false
         },
         "ResourceGroupsTaggingAPI"        : {
-            "Version" : "3.3.103.113",
+            "Version" : "3.3.103.114",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.35"
@@ -921,7 +921,7 @@
             "InPreview"               : false
         },
         "AppSync"                         : {
-            "Version" : "3.3.105.15",
+            "Version" : "3.3.106.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.35"
@@ -1049,7 +1049,7 @@
             "InPreview"               : false
         },
         "TranscribeService"               : {
-            "Version" : "3.3.116.48",
+            "Version" : "3.3.117.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.35"
@@ -1297,7 +1297,7 @@
             "InPreview"               : false
         },
         "FSx"                             : {
-            "Version" : "3.3.108.7",
+            "Version" : "3.3.108.8",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.35"
