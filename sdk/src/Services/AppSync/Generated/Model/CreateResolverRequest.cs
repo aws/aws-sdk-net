@@ -186,7 +186,7 @@ namespace Amazon.AppSync.Model
         /// Velocity Template Language (VTL).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=65536)]
+        [AWSProperty(Min=1, Max=65536)]
         public string RequestMappingTemplate
         {
             get { return this._requestMappingTemplate; }

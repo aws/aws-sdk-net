@@ -112,7 +112,48 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The cache instance type.
+        /// The cache instance type. Valid values are 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>SMALL</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MEDIUM</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LARGE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>XLARGE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LARGE_2X</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LARGE_4X</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LARGE_8X</code> (not available in all regions)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LARGE_12X</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Historically, instance types were identified by an EC2-style value. As of July 2020,
+        /// this is deprecated, and the generic identifiers above should be used.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following legacy instance types are avaible, but their use is discouraged:
         /// </para>
         ///  <ul> <li> 
         /// <para>

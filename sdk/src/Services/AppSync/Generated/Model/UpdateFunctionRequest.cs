@@ -164,7 +164,7 @@ namespace Amazon.AppSync.Model
         /// version of the request mapping template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=65536)]
+        [AWSProperty(Min=1, Max=65536)]
         public string RequestMappingTemplate
         {
             get { return this._requestMappingTemplate; }
