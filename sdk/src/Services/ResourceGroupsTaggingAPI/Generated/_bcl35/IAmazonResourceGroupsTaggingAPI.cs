@@ -357,10 +357,6 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/frauddetector">Amazon Fraud Detector</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     ///  <a href="https://docs.aws.amazon.com/fsx">Amazon FSx</a> 
     /// </para>
     ///  </li> <li> 
