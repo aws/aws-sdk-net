@@ -25,11 +25,111 @@ namespace Amazon.TranscribeService
 {
 
     /// <summary>
+    /// Constants used for properties of type BaseModelName.
+    /// </summary>
+    public class BaseModelName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NarrowBand for BaseModelName
+        /// </summary>
+        public static readonly BaseModelName NarrowBand = new BaseModelName("NarrowBand");
+        /// <summary>
+        /// Constant WideBand for BaseModelName
+        /// </summary>
+        public static readonly BaseModelName WideBand = new BaseModelName("WideBand");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BaseModelName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BaseModelName FindValue(string value)
+        {
+            return FindValue<BaseModelName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BaseModelName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CLMLanguageCode.
+    /// </summary>
+    public class CLMLanguageCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EnUS for CLMLanguageCode
+        /// </summary>
+        public static readonly CLMLanguageCode EnUS = new CLMLanguageCode("en-US");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CLMLanguageCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CLMLanguageCode FindValue(string value)
+        {
+            return FindValue<CLMLanguageCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CLMLanguageCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LanguageCode.
     /// </summary>
     public class LanguageCode : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AfZA for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode AfZA = new LanguageCode("af-ZA");
         /// <summary>
         /// Constant ArAE for LanguageCode
         /// </summary>
@@ -38,6 +138,14 @@ namespace Amazon.TranscribeService
         /// Constant ArSA for LanguageCode
         /// </summary>
         public static readonly LanguageCode ArSA = new LanguageCode("ar-SA");
+        /// <summary>
+        /// Constant CyGB for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode CyGB = new LanguageCode("cy-GB");
+        /// <summary>
+        /// Constant DaDK for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode DaDK = new LanguageCode("da-DK");
         /// <summary>
         /// Constant DeCH for LanguageCode
         /// </summary>
@@ -94,6 +202,14 @@ namespace Amazon.TranscribeService
         /// Constant FrFR for LanguageCode
         /// </summary>
         public static readonly LanguageCode FrFR = new LanguageCode("fr-FR");
+        /// <summary>
+        /// Constant GaIE for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode GaIE = new LanguageCode("ga-IE");
+        /// <summary>
+        /// Constant GdGB for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode GdGB = new LanguageCode("gd-GB");
         /// <summary>
         /// Constant HeIL for LanguageCode
         /// </summary>
@@ -242,6 +358,60 @@ namespace Amazon.TranscribeService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MediaFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ModelStatus.
+    /// </summary>
+    public class ModelStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus COMPLETED = new ModelStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus FAILED = new ModelStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus IN_PROGRESS = new ModelStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModelStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModelStatus FindValue(string value)
+        {
+            return FindValue<ModelStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModelStatus(string value)
         {
             return FindValue(value);
         }

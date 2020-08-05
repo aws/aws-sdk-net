@@ -36,6 +36,42 @@ namespace Amazon.TranscribeService
     public partial interface IAmazonTranscribeService : IAmazonService, IDisposable
     {
                 
+        #region  CreateLanguageModel
+
+
+
+        /// <summary>
+        /// Creates a new custom language model. Use Amazon S3 prefixes to provide the location
+        /// of your input files. The time it takes to create your model depends on the size of
+        /// your training data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLanguageModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLanguageModel service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// There is already a resource with that name.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateLanguageModel">REST API Reference for CreateLanguageModel Operation</seealso>
+        Task<CreateLanguageModelResponse> CreateLanguageModelAsync(CreateLanguageModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateMedicalVocabulary
 
 
@@ -51,12 +87,13 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the CreateMedicalVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// The resource name already exists.
+        /// There is already a resource with that name.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -85,12 +122,13 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the CreateVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// The resource name already exists.
+        /// There is already a resource with that name.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -119,12 +157,13 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the CreateVocabularyFilter service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// The resource name already exists.
+        /// There is already a resource with that name.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -135,6 +174,37 @@ namespace Amazon.TranscribeService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabularyFilter">REST API Reference for CreateVocabularyFilter Operation</seealso>
         Task<CreateVocabularyFilterResponse> CreateVocabularyFilterAsync(CreateVocabularyFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteLanguageModel
+
+
+
+        /// <summary>
+        /// Deletes a custom language model using its name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLanguageModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLanguageModel service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteLanguageModel">REST API Reference for DeleteLanguageModel Operation</seealso>
+        Task<DeleteLanguageModelResponse> DeleteLanguageModelAsync(DeleteLanguageModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -153,9 +223,10 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the DeleteMedicalTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -183,9 +254,10 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the DeleteMedicalVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -217,9 +289,10 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the DeleteTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -247,9 +320,10 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the DeleteVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -280,9 +354,10 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the DeleteVocabularyFilter service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -296,6 +371,45 @@ namespace Amazon.TranscribeService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteVocabularyFilter">REST API Reference for DeleteVocabularyFilter Operation</seealso>
         Task<DeleteVocabularyFilterResponse> DeleteVocabularyFilterAsync(DeleteVocabularyFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeLanguageModel
+
+
+
+        /// <summary>
+        /// Gets information about a single custom language model. Use this information to see
+        /// details about the language model in your AWS account. You can also see whether the
+        /// base language model used to create your custom language model has been updated. If
+        /// Amazon Transcribe has updated the base model, you can create a new custom language
+        /// model using the updated base model. If the language model wasn't created, you can
+        /// use this operation to understand why Amazon Transcribe couldn't create it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLanguageModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLanguageModel service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DescribeLanguageModel">REST API Reference for DescribeLanguageModel Operation</seealso>
+        Task<DescribeLanguageModelResponse> DescribeLanguageModelAsync(DescribeLanguageModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -316,9 +430,10 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the GetMedicalTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -340,7 +455,7 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Retrieve information about a medical vocabulary.
+        /// Retrieves information about a medical vocabulary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMedicalVocabulary service method.</param>
         /// <param name="cancellationToken">
@@ -349,9 +464,10 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the GetMedicalVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -386,9 +502,10 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the GetTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -419,9 +536,10 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the GetVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -452,9 +570,10 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the GetVocabularyFilter service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -468,6 +587,39 @@ namespace Amazon.TranscribeService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabularyFilter">REST API Reference for GetVocabularyFilter Operation</seealso>
         Task<GetVocabularyFilterResponse> GetVocabularyFilterAsync(GetVocabularyFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListLanguageModels
+
+
+
+        /// <summary>
+        /// Provides more information about the custom language models you've created. You can
+        /// use the information in this list to find a specific custom language model. You can
+        /// then use the operation to get more information about it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLanguageModels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLanguageModels service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListLanguageModels">REST API Reference for ListLanguageModels Operation</seealso>
+        Task<ListLanguageModelsResponse> ListLanguageModelsAsync(ListLanguageModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -486,9 +638,10 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the ListMedicalTranscriptionJobs service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -507,8 +660,8 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Returns a list of vocabularies that match the specified criteria. You get the entire
-        /// list of vocabularies if you don't enter a value in any of the request parameters.
+        /// Returns a list of vocabularies that match the specified criteria. If you don't enter
+        /// a value in any of the request parameters, returns the entire list of vocabularies.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMedicalVocabularies service method.</param>
         /// <param name="cancellationToken">
@@ -517,9 +670,10 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the ListMedicalVocabularies service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -547,9 +701,10 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the ListTranscriptionJobs service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -578,9 +733,10 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the ListVocabularies service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -608,9 +764,10 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the ListVocabularyFilters service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -629,7 +786,7 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Start a batch job to transcribe medical speech to text.
+        /// Starts a batch job to transcribe medical speech to text.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMedicalTranscriptionJob service method.</param>
         /// <param name="cancellationToken">
@@ -638,12 +795,13 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the StartMedicalTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// The resource name already exists.
+        /// There is already a resource with that name.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -671,12 +829,13 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the StartTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// The resource name already exists.
+        /// There is already a resource with that name.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -695,7 +854,8 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Updates an existing vocabulary with new values in a different text file. The <code>UpdateMedicalVocabulary</code>
+        /// Updates a vocabulary with new values that you provide in a different text file from
+        /// the one you used to create the vocabulary. The <code>UpdateMedicalVocabulary</code>
         /// operation overwrites all of the existing information with the values that you provide
         /// in the request.
         /// </summary>
@@ -706,12 +866,13 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the UpdateMedicalVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// The resource name already exists.
+        /// There is already a resource with that name.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -744,12 +905,13 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the UpdateVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// The resource name already exists.
+        /// There is already a resource with that name.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -780,9 +942,10 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the UpdateVocabularyFilter service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the entity
+        /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+        /// example, it's "in progress"). See the exception <code>Message</code> field for more
+        /// information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.

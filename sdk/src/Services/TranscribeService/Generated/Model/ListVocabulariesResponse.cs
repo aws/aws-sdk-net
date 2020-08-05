@@ -41,10 +41,10 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The <code>ListVocabularies</code> operation returns a page of vocabularies at a time.
-        /// The maximum size of the page is set by the <code>MaxResults</code> parameter. If there
-        /// are more jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code>
-        /// token. Include the token in the next request to the <code>ListVocabularies</code>
-        /// operation to return in the next page of jobs.
+        /// The maximum size of the page is set in the <code>MaxResults</code> parameter. If there
+        /// are more jobs in the list than will fit on the page, Amazon Transcribe returns the
+        /// <code>NextPage</code> token. To return in the next page of jobs, include the token
+        /// in the next request to the <code>ListVocabularies</code> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

@@ -38,6 +38,7 @@ namespace Amazon.TranscribeService.Model
         private DateTime? _creationTime;
         private string _failureReason;
         private LanguageCode _languageCode;
+        private ModelSettings _modelSettings;
         private OutputLocationType _outputLocationType;
         private DateTime? _startTime;
         private string _transcriptionJobName;
@@ -132,6 +133,21 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetLanguageCode()
         {
             return this._languageCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelSettings.
+        /// </summary>
+        public ModelSettings ModelSettings
+        {
+            get { return this._modelSettings; }
+            set { this._modelSettings = value; }
+        }
+
+        // Check to see if ModelSettings property is set
+        internal bool IsSetModelSettings()
+        {
+            return this._modelSettings != null;
         }
 
         /// <summary>

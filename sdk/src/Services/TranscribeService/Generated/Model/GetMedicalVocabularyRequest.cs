@@ -30,7 +30,7 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMedicalVocabulary operation.
-    /// Retrieve information about a medical vocabulary.
+    /// Retrieves information about a medical vocabulary.
     /// </summary>
     public partial class GetMedicalVocabularyRequest : AmazonTranscribeServiceRequest
     {
@@ -39,8 +39,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the vocabulary you are trying to get information about. The value you
-        /// enter for this request is case-sensitive. 
+        /// The name of the vocabulary that you want information about. The value is case sensitive.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

@@ -77,6 +77,7 @@ namespace Amazon.TranscribeService.Model
         /// <code>DataAccessRoleArn</code> field.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string DataAccessRoleArn
         {
             get { return this._dataAccessRoleArn; }

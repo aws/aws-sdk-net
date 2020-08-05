@@ -30,8 +30,8 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMedicalVocabularies operation.
-    /// Returns a list of vocabularies that match the specified criteria. You get the entire
-    /// list of vocabularies if you don't enter a value in any of the request parameters.
+    /// Returns a list of vocabularies that match the specified criteria. If you don't enter
+    /// a value in any of the request parameters, returns the entire list of vocabularies.
     /// </summary>
     public partial class ListMedicalVocabulariesRequest : AmazonTranscribeServiceRequest
     {
@@ -62,9 +62,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property NameContains. 
         /// <para>
-        /// Returns vocabularies in the list whose name contains the specified string. The search
-        /// is case-insensitive, <code>ListMedicalVocabularies</code> returns both "vocabularyname"
-        /// and "VocabularyName" in the response list.
+        /// Returns vocabularies whose names contain the specified string. The search is not case
+        /// sensitive. <code>ListMedicalVocabularies</code> returns both "<code>vocabularyname</code>"
+        /// and "<code>VocabularyName</code>".
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -84,7 +84,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the result of your previous request to <code>ListMedicalVocabularies</code> was
-        /// truncated, include the <code>NextToken</code> to fetch the next set of jobs.
+        /// truncated, include the <code>NextToken</code> to fetch the next set of vocabularies.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -103,8 +103,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property StateEquals. 
         /// <para>
-        /// When specified, only returns vocabularies with the <code>VocabularyState</code> equal
-        /// to the specified vocabulary state.
+        /// When specified, returns only vocabularies with the <code>VocabularyState</code> equal
+        /// to the specified vocabulary state. Use this field to see which vocabularies are ready
+        /// for your medical transcription jobs.
         /// </para>
         /// </summary>
         public VocabularyState StateEquals
