@@ -1,3 +1,7 @@
+### 3.3.790.3 (2020-08-04 23:20 UTC)
+* S3 (3.3.111.37)
+	* AmazonS3Uri expects an encoded string or URI, AmazonS3Uri Key is now decoded; Fixes for S3Region
+
 ### 3.3.790.2 (2020-08-04 18:10 UTC)
 * AWSHealth (3.3.103.36)
 	* Documentation updates for health

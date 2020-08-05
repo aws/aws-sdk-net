@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.790.2",
+    "ProductVersion" : "3.3.790.3",
     "CoreVersion"    : "3.3.107.35",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -313,7 +313,7 @@
             "InPreview"               : false
         },
         "S3"                   : {
-            "Version" : "3.3.111.36",
+            "Version" : "3.3.111.37",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.35"
