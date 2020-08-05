@@ -45,7 +45,7 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// is <i>not</i> linked to an Amazon S3 data respository.
+    /// is <i>not</i> linked to a data respository.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -99,9 +99,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation.
-        /// This string is automatically filled on your behalf when you use the AWS Command Line
-        /// Interface (AWS CLI) or an AWS SDK.
+        /// (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent
+        /// creation. This string is automatically filled on your behalf when you use the AWS
+        /// Command Line Interface (AWS CLI) or an AWS SDK.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -139,10 +139,10 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to apply to the backup at backup creation. The key value of the <code>Name</code>
-        /// tag appears in the console as the backup name. If you have set <code>CopyTagsToBackups</code>
+        /// (Optional) The tags to apply to the backup at backup creation. The key value of the
+        /// <code>Name</code> tag appears in the console as the backup name. If you have set <code>CopyTagsToBackups</code>
         /// to true, and you specify one or more tags using the <code>CreateBackup</code> action,
-        /// no existing tags on the file system are copied from the file system to the backup.
+        /// no existing file system tags are copied from the file system to the backup.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
