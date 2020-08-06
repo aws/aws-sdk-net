@@ -198,6 +198,11 @@
     <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.GetBotResponse.NluIntentConfidenceThreshold</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetBotResponse.Version</property>
     <min>1</min>
     <max>64</max>
@@ -523,6 +528,11 @@
     <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.PutBotRequest.NluIntentConfidenceThreshold</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.PutBotResponse.Description</property>
     <min>0</min>
     <max>200</max>
@@ -537,6 +547,11 @@
     <min>2</min>
     <max>50</max>
     <pattern>^([A-Za-z]_?)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.PutBotResponse.NluIntentConfidenceThreshold</property>
+    <min>0</min>
+    <max>1</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.PutBotResponse.Version</property>

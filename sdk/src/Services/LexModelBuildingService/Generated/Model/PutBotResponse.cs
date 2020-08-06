@@ -41,12 +41,14 @@ namespace Amazon.LexModelBuildingService.Model
         private bool? _createVersion;
         private string _description;
         private bool? _detectSentiment;
+        private bool? _enableModelImprovements;
         private string _failureReason;
         private int? _idleSessionTTLInSeconds;
         private List<Intent> _intents = new List<Intent>();
         private DateTime? _lastUpdatedDate;
         private Locale _locale;
         private string _name;
+        private double? _nluIntentConfidenceThreshold;
         private Status _status;
         private List<Tag> _tags = new List<Tag>();
         private string _version;
@@ -228,6 +230,26 @@ namespace Amazon.LexModelBuildingService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableModelImprovements. 
+        /// <para>
+        /// Indicates whether the bot uses the new natural language understanding (NLU) model
+        /// or the original NLU. True indicates that the bot is using the new model, otherwise,
+        /// false.
+        /// </para>
+        /// </summary>
+        public bool EnableModelImprovements
+        {
+            get { return this._enableModelImprovements.GetValueOrDefault(); }
+            set { this._enableModelImprovements = value; }
+        }
+
+        // Check to see if EnableModelImprovements property is set
+        internal bool IsSetEnableModelImprovements()
+        {
+            return this._enableModelImprovements.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
         /// If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that
@@ -338,6 +360,30 @@ namespace Amazon.LexModelBuildingService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NluIntentConfidenceThreshold. 
+        /// <para>
+        /// The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>,
+        /// <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents
+        /// in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
+        /// or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+        /// response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code>
+        /// are only inserted if they are configured for the bot.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public double NluIntentConfidenceThreshold
+        {
+            get { return this._nluIntentConfidenceThreshold.GetValueOrDefault(); }
+            set { this._nluIntentConfidenceThreshold = value; }
+        }
+
+        // Check to see if NluIntentConfidenceThreshold property is set
+        internal bool IsSetNluIntentConfidenceThreshold()
+        {
+            return this._nluIntentConfidenceThreshold.HasValue; 
         }
 
         /// <summary>

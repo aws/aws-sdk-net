@@ -93,6 +93,12 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     response.DetectSentiment = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("enableModelImprovements", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.EnableModelImprovements = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("failureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -121,6 +121,12 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DetectSentiment);
                 }
 
+                if(publicRequest.IsSetEnableModelImprovements())
+                {
+                    context.Writer.WritePropertyName("enableModelImprovements");
+                    context.Writer.Write(publicRequest.EnableModelImprovements);
+                }
+
                 if(publicRequest.IsSetIdleSessionTTLInSeconds())
                 {
                     context.Writer.WritePropertyName("idleSessionTTLInSeconds");
@@ -147,6 +153,12 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("locale");
                     context.Writer.Write(publicRequest.Locale);
+                }
+
+                if(publicRequest.IsSetNluIntentConfidenceThreshold())
+                {
+                    context.Writer.WritePropertyName("nluIntentConfidenceThreshold");
+                    context.Writer.Write(publicRequest.NluIntentConfidenceThreshold);
                 }
 
                 if(publicRequest.IsSetProcessBehavior())

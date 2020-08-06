@@ -61,10 +61,12 @@ namespace Amazon.LexModelBuildingService.Model
         private bool? _createVersion;
         private string _description;
         private bool? _detectSentiment;
+        private bool? _enableModelImprovements;
         private int? _idleSessionTTLInSeconds;
         private List<Intent> _intents = new List<Intent>();
         private Locale _locale;
         private string _name;
+        private double? _nluIntentConfidenceThreshold;
         private ProcessBehavior _processBehavior;
         private List<Tag> _tags = new List<Tag>();
         private string _voiceId;
@@ -302,6 +304,84 @@ namespace Amazon.LexModelBuildingService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableModelImprovements. 
+        /// <para>
+        /// Set to <code>true</code> to enable the use of a new natural language understanding
+        /// (NLU) model. Using the new NLU may improve the performance of your bot. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you set the <code>enableModelImprovements</code> parameter to <code>true</code>
+        /// you can use the <code>nluIntentConfidenceThreshold</code> parameter to configure confidence
+        /// scores. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence
+        /// Scores</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only set the <code>enableModelImprovements</code> parameter in certain Regions.
+        /// If you set the parameter to <code>true</code>, your bot will use the new NLU. If you
+        /// set the parameter to <code>false</code>, your bot will continue to use the original
+        /// NLU. If you set the parameter to <code>false</code> after setting it to <code>true</code>,
+        /// your bot will return to the original NLU.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Regions where you can set the <code>enableModelImprovements</code> parameter to
+        /// <code>true</code> are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// US East (N. Virginia) (us-east-1)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// US West (Oregon) (us-west-2)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Sydney) (ap-southeast-2)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EU (Ireland) (eu-west-1)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code>
+        /// by default. In these Regions setting the parameter to <code>false</code> throws a
+        /// <code>ValidationException</code> exception.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Asia Pacific (Singapore) (ap-southeast-1)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Tokyo) (ap-northeast-1)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EU (Frankfurt) (eu-central-1)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EU (London) (eu-west-2)
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool EnableModelImprovements
+        {
+            get { return this._enableModelImprovements.GetValueOrDefault(); }
+            set { this._enableModelImprovements = value; }
+        }
+
+        // Check to see if EnableModelImprovements property is set
+        internal bool IsSetEnableModelImprovements()
+        {
+            return this._enableModelImprovements.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property IdleSessionTTLInSeconds. 
         /// <para>
         /// The maximum time in seconds that Amazon Lex retains the data gathered in a conversation.
@@ -404,6 +484,59 @@ namespace Amazon.LexModelBuildingService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NluIntentConfidenceThreshold. 
+        /// <para>
+        /// Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>,
+        /// <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents
+        /// in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
+        /// or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+        /// response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code>
+        /// are only inserted if they are configured for the bot.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must set the <code>enableModelImprovements</code> parameter to <code>true</code>
+        /// to use confidence scores.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, suppose a bot is configured with the confidence threshold of 0.80 and
+        /// the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents
+        /// with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50).
+        /// The response from the <code>PostText</code> operation would be:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// AMAZON.FallbackIntent
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IntentA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IntentB
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IntentC
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public double NluIntentConfidenceThreshold
+        {
+            get { return this._nluIntentConfidenceThreshold.GetValueOrDefault(); }
+            set { this._nluIntentConfidenceThreshold = value; }
+        }
+
+        // Check to see if NluIntentConfidenceThreshold property is set
+        internal bool IsSetNluIntentConfidenceThreshold()
+        {
+            return this._nluIntentConfidenceThreshold.HasValue; 
         }
 
         /// <summary>

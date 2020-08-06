@@ -40,6 +40,7 @@ namespace Amazon.LexModelBuildingService.Model
         private DateTime? _createdDate;
         private string _description;
         private bool? _detectSentiment;
+        private bool? _enableModelImprovements;
         private string _failureReason;
         private int? _idleSessionTTLInSeconds;
         private List<Intent> _intents = new List<Intent>();
@@ -201,6 +202,26 @@ namespace Amazon.LexModelBuildingService.Model
         internal bool IsSetDetectSentiment()
         {
             return this._detectSentiment.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableModelImprovements. 
+        /// <para>
+        /// Indicates whether the bot uses the new natural language understanding (NLU) model
+        /// or the original NLU. True indicates that the bot is using the new model, otherwise,
+        /// false.
+        /// </para>
+        /// </summary>
+        public bool EnableModelImprovements
+        {
+            get { return this._enableModelImprovements.GetValueOrDefault(); }
+            set { this._enableModelImprovements = value; }
+        }
+
+        // Check to see if EnableModelImprovements property is set
+        internal bool IsSetEnableModelImprovements()
+        {
+            return this._enableModelImprovements.HasValue; 
         }
 
         /// <summary>
