@@ -34,6 +34,7 @@ namespace Amazon.PersonalizeRuntime.Model
     public partial class GetRecommendationsResponse : AmazonWebServiceResponse
     {
         private List<PredictedItem> _itemList = new List<PredictedItem>();
+        private string _recommendationId;
 
         /// <summary>
         /// Gets and sets the property ItemList. 
@@ -52,6 +53,24 @@ namespace Amazon.PersonalizeRuntime.Model
         internal bool IsSetItemList()
         {
             return this._itemList != null && this._itemList.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommendationId. 
+        /// <para>
+        /// The ID of the recommendation.
+        /// </para>
+        /// </summary>
+        public string RecommendationId
+        {
+            get { return this._recommendationId; }
+            set { this._recommendationId = value; }
+        }
+
+        // Check to see if RecommendationId property is set
+        internal bool IsSetRecommendationId()
+        {
+            return this._recommendationId != null;
         }
 
     }
