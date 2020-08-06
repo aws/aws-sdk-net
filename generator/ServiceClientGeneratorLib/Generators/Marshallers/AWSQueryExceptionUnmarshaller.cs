@@ -31,7 +31,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line 6 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryExceptionUnmarshaller.tt"
 
-    AddLicenseHeader("2020");
+    AddLicenseHeader();
 
     AddCommonUsingStatements();
 

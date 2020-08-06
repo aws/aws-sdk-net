@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class EncryptionChangeTest
     {
-        private const string ExpectedHash = "AD3DBDAA70CDE33C2405A19CED2F497189D5DD750ABA23074C6055BCBCB98AF8";
+        private const string ExpectedHash = "6FA3F36858861189151DBC1A1E49794C254D43CE7DEEC9817B674893C78BDEB6";
         private const string Message = "Manually run EncryptionInteropTest.cs and EncryptionInteropTest.java.";
 
         private static readonly List<string> SourceFiles = new List<string>

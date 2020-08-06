@@ -39,29 +39,16 @@ namespace ServiceClientGenerator.Generators
 	public ServiceConfiguration Config { get; set; }
 
     // Adds the Amazon Apache 2.0 license
-    public void AddLicenseHeader(string copyrightDuration = "2010-2014")
+    public void AddLicenseHeader()
     {
 
         
         #line default
         #line hidden
         
-        #line 16 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
-this.Write("/*\r\n * Copyright ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 18 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(copyrightDuration));
-
-        
-        #line default
-        #line hidden
-        
-        #line 18 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
-this.Write(@" Amazon.com, Inc. or its affiliates. All Rights Reserved.
+        #line 16 "C:\Worktrees\GeneratorCopyrightIssue\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(@"/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the ""License"").
  * You may not use this file except in compliance with the License.

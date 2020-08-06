@@ -124,14 +124,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration("""")]
 [assembly: AssemblyProduct(""Amazon Web Services SDK for .NET"")]
 [assembly: AssemblyCompany(""Amazon.com, Inc"")]
-[assembly: AssemblyCopyright(""Copyright 2009-");
-            
-            #line 30 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(DateTime.UtcNow.Year));
-            
-            #line default
-            #line hidden
-            this.Write(@" Amazon.com, Inc. or its affiliates. All Rights Reserved."")]
+[assembly: AssemblyCopyright(""Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved."")]
 [assembly: AssemblyTrademark("""")]
 [assembly: AssemblyCulture("""")]
 
